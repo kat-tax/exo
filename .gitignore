@@ -1,0 +1,9 @@
+# Project
+dist/
+.ref/
+
+# OSX
+.DS_Store
+
+# Node
+node_modules/

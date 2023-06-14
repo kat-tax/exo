@@ -1,0 +1,21 @@
+diff --git a/node_modules/react-native-svg/src/ReactNativeSVG.web.ts b/node_modules/react-native-svg/src/ReactNativeSVG.web.ts
+index 7eb4b61..64fb495 100644
+--- a/node_modules/react-native-svg/src/ReactNativeSVG.web.ts
++++ b/node_modules/react-native-svg/src/ReactNativeSVG.web.ts
+@@ -3,7 +3,6 @@ import type { GestureResponderEvent, TransformsStyle } from 'react-native';
+ import {
+   // @ts-ignore
+   unstable_createElement as ucE,
+-  createElement as cE,
+ } from 'react-native';
+ import type {
+   NumberArray,
+@@ -14,7 +13,7 @@ import SvgTouchableMixin from './lib/SvgTouchableMixin';
+ import { resolve } from './lib/resolve';
+ import { transformsArrayToProps } from './lib/extract/extractTransform';
+ 
+-const createElement = cE || ucE;
++const createElement = ucE;
+ 
+ type BlurEvent = Object;
+ type FocusEvent = Object;
