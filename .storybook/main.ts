@@ -1,7 +1,19 @@
 import type {StorybookConfig} from '@storybook/react-vite';
 
 const config: StorybookConfig = {
-  stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
+  stories: [
+    {
+      titlePrefix: 'Guides',
+      directory: '../src/docs',
+      files: '*.mdx',
+    },
+    {
+      titlePrefix: 'Components',
+      directory: '../src/interface/base',
+      files: '*.stories.@(js|jsx|ts|tsx)',
+    },
+  ],
+  staticDirs: ['./assets'],
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
@@ -12,7 +24,11 @@ const config: StorybookConfig = {
     options: {},
   },
   docs: {
-    autodocs: 'tag',
+    autodocs: true,
+    defaultName: 'Documentation',
+  },
+  core: {
+    disableTelemetry: true,
   },
 };
 

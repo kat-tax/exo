@@ -8,6 +8,8 @@
     "postinstall": "patch-package"
   },
   "dependencies": {
+    "@storybook/manager-api": "^7.0.20",
+    "@storybook/theming": "^7.0.20",
     "react": "18.2.0",
     "react-dom": "^18.2.0",
     "react-native-svg": "^13.9.0",
@@ -15,20 +17,19 @@
     "react-native-windows": "^0.71.10"
   },
   "devDependencies": {
-    "@storybook/addon-essentials": "^7.0.8",
-    "@storybook/addon-interactions": "^7.0.8",
-    "@storybook/addon-links": "^7.0.8",
-    "@storybook/blocks": "^7.0.8",
-    "@storybook/react": "^7.0.8",
-    "@storybook/react-vite": "^7.0.8",
-    "@storybook/testing-library": "^0.1.0",
+    "@storybook/addon-essentials": "^7.0.20",
+    "@storybook/addon-interactions": "^7.0.20",
+    "@storybook/addon-links": "^7.0.20",
+    "@storybook/blocks": "^7.0.20",
+    "@storybook/react": "^7.0.20",
+    "@storybook/react-vite": "^7.0.20",
     "@tsconfig/react-native": "^3.0.0",
     "@types/react": "^18.2.4",
     "@types/react-native": "^0.72.2",
     "@vitejs/plugin-react": "^4.0.0",
     "patch-package": "^7.0.0",
     "prop-types": "^15.8.1",
-    "storybook": "^7.0.8",
+    "storybook": "^7.0.20",
     "typescript": "4.8.4",
     "vite": "^4.3.4",
     "vite-tsconfig-paths": "^4.2.0"
