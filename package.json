@@ -3,7 +3,6 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "vite dev",
     "storybook": "storybook dev -p 6006",
     "postinstall": "patch-package"
   },
