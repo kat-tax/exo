@@ -9,7 +9,7 @@ const config: StorybookConfig = {
     },
     {
       titlePrefix: 'Components',
-      directory: '../src/interface',
+      directory: '../src/components',
       files: '*.stories.@(js|jsx|ts|tsx)',
     },
   ],
@@ -29,6 +29,10 @@ const config: StorybookConfig = {
   },
   core: {
     disableTelemetry: true,
+    builder: '@storybook/builder-vite',
+  },
+  typescript: {
+    reactDocgen: 'react-docgen', // 👈 react-docgen configured here.
   },
 };
 
