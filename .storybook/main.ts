@@ -9,7 +9,7 @@ const config: StorybookConfig = {
     },
     {
       titlePrefix: 'Components',
-      directory: '../src/components/**',
+      directory: '../src/components',
       files: '*.stories.@(js|jsx|ts|tsx)',
     },
   ],
