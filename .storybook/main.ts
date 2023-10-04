@@ -13,7 +13,6 @@ const config: StorybookConfig = {
       files: '*.stories.@(js|jsx|ts|tsx)',
     },
   ],
-  staticDirs: ['./assets'],
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
@@ -32,8 +31,9 @@ const config: StorybookConfig = {
     builder: '@storybook/builder-vite',
   },
   typescript: {
-    reactDocgen: 'react-docgen', // 👈 react-docgen configured here.
+    reactDocgen: 'react-docgen',
   },
+  staticDirs: ['./assets'],
 };
 
 export default config;

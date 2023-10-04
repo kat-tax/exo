@@ -13,17 +13,11 @@ export default defineConfig(({mode}) => {
     ],
     resolve: {
       extensions: ['.web.tsx', '.web.ts', '.web.js', '.tsx', '.ts', '.js'],
-      alias: {
-        'react-native': 'react-native-web',
-        'react-native-maps': 'react-native-web-maps',
-        'react-native-webview': 'react-native-web-webview',
-        'lottie-react-native': 'react-native-web-lottie',
-        'recyclerlistview': 'recyclerlistview/web',
-      },
+      alias: {'react-native': 'react-native-web'},
     },
     build: {
       outDir: 'dist/web',
-      chunkSizeWarningLimit: 600,
+      chunkSizeWarningLimit: 700,
       rollupOptions: {
         output: {
           manualChunks: (id) => id.includes('node_modules') ? 'vendor' : null,
@@ -31,9 +25,9 @@ export default defineConfig(({mode}) => {
       }
     },
     define: {
-      global: 'window',
       __DEV__: isDev,
       ...isDev && {
+        global: 'window',
         process: {
           env: {
             NODE_ENV: '"development"',
