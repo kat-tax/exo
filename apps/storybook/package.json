@@ -25,7 +25,8 @@
     "@types/react": "^18.2.45",
     "cfg": "workspace:*",
     "prop-types": "^15.8.1",
-    "storybook": "7.2.3"
+    "storybook": "7.2.3",
+    "typescript": "^5.3.3"
   },
   "engines": {
     "node": ">=16"

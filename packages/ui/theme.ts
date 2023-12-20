@@ -1,3 +1,11 @@
+export const breakpoints = {
+  xs: 0,
+  sm: 576,
+  md: 768,
+  lg: 992,
+  xl: 1200,
+}
+
 export const pallete = {
   white: '#ffffff',
   black: '#000000',
@@ -245,14 +253,6 @@ export const pallete = {
   rose950: '#4c0519',
 }
 
-export const breakpoints = {
-  xs: 0,
-  sm: 576,
-  md: 768,
-  lg: 992,
-  xl: 1200,
-}
-
 export const themes = {
   light: {
     colors: {
@@ -299,7 +299,7 @@ export const themes = {
       input: pallete.zinc800,
       ring: pallete.zinc300,
     },
-  }
-};
+  },
+}
 
-export default 'light';
+export default 'light'

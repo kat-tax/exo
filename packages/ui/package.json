@@ -17,6 +17,7 @@
     "react-dom": "^18.2.0",
     "react-native-svg": "^14.1.0",
     "react-native-unistyles": "^2.0.0-rc.2",
-    "react-native-web": "^0.19.9"
+    "react-native-web": "^0.19.9",
+    "typescript": "^5.3.3"
   }
 }
