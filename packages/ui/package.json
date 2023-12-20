@@ -10,7 +10,7 @@
   },
   "devDependencies": {
     "@tsconfig/react-native": "^3.0.2",
-    "@storybook/react": "^6.4.9",
+    "@storybook/react": "^7.6.6",
     "cfg": "workspace:*",
     "react": "18.2.0",
     "react-native": "0.73.1",
