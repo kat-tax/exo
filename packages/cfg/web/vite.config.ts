@@ -12,7 +12,7 @@ export default defineConfig(({mode}) => {
       react(),
     ],
     resolve: {
-      extensions: ['.web.tsx', '.web.ts', '.web.js', '.js', '.mjs', '.mts', '.js', '.jsx', '.ts', '.tsx', '.json'],
+      extensions: ['.web.tsx', '.web.ts', '.web.js', '.mjs', '.mts', '.js', '.jsx', '.ts', '.tsx', '.json'],
       alias: {'react-native': 'react-native-web'},
     },
     build: {
