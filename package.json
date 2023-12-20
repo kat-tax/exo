@@ -1,8 +1,8 @@
 {
-  "private": true,
+  "name": "@f2rn/ui",
   "scripts": {
-    "storybook": "storybook dev -p 6006",
-    "storybook-build": "storybook build -o dist"
+    "dev": "storybook dev -p 6006",
+    "build": "storybook build -o dist"
   },
   "dependencies": {
     "react": "18.2.0",
