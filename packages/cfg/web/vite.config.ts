@@ -12,8 +12,7 @@ export default defineConfig(({mode}) => {
       react(),
     ],
     resolve: {
-      // Breaks storybook: https://github.com/storybookjs/storybook/issues/25013
-      // extensions: ['.web.tsx', '.web.ts', '.web.js', '.tsx', '.ts', '.js'],
+      extensions: ['.web.tsx', '.web.ts', '.web.js', '.js', '.mjs', '.mts', '.js', '.jsx', '.ts', '.tsx', '.json'],
       alias: {'react-native': 'react-native-web'},
     },
     build: {
