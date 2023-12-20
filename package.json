@@ -1,41 +1,5 @@
 {
-  "name": "@f2rn/ui",
-  "scripts": {
-    "dev": "storybook dev -p 6006",
-    "build": "storybook build -o dist"
-  },
-  "dependencies": {
-    "react": "18.2.0",
-    "react-dom": "^18.2.0",
-    "react-native-svg": "^14.1.0",
-    "react-native-unistyles": "^1.2.0",
-    "react-native-web": "^0.19.9"
-  },
-  "devDependencies": {
-    "@storybook/addon-essentials": "7.2.3",
-    "@storybook/addon-interactions": "7.2.3",
-    "@storybook/addon-links": "7.2.3",
-    "@storybook/blocks": "7.2.3",
-    "@storybook/builder-vite": "7.2.3",
-    "@storybook/manager-api": "7.2.3",
-    "@storybook/react": "7.2.3",
-    "@storybook/react-vite": "7.2.3",
-    "@storybook/theming": "7.2.3",
-    "@tsconfig/react-native": "^3.0.2",
-    "@types/react": "^18.2.45",
-    "@types/react-native": "^0.72.8",
-    "@vitejs/plugin-react": "^4.2.1",
-    "prop-types": "^15.8.1",
-    "storybook": "7.2.3",
-    "typescript": "5.3.3",
-    "vite": "^4.5.1",
-    "vite-tsconfig-paths": "^4.2.2"
-  },
-  "engines": {
-    "node": ">=16"
-  },
-  "browserslist": {
-    "production": ">0.2%, not dead, not op_mini all",
-    "development": "last 2 versions"
-  }
+  "name": "project",
+  "version": "1.0.0",
+  "private": true
 }

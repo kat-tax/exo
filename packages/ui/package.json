@@ -1,0 +1,22 @@
+{
+  "name": "ui",
+  "peerDependencies": {
+    "react": ">=18",
+    "react-native": ">=72",
+    "react-dom": ">=18",
+    "react-native-svg": ">=14",
+    "react-native-unistyles": ">=2",
+    "react-native-web": ">=19"
+  },
+  "devDependencies": {
+    "@tsconfig/react-native": "^3.0.2",
+    "@storybook/react": "^6.4.9",
+    "cfg": "workspace:*",
+    "react": "18.2.0",
+    "react-native": "0.73.1",
+    "react-dom": "^18.2.0",
+    "react-native-svg": "^14.1.0",
+    "react-native-unistyles": "^2.0.0-rc.2",
+    "react-native-web": "^0.19.9"
+  }
+}

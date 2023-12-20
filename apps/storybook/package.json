@@ -1,0 +1,37 @@
+{
+  "name": "storybook",
+  "scripts": {
+    "dev": "storybook dev -p 6006",
+    "build": "storybook build -o dist"
+  },
+  "dependencies": {
+    "ui": "workspace:^",
+    "react": "18.2.0",
+    "react-dom": "^18.2.0",
+    "react-native-svg": "^14.1.0",
+    "react-native-unistyles": "^1.2.0",
+    "react-native-web": "^0.19.9"
+  },
+  "devDependencies": {
+    "@storybook/addon-essentials": "7.2.3",
+    "@storybook/addon-interactions": "7.2.3",
+    "@storybook/addon-links": "7.2.3",
+    "@storybook/blocks": "7.2.3",
+    "@storybook/builder-vite": "7.2.3",
+    "@storybook/manager-api": "7.2.3",
+    "@storybook/react": "7.2.3",
+    "@storybook/react-vite": "7.2.3",
+    "@storybook/theming": "7.2.3",
+    "@types/react": "^18.2.45",
+    "cfg": "workspace:*",
+    "prop-types": "^15.8.1",
+    "storybook": "7.2.3"
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "browserslist": {
+    "production": ">0.2%, not dead, not op_mini all",
+    "development": "last 2 versions"
+  }
+}

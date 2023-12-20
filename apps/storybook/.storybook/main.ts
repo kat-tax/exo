@@ -4,12 +4,12 @@ const config: StorybookConfig = {
   stories: [
     {
       titlePrefix: 'Guides',
-      directory: '../src/docs',
+      directory: '../../../packages/ui/docs',
       files: '**/*.mdx',
     },
     {
       titlePrefix: 'Components',
-      directory: '../src/components',
+      directory: '../../../packages/ui/components',
       files: '**/*.stories.tsx',
     },
   ],

@@ -1,0 +1,15 @@
+{
+  "private": true,
+  "name": "cfg",
+  "main": "index.ts",
+  "files": [
+    "ts/base.tsconfig.json",
+    "ts/storybook.tsconfig.json",
+    "ts/ui.tsconfig.json"
+  ],
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.2.1",
+    "vite": "^4.5.1",
+    "vite-tsconfig-paths": "^4.2.2"
+  }
+}
