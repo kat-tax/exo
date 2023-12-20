@@ -7,7 +7,7 @@
   "dependencies": {
     "react": "18.2.0",
     "react-dom": "^18.2.0",
-    "react-native-svg": "^13.14.0",
+    "react-native-svg": "^14.1.0",
     "react-native-unistyles": "^1.2.0",
     "react-native-web": "^0.19.9"
   },
@@ -22,14 +22,14 @@
     "@storybook/react-vite": "7.2.3",
     "@storybook/theming": "7.2.3",
     "@tsconfig/react-native": "^3.0.2",
-    "@types/react": "^18.2.23",
-    "@types/react-native": "^0.72.2",
-    "@vitejs/plugin-react": "^4.1.0",
+    "@types/react": "^18.2.45",
+    "@types/react-native": "^0.72.8",
+    "@vitejs/plugin-react": "^4.2.1",
     "prop-types": "^15.8.1",
     "storybook": "7.2.3",
-    "typescript": "5.2.2",
-    "vite": "^4.4.9",
-    "vite-tsconfig-paths": "^4.2.1"
+    "typescript": "5.3.3",
+    "vite": "^4.5.1",
+    "vite-tsconfig-paths": "^4.2.2"
   },
   "engines": {
     "node": ">=16"
