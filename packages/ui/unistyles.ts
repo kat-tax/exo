@@ -1,6 +1,6 @@
 import {UnistylesRegistry} from 'react-native-unistyles';
 export {createStyleSheet, useStyles} from 'react-native-unistyles';
-import initialTheme, {themes, breakpoints} from './theme';
+import initialTheme, {themes, breakpoints} from 'theme';
 
 type AppThemes = {[K in keyof typeof themes]: typeof themes[K]};
 type AppBreakpoints = typeof breakpoints;
