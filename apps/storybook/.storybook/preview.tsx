@@ -1,4 +1,5 @@
-import 'ui/unistyles';
+import 'client/src/styles';
+
 import React from 'react';
 import uniDefault, {themes as uniThemes} from 'ui/theme';
 import {themes} from '@storybook/theming';

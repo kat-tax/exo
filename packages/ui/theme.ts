@@ -73,4 +73,4 @@ export const themes = {
   },
 }
 
-export default 'dark'
+export default 'light'

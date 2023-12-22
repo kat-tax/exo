@@ -24,6 +24,7 @@
     "@storybook/react-vite": "7.6.6",
     "@storybook/theming": "7.6.6",
     "@types/react": "^18.2.45",
+    "client": "workspace:*",
     "cfg": "workspace:*",
     "ui": "workspace:*",
     "prop-types": "^15.8.1",
