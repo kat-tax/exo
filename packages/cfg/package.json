@@ -1,0 +1,11 @@
+{
+  "name": "@kat.tax/cfg",
+  "version": "0.0.1",
+  "private": true,
+  "files": [
+    "ts/react-native.tsconfig.json",
+    "ts/client.tsconfig.json",
+    "ts/storybook.tsconfig.json",
+    "ts/ui.tsconfig.json"
+  ]
+}

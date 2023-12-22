@@ -1,0 +1,76 @@
+export const breakpoints = {
+  xs: 0,
+  sm: 576,
+  md: 768,
+  lg: 992,
+  xl: 1200,
+}
+
+export const pallete = {
+  white: '#ffffff',
+  black: '#000000',
+  red500: '#ef4444',
+  red900: '#7f1d1d',
+  zinc50: '#fafafa',
+  zinc100: '#f4f4f5',
+  zinc200: '#e4e4e7',
+  zinc300: '#d4d4d8',
+  zinc400: '#a1a1aa',
+  zinc500: '#71717a',
+  zinc600: '#52525b',
+  zinc700: '#3f3f46',
+  zinc800: '#27272a',
+  zinc900: '#18181b',
+  zinc950: '#09090b',
+}
+
+export const themes = {
+  light: {
+    colors: {
+      background: pallete.white,
+      foreground: pallete.zinc950,
+      card: pallete.white,
+      cardForeground: pallete.zinc950,
+      popover: pallete.white,
+      popoverForeground: pallete.zinc950,
+      primary: pallete.zinc900,
+      primaryForeground: pallete.zinc50,
+      secondary: pallete.zinc100,
+      secondaryForeground: pallete.zinc900,
+      muted: pallete.zinc100,
+      mutedForeground: pallete.zinc500,
+      accent: pallete.zinc100,
+      accentForeground: pallete.zinc900,
+      destructive: pallete.red500,
+      destructiveForeground: pallete.zinc50,
+      border: pallete.zinc200,
+      input: pallete.zinc200,
+      ring: pallete.zinc950,
+    },
+  },
+  dark: {
+    colors: {
+      background: pallete.zinc950,
+      foreground: pallete.zinc50,
+      card: pallete.zinc950,
+      cardForeground: pallete.zinc50,
+      popover: pallete.zinc950,
+      popoverForeground: pallete.zinc50,
+      primary: pallete.zinc50,
+      primaryForeground: pallete.zinc900,
+      secondary: pallete.zinc800,
+      secondaryForeground: pallete.zinc50,
+      muted: pallete.zinc800,
+      mutedForeground: pallete.zinc400,
+      accent: pallete.zinc800,
+      accentForeground: pallete.zinc50,
+      destructive: pallete.red900,
+      destructiveForeground: pallete.zinc50,
+      border: pallete.zinc800,
+      input: pallete.zinc800,
+      ring: pallete.zinc300,
+    },
+  },
+}
+
+export default 'light'

@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "./react-native.tsconfig.json",
+  "display": "UI",
+  "compilerOptions": {
+    "baseUrl": "../../ui",
+  },
+}

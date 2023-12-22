@@ -1,0 +1,31 @@
+{
+  "name": "@kat.tax/client",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "vite dev --open",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "@kat.tax/exo-ui": "workspace:*",
+    "react": "18.2.0",
+    "react-dom": "^18.2.0",
+    "react-native-svg": "^14.1.0",
+    "react-native-unistyles": "^2.0.0-rc.2",
+    "react-native-web": "^0.19.9"
+  },
+  "devDependencies": {
+    "@kat.tax/cfg": "workspace:*",
+    "@types/jest": "29.5.11",
+    "@types/react": "^18.2.45",
+    "@types/react-native": "^0.72.8",
+    "@vitejs/plugin-react": "^4.2.1",
+    "typescript": "^5.3.3",
+    "vite": "^4.5.1",
+    "vite-tsconfig-paths": "^4.2.2"
+  },
+  "browserslist": {
+    "production": ">0.2%, not dead, not op_mini all",
+    "development": "last 2 versions"
+  }
+}

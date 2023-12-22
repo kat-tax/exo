@@ -1,0 +1,42 @@
+{
+  "name": "@kat.tax/storybook",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "storybook dev -p 6006",
+    "build": "storybook build -o dist"
+  },
+  "dependencies": {
+    "@kat.tax/exo-ui": "workspace:*",
+    "react": "18.2.0",
+    "react-dom": "^18.2.0",
+    "react-native-svg": "^14.1.0",
+    "react-native-unistyles": "^2.0.0-rc.2",
+    "react-native-web": "^0.19.9"
+  },
+  "devDependencies": {
+    "@kat.tax/cfg": "workspace:*",
+    "@kat.tax/client": "workspace:*",
+    "@kat.tax/exo-ui": "workspace:*",
+    "@iconify/react": "^4.1.1",
+    "@storybook/addon-essentials": "7.6.6",
+    "@storybook/addon-interactions": "7.6.6",
+    "@storybook/addon-links": "7.6.6",
+    "@storybook/blocks": "7.6.6",
+    "@storybook/builder-vite": "7.6.6",
+    "@storybook/manager-api": "7.6.6",
+    "@storybook/react": "7.6.6",
+    "@storybook/react-vite": "7.6.6",
+    "@storybook/theming": "7.6.6",
+    "@types/jest": "29.5.11",
+    "@types/react": "^18.2.45",
+    "@types/react-native": "^0.72.8",
+    "prop-types": "^15.8.1",
+    "storybook": "7.6.6",
+    "typescript": "^5.3.3"
+  },
+  "browserslist": {
+    "production": ">0.2%, not dead, not op_mini all",
+    "development": "last 2 versions"
+  }
+}

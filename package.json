@@ -1,0 +1,12 @@
+{
+  "name": "@kat.tax/exo",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "pnpm --filter ./apps/client run dev",
+    "build": "pnpm --filter ./apps/client run build",
+    "storybook": "pnpm --filter ./apps/storybook run dev",
+    "storybook-build": "pnpm --filter ./apps/storybook run build",
+    "publish-ui": "pnpm --filter ./packages/ui publish"
+  }
+}
