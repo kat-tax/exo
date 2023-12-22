@@ -3,8 +3,8 @@ import type {StorybookConfig} from '@storybook/react-vite';
 const config: StorybookConfig = {
   stories: [
     {
-      titlePrefix: 'Guides',
-      directory: '../../../docs',
+      titlePrefix: 'References',
+      directory: '../docs',
       files: '**/*.mdx',
     },
     {

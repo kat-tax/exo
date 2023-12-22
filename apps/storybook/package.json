@@ -8,11 +8,12 @@
     "react": "18.2.0",
     "react-dom": "^18.2.0",
     "react-native-svg": "^14.1.0",
-    "react-native-unistyles": "^1.2.0",
+    "react-native-unistyles": "^2.0.0-rc.2",
     "react-native-web": "^0.19.9",
     "ui": "workspace:^"
   },
   "devDependencies": {
+    "@iconify/react": "^4.1.1",
     "@storybook/addon-essentials": "7.6.6",
     "@storybook/addon-interactions": "7.6.6",
     "@storybook/addon-links": "7.6.6",
@@ -24,6 +25,7 @@
     "@storybook/theming": "7.6.6",
     "@types/react": "^18.2.45",
     "cfg": "workspace:*",
+    "ui": "workspace:*",
     "prop-types": "^15.8.1",
     "storybook": "7.6.6",
     "typescript": "^5.3.3"
