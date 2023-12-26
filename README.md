@@ -10,7 +10,7 @@
 4. Press the `Download Components` button
 
 ### Develop
-> Note: you can also run this project [in the browser](https://vslite.dev/~/gh/kat-tax/exo.git).
+> Note: you can also run this project [in the browser](https://vslite.dev/~/gh/kat-tax/exo.git/~/gh/kat-tax/exo.git?init=pnpm+storybook).
 
 1. Run `pnpm i` to install dependencies
 2. Run `pnpm dev` to start the app's dev server
