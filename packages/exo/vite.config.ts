@@ -12,11 +12,6 @@ export default defineConfig(({mode}) => {
       },
       rollupOptions: {
         external: ['react'],
-        output: {
-          globals: {
-            react: 'react'
-          },
-        },
       },
     },
     plugins: [
