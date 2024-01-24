@@ -47,7 +47,9 @@ export function useVariants<S,T>(
             const vcond = (e?: PressableStateCallbackType): boolean => (
               // Test whether the current variant is the same as the value
               // or if the current variant is state and the pressable state matches the value
+              // @ts-ignore TODO
               (opts.current[v1] === v1v || (isVState(v1) ? e?.[v1v.toLowerCase()] : false)) &&
+              // @ts-ignore TODO
               (opts.current[v2] === v2v || (isVState(v2) ? e?.[v2v.toLowerCase()] : false))
             );
             // Add the variant combo style to styles

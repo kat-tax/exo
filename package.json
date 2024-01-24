@@ -7,6 +7,7 @@
     "build": "pnpm --filter ./apps/client run build",
     "storybook": "pnpm --filter ./apps/storybook run dev",
     "storybook-build": "pnpm --filter ./apps/storybook run build",
+    "publish-exo": "pnpm --filter ./packages/exo publish",
     "publish-ui": "pnpm --filter ./packages/ui publish"
   }
 }
