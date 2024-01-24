@@ -1,6 +1,6 @@
 {
   "name": "react-native-exo",
-  "version": "0.9.5",
+  "version": "0.9.6",
   "source": "./src/index.ts",
   "main": "./dist/index.mjs",
   "files": [
