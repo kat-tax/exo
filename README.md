@@ -1,6 +1,6 @@
 # EXO
 
-`The Ultimate React Native UI Kit`
+`The Ultimate React Native Design Kit`
 
 ### Design
 > Note: you can also clone this repo and skip designing
