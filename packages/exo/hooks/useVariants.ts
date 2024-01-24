@@ -57,12 +57,6 @@ export function useVariants<S,T>(
     return vstyles;
   }
 
-  // TODO
-  const buildColors = (theme: T): VColors => {
-    const colors = {} as VColors;
-    return colors; 
-  };
-
   const proxyStyles = (o: S): VStyles<S> => {
     // Cache the styles for each variant combo as they are accessed
     const cache = new Map<string, ReturnType<typeof buildStyles>>();
@@ -87,8 +81,14 @@ export function useVariants<S,T>(
     return proxy;
   };
 
+  // TODO
+  const proxyColors = (theme: T): VColors => {
+    const colors = {} as VColors;
+    return colors; 
+  };
+
   return {
     vstyles: useMemo(() => proxyStyles(options.design.styles), [options.design]),
-    vcolors: useMemo(() => buildColors(options.design.theme), [options.design])
+    vcolors: useMemo(() => proxyColors(options.design.theme), [options.design])
   };
 }
