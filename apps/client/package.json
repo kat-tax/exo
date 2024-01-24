@@ -11,18 +11,18 @@
     "react": "18.2.0",
     "react-dom": "^18.2.0",
     "react-native-svg": "^14.1.0",
-    "react-native-unistyles": "^2.0.0-rc.2",
-    "react-native-web": "^0.19.9"
+    "react-native-unistyles": "^2.0.0",
+    "react-native-web": "^0.19.10"
   },
   "devDependencies": {
     "@kat.tax/cfg": "workspace:*",
     "@types/jest": "29.5.11",
-    "@types/react": "^18.2.45",
-    "@types/react-native": "^0.72.8",
+    "@types/react": "^18.2.46",
+    "@types/react-native": "^0.73.0",
     "@vitejs/plugin-react": "^4.2.1",
     "typescript": "^5.3.3",
-    "vite": "^4.5.1",
-    "vite-tsconfig-paths": "^4.2.2"
+    "vite": "^5.0.10",
+    "vite-tsconfig-paths": "^4.2.3"
   },
   "browserslist": {
     "production": ">0.2%, not dead, not op_mini all",
