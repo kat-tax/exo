@@ -14,8 +14,9 @@ export default defineConfig(({mode}) => {
         external: ['react'],
       },
     },
-    plugins: [
-      // ...
-    ],
+    esbuild: {
+      jsxFactory: 'React.createElement',
+      jsxFragment: 'React.Fragment',
+    },
   };
 });

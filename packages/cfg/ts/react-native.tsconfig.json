@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "display": "React Native",
-  "_version": "3.0.2",
+  "_version": "3.0.3",
   "compilerOptions": {
     "target": "esnext",
     "module": "commonjs",
@@ -25,8 +25,8 @@
     "allowJs": true,
     "jsx": "react-native",
     "noEmit": true,
-    "isolatedModules": true,
     "strict": true,
+    "isolatedModules": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
