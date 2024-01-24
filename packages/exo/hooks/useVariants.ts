@@ -69,19 +69,19 @@ export function useVariants<S,T>(
     // Create empty object to proxy the styles, inherit types from stylesheet
     const proxy = {} as VStyles<S>;
     // Loop through all the styles in the stylesheet
-    for (const key in o) {
+    for (const k in o) {
       // Create a function that is called when the style is accessed
-      proxy[key] = (e?: PressableStateCallbackType) => {
+      proxy[k] = (e?: PressableStateCallbackType) => {
         // Lookup styles in cache or build and cache
-        let styles = cache.get(key);
+        let styles = cache.get(k);
         if (!styles) {
-          styles = buildStyles(key, o);
-          cache.set(key, styles);
+          styles = buildStyles(k, o);
+          cache.set(k, styles);
         }
         // Return styles that match the current variant values and/or state
         return styles
-          .filter(([cond]) => cond === null || cond?.(e))
-          .map(([,style]) => style);
+          .filter(([c]) => c === null || c?.(e))
+          .map(([,s]) => s);
       };
     }
     return proxy;
