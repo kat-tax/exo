@@ -11,8 +11,8 @@ type VStyleCond = (null | ((e?: PressableStateCallbackType) => boolean));
 type VColors = Record<string, string>;
 
 export function useVariants<S,T>(
-  variants: Record<string, readonly string[]>,
-  options: {
+  vars: Record<string, readonly string[]>,
+  opts: {
     current: Record<string, string>,
     design: {styles: S, theme: T},
   }
@@ -24,8 +24,8 @@ export function useVariants<S,T>(
 
   const buildStyles = (slug: VStyleKey<S>, styles: S) => {
     const vstyles: [VStyleCond, VStyleMod<S>][] = [[null, styles[slug]]];
-    const vnames = Object.entries(variants).sort((a, b) => a[0].localeCompare(b[0]));
-    // Sort and and loop through all variants
+    const vnames = Object.entries(vars).sort((a, b) => a[0].localeCompare(b[0]));
+    // Sort and and loop through all vars
     vnames.forEach(([v1, primary]) => {
       // Prevent state from being used as primary variant
       if (isVState(v1) && vnames.length > 1) return;
@@ -34,21 +34,22 @@ export function useVariants<S,T>(
         // For this value, loop all values of the other variants
         vnames.forEach(([v2, secondary]) => {
           if (v1 === v2) return;
-          // Loop through all the values in the other variants
+          // Loop through all the values in the other variant
           secondary.forEach(v2v => {
-            // Build identifier for this variant combo
+            // Build id for this variant combination
             const vkey = `${slug}${titleCase(v1)}${v1v}${titleCase(v2)}${v2v}` as VStyleKey<S>;
-            // Look up the style for this variant combo
+            // Look up the id in the stylesheet
             const vstyle = styles[vkey];
-            // No specific style for this variant combo, skip
+            // No specific style for this combo, skip
             if (!vstyle) return;
-            // Create a condition for when to apply this variant style
+            // Create a condition for when to apply this variant combo style
             const vcond = (e?: PressableStateCallbackType): boolean => (
               // Test whether the current variant is the same as the value
               // or if the current variant is state and the pressable state matches the value
-              (options.current[v1] === v1v || (isVState(v1) ? e?.[v1v.toLowerCase()] : false)) &&
-              (options.current[v2] === v2v || (isVState(v2) ? e?.[v2v.toLowerCase()] : false))
+              (opts.current[v1] === v1v || (isVState(v1) ? e?.[v1v.toLowerCase()] : false)) &&
+              (opts.current[v2] === v2v || (isVState(v2) ? e?.[v2v.toLowerCase()] : false))
             );
+            // Add the variant combo style to styles
             vstyles.push([vcond, vstyle]);
           });
         });
@@ -88,7 +89,7 @@ export function useVariants<S,T>(
   };
 
   return {
-    vstyles: useMemo(() => proxyStyles(options.design.styles), [options.design]),
-    vcolors: useMemo(() => proxyColors(options.design.theme), [options.design])
+    vstyles: useMemo(() => proxyStyles(opts.design.styles), [opts.design]),
+    vcolors: useMemo(() => proxyColors(opts.design.theme), [opts.design])
   };
 }
