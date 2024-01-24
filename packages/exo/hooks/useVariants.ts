@@ -3,12 +3,13 @@ import {titleCase} from '../utils/string';
 
 import type {PressableStateCallbackType} from 'react-native';
 
-type VStyles<S> = {[K in keyof S]: VStyle<S[K]>};
-type VStyle<S> = (e?: PressableStateCallbackType) => S[];
+type VStyleSheet<S> = {[K in keyof S]: VStyleVar<S[K]>};
+type VStyleVar<S> = (e?: PressableStateCallbackType) => S[];
 type VStyleKey<S> = Extract<keyof S, string>;
 type VStyleMod<S> = S[VStyleKey<S>];
 type VStyleCond = (null | ((e?: PressableStateCallbackType) => boolean));
-type VColors = Record<string, string>;
+
+type VColorSheet = Record<string, string>;
 
 export function useVariants<S,T>(
   vars: Record<string, readonly string[]>,
@@ -17,8 +18,8 @@ export function useVariants<S,T>(
     design: {styles: S, theme: T},
   }
 ): {
-  vstyles: VStyles<S>,
-  vcolors: VColors,
+  vstyles: VStyleSheet<S>,
+  vcolors: VColorSheet,
 } {
   const isVState = (v: string): boolean => v.toLowerCase() === 'state';
 
@@ -58,11 +59,11 @@ export function useVariants<S,T>(
     return vstyles;
   }
 
-  const proxyStyles = (o: S): VStyles<S> => {
+  const proxyStyles = (o: S): VStyleSheet<S> => {
     // Cache the styles for each variant combo as they are accessed
     const cache = new Map<string, ReturnType<typeof buildStyles>>();
     // Create empty object to proxy the styles, inherit types from stylesheet
-    const proxy = {} as VStyles<S>;
+    const proxy = {} as VStyleSheet<S>;
     // Loop through all the styles in the stylesheet
     for (const k in o) {
       // Create a function that is called when the style is accessed
@@ -83,8 +84,8 @@ export function useVariants<S,T>(
   };
 
   // TODO
-  const proxyColors = (theme: T): VColors => {
-    const colors = {} as VColors;
+  const proxyColors = (theme: T): VColorSheet => {
+    const colors = {} as VColorSheet;
     return colors; 
   };
 
