@@ -1,8 +1,8 @@
 {
   "name": "react-native-exo",
-  "version": "0.9.1",
-  "main": "./dist/index.mjs",
+  "version": "0.9.3",
   "source": "./src/index.ts",
+  "main": "./dist/index.mjs",
   "files": [
     "dist"
   ],
@@ -15,6 +15,10 @@
     "dev": "vite",
     "build": "vite build"
   },
+  "dependencies": {
+    "@iconify/react": "^4.1.1",
+    "react-native-iconify": "^0.2.11"
+  },
   "devDependencies": {
     "@kat.tax/cfg": "workspace:*",
     "@types/react": "^18.2.48",
@@ -22,9 +26,9 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-native": "^0.73.2",
-    "react-native-web": "^0.19.10",
     "react-native-svg": "^14.1.0",
     "react-native-unistyles": "^2.1.1",
+    "react-native-web": "^0.19.10",
     "vite": "^5.0.12"
   },
   "peerDependencies": {
