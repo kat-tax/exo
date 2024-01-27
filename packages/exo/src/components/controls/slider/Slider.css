@@ -1,0 +1,7 @@
+.slider-thumb:hover {
+  scale: 1.1;
+}
+
+.slider-thumb:active {
+  scale: 1.4;
+}

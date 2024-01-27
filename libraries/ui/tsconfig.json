@@ -1,0 +1,3 @@
+{
+  "extends": "@kat.tax/cfg/ts/library-ui.tsconfig.json"
+}

@@ -1,5 +1,4 @@
 import '@kat.tax/client/src/styles';
-
 import React from 'react';
 import uniDefault, {themes as uniThemes} from '@kat.tax/exo-ui/theme';
 import {themes} from '@storybook/theming';
