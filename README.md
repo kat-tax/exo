@@ -1,6 +1,9 @@
 # EXO
 
-`The Ultimate React Native App`
+`The Ultimate React Native App Kit`
+
+[Web App](https://exo.ult.dev) |
+[Storybook](https://exo.fig.run)
 
 ### Design
 > Note: you can also clone this repo and skip designing
