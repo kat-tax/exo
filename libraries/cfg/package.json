@@ -1,11 +1,13 @@
 {
   "name": "@kat.tax/cfg",
-  "version": "0.9.0",
+  "version": "0.9.9",
   "private": true,
   "files": [
-    "ts/react-native.tsconfig.json",
-    "ts/ui.tsconfig.json",
-    "ts/web-client.tsconfig.json",
-    "ts/web-storybook.tsconfig.json"
+    "ts/client.tsconfig.json",
+    "ts/lib-ui.tsconfig.json",
+    "ts/lib-exo.tsconfig.json",
+    "ts/storybook-web.tsconfig.json",
+    "ts/storybook-native.tsconfig.json",
+    "ts/react-native.tsconfig.json"
   ]
 }

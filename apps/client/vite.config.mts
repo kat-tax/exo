@@ -10,6 +10,9 @@ export default defineConfig(({mode}) => {
       paths(),
       react(),
     ],
+    define: {
+      __DEV__: mode === 'development',
+    },
     build: {
       outDir: 'dist/web',
       rollupOptions: {
@@ -17,9 +20,6 @@ export default defineConfig(({mode}) => {
           manualChunks: i => i.includes('node_modules') ? 'vendor' : null,
         }
       }
-    },
-    define: {
-      __DEV__: mode === 'development',
     },
     resolve: {
       alias: {'react-native': 'react-native-web'},

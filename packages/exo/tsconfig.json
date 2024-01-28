@@ -1,7 +1,0 @@
-{
-  "extends": "@kat.tax/cfg/ts/react-native.tsconfig.json",
-  "display": "EXO",
-  "compilerOptions": {
-    "baseUrl": "./src",
-  },
-}

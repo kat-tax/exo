@@ -17,7 +17,6 @@
   "devDependencies": {
     "@kat.tax/cfg": "workspace:*",
     "@kat.tax/client": "workspace:*",
-    "@kat.tax/exo-ui": "workspace:*",
     "@iconify/react": "^4.1.1",
     "@storybook/addon-essentials": "7.6.6",
     "@storybook/addon-interactions": "7.6.6",

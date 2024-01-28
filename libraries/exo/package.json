@@ -1,8 +1,9 @@
 {
   "name": "react-native-exo",
-  "version": "0.9.8",
-  "module": "dist/index.mjs",
+  "version": "0.9.9",
+  "type": "module",
   "main": "dist/index.js",
+  "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "source": "src/index.ts",
   "files": [
@@ -20,7 +21,7 @@
     "@radix-ui/react-slider": "^1.1.2",
     "@radix-ui/react-switch": "^1.0.3",
     "@react-native-community/slider": "^4.5.0",
-    "react-native-iconify": "^0.2.12",
+    "react-native-iconify": "^1.0.0",
     "react-native-ui-lib": "^7.15.0"
   },
   "devDependencies": {
@@ -32,7 +33,7 @@
     "react-dom": "^18.2.0",
     "react-native": "^0.73.2",
     "react-native-svg": "^14.1.0",
-    "react-native-unistyles": "^2.1.1",
+    "react-native-unistyles": "^2.2.0",
     "react-native-web": "^0.19.10",
     "vite": "^5.0.12",
     "vite-plugin-dts": "^3.7.2",
