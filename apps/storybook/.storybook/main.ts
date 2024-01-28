@@ -13,6 +13,9 @@ const config: StorybookConfig = {
       files: '**/*.stories.tsx',
     },
   ],
+  staticDirs: [
+    './assets',
+  ],
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
@@ -28,12 +31,16 @@ const config: StorybookConfig = {
   },
   core: {
     disableTelemetry: true,
-    builder: '@storybook/builder-vite',
+    builder: {
+      name: '@storybook/builder-vite',
+      options: {
+        viteConfigPath: '../client/vite.config.mjs',
+      },
+    }
   },
   typescript: {
     reactDocgen: 'react-docgen',
   },
-  staticDirs: ['./assets'],
 };
 
 export default config;
