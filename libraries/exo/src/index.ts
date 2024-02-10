@@ -3,18 +3,18 @@ export {useVariants} from 'hooks/useVariants';
 
 // Components
 export {Icon} from 'components/media/icon/Icon';
-export {Switch} from 'components/controls/switch/Switch';
-export {Slider} from 'components/controls/slider/Slider';
-export {Progress} from 'components/controls/progress/Progress';
-export {Checkbox} from 'components/controls/checkbox/Checkbox';
-export {RadioGroup} from 'components/controls/radio-group/RadioGroup';
-export {RadioButton} from 'components/controls/radio-button/RadioButton';
+export {Switch} from 'components/forms/switch/Switch';
+export {Slider} from 'components/forms/slider/Slider';
+export {Progress} from 'components/forms/progress/Progress';
+export {Checkbox} from 'components/forms/checkbox/Checkbox';
+export {RadioGroup} from 'components/forms/radio-group/RadioGroup';
+export {RadioButton} from 'components/forms/radio-button/RadioButton';
 
 // Component Props
 export type {IconProps} from 'components/media/icon/Icon';
-export type {SwitchProps} from 'components/controls/switch/SwitchProps';
-export type {SliderProps} from 'components/controls/slider/SliderProps';
-export type {ProgressProps} from 'components/controls/progress/ProgressProps';
-export type {CheckboxProps} from 'components/controls/checkbox/CheckboxProps';
-export type {RadioGroupProps} from 'components/controls/radio-group/RadioGroupProps';
-export type {RadioButtonProps} from 'components/controls/radio-button/RadioButtonProps';
+export type {SwitchProps} from 'components/forms/switch/SwitchProps';
+export type {SliderProps} from 'components/forms/slider/SliderProps';
+export type {ProgressProps} from 'components/forms/progress/ProgressProps';
+export type {CheckboxProps} from 'components/forms/checkbox/CheckboxProps';
+export type {RadioGroupProps} from 'components/forms/radio-group/RadioGroupProps';
+export type {RadioButtonProps} from 'components/forms/radio-button/RadioButtonProps';

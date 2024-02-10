@@ -1,6 +1,8 @@
 {
   "name": "@kat.tax/exo-ui",
   "version": "0.0.1",
+  "module": "index.ts",
+  "type": "module",
   "peerDependencies": {
     "react": ">=18",
     "react-native": ">=72",

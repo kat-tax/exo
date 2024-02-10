@@ -4,6 +4,7 @@
   "private": true,
   "files": [
     "ts/client.tsconfig.json",
+    "ts/docs.tsconfig.json",
     "ts/lib-ui.tsconfig.json",
     "ts/lib-exo.tsconfig.json",
     "ts/storybook-web.tsconfig.json",

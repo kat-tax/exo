@@ -28,35 +28,58 @@ export function useVariants<S,T>(
     const vnames = Object.entries(vars).sort((a, b) => a[0].localeCompare(b[0]));
     // Sort and and loop through all vars
     vnames.forEach(([v1, primary]) => {
-      // Prevent state from being used as primary variant
-      if (isVState(v1) && vnames.length > 1) return;
-      // Loop through all values for the variant
-      primary.forEach(v1v => {
-        // For this value, loop all values of the other variants
-        vnames.forEach(([v2, secondary]) => {
-          if (v1 === v2) return;
-          // Loop through all the values in the other variant
-          secondary.forEach(v2v => {
-            // Build id for this variant combination
-            const vkey = `${slug}${titleCase(v1)}${v1v}${titleCase(v2)}${v2v}` as VStyleKey<S>;
-            // Look up the id in the stylesheet
-            const vstyle = styles[vkey];
-            // No specific style for this combo, skip
-            if (!vstyle) return;
-            // Create a condition for when to apply this variant combo style
-            const vcond = (e?: PressableStateCallbackType): boolean => (
-              // Test whether the current variant is the same as the value
-              // or if the current variant is state and the pressable state matches the value
-              // @ts-ignore TODO
-              (opts.current[v1] === v1v || (isVState(v1) ? e?.[v1v.toLowerCase()] : false)) &&
-              // @ts-ignore TODO
-              (opts.current[v2] === v2v || (isVState(v2) ? e?.[v2v.toLowerCase()] : false))
-            );
-            // Add the variant combo style to styles
-            vstyles.push([vcond, vstyle]);
+      // Single variant for this component
+      if (vnames.length === 1) {
+        // Loop through all values for the variant
+        primary.forEach(v1v => {
+          // Build id for this variant combination
+          const vkey = `${slug}${titleCase(v1)}${v1v}` as VStyleKey<S>;
+          // Look up the id in the stylesheet
+          const vstyle = styles[vkey];
+          // No specific style for this combo, skip
+          if (!vstyle) return;
+          // Create a condition for when to apply this variant combo style
+          const vcond = (e?: PressableStateCallbackType): boolean => (
+            // Test whether the current variant is the same as the value
+            // or if the current variant is state and the pressable state matches the value
+            // @ts-ignore TODO
+            (opts.current[v1] === v1v || (isVState(v1) ? e?.[v1v.toLowerCase()] : false))
+          );
+          // Add the variant combo style to styles
+          vstyles.push([vcond, vstyle]);
+        });
+      // Multiple variants, create compound styles
+      } else {
+        // Prevent state from being used as primary variant (it's a secondary)
+        if (isVState(v1)) return;
+        // Loop through all values for the variant
+        primary.forEach(v1v => {
+          // For this value, loop all values of the other variants
+          vnames.forEach(([v2, secondary]) => {
+            if (v1 === v2) return;
+            // Loop through all the values in the other variant
+            secondary.forEach(v2v => {
+              // Build id for this variant combination
+              const vkey = `${slug}${titleCase(v1)}${v1v}${titleCase(v2)}${v2v}` as VStyleKey<S>;
+              // Look up the id in the stylesheet
+              const vstyle = styles[vkey];
+              // No specific style for this combo, skip
+              if (!vstyle) return;
+              // Create a condition for when to apply this variant combo style
+              const vcond = (e?: PressableStateCallbackType): boolean => (
+                // Test whether the current variant is the same as the value
+                // or if the current variant is state and the pressable state matches the value
+                // @ts-ignore TODO
+                (opts.current[v1] === v1v || (isVState(v1) ? e?.[v1v.toLowerCase()] : false)) &&
+                // @ts-ignore TODO
+                (opts.current[v2] === v2v || (isVState(v2) ? e?.[v2v.toLowerCase()] : false))
+              );
+              // Add the variant combo style to styles
+              vstyles.push([vcond, vstyle]);
+            });
           });
         });
-      });
+      }
     });
     return vstyles;
   }

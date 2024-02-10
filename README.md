@@ -1,8 +1,9 @@
 # EXO
 
-`The Ultimate React Native App Kit`
+`A Skeleton Project for React Native`
 
 [Web App](https://exo.ult.dev) |
+[Documentation](https://exo.ult.dev/docs) |
 [Storybook](https://exo.fig.run)
 
 ### Design
