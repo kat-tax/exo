@@ -19,8 +19,8 @@ export default defineConfig({
       entry: resolve(__dirname, pkg.source),
     },
     rollupOptions: {
-      input: [pkg.source],
-      external: ['react', 'react-dom', 'react-native'],
+      input: resolve(__dirname, pkg.source),
+      external: ['react', 'react-dom', 'react-native', 'react-native-web'],
     }
   },
   resolve: {
