@@ -1,0 +1,27 @@
+{
+  "name": "@kat.tax/docs",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vocs dev",
+    "build": "vocs build",
+    "preview": "vocs preview"
+  },
+  "dependencies": {
+    "@kat.tax/exo-ui": "workspace:*",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-native-web": "latest",
+    "vocs": "latest"
+  },
+  "devDependencies": {
+    "@kat.tax/cfg": "workspace:*",
+    "@kat.tax/client": "workspace:*",
+    "@vitejs/plugin-react": "latest",
+    "react-native": "^0.73.4",
+    "typescript": "^5.3.3",
+    "vite": "latest",
+    "vite-tsconfig-paths": "latest"
+  }
+}

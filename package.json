@@ -3,11 +3,20 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "dev": "pnpm --filter ./apps/client run dev",
-    "build": "pnpm --filter ./apps/client run build",
-    "publish-ui": "pnpm --filter ./libraries/ui publish",
+    "start": "concurrently pnpm:web pnpm:docs-dev pnpm:storybook-web",
+    "build": "concurrently pnpm:*-build",
+    "web": "pnpm --filter ./apps/client run dev",
+    "web-build": "pnpm --filter ./apps/client run build",
+    "docs-dev": "pnpm --filter ./apps/docs dev",
+    "docs-build": "pnpm --filter ./apps/docs build",
+    "docs-preview": "pnpm --filter ./apps/docs preview",
     "storybook-web": "pnpm --filter ./apps/storybook run dev",
     "storybook-native": "pnpm --filter ./apps/storybook run dev",
-    "storybook-build": "pnpm --filter ./apps/storybook run build"
+    "storybook-build": "pnpm --filter ./apps/storybook run build",
+    "publish-exo": "pnpm --filter ./libraries/exo publish",
+    "publish-ui": "pnpm --filter ./libraries/ui publish"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
   }
 }
