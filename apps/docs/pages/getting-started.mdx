@@ -1,0 +1,115 @@
+# Getting Started
+
+## Overview
+
+EXO is a skeleton project for your next React Native project.
+
+It is a starter kit, dev stack, design system, and an opinionated set of tools and patterns for developing your next cross-platform app.
+
+## Start with the CLI
+
+Scaffold a new project with [ULT](https://ult.dev)
+
+:::code-group
+
+```bash [npm]
+npx ult
+```
+
+```bash [pnpm]
+pnpm create ult
+```
+
+```bash [yarn]
+yarn create ult
+```
+
+```bash [bun]
+bun x ult
+```
+
+:::
+
+## Start with Figma
+
+1. Go to the [Figma -> React Native](https://www.figma.com/community/plugin/821138713091291738) plugin page
+2. Press `Open in...` and select `Playground File`
+3. Run the plugin and go to the `Export` tab
+4. Press the `Download Components` button
+
+## Manual Installation
+
+You can install Vocs in an existing project, or start from scratch, by installing Vocs as a dependency.
+
+::::steps
+
+### Install
+
+First, we will install `react-native-exo` as a dependency in our project.
+
+:::code-group
+
+```bash [npm]
+npm i react-native-exo
+```
+
+```bash [pnpm]
+pnpm i react-native-exo
+```
+
+```bash [yarn]
+yarn add react-native-exo
+```
+
+```bash [bun]
+bun i react-native-exo
+```
+
+:::
+
+### Add Scripts to `package.json`
+
+After that, let's add some scripts to our `package.json` for Vocs.
+
+```json [package.json]
+{
+  "name": "example",
+  "version": "0.0.0",
+  "scripts": { // [!code focus]
+    "docs:dev": "vocs dev", // [!code focus] 
+    "docs:build": "vocs build", // [!code focus]
+    "docs:preview": "vocs preview" // [!code focus]
+  } // [!code focus]
+}
+```
+
+### Build your First Page
+
+Create a directory called `docs`, and add a file inside of it called `index.mdx` under a `pages` directory:
+
+```
+my-project/      
+├── docs/                // [!code focus]
+│   ├── pages/           // [!code focus]
+│   │   └── index.mdx   // [!code focus]
+├── node_modules/
+└── package.json  
+```
+
+```markdown [docs/pages/index.mdx]
+# Hello, World! [This is my first page]
+
+Welcome to my docs. 
+```
+
+### Run
+
+Next, run the development server:
+
+```bash [Terminal]
+npm run dev
+```
+
+Then open up your browser to `http://localhost:5173`, and you can see your first page!
+
+::::
