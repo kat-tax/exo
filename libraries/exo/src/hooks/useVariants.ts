@@ -9,23 +9,20 @@ type VStyleKey<S> = Extract<keyof S, string>;
 type VStyleMod<S> = S[VStyleKey<S>];
 type VStyleCond = (null | ((e?: PressableStateCallbackType) => boolean));
 
-type VColorSheet = Record<string, string>;
+export type {VStyleSheet};
 
-export function useVariants<S,T>(
-  vars: Record<string, readonly string[]>,
-  opts: {
-    current: Record<string, string>,
-    design: {styles: S, theme: T},
-  }
+export function useVariants<S>(
+  variants: Record<string, readonly string[]>,
+  states: Record<string, string>,
+  styles: S,
 ): {
   vstyles: VStyleSheet<S>,
-  vcolors: VColorSheet,
 } {
   const isVState = (v: string): boolean => v.toLowerCase() === 'state';
 
   const buildStyles = (slug: VStyleKey<S>, styles: S) => {
     const vstyles: [VStyleCond, VStyleMod<S>][] = [[null, styles[slug]]];
-    const vnames = Object.entries(vars).sort((a, b) => a[0].localeCompare(b[0]));
+    const vnames = Object.entries(variants).sort((a, b) => a[0].localeCompare(b[0]));
     // Sort and and loop through all vars
     vnames.forEach(([v1, primary]) => {
       // Single variant for this component
@@ -43,7 +40,7 @@ export function useVariants<S,T>(
             // Test whether the current variant is the same as the value
             // or if the current variant is state and the pressable state matches the value
             // @ts-ignore TODO
-            (opts.current[v1] === v1v || (isVState(v1) ? e?.[v1v.toLowerCase()] : false))
+            (states[v1] === v1v || (isVState(v1) ? e?.[v1v.toLowerCase()] : false))
           );
           // Add the variant combo style to styles
           vstyles.push([vcond, vstyle]);
@@ -70,9 +67,9 @@ export function useVariants<S,T>(
                 // Test whether the current variant is the same as the value
                 // or if the current variant is state and the pressable state matches the value
                 // @ts-ignore TODO
-                (opts.current[v1] === v1v || (isVState(v1) ? e?.[v1v.toLowerCase()] : false)) &&
+                (states[v1] === v1v || (isVState(v1) ? e?.[v1v.toLowerCase()] : false)) &&
                 // @ts-ignore TODO
-                (opts.current[v2] === v2v || (isVState(v2) ? e?.[v2v.toLowerCase()] : false))
+                (states[v2] === v2v || (isVState(v2) ? e?.[v2v.toLowerCase()] : false))
               );
               // Add the variant combo style to styles
               vstyles.push([vcond, vstyle]);
@@ -108,14 +105,7 @@ export function useVariants<S,T>(
     return proxy;
   };
 
-  // TODO
-  const proxyColors = (theme: T): VColorSheet => {
-    const colors = {} as VColorSheet;
-    return colors; 
-  };
-
   return {
-    vstyles: useMemo(() => proxyStyles(opts.design.styles), [opts.design]),
-    vcolors: useMemo(() => proxyColors(opts.design.theme), [opts.design])
+    vstyles: useMemo(() => proxyStyles(styles), [styles]),
   };
 }

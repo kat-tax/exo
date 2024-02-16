@@ -1,11 +1,33 @@
 {
-  "name": "react-native-exo",
-  "version": "0.9.11",
+  "name": "react-exo",
+  "version": "0.10.0",
   "type": "module",
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
-  "types": "dist/index.d.ts",
-  "source": "src/index.ts",
+  "exports": {
+    "./hooks": {
+      "import": "./dist/hooks.js",
+      "require": "./dist/hooks.cjs"
+    },
+    "./icon": {
+      "import": "./dist/icon.js",
+      "require": "./dist/icon.cjs"
+    },
+    "./image": {
+      "import": "./dist/image.js",
+      "require": "./dist/image.cjs"
+    },
+    "./lottie": {
+      "import": "./dist/lottie.js",
+      "require": "./dist/lottie.cjs"
+    },
+    "./video": {
+      "import": "./dist/video.js",
+      "require": "./dist/video.cjs"
+    },
+    "./slider": {
+      "import": "./dist/slider.js",
+      "require": "./dist/slider.cjs"
+    }
+  },
   "files": [
     "dist"
   ],
@@ -14,37 +36,43 @@
     "build": "vite build"
   },
   "dependencies": {
+    "@dotlottie/react-player": "^1.6.17",
     "@iconify/react": "^4.1.1",
     "@radix-ui/react-checkbox": "^1.0.4",
     "@radix-ui/react-progress": "^1.0.3",
     "@radix-ui/react-radio-group": "^1.1.3",
     "@radix-ui/react-slider": "^1.1.2",
     "@radix-ui/react-switch": "^1.0.3",
-    "@react-native-community/slider": "^4.5.0",
-    "react-native-iconify": "^1.0.0",
-    "react-native-ui-lib": "^7.16.0"
+    "@vidstack/react": "^1.10.6"
   },
   "devDependencies": {
     "@kat.tax/cfg": "workspace:^",
+    "@candlefinance/faster-image": "^1.2.0",
+    "@react-native-community/slider": "^4.5.0",
     "@types/react": "^18.2.55",
-    "@types/react-native": "^0.73.0",
+    "@types/react-native-video": "^5.0.19",
     "@vitejs/plugin-react": "^4.2.1",
+    "lightningcss": "^1.23.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-native": "^0.73.4",
-    "react-native-svg": "^14.1.0",
-    "react-native-unistyles": "^2.3.0",
-    "react-native-web": "^0.19.10",
-    "vite": "^5.1.1",
+    "react-native-iconify": "^1.0.0",
+    "react-native-skottie": "^2.1.0",
+    "react-native-ui-lib": "^7.16.0",
+    "react-native-video": "6.0.0-beta.5",
+    "vite": "^5.1.3",
     "vite-plugin-dts": "^3.7.2",
     "vite-tsconfig-paths": "^4.3.1"
   },
   "peerDependencies": {
+    "@candlefinance/faster-image": ">=1",
+    "@react-native-community/slider": ">=4",
     "react": ">=18",
     "react-dom": ">=18",
     "react-native": ">=72",
-    "react-native-svg": ">=13",
-    "react-native-unistyles": ">=2",
-    "react-native-web": ">=19"
+    "react-native-iconify": ">=1",
+    "react-native-skottie": ">=2",
+    "react-native-ui-lib": ">=7",
+    "react-native-video": ">=6"
   }
 }

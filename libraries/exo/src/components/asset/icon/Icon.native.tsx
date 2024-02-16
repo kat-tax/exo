@@ -1,10 +1,5 @@
 import {Iconify} from 'react-native-iconify';
-
-export interface IconProps {
-  name: string,
-  size?: number,
-  color?: string,
-}
+import type {IconProps} from './Icon.props';
 
 export function Icon(props: IconProps) {
   return (

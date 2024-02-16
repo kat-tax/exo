@@ -3,14 +3,24 @@ import {fillDisplayRow} from 'utils/styles';
 import {colorWithOpacity} from 'utils/colors';
 import * as S from '@radix-ui/react-slider';
 
-import './Slider.css';
-import type {SliderProps} from './SliderProps';
+import type {SliderProps} from './Slider.props';
+import './Slider.module.css';
 
 export function Slider(props: SliderProps) {
   const value = [props.value || 0];
 
   return (
-    <View style={[props.style, {height: 40, display: 'flex', justifyContent: 'center',  marginHorizontal: 12}]} testID={props.testID}>
+    <View
+      style={[
+        props.style,
+        {
+          height: 40,
+          display: 'flex',
+          justifyContent: 'center', 
+          marginHorizontal: 12,
+        },
+      ]}
+      testID={props.testID}>
       <S.Root
         style={{
           ...fillDisplayRow,
