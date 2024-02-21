@@ -1,4 +1,4 @@
-import {themes, breakpoints} from '@kat.tax/exo-ui/theme';
+import {themes, breakpoints} from '@kat.tax/ui/theme';
 import {UnistylesRegistry} from 'react-native-unistyles';
 
 export {useStyles, createStyleSheet} from 'react-native-unistyles';

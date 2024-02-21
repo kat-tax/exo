@@ -1,5 +1,5 @@
 import ProgressBar from 'react-native-ui-lib/progressBar';
-import type {ProgressProps} from './ProgressProps';
+import type {ProgressProps} from './Progress.interface';
 
 export function Progress(props: ProgressProps) {
   return (

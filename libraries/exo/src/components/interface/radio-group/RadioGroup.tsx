@@ -1,8 +1,8 @@
 import {StyleSheet, View} from 'react-native';
 import * as R from '@radix-ui/react-radio-group';
 
-import './RadioGroup.css';
-import type {RadioGroupProps} from './RadioGroupProps';
+import type {RadioGroupProps} from './RadioGroup.interface';
+import './RadioGroup.module.css';
 
 export function RadioGroup(props: RadioGroupProps) {
   const $styles = {

@@ -1,5 +1,5 @@
 import {Image as ImageBase} from 'react-native';
-import type {ImageProps} from './Image.props';
+import type {ImageProps} from './Image.interface';
 
 export function Image(props: ImageProps) {
   return (

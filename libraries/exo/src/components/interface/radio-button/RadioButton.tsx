@@ -1,8 +1,8 @@
 import {StyleSheet, View} from 'react-native';
 import * as R from '@radix-ui/react-radio-group';
 
-import './RadioButton.css';
-import type {RadioButtonProps} from './RadioButtonProps';
+import type {RadioButtonProps} from './RadioButton.interface';
+import './RadioButton.module.css';
 
 export function RadioButton(props: RadioButtonProps) {
   const vstyles = {

@@ -1,2 +1,2 @@
-export type {ImageProps} from './Image.props';
 export {Image} from './Image';
+export type {ImageProps} from './Image.interface';

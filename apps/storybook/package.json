@@ -7,7 +7,7 @@
     "build": "storybook build -o dist"
   },
   "dependencies": {
-    "@kat.tax/exo-ui": "workspace:*",
+    "@kat.tax/ui": "workspace:*",
     "react": "18.2.0",
     "react-dom": "^18.2.0",
     "react-native": "^0.73.3",

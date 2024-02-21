@@ -1,5 +1,5 @@
 import {Switch as SwitchBase} from 'react-native';
-import type {SwitchProps} from './SwitchProps';
+import type {SwitchProps} from './Switch.interface';
 
 export function Switch(props: SwitchProps) {
   return (

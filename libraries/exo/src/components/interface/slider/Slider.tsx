@@ -3,7 +3,7 @@ import {fillDisplayRow} from 'utils/styles';
 import {colorWithOpacity} from 'utils/colors';
 import * as S from '@radix-ui/react-slider';
 
-import type {SliderProps} from './Slider.props';
+import type {SliderProps} from './Slider.interface';
 import './Slider.module.css';
 
 export function Slider(props: SliderProps) {
@@ -16,7 +16,7 @@ export function Slider(props: SliderProps) {
         {
           height: 40,
           display: 'flex',
-          justifyContent: 'center', 
+          justifyContent: 'center',
           marginHorizontal: 12,
         },
       ]}

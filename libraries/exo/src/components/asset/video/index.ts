@@ -1,2 +1,2 @@
-export type {VideoProps} from './Video.props';
 export {Video} from './Video';
+export type {VideoProps} from './Video.interface';

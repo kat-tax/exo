@@ -1,8 +1,8 @@
 import {StyleSheet, View} from 'react-native';
 import * as S from '@radix-ui/react-switch';
 
-import './Switch.css';
-import type {SwitchProps} from './SwitchProps';
+import type {SwitchProps} from './Switch.interface';
+import './Switch.module.css';
 
 export function Switch(props: SwitchProps) {
   const vstyles = {

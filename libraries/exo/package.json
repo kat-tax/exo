@@ -1,11 +1,11 @@
 {
   "name": "react-exo",
-  "version": "0.10.0",
+  "version": "0.10.1",
   "type": "module",
   "exports": {
-    "./hooks": {
-      "import": "./dist/hooks.js",
-      "require": "./dist/hooks.cjs"
+    "./variants": {
+      "import": "./dist/variants.js",
+      "require": "./dist/variants.cjs"
     },
     "./icon": {
       "import": "./dist/icon.js",
@@ -18,6 +18,10 @@
     "./lottie": {
       "import": "./dist/lottie.js",
       "require": "./dist/lottie.cjs"
+    },
+    "./rive": {
+      "import": "./dist/rive.js",
+      "require": "./dist/rive.cjs"
     },
     "./video": {
       "import": "./dist/video.js",
@@ -43,11 +47,12 @@
     "@radix-ui/react-radio-group": "^1.1.3",
     "@radix-ui/react-slider": "^1.1.2",
     "@radix-ui/react-switch": "^1.0.3",
+    "@rive-app/react-canvas": "^4.8.1",
     "@vidstack/react": "^1.10.6"
   },
   "devDependencies": {
-    "@kat.tax/cfg": "workspace:^",
     "@candlefinance/faster-image": "^1.2.0",
+    "@kat.tax/cfg": "workspace:^",
     "@react-native-community/slider": "^4.5.0",
     "@types/react": "^18.2.55",
     "@types/react-native-video": "^5.0.19",
@@ -60,6 +65,7 @@
     "react-native-skottie": "^2.1.0",
     "react-native-ui-lib": "^7.16.0",
     "react-native-video": "6.0.0-beta.5",
+    "rive-react-native": "^6.2.3",
     "vite": "^5.1.3",
     "vite-plugin-dts": "^3.7.2",
     "vite-tsconfig-paths": "^4.3.1"

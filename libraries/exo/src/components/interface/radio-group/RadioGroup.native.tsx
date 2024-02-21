@@ -1,5 +1,5 @@
 import RadioGroupBase from 'react-native-ui-lib/radioGroup';
-import type {RadioGroupProps} from './RadioGroupProps';
+import type {RadioGroupProps} from './RadioGroup.interface';
 
 export function RadioGroup(props: RadioGroupProps) {
   return (

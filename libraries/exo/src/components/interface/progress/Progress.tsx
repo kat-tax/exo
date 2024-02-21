@@ -2,8 +2,8 @@ import {View} from 'react-native';
 import {fillAbsolute} from 'utils/styles';
 import * as P from '@radix-ui/react-progress';
 
-import styles from './ProgressStyles';
-import type {ProgressProps} from './ProgressProps';
+import type {ProgressProps} from './Progress.interface';
+import styles from './Progress.styles';
 
 export function Progress(props: ProgressProps) {
   const $styles = {

@@ -1,14 +1,6 @@
 import {useCallback, useState} from 'react';
-import type {DragEvent, MouseEvent, ReactNode} from 'react';
-
-export interface PointerProps {
-  children: ReactNode,
-  onDoubleClick?(event: MouseEvent): void,
-  onContextMenu?(event: MouseEvent): void,
-  onDragStart?(event: DragEvent): void,
-  onDragEnd?(event: DragEvent): void,
-  onDragDrop?(event: DragEvent): void,
-}
+import type {DragEvent, MouseEvent} from 'react';
+import type {PointerProps} from './Pointer.interface';
 
 export function Pointer(props: PointerProps) {
   const doubleClick = useCallback((e: MouseEvent) => {

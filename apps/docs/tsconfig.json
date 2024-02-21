@@ -1,4 +1,4 @@
 {
   "extends": "@kat.tax/cfg/ts/docs.tsconfig.json",
-  "include": ["**/*.ts", "**/*.tsx"],
+  "include": ["**/*.ts", "**/*.tsx"]
 }

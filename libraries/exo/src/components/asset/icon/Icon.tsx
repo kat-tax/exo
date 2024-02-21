@@ -1,5 +1,5 @@
 import {Icon as Iconify} from '@iconify/react';
-import type {IconProps} from './Icon.props';
+import type {IconProps} from './Icon.interface';
 
 export function Icon(props: IconProps) {
   return (

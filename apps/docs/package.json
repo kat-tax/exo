@@ -9,7 +9,7 @@
     "preview": "vocs preview"
   },
   "dependencies": {
-    "@kat.tax/exo-ui": "workspace:*",
+    "@kat.tax/ui": "workspace:*",
     "react": "latest",
     "react-dom": "latest",
     "react-native-web": "latest",
