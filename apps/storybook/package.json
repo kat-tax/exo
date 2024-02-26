@@ -1,5 +1,5 @@
 {
-  "name": "@kat.tax/storybook-web",
+  "name": "storybook-web",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -7,31 +7,31 @@
     "build": "storybook build -o dist"
   },
   "dependencies": {
-    "@kat.tax/ui": "workspace:*",
     "react": "18.2.0",
     "react-dom": "^18.2.0",
-    "react-native": "^0.73.3",
+    "react-native": "^0.73.4",
     "react-native-svg": "^14.1.0",
-    "react-native-unistyles": "^2.2.0",
-    "react-native-web": "^0.19.10"
+    "react-native-unistyles": "^2.3.0",
+    "react-native-web": "^0.19.10",
+    "ui": "workspace:*"
   },
   "devDependencies": {
-    "@kat.tax/cfg": "workspace:*",
-    "@kat.tax/client": "workspace:*",
     "@iconify/react": "^4.1.1",
-    "@storybook/addon-essentials": "7.6.11",
-    "@storybook/addon-interactions": "7.6.11",
-    "@storybook/addon-links": "7.6.11",
-    "@storybook/blocks": "7.6.11",
-    "@storybook/builder-vite": "7.6.11",
-    "@storybook/manager-api": "7.6.11",
-    "@storybook/react": "7.6.11",
-    "@storybook/react-vite": "7.6.11",
-    "@storybook/theming": "7.6.11",
-    "@types/react": "^18.2.48",
+    "@storybook/addon-essentials": "7.6.17",
+    "@storybook/addon-interactions": "7.6.17",
+    "@storybook/addon-links": "7.6.17",
+    "@storybook/blocks": "7.6.17",
+    "@storybook/builder-vite": "7.6.17",
+    "@storybook/manager-api": "7.6.17",
+    "@storybook/react": "7.6.17",
+    "@storybook/react-vite": "7.6.17",
+    "@storybook/theming": "7.6.17",
+    "@types/react": "^18.2.58",
     "@types/react-native": "^0.73.0",
+    "cfg": "workspace:*",
+    "client": "workspace:*",
     "prop-types": "^15.8.1",
-    "storybook": "7.6.11",
+    "storybook": "7.6.17",
     "typescript": "^5.3.3"
   },
   "browserslist": {

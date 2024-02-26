@@ -25,6 +25,7 @@ export default defineConfig({
         /* Controller */
         'pointer': 'src/components/controller/pointer',
         /* Interface */
+        'calendar': 'src/components/interface/calendar',
         'checkbox': 'src/components/interface/checkbox',
         'progress': 'src/components/interface/progress',
         'radio-button': 'src/components/interface/radio-button',

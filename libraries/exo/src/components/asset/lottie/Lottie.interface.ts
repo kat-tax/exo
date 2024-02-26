@@ -2,7 +2,7 @@ import type {ViewStyle} from 'react-native';
 
 export interface LottieProps {
   /** Source of the animation, it can be a JSON file or a DotLottie file. */
-  source: string,
+  url: string,
   /** Style of the animation. */
   style?: ViewStyle,
   /** Resize mode of the animation. */

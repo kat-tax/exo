@@ -1,5 +1,5 @@
 {
-  "name": "@kat.tax/cfg",
+  "name": "cfg",
   "version": "0.9.9",
   "private": true,
   "files": [

@@ -4,10 +4,16 @@ import type {RiveProps} from './Rive.interface';
 export function Rive(props: RiveProps) {
   return (
     <RiveBase
-      url="https://cdn.rive.app/animations/vehicles.riv"
+      url={props.url}
+      ref={props.ref}
+      fit={props.fit}
+      style={props.style}
+      autoplay={props.autoplay}
+      alignment={props.alignment}
       artboardName={props.artboardName}
       animationName={props.animationName}
-      autoplay={props.autoplay}
+      stateMachineName={props.stateMachineName}
+      testID={props.testID}
     />
   );
 }

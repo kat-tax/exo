@@ -6,7 +6,7 @@ export function Lottie(props: LottieProps) {
   return (
     <View style={props.style}>
       <LottieBase
-        src={props.source}
+        src={props.url}
         speed={props.speed}
         loop={props.loop}
         autoplay={props.autoplay}

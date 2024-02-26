@@ -1,5 +1,5 @@
 {
-  "name": "@kat.tax/docs",
+  "name": "docs",
   "version": "0.0.1",
   "private": true,
   "type": "module",
@@ -9,16 +9,16 @@
     "preview": "vocs preview"
   },
   "dependencies": {
-    "@kat.tax/ui": "workspace:*",
     "react": "latest",
     "react-dom": "latest",
     "react-native-web": "latest",
+    "ui": "workspace:*",
     "vocs": "latest"
   },
   "devDependencies": {
-    "@kat.tax/cfg": "workspace:*",
-    "@kat.tax/client": "workspace:*",
     "@vitejs/plugin-react": "latest",
+    "cfg": "workspace:*",
+    "client": "workspace:*",
     "react-native": "^0.73.4",
     "typescript": "^5.3.3",
     "vite": "latest",

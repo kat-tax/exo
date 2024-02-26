@@ -1,8 +1,9 @@
-import '@kat.tax/client/src/styles';
 import React from 'react';
-import uniDefault, {themes as uniThemes} from '@kat.tax/ui/theme';
-import {themes} from '@storybook/theming';
 import type {Preview} from '@storybook/react';
+import {themes} from '@storybook/theming';
+import uniDefault, {themes as uniThemes} from 'ui/theme';
+
+import 'client/src/styles';
 
 const preview: Preview = {
   decorators: [

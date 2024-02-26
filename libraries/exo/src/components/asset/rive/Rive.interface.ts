@@ -11,7 +11,5 @@ export interface RiveProps {
   artboardName?: string | undefined,
   animationName?: string | undefined,
   stateMachineName?: string | undefined,
-  resourceName?: string | undefined,
-  isUserHandlingErrors?: boolean,
   testID?: string,
 }

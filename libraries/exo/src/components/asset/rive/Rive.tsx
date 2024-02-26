@@ -4,11 +4,10 @@ import type {RiveProps} from './Rive.interface';
 
 export function Rive(props: RiveProps) {
   return (
-    <View style={props.style}>
+    <View style={props.style} testID={props.testID}>
       <RiveBase
-        src="https://cdn.rive.app/animations/vehicles.riv"
-        artboard={props.artboardName}
-        animations={props.animationName}
+        src={props.url}
+        ref={props.ref}
       />
     </View>
   );

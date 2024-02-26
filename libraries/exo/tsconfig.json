@@ -1,4 +1,4 @@
 {
-  "extends": "@kat.tax/cfg/ts/lib-exo.tsconfig.json",
+  "extends": "cfg/ts/lib-exo.tsconfig.json",
   "include": ["src"]
 }

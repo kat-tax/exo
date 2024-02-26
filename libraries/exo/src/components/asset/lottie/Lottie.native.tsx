@@ -3,6 +3,6 @@ import type {LottieProps} from './Lottie.interface';
 
 export function Lottie(props: LottieProps) {
   return (
-    <LottieBase {...props}/>
+    <LottieBase source={props.url} {...props}/>
   );
 }
