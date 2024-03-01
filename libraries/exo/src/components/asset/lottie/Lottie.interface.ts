@@ -1,5 +1,7 @@
 import type {ViewStyle} from 'react-native';
 
+export type LottieComponent = (props: LottieProps) => JSX.Element;
+
 export interface LottieProps {
   /** Source of the animation, it can be a JSON file or a DotLottie file. */
   url: string,

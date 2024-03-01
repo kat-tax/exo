@@ -1,10 +1,10 @@
 import {StyleSheet, View} from 'react-native';
 import * as S from '@radix-ui/react-switch';
 
-import type {SwitchProps} from './Switch.interface';
-import './Switch.module.css';
+import type {SwitchComponent, SwitchProps} from './Switch.interface';
+import './Switch.css';
 
-export function Switch(props: SwitchProps) {
+export const Switch: SwitchComponent = (props: SwitchProps) => {
   const vstyles = {
     container: [
       styles.container,

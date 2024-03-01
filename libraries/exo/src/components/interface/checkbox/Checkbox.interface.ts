@@ -1,5 +1,7 @@
 import type {StyleProp, ViewStyle, TextStyle, TextProps} from 'react-native';
 
+export type CheckboxComponent = (props: CheckboxProps) => JSX.Element;
+
 export interface CheckboxProps {
   /**
    * The value of the Checkbox. If true the switch will be turned on. Default value is false.

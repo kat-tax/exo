@@ -1,2 +1,2 @@
 export {Pointer} from './Pointer';
-export type {PointerProps} from './Pointer.interface';
+export type {PointerComponent, PointerProps} from './Pointer.interface';

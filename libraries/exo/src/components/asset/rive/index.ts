@@ -1,2 +1,2 @@
 export {Rive} from './Rive';
-export type {RiveProps} from './Rive.interface';
+export type {RiveComponent, RiveProps} from './Rive.interface';

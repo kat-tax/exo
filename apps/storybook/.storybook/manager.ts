@@ -1,8 +1,8 @@
 import {addons} from '@storybook/manager-api';
-import dark from './theme/dark';
+import theme from './theme';
 
 addons.setConfig({
-  theme: dark,
+  theme,
   toolbar: {
     eject: {hidden: true},
   },

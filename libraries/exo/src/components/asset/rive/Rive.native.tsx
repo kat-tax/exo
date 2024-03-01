@@ -1,7 +1,7 @@
 import RiveBase from 'rive-react-native';
-import type {RiveProps} from './Rive.interface';
+import type {RiveComponent, RiveProps} from './Rive.interface';
 
-export function Rive(props: RiveProps) {
+export const Rive: RiveComponent = (props: RiveProps) => {
   return (
     <RiveBase
       url={props.url}

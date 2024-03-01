@@ -1,2 +1,2 @@
 export {Switch} from './Switch';
-export type {SwitchProps} from './Switch.interface';
+export type {SwitchComponent, SwitchProps} from './Switch.interface';

@@ -25,13 +25,12 @@ export default defineConfig({
         /* Controller */
         'pointer': 'src/components/controller/pointer',
         /* Interface */
-        'calendar': 'src/components/interface/calendar',
         'checkbox': 'src/components/interface/checkbox',
-        'progress': 'src/components/interface/progress',
-        'radio-button': 'src/components/interface/radio-button',
-        'radio-group': 'src/components/interface/radio-group',
-        'slider': 'src/components/interface/slider',
         'switch': 'src/components/interface/switch',
+        'radio': 'src/components/interface/radio',
+        'slider': 'src/components/interface/slider',
+        'progress': 'src/components/interface/progress',
+        'calendar': 'src/components/interface/calendar',
       }
     },
     rollupOptions: {
@@ -40,7 +39,7 @@ export default defineConfig({
         chunkFileNames: '_chunks/[format]/[name]_[hash].js',
         assetFileNames(chunkInfo) {
           return (chunkInfo.name === 'index.css')
-            ? 'Video.css'
+            ? 'video.css'
             : `[name].[ext]`;
         },
       },

@@ -1,10 +1,10 @@
 import {StyleSheet, View} from 'react-native';
 import * as C from '@radix-ui/react-checkbox';
 
-import type {CheckboxProps} from './Checkbox.interface';
-import './Checkbox.module.css';
+import type {CheckboxComponent, CheckboxProps} from './Checkbox.interface';
+import './Checkbox.css';
 
-export function Checkbox(props: CheckboxProps) {
+export const Checkbox: CheckboxComponent = (props: CheckboxProps) => {
   const $styles = {
     container: [
       styles.container,

@@ -1,2 +1,0 @@
-export {ExoBanner} from './ExoBanner';
-

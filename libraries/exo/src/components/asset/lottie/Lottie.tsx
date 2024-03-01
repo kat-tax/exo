@@ -1,8 +1,9 @@
 import {View} from 'react-native';
 import {DotLottiePlayer as LottieBase} from '@dotlottie/react-player';
-import type {LottieProps} from './Lottie.interface';
+import type {LottieComponent, LottieProps} from './Lottie.interface';
 
-export function Lottie(props: LottieProps) {
+/** A component that renders Lottie animations */
+export const Lottie: LottieComponent = (props: LottieProps) => {
   return (
     <View style={props.style}>
       <LottieBase

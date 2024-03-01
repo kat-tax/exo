@@ -1,9 +1,9 @@
 import {StyleSheet} from 'react-native';
 import SliderBase from '@react-native-community/slider';
 
-import type {SliderProps} from './Slider.interface';
+import type {SliderComponent, SliderProps} from './Slider.interface';
 
-export function Slider(props: SliderProps) {
+export const Slider: SliderComponent = (props: SliderProps) => {
   return (
     <SliderBase
       style={[styles.root, props.style]}

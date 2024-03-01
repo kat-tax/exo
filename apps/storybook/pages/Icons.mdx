@@ -1,28 +1,9 @@
-import {Icon} from '@iconify/react';
-import {IconGallery, IconItem} from '@storybook/blocks';
-import '../utils/icons';
+import {Icons} from '../components/Icons';
 
 # Icons
 
-All icons are from [Phosphor Icons](https://phosphoricons.com/).
+All icons are from [Phosphor Icons](https://phosphoricons.com) via [Iconify](https://icon-sets.iconify.design/ph/?prefixes=ph).
 
 Prefix: `ph` Example: `ph:placeholder`
 
-<IconGallery>
-  <IconItem name="placeholder">
-    <Icon
-      name="ph:placeholder"
-      width={16}
-      height={16}
-      color={'#FFF'}
-    />
-  </IconItem>
-  <IconItem name="alien">
-    <Icon
-      name="ph:alien"
-      width={16}
-      height={16}
-      color={'#FFF'}
-    />
-  </IconItem>
-</IconGallery>
+<Icons set="ph"/>

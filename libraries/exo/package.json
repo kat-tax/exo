@@ -3,6 +3,11 @@
   "version": "0.10.2",
   "type": "module",
   "exports": {
+    "./video.css": "./dist/video.css",
+    "./checkbox.css": "./dist/checkbox.css",
+    "./switch.css": "./dist/switch.css",
+    "./radio.css": "./dist/radio.css",
+    "./slider.css": "./dist/slider.css",
     "./variants": {
       "import": "./dist/variants.js",
       "require": "./dist/variants.cjs"
@@ -15,6 +20,10 @@
       "import": "./dist/image.js",
       "require": "./dist/image.cjs"
     },
+    "./video": {
+      "import": "./dist/video.js",
+      "require": "./dist/video.cjs"
+    },
     "./lottie": {
       "import": "./dist/lottie.js",
       "require": "./dist/lottie.cjs"
@@ -23,17 +32,29 @@
       "import": "./dist/rive.js",
       "require": "./dist/rive.cjs"
     },
-    "./video": {
-      "import": "./dist/video.js",
-      "require": "./dist/video.cjs"
+    "./checkbox": {
+      "import": "./dist/checkbox.js",
+      "require": "./dist/checkbox.cjs"
     },
-    "./calendar": {
-      "import": "./dist/calendar.js",
-      "require": "./dist/calendar.cjs"
+    "./switch": {
+      "import": "./dist/switch.js",
+      "require": "./dist/switch.cjs"
+    },
+    "./radio": {
+      "import": "./dist/radio.js",
+      "require": "./dist/radio.cjs"
     },
     "./slider": {
       "import": "./dist/slider.js",
       "require": "./dist/slider.cjs"
+    },
+    "./progress": {
+      "import": "./dist/progress.js",
+      "require": "./dist/progress.cjs"
+    },
+    "./calendar": {
+      "import": "./dist/calendar.js",
+      "require": "./dist/calendar.cjs"
     }
   },
   "files": [
@@ -59,6 +80,7 @@
   "devDependencies": {
     "@candlefinance/faster-image": "^1.2.0",
     "@react-native-community/slider": "^4.5.0",
+    "@storybook/react": "^7.6.17",
     "@types/react": "^18.2.55",
     "@types/react-native-video": "^5.0.19",
     "@vitejs/plugin-react": "^4.2.1",

@@ -1,7 +1,7 @@
 import {FasterImageView as ImageBase} from '@candlefinance/faster-image';
-import type {ImageProps} from './Image.interface';
+import type {ImageComponent, ImageProps} from './Image.interface';
 
-export function Image(props: ImageProps) {
+export const Image: ImageComponent = (props: ImageProps) => {
   return (
     <ImageBase {...props}/>
   );

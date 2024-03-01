@@ -1,13 +1,17 @@
 import React from 'react';
-import type {Preview} from '@storybook/react';
 import {themes} from '@storybook/theming';
+import {type Preview} from '@storybook/react';
 import uniDefault, {themes as uniThemes} from 'ui/theme';
-
+import {StoryEnv} from '../components/StoryEnv';
 import 'client/src/styles';
 
 const preview: Preview = {
   decorators: [
-    (Story) => <Story/>,
+    (Story) => (
+      <StoryEnv>
+        <Story/>
+      </StoryEnv>
+    ),
   ],
   globalTypes: {
     theme: {
@@ -41,25 +45,40 @@ const preview: Preview = {
         method: '',
         order: [
           'References', [
-            'Getting Started',
-            'Typography',
+            'Get Started',
+            'Themes',
             'Colors',
             'Icons',
           ],
           'Components',
+          'Primitives', [
+            'Assets', [
+              'Icon',
+              'Image',
+              'Video',
+              'Lottie',
+              'Rive',
+            ],
+            'Interface', [
+              'Checkbox',
+              'Switch',
+              'Radio',
+              'Slider',
+              'Progress',
+            ],
+          ],
         ],
         locales: '',
       },
     },
     backgrounds: {
-      default: 'dark',
       values: [
         {
-          name: 'dark',
+          name: 'Dark',
           value: '#181818',
         },
         {
-          name: 'light',
+          name: 'Light',
           value: '#f3f3f3',
         },
       ],

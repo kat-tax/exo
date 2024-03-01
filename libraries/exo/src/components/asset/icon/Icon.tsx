@@ -1,7 +1,8 @@
 import {Icon as Iconify} from '@iconify/react';
-import type {IconProps} from './Icon.interface';
+import type {IconComponent, IconProps} from './Icon.interface';
 
-export function Icon(props: IconProps) {
+/** A component that can display over 200,000 icons via [Iconify](https://icon-sets.iconify.design) */
+export const Icon: IconComponent = (props: IconProps) => {
   return (
     <Iconify
       icon={props.name}

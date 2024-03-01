@@ -1,5 +1,7 @@
 import type {DragEvent, MouseEvent, ReactNode} from 'react';
 
+export type PointerComponent = (props: PointerProps) => JSX.Element;
+
 export interface PointerProps {
   children: ReactNode,
   onDoubleClick?(event: MouseEvent): void,

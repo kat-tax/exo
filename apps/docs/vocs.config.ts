@@ -1,50 +1,24 @@
 import {defineConfig} from 'vocs';
 
+import general from './config/brand/general';
+import socials from './config/brand/socials';
+import topNav from './config/brand/topNav';
+
+import start from './config/sidebar/start';
+import guides from './config/sidebar/guides';
+import library from './config/sidebar/library';
+import exo from './config/sidebar/exo';
+
 export default defineConfig({
   rootDir: '.',
-  title: 'EXO',
+  socials,
+  topNav,
   sidebar: [
-    {
-      text: 'Getting Started',
-      link: '/getting-started',
-    },
+    start,
+    guides,
+    library,
+    ...exo,
   ],
-  topNav: [
-    {
-      text: 'Storybook',
-      link: 'https://exo.fig.run',
-    },
-    { 
-      text: 'v1.0.0', 
-      items: [
-        { 
-          text: 'Changelog', 
-          link: 'https://github.com/kat-tax/exo/blob/master/CHANGELOG.md', 
-        },
-        { 
-          text: 'License', 
-          link: 'https://github.com/kat-tax/exo/blob/master/LICENSE.md', 
-        }, 
-      ],
-    },
-  ],
-  socials: [
-    {
-      icon: 'github',
-      link: 'https://github.com/kat-tax/exo',
-    },
-    {
-      icon: 'discord',
-      link: 'https://discord.gg/KpMZVKmfnb',
-    },
-    {
-      icon: 'x',
-      link: 'https://twitter.com/theultdev',
-    },
-  ],
-  font: { 
-    google: 'Inter',
-  },
   theme: { 
     variables: {
       color: {
@@ -61,4 +35,5 @@ export default defineConfig({
       extensions: ['.web.tsx', '.web.ts', '.web.js', '.mjs', '.mts', '.ts', '.tsx', '.js', '.jsx', '.json'],
     },
   },
+  ...general,
 });

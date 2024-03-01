@@ -1,5 +1,7 @@
 import type {StyleProp, ViewStyle} from 'react-native';
 
+export type SliderComponent = (props: SliderProps) => JSX.Element;
+
 export interface SliderProps {
   /**
    * Write-only property representing the value of the slider.

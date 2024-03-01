@@ -3,10 +3,11 @@ import {fillDisplayRow} from 'utils/styles';
 import {colorWithOpacity} from 'utils/colors';
 import * as S from '@radix-ui/react-slider';
 
-import type {SliderProps} from './Slider.interface';
-import './Slider.module.css';
+import type {SliderComponent, SliderProps} from './Slider.interface';
+import './Slider.css';
 
-export function Slider(props: SliderProps) {
+/** A component that allows selection of a value within a range */
+export const Slider: SliderComponent = (props: SliderProps) => {
   const value = [props.value || 0];
 
   return (
@@ -15,6 +16,7 @@ export function Slider(props: SliderProps) {
         props.style,
         {
           height: 40,
+          minWidth: 100,
           display: 'flex',
           justifyContent: 'center',
           marginHorizontal: 12,

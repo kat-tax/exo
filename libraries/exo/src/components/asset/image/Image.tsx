@@ -1,7 +1,8 @@
 import {Image as ImageBase} from 'react-native';
-import type {ImageProps} from './Image.interface';
+import type {ImageComponent, ImageProps} from './Image.interface';
 
-export function Image(props: ImageProps) {
+/** A component that displays images with caching, blurhash, and thumbhash support */
+export const Image: ImageComponent = (props: ImageProps) => {
   return (
     <ImageBase
       style={props.style}
@@ -9,9 +10,12 @@ export function Image(props: ImageProps) {
       resizeMode={props.resizeMode}
       onError={props.onError}
       onLoad={event => {
-        const {width, height} = event.nativeEvent.source;
         props.onSuccess?.({
-          nativeEvent: {width, height, source: props.url},
+          nativeEvent: {
+            width: event.nativeEvent?.source?.width,
+            height: event.nativeEvent?.source?.height,
+            source: props.url,
+          },
         });
       }}
     />

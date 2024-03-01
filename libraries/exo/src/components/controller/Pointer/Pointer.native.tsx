@@ -1,7 +1,7 @@
 import {Fragment} from 'react';
-import type {PointerProps} from './Pointer.interface';
+import type {PointerComponent, PointerProps} from './Pointer.interface';
 
-export function Pointer(props: PointerProps) {
+export const Pointer: PointerComponent = (props: PointerProps) => {
   return (
     <Fragment>
       {props.children}

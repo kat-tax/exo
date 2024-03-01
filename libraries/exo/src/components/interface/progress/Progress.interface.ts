@@ -1,5 +1,7 @@
 import type {StyleProp, ViewStyle} from 'react-native';
 
+export type ProgressComponent = (props: ProgressProps) => JSX.Element;
+
 export interface ProgressProps {
   /**
    * The progress of the bar from 0 to 100

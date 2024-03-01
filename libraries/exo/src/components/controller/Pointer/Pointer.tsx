@@ -1,8 +1,8 @@
 import {useCallback, useState} from 'react';
 import type {DragEvent, MouseEvent} from 'react';
-import type {PointerProps} from './Pointer.interface';
+import type {PointerComponent, PointerProps} from './Pointer.interface';
 
-export function Pointer(props: PointerProps) {
+export const Pointer: PointerComponent = (props: PointerProps) => {
   const doubleClick = useCallback((e: MouseEvent) => {
     if (props.onDoubleClick) {
       e.stopPropagation();

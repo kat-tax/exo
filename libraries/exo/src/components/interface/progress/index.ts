@@ -1,2 +1,2 @@
 export {Progress} from './Progress';
-export type {ProgressProps} from './Progress.interface';
+export type {ProgressComponent, ProgressProps} from './Progress.interface';

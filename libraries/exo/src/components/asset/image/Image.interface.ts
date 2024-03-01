@@ -1,5 +1,7 @@
 import type {ImageStyle, ImageResizeMode} from 'react-native';
 
+export type ImageComponent = (props: ImageProps) => JSX.Element;
+
 export interface ImageProps {
   /** URL of the image */
   url: string,

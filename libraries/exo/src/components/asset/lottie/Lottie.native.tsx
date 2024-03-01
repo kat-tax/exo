@@ -1,8 +1,12 @@
 import {Skottie as LottieBase} from 'react-native-skottie';
-import type {LottieProps} from './Lottie.interface';
+import type {LottieComponent, LottieProps} from './Lottie.interface';
 
-export function Lottie(props: LottieProps) {
+export const Lottie: LottieComponent = (props: LottieProps) => {
   return (
-    <LottieBase source={props.url} {...props}/>
+    <LottieBase
+      source={props.url}
+      autoPlay={props.autoplay}
+      {...props}
+    />
   );
 }

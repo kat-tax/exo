@@ -1,2 +1,2 @@
 export {Lottie} from './Lottie';
-export type {LottieProps} from './Lottie.interface';
+export type {LottieComponent, LottieProps} from './Lottie.interface';

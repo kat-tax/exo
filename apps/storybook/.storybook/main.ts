@@ -10,16 +10,23 @@ const config: StorybookConfig = {
     {
       titlePrefix: 'Components',
       directory: '../../../libraries/ui/components',
-      files: '**/*.stories.tsx',
+      files: '**/*.story.tsx',
+    },
+    {
+      titlePrefix: 'Primitives',
+      directory: '../../../libraries/exo/src/components',
+      files: '**/*.story.tsx',
     },
   ],
   staticDirs: [
     './assets',
   ],
   addons: [
-    '@storybook/addon-links',
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
+    '@storybook/addon-designs',
+    '@storybook/addon-links',
+    '@storybook/addon-a11y',
   ],
   framework: {
     name: '@storybook/react-vite',
@@ -27,7 +34,7 @@ const config: StorybookConfig = {
   },
   docs: {
     autodocs: true,
-    defaultName: 'Documentation',
+    defaultName: 'Docs',
   },
   core: {
     disableTelemetry: true,

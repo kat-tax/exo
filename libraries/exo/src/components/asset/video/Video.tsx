@@ -2,16 +2,16 @@ import {View} from 'react-native';
 import {MediaPlayer, MediaProvider} from '@vidstack/react';
 import {defaultLayoutIcons, DefaultVideoLayout} from '@vidstack/react/player/layouts/default';
 
-import type {VideoProps} from './Video.interface';
-import './Video.module.css';
+import type {VideoComponent, VideoProps} from './Video.interface';
+import './Video.css';
 
-export function Video(props: VideoProps) {
+/** A component that enables video playblack */
+export const Video: VideoComponent = (props: VideoProps) => {
   return (
     <View style={props.style}>
-      <MediaPlayer src={props.source?.toString()}>
+      <MediaPlayer style={{flex: 1}} src={props?.source?.uri}>
         <MediaProvider/>
         <DefaultVideoLayout
-          thumbnails="https://image.mux.com/VZtzUzGRv02OhRnZCxcNg49OilvolTqdnFLEqBsTwaxU/storyboard.vtt"
           icons={defaultLayoutIcons}
           noScrubGesture={false}
         />

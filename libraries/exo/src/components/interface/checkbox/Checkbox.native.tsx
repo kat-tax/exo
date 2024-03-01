@@ -1,7 +1,7 @@
 import CheckboxBase from 'react-native-ui-lib/checkbox';
-import type {CheckboxProps} from './Checkbox.interface';
+import type {CheckboxComponent, CheckboxProps} from './Checkbox.interface';
 
-export function Checkbox(props: CheckboxProps) {
+export const Checkbox: CheckboxComponent = (props: CheckboxProps) => {
   return (
     <CheckboxBase {...props}/>
   );

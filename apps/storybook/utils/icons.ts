@@ -2,7 +2,6 @@ import {loadIcons} from '@iconify/react';
 
 export async function loadIconSet(
   iconSet: string,
-  onProgress: (value: number) => void,
 ): Promise<string[]> {
   if (!iconSet) return [];
 
@@ -18,14 +17,13 @@ export async function loadIconSet(
   const list = set.map((icon: string) => `${iconSet}:${icon}`);
   return new Promise((resolve, _reject) => {
     loadIcons(list, (_loaded, _missing, pending, _unsubscribe) => {
-      onProgress(Math.round((_loaded.length / list.length) * 100));
       if (pending.length) return;
       resolve(list);
     });
   });
 };
 
-export function filterIconsBySuffix(
+function filterIconsBySuffix(
   suffix: string,
   suffixes: Record<string, string>,
   items: string[],
@@ -41,5 +39,3 @@ export function filterIconsBySuffix(
     return items;
   }
 }
-
-loadIconSet('ph', (value) => console.log(value));

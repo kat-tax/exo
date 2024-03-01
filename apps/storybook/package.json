@@ -9,6 +9,7 @@
   "dependencies": {
     "react": "18.2.0",
     "react-dom": "^18.2.0",
+    "react-exo": "workspace:^",
     "react-native": "^0.73.4",
     "react-native-svg": "^14.1.0",
     "react-native-unistyles": "^2.3.0",
@@ -17,9 +18,12 @@
   },
   "devDependencies": {
     "@iconify/react": "^4.1.1",
+    "@storybook/addon-a11y": "^7.6.17",
+    "@storybook/addon-designs": "^7.0.9",
     "@storybook/addon-essentials": "7.6.17",
     "@storybook/addon-interactions": "7.6.17",
     "@storybook/addon-links": "7.6.17",
+    "@storybook/addon-storysource": "^7.6.17",
     "@storybook/blocks": "7.6.17",
     "@storybook/builder-vite": "7.6.17",
     "@storybook/manager-api": "7.6.17",

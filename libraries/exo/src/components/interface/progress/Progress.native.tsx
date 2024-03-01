@@ -1,7 +1,7 @@
 import ProgressBar from 'react-native-ui-lib/progressBar';
-import type {ProgressProps} from './Progress.interface';
+import type {ProgressComponent, ProgressProps} from './Progress.interface';
 
-export function Progress(props: ProgressProps) {
+export const Progress: ProgressComponent = (props: ProgressProps) => {
   return (
     <ProgressBar
       testID={props.testID}

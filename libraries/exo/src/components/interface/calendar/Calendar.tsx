@@ -1,7 +1,7 @@
 import {Calendar as CalendarBase} from '@marceloterreiro/flash-calendar';
-import type {CalendarProps} from './Calendar.interface';
+import type {CalendarComponent, CalendarProps} from './Calendar.interface';
 
-export function Calendar(props: CalendarProps) {
+export const Calendar: CalendarComponent = (props: CalendarProps) => {
   return (
     <CalendarBase {...props}/>
   );

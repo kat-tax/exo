@@ -1,0 +1,42 @@
+import {Button} from 'vocs/components';
+
+# Rive Component
+
+> A component that renders Rive animations.
+
+<Riv
+  src="https://get.ult.dev/samples/cursor.riv"
+  autoplay
+  loop
+/>
+
+```tsx
+import {Rive} from 'react-exo/rive'; // [!code focus]
+
+export default () => (
+  <Rive // [!code focus]
+    src="https://get.ult.dev/samples/cursor.riv" // [!code focus]
+    autoplay // [!code focus]
+    loop // [!code focus]
+  /> // [!code focus]
+);
+```
+
+<Button href="https://exo.fig.run/?path=/docs/primitives-rive">Storybook</Button>
+
+## Platform Support
+
+:::info
+For native support you must install [Rive React Native](https://help.rive.app/runtimes/overview/react-native)
+
+`npm i rive-react-native{:bash}`
+:::
+
+
+| Platform | Technology | Functional | Notes |
+| -------- | ---------- | :--------: | :---: |
+| Web | [@rive-app/react-canvas](https://rive-app.github.io/rive-react) | ✅ | - |
+| iOS | [rive-react-native](https://help.rive.app/runtimes/overview/react-native) | ✅ | - |
+| MacOS | [rive-react-native](https://help.rive.app/runtimes/overview/react-native) | ✅ | - |
+| Android | [rive-react-native](https://help.rive.app/runtimes/overview/react-native) | ✅ | - |
+| Windows | [rive-react-native](https://help.rive.app/runtimes/overview/react-native) | ✅ | - |

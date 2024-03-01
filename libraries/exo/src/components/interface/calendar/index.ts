@@ -1,2 +1,2 @@
 export {Calendar} from './Calendar';
-export type {CalendarProps} from './Calendar.interface';
+export type {CalendarComponent, CalendarProps} from './Calendar.interface';

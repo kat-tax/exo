@@ -1,8 +1,9 @@
 import {View} from 'react-native';
 import RiveBase from '@rive-app/react-canvas';
-import type {RiveProps} from './Rive.interface';
+import type {RiveComponent, RiveProps} from './Rive.interface';
 
-export function Rive(props: RiveProps) {
+/** A component that renders Rive animations */
+export const Rive: RiveComponent = (props: RiveProps) => {
   return (
     <View style={props.style} testID={props.testID}>
       <RiveBase

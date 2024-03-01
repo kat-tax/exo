@@ -1,0 +1,46 @@
+import {Image} from 'react-exo/image';
+import {Button} from 'vocs/components';
+
+# Image Component
+
+> A component that displays images with caching, blurhash, and thumbhash support.
+
+<Image
+  url="https://placekitten.com/48/48"
+  style={{
+    width: 48,
+    height: 48,
+  }}
+/>
+
+```tsx
+import {Image} from 'react-exo/image'; // [!code focus]
+
+export default () => (
+  <Image // [!code focus]
+    url="https://placekitten.com/48/48" // [!code focus]
+    style={{ // [!code focus]
+      width: 48, // [!code focus]
+      height: 48, // [!code focus]
+    }} // [!code focus]
+  /> // [!code focus]
+);
+```
+
+<Button href="https://exo.fig.run/?path=/docs/primitives-image">Storybook</Button>
+
+## Platform Support
+
+:::info
+For iOS support you must install [Faster Image](https://github.com/candlefinance/faster-image)
+
+`npm i @candlefinance/faster-image{:bash}`
+:::
+
+| Platform | Technology | Functional | Notes |
+| -------- | ---------- | :--------: | ----- |
+| Web | [React Native Web Image](https://necolas.github.io/react-native-web/docs/image) | ✅ | Default browser caching |
+| iOS | [@candlefinance/faster-image](https://github.com/candlefinance/faster-image) | ✅ | - |
+| MacOS | [React Native Image](https://reactnative.dev/docs/image) | ✅ | No cache support |
+| Android | [React Native Image](https://reactnative.dev/docs/image) | ✅ | No cache support |
+| Windows | [React Native Image](https://reactnative.dev/docs/image) | ✅ | No cache support |
