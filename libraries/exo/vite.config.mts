@@ -14,6 +14,8 @@ export default defineConfig({
     lib: {
       formats: ['cjs', 'es'],
       entry: {
+        /* Types */
+        index: 'src/index.ts',
         /* Utilities */
         'variants': 'src/hooks/useVariants',
         /* Assets */

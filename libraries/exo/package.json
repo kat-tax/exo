@@ -1,7 +1,9 @@
 {
   "name": "react-exo",
-  "version": "0.10.4",
+  "version": "0.10.5",
   "type": "module",
+  "files": ["dist"],
+  "types": "./dist/index.d.ts",
   "exports": {
     "./video.css": "./dist/video.css",
     "./checkbox.css": "./dist/checkbox.css",
