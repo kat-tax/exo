@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "prepublishOnly": "cp package.json ./dist && npm publish ./dist"
+    "prepublishOnly": "cp ./package.json ./dist && npm publish ./dist"
   },
   "exports": {
     "./video.css": "./video.css",
