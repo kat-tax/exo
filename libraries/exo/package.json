@@ -1,6 +1,6 @@
 {
   "name": "react-exo",
-  "version": "0.10.3",
+  "version": "0.10.4",
   "type": "module",
   "exports": {
     "./video.css": "./dist/video.css",
@@ -57,9 +57,6 @@
       "require": "./dist/calendar.cjs"
     }
   },
-  "files": [
-    "dist"
-  ],
   "scripts": {
     "dev": "vite",
     "build": "vite build"
