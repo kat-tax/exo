@@ -13,5 +13,5 @@ export function StoryEnv(props: StoryEnvProps) {
     <>
       {props.children}
     </>
-  )
+  );
 }

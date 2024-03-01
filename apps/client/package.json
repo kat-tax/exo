@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "dev": "vite dev --open",
+    "dev": "vite dev --port 6004",
     "build": "vite build"
   },
   "dependencies": {

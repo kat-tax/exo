@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vocs dev",
+    "dev": "vocs dev -p 6005",
     "build": "vocs build",
     "preview": "vocs preview"
   },
@@ -17,6 +17,8 @@
     "vocs": "latest"
   },
   "devDependencies": {
+    "@types/react": "^18.2.61",
+    "@types/react-dom": "^18.2.19",
     "@vitejs/plugin-react": "latest",
     "cfg": "workspace:*",
     "client": "workspace:*",

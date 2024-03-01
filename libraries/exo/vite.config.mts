@@ -55,4 +55,8 @@ export default defineConfig({
     cssCodeSplit: true,
     sourcemap: true,
   },
+  resolve: {
+    alias: {'react-native-web': 'react-native'},
+    extensions: ['.web.tsx', '.web.ts', '.web.js', '.mjs', '.mts', '.ts', '.tsx', '.js', '.jsx', '.json'],
+  },
 });
