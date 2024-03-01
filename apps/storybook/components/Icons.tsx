@@ -20,7 +20,7 @@ export function Icons(props: IconsProps) {
     <IconGallery>
       {icons.map((icon: string) => (
         <IconItem key={icon} name={icon.split(':')[1]}>
-          <Icon name={icon} color="#666" width={16} height={16}/>
+          <Icon name={icon} color="#666" size={16}/>
         </IconItem>
       ))}
     </IconGallery>

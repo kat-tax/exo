@@ -1,67 +1,67 @@
 {
   "name": "react-exo",
-  "version": "0.10.5",
+  "version": "0.10.6",
   "type": "module",
-  "files": ["dist"],
-  "types": "./dist/index.d.ts",
-  "exports": {
-    "./video.css": "./dist/video.css",
-    "./checkbox.css": "./dist/checkbox.css",
-    "./switch.css": "./dist/switch.css",
-    "./radio.css": "./dist/radio.css",
-    "./slider.css": "./dist/slider.css",
-    "./variants": {
-      "import": "./dist/variants.js",
-      "require": "./dist/variants.cjs"
-    },
-    "./icon": {
-      "import": "./dist/icon.js",
-      "require": "./dist/icon.cjs"
-    },
-    "./image": {
-      "import": "./dist/image.js",
-      "require": "./dist/image.cjs"
-    },
-    "./video": {
-      "import": "./dist/video.js",
-      "require": "./dist/video.cjs"
-    },
-    "./lottie": {
-      "import": "./dist/lottie.js",
-      "require": "./dist/lottie.cjs"
-    },
-    "./rive": {
-      "import": "./dist/rive.js",
-      "require": "./dist/rive.cjs"
-    },
-    "./checkbox": {
-      "import": "./dist/checkbox.js",
-      "require": "./dist/checkbox.cjs"
-    },
-    "./switch": {
-      "import": "./dist/switch.js",
-      "require": "./dist/switch.cjs"
-    },
-    "./radio": {
-      "import": "./dist/radio.js",
-      "require": "./dist/radio.cjs"
-    },
-    "./slider": {
-      "import": "./dist/slider.js",
-      "require": "./dist/slider.cjs"
-    },
-    "./progress": {
-      "import": "./dist/progress.js",
-      "require": "./dist/progress.cjs"
-    },
-    "./calendar": {
-      "import": "./dist/calendar.js",
-      "require": "./dist/calendar.cjs"
-    }
-  },
+  "types": "./index.d.ts",
   "scripts": {
     "dev": "vite",
-    "build": "vite build"
+    "build": "vite build",
+    "prepublishOnly": "cp package.json dist/ && npm publish ./dist"
+  },
+  "exports": {
+    "./video.css": "./video.css",
+    "./checkbox.css": "./checkbox.css",
+    "./switch.css": "./switch.css",
+    "./radio.css": "./radio.css",
+    "./slider.css": "./slider.css",
+    "./variants": {
+      "import": "./variants.js",
+      "require": "./variants.cjs"
+    },
+    "./icon": {
+      "import": "./icon.js",
+      "require": "./icon.cjs"
+    },
+    "./image": {
+      "import": "./image.js",
+      "require": "./image.cjs"
+    },
+    "./video": {
+      "import": "./video.js",
+      "require": "./video.cjs"
+    },
+    "./lottie": {
+      "import": "./lottie.js",
+      "require": "./lottie.cjs"
+    },
+    "./rive": {
+      "import": "./rive.js",
+      "require": "./rive.cjs"
+    },
+    "./checkbox": {
+      "import": "./checkbox.js",
+      "require": "./checkbox.cjs"
+    },
+    "./switch": {
+      "import": "./switch.js",
+      "require": "./switch.cjs"
+    },
+    "./radio": {
+      "import": "./radio.js",
+      "require": "./radio.cjs"
+    },
+    "./slider": {
+      "import": "./slider.js",
+      "require": "./slider.cjs"
+    },
+    "./progress": {
+      "import": "./progress.js",
+      "require": "./progress.cjs"
+    },
+    "./calendar": {
+      "import": "./calendar.js",
+      "require": "./calendar.cjs"
+    }
   },
   "dependencies": {
     "@dotlottie/react-player": "^1.6.17",
