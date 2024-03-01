@@ -14,8 +14,6 @@ export default defineConfig({
     lib: {
       formats: ['cjs', 'es'],
       entry: {
-        /* Types */
-        index: 'src/index.ts',
         /* Utilities */
         'variants': 'src/hooks/useVariants',
         /* Assets */
@@ -37,7 +35,7 @@ export default defineConfig({
     },
     rollupOptions: {
       output: {
-        dir: 'dist',
+        dir: '.',
         chunkFileNames: '_chunks/[format]/[name]_[hash].js',
         assetFileNames(chunkInfo) {
           return (chunkInfo.name === 'index.css')
@@ -54,6 +52,7 @@ export default defineConfig({
       ],
     },
     cssMinify: 'lightningcss',
+    emptyOutDir: false,
     cssCodeSplit: true,
     sourcemap: true,
   },
