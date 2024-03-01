@@ -3,6 +3,7 @@ import type {SidebarItem} from 'vocs';
 export default {
   text: 'Start',
   link: '/start',
+  collapsed: false,
   items: [
     {
       text: 'with Figma',

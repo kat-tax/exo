@@ -6,9 +6,13 @@ import {Button} from 'vocs/components';
 > A component that renders Lottie animations.
 
 <Lottie
-  src="https://get.ult.dev/samples/stack.lottie"
+  url="https://get.ult.dev/samples/stack.lottie"
   autoplay
   loop
+  style={{
+    width: 320,
+    height: 320,
+  }}
 />
 
 ```tsx
@@ -16,9 +20,13 @@ import {Lottie} from 'react-exo/lottie'; // [!code focus]
 
 export default () => (
   <Lottie // [!code focus]
-    src="https://get.ult.dev/samples/stack.lottie" // [!code focus]
+    url="https://get.ult.dev/samples/stack.lottie" // [!code focus]
     autoplay // [!code focus]
     loop // [!code focus]
+    style={{ // [!code focus]
+      width: 320, // [!code focus]
+      height: 320, // [!code focus]
+    }} // [!code focus]
   /> // [!code focus]
 );
 ```

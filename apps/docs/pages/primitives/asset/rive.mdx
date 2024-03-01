@@ -1,13 +1,16 @@
+import {Rive} from 'react-exo/rive';
 import {Button} from 'vocs/components';
 
 # Rive Component
 
 > A component that renders Rive animations.
 
-<Riv
-  src="https://get.ult.dev/samples/cursor.riv"
-  autoplay
-  loop
+<Rive
+  url="https://get.ult.dev/samples/cursor.riv"
+  style={{
+    width: 320,
+    height: 320,
+  }}
 />
 
 ```tsx
@@ -15,9 +18,11 @@ import {Rive} from 'react-exo/rive'; // [!code focus]
 
 export default () => (
   <Rive // [!code focus]
-    src="https://get.ult.dev/samples/cursor.riv" // [!code focus]
-    autoplay // [!code focus]
-    loop // [!code focus]
+    url="https://get.ult.dev/samples/cursor.riv" // [!code focus]
+    style={{ // [!code focus]
+      width: 320, // [!code focus]
+      height: 320, // [!code focus]
+    }} // [!code focus]
   /> // [!code focus]
 );
 ```
