@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vocs dev -p 6005",
+    "dev": "vocs dev -p 6106",
     "build": "vocs build",
     "preview": "vocs preview"
   },

@@ -1,13 +1,11 @@
 import {defineConfig} from 'vocs';
 
+import exo from './config/sidebar/exo';
+import library from './config/sidebar/library';
 import general from './config/brand/general';
 import socials from './config/brand/socials';
-import theme from './config/brand/theme';
 import topNav from './config/brand/topNav';
-import start from './config/sidebar/start';
-import guides from './config/sidebar/guides';
-import library from './config/sidebar/library';
-import exo from './config/sidebar/exo';
+import theme from './config/brand/theme';
 
 export default defineConfig({
   ...general,
@@ -15,9 +13,7 @@ export default defineConfig({
   theme,
   topNav,
   sidebar: [
-    start,
-    guides,
-    library,
+    ...library,
     ...exo,
   ],
   vite: {
