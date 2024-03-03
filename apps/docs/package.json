@@ -1,8 +1,7 @@
 {
   "name": "docs",
-  "version": "0.0.1",
-  "private": true,
   "type": "module",
+  "private": true,
   "scripts": {
     "dev": "pnpm create-docs && vocs dev -p 6106",
     "build": "pnpm create-docs && vocs build",

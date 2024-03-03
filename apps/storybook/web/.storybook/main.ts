@@ -4,22 +4,22 @@ const config: StorybookConfig = {
   stories: [
     {
       titlePrefix: 'References',
-      directory: '../pages',
+      directory: '../../common/pages',
       files: '**/*.mdx',
     },
     {
       titlePrefix: 'Components',
-      directory: '../../../libraries/ui/components',
+      directory: '../../../../libraries/ui/components',
       files: '**/*.story.tsx',
     },
     {
       titlePrefix: 'Primitives',
-      directory: '../../../libraries/exo/src/components',
+      directory: '../../../../libraries/exo/src/components',
       files: '**/*.story.tsx',
     },
   ],
   staticDirs: [
-    './assets',
+    '../../common/assets',
   ],
   addons: [
     '@storybook/addon-essentials',
@@ -41,7 +41,7 @@ const config: StorybookConfig = {
     builder: {
       name: '@storybook/builder-vite',
       options: {
-        viteConfigPath: '../client/vite.config.mjs',
+        viteConfigPath: '../../client/vite.config.mjs',
       },
     }
   },

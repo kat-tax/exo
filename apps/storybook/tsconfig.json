@@ -1,3 +1,0 @@
-{
-  "extends": "cfg/ts/storybook-web.tsconfig.json"
-}

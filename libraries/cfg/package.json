@@ -1,15 +1,14 @@
 {
   "name": "cfg",
-  "version": "0.9.9",
+  "version": "0.10.0",
   "private": true,
   "files": [
     "ts/client.tsconfig.json",
     "ts/docs.tsconfig.json",
-    "ts/lib-ui.tsconfig.json",
     "ts/lib-exo.tsconfig.json",
-    "ts/storybook-web.tsconfig.json",
-    "ts/storybook-native.tsconfig.json",
-    "ts/react-native.tsconfig.json"
+    "ts/lib-ui.tsconfig.json",
+    "ts/react-native.tsconfig.json",
+    "ts/storybook.tsconfig.json"
   ],
   "devDependencies": {
     "vite": "^5.1.4"

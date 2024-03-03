@@ -10,9 +10,9 @@
     "docs-dev": "pnpm --filter ./apps/docs dev",
     "docs-build": "pnpm --filter ./apps/docs build",
     "docs-preview": "pnpm --filter ./apps/docs preview",
-    "storybook-web": "pnpm --filter ./apps/storybook run dev",
-    "storybook-native": "pnpm --filter ./apps/storybook run dev",
-    "storybook-build": "pnpm --filter ./apps/storybook run build",
+    "storybook-web": "pnpm --filter ./apps/storybook/web run dev",
+    "storybook-native": "pnpm --filter ./apps/storybook/native run dev",
+    "storybook-build": "pnpm --filter ./apps/storybook/web run build",
     "publish-exo": "pnpm --filter ./libraries/exo publish",
     "publish-ui": "pnpm --filter ./libraries/ui publish"
   },
