@@ -1,9 +1,8 @@
-import {View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import {fillAbsolute} from 'utils/styles';
 import * as P from '@radix-ui/react-progress';
 
 import type {ProgressComponent, ProgressProps} from './Progress.interface';
-import styles from './Progress.styles';
 
 export const Progress: ProgressComponent = (props: ProgressProps) => {
   const $styles = {
@@ -31,3 +30,27 @@ export const Progress: ProgressComponent = (props: ProgressProps) => {
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  root: {
+    height: 8,
+    overflow: 'hidden',
+    position: 'relative',
+    backgroundColor: '#d2d6d8',
+    borderRadius: 99999,
+    /* Fix overflow clipping in Safari */
+    /* https://gist.github.com/domske/b66047671c780a238b51c51ffde8d3a0 */
+    transform: 'translateZ(0)',
+  },
+  fullWidth: {
+    width: '100%',
+  },
+  active: {
+    width: '100%',
+    height: '100%',
+    borderRadius: 99999,
+    // @ts-ignore Web property
+    transition: 'transform 660ms linear',
+  },
+});
+
