@@ -2,8 +2,10 @@
   "name": "ui",
   "version": "0.0.1",
   "type": "module",
-  "module": "index.ts",
   "exports": {
+    ".": {
+      "import": "./index.ts"
+    },
     "./theme": {
       "import": "./theme.ts"
     }
