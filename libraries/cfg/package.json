@@ -10,5 +10,8 @@
     "ts/storybook-web.tsconfig.json",
     "ts/storybook-native.tsconfig.json",
     "ts/react-native.tsconfig.json"
-  ]
+  ],
+  "devDependencies": {
+    "vite": "^5.1.4"
+  }
 }

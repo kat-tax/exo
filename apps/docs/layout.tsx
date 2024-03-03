@@ -1,5 +1,5 @@
 interface LayoutProps {
-  children: React.ReactNode;
+  children: React.ReactNode,
 }
 
 export default function Layout(props: LayoutProps) {

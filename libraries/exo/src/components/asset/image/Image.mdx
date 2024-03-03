@@ -6,22 +6,24 @@ import {Button} from 'vocs/components';
 > A component that displays images with caching, blurhash, and thumbhash support.
 
 <Image
-  url="https://placekitten.com/48/48"
+  url="https://placekitten.com/685/480"
   style={{
-    width: 48,
-    height: 48,
+    width: 685,
+    height: 480,
   }}
 />
 
-```tsx
+```tsx twoslash
+import React from 'react';
+// ---cut---
 import {Image} from 'react-exo/image'; // [!code focus]
 
 export default () => (
   <Image // [!code focus]
-    url="https://placekitten.com/48/48" // [!code focus]
+    url="https://placekitten.com/685/480" // [!code focus]
     style={{ // [!code focus]
-      width: 48, // [!code focus]
-      height: 48, // [!code focus]
+      width: 685, // [!code focus]
+      height: 480, // [!code focus]
     }} // [!code focus]
   /> // [!code focus]
 );

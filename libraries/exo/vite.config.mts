@@ -3,12 +3,17 @@ import {defineConfig} from 'vite';
 import types from 'vite-plugin-dts';
 import paths from 'vite-tsconfig-paths';
 import react from '@vitejs/plugin-react';
+import vite from 'cfg/web/vite.config.mjs';
 
 export default defineConfig({
   plugins: [
-    types({insertTypesEntry: true}),
     paths(),
     react(),
+    types({
+      outDir: '.',
+      rollupTypes: true,
+      insertTypesEntry: true,
+    }),
   ],
   build: {
     lib: {
@@ -36,12 +41,10 @@ export default defineConfig({
     rollupOptions: {
       output: {
         dir: '.',
-        chunkFileNames: '_chunks/[format]/[name]_[hash].js',
-        assetFileNames(chunkInfo) {
-          return (chunkInfo.name === 'index.css')
-            ? 'video.css'
-            : `[name].[ext]`;
-        },
+        chunkFileNames: 'chunks/[format]/[name]_[hash].js',
+        assetFileNames: (asset) => (asset.name === 'index.css')
+          ? 'video.css'
+          : `[name].[ext]`
       },
       external: [
         'react',
@@ -56,8 +59,5 @@ export default defineConfig({
     cssCodeSplit: true,
     sourcemap: true,
   },
-  resolve: {
-    alias: {'react-native-web': 'react-native'},
-    extensions: ['.web.tsx', '.web.ts', '.web.js', '.mjs', '.mts', '.ts', '.tsx', '.js', '.jsx', '.json'],
-  },
+  ...vite,
 });

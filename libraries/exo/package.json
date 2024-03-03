@@ -1,6 +1,6 @@
 {
   "name": "react-exo",
-  "version": "0.10.10",
+  "version": "0.10.13",
   "type": "module",
   "scripts": {
     "dev": "vite",

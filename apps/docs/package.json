@@ -4,26 +4,30 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vocs dev -p 6106",
-    "build": "vocs build",
-    "preview": "vocs preview"
+    "dev": "pnpm create-docs && vocs dev -p 6106",
+    "build": "pnpm create-docs && vocs build",
+    "preview": "pnpm create-docs && vocs preview",
+    "create-docs": "tsx scripts/create-docs"
   },
   "dependencies": {
     "react": "latest",
     "react-dom": "latest",
-    "react-exo": "workspace:^",
-    "react-native-web": "0.19.10",
+    "react-native-web": "latest",
     "ui": "workspace:*",
     "vocs": "latest"
   },
   "devDependencies": {
-    "@types/react": "^18.2.61",
-    "@types/react-dom": "^18.2.19",
+    "@types/fs-extra": "^11.0.4",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
     "@vitejs/plugin-react": "latest",
     "cfg": "workspace:*",
     "client": "workspace:*",
-    "react-native": "^0.73.4",
-    "typescript": "^5.3.3",
+    "fs-extra": "latest",
+    "react-exo": "workspace:*",
+    "react-native": "latest",
+    "tsx": "latest",
+    "typescript": "latest",
     "vite": "latest",
     "vite-tsconfig-paths": "latest"
   }

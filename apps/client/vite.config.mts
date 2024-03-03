@@ -4,6 +4,7 @@ import {defineConfig} from 'vite';
 import million from 'million/compiler';
 import paths from 'vite-tsconfig-paths';
 import react from '@vitejs/plugin-react';
+import vite from 'cfg/web/vite.config';
 
 export default defineConfig({
   plugins: [
@@ -24,21 +25,5 @@ export default defineConfig({
       }
     }
   },
-  resolve: {
-    alias: {
-      'react-native': 'react-native-web',
-    },
-    extensions: [
-      '.web.tsx',
-      '.web.ts',
-      '.web.js',
-      '.mjs',
-      '.mts',
-      '.ts',
-      '.tsx',
-      '.js',
-      '.jsx',
-      '.json',
-    ],
-  },
+  ...vite,
 });

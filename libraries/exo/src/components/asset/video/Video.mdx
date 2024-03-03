@@ -6,17 +6,29 @@ import {Button} from 'vocs/components';
 > A component that enables video playblack.
 
 <Video
-  src="https://get.ult.dev/samples/bunny.mp4"
-  autoplay
+  source={{
+    uri: 'https://get.ult.dev/samples/bunny.mp4',
+  }}
+  style={{
+    width: 480,
+    height: 320,
+  }}
 />
 
-```tsx
+```tsx twoslash
+import React from 'react';
+// ---cut---
 import {Video} from 'react-exo/video'; // [!code focus]
 
 export default () => (
   <Video // [!code focus]
-    src="https://get.ult.dev/samples/bunny.mp4" // [!code focus]
-    autoplay // [!code focus]
+    source={{ // [!code focus]
+      uri: 'https://get.ult.dev/samples/bunny.mp4', // [!code focus]
+    }} // [!code focus]
+    style={{ // [!code focus]
+      width: 480, // [!code focus]
+      height: 320, // [!code focus]
+    }} // [!code focus]
   /> // [!code focus]
 );
 ```
