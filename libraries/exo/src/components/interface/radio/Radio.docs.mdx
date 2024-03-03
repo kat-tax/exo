@@ -1,1 +1,45 @@
+import 'react-exo/radio.css';
+import {RadioGroup, RadioButton} from 'react-exo/radio';
+import {Button} from 'vocs/components';
+
 # Radio Component
+
+> A component that allows selection of a value within a range.
+
+<RadioGroup>
+  <RadioButton key="1" value="1" label="Option 1"/>
+  <RadioButton key="2" value="2" label="Option 2"/>
+  <RadioButton key="3" value="3" label="Option 3"/>
+</RadioGroup>
+
+```tsx twoslash
+import React from 'react';
+// ---cut---
+import {RadioGroup, RadioButton} from 'react-exo/radio'; // [!code focus]
+
+export default () => (
+  <RadioGroup> // [!code focus]
+    <RadioButton key="1" value="1" label="Option 1"/> // [!code focus]
+    <RadioButton key="2" value="2" label="Option 2"/> // [!code focus]
+    <RadioButton key="3" value="3" label="Option 3"/> // [!code focus]
+  </RadioGroup> // [!code focus]
+);
+```
+
+<Button href="https://exo.fig.run/?path=/docs/primitives-radio">Storybook</Button>
+
+## Platform Support
+
+:::info
+For native support you must install [React Native Community Radio](https://github.com/callstack/react-native-Radio)
+
+`npm i @react-native-community/radio{:bash}`
+:::
+
+| Platform | Technology | Functional | Notes |
+| -------- | ---------- | :--------: | :---: |
+| Web | [@radix-ui/react-Radio](https://www.radix-ui.com/primitives/docs/components/Radio) | ✅ | - |
+| iOS | [@react-native-community/Radio](https://github.com/callstack/react-native-Radio) | ✅ | - |
+| MacOS | [@react-native-community/Radio](https://github.com/callstack/react-native-Radio) | ✅ | - |
+| Android | [@react-native-community/Radio](https://github.com/callstack/react-native-Radio) | ✅ | - |
+| Windows | [@react-native-community/Radio](https://github.com/callstack/react-native-Radio) | ✅ | - |

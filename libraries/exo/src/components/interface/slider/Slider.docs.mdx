@@ -9,14 +9,14 @@ import {Button} from 'vocs/components';
 <Slider
   step={1}
   value={50}
-  onChange={(value) => console.log(value)}
+  onChange={console.log}
   lowerLimit={0}
   upperLimit={100}
   minimumValue={0}
   maximumValue={100}
-  rangeColor="#ffffff"
-  thumbColor="#ffffff"
-  trackColor="#333333"
+  rangeColor="#666"
+  thumbColor="#666"
+  trackColor="#333"
   disabled={false}
   name="slider"
   testID="0:0"
@@ -36,9 +36,9 @@ export default () => (
     upperLimit={100} // [!code focus]
     minimumValue={0} // [!code focus]
     maximumValue={100} // [!code focus]
-    onChange={(value) => console.log(value)} // [!code focus]
-    rangeColor="#fff" // [!code focus]
-    thumbColor="#fff" // [!code focus]
+    onChange={console.log} // [!code focus]
+    rangeColor="#666" // [!code focus]
+    thumbColor="#666" // [!code focus]
     trackColor="#333" // [!code focus]
     disabled={false} // [!code focus]
     name="slider" // [!code focus]
