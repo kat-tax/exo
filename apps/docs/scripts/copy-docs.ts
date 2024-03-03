@@ -17,11 +17,11 @@ const copydocs = (files: string[], paths: string[]) => files
     );
   });
 
-const [components, primitives, hooks] = [
-  await readdir(paths.components[0], {recursive: true}),
-  await readdir(paths.primitives[0], {recursive: true}),
-  await readdir(paths.hooks[0], {recursive: true}),
-];
+const [components, primitives, hooks] = await Promise.all([
+  readdir(paths.components[0], {recursive: true}),
+  readdir(paths.primitives[0], {recursive: true}),
+  readdir(paths.hooks[0], {recursive: true}),
+]);
 
 await Promise.all([
   copydocs(components, paths.components),
