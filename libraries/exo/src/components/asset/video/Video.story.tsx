@@ -14,8 +14,8 @@ export const Sandbox: Story = {
       uri: 'https://get.ult.dev/samples/bunny.mp4',
     },
     style: {
-      width: 480,
-      height: 320,
+      width: 685,
+      height: 386,
     },
   },
 };

@@ -1,3 +1,4 @@
+import 'react-exo/slider.css';
 import {Slider} from 'react-exo/slider';
 import {Button} from 'vocs/components';
 
@@ -6,17 +7,17 @@ import {Button} from 'vocs/components';
 > A component that allows selection of a value within a range.
 
 <Slider
+  step={1}
   value={50}
-  minimumValue={0}
-  maximumValue={100}
+  onChange={(value) => console.log(value)}
   lowerLimit={0}
   upperLimit={100}
-  step={1}
-  onChange={(value) => console.log(value)}
-  disabled={false}
+  minimumValue={0}
+  maximumValue={100}
   rangeColor="#ffffff"
   thumbColor="#ffffff"
   trackColor="#333333"
+  disabled={false}
   name="slider"
   testID="0:0"
   style={{}}
@@ -29,17 +30,17 @@ import {Slider} from 'react-exo/slider'; // [!code focus]
 
 export default () => (
   <Slider // [!code focus]
+    step={1} // [!code focus]
     value={50} // [!code focus]
-    minimumValue={0} // [!code focus]
-    maximumValue={100} // [!code focus]
     lowerLimit={0} // [!code focus]
     upperLimit={100} // [!code focus]
-    step={1} // [!code focus]
+    minimumValue={0} // [!code focus]
+    maximumValue={100} // [!code focus]
     onChange={(value) => console.log(value)} // [!code focus]
+    rangeColor="#fff" // [!code focus]
+    thumbColor="#fff" // [!code focus]
+    trackColor="#333" // [!code focus]
     disabled={false} // [!code focus]
-    rangeColor="#ffffff" // [!code focus]
-    thumbColor="#ffffff" // [!code focus]
-    trackColor="#333333" // [!code focus]
     name="slider" // [!code focus]
     testID="0:0" // [!code focus]
     style={{}} // [!code focus]

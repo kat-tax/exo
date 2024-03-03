@@ -1,6 +1,6 @@
 {
   "name": "react-exo",
-  "version": "0.10.13",
+  "version": "0.10.14",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -80,7 +80,7 @@
     "@react-native-community/slider": "^4.5.0",
     "@storybook/react": "^7.6.17",
     "@tsconfig/react-native": "^3.0.3",
-    "@types/jest": "^26.0.24",
+    "@types/jest": "^29.5.12",
     "@types/react": "^18.2.61",
     "@types/react-dom": "^18.2.19",
     "@types/react-native-video": "^5.0.19",
@@ -111,5 +111,19 @@
     "react-native-skottie": ">=2",
     "react-native-ui-lib": ">=7",
     "react-native-video": ">=6"
+  },
+  "optionalDependencies": {
+    "@candlefinance/faster-image": "^1.2.0",
+    "@marceloterreiro/flash-calendar": "^0.0.7",
+    "@react-native-community/checkbox": "^0.5.17",
+    "@react-native-community/slider": "^4.5.0",
+    "react-dom": "^18.2.0",
+    "react-native": "0.73.5",
+    "react-native-video": "6.0.0-beta.5",
+    "react-native-web": "0.19.10",
+    "react-native-iconify": "1.0.0",
+    "react-native-skottie": "2.1.0",
+    "react-native-ui-lib": "7.17.0",
+    "rive-react-native": "6.2.3"
   }
 }

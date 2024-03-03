@@ -4,11 +4,11 @@ import 'react-exo/switch.css';
 import 'react-exo/radio.css';
 import 'react-exo/slider.css';
 
-interface StoryEnvProps {
+interface StoryProps {
   children: JSX.Element,
 }
 
-export function StoryEnv(props: StoryEnvProps) {
+export function Story(props: StoryProps) {
   return (
     <>
       {props.children}

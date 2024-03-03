@@ -2,15 +2,16 @@ import React from 'react';
 import {themes} from '@storybook/theming';
 import {type Preview} from '@storybook/react';
 import uniDefault, {themes as uniThemes} from 'ui/theme';
-import {StoryEnv} from '../components/StoryEnv';
+import {Story} from '../components/Story';
+
 import 'client/src/styles';
 
 const preview: Preview = {
   decorators: [
-    (Story) => (
-      <StoryEnv>
-        <Story/>
-      </StoryEnv>
+    (Outlet) => (
+      <Story>
+        <Outlet/>
+      </Story>
     ),
   ],
   globalTypes: {

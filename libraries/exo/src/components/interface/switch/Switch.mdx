@@ -1,3 +1,4 @@
+import 'react-exo/switch.css';
 import {Switch} from 'react-exo/switch';
 import {Button} from 'vocs/components';
 
@@ -5,7 +6,13 @@ import {Button} from 'vocs/components';
 
 > A component that allows selection of a value within a range.
 
-<Switch/>
+<Switch
+  disabled={false}
+  onValueChange={console.log}
+  thumbColor="#FFF"
+  onColor="#FFF"
+  offColor="#333"
+/>
 
 ```tsx twoslash
 import React from 'react';
@@ -13,7 +20,14 @@ import React from 'react';
 import {Switch} from 'react-exo/switch'; // [!code focus]
 
 export default () => (
-  <Switch/> // [!code focus]
+  <Switch // [!code focus]
+    value={true} // [!code focus]
+    disabled={false} // [!code focus]
+    onValueChange={console.log} // [!code focus]
+    thumbColor="#FFF" // [!code focus]
+    onColor="#FFF" // [!code focus]
+    offColor="#333" // [!code focus]
+  /> // [!code focus]
 );
 ```
 

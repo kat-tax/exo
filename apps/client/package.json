@@ -11,14 +11,14 @@
     "react": "18.2.0",
     "react-dom": "^18.2.0",
     "react-exo": "workspace:*",
-    "react-native": "^0.73.4",
-    "react-native-svg": "^14.1.0",
-    "react-native-unistyles": "^2.3.0",
+    "react-native": "^0.73.5",
+    "react-native-svg": "^15.0.0",
+    "react-native-unistyles": "^2.4.0",
     "react-native-web": "^0.19.10",
     "ui": "workspace:*"
   },
   "devDependencies": {
-    "@types/react": "^18.2.58",
+    "@types/react": "^18.2.61",
     "@vitejs/plugin-react": "^4.2.1",
     "cfg": "workspace:*",
     "typescript": "^5.3.3",

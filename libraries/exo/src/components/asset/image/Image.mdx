@@ -6,10 +6,13 @@ import {Button} from 'vocs/components';
 > A component that displays images with caching, blurhash, and thumbhash support.
 
 <Image
-  url="https://placekitten.com/685/480"
+  url="https://get.ult.dev/samples/turing.jpg"
+  thumbhash="XwgGFoKwnYZxZ3emWReEaGV30FUKnLQ"
+  blurhash="L8GIcO04^a~q02S%N2M{Z|^*x^I9"
+  resizeMode="cover"
   style={{
     width: 685,
-    height: 480,
+    height: 500,
   }}
 />
 
@@ -20,10 +23,13 @@ import {Image} from 'react-exo/image'; // [!code focus]
 
 export default () => (
   <Image // [!code focus]
-    url="https://placekitten.com/685/480" // [!code focus]
+    url="https://get.ult.dev/samples/turing.jpg" // [!code focus]
+    thumbhash="XwgGFoKwnYZxZ3emWReEaGV30FUKnLQ" // [!code focus]
+    blurhash="L8GIcO04^a~q02S%N2M{Z|^*x^I9" // [!code focus]
+    resizeMode="cover" // [!code focus]
     style={{ // [!code focus]
       width: 685, // [!code focus]
-      height: 480, // [!code focus]
+      height: 500, // [!code focus]
     }} // [!code focus]
   /> // [!code focus]
 );

@@ -10,10 +10,11 @@ const meta: Meta<typeof Component> = {
 
 export const Sandbox: Story = {
   args: {
-    url: 'https://placekitten.com/480/320',
+    url: 'https://get.ult.dev/samples/turing.jpg',
+    resizeMode: 'cover',
     style: {
       width: 480,
-      height: 320,
+      height: 500,
     },
   },
 };
