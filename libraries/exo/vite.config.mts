@@ -27,8 +27,6 @@ export default defineConfig({
         'video': 'src/components/asset/video',
         'lottie': 'src/components/asset/lottie',
         'rive': 'src/components/asset/rive',
-        /* Controller */
-        'pointer': 'src/components/controller/pointer',
         /* Interface */
         'checkbox': 'src/components/interface/checkbox',
         'switch': 'src/components/interface/switch',
