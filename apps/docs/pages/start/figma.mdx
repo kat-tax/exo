@@ -1,30 +1,97 @@
 # Start with Figma
 
-You can use the Figma plugin to design components, create themes, choose icons, and export everything as an EXO project.
+You can use the Figma plugin to design components, create themes, choose icons, and export the Figma file as an EXO project.
 
 ::::steps
 
-### Run the Figma plugin
+### Run the Plugin
 
-Go to the [Figma -> React Native](https://www.figma.com/community/plugin/821138713091291738) plugin page
+- Go to the [Figma -> React Native](https://www.figma.com/community/plugin/821138713091291738) plugin page
+- Press `Open in…` and select `Playground File`
 
-[![Figma -> React Native](https://placekitten.com/640/480)](https://www.figma.com/community/plugin/821138713091291738)
+<video
+  src="/videos/start-figma-light-1.mp4"
+  style={{width: 685}}
+  autoPlay
+  muted
+  loop
+/>
 
-### Open the EXO Figma template
+### Export the Project
 
-Press `Open in...` and select `Playground File`
+- Go to the plugin's `Export` tab
+- Press `Download Components`
+- Extract the downloaded zip file
 
-[![Figma -> React Native](https://placekitten.com/640/540)](https://www.figma.com/community/plugin/821138713091291738)
+<video
+  src="/videos/start-figma-light-2.mp4"
+  style={{width: 685}}
+  autoPlay
+  muted
+  loop
+/>
 
-### Run the plugin
+### Install Dependencies
+  
+- Open a terminal in the extracted folder
+- Install dependencies with your favorite package manager
 
-Run the plugin and go to the `Export` tab
+:::code-group
 
-[![Figma -> React Native](https://placekitten.com/640/440)](https://www.figma.com/community/plugin/821138713091291738)
+```bash [npm]
+npm install
+```
 
-### Press the `Download Components` button
+```bash [pnpm]
+pnpm install
+```
 
-Run the plugin and go to the `Export` tab
+```bash [yarn]
+yarn install
+```
 
-[![Figma -> React Native](https://placekitten.com/640/320)](https://www.figma.com/community/plugin/821138713091291738)
+```bash [bun]
+bun install
+```
+
+:::
+
+:::warning
+For iOS support, you also need to run:
+
+`cd apps/client/ios && pod install{:bash}`
+:::
+
+
+### Run Development Servers
+  
+- Open a terminal in your project folder
+- Run a script with your favorite package manager
+
+:::code-group
+
+```bash [npm]
+npm start
+```
+
+```bash [pnpm]
+pnpm start
+```
+
+```bash [yarn]
+yarn start
+```
+
+```bash [bun]
+bun start
+```
+
+:::
+
+:::info
+You may now visit the following urls to start developing:
+- Web: http://localhost:6206
+- Docs: http://localhost:6106
+- Storybook: http://localhost:6006
+:::
 

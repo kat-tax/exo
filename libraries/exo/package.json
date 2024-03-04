@@ -8,11 +8,6 @@
     "postinstall": "vite build"
   },
   "exports": {
-    "./video.css": "./video.css",
-    "./checkbox.css": "./checkbox.css",
-    "./switch.css": "./switch.css",
-    "./radio.css": "./radio.css",
-    "./slider.css": "./slider.css",
     "./variants": {
       "import": "./variants.js",
       "require": "./variants.cjs"
@@ -60,7 +55,12 @@
     "./calendar": {
       "import": "./calendar.js",
       "require": "./calendar.cjs"
-    }
+    },
+    "./checkbox.css": "./checkbox.css",
+    "./switch.css": "./switch.css",
+    "./radio.css": "./radio.css",
+    "./slider.css": "./slider.css",
+    "./video.css": "./video.css"
   },
   "dependencies": {
     "@dotlottie/react-player": "^1.6.17",
