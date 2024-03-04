@@ -14,7 +14,7 @@ export const Sandbox: Story = {
     resizeMode: 'cover',
     style: {
       width: 480,
-      height: 500,
+      height: 404,
     },
   },
 };

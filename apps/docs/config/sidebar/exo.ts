@@ -13,12 +13,12 @@ export default [
             link: '/primitives/asset/icon',
           },
           {
-            text: 'Video',
-            link: '/primitives/asset/video',
-          },
-          {
             text: 'Image',
             link: '/primitives/asset/image',
+          },
+          {
+            text: 'Video',
+            link: '/primitives/asset/video',
           },
           {
             text: 'Lottie',
