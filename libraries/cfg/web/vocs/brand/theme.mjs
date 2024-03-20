@@ -1,4 +1,4 @@
-import type {Theme} from 'vocs';
+/** @type {import('vocs').Theme} */
 
 export default {
   variables: {
@@ -9,4 +9,4 @@ export default {
       },
     },
   }
-} as Theme;
+};

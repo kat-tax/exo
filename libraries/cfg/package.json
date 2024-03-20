@@ -5,12 +5,16 @@
   "files": [
     "ts/client.tsconfig.json",
     "ts/docs.tsconfig.json",
+    "ts/lib-cfg.tsconfig.json",
     "ts/lib-exo.tsconfig.json",
     "ts/lib-ui.tsconfig.json",
     "ts/react-native.tsconfig.json",
-    "ts/storybook.tsconfig.json"
+    "web/vocs/index.ts",
+    "web/vite.config.d.ts",
+    "web/vite.config.mjs"
   ],
   "devDependencies": {
-    "vite": "^5.1.4"
+    "vite": "^5.1.4",
+    "vocs": "1.0.0-alpha.43"
   }
 }

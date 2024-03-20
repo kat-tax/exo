@@ -1,4 +1,4 @@
-import type {SocialItem} from 'vocs';
+/** @type {import('vocs').Socials} */
 
 export default [
   {
@@ -13,4 +13,4 @@ export default [
     icon: 'x',
     link: 'https://twitter.com/theultdev',
   },
-] as SocialItem[];
+]

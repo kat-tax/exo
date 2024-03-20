@@ -1,4 +1,4 @@
-import type {Config} from 'vocs';
+/** @type {import('vocs').Config} */
 
 export default {
   title: 'EXO',
@@ -6,4 +6,4 @@ export default {
   font: { 
     google: 'Inter',
   },
-} as Config;
+}

@@ -2,7 +2,7 @@ import React from 'react';
 import {themes} from '@storybook/theming';
 import {type Preview} from '@storybook/react';
 import uniDefault, {themes as uniThemes} from 'ui/theme';
-import {Story} from '../../common/components/Story';
+import {Story} from '../../common/blocks/Story';
 
 import 'client/src/styles';
 

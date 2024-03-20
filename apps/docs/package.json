@@ -14,7 +14,7 @@
     "react-dom": "latest",
     "react-native-web": "latest",
     "ui": "workspace:*",
-    "vocs": "latest"
+    "vocs": "1.0.0-alpha.43"
   },
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",

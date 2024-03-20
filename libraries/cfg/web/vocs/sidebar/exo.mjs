@@ -1,4 +1,4 @@
-import type {SidebarItem} from 'vocs';
+/** @type {import('vocs').SideBarItem[]} */
 
 export default [
   {
@@ -73,4 +73,4 @@ export default [
       },
     ],
   },*/
-] as SidebarItem[];
+]

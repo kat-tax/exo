@@ -4,7 +4,7 @@ const config: StorybookConfig = {
   stories: [
     {
       titlePrefix: 'References',
-      directory: '../../common/pages',
+      directory: '../../../../content/docs/style',
       files: '**/*.mdx',
     },
     {
@@ -19,7 +19,7 @@ const config: StorybookConfig = {
     },
   ],
   staticDirs: [
-    '../../common/assets',
+    '../../../../content/assets',
   ],
   addons: [
     '@storybook/addon-essentials',

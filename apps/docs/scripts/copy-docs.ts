@@ -2,12 +2,14 @@ import {copy} from 'fs-extra';
 import {readdir} from 'node:fs/promises';
 
 const paths = {
+  start: ['../../content/docs/start', './pages/start'],
+  assets: ['../../content/assets', './public'],
   components: ['../../libraries/ui/components', './pages/components'],
   primitives: ['../../libraries/exo/src/components', './pages/primitives'],
   hooks: ['../../libraries/exo/src/hooks', './pages/hooks'],
 };
 
-const copydocs = (files: string[], paths: string[]) => files
+const copymdx = (files: string[], paths: string[]) => files
   .flat(1)
   .filter(f => f.endsWith('.mdx'))
   .map(async path => {
@@ -23,8 +25,11 @@ const [components, primitives, hooks] = await Promise.all([
   readdir(paths.hooks[0], {recursive: true}),
 ]);
 
+
 await Promise.all([
-  copydocs(components, paths.components),
-  copydocs(primitives, paths.primitives),
-  copydocs(hooks, paths.hooks),
+  copy(paths.start[0], paths.start[1]),
+  copy(paths.assets[0], paths.assets[1]),
+  copymdx(components, paths.components),
+  copymdx(primitives, paths.primitives),
+  copymdx(hooks, paths.hooks),
 ].flat(1));

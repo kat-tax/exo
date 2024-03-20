@@ -1,4 +1,4 @@
-import type {TopNavItem} from 'vocs';
+/** @type {import('vocs').TopNavItem[]} */
 
 export default [
   {
@@ -18,4 +18,4 @@ export default [
       }, 
     ],
   },
-] as TopNavItem[];
+]

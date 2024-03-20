@@ -1,4 +1,4 @@
-import type {SidebarItem} from 'vocs';
+/** @type {import('vocs').SideBarItem[]} */
 
 export default [{
   text: 'Start',
@@ -18,4 +18,4 @@ export default [{
       link: '/start/manual',
     },
   ],
-}] as SidebarItem[];
+}]
