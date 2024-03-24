@@ -1,4 +1,4 @@
-import {copy} from 'fs-extra';
+import {copy, ensureDir} from 'fs-extra';
 import {readdir} from 'node:fs/promises';
 
 const paths = {
@@ -26,6 +26,7 @@ const [components, primitives, hooks] = await Promise.all([
 
 
 await Promise.all([
+  ensureDir(paths.docs[1]),
   copy(paths.docs[0], paths.docs[1]),
   copymdx(components, paths.components),
   copymdx(primitives, paths.primitives),

@@ -7,14 +7,12 @@
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "useDefineForClassFields": true,
     "skipLibCheck": true,
-
     "jsx": "react-jsx",
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,

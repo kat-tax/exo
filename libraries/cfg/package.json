@@ -3,15 +3,16 @@
   "version": "0.10.0",
   "private": true,
   "files": [
+    "ts/base/react-native.tsconfig.json",
     "ts/client.tsconfig.json",
     "ts/docs.tsconfig.json",
     "ts/lib-cfg.tsconfig.json",
     "ts/lib-exo.tsconfig.json",
     "ts/lib-ui.tsconfig.json",
-    "ts/react-native.tsconfig.json",
-    "web/vocs/index.ts",
-    "web/vite.config.d.ts",
-    "web/vite.config.mjs"
+    "web/vocs/index.d.ts",
+    "web/vocs/index.mjs",
+    "web/vite/index.d.ts",
+    "web/vite/index.mjs"
   ],
   "devDependencies": {
     "vite": "^5.1.4",

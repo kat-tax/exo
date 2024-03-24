@@ -1,6 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "extends": "./react-native.tsconfig.json",
+  "extends": "./base/react-native.tsconfig.json",
   "display": "Client",
   "compilerOptions": {
     "baseUrl": "../../../apps/client/src",

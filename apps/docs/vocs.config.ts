@@ -1,2 +1,1 @@
-import vocs from 'cfg/web/vocs';
-export default vocs;
+export {default} from 'cfg/web/vocs';

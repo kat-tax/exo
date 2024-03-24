@@ -3,7 +3,7 @@ import {defineConfig} from 'vite';
 import types from 'vite-plugin-dts';
 import paths from 'vite-tsconfig-paths';
 import react from '@vitejs/plugin-react';
-import vite from 'cfg/web/vite.config';
+import vite from 'cfg/web/vite';
 
 export default defineConfig({
   plugins: [

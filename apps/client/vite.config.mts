@@ -4,7 +4,7 @@ import {defineConfig} from 'vite';
 import million from 'million/compiler';
 import paths from 'vite-tsconfig-paths';
 import react from '@vitejs/plugin-react';
-import vite from 'cfg/web/vite.config';
+import vite from 'cfg/web/vite';
 
 export default defineConfig({
   plugins: [
