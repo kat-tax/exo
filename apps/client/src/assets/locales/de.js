@@ -1,0 +1,1 @@
+/*eslint-disable*/module.exports={messages:JSON.parse("{\"MXvRL0\":\"Add a task\",\"pvnfJD\":\"Dark\",\"ovBPCi\":\"Default\",\"OhcZLY\":\"Enjoy the night.\",\"3S3Kvd\":\"Good afternoon.\",\"r8k4eR\":\"Good evening.\",\"mO1k4g\":\"Good morning.\",\"i0qMbr\":\"Home\",\"vXIe7J\":\"Language\",\"1njn7W\":\"Light\",\"Tz0i8g\":\"Settings\",\"GtycJ/\":\"Tasks\",\"FEr96N\":\"Theme\"}")};

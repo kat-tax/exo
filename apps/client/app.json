@@ -1,0 +1,8 @@
+{
+  "name": "EXO",
+  "displayName": "EXO",
+  "svgAppIcon": {
+    "foregroundPath": "./src/assets/images/logo-foreground.svg",
+    "backgroundPath": "./src/assets/images/logo-background.svg"
+  }
+}

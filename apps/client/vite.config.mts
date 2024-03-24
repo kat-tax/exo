@@ -1,15 +1,21 @@
 /// <reference types="vite"/>
 
 import {defineConfig} from 'vite';
-import million from 'million/compiler';
+import {lingui} from '@lingui/vite-plugin';
+import react from '@vitejs/plugin-react-swc';
 import paths from 'vite-tsconfig-paths';
-import react from '@vitejs/plugin-react';
+import million from 'million/compiler';
 import vite from 'cfg/web/vite';
 
 export default defineConfig({
   plugins: [
+    lingui(),
     paths(),
-    react(),
+    react({
+      plugins: [
+        ['@lingui/swc-plugin', {}],
+      ],
+    }),
     million.vite({
       auto: true,
       telemetry: false,
