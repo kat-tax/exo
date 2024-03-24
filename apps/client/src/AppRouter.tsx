@@ -16,7 +16,6 @@ export function AppRouter() {
           <Route path="tasks" element={<ScreenTaskList/>}/>
           <Route path="tasks/:id" element={<ScreenTaskDetails/>}/>
           <Route path="settings" element={<ScreenSettings/>}/>
-          {/* #ult-feat <Route path="$path" element={<Screen$name/>}/>*/}
         </Route>
       </Routes>
     </Router>
