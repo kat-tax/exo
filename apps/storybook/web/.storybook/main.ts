@@ -19,7 +19,7 @@ const config: StorybookConfig = {
     },
   ],
   staticDirs: [
-    '../../common/assets',
+    '../../../../content/public',
   ],
   addons: [
     '@storybook/addon-essentials',

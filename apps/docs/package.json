@@ -3,11 +3,10 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "pnpm copy-docs && vocs dev -p 6106",
-    "build": "pnpm copy-docs && vocs build",
-    "preview": "pnpm copy-docs && vocs preview",
-    "postinstall": "pnpm copy-docs",
-    "copy-docs": "tsx scripts/copy-docs"
+    "dev": "tsx copy-docs && vocs dev -p 6106",
+    "build": "tsx copy-docs && vocs build",
+    "preview": "tsx copy-docs && vocs preview",
+    "postinstall": "tsx copy-docs"
   },
   "dependencies": {
     "react": "latest",
