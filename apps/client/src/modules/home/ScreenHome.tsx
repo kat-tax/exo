@@ -2,7 +2,8 @@ import {useState} from 'react';
 import {useLingui} from '@lingui/react';
 import {Slider} from 'react-exo/slider';
 import {Text} from 'react-native';
-import {Page} from './base/Page';
+import {Page} from 'common/components/Page';
+
 import {getGreeting} from './utils/getGreeting';
 
 export function ScreenHome() {

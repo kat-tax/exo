@@ -2,10 +2,10 @@ import {Router, Routes, Route} from 'react-exo/navigation';
 import {state} from 'common/store/history';
 
 import {AppLayout} from 'AppLayout';
-import {ScreenHome} from 'modules/core/ScreenHome';
-import {ScreenSettings} from 'modules/settings/ScreenSettings';
+import {ScreenHome} from 'modules/home/ScreenHome';
 import {ScreenTaskList} from 'modules/tasks/ScreenTaskList';
 import {ScreenTaskDetails} from 'modules/tasks/ScreenTaskDetails';
+import {ScreenSettings} from 'modules/settings/ScreenSettings';
 
 export function AppRouter() {
   return (

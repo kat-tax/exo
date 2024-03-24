@@ -1,7 +1,7 @@
 import {t} from '@lingui/macro';
 import {useLingui} from '@lingui/react';
 import {useLists} from 'modules/tasks/hooks/useLists';
-import {Page} from 'modules/core/base/Page';
+import {Page} from 'common/components/Page';
 import {Link} from 'react-exo/navigation';
 
 export function ScreenTaskList() {

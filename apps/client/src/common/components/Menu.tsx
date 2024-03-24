@@ -2,7 +2,7 @@ import {View} from 'react-native';
 import {Trans} from '@lingui/macro';
 import {SafeAreaView} from 'react-exo/safearea';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {MenuItem} from 'modules/core/base/MenuItem';
+import {MenuItem} from 'common/components/MenuItem';
 import {useLists} from 'modules/tasks/hooks/useLists';
 
 export function Menu() {
