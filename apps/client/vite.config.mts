@@ -2,9 +2,9 @@
 
 import {defineConfig} from 'vite';
 import {lingui} from '@lingui/vite-plugin';
-import react from '@vitejs/plugin-react-swc';
-import paths from 'vite-tsconfig-paths';
 import million from 'million/compiler';
+import paths from 'vite-tsconfig-paths';
+import react from '@vitejs/plugin-react-swc';
 import vite from 'cfg/web/vite';
 
 export default defineConfig({

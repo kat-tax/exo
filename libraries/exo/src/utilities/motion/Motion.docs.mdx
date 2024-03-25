@@ -1,0 +1,42 @@
+import {Motion} from 'react-exo/motion';
+import {Button} from 'vocs/components';
+
+# Motion Utility
+
+> A utility to declare animations to make it easy to transition between styles without needing to manage animations.
+
+<Motion.View
+  initial={{y: -50}}
+  animate={{x: value * 100, y: 0}}
+  transition={{type: 'spring'}}
+  whileHover={{scale: 1.2}}
+  whileTap={{y: 20}}
+/>
+
+```tsx twoslash
+import React from 'react';
+// ---cut---
+import {Motion} from 'react-exo/motion'; // [!code focus]
+
+export default () => (
+  <Motion.View // [!code focus]
+    initial={{y: -50}} // [!code focus]
+    animate={{x: value * 100, y: 0}} // [!code focus]
+    transition={{type: 'spring'}} // [!code focus]
+    whileHover={{scale: 1.2}} // [!code focus]
+    whileTap={{y: 20}} // [!code focus]
+  />
+);
+```
+
+<Button href="https://exo.fig.run/?path=/docs/utils-motion">Storybook</Button>
+
+## Platform Support
+
+| Platform | Technology | Functional | Notes |
+| -------- | ---------- | :--------: | ----- |
+| Web | [Legend Motion](https://legendapp.com/open-source/motion) | ✅ | - |
+| iOS | [Legend Motion](https://legendapp.com/open-source/motion) | ✅ | - |
+| MacOS | [Legend Motion](https://legendapp.com/open-source/motion) | ✅ | - |
+| Android | [Legend Motion](https://legendapp.com/open-source/motion) | ✅ | - |
+| Windows | [Legend Motion](https://legendapp.com/open-source/motion) | ✅ | - |

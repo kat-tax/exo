@@ -1,13 +1,13 @@
 import {useEffect} from 'react';
 import {I18nProvider} from '@lingui/react';
-import {BootSplash} from 'react-exo/device';
-import {GestureHandlerRootView} from 'react-exo/gesture';
 import {Appearance, StatusBar} from 'react-native';
+import {GestureHandlerRootView} from 'react-exo/gesture';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
-import {loadLocale, i18n} from 'common/i18n';
-import {isNative} from 'common/utils/platform';
 import {useScheme} from 'modules/settings/hooks/useScheme';
 import {useLocale} from 'modules/settings/hooks/useLocale';
+import {isNative} from 'common/utils/platform';
+import {loadLocale, i18n} from 'common/i18n';
+import device from 'react-exo/device';
 
 export interface AppProviderProps {
   children: React.ReactNode;
@@ -18,7 +18,7 @@ export function AppProvider(props: AppProviderProps) {
   const [scheme] = useScheme();
 
   useEffect(() => {loadLocale(locale)}, [locale]);
-  useEffect(() => {BootSplash.hide({fade: true})}, []);
+  useEffect(() => {device.hide({fade: true})}, []);
   useEffect(() => {
     if (isNative()) {
       Appearance.setColorScheme(scheme);

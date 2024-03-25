@@ -5,12 +5,12 @@ export type RiveComponent = (props: RiveProps) => JSX.Element;
 
 export interface RiveProps {
   url: string,
-  ref: any,
-  fit: Fit,
-  alignment: Alignment,
-  style?: ViewStyle,
+  ref?: any,
+  fit?: Fit,
   loop?: boolean,
+  style?: ViewStyle,
   autoplay?: boolean,
+  alignment?: Alignment,
   artboardName?: string | undefined,
   animationName?: string | undefined,
   stateMachineName?: string | undefined,

@@ -2,7 +2,6 @@ import {Router, Routes, Route} from 'react-exo/navigation';
 import {state} from 'common/store/history';
 
 import {AppLayout} from 'AppLayout';
-
 import {ScreenHome} from 'modules/home/ScreenHome';
 import {ScreenTaskList} from 'modules/tasks/ScreenTaskList';
 import {ScreenTaskDetails} from 'modules/tasks/ScreenTaskDetails';

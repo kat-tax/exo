@@ -23,16 +23,16 @@
   "devDependencies": {
     "@lingui/macro": "^4.7.1",
     "@storybook/react": "^7.6.17",
-    "@types/react": "^18.2.58",
+    "@types/react": "^18.2.69",
     "@types/react-native": "^0.73.0",
     "cfg": "workspace:*",
     "react": "18.2.0",
     "react-dom": "^18.2.0",
     "react-exo": "workspace:^",
-    "react-native": "0.73.4",
-    "react-native-svg": "^14.1.0",
-    "react-native-unistyles": "^2.3.0",
+    "react-native": "0.73.6",
+    "react-native-svg": "^15.1.0",
+    "react-native-unistyles": "^2.5.0",
     "react-native-web": "^0.19.10",
-    "typescript": "^5.3.3"
+    "typescript": "^5.4.3"
   }
 }

@@ -10,67 +10,68 @@ export default [
         items: [
           {
             text: 'Icon',
-            link: '/primitives/asset/icon',
+            link: '/primitives/assets/icon',
           },
           {
             text: 'Image',
-            link: '/primitives/asset/image',
+            link: '/primitives/assets/image',
           },
           {
             text: 'Video',
-            link: '/primitives/asset/video',
+            link: '/primitives/assets/video',
           },
           {
             text: 'Lottie',
-            link: '/primitives/asset/lottie',
+            link: '/primitives/assets/lottie',
           },
           {
             text: 'Rive',
-            link: '/primitives/asset/rive',
+            link: '/primitives/assets/rive',
           },
         ],
       },
       {
-        text: 'Interface',
+        text: 'Widgets',
         items: [
           {
             text: 'Checkbox',
-            link: '/primitives/interface/checkbox',
+            link: '/primitives/widgets/checkbox',
           },
           {
             text: 'Switch',
-            link: '/primitives/interface/switch',
+            link: '/primitives/widgets/switch',
           },
           {
             text: 'Radio',
-            link: '/primitives/interface/radio',
+            link: '/primitives/widgets/radio',
           },
           {
             text: 'Slider',
-            link: '/primitives/interface/slider',
+            link: '/primitives/widgets/slider',
           },
           {
             text: 'Progress',
-            link: '/primitives/interface/progress',
+            link: '/primitives/widgets/progress',
+          },
+        ],
+      },
+      {
+        text: 'Utilities',
+        items: [
+          {
+            text: 'Form',
+            link: '/primitives/utilities/form',
+          },
+          {
+            text: 'Gesture',
+            link: '/primitives/utilities/gesture',
+          },
+          {
+            text: 'Motion',
+            link: '/primitives/utilities/motion',
           },
         ],
       },
     ],
   },
-  /*{
-    text: 'Hooks',
-    collapsed: false,
-    items: [
-      {
-        text: 'Primitives',
-        collapsed: false,
-        items: [
-          {
-            text: 'useVariants',
-            link: '/primitives/hooks/Variants',
-          },
-        ],
-      },
-    ],
-  },*/
 ]

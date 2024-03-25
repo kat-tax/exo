@@ -14,7 +14,9 @@ export type * from './services/navigation';
 export type * from './services/storage';
 
 // Utilities
+export type * from './utilities/motion';
 export type * from './utilities/gesture';
+export type * from './utilities/motion';
 
 // Widgets
 export type * from './widgets/checkbox';

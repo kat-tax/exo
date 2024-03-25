@@ -1,2 +1,2 @@
-export {GestureHandlerRootView} from './GestureHandlerRootView';
-export type {GestureHandlerRootViewProps} from './GestureHandlerRootView.interface';
+export {GestureHandlerRootView} from './Gesture';
+export type {GestureHandlerRootViewProps} from './Gesture.interface';

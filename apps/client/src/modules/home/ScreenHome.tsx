@@ -3,7 +3,6 @@ import {useLingui} from '@lingui/react';
 import {Slider} from 'react-exo/slider';
 import {Text} from 'react-native';
 import {Page} from 'common/base/Page';
-
 import {getGreeting} from './utils/getGreeting';
 
 export function ScreenHome() {

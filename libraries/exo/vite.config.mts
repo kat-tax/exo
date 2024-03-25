@@ -32,7 +32,9 @@ export default defineConfig({
         'navigation': 'src/services/navigation',
         'storage': 'src/services/storage',
         /** Utilities */
+        'form': 'src/utilities/form',
         'gesture': 'src/utilities/gesture',
+        'motion': 'src/utilities/motion',
         /* Widgets */
         'calendar': 'src/widgets/calendar',
         'checkbox': 'src/widgets/checkbox',

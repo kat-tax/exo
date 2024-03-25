@@ -4,8 +4,7 @@ import {readdir} from 'node:fs/promises';
 const paths = {
   docs: ['../../content/docs', './pages'],
   components: ['../../libraries/ui/components', './pages/components'],
-  primitives: ['../../libraries/exo/src/components', './pages/primitives'],
-  hooks: ['../../libraries/exo/src/hooks', './pages/hooks'],
+  primitives: ['../../libraries/exo/src', './pages/primitives'],
 };
 
 const copymdx = (files: string[], paths: string[]) => files
@@ -18,10 +17,9 @@ const copymdx = (files: string[], paths: string[]) => files
     );
   });
 
-const [components, primitives, hooks] = await Promise.all([
+const [components, primitives] = await Promise.all([
   readdir(paths.components[0], {recursive: true}),
   readdir(paths.primitives[0], {recursive: true}),
-  readdir(paths.hooks[0], {recursive: true}),
 ]);
 
 
@@ -30,5 +28,4 @@ await Promise.all([
   copy(paths.docs[0], paths.docs[1]),
   copymdx(components, paths.components),
   copymdx(primitives, paths.primitives),
-  copymdx(hooks, paths.hooks),
 ].flat(1));
