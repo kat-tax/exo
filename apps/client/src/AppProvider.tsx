@@ -18,7 +18,7 @@ export function AppProvider(props: AppProviderProps) {
   const [scheme] = useScheme();
 
   useEffect(() => {loadLocale(locale)}, [locale]);
-  useEffect(() => {Device.hideBootScreen({fade: true})}, []);
+  useEffect(() => {Device.bootSplash.hide()}, []);
   useEffect(() => {
     if (isNative()) {
       Appearance.setColorScheme(scheme);

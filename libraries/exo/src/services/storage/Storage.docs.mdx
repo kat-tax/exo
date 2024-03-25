@@ -1,0 +1,38 @@
+import {Button} from 'vocs/components';
+
+# Storage Service
+
+> A fast key/value service that persists data to disk.
+
+```tsx twoslash
+// ---cut---
+// 1. Import the storage service // [!code focus]
+import {Storage} from 'react-exo/storage'; // [!code focus]
+
+// 2. Create a storage instance // [!code focus]
+const store = Storage.init('exo', 1); // [!code focus]
+
+// 3. Set, get, remove, or clear items // [!code focus]
+const added = await store.setItem('foo', 'bar'); // [!code focus]
+const value = await store.getItem('foo'); // [!code focus]
+const removed = await store.removeItem('foo'); // [!code focus]
+await store.clear(); // [!code focus]
+```
+
+<Button href="https://exo.fig.run/?path=/docs/service-storage">Storybook</Button>
+
+## Platform Support
+
+:::info
+For native support you must install [MMKV](https://rnmmkv.vercel.app)
+
+`npm i react-native-mmkv{:bash}`
+:::
+
+| Platform | Technology | Functional | Notes |
+| -------- | ---------- | :--------: | ----- |
+| Web | [IDB-keyval](https://github.com/jakearchibald/idb-keyval) | ✅ | - |
+| iOS | [MMKV](https://rnmmkv.vercel.app) | ✅ | - |
+| MacOS | [MMKV](https://rnmmkv.vercel.app) | ✅ | - |
+| Android | [MMKV](https://rnmmkv.vercel.app) | ✅ | - |
+| Windows | [MMKV](https://rnmmkv.vercel.app) | ✅ | - |

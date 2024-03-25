@@ -5,7 +5,7 @@ import settings from 'modules/settings/store';
 
 import type {ColorSchemeName} from 'react-native';
 
-export function useScheme(storedOnly?: boolean) {
+export function useScheme(storedOnly?: boolean): [ColorSchemeName, (scheme: ColorSchemeName) => void] {
   const scheme = useColorScheme();
   const stored = useSelector(getScheme);
   const dispatch = useDispatch();

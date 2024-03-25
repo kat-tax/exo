@@ -1,2 +1,1 @@
-import {Motion} from '@legendapp/motion';
-export {Motion};
+export {Motion} from './Motion.tsx';

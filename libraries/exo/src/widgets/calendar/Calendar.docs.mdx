@@ -1,0 +1,41 @@
+import {Calendar} from 'react-exo/calendar';
+import {Button} from 'vocs/components';
+
+# Calendar Component
+
+> A component that allows various selections of dates.
+
+<Calendar
+  value={new Date()}
+  onChange={console.log}
+  style={{width: 300}}
+  testID="0:0"
+/>
+
+```tsx twoslash
+import React from 'react';
+// ---cut---
+import {Calendar} from 'react-exo/calendar'; // [!code focus]
+
+export default () => (
+  <Calendar/> // [!code focus]
+);
+```
+
+<Button href="https://marceloprado.github.io/flash-calendar">Storybook</Button>
+
+## Platform Support
+
+:::info
+Before using, you must install [@shopify/flash-list](https://shopify.github.io/flash-list)
+
+`npm i @shopify/flash-list{:bash}`
+:::
+
+| Platform | Technology | Functional | Notes |
+| -------- | ---------- | :--------: | :---: |
+| Web | [@marceloterreiro/flash-calendar](https://marceloprado.github.io/flash-calendar) | ✅ | - |
+| iOS | [@marceloterreiro/flash-calendar](https://marceloprado.github.io/flash-calendar) | ✅ | - |
+| MacOS | [@marceloterreiro/flash-calendar](https://marceloprado.github.io/flash-calendar) | ✅ | - |
+| Android | [@marceloterreiro/flash-calendar](https://marceloprado.github.io/flash-calendar) | ✅ | - |
+| Windows | [@marceloterreiro/flash-calendar](https://marceloprado.github.io/flash-calendar) | ✅ | - |

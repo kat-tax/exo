@@ -19,29 +19,31 @@ export default defineConfig({
     lib: {
       formats: ['cjs', 'es'],
       entry: {
-        /* Assets */
+        // Entry
+        index: 'src/index.ts',
+        // Assets
         'icon': 'src/assets/icon',
         'image': 'src/assets/image',
         'lottie': 'src/assets/lottie',
         'rive': 'src/assets/rive',
         'video': 'src/assets/video',
-        /* Hooks */
+        // Hooks
         'variants': 'src/hooks/useVariants',
-        /** Services */
+        // Services
         'device': 'src/services/device',
         'navigation': 'src/services/navigation',
         'storage': 'src/services/storage',
-        /** Utilities */
+        // Interactions
         'form': 'src/utilities/form',
-        'gesture': 'src/utilities/gesture',
         'motion': 'src/utilities/motion',
-        /* Widgets */
-        'calendar': 'src/widgets/calendar',
+        'gesture': 'src/utilities/gesture',
+        // Widgets
         'checkbox': 'src/widgets/checkbox',
-        'progress': 'src/widgets/progress',
+        'switch': 'src/widgets/switch',
         'radio': 'src/widgets/radio',
         'slider': 'src/widgets/slider',
-        'switch': 'src/widgets/switch',
+        'progress': 'src/widgets/progress',
+        'calendar': 'src/widgets/calendar',
       }
     },
     rollupOptions: {
@@ -54,16 +56,23 @@ export default defineConfig({
         // : `[name].[ext]`
       },
       external: [
+        // React
         'react',
         'react-dom',
         'react-native',
         'react-native-web',
         'react/jsx-runtime',
+        // 3rd party
+        '@marceloterreiro/flash-calendar',
+        '@react-native-community/viewpager',
+        '@react-native-community/checkbox',
+        '@react-native-community/slider',
+
       ],
     },
     cssMinify: 'lightningcss',
-    sourcemap: true,
     cssCodeSplit: true,
+    sourcemap: true,
     emptyOutDir: false,
   },
   ...vite,

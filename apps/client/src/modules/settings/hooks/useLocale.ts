@@ -6,7 +6,7 @@ import {Device} from 'react-exo/device';
 
 import type {Locales} from 'common/i18n/types';
 
-export function useLocale(storedOnly?: boolean) {
+export function useLocale(storedOnly?: boolean): [Locales, (locale: Locales) => void] {
   const locale = useRef(Device.getLocale(true) as Locales);
   const stored = useSelector(getLanguage);
   const dispatch = useDispatch();
@@ -15,6 +15,6 @@ export function useLocale(storedOnly?: boolean) {
     dispatch(settings.actions.setLocale(newLocale));
 
   return (stored || storedOnly)
-    ? [stored, setLocale]
-    : [locale.current || 'en', setLocale];
+    ? [stored || 'en', setLocale]
+    : [locale?.current || 'en', setLocale];
 }

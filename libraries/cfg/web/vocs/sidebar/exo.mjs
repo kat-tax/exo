@@ -53,6 +53,10 @@ export default [
             text: 'Progress',
             link: '/primitives/widgets/progress',
           },
+          {
+            text: 'Calendar',
+            link: '/primitives/widgets/calendar',
+          },
         ],
       },
       {

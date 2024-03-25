@@ -1,0 +1,47 @@
+import {Button} from 'vocs/components';
+
+# Navigation Service
+
+> A service to manage simple, cross-platform navigation in your app
+
+```tsx twoslash
+// @noErrors
+import React from 'react';
+import {AppLayout} from 'AppLayout';
+import {ScreenHome} from 'modules/home/ScreenHome';
+import {ScreenTaskList} from 'modules/tasks/ScreenTaskList';
+import {ScreenTaskDetails} from 'modules/tasks/ScreenTaskDetails';
+import {ScreenSettings} from 'modules/settings/ScreenSettings';
+// ---cut---
+// 1. Import the navigation service // [!code focus]
+import {Router, Routes, Route} from 'react-exo/navigation'; // [!code focus]
+
+// 2. Import the History API // [!code focus]
+import state from 'history'; // [!code focus]
+
+// 3. Create your Router component // [!code focus]
+export default () => (
+  <Router history={state}> // [!code focus]
+    <Routes> // [!code focus]
+      <Route path="/" element={<AppLayout/>}> // [!code focus]
+        <Route index element={<ScreenHome/>}/> // [!code focus]
+        <Route path="tasks" element={<ScreenTaskList/>}/> // [!code focus]
+        <Route path="tasks/:id" element={<ScreenTaskDetails/>}/> // [!code focus]
+        <Route path="settings" element={<ScreenSettings/>}/> // [!code focus]
+      </Route> // [!code focus]
+    </Routes> // [!code focus]
+  </Router> // [!code focus]
+);
+```
+
+<Button href="https://exo.fig.run/?path=/docs/service-navigation">Storybook</Button>
+
+## Platform Support
+
+| Platform | Technology | Functional | Notes |
+| -------- | ---------- | :--------: | ----- |
+| Web | [React Router](https://reactrouter.com) | ✅ | - |
+| iOS | [React Router](https://reactrouter.com) | ✅ | - |
+| MacOS | [React Router](https://reactrouter.com) | ✅ | - |
+| Android | [React Router](https://reactrouter.com) | ✅ | - |
+| Windows | [React Router](https://reactrouter.com) | ✅ | - |

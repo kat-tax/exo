@@ -6,12 +6,30 @@ import {Button} from 'vocs/components';
 > A service to manage and query device instruments
 
 ```ts twoslash
+// @noErrors
 import React from 'react';
 // ---cut---
+// 1. Import the device service // [!code focus]
 import {Device} from 'react-exo/device'; // [!code focus]
 
-Device // [!code focus]
-// ^|
+// 2. Hide the boot splash screen // [!code focus]
+await Device.bootSplash.hide(); // [!code focus]
+
+// 3. Share EXO with a friend :) // [!code focus]
+Device.share('https://exo.ult.dev', 'This is awesome!'); // [!code focus]
+
+// 4. Query device states // [!code focus]
+const loading = await Device.bootSplash.isVisible(); // [!code focus]
+const online = await Device.isOnline(); // [!code focus]
+const locale = await Device.getLocale(); // [!code focus]
+
+// 5. Or do, whatever you want... // [!code focus]
+Device. // [!code focus]
+    // ^|
+
+
+
+
 ```
 
 <Button href="https://exo.fig.run/?path=/docs/primitives-device">Storybook</Button>
