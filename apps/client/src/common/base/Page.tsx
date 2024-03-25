@@ -1,6 +1,5 @@
 import {View, Text} from 'react-native';
-import {SafeAreaView} from 'react-exo/safearea';
-
+import {SafeAreaView} from 'react-native-safe-area-context';
 import type {ReactNode} from 'react';
 
 export interface PageProps {

@@ -44,6 +44,9 @@ importers:
       react-native:
         specifier: ^0.73.6
         version: 0.73.6(@babel/core@7.23.9)(@babel/preset-env@7.23.6)(react@18.2.0)
+      react-native-safe-area-context:
+        specifier: ^4.9.0
+        version: 4.9.0(react-native@0.73.6)(react@18.2.0)
       react-native-svg:
         specifier: ^15.1.0
         version: 15.1.0(react-native@0.73.6)(react@18.2.0)
@@ -321,6 +324,15 @@ importers:
       '@vidstack/react':
         specifier: ^1.10.6
         version: 1.10.9(@types/react@18.2.69)(react@18.2.0)
+      history:
+        specifier: ^5.3.0
+        version: 5.3.0
+      idb-keyval:
+        specifier: ^6.2.1
+        version: 6.2.1
+      react-router:
+        specifier: ^6.18.0
+        version: 6.21.3(react@18.2.0)
     devDependencies:
       '@candlefinance/faster-image':
         specifier: ^1.3.4
@@ -331,6 +343,9 @@ importers:
       '@react-native-community/checkbox':
         specifier: ^0.5.17
         version: 0.5.17(react-native-windows@0.73.11)(react-native@0.73.6)(react@18.2.0)
+      '@react-native-community/netinfo':
+        specifier: ^11.3.1
+        version: 11.3.1(react-native@0.73.6)
       '@react-native-community/slider':
         specifier: ^4.5.0
         version: 4.5.0
@@ -5770,6 +5785,14 @@ packages:
       - encoding
       - supports-color
       - utf-8-validate
+
+  /@react-native-community/netinfo@11.3.1(react-native@0.73.6):
+    resolution: {integrity: sha512-UBnJxyV0b7i9Moa97Av+HKho1ByzX0DtbJXzUQS5E3xhQs6P2D/Os0iw3ouy7joY1TVd6uIhplPbr7l1SJNaNQ==}
+    peerDependencies:
+      react-native: '>=0.59'
+    dependencies:
+      react-native: 0.73.6(@babel/core@7.23.9)(@babel/preset-env@7.23.6)(react@18.2.0)
+    dev: true
 
   /@react-native-community/slider@4.5.0:
     resolution: {integrity: sha512-pyUvNTvu5IfCI5abzqRfO/dd3A009RC66RXZE6t0gyOwI/j0QDlq9VZRv3rjkpuIvNTnsYj+m5BHlh0DkSYUyA==}
@@ -13856,7 +13879,6 @@ packages:
     dependencies:
       react: 18.2.0
       react-native: 0.73.6(@babel/core@7.23.9)(@babel/preset-env@7.23.6)(react@18.2.0)
-    dev: true
 
   /react-native-screens@3.29.0(react-native@0.73.6)(react@18.2.0):
     resolution: {integrity: sha512-yB1GoAMamFAcYf4ku94uBPn0/ani9QG7NdI98beJ5cet2YFESYYzuEIuU+kt+CNRcO8qqKeugxlfgAa3HyTqlg==}

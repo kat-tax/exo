@@ -1,0 +1,38 @@
+import {GestureHandlerRootView} from 'react-exo/gesture';
+import {Button} from 'vocs/components';
+
+# Gesture Handler
+
+> The Gesture Handler Root View is a component that wraps your application's root view to enable gesture handling.
+
+```tsx
+
+```tsx twoslash
+import React from 'react';
+// ---cut---
+import {GestureHandlerRootView} from 'react-exo/gesture'; // [!code focus]
+
+export default () => (
+  <GestureHandlerRootView>
+    {/* Your application's root view */}
+  </GestureHandlerRootView>
+);
+```
+
+<Button href="https://exo.fig.run/?path=/docs/utils-gestures">Storybook</Button>
+
+## Platform Support
+
+:::info
+For native support you must install [RNGH](https://docs.swmansion.com/react-native-gesture-handler)
+
+`npm i react-native-gesture-handler{:bash}`
+:::
+
+| Platform | Technology | Functional | Notes |
+| -------- | ---------- | :--------: | ----- |
+| Web | [ N/A ] | ❌ | No-op on web for performance reasons |
+| iOS | [RNGH](https://docs.swmansion.com/react-native-gesture-handler) | ✅ | - |
+| MacOS | [RNGH](https://docs.swmansion.com/react-native-gesture-handler) | ✅ | - |
+| Android | [RNGH](https://docs.swmansion.com/react-native-gesture-handler) | ✅ | - |
+| Windows | [RNGH](https://docs.swmansion.com/react-native-gesture-handler) | ✅ | - |

@@ -1,7 +1,9 @@
 import {useCallback} from 'react';
-import {useColorScheme, GestureResponderEvent, Pressable, PressableProps} from 'react-native';
+import {useColorScheme, Pressable} from 'react-native';
 import {useLinkPressHandler} from '../hooks/useLinkPressHandler';
+
 import type {To} from 'react-router';
+import type {PressableProps, GestureResponderEvent} from 'react-native';
 
 export interface LinkProps extends PressableProps {
   to: To;

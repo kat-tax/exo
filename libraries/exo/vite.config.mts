@@ -19,21 +19,27 @@ export default defineConfig({
     lib: {
       formats: ['cjs', 'es'],
       entry: {
-        /* Utilities */
-        'variants': 'src/hooks/useVariants',
         /* Assets */
-        'icon': 'src/components/asset/icon',
-        'image': 'src/components/asset/image',
-        'video': 'src/components/asset/video',
-        'lottie': 'src/components/asset/lottie',
-        'rive': 'src/components/asset/rive',
-        /* Interface */
-        'checkbox': 'src/components/interface/checkbox',
-        'switch': 'src/components/interface/switch',
-        'radio': 'src/components/interface/radio',
-        'slider': 'src/components/interface/slider',
-        'progress': 'src/components/interface/progress',
-        'calendar': 'src/components/interface/calendar',
+        'icon': 'src/assets/icon',
+        'image': 'src/assets/image',
+        'lottie': 'src/assets/lottie',
+        'rive': 'src/assets/rive',
+        'video': 'src/assets/video',
+        /* Hooks */
+        'variants': 'src/hooks/useVariants',
+        /** Services */
+        'device': 'src/services/device',
+        'navigation': 'src/services/navigation',
+        'storage': 'src/services/storage',
+        /** Utilities */
+        'gesture': 'src/utilities/gesture',
+        /* Widgets */
+        'calendar': 'src/widgets/calendar',
+        'checkbox': 'src/widgets/checkbox',
+        'progress': 'src/widgets/progress',
+        'radio': 'src/widgets/radio',
+        'slider': 'src/widgets/slider',
+        'switch': 'src/widgets/switch',
       }
     },
     rollupOptions: {

@@ -1,5 +1,5 @@
 import {useMemo} from 'react';
-import {titleCase} from 'utils/string';
+import {titleCase} from '_lib/string';
 
 import type {PressableStateCallbackType} from 'react-native';
 

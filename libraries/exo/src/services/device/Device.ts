@@ -23,4 +23,14 @@ export class Device implements IDevice {
       window.removeEventListener('offline', handler);
     };
   }
+
+  bootSplash = {
+    hide: async () => {},
+    isVisible: async () => false,
+    useHideAnimation: () => ({
+      logo: {},
+      brand: {},
+      container: {},
+    }),
+  }
 }

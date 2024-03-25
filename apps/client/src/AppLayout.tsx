@@ -1,9 +1,9 @@
 import {View} from 'react-native';
 import {useCallback} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {SafeAreaView} from 'react-exo/safearea';
+import {SafeAreaView} from 'react-native-safe-area-context';
 import {Outlet} from 'react-exo/navigation';
-import {Menu} from 'common/components/Menu';
+import {Menu} from 'common/base/Menu';
 
 export const APP_MENU_WIDTH = 200;
 

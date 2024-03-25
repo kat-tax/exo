@@ -8,6 +8,22 @@
     "postinstall": "vite build"
   },
   "exports": {
+    "./device": {
+      "import": "./device.js",
+      "require": "./device.cjs"
+    },
+    "./navigation": {
+      "import": "./navigation.js",
+      "require": "./navigation.cjs"
+    },
+    "./storage": {
+      "import": "./storage.js",
+      "require": "./storage.cjs"
+    },
+    "./gesture": {
+      "import": "./gesture.js",
+      "require": "./gesture.cjs"
+    },
     "./variants": {
       "import": "./variants.js",
       "require": "./variants.cjs"
@@ -72,23 +88,29 @@
     "@radix-ui/react-switch": "^1.0.3",
     "@rive-app/react-canvas": "^4.8.3",
     "@shopify/flash-list": "^1.6.3",
-    "@vidstack/react": "^1.10.6"
+    "@vidstack/react": "^1.10.6",
+    "history": "^5.3.0",
+    "idb-keyval": "^6.2.1",
+    "react-router": "^6.18.0"
   },
   "devDependencies": {
     "@candlefinance/faster-image": "^1.3.4",
     "@marceloterreiro/flash-calendar": "^0.0.8",
     "@react-native-community/checkbox": "^0.5.17",
+    "@react-native-community/netinfo": "^11.3.1",
     "@react-native-community/slider": "^4.5.0",
     "@storybook/react": "^7.6.17",
     "@tsconfig/react-native": "^3.0.4",
     "@types/jest": "^29.5.12",
+    "@types/react": "^18.2.69",
     "@types/react-dom": "^18.2.22",
     "@types/react-native-video": "^5.0.20",
-    "@types/react": "^18.2.69",
     "@vitejs/plugin-react": "^4.2.1",
     "cfg": "workspace:^",
     "lightningcss": "^1.24.1",
+    "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-native": "^0.73.6",
     "react-native-bootsplash": "^5.4.1",
     "react-native-gesture-handler": "^2.15.0",
     "react-native-get-random-values": "^1.11.0",
@@ -107,20 +129,19 @@
     "react-native-unistyles": "^2.5.0",
     "react-native-url-polyfill": "^2.0.0",
     "react-native-video": "5.2.1",
-    "react-native-web-linear-gradient": "^1.1.2",
     "react-native-web": "^0.19.10",
+    "react-native-web-linear-gradient": "^1.1.2",
     "react-native-windows": "^0.73.11",
-    "react-native": "^0.73.6",
-    "react": "^18.2.0",
     "rive-react-native": "^6.2.3",
+    "vite": "^5.2.6",
     "vite-plugin-dts": "^3.7.3",
-    "vite-tsconfig-paths": "^4.3.2",
-    "vite": "^5.2.6"
+    "vite-tsconfig-paths": "^4.3.2"
   },
   "peerDependencies": {
     "@candlefinance/faster-image": ">=1",
     "@marceloterreiro/flash-calendar": ">=0",
     "@react-native-community/checkbox": ">=0",
+    "@react-native-community/netinfo": ">=11",
     "@react-native-community/slider": ">=4",
     "react": ">=18",
     "react-dom": ">=18",
@@ -128,8 +149,8 @@
     "react-native-bootsplash": ">=5",
     "react-native-gesture-handler": ">=2",
     "react-native-get-random-values": ">=1",
-    "react-native-linear-gradient": ">=2",
     "react-native-iconify": ">=1",
+    "react-native-linear-gradient": ">=2",
     "react-native-mmkv": ">=2",
     "react-native-reanimated": ">=",
     "react-native-safe-area-context": ">=4",

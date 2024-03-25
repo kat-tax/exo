@@ -1,5 +1,7 @@
 import {Share, Platform, NativeModules} from 'react-native';
+import BootSplash from 'react-native-bootsplash';
 import NetInfo from '@react-native-community/netinfo';
+
 import type {IDevice} from './Device.interface';
 
 export class Device implements IDevice {
@@ -31,5 +33,7 @@ export class Device implements IDevice {
       update(!!(e.isConnected && e.isInternetReachable))
     );
   }
+
+  bootSplash = BootSplash;
 }
 

@@ -1,6 +1,6 @@
 import {View} from 'react-native';
-import {fillDisplayRow} from 'utils/styles';
-import {colorWithOpacity} from 'utils/colors';
+import {fillDisplayRow} from '_lib/styles';
+import {colorWithOpacity} from '_lib/colors';
 import * as S from '@radix-ui/react-slider';
 
 import type {SliderComponent, SliderProps} from './Slider.interface';

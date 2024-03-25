@@ -3,10 +3,10 @@ import 'react-native-get-random-values';
 import 'react-native-gesture-handler';
 import 'common/utils/styles';
 
-import config from 'react-native-ultimate-config';
-import {Navigation} from 'react-native-navigation';
-import {AppRegistry} from 'react-native';
 import {App} from 'App';
+import {AppRegistry} from 'react-native';
+import {Navigation} from 'react-native-navigation';
+import config from 'react-native-ultimate-config';
 
 AppRegistry.registerComponent(config.APP_NAME, () => App);
 Navigation.registerComponent(config.APP_PACKAGE, () => App);

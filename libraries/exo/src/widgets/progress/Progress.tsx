@@ -1,5 +1,5 @@
 import {StyleSheet, View} from 'react-native';
-import {fillAbsolute} from 'utils/styles';
+import {fillAbsolute} from '_lib/styles';
 import * as P from '@radix-ui/react-progress';
 
 import type {ProgressComponent, ProgressProps} from './Progress.interface';

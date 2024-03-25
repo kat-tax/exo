@@ -2,7 +2,7 @@
   "name": "EXO",
   "displayName": "EXO",
   "svgAppIcon": {
-    "foregroundPath": "./src/assets/images/logo-foreground.svg",
-    "backgroundPath": "./src/assets/images/logo-background.svg"
+    "foregroundPath": "./src/assets/svgs/logo-foreground.svg",
+    "backgroundPath": "./src/assets/svgs/logo-background.svg"
   }
 }

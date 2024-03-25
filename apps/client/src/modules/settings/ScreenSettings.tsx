@@ -5,7 +5,7 @@ import {useLingui} from '@lingui/react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useLocale} from 'modules/settings/hooks/useLocale';
 import {useScheme} from 'modules/settings/hooks/useScheme';
-import {Page} from 'common/components/Page';
+import {Page} from 'common/base/Page';
 
 export function ScreenSettings() {
   useLingui();
