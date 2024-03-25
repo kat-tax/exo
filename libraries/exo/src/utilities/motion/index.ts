@@ -1,1 +1,2 @@
-export * from './Motion';
+import {Motion} from '@legendapp/motion';
+export {Motion};

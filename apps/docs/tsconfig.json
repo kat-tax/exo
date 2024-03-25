@@ -1,4 +1,6 @@
 {
   "extends": "cfg/ts/docs.tsconfig.json",
-  "include": ["**/*.ts", "**/*.tsx"]
+  "compilerOptions": {
+    "baseUrl": "."
+  }
 }

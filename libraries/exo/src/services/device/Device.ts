@@ -1,6 +1,6 @@
 import type {IDevice} from './Device.interface';
 
-export class Device implements IDevice {
+export class DeviceImpl implements IDevice {
   getLocale(short?: boolean): string {
     const locale = navigator.language;
     return short ? locale.split('-').shift() || locale : locale;

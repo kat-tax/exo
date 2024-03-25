@@ -1,11 +1,11 @@
 import {useState, useEffect} from 'react';
-import device from 'react-exo/device';
+import {Device} from 'react-exo/device';
 
 export function useOnline() {
   const [isOnline, setOnline] = useState(false);
   useEffect(() => {
-    device.isOnline().then(setOnline);
-    return device.suscribeOnline(setOnline);
+    Device.isOnline().then(setOnline);
+    return Device.suscribeOnline(setOnline);
   }, []);
   return isOnline;
 }

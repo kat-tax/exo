@@ -1,8 +1,8 @@
 import {defineConfig} from 'vite';
-
-import types from 'vite-plugin-dts';
-import paths from 'vite-tsconfig-paths';
+import plugins from './plugins';
 import react from '@vitejs/plugin-react';
+import paths from 'vite-tsconfig-paths';
+import types from 'vite-plugin-dts';
 import vite from 'cfg/web/vite';
 
 export default defineConfig({
@@ -45,12 +45,13 @@ export default defineConfig({
       }
     },
     rollupOptions: {
+      plugins,
       output: {
         dir: '.',
         chunkFileNames: 'chunks/[format]/[name]_[hash].js',
-        assetFileNames: (asset) => (asset.name === 'index.css')
-          ? 'video.css'
-          : `[name].[ext]`
+        //assetFileNames: (asset) => (asset.name === 'index.css')
+        // ? 'video.css'
+        // : `[name].[ext]`
       },
       external: [
         'react',
@@ -61,9 +62,9 @@ export default defineConfig({
       ],
     },
     cssMinify: 'lightningcss',
-    emptyOutDir: false,
-    cssCodeSplit: true,
     sourcemap: true,
+    cssCodeSplit: true,
+    emptyOutDir: false,
   },
   ...vite,
 });

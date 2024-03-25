@@ -4,7 +4,7 @@ import NetInfo from '@react-native-community/netinfo';
 
 import type {IDevice} from './Device.interface';
 
-export class Device implements IDevice {
+export class DeviceImpl implements IDevice {
   getLocale(short?: boolean) {
     const locale: string = Platform.OS === 'ios'
       ? NativeModules.SettingsManager.settings.AppleLocale

@@ -15,7 +15,7 @@
     "web/vite/index.mjs"
   ],
   "devDependencies": {
-    "vite": "^5.1.4",
-    "vocs": "1.0.0-alpha.43"
+    "vite": "latest",
+    "vocs": "latest"
   }
 }

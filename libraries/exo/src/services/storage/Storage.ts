@@ -1,7 +1,7 @@
 import {createStore, get, set, del, clear} from 'idb-keyval';
 import type {IStorage} from './Storage.interface';
 
-export class Storage implements IStorage {
+export class StorageImpl implements IStorage {
   init(id: string, version: number) {
     const db = createStore(id, `v${version}`);
     return {

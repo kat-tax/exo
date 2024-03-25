@@ -11,19 +11,20 @@
   "dependencies": {
     "react": "latest",
     "react-dom": "latest",
+    "react-exo": "workspace:*",
     "react-native-web": "latest",
     "ui": "workspace:*",
-    "vocs": "1.0.0-alpha.43"
+    "vocs": "latest"
   },
   "devDependencies": {
-    "@types/fs-extra": "^11.0.4",
+    "@types/fs-extra": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
     "@vitejs/plugin-react": "latest",
+    "@vitejs/plugin-react-swc": "latest",
     "cfg": "workspace:*",
     "client": "workspace:*",
     "fs-extra": "latest",
-    "react-exo": "workspace:*",
     "react-native": "latest",
     "tsx": "latest",
     "typescript": "latest",

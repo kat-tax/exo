@@ -1,3 +1,6 @@
 {
-  "extends": "cfg/ts/client.tsconfig.json"
+  "extends": "cfg/ts/client.tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": "./src",
+  },
 }

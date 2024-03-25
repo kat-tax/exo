@@ -7,7 +7,7 @@ import {useScheme} from 'modules/settings/hooks/useScheme';
 import {useLocale} from 'modules/settings/hooks/useLocale';
 import {isNative} from 'common/utils/platform';
 import {loadLocale, i18n} from 'common/i18n';
-import device from 'react-exo/device';
+import {Device} from 'react-exo/device';
 
 export interface AppProviderProps {
   children: React.ReactNode;
@@ -18,7 +18,7 @@ export function AppProvider(props: AppProviderProps) {
   const [scheme] = useScheme();
 
   useEffect(() => {loadLocale(locale)}, [locale]);
-  useEffect(() => {device.hide({fade: true})}, []);
+  useEffect(() => {Device.hideBootScreen({fade: true})}, []);
   useEffect(() => {
     if (isNative()) {
       Appearance.setColorScheme(scheme);

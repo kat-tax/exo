@@ -56,6 +56,23 @@ export default [
         ],
       },
       {
+        text: 'Services',
+        items: [
+          {
+            text: 'Device',
+            link: '/primitives/services/device',
+          },
+          {
+            text: 'Navigation',
+            link: '/primitives/services/navigation',
+          },
+          {
+            text: 'Storage',
+            link: '/primitives/services/storage',
+          },
+        ],
+      },
+      {
         text: 'Utilities',
         items: [
           {

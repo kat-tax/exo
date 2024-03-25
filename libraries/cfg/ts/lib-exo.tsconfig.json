@@ -1,8 +1,5 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "extends": "./base/react-native.tsconfig.json",
-  "display": "EXO",
-  "compilerOptions": {
-    "baseUrl": "../../exo/src",
-  },
+  "display": "EXO"
 }

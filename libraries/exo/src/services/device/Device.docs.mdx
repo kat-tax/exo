@@ -1,40 +1,20 @@
-import 'react-exo/video.css';
-import {Video} from 'react-exo/video';
+import {Device} from 'react-exo/device';
 import {Button} from 'vocs/components';
 
-# Video Component
+# Device Service
 
-> A component that enables video playblack.
+> A service to manage and query device instruments
 
-<Video
-  source={{
-    uri: 'https://get.ult.dev/samples/bunny.mp4',
-  }}
-  style={{
-    width: 685,
-    height: 386,
-  }}
-/>
-
-```tsx twoslash
+```ts twoslash
 import React from 'react';
 // ---cut---
-import {Video} from 'react-exo/video'; // [!code focus]
+import {Device} from 'react-exo/device'; // [!code focus]
 
-export default () => (
-  <Video // [!code focus]
-    source={{ // [!code focus]
-      uri: 'https://get.ult.dev/samples/bunny.mp4', // [!code focus]
-    }} // [!code focus]
-    style={{ // [!code focus]
-      width: 685, // [!code focus]
-      height: 386, // [!code focus]
-    }} // [!code focus]
-  /> // [!code focus]
-);
+Device // [!code focus]
+// ^|
 ```
 
-<Button href="https://exo.fig.run/?path=/docs/primitives-video">Storybook</Button>
+<Button href="https://exo.fig.run/?path=/docs/primitives-device">Storybook</Button>
 
 ## Platform Support
 

@@ -1,2 +1,2 @@
-import {Device} from './Device';
-export default new Device();
+import {DeviceImpl} from './Device';
+export const Device = new DeviceImpl();

@@ -2,6 +2,7 @@
 
 import {defineConfig} from 'vocs';
 import vite from '../vite/index.mjs';
+
 import general from './brand/general.mjs';
 import socials from './brand/socials.mjs';
 import topNav from './brand/topNav.mjs';

@@ -1,4 +1,3 @@
-import 'react-exo/video.css';
 import 'react-exo/checkbox.css';
 import 'react-exo/switch.css';
 import 'react-exo/radio.css';

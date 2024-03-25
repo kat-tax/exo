@@ -1,2 +1,4 @@
-import {Storage} from './Storage';
-export default new Storage();
+import {StorageImpl} from './Storage';
+export const Storage = new StorageImpl();
+
+

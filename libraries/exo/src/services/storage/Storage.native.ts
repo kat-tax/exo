@@ -1,7 +1,7 @@
 import {MMKV} from 'react-native-mmkv';
 import type {IStorage} from './Storage.interface';
 
-export class Storage implements IStorage {
+export class StorageImpl implements IStorage {
   init(id: string, version: number) {
     const db = new MMKV({id, path: `v${version}`});
     return {
