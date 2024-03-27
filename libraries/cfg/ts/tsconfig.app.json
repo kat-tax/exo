@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "./tsconfig.base.json",
+  "display": "App",
+  "compilerOptions": {
+    "baseUrl": "../../../apps/client/src",
+    "jsx": "react-native",
+    "types": ["react-native"],
+    "lib": ["ESNext", "DOM"],
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": false,
+    "allowImportingTsExtensions": true,
+    "useDefineForClassFields": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "allowJs": true,
+    "noEmit": true,
+    "strict": true,
+  },
+  "exclude": [
+    "node_modules",
+    "vite.config.mts",
+    "babel.config.js",
+    "metro.config.js",
+    "lingui.config.js"
+  ]
+}

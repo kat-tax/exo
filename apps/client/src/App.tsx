@@ -1,6 +1,6 @@
-import {AppRouter} from 'AppRouter';
+import {StoreProvider} from 'store/Provider';
 import {AppProvider} from 'AppProvider';
-import {StoreProvider} from 'common/store/Provider';
+import {AppRouter} from 'AppRouter';
 
 export function App() {
   return (

@@ -1,5 +1,5 @@
 export * from 'react-router';
-export * from './utils/history';
+export * as history from './utils/history';
 
 export {Link} from './components/Link';
 export {Router} from './components/Router';

@@ -4,7 +4,9 @@ import NetInfo from '@react-native-community/netinfo';
 
 import type {IDevice} from './Device.interface';
 
-export class DeviceImpl implements IDevice {
+export class DeviceService implements IDevice {
+  BootSplash = BootSplash;
+
   getLocale(short?: boolean) {
     const locale: string = Platform.OS === 'ios'
       ? NativeModules.SettingsManager.settings.AppleLocale
@@ -33,7 +35,5 @@ export class DeviceImpl implements IDevice {
       update(!!(e.isConnected && e.isInternetReachable))
     );
   }
-
-  bootSplash = BootSplash;
 }
 

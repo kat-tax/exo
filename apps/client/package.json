@@ -7,23 +7,24 @@
     "build": "vite build"
   },
   "dependencies": {
-    "@lingui/conf": "^4.7.2",
     "@lingui/core": "^4.7.2",
     "@lingui/macro": "^4.7.2",
     "@lingui/react": "^4.7.2",
+    "@reduxjs/toolkit": "^2.2.2",
     "react": "18.2.0",
     "react-dom": "^18.2.0",
     "react-exo": "workspace:*",
     "react-native": "^0.73.6",
-    "react-native-safe-area-context": "^4.9.0",
     "react-native-svg": "^15.1.0",
-    "react-native-ultimate-config": "^6.0.1",
     "react-native-unistyles": "^2.5.0",
     "react-native-web": "^0.19.10",
+    "react-redux": "^9.1.0",
+    "redux-persist": "^6.0.0",
     "ui": "workspace:*"
   },
   "devDependencies": {
     "@lingui/cli": "^4.7.2",
+    "@lingui/conf": "^4.7.2",
     "@lingui/vite-plugin": "^4.7.2",
     "@types/react": "^18.2.71",
     "@types/react-dom": "^18.2.22",

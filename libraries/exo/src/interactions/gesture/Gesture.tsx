@@ -1,1 +1,2 @@
-export {View as GestureHandlerRootView} from 'react-native';
+export {View as GestureProvider} from 'react-native';
+export default () => {};

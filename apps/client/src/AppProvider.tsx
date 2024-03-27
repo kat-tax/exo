@@ -1,41 +1,33 @@
 import {useEffect} from 'react';
+import {StatusBar} from 'react-native';
 import {I18nProvider} from '@lingui/react';
-import {Appearance, StatusBar} from 'react-native';
-import {GestureHandlerRootView} from 'react-exo/gesture';
-import {SafeAreaProvider} from 'react-native-safe-area-context';
-import {useScheme} from 'modules/settings/hooks/useScheme';
-import {useLocale} from 'modules/settings/hooks/useLocale';
-import {isNative} from 'common/utils/platform';
-import {loadLocale, i18n} from 'common/i18n';
-import {Device} from 'react-exo/device';
+import {SafeAreaProvider} from 'react-exo/safe-area';
+import {GestureProvider} from 'react-exo/gesture';
+import {BootSplash} from 'react-exo/device';
+import {useScheme} from 'mod/settings/hooks/useScheme';
+import {useLocale} from 'mod/settings/hooks/useLocale';
+import {loadLocale, i18n} from 'lib/i18n';
 
 export interface AppProviderProps {
-  children: React.ReactNode;
+  children: React.ReactNode,
 }
 
 export function AppProvider(props: AppProviderProps) {
   const [locale] = useLocale();
   const [scheme] = useScheme();
+  const isDark = scheme === 'dark';
 
+  useEffect(() => {BootSplash.hide()}, []);
   useEffect(() => {loadLocale(locale)}, [locale]);
-  useEffect(() => {Device.bootSplash.hide()}, []);
-  useEffect(() => {
-    if (isNative()) {
-      Appearance.setColorScheme(scheme);
-      StatusBar.setBarStyle(scheme === 'dark'
-        ? 'light-content'
-        : 'dark-content'
-      );
-    }
-  }, [scheme]);
-    
+
   return (
-    <I18nProvider i18n={i18n}>
-      <GestureHandlerRootView style={{flex: 1}}>
+    <I18nProvider {...{i18n}}>
+      <StatusBar barStyle={isDark ? 'light-content' : 'dark-content'}/>
+      <GestureProvider style={{flex: 1}}>
         <SafeAreaProvider>
           {props.children}
         </SafeAreaProvider>
-      </GestureHandlerRootView>
+      </GestureProvider>
     </I18nProvider>
   );
 }

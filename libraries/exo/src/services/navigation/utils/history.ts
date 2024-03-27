@@ -17,5 +17,3 @@ export const context = createReduxHistoryContext({
 export const init = (store: Store) => {
   state = context.createReduxHistory(store);
 }
-
-export default {init, context};

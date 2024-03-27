@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Config",
+  "include": [
+    "../src/**.*",
+  ],
+  "compilerOptions": {
+    "outDir": "../generated",
+    "rootDir": "../src/",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "isolatedModules": true,
+    "skipLibCheck": true,
+    "composite": true
+  }
+}

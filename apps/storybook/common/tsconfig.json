@@ -1,5 +1,5 @@
 {
-  "extends": "cfg/ts/apps/storybook.tsconfig.json",
+  "extends": "cfg/ts/tsconfig.app.json",
   "compilerOptions": {
     "baseUrl": "./"
   }

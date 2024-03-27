@@ -1,9 +1,9 @@
 import {MMKV} from 'react-native-mmkv';
 import {StorageDataCheck} from './Storage.interface';
-import type {StorageService, IStorageDB} from './Storage.interface';
+import type {IStorage, IStorageDB} from './Storage.interface';
 
-export class Storage implements StorageService {
-  async init(id: string, version: number) {
+export class StorageService implements IStorage {
+  init(id: string, version: number) {
     const db = new MMKV({id, path: `v${version}`});
     return <IStorageDB>{
       getItem: async (k, i) => {

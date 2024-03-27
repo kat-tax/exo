@@ -3,15 +3,12 @@ import plugins from './plugins';
 import react from '@vitejs/plugin-react';
 import paths from 'vite-tsconfig-paths';
 import types from 'vite-plugin-dts';
-import vite from 'cfg/web/vite';
 
 export default defineConfig({
   plugins: [
     paths(),
     react(),
     types({
-      outDir: '.',
-      rollupTypes: true,
       insertTypesEntry: true,
     }),
   ],
@@ -28,6 +25,7 @@ export default defineConfig({
         lottie: 'src/assets/lottie',
         rive: 'src/assets/rive',
         /* Services */
+        'safe-area': 'src/services/safe-area',
         navigation: 'src/services/navigation',
         storage: 'src/services/storage',
         device: 'src/services/device',
@@ -41,6 +39,7 @@ export default defineConfig({
         slider: 'src/widgets/slider',
         radio: 'src/widgets/radio',
         switch: 'src/widgets/switch',
+        picker: 'src/widgets/picker',
         checkbox: 'src/widgets/checkbox',
         /* Hooks */
         variants: 'src/hooks/useVariants',
@@ -65,11 +64,30 @@ export default defineConfig({
         '@marceloterreiro/flash-calendar',
       ],
     },
-    outDir: 'dist',
-    emptyOutDir: false,
+    outDir: 'generated',
     cssMinify: 'lightningcss',
     cssCodeSplit: true,
     sourcemap: true,
   },
-  ...vite,
+  resolve: {
+    alias: {
+      'react-native': 'react-native-web',
+    },
+    extensions: [
+      '.web.tsx',
+      '.web.ts',
+      '.web.js',
+      '.mjs',
+      '.mts',
+      '.ts',
+      '.tsx',
+      '.js',
+      '.jsx',
+      '.json',
+    ],
+  },
+  define: {
+    global: 'window',
+    __DEV__: true,
+  },
 });

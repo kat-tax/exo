@@ -1,4 +1,4 @@
-import {GestureHandlerRootView} from 'react-exo/gesture';
+import {GestureProvider} from 'react-exo/gesture';
 import {Button} from 'vocs/components';
 
 # Gesture Interaction
@@ -10,15 +10,15 @@ import {Button} from 'vocs/components';
 import React from 'react';
 // ---cut---
 // 1. Import the gesture utility // [!code focus]
-import {GestureHandlerRootView} from 'react-exo/gesture'; // [!code focus]
+import {GestureProvider} from 'react-exo/gesture'; // [!code focus]
 
 // 2. Wrap your application with the root view // [!code focus]
 export default () => (
-  <GestureHandlerRootView> // [!code focus]
+  <GestureProvider> // [!code focus]
     <SafeAreaProvider>
       {/* Your application */}
     </SafeAreaProvider>
-  </GestureHandlerRootView> // [!code focus]
+  </GestureProvider> // [!code focus]
 );
 ```
 

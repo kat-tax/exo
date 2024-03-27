@@ -8,85 +8,116 @@
     "postinstall": "vite build"
   },
   "files": [
-    "dist"
+    "generated"
   ],
   "exports": {
+    ".": {
+      "types": "./generated/index.d.ts",
+      "import": "./generated/index.js",
+      "require": "./generated/index.cjs"
+    },
     "./device": {
-      "import": "./device.js",
-      "require": "./device.cjs"
+      "import": "./src/services/device/index.ts",
+      "require": "./generated/device.cjs"
     },
     "./navigation": {
-      "import": "./navigation.js",
-      "require": "./navigation.cjs"
+      "types": "./generated/navigation.d.ts",
+      "import": "./generated/navigation.js",
+      "require": "./generated/navigation.cjs"
     },
     "./storage": {
-      "import": "./storage.js",
-      "require": "./storage.cjs"
+      "import": "./src/services/storage/index.ts",
+      "require": "./generated/storage.cjs"
     },
     "./form": {
-      "import": "./form.js",
-      "require": "./form.cjs"
+      "types": "./generated/form.d.ts",
+      "import": "./generated/form.js",
+      "require": "./generated/form.cjs"
     },
     "./gesture": {
-      "import": "./gesture.js",
-      "require": "./gesture.cjs"
+      "types": "./generated/gesture.d.ts",
+      "import": "./generated/gesture.js",
+      "require": "./generated/gesture.cjs"
+    },
+    "./safe-area": {
+      "types": "./generated/safe-area.d.ts",
+      "import": "./generated/safe-area.js",
+      "require": "./generated/safe-area.cjs"
     },
     "./motion": {
-      "import": "./motion.js",
-      "require": "./motion.cjs"
+      "types": "./generated/motion.d.ts",
+      "import": "./generated/motion.js",
+      "require": "./generated/motion.cjs"
     },
     "./variants": {
-      "import": "./variants.js",
-      "require": "./variants.cjs"
+      "types": "./generated/variants.d.ts",
+      "import": "./generated/variants.js",
+      "require": "./generated/variants.cjs"
     },
     "./icon": {
-      "import": "./icon.js",
-      "require": "./icon.cjs"
+      "types": "./generated/icon.d.ts",
+      "import": "./generated/icon.js",
+      "require": "./generated/icon.cjs"
     },
     "./image": {
-      "import": "./image.js",
-      "require": "./image.cjs"
+      "types": "./generated/image.d.ts",
+      "import": "./generated/image.js",
+      "require": "./generated/image.cjs"
     },
     "./video": {
-      "import": "./video.js",
-      "require": "./video.cjs"
+      "types": "./generated/video.d.ts",
+      "import": "./generated/video.js",
+      "require": "./generated/video.cjs"
     },
     "./lottie": {
-      "import": "./lottie.js",
-      "require": "./lottie.cjs"
+      "types": "./generated/lottie.d.ts",
+      "import": "./generated/lottie.js",
+      "require": "./generated/lottie.cjs"
     },
     "./rive": {
-      "import": "./rive.js",
-      "require": "./rive.cjs"
+      "types": "./generated/rive.d.ts",
+      "import": "./generated/rive.js",
+      "require": "./generated/rive.cjs"
     },
     "./checkbox": {
-      "import": "./checkbox.js",
-      "require": "./checkbox.cjs"
+      "types": "./generated/checkbox.d.ts",
+      "import": "./generated/checkbox.js",
+      "require": "./generated/checkbox.cjs"
     },
     "./switch": {
-      "import": "./switch.js",
-      "require": "./switch.cjs"
+      "types": "./generated/switch.d.ts",
+      "import": "./generated/switch.js",
+      "require": "./generated/switch.cjs"
     },
     "./radio": {
-      "import": "./radio.js",
-      "require": "./radio.cjs"
+      "types": "./generated/radio.d.ts",
+      "import": "./generated/radio.js",
+      "require": "./generated/radio.cjs"
     },
     "./slider": {
-      "import": "./slider.js",
-      "require": "./slider.cjs"
+      "types": "./generated/slider.d.ts",
+      "import": "./generated/slider.js",
+      "require": "./generated/slider.cjs"
+    },
+    "./picker": {
+      "types": "./generated/picker.d.ts",
+      "import": "./generated/picker.js",
+      "require": "./generated/picker.cjs"
     },
     "./progress": {
-      "import": "./progress.js",
-      "require": "./progress.cjs"
+      "types": "./generated/progress.d.ts",
+      "import": "./generated/progress.js",
+      "require": "./generated/progress.cjs"
     },
     "./calendar": {
-      "import": "./calendar.js",
-      "require": "./calendar.cjs"
+      "types": "./generated/calendar.d.ts",
+      "import": "./generated/calendar.js",
+      "require": "./generated/calendar.cjs"
     },
-    "./checkbox.css": "./checkbox.css",
-    "./switch.css": "./switch.css",
-    "./radio.css": "./radio.css",
-    "./slider.css": "./slider.css"
+    "./checkbox.css": "./generated/checkbox.css",
+    "./switch.css": "./generated/switch.css",
+    "./radio.css": "./generated/radio.css",
+    "./slider.css": "./generated/slider.css"
   },
   "peerDependencies": {
     "@candlefinance/faster-image": ">=1",
@@ -143,7 +174,6 @@
     "@react-native-community/slider": "^4.5.0",
     "@react-native-picker/picker": "^2.7.2",
     "@storybook/react": "^8.0.4",
-    "@tsconfig/react-native": "^3.0.4",
     "@types/jest": "^29.5.12",
     "@types/react": "^18.2.72",
     "@types/react-dom": "^18.2.22",
@@ -169,7 +199,6 @@
     "react-native-skottie": "^2.1.0",
     "react-native-svg": "^15.1.0",
     "react-native-ui-lib": "^7.18.3",
-    "react-native-ultimate-config": "^6.0.1",
     "react-native-unistyles": "^2.5.0",
     "react-native-url-polyfill": "^2.0.0",
     "react-native-video": "5.2.1",

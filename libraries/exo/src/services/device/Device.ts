@@ -1,9 +1,21 @@
 import type {IDevice} from './Device.interface';
 
-export class DeviceImpl implements IDevice {
+export class DeviceService implements IDevice {
+  BootSplash = {
+    hide: async () => {},
+    isVisible: async () => false,
+    useHideAnimation: () => ({
+      logo: {},
+      brand: {},
+      container: {},
+    }),
+  }
+
   getLocale(short?: boolean): string {
     const locale = navigator.language;
-    return short ? locale.split('-').shift() || locale : locale;
+    return short
+      ? locale.split('-').shift() || locale
+      : locale;
   }
 
   share(url: string, title: string) {
@@ -22,15 +34,5 @@ export class DeviceImpl implements IDevice {
       window.removeEventListener('online', handler);
       window.removeEventListener('offline', handler);
     };
-  }
-
-  bootSplash = {
-    hide: async () => {},
-    isVisible: async () => false,
-    useHideAnimation: () => ({
-      logo: {},
-      brand: {},
-      container: {},
-    }),
   }
 }

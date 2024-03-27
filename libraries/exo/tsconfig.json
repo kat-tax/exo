@@ -1,5 +1,5 @@
 {
-  "extends": "cfg/ts/libs/exo.tsconfig.json",
+  "extends": "cfg/ts/tsconfig.app.json",
   "compilerOptions": {
     "baseUrl": "./src",
   },

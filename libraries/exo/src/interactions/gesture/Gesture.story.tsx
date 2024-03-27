@@ -1,4 +1,4 @@
-import {GestureHandlerRootView as Component} from './Gesture';
+import {GestureProvider as Component} from './Gesture';
 import type {StoryObj, Meta} from '@storybook/react';
 
 type Story = StoryObj<typeof Component>;

@@ -5,7 +5,7 @@ import type {Storage as Persist} from 'redux-persist';
  * 
  * Supports `string`, `number`, `boolean`, and `Uint8Array` values, indexed by `string` keys.
  */
-export interface StorageService {
+export interface IStorage {
   /**
    * Initializes a storage database
    * 
@@ -13,7 +13,7 @@ export interface StorageService {
    * @param version The version of the database
    * @returns The storage database
    */
-  init(id: string, version: number): Promise<IStorageDB>
+  init(id: string, version: number): IStorageDB
 }
 
 /**

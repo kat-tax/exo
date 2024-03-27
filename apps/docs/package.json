@@ -3,11 +3,11 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "start": "vocs dev -p 6106",
-    "build": "tsx setup && vocs build",
-    "preview": "vocs preview",
-    "prestart": "tsx setup",
-    "postinstall": "tsx setup"
+    "dev": "pnpm generate && vocs dev -p 6106",
+    "build": "pnpm generate && vocs build",
+    "preview": "pnpm generate && vocs preview",
+    "generate": "tsx utils/setup",
+    "postinstall": "pnpm generate"
   },
   "dependencies": {
     "react": "latest",
@@ -24,6 +24,7 @@
     "cfg": "workspace:*",
     "client": "workspace:*",
     "fs-extra": "latest",
+    "react-native": "latest",
     "tsx": "latest"
   }
 }
