@@ -1,4 +1,4 @@
-import {Calendar} from 'react-exo/calendar';
+import {Calendar, toDateId} from 'react-exo/calendar';
 import {Button} from 'vocs/components';
 
 # Calendar Component
@@ -6,19 +6,33 @@ import {Button} from 'vocs/components';
 > A component that allows various selections of dates.
 
 <Calendar
-  value={new Date()}
-  onChange={console.log}
-  style={{width: 300}}
-  testID="0:0"
+  onCalendarDayPress={undefined}
+  calendarMonthId={toDateId(new Date())}
+  calendarActiveDateRanges={[
+    {
+      startId: toDateId(new Date()),
+      endId: toDateId(new Date()),
+    },
+  ]}
 />
 
 ```tsx twoslash
+// @noErrors
 import React from 'react';
 // ---cut---
 import {Calendar} from 'react-exo/calendar'; // [!code focus]
 
 export default () => (
-  <Calendar/> // [!code focus]
+  <Calendar // [!code focus]
+    onCalendarDayPress={undefined} // [!code focus]
+    calendarMonthId={toDateId(new Date())} // [!code focus]
+    calendarActiveDateRanges={[ // [!code focus]
+      { // [!code focus]
+        startId: toDateId(new Date()), // [!code focus]
+        endId: toDateId(new Date()), // [!code focus]
+      }, // [!code focus]
+    ]} // [!code focus]
+  /> // [!code focus]
 );
 ```
 

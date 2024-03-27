@@ -1,39 +1,33 @@
-import {forwardRef} from 'react';
 import {useHref} from 'react-router';
+import {useCallback, forwardRef} from 'react';
 import {useLinkClickHandler} from '../hooks/useLinkClickHandler';
 
-import type {To} from 'react-router';
-
-export interface LinkProps extends Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, 'href'> {
-  to: To;
-  state?: any;
-  replace?: boolean;
-  /* Web Only */
-  reloadDocument?: boolean;
-}
+import type {LinkWeb} from './Link.interface';
 
 /**
- * The public API for rendering a history-aware <a>.
- *
- * @see https://reactrouter.com/docs/en/v6/components/link
+ * Navigates to a screen when clicked.
+ * 
+ * @platform Native: renders a Pressable
+ * @platform Web: renders an Anchor
  */
-export const Link = forwardRef<HTMLAnchorElement, LinkProps>(
-  function LinkWithRef({onClick, reloadDocument, replace = false, state, target, to, ...rest}, ref) {
+export const Link = forwardRef<HTMLAnchorElement, LinkWeb>(
+  ({onClick, reloadDocument, replace = false, state, target, to, ...rest}, ref) => {
     const href = useHref(to);
-    const _handleClick = useLinkClickHandler(to, {replace, state, target});
-    function handleClick(event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) {
-      if (onClick) onClick(event);
-      if (!event.defaultPrevented && !reloadDocument) {
-        _handleClick(event);
-      }
-    }
+    const click = useLinkClickHandler(to, {replace, state, target});
+    const handler = useCallback((e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+      if (!e.defaultPrevented && !reloadDocument)
+        click(e);
+      if (onClick)
+        onClick(e);
+    }, [click, onClick, reloadDocument]);
+  
     return (
       <a
         {...rest}
         ref={ref}
         href={href}
         target={target}
-        onClick={handleClick}
+        onClick={handler}
       />
     );
   }

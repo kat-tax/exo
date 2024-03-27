@@ -1,8 +1,6 @@
 {
-  "extends": "cfg/ts/lib-exo.tsconfig.json",
+  "extends": "cfg/ts/libs/exo.tsconfig.json",
   "compilerOptions": {
     "baseUrl": "./src",
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
   },
 }

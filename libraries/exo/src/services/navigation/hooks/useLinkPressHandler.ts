@@ -1,6 +1,7 @@
-import {GestureResponderEvent} from 'react-native';
 import {useNavigate} from 'react-router';
+
 import type {To} from 'react-router';
+import type {GestureResponderEvent} from 'react-native';
 
 /**
  * Handles the press behavior for router `<Link>` components. This is useful if
@@ -9,13 +10,8 @@ import type {To} from 'react-router';
  */
  export function useLinkPressHandler(
   to: To,
-  {replace, state}: {
-    replace?: boolean;
-    state?: any;
-  } = {}
-): (event: GestureResponderEvent) => void {
+  {replace, state}: {replace?: boolean, state?: any} = {}
+): (e: GestureResponderEvent) => void {
   const navigate = useNavigate();
-  return function handlePress() {
-    navigate(to, {replace, state});
-  };
+  return () => navigate(to, {replace, state});
 }

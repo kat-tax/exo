@@ -3,10 +3,11 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "tsx copy-docs && vocs dev -p 6106",
-    "build": "tsx copy-docs && vocs build",
-    "preview": "tsx copy-docs && vocs preview",
-    "postinstall": "tsx copy-docs"
+    "start": "vocs dev -p 6106",
+    "build": "tsx setup && vocs build",
+    "preview": "vocs preview",
+    "prestart": "tsx setup",
+    "postinstall": "tsx setup"
   },
   "dependencies": {
     "react": "latest",
@@ -20,15 +21,9 @@
     "@types/fs-extra": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
-    "@vitejs/plugin-react": "latest",
-    "@vitejs/plugin-react-swc": "latest",
     "cfg": "workspace:*",
     "client": "workspace:*",
     "fs-extra": "latest",
-    "react-native": "latest",
-    "tsx": "latest",
-    "typescript": "latest",
-    "vite": "latest",
-    "vite-tsconfig-paths": "latest"
+    "tsx": "latest"
   }
 }

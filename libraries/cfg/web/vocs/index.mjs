@@ -1,24 +1,21 @@
 /** @type {import('vocs').Config} */
 
-import {defineConfig} from 'vocs';
 import vite from '../vite/index.mjs';
-
-import general from './brand/general.mjs';
-import socials from './brand/socials.mjs';
-import topNav from './brand/topNav.mjs';
 import theme from './brand/theme.mjs';
-import exo from './sidebar/exo.mjs';
-import lib from './sidebar/lib.mjs';
+import topNav from './brand/topNav.mjs';
+import socials from './brand/socials.mjs';
+import general from './brand/general.mjs';
+import library from './sidebar/library.mjs';
+import primitives from './sidebar/primitives.mjs';
 
-export default defineConfig({
-  ...general,
+export default {
   vite,
   theme,
   topNav,
   socials,
-  rootDir: '.',
+  ...general,
   sidebar: [
-    ...lib,
-    ...exo,
+    ...library,
+    ...primitives,
   ],
-});
+};

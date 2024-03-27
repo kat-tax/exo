@@ -1,11 +1,11 @@
-import {Picker as Component} from './Picker';
+import {Picker} from './Picker';
 import type {StoryObj, Meta} from '@storybook/react';
 
-type Story = StoryObj<typeof Component>;
+type Story = StoryObj<typeof Picker>;
 
-const meta: Meta<typeof Component> = {
-  title: 'Interface/Picker',
-  component: Component,
+const meta: Meta<typeof Picker> = {
+  title: 'Interactivity/Picker',
+  component: Picker,
 };
 
 export const Sandbox: Story = {

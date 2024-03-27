@@ -1,8 +1,6 @@
 {
-  "extends": "cfg/ts/lib-ui.tsconfig.json",
+  "extends": "cfg/ts/libs/ui.tsconfig.json",
   "compilerOptions": {
     "baseUrl": "./",
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
   },
 }

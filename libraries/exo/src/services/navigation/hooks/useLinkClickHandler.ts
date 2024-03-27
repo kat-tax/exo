@@ -16,21 +16,22 @@ import type {To} from 'react-router';
     replace?: boolean;
     state?: any;
   } = {}
-): (event: React.MouseEvent<E, MouseEvent>) => void {
+): (e: React.MouseEvent<E, MouseEvent>) => void {
+
   const navigate = useNavigate();
   const location = useLocation();
   const path = useResolvedPath(to);
 
-  return useCallback((event: React.MouseEvent<E, MouseEvent>) => {
+  return useCallback((e: React.MouseEvent<E, MouseEvent>) => {
     if (
       // Ignore everything but left clicks
-      event.button === 0
+      e.button === 0
       // Let browser handle "target=_blank" etc.
       && (!target || target === '_self')
       // Ignore clicks with modifier keys
-      && !isModifiedEvent(event)
+      && !isModifiedEvent(e)
     ) {
-      event.preventDefault();
+      e.preventDefault();
       // If the URL hasn't changed, a regular <a> will do a replace
       // instead of a push, so do the same here
       const replace = !!replaceProp || createPath(location) === createPath(path);
@@ -40,6 +41,6 @@ import type {To} from 'react-router';
   [location, navigate, path, replaceProp, state, target, to]);
 }
 
-function isModifiedEvent(event: React.MouseEvent) {
-  return !!(event.metaKey || event.altKey || event.ctrlKey || event.shiftKey);
+function isModifiedEvent(e: React.MouseEvent) {
+  return !!(e.metaKey || e.altKey || e.ctrlKey || e.shiftKey);
 }

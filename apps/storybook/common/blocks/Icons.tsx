@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react';
 import {IconGallery, IconItem} from '@storybook/blocks';
-import {loadIconSet} from '../utils/icons';
+import {loadIconSet} from 'utils/icons';
 import {Icon} from 'react-exo/icon';
 
 interface IconsProps {

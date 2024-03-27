@@ -4,19 +4,13 @@
   "private": true,
   "dependencies": {
     "@iconify/react": "^4.1.1",
-    "@storybook/addon-essentials": "7.6.17",
-    "@storybook/blocks": "7.6.17",
+    "@storybook/addon-essentials": "^8.0.4",
+    "@storybook/blocks": "^8.0.4",
     "ui": "workspace:*"
   },
   "devDependencies": {
-    "@types/react": "^18.2.61",
+    "@types/react": "^18.2.72",
     "cfg": "workspace:*",
-    "react-exo": "workspace:*",
-    "react-native": "^0.73.5",
-    "typescript": "^5.3.3"
-  },
-  "peerDependencies": {
-    "react": ">=18",
-    "react-exo": ">=0"
+    "react-exo": "workspace:*"
   }
 }

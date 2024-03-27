@@ -1,18 +1,20 @@
 {
-  "name": "@kat.tax/exo",
-  "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "concurrently pnpm:web pnpm:docs-dev pnpm:storybook-web",
+    "start": "concurrently pnpm:web pnpm:docs pnpm:storybook",
     "build": "concurrently pnpm:*-build",
+
     "web": "pnpm --filter ./apps/client run dev",
     "web-build": "pnpm --filter ./apps/client run build",
-    "docs-dev": "pnpm --filter ./apps/docs dev",
+
+    "docs": "pnpm --filter ./apps/docs dev",
     "docs-build": "pnpm --filter ./apps/docs build",
-    "docs-preview": "pnpm --filter ./apps/docs preview",
+
+    "storybook": "concurrently pnpm:storybook-web pnpm:storybook-native",
     "storybook-web": "pnpm --filter ./apps/storybook/web run dev",
     "storybook-native": "pnpm --filter ./apps/storybook/native run dev",
     "storybook-build": "pnpm --filter ./apps/storybook/web run build",
+
     "publish-exo": "pnpm --filter ./libraries/exo publish",
     "publish-ui": "pnpm --filter ./libraries/ui publish"
   },

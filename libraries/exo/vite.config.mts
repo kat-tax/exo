@@ -17,63 +17,59 @@ export default defineConfig({
   ],
   build: {
     lib: {
-      formats: ['cjs', 'es'],
+      formats: ['es', 'cjs'],
       entry: {
-        // Entry
+        /* Entry */
         index: 'src/index.ts',
-        // Assets
-        'icon': 'src/assets/icon',
-        'image': 'src/assets/image',
-        'lottie': 'src/assets/lottie',
-        'rive': 'src/assets/rive',
-        'video': 'src/assets/video',
-        // Hooks
-        'variants': 'src/hooks/useVariants',
-        // Services
-        'device': 'src/services/device',
-        'navigation': 'src/services/navigation',
-        'storage': 'src/services/storage',
-        // Interactions
-        'form': 'src/utilities/form',
-        'motion': 'src/utilities/motion',
-        'gesture': 'src/utilities/gesture',
-        // Widgets
-        'checkbox': 'src/widgets/checkbox',
-        'switch': 'src/widgets/switch',
-        'radio': 'src/widgets/radio',
-        'slider': 'src/widgets/slider',
-        'progress': 'src/widgets/progress',
-        'calendar': 'src/widgets/calendar',
+        /* Assets */
+        icon: 'src/assets/icon',
+        image: 'src/assets/image',
+        video: 'src/assets/video',
+        lottie: 'src/assets/lottie',
+        rive: 'src/assets/rive',
+        /* Services */
+        navigation: 'src/services/navigation',
+        storage: 'src/services/storage',
+        device: 'src/services/device',
+        form: 'src/services/form',
+        /* Interactions */
+        gesture: 'src/interactions/gesture',
+        motion: 'src/interactions/motion',
+        /* Widgets */
+        calendar: 'src/widgets/calendar',
+        progress: 'src/widgets/progress',
+        slider: 'src/widgets/slider',
+        radio: 'src/widgets/radio',
+        switch: 'src/widgets/switch',
+        checkbox: 'src/widgets/checkbox',
+        /* Hooks */
+        variants: 'src/hooks/useVariants',
       }
     },
     rollupOptions: {
       plugins,
       output: {
-        dir: '.',
         chunkFileNames: 'chunks/[format]/[name]_[hash].js',
-        //assetFileNames: (asset) => (asset.name === 'index.css')
-        // ? 'video.css'
-        // : `[name].[ext]`
+        // assetFileNames: (asset) => (asset.name === 'index.css')
+        //   ? 'video.css'
+        //   : `[name].[ext]`
       },
       external: [
-        // React
+        /* React */
         'react',
         'react-dom',
         'react-native',
         'react-native-web',
         'react/jsx-runtime',
-        // 3rd party
+        /* Native */
         '@marceloterreiro/flash-calendar',
-        '@react-native-community/viewpager',
-        '@react-native-community/checkbox',
-        '@react-native-community/slider',
-
       ],
     },
+    outDir: 'dist',
+    emptyOutDir: false,
     cssMinify: 'lightningcss',
     cssCodeSplit: true,
     sourcemap: true,
-    emptyOutDir: false,
   },
   ...vite,
 });

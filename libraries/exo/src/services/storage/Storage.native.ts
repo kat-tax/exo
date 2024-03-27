@@ -1,26 +1,28 @@
 import {MMKV} from 'react-native-mmkv';
-import type {IStorage} from './Storage.interface';
+import {StorageDataCheck} from './Storage.interface';
+import type {StorageService, IStorageDB} from './Storage.interface';
 
-export class StorageImpl implements IStorage {
-  init(id: string, version: number) {
+export class Storage implements StorageService {
+  async init(id: string, version: number) {
     const db = new MMKV({id, path: `v${version}`});
-    return {
-      setItem: (key: string, value: any) => {
-        db.set(key, value);
-        return Promise.resolve(true);
+    return <IStorageDB>{
+      getItem: async (k, i) => {
+        switch (true) {
+          case StorageDataCheck.isBoolean(i):
+            return db.getBoolean(k) ?? i;
+          case StorageDataCheck.isString(i):
+            return db.getString(k) ?? i;
+          case StorageDataCheck.isNumber(i):
+            return db.getNumber(k) ?? i;
+          case StorageDataCheck.isUint8Array(i):
+            return db.getBuffer(k) ?? i;
+          default:
+            return undefined;
+        }
       },
-      getItem: (key: string) => {
-        const value = db.getString(key);
-        return Promise.resolve(value);
-      },
-      removeItem: (key: string) => {
-        db.delete(key);
-        return Promise.resolve();
-      },
-      clear: () => {
-        db.clearAll();
-        return Promise.resolve();
-      }
+      setItem: async (k, v) => db.set(k, v),
+      removeItem: async (k) => db.delete(k),
+      clear: async () => db.clearAll(),
     };
   }
 }

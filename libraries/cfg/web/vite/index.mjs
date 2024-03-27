@@ -4,10 +4,6 @@ export default {
   resolve: {
     alias: {
       'react-native': 'react-native-web',
-      //'react-native-webview': 'react-native-web-webview',
-      //'react-native-linear-gradient': 'react-native-web-linear-gradient',
-      //'react-native-vector-icons/MaterialIcons': 'react-native-vector-icons/dist/MaterialIcons',
-      //'recyclerlistview': 'recyclerlistview/web',
     },
     extensions: [
       '.web.tsx',
@@ -21,5 +17,9 @@ export default {
       '.jsx',
       '.json',
     ],
+  },
+  define: {
+    global: 'window',
+    __DEV__: true,
   },
 }

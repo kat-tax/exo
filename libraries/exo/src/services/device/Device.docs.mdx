@@ -15,7 +15,7 @@ import {Device} from 'react-exo/device'; // [!code focus]
 // 2. Hide the boot splash screen // [!code focus]
 await Device.bootSplash.hide(); // [!code focus]
 
-// 3. Share EXO with a friend :) // [!code focus]
+// 3. Share EXO with a friend ;) // [!code focus]
 Device.share('https://exo.ult.dev', 'This is awesome!'); // [!code focus]
 
 // 4. Query device states // [!code focus]
@@ -37,16 +37,13 @@ Device. // [!code focus]
 ## Platform Support
 
 :::info
-For native support you must install [React Native Video](https://react-native-video.github.io/react-native-video)
+For native support you must install [RN Boot Splash](https://react-native-bootsplash.github.io/react-native-bootsplash) and [RN Net Info](https://github.com/react-native-netinfo/react-native-netinfo)
 
-`npm i react-native-video{:bash}`
+`npm i react-native-bootsplash @react-native-community/netinfo{:bash}`
 :::
 
 
 | Platform | Technology | Functional | Notes |
 | -------- | ---------- | :--------: | :---: |
-| Web | [@vidstack/react](https://www.vidstack.io) | ✅ | - |
-| iOS | [react-native-video](https://react-native-video.github.io/react-native-video) | ✅ | - |
-| MacOS | [react-native-video](https://react-native-video.github.io/react-native-video) | ✅ | - |
-| Android | [react-native-video](https://react-native-video.github.io/react-native-video) | ✅ | - |
-| Windows | [react-native-video](https://react-native-video.github.io/react-native-video) | ✅ | - |
+| Web | [navigator](https://developer.mozilla.org/en-US/docs/Web/API/Navigator) | ✅ | - |
+| Native | [react-native-bootsplash](https://react-native-bootsplash.github.io/react-native-bootsplash) <br/> [@react-native-community/netinfo](https://github.com/react-native-netinfo/react-native-netinfo) | ✅ | - |

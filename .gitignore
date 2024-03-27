@@ -1,15 +1,16 @@
 # Project
+apps/docs/pages/
+dist/
 WIP.md
-
-# RNUC
-rnuc.xcconfig
 
 # Node
 node_modules/
 
+# RNUC
+rnuc.xcconfig
+
 # Expo
 .expo/
-dist/
 web-build/
 
 # Native

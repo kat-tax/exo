@@ -1,4 +1,5 @@
 src/
+plugins/
 node_modules/
 tsconfig.json
 vite.config.mts

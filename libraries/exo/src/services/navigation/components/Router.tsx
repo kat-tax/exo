@@ -4,9 +4,9 @@ import {Router as BaseRouter} from 'react-router';
 import type {History} from 'history';
 
 export interface RouterProps {
-  history: History;
-  basename?: string;
-  children?: React.ReactNode;
+  history: History,
+  basename?: string,
+  children?: React.ReactNode,
 }
 
 export function Router({basename, children, history}: RouterProps) {
@@ -15,10 +15,7 @@ export function Router({basename, children, history}: RouterProps) {
     action: history.action,
   });
 
-  useLayoutEffect(() => history.listen(e => {
-    console.log(e);
-    setState(e);
-  }), [history]);
+  useLayoutEffect(() => history.listen(setState), [history]);
 
   return (
     <BaseRouter

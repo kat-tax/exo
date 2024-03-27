@@ -1,14 +1,14 @@
 import {createStore, get, set, del, clear} from 'idb-keyval';
-import type {IStorage} from './Storage.interface';
+import type {StorageService, IStorageDB} from './Storage.interface';
 
-export class StorageImpl implements IStorage {
-  init(id: string, version: number) {
+export class Storage implements StorageService {
+  async init(id: string, version: number) {
     const db = createStore(id, `v${version}`);
-    return {
-      getItem: (key: string) => get(key, db),
-      setItem: (key: string, value: any) => set(key, value, db),
-      removeItem: (key: string) => del(key, db),
+    return db('readwrite', () => {}).then((): IStorageDB => ({
+      getItem: (k, i) => get(k, db) ?? (i !== Object(i) ? i : undefined),
+      setItem: (k, v) => set(k, v, db),
+      removeItem: (k) => del(k, db),
       clear: () => clear(db),
-    };
+    }));
   }
 }
