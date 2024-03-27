@@ -20,5 +20,8 @@
   },
   "devDependencies": {
     "concurrently": "^8.2.2"
+  },
+  "resolutions": {
+    "@swc/core": "1.3.56"
   }
 }
