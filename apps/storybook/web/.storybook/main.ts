@@ -41,7 +41,7 @@ const config: StorybookConfig = {
     builder: {
       name: '@storybook/builder-vite',
       options: {
-        viteConfigPath: '../../client/vite.config.mjs',
+        viteConfigPath: '../../cfg/vite.mjs',
       },
     }
   },

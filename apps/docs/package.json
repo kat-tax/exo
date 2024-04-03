@@ -3,18 +3,26 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "pnpm generate && vocs dev -p 6106",
-    "build": "pnpm generate && vocs build",
-    "preview": "pnpm generate && vocs preview",
-    "generate": "tsx utils/setup",
-    "postinstall": "pnpm generate"
+    "dev": "tsx utils/setup && vocs dev -p 6106",
+    "build": "tsx utils/setup && vocs build -c",
+    "preview": "tsx utils/setup && vocs preview",
+    "postinstall": "tsx utils/setup"
   },
   "dependencies": {
-    "react": "latest",
-    "react-dom": "latest",
+    "@lingui/macro": "^4.8.0",
+    "@lingui/react": "^4.8.0",
+    "@reduxjs/toolkit": "^2.2.2",
+    "react": "18.2.0",
+    "react-dom": "^18.2.0",
     "react-exo": "workspace:*",
-    "react-native-web": "latest",
+    "react-native": "^0.73.6",
+    "react-native-svg": "^15.1.0",
+    "react-native-unistyles": "^2.5.0",
+    "react-native-web": "^0.19.10",
+    "react-redux": "^9.1.0",
+    "redux-persist": "^6.0.0",
     "ui": "workspace:*",
+    "vite": "latest",
     "vocs": "latest"
   },
   "devDependencies": {
@@ -22,9 +30,7 @@
     "@types/react": "latest",
     "@types/react-dom": "latest",
     "cfg": "workspace:*",
-    "client": "workspace:*",
     "fs-extra": "latest",
-    "react-native": "latest",
     "tsx": "latest"
   }
 }

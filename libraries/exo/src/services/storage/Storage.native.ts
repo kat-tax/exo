@@ -1,11 +1,11 @@
 import {MMKV} from 'react-native-mmkv';
 import {StorageDataCheck} from './Storage.interface';
-import type {IStorage, IStorageDB} from './Storage.interface';
+import type {StorageBase, StorageDB} from './Storage.interface';
 
-export class StorageService implements IStorage {
+export class StorageService implements StorageBase {
   init(id: string, version: number) {
     const db = new MMKV({id, path: `v${version}`});
-    return <IStorageDB>{
+    return <StorageDB>{
       getItem: async (k, i) => {
         switch (true) {
           case StorageDataCheck.isBoolean(i):

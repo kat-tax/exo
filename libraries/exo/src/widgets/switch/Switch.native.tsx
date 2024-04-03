@@ -1,7 +1,7 @@
 import {Switch as SwitchBase} from 'react-native';
-import type {SwitchProps} from './Switch.interface';
+import type {SwitchComponent, SwitchProps} from './Switch.interface';
 
-export function Switch(props: SwitchProps) {
+export const Switch: SwitchComponent = (props: SwitchProps) => {
   return (
     <SwitchBase
       testID={props.testID}

@@ -1,10 +1,9 @@
 import {View, Text} from 'react-native';
 import {SafeAreaView} from 'react-exo/safe-area';
-import type {ReactNode} from 'react';
 
 export interface PageProps {
-  title: string | ReactNode,
-  children?: ReactNode,
+  title: string | React.ReactNode,
+  children?: React.ReactNode,
 }
 
 export function Page(props: PageProps) {

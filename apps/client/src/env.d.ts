@@ -1,11 +1,11 @@
 /// <reference types="vite/client"/>
 
 import type {SvgProps} from 'react-native-svg';
-import type {AppBreakpoints, AppThemes} from 'styles';
+import type {AppThemes, AppBreakpoints} from 'styles';
 
 declare module 'react-native-unistyles' {
-  export interface UnistylesBreakpoints extends AppBreakpoints {}
   export interface UnistylesThemes extends AppThemes {}
+  export interface UnistylesBreakpoints extends AppBreakpoints {}
 }
 
 declare module '*.svg' {

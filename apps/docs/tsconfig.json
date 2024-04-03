@@ -1,6 +1,3 @@
 {
-  "extends": "cfg/ts/tsconfig.web.json",
-  "compilerOptions": {
-    "baseUrl": "./"
-  }
+  "extends": "cfg/ts/tsconfig.docs.json"
 }

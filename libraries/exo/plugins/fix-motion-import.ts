@@ -4,7 +4,7 @@ import type {Plugin} from 'vite';
 export default {
   name: 'fix-motion-import',
   async writeBundle() {
-    const target = './generated/motion.js';
+    const target = './gen/motion.js';
     try {
       await fs.access(target);
     } catch {

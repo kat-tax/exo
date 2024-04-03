@@ -1,12 +1,12 @@
 import {useEffect} from 'react';
 import {StatusBar} from 'react-native';
-import {I18nProvider} from '@lingui/react';
-import {SafeAreaProvider} from 'react-exo/safe-area';
-import {GestureProvider} from 'react-exo/gesture';
 import {BootSplash} from 'react-exo/device';
+import {GestureProvider} from 'react-exo/gesture';
+import {SafeAreaProvider} from 'react-exo/safe-area';
+import {I18nProvider, i18n, loadLocale} from 'react-exo/i18n';
+
 import {useScheme} from 'mod/settings/hooks/useScheme';
 import {useLocale} from 'mod/settings/hooks/useLocale';
-import {loadLocale, i18n} from 'lib/i18n';
 
 export interface AppProviderProps {
   children: React.ReactNode,

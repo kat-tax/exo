@@ -16,6 +16,7 @@ export type * from './services/safe-area';
 export type * from './services/navigation';
 export type * from './services/storage';
 export type * from './services/device';
+export type * from './services/i18n';
 export type * from './services/form';
 
 // Widgets

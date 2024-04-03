@@ -1,5 +1,4 @@
 import type {Config} from 'vocs';
-//import vite from './vite';
 
 export default <Config> {
   title: 'EXO',

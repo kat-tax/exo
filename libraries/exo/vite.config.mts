@@ -29,6 +29,7 @@ export default defineConfig({
         navigation: 'src/services/navigation',
         storage: 'src/services/storage',
         device: 'src/services/device',
+        i18n: 'src/services/i18n',
         form: 'src/services/form',
         /* Interactions */
         gesture: 'src/interactions/gesture',
@@ -48,7 +49,7 @@ export default defineConfig({
     rollupOptions: {
       plugins,
       output: {
-        chunkFileNames: 'chunks/[format]/[name]_[hash].js',
+        chunkFileNames: 'chunks/[format]/[hash].js',
         // assetFileNames: (asset) => (asset.name === 'index.css')
         //   ? 'video.css'
         //   : `[name].[ext]`
@@ -60,11 +61,15 @@ export default defineConfig({
         'react-native',
         'react-native-web',
         'react/jsx-runtime',
+        /* Web */
+        '@vidstack/react',
+        '@dotlottie/common',
+        '@dotlottie/react-player',
         /* Native */
         '@marceloterreiro/flash-calendar',
       ],
     },
-    outDir: 'generated',
+    outDir: 'gen',
     cssMinify: 'lightningcss',
     cssCodeSplit: true,
     sourcemap: true,
@@ -84,6 +89,12 @@ export default defineConfig({
       '.js',
       '.jsx',
       '.json',
+    ],
+  },
+  optimizeDeps: {
+    exclude: [
+      '@dotlottie/react-player',
+      '@dotlottie/common'
     ],
   },
   define: {

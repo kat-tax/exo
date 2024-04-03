@@ -1,7 +1,7 @@
 # Project
 apps/docs/pages/
-generated/
 dist/
+gen/
 WIP.md
 
 # Node

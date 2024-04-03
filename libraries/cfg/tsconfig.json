@@ -2,15 +2,14 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "display": "Config",
   "include": [
-    "../src/**.*",
+    "./src/**.*",
   ],
   "compilerOptions": {
-    "outDir": "../generated",
-    "rootDir": "../src/",
+    "rootDir": "./src",
+    "outDir": "./gen",
     "module": "esnext",
     "moduleResolution": "node",
-    "isolatedModules": true,
     "skipLibCheck": true,
-    "composite": true
+    "composite": true,
   }
 }

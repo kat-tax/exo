@@ -1,23 +1,11 @@
-import {Share, Platform, NativeModules} from 'react-native';
 import BootSplash from 'react-native-bootsplash';
 import NetInfo from '@react-native-community/netinfo';
+import {Share} from 'react-native';
 
-import type {IDevice} from './Device.interface';
+import type {DeviceBase} from './Device.interface';
 
-export class DeviceService implements IDevice {
+export class DeviceService implements DeviceBase {
   BootSplash = BootSplash;
-
-  getLocale(short?: boolean) {
-    const locale: string = Platform.OS === 'ios'
-      ? NativeModules.SettingsManager.settings.AppleLocale
-        || NativeModules.SettingsManager.settings.AppleLanguages[0]
-      : NativeModules.I18nManager.localeIdentifier;
-    return short
-      ? Platform.OS === 'ios'
-        ? locale.split('-').shift() || locale
-        : locale.split('_').shift() || locale
-      : locale;
-  }
 
   share(url: string, title: string) {
     Share.share({url, title, message: url}, {

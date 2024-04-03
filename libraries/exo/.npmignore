@@ -3,4 +3,3 @@ plugins/
 node_modules/
 tsconfig.json
 vite.config.mts
-vite.config.d.mts

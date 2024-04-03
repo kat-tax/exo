@@ -1,7 +1,5 @@
 import type {LinguiConfig} from '@lingui/conf';
 
-export type Locales = typeof locales;
-
 export const locales = [
   'en',
   'de',
@@ -13,9 +11,11 @@ export const locales = [
   'id',
 ] as const;
 
+export type Locales = typeof locales;
+
 export default <LinguiConfig> {
-  locales: Array.from(locales),
   format: 'po',
+  locales: locales as unknown as string[],
   catalogs: [{
     path: '../../content/locales/{locale}',
     include: [

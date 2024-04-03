@@ -1,11 +1,11 @@
-import {useStyles, createStyleSheet} from 'styles';
-import {useLingui} from '@lingui/react';
-import {Trans, t} from '@lingui/macro';
-import {Picker} from 'react-exo/picker';
 import {Text} from 'react-native';
-import {Page} from 'mod/core/base/Page';
+import {Picker} from 'react-exo/picker';
+import {Trans, t} from '@lingui/macro';
+import {useLingui} from '@lingui/react';
+import {useStyles, createStyleSheet} from 'styles';
 import {useLocale} from 'mod/settings/hooks/useLocale';
 import {useScheme} from 'mod/settings/hooks/useScheme';
+import {Page} from 'mod/core/base/Page';
 
 export function ScreenSettings() {
   useLingui();

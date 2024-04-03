@@ -12,112 +12,119 @@
   ],
   "exports": {
     ".": {
-      "types": "./generated/index.d.ts",
-      "import": "./generated/index.js",
-      "require": "./generated/index.cjs"
+      "types": "./gen/index.d.ts",
+      "import": "./gen/index.js",
+      "require": "./gen/index.cjs"
+    },
+    "./i18n": {
+      "types": "./gen/i18n.d.ts",
+      "import": "./gen/i18n.js",
+      "require": "./gen/i18n.cjs"
     },
     "./device": {
-      "import": "./src/services/device/index.ts",
-      "require": "./generated/device.cjs"
+      "types": "./gen/device.d.ts",
+      "import": "./gen/device.js",
+      "require": "./gen/device.cjs"
     },
     "./navigation": {
-      "types": "./generated/navigation.d.ts",
-      "import": "./generated/navigation.js",
-      "require": "./generated/navigation.cjs"
+      "types": "./gen/navigation.d.ts",
+      "import": "./gen/navigation.js",
+      "require": "./gen/navigation.cjs"
     },
     "./storage": {
-      "import": "./src/services/storage/index.ts",
-      "require": "./generated/storage.cjs"
+      "types": "./gen/storage.d.ts",
+      "import": "./gen/storage.js",
+      "require": "./gen/storage.cjs"
     },
     "./form": {
-      "types": "./generated/form.d.ts",
-      "import": "./generated/form.js",
-      "require": "./generated/form.cjs"
+      "types": "./gen/form.d.ts",
+      "import": "./gen/form.js",
+      "require": "./gen/form.cjs"
     },
     "./gesture": {
-      "types": "./generated/gesture.d.ts",
-      "import": "./generated/gesture.js",
-      "require": "./generated/gesture.cjs"
+      "types": "./gen/gesture.d.ts",
+      "import": "./gen/gesture.js",
+      "require": "./gen/gesture.cjs"
     },
     "./safe-area": {
-      "types": "./generated/safe-area.d.ts",
-      "import": "./generated/safe-area.js",
-      "require": "./generated/safe-area.cjs"
+      "types": "./gen/safe-area.d.ts",
+      "import": "./gen/safe-area.js",
+      "require": "./gen/safe-area.cjs"
     },
     "./motion": {
-      "types": "./generated/motion.d.ts",
-      "import": "./generated/motion.js",
-      "require": "./generated/motion.cjs"
+      "types": "./gen/motion.d.ts",
+      "import": "./gen/motion.js",
+      "require": "./gen/motion.cjs"
     },
     "./variants": {
-      "types": "./generated/variants.d.ts",
-      "import": "./generated/variants.js",
-      "require": "./generated/variants.cjs"
+      "types": "./gen/variants.d.ts",
+      "import": "./gen/variants.js",
+      "require": "./gen/variants.cjs"
     },
     "./icon": {
-      "types": "./generated/icon.d.ts",
-      "import": "./generated/icon.js",
-      "require": "./generated/icon.cjs"
+      "types": "./gen/icon.d.ts",
+      "import": "./gen/icon.js",
+      "require": "./gen/icon.cjs"
     },
     "./image": {
-      "types": "./generated/image.d.ts",
-      "import": "./generated/image.js",
-      "require": "./generated/image.cjs"
+      "types": "./gen/image.d.ts",
+      "import": "./gen/image.js",
+      "require": "./gen/image.cjs"
     },
     "./video": {
-      "types": "./generated/video.d.ts",
-      "import": "./generated/video.js",
-      "require": "./generated/video.cjs"
+      "types": "./gen/video.d.ts",
+      "import": "./gen/video.js",
+      "require": "./gen/video.cjs"
     },
     "./lottie": {
-      "types": "./generated/lottie.d.ts",
-      "import": "./generated/lottie.js",
-      "require": "./generated/lottie.cjs"
+      "types": "./gen/lottie.d.ts",
+      "import": "./gen/lottie.js",
+      "require": "./gen/lottie.cjs"
     },
     "./rive": {
-      "types": "./generated/rive.d.ts",
-      "import": "./generated/rive.js",
-      "require": "./generated/rive.cjs"
+      "types": "./gen/rive.d.ts",
+      "import": "./gen/rive.js",
+      "require": "./gen/rive.cjs"
     },
     "./checkbox": {
-      "types": "./generated/checkbox.d.ts",
-      "import": "./generated/checkbox.js",
-      "require": "./generated/checkbox.cjs"
+      "types": "./gen/checkbox.d.ts",
+      "import": "./gen/checkbox.js",
+      "require": "./gen/checkbox.cjs"
     },
     "./switch": {
-      "types": "./generated/switch.d.ts",
-      "import": "./generated/switch.js",
-      "require": "./generated/switch.cjs"
+      "types": "./gen/switch.d.ts",
+      "import": "./gen/switch.js",
+      "require": "./gen/switch.cjs"
     },
     "./radio": {
-      "types": "./generated/radio.d.ts",
-      "import": "./generated/radio.js",
-      "require": "./generated/radio.cjs"
+      "types": "./gen/radio.d.ts",
+      "import": "./gen/radio.js",
+      "require": "./gen/radio.cjs"
     },
     "./slider": {
-      "types": "./generated/slider.d.ts",
-      "import": "./generated/slider.js",
-      "require": "./generated/slider.cjs"
+      "types": "./gen/slider.d.ts",
+      "import": "./gen/slider.js",
+      "require": "./gen/slider.cjs"
     },
     "./picker": {
-      "types": "./generated/picker.d.ts",
-      "import": "./generated/picker.js",
-      "require": "./generated/picker.cjs"
+      "types": "./gen/picker.d.ts",
+      "import": "./gen/picker.js",
+      "require": "./gen/picker.cjs"
     },
     "./progress": {
-      "types": "./generated/progress.d.ts",
-      "import": "./generated/progress.js",
-      "require": "./generated/progress.cjs"
+      "types": "./gen/progress.d.ts",
+      "import": "./gen/progress.js",
+      "require": "./gen/progress.cjs"
     },
     "./calendar": {
-      "types": "./generated/calendar.d.ts",
-      "import": "./generated/calendar.js",
-      "require": "./generated/calendar.cjs"
+      "types": "./gen/calendar.d.ts",
+      "import": "./gen/calendar.js",
+      "require": "./gen/calendar.cjs"
     },
-    "./checkbox.css": "./generated/checkbox.css",
-    "./switch.css": "./generated/switch.css",
-    "./radio.css": "./generated/radio.css",
-    "./slider.css": "./generated/slider.css"
+    "./checkbox.css": "./gen/checkbox.css",
+    "./switch.css": "./gen/switch.css",
+    "./radio.css": "./gen/radio.css",
+    "./slider.css": "./gen/slider.css"
   },
   "peerDependencies": {
     "@candlefinance/faster-image": ">=1",
@@ -147,6 +154,8 @@
     "@dotlottie/react-player": "^1.6.19",
     "@iconify/react": "^4.1.1",
     "@legendapp/motion": "^2.3.0",
+    "@lingui/core": "^4.8.0",
+    "@lingui/react": "^4.8.0",
     "@radix-ui/react-checkbox": "^1.0.4",
     "@radix-ui/react-progress": "^1.0.3",
     "@radix-ui/react-radio-group": "^1.1.3",

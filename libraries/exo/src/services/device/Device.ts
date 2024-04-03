@@ -1,6 +1,6 @@
-import type {IDevice} from './Device.interface';
+import type {DeviceBase} from './Device.interface';
 
-export class DeviceService implements IDevice {
+export class DeviceService implements DeviceBase {
   BootSplash = {
     hide: async () => {},
     isVisible: async () => false,
@@ -9,13 +9,6 @@ export class DeviceService implements IDevice {
       brand: {},
       container: {},
     }),
-  }
-
-  getLocale(short?: boolean): string {
-    const locale = navigator.language;
-    return short
-      ? locale.split('-').shift() || locale
-      : locale;
   }
 
   share(url: string, title: string) {

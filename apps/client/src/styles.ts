@@ -1,14 +1,13 @@
 import {UnistylesRegistry} from 'react-native-unistyles';
 import {breakpoints, themes} from 'ui/theme';
 
-export type AppBreakpoints = typeof breakpoints;
-export type AppThemes = {[K in keyof typeof themes]: typeof themes[K]};
+export type AppThemes = {[K in keyof typeof themes]: typeof themes[K]}
+export type AppBreakpoints = typeof breakpoints
 
-export {useStyles, createStyleSheet} from 'react-native-unistyles';
-
+export * from 'react-native-unistyles';
 export default UnistylesRegistry
-  .addBreakpoints(breakpoints)
   .addThemes(themes)
+  .addBreakpoints(breakpoints)
   .addConfig({
     adaptiveThemes: true,
     experimentalCSSMediaQueries: true,

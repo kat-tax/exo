@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "./tsconfig.app.json",
+  "display": "Storybook Native",
+  "compilerOptions": {
+    "baseUrl": "../../../apps/storybook/native",
+  }
+}

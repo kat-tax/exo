@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   presets: ['@rnx-kit/babel-preset-metro-react-native'],
   plugins: [
     'macros',
@@ -7,4 +7,4 @@ module.exports = {
       relativeSourceLocation: false,
     }],
   ],
-};
+}

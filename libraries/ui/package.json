@@ -16,21 +16,21 @@
     "react-dom": ">=18",
     "react-exo": ">=0",
     "react-native": ">=73",
-    "react-native-svg": ">=14",
+    "react-native-svg": ">=15",
     "react-native-unistyles": ">=2",
     "react-native-web": ">=19"
   },
   "devDependencies": {
-    "@lingui/macro": "^4.7.2",
-    "@storybook/react": "^7.6.17",
-    "@types/react": "^18.2.72",
+    "@lingui/macro": "^4.8.0",
+    "@storybook/react": "^8.0.5",
+    "@types/react": "^18.2.74",
     "cfg": "workspace:*",
     "react": "18.2.0",
     "react-dom": "^18.2.0",
     "react-exo": "workspace:^",
     "react-native": "0.73.6",
     "react-native-svg": "^15.1.0",
-    "react-native-unistyles": "^2.5.0",
+    "react-native-unistyles": "^2.5.2",
     "react-native-web": "^0.19.10",
     "typescript": "^5.4.3"
   }

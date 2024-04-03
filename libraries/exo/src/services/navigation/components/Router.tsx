@@ -1,5 +1,5 @@
 import {useState, useLayoutEffect} from 'react';
-import {Router as BaseRouter} from 'react-router';
+import {Router as RouterBase} from 'react-router';
 
 import type {History} from 'history';
 
@@ -9,7 +9,7 @@ export interface RouterProps {
   children?: React.ReactNode,
 }
 
-export function Router({basename, children, history}: RouterProps) {
+export function Router({basename, children, history}: RouterProps): JSX.Element {
   const [state, setState] = useState({
     location: history.location,
     action: history.action,
@@ -18,7 +18,7 @@ export function Router({basename, children, history}: RouterProps) {
   useLayoutEffect(() => history.listen(setState), [history]);
 
   return (
-    <BaseRouter
+    <RouterBase
       navigator={history}
       basename={basename}
       children={children}
