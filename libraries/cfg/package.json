@@ -3,19 +3,21 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "build": "tsc --project ./ts/tsconfig.config.json",
-    "generate": "rnuc --project-root ../../../../apps/client --lib-root ./node_modules/react-native-ultimate-config config.yaml",
-    "postinstall": "pnpm run generate && pnpm run build"
+    "build": "pnpm run gen-config && tsc --project ./types/tsconfig.cfg.json && pnpm run gen-files",
+    "gen-config": "rnuc --project-root ../../../../apps/client --lib-root ./node_modules/react-native-ultimate-config config.yaml",
+    "gen-files": "tsx ./scripts/generate.ts",
+    "postinstall": "pnpm run build"
   },
   "exports": {
-    ".": "./gen/index.js",
-    "./babel": "./gen/babel.js",
-    "./lingui": "./gen/lingui.js",
-    "./metro": "./gen/metro.js",
-    "./vite": "./gen/vite.js",
-    "./vocs": "./gen/vocs.js",
-    "./ts/tsconfig.app.json": "./ts/tsconfig.app.json",
-    "./ts/tsconfig.config.json": "./ts/tsconfig.config.json"
+    ".": "./node_modules/react-native-ultimate-config",
+    "./docs": "./gen/docs.js",
+    "./vite": "./gen/tools/vite.js",
+    "./babel": "./gen/tools/babel.js",
+    "./metro": "./gen/tools/metro.js",
+    "./locales": "./gen/locales.js",
+    "./app.json": "./gen/app.json",
+    "./types/tsconfig.app.json": "./types/tsconfig.app.json",
+    "./types/tsconfig.cfg.json": "./types/tsconfig.cfg.json"
   },
   "dependencies": {
     "@lingui/cli": "^4.8.0",
@@ -35,6 +37,7 @@
     "vite": "^5.2.7",
     "vite-tsconfig-paths": "^4.3.2",
     "vocs": "latest",
-    "yaml": "latest"
+    "yaml": "latest",
+    "tsx": "latest"
   }
 }

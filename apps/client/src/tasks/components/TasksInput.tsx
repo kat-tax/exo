@@ -1,6 +1,6 @@
 import {t} from '@lingui/macro';
 import {useRef} from 'react';
-import {useLingui} from '@lingui/react';
+import {useLingui} from 'react-exo/i18n';
 import {useStyles, createStyleSheet} from 'styles';
 import {TextInput} from 'react-native';
 

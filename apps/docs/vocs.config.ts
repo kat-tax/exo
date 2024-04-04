@@ -1,19 +1,21 @@
 import {defineConfig} from 'vocs';
-import vocsConfig from 'cfg/vocs';
+import docsConfig from 'cfg/docs';
 import viteConfig from 'cfg/vite';
 
 export default defineConfig({
-  ...vocsConfig,
+  ...docsConfig,
   rootDir: './',
+  vite: {
+    plugins: viteConfig.plugins?.slice(0,-1),
+    resolve: viteConfig.resolve,
+    build: viteConfig.build,
+    define: {
+      global: 'window',
+    },
+  },
   twoslash: {
     compilerOptions: {
       moduleResolution: 100,
     }
-  },
-  vite: {
-    resolve: viteConfig.resolve,
-    build: {
-      outDir: './dist',
-    },
   },
 });

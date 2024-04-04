@@ -8,11 +8,10 @@ export function Shift(props: ShiftProps) {
   const [value, setValue] = useState(0);
   
   useEffect(() => {
-    const interval = setInterval(() => {
-      setValue(v => v === 0 ? 1 : 0);
-    }, 1000);
-    return () => clearInterval(interval);
-  }, []);
+    setTimeout(() => {
+      setValue(value === 1 ? 0 : 1);
+    }, 1500);
+  }, [value]);
 
   return <>{props.children(value)}</>;
 }

@@ -63,12 +63,14 @@ export default defineConfig({
         'react-native',
         'react-native-web',
         'react/jsx-runtime',
+        /* I18n */
+        '@linguijs/core',
+        '@linguijs/react',
+        '@linguijs/macro',
         /* Web */
         '@vidstack/react',
         '@dotlottie/common',
-        '@dotlottie/react-player',
-        /* Native */
-        '@marceloterreiro/flash-calendar',
+        '@dotlottie/react-player'
       ],
     },
     outDir: 'gen',

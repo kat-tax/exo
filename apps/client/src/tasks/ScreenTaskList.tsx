@@ -1,6 +1,6 @@
 import {t} from '@lingui/macro';
 import {Link} from 'react-exo/router';
-import {useLingui} from '@lingui/react';
+import {useLingui} from 'react-exo/i18n';
 import {useLists} from 'tasks/hooks/useLists';
 import {Page} from 'core/components/Page';
 

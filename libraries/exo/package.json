@@ -182,6 +182,8 @@
   },
   "devDependencies": {
     "@candlefinance/faster-image": "^1.3.4",
+    "@lingui/conf": "^4.8.0",
+    "@lingui/macro": "^4.8.0",
     "@marceloterreiro/flash-calendar": "^0.0.8",
     "@react-native-community/checkbox": "^0.5.17",
     "@react-native-community/netinfo": "^11.3.1",

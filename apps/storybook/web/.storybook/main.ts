@@ -14,7 +14,7 @@ const config: StorybookConfig = {
     },
     {
       titlePrefix: 'Primitives',
-      directory: '../../../../libraries/exo/src/components',
+      directory: '../../../../libraries/exo/src',
       files: '**/*.story.tsx',
     },
   ],
@@ -41,7 +41,7 @@ const config: StorybookConfig = {
     builder: {
       name: '@storybook/builder-vite',
       options: {
-        viteConfigPath: '../../cfg/vite.mjs',
+        viteConfigPath: '../../../libraries/cfg/gen/vite.js',
       },
     }
   },

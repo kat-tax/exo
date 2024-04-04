@@ -1,4 +1,4 @@
-import {useLingui} from '@lingui/react';
+import {useLingui} from 'react-exo/i18n';
 import {useParams} from 'react-exo/router';
 import {useTasks} from 'tasks/hooks/useTasks';
 import {TasksList} from 'tasks/components/TasksList';

@@ -9,14 +9,14 @@ export default <UserConfig> {
   plugins: [
     paths(),
     lingui(),
+    million.vite({
+      auto: false,
+      telemetry: false,
+    }),
     react({
       babel: {
         plugins: ["macros"],
       },
-    }),
-    million.vite({
-      auto: true,
-      telemetry: false,
     }),
   ],
   build: {

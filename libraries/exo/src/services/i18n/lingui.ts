@@ -1,25 +1,14 @@
 import type {LinguiConfig} from '@lingui/conf';
-
-export const locales = [
-  'en',
-  'de',
-  'es',
-  'pt',
-  'ja',
-  'ru',
-  'ar',
-  'id',
-] as const;
-
-export type Locales = typeof locales;
+import sourceLocale, {locales} from 'cfg/locales';
 
 export default <LinguiConfig> {
   format: 'po',
+  sourceLocale,
   locales: locales as unknown as string[],
   catalogs: [{
-    path: '../../content/locales/{locale}',
+    path: '../../../../../content/locales/{locale}',
     include: [
-      '../../apps/client/src/**/*.{ts,tsx}',
+      '../../../../../apps/client/src/**/*.{ts,tsx}',
     ],
     exclude: [
       '**/node_modules/**',

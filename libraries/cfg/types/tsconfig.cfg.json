@@ -1,7 +1,8 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
-    "rootDir": "../src",
+    "baseUrl": "../",
+    "rootDir": "../",
     "outDir": "../gen",
     "module": "esnext",
     "moduleResolution": "node",
@@ -9,6 +10,10 @@
     "composite": true,
   }, 
   "include": [
-    "../src/**.*",
+    "../tools",
+    "../*.ts"
   ],
+  "exclude": [
+    "gen",
+  ]
 }

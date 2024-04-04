@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import {useLingui} from '@lingui/react';
+import {useLingui} from 'react-exo/i18n';
 import {Motion} from 'react-exo/motion';
 import {Slider} from 'react-exo/slider';
 import {Text} from 'react-native';

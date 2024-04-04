@@ -170,6 +170,9 @@ importers:
       react-exo:
         specifier: workspace:*
         version: link:../../../libraries/exo
+      react-native:
+        specifier: ^0.73.6
+        version: 0.73.6(@babel/core@7.23.9)(@babel/preset-env@7.23.6)(react@18.2.0)
       react-native-svg:
         specifier: ^15.1.0
         version: 15.1.0(react-native@0.73.6)(react@18.2.0)
@@ -270,6 +273,9 @@ importers:
       react-native-ultimate-config:
         specifier: ^6.0.1
         version: 6.0.1(react-native@0.73.6)
+      tsx:
+        specifier: latest
+        version: 4.7.1
       typescript:
         specifier: ^5.4.3
         version: 5.4.3
@@ -361,6 +367,12 @@ importers:
       '@candlefinance/faster-image':
         specifier: ^1.3.4
         version: 1.3.4(react-native@0.73.6)(react@18.2.0)
+      '@lingui/conf':
+        specifier: ^4.8.0
+        version: 4.8.0(typescript@5.4.3)
+      '@lingui/macro':
+        specifier: ^4.8.0
+        version: 4.8.0(@lingui/react@4.8.0)(babel-plugin-macros@3.1.0)(typescript@5.4.3)
       '@marceloterreiro/flash-calendar':
         specifier: ^0.0.8
         version: 0.0.8(@shopify/flash-list@1.6.4)(react-native@0.73.6)(react@18.2.0)
@@ -751,7 +763,7 @@ packages:
     resolution: {integrity: sha512-OErEqsrxjZTJciZ4Oo+eoZqeW9UIiOcuYKRJA4ZAgV9myA+pOXhhmpfNCKjEH/auVfEYVFJ6y1Tc4r0eIApqiw==}
     engines: {node: '>=6.9.0'}
     dependencies:
-      '@babel/template': 7.22.15
+      '@babel/template': 7.23.9
       '@babel/types': 7.23.9
 
   /@babel/helper-hoist-variables@7.22.5:
@@ -879,13 +891,6 @@ packages:
       '@babel/helper-validator-identifier': 7.22.20
       chalk: 2.4.2
       js-tokens: 4.0.0
-
-  /@babel/parser@7.23.6:
-    resolution: {integrity: sha512-Z2uID7YJ7oNvAI20O9X0bblw7Qqs8Q2hFy0R9tAfnfLkp5MW0UH9eUvnDSnFwKZ0AvgS1ucqR4KzvVHgnke1VQ==}
-    engines: {node: '>=6.0.0'}
-    hasBin: true
-    dependencies:
-      '@babel/types': 7.23.9
 
   /@babel/parser@7.23.9:
     resolution: {integrity: sha512-9tcKgqKbs3xGJ+NtKF2ndOBBLVwPjl1SHxPQkd36r3Dlirw3xWUeGaTbqr7uGZcTaxkVNwc+03SVP7aCdWrTlA==}
@@ -1932,14 +1937,6 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       regenerator-runtime: 0.14.1
-
-  /@babel/template@7.22.15:
-    resolution: {integrity: sha512-QPErUVm4uyJa60rkI73qneDacvdvzxshT3kksGqlGWYdOTIUOwJ7RDUL8sGqslY1uXWSL6xMFKEXDS3ox2uF0w==}
-    engines: {node: '>=6.9.0'}
-    dependencies:
-      '@babel/code-frame': 7.23.5
-      '@babel/parser': 7.23.9
-      '@babel/types': 7.23.9
 
   /@babel/template@7.23.9:
     resolution: {integrity: sha512-+xrD2BWLpvHKNmX2QbpdpsBaWnRxahMwJjO+KZk2JOElj5nSmKezyS1B4u+QbHMTX69t4ukm6hh9lsYQ7GHCKA==}
@@ -7532,7 +7529,7 @@ packages:
   /@types/babel__template@7.4.4:
     resolution: {integrity: sha512-h/NUaSyG5EyxBIp8YRxo4RMe2/qQgvyowRwVMzhYhBCONbW8PUsg4lkFMrhgZhUe5z3L3MiLDuvyJ/CaPa2A8A==}
     dependencies:
-      '@babel/parser': 7.23.6
+      '@babel/parser': 7.23.9
       '@babel/types': 7.23.9
 
   /@types/babel__traverse@7.20.4:
@@ -10570,7 +10567,6 @@ packages:
     resolution: {integrity: sha512-wuMsz4leaj5hbGgg4IvDU0bqJagpftG5l5cXIAvo8uZrqn0NJqwtfupTN00VnkQJPcIRrxYrm1Ue24btpCha2A==}
     dependencies:
       resolve-pkg-maps: 1.0.0
-    dev: true
 
   /getenv@1.0.0:
     resolution: {integrity: sha512-7yetJWqbS9sbn0vIfliPsFgoXMKn/YMF+Wuiog97x+urnSRRRZ7xB+uVkwGKzRgq9CDFfMQnE9ruL5DHv9c6Xg==}
@@ -15257,7 +15253,6 @@ packages:
 
   /resolve-pkg-maps@1.0.0:
     resolution: {integrity: sha512-seS2Tj26TBVOC2NIc2rOe2y2ZO7efxITtLZcGSOnHHNOQ7CkiUBfw0Iw2ck6xkIhPwLhKNLS8BO+hEpngQlqzw==}
-    dev: true
 
   /resolve@1.19.0:
     resolution: {integrity: sha512-rArEXAgsBG4UgRGcynxWIWKFvh/XZCcS8UJdHhwy91zwAvCZIbcs+vAbflgBnNjYMs/i/i+/Ux6IZhML1yPvxg==}
@@ -16286,7 +16281,6 @@ packages:
       get-tsconfig: 4.7.2
     optionalDependencies:
       fsevents: 2.3.3
-    dev: true
 
   /tunnel-agent@0.6.0:
     resolution: {integrity: sha512-McnNiV1l8RYeY8tBgEpuodCC1mLUdbSN+CYBL7kJsJNInOP8UjDDEwdk6Mw60vdLLrr5NHKZhMAOSrR2NZuQ+w==}
