@@ -1,3 +1,8 @@
 {
-  "extends": "cfg/ts/tsconfig.client.json"
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "cfg/ts/tsconfig.app.json",
+  "display": "Client",
+  "compilerOptions": {
+    "baseUrl": "./src",
+  }
 }

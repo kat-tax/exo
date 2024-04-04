@@ -20,7 +20,7 @@ export default <UserConfig> {
     }),
   ],
   build: {
-    outDir: '../../../dist/web',
+    emptyOutDir: true,
     rollupOptions: {
       output: {
         manualChunks: i => i.includes('node_modules')

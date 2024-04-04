@@ -1,1 +1,1 @@
-require('./src/index.native.ts')
+require('./src/index.native.tsx')

@@ -1,0 +1,30 @@
+//import config from 'cfg';
+import * as redux from 'react-exo/redux';
+import {Storage} from 'react-exo/storage';
+
+import core from 'core/store';
+import tasks from 'tasks/store';
+import settings from 'settings/store';
+
+export const store = redux.configureStore({
+  reducer: redux.persistReducer({
+    key: 'exo',
+    version: 0,
+    storage: Storage.init(`${'exo'}::redux`, 0),
+    blacklist: [
+      redux.history.context.routerReducer.name,
+      core.reducer.name,
+    ],
+  }, redux.combineReducers({
+    router: redux.history.context.routerReducer,
+    core: core.reducer,
+    tasks: tasks.reducer,
+    settings: settings.reducer,
+  })),
+  devTools: __DEV__,
+  middleware: () => new redux.Tuple(
+    redux.history.context.routerMiddleware,
+  ),
+});
+
+redux.history.init(store);

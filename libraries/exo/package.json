@@ -16,6 +16,11 @@
       "import": "./gen/index.js",
       "require": "./gen/index.cjs"
     },
+    "./redux": {
+      "types": "./gen/redux.d.ts",
+      "import": "./gen/redux.js",
+      "require": "./gen/redux.cjs"
+    },
     "./i18n": {
       "types": "./gen/i18n.d.ts",
       "import": "./gen/i18n.js",
@@ -26,10 +31,10 @@
       "import": "./gen/device.js",
       "require": "./gen/device.cjs"
     },
-    "./navigation": {
-      "types": "./gen/navigation.d.ts",
-      "import": "./gen/navigation.js",
-      "require": "./gen/navigation.cjs"
+    "./router": {
+      "types": "./gen/router.d.ts",
+      "import": "./gen/router.js",
+      "require": "./gen/router.cjs"
     },
     "./storage": {
       "types": "./gen/storage.d.ts",

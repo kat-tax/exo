@@ -1,8 +1,8 @@
 import {defineConfig} from 'vite';
-import plugins from './plugins';
 import react from '@vitejs/plugin-react';
 import paths from 'vite-tsconfig-paths';
 import types from 'vite-plugin-dts';
+import plugins from './plugins';
 
 export default defineConfig({
   plugins: [
@@ -26,9 +26,10 @@ export default defineConfig({
         rive: 'src/assets/rive',
         /* Services */
         'safe-area': 'src/services/safe-area',
-        navigation: 'src/services/navigation',
         storage: 'src/services/storage',
         device: 'src/services/device',
+        router: 'src/services/router',
+        redux: 'src/services/redux',
         i18n: 'src/services/i18n',
         form: 'src/services/form',
         /* Interactions */

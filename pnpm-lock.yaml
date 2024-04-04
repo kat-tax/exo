@@ -17,15 +17,15 @@ importers:
 
   apps/client:
     dependencies:
+      '@lingui/core':
+        specifier: ^4.8.0
+        version: 4.8.0
       '@lingui/macro':
         specifier: ^4.8.0
         version: 4.8.0(@lingui/react@4.8.0)(babel-plugin-macros@3.1.0)(typescript@5.4.3)
       '@lingui/react':
         specifier: ^4.8.0
         version: 4.8.0(react@18.2.0)
-      '@reduxjs/toolkit':
-        specifier: ^2.2.3
-        version: 2.2.3(react-redux@9.1.0)(react@18.2.0)
       react:
         specifier: 18.2.0
         version: 18.2.0
@@ -42,17 +42,14 @@ importers:
         specifier: ^15.1.0
         version: 15.1.0(react-native@0.73.6)(react@18.2.0)
       react-native-unistyles:
-        specifier: ^2.5.2
+        specifier: ^2.5.3
         version: 2.5.3(@react-native/normalize-colors@0.74.1)(react-native-web@0.19.10)(react-native@0.73.6)(react@18.2.0)
       react-native-web:
         specifier: ^0.19.10
         version: 0.19.10(react-dom@18.2.0)(react@18.2.0)
       react-redux:
         specifier: ^9.1.0
-        version: 9.1.0(@types/react@18.2.74)(react-native@0.73.6)(react@18.2.0)(redux@5.0.1)
-      redux-persist:
-        specifier: ^6.0.0
-        version: 6.0.0(react@18.2.0)(redux@5.0.1)
+        version: 9.1.0(@types/react@18.2.74)(react-native@0.73.6)(react@18.2.0)
       ui:
         specifier: workspace:*
         version: link:../../libraries/ui
@@ -61,8 +58,8 @@ importers:
         specifier: ^18.2.74
         version: 18.2.74
       '@types/react-dom':
-        specifier: ^18.2.23
-        version: 18.2.23
+        specifier: ^18.2.24
+        version: 18.2.24
       cfg:
         specifier: workspace:*
         version: link:../../libraries/cfg
@@ -81,9 +78,6 @@ importers:
       '@lingui/react':
         specifier: ^4.8.0
         version: 4.8.0(react@18.2.0)
-      '@reduxjs/toolkit':
-        specifier: ^2.2.2
-        version: 2.2.2(react-redux@9.1.0)(react@18.2.0)
       react:
         specifier: 18.2.0
         version: 18.2.0
@@ -105,12 +99,6 @@ importers:
       react-native-web:
         specifier: ^0.19.10
         version: 0.19.10(react-dom@18.2.0)(react@18.2.0)
-      react-redux:
-        specifier: ^9.1.0
-        version: 9.1.0(@types/react@18.2.61)(react-native@0.73.6)(react@18.2.0)(redux@5.0.1)
-      redux-persist:
-        specifier: ^6.0.0
-        version: 6.0.0(react@18.2.0)(redux@5.0.1)
       ui:
         specifier: workspace:*
         version: link:../../libraries/ui
@@ -120,6 +108,9 @@ importers:
       vocs:
         specifier: latest
         version: 1.0.0-alpha.43(@types/react-dom@18.2.19)(@types/react@18.2.61)(react-dom@18.2.0)(react@18.2.0)(rollup@4.13.0)(typescript@5.4.3)
+      yaml:
+        specifier: latest
+        version: 2.4.1
     devDependencies:
       '@types/fs-extra':
         specifier: latest
@@ -6030,26 +6021,7 @@ packages:
     dependencies:
       immer: 10.0.4
       react: 18.2.0
-      react-redux: 9.1.0(@types/react@18.2.61)(react-native@0.73.6)(react@18.2.0)(redux@5.0.1)
-      redux: 5.0.1
-      redux-thunk: 3.1.0(redux@5.0.1)
-      reselect: 5.1.0
-    dev: false
-
-  /@reduxjs/toolkit@2.2.3(react-redux@9.1.0)(react@18.2.0):
-    resolution: {integrity: sha512-76dll9EnJXg4EVcI5YNxZA/9hSAmZsFqzMmNRHvIlzw2WS/twfcVX3ysYrWGJMClwEmChQFC4yRq74tn6fdzRA==}
-    peerDependencies:
-      react: ^16.9.0 || ^17.0.0 || ^18
-      react-redux: ^7.2.1 || ^8.1.3 || ^9.0.0
-    peerDependenciesMeta:
-      react:
-        optional: true
-      react-redux:
-        optional: true
-    dependencies:
-      immer: 10.0.4
-      react: 18.2.0
-      react-redux: 9.1.0(@types/react@18.2.74)(react-native@0.73.6)(react@18.2.0)(redux@5.0.1)
+      react-redux: 9.1.0(@types/react@18.2.72)(react-native@0.73.6)(react@18.2.0)(redux@5.0.1)
       redux: 5.0.1
       redux-thunk: 3.1.0(redux@5.0.1)
       reselect: 5.1.0
@@ -7769,6 +7741,13 @@ packages:
     resolution: {integrity: sha512-ZQ71wgGOTmDYpnav2knkjr3qXdAFu0vsk8Ci5w3pGAIdj7/kKAyn+VsQDhXsmzzzepAiI9leWMmubXz690AI/A==}
     dependencies:
       '@types/react': 18.2.74
+    dev: false
+
+  /@types/react-dom@18.2.24:
+    resolution: {integrity: sha512-cN6upcKd8zkGy4HU9F1+/s98Hrp6D4MOcippK4PoE8OZRngohHZpbJn1GsaDLz87MqvHNoT13nHvNqM9ocRHZg==}
+    dependencies:
+      '@types/react': 18.2.74
+    dev: true
 
   /@types/react-native-video@5.0.20(@babel/core@7.23.9)(@babel/preset-env@7.23.6)(react@18.2.0):
     resolution: {integrity: sha512-CdD4T43uEKzTNJ/RylTDViNuGuyOPWQUEuA1Y9GY8T+HiE9cwYw1zQNqk8a7zz9GHamlPfJQ+bYoEE9OWjZ/6g==}
@@ -13160,11 +13139,11 @@ packages:
       css-mediaquery: 0.1.2
       css-to-react-native: 3.2.0
       micromatch: 4.0.5
-      postcss: 8.4.37
-      postcss-calc: 8.2.4(postcss@8.4.37)
-      postcss-color-functional-notation: 4.2.4(postcss@8.4.37)
-      postcss-css-variables: 0.18.0(postcss@8.4.37)
-      postcss-nested: 5.0.6(postcss@8.4.37)
+      postcss: 8.4.38
+      postcss-calc: 8.2.4(postcss@8.4.38)
+      postcss-color-functional-notation: 4.2.4(postcss@8.4.38)
+      postcss-css-variables: 0.18.0(postcss@8.4.38)
+      postcss-nested: 5.0.6(postcss@8.4.38)
       react-is: 18.2.0
       tailwindcss: 3.4.1
       use-sync-external-store: 1.2.0(react@18.2.0)
@@ -13700,27 +13679,27 @@ packages:
     dependencies:
       '@babel/runtime': 7.23.6
 
-  /postcss-calc@8.2.4(postcss@8.4.37):
+  /postcss-calc@8.2.4(postcss@8.4.38):
     resolution: {integrity: sha512-SmWMSJmB8MRnnULldx0lQIyhSNvuDl9HfrZkaqqE/WHAhToYsAvDq+yAsA/kIyINDszOp3Rh0GFoNuH5Ypsm3Q==}
     peerDependencies:
       postcss: ^8.2.2
     dependencies:
-      postcss: 8.4.37
+      postcss: 8.4.38
       postcss-selector-parser: 6.0.15
       postcss-value-parser: 4.2.0
     dev: false
 
-  /postcss-color-functional-notation@4.2.4(postcss@8.4.37):
+  /postcss-color-functional-notation@4.2.4(postcss@8.4.38):
     resolution: {integrity: sha512-2yrTAUZUab9s6CpxkxC4rVgFEVaR6/2Pipvi6qcgvnYiVqZcbDHEoBDhrXzyb7Efh2CCfHQNtcqWcIruDTIUeg==}
     engines: {node: ^12 || ^14 || >=16}
     peerDependencies:
       postcss: ^8.2
     dependencies:
-      postcss: 8.4.37
+      postcss: 8.4.38
       postcss-value-parser: 4.2.0
     dev: false
 
-  /postcss-css-variables@0.18.0(postcss@8.4.37):
+  /postcss-css-variables@0.18.0(postcss@8.4.38):
     resolution: {integrity: sha512-lYS802gHbzn1GI+lXvy9MYIYDuGnl1WB4FTKoqMQqJ3Mab09A7a/1wZvGTkCEZJTM8mSbIyb1mJYn8f0aPye0Q==}
     peerDependencies:
       postcss: ^8.2.6
@@ -13728,7 +13707,7 @@ packages:
       balanced-match: 1.0.2
       escape-string-regexp: 1.0.5
       extend: 3.0.2
-      postcss: 8.4.37
+      postcss: 8.4.38
     dev: false
 
   /postcss-import@15.1.0(postcss@8.4.37):
@@ -13770,13 +13749,13 @@ packages:
       yaml: 2.4.1
     dev: false
 
-  /postcss-nested@5.0.6(postcss@8.4.37):
+  /postcss-nested@5.0.6(postcss@8.4.38):
     resolution: {integrity: sha512-rKqm2Fk0KbA8Vt3AdGN0FB9OBOMDVajMG6ZCf/GoHgdxUJ4sBFp0A/uMIRm+MJUdo33YXEtjqIz8u7DAp8B7DA==}
     engines: {node: '>=12.0'}
     peerDependencies:
       postcss: ^8.2.14
     dependencies:
-      postcss: 8.4.37
+      postcss: 8.4.38
       postcss-selector-parser: 6.0.15
     dev: false
 
@@ -14655,29 +14634,6 @@ packages:
       scheduler: 0.21.0
     dev: true
 
-  /react-redux@9.1.0(@types/react@18.2.61)(react-native@0.73.6)(react@18.2.0)(redux@5.0.1):
-    resolution: {integrity: sha512-6qoDzIO+gbrza8h3hjMA9aq4nwVFCKFtY2iLxCtVT38Swyy2C/dJCGBXHeHLtx6qlg/8qzc2MrhOeduf5K32wQ==}
-    peerDependencies:
-      '@types/react': ^18.2.25
-      react: ^18.0
-      react-native: '>=0.69'
-      redux: ^5.0.0
-    peerDependenciesMeta:
-      '@types/react':
-        optional: true
-      react-native:
-        optional: true
-      redux:
-        optional: true
-    dependencies:
-      '@types/react': 18.2.61
-      '@types/use-sync-external-store': 0.0.3
-      react: 18.2.0
-      react-native: 0.73.6(@babel/core@7.23.9)(@babel/preset-env@7.23.6)(react@18.2.0)
-      redux: 5.0.1
-      use-sync-external-store: 1.2.0(react@18.2.0)
-    dev: false
-
   /react-redux@9.1.0(@types/react@18.2.72)(react-native@0.73.6)(react@18.2.0)(redux@5.0.1):
     resolution: {integrity: sha512-6qoDzIO+gbrza8h3hjMA9aq4nwVFCKFtY2iLxCtVT38Swyy2C/dJCGBXHeHLtx6qlg/8qzc2MrhOeduf5K32wQ==}
     peerDependencies:
@@ -14701,7 +14657,7 @@ packages:
       use-sync-external-store: 1.2.0(react@18.2.0)
     dev: false
 
-  /react-redux@9.1.0(@types/react@18.2.74)(react-native@0.73.6)(react@18.2.0)(redux@5.0.1):
+  /react-redux@9.1.0(@types/react@18.2.74)(react-native@0.73.6)(react@18.2.0):
     resolution: {integrity: sha512-6qoDzIO+gbrza8h3hjMA9aq4nwVFCKFtY2iLxCtVT38Swyy2C/dJCGBXHeHLtx6qlg/8qzc2MrhOeduf5K32wQ==}
     peerDependencies:
       '@types/react': ^18.2.25
@@ -14720,7 +14676,6 @@ packages:
       '@types/use-sync-external-store': 0.0.3
       react: 18.2.0
       react-native: 0.73.6(@babel/core@7.23.9)(@babel/preset-env@7.23.6)(react@18.2.0)
-      redux: 5.0.1
       use-sync-external-store: 1.2.0(react@18.2.0)
     dev: false
 

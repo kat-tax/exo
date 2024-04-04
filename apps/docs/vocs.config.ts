@@ -8,7 +8,7 @@ export default defineConfig({
   vite: {
     resolve: viteConfig.resolve,
     build: {
-      outDir: '../../dist/docs',
+      outDir: '../../output/docs',
     },
   },
 });

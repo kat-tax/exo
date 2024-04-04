@@ -1,13 +1,13 @@
-import {AppRouter} from 'AppRouter';
+import {AppStore} from 'AppStore';
 import {AppProvider} from 'AppProvider';
-import {StoreProvider} from 'store/Provider';
+import {AppRouter, AppRoutes} from 'AppRouter';
 
-export function App() {
+export function App(routes: AppRoutes) {
   return (
-    <StoreProvider>
+    <AppStore>
       <AppProvider>
-        <AppRouter/>
+        <AppRouter {...routes}/>
       </AppProvider>
-    </StoreProvider>
+    </AppStore>
   )
 }

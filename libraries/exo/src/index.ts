@@ -13,9 +13,10 @@ export type * from './interactions/motion';
 
 // Services
 export type * from './services/safe-area';
-export type * from './services/navigation';
+export type * from './services/router';
 export type * from './services/storage';
 export type * from './services/device';
+export type * from './services/redux';
 export type * from './services/i18n';
 export type * from './services/form';
 
