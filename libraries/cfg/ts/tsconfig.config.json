@@ -1,15 +1,14 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "display": "Config",
-  "include": [
-    "./src/**.*",
-  ],
   "compilerOptions": {
-    "rootDir": "./src",
-    "outDir": "./gen",
+    "rootDir": "../src",
+    "outDir": "../gen",
     "module": "esnext",
     "moduleResolution": "node",
     "skipLibCheck": true,
     "composite": true,
-  }
+  }, 
+  "include": [
+    "../src/**.*",
+  ],
 }

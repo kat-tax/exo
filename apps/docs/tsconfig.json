@@ -1,3 +1,8 @@
 {
-  "extends": "cfg/ts/tsconfig.docs.json"
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "cfg/ts/tsconfig.app.json",
+  "display": "Docs",
+  "compilerOptions": {
+    "baseUrl": "./",
+  }
 }

@@ -5,10 +5,15 @@ import viteConfig from 'cfg/vite';
 export default defineConfig({
   ...vocsConfig,
   rootDir: './',
+  twoslash: {
+    compilerOptions: {
+      moduleResolution: 100,
+    }
+  },
   vite: {
     resolve: viteConfig.resolve,
     build: {
-      outDir: '../../output/docs',
+      outDir: './dist',
     },
   },
 });

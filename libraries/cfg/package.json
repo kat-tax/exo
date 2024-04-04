@@ -3,7 +3,7 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "build": "tsc",
+    "build": "tsc --project ./ts/tsconfig.config.json",
     "generate": "rnuc --project-root ../../../../apps/client --lib-root ./node_modules/react-native-ultimate-config config.yaml",
     "postinstall": "pnpm run generate && pnpm run build"
   },
@@ -15,13 +15,7 @@
     "./vite": "./gen/vite.js",
     "./vocs": "./gen/vocs.js",
     "./ts/tsconfig.app.json": "./ts/tsconfig.app.json",
-    "./ts/tsconfig.client.json": "./ts/tsconfig.client.json",
-    "./ts/tsconfig.config.json": "./ts/tsconfig.config.json",
-    "./ts/tsconfig.docs.json": "./ts/tsconfig.docs.json",
-    "./ts/tsconfig.exo.json": "./ts/tsconfig.exo.json",
-    "./ts/tsconfig.sb-common.json": "./ts/tsconfig.sb-common.json",
-    "./ts/tsconfig.sb-native.json": "./ts/tsconfig.sb-native.json",
-    "./ts/tsconfig.sb-web.json": "./ts/tsconfig.sb-web.json"
+    "./ts/tsconfig.config.json": "./ts/tsconfig.config.json"
   },
   "dependencies": {
     "@lingui/cli": "^4.8.0",

@@ -9,6 +9,7 @@ export default defineConfig({
     paths(),
     react(),
     types({
+      exclude: ['gen', 'vite.config.mts'],
       insertTypesEntry: true,
     }),
   ],

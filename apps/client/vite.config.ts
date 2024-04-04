@@ -5,7 +5,7 @@ export default defineConfig(mergeConfig(
   viteConfig,
   defineConfig({
     build: {
-      outDir: '../../output/web',
+      outDir: 'dist/web',
     },
   })
 ));

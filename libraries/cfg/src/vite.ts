@@ -20,7 +20,7 @@ export default <UserConfig> {
     }),
   ],
   build: {
-    emptyOutDir: true,
+    outDir: './dist',
     rollupOptions: {
       output: {
         manualChunks: i => i.includes('node_modules')
