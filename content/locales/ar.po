@@ -13,56 +13,56 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/features/tasks/base/TasksInput.tsx:21
+#: src/tasks/components/TasksInput.tsx:21
 msgid "Add a task"
 msgstr ""
 
 #: src/features/settings/ScreenSettings.tsx:38
-msgid "Dark"
-msgstr ""
+#~ msgid "Dark"
+#~ msgstr ""
 
 #: src/features/settings/ScreenSettings.tsx:36
 #: src/features/settings/ScreenSettings.tsx:47
-msgid "Default"
-msgstr ""
+#~ msgid "Default"
+#~ msgstr ""
 
-#: src/features/app/utils/getGreeting.ts:13
+#: src/core/utils/date.ts:24
 msgid "Enjoy the night."
 msgstr ""
 
-#: src/features/app/utils/getGreeting.ts:9
+#: src/core/utils/date.ts:20
 msgid "Good afternoon."
 msgstr ""
 
-#: src/features/app/utils/getGreeting.ts:11
+#: src/core/utils/date.ts:22
 msgid "Good evening."
 msgstr ""
 
-#: src/features/app/utils/getGreeting.ts:7
+#: src/core/utils/date.ts:18
 msgid "Good morning."
 msgstr ""
 
-#: src/features/app/base/Menu.tsx:24
+#: src/core/components/Menu.tsx:16
 msgid "Home"
 msgstr ""
 
-#: src/features/settings/ScreenSettings.tsx:41
+#: src/settings/ScreenSettings.tsx:35
 msgid "Language"
 msgstr ""
 
 #: src/features/settings/ScreenSettings.tsx:37
-msgid "Light"
-msgstr ""
+#~ msgid "Light"
+#~ msgstr ""
 
-#: src/features/app/base/Menu.tsx:33
-#: src/features/settings/ScreenSettings.tsx:28
+#: src/core/components/Menu.tsx:25
+#: src/settings/ScreenSettings.tsx:22
 msgid "Settings"
 msgstr ""
 
-#: src/features/tasks/ScreenTaskList.tsx:11
+#: src/tasks/ScreenTaskList.tsx:11
 msgid "Tasks"
 msgstr ""
 
-#: src/features/settings/ScreenSettings.tsx:30
+#: src/settings/ScreenSettings.tsx:24
 msgid "Theme"
 msgstr ""

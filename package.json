@@ -16,10 +16,15 @@
     "storybook-native": "pnpm --filter ./apps/storybook/native run dev",
     "storybook-build": "pnpm --filter ./apps/storybook/web run build",
 
+    "translate": "pnpm run translate-extract && pnpm run translate-compile",
+    "translate-extract": "lingui extract --config ./apps/client/lingui.config.ts",
+    "translate-compile": "lingui compile --config ./apps/client/lingui.config.ts",
+
     "publish-exo": "pnpm --filter ./libraries/exo publish",
     "publish-ui": "pnpm --filter ./libraries/ui publish"
   },
   "devDependencies": {
+    "@lingui/cli": "^4.8.0",
     "concurrently": "^8.2.2"
   },
   "resolutions": {

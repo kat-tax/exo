@@ -11,6 +11,9 @@ importers:
 
   .:
     devDependencies:
+      '@lingui/cli':
+        specifier: ^4.8.0
+        version: 4.8.0(typescript@5.4.3)
       concurrently:
         specifier: ^8.2.2
         version: 8.2.2
@@ -228,13 +231,13 @@ importers:
 
   libraries/cfg:
     dependencies:
+      '@lingui/core':
+        specifier: ^4.8.0
+        version: 4.8.0
       react-native-ultimate-config:
         specifier: ^6.0.1
         version: 6.0.1(react-native@0.73.6)
     devDependencies:
-      '@lingui/cli':
-        specifier: ^4.8.0
-        version: 4.8.0(typescript@5.4.3)
       '@lingui/vite-plugin':
         specifier: ^4.8.0
         version: 4.8.0(typescript@5.4.3)(vite@5.2.8)
@@ -247,6 +250,9 @@ importers:
       '@rnx-kit/metro-resolver-symlinks':
         specifier: ^0.1.35
         version: 0.1.35
+      '@rollup/plugin-dynamic-import-vars':
+        specifier: ^2.1.2
+        version: 2.1.2(rollup@4.13.0)
       '@types/react':
         specifier: ^18.2.74
         version: 18.2.74
@@ -6083,6 +6089,23 @@ packages:
       find-up: 5.0.0
       read-yaml-file: 2.1.0
       strip-json-comments: 3.1.1
+    dev: true
+
+  /@rollup/plugin-dynamic-import-vars@2.1.2(rollup@4.13.0):
+    resolution: {integrity: sha512-4lr2oXxs9hcxtGGaK8s0i9evfjzDrAs7ngw28TqruWKTEm0+U4Eljb+F6HXGYdFv8xRojQlrQwV7M/yxeh3yzQ==}
+    engines: {node: '>=14.0.0'}
+    peerDependencies:
+      rollup: ^1.20.0||^2.0.0||^3.0.0||^4.0.0
+    peerDependenciesMeta:
+      rollup:
+        optional: true
+    dependencies:
+      '@rollup/pluginutils': 5.1.0(rollup@4.13.0)
+      astring: 1.8.6
+      estree-walker: 2.0.2
+      fast-glob: 3.3.2
+      magic-string: 0.30.5
+      rollup: 4.13.0
     dev: true
 
   /@rollup/pluginutils@5.1.0(rollup@4.13.0):

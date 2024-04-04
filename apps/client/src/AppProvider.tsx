@@ -19,7 +19,7 @@ export function AppProvider(props: React.PropsWithChildren) {
   useEffect(() => {loadLocale(locale)}, [locale]);
 
   return (
-    <I18nProvider {...{i18n}}>
+    <I18nProvider i18n={i18n}>
       <StatusBar {...{barStyle}}/>
       <GestureProvider style={{flex: 1}}>
         <SafeAreaProvider>

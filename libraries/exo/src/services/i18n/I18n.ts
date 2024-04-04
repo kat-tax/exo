@@ -8,7 +8,7 @@ export class I18nService implements I18nBase {
   Provider: typeof I18nProvider = I18nProvider;
 
   async loadLocale(locale: Locales = sourceLocale) {
-    const {messages} = await import(`../../../../../content/locales/${locale}.js`) as Messages[Locales];
+    const {messages} = await import(`./messages/${locale}.ts`) as Messages[Locales];
     i18n.loadAndActivate({locale, messages});
   }
 

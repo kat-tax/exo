@@ -25,30 +25,30 @@ export default defineConfig(env => mergeConfig(
           /* Entry */
           index: 'src/index.ts',
           /* Assets */
-          icon: 'src/assets/icon',
-          image: 'src/assets/image',
-          video: 'src/assets/video',
-          lottie: 'src/assets/lottie',
-          rive: 'src/assets/rive',
+          icon: 'src/assets/icon/Icon.export',
+          image: 'src/assets/image/Image.export',
+          video: 'src/assets/video/Video.export',
+          lottie: 'src/assets/lottie/Lottie.export',
+          rive: 'src/assets/rive/Rive.export',
           /* Services */
-          'safe-area': 'src/services/safe-area',
-          storage: 'src/services/storage',
-          device: 'src/services/device',
-          router: 'src/services/router',
-          redux: 'src/services/redux',
-          i18n: 'src/services/i18n',
-          form: 'src/services/form',
+          'safe-area': 'src/services/safe-area/SafeArea.export',
+          storage: 'src/services/storage/Storage.export',
+          device: 'src/services/device/Device.export',
+          router: 'src/services/router/Router.export',
+          redux: 'src/services/redux/Redux.export',
+          i18n: 'src/services/i18n/I18n.export',
+          form: 'src/services/form/Form.export',
           /* Interactions */
-          gesture: 'src/interactions/gesture',
-          motion: 'src/interactions/motion',
+          gesture: 'src/interactions/gesture/Gesture.export',
+          motion: 'src/interactions/motion/Motion.export',
           /* Widgets */
-          calendar: 'src/widgets/calendar',
-          progress: 'src/widgets/progress',
-          slider: 'src/widgets/slider',
-          radio: 'src/widgets/radio',
-          switch: 'src/widgets/switch',
-          picker: 'src/widgets/picker',
-          checkbox: 'src/widgets/checkbox',
+          calendar: 'src/widgets/calendar/Calendar.export',
+          progress: 'src/widgets/progress/Progress.export',
+          slider: 'src/widgets/slider/Slider.export',
+          radio: 'src/widgets/radio/Radio.export',
+          switch: 'src/widgets/switch/Switch.export',
+          picker: 'src/widgets/picker/Picker.export',
+          checkbox: 'src/widgets/checkbox/Checkbox.export',
           /* Hooks */
           variants: 'src/hooks/useVariants',
         }
@@ -56,7 +56,7 @@ export default defineConfig(env => mergeConfig(
       rollupOptions: {
         plugins,
         output: {
-          chunkFileNames: 'chunks/[format]/[hash].js',
+          chunkFileNames: 'chunks/[format]/[hash]/[name].js',
           // assetFileNames: (asset) => (asset.name === 'index.css')
           //   ? 'video.css'
           //   : `[name].[ext]`

@@ -1,33 +1,33 @@
 export default {}
 
 // Assets
-export type * from './assets/icon';
-export type * from './assets/image';
-export type * from './assets/video';
-export type * from './assets/lottie';
-export type * from './assets/rive';
+export type * from './assets/icon/Icon.export';
+export type * from './assets/image/Image.export';
+export type * from './assets/video/Video.export';
+export type * from './assets/lottie/Lottie.export';
+export type * from './assets/rive/Rive.export';
 
 // Interactions
-export type * from './interactions/gesture';
-export type * from './interactions/motion';
+export type * from './interactions/gesture/Gesture.export';
+export type * from './interactions/motion/Motion.export';
 
 // Services
-export type * from './services/safe-area';
-export type * from './services/router';
-export type * from './services/storage';
-export type * from './services/device';
-export type * from './services/redux';
-export type * from './services/i18n';
-export type * from './services/form';
+export type * from './services/safe-area/SafeArea.export';
+export type * from './services/router/Router.export';
+export type * from './services/storage/Storage.export';
+export type * from './services/device/Device.export';
+export type * from './services/redux/Redux.export';
+export type * from './services/i18n/I18n.export';
+export type * from './services/form/Form.export';
 
 // Widgets
-export type * from './widgets/calendar';
-export type * from './widgets/progress';
-export type * from './widgets/slider';
-export type * from './widgets/picker';
-export type * from './widgets/radio';
-export type * from './widgets/switch';
-export type * from './widgets/checkbox';
+export type * from './widgets/calendar/Calendar.export';
+export type * from './widgets/progress/Progress.export';
+export type * from './widgets/slider/Slider.export';
+export type * from './widgets/picker/Picker.export';
+export type * from './widgets/radio/Radio.export';
+export type * from './widgets/switch/Switch.export';
+export type * from './widgets/checkbox/Checkbox.export';
 
 // Hooks
 export type * from './hooks/useVariants';
