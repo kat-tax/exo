@@ -9,6 +9,7 @@
     "postinstall": "tsx utils/setup"
   },
   "dependencies": {
+    "@lingui/core": "^4.8.0",
     "@lingui/macro": "^4.8.0",
     "@lingui/react": "^4.8.0",
     "react": "18.2.0",
@@ -19,7 +20,6 @@
     "react-native-unistyles": "^2.5.0",
     "react-native-web": "^0.19.10",
     "ui": "workspace:*",
-    "vite": "latest",
     "vocs": "latest",
     "yaml": "latest"
   },

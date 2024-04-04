@@ -8,6 +8,7 @@
     "web-build": "pnpm --filter ./apps/client run build",
 
     "docs": "pnpm --filter ./apps/docs dev",
+    "docs-exo": "pnpm --filter ./apps/docs build",
     "docs-build": "pnpm --filter ./apps/docs build",
 
     "storybook": "concurrently pnpm:storybook-web pnpm:storybook-native",

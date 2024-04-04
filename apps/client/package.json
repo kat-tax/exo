@@ -3,8 +3,8 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "vite dev --port 6206",
-    "build": "vite build"
+    "dev": "exo dev --port 6206",
+    "build": "exo build"
   },
   "dependencies": {
     "@lingui/core": "^4.8.0",
@@ -23,9 +23,7 @@
   "devDependencies": {
     "@types/react": "^18.2.74",
     "@types/react-dom": "^18.2.24",
-    "cfg": "workspace:*",
-    "typescript": "^5.4.3",
-    "vite": "^5.2.8"
+    "cfg": "workspace:*"
   },
   "browserslist": {
     "production": ">0.2%, not dead, not op_mini all",

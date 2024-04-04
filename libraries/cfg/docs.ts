@@ -87,8 +87,8 @@ export default <Config> {
           text: 'Services',
           items: [
             {
-              text: 'Navigation',
-              link: '/primitives/services/navigation',
+              text: 'Router',
+              link: '/primitives/services/router',
             },
             {
               text: 'Storage',
@@ -99,8 +99,16 @@ export default <Config> {
               link: '/primitives/services/device',
             },
             {
+              text: 'Redux',
+              link: '/primitives/services/redux',
+            },
+            {
               text: 'Form',
               link: '/primitives/services/form',
+            },
+            {
+              text: 'I18n',
+              link: '/primitives/services/i18n',
             },
           ],
         },

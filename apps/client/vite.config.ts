@@ -1,11 +1,1 @@
-import {defineConfig, mergeConfig} from 'vite';
-import viteConfig from 'cfg/vite';
-
-export default defineConfig(mergeConfig(
-  viteConfig,
-  defineConfig({
-    build: {
-      outDir: 'dist/web',
-    },
-  })
-));
+export {default} from 'cfg/vite.client';
