@@ -2,7 +2,7 @@ import {copy, ensureDir} from 'fs-extra';
 import {readdir} from 'node:fs/promises';
 
 const paths = {
-  docs: ['../../public/docs', './pages'],
+  docs: ['../../guides/docs', './pages'],
   primitives: ['../../library/src', './pages/primitives'],
   components: ['../../design/components', './pages/components'],
 };

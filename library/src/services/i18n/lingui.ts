@@ -10,7 +10,7 @@ export default <LinguiConfig> {
   catalogs: [{
     path: './locales/{locale}',
     include: [
-      './apps/client/src/**/*.{ts,tsx}',
+      './client/src/**/*.{ts,tsx}',
     ],
     exclude: [
       '**/node_modules/**',

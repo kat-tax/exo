@@ -193,6 +193,7 @@
     "@types/react": "^18.2.72",
     "@types/react-dom": "^18.2.22",
     "@types/react-native-video": "^5.0.20",
+    "build": "workspace:*",
     "config": "workspace:*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -217,7 +218,6 @@
     "react-native-web": "^0.19.10",
     "react-native-web-linear-gradient": "^1.1.2",
     "react-native-windows": "^0.73.11",
-    "rive-react-native": "^6.2.3",
-    "tools": "workspace:*"
+    "rive-react-native": "^6.2.3"
   }
 }

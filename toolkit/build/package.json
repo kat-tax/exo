@@ -1,5 +1,5 @@
 {
-  "name": "tools",
+  "name": "build",
   "type": "module",
   "private": true,
   "scripts": {

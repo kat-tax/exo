@@ -1,6 +1,6 @@
 # Project
-apps/docs/pages/
-messages/
+**/i18n/messages/
+**/docs/pages/
 dist/
 gen/
 WIP.md

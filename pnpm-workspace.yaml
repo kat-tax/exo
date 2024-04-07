@@ -1,7 +1,8 @@
 packages:
-  - 'apps/**'
-  - 'config/**'
+  - '.config/**'
+  - 'client/**'
   - 'design/**'
   - 'library/**'
-  - 'tools/**'
+  - 'locales/**'
+  - 'toolkit/**'
   - '!**/test/**'

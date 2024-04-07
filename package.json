@@ -1,16 +1,16 @@
 {
   "private": true,
   "scripts": {
-    "start": "concurrently pnpm:*-dev",
-    "build": "concurrently pnpm:*-build",
+    "start": "conc pnpm:*-dev",
+    "build": "conc pnpm:*-build",
 
-    "web-dev": "pnpm --filter ./apps/client run dev",
-    "web-build": "pnpm --filter ./apps/client run build",
+    "web-dev": "pnpm --filter ./client run dev",
+    "web-build": "pnpm --filter ./client run build",
 
     "docs-dev": "pnpm --filter ./apps/docs dev",
     "docs-build": "pnpm --filter ./apps/docs build",
 
-    "storybook-dev": "concurrently pnpm:storybook-web pnpm:storybook-native",
+    "storybook-dev": "conc pnpm:storybook-web pnpm:storybook-native",
     "storybook-build": "pnpm --filter ./apps/storybook/web run build",
     "storybook-native": "pnpm --filter ./apps/storybook/native run dev",
     "storybook-web": "pnpm --filter ./apps/storybook/web run dev",
@@ -26,10 +26,10 @@
     "config-dev": "pnpm --filter ./config dev",
     "config-build": "pnpm --filter ./config build",
 
-    "translate-dev": "concurrently pnpm:translate-extract --watch && pnpm:translate-compile --watch",
+    "translate-dev": "conc -P 'pnpm:translate-extract {1}' 'pnpm:translate-compile {1}' -- --watch",
     "translate-build": "pnpm run translate-extract && pnpm run translate-compile",
-    "translate-extract": "lingui extract --config ./apps/client/lingui.config.ts",
-    "translate-compile": "lingui compile --config ./apps/client/lingui.config.ts"
+    "translate-extract": "lingui extract --config ./client/lingui.config.ts",
+    "translate-compile": "lingui compile --config ./client/lingui.config.ts"
   },
   "devDependencies": {
     "@lingui/cli": "latest",
