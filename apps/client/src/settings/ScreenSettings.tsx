@@ -1,22 +1,21 @@
 import {Text} from 'react-native';
-// import {Picker} from 'react-exo/picker';
+import {Picker} from 'react-exo/picker';
 import {Trans, t} from '@lingui/macro';
-import {useLingui} from 'react-exo/i18n';
+import {useLingui} from '@lingui/react';
 import {useStyles, createStyleSheet} from 'styles';
 import {useLocale} from 'settings/hooks/useLocale';
 import {useScheme} from 'settings/hooks/useScheme';
 import {Page} from 'core/components/Page';
 
 export default function ScreenSettings() {
-  useLingui();
-
   const {styles} = useStyles(stylesheet);
   const [activeScheme] = useScheme();
   const [scheme, setScheme] = useScheme(true);
   const [locale, setLocale] = useLocale(true);
-
   const isDark = activeScheme === 'dark';
   const color = isDark ? '#fff' : '#000';
+
+  useLingui();
 
   return (
     <Page title={t`Settings`}>

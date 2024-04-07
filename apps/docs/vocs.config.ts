@@ -1,6 +1,6 @@
 import {defineConfig} from 'vocs';
-import docsConfig from 'cfg/docs';
-import viteBase from 'cfg/vite.base';
+import docsConfig from 'config/docs';
+import viteBase from 'tools/vite.base';
 
 export default defineConfig({
   ...docsConfig,

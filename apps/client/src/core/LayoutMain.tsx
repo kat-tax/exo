@@ -1,7 +1,7 @@
 import {View} from 'react-native';
 import {useCallback} from 'react';
 import {useStyles, createStyleSheet} from 'styles';
-import {SafeAreaView} from 'react-exo/safe-area';
+import {SafeAreaView} from 'react-exo/safearea';
 import {Outlet} from 'react-exo/router';
 import {Menu} from 'core/components/Menu';
 

@@ -1,0 +1,49 @@
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2024-04-07 17:49+0800\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: id\n"
+
+#: src/tasks/components/TasksInput.tsx:21
+msgid "Add a task"
+msgstr ""
+
+#: src/core/utils/date.ts:24
+msgid "Enjoy the night."
+msgstr ""
+
+#: src/core/utils/date.ts:20
+msgid "Good afternoon."
+msgstr ""
+
+#: src/core/utils/date.ts:22
+msgid "Good evening."
+msgstr ""
+
+#: src/core/utils/date.ts:18
+msgid "Good morning."
+msgstr ""
+
+#: src/core/components/Menu.tsx:16
+msgid "Home"
+msgstr ""
+
+#: src/settings/ScreenSettings.tsx:34
+msgid "Language"
+msgstr ""
+
+#: src/core/components/Menu.tsx:25
+#: src/settings/ScreenSettings.tsx:21
+msgid "Settings"
+msgstr ""
+
+#: src/tasks/views/TasksList.tsx:11
+msgid "Tasks"
+msgstr ""
+
+#: src/settings/ScreenSettings.tsx:23
+msgid "Theme"
+msgstr ""

@@ -1,6 +1,6 @@
 import {t} from '@lingui/macro';
 import {useRef} from 'react';
-import {useLingui} from 'react-exo/i18n';
+import {useLingui} from '@lingui/react';
 import {useStyles, createStyleSheet} from 'styles';
 import {TextInput} from 'react-native';
 
@@ -31,7 +31,7 @@ export function TasksInput(props: TasksInputProps) {
   );
 }
 
-const stylesheet = createStyleSheet(theme => ({
+const stylesheet = createStyleSheet(_theme => ({
   input: {
     width: '100%',
     padding: 12,

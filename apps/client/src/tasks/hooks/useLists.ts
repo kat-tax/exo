@@ -1,6 +1,6 @@
 import {useSelector} from 'react-redux';
-import {getLists} from 'tasks/store/selectors';
+import store from 'tasks/store';
 
 export function useLists() {
-  return useSelector(getLists);
+  return useSelector(store.selectors.getLists);
 }

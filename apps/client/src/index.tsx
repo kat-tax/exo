@@ -10,16 +10,13 @@ export const AppLayouts = {
 
 export const AppScreens = {
   Home: lazy(() => import('./core/ScreenHome')),
-  TaskList: lazy(() => import('./tasks/ScreenTaskList')),
-  TaskDetails: lazy(() => import('./tasks/ScreenTaskList')),
+  TaskList: lazy(() => import('./tasks/views/TasksList')),
+  TaskDetails: lazy(() => import('./tasks/views/TasksList')),
   Settings: lazy(() => import('./settings/ScreenSettings')),
 };
 
 AppRegistry.registerComponent('exo', () => () => (
-  <App
-    Layout={AppLayouts}
-    Screen={AppScreens}
-  />
+  <App Layout={AppLayouts} Screen={AppScreens}/>
 ));
 
 AppRegistry.runApplication('exo', {

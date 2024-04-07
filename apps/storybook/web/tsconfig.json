@@ -1,6 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "extends": "cfg/types/tsconfig.app.json",
+  "extends": "config/tsconfig.app.json",
   "display": "Storybook Web",
   "compilerOptions": {
     "baseUrl": "./",

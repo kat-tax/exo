@@ -7,14 +7,14 @@
     "build": "storybook build -o dist"
   },
   "dependencies": {
+    "design": "workspace:*",
     "react": "18.2.0",
     "react-dom": "^18.2.0",
     "react-exo": "workspace:*",
     "react-native": "^0.73.6",
     "react-native-svg": "^15.1.0",
     "react-native-unistyles": "^2.5.0",
-    "react-native-web": "^0.19.10",
-    "ui": "workspace:*"
+    "react-native-web": "^0.19.10"
   },
   "devDependencies": {
     "@iconify/react": "^4.1.1",
@@ -29,7 +29,7 @@
     "@storybook/react-vite": "8.0.4",
     "@storybook/theming": "8.0.4",
     "@types/react": "^18.2.72",
-    "cfg": "workspace:*",
+    "config": "workspace:*",
     "client": "workspace:*",
     "storybook": "8.0.4"
   },

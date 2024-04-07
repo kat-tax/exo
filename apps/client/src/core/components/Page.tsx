@@ -1,5 +1,5 @@
 import {View, Text} from 'react-native';
-import {SafeAreaView} from 'react-exo/safe-area';
+import {SafeAreaView} from 'react-exo/safearea';
 
 export interface PageProps {
   title: string | React.ReactNode,

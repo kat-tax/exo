@@ -1,31 +1,39 @@
 {
   "private": true,
   "scripts": {
-    "start": "concurrently pnpm:web pnpm:docs pnpm:storybook",
+    "start": "concurrently pnpm:*-dev",
     "build": "concurrently pnpm:*-build",
 
-    "web": "pnpm --filter ./apps/client run dev",
+    "web-dev": "pnpm --filter ./apps/client run dev",
     "web-build": "pnpm --filter ./apps/client run build",
 
-    "docs": "pnpm --filter ./apps/docs dev",
-    "docs-exo": "pnpm --filter ./apps/docs build",
+    "docs-dev": "pnpm --filter ./apps/docs dev",
     "docs-build": "pnpm --filter ./apps/docs build",
 
-    "storybook": "concurrently pnpm:storybook-web pnpm:storybook-native",
-    "storybook-web": "pnpm --filter ./apps/storybook/web run dev",
-    "storybook-native": "pnpm --filter ./apps/storybook/native run dev",
+    "storybook-dev": "concurrently pnpm:storybook-web pnpm:storybook-native",
     "storybook-build": "pnpm --filter ./apps/storybook/web run build",
+    "storybook-native": "pnpm --filter ./apps/storybook/native run dev",
+    "storybook-web": "pnpm --filter ./apps/storybook/web run dev",
 
-    "translate": "pnpm run translate-extract && pnpm run translate-compile",
+    "design-dev": "pnpm --filter ./design dev",
+    "design-build": "pnpm --filter ./design build",
+    "design-publish": "pnpm --filter ./design publish",
+
+    "library-dev": "pnpm --filter ./library dev",
+    "library-build": "pnpm --filter ./library build",
+    "library-publish": "pnpm --filter ./library publish",
+
+    "config-dev": "pnpm --filter ./config dev",
+    "config-build": "pnpm --filter ./config build",
+
+    "translate-dev": "concurrently pnpm:translate-extract --watch && pnpm:translate-compile --watch",
+    "translate-build": "pnpm run translate-extract && pnpm run translate-compile",
     "translate-extract": "lingui extract --config ./apps/client/lingui.config.ts",
-    "translate-compile": "lingui compile --config ./apps/client/lingui.config.ts",
-
-    "publish-exo": "pnpm --filter ./libraries/exo publish",
-    "publish-ui": "pnpm --filter ./libraries/ui publish"
+    "translate-compile": "lingui compile --config ./apps/client/lingui.config.ts"
   },
   "devDependencies": {
-    "@lingui/cli": "^4.8.0",
-    "concurrently": "^8.2.2"
+    "@lingui/cli": "latest",
+    "concurrently": "latest"
   },
   "resolutions": {
     "@swc/core": "1.3.56"

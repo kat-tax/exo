@@ -1,12 +1,14 @@
 import {useEffect} from 'react';
 import {StatusBar} from 'react-native';
-import {BootSplash} from 'react-exo/device';
+import {I18nProvider} from '@lingui/react';
 import {GestureProvider} from 'react-exo/gesture';
-import {SafeAreaProvider} from 'react-exo/safe-area';
-import {I18nProvider, i18n, loadLocale} from 'react-exo/i18n';
-
+import {SafeAreaProvider} from 'react-exo/safearea';
+import {i18n, loadLocale} from 'react-exo/i18n';
+import {BootSplash} from 'react-exo/device';
 import {useScheme} from 'settings/hooks/useScheme';
 import {useLocale} from 'settings/hooks/useLocale';
+
+i18n.activate('en');
 
 export function AppProvider(props: React.PropsWithChildren) {
   const [locale] = useLocale();
@@ -19,7 +21,7 @@ export function AppProvider(props: React.PropsWithChildren) {
   useEffect(() => {loadLocale(locale)}, [locale]);
 
   return (
-    <I18nProvider i18n={i18n}>
+    <I18nProvider {...{i18n}}>
       <StatusBar {...{barStyle}}/>
       <GestureProvider style={{flex: 1}}>
         <SafeAreaProvider>

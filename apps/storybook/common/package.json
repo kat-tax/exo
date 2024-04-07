@@ -6,11 +6,11 @@
     "@iconify/react": "^4.1.1",
     "@storybook/addon-essentials": "^8.0.4",
     "@storybook/blocks": "^8.0.4",
-    "ui": "workspace:*"
+    "design": "workspace:*"
   },
   "devDependencies": {
     "@types/react": "^18.2.72",
-    "cfg": "workspace:*",
+    "config": "workspace:*",
     "react-exo": "workspace:*",
     "react-native": "^0.73.6"
   }

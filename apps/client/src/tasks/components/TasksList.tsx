@@ -2,10 +2,10 @@ import {useStyles, createStyleSheet} from 'styles';
 import {Text, Pressable, ScrollView} from 'react-native';
 
 interface TasksListProps {
-  active: string[];
-  complete: string[];
-  addActive: (item: string) => void;
-  addComplete: (item: string) => void;
+  active: string[],
+  complete: string[],
+  addActive: (item: string) => void,
+  addComplete: (item: string) => void,
 }
 
 export function TasksList(props: TasksListProps) {
@@ -37,7 +37,7 @@ export function TasksList(props: TasksListProps) {
   );
 }
 
-const stylesheet = createStyleSheet(theme => ({
+const stylesheet = createStyleSheet(_theme => ({
   list: {
     flex: 1,
     width: '100%',

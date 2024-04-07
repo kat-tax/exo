@@ -1,1 +1,1 @@
-export {default} from 'cfg/vite.client';
+export {default} from 'tools/vite.client';

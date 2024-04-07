@@ -1,0 +1,223 @@
+{
+  "name": "react-exo",
+  "version": "0.12.0",
+  "type": "module",
+  "scripts": {
+    "build": "exo build"
+  },
+  "exports": {
+    ".": {
+      "types": "./gen/index.d.ts",
+      "import": "./gen/index.js",
+      "require": "./gen/index.cjs"
+    },
+    "./redux": {
+      "types": "./gen/redux.d.ts",
+      "import": "./gen/redux.js",
+      "require": "./gen/redux.cjs"
+    },
+    "./i18n": {
+      "types": "./gen/i18n.d.ts",
+      "import": "./gen/i18n.js",
+      "require": "./gen/i18n.cjs"
+    },
+    "./device": {
+      "types": "./gen/device.d.ts",
+      "import": "./gen/device.js",
+      "require": "./gen/device.cjs"
+    },
+    "./router": {
+      "types": "./gen/router.d.ts",
+      "import": "./gen/router.js",
+      "require": "./gen/router.cjs"
+    },
+    "./storage": {
+      "types": "./gen/storage.d.ts",
+      "import": "./gen/storage.js",
+      "require": "./gen/storage.cjs"
+    },
+    "./form": {
+      "types": "./gen/form.d.ts",
+      "import": "./gen/form.js",
+      "require": "./gen/form.cjs"
+    },
+    "./gesture": {
+      "types": "./gen/gesture.d.ts",
+      "import": "./gen/gesture.js",
+      "require": "./gen/gesture.cjs"
+    },
+    "./safearea": {
+      "types": "./gen/safearea.d.ts",
+      "import": "./gen/safearea.js",
+      "require": "./gen/safearea.cjs"
+    },
+    "./motion": {
+      "types": "./gen/motion.d.ts",
+      "import": "./gen/motion.js",
+      "require": "./gen/motion.cjs"
+    },
+    "./variants": {
+      "types": "./gen/variants.d.ts",
+      "import": "./gen/variants.js",
+      "require": "./gen/variants.cjs"
+    },
+    "./icon": {
+      "types": "./gen/icon.d.ts",
+      "import": "./gen/icon.js",
+      "require": "./gen/icon.cjs"
+    },
+    "./image": {
+      "types": "./gen/image.d.ts",
+      "import": "./gen/image.js",
+      "require": "./gen/image.cjs"
+    },
+    "./video": {
+      "types": "./gen/video.d.ts",
+      "import": "./gen/video.js",
+      "require": "./gen/video.cjs"
+    },
+    "./lottie": {
+      "types": "./gen/lottie.d.ts",
+      "import": "./gen/lottie.js",
+      "require": "./gen/lottie.cjs"
+    },
+    "./rive": {
+      "types": "./gen/rive.d.ts",
+      "import": "./gen/rive.js",
+      "require": "./gen/rive.cjs"
+    },
+    "./checkbox": {
+      "types": "./gen/checkbox.d.ts",
+      "import": "./gen/checkbox.js",
+      "require": "./gen/checkbox.cjs"
+    },
+    "./switch": {
+      "types": "./gen/switch.d.ts",
+      "import": "./gen/switch.js",
+      "require": "./gen/switch.cjs"
+    },
+    "./radio": {
+      "types": "./gen/radio.d.ts",
+      "import": "./gen/radio.js",
+      "require": "./gen/radio.cjs"
+    },
+    "./slider": {
+      "types": "./gen/slider.d.ts",
+      "import": "./gen/slider.js",
+      "require": "./gen/slider.cjs"
+    },
+    "./picker": {
+      "types": "./gen/picker.d.ts",
+      "import": "./gen/picker.js",
+      "require": "./gen/picker.cjs"
+    },
+    "./progress": {
+      "types": "./gen/progress.d.ts",
+      "import": "./gen/progress.js",
+      "require": "./gen/progress.cjs"
+    },
+    "./calendar": {
+      "types": "./gen/calendar.d.ts",
+      "import": "./gen/calendar.js",
+      "require": "./gen/calendar.cjs"
+    },
+    "./checkbox.css": "./gen/checkbox.css",
+    "./switch.css": "./gen/switch.css",
+    "./radio.css": "./gen/radio.css",
+    "./slider.css": "./gen/slider.css"
+  },
+  "peerDependencies": {
+    "@candlefinance/faster-image": ">=1",
+    "@lingui/core": ">=4",
+    "@lingui/macro": ">=4",
+    "@lingui/react": ">=4",
+    "@marceloterreiro/flash-calendar": ">=0",
+    "@react-native-community/checkbox": ">=0",
+    "@react-native-community/netinfo": ">=11",
+    "@react-native-community/slider": ">=4",
+    "@react-native-picker/picker": ">=2",
+    "react": ">=18",
+    "react-dom": ">=18",
+    "react-native": ">=73",
+    "react-native-bootsplash": ">=5",
+    "react-native-gesture-handler": ">=2",
+    "react-native-get-random-values": ">=1",
+    "react-native-iconify": ">=1",
+    "react-native-linear-gradient": ">=2",
+    "react-native-mmkv": ">=2",
+    "react-native-reanimated": ">=3",
+    "react-native-safe-area-context": ">=4",
+    "react-native-screens": ">=3",
+    "react-native-skottie": ">=2",
+    "react-native-svg": ">=14",
+    "react-native-ui-lib": ">=7",
+    "react-native-video": ">=6"
+  },
+  "dependencies": {
+    "@dotlottie/react-player": "^1.6.19",
+    "@iconify/react": "^4.1.1",
+    "@legendapp/motion": "^2.3.0",
+    "@radix-ui/react-checkbox": "^1.0.4",
+    "@radix-ui/react-progress": "^1.0.3",
+    "@radix-ui/react-radio-group": "^1.1.3",
+    "@radix-ui/react-select": "^2.0.0",
+    "@radix-ui/react-slider": "^1.1.2",
+    "@radix-ui/react-switch": "^1.0.3",
+    "@reduxjs/toolkit": "^2.2.2",
+    "@rive-app/react-canvas": "^4.8.3",
+    "@shopify/flash-list": "^1.6.4",
+    "@vidstack/react": "^0.6.14",
+    "burnt": "^0.12.2",
+    "history": "^5.3.0",
+    "idb-keyval": "^6.2.1",
+    "react-hook-form": "^7.51.2",
+    "react-redux": "^9.1.0",
+    "react-router": "^6.22.3",
+    "redux": "^5.0.1",
+    "redux-first-history": "^5.2.0",
+    "redux-persist": "^6.0.0"
+  },
+  "devDependencies": {
+    "@candlefinance/faster-image": "^1.3.4",
+    "@lingui/conf": "^4.8.0",
+    "@lingui/core": "^4.8.0",
+    "@lingui/macro": "^4.8.0",
+    "@lingui/react": "^4.8.0",
+    "@marceloterreiro/flash-calendar": "^0.0.8",
+    "@react-native-community/checkbox": "^0.5.17",
+    "@react-native-community/netinfo": "^11.3.1",
+    "@react-native-community/slider": "^4.5.0",
+    "@react-native-picker/picker": "^2.7.2",
+    "@storybook/react": "^8.0.4",
+    "@types/jest": "^29.5.12",
+    "@types/react": "^18.2.72",
+    "@types/react-dom": "^18.2.22",
+    "@types/react-native-video": "^5.0.20",
+    "config": "workspace:*",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-native": "^0.73.6",
+    "react-native-bootsplash": "^5.4.1",
+    "react-native-gesture-handler": "^2.15.0",
+    "react-native-get-random-values": "^1.11.0",
+    "react-native-iconify": "^1.0.1",
+    "react-native-linear-gradient": "^2.8.3",
+    "react-native-macos": "^0.73.23",
+    "react-native-mmkv": "^2.12.2",
+    "react-native-navigation": "7.38.4",
+    "react-native-reanimated": "^3.8.1",
+    "react-native-safe-area-context": "^4.9.0",
+    "react-native-screens": "^3.30.1",
+    "react-native-skottie": "^2.1.0",
+    "react-native-svg": "^15.1.0",
+    "react-native-ui-lib": "^7.18.3",
+    "react-native-unistyles": "^2.5.0",
+    "react-native-url-polyfill": "^2.0.0",
+    "react-native-video": "5.2.1",
+    "react-native-web": "^0.19.10",
+    "react-native-web-linear-gradient": "^1.1.2",
+    "react-native-windows": "^0.73.11",
+    "rive-react-native": "^6.2.3",
+    "tools": "workspace:*"
+  }
+}
