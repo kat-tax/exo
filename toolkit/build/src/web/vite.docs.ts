@@ -6,9 +6,5 @@ export default defineConfig(env => mergeConfig(
   baseConfig(env),
   defineConfig({
     plugins,
-    build: {
-      outDir: '../output/docs',
-      emptyOutDir: true,
-    },
   }),
 ));

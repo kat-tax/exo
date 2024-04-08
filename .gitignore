@@ -6,11 +6,15 @@ dist/
 gen/
 WIP.md
 
+
 # Node
 node_modules/
 
 # RNUC
 rnuc.xcconfig
+
+# Vocs
+vocs.config.ts.timestamp-*
 
 # Expo
 .expo/
