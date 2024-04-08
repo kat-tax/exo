@@ -17,6 +17,9 @@ export default defineConfig(env => mergeConfig(
         }
       }
     },
+    optimizeDeps: {
+      include: ['config']
+    },
     define: {
       ...env.command === 'serve' && {
         process: {

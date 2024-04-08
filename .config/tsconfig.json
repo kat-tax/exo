@@ -1,13 +1,14 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "extends": "./typescript/node.tsconfig.json",
+  "extends": "./ts/node.tsconfig.json",
   "display": "Config",
   "compilerOptions": {
     "rootDir": "./",
     "outDir": "./gen",
   },
   "include": [
-    "./**/*.ts"
+    "./**/*.ts",
+    "./**/*.cjs",
   ],
   "exclude": [
     "./gen"

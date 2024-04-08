@@ -1,5 +1,5 @@
 import type {Config} from 'vocs';
-import config from './index.js';
+import config from './src/index.js';
 
 export default <Config> {
   title: config.APP_NAME,

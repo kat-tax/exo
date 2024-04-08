@@ -8,13 +8,13 @@
     "gen-app-json": "node ./scripts/gen-app-json.cjs"
   },
   "exports": {
-    ".": "./gen/index.js",
+    ".": "./gen/src/index.js",
     "./app.json": "./gen/app.json",
     "./locales": "./gen/config.locales.js",
     "./docs": "./gen/config.docs.js",
     "./storybook": "./gen/config.storybook.js",
-    "./tsconfig.app.json": "./typescript/app.tsconfig.json",
-    "./tsconfig.node.json": "./typescript/node.tsconfig.json"
+    "./tsconfig.app.json": "./ts/app.tsconfig.json",
+    "./tsconfig.node.json": "./ts/node.tsconfig.json"
   },
   "dependencies": {
     "react-native-ultimate-config": "latest"
