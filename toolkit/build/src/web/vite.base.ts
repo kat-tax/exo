@@ -1,5 +1,5 @@
 import {defineConfig} from 'vite';
-import plugins from './plugins/lib/index.js';
+import plugins from './plugins/base/index.js';
 
 export default defineConfig(env => ({
   plugins,

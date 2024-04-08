@@ -1,6 +1,12 @@
 # General
 APP_NAME: EXO
-APP_PACKAGE: com.ult.exo
+
+# Library
+LIB_NAME: react-exo
+LIB_VERSION: 1.0.0
+
+# Native
+PACKAGE_NAME: com.ult.exo
 
 # State
 STORE_VERSION: 1

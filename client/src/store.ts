@@ -6,7 +6,7 @@ import core from 'core/store';
 import tasks from 'tasks/store';
 import settings from 'settings/store';
 
-export const reducer = redux.persistReducer({
+const reducer = redux.persistReducer({
   key: 'exo',
   version: 0,
   storage: Storage.init(`${'exo'}::redux`, 0),
@@ -21,7 +21,7 @@ export const reducer = redux.persistReducer({
   settings: settings.reducer,
 }));
 
-export const store = redux.configureStore({
+const store = redux.configureStore({
   reducer,
   devTools: __DEV__,
   middleware: () => new redux.Tuple(

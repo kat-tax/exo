@@ -7,13 +7,13 @@
     "web-dev": "pnpm --filter ./client run dev",
     "web-build": "pnpm --filter ./client run build",
 
-    "docs-dev": "pnpm --filter ./apps/docs dev",
-    "docs-build": "pnpm --filter ./apps/docs build",
+    "docs-dev": "pnpm --filter ./toolkit/apps/docs dev",
+    "docs-build": "pnpm --filter ./toolkit/apps/docs build",
 
     "storybook-dev": "conc pnpm:storybook-web pnpm:storybook-native",
-    "storybook-build": "pnpm --filter ./apps/storybook/web run build",
-    "storybook-native": "pnpm --filter ./apps/storybook/native run dev",
-    "storybook-web": "pnpm --filter ./apps/storybook/web run dev",
+    "storybook-build": "pnpm --filter ./toolkit/apps/storybook/web run build",
+    "storybook-native": "pnpm --filter ./toolkit/apps/storybook/native run dev",
+    "storybook-web": "pnpm --filter ./toolkit/apps/storybook/web run dev",
 
     "design-dev": "pnpm --filter ./design dev",
     "design-build": "pnpm --filter ./design build",
@@ -23,8 +23,8 @@
     "library-build": "pnpm --filter ./library build",
     "library-publish": "pnpm --filter ./library publish",
 
-    "config-dev": "pnpm --filter ./config dev",
-    "config-build": "pnpm --filter ./config build",
+    "config-dev": "pnpm --filter ./.config dev",
+    "config-build": "pnpm --filter ./.config build",
 
     "translate-dev": "conc -P 'pnpm:translate-extract {1}' 'pnpm:translate-compile {1}' -- --watch",
     "translate-build": "pnpm run translate-extract && pnpm run translate-compile",

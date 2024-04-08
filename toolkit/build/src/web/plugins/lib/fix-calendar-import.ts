@@ -10,7 +10,7 @@ export default <Plugin> {
     try {
       await access(target);
     } catch (e) {
-      throw new Error('Failed to patch library/gen/calendar.js');
+      throw new Error(`Failed to patch library/gen/calendar.js. Does the file exist?\n${target}`);
     }
     const contents = await readFile(target, {encoding: 'utf-8'});
     await writeFile(

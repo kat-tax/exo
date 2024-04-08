@@ -1,5 +1,7 @@
 {
   "material-icon-theme.folders.associations": {
+    "client": "mobile",
     "guides": "content",
+    "output": "dist",
   }
 }

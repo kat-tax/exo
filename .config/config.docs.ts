@@ -1,7 +1,21 @@
 import type {Config} from 'vocs';
+import config from './index.js';
 
 export default <Config> {
-  title: 'EXO',
+  title: config.APP_NAME,
+  font: { 
+    google: 'Inter',
+  },
+  theme: {
+    variables: {
+      color: {
+        background: { 
+          light: 'white', 
+          dark: 'black',
+        },
+      },
+    }
+  },
   topNav: [
     {
       text: 'Storybook',
@@ -157,17 +171,4 @@ export default <Config> {
       ],
     },
   ],
-  theme: {
-    variables: {
-      color: {
-        background: { 
-          light: 'white', 
-          dark: 'black',
-        },
-      },
-    }
-  },
-  font: { 
-    google: 'Inter',
-  },
 }
