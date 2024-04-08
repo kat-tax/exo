@@ -1,6 +1,6 @@
 import {ColorPalette, ColorItem} from '@storybook/blocks';
 import {extractBasics, extractScales, getBasicProps} from 'utils/colors';
-import {pallete} from 'ui/theme';
+import {pallete} from 'design/theme';
 
 export function Colors() {
   return (

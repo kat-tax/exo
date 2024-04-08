@@ -7,14 +7,18 @@
     "build": "storybook build -o dist"
   },
   "dependencies": {
+    "@lingui/core": "^4.8.0",
+    "@lingui/macro": "^4.8.0",
+    "@lingui/react": "^4.8.0",
     "design": "workspace:*",
     "react": "18.2.0",
     "react-dom": "^18.2.0",
     "react-exo": "workspace:*",
     "react-native": "^0.73.6",
     "react-native-svg": "^15.1.0",
-    "react-native-unistyles": "^2.5.0",
-    "react-native-web": "^0.19.10"
+    "react-native-unistyles": "^2.5.4",
+    "react-native-web": "^0.19.10",
+    "react-redux": "^9.1.0"
   },
   "devDependencies": {
     "@iconify/react": "^4.1.1",
@@ -31,7 +35,8 @@
     "@types/react": "^18.2.72",
     "config": "workspace:*",
     "client": "workspace:*",
-    "storybook": "8.0.4"
+    "storybook": "8.0.4",
+    "storybook-common": "workspace:*"
   },
   "browserslist": {
     "production": ">0.2%, not dead, not op_mini all",

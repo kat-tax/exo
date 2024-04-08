@@ -23,8 +23,8 @@
     "docs-dev": "pnpm --filter ./toolkit/apps/docs dev",
     "docs-build": "pnpm --filter ./toolkit/apps/docs build",
 
-    "storybook-xdev": "conc pnpm:storybook-web pnpm:storybook-native",
-    "storybook-xbuild": "pnpm --filter ./toolkit/apps/storybook/web run build",
+    "storybook-dev": "conc pnpm:storybook-web pnpm:storybook-native",
+    "storybook-build": "pnpm --filter ./toolkit/apps/storybook/web run build",
     "storybook-native": "pnpm --filter ./toolkit/apps/storybook/native run dev",
     "storybook-web": "pnpm --filter ./toolkit/apps/storybook/web run dev",
 
