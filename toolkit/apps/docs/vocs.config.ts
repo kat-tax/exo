@@ -1,11 +1,11 @@
 import {defineConfig} from 'vocs';
 import docsConfig from 'config/docs';
-import viteBase from 'build/vite.base';
+import viteDocs from 'build/vite.docs';
 
 export default defineConfig({
   ...docsConfig,
   rootDir: './',
-  vite: viteBase({
+  vite: viteDocs({
     command: 'build',
     mode: '',
   }),

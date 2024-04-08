@@ -13,12 +13,12 @@
     "./metro": "./gen/native/metro.js",
     "./vite.base": "./gen/web/vite.base.js",
     "./vite.client": "./gen/web/vite.client.js",
+    "./vite.docs": "./gen/web/vite.docs.js",
     "./vite.lib": "./gen/web/vite.lib.js"
   },
   "devDependencies": {
     "@lingui/core": "^4.8.0",
     "@lingui/vite-plugin": "^4.8.0",
-    "@originjs/vite-plugin-commonjs": "^1.0.3",
     "@react-native/metro-config": "0.75.0-main",
     "@rnx-kit/metro-config": "^1.3.15",
     "@rnx-kit/metro-resolver-symlinks": "^0.1.35",
