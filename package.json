@@ -1,27 +1,8 @@
 {
   "private": true,
   "scripts": {
-    "start": "conc pnpm:*-dev",
-    "build": "conc pnpm:*-build",
-
-    "web-dev": "pnpm --filter ./client run dev",
-    "web-build": "pnpm --filter ./client run build",
-
-    "docs-dev": "pnpm --filter ./toolkit/apps/docs dev",
-    "docs-build": "pnpm --filter ./toolkit/apps/docs build",
-
-    "storybook-dev": "conc pnpm:storybook-web pnpm:storybook-native",
-    "storybook-build": "pnpm --filter ./toolkit/apps/storybook/web run build",
-    "storybook-native": "pnpm --filter ./toolkit/apps/storybook/native run dev",
-    "storybook-web": "pnpm --filter ./toolkit/apps/storybook/web run dev",
-
-    "design-dev": "pnpm --filter ./design dev",
-    "design-build": "pnpm --filter ./design build",
-    "design-publish": "pnpm --filter ./design publish",
-
-    "library-dev": "pnpm --filter ./library dev",
-    "library-build": "pnpm --filter ./library build",
-    "library-publish": "pnpm --filter ./library publish",
+    "start": "pnpm run build && conc pnpm:*-dev",
+    "build": "conc -g pnpm:*-build",
 
     "config-dev": "pnpm --filter ./.config dev",
     "config-build": "pnpm --filter ./.config build",
@@ -29,7 +10,28 @@
     "translate-dev": "conc -P 'pnpm:translate-extract {1}' 'pnpm:translate-compile {1}' -- --watch",
     "translate-build": "pnpm run translate-extract && pnpm run translate-compile",
     "translate-extract": "lingui extract --config ./client/lingui.config.ts",
-    "translate-compile": "lingui compile --config ./client/lingui.config.ts"
+    "translate-compile": "lingui compile --config ./client/lingui.config.ts",
+
+    "design-xdev": "pnpm --filter ./design dev",
+    "design-xbuild": "pnpm --filter ./design build",
+    "design-publish": "pnpm --filter ./design publish",
+
+    "library-dev": "pnpm --filter ./library dev",
+    "library-build": "pnpm --filter ./library build",
+    "library-publish": "pnpm --filter ./library publish",
+
+    "docs-dev": "pnpm --filter ./toolkit/apps/docs dev",
+    "docs-build": "pnpm --filter ./toolkit/apps/docs build",
+
+    "storybook-xdev": "conc pnpm:storybook-web pnpm:storybook-native",
+    "storybook-xbuild": "pnpm --filter ./toolkit/apps/storybook/web run build",
+    "storybook-native": "pnpm --filter ./toolkit/apps/storybook/native run dev",
+    "storybook-web": "pnpm --filter ./toolkit/apps/storybook/web run dev",
+
+    "web-dev": "pnpm --filter ./client run dev",
+    "web-build": "pnpm --filter ./client run build",
+
+    "postinstall": "pnpm run build"
   },
   "devDependencies": {
     "@lingui/cli": "latest",
