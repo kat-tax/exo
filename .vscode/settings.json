@@ -2,8 +2,9 @@
   "material-icon-theme.folders.associations": {
     "client": "mobile",
     "guides": "content",
-    "output": "dist",
     "builder": "robot",
+    "native": "target",
+    "output": "dist",
     "vocs": "vue",
-  }
+  },
 }
