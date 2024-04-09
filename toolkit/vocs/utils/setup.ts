@@ -2,9 +2,9 @@ import {copy, ensureDir} from 'fs-extra';
 import {readdir} from 'node:fs/promises';
 
 const paths = {
-  docs: ['../../../guides/docs', './pages'],
-  primitives: ['../../../library/src', './pages/primitives'],
-  components: ['../../../design/components', './pages/components'],
+  docs: ['../../guides/docs', './pages'],
+  primitives: ['../../library/src', './pages/primitives'],
+  components: ['../../design/components', './pages/components'],
 };
 
 const copymdx = (files: string[], paths: string[]) => files
@@ -21,7 +21,6 @@ const [components, primitives] = await Promise.all([
   readdir(paths.components[0], {recursive: true}),
   readdir(paths.primitives[0], {recursive: true}),
 ]);
-
 
 await Promise.all([
   ensureDir(paths.docs[1]),

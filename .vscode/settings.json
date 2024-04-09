@@ -3,5 +3,7 @@
     "client": "mobile",
     "guides": "content",
     "output": "dist",
+    "builder": "robot",
+    "vocs": "vue",
   }
 }

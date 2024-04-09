@@ -1,0 +1,9 @@
+# Android
+package_name "com.helloworld"
+json_key_file "~/documents/fastlane/keys/google-play.json"
+
+# iOS
+app_identifier "com.helloworld" # The bundle identifier of your app
+apple_id "" # Your Apple email address
+team_id "" # Developer Portal Team ID
+itc_team_id "" # App Store Connect Team ID

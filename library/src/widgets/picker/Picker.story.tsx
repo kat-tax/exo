@@ -4,7 +4,7 @@ import type {StoryObj, Meta} from '@storybook/react';
 type Story = StoryObj<typeof Picker>;
 
 const meta: Meta<typeof Picker> = {
-  title: 'Interactivity/Picker',
+  title: 'Widgets/Picker',
   component: Picker,
 };
 

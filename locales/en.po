@@ -55,9 +55,5 @@ msgid "Tasks"
 msgstr "Tasks"
 
 #: src/settings/ScreenSettings.tsx:23
-#~ msgid "Theme"
-#~ msgstr "Theme"
-
-#: src/settings/ScreenSettings.tsx:23
-msgid "Themsse"
-msgstr "Themsse"
+msgid "Theme"
+msgstr "Theme"

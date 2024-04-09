@@ -4,22 +4,22 @@ const config: StorybookConfig = {
   stories: [
     {
       titlePrefix: 'References',
-      directory: '../../../../../guides/storybook',
+      directory: '../../../../guides/storybook',
       files: '**/*.mdx',
     },
     {
       titlePrefix: 'Components',
-      directory: '../../../../../design/components',
+      directory: '../../../../design/components',
       files: '**/*.story.tsx',
     },
     {
       titlePrefix: 'Primitives',
-      directory: '../../../../../library/src',
+      directory: '../../../../library/src',
       files: '**/*.story.tsx',
     },
   ],
   staticDirs: [
-    '../../../../../design/assets',
+    '../../../../design/assets',
   ],
   addons: [
     '@storybook/addon-essentials',
@@ -43,7 +43,7 @@ const config: StorybookConfig = {
     builder: {
       name: '@storybook/builder-vite',
       options: {
-        viteConfigPath: '../../../../toolkit/build/gen/web/vite.sb.js',
+        viteConfigPath: '../../builder/gen/web/vite.sb.js',
       },
     },
     disableTelemetry: true,

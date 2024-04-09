@@ -73,9 +73,9 @@ importers:
       '@types/react-dom':
         specifier: latest
         version: 18.2.24
-      build:
+      builder:
         specifier: workspace:*
-        version: link:../toolkit/build
+        version: link:../toolkit/builder
       config:
         specifier: workspace:*
         version: link:../.config
@@ -246,9 +246,9 @@ importers:
       '@types/react-native-video':
         specifier: ^5.0.20
         version: 5.0.20(@babel/core@7.23.9)(@babel/preset-env@7.23.6)(react@18.2.0)
-      build:
+      builder:
         specifier: workspace:*
-        version: link:../toolkit/build
+        version: link:../toolkit/builder
       config:
         specifier: workspace:*
         version: link:../.config
@@ -325,190 +325,7 @@ importers:
         specifier: ^6.2.3
         version: 6.2.3(react-native@0.73.6)(react@18.2.0)
 
-  toolkit/apps/docs:
-    dependencies:
-      '@lingui/core':
-        specifier: ^4.8.0
-        version: 4.8.0
-      '@lingui/macro':
-        specifier: ^4.8.0
-        version: 4.8.0(@lingui/react@4.8.0)(babel-plugin-macros@3.1.0)(typescript@5.4.3)
-      '@lingui/react':
-        specifier: ^4.8.0
-        version: 4.8.0(react@18.2.0)
-      design:
-        specifier: workspace:*
-        version: link:../../../design
-      react:
-        specifier: 18.2.0
-        version: 18.2.0
-      react-dom:
-        specifier: ^18.2.0
-        version: 18.2.0(react@18.2.0)
-      react-exo:
-        specifier: workspace:*
-        version: link:../../../library
-      react-native:
-        specifier: ^0.73.6
-        version: 0.73.6(@babel/core@7.23.9)(@babel/preset-env@7.23.6)(react@18.2.0)
-      react-native-svg:
-        specifier: ^15.1.0
-        version: 15.1.0(react-native@0.73.6)(react@18.2.0)
-      react-native-unistyles:
-        specifier: ^2.5.4
-        version: 2.5.4(@react-native/normalize-colors@0.74.1)(react-native-web@0.19.10)(react-native@0.73.6)(react@18.2.0)
-      react-native-web:
-        specifier: ^0.19.10
-        version: 0.19.10(react-dom@18.2.0)(react@18.2.0)
-      react-redux:
-        specifier: ^9.1.0
-        version: 9.1.0(@types/react@18.2.74)(react-native@0.73.6)(react@18.2.0)(redux@5.0.1)
-    devDependencies:
-      '@types/fs-extra':
-        specifier: latest
-        version: 11.0.4
-      '@types/react':
-        specifier: latest
-        version: 18.2.74
-      '@types/react-dom':
-        specifier: latest
-        version: 18.2.24
-      build:
-        specifier: workspace:*
-        version: link:../../build
-      config:
-        specifier: workspace:*
-        version: link:../../../.config
-      fs-extra:
-        specifier: latest
-        version: 11.2.0
-      tsx:
-        specifier: latest
-        version: 4.7.1
-      vocs:
-        specifier: latest
-        version: 1.0.0-alpha.43(@types/react-dom@18.2.24)(@types/react@18.2.74)(lightningcss@1.24.1)(react-dom@18.2.0)(react@18.2.0)(rollup@4.13.0)(typescript@5.4.3)
-      yaml:
-        specifier: latest
-        version: 2.4.1
-
-  toolkit/apps/storybook/common:
-    dependencies:
-      '@iconify/react':
-        specifier: ^4.1.1
-        version: 4.1.1(react@18.2.0)
-      '@storybook/addon-essentials':
-        specifier: ^8.0.4
-        version: 8.0.4(@types/react@18.2.74)(react-dom@18.2.0)(react@18.2.0)
-      '@storybook/blocks':
-        specifier: ^8.0.4
-        version: 8.0.4(@types/react@18.2.74)(react-dom@18.2.0)(react@18.2.0)
-      design:
-        specifier: workspace:*
-        version: link:../../../../design
-    devDependencies:
-      '@types/react':
-        specifier: ^18.2.72
-        version: 18.2.74
-      config:
-        specifier: workspace:*
-        version: link:../../../../.config
-      react-exo:
-        specifier: workspace:*
-        version: link:../../../../library
-      react-native:
-        specifier: ^0.73.6
-        version: 0.73.6(@babel/core@7.23.9)(@babel/preset-env@7.23.6)(react@18.2.0)
-
-  toolkit/apps/storybook/web:
-    dependencies:
-      '@lingui/core':
-        specifier: ^4.8.0
-        version: 4.8.0
-      '@lingui/macro':
-        specifier: ^4.8.0
-        version: 4.8.0(@lingui/react@4.8.0)(babel-plugin-macros@3.1.0)(typescript@5.4.3)
-      '@lingui/react':
-        specifier: ^4.8.0
-        version: 4.8.0(react@18.2.0)
-      design:
-        specifier: workspace:*
-        version: link:../../../../design
-      react:
-        specifier: 18.2.0
-        version: 18.2.0
-      react-dom:
-        specifier: ^18.2.0
-        version: 18.2.0(react@18.2.0)
-      react-exo:
-        specifier: workspace:*
-        version: link:../../../../library
-      react-native:
-        specifier: ^0.73.6
-        version: 0.73.6(@babel/core@7.23.9)(@babel/preset-env@7.23.6)(react@18.2.0)
-      react-native-svg:
-        specifier: ^15.1.0
-        version: 15.1.0(react-native@0.73.6)(react@18.2.0)
-      react-native-unistyles:
-        specifier: ^2.5.4
-        version: 2.5.4(@react-native/normalize-colors@0.74.1)(react-native-web@0.19.10)(react-native@0.73.6)(react@18.2.0)
-      react-native-web:
-        specifier: ^0.19.10
-        version: 0.19.10(react-dom@18.2.0)(react@18.2.0)
-      react-redux:
-        specifier: ^9.1.0
-        version: 9.1.0(@types/react@18.2.74)(react-native@0.73.6)(react@18.2.0)(redux@5.0.1)
-    devDependencies:
-      '@iconify/react':
-        specifier: ^4.1.1
-        version: 4.1.1(react@18.2.0)
-      '@storybook/addon-a11y':
-        specifier: ^8.0.4
-        version: 8.0.4
-      '@storybook/addon-designs':
-        specifier: ^8.0.0
-        version: 8.0.0(@storybook/theming@8.0.4)(react-dom@18.2.0)(react@18.2.0)
-      '@storybook/addon-essentials':
-        specifier: 8.0.4
-        version: 8.0.4(@types/react@18.2.74)(react-dom@18.2.0)(react@18.2.0)
-      '@storybook/addon-interactions':
-        specifier: 8.0.4
-        version: 8.0.4
-      '@storybook/addon-links':
-        specifier: 8.0.4
-        version: 8.0.4(react@18.2.0)
-      '@storybook/builder-vite':
-        specifier: 8.0.4
-        version: 8.0.4(typescript@5.4.3)(vite@5.2.8)
-      '@storybook/manager-api':
-        specifier: 8.0.4
-        version: 8.0.4(react-dom@18.2.0)(react@18.2.0)
-      '@storybook/react':
-        specifier: 8.0.4
-        version: 8.0.4(react-dom@18.2.0)(react@18.2.0)(typescript@5.4.3)
-      '@storybook/react-vite':
-        specifier: 8.0.4
-        version: 8.0.4(react-dom@18.2.0)(react@18.2.0)(typescript@5.4.3)(vite@5.2.8)
-      '@storybook/theming':
-        specifier: 8.0.4
-        version: 8.0.4(react-dom@18.2.0)(react@18.2.0)
-      '@types/react':
-        specifier: ^18.2.72
-        version: 18.2.74
-      client:
-        specifier: workspace:*
-        version: link:../../../../client
-      config:
-        specifier: workspace:*
-        version: link:../../../../.config
-      storybook:
-        specifier: 8.0.4
-        version: 8.0.4(@babel/preset-env@7.23.6)(react-dom@18.2.0)(react@18.2.0)
-      storybook-common:
-        specifier: workspace:*
-        version: link:../common
-
-  toolkit/build:
+  toolkit/builder:
     devDependencies:
       '@lingui/core':
         specifier: ^4.8.0
@@ -564,6 +381,189 @@ importers:
       vite-tsconfig-paths:
         specifier: ^4.3.2
         version: 4.3.2(typescript@5.4.3)(vite@5.2.8)
+      vocs:
+        specifier: latest
+        version: 1.0.0-alpha.43(@types/react-dom@18.2.24)(@types/react@18.2.74)(lightningcss@1.24.1)(react-dom@18.2.0)(react@18.2.0)(rollup@4.13.0)(typescript@5.4.3)
+      yaml:
+        specifier: latest
+        version: 2.4.1
+
+  toolkit/storybook/common:
+    dependencies:
+      '@iconify/react':
+        specifier: ^4.1.1
+        version: 4.1.1(react@18.2.0)
+      '@storybook/addon-essentials':
+        specifier: ^8.0.4
+        version: 8.0.4(@types/react@18.2.74)(react-dom@18.2.0)(react@18.2.0)
+      '@storybook/blocks':
+        specifier: ^8.0.4
+        version: 8.0.4(@types/react@18.2.74)(react-dom@18.2.0)(react@18.2.0)
+      design:
+        specifier: workspace:*
+        version: link:../../../design
+    devDependencies:
+      '@types/react':
+        specifier: ^18.2.72
+        version: 18.2.74
+      config:
+        specifier: workspace:*
+        version: link:../../../.config
+      react-exo:
+        specifier: workspace:*
+        version: link:../../../library
+      react-native:
+        specifier: ^0.73.6
+        version: 0.73.6(@babel/core@7.23.9)(@babel/preset-env@7.23.6)(react@18.2.0)
+
+  toolkit/storybook/web:
+    dependencies:
+      '@lingui/core':
+        specifier: ^4.8.0
+        version: 4.8.0
+      '@lingui/macro':
+        specifier: ^4.8.0
+        version: 4.8.0(@lingui/react@4.8.0)(babel-plugin-macros@3.1.0)(typescript@5.4.3)
+      '@lingui/react':
+        specifier: ^4.8.0
+        version: 4.8.0(react@18.2.0)
+      design:
+        specifier: workspace:*
+        version: link:../../../design
+      react:
+        specifier: 18.2.0
+        version: 18.2.0
+      react-dom:
+        specifier: ^18.2.0
+        version: 18.2.0(react@18.2.0)
+      react-exo:
+        specifier: workspace:*
+        version: link:../../../library
+      react-native:
+        specifier: ^0.73.6
+        version: 0.73.6(@babel/core@7.23.9)(@babel/preset-env@7.23.6)(react@18.2.0)
+      react-native-svg:
+        specifier: ^15.1.0
+        version: 15.1.0(react-native@0.73.6)(react@18.2.0)
+      react-native-unistyles:
+        specifier: ^2.5.4
+        version: 2.5.4(@react-native/normalize-colors@0.74.1)(react-native-web@0.19.10)(react-native@0.73.6)(react@18.2.0)
+      react-native-web:
+        specifier: ^0.19.10
+        version: 0.19.10(react-dom@18.2.0)(react@18.2.0)
+      react-redux:
+        specifier: ^9.1.0
+        version: 9.1.0(@types/react@18.2.74)(react-native@0.73.6)(react@18.2.0)(redux@5.0.1)
+    devDependencies:
+      '@iconify/react':
+        specifier: ^4.1.1
+        version: 4.1.1(react@18.2.0)
+      '@storybook/addon-a11y':
+        specifier: ^8.0.4
+        version: 8.0.4
+      '@storybook/addon-designs':
+        specifier: ^8.0.0
+        version: 8.0.0(@storybook/theming@8.0.4)(react-dom@18.2.0)(react@18.2.0)
+      '@storybook/addon-essentials':
+        specifier: 8.0.4
+        version: 8.0.4(@types/react@18.2.74)(react-dom@18.2.0)(react@18.2.0)
+      '@storybook/addon-interactions':
+        specifier: 8.0.4
+        version: 8.0.4
+      '@storybook/addon-links':
+        specifier: 8.0.4
+        version: 8.0.4(react@18.2.0)
+      '@storybook/builder-vite':
+        specifier: 8.0.4
+        version: 8.0.4(typescript@5.4.3)(vite@5.2.8)
+      '@storybook/manager-api':
+        specifier: 8.0.4
+        version: 8.0.4(react-dom@18.2.0)(react@18.2.0)
+      '@storybook/react':
+        specifier: 8.0.4
+        version: 8.0.4(react-dom@18.2.0)(react@18.2.0)(typescript@5.4.3)
+      '@storybook/react-vite':
+        specifier: 8.0.4
+        version: 8.0.4(react-dom@18.2.0)(react@18.2.0)(typescript@5.4.3)(vite@5.2.8)
+      '@storybook/theming':
+        specifier: 8.0.4
+        version: 8.0.4(react-dom@18.2.0)(react@18.2.0)
+      '@types/react':
+        specifier: ^18.2.72
+        version: 18.2.74
+      client:
+        specifier: workspace:*
+        version: link:../../../client
+      config:
+        specifier: workspace:*
+        version: link:../../../.config
+      storybook:
+        specifier: 8.0.4
+        version: 8.0.4(@babel/preset-env@7.23.6)(react-dom@18.2.0)(react@18.2.0)
+      storybook-common:
+        specifier: workspace:*
+        version: link:../common
+
+  toolkit/vocs:
+    dependencies:
+      '@lingui/core':
+        specifier: ^4.8.0
+        version: 4.8.0
+      '@lingui/macro':
+        specifier: ^4.8.0
+        version: 4.8.0(@lingui/react@4.8.0)(babel-plugin-macros@3.1.0)(typescript@5.4.3)
+      '@lingui/react':
+        specifier: ^4.8.0
+        version: 4.8.0(react@18.2.0)
+      design:
+        specifier: workspace:*
+        version: link:../../design
+      react:
+        specifier: 18.2.0
+        version: 18.2.0
+      react-dom:
+        specifier: ^18.2.0
+        version: 18.2.0(react@18.2.0)
+      react-exo:
+        specifier: workspace:*
+        version: link:../../library
+      react-native:
+        specifier: ^0.73.6
+        version: 0.73.6(@babel/core@7.23.9)(@babel/preset-env@7.23.6)(react@18.2.0)
+      react-native-svg:
+        specifier: ^15.1.0
+        version: 15.1.0(react-native@0.73.6)(react@18.2.0)
+      react-native-unistyles:
+        specifier: ^2.5.4
+        version: 2.5.4(@react-native/normalize-colors@0.74.1)(react-native-web@0.19.10)(react-native@0.73.6)(react@18.2.0)
+      react-native-web:
+        specifier: ^0.19.10
+        version: 0.19.10(react-dom@18.2.0)(react@18.2.0)
+      react-redux:
+        specifier: ^9.1.0
+        version: 9.1.0(@types/react@18.2.74)(react-native@0.73.6)(react@18.2.0)(redux@5.0.1)
+    devDependencies:
+      '@types/fs-extra':
+        specifier: latest
+        version: 11.0.4
+      '@types/react':
+        specifier: latest
+        version: 18.2.74
+      '@types/react-dom':
+        specifier: latest
+        version: 18.2.24
+      builder:
+        specifier: workspace:*
+        version: link:../builder
+      config:
+        specifier: workspace:*
+        version: link:../../.config
+      fs-extra:
+        specifier: latest
+        version: 11.2.0
+      tsx:
+        specifier: latest
+        version: 4.7.1
       vocs:
         specifier: latest
         version: 1.0.0-alpha.43(@types/react-dom@18.2.24)(@types/react@18.2.74)(lightningcss@1.24.1)(react-dom@18.2.0)(react@18.2.0)(rollup@4.13.0)(typescript@5.4.3)
@@ -865,17 +865,6 @@ packages:
       '@babel/helper-annotate-as-pure': 7.22.5
       '@babel/helper-environment-visitor': 7.22.20
       '@babel/helper-wrap-function': 7.22.20
-
-  /@babel/helper-replace-supers@7.22.20(@babel/core@7.23.9):
-    resolution: {integrity: sha512-qsW0In3dbwQUbK8kejJ4R7IHVGwHJlV6lpG6UA7a9hSa2YEiAib+N1T2kr6PEeUT+Fl7najmSOS6SmAwCHK6Tw==}
-    engines: {node: '>=6.9.0'}
-    peerDependencies:
-      '@babel/core': ^7.0.0
-    dependencies:
-      '@babel/core': 7.23.9
-      '@babel/helper-environment-visitor': 7.22.20
-      '@babel/helper-member-expression-to-functions': 7.23.0
-      '@babel/helper-optimise-call-expression': 7.22.5
 
   /@babel/helper-replace-supers@7.24.1(@babel/core@7.23.9):
     resolution: {integrity: sha512-QCR1UqC9BzG5vZl8BMicmZ28RuUBnHhAMddD8yHFHDRH9lLTZ9uUPehX8ctVPT8l0TKblJidqcgUUKGVrePleQ==}
@@ -1387,7 +1376,7 @@ packages:
       '@babel/helper-function-name': 7.23.0
       '@babel/helper-optimise-call-expression': 7.22.5
       '@babel/helper-plugin-utils': 7.24.0
-      '@babel/helper-replace-supers': 7.22.20(@babel/core@7.23.9)
+      '@babel/helper-replace-supers': 7.24.1(@babel/core@7.23.9)
       '@babel/helper-split-export-declaration': 7.22.6
       globals: 11.12.0
 
@@ -10962,7 +10951,7 @@ packages:
     resolution: {integrity: sha512-8Q7EARjzEnKpt/PCD7e1cgUS0a6X8u5tdSiMqXhojOdoV9TsMsiO+9VLC5vAmO8N7/GmXn7yjR8qnA6bVAEzfA==}
     engines: {node: '>= 0.4'}
     dependencies:
-      call-bind: 1.0.5
+      call-bind: 1.0.7
       has-tostringtag: 1.0.0
 
   /is-array-buffer@3.0.4:
@@ -11112,7 +11101,7 @@ packages:
     resolution: {integrity: sha512-E+zBKpQ2t6MEo1VsonYmluk9NxGrbzpeeLC2xIViuO2EjU2xsXsBPwTr3Ykv9l08UYEVEdWeRZNouaZqF6RN0w==}
     engines: {node: '>= 0.4'}
     dependencies:
-      call-bind: 1.0.5
+      call-bind: 1.0.7
       define-properties: 1.2.1
 
   /is-number-object@1.0.7:
@@ -13299,7 +13288,7 @@ packages:
     resolution: {integrity: sha512-3cyDsyHgtmi7I7DfSSI2LDp6SK2lwvtbg0p0R1e0RvTqF5ceGx+K2dfSjm1bKDMVCFEDAQvy+o8c6a7VujOddw==}
     engines: {node: '>= 0.4'}
     dependencies:
-      call-bind: 1.0.5
+      call-bind: 1.0.7
       define-properties: 1.2.1
 
   /object-keys@1.1.1:
@@ -13310,7 +13299,7 @@ packages:
     resolution: {integrity: sha512-byy+U7gp+FVwmyzKPYhW2h5l3crpmGsxl7X2s8y43IgxvG4g3QZ6CffDtsNQy1WsmZpQbO+ybo0AlW7TY6DcBQ==}
     engines: {node: '>= 0.4'}
     dependencies:
-      call-bind: 1.0.5
+      call-bind: 1.0.7
       define-properties: 1.2.1
       has-symbols: 1.0.3
       object-keys: 1.1.1
@@ -17124,7 +17113,7 @@ packages:
     engines: {node: '>= 0.4'}
     dependencies:
       available-typed-arrays: 1.0.5
-      call-bind: 1.0.5
+      call-bind: 1.0.7
       for-each: 0.3.3
       gopd: 1.0.1
       has-tostringtag: 1.0.0

@@ -23,7 +23,7 @@
   "devDependencies": {
     "@types/react": "latest",
     "@types/react-dom": "latest",
-    "build": "workspace:*",
+    "builder": "workspace:*",
     "config": "workspace:*"
   },
   "browserslist": {

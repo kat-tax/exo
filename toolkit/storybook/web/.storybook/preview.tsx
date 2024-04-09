@@ -48,7 +48,7 @@ const preview: Preview = {
         order: [
           'References', [
             'Get Started',
-            'Themes',
+            'Theme',
             'Colors',
             'Icons',
           ],
@@ -61,12 +61,14 @@ const preview: Preview = {
               'Lottie',
               'Rive',
             ],
-            'Interface', [
-              'Checkbox',
-              'Switch',
-              'Radio',
-              'Slider',
+            'Widgets', [
+              'Calendar',
               'Progress',
+              'Slider',
+              'Radio',
+              'Switch',
+              'Picker',
+              'Checkbox',
             ],
           ],
         ],

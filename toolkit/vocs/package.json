@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "tsx utils/setup && vocs dev -p 6106",
-    "build": "tsx utils/setup && vocs build -c -o ../../../output/docs",
+    "build": "tsx utils/setup && vocs build -c -o ../../output/docs",
     "preview": "tsx utils/setup && vocs preview"
   },
   "dependencies": {
@@ -25,7 +25,7 @@
     "@types/fs-extra": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
-    "build": "workspace:*",
+    "builder": "workspace:*",
     "config": "workspace:*",
     "fs-extra": "latest",
     "tsx": "latest",

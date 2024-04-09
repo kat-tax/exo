@@ -20,7 +20,7 @@ export default function ScreenSettings() {
   return (
     <Page title={t`Settings`}>
       <Text style={styles.label}>
-        <Trans>Themsse</Trans>
+        <Trans>Theme</Trans>
       </Text>
       {/* <Picker
         style={styles.select}

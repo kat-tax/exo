@@ -1,11 +1,10 @@
 # Project
 **/i18n/messages/
-**/docs/pages/
+toolkit/vocs/pages/
 output/
 dist/
 gen/
 WIP.md
-
 
 # Node
 node_modules/
