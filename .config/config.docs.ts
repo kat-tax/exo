@@ -3,51 +3,37 @@ import config from './src/index.js';
 
 export default <Config> {
   title: config.APP_NAME,
-  font: { 
-    google: 'Inter',
+  socials: [{
+    icon: 'github',
+    link: config.LINK_GITHUB,
   },
-  theme: {
-    variables: {
-      color: {
-        background: { 
-          light: 'white', 
-          dark: 'black',
-        },
-      },
-    }
+  {
+    icon: 'discord',
+    link: config.LINK_DISCORD,
   },
+  {
+    icon: 'x',
+    link: config.LINK_X,
+  }],
   topNav: [
     {
       text: 'Storybook',
-      link: 'https://exo.fig.run',
+      link: config.LINK_STORYBOOK,
     },
     { 
-      text: 'v1.0.0', 
+      text: `v${config.LIB_VERSION}`, 
       items: [
         { 
           text: 'Changelog', 
-          link: 'https://github.com/kat-tax/exo/blob/master/CHANGELOG.md', 
+          link: `${config.LINK_GITHUB}/blob/master/CHANGELOG.md`, 
         },
         { 
           text: 'License', 
-          link: 'https://github.com/kat-tax/exo/blob/master/LICENSE.md', 
+          link: `${config.LINK_GITHUB}/blob/master/LICENSE.md`, 
         }, 
       ],
     },
   ],
-  socials: [{
-    icon: 'github',
-    link: 'https://github.com/kat-tax/exo',
-  },
-  {
-    icon: 'discord',
-    link: 'https://discord.gg/KpMZVKmfnb',
-  },
-  {
-    icon: 'x',
-    link: 'https://twitter.com/theultdev',
-  }],
-  sponsors: [],
   sidebar: [
     {
       text: 'Start',
@@ -171,4 +157,18 @@ export default <Config> {
       ],
     },
   ],
+  font: { 
+    google: config.FONT_NAME,
+  },
+  theme: {
+    variables: {
+      color: {
+        background: { 
+          light: 'white', 
+          dark: 'black',
+        },
+      },
+    }
+  },
+  sponsors: [],
 }

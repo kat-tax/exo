@@ -1,4 +1,4 @@
-import {Motion} from './index';
+import {Motion} from './Motion';
 import type {StoryObj, Meta} from '@storybook/react';
 
 type Story = StoryObj<typeof Motion.View>;

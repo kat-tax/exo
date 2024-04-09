@@ -28,26 +28,26 @@ const config: StorybookConfig = {
     '@storybook/addon-links',
     '@storybook/addon-a11y',
   ],
-  framework: {
-    name: '@storybook/react-vite',
-    options: {},
-  },
   docs: {
     defaultName: 'Docs',
     autodocs: true,
   },
-  core: {
-    disableTelemetry: true,
-    builder: {
-      name: '@storybook/builder-vite',
-      options: {
-        viteConfigPath: '../../../../toolkit/build/gen/web/vite.client.js',
-      },
-    }
-  },
   typescript: {
     reactDocgen: 'react-docgen',
   },
+  framework: {
+    name: '@storybook/react-vite',
+    options: {},
+  },
+  core: {
+    builder: {
+      name: '@storybook/builder-vite',
+      options: {
+        viteConfigPath: '../../../../toolkit/build/gen/web/vite.sb.js',
+      },
+    },
+    disableTelemetry: true,
+  }
 };
 
 export default config;

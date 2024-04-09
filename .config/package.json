@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "build": "tsc && pnpm run gen-cfg && pnpm run gen-app-json",
-    "gen-cfg": "rnuc --project-root ../apps/client --lib-root ./node_modules/react-native-ultimate-config config.client.yaml",
-    "gen-app-json": "node ./scripts/gen-app-json.cjs"
+    "gen-cfg": "rnuc --project-root ../client --lib-root ./node_modules/react-native-ultimate-config config.client.yaml",
+    "gen-app-json": "node ./scripts/gen-app-json.js"
   },
   "exports": {
     ".": "./gen/src/index.js",

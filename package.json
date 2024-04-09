@@ -12,13 +12,12 @@
     "translate-extract": "lingui extract --config ./client/lingui.config.ts",
     "translate-compile": "lingui compile --config ./client/lingui.config.ts",
 
-    "design-xdev": "pnpm --filter ./design dev",
-    "design-xbuild": "pnpm --filter ./design build",
-    "design-publish": "pnpm --filter ./design publish",
-
     "library-dev": "pnpm --filter ./library dev",
     "library-build": "pnpm --filter ./library build",
     "library-publish": "pnpm --filter ./library publish",
+
+    "web-dev": "pnpm --filter ./client run dev",
+    "web-build": "pnpm --filter ./client run build",
 
     "docs-dev": "pnpm --filter ./toolkit/apps/docs dev",
     "docs-build": "pnpm --filter ./toolkit/apps/docs build",
@@ -27,10 +26,6 @@
     "storybook-build": "pnpm --filter ./toolkit/apps/storybook/web run build",
     "storybook-native": "pnpm --filter ./toolkit/apps/storybook/native run dev",
     "storybook-web": "pnpm --filter ./toolkit/apps/storybook/web run dev",
-
-    "web-dev": "pnpm --filter ./client run dev",
-    "web-build": "pnpm --filter ./client run build",
-
     "postinstall": "pnpm run build"
   },
   "devDependencies": {

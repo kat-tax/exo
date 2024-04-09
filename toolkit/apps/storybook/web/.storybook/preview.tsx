@@ -1,10 +1,11 @@
+import 'client/src/styles';
+
 import React from 'react';
 import {themes} from '@storybook/theming';
-import {type Preview} from '@storybook/react';
-import uniDefault, {themes as uniThemes} from 'ui/theme';
-import {Story} from '../../common/blocks/Story';
+import uniDefault, {themes as uniThemes} from 'design/theme';
+import {Story} from 'storybook-common/utils/blocks';
 
-import 'client/src/styles';
+import type {Preview} from '@storybook/react';
 
 const preview: Preview = {
   decorators: [
