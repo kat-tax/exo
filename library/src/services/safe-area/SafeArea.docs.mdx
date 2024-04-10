@@ -4,21 +4,19 @@ import {Button} from 'vocs/components';
 
 > A component that wraps your application's root view and applies safe area insets to it.
 
-```tsx
-
 ```tsx twoslash
 import React from 'react';
 // ---cut---
+// @log: 1. Import the safe area service
 import {SafeArea} from 'react-exo/safearea';
 
 export default () => (
+// @log: 2. Wrap your application with the provider
   <SafeArea>
     {/* Your application's root view */}
   </SafeArea>
 );
 ```
-
-<Button href="https://exo.fig.run/?path=/docs/utils-safearea">Storybook</Button>
 
 ## Platform Support
 
@@ -31,7 +29,7 @@ For native support you must install [RNGH](https://docs.swmansion.com/react-nati
 | Platform | Technology | Functional | Notes |
 | -------- | ---------- | :--------: | ----- |
 | Web | [-] | ✅ | No-op on web for performance reasons |
-| iOS | [RNGH](https://docs.swmansion.com/react-native-safe-area/) | ✅ | - |
-| MacOS | [RNGH](https://docs.swmansion.com/react-native-safe-area/) | ✅ | - |
-| Android | [RNGH](https://docs.swmansion.com/react-native-safe-area/) | ✅ | - |
-| Windows | [RNGH](https://docs.swmansion.com/react-native-safe-area/) | ✅ | - |
+| iOS | [RNGH](https://docs.swmansion.com/react-native-safe-area) | ✅ | - |
+| MacOS | [RNGH](https://docs.swmansion.com/react-native-safe-area) | ✅ | - |
+| Android | [RNGH](https://docs.swmansion.com/react-native-safe-area) | ✅ | - |
+| Windows | [RNGH](https://docs.swmansion.com/react-native-safe-area) | ✅ | - |

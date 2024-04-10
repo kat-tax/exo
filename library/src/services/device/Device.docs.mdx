@@ -1,5 +1,4 @@
 import {Device} from 'react-exo/device';
-import {Button} from 'vocs/components';
 
 # Device Service
 
@@ -9,28 +8,26 @@ import {Button} from 'vocs/components';
 // @noErrors
 import React from 'react';
 // ---cut---
-// 1. Import the device service // [!code focus]
+// @annotate: Import the device service
 import {Device} from 'react-exo/device'; // [!code focus]
 
-// 2. Hide the boot splash screen // [!code focus]
+// @annotate: Hide the boot splash screen
 await Device.BootSplash.hide(); // [!code focus]
 
-// 3. Share EXO with a friend ;) // [!code focus]
+// @annotate: Share EXO with a friend :]
 Device.share('https://exo.ult.dev', 'EXO is amazing!'); // [!code focus]
 
-// 4. Query device states // [!code focus]
+// @annotate: Query device states
 const online = await Device.isOnline(); // [!code focus]
 const booting = await Device.BootSplash.isVisible(); // [!code focus]
 
-// 5. Or do, whatever you want... // [!code focus]
+// @annotate: Or do whatever you want...
 Device. // [!code focus]
     // ^|
 
 
 
 ```
-
-<Button href="https://exo.fig.run/?path=/docs/primitives-device">Storybook</Button>
 
 ## Platform Support
 
@@ -43,5 +40,5 @@ For native support you must install [RN Boot Splash](https://react-native-bootsp
 
 | Platform | Technology | Functional | Notes |
 | -------- | ---------- | :--------: | :---: |
-| Web | [navigator](https://developer.mozilla.org/en-US/docs/Web/API/Navigator) | ✅ | - |
+| Web | [Web API Navigator](https://developer.mozilla.org/en-US/docs/Web/API/Navigator) | ✅ | - |
 | Native | [react-native-bootsplash](https://react-native-bootsplash.github.io/react-native-bootsplash) <br/> [@react-native-community/netinfo](https://github.com/react-native-netinfo/react-native-netinfo) | ✅ | - |

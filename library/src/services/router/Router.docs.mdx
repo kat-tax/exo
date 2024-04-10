@@ -1,8 +1,12 @@
-import {Button} from 'vocs/components';
+import {Callout} from 'vocs/components';
+
+<Callout type="warning">
+  This documentation page is work in progress!
+</Callout>
 
 # Router Service
 
-> A service to manage navigation in your app
+> A service to manage the layout and navigation of screens.
 
 ```tsx twoslash
 // @noErrors
@@ -13,13 +17,13 @@ import {ScreenTaskList} from 'modules/tasks/ScreenTaskList';
 import {ScreenTaskDetails} from 'modules/tasks/ScreenTaskDetails';
 import {ScreenSettings} from 'modules/settings/ScreenSettings';
 // ---cut---
-// 1. Import the router service // [!code focus]
+// @annotate: Import the router service
 import {Router, Routes, Route} from 'react-exo/router'; // [!code focus]
 
-// 2. Import the History API // [!code focus]
+// @annotate: Import the History API
 import {history} from 'react-exo/redux'; // [!code focus]
 
-// 3. Create your Router component // [!code focus]
+// @annotate: Create your Router component
 export default () => (
   <Router history={history.state}> // [!code focus]
     <Routes> // [!code focus]
@@ -33,8 +37,6 @@ export default () => (
   </Router> // [!code focus]
 );
 ```
-
-<Button href="https://exo.fig.run/?path=/docs/service-router">Storybook</Button>
 
 ## Platform Support
 

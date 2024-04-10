@@ -1,5 +1,9 @@
 import {Form} from 'react-exo/form';
-import {Button} from 'vocs/components';
+import {Callout} from 'vocs/components';
+
+<Callout type="warning">
+  This documentation page is work in progress!
+</Callout>
 
 # Form Service
 
@@ -8,10 +12,10 @@ import {Button} from 'vocs/components';
 ```tsx twoslash
 import React from 'react';
 // ---cut---
-// 1. Import the form utility // [!code focus]
+// @annotate: Import the form utility
 import {Form} from 'react-exo/form'; // [!code focus]
 
-// 2. Use the Form component // [!code focus]
+// @annotate: Use the Form component
 export default () => (
   <Form // [!code focus]
     action="/api" // [!code focus]
@@ -19,12 +23,11 @@ export default () => (
     onError={() => {}} // [!code focus]
     onSubmit={() => {}} // [!code focus]
     onSuccess={() => {}} // [!code focus]
-    validateStatus={(status) => status >= 200} // [!code focus]
-  /> // [!code focus]
+    validateStatus={(status) => status >= 200}> // [!code focus]
+    {/* Your input components */}
+  </Form> // [!code focus]
 );
 ```
-
-<Button href="https://exo.fig.run/?path=/docs/utils-form">Storybook</Button>
 
 ## Platform Support
 
