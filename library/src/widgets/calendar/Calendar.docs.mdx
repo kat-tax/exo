@@ -5,7 +5,7 @@ import {Button, Callout} from 'vocs/components';
   This documentation page is work in progress!
 </Callout>
 
-# Calendar Component
+# Calendars
 
 > A component that allows various selections of dates.
 
@@ -24,20 +24,20 @@ import {Button, Callout} from 'vocs/components';
 // @noErrors
 import React from 'react';
 // ---cut---
-import {Calendar} from 'react-exo/calendar'; // [!code focus]
+// @log: ↓ Import the component
+import {Calendar} from 'react-exo/calendar';
 
-export default () => (
-  <Calendar // [!code focus]
-    onCalendarDayPress={undefined} // [!code focus]
-    calendarMonthId={toDateId(new Date())} // [!code focus]
-    calendarActiveDateRanges={[ // [!code focus]
-      { // [!code focus]
-        startId: toDateId(new Date()), // [!code focus]
-        endId: toDateId(new Date()), // [!code focus]
-      }, // [!code focus]
-    ]} // [!code focus]
-  /> // [!code focus]
-);
+// @log: ↓ Try the example
+<Calendar
+  onCalendarDayPress={undefined}
+  calendarMonthId={toDateId(new Date())}
+  calendarActiveDateRanges={[
+    {
+      startId: toDateId(new Date()),
+      endId: toDateId(new Date()),
+    },
+  ]}
+/>
 ```
 
 <Button href="https://marceloprado.github.io/flash-calendar">Storybook</Button>

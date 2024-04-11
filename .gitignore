@@ -9,15 +9,21 @@ WIP.md
 # Node
 node_modules/
 
-# RNUC
-rnuc.xcconfig
+# MacOS
+.DS_Store
+*.pem
+
+# Env
+.env*.local
+
+# Typescript
+*.tsbuildinfo
 
 # Vocs
 vocs.config.ts.timestamp-*
 
-# Expo
-.expo/
-web-build/
+# RNUC
+rnuc.xcconfig
 
 # Native
 *.orig.*
@@ -34,13 +40,3 @@ web-build/
 npm-debug.*
 yarn-debug.*
 yarn-error.*
-
-# MacOS
-.DS_Store
-*.pem
-
-# Local env files
-.env*.local
-
-# Typescript
-*.tsbuildinfo

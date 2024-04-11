@@ -23,16 +23,16 @@ export default defineConfig(env => mergeConfig(
           lottie: 'src/assets/lottie/Lottie.export',
           rive: 'src/assets/rive/Rive.export',
           /* Services */
-          safearea: 'src/services/safe-area/SafeArea.export',
           storage: 'src/services/storage/Storage.export',
           device: 'src/services/device/Device.export',
-          router: 'src/services/router/Router.export',
           redux: 'src/services/redux/Redux.export',
           i18n: 'src/services/i18n/I18n.export',
           form: 'src/services/form/Form.export',
-          /* Interactions */
-          gesture: 'src/interactions/gesture/Gesture.export',
-          motion: 'src/interactions/motion/Motion.export',
+          /* Layout */
+          router: 'src/layout/router/Router.export',
+          motion: 'src/layout/motion/Motion.export',
+          gesture: 'src/layout/gesture/Gesture.export',
+          safearea: 'src/layout/safe-area/SafeArea.export',
           /* Widgets */
           calendar: 'src/widgets/calendar/Calendar.export',
           progress: 'src/widgets/progress/Progress.export',

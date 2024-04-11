@@ -1,7 +1,7 @@
 import {Rive} from 'react-exo/rive';
 import {Button} from 'vocs/components';
 
-# Rive Component
+# Rive Animations
 
 > A component that renders Rive animations.
 
@@ -16,17 +16,17 @@ import {Button} from 'vocs/components';
 ```tsx twoslash
 import React from 'react';
 // ---cut---
-import {Rive} from 'react-exo/rive'; // [!code focus]
+// @log: ↓ Import the component
+import {Rive} from 'react-exo/rive';
 
-export default () => (
-  <Rive // [!code focus]
-    url="https://get.ult.dev/samples/cursor.riv" // [!code focus]
-    style={{ // [!code focus]
-      width: 320, // [!code focus]
-      height: 320, // [!code focus]
-    }} // [!code focus]
-  /> // [!code focus]
-);
+// @log: ↓ Try the example
+<Rive
+  url="https://get.ult.dev/samples/cursor.riv"
+  style={{
+    width: 320,
+    height: 320,
+  }}
+/>
 ```
 
 <Button href="https://exo.fig.run/?path=/docs/primitives-rive">Storybook</Button>

@@ -1,12 +1,13 @@
 {
   "private": true,
+  "license": "MIT",
   "scripts": {
     "start": "pnpm run build && conc pnpm:*-dev",
     "build": "conc -g pnpm:*-build",
 
-    "config-dev": "pnpm --filter ./.config dev",
-    "config-build": "pnpm --filter ./.config build",
-    "builder-build": "pnpm --filter ./.builder build",
+    "config-dev": "pnpm --filter ./toolkit/config dev",
+    "config-build": "pnpm --filter ./toolkit/config build",
+    "builder-build": "pnpm --filter ./toolkit/builder build",
 
     "translate-dev": "conc -P 'pnpm:translate-extract {1}' 'pnpm:translate-compile {1}' -- --watch",
     "translate-build": "pnpm run translate-extract && pnpm run translate-compile",

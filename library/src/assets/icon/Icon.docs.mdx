@@ -1,7 +1,7 @@
 import {Icon} from 'react-exo/icon';
 import {Button} from 'vocs/components';
 
-# Icon Component
+# Icons
 
 > A component that can display over 200,000 icons via [Iconify](https://iconify.design)
 
@@ -14,15 +14,15 @@ import {Button} from 'vocs/components';
 ```tsx twoslash
 import React from 'react';
 // ---cut---
-import {Icon} from 'react-exo/icon'; // [!code focus]
+// @log: ↓ Import the component
+import {Icon} from 'react-exo/icon';
 
-export default () => (
-  <Icon // [!code focus]
-    name="ph:cat" // [!code focus]
-    color="#666" // [!code focus]
-    size={48} // [!code focus]
-  /> // [!code focus]
-);
+// @log: ↓ Try the example
+<Icon
+  name="ph:cat"
+  color="#666"
+  size={48}
+/>
 ```
 
 <Button href="https://exo.fig.run/?path=/docs/primitives-icon">Storybook</Button>

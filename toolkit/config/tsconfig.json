@@ -3,14 +3,11 @@
   "extends": "./ts/node.tsconfig.json",
   "display": "Config",
   "compilerOptions": {
-    "rootDir": "./",
-    "outDir": "./gen",
+    "rootDir": "../../",
+    "outDir": "gen",
   },
   "include": [
-    "./**/*.ts",
-    "./**/*.cjs",
+    "./*.ts",
+    "../../locales.ts",
   ],
-  "exclude": [
-    "./gen"
-  ]
 }

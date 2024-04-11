@@ -5,50 +5,17 @@ import {Button, Callout} from 'vocs/components';
   This documentation page is work in progress!
 </Callout>
 
-# Picker Component
+# Pickers
 
 > A component that allows selection of a value within a range.
-
-<Picker
-  step={1}
-  value={50}
-  onChange={console.log}
-  lowerLimit={0}
-  upperLimit={100}
-  minimumValue={0}
-  maximumValue={100}
-  rangeColor="#666"
-  thumbColor="#666"
-  trackColor="#333"
-  disabled={false}
-  name="slider"
-  testID="0:0"
-  style={{}}
-/>
 
 ```tsx twoslash
 import React from 'react';
 // ---cut---
-import {Picker} from 'react-exo/picker'; // [!code focus]
+// @log: ↓ Import the component
+import {Picker} from 'react-exo/picker';
 
-export default () => (
-  <Picker // [!code focus]
-    step={1} // [!code focus]
-    value={50} // [!code focus]
-    lowerLimit={0} // [!code focus]
-    upperLimit={100} // [!code focus]
-    minimumValue={0} // [!code focus]
-    maximumValue={100} // [!code focus]
-    onChange={console.log} // [!code focus]
-    rangeColor="#666" // [!code focus]
-    thumbColor="#666" // [!code focus]
-    trackColor="#333" // [!code focus]
-    disabled={false} // [!code focus]
-    name="slider" // [!code focus]
-    testID="0:0" // [!code focus]
-    style={{}} // [!code focus]
-  /> // [!code focus]
-);
+// @log: ↓ Try the example
 ```
 
 <Button href="https://exo.fig.run/?path=/docs/primitives-slider">Storybook</Button>

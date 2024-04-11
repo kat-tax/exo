@@ -4,7 +4,7 @@ import {Callout} from 'vocs/components';
   This documentation page is work in progress!
 </Callout>
 
-# Router Service
+# Routing
 
 > A service to manage the layout and navigation of screens.
 
@@ -17,25 +17,23 @@ import {ScreenTaskList} from 'modules/tasks/ScreenTaskList';
 import {ScreenTaskDetails} from 'modules/tasks/ScreenTaskDetails';
 import {ScreenSettings} from 'modules/settings/ScreenSettings';
 // ---cut---
-// @annotate: Import the router service
-import {Router, Routes, Route} from 'react-exo/router'; // [!code focus]
+// @log: ↓ Import the components
+import {Router, Routes, Route} from 'react-exo/router';
 
-// @annotate: Import the History API
-import {history} from 'react-exo/redux'; // [!code focus]
+// @log: ↓ Import the History API
+import {history} from 'react-exo/redux';
 
-// @annotate: Create your Router component
-export default () => (
-  <Router history={history.state}> // [!code focus]
-    <Routes> // [!code focus]
-      <Route path="/" element={<AppLayout/>}> // [!code focus]
-        <Route index element={<ScreenHome/>}/> // [!code focus]
-        <Route path="tasks" element={<ScreenTaskList/>}/> // [!code focus]
-        <Route path="tasks/:id" element={<ScreenTaskDetails/>}/> // [!code focus]
-        <Route path="settings" element={<ScreenSettings/>}/> // [!code focus]
-      </Route> // [!code focus]
-    </Routes> // [!code focus]
-  </Router> // [!code focus]
-);
+// @log: ↓ Create your Router component
+<Router history={history.state}>
+  <Routes>
+    <Route path="/" element={<AppLayout/>}>
+      <Route index element={<ScreenHome/>}/>
+      <Route path="tasks" element={<ScreenTaskList/>}/>
+      <Route path="tasks/:id" element={<ScreenTaskDetails/>}/>
+      <Route path="settings" element={<ScreenSettings/>}/>
+    </Route>
+  </Routes>
+</Router>
 ```
 
 ## Platform Support

@@ -1,0 +1,25 @@
+{
+  "name": "config",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "tsc && pnpm run gen-cfg && pnpm run gen-files",
+    "gen-cfg": "rnuc --project-root ../../client --lib-root ./node_modules/react-native-ultimate-config ../../config.yaml",
+    "gen-files": "node ./scripts/gen-app-json.js && node ./scripts/gen-docs-sidebar.js"
+  },
+  "exports": {
+    ".": "./gen/toolkit/config/index.js",
+    "./locales": "./gen/locales.js",
+    "./app.json": "./gen/app.json",
+    "./docs.sidebar": "./gen/toolkit/config/docs.sidebar.js",
+    "./tsconfig.app.json": "./ts/app.tsconfig.json",
+    "./tsconfig.node.json": "./ts/node.tsconfig.json"
+  },
+  "dependencies": {
+    "react-native-ultimate-config": "latest"
+  },
+  "devDependencies": {
+    "gray-matter": "latest",
+    "vocs": "latest"
+  }
+}

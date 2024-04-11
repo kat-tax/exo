@@ -1,5 +1,5 @@
 import type {LinguiConfig} from '@lingui/conf';
-import sourceLocale, {locales} from 'config/locales';
+import {locales, sourceLocale} from './locales';
 
 export default <LinguiConfig> {
   locales: Object.keys(locales),

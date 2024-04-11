@@ -6,7 +6,7 @@ import {Button, Callout} from 'vocs/components';
   This documentation page is work in progress!
 </Callout>
 
-# Slider Component
+# Sliders
 
 > A component that allows selection of a value within a range.
 
@@ -30,26 +30,26 @@ import {Button, Callout} from 'vocs/components';
 ```tsx twoslash
 import React from 'react';
 // ---cut---
-import {Slider} from 'react-exo/slider'; // [!code focus]
+// @log: ↓ Import the component
+import {Slider} from 'react-exo/slider';
 
-export default () => (
-  <Slider // [!code focus]
-    step={1} // [!code focus]
-    value={50} // [!code focus]
-    lowerLimit={0} // [!code focus]
-    upperLimit={100} // [!code focus]
-    minimumValue={0} // [!code focus]
-    maximumValue={100} // [!code focus]
-    onChange={console.log} // [!code focus]
-    rangeColor="#666" // [!code focus]
-    thumbColor="#666" // [!code focus]
-    trackColor="#333" // [!code focus]
-    disabled={false} // [!code focus]
-    name="slider" // [!code focus]
-    testID="0:0" // [!code focus]
-    style={{}} // [!code focus]
-  /> // [!code focus]
-);
+// @log: ↓ Try the example
+<Slider
+  step={1}
+  value={50}
+  lowerLimit={0}
+  upperLimit={100}
+  minimumValue={0}
+  maximumValue={100}
+  onChange={console.log}
+  rangeColor="#666"
+  thumbColor="#666"
+  trackColor="#333"
+  disabled={false}
+  name="slider"
+  testID="0:0"
+  style={{}}
+/>
 ```
 
 <Button href="https://exo.fig.run/?path=/docs/primitives-slider">Storybook</Button>

@@ -6,7 +6,7 @@ import {Callout} from 'vocs/components';
   This documentation page is work in progress!
 </Callout>
 
-# Motion Interaction
+# Motions
 
 > A utility to declare animations to make it easy to transition between styles without needing to manage animations.
 
@@ -32,19 +32,17 @@ import {Callout} from 'vocs/components';
 import React from 'react';
 import {Shift} from 'utils/blocks';
 // ---cut---
-// @annotate: Import the Motion component
-import {Motion} from 'react-exo/motion'; // [!code focus]
+// @log: ↓ Import the component
+import {Motion} from 'react-exo/motion';
 
-// @annotate: Try the Motion.View component
-export default () => (
-  <Motion.View // [!code focus]
-    initial={{x: 0, y: -50}} // [!code focus]
-    animate={{x: 100, y: 0}} // [!code focus]
-    transition={{type: 'spring'}} // [!code focus]
-    whileHover={{scale: 1.5}} // [!code focus]
-    whileTap={{x: 20}} // [!code focus]
-  /> // [!code focus]
-);
+// @log: ↓ Try the example
+<Motion.View
+  initial={{x: 0, y: -50}}
+  animate={{x: 100, y: 0}}
+  transition={{type: 'spring'}}
+  whileHover={{scale: 1.5}}
+  whileTap={{x: 20}}
+/>
 ```
 
 ## Platform Support

@@ -1,7 +1,7 @@
 import {Lottie} from 'react-exo/lottie';
 import {Button} from 'vocs/components';
 
-# Lottie Component
+# Lottie Animations
 
 > A component that renders Lottie animations.
 
@@ -18,19 +18,19 @@ import {Button} from 'vocs/components';
 ```tsx twoslash
 import React from 'react';
 // ---cut---
-import {Lottie} from 'react-exo/lottie'; // [!code focus]
+// @log: ↓ Import the component
+import {Lottie} from 'react-exo/lottie';
 
-export default () => (
-  <Lottie // [!code focus]
-    url="https://get.ult.dev/samples/stack.lottie" // [!code focus]
-    autoplay // [!code focus]
-    loop // [!code focus]
-    style={{ // [!code focus]
-      width: 320, // [!code focus]
-      height: 320, // [!code focus]
-    }} // [!code focus]
-  /> // [!code focus]
-);
+// @log: ↓ Try the example
+<Lottie
+  url="https://get.ult.dev/samples/stack.lottie"
+  autoplay
+  loop
+  style={{
+    width: 320,
+    height: 320,
+  }}
+/>
 ```
 
 <Button href="https://exo.fig.run/?path=/docs/primitives-lottie">Storybook</Button>

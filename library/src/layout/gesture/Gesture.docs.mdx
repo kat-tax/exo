@@ -5,7 +5,7 @@ import {Callout} from 'vocs/components';
   This documentation page is work in progress!
 </Callout>
 
-# Gesture Interaction
+# Gestures
 
 > The Gesture Handler Root View is a component that wraps your application's root view to enable gesture handling.
 
@@ -13,15 +13,13 @@ import {Callout} from 'vocs/components';
 // @noErrors
 import React from 'react';
 // ---cut---
-// @annotate: Import the gesture provider
+// @log: ↓ Import the component
 import {GestureProvider} from 'react-exo/gesture'; // [!code focus]
 
-export default () => (
-// @annotate: Wrap your application with the provider
-  <GestureProvider> // [!code focus]
-    {/* Your application */}
-  </GestureProvider> // [!code focus]
-);
+// @log: ↓ Wrap your application with the provider
+<GestureProvider> // [!code focus]
+  {/* Your application */}
+</GestureProvider> // [!code focus]
 ```
 
 ## Platform Support

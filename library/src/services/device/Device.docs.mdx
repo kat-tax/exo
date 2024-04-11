@@ -8,20 +8,20 @@ import {Device} from 'react-exo/device';
 // @noErrors
 import React from 'react';
 // ---cut---
-// @annotate: Import the device service
+// @log: ↓ Import the device service
 import {Device} from 'react-exo/device'; // [!code focus]
 
-// @annotate: Hide the boot splash screen
+// @log: ↓ Hide the boot splash screen
 await Device.BootSplash.hide(); // [!code focus]
 
-// @annotate: Share EXO with a friend :]
+// @log: ↓ Share EXO with a friend :]
 Device.share('https://exo.ult.dev', 'EXO is amazing!'); // [!code focus]
 
-// @annotate: Query device states
+// @log: ↓ Query device states
 const online = await Device.isOnline(); // [!code focus]
 const booting = await Device.BootSplash.isVisible(); // [!code focus]
 
-// @annotate: Or do whatever you want...
+// @log: ↓ Or do whatever you want...
 Device. // [!code focus]
     // ^|
 

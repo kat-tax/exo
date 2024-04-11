@@ -1,6 +1,8 @@
 import {i18n} from '@lingui/core';
-import {default as sourceLocale} from 'config/locales';
-import type {I18nBase, Locales, Messages} from './I18n.interface';
+import {sourceLocale} from './locales';
+
+import type {I18nBase, Messages} from './I18n.interface';
+import type {Locales} from './locales';
 
 export class I18nService implements I18nBase {
   getLocale(short?: boolean): string {

@@ -1,7 +1,7 @@
 import {Video} from 'react-exo/video';
 import {Button} from 'vocs/components';
 
-# Video Component
+# Videos
 
 > A component that enables video playblack.
 
@@ -18,19 +18,19 @@ import {Button} from 'vocs/components';
 ```tsx twoslash
 import React from 'react';
 // ---cut---
-import {Video} from 'react-exo/video'; // [!code focus]
+// @log: ↓ Import the component
+import {Video} from 'react-exo/video';
 
-export default () => (
-  <Video // [!code focus]
-    source={{ // [!code focus]
-      uri: 'https://get.ult.dev/samples/bunny.mp4', // [!code focus]
-    }} // [!code focus]
-    style={{ // [!code focus]
-      width: 685, // [!code focus]
-      height: 386, // [!code focus]
-    }} // [!code focus]
-  /> // [!code focus]
-);
+// @log: ↓ Try the example
+<Video
+  source={{
+    uri: 'https://get.ult.dev/samples/bunny.mp4',
+  }}
+  style={{
+    width: 685,
+    height: 386,
+  }}
+/>
 ```
 
 <Button href="https://exo.fig.run/?path=/docs/primitives-video">Storybook</Button>

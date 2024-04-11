@@ -12,21 +12,19 @@ import {Callout} from 'vocs/components';
 ```tsx twoslash
 import React from 'react';
 // ---cut---
-// @annotate: Import the form utility
+// @log: ↓ Import the component
 import {Form} from 'react-exo/form'; // [!code focus]
 
-// @annotate: Use the Form component
-export default () => (
-  <Form // [!code focus]
-    action="/api" // [!code focus]
-    method="post" // [!code focus]
-    onError={() => {}} // [!code focus]
-    onSubmit={() => {}} // [!code focus]
-    onSuccess={() => {}} // [!code focus]
-    validateStatus={(status) => status >= 200}> // [!code focus]
-    {/* Your input components */}
-  </Form> // [!code focus]
-);
+// @log: ↓ Try the example
+<Form // [!code focus]
+  action="/api" // [!code focus]
+  method="post" // [!code focus]
+  onError={() => {}} // [!code focus]
+  onSubmit={() => {}} // [!code focus]
+  onSuccess={() => {}} // [!code focus]
+  validateStatus={(status) => status >= 200}> // [!code focus]
+  {/* Your input components */}
+</Form> // [!code focus]
 ```
 
 ## Platform Support

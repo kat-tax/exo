@@ -3,7 +3,6 @@
     "client": "mobile",
     "guides": "content",
     "builder": "robot",
-    "interactions": "interface",
     "native": "target",
     "output": "dist",
     "rive": "animation",

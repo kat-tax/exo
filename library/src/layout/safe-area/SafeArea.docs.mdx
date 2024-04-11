@@ -1,21 +1,19 @@
 import {Button} from 'vocs/components';
 
-# Safe Area
+# Safe Areas
 
 > A component that wraps your application's root view and applies safe area insets to it.
 
 ```tsx twoslash
 import React from 'react';
 // ---cut---
-// @log: 1. Import the safe area service
-import {SafeArea} from 'react-exo/safearea';
+// @log: ↓ Import the components
+import {SafeAreaProvider, SafeAreaView} from 'react-exo/safearea'; // [!code focus]
 
-export default () => (
-// @log: 2. Wrap your application with the provider
-  <SafeArea>
-    {/* Your application's root view */}
-  </SafeArea>
-);
+// @log: ↓ Wrap your application with the provider
+<SafeAreaProvider> // [!code focus]
+  {/* Your application's root view */}
+</SafeAreaProvider> // [!code focus]
 ```
 
 ## Platform Support

@@ -7,13 +7,13 @@ export type * from './assets/video/Video.export';
 export type * from './assets/lottie/Lottie.export';
 export type * from './assets/rive/Rive.export';
 
-// Interactions
-export type * from './interactions/gesture/Gesture.export';
-export type * from './interactions/motion/Motion.export';
+// Layout
+export type * from './layout/router/Router.export';
+export type * from './layout/motion/Motion.export';
+export type * from './layout/gesture/Gesture.export';
+export type * from './layout/safe-area/SafeArea.export';
 
 // Services
-export type * from './services/safe-area/SafeArea.export';
-export type * from './services/router/Router.export';
 export type * from './services/storage/Storage.export';
 export type * from './services/device/Device.export';
 export type * from './services/redux/Redux.export';

@@ -26,3 +26,14 @@
     display: none;
   }
 </style>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const q = document.location.search;
+    if (!q || q.startsWith('?path=/docs/references')) {
+      setTimeout(() => {
+        document.getElementById('primitives-assets').click();
+        document.getElementById('primitives-widgets').click();
+      }, 50);
+    }
+  });
+</script>

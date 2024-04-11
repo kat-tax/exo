@@ -1,7 +1,8 @@
-// Source language
-export default 'en';
+import config from 'config';
 
-// Supported languages
+export type Locales = keyof typeof locales;
+export const name = config.APP_NAME;
+export const sourceLocale: Locales = 'en';
 export const locales = {
   en: 'English',
   de: 'Deutsch',

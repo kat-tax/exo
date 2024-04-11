@@ -6,7 +6,7 @@ import {Button, Callout} from 'vocs/components';
   This documentation page is work in progress!
 </Callout>
 
-# Radio Component
+# Radio Groups
 
 > A component that allows selection of a value within a range.
 
@@ -19,15 +19,15 @@ import {Button, Callout} from 'vocs/components';
 ```tsx twoslash
 import React from 'react';
 // ---cut---
-import {RadioGroup, RadioButton} from 'react-exo/radio'; // [!code focus]
+// @log: ↓ Import the component
+import {RadioGroup, RadioButton} from 'react-exo/radio';
 
-export default () => (
-  <RadioGroup> // [!code focus]
-    <RadioButton key="1" value="1" label="Option 1"/> // [!code focus]
-    <RadioButton key="2" value="2" label="Option 2"/> // [!code focus]
-    <RadioButton key="3" value="3" label="Option 3"/> // [!code focus]
-  </RadioGroup> // [!code focus]
-);
+// @log: ↓ Try the example
+<RadioGroup>
+  <RadioButton key="1" value="1" label="Option 1"/>
+  <RadioButton key="2" value="2" label="Option 2"/>
+  <RadioButton key="3" value="3" label="Option 3"/>
+</RadioGroup>
 ```
 
 <Button href="https://exo.fig.run/?path=/docs/primitives-radio">Storybook</Button>

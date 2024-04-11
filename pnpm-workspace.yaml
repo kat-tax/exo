@@ -1,5 +1,4 @@
 packages:
-  - '.config/**'
   - 'client/**'
   - 'design/**'
   - 'library/**'
