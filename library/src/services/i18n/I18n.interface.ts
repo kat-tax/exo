@@ -1,4 +1,4 @@
-import type {Locales, sourceLocale} from './locales';
+import type {Locales, sourceLocale} from 'config/locales';
 
 export interface I18nBase {
   getLocale(short?: boolean): string,

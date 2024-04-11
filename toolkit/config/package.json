@@ -3,17 +3,18 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "build": "tsc && pnpm run gen-cfg && pnpm run gen-files",
+    "build": "pnpm run gen-locales && tsc && pnpm run gen-cfg && pnpm run gen-files",
     "gen-cfg": "rnuc --project-root ../../client --lib-root ./node_modules/react-native-ultimate-config ../../config.yaml",
-    "gen-files": "node ./scripts/gen-app-json.js && node ./scripts/gen-docs-sidebar.js"
+    "gen-files": "node ./scripts/gen-app-json.js && node ./scripts/gen-docs-sidebar.js",
+    "gen-locales": "node ./scripts/gen-user-locales.js"
   },
   "exports": {
-    ".": "./gen/toolkit/config/index.js",
-    "./locales": "./gen/locales.js",
+    ".": "./gen/index.js",
     "./app.json": "./gen/app.json",
-    "./docs.sidebar": "./gen/toolkit/config/docs.sidebar.js",
-    "./tsconfig.app.json": "./ts/app.tsconfig.json",
-    "./tsconfig.node.json": "./ts/node.tsconfig.json"
+    "./locales": "./gen/locales.js",
+    "./docs.sidebar": "./gen/docs.sidebar.js",
+    "./tsconfig.app.json": "./typescript/app.tsconfig.json",
+    "./tsconfig.node.json": "./typescript/node.tsconfig.json"
   },
   "dependencies": {
     "react-native-ultimate-config": "latest"

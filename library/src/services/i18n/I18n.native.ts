@@ -1,9 +1,9 @@
 import {i18n} from '@lingui/core';
-import {sourceLocale} from './locales';
+import {sourceLocale} from 'config/locales';
 import {Platform, NativeModules} from 'react-native';
 
 import type {I18nBase, Messages} from './I18n.interface';
-import type {Locales} from './locales';
+import type {Locales} from 'config/locales';
 
 
 export class I18nService implements I18nBase {

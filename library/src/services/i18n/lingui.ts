@@ -1,5 +1,5 @@
 import type {LinguiConfig} from '@lingui/conf';
-import {locales, sourceLocale} from './locales';
+import {locales, sourceLocale} from 'config/locales';
 
 export default <LinguiConfig> {
   locales: Object.keys(locales),
@@ -8,7 +8,7 @@ export default <LinguiConfig> {
   compileNamespace: 'ts',
   catalogsMergePath: './library/src/services/i18n/messages/{locale}',
   catalogs: [{
-    path: './locales/{locale}',
+    path: 'config/locales/{locale}',
     include: [
       './client/src/**/*.{ts,tsx}',
     ],

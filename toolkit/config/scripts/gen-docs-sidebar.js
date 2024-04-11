@@ -52,7 +52,7 @@ const sidebar = [
 // Output
 
 writeFileSync(
-  './gen/toolkit/config/docs.sidebar.js',
+  './gen/docs.sidebar.js',
   'export default ' + JSON.stringify(sidebar, null, 2)
 );
 
