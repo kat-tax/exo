@@ -3,6 +3,7 @@ layout: landing
 ---
 
 import {HomePage, Sponsors} from 'vocs/components';
+import config from 'config';
 
 <HomePage.Root>
   <HomePage.Logo/>
@@ -14,7 +15,7 @@ import {HomePage, Sponsors} from 'vocs/components';
     <HomePage.Button href="/start" variant="accent">
       Get started
     </HomePage.Button>
-    <HomePage.Button href="https://github.com/kat-tax/exo">
+    <HomePage.Button href={config.LINK_GITHUB}>
       GitHub
     </HomePage.Button>
   </HomePage.Buttons>
