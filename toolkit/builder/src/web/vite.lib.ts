@@ -29,9 +29,9 @@ export default defineConfig(env => mergeConfig(
           i18n: 'src/services/i18n/I18n.export',
           form: 'src/services/form/Form.export',
           /* Layout */
-          router: 'src/layout/router/Router.export',
-          motion: 'src/layout/motion/Motion.export',
+          navigation: 'src/layout/navigation/Navigation.export',
           gesture: 'src/layout/gesture/Gesture.export',
+          motion: 'src/layout/motion/Motion.export',
           safearea: 'src/layout/safe-area/SafeArea.export',
           /* Widgets */
           calendar: 'src/widgets/calendar/Calendar.export',

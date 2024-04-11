@@ -1,4 +1,4 @@
-import {Router, Routes, Route, Load} from 'react-exo/router';
+import {Router, Routes, Route, Load} from 'react-exo/navigation';
 import {history} from 'react-exo/redux';
 
 export function AppRouter({Layout, Screen}: AppRoutes) {

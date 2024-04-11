@@ -1,5 +1,5 @@
 import {useLingui} from '@lingui/react';
-import {useParams} from 'react-exo/router';
+import {useParams} from 'react-exo/navigation';
 import {useTasks} from 'tasks/hooks/useTasks';
 import {TasksList} from 'tasks/components/TasksList';
 import {TasksInput} from 'tasks/components/TasksInput';

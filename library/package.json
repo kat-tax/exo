@@ -26,10 +26,10 @@
       "import": "./gen/device.js",
       "require": "./gen/device.cjs"
     },
-    "./router": {
-      "types": "./gen/router.d.ts",
-      "import": "./gen/router.js",
-      "require": "./gen/router.cjs"
+    "./navigation": {
+      "types": "./gen/navigation.d.ts",
+      "import": "./gen/navigation.js",
+      "require": "./gen/navigation.cjs"
     },
     "./storage": {
       "types": "./gen/storage.d.ts",

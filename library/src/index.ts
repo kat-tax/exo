@@ -8,7 +8,7 @@ export type * from './assets/lottie/Lottie.export';
 export type * from './assets/rive/Rive.export';
 
 // Layout
-export type * from './layout/router/Router.export';
+export type * from './layout/navigation/Navigation.export';
 export type * from './layout/motion/Motion.export';
 export type * from './layout/gesture/Gesture.export';
 export type * from './layout/safe-area/SafeArea.export';

@@ -1,7 +1,7 @@
 import {Trans} from '@lingui/macro';
 import {View, Text} from 'react-native';
 import {SafeAreaView} from 'react-exo/safearea';
-import {useLocation, Link} from 'react-exo/router';
+import {useLocation, Link} from 'react-exo/navigation';
 import {useStyles, createStyleSheet} from 'styles';
 import {useLists} from 'tasks/hooks/useLists';
 
