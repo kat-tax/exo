@@ -3,14 +3,14 @@ import type {StyleProp, ViewStyle, TextStyle, TextProps} from 'react-native';
 export type CheckboxComponent = (props: CheckboxProps) => JSX.Element;
 
 export interface CheckboxProps {
+  /** Invoked with the new value when the value changes. */
+  onValueChange?: (value: boolean) => void,
+  /** The value of the checkbox. Default value is false. */
+  value?: boolean,
   /** The identifier for the checkbox */
   id?: string,
   /** The label of the checkbox */
   label?: string,
-  /** The value of the checkbox. Default value is false. */
-  value?: boolean,
-  /** Invoked with the new value when the value changes. */
-  onValueChange?: (value: boolean) => void,
   /** Whether the checkbox should be disabled */
   disabled?: boolean,
   /** Whether the checkbox is an indeterminate state */

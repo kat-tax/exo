@@ -33,8 +33,8 @@ export const Image: ImageComponent = (props: ImageProps) => {
       }}
       defaultSource={{
         uri: props.showActivityIndicator
-          ? imagePlaceholder
-          : imageLoading,
+          ? imageLoading
+          : imagePlaceholder,
         width: props.width,
         height: props.height,
         cache,

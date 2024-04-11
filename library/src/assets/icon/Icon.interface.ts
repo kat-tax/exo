@@ -7,4 +7,6 @@ export interface IconProps {
   size?: number,
   /** The color of the icon */
   color?: string,
+  /** The identifier used for testing */
+  testID?: string,
 }

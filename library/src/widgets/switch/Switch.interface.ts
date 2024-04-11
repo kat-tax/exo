@@ -3,31 +3,34 @@ import type {StyleProp, ViewStyle, ColorValue} from 'react-native';
 export type SwitchComponent = (props: SwitchProps) => JSX.Element;
 
 export interface SwitchProps {
-  /**  The value of the switch. If true the switch will be turned on. Default = false */
-  value?: boolean;
   /** Invoked with the new value when the value changes */
-  onValueChange?: (value: boolean) => void;
+  onValueChange?: (value: boolean) => void,
+  /** The value of the switch */
+  value?: boolean,
+  /** The identifier for the switch */
+  id?: string,
+  /** The label to show the switch */
+  label?: string,
   /** Whether the switch should be disabled */
-  disabled?: boolean;
+  disabled?: boolean,
   /** The switch width */
-  width?: number;
+  width?: number,
   /** The switch height */
-  height?: number;
+  height?: number,
   /** The switch background color when it's turned on */
-  onColor?: ColorValue;
+  onColor?: ColorValue,
   /** The switch background color when it's turned off */
-  offColor?: ColorValue;
+  offColor?: ColorValue,
   /** The switch background color when it's disabled */
-  disabledColor?: ColorValue;
+  disabledColor?: ColorValue,
   /** The switch's thumb color */
-  thumbColor?: ColorValue;
+  thumbColor?: ColorValue,
   /** The switch's thumb size (width & height) */
-  thumbSize?: number;
+  thumbSize?: number,
   /** The switch's thumb style */
-  thumbStyle?: StyleProp<ViewStyle>;
-  style?: StyleProp<ViewStyle>;
-  id?: string;
-  label?: string;
+  thumbStyle?: StyleProp<ViewStyle>,
+  /** Additional styling */
+  style?: StyleProp<ViewStyle>,
   /** The identifier used for testing */
-  testID?: string;
+  testID?: string,
 }

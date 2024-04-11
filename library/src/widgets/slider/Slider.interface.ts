@@ -3,6 +3,8 @@ import type {StyleProp, ViewStyle} from 'react-native';
 export type SliderComponent = (props: SliderProps) => JSX.Element;
 
 export interface SliderProps {
+  /** Called when the slider value changes */
+  onChange?: (value: number) => void,
   /**
    * Write-only property representing the value of the slider.
    * Can be used to programmatically control the position of the thumb.
@@ -14,21 +16,19 @@ export interface SliderProps {
    * This is not a controlled component, you don't need to update the
    * value during dragging.
    */
-  value?: number;
+  value?: number,
   /** Initial minimum value of the slider. Default = 0. */
-  minimumValue?: number;
+  minimumValue?: number,
   /** Initial maximum value of the slider. Default = 1. */
-  maximumValue?: number;
+  maximumValue?: number,
   /** The lower limit value of the slider. The user won't be able to slide below this limit. */
-  lowerLimit?: number;
+  lowerLimit?: number,
   /** The upper limit value of the slider. The user won't be able to slide above this limit. */
-  upperLimit?: number;
+  upperLimit?: number,
   /** Step value of the slider. The value should be between 0 and (maximumValue - minimumValue). Default value is 0. */
-  step?: number;
-  /** Called when the slider value changes */
-  onChange?: (value: number) => void,
+  step?: number,
   /** If true the user won't be able to move the slider. Default = false. */
-  disabled?: boolean;
+  disabled?: boolean,
   /** The color used for the track from minimum value to current value */
   rangeColor?: string,
   /** The background track color */
@@ -36,9 +36,9 @@ export interface SliderProps {
   /** The thumb accent color */
   thumbColor?: string,
   /** Used to style and layout the slider. */
-  style?: StyleProp<ViewStyle>;
+  style?: StyleProp<ViewStyle>,
   /** Form input name (web only) */
-  name?: string;
+  name?: string,
   /** The identifier used for testing */
-  testID?: string;
+  testID?: string,
 }
