@@ -5,7 +5,7 @@ export type CheckboxComponent = (props: CheckboxProps) => JSX.Element;
 export interface CheckboxProps {
   /** Invoked with the new value when the value changes. */
   onValueChange?: (value: boolean) => void,
-  /** The value of the checkbox. Default value is false. */
+  /** The value of the checkbox. */
   value?: boolean,
   /** The identifier for the checkbox */
   id?: string,
