@@ -7,9 +7,9 @@ export const Image: ImageComponent = (props: ImageProps) => {
       onSuccess={props.onSuccess}
       onError={props.onError}
       style={{
+        ...props.style,
         width: props.width,
         height: props.height,
-        ...props.style,
       }}
       source={{
         url: props.url,

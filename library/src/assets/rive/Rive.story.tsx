@@ -11,10 +11,8 @@ const meta: Meta<typeof Component> = {
 export const Sandbox: Story = {
   args: {
     url: 'https://get.ult.dev/samples/cursor.riv',
-    style: {
-      width: 320,
-      height: 320,
-    },
+    width: 320,
+    height: 320,
   },
 };
 

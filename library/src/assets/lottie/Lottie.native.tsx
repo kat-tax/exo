@@ -6,6 +6,11 @@ export const Lottie: LottieComponent = (props: LottieProps) => {
     <LottieBase
       source={props.url}
       autoPlay={props.autoplay}
+      style={{
+        ...props.style,
+        width: props.width,
+        height: props.height,
+      }}
       {...props}
     />
   );

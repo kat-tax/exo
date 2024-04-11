@@ -3,7 +3,7 @@ import {Button} from 'vocs/components';
 
 # Images
 
-> A component that displays images with caching and thumbhash support.
+> A component that displays images with disk caching and thumbhash support.
 
 <Image
   url="https://get.ult.dev/samples/turing.jpg"
@@ -15,7 +15,6 @@ import {Button} from 'vocs/components';
 
 ```tsx twoslash
 import React from 'react';
-import type {ImageStyle} from 'react-native';
 // ---cut---
 // @log: ↓ Import the component
 import {Image} from 'react-exo/image';
@@ -27,15 +26,6 @@ import {Image} from 'react-exo/image';
   resizeMode="cover"
   width={685}
   height={404}
-  style={undefined}
-  borderRadius={undefined}
-  failureImage={undefined}
-  transitionDuration={undefined}
-  showActivityIndicator={undefined}
-  progressiveLoadingEnabled={undefined}
-  cachePolicy={undefined}
-  onSuccess={undefined}
-  onError={undefined}
 />
 ```
 
@@ -51,8 +41,8 @@ For Android & iOS support you must install [Faster Image](https://github.com/can
 
 | Platform | Technology | Functional | Notes |
 | -------- | ---------- | :--------: | ----- |
-| Web | [React Native Web Image](https://necolas.github.io/react-native-web/docs/image) | ✅ | Default platform caching. |
+| Web | [React Native Web Image](https://necolas.github.io/react-native-web/docs/image) | ✅ | Uses default platform cache. |
 | Android | [@candlefinance/faster-image](https://github.com/candlefinance/faster-image) | ✅ | - |
 | iOS | [@candlefinance/faster-image](https://github.com/candlefinance/faster-image) | ✅ | - |
-| MacOS | [React Native Image](https://reactnative.dev/docs/image) | ✅ | Default platform caching. |
-| Windows | [React Native Image](https://reactnative.dev/docs/image) | ✅ | Default platform caching. |
+| MacOS | [React Native Image](https://reactnative.dev/docs/image) | ✅ | Uses default platform cache. |
+| Windows | [React Native Image](https://reactnative.dev/docs/image) | ✅ | Uses default platform cache. |

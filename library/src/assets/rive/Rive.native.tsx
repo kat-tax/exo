@@ -6,7 +6,7 @@ export const Rive: RiveComponent = (props: RiveProps) => {
     <RiveBase
       url={props.url}
       ref={props.ref}
-      fit={props.fit}
+      fit={props.resizeMode}
       style={props.style}
       autoplay={props.autoplay}
       alignment={props.alignment}

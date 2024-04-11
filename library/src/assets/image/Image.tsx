@@ -6,7 +6,7 @@ import type {ImageComponent, ImageProps} from './Image.interface';
 /** A component that displays images with caching and thumbhash support */
 export const Image: ImageComponent = (props: ImageProps) => {
 
-  const imagePlaceholder = props.thumbhash
+  const imagePlaceholder = props.thumbhash && !props.showActivityIndicator
     ? thumbHashToDataURL(base64ToBytes(props.thumbhash))
     : undefined;
 
@@ -32,7 +32,9 @@ export const Image: ImageComponent = (props: ImageProps) => {
         cache,
       }}
       defaultSource={{
-        uri: imagePlaceholder,
+        uri: props.showActivityIndicator
+          ? imagePlaceholder
+          : imageLoading,
         width: props.width,
         height: props.height,
         cache,
@@ -43,6 +45,8 @@ export const Image: ImageComponent = (props: ImageProps) => {
         height: props.height,
         cache,
       }}
+      // @ts-ignore Web only prop
+      draggable={props.draggable}
       progressiveRenderingEnabled={props.progressiveLoadingEnabled}
       borderRadius={props.borderRadius}
       resizeMode={props.resizeMode}

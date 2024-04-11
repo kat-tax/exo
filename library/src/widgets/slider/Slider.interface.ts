@@ -15,58 +15,30 @@ export interface SliderProps {
    * value during dragging.
    */
   value?: number;
-  /**
-   * Initial minimum value of the slider. Default value is 0.
-   */
+  /** Initial minimum value of the slider. Default = 0. */
   minimumValue?: number;
-  /**
-   * Initial maximum value of the slider. Default value is 1.
-   */
+  /** Initial maximum value of the slider. Default = 1. */
   maximumValue?: number;
-  /**
-   * The lower limit value of the slider. The user won't be able to slide below this limit.
-   */
+  /** The lower limit value of the slider. The user won't be able to slide below this limit. */
   lowerLimit?: number;
-  /**
-   * The upper limit value of the slider. The user won't be able to slide above this limit.
-   */
+  /** The upper limit value of the slider. The user won't be able to slide above this limit. */
   upperLimit?: number;
-  /**
-   * Step value of the slider. The value should be between 0 and (maximumValue - minimumValue). Default value is 0.
-   */
+  /** Step value of the slider. The value should be between 0 and (maximumValue - minimumValue). Default value is 0. */
   step?: number;
-  /**
-   * Called when the slider value changes
-   */
+  /** Called when the slider value changes */
   onChange?: (value: number) => void,
-  /**
-   * If true the user won't be able to move the slider.
-   * Default value is false.
-   */
+  /** If true the user won't be able to move the slider. Default = false. */
   disabled?: boolean;
-  /**
-   * The color used for the track from minimum value to current value
-   */
+  /** The color used for the track from minimum value to current value */
   rangeColor?: string,
-  /**
-   * The background track color
-   */
+  /** The background track color */
   trackColor?: string,
-  /**
-   * The thumb accent color
-   */
+  /** The thumb accent color */
   thumbColor?: string,
-  /**
-   * Used to style and layout the Slider. See StyleSheet.js and ViewStylePropTypes.js for more info.
-   */
+  /** Used to style and layout the slider. */
   style?: StyleProp<ViewStyle>;
-  /**
-   * Form input name
-   * (web only)
-   */
+  /** Form input name (web only) */
   name?: string;
-  /**
-   * The slider's test identifier
-   */
+  /** The identifier used for testing */
   testID?: string;
 }
