@@ -8,7 +8,7 @@ export default <LinguiConfig> {
   compileNamespace: 'ts',
   catalogsMergePath: './library/src/services/i18n/messages/{locale}',
   catalogs: [{
-    path: 'config/locales/{locale}',
+    path: 'locales/{locale}',
     include: [
       './client/src/**/*.{ts,tsx}',
     ],
