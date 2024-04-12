@@ -36,7 +36,7 @@ const sidebar = [
       })),
     })).filter(g => g.items.length),
   },
-  {
+  componentsGroups.length && {
     text: 'Components',
     collapsed: false,
     items: componentsGroups.map(g => ({
@@ -47,7 +47,7 @@ const sidebar = [
       })),
     })).filter(g => g.items.length),
   },
-];
+].filter(Boolean);
 
 // Output
 
