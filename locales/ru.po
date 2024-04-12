@@ -15,41 +15,41 @@ msgstr ""
 
 #: src/tasks/components/TasksInput.tsx:21
 msgid "Add a task"
-msgstr ""
+msgstr "Добавить задачу"
 
 #: src/core/utils/date.ts:24
 msgid "Enjoy the night."
-msgstr ""
+msgstr "Наслаждайтесь ночью."
 
 #: src/core/utils/date.ts:20
 msgid "Good afternoon."
-msgstr ""
+msgstr "Добрый день."
 
 #: src/core/utils/date.ts:22
 msgid "Good evening."
-msgstr ""
+msgstr "Добрый вечер."
 
 #: src/core/utils/date.ts:18
 msgid "Good morning."
-msgstr ""
+msgstr "Доброе утро."
 
 #: src/core/components/Menu.tsx:16
 msgid "Home"
-msgstr ""
+msgstr "Главная"
 
 #: src/settings/ScreenSettings.tsx:34
 msgid "Language"
-msgstr ""
+msgstr "Язык"
 
 #: src/core/components/Menu.tsx:25
 #: src/settings/ScreenSettings.tsx:21
 msgid "Settings"
-msgstr ""
+msgstr "Настройки"
 
 #: src/tasks/views/TasksList.tsx:11
 msgid "Tasks"
-msgstr ""
+msgstr "Задачи"
 
 #: src/settings/ScreenSettings.tsx:23
 msgid "Theme"
-msgstr ""
+msgstr "Тема"

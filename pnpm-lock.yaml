@@ -133,6 +133,18 @@ importers:
       '@legendapp/motion':
         specifier: ^2.3.0
         version: 2.3.0(nativewind@2.0.11)(react-native@0.73.6)(react@18.2.0)
+      '@lingui/conf':
+        specifier: ^4.8.0
+        version: 4.8.0(typescript@5.4.3)
+      '@lingui/core':
+        specifier: ^4.8.0
+        version: 4.8.0
+      '@lingui/macro':
+        specifier: '>=4'
+        version: 4.8.0(@lingui/react@4.8.0)(babel-plugin-macros@3.1.0)(typescript@5.4.3)
+      '@lingui/react':
+        specifier: '>=4'
+        version: 4.8.0(react@18.2.0)
       '@radix-ui/react-checkbox':
         specifier: ^1.0.4
         version: 1.0.4(@types/react-dom@18.2.24)(@types/react@18.2.75)(react-dom@18.2.0)(react@18.2.0)
@@ -197,18 +209,6 @@ importers:
       '@candlefinance/faster-image':
         specifier: ^1.4.3
         version: 1.4.3(react-native@0.73.6)(react@18.2.0)
-      '@lingui/conf':
-        specifier: ^4.8.0
-        version: 4.8.0(typescript@5.4.3)
-      '@lingui/core':
-        specifier: ^4.8.0
-        version: 4.8.0
-      '@lingui/macro':
-        specifier: ^4.8.0
-        version: 4.8.0(@lingui/react@4.8.0)(babel-plugin-macros@3.1.0)(typescript@5.4.3)
-      '@lingui/react':
-        specifier: ^4.8.0
-        version: 4.8.0(react@18.2.0)
       '@marceloterreiro/flash-calendar':
         specifier: ^0.0.8
         version: 0.0.8(@shopify/flash-list@1.6.4)(react-native@0.73.6)(react@18.2.0)
@@ -3663,6 +3663,7 @@ packages:
       babel-plugin-macros: 3.1.0
     transitivePeerDependencies:
       - typescript
+    dev: false
 
   /@lingui/message-utils@4.8.0:
     resolution: {integrity: sha512-iGTGhtlREy2MwZU9mgs3jydCmf/ik+7th9z1NznNzUBJVcebLD/KPMWRJEkXHkVghLWeCxulvh8PZ08CmyuCzQ==}
@@ -3680,6 +3681,7 @@ packages:
       '@babel/runtime': 7.23.6
       '@lingui/core': 4.8.0
       react: 18.2.0
+    dev: false
 
   /@lingui/vite-plugin@4.8.0(typescript@5.4.3)(vite@5.2.8):
     resolution: {integrity: sha512-4PANGlYhvgZ1lYjrndHJp/0+NAQvjnr12RwehrFMIsRlprfQnjnaRHYkFzcioLyUdfT9qiKpY6u5E2QAVJzPvg==}

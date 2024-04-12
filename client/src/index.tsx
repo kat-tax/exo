@@ -1,8 +1,8 @@
 import 'styles';
 
-import {App} from 'App';
-import {AppRegistry} from 'react-native';
 import {lazy} from 'react';
+import {AppRegistry} from 'react-native';
+import {App} from 'App';
 
 export const AppLayouts = {
   Main: lazy(() => import('./core/LayoutMain')),

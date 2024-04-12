@@ -1,8 +1,6 @@
 export * from 'react-router';
 
 export {Router} from './components/Router';
-export {Route} from './components/Route';
-export {Load} from './components/Load';
 export {Link} from './components/Link';
 
 export {useBackButton} from './hooks/useBackButton';

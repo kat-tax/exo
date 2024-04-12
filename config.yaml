@@ -2,18 +2,17 @@
 APP_NAME: EXO
 APP_DISPLAY_NAME: EXO
 
-# Library
-LIB_NAME: react-exo
-LIB_VERSION: 1.2.1
-
 # State
 STORE_VERSION: 1.0
 
-# Native
-PACKAGE_IOS: com.exo.ios
-PACKAGE_MACOS: com.exo.macos
-PACKAGE_ANDROID: com.exo.android
-PACKAGE_WINDOWS: com.exo.windows
+# Design
+FONT_ID: inter
+FONT_NAME: Inter
+FONT_WEIGHTS: 400,500
+
+# Library
+LIB_NAME: react-exo
+LIB_VERSION: 1.0.0
 
 # Links
 LINK_DOCS: https://exo.ult.dev
@@ -22,7 +21,8 @@ LINK_DISCORD: https://discord.gg/KpMZVKmfnb
 LINK_GITHUB: https://github.com/kat-tax/exo
 LINK_X: https://x.com/theultdev
 
-# Font
-FONT_ID: inter
-FONT_NAME: Inter
-FONT_WEIGHTS: 400,500
+# Native
+PACKAGE_IOS: com.exo.ios
+PACKAGE_MACOS: com.exo.macos
+PACKAGE_ANDROID: com.exo.android
+PACKAGE_WINDOWS: com.exo.windows

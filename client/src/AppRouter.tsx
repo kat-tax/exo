@@ -1,17 +1,27 @@
-import {Router, Routes, Route, Load} from 'react-exo/navigation';
+import {Suspense} from 'react';
+import {Router, Routes, Route} from 'react-exo/navigation';
 import {history} from 'react-exo/redux';
+import {Loading} from 'core/components/Loading';
 
 export function AppRouter({Layout, Screen}: AppRoutes) {
   return (
     <Router history={history.state}>
       <Routes>
-        <Route path="/" element={<Load><Layout.Main/></Load>}>
-          <Route index element={<Load><Screen.Home/></Load>}/>
-          <Route path="tasks" element={<Load><Screen.TaskList/></Load>}/>
-          <Route path="tasks/:id" element={<Load><Screen.TaskDetails/></Load>}/>
-          <Route path="settings" element={<Load><Screen.Settings/></Load>}/>
+        <Route path="/" element={<Lazy><Layout.Main/></Lazy>}>
+          <Route index element={<Lazy><Screen.Home/></Lazy>}/>
+          <Route path="tasks" element={<Lazy><Screen.TaskList/></Lazy>}/>
+          <Route path="tasks/:id" element={<Lazy><Screen.TaskDetails/></Lazy>}/>
+          <Route path="settings" element={<Lazy><Screen.Settings/></Lazy>}/>
         </Route>
       </Routes>
     </Router>
+  );
+}
+
+export function Lazy(props: React.PropsWithChildren): React.ReactNode {
+  return (
+    <Suspense fallback={<Loading/>}>
+      {props.children}
+    </Suspense>
   );
 }

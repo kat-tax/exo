@@ -7,7 +7,6 @@
     "build": "exo build"
   },
   "dependencies": {
-    "@lingui/core": "^4.8.0",
     "@lingui/macro": "^4.8.0",
     "@lingui/react": "^4.8.0",
     "design": "workspace:*",

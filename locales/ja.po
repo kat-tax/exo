@@ -15,41 +15,41 @@ msgstr ""
 
 #: src/tasks/components/TasksInput.tsx:21
 msgid "Add a task"
-msgstr ""
+msgstr "タスクを追加"
 
 #: src/core/utils/date.ts:24
 msgid "Enjoy the night."
-msgstr ""
+msgstr "夜を楽しんでください。"
 
 #: src/core/utils/date.ts:20
 msgid "Good afternoon."
-msgstr ""
+msgstr "こんにちは。"
 
 #: src/core/utils/date.ts:22
 msgid "Good evening."
-msgstr ""
+msgstr "こんばんは。"
 
 #: src/core/utils/date.ts:18
 msgid "Good morning."
-msgstr ""
+msgstr "おはようございます。"
 
 #: src/core/components/Menu.tsx:16
 msgid "Home"
-msgstr ""
+msgstr "ホーム"
 
 #: src/settings/ScreenSettings.tsx:34
 msgid "Language"
-msgstr ""
+msgstr "言語"
 
 #: src/core/components/Menu.tsx:25
 #: src/settings/ScreenSettings.tsx:21
 msgid "Settings"
-msgstr ""
+msgstr "設定"
 
 #: src/tasks/views/TasksList.tsx:11
 msgid "Tasks"
-msgstr ""
+msgstr "タスク"
 
 #: src/settings/ScreenSettings.tsx:23
 msgid "Theme"
-msgstr ""
+msgstr "テーマ"

@@ -15,41 +15,41 @@ msgstr ""
 
 #: src/tasks/components/TasksInput.tsx:21
 msgid "Add a task"
-msgstr ""
+msgstr "إضافة مهمة"
 
 #: src/core/utils/date.ts:24
 msgid "Enjoy the night."
-msgstr ""
+msgstr "استمتع بالليل."
 
 #: src/core/utils/date.ts:20
 msgid "Good afternoon."
-msgstr ""
+msgstr "مساء الخير."
 
 #: src/core/utils/date.ts:22
 msgid "Good evening."
-msgstr ""
+msgstr "مساء الخير."
 
 #: src/core/utils/date.ts:18
 msgid "Good morning."
-msgstr ""
+msgstr "صباح الخير."
 
 #: src/core/components/Menu.tsx:16
 msgid "Home"
-msgstr ""
+msgstr "الصفحة الرئيسية"
 
 #: src/settings/ScreenSettings.tsx:34
 msgid "Language"
-msgstr ""
+msgstr "اللغة"
 
 #: src/core/components/Menu.tsx:25
 #: src/settings/ScreenSettings.tsx:21
 msgid "Settings"
-msgstr ""
+msgstr "الإعدادات"
 
 #: src/tasks/views/TasksList.tsx:11
 msgid "Tasks"
-msgstr ""
+msgstr "المهام"
 
 #: src/settings/ScreenSettings.tsx:23
 msgid "Theme"
-msgstr ""
+msgstr "السمة"
