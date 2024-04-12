@@ -12,6 +12,7 @@ const COMPONENTS = '../../design/components';
 const guideGroups = readdirSync(GUIDES).filter(excludeGroups);
 const primitivesGroups = readdirSync(PRIMITIVES).filter(excludeGroups);
 const componentsGroups = readdirSync(COMPONENTS).filter(excludeGroups);
+const hasComponents = componentsGroups.length > 0;
 
 // Mappings
 
@@ -25,24 +26,24 @@ const sidebar = [
       text: getTitle(f, `${GUIDES}/${g}/${f}`),
     })),
   })).filter(g => g.items.length),
-  {
-    text: 'Primitives',
-    collapsed: false,
-    items: primitivesGroups.map(g => ({
-      text: titleCase(g),
-      items: readdirSync(`${PRIMITIVES}/${g}`).filter(excludeFiles).map(f => ({
-        link: `/primitives/${g}/${f}`,
-        text: getTitle(f, `${PRIMITIVES}/${g}/${f}/${titleCase(f, true)}.docs.mdx`),
-      })),
-    })).filter(g => g.items.length),
-  },
-  componentsGroups.length && {
+  hasComponents && {
     text: 'Components',
     collapsed: false,
     items: componentsGroups.map(g => ({
       text: titleCase(g),
       items: readdirSync(`${PRIMITIVES}/${g}`).filter(excludeFiles).map(f => ({
         link: `/components/${g}/${f}`,
+        text: getTitle(f, `${PRIMITIVES}/${g}/${f}/${titleCase(f, true)}.docs.mdx`),
+      })),
+    })).filter(g => g.items.length),
+  },
+  {
+    text: 'Primitives',
+    collapsed: hasComponents,
+    items: primitivesGroups.map(g => ({
+      text: titleCase(g),
+      items: readdirSync(`${PRIMITIVES}/${g}`).filter(excludeFiles).map(f => ({
+        link: `/primitives/${g}/${f}`,
         text: getTitle(f, `${PRIMITIVES}/${g}/${f}/${titleCase(f, true)}.docs.mdx`),
       })),
     })).filter(g => g.items.length),
