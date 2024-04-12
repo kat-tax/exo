@@ -10,18 +10,22 @@ You can use either [Figma](/start/figma) or the [CLI](/start/command) to create 
 
 *Either method will create a new EXO project with the following structure:*
 
-```
+```yml
 project/
-├── apps/
-│   ├── client/ // [!code focus]
-│   ├── docs/ // [!code focus]
-│   └── storybook/ // [!code focus]
-├── libraries/
-│   ├── cfg/ // [!code focus]
-│   ├── exo/ // [!code focus]
-│   └── ui/ // [!code focus]
-├── package.json
-│   ...
+├── client/            # The React Native app source code for all platforms
+├── design/            # UI kit containing components, assets, and the theme
+├── guides/            # MDX documentation for the doc site and storybook
+├── library/           # 
+├── locales/           #
+├── output/            #
+├── toolkit/           #
+│   ├── builder/       #
+│   ├── config/        #
+│   ├── fastlane/      #
+│   └── storybook/     #
+├── config.yaml        # Master config file used throughout the project
+├── locales.ts         # Configure your source and target languages here
+└── package.json       # Monorepo package, run all scripts from here
 ```
 
 ## Existing Project

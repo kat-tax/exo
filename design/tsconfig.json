@@ -3,6 +3,6 @@
   "extends": "config/tsconfig.app.json",
   "display": "Design",
   "compilerOptions": {
-    "baseUrl": "./",
+    "baseUrl": "./"
   }
 }

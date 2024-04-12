@@ -10,7 +10,10 @@ import config from 'config';
   <HomePage.Tagline>
     Developer Documentation
   </HomePage.Tagline>
-  <HomePage.InstallPackage name="exo" type="init"/>
+  <HomePage.InstallPackage
+    name={config.LIB_NAME}
+    type="install"
+  />
   <HomePage.Buttons>
     <HomePage.Button href="/start" variant="accent">
       Get started
