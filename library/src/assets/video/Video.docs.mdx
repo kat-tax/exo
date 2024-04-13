@@ -1,0 +1,53 @@
+import {Video} from 'react-exo/video';
+import {Button} from 'vocs/components';
+
+# Videos
+
+> A component that enables video playblack.
+
+<Video
+  source={{
+    uri: 'https://get.ult.dev/samples/bunny.mp4',
+  }}
+  style={{
+    width: 685,
+    height: 386,
+  }}
+/>
+
+```tsx twoslash
+import React from 'react';
+// ---cut---
+// @log: ↓ Import the component
+import {Video} from 'react-exo/video';
+
+// @log: ↓ Try the example
+<Video
+  source={{
+    uri: 'https://get.ult.dev/samples/bunny.mp4',
+  }}
+  style={{
+    width: 685,
+    height: 386,
+  }}
+/>
+```
+
+<Button href="https://exo.fig.run/?path=/docs/primitives-video">Storybook</Button>
+
+## Platform Support
+
+:::info
+For native support you must install [React Native Video](https://react-native-video.github.io/react-native-video)
+
+`npm i react-native-video{:bash}`
+:::
+
+
+| Platform | Technology | Functional | Notes |
+| -------- | ---------- | :--------: | :---: |
+| Web | [@vidstack/react](https://www.vidstack.io) | ✅ | - |
+| Android | [react-native-video](https://react-native-video.github.io/react-native-video) | ✅ | - |
+| iOS | [react-native-video](https://react-native-video.github.io/react-native-video) | ✅ | - |
+| MacOS | [react-native-video](https://react-native-video.github.io/react-native-video) | ✅ | - |
+| Windows | [react-native-video](https://react-native-video.github.io/react-native-video) | ✅ | - |

@@ -1,10 +1,29 @@
+# Project
+**/i18n/messages/
+toolkit/vocs/pages/
+output/
+dist/
+gen/
+WIP.md
+
 # Node
 node_modules/
 
-# Expo
-.expo/
-dist/
-web-build/
+# MacOS
+.DS_Store
+*.pem
+
+# Env
+.env*.local
+
+# Typescript
+*.tsbuildinfo
+
+# Vocs
+vocs.config.ts.timestamp-*
+
+# RNUC
+rnuc.xcconfig
 
 # Native
 *.orig.*
@@ -21,13 +40,3 @@ web-build/
 npm-debug.*
 yarn-debug.*
 yarn-error.*
-
-# MacOS
-.DS_Store
-*.pem
-
-# Local env files
-.env*.local
-
-# Typescript
-*.tsbuildinfo

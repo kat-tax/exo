@@ -1,0 +1,45 @@
+import {Rive} from 'react-exo/rive';
+import {Button} from 'vocs/components';
+
+# Rive Animations
+
+> A component that renders Rive animations.
+
+<Rive
+  url="https://get.ult.dev/samples/cursor.riv"
+  width={320}
+  height={320}
+/>
+
+```tsx twoslash
+import React from 'react';
+// ---cut---
+// @log: ↓ Import the component
+import {Rive} from 'react-exo/rive';
+
+// @log: ↓ Try the example
+<Rive
+  url="https://get.ult.dev/samples/cursor.riv"
+  width={320}
+  height={320}
+/>
+```
+
+<Button href="https://exo.fig.run/?path=/docs/primitives-rive">Storybook</Button>
+
+## Platform Support
+
+:::info
+For native support you must install [Rive React Native](https://help.rive.app/runtimes/overview/react-native)
+
+`npm i rive-react-native{:bash}`
+:::
+
+
+| Platform | Technology | Functional | Notes |
+| -------- | ---------- | :--------: | :---: |
+| Web | [@rive-app/react-canvas](https://rive-app.github.io/rive-react) | ✅ | - |
+| Android | [rive-react-native](https://help.rive.app/runtimes/overview/react-native) | ✅ | - |
+| iOS | [rive-react-native](https://help.rive.app/runtimes/overview/react-native) | ✅ | - |
+| MacOS | [rive-react-native](https://help.rive.app/runtimes/overview/react-native) | ✅ | - |
+| Windows | [rive-react-native](https://help.rive.app/runtimes/overview/react-native) | ✅ | - |

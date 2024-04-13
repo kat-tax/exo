@@ -1,0 +1,48 @@
+import 'react-exo/switch.css';
+import {Switch} from 'react-exo/switch';
+import {Button, Callout} from 'vocs/components';
+
+<Callout type="warning">
+  This documentation page is work in progress!
+</Callout>
+
+# Switches
+
+> A component that allows selection of a value within a range.
+
+<Switch
+  disabled={false}
+  onValueChange={console.log}
+  thumbColor="#666"
+  onColor="#666"
+  offColor="#333"
+/>
+
+```tsx twoslash
+import React from 'react';
+// ---cut---
+// @log: ↓ Import the component
+import {Switch} from 'react-exo/switch';
+
+// @log: ↓ Try the example
+<Switch
+  value={true}
+  disabled={false}
+  onValueChange={console.log}
+  thumbColor="#666"
+  onColor="#666"
+  offColor="#333"
+/>
+```
+
+<Button href="https://exo.fig.run/?path=/docs/primitives-switch">Storybook</Button>
+
+## Platform Support
+
+| Platform | Technology | Functional | Notes |
+| -------- | ---------- | :--------: | :---: |
+| Web | [@radix-ui/react-checkbox](https://www.radix-ui.com/primitives/docs/components/switch) | ✅ | - |
+| Android | [React Native Switch](https://reactnative.dev/docs/switch) | ✅ | - |
+| iOS | [React Native Switch](https://reactnative.dev/docs/switch) | ✅ | - |
+| MacOS | [React Native Switch](https://reactnative.dev/docs/switch) | ✅ | - |
+| Windows | [React Native Switch](https://reactnative.dev/docs/switch) | ✅ | - |

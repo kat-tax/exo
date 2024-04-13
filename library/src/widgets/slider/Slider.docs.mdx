@@ -1,0 +1,71 @@
+import 'react-exo/slider.css';
+import {Slider} from 'react-exo/slider';
+import {Button, Callout} from 'vocs/components';
+
+<Callout type="warning">
+  This documentation page is work in progress!
+</Callout>
+
+# Sliders
+
+> A component that allows selection of a value within a range.
+
+<Slider
+  step={1}
+  value={50}
+  onChange={console.log}
+  lowerLimit={0}
+  upperLimit={100}
+  minimumValue={0}
+  maximumValue={100}
+  rangeColor="#666"
+  thumbColor="#666"
+  trackColor="#333"
+  disabled={false}
+  name="slider"
+  testID="0:0"
+  style={{}}
+/>
+
+```tsx twoslash
+import React from 'react';
+// ---cut---
+// @log: ↓ Import the component
+import {Slider} from 'react-exo/slider';
+
+// @log: ↓ Try the example
+<Slider
+  step={1}
+  value={50}
+  lowerLimit={0}
+  upperLimit={100}
+  minimumValue={0}
+  maximumValue={100}
+  onChange={console.log}
+  rangeColor="#666"
+  thumbColor="#666"
+  trackColor="#333"
+  disabled={false}
+  name="slider"
+  testID="0:0"
+  style={{}}
+/>
+```
+
+<Button href="https://exo.fig.run/?path=/docs/primitives-slider">Storybook</Button>
+
+## Platform Support
+
+:::info
+For native support you must install [React Native Community Slider](https://github.com/callstack/react-native-slider)
+
+`npm i @react-native-community/slider{:bash}`
+:::
+
+| Platform | Technology | Functional | Notes |
+| -------- | ---------- | :--------: | :---: |
+| Web | [@radix-ui/react-slider](https://www.radix-ui.com/primitives/docs/components/slider) | ✅ | - |
+| Android | [@react-native-community/slider](https://github.com/callstack/react-native-slider) | ✅ | - |
+| iOS | [@react-native-community/slider](https://github.com/callstack/react-native-slider) | ✅ | - |
+| MacOS | [@react-native-community/slider](https://github.com/callstack/react-native-slider) | ✅ | - |
+| Windows | [@react-native-community/slider](https://github.com/callstack/react-native-slider) | ✅ | - |

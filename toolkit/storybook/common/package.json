@@ -1,0 +1,17 @@
+{
+  "name": "storybook-common",
+  "type": "module",
+  "private": true,
+  "dependencies": {
+    "@iconify/react": "^4.1.1",
+    "@storybook/addon-essentials": "^8.0.4",
+    "@storybook/blocks": "^8.0.4",
+    "design": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.72",
+    "config": "workspace:*",
+    "react-exo": "workspace:*",
+    "react-native": "^0.73.6"
+  }
+}

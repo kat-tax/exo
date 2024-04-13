@@ -1,6 +1,6 @@
 # EXO
 
-`A Skeleton Project for React Native`
+`The Ultimate Skeleton Project for React Native`
 
 [Web App](https://exo.ult.dev) |
 [Documentation](https://exo.ult.dev/docs) |

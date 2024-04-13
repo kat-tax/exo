@@ -1,0 +1,33 @@
+import {Button} from 'vocs/components';
+
+# Safe Areas
+
+> A component that wraps your application's root view and applies safe area insets to it.
+
+```tsx twoslash
+import React from 'react';
+// ---cut---
+// @log: ↓ Import the components
+import {SafeAreaProvider, SafeAreaView} from 'react-exo/safearea'; // [!code focus]
+
+// @log: ↓ Wrap your application with the provider
+<SafeAreaProvider> // [!code focus]
+  {/* Your application's root view */}
+</SafeAreaProvider> // [!code focus]
+```
+
+## Platform Support
+
+:::info
+For native support you must install [RNGH](https://docs.swmansion.com/react-native-safe-area/)
+
+`npm i react-native-safe-area{:bash}`
+:::
+
+| Platform | Technology | Functional | Notes |
+| -------- | ---------- | :--------: | ----- |
+| Web | [-] | ✅ | No-op on web for performance reasons |
+| Android | [RNGH](https://docs.swmansion.com/react-native-safe-area) | ✅ | - |
+| iOS | [RNGH](https://docs.swmansion.com/react-native-safe-area) | ✅ | - |
+| MacOS | [RNGH](https://docs.swmansion.com/react-native-safe-area) | ✅ | - |
+| Windows | [RNGH](https://docs.swmansion.com/react-native-safe-area) | ✅ | - |

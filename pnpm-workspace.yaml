@@ -1,4 +1,7 @@
 packages:
-  - 'apps/**'
-  - 'libraries/**'
+  - 'client/**'
+  - 'design/**'
+  - 'library/**'
+  - 'locales/**'
+  - 'toolkit/**'
   - '!**/test/**'

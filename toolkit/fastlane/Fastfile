@@ -1,0 +1,9 @@
+import "./Platformfile"
+
+desc "Deploy all platforms"
+lane :deploy do
+  git_check
+  build_ios
+  build_android
+  git_tag
+end

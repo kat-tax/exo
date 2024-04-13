@@ -1,0 +1,44 @@
+import {Device} from 'react-exo/device';
+
+# Device Service
+
+> A service to manage and query device instruments
+
+```ts twoslash
+// @noErrors
+import React from 'react';
+// ---cut---
+// @log: ↓ Import the device service
+import {Device} from 'react-exo/device'; // [!code focus]
+
+// @log: ↓ Hide the boot splash screen
+await Device.BootSplash.hide(); // [!code focus]
+
+// @log: ↓ Share EXO with a friend :]
+Device.share('https://exo.ult.dev', 'EXO is amazing!'); // [!code focus]
+
+// @log: ↓ Query device states
+const online = await Device.isOnline(); // [!code focus]
+const booting = await Device.BootSplash.isVisible(); // [!code focus]
+
+// @log: ↓ Or do whatever you want...
+Device. // [!code focus]
+    // ^|
+
+
+
+```
+
+## Platform Support
+
+:::info
+For native support you must install [RN Boot Splash](https://react-native-bootsplash.github.io/react-native-bootsplash) and [RN Net Info](https://github.com/react-native-netinfo/react-native-netinfo)
+
+`npm i react-native-bootsplash @react-native-community/netinfo{:bash}`
+:::
+
+
+| Platform | Technology | Functional | Notes |
+| -------- | ---------- | :--------: | :---: |
+| Web | [Web API Navigator](https://developer.mozilla.org/en-US/docs/Web/API/Navigator) | ✅ | - |
+| Native | [react-native-bootsplash](https://react-native-bootsplash.github.io/react-native-bootsplash) <br/> [@react-native-community/netinfo](https://github.com/react-native-netinfo/react-native-netinfo) | ✅ | - |

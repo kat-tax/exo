@@ -1,4 +1,0 @@
-{
-  "extends": "./ts/lib-cfg.tsconfig.json",
-  "include": ["**/*.ts", "**/*.tsx"]
-}

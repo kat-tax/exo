@@ -1,0 +1,54 @@
+# Info
+
+changelog = File.read("../CHANGELOG.md")
+package = load_json(json_path: "./package.json")
+version = package["version"]
+project = package["name"]
+
+# Paths
+
+path_ios = "./ios/";
+path_android = "./android/";
+path_gradle = path_android + "app/build.gradle"
+path_xcodeproj = path_ios + project.downcase + ".xcodeproj"
+path_xcworkspace = path_ios + project + ".xcworkspace"
+
+# Git
+
+private_lane :git_check do
+  ensure_git_branch
+  ensure_git_status_clean
+end
+
+private_lane :git_tag do
+  git_commit(message: "Version bump")
+  add_git_tag
+  push_to_git_remote
+end
+
+# Bump
+
+private_lane :bump_ios do
+  increment_build_number(xcodeproj: path_xcodeproj)
+  increment_version_number(version_number: version, xcodeproj: path_xcodeproj)
+end
+
+private_lane :bump_android do
+  increment_version_code(gradle_file_path: path_gradle)
+  increment_version_name(version_name: version, gradle_file_path: path_gradle)
+end
+
+# Build
+
+private_lane :ios do
+  bump_ios
+  sync_code_signing(type: "appstore")
+  build_app(scheme: scheme.downcase, workspace: path_xcworkspace)
+  upload_to_testflight(changelog: changelog)
+end
+
+private_lane :android do
+  bump_android
+  build_android_app(task: "clean bundleRelease", project_dir: path_android)
+  upload_to_play_store(track: "alpha")
+end

@@ -1,0 +1,48 @@
+import {Image} from 'react-exo/image';
+import {Button} from 'vocs/components';
+
+# Images
+
+> A component that displays images with disk caching and thumbhash support.
+
+<Image
+  url="https://get.ult.dev/samples/turing.jpg"
+  thumbhash="XwgGFoKwnYZxZ3emWReEaGV30FUKnLQ"
+  resizeMode="cover"
+  width={685}
+  height={404}
+/>
+
+```tsx twoslash
+import React from 'react';
+// ---cut---
+// @log: ↓ Import the component
+import {Image} from 'react-exo/image';
+
+// @log: ↓ Try the example
+<Image
+  url="https://get.ult.dev/samples/turing.jpg"
+  thumbhash="XwgGFoKwnYZxZ3emWReEaGV30FUKnLQ"
+  resizeMode="cover"
+  width={685}
+  height={404}
+/>
+```
+
+<Button href="https://exo.fig.run/?path=/docs/primitives-image">Storybook</Button>
+
+## Platform Support
+
+:::info
+For Android & iOS support you must install [Faster Image](https://github.com/candlefinance/faster-image)
+
+`npm i @candlefinance/faster-image{:bash}`
+:::
+
+| Platform | Technology | Functional | Notes |
+| -------- | ---------- | :--------: | ----- |
+| Web | [React Native Web Image](https://necolas.github.io/react-native-web/docs/image) | ✅ | Uses default platform cache. |
+| Android | [@candlefinance/faster-image](https://github.com/candlefinance/faster-image) | ✅ | - |
+| iOS | [@candlefinance/faster-image](https://github.com/candlefinance/faster-image) | ✅ | - |
+| MacOS | [React Native Image](https://reactnative.dev/docs/image) | ✅ | Uses default platform cache. |
+| Windows | [React Native Image](https://reactnative.dev/docs/image) | ✅ | Uses default platform cache. |

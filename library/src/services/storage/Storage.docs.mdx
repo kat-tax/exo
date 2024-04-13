@@ -1,0 +1,77 @@
+# Storage Service
+
+> A service that persists key/values to disk. Mainly used for Redux state persistence.
+
+```ts twoslash
+// ---cut---
+// @log: ↓ Import the storage service
+import {Storage} from 'react-exo/storage';
+
+// @log: ↓ Create or get a versioned store
+const store = Storage.init('exo', 1.0);
+
+// @log: ↓ Set a value to a key
+await store.setItem('foo', 'bar');
+
+// @log: ↓ Get a value from a key
+const value = await store.getItem('foo');
+
+// @log: ↓ Remove a key/value pair
+await store.removeItem('foo');
+
+// @log: ↓ Clear the entire store
+await store.clear();
+
+```
+
+## Advanced Usage
+
+```ts twoslash
+import {Storage} from 'react-exo/storage';
+const store = Storage.init('exo', 1);
+// ---cut---
+// @annotate: ↓ Working with booleans
+await store.setItem('verified', false);
+const verified = await store.getItem('verified', Boolean);
+   // ^?
+
+
+
+// @annotate: ↓ Working with numbers
+await store.setItem('age', 18);
+const age = await store.getItem('age', Number);
+   // ^?
+
+
+
+// @annotate: ↓ Working with byte arrays
+await store.setItem('photo', new Uint8Array([0x47, 0x49, 0x46, 0x38, 0x39, 0x61, 0x01, 0x00, 0x01, 0x00, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0xFF, 0xFF, 0xFF, 0x2C, 0x00, 0x00, 0x00, 0x01, 0x00, 0x01, 0x00, 0x00, 0x00]));
+const photo = await store.getItem('photo', Uint8Array);
+   // ^?
+
+
+
+// @annotate: ↓ Working with default values
+const language = await store.getItem('language', 'en-US');
+const showLogo = await store.getItem('showLogo', true);
+const fontSize = await store.getItem('fontSize', 16);
+
+```
+
+
+
+## Platform Support
+
+:::info
+For native support you must install [MMKV](https://rnmmkv.vercel.app)
+
+`npm i react-native-mmkv{:bash}`
+:::
+
+| Platform | Technology | Functional | Notes |
+| -------- | ---------- | :--------: | ----- |
+| Web | [IDB-Keyval](https://github.com/jakearchibald/idb-keyval) | ✅ | - |
+| Android | [MMKV](https://rnmmkv.vercel.app) | ✅ | - |
+| iOS | [MMKV](https://rnmmkv.vercel.app) | ✅ | - |
+| MacOS | [MMKV](https://rnmmkv.vercel.app) | ✅ | - |
+| Windows | [MMKV](https://rnmmkv.vercel.app) | ✅ | - |

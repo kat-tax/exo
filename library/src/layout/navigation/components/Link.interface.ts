@@ -1,0 +1,20 @@
+import type {To} from 'react-router';
+import type {PressableProps} from 'react-native';
+
+export interface LinkBase {
+  to: To,
+  state?: any,
+  replace?: boolean,
+}
+
+export interface LinkWeb extends LinkBase, Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, 'href'> {
+  /** 
+   * Reloads the browser when the link is clicked
+   * @platform Web
+   */
+  reloadDocument?: boolean,
+}
+
+export interface LinkNative extends LinkBase, PressableProps {}
+
+export type LinkProps = LinkNative | LinkWeb;

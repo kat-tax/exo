@@ -1,22 +1,41 @@
 {
-  "name": "@kat.tax/exo",
-  "version": "0.0.1",
   "private": true,
+  "license": "MIT",
   "scripts": {
-    "start": "concurrently pnpm:web pnpm:docs-dev pnpm:storybook-web",
-    "build": "concurrently pnpm:*-build",
-    "web": "pnpm --filter ./apps/client run dev",
-    "web-build": "pnpm --filter ./apps/client run build",
-    "docs-dev": "pnpm --filter ./apps/docs dev",
-    "docs-build": "pnpm --filter ./apps/docs build",
-    "docs-preview": "pnpm --filter ./apps/docs preview",
-    "storybook-web": "pnpm --filter ./apps/storybook/web run dev",
-    "storybook-native": "pnpm --filter ./apps/storybook/native run dev",
-    "storybook-build": "pnpm --filter ./apps/storybook/web run build",
-    "publish-exo": "pnpm --filter ./libraries/exo publish",
-    "publish-ui": "pnpm --filter ./libraries/ui publish"
+    "start": "pnpm run build && conc 'pnpm:*-dev'",
+    "build": "conc -c 'auto' -g 'pnpm:*-build'",
+
+    "config-dev": "pnpm --filter ./toolkit/config dev",
+    "config-build": "pnpm --filter ./toolkit/config build",
+    "builder-build": "pnpm --filter ./toolkit/builder build",
+
+    "translate-dev": "conc -P 'pnpm:translate-extract {1}' 'pnpm:translate-compile {1}' -- --watch",
+    "translate-build": "pnpm run translate-extract && pnpm run translate-compile",
+    "translate-extract": "lingui extract --config ./client/lingui.config.ts",
+    "translate-compile": "lingui compile --config ./client/lingui.config.ts",
+
+    "library-dev": "pnpm --filter ./library dev",
+    "library-build": "pnpm --filter ./library build",
+    "library-publish": "pnpm --filter ./library publish",
+
+    "web-dev": "pnpm --filter ./client run dev",
+    "web-build": "pnpm --filter ./client run build",
+
+    "docs-dev": "pnpm --filter ./toolkit/vocs dev",
+    "docs-build": "pnpm --filter ./toolkit/vocs build",
+
+    "storybook-dev": "conc pnpm:storybook-web pnpm:storybook-native",
+    "storybook-xbuild": "pnpm --filter ./toolkit/storybook/web run build",
+    "storybook-native": "pnpm --filter ./toolkit/storybook/native run dev",
+    "storybook-web": "pnpm --filter ./toolkit/storybook/web run dev",
+    
+    "postinstall": "pnpm run build"
   },
   "devDependencies": {
-    "concurrently": "^8.2.2"
+    "@lingui/cli": "latest",
+    "concurrently": "latest"
+  },
+  "resolutions": {
+    "@swc/core": "1.3.56"
   }
 }

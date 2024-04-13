@@ -1,0 +1,38 @@
+import {Form} from 'react-exo/form';
+import {Callout} from 'vocs/components';
+
+<Callout type="warning">
+  This documentation page is work in progress!
+</Callout>
+
+# Form Service
+
+> A service to handle form submission and validation.
+
+```tsx twoslash
+import React from 'react';
+// ---cut---
+// @log: ↓ Import the component
+import {Form} from 'react-exo/form'; // [!code focus]
+
+// @log: ↓ Try the example
+<Form // [!code focus]
+  action="/api" // [!code focus]
+  method="post" // [!code focus]
+  onError={() => {}} // [!code focus]
+  onSubmit={() => {}} // [!code focus]
+  onSuccess={() => {}} // [!code focus]
+  validateStatus={(status) => status >= 200}> // [!code focus]
+  {/* Your input components */}
+</Form> // [!code focus]
+```
+
+## Platform Support
+
+| Platform | Technology | Functional | Notes |
+| -------- | ---------- | :--------: | ----- |
+| Web | [React Hook Form](https://react-hook-form.com) | ✅ | - |
+| Android | [React Hook Form](https://react-hook-form.com) | ✅ | - |
+| iOS | [React Hook Form](https://react-hook-form.com) | ✅ | - |
+| MacOS | [React Hook Form](https://react-hook-form.com) | ✅ | - |
+| Windows | [React Hook Form](https://react-hook-form.com) | ✅ | - |

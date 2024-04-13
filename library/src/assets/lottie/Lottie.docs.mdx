@@ -1,0 +1,49 @@
+import {Lottie} from 'react-exo/lottie';
+import {Button} from 'vocs/components';
+
+# Lottie Animations
+
+> A component that renders Lottie animations.
+
+<Lottie
+  url="https://get.ult.dev/samples/stack.lottie"
+  width={320}
+  height={320}
+  autoplay
+  loop
+/>
+
+```tsx twoslash
+import React from 'react';
+// ---cut---
+// @log: ↓ Import the component
+import {Lottie} from 'react-exo/lottie';
+
+// @log: ↓ Try the example
+<Lottie
+  url="https://get.ult.dev/samples/stack.lottie"
+  width={320}
+  height={320}
+  autoplay
+  loop
+/>
+```
+
+<Button href="https://exo.fig.run/?path=/docs/primitives-lottie">Storybook</Button>
+
+## Platform Support
+
+:::info
+For native support you must install [Skottie](https://github.com/margelo/react-native-skottie) and [Skia](https://shopify.github.io/react-native-skia)
+
+`npm i react-native-skottie @shopify/react-native-skia{:bash}`
+:::
+
+
+| Platform | Technology | Functional | Notes |
+| -------- | ---------- | :--------: | :---: |
+| Web | [@dotlottie/react-player](https://developers.lottiefiles.com/docs/dotlottie-player/react-player) | ✅ | - |
+| Android | [react-native-skottie](https://github.com/margelo/react-native-skottie) | ✅ | - |
+| iOS | [react-native-skottie](https://github.com/margelo/react-native-skottie) | ✅ | - |
+| MacOS | [react-native-skottie](https://github.com/margelo/react-native-skottie) | ✅ | - |
+| Windows | [react-native-skottie](https://github.com/margelo/react-native-skottie) | ✅ | - |
