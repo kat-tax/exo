@@ -27,9 +27,7 @@
     "storybook-dev": "conc pnpm:storybook-web pnpm:storybook-native",
     "storybook-xbuild": "pnpm --filter ./toolkit/storybook/web run build",
     "storybook-native": "pnpm --filter ./toolkit/storybook/native run dev",
-    "storybook-web": "pnpm --filter ./toolkit/storybook/web run dev",
-    
-    "postinstall": "pnpm run build"
+    "storybook-web": "pnpm --filter ./toolkit/storybook/web run dev"
   },
   "devDependencies": {
     "@lingui/cli": "latest",
