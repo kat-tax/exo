@@ -8,11 +8,12 @@
     "gen-files": "node ./scripts/gen-app-json.js && node ./scripts/gen-docs-sidebar.js",
     "gen-locales": "node ./scripts/gen-user-locales.js"
   },
-  "main": "gen/index.cjs",
-  "module": "gen/index.mjs",
-  "types": "gen/index.d.ts",
   "exports": {
-    ".": "./gen/index.cjs",
+    ".": {
+      "types": "./gen/index.d.ts",
+      "import": "./gen/index.js",
+      "require": "./gen/index.cjs"
+    },
     "./app.json": "./gen/app.json",
     "./locales": "./gen/locales.js",
     "./docs.sidebar": "./gen/docs.sidebar.js",

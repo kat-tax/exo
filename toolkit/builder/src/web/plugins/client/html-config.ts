@@ -13,7 +13,7 @@ export default <Plugin> {
   transformIndexHtml(html) {
     let out = html;
     replacements.forEach(([reg, val]) => {
-      out = out.replace(reg, val);
+      out = out.replace(reg as any, val as any);
     });
     return out;
   },
