@@ -20,6 +20,9 @@ importers:
 
   client:
     dependencies:
+      '@lingui/core':
+        specifier: ^4.8.0
+        version: 4.8.0
       '@lingui/macro':
         specifier: ^4.8.0
         version: 4.8.0(@lingui/react@4.8.0)(babel-plugin-macros@3.1.0)(typescript@5.4.3)
@@ -69,6 +72,9 @@ importers:
 
   design:
     dependencies:
+      '@lingui/core':
+        specifier: ^4.8.0
+        version: 4.8.0
       '@lingui/macro':
         specifier: ^4.8.0
         version: 4.8.0(@lingui/react@4.8.0)(babel-plugin-macros@3.1.0)(typescript@5.4.3)
@@ -127,12 +133,6 @@ importers:
       '@legendapp/motion':
         specifier: ^2.3.0
         version: 2.3.0(nativewind@2.0.11)(react-native@0.73.6)(react@18.2.0)
-      '@lingui/conf':
-        specifier: ^4.8.0
-        version: 4.8.0(typescript@5.4.3)
-      '@lingui/core':
-        specifier: ^4.8.0
-        version: 4.8.0
       '@lingui/macro':
         specifier: '>=4'
         version: 4.8.0(@lingui/react@4.8.0)(babel-plugin-macros@3.1.0)(typescript@5.4.3)
@@ -203,6 +203,12 @@ importers:
       '@candlefinance/faster-image':
         specifier: ^1.4.3
         version: 1.4.3(react-native@0.73.6)(react@18.2.0)
+      '@lingui/conf':
+        specifier: ^4.8.0
+        version: 4.8.0(typescript@5.4.3)
+      '@lingui/core':
+        specifier: ^4.8.0
+        version: 4.8.0
       '@marceloterreiro/flash-calendar':
         specifier: ^0.0.8
         version: 0.0.8(@shopify/flash-list@1.6.4)(react-native@0.73.6)(react@18.2.0)
@@ -418,6 +424,9 @@ importers:
 
   toolkit/storybook/web:
     dependencies:
+      '@lingui/core':
+        specifier: ^4.8.0
+        version: 4.8.0
       '@lingui/macro':
         specifier: ^4.8.0
         version: 4.8.0(@lingui/react@4.8.0)(babel-plugin-macros@3.1.0)(typescript@5.4.3)
@@ -503,6 +512,9 @@ importers:
 
   toolkit/vocs:
     dependencies:
+      '@lingui/core':
+        specifier: ^4.8.0
+        version: 4.8.0
       '@lingui/macro':
         specifier: ^4.8.0
         version: 4.8.0(@lingui/react@4.8.0)(babel-plugin-macros@3.1.0)(typescript@5.4.3)

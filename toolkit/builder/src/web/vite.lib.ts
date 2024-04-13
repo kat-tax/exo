@@ -53,6 +53,10 @@ export default defineConfig(env => mergeConfig(
           'react-native',
           'react-native-web',
           'react/jsx-runtime',
+          /* I18n */
+          '@linguijs/core',
+          '@linguijs/react',
+          '@linguijs/macro',
           /* Web */
           '@vidstack/react',
           '@dotlottie/common',
