@@ -1,5 +1,8 @@
-on: [push]
 name: Build and Deploy
+on:
+  push:
+    branches:
+      - master
 permissions:
   contents: write
 jobs:
@@ -7,11 +10,17 @@ jobs:
     concurrency: ci-${{github.ref}}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout 🛎️
+      - name: 🛎️ Git Checkout
         uses: actions/checkout@v4
-      - name: Install and Build 🔧
+      - name: 📦 Package Manager
+        uses: pnpm/action-setup@v3
+        with:
+          version: 8
+      - name: 🚚 Install
+        run: pnpm install
+      - name: 🏗️ Build
         run: pnpm build-app
-      - name: Deploy 🚀
+      - name: 🚀 Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: output/client/web
