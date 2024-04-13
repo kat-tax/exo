@@ -14,8 +14,6 @@ jobs:
         uses: actions/checkout@v4
       - name: 📦 Package Manager
         uses: pnpm/action-setup@v3
-        with:
-          version: 8
       - name: 🚚 Dependency Install
         run: pnpm install
       # Web
