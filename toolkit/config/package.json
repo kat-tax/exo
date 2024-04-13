@@ -9,7 +9,7 @@
     "gen-locales": "node ./scripts/gen-user-locales.js"
   },
   "exports": {
-    ".": "./gen/index.js",
+    ".": "./gen/index.cjs",
     "./app.json": "./gen/app.json",
     "./locales": "./gen/locales.js",
     "./docs.sidebar": "./gen/docs.sidebar.js",

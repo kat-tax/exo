@@ -1,5 +1,5 @@
 import {writeFileSync} from 'node:fs';
-import config from '../gen/index.js';
+import config from '../gen/index.cjs';
 
 writeFileSync('./gen/app.json', JSON.stringify({
   "name": config.APP_NAME,

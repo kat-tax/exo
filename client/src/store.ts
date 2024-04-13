@@ -1,4 +1,4 @@
-//import config from 'config';
+import config from 'config';
 import * as redux from 'react-exo/redux';
 import {Storage} from 'react-exo/storage';
 
@@ -7,9 +7,9 @@ import tasks from 'tasks/store';
 import settings from 'settings/store';
 
 const reducer = redux.persistReducer({
-  key: 'exo',
+  key: config.APP_NAME,
   version: 0,
-  storage: Storage.init(`${'exo'}::redux`, 0),
+  storage: Storage.init(`${config.APP_NAME}::redux`, 0),
   blacklist: [
     redux.history.context.routerReducer.name,
     core.reducer.name,

@@ -5,6 +5,7 @@ import 'react-native-url-polyfill/auto';
 
 import {App} from 'App';
 import {AppRegistry} from 'react-native';
+import config from 'config';
 
 export const AppLayouts = {
   Main: require('./core/LayoutMain').default,
@@ -17,7 +18,7 @@ export const AppScreens = {
   Settings: require('./settings/ScreenSettings').default,
 }
 
-AppRegistry.registerComponent('exo', () => () => (
+AppRegistry.registerComponent(config.APP_NAME, () => () => (
   <App
     Layout={AppLayouts}
     Screen={AppScreens}
