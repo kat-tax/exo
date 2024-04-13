@@ -9,6 +9,8 @@
     "gen-locales": "node ./scripts/gen-user-locales.js"
   },
   "main": "gen/index.cjs",
+  "module": "gen/index.mjs",
+  "types": "gen/index.d.ts",
   "exports": {
     ".": "./gen/index.cjs",
     "./app.json": "./gen/app.json",
