@@ -25,7 +25,7 @@
     "docs-build": "pnpm --filter ./toolkit/vocs build",
 
     "storybook-dev": "conc pnpm:storybook-web pnpm:storybook-native",
-    "storybook-build": "pnpm --filter ./toolkit/storybook/web run build",
+    "storybook-xbuild": "pnpm --filter ./toolkit/storybook/web run build",
     "storybook-native": "pnpm --filter ./toolkit/storybook/native run dev",
     "storybook-web": "pnpm --filter ./toolkit/storybook/web run dev",
     
