@@ -4,9 +4,9 @@
   "display": "Config",
   "compilerOptions": {
     "rootDir": ".",
-    "outDir": "gen",
+    "outDir": "gen"
   },
   "include": [
-    "./*.ts",
-  ],
+    "./*.ts"
+  ]
 }

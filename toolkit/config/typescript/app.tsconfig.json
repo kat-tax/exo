@@ -19,9 +19,9 @@
     "noEmit": true,
     "strict": true,
     "allowJs": true,
-    "skipLibCheck": true,
+    "skipLibCheck": true
   },
   "exclude": [
-    "node_modules",
+    "node_modules"
   ]
 }
