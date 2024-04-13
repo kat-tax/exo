@@ -3,8 +3,8 @@
   "license": "MIT",
   "scripts": {
     "start": "pnpm run build-app && conc 'pnpm:*-dev'",
-    "build": "conc -c 'auto' -g 'pnpm:*-build'",
-    "build-app": "conc -c 'auto' -g 'pnpm:*-build(!docs)'",
+    "build": "pnpm config-build && conc -c 'auto' -g 'pnpm:*-build'",
+    "build-app": "pnpm config-build && conc -c 'auto' -g 'pnpm:*-build(!docs)'",
 
     "config-dev": "pnpm --filter ./toolkit/config dev",
     "config-build": "pnpm --filter ./toolkit/config build",
