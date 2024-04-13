@@ -1,6 +1,6 @@
 import config from 'config';
-import * as redux from 'react-exo/redux';
 import {Storage} from 'react-exo/storage';
+import * as redux from 'react-exo/redux';
 
 import core from 'core/store';
 import tasks from 'tasks/store';
