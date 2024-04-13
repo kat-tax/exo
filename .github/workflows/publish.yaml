@@ -18,7 +18,7 @@ jobs:
         run: pnpm install
       # Web
       - name: 🏗️ Web App Build
-        run: pnpm build-app
+        run: pnpm build
       - name: 🚀 Web App Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
