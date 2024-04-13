@@ -8,6 +8,7 @@
     "gen-files": "node ./scripts/gen-app-json.js && node ./scripts/gen-docs-sidebar.js",
     "gen-locales": "node ./scripts/gen-user-locales.js"
   },
+  "main": "gen/index.cjs",
   "exports": {
     ".": "./gen/index.cjs",
     "./app.json": "./gen/app.json",
