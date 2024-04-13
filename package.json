@@ -2,9 +2,9 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "start": "pnpm run build-app && conc 'pnpm:*-dev'",
-    "build": "pnpm config-build && conc -c 'auto' -g 'pnpm:*-build'",
-    "build-app": "pnpm config-build && conc -c 'auto' -g 'pnpm:*-build(!docs)'",
+    "start": "pnpm run build && conc 'pnpm:*-dev'",
+    "build": "pnpm config-build && pnpm builder-build && pnpm library-build && pnpm web-build",
+    "build-all": "conc -c 'auto' -g 'pnpm:*-build'",
 
     "config-dev": "pnpm --filter ./toolkit/config dev",
     "config-build": "pnpm --filter ./toolkit/config build",
