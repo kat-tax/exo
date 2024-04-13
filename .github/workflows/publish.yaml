@@ -15,7 +15,9 @@ jobs:
       - name: 📦 Package Manager
         uses: pnpm/action-setup@v3
       - name: 🚚 Dependency Install
-        run: pnpm install
+        run: |
+          pnpm install
+          pnpm install
       # Web
       - name: 🏗️ Web App Build
         run: pnpm build-app
