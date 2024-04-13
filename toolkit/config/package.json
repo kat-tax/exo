@@ -21,6 +21,7 @@
   },
   "devDependencies": {
     "gray-matter": "latest",
-    "vocs": "latest"
+    "vocs": "latest",
+    "typescript": "^5.3.2"
   }
 }

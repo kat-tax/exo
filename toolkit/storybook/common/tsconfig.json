@@ -3,6 +3,6 @@
   "extends": "config/tsconfig.app.json",
   "display": "Storybook Common",
   "compilerOptions": {
-    "baseUrl": "./",
+    "baseUrl": "./"
   }
 }

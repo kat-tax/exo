@@ -30,6 +30,7 @@
     "fs-extra": "latest",
     "tsx": "latest",
     "vocs": "latest",
-    "yaml": "latest"
+    "yaml": "latest",
+    "typescript": "^5.3.2"
   }
 }
