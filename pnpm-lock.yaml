@@ -69,6 +69,9 @@ importers:
       config:
         specifier: workspace:*
         version: link:../toolkit/config
+      typescript:
+        specifier: ^5.3.2
+        version: 5.4.3
 
   design:
     dependencies:
@@ -121,6 +124,9 @@ importers:
       config:
         specifier: workspace:*
         version: link:../toolkit/config
+      typescript:
+        specifier: ^5.3.2
+        version: 5.4.3
 
   library:
     dependencies:
@@ -365,6 +371,9 @@ importers:
       tsx:
         specifier: latest
         version: 4.7.1
+      typescript:
+        specifier: ^5.3.2
+        version: 5.4.3
       vite:
         specifier: ^5.2.8
         version: 5.2.8(lightningcss@1.24.1)
@@ -390,6 +399,9 @@ importers:
       gray-matter:
         specifier: latest
         version: 4.0.3
+      typescript:
+        specifier: ^5.3.2
+        version: 5.4.3
       vocs:
         specifier: latest
         version: 1.0.0-alpha.43(@types/react@18.2.77)(react-dom@18.2.0)(react@18.2.0)(rollup@4.13.0)(typescript@5.4.3)
@@ -421,6 +433,9 @@ importers:
       react-native:
         specifier: ^0.73.6
         version: 0.73.6(@babel/core@7.23.9)(@babel/preset-env@7.23.6)(react@18.2.0)
+      typescript:
+        specifier: ^5.3.2
+        version: 5.4.3
 
   toolkit/storybook/web:
     dependencies:
@@ -509,6 +524,9 @@ importers:
       storybook-common:
         specifier: workspace:*
         version: link:../common
+      typescript:
+        specifier: ^5.3.2
+        version: 5.4.3
 
   toolkit/vocs:
     dependencies:
@@ -570,6 +588,9 @@ importers:
       tsx:
         specifier: latest
         version: 4.7.1
+      typescript:
+        specifier: ^5.3.2
+        version: 5.4.3
       vocs:
         specifier: latest
         version: 1.0.0-alpha.43(@types/react-dom@18.2.24)(@types/react@18.2.74)(react-dom@18.2.0)(react@18.2.0)(rollup@4.13.0)(typescript@5.4.3)
