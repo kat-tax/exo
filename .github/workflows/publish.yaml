@@ -5,7 +5,7 @@ on:
 permissions:
   contents: write
 jobs:
-  setup:
+  build:
     runs-on: ubuntu-latest
     concurrency: ci-${{github.ref}}
     steps:
@@ -15,16 +15,14 @@ jobs:
         uses: pnpm/action-setup@v3
       - name: Install Dependencies
         run: pnpm install
-  web:
-    needs: setup
+      - name: Build App
+        run: pnpm build
+  deploy:
+    needs: build
     runs-on: ubuntu-latest
     concurrency: ci-${{github.ref}}
     steps:
-      - name: Add PNPM
-        uses: pnpm/action-setup@v3
-      - name: Build App
-        run: pnpm build
-      - name: Deploy App
+      - name: Deploy Web
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: output/client/web
