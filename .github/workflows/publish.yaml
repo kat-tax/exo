@@ -17,11 +17,20 @@ jobs:
         run: pnpm install
       - name: Build App
         run: pnpm build
+      - name: Upload Output
+        uses: actions/upload-artifact@v2
+        with:
+          name: output
+          path: output
   deploy:
     needs: build
     runs-on: ubuntu-latest
     concurrency: ci-${{github.ref}}
     steps:
+      - name: Download Output
+        uses: actions/download-artifact@v2
+        with:
+          name: shared-data
       - name: Deploy Web
         uses: JamesIves/github-pages-deploy-action@v4
         with:
