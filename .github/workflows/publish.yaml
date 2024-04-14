@@ -9,20 +9,22 @@ jobs:
     runs-on: ubuntu-latest
     concurrency: ci-${{github.ref}}
     steps:
-      - name: checkout 🛎️
-        uses: actions/checkout@v4
-      - name: packager 📦
+      - name: Add PNPM
         uses: pnpm/action-setup@v3
-      - name: install 🚚
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+      - name: Install Dependencies
         run: pnpm install
   web:
     needs: setup
     runs-on: ubuntu-latest
     concurrency: ci-${{github.ref}}
     steps:
-      - name: build 🏗️
+      - name: Add PNPM
+        uses: pnpm/action-setup@v3
+      - name: Build App
         run: pnpm build
-      - name: deploy 🚀
+      - name: Deploy App
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: output/client/web
