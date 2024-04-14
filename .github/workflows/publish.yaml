@@ -20,10 +20,10 @@ jobs:
     runs-on: ubuntu-latest
     concurrency: ci-${{github.ref}}
     steps:
-      - name: Build App
-        run: pnpm build
       - name: Add PNPM
         uses: pnpm/action-setup@v3
+      - name: Build App
+        run: pnpm build
       - name: Deploy App
         uses: JamesIves/github-pages-deploy-action@v4
         with:
