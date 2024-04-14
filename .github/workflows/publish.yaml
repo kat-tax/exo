@@ -5,7 +5,6 @@ on:
 jobs:
   build:
     runs-on: ${{matrix.os}}
-    concurrency: ci-${{github.ref}}
     strategy:
       matrix:
         os: [
@@ -13,6 +12,9 @@ jobs:
           # windows-latest,
           # macos-latest,
         ]
+    concurrency:
+      group: ${{github.workflow}}-${{github.ref}}
+      cancel-in-progress: true
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v4
