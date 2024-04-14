@@ -4,7 +4,7 @@
   "scripts": {
     "build": "conc -c 'auto' -g 'pnpm:*-build'",
     "start": "pnpm run build && conc 'pnpm:*-dev'",
-    "init": "pnpm config-build && pnpm builder-build && pnpm library-build",
+    "gen": "pnpm config-build && pnpm builder-build && pnpm library-build",
 
     "config-dev": "pnpm --filter ./toolkit/config dev",
     "config-build": "pnpm --filter ./toolkit/config build",
@@ -30,7 +30,7 @@
     "storybook-native": "pnpm --filter ./toolkit/storybook/native run dev",
     "storybook-web": "pnpm --filter ./toolkit/storybook/web run dev",
 
-    "postinstall": "pnpm init"
+    "postinstall": "pnpm gen"
   },
   "devDependencies": {
     "@lingui/cli": "latest",
