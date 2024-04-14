@@ -2,9 +2,9 @@
   "private": true,
   "license": "MIT",
   "scripts": {
+    "start": "conc -c 'auto' 'pnpm:*-dev'",
     "build": "conc -c 'auto' -g 'pnpm:*-build'",
-    "start": "pnpm run build && conc 'pnpm:*-dev'",
-    "gen": "pnpm config-build && pnpm builder-build && pnpm library-build",
+    "generate": "pnpm config-build && pnpm builder-build && pnpm library-build",
 
     "config-dev": "pnpm --filter ./toolkit/config dev",
     "config-build": "pnpm --filter ./toolkit/config build",
@@ -26,11 +26,11 @@
     "docs-build": "pnpm --filter ./toolkit/vocs build",
 
     "storybook-dev": "conc pnpm:storybook-web pnpm:storybook-native",
-    "storybook-xbuild": "pnpm --filter ./toolkit/storybook/web run build",
+    "storybook-build": "pnpm --filter ./toolkit/storybook/web run build",
     "storybook-native": "pnpm --filter ./toolkit/storybook/native run dev",
     "storybook-web": "pnpm --filter ./toolkit/storybook/web run dev",
 
-    "postinstall": "pnpm gen"
+    "postinstall": "pnpm generate"
   },
   "devDependencies": {
     "@lingui/cli": "latest",
