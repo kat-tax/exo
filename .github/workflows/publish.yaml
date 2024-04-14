@@ -2,12 +2,17 @@ on:
   push:
     branches:
       - master
-permissions:
-  contents: write
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ${{matrix.os}}
     concurrency: ci-${{github.ref}}
+    strategy:
+      matrix:
+        os: [
+          ubuntu-latest,
+          windows-latest,
+          macos-latest,
+        ]
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v4
@@ -17,6 +22,8 @@ jobs:
         run: pnpm install
       - name: Build App
         run: pnpm build
+      - name: Upload to GitHub Pages
+        uses: actions/upload-pages-artifact@v1
       - name: Upload Output
         uses: actions/upload-artifact@v2
         with:
@@ -26,12 +33,13 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     concurrency: ci-${{github.ref}}
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{steps.gh_pages_deploy.outputs.page_url}}
     steps:
-      - name: Download Output
-        uses: actions/download-artifact@v2
-        with:
-          name: output
-      - name: Deploy Web
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: output/client/web
+      - name: Deploy to GitHub Pages
+        id: gh_pages_deploy
+        uses: actions/deploy-pages@v2
