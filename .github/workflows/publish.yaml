@@ -29,7 +29,6 @@ jobs:
       - name: Upload to GitHub Pages
         uses: actions/upload-pages-artifact@v1
         with:
-          name: output
           path: output
       # - name: Upload Output
       #   uses: actions/upload-artifact@v2
@@ -48,13 +47,11 @@ jobs:
       name: github-pages
       url: ${{steps.gh_pages_deploy.outputs.page_url}}
     steps:
+      - name: Deploy to GitHub Pages
+      id: gh_pages_deploy
+      uses: actions/deploy-pages@v2
       # - name: Download Output
       #   uses: actions/download-artifact@v2
       #   with:
       #     name: output
-      - name: Deploy to GitHub Pages
-        id: gh_pages_deploy
-        uses: actions/deploy-pages@v2
-        with:
-          artifact_name: output
 
