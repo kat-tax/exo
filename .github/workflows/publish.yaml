@@ -36,18 +36,27 @@ jobs:
     runs-on: ubuntu-latest
     concurrency: ci-${{github.ref}}
     permissions:
-      contents: write
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{steps.gh_pages_deploy.outputs.page_url}}
     steps:
       - name: Download Output
         uses: actions/download-artifact@v2
         with:
           name: output
-      - name: Deploy Github Pages
-        uses: peaceiris/actions-gh-pages@v4
-        if: github.ref == 'refs/heads/master'
+      - name: Deploy to GitHub Pages
+        id: gh_pages_deploy
+        uses: actions/deploy-pages@v2
         with:
-          github_token: ${{secrets.GITHUB_TOKEN}}
-          user_name: 'EXO[bot]'
-          user_email: 'exo[bot]@users.noreply.github.com'
-          publish_dir: output
-          cname: exo.ult.dev
+          artifact_name: output
+      # - name: Deploy Github Pages
+      #   uses: peaceiris/actions-gh-pages@v4
+      #   if: github.ref == 'refs/heads/master'
+      #   with:
+      #     github_token: ${{secrets.GITHUB_TOKEN}}
+      #     user_name: 'EXO[bot]'
+      #     user_email: 'exo[bot]@users.noreply.github.com'
+      #     publish_dir: ./output
+      #     cname: exo.ult.dev
