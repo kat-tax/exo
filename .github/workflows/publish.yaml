@@ -31,11 +31,11 @@ jobs:
         with:
           name: output
           path: output
-      - name: Upload Output
-        uses: actions/upload-artifact@v2
-        with:
-          name: output
-          path: output
+      # - name: Upload Output
+      #   uses: actions/upload-artifact@v2
+      #   with:
+      #     name: output
+      #     path: output
   deploy:
     if: github.ref == 'refs/heads/master'
     needs: build
@@ -48,21 +48,13 @@ jobs:
       name: github-pages
       url: ${{steps.gh_pages_deploy.outputs.page_url}}
     steps:
-      - name: Download Output
-        uses: actions/download-artifact@v2
-        with:
-          name: output
+      # - name: Download Output
+      #   uses: actions/download-artifact@v2
+      #   with:
+      #     name: output
       - name: Deploy to GitHub Pages
         id: gh_pages_deploy
         uses: actions/deploy-pages@v2
         with:
           artifact_name: output
-      # - name: Deploy Github Pages
-      #   uses: peaceiris/actions-gh-pages@v4
-      #   if: github.ref == 'refs/heads/master'
-      #   with:
-      #     github_token: ${{secrets.GITHUB_TOKEN}}
-      #     user_name: 'EXO[bot]'
-      #     user_email: 'exo[bot]@users.noreply.github.com'
-      #     publish_dir: ./output
-      #     cname: exo.ult.dev
+
