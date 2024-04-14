@@ -26,12 +26,18 @@ jobs:
         run: pnpm install
       - name: Build App
         run: pnpm build
+      - name: Upload to GitHub Pages
+        uses: actions/upload-pages-artifact@v1
+        with:
+          artifact-name: output
+          path: output
       - name: Upload Output
         uses: actions/upload-artifact@v2
         with:
           name: output
           path: output
   deploy:
+    if: github.ref == 'refs/heads/master'
     needs: build
     runs-on: ubuntu-latest
     concurrency: ci-${{github.ref}}
