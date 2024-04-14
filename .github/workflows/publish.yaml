@@ -30,7 +30,7 @@ jobs:
       - name: Download Output
         uses: actions/download-artifact@v2
         with:
-          name: shared-data
+          name: output
       - name: Deploy Web
         uses: JamesIves/github-pages-deploy-action@v4
         with:
