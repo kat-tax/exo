@@ -48,8 +48,8 @@ jobs:
       url: ${{steps.gh_pages_deploy.outputs.page_url}}
     steps:
       - name: Deploy to GitHub Pages
-      id: gh_pages_deploy
-      uses: actions/deploy-pages@v2
+        id: gh_pages_deploy
+        uses: actions/deploy-pages@v2
       # - name: Download Output
       #   uses: actions/download-artifact@v2
       #   with:
