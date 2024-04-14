@@ -35,6 +35,7 @@ jobs:
         with:
           name: output
           path: output
+
   deploy:
     if: github.ref == 'refs/heads/master'
     needs: build
