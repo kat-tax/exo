@@ -24,12 +24,12 @@ jobs:
         uses: pnpm/action-setup@v3
       - name: Install Dependencies
         run: pnpm install
-      - name: Build App
-        run: pnpm build
+      - name: Build Docs
+        run: pnpm docs-build
       - name: Upload to GitHub Pages
         uses: actions/upload-pages-artifact@v1
         with:
-          path: output/client/web
+          path: output/docs
       - name: Upload Output
         uses: actions/upload-artifact@v2
         with:
