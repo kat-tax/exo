@@ -26,8 +26,6 @@ jobs:
         run: pnpm install
       - name: Build App
         run: pnpm build
-      - name: Upload to GitHub Pages
-        uses: actions/upload-pages-artifact@v1
       - name: Upload Output
         uses: actions/upload-artifact@v2
         with:
