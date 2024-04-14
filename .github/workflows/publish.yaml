@@ -44,7 +44,7 @@ jobs:
           name: output
       - name: Deploy Github Pages
         uses: peaceiris/actions-gh-pages@v4
-        if: github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/master'
         with:
           github_token: ${{secrets.GITHUB_TOKEN}}
           user_name: 'EXO[bot]'
