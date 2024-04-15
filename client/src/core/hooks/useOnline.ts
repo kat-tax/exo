@@ -10,7 +10,7 @@ export function useOnline() {
   const handleConnectivity = (connected: boolean, init?: boolean) => {
     if (connected && !init) {
       toast({title: t`You are online`, preset: 'done'});
-    } else if (connected) {
+    } else if (!connected) {
       toast({title: t`You are offline`, preset: 'error'});
     }
     setOnline(connected);
@@ -18,7 +18,7 @@ export function useOnline() {
 
   useLingui();
   useEffect(() => {
-    isOnline().then((online) => handleConnectivity(online, true));
+    isOnline().then(connected => handleConnectivity(connected, true));
     return suscribeOnline(handleConnectivity);
   }, []);
 
