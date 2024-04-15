@@ -16,6 +16,7 @@
     },
     "./app.json": "./gen/app.json",
     "./locales": "./gen/locales.js",
+    "./lingui": "./gen/lingui.js",
     "./docs.sidebar": "./gen/docs.sidebar.js",
     "./tsconfig.app.json": "./typescript/app.tsconfig.json",
     "./tsconfig.node.json": "./typescript/node.tsconfig.json"
@@ -24,7 +25,8 @@
     "react-native-ultimate-config": "latest"
   },
   "devDependencies": {
-    "gray-matter": "latest",
+    "@lingui/conf": "^4.8.0",
+    "gray-matter": "^4.0.3",
     "vocs": "latest",
     "typescript": "^5.3.2"
   }

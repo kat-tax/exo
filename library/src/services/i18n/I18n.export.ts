@@ -6,4 +6,4 @@ export const loadLocale = I18n.loadLocale;
 export const getLocale = I18n.getLocale;
 
 export {i18n} from '@lingui/core';
-export {default as config} from './lingui';
+export {default as config} from 'config/lingui';
