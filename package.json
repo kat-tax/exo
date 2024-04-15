@@ -4,20 +4,20 @@
   "scripts": {
     "start": "conc -c 'auto' 'pnpm:*-dev'",
     "build": "conc -c 'auto' -g 'pnpm:*-build'",
-    "generate": "pnpm config-build && pnpm builder-build && pnpm translate-build && pnpm library-build",
+    "generate": "pnpm config-build && pnpm builder-build && pnpm library-build && pnpm translate-build",
 
     "config-dev": "pnpm --filter ./toolkit/config dev",
     "config-build": "pnpm --filter ./toolkit/config build",
     "builder-build": "pnpm --filter ./toolkit/builder build",
 
+    "library-dev": "pnpm --filter ./library dev",
+    "library-build": "pnpm --filter ./library build",
+    "library-publish": "pnpm --filter ./library publish",
+
     "translate-dev": "conc -P 'pnpm:translate-extract {1}' 'pnpm:translate-compile {1}' -- --watch",
     "translate-build": "pnpm run translate-extract && pnpm run translate-compile",
     "translate-extract": "lingui extract --config ./client/lingui.config.ts",
     "translate-compile": "lingui compile --config ./client/lingui.config.ts",
-
-    "library-dev": "pnpm --filter ./library dev",
-    "library-build": "pnpm --filter ./library build",
-    "library-publish": "pnpm --filter ./library publish",
 
     "web-dev": "pnpm --filter ./client run dev",
     "web-build": "pnpm --filter ./client run build",
