@@ -33,15 +33,17 @@ jobs:
         with:
           version: 8
           run_install: false
-      - name: Set PNPM Store Env
+      # Cache
+      - name: Set PNPM Store Path
         shell: bash
         run: echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
-      - uses: actions/cache@v4
-        name: Setup PNPM Cache
+      - name: Setup PNPM Cache
+        uses: actions/cache@v4
         with:
           path: ${{env.STORE_PATH}}
           key: ${{runner.os}}-pnpm-store-${{hashFiles('**/pnpm-lock.yaml')}}
           restore-keys: ${{runner.os}}-pnpm-store-
+      # Install
       - name: Install Dependencies
         run: pnpm install
       # Docs
@@ -70,9 +72,11 @@ jobs:
       name: github-pages
       url: ${{steps.gh_pages_deploy.outputs.page_url}}
     steps:
+      # Docs
       - name: Deploy to GitHub Pages
         id: gh_pages_deploy
         uses: actions/deploy-pages@v2
+      # Artifacts
       - name: Download Output
         uses: actions/download-artifact@v2
         with:

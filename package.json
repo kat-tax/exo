@@ -4,7 +4,7 @@
   "scripts": {
     "start": "conc -c 'auto' 'pnpm:*-dev'",
     "build": "conc -c 'auto' -g 'pnpm:*-build'",
-    "generate": "pnpm config-build && pnpm builder-build && pnpm library-build",
+    "generate": "pnpm config-build && pnpm builder-build && pnpm translate-build && pnpm library-build",
 
     "config-dev": "pnpm --filter ./toolkit/config dev",
     "config-build": "pnpm --filter ./toolkit/config build",
