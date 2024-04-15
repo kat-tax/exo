@@ -3,7 +3,7 @@ import {useCallback} from 'react';
 import {useStyles, createStyleSheet} from 'styles';
 import {SafeAreaView} from 'react-exo/safearea';
 import {Outlet} from 'react-exo/navigation';
-import {Menu} from 'common/base/Menu';
+import {Menu} from 'core/base/Menu';
 
 export const APP_MENU_WIDTH = 200;
 

@@ -5,7 +5,7 @@ import {useLingui} from '@lingui/react';
 import {useStyles, createStyleSheet} from 'styles';
 import {useLocale} from 'settings/hooks/useLocale';
 import {useScheme} from 'settings/hooks/useScheme';
-import {Page} from 'common/base/Page';
+import {Page} from 'core/base/Page';
 
 export default function ScreenSettings() {
   const {styles} = useStyles(stylesheet);

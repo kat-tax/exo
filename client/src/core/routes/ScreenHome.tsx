@@ -4,8 +4,8 @@ import {useState} from 'react';
 import {useLingui} from '@lingui/react';
 import {Motion} from 'react-exo/motion';
 import {Slider} from 'react-exo/slider';
-import {Page} from 'common/base/Page';
-import {getGreeting} from 'common/utils/date';
+import {Page} from 'core/base/Page';
+import {getGreeting} from 'core/utils/date';
 
 export default function ScreenHome() {
   const [slider, setSlider] = useState(0);

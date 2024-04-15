@@ -1,5 +1,5 @@
 import {Suspense} from 'react';
-import {LoadPage} from 'common/base/LoadPage';
+import {LoadPage} from 'core/base/LoadPage';
 
 export function LazyLoad(props: React.PropsWithChildren) {
   return (

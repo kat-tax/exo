@@ -1,7 +1,7 @@
 import * as Nav from 'react-exo/navigation';
 import {history} from 'react-exo/redux';
 import {Layout, Screen} from 'app/routes';
-import {LazyLoad as $} from 'common/base/LazyLoad';
+import {LazyLoad as $} from 'core/base/LazyLoad';
 
 export function Router() {
   return (

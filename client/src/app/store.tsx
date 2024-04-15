@@ -1,11 +1,11 @@
 import * as Redux from 'react-exo/redux';
 import {Storage} from 'react-exo/storage';
-import {LoadPage} from 'common/base/LoadPage';
+import {LoadPage} from 'core/base/LoadPage';
 import config from 'config';
 
-import common from 'common/store';
-import settings from 'settings/store';
+import core from 'core/store';
 import tasks from 'tasks/store';
+import settings from 'settings/store';
 
 export function Store(props: React.PropsWithChildren) {
   return (
@@ -21,14 +21,14 @@ const reducer = Redux.persistReducer({
   storage: Storage.init(`${config.APP_NAME}::redux`, 0),
   blacklist: [
     Redux.history.context.routerReducer.name,
-    common.reducer.name,
+    core.reducer.name,
     // Tip: disable a reducer persisting to disk here...
   ],
 }, Redux.combineReducers({
   router: Redux.history.context.routerReducer,
-  common: common.reducer,
-  settings: settings.reducer,
+  core: core.reducer,
   tasks: tasks.reducer,
+  settings: settings.reducer,
   // Tip: add your new reducers here...
 }));
 

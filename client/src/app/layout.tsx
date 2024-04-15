@@ -2,7 +2,7 @@ import {useEffect} from 'react';
 import {StatusBar} from 'react-native';
 import {ToastRoot} from 'react-exo/toast';
 import {BootSplash} from 'react-exo/device';
-import {useOnline} from 'common/hooks/useOnline';
+import {useOnline} from 'core/hooks/useOnline';
 import {useScheme} from 'settings/hooks/useScheme';
 
 export function Layout(props: React.PropsWithChildren) {

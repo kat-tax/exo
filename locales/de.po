@@ -17,24 +17,24 @@ msgstr ""
 msgid "Add a task"
 msgstr "Eine Aufgabe hinzufügen"
 
-#: ../../client/src/common/utils/date.ts:24
+#: ../../client/src/core/utils/date.ts:24
 msgid "Enjoy the night."
 msgstr "Genieße die Nacht."
 
-#: ../../client/src/common/utils/date.ts:20
+#: ../../client/src/core/utils/date.ts:20
 msgid "Good afternoon."
 msgstr "Guten Tag."
 
-#: ../../client/src/common/utils/date.ts:22
+#: ../../client/src/core/utils/date.ts:22
 msgid "Good evening."
 msgstr "Guten Abend."
 
-#: ../../client/src/common/utils/date.ts:18
+#: ../../client/src/core/utils/date.ts:18
 msgid "Good morning."
 msgstr "Guten Morgen."
 
-#: ../../client/src/common/base/Menu.tsx:16
-#: ../../client/src/common/routes/ScreenHome.tsx:14
+#: ../../client/src/core/base/Menu.tsx:16
+#: ../../client/src/core/routes/ScreenHome.tsx:14
 msgid "Home"
 msgstr "Startseite"
 
@@ -42,7 +42,7 @@ msgstr "Startseite"
 msgid "Language"
 msgstr "Sprache"
 
-#: ../../client/src/common/base/Menu.tsx:25
+#: ../../client/src/core/base/Menu.tsx:25
 #: ../../client/src/settings/routes/ScreenSettings.tsx:21
 msgid "Settings"
 msgstr "Einstellungen"
@@ -55,10 +55,10 @@ msgstr "Aufgaben"
 msgid "Theme"
 msgstr "Thema"
 
-#: ../../client/src/common/hooks/useOnline.ts:14
+#: ../../client/src/core/hooks/useOnline.ts:14
 msgid "You are offline"
 msgstr ""
 
-#: ../../client/src/common/hooks/useOnline.ts:12
+#: ../../client/src/core/hooks/useOnline.ts:12
 msgid "You are online"
 msgstr ""

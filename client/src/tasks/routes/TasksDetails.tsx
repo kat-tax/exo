@@ -3,7 +3,7 @@ import {useParams} from 'react-exo/navigation';
 import {useTasks} from 'tasks/hooks/useTasks';
 import {TasksList} from 'tasks/base/TasksList';
 import {TasksInput} from 'tasks/base/TasksInput';
-import {Page} from 'common/base/Page';
+import {Page} from 'core/base/Page';
 
 export default function TasksDetails() {
   const {id} = useParams<{id: string}>();
