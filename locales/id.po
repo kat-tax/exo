@@ -53,3 +53,11 @@ msgstr "Tugas"
 #: ../../client/src/settings/ScreenSettings.tsx:23
 msgid "Theme"
 msgstr "Tema"
+
+#: ../../client/src/core/hooks/useOnline.ts:15
+msgid "You are offline"
+msgstr ""
+
+#: ../../client/src/core/hooks/useOnline.ts:13
+msgid "You are online"
+msgstr ""
