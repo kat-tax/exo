@@ -54,10 +54,10 @@ msgstr "Aufgaben"
 msgid "Theme"
 msgstr "Thema"
 
-#: ../../client/src/core/hooks/useOnline.ts:15
+#: ../../client/src/core/hooks/useOnline.ts:14
 msgid "You are offline"
 msgstr ""
 
-#: ../../client/src/core/hooks/useOnline.ts:13
+#: ../../client/src/core/hooks/useOnline.ts:12
 msgid "You are online"
 msgstr ""
