@@ -1,31 +1,48 @@
-# EXO
+<!-- Header  -->
+<h1 align="center">
+  EXO
+</h1>
+<h6 align="center">
+  The Ultimate React Native Skeleton
+</h6>
+<p align="center">
+  <a href="https://exo.ult.dev" _target="blank">
+    Documentation
+  </a> |
+    <a href="https://exo.fig.run" _target="blank">
+    Storybook
+  </a> |
+  <a href="https://web.exo.ult.dev" _target="blank">
+    Demo
+  </a>
+</p>
 
-`The Ultimate Skeleton Project for React Native`
-
-[Web App](https://exo.ult.dev) |
-[Documentation](https://exo.ult.dev/docs) |
-[Storybook](https://exo.fig.run)
+<br/>
 
 ### Design
-> Note: you can also clone this repo and skip designing
+
+> Note: you can also clone this repo and skip designing.
+
 1. Go to the [Figma to React Native](https://www.figma.com/community/plugin/821138713091291738) plugin page
 2. Press `Open in...` and select `Playground File`
 3. Run the plugin and go to the `Export` tab
 4. Press the `Download Components` button
 
+<br/>
+
 ### Develop
-> Note: you can also run this project [in the browser](https://vslite.dev/~/gh/kat-tax/exo.git?init=pnpm+storybook-web)
 
-1. Run `pnpm i` to install dependencies
-2. Run `pnpm dev` to start the app's dev server
-3. Run `pnpm build` to build the app for hosting
-4. Run `pnpm storybook-web` to start storybook's dev server
-5. Run `pnpm storybook-build` to build the storybook for hosting
+> Note: you must have [pnpm](https://pnpm.io) installed to develop.
 
----
+1. Run `pnpm install` to install deps and generate files
+2. Run `pnpm start` to start all the development servers
+3. Run `pnpm build` to build the production apps and tools
 
-This project is work in progress.
+<br/>
 
-Focus is first on a minimal web framework, then implement all native platforms.
+### Discuss
 
-Join the [Discord Channel](https://discord.com/invite/TzhDRyj) or follow [@TheUltDev](https://x.com/theultdev) to track project development.
+> Note: This project is work in progress. Focus is on web, then all native platforms.
+
+1. Join the [ΚΛΤΤΛΧ](https://discord.com/invite/TzhDRyj) on Discord
+2. Follow [@TheUltDev](https://x.com/theultdev) on X
