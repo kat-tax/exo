@@ -13,43 +13,43 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/tasks/components/TasksInput.tsx:21
+#: ../../client/src/tasks/components/TasksInput.tsx:21
 msgid "Add a task"
 msgstr "Добавить задачу"
 
-#: src/core/utils/date.ts:24
+#: ../../client/src/core/utils/date.ts:24
 msgid "Enjoy the night."
 msgstr "Наслаждайтесь ночью."
 
-#: src/core/utils/date.ts:20
+#: ../../client/src/core/utils/date.ts:20
 msgid "Good afternoon."
 msgstr "Добрый день."
 
-#: src/core/utils/date.ts:22
+#: ../../client/src/core/utils/date.ts:22
 msgid "Good evening."
 msgstr "Добрый вечер."
 
-#: src/core/utils/date.ts:18
+#: ../../client/src/core/utils/date.ts:18
 msgid "Good morning."
 msgstr "Доброе утро."
 
-#: src/core/components/Menu.tsx:16
+#: ../../client/src/core/components/Menu.tsx:16
 msgid "Home"
 msgstr "Главная"
 
-#: src/settings/ScreenSettings.tsx:34
+#: ../../client/src/settings/ScreenSettings.tsx:34
 msgid "Language"
 msgstr "Язык"
 
-#: src/core/components/Menu.tsx:25
-#: src/settings/ScreenSettings.tsx:21
+#: ../../client/src/core/components/Menu.tsx:25
+#: ../../client/src/settings/ScreenSettings.tsx:21
 msgid "Settings"
 msgstr "Настройки"
 
-#: src/tasks/views/TasksList.tsx:11
+#: ../../client/src/tasks/views/TasksList.tsx:11
 msgid "Tasks"
 msgstr "Задачи"
 
-#: src/settings/ScreenSettings.tsx:23
+#: ../../client/src/settings/ScreenSettings.tsx:23
 msgid "Theme"
 msgstr "Тема"

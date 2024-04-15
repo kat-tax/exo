@@ -12,8 +12,8 @@
 
     "translate-dev": "conc -P 'pnpm:translate-extract {1}' 'pnpm:translate-compile {1}' -- --watch",
     "translate-build": "pnpm run translate-extract && pnpm run translate-compile",
-    "translate-extract": "lingui extract --config ./client/lingui.config.ts",
-    "translate-compile": "lingui compile --config ./client/lingui.config.ts",
+    "translate-extract": "lingui extract --config ./toolkit/config/lingui.ts",
+    "translate-compile": "lingui compile --config ./toolkit/config/lingui.ts",
 
     "library-dev": "pnpm --filter ./library dev",
     "library-build": "pnpm --filter ./library build",
