@@ -44,14 +44,14 @@
 
 > Note: This project is work in progress. Focus is on web, then all native platforms.
 
-- Join the [ΚΛΤΤΛΧ](https://discord.com/invite/TzhDRyj) on Discord
+- Join the [ΚΛΤΤΛΧ](https://discord.com/invite/TzhDRyj) channel on Discord
 - Follow [@TheUltDev](https://x.com/theultdev) on X
 
 <br/>
 
 ### Donate
 
-> Note: This project takes a lot of time. Please consider donating.
+> Note: Developing this takes a lot of time and makes no money. *Please consider donating.*
 
 - Sponsor [@TheUltDev](https://github.com/sponsors/TheUltDev) on Github
 - Send a crypto donation:
