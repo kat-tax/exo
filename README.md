@@ -2,7 +2,7 @@
 <h1 align="center">
   EXO
 </h1>
-<h6 align="center">
+<h4 align="center">
   The Ultimate React Native Skeleton
 </h6>
 <p align="center">
@@ -13,7 +13,7 @@
     Storybook
   </a> |
   <a href="https://web.exo.ult.dev" _target="blank">
-    Demo
+    Web Demo
   </a>
 </p>
 
@@ -23,7 +23,7 @@
 
 > Note: you can also clone this repo and skip designing.
 
-1. Go to the [Figma to React Native](https://www.figma.com/community/plugin/821138713091291738) plugin page
+1. Go to the [figma to react native](https://www.figma.com/community/plugin/821138713091291738) figma plugin page
 2. Press `Open in...` and select `Playground File`
 3. Run the plugin and go to the `Export` tab
 4. Press the `Download Components` button
@@ -44,5 +44,20 @@
 
 > Note: This project is work in progress. Focus is on web, then all native platforms.
 
-1. Join the [ΚΛΤΤΛΧ](https://discord.com/invite/TzhDRyj) on Discord
-2. Follow [@TheUltDev](https://x.com/theultdev) on X
+- Join the [ΚΛΤΤΛΧ](https://discord.com/invite/TzhDRyj) on Discord
+- Follow [@TheUltDev](https://x.com/theultdev) on X
+
+<br/>
+
+### Donate
+
+> Note: This project takes a lot of time. Please consider donating.
+
+- Sponsor [@TheUltDev](https://github.com/sponsors/TheUltDev) on Github
+- Send a crypto donation:
+
+```
+BTC 3MxrqVM7S8FGb7UwKMLxQ9gG1B2n24Y1NP
+ETH 0x6F373884D766803Eb8BC5969804Be4FAf77BC335
+XMR 86tDLzweVEmUunPeucZpRmW4MZ4RoTQUfjZ4KZATdYZBUkH3biwiLF3X1LhMkzvThZMQxGfGZFFwxRRWA7M5sVfv7AMPjsD
+```
