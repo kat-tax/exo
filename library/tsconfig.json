@@ -3,6 +3,6 @@
   "extends": "config/tsconfig.app.json",
   "display": "Library",
   "compilerOptions": {
-    "baseUrl": "./src",
+    "baseUrl": "./src"
   }
 }

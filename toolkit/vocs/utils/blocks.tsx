@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react';
 
 export interface ShiftProps {
-  children: (value: number) => void;
+  children: (value: number) => void,
 }
 
 export function Shift(props: ShiftProps) {
