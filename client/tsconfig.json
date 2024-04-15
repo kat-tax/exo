@@ -3,6 +3,6 @@
   "extends": "config/tsconfig.app.json",
   "display": "Client",
   "compilerOptions": {
-    "baseUrl": "./src",
+    "baseUrl": "./src"
   }
 }
