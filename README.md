@@ -21,7 +21,7 @@
 
 ### Design
 
-> Note: you can also clone this repo and skip designing.
+> Note: You can also clone this repo and skip designing.
 
 1. Go to the [figma to react native](https://www.figma.com/community/plugin/821138713091291738) figma plugin page
 2. Press `Open in...` and select `Playground File`
@@ -32,7 +32,7 @@
 
 ### Develop
 
-> Note: you must have [pnpm](https://pnpm.io) installed to develop.
+> Note: You must have [pnpm](https://pnpm.io) installed to develop.
 
 1. Run `pnpm install` to install deps and generate files
 2. Run `pnpm start` to start all the development servers
