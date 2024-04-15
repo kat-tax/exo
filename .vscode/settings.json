@@ -1,4 +1,5 @@
 {
+  "material-icon-theme.activeIconPack": "react_redux",
   "material-icon-theme.folders.associations": {
     "client": "mobile",
     "guides": "content",
@@ -8,4 +9,11 @@
     "rive": "animation",
     "vocs": "vue",
   },
+  "material-icon-theme.files.associations": {
+    "app/index.tsx": "tree",
+    "layout.tsx": "renovate",
+    "provider.tsx": "dll",
+    "store.tsx": "redux-action",
+    "store.ts": "redux-reducer",
+  }
 }

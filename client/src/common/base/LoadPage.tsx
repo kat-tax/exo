@@ -7,7 +7,7 @@ export interface LoadingProps {
   indicator?: ActivityIndicatorProps;
 }
 
-export function Loading(props: LoadingProps) {
+export function LoadPage(props: LoadingProps) {
   const {styles, theme} = useStyles(stylesheet);
   return (
     <View style={styles.root} {...props.container}>

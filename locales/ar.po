@@ -13,51 +13,52 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: ../../client/src/tasks/components/TasksInput.tsx:21
+#: ../../client/src/tasks/base/TasksInput.tsx:23
 msgid "Add a task"
 msgstr "إضافة مهمة"
 
-#: ../../client/src/core/utils/date.ts:24
+#: ../../client/src/common/utils/date.ts:24
 msgid "Enjoy the night."
 msgstr "استمتع بالليل."
 
-#: ../../client/src/core/utils/date.ts:20
+#: ../../client/src/common/utils/date.ts:20
 msgid "Good afternoon."
 msgstr "مساء الخير."
 
-#: ../../client/src/core/utils/date.ts:22
+#: ../../client/src/common/utils/date.ts:22
 msgid "Good evening."
 msgstr "مساء الخير."
 
-#: ../../client/src/core/utils/date.ts:18
+#: ../../client/src/common/utils/date.ts:18
 msgid "Good morning."
 msgstr "صباح الخير."
 
-#: ../../client/src/core/components/Menu.tsx:16
+#: ../../client/src/common/base/Menu.tsx:16
+#: ../../client/src/common/routes/ScreenHome.tsx:14
 msgid "Home"
 msgstr "الصفحة الرئيسية"
 
-#: ../../client/src/settings/ScreenSettings.tsx:34
+#: ../../client/src/settings/routes/ScreenSettings.tsx:34
 msgid "Language"
 msgstr "اللغة"
 
-#: ../../client/src/core/components/Menu.tsx:25
-#: ../../client/src/settings/ScreenSettings.tsx:21
+#: ../../client/src/common/base/Menu.tsx:25
+#: ../../client/src/settings/routes/ScreenSettings.tsx:21
 msgid "Settings"
 msgstr "الإعدادات"
 
-#: ../../client/src/tasks/views/TasksList.tsx:11
+#: ../../client/src/tasks/routes/TasksList.tsx:11
 msgid "Tasks"
 msgstr "المهام"
 
-#: ../../client/src/settings/ScreenSettings.tsx:23
+#: ../../client/src/settings/routes/ScreenSettings.tsx:23
 msgid "Theme"
 msgstr "السمة"
 
-#: ../../client/src/core/hooks/useOnline.ts:14
+#: ../../client/src/common/hooks/useOnline.ts:14
 msgid "You are offline"
 msgstr ""
 
-#: ../../client/src/core/hooks/useOnline.ts:12
+#: ../../client/src/common/hooks/useOnline.ts:12
 msgid "You are online"
 msgstr ""

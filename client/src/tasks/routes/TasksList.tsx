@@ -2,7 +2,7 @@ import {t} from '@lingui/macro';
 import {Link} from 'react-exo/navigation';
 import {useLingui} from '@lingui/react';
 import {useLists} from 'tasks/hooks/useLists';
-import {Page} from 'core/components/Page';
+import {Page} from 'common/base/Page';
 
 export default function TasksList() {
   const tasks = useLists();

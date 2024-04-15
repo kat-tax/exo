@@ -1,15 +1,7 @@
 /// <reference types="vite/client"/>
 
-import type {AppLayouts, AppScreens} from 'index';
 import type {AppThemes, AppBreakpoints} from 'styles';
 import type {SvgProps} from 'react-native-svg';
-
-declare module 'AppRouter' {
-  export interface AppRoutes {
-    Layout: typeof AppLayouts;
-    Screen: typeof AppScreens;
-  }
-}
 
 declare module 'styles' {
   export interface UnistylesThemes extends AppThemes {}

@@ -13,51 +13,52 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: ../../client/src/tasks/components/TasksInput.tsx:21
+#: ../../client/src/tasks/base/TasksInput.tsx:23
 msgid "Add a task"
 msgstr "Tambahkan tugas"
 
-#: ../../client/src/core/utils/date.ts:24
+#: ../../client/src/common/utils/date.ts:24
 msgid "Enjoy the night."
 msgstr "Nikmati malam."
 
-#: ../../client/src/core/utils/date.ts:20
+#: ../../client/src/common/utils/date.ts:20
 msgid "Good afternoon."
 msgstr "Selamat siang."
 
-#: ../../client/src/core/utils/date.ts:22
+#: ../../client/src/common/utils/date.ts:22
 msgid "Good evening."
 msgstr "Selamat malam."
 
-#: ../../client/src/core/utils/date.ts:18
+#: ../../client/src/common/utils/date.ts:18
 msgid "Good morning."
 msgstr "Selamat pagi."
 
-#: ../../client/src/core/components/Menu.tsx:16
+#: ../../client/src/common/base/Menu.tsx:16
+#: ../../client/src/common/routes/ScreenHome.tsx:14
 msgid "Home"
 msgstr "Beranda"
 
-#: ../../client/src/settings/ScreenSettings.tsx:34
+#: ../../client/src/settings/routes/ScreenSettings.tsx:34
 msgid "Language"
 msgstr "Bahasa"
 
-#: ../../client/src/core/components/Menu.tsx:25
-#: ../../client/src/settings/ScreenSettings.tsx:21
+#: ../../client/src/common/base/Menu.tsx:25
+#: ../../client/src/settings/routes/ScreenSettings.tsx:21
 msgid "Settings"
 msgstr "Pengaturan"
 
-#: ../../client/src/tasks/views/TasksList.tsx:11
+#: ../../client/src/tasks/routes/TasksList.tsx:11
 msgid "Tasks"
 msgstr "Tugas"
 
-#: ../../client/src/settings/ScreenSettings.tsx:23
+#: ../../client/src/settings/routes/ScreenSettings.tsx:23
 msgid "Theme"
 msgstr "Tema"
 
-#: ../../client/src/core/hooks/useOnline.ts:14
+#: ../../client/src/common/hooks/useOnline.ts:14
 msgid "You are offline"
 msgstr ""
 
-#: ../../client/src/core/hooks/useOnline.ts:12
+#: ../../client/src/common/hooks/useOnline.ts:12
 msgid "You are online"
 msgstr ""

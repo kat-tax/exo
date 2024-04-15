@@ -11,7 +11,9 @@ interface TasksInputProps {
 export function TasksInput(props: TasksInputProps) {
   const {styles} = useStyles(stylesheet);
   const refInput = useRef<any>(null);
+
   useLingui();
+
   return (
     <TextInput
       autoFocus

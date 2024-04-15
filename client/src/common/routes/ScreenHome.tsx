@@ -1,16 +1,17 @@
+import {t} from '@lingui/macro';
+import {Text} from 'react-native';
 import {useState} from 'react';
 import {useLingui} from '@lingui/react';
 import {Motion} from 'react-exo/motion';
 import {Slider} from 'react-exo/slider';
-import {Text} from 'react-native';
-import {Page} from 'core/components/Page';
-import {getGreeting} from 'core/utils/date';
+import {Page} from 'common/base/Page';
+import {getGreeting} from 'common/utils/date';
 
 export default function ScreenHome() {
   const [slider, setSlider] = useState(0);
   useLingui();
   return (
-    <Page title="Home">
+    <Page title={t`Home`}>
       <Text style={{color: 'white'}}>
         {getGreeting()}
       </Text>

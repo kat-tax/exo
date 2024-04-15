@@ -1,1 +1,1 @@
-export {config as default} from 'react-exo/i18n';
+export {default} from 'config/lingui';
