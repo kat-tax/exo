@@ -1,4 +1,4 @@
-import {Calendar as Component} from './Calendar';
+import {Calendar as Component} from 'react-exo/calendar';
 import type {StoryObj, Meta} from '@storybook/react';
 
 type Story = StoryObj<typeof Component>;
@@ -8,7 +8,7 @@ const meta: Meta<typeof Component> = {
   component: Component,
 };
 
-export const Sandbox: Story = {
+export const Calendar: Story = {
   args: {
 
   },

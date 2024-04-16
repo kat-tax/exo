@@ -29,11 +29,7 @@ const config: StorybookConfig = {
     '@storybook/addon-a11y',
   ],
   docs: {
-    defaultName: 'Docs',
-    autodocs: true,
-  },
-  typescript: {
-    reactDocgen: 'react-docgen',
+    autodocs: false,
   },
   framework: {
     name: '@storybook/react-vite',

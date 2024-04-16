@@ -1,4 +1,4 @@
-import {Image as Component} from './Image';
+import {Image as Component} from 'react-exo/image';
 import type {StoryObj, Meta} from '@storybook/react';
 
 type Story = StoryObj<typeof Component>;
@@ -8,7 +8,7 @@ const meta: Meta<typeof Component> = {
   component: Component,
 };
 
-export const Sandbox: Story = {
+export const Image: Story = {
   args: {
     url: 'https://get.ult.dev/samples/turing.jpg',
     thumbhash: 'XwgGFoKwnYZxZ3emWReEaGV30FUKnLQ',

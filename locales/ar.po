@@ -17,6 +17,15 @@ msgstr ""
 msgid "Add a task"
 msgstr "إضافة مهمة"
 
+#: ../../client/src/settings/routes/ScreenSettings.tsx:29
+msgid "Dark"
+msgstr ""
+
+#: ../../client/src/settings/routes/ScreenSettings.tsx:27
+#: ../../client/src/settings/routes/ScreenSettings.tsx:38
+msgid "Default"
+msgstr ""
+
 #: ../../client/src/core/utils/date.ts:24
 msgid "Enjoy the night."
 msgstr "استمتع بالليل."
@@ -38,12 +47,16 @@ msgstr "صباح الخير."
 msgid "Home"
 msgstr "الصفحة الرئيسية"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:34
+#: ../../client/src/settings/routes/ScreenSettings.tsx:32
 msgid "Language"
 msgstr "اللغة"
 
+#: ../../client/src/settings/routes/ScreenSettings.tsx:28
+msgid "Light"
+msgstr ""
+
 #: ../../client/src/core/base/Menu.tsx:25
-#: ../../client/src/settings/routes/ScreenSettings.tsx:21
+#: ../../client/src/settings/routes/ScreenSettings.tsx:19
 msgid "Settings"
 msgstr "الإعدادات"
 
@@ -51,7 +64,7 @@ msgstr "الإعدادات"
 msgid "Tasks"
 msgstr "المهام"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:23
+#: ../../client/src/settings/routes/ScreenSettings.tsx:21
 msgid "Theme"
 msgstr "السمة"
 

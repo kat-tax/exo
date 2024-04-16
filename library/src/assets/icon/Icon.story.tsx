@@ -1,4 +1,4 @@
-import {Icon as Component} from './Icon';
+import {Icon as Component} from 'react-exo/icon';
 import type {StoryObj, Meta} from '@storybook/react';
 
 type Story = StoryObj<typeof Component>;
@@ -8,11 +8,11 @@ const meta: Meta<typeof Component> = {
   component: Component,
 };
 
-export const Sandbox: Story = {
+export const Icon: Story = {
   args: {
-    name: 'ph:alien',
+    name: 'ph:cat',
     color: '#666',
-    size: 48,
+    size: 90,
   },
   parameters: {
     design: {

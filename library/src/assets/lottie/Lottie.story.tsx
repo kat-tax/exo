@@ -1,4 +1,4 @@
-import {Lottie as Component} from './Lottie';
+import {Lottie as Component} from 'react-exo/lottie';
 import type {StoryObj, Meta} from '@storybook/react';
 
 type Story = StoryObj<typeof Component>;
@@ -8,7 +8,7 @@ const meta: Meta<typeof Component> = {
   component: Component,
 };
 
-export const Sandbox: Story = {
+export const Lottie: Story = {
   args: {
     url: 'https://get.ult.dev/samples/stack.lottie',
     autoplay: true,

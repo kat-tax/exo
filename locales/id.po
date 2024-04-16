@@ -17,6 +17,15 @@ msgstr ""
 msgid "Add a task"
 msgstr "Tambahkan tugas"
 
+#: ../../client/src/settings/routes/ScreenSettings.tsx:29
+msgid "Dark"
+msgstr ""
+
+#: ../../client/src/settings/routes/ScreenSettings.tsx:27
+#: ../../client/src/settings/routes/ScreenSettings.tsx:38
+msgid "Default"
+msgstr ""
+
 #: ../../client/src/core/utils/date.ts:24
 msgid "Enjoy the night."
 msgstr "Nikmati malam."
@@ -38,12 +47,16 @@ msgstr "Selamat pagi."
 msgid "Home"
 msgstr "Beranda"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:34
+#: ../../client/src/settings/routes/ScreenSettings.tsx:32
 msgid "Language"
 msgstr "Bahasa"
 
+#: ../../client/src/settings/routes/ScreenSettings.tsx:28
+msgid "Light"
+msgstr ""
+
 #: ../../client/src/core/base/Menu.tsx:25
-#: ../../client/src/settings/routes/ScreenSettings.tsx:21
+#: ../../client/src/settings/routes/ScreenSettings.tsx:19
 msgid "Settings"
 msgstr "Pengaturan"
 
@@ -51,7 +64,7 @@ msgstr "Pengaturan"
 msgid "Tasks"
 msgstr "Tugas"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:23
+#: ../../client/src/settings/routes/ScreenSettings.tsx:21
 msgid "Theme"
 msgstr "Tema"
 

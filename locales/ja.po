@@ -17,6 +17,15 @@ msgstr ""
 msgid "Add a task"
 msgstr "タスクを追加"
 
+#: ../../client/src/settings/routes/ScreenSettings.tsx:29
+msgid "Dark"
+msgstr ""
+
+#: ../../client/src/settings/routes/ScreenSettings.tsx:27
+#: ../../client/src/settings/routes/ScreenSettings.tsx:38
+msgid "Default"
+msgstr ""
+
 #: ../../client/src/core/utils/date.ts:24
 msgid "Enjoy the night."
 msgstr "夜を楽しんでください。"
@@ -38,12 +47,16 @@ msgstr "おはようございます。"
 msgid "Home"
 msgstr "ホーム"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:34
+#: ../../client/src/settings/routes/ScreenSettings.tsx:32
 msgid "Language"
 msgstr "言語"
 
+#: ../../client/src/settings/routes/ScreenSettings.tsx:28
+msgid "Light"
+msgstr ""
+
 #: ../../client/src/core/base/Menu.tsx:25
-#: ../../client/src/settings/routes/ScreenSettings.tsx:21
+#: ../../client/src/settings/routes/ScreenSettings.tsx:19
 msgid "Settings"
 msgstr "設定"
 
@@ -51,7 +64,7 @@ msgstr "設定"
 msgid "Tasks"
 msgstr "タスク"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:23
+#: ../../client/src/settings/routes/ScreenSettings.tsx:21
 msgid "Theme"
 msgstr "テーマ"
 

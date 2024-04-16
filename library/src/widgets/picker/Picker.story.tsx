@@ -1,18 +1,20 @@
-import {Picker} from './Picker';
+import {Picker as Component} from 'react-exo/picker';
 import type {StoryObj, Meta} from '@storybook/react';
 
-type Story = StoryObj<typeof Picker>;
+type Story = StoryObj<typeof Component>;
 
-const meta: Meta<typeof Picker> = {
+const meta: Meta<typeof Component> = {
   title: 'Widgets/Picker',
-  component: Picker,
+  component: Component,
 };
 
-export const Sandbox: Story = {
+export const Picker: Story = {
   args: {
-    style: {
-      width: 300,
-    },
+    children: [
+      <Component.Item label="Default" value=""/>,
+      <Component.Item label="Light" value="light"/>,
+      <Component.Item label="Dark" value="dark"/>,
+    ]
   },
 };
 

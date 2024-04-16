@@ -10,5 +10,4 @@ export default UnistylesRegistry
   .addBreakpoints(breakpoints)
   .addConfig({
     adaptiveThemes: true,
-    experimentalCSSMediaQueries: true,
   });

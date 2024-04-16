@@ -1,4 +1,4 @@
-import {Slider as Component} from './Slider';
+import {Slider as Component} from 'react-exo/slider';
 import type {StoryObj, Meta} from '@storybook/react';
 
 type Story = StoryObj<typeof Component>;
@@ -8,7 +8,7 @@ const meta: Meta<typeof Component> = {
   component: Component,
 };
 
-export const Sandbox: Story = {
+export const Slider: Story = {
   args: {
     style: {
       width: 300,

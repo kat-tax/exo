@@ -1,4 +1,4 @@
-import {Rive as Component} from './Rive';
+import {Rive as Component} from 'react-exo/rive';
 import type {StoryObj, Meta} from '@storybook/react';
 
 type Story = StoryObj<typeof Component>;
@@ -8,7 +8,7 @@ const meta: Meta<typeof Component> = {
   component: Component,
 };
 
-export const Sandbox: Story = {
+export const Rive: Story = {
   args: {
     url: 'https://get.ult.dev/samples/cursor.riv',
     width: 320,

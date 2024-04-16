@@ -1,11 +1,12 @@
 import * as Nav from 'react-exo/navigation';
-import {history} from 'react-exo/redux';
+import {Suspense} from 'react';
+import {history} from 'app/store';
 import {Layout, Screen} from 'app/routes';
-import {LazyLoad as $} from 'core/base/LazyLoad';
+import {PageLoading} from 'core/base/PageLoading';
 
 export function Router() {
   return (
-    <Nav.Router history={history.state}>
+    <Nav.Router history={history}>
       <Nav.Routes>
         <Nav.Route path="/" element={<$><Layout.Main/></$>}>
           <Nav.Route index element={<$><Screen.Home/></$>}/>
@@ -15,5 +16,13 @@ export function Router() {
         </Nav.Route>
       </Nav.Routes>
     </Nav.Router>
+  );
+}
+
+const $ = (props: React.PropsWithChildren) => {
+  return (
+    <Suspense fallback={<PageLoading/>}>
+      {props.children}
+    </Suspense>
   );
 }

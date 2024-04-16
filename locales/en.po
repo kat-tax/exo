@@ -17,6 +17,15 @@ msgstr ""
 msgid "Add a task"
 msgstr "Add a task"
 
+#: ../../client/src/settings/routes/ScreenSettings.tsx:29
+msgid "Dark"
+msgstr "Dark"
+
+#: ../../client/src/settings/routes/ScreenSettings.tsx:27
+#: ../../client/src/settings/routes/ScreenSettings.tsx:38
+msgid "Default"
+msgstr "Default"
+
 #: ../../client/src/core/utils/date.ts:24
 msgid "Enjoy the night."
 msgstr "Enjoy the night."
@@ -38,12 +47,16 @@ msgstr "Good morning."
 msgid "Home"
 msgstr "Home"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:34
+#: ../../client/src/settings/routes/ScreenSettings.tsx:32
 msgid "Language"
 msgstr "Language"
 
+#: ../../client/src/settings/routes/ScreenSettings.tsx:28
+msgid "Light"
+msgstr "Light"
+
 #: ../../client/src/core/base/Menu.tsx:25
-#: ../../client/src/settings/routes/ScreenSettings.tsx:21
+#: ../../client/src/settings/routes/ScreenSettings.tsx:19
 msgid "Settings"
 msgstr "Settings"
 
@@ -51,7 +64,7 @@ msgstr "Settings"
 msgid "Tasks"
 msgstr "Tasks"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:23
+#: ../../client/src/settings/routes/ScreenSettings.tsx:21
 msgid "Theme"
 msgstr "Theme"
 

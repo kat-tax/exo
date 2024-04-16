@@ -1,5 +1,4 @@
-import {RadioGroup} from './RadioGroup';
-import {RadioButton} from './RadioButton';
+import {RadioGroup, RadioButton} from 'react-exo/radio';
 import type {StoryObj, Meta} from '@storybook/react';
 
 type Story = StoryObj<typeof RadioGroup>;
@@ -9,7 +8,7 @@ const meta: Meta<typeof RadioGroup> = {
   component: RadioGroup,
 };
 
-export const Sandbox: Story = {
+export const Radio: Story = {
   args: {
     children: [
       <RadioButton key="1" value="1" label="Option 1"/>,

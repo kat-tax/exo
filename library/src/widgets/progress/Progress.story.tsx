@@ -1,4 +1,4 @@
-import {Progress as Component} from './Progress';
+import {Progress as Component} from 'react-exo/progress';
 import type {StoryObj, Meta} from '@storybook/react';
 
 type Story = StoryObj<typeof Component>;
@@ -8,7 +8,7 @@ const meta: Meta<typeof Component> = {
   component: Component,
 };
 
-export const Sandbox: Story = {
+export const Progress: Story = {
   args: {
     progress: 50,
     style: {

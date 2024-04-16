@@ -22,13 +22,14 @@ export default defineConfig({
     },
   ],
   topNav: [
-    {
+    /*{
       text: 'Storybook',
       link: config.LINK_STORYBOOK,
-    },
+    },*/
     {
       text: `v${config.LIB_VERSION}`,
-      items: [
+      link: `https://www.npmjs.com/package/${config.LIB_NAME}`,
+      /*items: [
         {
           text: 'Changelog',
           link: `${config.LINK_GITHUB}/blob/master/CHANGELOG.md`,
@@ -37,7 +38,7 @@ export default defineConfig({
           text: 'License',
           link: `${config.LINK_GITHUB}/blob/master/LICENSE.md`,
         },
-      ],
+      ],*/
     },
   ],
   theme: {

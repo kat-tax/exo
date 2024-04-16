@@ -1,4 +1,4 @@
-import {Checkbox as Component} from './Checkbox';
+import {Checkbox as Component} from 'react-exo/checkbox';
 import type {StoryObj, Meta} from '@storybook/react';
 
 type Story = StoryObj<typeof Component>;
@@ -8,7 +8,7 @@ const meta: Meta<typeof Component> = {
   component: Component,
 };
 
-export const Sandbox: Story = {
+export const Checkbox: Story = {
   args: {
 
   },

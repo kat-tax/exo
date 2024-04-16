@@ -1,15 +1,16 @@
 import * as Redux from 'react-exo/redux';
 import {Storage} from 'react-exo/storage';
-import {LoadPage} from 'core/base/LoadPage';
+import {PageLoading} from 'core/base/PageLoading';
 import config from 'config';
 
 import core from 'core/store';
 import tasks from 'tasks/store';
 import settings from 'settings/store';
+// Tip: import your new reducers here...
 
 export function Store(props: React.PropsWithChildren) {
   return (
-    <Redux.Provider store={store} loading={<LoadPage/>}>
+    <Redux.Provider store={store} loading={<PageLoading/>}>
       {props.children}
     </Redux.Provider>
   )
@@ -44,4 +45,5 @@ const store = Redux.configureStore({
 Redux.history.init(store);
 
 export type State = ReturnType<typeof store.getState>
+export const history = Redux.history.state;
 export default store;

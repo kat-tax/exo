@@ -1,27 +1,27 @@
 import {createSlice} from 'react-exo/redux';
 import type {PayloadAction} from 'react-exo/redux';
 
-export type Common = {
+export type Core = {
   loaded?: boolean,
   online?: boolean,
 }
 
 export default createSlice({
-  name: 'common',
-  initialState: <Common> {
+  name: 'core',
+  initialState: <Core> {
     online: false,
     loaded: false,
   },
   selectors: {
-    isLoaded: ($) => $.loaded,
-    isOnline: ($) => $.online,
+    isLoaded: (core) => core.loaded,
+    isOnline: (core) => core.online,
   },
   reducers: {
-    setLoaded(store, action: PayloadAction<boolean>) {
-      store.loaded = action.payload;
+    setLoaded(core, action: PayloadAction<boolean>) {
+      core.loaded = action.payload;
     },
-    setOnline(store, action: PayloadAction<boolean>) {
-      store.online = action.payload;
+    setOnline(core, action: PayloadAction<boolean>) {
+      core.online = action.payload;
     },
   },
 });

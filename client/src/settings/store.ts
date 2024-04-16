@@ -13,15 +13,15 @@ export default createSlice({
   name: 'settings',
   initialState: <Settings> {},
   selectors: {
-    getScheme: ($) => $.scheme,
-    getLocale: ($) => $.locale,
+    getScheme: (settings) => settings.scheme,
+    getLocale: (settings) => settings.locale,
   },
   reducers: {
-    setScheme($, action: PayloadAction<ColorSchemeName>) {
-      $.scheme = action.payload;
+    setScheme(settings, action: PayloadAction<ColorSchemeName>) {
+      settings.scheme = action.payload;
     },
-    setLocale($, action: PayloadAction<Locales>) {
-      $.locale = action.payload;
+    setLocale(settings, action: PayloadAction<Locales>) {
+      settings.locale = action.payload;
     },
   },
 });

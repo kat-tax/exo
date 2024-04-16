@@ -2,12 +2,12 @@ import {useStyles, createStyleSheet} from 'styles';
 import {View, ActivityIndicator} from 'react-native';
 import type {ViewProps, ActivityIndicatorProps} from 'react-native';
 
-export interface LoadingProps {
+export interface PageLoadingProps {
   container?: ViewProps;
   indicator?: ActivityIndicatorProps;
 }
 
-export function LoadPage(props: LoadingProps) {
+export function PageLoading(props: PageLoadingProps) {
   const {styles, theme} = useStyles(stylesheet);
   return (
     <View style={styles.root} {...props.container}>
