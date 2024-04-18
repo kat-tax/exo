@@ -1,0 +1,15 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "entryPoints": ["./src/index.ts"],
+  "json": "./metadata.json",
+  "emit": "docs",
+  "pretty": true,
+  "categorizeByGroup": false,
+  "skipErrorChecking": true,
+  "excludeProtected": true,
+  "excludePrivate": true,
+  "excludeInternal": true,
+  "excludeExternals": true,
+  "excludeReferences": false,
+  "excludeNotDocumented": false,
+}

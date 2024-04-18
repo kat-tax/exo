@@ -13,6 +13,7 @@
     "@lingui/react": "^4.10.0",
     "design": "workspace:*",
     "react": "18.2.0",
+    "react-docgen": "^7.0.3",
     "react-dom": "^18.2.0",
     "react-exo": "workspace:*",
     "react-native": "^0.73.6",
@@ -29,8 +30,8 @@
     "config": "workspace:*",
     "fs-extra": "latest",
     "tsx": "latest",
+    "typescript": "^5.3.2",
     "vocs": "latest",
-    "yaml": "latest",
-    "typescript": "^5.3.2"
+    "yaml": "latest"
   }
 }

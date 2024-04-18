@@ -17,6 +17,7 @@ const hasComponents = componentsGroups.length > 0;
 // Mappings
 
 const sidebar = [
+  // Index guides
   ...guideGroups.map(g => ({
     link: existsSync(`${GUIDES}/${g}/index.mdx`) ? `/${g}` : undefined,
     text: titleCase(g),
@@ -26,17 +27,19 @@ const sidebar = [
       text: getTitle(f, `${GUIDES}/${g}/${f}`),
     })),
   })).filter(g => g.items.length),
+  // Index components
   hasComponents && {
     text: 'Components',
     collapsed: false,
     items: componentsGroups.map(g => ({
       text: titleCase(g),
-      items: readdirSync(`${PRIMITIVES}/${g}`).filter(excludeFiles).map(f => ({
+      items: readdirSync(`${COMPONENTS}/${g}`).filter(excludeFiles).map(f => ({
         link: `/components/${g}/${f}`,
-        text: getTitle(f, `${PRIMITIVES}/${g}/${f}/${titleCase(f, true)}.docs.mdx`),
+        text: getTitle(f, `${COMPONENTS}/${g}/${f}/${titleCase(f, true)}.docs.mdx`),
       })),
     })).filter(g => g.items.length),
   },
+  // Index primitives
   {
     text: 'Primitives',
     collapsed: hasComponents,
@@ -76,6 +79,7 @@ function excludeFiles(file) {
   return file !== 'index.mdx'
     && file !== '.DS_Store'
     && !file.endsWith('.ts')
+    && !file.endsWith('.tsx')
 }
 
 function getTitle(file, path) {

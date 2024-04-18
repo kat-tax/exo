@@ -3,7 +3,8 @@
   "version": "0.12.0",
   "type": "module",
   "scripts": {
-    "build": "exo build"
+    "build": "exo build",
+    "typedoc": "typedoc"
   },
   "exports": {
     ".": {
@@ -227,6 +228,7 @@
     "react-native-web": "^0.19.10",
     "react-native-web-linear-gradient": "^1.1.2",
     "react-native-windows": "^0.73.11",
-    "rive-react-native": "^7.0.0"
+    "rive-react-native": "^7.0.0",
+    "typedoc": "^0.25.13"
   }
 }

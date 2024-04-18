@@ -1,6 +1,7 @@
 # Project
 **/i18n/messages/
 toolkit/vocs/pages/
+library/metadata.json
 output/
 dist/
 gen/

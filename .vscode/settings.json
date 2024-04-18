@@ -5,6 +5,7 @@
     "guides": "content",
     "builder": "robot",
     "native": "target",
+    "platforms": "target",
     "output": "dist",
     "rive": "animation",
     "vocs": "vue",

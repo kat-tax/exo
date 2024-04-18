@@ -2,4 +2,6 @@ src/
 plugins/
 node_modules/
 tsconfig.json
+typedoc.json
+metadata.json
 vite.config.mts

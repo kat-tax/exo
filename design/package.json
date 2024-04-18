@@ -14,7 +14,6 @@
     "@lingui/core": "^4.10.0",
     "@lingui/macro": "^4.10.0",
     "@lingui/react": "^4.10.0",
-    "design": "workspace:*",
     "react": "18.2.0",
     "react-dom": "^18.2.0",
     "react-exo": "workspace:*",

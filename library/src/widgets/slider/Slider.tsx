@@ -6,7 +6,9 @@ import * as S from '@radix-ui/react-slider';
 import type {SliderComponent, SliderProps} from './Slider.interface';
 import './Slider.css';
 
-/** A component that allows selection of a value within a range */
+/**
+ * A component that allows selection of a value within a range
+ */
 export const Slider: SliderComponent = (props: SliderProps) => {
   const value = [props.value || 0];
 
