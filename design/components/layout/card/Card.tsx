@@ -1,4 +1,4 @@
-import {useStyles, createStyleSheet} from 'react-native-unistyles';
+import {useStyles, createStyleSheet} from 'styles';
 import {View, Text} from 'react-native';
 
 export interface CardProps {
@@ -13,7 +13,7 @@ export interface CardProps {
 /**
  * A simple card block component
  * */
-export function Card(props: CardProps) {
+export function Card(props: CardProps): JSX.Element {
   const {styles} = useStyles(stylesheet);
 
   return (

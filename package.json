@@ -4,7 +4,7 @@
   "scripts": {
     "start": "conc -c 'auto' 'pnpm:*-dev'",
     "build": "conc -c 'auto' -g 'pnpm:*-build'",
-    "generate": "pnpm config-build && pnpm translate-build && pnpm builder-build && pnpm library-build",
+    "generate": "pnpm config-build && pnpm translate-build && pnpm builder-build && pnpm library-build && pnpm design-build",
 
     "config-dev": "pnpm --filter ./toolkit/config dev",
     "config-build": "pnpm --filter ./toolkit/config build",
@@ -18,6 +18,10 @@
     "library-dev": "pnpm --filter ./library dev",
     "library-build": "pnpm --filter ./library build",
     "library-publish": "pnpm --filter ./library publish",
+  
+    "design-dev": "pnpm --filter ./design dev",
+    "design-build": "pnpm --filter ./design build",
+    "design-publish": "pnpm --filter ./design publish",
 
     "web-dev": "pnpm --filter ./client run dev",
     "web-build": "pnpm --filter ./client run build",

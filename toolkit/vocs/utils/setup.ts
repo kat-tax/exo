@@ -56,6 +56,7 @@ async function processComponents(files: string[], paths: string[]) {
     mdx = mdx.replace(/:::desc:::/g, doc.description || '');
     mdx = mdx.replace(/:::props:::/g, getPropsTable(doc.props));
     mdx = mdx.replace(/:::import:::/g, `import {${doc.displayName}} from 'design';`);
+    mdx = mdx.replace(/:::twobase:::/g, `import React from 'react';\n// ---cut---`);
     mdx = mdx.replace(/:::storybook:::/g, `${config.LINK_STORYBOOK}/?path=/docs/components-${base.replace('/', '-')}`);
     const example = mdx.match(/:::example(.*?):::/s)?.[1];
     if (example) mdx = mdx.replace(/:::example(.*?):::/gs, example.trim());

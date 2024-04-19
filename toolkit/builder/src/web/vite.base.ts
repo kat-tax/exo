@@ -21,7 +21,7 @@ export default defineConfig(env => ({
     ],
   },
   define: {
+    __DEV__: JSON.stringify(env.mode === 'development'),
     global: 'window',
-    __DEV__: env.command === 'serve',
   },
 }));

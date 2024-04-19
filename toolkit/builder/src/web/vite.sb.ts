@@ -9,15 +9,5 @@ export default defineConfig(env => mergeConfig(
     build: {
       chunkSizeWarningLimit: 600,
     },
-    define: {
-      ...env.command === 'serve' && {
-        process: {
-          env: {
-            DEV: JSON.stringify('true'),
-            NODE_ENV: JSON.stringify('development'),
-          },
-        },
-      },
-    },
   }),
 ));

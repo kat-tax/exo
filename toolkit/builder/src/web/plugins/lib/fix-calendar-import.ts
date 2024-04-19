@@ -16,8 +16,8 @@ export default <Plugin> {
     await writeFile(
       target,
       contents.replace(
-        'import fe, { StyleSheet as me',
-        'import * as fe from "react-native";import { StyleSheet as me'
+        'import he, { StyleSheet as we',
+        'import * as he from "react-native";import { StyleSheet as we'
       )
     )
   }

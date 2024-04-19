@@ -17,15 +17,5 @@ export default defineConfig(env => mergeConfig(
         }
       }
     },
-    define: {
-      ...env.command === 'serve' && {
-        process: {
-          env: {
-            DEV: JSON.stringify('true'),
-            NODE_ENV: JSON.stringify('development'),
-          },
-        },
-      },
-    },
   }),
 ));

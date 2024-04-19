@@ -2,7 +2,7 @@ import 'client/src/styles';
 
 import React from 'react';
 import {themes} from '@storybook/theming';
-import uniDefault, {themes as uniThemes} from 'design/theme';
+import {initialTheme, themes as uniThemes} from 'design/theme';
 import {Story} from 'storybook-common/utils/blocks';
 
 import type {Preview} from '@storybook/react';
@@ -19,7 +19,7 @@ const preview: Preview = {
     theme: {
       name: 'Theme',
       description: 'Change the component theme',
-      defaultValue: uniDefault,
+      defaultValue: initialTheme,
       toolbar: {
         icon: 'paintbrush',
         dynamicTitle: true,

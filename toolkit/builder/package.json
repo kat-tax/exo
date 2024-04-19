@@ -12,6 +12,7 @@
     "./babel": "./gen/native/babel.js",
     "./metro": "./gen/native/metro.js",
     "./vite.base": "./gen/web/vite.base.js",
+    "./vite.design": "./gen/web/vite.design.js",
     "./vite.client": "./gen/web/vite.client.js",
     "./vite.docs": "./gen/web/vite.docs.js",
     "./vite.lib": "./gen/web/vite.lib.js"
@@ -32,11 +33,12 @@
     "million": "^3.0.6",
     "react-native": "0.73.6",
     "tsx": "latest",
+    "typescript": "^5.3.2",
     "vite": "^5.2.8",
     "vite-plugin-dts": "^3.8.3",
+    "vite-plugin-node-polyfills": "^0.21.0",
     "vite-tsconfig-paths": "^4.3.2",
     "vocs": "latest",
-    "yaml": "latest",
-    "typescript": "^5.3.2"
+    "yaml": "latest"
   }
 }

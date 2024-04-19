@@ -188,7 +188,8 @@
     "redux": "^5.0.1",
     "redux-first-history": "^5.2.0",
     "redux-persist": "^6.0.0",
-    "thumbhash": "^0.1.1"
+    "thumbhash": "^0.1.1",
+    "vite-plugin-node-polyfills": "^0.21.0"
   },
   "devDependencies": {
     "@candlefinance/faster-image": "^1.4.3",

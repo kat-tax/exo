@@ -1,3 +1,5 @@
+export type Themes = keyof typeof themes;
+
 export const breakpoints = {
   xs: 0,
   sm: 576,
@@ -304,4 +306,4 @@ export const themes = {
   },
 }
 
-export default 'light'
+export const initialTheme: Themes = 'light'
