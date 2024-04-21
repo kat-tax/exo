@@ -1,15 +1,15 @@
 {
   "material-icon-theme.activeIconPack": "react_redux",
   "material-icon-theme.folders.associations": {
+    "output": "dist",
     "client": "mobile",
     "guides": "content",
-    "builder": "robot",
     "native": "target",
-    "platforms": "target",
-    "vision": "content",
-    "output": "dist",
-    "rive": "animation",
+    "android-tv": "android",
+    "visionos": "macos",
+    "tvos": "macos",
     "vocs": "vue",
+    "rive": "animation",
   },
   "material-icon-theme.files.associations": {
     "app/index.tsx": "tree",
