@@ -29,7 +29,9 @@
     "@react-native/babel-preset": "0.75.0-main",
     "@react-native/metro-config": "0.73.2",
     "@types/react": "18.2.71",
+    "babel-plugin-macros": "^3.1.0",
     "babel-plugin-module-resolver": "5.0.0",
+    "config": "workspace:*",
     "typescript": "5.0.4"
   }
 }

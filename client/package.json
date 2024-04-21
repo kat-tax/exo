@@ -23,9 +23,9 @@
   "devDependencies": {
     "@types/react": "latest",
     "@types/react-dom": "latest",
-    "builder": "workspace:*",
     "config": "workspace:*",
-    "typescript": "^5.3.2"
+    "typescript": "^5.3.2",
+    "web": "workspace:*"
   },
   "browserslist": {
     "production": ">0.2%, not dead, not op_mini all",

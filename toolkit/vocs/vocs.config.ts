@@ -1,6 +1,6 @@
 import {defineConfig} from 'vocs';
 import {themes} from 'design/theme';
-import viteDocs from 'builder/vite.docs';
+import viteDocs from 'web/vite.docs';
 import sidebar from 'config/docs.sidebar';
 import config from 'config';
 

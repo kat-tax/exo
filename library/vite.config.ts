@@ -1,1 +1,1 @@
-export {default} from 'builder/vite.lib';
+export {default} from 'web/vite.lib';

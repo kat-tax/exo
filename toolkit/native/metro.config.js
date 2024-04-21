@@ -18,6 +18,8 @@ const config = {
   // So we block them at the root, and alias them to the versions in example's node_modules
   resolver: {
     ...defaultConfig.resolver,
+    sourceExts: [...(defaultConfig.resolver.sourceExts || []), 'svg', 'mjs'],
+    assetExts: defaultConfig.resolver.assetExts?.filter(ext => ext !== 'svg'),
     blockList: exclusionList([
       // This stops "react-native run-windows" from causing the metro server to crash if its already running
       new RegExp(`${path.resolve(__dirname, 'windows').replace(/[/\\]/g, '/')}.*`),
@@ -40,6 +42,7 @@ const config = {
   transformer: {
     // This fixes the 'missing-asset-registry-path` error (see https://github.com/microsoft/react-native-windows/issues/11437)
     assetRegistryPath: 'react-native/Libraries/Image/AssetRegistry',
+    babelTransformerPath: require.resolve('react-native-svg-transformer'),
     getTransformOptions: async () => ({
       transform: {
         experimentalImportSupport: false,

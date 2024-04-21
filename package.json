@@ -4,11 +4,11 @@
   "scripts": {
     "start": "conc -c 'auto' 'pnpm:*-dev'",
     "build": "conc -c 'auto' -g 'pnpm:*-build'",
-    "generate": "pnpm config-build && pnpm translate-build && pnpm builder-build && pnpm library-build && pnpm design-build",
+    "generate": "pnpm toolkit-cfg-build && pnpm translate-build && pnpm toolkit-web-build && pnpm library-build && pnpm design-build",
 
-    "config-dev": "pnpm --filter ./toolkit/config dev",
-    "config-build": "pnpm --filter ./toolkit/config build",
-    "builder-build": "pnpm --filter ./toolkit/builder build",
+    "toolkit-cfg-dev": "pnpm --filter ./toolkit/config dev",
+    "toolkit-cfg-build": "pnpm --filter ./toolkit/config build",
+    "toolkit-web-build": "pnpm --filter ./toolkit/web build",
 
     "translate-dev": "conc -P 'pnpm:translate-extract {1}' 'pnpm:translate-compile {1}' -- --watch",
     "translate-build": "pnpm run translate-extract && pnpm run translate-compile",
@@ -18,7 +18,7 @@
     "library-dev": "pnpm --filter ./library dev",
     "library-build": "pnpm --filter ./library build",
     "library-publish": "pnpm --filter ./library publish",
-  
+
     "design-dev": "pnpm --filter ./design dev",
     "design-build": "pnpm --filter ./design build",
     "design-publish": "pnpm --filter ./design publish",

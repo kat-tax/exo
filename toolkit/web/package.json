@@ -1,5 +1,5 @@
 {
-  "name": "builder",
+  "name": "web",
   "type": "module",
   "private": true,
   "scripts": {
@@ -9,30 +9,23 @@
     "exo": "./node_modules/vite/bin/vite.js"
   },
   "exports": {
-    "./babel": "./gen/native/babel.js",
-    "./metro": "./gen/native/metro.js",
-    "./vite.base": "./gen/web/vite.base.js",
-    "./vite.design": "./gen/web/vite.design.js",
-    "./vite.client": "./gen/web/vite.client.js",
-    "./vite.docs": "./gen/web/vite.docs.js",
-    "./vite.lib": "./gen/web/vite.lib.js"
+    "./vite.base": "./gen/vite.base.js",
+    "./vite.design": "./gen/vite.design.js",
+    "./vite.client": "./gen/vite.client.js",
+    "./vite.docs": "./gen/vite.docs.js",
+    "./vite.lib": "./gen/vite.lib.js"
   },
   "devDependencies": {
     "@lingui/core": "^4.10.0",
     "@lingui/vite-plugin": "^4.10.0",
-    "@react-native/metro-config": "0.75.0-main",
-    "@rnx-kit/metro-config": "^1.3.15",
-    "@rnx-kit/metro-resolver-symlinks": "^0.1.36",
     "@rollup/plugin-dynamic-import-vars": "^2.1.2",
     "@types/react": "^18.2.78",
     "@types/react-dom": "^18.2.25",
     "@vitejs/plugin-react": "^4.2.1",
-    "babel-plugin-macros": "^3.1.0",
     "config": "workspace:*",
     "lightningcss": "^1.24.1",
     "million": "^3.0.6",
     "react-native": "0.73.6",
-    "tsx": "latest",
     "typescript": "^5.3.2",
     "vite": "^5.2.8",
     "vite-plugin-dts": "^3.8.3",

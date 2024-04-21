@@ -1,10 +1,10 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "extends": "config/tsconfig.node.json",
-  "display": "Tools",
+  "display": "Web",
   "compilerOptions": {
     "rootDir": "./src",
-    "outDir": "./gen",
+    "outDir": "./gen"
   },
   "include": [
     "./src/**/*.ts"
