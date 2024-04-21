@@ -18,6 +18,9 @@
     "./styles": {
       "import": "./gen/styles.js",
       "require": "./gen/styles.cjs"
+    },
+    "./types": {
+      "types": "./env.d.ts"
     }
   },
   "dependencies": {

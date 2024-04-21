@@ -1,4 +1,4 @@
-import {useStyles, createStyleSheet} from 'styles';
+import {useStyles, createStyleSheet} from 'design/styles';
 import {View, ActivityIndicator} from 'react-native';
 import type {ViewProps, ActivityIndicatorProps} from 'react-native';
 

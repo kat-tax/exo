@@ -1,7 +1,7 @@
 import {t} from '@lingui/macro';
 import {useRef} from 'react';
 import {useLingui} from '@lingui/react';
-import {useStyles, createStyleSheet} from 'styles';
+import {useStyles, createStyleSheet} from 'design/styles';
 import {TextInput} from 'react-native';
 
 interface TasksInputProps {

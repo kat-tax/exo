@@ -1,4 +1,4 @@
-import 'styles';
+import 'design/styles';
 
 import {AppRegistry} from 'react-native';
 import AppRoot from 'app';

@@ -10,5 +10,4 @@ export const registry = UnistylesRegistry
   .addBreakpoints(breakpoints)
   .addConfig({
     initialTheme,
-    adaptiveThemes: false,
   });

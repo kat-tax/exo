@@ -2,7 +2,7 @@ import {Text} from 'react-native';
 import {Picker} from 'react-exo/picker';
 import {Trans, t} from '@lingui/macro';
 import {useLingui} from '@lingui/react';
-import {useStyles, createStyleSheet} from 'styles';
+import {useStyles, createStyleSheet} from 'design/styles';
 import {useLocale} from 'settings/hooks/useLocale';
 import {useScheme} from 'settings/hooks/useScheme';
 import {locales} from 'config/locales';

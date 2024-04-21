@@ -21,7 +21,7 @@ node_modules/
 *.tsbuildinfo
 
 # Vocs
-vocs.config.ts.timestamp-*
+vocs.*.timestamp-*
 
 # RNUC
 rnuc.xcconfig

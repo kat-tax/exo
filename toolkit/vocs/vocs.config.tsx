@@ -1,5 +1,8 @@
+import React from 'react';
 import {defineConfig} from 'vocs';
-// import {themes} from 'design/theme';
+import {ThemeSwitcher} from 'utils/blocks';
+import {UnistylesRuntime} from 'design/styles';
+import {themes} from 'design/theme';
 import viteDocs from 'builder/vite.docs';
 import sidebar from 'config/docs.sidebar';
 import config from 'config';
@@ -22,14 +25,14 @@ export default defineConfig({
     },
   ],
   topNav: [
-    /*{
+    {
       text: 'Storybook',
       link: config.LINK_STORYBOOK,
-    },*/
+    },
     {
       text: `v${config.LIB_VERSION}`,
       link: `https://www.npmjs.com/package/${config.LIB_NAME}`,
-      /*items: [
+      items: [
         {
           text: 'Changelog',
           link: `${config.LINK_GITHUB}/blob/master/CHANGELOG.md`,
@@ -38,49 +41,42 @@ export default defineConfig({
           text: 'License',
           link: `${config.LINK_GITHUB}/blob/master/LICENSE.md`,
         },
-      ],*/
+      ],
     },
   ],
-  theme: {
-    variables: {
-      color: {
-        background: { 
-          light: 'white', 
-          dark: 'black',
-        },
-      },
-    },
-  },
-  /*
-    theme: {
-      accentColor: {
-        light: themes.light.colors.primary,
-        dark: themes.dark.colors.primary,
-      },
-      variables: {
-        color: {
-          text: {
-            light: themes.light.colors.foreground,
-            dark: themes.dark.colors.foreground,
-          },
-          background: {
-            light: themes.light.colors.background,
-            dark: themes.dark.colors.background,
-          },
-          border: {
-            light: themes.light.colors.border,
-            dark: themes.dark.colors.border,
-          },
-        },
-      }
-    },
-  */
   font: {
     google: config.FONT_NAME,
   },
+  theme: {
+    accentColor: {
+      light: themes.light.colors.primary,
+      dark: themes.dark.colors.primary,
+    },
+    variables: {
+      color: {
+        text: {
+          light: themes.light.colors.foreground,
+          dark: themes.dark.colors.foreground,
+        },
+        background: {
+          light: themes.light.colors.background,
+          dark: themes.dark.colors.background,
+        },
+        border: {
+          light: themes.light.colors.border,
+          dark: themes.dark.colors.border,
+        },
+      },
+    }
+  },
+  head: ( 
+    <>
+      <ThemeSwitcher onChange={UnistylesRuntime.setTheme}/>
+    </> 
+  ),
   vite: viteDocs({
     command: 'build',
-    mode: '',
+    mode: 'production',
   }),
   twoslash: {
     compilerOptions: {

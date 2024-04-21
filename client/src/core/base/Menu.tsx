@@ -2,7 +2,7 @@ import {Trans} from '@lingui/macro';
 import {View, Text} from 'react-native';
 import {SafeAreaView} from 'react-exo/safearea';
 import {useLocation, Link} from 'react-exo/navigation';
-import {useStyles, createStyleSheet} from 'styles';
+import {useStyles, createStyleSheet} from 'design/styles';
 import {useLists} from 'tasks/hooks/useLists';
 
 export function Menu() {

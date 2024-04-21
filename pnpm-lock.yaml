@@ -49,7 +49,7 @@ importers:
         version: 15.1.0(react-native@0.73.6)(react@18.2.0)
       react-native-unistyles:
         specifier: ^2.6.0
-        version: 2.6.0(@react-native/normalize-colors@0.74.1)(react-native-macos@0.73.24)(react-native-web@0.19.10)(react-native-windows@0.73.11)(react-native@0.73.6)(react@18.2.0)
+        version: 2.6.0(@react-native/normalize-colors@0.74.1)(react-native-web@0.19.10)(react-native@0.73.6)(react@18.2.0)
       react-native-web:
         specifier: ^0.19.10
         version: 0.19.10(react-dom@18.2.0)(react@18.2.0)
@@ -104,7 +104,7 @@ importers:
         version: 15.1.0(react-native@0.73.6)(react@18.2.0)
       react-native-unistyles:
         specifier: ^2.6.0
-        version: 2.6.0(@react-native/normalize-colors@0.74.1)(react-native-macos@0.73.24)(react-native-web@0.19.10)(react-native-windows@0.73.11)(react-native@0.73.6)(react@18.2.0)
+        version: 2.6.0(@react-native/normalize-colors@0.74.1)(react-native-web@0.19.10)(react-native@0.73.6)(react@18.2.0)
       react-native-web:
         specifier: ^0.19.10
         version: 0.19.10(react-dom@18.2.0)(react@18.2.0)
@@ -312,8 +312,8 @@ importers:
         specifier: ^7.20.0
         version: 7.20.0(react-native-gesture-handler@2.16.0)(react-native-reanimated@3.8.1)(react-native@0.73.6)(react@18.2.0)
       react-native-unistyles:
-        specifier: ^2.6.0
-        version: 2.6.0(@react-native/normalize-colors@0.74.1)(react-native-macos@0.73.24)(react-native-web@0.19.10)(react-native-windows@0.73.11)(react-native@0.73.6)(react@18.2.0)
+        specifier: ^2.7.1
+        version: 2.7.1(@react-native/normalize-colors@0.74.1)(react-native-macos@0.73.24)(react-native-web@0.19.10)(react-native-windows@0.73.11)(react-native@0.73.6)(react@18.2.0)
       react-native-url-polyfill:
         specifier: ^2.0.0
         version: 2.0.0(react-native@0.73.6)
@@ -485,8 +485,8 @@ importers:
         specifier: ^15.1.0
         version: 15.1.0(react-native@0.73.6)(react@18.2.0)
       react-native-unistyles:
-        specifier: ^2.6.0
-        version: 2.6.0(@react-native/normalize-colors@0.74.1)(react-native-macos@0.73.24)(react-native-web@0.19.10)(react-native-windows@0.73.11)(react-native@0.73.6)(react@18.2.0)
+        specifier: ^2.7.1
+        version: 2.7.1(@react-native/normalize-colors@0.74.1)(react-native-macos@0.73.24)(react-native-web@0.19.10)(react-native-windows@0.73.11)(react-native@0.73.6)(react@18.2.0)
       react-native-web:
         specifier: ^0.19.10
         version: 0.19.10(react-dom@18.2.0)(react@18.2.0)
@@ -582,8 +582,8 @@ importers:
         specifier: ^15.1.0
         version: 15.1.0(react-native@0.73.6)(react@18.2.0)
       react-native-unistyles:
-        specifier: ^2.6.0
-        version: 2.6.0(@react-native/normalize-colors@0.74.1)(react-native-macos@0.73.24)(react-native-web@0.19.10)(react-native-windows@0.73.11)(react-native@0.73.6)(react@18.2.0)
+        specifier: ^2.7.1
+        version: 2.7.1(@react-native/normalize-colors@0.74.1)(react-native-macos@0.73.24)(react-native-web@0.19.10)(react-native-windows@0.73.11)(react-native@0.73.6)(react@18.2.0)
       react-native-web:
         specifier: ^0.19.10
         version: 0.19.10(react-dom@18.2.0)(react@18.2.0)
@@ -16430,8 +16430,32 @@ packages:
       yargs: 17.7.2
     dev: false
 
-  /react-native-unistyles@2.6.0(@react-native/normalize-colors@0.74.1)(react-native-macos@0.73.24)(react-native-web@0.19.10)(react-native-windows@0.73.11)(react-native@0.73.6)(react@18.2.0):
+  /react-native-unistyles@2.6.0(@react-native/normalize-colors@0.74.1)(react-native-web@0.19.10)(react-native@0.73.6)(react@18.2.0):
     resolution: {integrity: sha512-fCJDCk4ZHhyE81jmbcN5FPFSHK8p1xUJSRKmoa7GP5XDB3IAlvXK6EVsUnIZ7oM9gEG5V8Hy7G0/sNU+T4PVeA==}
+    engines: {node: '>= 18.0.0'}
+    peerDependencies:
+      '@react-native/normalize-colors': '*'
+      react: '*'
+      react-native: '*'
+      react-native-macos: '*'
+      react-native-web: '*'
+      react-native-windows: '*'
+    peerDependenciesMeta:
+      react-native-macos:
+        optional: true
+      react-native-web:
+        optional: true
+      react-native-windows:
+        optional: true
+    dependencies:
+      '@react-native/normalize-colors': 0.74.1
+      react: 18.2.0
+      react-native: 0.73.6(@babel/core@7.23.9)(@babel/preset-env@7.23.6)(react@18.2.0)
+      react-native-web: 0.19.10(react-dom@18.2.0)(react@18.2.0)
+    dev: false
+
+  /react-native-unistyles@2.7.1(@react-native/normalize-colors@0.74.1)(react-native-macos@0.73.24)(react-native-web@0.19.10)(react-native-windows@0.73.11)(react-native@0.73.6)(react@18.2.0):
+    resolution: {integrity: sha512-sYaDBsoX+2dfgak4YPWXvy1Hr9QFpGumBavn5wYF5dT3/Yl8F1VFol8SrvxRFfcqjpa+ENuKR6ylvmQXtQAbGQ==}
     engines: {node: '>= 18.0.0'}
     peerDependencies:
       '@react-native/normalize-colors': '*'

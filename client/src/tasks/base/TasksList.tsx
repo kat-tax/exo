@@ -1,4 +1,4 @@
-import {useStyles, createStyleSheet} from 'styles';
+import {useStyles, createStyleSheet} from 'design/styles';
 import {Text, Pressable, ScrollView} from 'react-native';
 
 interface TasksListProps {
