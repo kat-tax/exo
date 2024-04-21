@@ -1,0 +1,35 @@
+{
+  "name": "native",
+  "private": true,
+  "scripts": {
+    "start": "react-native start",
+    "start-vision": "npx @callstack/react-native-visionos start",
+    "android": "react-native run-android",
+    "android-tv": "react-native-tvos --device tv_api_34",
+    "ios": "react-native run-ios",
+    "tvos": "react-native-tvos --scheme tv-tvOS --device \"Apple TV\"",
+    "macos": "react-native run-macos",
+    "visionos": "react-native run-visionos",
+    "windows": "react-native run-windows"
+  },
+  "dependencies": {
+    "@callstack/react-native-visionos": "0.73.10",
+    "react": "18.2.0",
+    "react-native": "0.73.2",
+    "react-native-windows": "0.73.4",
+    "react-native-tvos": "0.73.6-1",
+    "react-native-svg": "15.1.0",
+    "react-native-macos": "0.73.1"
+  },
+  "devDependencies": {
+    "@babel/core": "7.23.6",
+    "@babel/preset-env": "7.23.6",
+    "@babel/runtime": "7.20.0",
+    "@callstack/out-of-tree-platforms": "0.73.10",
+    "@react-native/babel-preset": "0.75.0-main",
+    "@react-native/metro-config": "0.73.2",
+    "@types/react": "18.2.71",
+    "babel-plugin-module-resolver": "5.0.0",
+    "typescript": "5.0.4"
+  }
+}

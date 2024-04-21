@@ -6,6 +6,7 @@
     "builder": "robot",
     "native": "target",
     "platforms": "target",
+    "vision": "content",
     "output": "dist",
     "rive": "animation",
     "vocs": "vue",
