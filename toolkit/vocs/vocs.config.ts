@@ -1,7 +1,4 @@
-import React from 'react';
 import {defineConfig} from 'vocs';
-import {ThemeSwitcher} from 'utils/blocks';
-import {UnistylesRuntime} from 'design/styles';
 import {themes} from 'design/theme';
 import viteDocs from 'builder/vite.docs';
 import sidebar from 'config/docs.sidebar';
@@ -69,14 +66,9 @@ export default defineConfig({
       },
     }
   },
-  head: ( 
-    <>
-      <ThemeSwitcher onChange={UnistylesRuntime.setTheme}/>
-    </> 
-  ),
   vite: viteDocs({
-    command: 'build',
-    mode: 'production',
+    command: 'serve',
+    mode: 'development',
   }),
   twoslash: {
     compilerOptions: {
