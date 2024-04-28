@@ -1,9 +1,24 @@
 const path = require('path')
+const project = (() => {
+  try {
+    const { configureProjects } = require('react-native-test-app');
+    return configureProjects({
+      android: {
+        sourceDir: 'android',
+      },
+      ios: {
+        sourceDir: 'ios',
+      },
+      windows: {
+        sourceDir: 'windows',
+        solutionFile: 'windows/EXO.sln',
+      },
+    });
+  } catch (_) {
+    return undefined;
+  }
+})();
 
 module.exports = {
-  dependencies: {
-    'react-native-unistyles': {
-      root: path.resolve(__dirname, '../..')
-    }
-  }
-}
+  ...(project ? { project } : undefined),
+};

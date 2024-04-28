@@ -1,15 +1,8 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "extends": "config/tsconfig.app.json",
-  "display": "Native",
+  "display": "Client",
   "compilerOptions": {
     "baseUrl": "./src"
-  },
-  "exclude": [
-    "**/Pods/**",
-    "node_modules",
-    "babel.config.js",
-    "metro.config.js",
-    "jest.config.js"
-  ]
+  }
 }

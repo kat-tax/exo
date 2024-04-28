@@ -1,38 +1,43 @@
 {
-  "name": "native",
+  "name": "platforms",
   "private": true,
   "scripts": {
-    "start": "react-native start",
-    "start-vision": "npx @callstack/react-native-visionos start",
-    "android": "react-native run-android",
-    "android-tv": "react-native-tvos --device tv_api_34",
-    "ios": "react-native run-ios",
-    "tvos": "react-native-tvos --scheme tv-tvOS --device \"Apple TV\"",
-    "macos": "react-native run-macos",
-    "visionos": "react-native run-visionos",
-    "windows": "react-native run-windows"
+    "ios": "react-native run-ios --no-packager",
+    "android": "react-native run-android --no-packager",
+    "macos": "react-native run-macos --no-packager --scheme EXO",
+    "windows": "react-native run-windows --no-packager",
+    "visionos": "react-native run-visionos --no-packager",
+
+    "build:ios": "react-native bundle --entry-file index.js --platform ios --dev true --bundle-output dist/main.ios.jsbundle --assets-dest dist",
+    "build:android": "react-native bundle --entry-file index.js --platform android --dev true --bundle-output dist/main.android.jsbundle --assets-dest dist/res",
+    "build:macos": "react-native bundle --entry-file index.js --platform macos --dev true --bundle-output dist/main.macos.jsbundle --assets-dest dist",
+    "build:windows": "react-native bundle --entry-file index.js --platform windows --dev true --bundle-output dist/main.windows.bundle --assets-dest dist",
+    "build:visionos": "react-native bundle --entry-file index.js --platform ios --dev true --bundle-output dist/main.visionos.jsbundle --assets-dest dist",
+
+    "metro": "react-native start",
+    "generate": "pod install --project-directory=ios && pod install --project-directory=macos && pod install --project-directory=visionos",
+    "postinstall": "pnpm generate"
   },
   "dependencies": {
-    "@callstack/react-native-visionos": "0.73.10",
-    "react": "18.2.0",
-    "react-native": "0.73.2",
-    "react-native-macos": "0.73.1",
-    "react-native-svg": "15.1.0",
-    "react-native-svg-transformer": "^1.3.0",
-    "react-native-tvos": "0.73.6-1",
-    "react-native-windows": "0.73.4"
+    "@callstack/react-native-visionos": "^0.73.0",
+    "react": "^18.3.0",
+    "react-native": "^0.73.0",
+    "react-native-macos": "^0.73.0",
+    "react-native-windows": "^0.73.0",
+    "react-native-svg": "^15.1.0"
   },
   "devDependencies": {
-    "@babel/core": "7.23.6",
-    "@babel/preset-env": "7.23.6",
-    "@babel/runtime": "7.20.0",
-    "@callstack/out-of-tree-platforms": "0.73.10",
-    "@react-native/babel-preset": "0.75.0-main",
-    "@react-native/metro-config": "0.73.2",
-    "@types/react": "18.2.71",
-    "babel-plugin-macros": "^3.1.0",
-    "babel-plugin-module-resolver": "5.0.0",
+    "@babel/core": "^7.20.0",
+    "@babel/preset-env": "^7.20.0",
+    "@babel/runtime": "^7.20.0",
+    "@react-native/babel-preset": "0.73.21",
+    "@react-native/metro-config": "0.73.5",
+    "@rnx-kit/metro-config": "^1.3.15",
+    "@types/react": "^18.3.0",
+    "@types/react-test-renderer": "^18.3.0",
     "config": "workspace:*",
-    "typescript": "5.0.4"
+    "react-native-test-app": "^3.5.13",
+    "react-test-renderer": "18.3.0",
+    "typescript": "^5.3.2"
   }
 }
