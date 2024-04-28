@@ -26,16 +26,6 @@
     "web-dev": "pnpm --filter ./client run dev",
     "web-build": "pnpm --filter ./client run build",
 
-    "native-dev": "pnpm --filter ./toolkit/native run start",
-    "native-vision-dev": "pnpm --filter ./toolkit/native run start-vision",
-    "android": "pnpm --filter ./toolkit/native run android",
-    "android-tv": "pnpm --filter ./toolkit/native run android-tv",
-    "ios": "pnpm --filter ./toolkit/native run ios",
-    "tvos": "pnpm --filter ./toolkit/native run tvos",
-    "macos": "pnpm --filter ./toolkit/native run macos",
-    "visionos": "pnpm --filter ./toolkit/native run visionos",
-    "windows": "pnpm --filter ./toolkit/native run windows",
-
     "docs-dev": "pnpm --filter ./toolkit/vocs dev",
     "docs-build": "pnpm --filter ./toolkit/vocs build",
 

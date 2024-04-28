@@ -1,4 +1,4 @@
-import 'client/src/styles';
+import 'design/styles';
 
 import React from 'react';
 import {themes} from '@storybook/theming';

@@ -6,7 +6,7 @@
     "build": "tsc"
   },
   "bin": {
-    "exo": "./node_modules/vite/bin/vite.js"
+    "web": "./node_modules/vite/bin/vite.js"
   },
   "exports": {
     "./vite.base": "./gen/vite.base.js",
@@ -19,13 +19,13 @@
     "@lingui/core": "^4.10.0",
     "@lingui/vite-plugin": "^4.10.0",
     "@rollup/plugin-dynamic-import-vars": "^2.1.2",
-    "@types/react": "^18.2.78",
-    "@types/react-dom": "^18.2.25",
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.2.1",
     "config": "workspace:*",
     "lightningcss": "^1.24.1",
     "million": "^3.0.6",
-    "react-native": "0.73.6",
+    "react-native": "^0.73.0",
     "typescript": "^5.3.2",
     "vite": "^5.2.8",
     "vite-plugin-dts": "^3.8.3",

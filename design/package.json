@@ -3,8 +3,8 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "exo dev --port 6406",
-    "build": "exo build"
+    "dev": "web dev --port 6406",
+    "build": "web build"
   },
   "exports": {
     ".": {

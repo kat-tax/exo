@@ -2,13 +2,15 @@
 **/i18n/messages/
 toolkit/vocs/pages/
 library/metadata.json
+example/
 output/
 dist/
 gen/
 WIP.md
 
-# RNUC
-rnuc.xcconfig
+# RNTA
+client/ReactTestApp-*
+toolkit/platforms
 
 # MacOS
 .DS_Store
@@ -30,41 +32,6 @@ yarn-error.log
 
 # Metro
 .metro-health-check*
-
-# Native
-*.orig.*
-*.jks
-*.p8
-*.p12
-*.key
-*.mobileprovision
-
-# Xcode
-*.pbxuser
-!default.pbxuser
-*.mode1v3
-!default.mode1v3
-*.mode2v3
-!default.mode2v3
-*.perspectivev3
-!default.perspectivev3
-xcuserdata
-*.xccheckout
-*.moved-aside
-DerivedData
-*.hmap
-*.ipa
-*.xcuserstate
-
-# Android/IntelliJ
-.idea
-.gradle
-local.properties
-*.iml
-*.hprof
-.cxx/
-*.keystore
-!debug.keystore
 
 # Fastlane
 #
