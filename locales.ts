@@ -1,3 +1,5 @@
+/** Supported languages **/
+
 export type Locales = keyof typeof locales;
 
 export const sourceLocale: Locales = 'en';

@@ -51,18 +51,41 @@ async function processComponents(files: string[], paths: string[]) {
     const {name, base} = getPartsFromDocPath(path);
     const component = await readFile(`${input}/${base}/${name}.tsx`, 'utf8');
     const [doc] = parseDocs(component);
+    const componentName = doc.displayName || '';
     let mdx = await readFile(`${input}/${base}/${name}.docs.mdx`, 'utf8');
-    mdx = mdx.replace(/:::name:::/g, doc.displayName || '');
-    mdx = mdx.replace(/:::desc:::/g, doc.description || '');
+    mdx = mdx.replace(/:::header:::/g, `\n# ${componentName}\n\n> ${doc.description}`);
     mdx = mdx.replace(/:::props:::/g, getPropsTable(doc.props));
-    mdx = mdx.replace(/:::import:::/g, `import {${doc.displayName}} from 'design';`);
-    mdx = mdx.replace(/:::twobase:::/g, `import React from 'react';\n// ---cut---`);
-    mdx = mdx.replace(/:::storybook:::/g, `${config.LINK_STORYBOOK}/?path=/docs/components-${base.replace('/', '-')}`);
-    const example = mdx.match(/:::example(.*?):::/s)?.[1];
-    if (example) mdx = mdx.replace(/:::example(.*?):::/gs, example.trim());
+    mdx = mdx.replace(/:::storybook:::/g, `<SB href="${config.LINK_STORYBOOK}/?path=/docs/components-${base.replace('/', '-')}">Storybook</SB>`);
+    const demo = mdx.match(/:::demo(.*?):::/s)?.[1];
+    const imports = mdx.match(/:::imports(.*?):::/s)?.[1];
+    if (demo) mdx = mdx.replace(/:::demo(.*?):::/gs, demo.trim());
+    if (imports) mdx = mdx.replace(/:::imports(.*?):::/gs, imports.trim());
+    mdx = mdx.replace(/:::usage:::/g, getCodeBlock(componentName, imports, demo));
+    const final = getDefaultImports(componentName) + '\n' + mdx;
     await ensureDir([output, ...base.split('/')].slice(0, -1).join('/'));
-    await writeFile(`${output}/${base}.mdx`, mdx, 'utf8');
+    await writeFile(`${output}/${base}.mdx`, final, 'utf8');
   });
+}
+
+function getDefaultImports(componentName: string) {
+  return [
+    `import {Button as SB} from 'vocs/components';`,
+    `import {${componentName}} from 'design';`,
+  ].join('\n');
+}
+
+function getCodeBlock(componentName: string, imports?: string, demo?: string) {
+  return [
+    '```tsx twoslash',
+    'import React from \'react\';',
+    '// ---cut---',
+    '// @log: ↓ Import the component',
+    `import {${componentName}} from \'design\';`,
+    imports ? imports?.trim() + '\n' : '',
+    '// @log: ↓ Try the example',
+    demo?.trim(),
+    '```',
+  ].join('\n');
 }
 
 function getPropsTable(props?: Record<string, PropDescriptor>) {
