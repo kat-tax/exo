@@ -15,8 +15,7 @@
     "build:visionos": "react-native bundle --entry-file index.js --platform ios --dev true --bundle-output dist/main.visionos.jsbundle --assets-dest dist",
 
     "metro": "react-native start",
-    "generate": "pod install --project-directory=ios && pod install --project-directory=macos && pod install --project-directory=visionos",
-    "postinstall": "pnpm generate"
+    "generate": "pod install --project-directory=ios && pod install --project-directory=macos && pod install --project-directory=visionos"
   },
   "dependencies": {
     "@callstack/react-native-visionos": "^0.73.0",

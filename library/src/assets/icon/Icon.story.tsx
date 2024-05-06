@@ -14,12 +14,12 @@ export const Icon: Story = {
     color: '#666',
     size: 90,
   },
-  parameters: {
+  /*parameters: {
     design: {
       type: 'figma',
       url: 'https://www.figma.com/file/DFmPlavFWyMaYJtoGLhGz3/EXO-%5B45%5D-(Copy)?node-id=2029%3A647',
     },
-  },
+  },*/
 };
 
 export default meta;

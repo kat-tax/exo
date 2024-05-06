@@ -17,5 +17,12 @@
     "provider.tsx": "dll",
     "store.tsx": "redux-action",
     "store.ts": "redux-reducer",
+  },
+  "typescript.tsserver.watchOptions": {
+    "watchDirectory": "useFsEvents",
+    "fallbackPolling": "dynamicPriorityPolling",
+    "watchFile": "useFsEventsOnParentDirectory",
+    "excludeDirectories": ["**/node_modules/**/*"],
+    "synchronousWatchDirectory": true,
   }
 }

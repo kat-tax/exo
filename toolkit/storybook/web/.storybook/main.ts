@@ -39,7 +39,7 @@ const config: StorybookConfig = {
     builder: {
       name: '@storybook/builder-vite',
       options: {
-        viteConfigPath: '../../web/gen/web/vite.sb.js',
+        viteConfigPath: '../../web/gen/vite.sb.js',
       },
     },
     disableTelemetry: true,
