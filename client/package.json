@@ -3,8 +3,12 @@
   "type": "module",
   "private": true,
   "scripts": {
+    "dev": "conc -c 'auto' 'pnpm:web'",
+    "build": "conc -c 'auto' -g 'pnpm:build-*'",
+
     "web": "web dev --port 6206",
-    "build:web": "web build"
+
+    "build-web": "web build"
   },
   "dependencies": {
     "@lingui/core": "^4.10.0",
@@ -23,6 +27,7 @@
   "devDependencies": {
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
+    "concurrently": "latest",
     "config": "workspace:*",
     "typescript": "^5.3.2",
     "web": "workspace:*"

@@ -7,7 +7,7 @@ export default defineConfig(env => mergeConfig(
   defineConfig({
     plugins,
     build: {
-      outDir: 'gen',
+      outDir: './gen',
       cssMinify: 'lightningcss',
       cssCodeSplit: true,
       sourcemap: true,

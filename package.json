@@ -2,7 +2,7 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "start": "conc -c 'auto' 'pnpm:*-dev'",
+    "dev": "conc -c 'auto' 'pnpm:*-dev'",
     "build": "conc -c 'gray,gray,auto' -g 'pnpm:*-build'",
     "generate": "pnpm toolkit-cfg-build && pnpm translate-build && pnpm toolkit-web-build && pnpm library-build && pnpm design-build",
 
@@ -23,8 +23,8 @@
     "design-build": "pnpm --filter ./design build",
     "design-publish": "pnpm --filter ./design publish",
 
-    "web-dev": "pnpm --filter ./client run dev",
-    "web-build": "pnpm --filter ./client run build",
+    "client-dev": "pnpm --filter ./client run dev",
+    "client-build": "pnpm --filter ./client run build",
 
     "docs-dev": "pnpm --filter ./toolkit/vocs dev",
     "docs-build": "pnpm --filter ./toolkit/vocs build",
