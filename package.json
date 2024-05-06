@@ -3,7 +3,7 @@
   "license": "MIT",
   "scripts": {
     "start": "conc -c 'auto' 'pnpm:*-dev'",
-    "build": "conc -c 'gray,gray,green,yellow,magenta,blue,gray' -g 'pnpm:*-build'",
+    "build": "conc -c 'gray,gray,auto' -g 'pnpm:*-build'",
     "generate": "pnpm toolkit-cfg-build && pnpm translate-build && pnpm toolkit-web-build && pnpm library-build && pnpm design-build",
 
     "toolkit-cfg-dev": "pnpm --filter ./toolkit/config dev",
