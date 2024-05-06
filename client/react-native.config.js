@@ -9,6 +9,12 @@ const project = (() => {
       ios: {
         sourceDir: 'ios',
       },
+      macos: {
+        sourceDir: 'macos',
+      },
+      visionos: {
+        sourceDir: 'visionos',
+      },
       windows: {
         sourceDir: 'windows',
         solutionFile: 'windows/EXO.sln',

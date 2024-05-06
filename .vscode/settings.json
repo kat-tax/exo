@@ -2,6 +2,7 @@
   "material-icon-theme.activeIconPack": "react_redux",
   "material-icon-theme.folders.associations": {
     "output": "dist",
+    "bundler": "container",
     "client": "mobile",
     "guides": "content",
     "native": "target",

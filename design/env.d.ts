@@ -1,4 +1,4 @@
-import type {AppThemes, AppBreakpoints} from 'styles';
+import type {AppThemes, AppBreakpoints} from './styles';
 import type {SvgProps} from 'react-native-svg';
 
 declare module 'design/styles' {

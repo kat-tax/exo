@@ -6,7 +6,7 @@ import {PageLoading} from 'core/base/PageLoading';
 
 export function Router() {
   return (
-    <Nav.Router history={history}>
+    <Nav.Router {...{history}}>
       <Nav.Routes>
         <Nav.Route path="/" element={<$><Layout.Main/></$>}>
           <Nav.Route index element={<$><Screen.Home/></$>}/>
