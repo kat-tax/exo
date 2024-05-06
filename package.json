@@ -4,7 +4,6 @@
   "scripts": {
     "dev": "conc -c 'auto' 'pnpm:*-dev'",
     "build": "conc -c 'gray,gray,auto' -g 'pnpm:*-build'",
-    "generate": "pnpm toolkit-cfg-build && pnpm translate-build && pnpm toolkit-web-build && pnpm library-build && pnpm design-build",
 
     "toolkit-cfg-dev": "pnpm --filter ./toolkit/config dev",
     "toolkit-cfg-build": "pnpm --filter ./toolkit/config build",
@@ -34,6 +33,7 @@
     "storybook-native": "pnpm --filter ./toolkit/storybook/native run dev",
     "storybook-web": "pnpm --filter ./toolkit/storybook/web run dev",
 
+    "generate": "pnpm toolkit-cfg-build && pnpm translate-build && pnpm toolkit-web-build && pnpm library-build && pnpm design-build",
     "postinstall": "pnpm generate"
   },
   "devDependencies": {

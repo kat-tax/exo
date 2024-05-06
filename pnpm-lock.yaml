@@ -63,6 +63,9 @@ importers:
       '@types/react-dom':
         specifier: ^18.2.0
         version: 18.3.0
+      concurrently:
+        specifier: latest
+        version: 8.2.2
       config:
         specifier: workspace:*
         version: link:../toolkit/config
@@ -14662,7 +14665,7 @@ packages:
       postcss-color-functional-notation: 4.2.4(postcss@8.4.38)
       postcss-css-variables: 0.18.0(postcss@8.4.38)
       postcss-nested: 5.0.6(postcss@8.4.38)
-      react-is: 18.3.0
+      react-is: 18.3.1
       tailwindcss: 3.4.1
       use-sync-external-store: 1.2.0(react@18.3.0)
     transitivePeerDependencies:
@@ -15857,7 +15860,6 @@ packages:
 
   /react-is@18.3.1:
     resolution: {integrity: sha512-/LLMVyas0ljjAtoYiPqYiL8VWXzUUdThrmU5+n20DZv+a+ClRoevUzw5JxU+Ieh5/c87ytoTBV9G1FiKfNJdmg==}
-    dev: true
 
   /react-lifecycles-compat@2.0.0:
     resolution: {integrity: sha512-txfpPCQYiazVdcbMRhatqWKcAxJweUu2wDXvts5/7Wyp6+Y9cHojqXHsLPEckzutfHlxZhG8Oiundbmp8Fd6eQ==}
