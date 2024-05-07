@@ -84,6 +84,9 @@ importers:
       '@react-native/metro-config':
         specifier: 0.73.5
         version: 0.73.5(@babel/core@7.23.9)(@babel/preset-env@7.23.6)
+      '@rnx-kit/babel-plugin-import-path-remapper':
+        specifier: ^1.1.4
+        version: 1.1.4
       '@rnx-kit/babel-preset-metro-react-native':
         specifier: ^1.1.8
         version: 1.1.8(@babel/core@7.23.9)(@babel/runtime@7.23.6)(@react-native/babel-preset@0.73.21)
@@ -6556,6 +6559,16 @@ packages:
     resolution: {integrity: sha512-TzY/tpsxIZB+unA3q6kNeMjC7bPFM7tbdV+Mpkh1tdM3MB1LnOKQpqKTuIYpbsLzjd76UafzIdhcHUJ8kYVang==}
     engines: {node: '>=12.13'}
     hasBin: true
+    dev: true
+
+  /@rnx-kit/babel-plugin-import-path-remapper@1.1.4:
+    resolution: {integrity: sha512-nJUlfyZKOSDM0TmfD3EARUeNnbU1UcOnEH3IsA0SoaRcilJZC3EiFpgSlgxRE+krneJNxYJ87FgkMyWR7vRMLw==}
+    dependencies:
+      '@babel/core': 7.23.9
+      '@babel/helper-plugin-utils': 7.24.0
+      '@rnx-kit/tools-node': 2.1.1
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /@rnx-kit/babel-preset-metro-react-native@1.1.8(@babel/core@7.23.9)(@babel/runtime@7.23.6)(@react-native/babel-preset@0.73.21):
