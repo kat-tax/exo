@@ -6,6 +6,9 @@ export default defineConfig(env => mergeConfig(
   baseConfig(env),
   defineConfig({
     plugins,
+    preview: {
+      open: false,
+    },
     build: {
       outDir: '../output/client/web',
       emptyOutDir: true,

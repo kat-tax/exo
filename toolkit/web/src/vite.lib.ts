@@ -65,7 +65,8 @@ export default defineConfig(env => mergeConfig(
           '@dotlottie/react-player'
         ],
         output: {
-          chunkFileNames: 'chunks/[format]/[hash]/[name].js',
+          chunkFileNames: '[format]/chunks/[hash]/[name].js',
+          entryFileNames: '[format]/[name].js',
         },
       },
     },

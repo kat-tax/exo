@@ -6,7 +6,7 @@ import {access, readFile, writeFile} from 'node:fs/promises';
 export default <Plugin> {
   name: 'fix-motion-import',
   async writeBundle() {
-    const target = resolve(process.cwd(), 'gen/motion.js');
+    const target = resolve(process.cwd(), 'gen/es/motion.js');
     try {
       await access(target);
     } catch (e) {
