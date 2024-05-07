@@ -19,7 +19,7 @@
     "start-vite": "web dev --port 6206",
     "start-metro": "react-native rnx-start",
     "generate": "pod install --project-directory=ios && pod install --project-directory=macos && pod install --project-directory=visionos",
-    "postinstall": "pnpm generate"
+    "_postinstall": "pnpm generate"
   },
   "dependencies": {
     "@callstack/react-native-visionos": "^0.73.0",
