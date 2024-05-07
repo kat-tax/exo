@@ -1,1 +1,1 @@
-export {default} from 'web/vite.client';
+export {default} from 'bundler/web.client.cfg';

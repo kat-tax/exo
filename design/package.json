@@ -8,16 +8,19 @@
   },
   "exports": {
     ".": {
-      "import": "./gen/index.js",
-      "require": "./gen/index.cjs"
+      "types": "./gen/web/index.d.ts",
+      "import": "./gen/web/index.js",
+      "require": "./gen/native/index.js"
     },
     "./theme": {
-      "import": "./gen/theme.js",
-      "require": "./gen/theme.cjs"
+      "types": "./gen/web/theme.d.ts",
+      "import": "./gen/web/theme.js",
+      "require": "./gen/native/theme.js"
     },
     "./styles": {
-      "import": "./gen/styles.js",
-      "require": "./gen/styles.cjs"
+      "types": "./gen/web/styles.d.ts",
+      "import": "./gen/web/styles.js",
+      "require": "./gen/native/styles.-js"
     },
     "./types": {
       "types": "./env.d.ts"
@@ -41,8 +44,8 @@
     "@storybook/react": "^8.0.8",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
+    "bundler": "workspace:*",
     "config": "workspace:*",
-    "typescript": "^5.3.2",
-    "web": "workspace:*"
+    "typescript": "^5.3.2"
   }
 }

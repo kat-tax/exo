@@ -1,18 +1,22 @@
 import {defineConfig, mergeConfig} from 'vite';
-import baseConfig from './vite.base.js';
-import plugins from './plugins/lib/index.js';
+import webConfig from '../vite.web.js';
+
+import react from '@vitejs/plugin-react';
+import types from 'vite-plugin-dts';
+import dynImportVar from '@rollup/plugin-dynamic-import-vars';
+import patchCalendar from '../mod/fix-calendar-import.js';
+import patchMotion from '../mod/fix-motion-import.js';
 
 export default defineConfig(env => mergeConfig(
-  baseConfig(env),
+  webConfig(env),
   defineConfig({
-    plugins,
     build: {
-      outDir: './gen',
+      outDir: './gen/web',
       cssMinify: 'lightningcss',
       cssCodeSplit: true,
       sourcemap: true,
       lib: {
-        formats: ['es', 'cjs'],
+        formats: ['es'],
         entry: {
           /* Entry */
           index: 'src/index.ts',
@@ -49,33 +53,31 @@ export default defineConfig(env => mergeConfig(
       },
       rollupOptions: {
         external: [
-          /* React */
-          'react',
-          'react-dom',
-          'react-native',
-          'react-native-web',
-          'react/jsx-runtime',
-          /* I18n */
-          '@linguijs/core',
-          '@linguijs/react',
-          '@linguijs/macro',
-          /* Web */
           '@vidstack/react',
           '@dotlottie/common',
           '@dotlottie/react-player'
         ],
         output: {
-          chunkFileNames: '[format]/chunks/[hash]/[name].js',
-          entryFileNames: '[format]/[name].js',
+          chunkFileNames: 'chunks/[hash]/[name].js'
         },
       },
     },
     optimizeDeps: {
       exclude: [
+        '@dotlottie/common',
         '@dotlottie/react-player',
-        '@dotlottie/common'
       ],
     },
+    plugins: [
+      dynImportVar as any,
+      patchCalendar,
+      patchMotion,
+      types({
+        exclude: ['gen', 'vite.config.mts'],
+        insertTypesEntry: true,
+      }),
+      react(),
+    ],
   }),
 ));
 

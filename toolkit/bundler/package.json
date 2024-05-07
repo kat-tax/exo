@@ -1,5 +1,5 @@
 {
-  "name": "web",
+  "name": "bundler",
   "type": "module",
   "private": true,
   "scripts": {
@@ -9,11 +9,10 @@
     "web": "./node_modules/vite/bin/vite.js"
   },
   "exports": {
-    "./vite.base": "./gen/vite.base.js",
-    "./vite.design": "./gen/vite.design.js",
-    "./vite.client": "./gen/vite.client.js",
-    "./vite.docs": "./gen/vite.docs.js",
-    "./vite.lib": "./gen/vite.lib.js"
+    "./web.client.cfg": "./gen/web/client.js",
+    "./web.docs.cfg": "./gen/web/docs.js",
+    "./lib.exo.web.cfg": "./gen/lib/exo.web.js",
+    "./lib.design.web.cfg": "./gen/lib/design.web.js"
   },
   "devDependencies": {
     "@lingui/core": "^4.10.0",

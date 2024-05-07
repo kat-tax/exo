@@ -5,7 +5,7 @@
     "bundler": "container",
     "client": "mobile",
     "guides": "content",
-    "native": "target",
+    "targets": "target",
     "android-tv": "android",
     "visionos": "macos",
     "tvos": "macos",

@@ -120,6 +120,9 @@ importers:
       babel-plugin-tsconfig-paths-module-resolver:
         specifier: ^1.0.4
         version: 1.0.4
+      bundler:
+        specifier: workspace:*
+        version: link:../toolkit/bundler
       concurrently:
         specifier: latest
         version: 8.2.2
@@ -135,9 +138,6 @@ importers:
       typescript:
         specifier: ^5.3.2
         version: 5.4.3
-      web:
-        specifier: workspace:*
-        version: link:../toolkit/web
 
   design:
     dependencies:
@@ -187,15 +187,15 @@ importers:
       '@types/react-dom':
         specifier: ^18.2.0
         version: 18.3.0
+      bundler:
+        specifier: workspace:*
+        version: link:../toolkit/bundler
       config:
         specifier: workspace:*
         version: link:../toolkit/config
       typescript:
         specifier: ^5.3.2
         version: 5.4.3
-      web:
-        specifier: workspace:*
-        version: link:../toolkit/web
 
   library:
     dependencies:
@@ -317,6 +317,9 @@ importers:
       '@types/react-native-video':
         specifier: ^5.0.20
         version: 5.0.20(@babel/core@7.23.9)(@babel/preset-env@7.23.6)(react@18.3.0)
+      bundler:
+        specifier: workspace:*
+        version: link:../toolkit/bundler
       config:
         specifier: workspace:*
         version: link:../toolkit/config
@@ -392,9 +395,60 @@ importers:
       typedoc:
         specifier: ^0.25.13
         version: 0.25.13(typescript@5.4.3)
-      web:
+
+  toolkit/bundler:
+    devDependencies:
+      '@lingui/core':
+        specifier: ^4.10.0
+        version: 4.10.0
+      '@lingui/vite-plugin':
+        specifier: ^4.10.0
+        version: 4.10.0(typescript@5.4.3)(vite@5.2.11)
+      '@rollup/plugin-dynamic-import-vars':
+        specifier: ^2.1.2
+        version: 2.1.2(rollup@4.13.0)
+      '@types/react':
+        specifier: ^18.2.0
+        version: 18.3.0
+      '@types/react-dom':
+        specifier: ^18.2.0
+        version: 18.3.0
+      '@vitejs/plugin-react':
+        specifier: ^4.2.1
+        version: 4.2.1(vite@5.2.11)
+      config:
         specifier: workspace:*
-        version: link:../toolkit/web
+        version: link:../config
+      lightningcss:
+        specifier: ^1.24.1
+        version: 1.24.1
+      million:
+        specifier: ^3.0.6
+        version: 3.0.6(rollup@4.13.0)
+      react-native:
+        specifier: ^0.73.0
+        version: 0.73.6(@babel/core@7.23.9)(@babel/preset-env@7.23.6)(react@18.2.0)
+      typescript:
+        specifier: ^5.3.2
+        version: 5.4.3
+      vite:
+        specifier: ^5.2.8
+        version: 5.2.11(lightningcss@1.24.1)
+      vite-plugin-dts:
+        specifier: ^3.8.3
+        version: 3.8.3(rollup@4.13.0)(typescript@5.4.3)(vite@5.2.11)
+      vite-plugin-node-polyfills:
+        specifier: ^0.21.0
+        version: 0.21.0(rollup@4.13.0)(vite@5.2.11)
+      vite-tsconfig-paths:
+        specifier: ^4.3.2
+        version: 4.3.2(typescript@5.4.3)(vite@5.2.11)
+      vocs:
+        specifier: latest
+        version: 1.0.0-alpha.47(@types/react-dom@18.3.0)(@types/react@18.3.0)(lightningcss@1.24.1)(react-dom@18.3.0)(react@18.2.0)(rollup@4.13.0)(typescript@5.4.3)
+      yaml:
+        specifier: latest
+        version: 2.4.2
 
   toolkit/config:
     dependencies:
@@ -588,6 +642,9 @@ importers:
       '@types/react-dom':
         specifier: ^18.2.0
         version: 18.3.0
+      bundler:
+        specifier: workspace:*
+        version: link:../bundler
       config:
         specifier: workspace:*
         version: link:../config
@@ -603,63 +660,6 @@ importers:
       vocs:
         specifier: latest
         version: 1.0.0-alpha.43(@types/react-dom@18.3.0)(@types/react@18.3.0)(react-dom@18.3.0)(react@18.3.0)(rollup@4.13.0)(typescript@5.4.3)
-      web:
-        specifier: workspace:*
-        version: link:../web
-      yaml:
-        specifier: latest
-        version: 2.4.1
-
-  toolkit/web:
-    devDependencies:
-      '@lingui/core':
-        specifier: ^4.10.0
-        version: 4.10.0
-      '@lingui/vite-plugin':
-        specifier: ^4.10.0
-        version: 4.10.0(typescript@5.4.3)(vite@5.2.8)
-      '@rollup/plugin-dynamic-import-vars':
-        specifier: ^2.1.2
-        version: 2.1.2(rollup@4.13.0)
-      '@types/react':
-        specifier: ^18.2.0
-        version: 18.3.0
-      '@types/react-dom':
-        specifier: ^18.2.0
-        version: 18.3.0
-      '@vitejs/plugin-react':
-        specifier: ^4.2.1
-        version: 4.2.1(vite@5.2.8)
-      config:
-        specifier: workspace:*
-        version: link:../config
-      lightningcss:
-        specifier: ^1.24.1
-        version: 1.24.1
-      million:
-        specifier: ^3.0.6
-        version: 3.0.6(rollup@4.13.0)
-      react-native:
-        specifier: ^0.73.0
-        version: 0.73.6(@babel/core@7.23.9)(@babel/preset-env@7.23.6)(react@18.2.0)
-      typescript:
-        specifier: ^5.3.2
-        version: 5.4.3
-      vite:
-        specifier: ^5.2.8
-        version: 5.2.8(lightningcss@1.24.1)
-      vite-plugin-dts:
-        specifier: ^3.8.3
-        version: 3.8.3(rollup@4.13.0)(typescript@5.4.3)(vite@5.2.8)
-      vite-plugin-node-polyfills:
-        specifier: ^0.21.0
-        version: 0.21.0(rollup@4.13.0)(vite@5.2.8)
-      vite-tsconfig-paths:
-        specifier: ^4.3.2
-        version: 4.3.2(typescript@5.4.3)(vite@5.2.8)
-      vocs:
-        specifier: latest
-        version: 1.0.0-alpha.43(@types/react-dom@18.3.0)(@types/react@18.3.0)(lightningcss@1.24.1)(react-dom@18.3.0)(react@18.2.0)(rollup@4.13.0)(typescript@5.4.3)
       yaml:
         specifier: latest
         version: 2.4.1
@@ -3695,7 +3695,7 @@ packages:
       magic-string: 0.27.0
       react-docgen-typescript: 2.2.2(typescript@5.4.3)
       typescript: 5.4.3
-      vite: 5.2.11
+      vite: 5.2.11(lightningcss@1.24.1)
     dev: true
 
   /@jridgewell/gen-mapping@0.3.3:
@@ -3979,7 +3979,7 @@ packages:
       react: 18.3.0
     dev: false
 
-  /@lingui/vite-plugin@4.10.0(typescript@5.4.3)(vite@5.2.8):
+  /@lingui/vite-plugin@4.10.0(typescript@5.4.3)(vite@5.2.11):
     resolution: {integrity: sha512-EQirftJjk2GHFIyUH64BMlvzxlcmvToYF+6GHpJfsT+4oq54iv/HLymuXWgoPYR/NhyDWWeZafNMLonnP5kdrg==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
@@ -3987,7 +3987,7 @@ packages:
     dependencies:
       '@lingui/cli': 4.10.0(typescript@5.4.3)
       '@lingui/conf': 4.10.0(typescript@5.4.3)
-      vite: 5.2.8(lightningcss@1.24.1)
+      vite: 5.2.11(lightningcss@1.24.1)
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -5800,7 +5800,7 @@ packages:
       semver: 7.5.4
       strip-ansi: 5.2.0
       wcwidth: 1.0.1
-      yaml: 2.4.1
+      yaml: 2.4.2
     transitivePeerDependencies:
       - encoding
 
@@ -7564,7 +7564,7 @@ packages:
       magic-string: 0.30.5
       ts-dedent: 2.2.0
       typescript: 5.4.3
-      vite: 5.2.11
+      vite: 5.2.11(lightningcss@1.24.1)
     transitivePeerDependencies:
       - encoding
       - supports-color
@@ -8164,7 +8164,7 @@ packages:
       react-dom: 18.3.0(react@18.3.0)
       resolve: 1.22.8
       tsconfig-paths: 4.2.0
-      vite: 5.2.11
+      vite: 5.2.11(lightningcss@1.24.1)
     transitivePeerDependencies:
       - '@preact/preset-vite'
       - encoding
@@ -8796,7 +8796,7 @@ packages:
       lodash: 4.17.21
       mlly: 1.5.0
       outdent: 0.8.0
-      vite: 5.2.8(lightningcss@1.24.1)
+      vite: 5.2.11(lightningcss@1.24.1)
       vite-node: 1.2.2(lightningcss@1.24.1)
     transitivePeerDependencies:
       - '@types/node'
@@ -8813,7 +8813,7 @@ packages:
     resolution: {integrity: sha512-17kVyLq3ePTKOkveHxXuIJZtGYs+cSoev7BlP+Lf4916qfDhk/HBjvlYDe8egrea7LNPHKwSZJK/bzZC+Q6AwQ==}
     dev: true
 
-  /@vanilla-extract/vite-plugin@3.9.5(lightningcss@1.24.1)(vite@5.2.8):
+  /@vanilla-extract/vite-plugin@3.9.5(lightningcss@1.24.1)(vite@5.2.11):
     resolution: {integrity: sha512-CWI/CtrVW6i3HKccI6T7uGQkTJ8bd8Xl2UMBg3Pkr7dwWMmavXTeucV0I9KSbmXaYXSbEj+Q8c9y0xAZwtmTig==}
     peerDependencies:
       vite: ^2.2.3 || ^3.0.0 || ^4.0.3 || ^5.0.0
@@ -8822,7 +8822,7 @@ packages:
       outdent: 0.8.0
       postcss: 8.4.38
       postcss-load-config: 4.0.2(postcss@8.4.38)
-      vite: 5.2.8(lightningcss@1.24.1)
+      vite: 5.2.11(lightningcss@1.24.1)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -8850,7 +8850,7 @@ packages:
       vidstack: 0.6.14
     dev: false
 
-  /@vitejs/plugin-react@4.2.0(vite@5.2.8):
+  /@vitejs/plugin-react@4.2.0(vite@5.2.11):
     resolution: {integrity: sha512-+MHTH/e6H12kRp5HUkzOGqPMksezRMmW+TNzlh/QXfI8rRf6l2Z2yH/v12no1UvTwhZgEDMuQ7g7rrfMseU6FQ==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
@@ -8861,12 +8861,12 @@ packages:
       '@babel/plugin-transform-react-jsx-source': 7.23.3(@babel/core@7.23.9)
       '@types/babel__core': 7.20.5
       react-refresh: 0.14.0
-      vite: 5.2.8(lightningcss@1.24.1)
+      vite: 5.2.11(lightningcss@1.24.1)
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /@vitejs/plugin-react@4.2.1(vite@5.2.8):
+  /@vitejs/plugin-react@4.2.1(vite@5.2.11):
     resolution: {integrity: sha512-oojO9IDc4nCUUi8qIR11KoQm0XFFLIwsRBwHRR4d/88IWghn1y6ckz/bJ8GHDCsYEJee8mDzqtJxh15/cisJNQ==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
@@ -8877,7 +8877,7 @@ packages:
       '@babel/plugin-transform-react-jsx-source': 7.23.3(@babel/core@7.23.9)
       '@types/babel__core': 7.20.5
       react-refresh: 0.14.0
-      vite: 5.2.8(lightningcss@1.24.1)
+      vite: 5.2.11(lightningcss@1.24.1)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -13370,7 +13370,6 @@ packages:
     cpu: [arm64]
     os: [darwin]
     requiresBuild: true
-    dev: true
     optional: true
 
   /lightningcss-darwin-x64@1.19.0:
@@ -13388,7 +13387,6 @@ packages:
     cpu: [x64]
     os: [darwin]
     requiresBuild: true
-    dev: true
     optional: true
 
   /lightningcss-freebsd-x64@1.24.1:
@@ -13397,7 +13395,6 @@ packages:
     cpu: [x64]
     os: [freebsd]
     requiresBuild: true
-    dev: true
     optional: true
 
   /lightningcss-linux-arm-gnueabihf@1.19.0:
@@ -13415,7 +13412,6 @@ packages:
     cpu: [arm]
     os: [linux]
     requiresBuild: true
-    dev: true
     optional: true
 
   /lightningcss-linux-arm64-gnu@1.19.0:
@@ -13433,7 +13429,6 @@ packages:
     cpu: [arm64]
     os: [linux]
     requiresBuild: true
-    dev: true
     optional: true
 
   /lightningcss-linux-arm64-musl@1.19.0:
@@ -13451,7 +13446,6 @@ packages:
     cpu: [arm64]
     os: [linux]
     requiresBuild: true
-    dev: true
     optional: true
 
   /lightningcss-linux-x64-gnu@1.19.0:
@@ -13469,7 +13463,6 @@ packages:
     cpu: [x64]
     os: [linux]
     requiresBuild: true
-    dev: true
     optional: true
 
   /lightningcss-linux-x64-musl@1.19.0:
@@ -13487,7 +13480,6 @@ packages:
     cpu: [x64]
     os: [linux]
     requiresBuild: true
-    dev: true
     optional: true
 
   /lightningcss-win32-x64-msvc@1.19.0:
@@ -13505,7 +13497,6 @@ packages:
     cpu: [x64]
     os: [win32]
     requiresBuild: true
-    dev: true
     optional: true
 
   /lightningcss@1.19.0:
@@ -13539,7 +13530,6 @@ packages:
       lightningcss-linux-x64-gnu: 1.24.1
       lightningcss-linux-x64-musl: 1.24.1
       lightningcss-win32-x64-msvc: 1.24.1
-    dev: true
 
   /lilconfig@2.1.0:
     resolution: {integrity: sha512-utWOt/GHzuUxnLKxB6dk81RoOeoNeHgbrXiuGk4yyF5qlRz+iIVWu56E2fqGHFrXz0QNUhLB/8nKqvRH66JKGQ==}
@@ -15662,7 +15652,7 @@ packages:
     dependencies:
       lilconfig: 3.0.0
       postcss: 8.4.38
-      yaml: 2.4.1
+      yaml: 2.4.2
 
   /postcss-nested@5.0.6(postcss@8.4.38):
     resolution: {integrity: sha512-rKqm2Fk0KbA8Vt3AdGN0FB9OBOMDVajMG6ZCf/GoHgdxUJ4sBFp0A/uMIRm+MJUdo33YXEtjqIz8u7DAp8B7DA==}
@@ -17252,7 +17242,7 @@ packages:
       estree-util-value-to-estree: 3.0.1
       toml: 3.0.0
       unified: 11.0.4
-      yaml: 2.4.1
+      yaml: 2.4.2
     dev: true
 
   /remark-mdx@3.0.0:
@@ -19096,7 +19086,7 @@ packages:
       debug: 4.3.4
       pathe: 1.1.2
       picocolors: 1.0.0
-      vite: 5.2.8(lightningcss@1.24.1)
+      vite: 5.2.11(lightningcss@1.24.1)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -19108,7 +19098,7 @@ packages:
       - terser
     dev: true
 
-  /vite-plugin-dts@3.8.3(rollup@4.13.0)(typescript@5.4.3)(vite@5.2.8):
+  /vite-plugin-dts@3.8.3(rollup@4.13.0)(typescript@5.4.3)(vite@5.2.11):
     resolution: {integrity: sha512-yRHiRosQw7MXdOhmcrVI+kRiB8YEShbSxnADNteK4eZGdEoyOkMHihvO5XOAVlOq8ng9sIqu8vVefDK1zcj3qw==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
@@ -19125,7 +19115,7 @@ packages:
       kolorist: 1.8.0
       magic-string: 0.30.8
       typescript: 5.4.3
-      vite: 5.2.8(lightningcss@1.24.1)
+      vite: 5.2.11(lightningcss@1.24.1)
       vue-tsc: 1.8.27(typescript@5.4.3)
     transitivePeerDependencies:
       - '@types/node'
@@ -19140,24 +19130,11 @@ packages:
     dependencies:
       '@rollup/plugin-inject': 5.0.5(rollup@4.13.0)
       node-stdlib-browser: 1.2.0
-      vite: 5.2.11
+      vite: 5.2.11(lightningcss@1.24.1)
     transitivePeerDependencies:
       - rollup
-    dev: false
 
-  /vite-plugin-node-polyfills@0.21.0(rollup@4.13.0)(vite@5.2.8):
-    resolution: {integrity: sha512-Sk4DiKnmxN8E0vhgEhzLudfJQfaT8k4/gJ25xvUPG54KjLJ6HAmDKbr4rzDD/QWEY+Lwg80KE85fGYBQihEPQA==}
-    peerDependencies:
-      vite: ^2.0.0 || ^3.0.0 || ^4.0.0 || ^5.0.0
-    dependencies:
-      '@rollup/plugin-inject': 5.0.5(rollup@4.13.0)
-      node-stdlib-browser: 1.2.0
-      vite: 5.2.8(lightningcss@1.24.1)
-    transitivePeerDependencies:
-      - rollup
-    dev: true
-
-  /vite-tsconfig-paths@4.3.2(typescript@5.4.3)(vite@5.2.8):
+  /vite-tsconfig-paths@4.3.2(typescript@5.4.3)(vite@5.2.11):
     resolution: {integrity: sha512-0Vd/a6po6Q+86rPlntHye7F31zA2URZMbH8M3saAZ/xR9QoGN/L21bxEGfXdWmFdNkqPpRdxFT7nmNe12e9/uA==}
     peerDependencies:
       vite: '*'
@@ -19168,48 +19145,14 @@ packages:
       debug: 4.3.4
       globrex: 0.1.2
       tsconfck: 3.0.3(typescript@5.4.3)
-      vite: 5.2.8(lightningcss@1.24.1)
+      vite: 5.2.11(lightningcss@1.24.1)
     transitivePeerDependencies:
       - supports-color
       - typescript
     dev: true
 
-  /vite@5.2.11:
+  /vite@5.2.11(lightningcss@1.24.1):
     resolution: {integrity: sha512-HndV31LWW05i1BLPMUCE1B9E9GFbOu1MbenhS58FuK6owSO5qHm7GiCotrNY1YE5rMeQSFBGmT5ZaLEjFizgiQ==}
-    engines: {node: ^18.0.0 || >=20.0.0}
-    hasBin: true
-    peerDependencies:
-      '@types/node': ^18.0.0 || >=20.0.0
-      less: '*'
-      lightningcss: ^1.21.0
-      sass: '*'
-      stylus: '*'
-      sugarss: '*'
-      terser: ^5.4.0
-    peerDependenciesMeta:
-      '@types/node':
-        optional: true
-      less:
-        optional: true
-      lightningcss:
-        optional: true
-      sass:
-        optional: true
-      stylus:
-        optional: true
-      sugarss:
-        optional: true
-      terser:
-        optional: true
-    dependencies:
-      esbuild: 0.20.2
-      postcss: 8.4.38
-      rollup: 4.13.0
-    optionalDependencies:
-      fsevents: 2.3.3
-
-  /vite@5.2.8(lightningcss@1.24.1):
-    resolution: {integrity: sha512-OyZR+c1CE8yeHw5V5t59aXsUPPVTHMDjEZz8MgguLL/Q7NblxhZUlTu9xSPqlsUO/y+X7dlU05jdhvyycD55DA==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
     peerDependencies:
@@ -19242,98 +19185,12 @@ packages:
       rollup: 4.13.0
     optionalDependencies:
       fsevents: 2.3.3
-    dev: true
 
   /vlq@1.0.1:
     resolution: {integrity: sha512-gQpnTgkubC6hQgdIcRdYGDSDc+SaujOdyesZQMv6JlfQee/9Mp0Qhnys6WxDWvQnL5WZdT7o2Ul187aSt0Rq+w==}
 
   /vm-browserify@1.1.2:
     resolution: {integrity: sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ==}
-
-  /vocs@1.0.0-alpha.43(@types/react-dom@18.3.0)(@types/react@18.3.0)(lightningcss@1.24.1)(react-dom@18.3.0)(react@18.2.0)(rollup@4.13.0)(typescript@5.4.3):
-    resolution: {integrity: sha512-HNceLIyKXbkZqWZPEboZzDWmLRQ6X71SMfPcFmXHYqk6kwoH/IJLTjbTCPpvvGodGtRwTbnVs+aw/3VPe2HMDw==}
-    hasBin: true
-    peerDependencies:
-      react: ^18.2.0
-      react-dom: ^18.2.0
-    dependencies:
-      '@floating-ui/react': 0.26.8(react-dom@18.3.0)(react@18.2.0)
-      '@hono/node-server': 1.7.0
-      '@mdx-js/react': 3.0.0(@types/react@18.3.0)(react@18.2.0)
-      '@mdx-js/rollup': 3.0.0(rollup@4.13.0)
-      '@noble/hashes': 1.3.3
-      '@radix-ui/colors': 3.0.0
-      '@radix-ui/react-accordion': 1.1.2(@types/react-dom@18.3.0)(@types/react@18.3.0)(react-dom@18.3.0)(react@18.2.0)
-      '@radix-ui/react-dialog': 1.0.5(@types/react-dom@18.3.0)(@types/react@18.3.0)(react-dom@18.3.0)(react@18.2.0)
-      '@radix-ui/react-icons': 1.3.0(react@18.2.0)
-      '@radix-ui/react-label': 2.0.2(@types/react-dom@18.3.0)(@types/react@18.3.0)(react-dom@18.3.0)(react@18.2.0)
-      '@radix-ui/react-navigation-menu': 1.1.4(@types/react-dom@18.3.0)(@types/react@18.3.0)(react-dom@18.3.0)(react@18.2.0)
-      '@radix-ui/react-popover': 1.0.7(@types/react-dom@18.3.0)(@types/react@18.3.0)(react-dom@18.3.0)(react@18.2.0)
-      '@radix-ui/react-tabs': 1.0.4(@types/react-dom@18.3.0)(@types/react@18.3.0)(react-dom@18.3.0)(react@18.2.0)
-      '@shikijs/rehype': 1.2.0
-      '@shikijs/transformers': 1.2.0
-      '@shikijs/twoslash': 1.2.0(typescript@5.4.3)
-      '@vanilla-extract/css': 1.14.1
-      '@vanilla-extract/dynamic': 2.1.0
-      '@vanilla-extract/vite-plugin': 3.9.5(lightningcss@1.24.1)(vite@5.2.8)
-      '@vitejs/plugin-react': 4.2.0(vite@5.2.8)
-      autoprefixer: 10.4.17(postcss@8.4.38)
-      cac: 6.7.14
-      chroma-js: 2.4.2
-      clsx: 2.1.0
-      compression: 1.7.4
-      create-vocs: 1.0.0-alpha.5
-      cross-spawn: 7.0.3
-      fs-extra: 11.2.0
-      globby: 13.2.2
-      hastscript: 8.0.0
-      hono: 3.12.9
-      mark.js: 8.11.1
-      mdast-util-directive: 3.0.0
-      mdast-util-from-markdown: 2.0.0
-      mdast-util-gfm: 3.0.0
-      mdast-util-to-hast: 13.1.0
-      minimatch: 9.0.3
-      minisearch: 6.3.0
-      ora: 7.0.1
-      postcss: 8.4.38
-      react: 18.2.0
-      react-dom: 18.3.0(react@18.2.0)
-      react-helmet: 6.1.0(react@18.2.0)
-      react-intersection-observer: 9.5.3(react@18.2.0)
-      react-router-dom: 6.21.3(react-dom@18.3.0)(react@18.2.0)
-      rehype-autolink-headings: 7.1.0
-      rehype-class-names: 1.0.14
-      rehype-slug: 6.0.0
-      remark-directive: 3.0.0
-      remark-frontmatter: 5.0.0
-      remark-gfm: 4.0.0
-      remark-mdx-frontmatter: 4.0.0
-      remark-parse: 11.0.0
-      serve-static: 1.15.0
-      shiki: 1.2.0
-      tailwindcss: 3.4.1
-      toml: 3.0.0
-      twoslash: 0.2.4(typescript@5.4.3)
-      ua-parser-js: 1.0.37
-      unified: 11.0.4
-      unist-util-visit: 5.0.0
-      vite: 5.2.8(lightningcss@1.24.1)
-    transitivePeerDependencies:
-      - '@types/node'
-      - '@types/react'
-      - '@types/react-dom'
-      - less
-      - lightningcss
-      - rollup
-      - sass
-      - stylus
-      - sugarss
-      - supports-color
-      - terser
-      - ts-node
-      - typescript
-    dev: true
 
   /vocs@1.0.0-alpha.43(@types/react-dom@18.3.0)(@types/react@18.3.0)(react-dom@18.3.0)(react@18.3.0)(rollup@4.13.0)(typescript@5.4.3):
     resolution: {integrity: sha512-HNceLIyKXbkZqWZPEboZzDWmLRQ6X71SMfPcFmXHYqk6kwoH/IJLTjbTCPpvvGodGtRwTbnVs+aw/3VPe2HMDw==}
@@ -19360,8 +19217,8 @@ packages:
       '@shikijs/twoslash': 1.2.0(typescript@5.4.3)
       '@vanilla-extract/css': 1.14.1
       '@vanilla-extract/dynamic': 2.1.0
-      '@vanilla-extract/vite-plugin': 3.9.5(lightningcss@1.24.1)(vite@5.2.8)
-      '@vitejs/plugin-react': 4.2.0(vite@5.2.8)
+      '@vanilla-extract/vite-plugin': 3.9.5(lightningcss@1.24.1)(vite@5.2.11)
+      '@vitejs/plugin-react': 4.2.0(vite@5.2.11)
       autoprefixer: 10.4.17(postcss@8.4.38)
       cac: 6.7.14
       chroma-js: 2.4.2
@@ -19403,7 +19260,92 @@ packages:
       ua-parser-js: 1.0.37
       unified: 11.0.4
       unist-util-visit: 5.0.0
-      vite: 5.2.8(lightningcss@1.24.1)
+      vite: 5.2.11(lightningcss@1.24.1)
+    transitivePeerDependencies:
+      - '@types/node'
+      - '@types/react'
+      - '@types/react-dom'
+      - less
+      - lightningcss
+      - rollup
+      - sass
+      - stylus
+      - sugarss
+      - supports-color
+      - terser
+      - ts-node
+      - typescript
+    dev: true
+
+  /vocs@1.0.0-alpha.47(@types/react-dom@18.3.0)(@types/react@18.3.0)(lightningcss@1.24.1)(react-dom@18.3.0)(react@18.2.0)(rollup@4.13.0)(typescript@5.4.3):
+    resolution: {integrity: sha512-WjwCvReMuJIHMyEk9TpO7seCTUpaXp6tWevfI7uZmdMovMPTw04kyvdre3cpp3//21YTQzXOs+41yw0WtZN+OQ==}
+    hasBin: true
+    peerDependencies:
+      react: ^18.2.0
+      react-dom: ^18.2.0
+    dependencies:
+      '@floating-ui/react': 0.26.8(react-dom@18.3.0)(react@18.2.0)
+      '@hono/node-server': 1.7.0
+      '@mdx-js/react': 3.0.0(@types/react@18.3.0)(react@18.2.0)
+      '@mdx-js/rollup': 3.0.0(rollup@4.13.0)
+      '@noble/hashes': 1.3.3
+      '@radix-ui/colors': 3.0.0
+      '@radix-ui/react-accordion': 1.1.2(@types/react-dom@18.3.0)(@types/react@18.3.0)(react-dom@18.3.0)(react@18.2.0)
+      '@radix-ui/react-dialog': 1.0.5(@types/react-dom@18.3.0)(@types/react@18.3.0)(react-dom@18.3.0)(react@18.2.0)
+      '@radix-ui/react-icons': 1.3.0(react@18.2.0)
+      '@radix-ui/react-label': 2.0.2(@types/react-dom@18.3.0)(@types/react@18.3.0)(react-dom@18.3.0)(react@18.2.0)
+      '@radix-ui/react-navigation-menu': 1.1.4(@types/react-dom@18.3.0)(@types/react@18.3.0)(react-dom@18.3.0)(react@18.2.0)
+      '@radix-ui/react-popover': 1.0.7(@types/react-dom@18.3.0)(@types/react@18.3.0)(react-dom@18.3.0)(react@18.2.0)
+      '@radix-ui/react-tabs': 1.0.4(@types/react-dom@18.3.0)(@types/react@18.3.0)(react-dom@18.3.0)(react@18.2.0)
+      '@shikijs/rehype': 1.2.0
+      '@shikijs/transformers': 1.2.0
+      '@shikijs/twoslash': 1.2.0(typescript@5.4.3)
+      '@vanilla-extract/css': 1.14.1
+      '@vanilla-extract/dynamic': 2.1.0
+      '@vanilla-extract/vite-plugin': 3.9.5(lightningcss@1.24.1)(vite@5.2.11)
+      '@vitejs/plugin-react': 4.2.0(vite@5.2.11)
+      autoprefixer: 10.4.17(postcss@8.4.38)
+      cac: 6.7.14
+      chroma-js: 2.4.2
+      clsx: 2.1.0
+      compression: 1.7.4
+      create-vocs: 1.0.0-alpha.5
+      cross-spawn: 7.0.3
+      fs-extra: 11.2.0
+      globby: 13.2.2
+      hastscript: 8.0.0
+      hono: 3.12.9
+      mark.js: 8.11.1
+      mdast-util-directive: 3.0.0
+      mdast-util-from-markdown: 2.0.0
+      mdast-util-gfm: 3.0.0
+      mdast-util-to-hast: 13.1.0
+      minimatch: 9.0.3
+      minisearch: 6.3.0
+      ora: 7.0.1
+      postcss: 8.4.38
+      react: 18.2.0
+      react-dom: 18.3.0(react@18.2.0)
+      react-helmet: 6.1.0(react@18.2.0)
+      react-intersection-observer: 9.5.3(react@18.2.0)
+      react-router-dom: 6.21.3(react-dom@18.3.0)(react@18.2.0)
+      rehype-autolink-headings: 7.1.0
+      rehype-class-names: 1.0.14
+      rehype-slug: 6.0.0
+      remark-directive: 3.0.0
+      remark-frontmatter: 5.0.0
+      remark-gfm: 4.0.0
+      remark-mdx-frontmatter: 4.0.0
+      remark-parse: 11.0.0
+      serve-static: 1.15.0
+      shiki: 1.2.0
+      tailwindcss: 3.4.1
+      toml: 3.0.0
+      twoslash: 0.2.4(typescript@5.4.3)
+      ua-parser-js: 1.0.37
+      unified: 11.0.4
+      unist-util-visit: 5.0.0
+      vite: 5.2.11(lightningcss@1.24.1)
     transitivePeerDependencies:
       - '@types/node'
       - '@types/react'
@@ -19751,6 +19693,7 @@ packages:
     resolution: {integrity: sha512-pIXzoImaqmfOrL7teGUBt/T7ZDnyeGBWyXQBvOVhLkWLN37GXv8NMLK406UY6dS51JfcQHsmcW5cJ441bHg6Lg==}
     engines: {node: '>= 14'}
     hasBin: true
+    dev: true
 
   /yaml@2.4.2:
     resolution: {integrity: sha512-B3VqDZ+JAg1nZpaEmWtTXUlBneoGx6CPM9b0TENK6aoSu5t73dItudwdgmi6tHlIZZId4dZ9skcAQ2UbcyAeVA==}

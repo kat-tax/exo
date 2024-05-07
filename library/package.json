@@ -8,134 +8,134 @@
   },
   "exports": {
     ".": {
-      "types": "./gen/index.d.ts",
-      "import": "./gen/es/index.js",
+      "types": "./gen/web/index.d.ts",
+      "import": "./gen/web/index.js",
       "require": "./gen/cjs/index.js"
     },
     "./redux": {
-      "types": "./gen/redux.d.ts",
-      "import": "./gen/es/redux.js",
+      "types": "./gen/web/redux.d.ts",
+      "import": "./gen/web/redux.js",
       "require": "./gen/cjs/redux.js"
     },
     "./i18n": {
-      "types": "./gen/i18n.d.ts",
-      "import": "./gen/es/i18n.js",
+      "types": "./gen/web/i18n.d.ts",
+      "import": "./gen/web/i18n.js",
       "require": "./gen/cjs/i18n.js"
     },
     "./device": {
-      "types": "./gen/device.d.ts",
-      "import": "./gen/es/device.js",
+      "types": "./gen/web/device.d.ts",
+      "import": "./gen/web/device.js",
       "require": "./gen/cjs/device.js"
     },
     "./navigation": {
-      "types": "./gen/navigation.d.ts",
-      "import": "./gen/es/navigation.js",
+      "types": "./gen/web/navigation.d.ts",
+      "import": "./gen/web/navigation.js",
       "require": "./gen/cjs/navigation.js"
     },
     "./storage": {
-      "types": "./gen/storage.d.ts",
-      "import": "./gen/es/storage.js",
+      "types": "./gen/web/storage.d.ts",
+      "import": "./gen/web/storage.js",
       "require": "./gen/cjs/storage.js"
     },
     "./form": {
-      "types": "./gen/form.d.ts",
-      "import": "./gen/es/form.js",
+      "types": "./gen/web/form.d.ts",
+      "import": "./gen/web/form.js",
       "require": "./gen/cjs/form.js"
     },
     "./toast": {
-      "types": "./gen/toast.d.ts",
-      "import": "./gen/es/toast.js",
+      "types": "./gen/web/toast.d.ts",
+      "import": "./gen/web/toast.js",
       "require": "./gen/cjs/toast.js"
     },
     "./gesture": {
-      "types": "./gen/gesture.d.ts",
-      "import": "./gen/es/gesture.js",
+      "types": "./gen/web/gesture.d.ts",
+      "import": "./gen/web/gesture.js",
       "require": "./gen/cjs/gesture.js"
     },
     "./safearea": {
-      "types": "./gen/safearea.d.ts",
-      "import": "./gen/es/safearea.js",
+      "types": "./gen/web/safearea.d.ts",
+      "import": "./gen/web/safearea.js",
       "require": "./gen/cjs/safearea.js"
     },
     "./skeleton": {
-      "types": "./gen/skeleton.d.ts",
-      "import": "./gen/es/skeleton.js",
+      "types": "./gen/web/skeleton.d.ts",
+      "import": "./gen/web/skeleton.js",
       "require": "./gen/cjs/skeleton.js"
     },
     "./motion": {
-      "types": "./gen/motion.d.ts",
-      "import": "./gen/es/motion.js",
+      "types": "./gen/web/motion.d.ts",
+      "import": "./gen/web/motion.js",
       "require": "./gen/cjs/motion.js"
     },
     "./variants": {
-      "types": "./gen/variants.d.ts",
-      "import": "./gen/es/variants.js",
+      "types": "./gen/web/variants.d.ts",
+      "import": "./gen/web/variants.js",
       "require": "./gen/cjs/variants.js"
     },
     "./icon": {
-      "types": "./gen/icon.d.ts",
-      "import": "./gen/es/icon.js",
+      "types": "./gen/web/icon.d.ts",
+      "import": "./gen/web/icon.js",
       "require": "./gen/cjs/icon.js"
     },
     "./image": {
-      "types": "./gen/image.d.ts",
-      "import": "./gen/es/image.js",
+      "types": "./gen/web/image.d.ts",
+      "import": "./gen/web/image.js",
       "require": "./gen/cjs/image.js"
     },
     "./video": {
-      "types": "./gen/video.d.ts",
-      "import": "./gen/es/video.js",
+      "types": "./gen/web/video.d.ts",
+      "import": "./gen/web/video.js",
       "require": "./gen/cjs/video.js"
     },
     "./lottie": {
-      "types": "./gen/lottie.d.ts",
-      "import": "./gen/es/lottie.js",
+      "types": "./gen/web/lottie.d.ts",
+      "import": "./gen/web/lottie.js",
       "require": "./gen/cjs/lottie.js"
     },
     "./rive": {
-      "types": "./gen/rive.d.ts",
-      "import": "./gen/es/rive.js",
+      "types": "./gen/web/rive.d.ts",
+      "import": "./gen/web/rive.js",
       "require": "./gen/cjs/rive.js"
     },
     "./checkbox": {
-      "types": "./gen/checkbox.d.ts",
-      "import": "./gen/es/checkbox.js",
+      "types": "./gen/web/checkbox.d.ts",
+      "import": "./gen/web/checkbox.js",
       "require": "./gen/cjs/checkbox.js"
     },
     "./switch": {
-      "types": "./gen/switch.d.ts",
-      "import": "./gen/es/switch.js",
+      "types": "./gen/web/switch.d.ts",
+      "import": "./gen/web/switch.js",
       "require": "./gen/cjs/switch.js"
     },
     "./radio": {
-      "types": "./gen/radio.d.ts",
-      "import": "./gen/es/radio.js",
+      "types": "./gen/web/radio.d.ts",
+      "import": "./gen/web/radio.js",
       "require": "./gen/cjs/radio.js"
     },
     "./slider": {
-      "types": "./gen/slider.d.ts",
-      "import": "./gen/es/slider.js",
+      "types": "./gen/web/slider.d.ts",
+      "import": "./gen/web/slider.js",
       "require": "./gen/cjs/slider.js"
     },
     "./picker": {
-      "types": "./gen/picker.d.ts",
-      "import": "./gen/es/picker.js",
+      "types": "./gen/web/picker.d.ts",
+      "import": "./gen/web/picker.js",
       "require": "./gen/cjs/picker.js"
     },
     "./progress": {
-      "types": "./gen/progress.d.ts",
-      "import": "./gen/es/progress.js",
+      "types": "./gen/web/progress.d.ts",
+      "import": "./gen/web/progress.js",
       "require": "./gen/cjs/progress.js"
     },
     "./calendar": {
-      "types": "./gen/calendar.d.ts",
-      "import": "./gen/es/calendar.js",
+      "types": "./gen/web/calendar.d.ts",
+      "import": "./gen/web/calendar.js",
       "require": "./gen/cjs/calendar.js"
     },
-    "./checkbox.css": "./gen/checkbox.css",
-    "./switch.css": "./gen/switch.css",
-    "./radio.css": "./gen/radio.css",
-    "./slider.css": "./gen/slider.css"
+    "./checkbox.css": "./gen/web/checkbox.css",
+    "./switch.css": "./gen/web/switch.css",
+    "./radio.css": "./gen/web/radio.css",
+    "./slider.css": "./gen/web/slider.css"
   },
   "peerDependencies": {
     "@candlefinance/faster-image": ">=1",
@@ -204,6 +204,7 @@
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
     "@types/react-native-video": "^5.0.20",
+    "bundler": "workspace:*",
     "config": "workspace:*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -228,7 +229,6 @@
     "react-native-web-linear-gradient": "^1.1.2",
     "react-native-windows": "^0.73.11",
     "rive-react-native": "^7.0.0",
-    "typedoc": "^0.25.13",
-    "web": "workspace:*"
+    "typedoc": "^0.25.13"
   }
 }

@@ -1,1 +1,1 @@
-export {default} from 'web/vite.lib';
+export {default} from 'bundler/lib.exo.web.cfg';

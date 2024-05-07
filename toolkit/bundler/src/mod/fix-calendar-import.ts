@@ -6,7 +6,7 @@ import {access, readFile, writeFile} from 'node:fs/promises';
 export default <Plugin> {
   name: 'fix-calendar-import',
   async writeBundle() {
-    const target = resolve(process.cwd(), 'gen/es/calendar.js');
+    const target = resolve(process.cwd(), 'gen/web/calendar.js');
     try {
       await access(target);
     } catch (e) {
@@ -16,8 +16,8 @@ export default <Plugin> {
     await writeFile(
       target,
       contents.replace(
-        'import he, { StyleSheet as we',
-        'import * as he from "react-native";import { StyleSheet as we'
+        'import fe, { StyleSheet as we',
+        'import * as fe from "react-native";import { StyleSheet as we'
       )
     )
   }
