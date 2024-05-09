@@ -2,17 +2,6 @@ import {defineConfig} from 'vite';
 import paths from 'vite-tsconfig-paths';
 
 export default defineConfig(env => ({
-  resolve: {
-    extensions: [
-      '.mjs',
-      '.mts',
-      '.ts',
-      '.tsx',
-      '.js',
-      '.jsx',
-      '.json',
-    ],
-  },
   build: {
     rollupOptions: {
       external: [

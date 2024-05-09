@@ -10,6 +10,13 @@ export default defineConfig(env => mergeConfig(
         '.web.tsx',
         '.web.ts',
         '.web.js',
+        '.mjs',
+        '.mts',
+        '.ts',
+        '.tsx',
+        '.js',
+        '.jsx',
+        '.json',
       ],
       alias: {
         'react-native': 'react-native-web',
