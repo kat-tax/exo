@@ -25,6 +25,18 @@ export default defineConfig(env => mergeConfig(
         output: {
           chunkFileNames: 'chunks/[hash]/[name].js',
         },
+        external: [
+          /* React */
+          'react',
+          'react-dom',
+          'react-native',
+          'react-native-web',
+          'react/jsx-runtime',
+          /* I18n */
+          '@linguijs/core',
+          '@linguijs/react',
+          '@linguijs/macro',
+        ],
       },
     },
     plugins: [

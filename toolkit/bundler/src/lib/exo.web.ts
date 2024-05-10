@@ -52,14 +52,25 @@ export default defineConfig(env => mergeConfig(
         }
       },
       rollupOptions: {
+        output: {
+          chunkFileNames: 'chunks/[hash]/[name].js'
+        },
         external: [
+          /* React */
+          'react',
+          'react-dom',
+          'react-native',
+          'react-native-web',
+          'react/jsx-runtime',
+          /* I18n */
+          '@linguijs/core',
+          '@linguijs/react',
+          '@linguijs/macro',
+          /* Vendor */
           '@vidstack/react',
           '@dotlottie/common',
           '@dotlottie/react-player'
         ],
-        output: {
-          chunkFileNames: 'chunks/[hash]/[name].js'
-        },
       },
     },
     optimizeDeps: {
