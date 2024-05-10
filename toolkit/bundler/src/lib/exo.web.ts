@@ -75,6 +75,7 @@ export default defineConfig(env => mergeConfig(
     },
     optimizeDeps: {
       exclude: [
+        '@vidstack/react',
         '@dotlottie/common',
         '@dotlottie/react-player',
       ],
