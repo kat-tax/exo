@@ -67,8 +67,8 @@ export default defineConfig({
     }
   },
   vite: viteDocs({
-    command: 'serve',
-    mode: 'development',
+    command: 'build',
+    mode: 'production',
   }),
   twoslash: {
     compilerOptions: {
