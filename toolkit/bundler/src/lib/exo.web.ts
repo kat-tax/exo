@@ -68,16 +68,12 @@ export default defineConfig(env => mergeConfig(
           '@linguijs/macro',
           /* Vendor */
           '@vidstack/react',
-          '@dotlottie/common',
-          '@dotlottie/react-player'
         ],
       },
     },
     optimizeDeps: {
       exclude: [
         '@vidstack/react',
-        '@dotlottie/common',
-        '@dotlottie/react-player',
       ],
     },
     plugins: [
