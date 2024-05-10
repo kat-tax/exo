@@ -3,7 +3,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "conc -c 'auto' 'pnpm:*-dev'",
-    "build": "conc -c 'gray,gray,auto' -g 'pnpm:*-build'",
+    "build": "conc -c 'gray,white,auto' -g 'pnpm:*-build'",
 
     "config-dev": "pnpm --filter ./toolkit/config dev",
     "config-build": "pnpm --filter ./toolkit/config build",
