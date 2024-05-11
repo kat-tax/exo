@@ -25,13 +25,13 @@
     "client-dev": "pnpm --filter ./client run dev",
     "client-build": "pnpm --filter ./client run build",
 
-    "docs-dev": "pnpm --filter ./toolkit/vocs dev",
-    "docs-build": "pnpm --filter ./toolkit/vocs build",
-
     "storybook-dev": "conc pnpm:storybook-web pnpm:storybook-native",
     "storybook-build": "pnpm --filter ./toolkit/storybook/web run build",
     "storybook-native": "pnpm --filter ./toolkit/storybook/native run dev",
     "storybook-web": "pnpm --filter ./toolkit/storybook/web run dev",
+
+    "docs-dev": "pnpm --filter ./toolkit/vocs dev",
+    "docs-build": "pnpm --filter ./toolkit/vocs build",
 
     "generate": "pnpm config-build && pnpm translate-build && pnpm bundler-build && pnpm library-build && pnpm design-build",
     "postinstall": "pnpm generate"

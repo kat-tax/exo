@@ -43,6 +43,15 @@ const config: StorybookConfig = {
       },
     },
     disableTelemetry: true,
+  },
+  async viteFinal(config) {
+    return {
+      ...config,
+      build: {
+        ...config.build,
+        chunkSizeWarningLimit: 800,
+      },
+    };
   }
 };
 
