@@ -3,24 +3,30 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "web dev --port 6406",
-    "build": "web build"
+    "dev": "conc -c 'auto' 'pnpm:*-dev'",
+    "build": "conc -c 'auto' -g 'pnpm:*-build'",
+
+    "web-dev": "vite dev  -c ../toolkit/bundler/gen/lib/design.web.js --port 6406",
+    "web-build": "vite build -c ../toolkit/bundler/gen/lib/design.web.js",
+
+    "native-dev": "vite dev  -c ../toolkit/bundler/gen/lib/design.native.js --port 6506",
+    "native-build": "vite build -c ../toolkit/bundler/gen/lib/design.native.js"
   },
   "exports": {
     ".": {
-      "types": "./gen/web/index.d.ts",
+      "types": "./gen/types/index.d.ts",
       "import": "./gen/web/index.js",
       "require": "./gen/native/index.js"
     },
     "./theme": {
-      "types": "./gen/web/theme.d.ts",
+      "types": "./gen/types/theme.d.ts",
       "import": "./gen/web/theme.js",
       "require": "./gen/native/theme.js"
     },
     "./styles": {
-      "types": "./gen/web/styles.d.ts",
+      "types": "./gen/types/styles.d.ts",
       "import": "./gen/web/styles.js",
-      "require": "./gen/native/styles.-js"
+      "require": "./gen/native/styles.js"
     },
     "./types": {
       "types": "./env.d.ts"

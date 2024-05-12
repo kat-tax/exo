@@ -82,6 +82,7 @@ export default defineConfig(env => mergeConfig(
       patchMotion,
       types({
         exclude: ['gen', 'vite.config.mts'],
+        outDir: './gen/types',
         insertTypesEntry: true,
       }),
       react(),

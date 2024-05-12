@@ -6,7 +6,7 @@
     "build": "tsc"
   },
   "bin": {
-    "web": "./node_modules/vite/bin/vite.js"
+    "vite": "./node_modules/vite/bin/vite.js"
   },
   "exports": {
     "./web.client.cfg": "./gen/web/client.js",

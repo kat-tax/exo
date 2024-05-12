@@ -9,12 +9,12 @@ export default defineConfig(env => mergeConfig(
   webConfig(env),
   defineConfig({
     build: {
-      outDir: './gen/web',
+      outDir: './gen/native',
       cssMinify: 'lightningcss',
       cssCodeSplit: true,
       sourcemap: true,
       lib: {
-        formats: ['es'],
+        formats: ['cjs'],
         entry: {
           index: 'index.ts',
           theme: 'theme.ts',
@@ -24,13 +24,13 @@ export default defineConfig(env => mergeConfig(
       rollupOptions: {
         output: {
           chunkFileNames: 'chunks/[hash]/[name].js',
+          entryFileNames: '[name].js',
         },
         external: [
           /* React */
           'react',
           'react-dom',
           'react-native',
-          'react-native-web',
           'react/jsx-runtime',
           /* I18n */
           '@linguijs/core',
@@ -41,11 +41,6 @@ export default defineConfig(env => mergeConfig(
     },
     plugins: [
       lingui(),
-      types({
-        exclude: ['gen', 'vite.config.ts', 'lingui.config.ts'],
-        outDir: './gen/types',
-        insertTypesEntry: true,
-      }),
       react({
         babel: {
           plugins: ['macros'],
