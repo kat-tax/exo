@@ -1,18 +1,19 @@
 import {View, Text} from 'react-native';
 import {SafeAreaView} from 'react-exo/safearea';
+import {useStyles, createStyleSheet} from 'design/styles';
 
 export interface PageProps {
-  title: string | React.ReactNode,
+  title?: string | React.ReactNode,
   children?: React.ReactNode,
 }
 
 export function Page(props: PageProps) {
-  const showHeader = false;
+  const {styles} = useStyles(stylesheet);
   return (
     <SafeAreaView>
-      <View>
-        {showHeader &&
-          <Text>
+      <View style={styles.root}>
+        {props.title &&
+          <Text style={styles.header}>
             {props.title}
           </Text>
         }
@@ -23,3 +24,15 @@ export function Page(props: PageProps) {
     </SafeAreaView>
   );
 }
+
+const stylesheet = createStyleSheet(_theme => ({
+  root: {
+    flex: 1,
+    padding: 24,
+  },
+  header: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginBottom: 16,
+  },
+}));

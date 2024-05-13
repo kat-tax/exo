@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 2024-04-11 17:09+0800\n"
+"POT-Creation-Date: 2024-05-12 23:27+0900\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -19,12 +19,16 @@ msgstr "タスクを追加"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:29
 msgid "Dark"
-msgstr ""
+msgstr "ダーク"
+
+#: ../../client/src/core/base/Menu.tsx:16
+msgid "Dashboard"
+msgstr "ダッシュボード"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:27
 #: ../../client/src/settings/routes/ScreenSettings.tsx:38
 msgid "Default"
-msgstr ""
+msgstr "デフォルト"
 
 #: ../../client/src/core/utils/date.ts:24
 msgid "Enjoy the night."
@@ -42,18 +46,13 @@ msgstr "こんばんは。"
 msgid "Good morning."
 msgstr "おはようございます。"
 
-#: ../../client/src/core/base/Menu.tsx:16
-#: ../../client/src/core/routes/ScreenHome.tsx:14
-msgid "Home"
-msgstr "ホーム"
-
 #: ../../client/src/settings/routes/ScreenSettings.tsx:32
 msgid "Language"
 msgstr "言語"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:28
 msgid "Light"
-msgstr ""
+msgstr "ライト"
 
 #: ../../client/src/core/base/Menu.tsx:25
 #: ../../client/src/settings/routes/ScreenSettings.tsx:19
@@ -70,8 +69,8 @@ msgstr "テーマ"
 
 #: ../../client/src/core/hooks/useOnline.ts:14
 msgid "You are offline"
-msgstr ""
+msgstr "オフラインです"
 
 #: ../../client/src/core/hooks/useOnline.ts:12
 msgid "You are online"
-msgstr ""
+msgstr "オンラインです"

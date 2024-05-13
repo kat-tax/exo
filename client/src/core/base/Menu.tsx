@@ -13,7 +13,7 @@ export function Menu() {
       <SafeAreaView style={styles.fill}>
         <View style={styles.fill}>
           <MenuItem path="/">
-            <Trans>Home</Trans>
+            <Trans>Dashboard</Trans>
           </MenuItem>
           {lists.map(list =>
             <MenuItem key={list} path={`/tasks/${list}`}>
@@ -49,23 +49,18 @@ const stylesheet = createStyleSheet(_theme => ({
   root: {
     padding: 14,
     height: '100%',
-    backgroundColor: '#272727',
   },
   fill: {
     flex: 1,
   },
   item: {
-    paddingVertical: 16,
-    paddingHorizontal: 12,
+    paddingHorizontal: 8,
   },
   link: {
-    fontSize: 16,
-    fontWeight: '600',
-    textTransform: 'uppercase',
-    color: '#999',
+    fontSize: 12,
+    lineHeight: 24,
   },
   active: {
-    color: '#FFF',
   },
 }));
 

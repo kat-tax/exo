@@ -1,37 +1,24 @@
-import {t} from '@lingui/macro';
 import {Text} from 'react-native';
-import {useState} from 'react';
 import {useLingui} from '@lingui/react';
-import {Motion} from 'react-exo/motion';
-import {Slider} from 'react-exo/slider';
-import {Page} from 'core/base/Page';
+import {useStyles, createStyleSheet} from 'design/styles';
 import {getGreeting} from 'core/utils/date';
+import {Page} from 'core/base/Page';
 
 export default function ScreenHome() {
-  const [slider, setSlider] = useState(0);
+  const {styles} = useStyles(stylesheet);
   useLingui();
   return (
-    <Page title={t`Home`}>
-      <Text style={{color: 'white'}}>
+    <Page>
+      <Text style={styles.greeting}>
         {getGreeting()}
       </Text>
-      <Motion.View
-        initial={{y: -50}}
-        animate={{x: 1 * 100, y: 0}}
-        transition={{type: 'spring'}}
-        whileHover={{scale: 1.2}}
-        whileTap={{y: 20}}
-      />
-      <Slider
-        step={10}
-        value={50}
-        minimumValue={0}
-        maximumValue={100}
-        onChange={value => {
-          setSlider(value);
-        }}
-      />
-      <Text>{slider}</Text>
     </Page>
   );
 }
+
+const stylesheet = createStyleSheet(_theme => ({
+  greeting: {
+    fontSize: 16,
+    lineHeight: 32,
+  },
+}));

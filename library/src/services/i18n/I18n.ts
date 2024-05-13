@@ -5,11 +5,8 @@ import type {I18nBase, Messages} from './I18n.interface';
 import type {Locales} from 'config/locales';
 
 export class I18nService implements I18nBase {
-  getLocale(short?: boolean): string {
-    const locale = navigator.language;
-    return short
-      ? locale.split('-').shift() || locale
-      : locale;
+  getLocale() {
+    return navigator.language.split('-').shift() || sourceLocale;
   }
 
   async loadLocale(locale: Locales = sourceLocale) {

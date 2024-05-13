@@ -7,7 +7,8 @@ declare module 'styles' {
 }
 
 declare module 'design/styles' {
-  export * from 'styles';
+  export interface UnistylesThemes extends AppThemes {}
+  export interface UnistylesBreakpoints extends AppBreakpoints {}
 }
 
 declare module '*.svg' {

@@ -21,6 +21,10 @@ msgstr "Add a task"
 msgid "Dark"
 msgstr "Dark"
 
+#: ../../client/src/core/base/Menu.tsx:16
+msgid "Dashboard"
+msgstr "Dashboard"
+
 #: ../../client/src/settings/routes/ScreenSettings.tsx:27
 #: ../../client/src/settings/routes/ScreenSettings.tsx:38
 msgid "Default"
@@ -41,11 +45,6 @@ msgstr "Good evening."
 #: ../../client/src/core/utils/date.ts:18
 msgid "Good morning."
 msgstr "Good morning."
-
-#: ../../client/src/core/base/Menu.tsx:16
-#: ../../client/src/core/routes/ScreenHome.tsx:14
-msgid "Home"
-msgstr "Home"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:32
 msgid "Language"

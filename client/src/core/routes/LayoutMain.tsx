@@ -5,7 +5,7 @@ import {SafeAreaView} from 'react-exo/safearea';
 import {Outlet} from 'react-exo/navigation';
 import {Menu} from 'core/base/Menu';
 
-export const APP_MENU_WIDTH = 200;
+export const APP_MENU_WIDTH = 145;
 
 export default function LayoutMain() {
   const {styles} = useStyles(stylesheet);
@@ -28,6 +28,6 @@ const stylesheet = createStyleSheet(_theme => ({
   menu: {
     width: APP_MENU_WIDTH,
     borderRightWidth: 1,
-    borderColor: '#333',
+    borderColor: '#111',
   },
 }));

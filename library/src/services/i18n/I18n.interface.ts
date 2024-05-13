@@ -1,7 +1,7 @@
 import type {Locales, sourceLocale} from 'config/locales';
 
 export interface I18nBase {
-  getLocale(short?: boolean): string,
+  getLocale(): string,
   loadLocale(locale?: Locales): Promise<void>,
 }
 

@@ -5,6 +5,7 @@ import {SafeAreaProvider} from 'react-exo/safearea';
 import {i18n, loadLocale} from 'react-exo/i18n';
 import {useLocale} from 'settings/hooks/useLocale';
 
+loadLocale('en');
 i18n.activate('en');
 
 export function Provider(props: React.PropsWithChildren) {

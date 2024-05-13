@@ -1,11 +1,11 @@
-import BootSplash from 'react-native-bootsplash';
+// import BootSplash from 'react-native-bootsplash';
 import NetInfo from '@react-native-community/netinfo';
 import {Share} from 'react-native';
 
 import type {DeviceBase} from './Device.interface';
 
 export class DeviceService implements DeviceBase {
-  BootSplash = BootSplash;
+  // BootSplash = BootSplash;
 
   share(url: string, title: string) {
     Share.share({url, title, message: url}, {
