@@ -6,7 +6,7 @@ import settings from 'settings/store';
 import type {Locales} from 'config/locales';
 
 export type LocaleData = [
-  Locales,
+  Locales | undefined,
   (locale: Locales) => void,
 ];
 
@@ -19,6 +19,6 @@ export function useLocale(storedOnly?: boolean): LocaleData {
     dispatch(settings.actions.setLocale(newLocale));
 
   return (stored || storedOnly)
-    ? [stored || 'en', setLocale]
+    ? [stored || (storedOnly ? undefined : 'en'), setLocale]
     : [locale?.current || 'en', setLocale];
 }

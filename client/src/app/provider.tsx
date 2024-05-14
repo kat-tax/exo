@@ -1,8 +1,7 @@
 import {useEffect} from 'react';
 import {I18nProvider} from '@lingui/react';
-import {GestureProvider} from 'react-exo/gesture';
-import {SafeAreaProvider} from 'react-exo/safearea';
 import {i18n, loadLocale} from 'react-exo/i18n';
+import {GestureProvider} from 'react-exo/gesture';
 import {useLocale} from 'settings/hooks/useLocale';
 
 loadLocale('en');
@@ -18,9 +17,7 @@ export function Provider(props: React.PropsWithChildren) {
   return (
     <I18nProvider {...{i18n}}>
       <GestureProvider style={{flex: 1}}>
-        <SafeAreaProvider>
-          {props.children}
-        </SafeAreaProvider>
+        {props.children}
       </GestureProvider>
     </I18nProvider>
   );

@@ -1,6 +1,6 @@
 import {Trans} from '@lingui/macro';
-import {View, Text} from 'react-native';
-import {SafeAreaView} from 'react-exo/safearea';
+import {Icon} from 'react-exo/icon';
+import {View, Text, Platform} from 'react-native';
 import {useLocation, Link} from 'react-exo/navigation';
 import {useStyles, createStyleSheet} from 'design/styles';
 import {useLists} from 'tasks/hooks/useLists';
@@ -10,34 +10,39 @@ export function Menu() {
   const lists = useLists();
   return (
     <View style={styles.root}>
-      <SafeAreaView style={styles.fill}>
-        <View style={styles.fill}>
-          <MenuItem path="/">
-            <Trans>Dashboard</Trans>
+      <View style={styles.fill}>
+        <MenuItem path="/" icon="ph:squares-four">
+          <Trans>Dashboard</Trans>
+        </MenuItem>
+        {lists.map(list =>
+          <MenuItem key={list} path={`/tasks/${list}`} icon="ph:list-checks">
+            {list}
           </MenuItem>
-          {lists.map(list =>
-            <MenuItem key={list} path={`/tasks/${list}`}>
-              {list}
-            </MenuItem>
-          )}
-          <View style={styles.fill}/>
-          <MenuItem path="/settings">
-            <Trans>Settings</Trans>
-          </MenuItem>
-        </View>
-      </SafeAreaView>
+        )}
+        <View style={styles.fill}/>
+        <MenuItem path="/settings" icon="ph:gear">
+          <Trans>Settings</Trans>
+        </MenuItem>
+      </View>
     </View>
   );
 }
 
-export function MenuItem(props: {path: string} & React.PropsWithChildren) {
+export function MenuItem(props: {path: string, icon?: string} & React.PropsWithChildren) {
+  const {styles, theme} = useStyles(stylesheet);
   const {pathname} = useLocation();
-  const {styles} = useStyles(stylesheet);
-  const isActive = props.path === pathname;
+  const isActive = props.path === decodeURIComponent(pathname);
   return (
     <Link to={props.path}>
-      <View style={styles.item}>
-        <Text style={[styles.link, isActive && styles.active]}>
+      <View style={[styles.item, isActive && styles.active]}>
+        {props.icon && Platform.OS === 'web' &&
+          <Icon
+            name={props.icon}
+            color={theme.colors.primary}
+            size={16}
+          />
+        }
+        <Text style={styles.link}>
           {props.children}
         </Text>
       </View>
@@ -45,22 +50,35 @@ export function MenuItem(props: {path: string} & React.PropsWithChildren) {
   );
 }
 
-const stylesheet = createStyleSheet(_theme => ({
+const stylesheet = createStyleSheet(theme => ({
   root: {
-    padding: 14,
+    padding: 10,
     height: '100%',
+    ...Platform.select({
+      default: {
+        backgroundColor: theme.colors.secondary,
+      },
+    }),
   },
   fill: {
     flex: 1,
   },
   item: {
+    flexDirection: 'row',
+    alignItems: 'center',
     paddingHorizontal: 8,
-  },
-  link: {
-    fontSize: 12,
-    lineHeight: 24,
+    paddingVertical: 1,
+    borderRadius: 5,
   },
   active: {
+    backgroundColor: 'rgba(255, 255, 255, 0.15)',
+    //backgroundColor: 'rgba(0, 0, 0, 0.07)',
+  },
+  link: {
+    fontSize: 11,
+    lineHeight: 24,
+    marginLeft: 4,
+    color: theme.colors.secondaryForeground,
   },
 }));
 

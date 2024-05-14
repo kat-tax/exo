@@ -13,53 +13,53 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: ../../client/src/tasks/base/TasksInput.tsx:23
+#: ../../client/src/tasks/base/TasksInput.tsx:21
 msgid "Add a task"
 msgstr "Add a task"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:29
+#: ../../client/src/settings/routes/ScreenSettings.tsx:31
 msgid "Dark"
 msgstr "Dark"
 
-#: ../../client/src/core/base/Menu.tsx:16
+#: ../../client/src/core/base/Menu.tsx:15
 msgid "Dashboard"
 msgstr "Dashboard"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:27
-#: ../../client/src/settings/routes/ScreenSettings.tsx:38
+#: ../../client/src/settings/routes/ScreenSettings.tsx:29
+#: ../../client/src/settings/routes/ScreenSettings.tsx:44
 msgid "Default"
 msgstr "Default"
 
-#: ../../client/src/core/utils/date.ts:24
-msgid "Enjoy the night."
-msgstr "Enjoy the night."
+#: ../../client/src/core/utils/date.ts:12
+msgid "Enjoy the night"
+msgstr "Enjoy the night"
 
-#: ../../client/src/core/utils/date.ts:20
-msgid "Good afternoon."
-msgstr "Good afternoon."
+#: ../../client/src/core/utils/date.ts:8
+msgid "Good afternoon"
+msgstr "Good afternoon"
 
-#: ../../client/src/core/utils/date.ts:22
-msgid "Good evening."
-msgstr "Good evening."
+#: ../../client/src/core/utils/date.ts:10
+msgid "Good evening"
+msgstr "Good evening"
 
-#: ../../client/src/core/utils/date.ts:18
-msgid "Good morning."
-msgstr "Good morning."
+#: ../../client/src/core/utils/date.ts:6
+msgid "Good morning"
+msgstr "Good morning"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:32
+#: ../../client/src/settings/routes/ScreenSettings.tsx:36
 msgid "Language"
 msgstr "Language"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:28
+#: ../../client/src/settings/routes/ScreenSettings.tsx:30
 msgid "Light"
 msgstr "Light"
 
-#: ../../client/src/core/base/Menu.tsx:25
-#: ../../client/src/settings/routes/ScreenSettings.tsx:19
+#: ../../client/src/core/base/Menu.tsx:24
+#: ../../client/src/settings/routes/ScreenSettings.tsx:17
 msgid "Settings"
 msgstr "Settings"
 
-#: ../../client/src/tasks/routes/TasksList.tsx:11
+#: ../../client/src/tasks/routes/TasksList.tsx:13
 msgid "Tasks"
 msgstr "Tasks"
 

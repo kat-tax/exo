@@ -33,7 +33,7 @@ export function TasksList(props: TasksListProps) {
   );
 }
 
-const stylesheet = createStyleSheet(_theme => ({
+const stylesheet = createStyleSheet(theme => ({
   list: {
     flex: 1,
     width: '100%',
@@ -42,6 +42,7 @@ const stylesheet = createStyleSheet(_theme => ({
   text: {
     fontSize: 14,
     lineHeight: 24,
+    color: theme.colors.foreground,
   },
   strike: {
     textDecorationLine: 'line-through',

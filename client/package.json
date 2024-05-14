@@ -20,7 +20,7 @@
     "_build-visionos": "react-native bundle --entry-file index.js --platform ios --dev true --bundle-output dist/main.visionos.jsbundle --assets-dest dist",
     
     "start-vite": "vite dev --port 6206",
-    "start-metro": "react-native rnx-start",
+    "start-metro": "react-native rnx-start --reset-cache",
 
     "generate": "pod install --project-directory=ios && pod install --project-directory=macos && pod install --project-directory=visionos",
     "_postinstall": "pnpm generate"

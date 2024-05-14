@@ -11,9 +11,7 @@ interface TasksInputProps {
 export function TasksInput(props: TasksInputProps) {
   const {styles, theme} = useStyles(stylesheet);
   const refInput = useRef<any>(null);
-
   useLingui();
-
   return (
     <TextInput
       autoFocus
@@ -33,10 +31,11 @@ export function TasksInput(props: TasksInputProps) {
   );
 }
 
-const stylesheet = createStyleSheet(_theme => ({
+const stylesheet = createStyleSheet(theme => ({
   input: {
     width: 300,
     padding: 8,
     marginTop: 16,
+    color: theme.colors.foreground,
   },
 }));

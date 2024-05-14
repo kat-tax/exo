@@ -1,5 +1,4 @@
 import {View, Text} from 'react-native';
-import {SafeAreaView} from 'react-exo/safearea';
 import {useStyles, createStyleSheet} from 'design/styles';
 
 export interface PageProps {
@@ -10,29 +9,29 @@ export interface PageProps {
 export function Page(props: PageProps) {
   const {styles} = useStyles(stylesheet);
   return (
-    <SafeAreaView>
-      <View style={styles.root}>
-        {props.title &&
-          <Text style={styles.header}>
-            {props.title}
-          </Text>
-        }
-        <View>
-          {props.children}
-        </View>
+    <View style={styles.root}>
+      {props.title &&
+        <Text style={styles.header}>
+          {props.title}
+        </Text>
+      }
+      <View>
+        {props.children}
       </View>
-    </SafeAreaView>
+    </View>
   );
 }
 
-const stylesheet = createStyleSheet(_theme => ({
+const stylesheet = createStyleSheet(theme => ({
   root: {
     flex: 1,
+    gap: 24,
     padding: 24,
+    backgroundColor: theme.colors.background,
   },
   header: {
     fontSize: 18,
     fontWeight: 'bold',
-    marginBottom: 16,
+    color: theme.colors.foreground,
   },
 }));

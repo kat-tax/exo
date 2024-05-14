@@ -3,6 +3,7 @@ module.exports = {
     ["@rnx-kit/babel-preset-metro-react-native", {
       additionalPlugins: [
         'macros',
+        'react-native-iconify/plugin',
         'tsconfig-paths-module-resolver',
         ['@rnx-kit/babel-plugin-import-path-remapper', {
           test: (path) => path.startsWith('react-exo/'),
