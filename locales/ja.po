@@ -17,6 +17,10 @@ msgstr ""
 msgid "Add a task"
 msgstr "タスクを追加"
 
+#: ../../client/src/core/base/Menu.tsx:19
+msgid "Calendar"
+msgstr "カレンダー"
+
 #: ../../client/src/settings/routes/ScreenSettings.tsx:31
 msgid "Dark"
 msgstr "ダーク"
@@ -32,7 +36,7 @@ msgstr "デフォルト"
 
 #: ../../client/src/core/utils/date.ts:14
 msgid "Enjoy the day"
-msgstr ""
+msgstr "楽しくないでください"
 
 #: ../../client/src/core/utils/date.ts:12
 msgid "Enjoy the night"
@@ -58,12 +62,13 @@ msgstr "言語"
 msgid "Light"
 msgstr "ライト"
 
-#: ../../client/src/core/base/Menu.tsx:25
+#: ../../client/src/core/base/Menu.tsx:31
 #: ../../client/src/settings/routes/ScreenSettings.tsx:17
 msgid "Settings"
 msgstr "設定"
 
-#: ../../client/src/tasks/routes/TasksList.tsx:13
+#: ../../client/src/core/base/Menu.tsx:22
+#: ../../client/src/tasks/routes/TasksList.tsx:14
 msgid "Tasks"
 msgstr "タスク"
 

@@ -49,6 +49,8 @@ export async function fetchIconSetJSON(set: string, icons: string[]): Promise<i.
   const res = await fetch(`https://api.iconify.design/${set}.json?icons=${icons.join(',')}`);
   if (!res.ok) throw new Error(`Iconify: Failed to fetch data for the set with prefix: "${set}"`);
   const json = await res.json() as i.IconifyJSON;
+  const cached = iconJsonCache.get(set);
+  if (cached) json.icons = {...cached.icons, ...json.icons};
   saveIconSet(set, json, icons);
   return json;
 }

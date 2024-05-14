@@ -31,3 +31,7 @@ export function getTimeOfDay() {
 export function getCurrentTime() {
   return new Date().toLocaleTimeString();
 }
+
+export function getCurrentDate() {
+  return new Date().toLocaleDateString();
+}

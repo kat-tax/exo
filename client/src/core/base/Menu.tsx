@@ -1,6 +1,6 @@
+import {Icon} from 'react-exo/icon';
 import {Trans} from '@lingui/macro';
 import {cloneElement} from 'react';
-import {Icon} from 'react-exo/icon';
 import {View, Text, Platform} from 'react-native';
 import {useLocation, Link} from 'react-exo/navigation';
 import {useStyles, createStyleSheet} from 'design/styles';
@@ -15,9 +15,15 @@ export function Menu() {
         <MenuItem path="/" icon={<Icon name="ph:squares-four"/>}>
           <Trans>Dashboard</Trans>
         </MenuItem>
+        <MenuItem path="/calendar" icon={<Icon name="ph:calendar-dots"/>}>
+          <Trans>Calendar</Trans>
+        </MenuItem>
+        <MenuItem path={`/tasks`} icon={<Icon name="ph:list-checks"/>}>
+          <Trans>Tasks</Trans>
+        </MenuItem>
         {lists.map(list =>
-          <MenuItem key={list} path={`/tasks/${list}`} icon={<Icon name="ph:list-checks"/>}>
-            {list}
+          <MenuItem key={list} path={`/tasks/${list}`} submenu>
+            {`• ${list}`}
           </MenuItem>
         )}
         <View style={styles.fill}/>
@@ -29,13 +35,23 @@ export function Menu() {
   );
 }
 
-export function MenuItem(props: {path: string, icon?: JSX.Element} & React.PropsWithChildren) {
+interface MenuItemProps extends React.PropsWithChildren {
+  path: string;
+  icon?: JSX.Element;
+  submenu?: boolean;
+}
+
+export function MenuItem(props: MenuItemProps) {
   const {styles, theme} = useStyles(stylesheet);
   const {pathname} = useLocation();
   const isActive = props.path === decodeURIComponent(pathname);
   return (
     <Link to={props.path}>
-      <View style={[styles.item, isActive && styles.active]}>
+      <View style={[
+        styles.item,
+        props.submenu && styles.submenu,
+        isActive && styles.active,
+      ]}>
         {props?.icon && cloneElement(props.icon, {
           color: theme.colors.primary,
           size: 16,
@@ -67,6 +83,9 @@ const stylesheet = createStyleSheet(theme => ({
     paddingHorizontal: 8,
     paddingVertical: 1,
     borderRadius: 5,
+  },
+  submenu: {
+    marginLeft: 8,
   },
   active: {
     backgroundColor: 'rgba(255, 255, 255, 0.15)',

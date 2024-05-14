@@ -17,6 +17,10 @@ msgstr ""
 msgid "Add a task"
 msgstr "أضف مهمة"
 
+#: ../../client/src/core/base/Menu.tsx:19
+msgid "Calendar"
+msgstr "التقويم"
+
 #: ../../client/src/settings/routes/ScreenSettings.tsx:31
 msgid "Dark"
 msgstr "داكن"
@@ -32,7 +36,7 @@ msgstr "افتراضي"
 
 #: ../../client/src/core/utils/date.ts:14
 msgid "Enjoy the day"
-msgstr ""
+msgstr "استمتع باليوم"
 
 #: ../../client/src/core/utils/date.ts:12
 msgid "Enjoy the night"
@@ -58,12 +62,13 @@ msgstr "اللغة"
 msgid "Light"
 msgstr "فاتح"
 
-#: ../../client/src/core/base/Menu.tsx:25
+#: ../../client/src/core/base/Menu.tsx:31
 #: ../../client/src/settings/routes/ScreenSettings.tsx:17
 msgid "Settings"
 msgstr "الإعدادات"
 
-#: ../../client/src/tasks/routes/TasksList.tsx:13
+#: ../../client/src/core/base/Menu.tsx:22
+#: ../../client/src/tasks/routes/TasksList.tsx:14
 msgid "Tasks"
 msgstr "المهام"
 

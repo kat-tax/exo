@@ -17,6 +17,10 @@ msgstr ""
 msgid "Add a task"
 msgstr "Add a task"
 
+#: ../../client/src/core/base/Menu.tsx:19
+msgid "Calendar"
+msgstr "Calendar"
+
 #: ../../client/src/settings/routes/ScreenSettings.tsx:31
 msgid "Dark"
 msgstr "Dark"
@@ -58,12 +62,13 @@ msgstr "Language"
 msgid "Light"
 msgstr "Light"
 
-#: ../../client/src/core/base/Menu.tsx:25
+#: ../../client/src/core/base/Menu.tsx:31
 #: ../../client/src/settings/routes/ScreenSettings.tsx:17
 msgid "Settings"
 msgstr "Settings"
 
-#: ../../client/src/tasks/routes/TasksList.tsx:13
+#: ../../client/src/core/base/Menu.tsx:22
+#: ../../client/src/tasks/routes/TasksList.tsx:14
 msgid "Tasks"
 msgstr "Tasks"
 
