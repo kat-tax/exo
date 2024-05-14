@@ -1,15 +1,17 @@
-import {t} from '@lingui/macro';
+import {msg} from '@lingui/macro';
 
 export function getDayGreeting() {
   switch (getTimeOfDay()) {
     case 'morning':
-      return t`Good morning`;
+      return msg`Good morning`;
     case 'afternoon':
-      return t`Good afternoon`;
+      return msg`Good afternoon`;
     case 'evening':
-      return t`Good evening`;
+      return msg`Good evening`;
     case 'night':
-      return t`Enjoy the night`;
+      return msg`Enjoy the night`;
+    default:
+      return msg`Enjoy the day`;
   }
 }
 
@@ -23,6 +25,7 @@ export function getTimeOfDay() {
     return 'evening';
   if (hour >= 21 || hour <= 3)
     return 'night';
+  return 'unknown';
 }
 
 export function getCurrentTime() {

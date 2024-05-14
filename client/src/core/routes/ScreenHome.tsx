@@ -1,4 +1,5 @@
 import {Text} from 'react-native';
+import {Trans} from '@lingui/react';
 import {useLingui} from '@lingui/react';
 import {useEffect, useState} from 'react';
 import {useStyles, createStyleSheet} from 'design/styles';
@@ -16,7 +17,7 @@ export default function ScreenHome() {
   }, []);
 
   return (
-    <Page title={getDayGreeting()}>
+    <Page title={<Trans id={getDayGreeting().id}/>}>
       <Text style={styles.clock}>
         {time}
       </Text>
