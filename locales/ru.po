@@ -30,6 +30,10 @@ msgstr "Пульт"
 msgid "Default"
 msgstr "По умолчанию"
 
+#: ../../client/src/core/utils/date.ts:14
+msgid "Enjoy the day"
+msgstr ""
+
 #: ../../client/src/core/utils/date.ts:12
 msgid "Enjoy the night"
 msgstr "Наслаждайтесь ночью"

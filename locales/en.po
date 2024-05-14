@@ -30,6 +30,10 @@ msgstr "Dashboard"
 msgid "Default"
 msgstr "Default"
 
+#: ../../client/src/core/utils/date.ts:14
+msgid "Enjoy the day"
+msgstr "Enjoy the day"
+
 #: ../../client/src/core/utils/date.ts:12
 msgid "Enjoy the night"
 msgstr "Enjoy the night"

@@ -48,7 +48,7 @@ export default defineConfig(env => mergeConfig(
           slider: 'src/widgets/slider/Slider.export',
           switch: 'src/widgets/switch/Switch.export',
           /* Hooks */
-          variants: 'src/hooks/useVariants',
+          variants: 'src/hooks/useVariants'
         }
       },
       rollupOptions: {
@@ -56,6 +56,8 @@ export default defineConfig(env => mergeConfig(
           chunkFileNames: 'chunks/[hash]/[name].js'
         },
         external: [
+          /* Node */
+          'fs',
           /* React */
           'react',
           'react-dom',

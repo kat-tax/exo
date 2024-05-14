@@ -1,4 +1,5 @@
 import {Trans} from '@lingui/macro';
+import {cloneElement} from 'react';
 import {Icon} from 'react-exo/icon';
 import {View, Text, Platform} from 'react-native';
 import {useLocation, Link} from 'react-exo/navigation';
@@ -11,16 +12,16 @@ export function Menu() {
   return (
     <View style={styles.root}>
       <View style={styles.fill}>
-        <MenuItem path="/" icon="ph:squares-four">
+        <MenuItem path="/" icon={<Icon name="ph:squares-four"/>}>
           <Trans>Dashboard</Trans>
         </MenuItem>
         {lists.map(list =>
-          <MenuItem key={list} path={`/tasks/${list}`} icon="ph:list-checks">
+          <MenuItem key={list} path={`/tasks/${list}`} icon={<Icon name="ph:list-checks"/>}>
             {list}
           </MenuItem>
         )}
         <View style={styles.fill}/>
-        <MenuItem path="/settings" icon="ph:gear">
+        <MenuItem path="/settings" icon={<Icon name="ph:gear"/>}>
           <Trans>Settings</Trans>
         </MenuItem>
       </View>
@@ -28,20 +29,17 @@ export function Menu() {
   );
 }
 
-export function MenuItem(props: {path: string, icon?: string} & React.PropsWithChildren) {
+export function MenuItem(props: {path: string, icon?: JSX.Element} & React.PropsWithChildren) {
   const {styles, theme} = useStyles(stylesheet);
   const {pathname} = useLocation();
   const isActive = props.path === decodeURIComponent(pathname);
   return (
     <Link to={props.path}>
       <View style={[styles.item, isActive && styles.active]}>
-        {props.icon && Platform.OS === 'web' &&
-          <Icon
-            name={props.icon}
-            color={theme.colors.primary}
-            size={16}
-          />
-        }
+        {props?.icon && cloneElement(props.icon, {
+          color: theme.colors.primary,
+          size: 16,
+        })}
         <Text style={styles.link}>
           {props.children}
         </Text>

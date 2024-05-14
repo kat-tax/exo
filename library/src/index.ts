@@ -31,3 +31,6 @@ export type * from './widgets/checkbox/Checkbox.export';
 
 // Hooks
 export type * from './hooks/useVariants';
+
+// Plugins
+export type * from './plugins/babel-plugin-iconify';

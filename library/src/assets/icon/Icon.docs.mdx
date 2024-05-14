@@ -32,15 +32,23 @@ import {Icon} from 'react-exo/icon';
 ## Platform Support
 
 :::info
-For native support you must install [React Native Iconify](https://github.com/oktaysenkan/react-native-iconify)
+For native support you must install [React Native SVG](https://github.com/software-mansion/react-native-svg)
 
-`npm i react-native-iconify{:bash}`
+`npm i react-native-svg{:bash}`
+
+And add the following to your **babel.config.js** file
+
+```js
+{
+  plugins: ['react-exo/babel-plugin-iconify']
+}
+```
 :::
 
 | Platform | Technology | Functional | Notes |
 | -------- | ---------- | :--------: | :---: |
 | Web | [@iconify/react](https://iconify.design/docs/icon-components/react) | ✅ | - |
-| Android | [react-native-iconify](https://github.com/oktaysenkan/react-native-iconify) | ✅ | - |
-| iOS | [react-native-iconify](https://github.com/oktaysenkan/react-native-iconify) | ✅ | - |
-| MacOS | [react-native-iconify](https://github.com/oktaysenkan/react-native-iconify) | ✅ | - |
-| Windows | [react-native-iconify](https://github.com/oktaysenkan/react-native-iconify) | ✅ | - |
+| Android | [react-native-svg](https://github.com/software-mansion/react-native-svg) | ✅ | - |
+| iOS | [react-native-svg](https://github.com/software-mansion/react-native-svg) | ✅ | - |
+| MacOS | [react-native-svg](https://github.com/software-mansion/react-native-svg) | ✅ | - |
+| Windows | [react-native-svg](https://github.com/software-mansion/react-native-svg) | ✅ | - |

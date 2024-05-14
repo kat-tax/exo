@@ -30,6 +30,10 @@ msgstr "ダッシュボード"
 msgid "Default"
 msgstr "デフォルト"
 
+#: ../../client/src/core/utils/date.ts:14
+msgid "Enjoy the day"
+msgstr ""
+
 #: ../../client/src/core/utils/date.ts:12
 msgid "Enjoy the night"
 msgstr "夜を楽しんでください"

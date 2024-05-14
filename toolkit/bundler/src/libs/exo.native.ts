@@ -43,14 +43,20 @@ export default defineConfig(env => mergeConfig(
           //switch: 'src/widgets/switch/Switch.export',
           /* Hooks */
           variants: 'src/hooks/useVariants',
+          /* Plugins */
+          'babel-plugin-iconify': 'src/plugins/babel-plugin-iconify',
         }
       },
       rollupOptions: {
         output: {
-          chunkFileNames: 'chunks/[hash]/[name].js',
-          entryFileNames: '[name].js',
+          chunkFileNames: 'chunks/[hash]/[name].cjs',
+          entryFileNames: (info) => info.name.includes('babel-plugin-iconify')
+            ? '[name].cjs'
+            : '[name].js',
         },
         external: [
+          /* Node */
+          'fs',
           /* React */
           'react',
           'react-dom',
@@ -70,7 +76,6 @@ export default defineConfig(env => mergeConfig(
           'react-native-bootsplash',
           'react-native-gesture-handler',
           'react-native-get-random-values',
-          'react-native-iconify',
           'react-native-linear-gradient',
           'react-native-mmkv',
           'react-native-reanimated',

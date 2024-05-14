@@ -6,11 +6,11 @@
     "dev": "conc -c 'auto' 'pnpm:*-dev'",
     "build": "conc -c 'auto' -g 'pnpm:*-build'",
 
-    "web-dev": "vite dev  -c ../toolkit/bundler/gen/lib/exo.web.js --port 6606",
-    "web-build": "vite build -c ../toolkit/bundler/gen/lib/exo.web.js",
+    "web-dev": "vite dev  -c ../toolkit/bundler/gen/libs/exo.web.js --port 6606",
+    "web-build": "vite build -c ../toolkit/bundler/gen/libs/exo.web.js",
 
-    "native-dev": "vite dev  -c ../toolkit/bundler/gen/lib/exo.native.js --port 6706",
-    "native-build": "vite build -c ../toolkit/bundler/gen/lib/exo.native.js",
+    "native-dev": "vite dev  -c ../toolkit/bundler/gen/libs/exo.native.js --port 6706",
+    "native-build": "vite build -c ../toolkit/bundler/gen/libs/exo.native.js",
 
     "typedoc": "typedoc"
   },
@@ -140,6 +140,10 @@
       "import": "./gen/web/calendar.js",
       "require": "./gen/native/calendar.js"
     },
+    "./babel-plugin-iconify": {
+      "types": "./gen/types/babel-plugin-iconify.d.ts",
+      "require": "./gen/native/babel-plugin-iconify.cjs"
+    },
     "./checkbox.css": "./gen/web/checkbox.css",
     "./radio.css": "./gen/web/radio.css",
     "./slider.css": "./gen/web/slider.css",
@@ -161,7 +165,6 @@
     "react-native-bootsplash": ">=5",
     "react-native-gesture-handler": ">=2",
     "react-native-get-random-values": ">=1",
-    "react-native-iconify": ">=1",
     "react-native-linear-gradient": ">=2",
     "react-native-mmkv": ">=2",
     "react-native-reanimated": ">=3",
@@ -174,6 +177,8 @@
   },
   "dependencies": {
     "@iconify/react": "^4.1.1",
+    "@iconify/json": "^2.2.210",
+    "@iconify/utils": "^2.1.23",
     "@legendapp/motion": "^2.3.0",
     "@lottiefiles/dotlottie-react": "^0.5.4",
     "@radix-ui/react-checkbox": "^1.0.4",
@@ -200,6 +205,7 @@
     "vite-plugin-node-polyfills": "^0.21.0"
   },
   "devDependencies": {
+    "@babel/types": "^7.24.4",
     "@candlefinance/faster-image": "^1.4.3",
     "@lingui/core": "^4.10.0",
     "@marceloterreiro/flash-calendar": "^0.0.8",
@@ -208,6 +214,7 @@
     "@react-native-community/slider": "^4.5.2",
     "@react-native-picker/picker": "^2.7.5",
     "@storybook/react": "^8.0.8",
+    "@types/babel__core": "^7.20.5",
     "@types/jest": "^29.5.12",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
@@ -220,7 +227,6 @@
     "react-native-bootsplash": "^5.5.2",
     "react-native-gesture-handler": "^2.16.0",
     "react-native-get-random-values": "^1.11.0",
-    "react-native-iconify": "^1.0.1",
     "react-native-linear-gradient": "^2.8.3",
     "react-native-macos": "^0.73.24",
     "react-native-mmkv": "^2.12.2",

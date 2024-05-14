@@ -2,7 +2,6 @@ import {defineConfig, mergeConfig} from 'vite';
 import webConfig from '../vite.web.js';
 
 import react from '@vitejs/plugin-react';
-import types from 'vite-plugin-dts';
 import {lingui} from '@lingui/vite-plugin';
 
 export default defineConfig(env => mergeConfig(
@@ -23,7 +22,7 @@ export default defineConfig(env => mergeConfig(
       },
       rollupOptions: {
         output: {
-          chunkFileNames: 'chunks/[hash]/[name].js',
+          chunkFileNames: 'chunks/[hash]/[name].cjs',
           entryFileNames: '[name].js',
         },
         external: [

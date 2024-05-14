@@ -1,6 +1,8 @@
-export type IconComponent = (props: IconProps) => JSX.Element;
+import type {XmlProps} from 'react-native-svg';
 
-export interface IconProps {
+export type IconComponent = (props: IconProps) => JSX.Element | null;
+
+export interface IconProps extends Omit<XmlProps, 'xml'> {
   /** The name of the icon to display */
   name: string,
   /** The size of the icon */
