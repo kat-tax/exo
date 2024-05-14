@@ -21,7 +21,7 @@ msgstr "أضف مهمة"
 msgid "Dark"
 msgstr "داكن"
 
-#: ../../client/src/core/base/Menu.tsx:15
+#: ../../client/src/core/base/Menu.tsx:16
 msgid "Dashboard"
 msgstr "لوحة التحكم"
 
@@ -58,7 +58,7 @@ msgstr "اللغة"
 msgid "Light"
 msgstr "فاتح"
 
-#: ../../client/src/core/base/Menu.tsx:24
+#: ../../client/src/core/base/Menu.tsx:25
 #: ../../client/src/settings/routes/ScreenSettings.tsx:17
 msgid "Settings"
 msgstr "الإعدادات"

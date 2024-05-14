@@ -56,8 +56,6 @@ export default defineConfig(env => mergeConfig(
           chunkFileNames: 'chunks/[hash]/[name].js'
         },
         external: [
-          /* Node */
-          'fs',
           /* React */
           'react',
           'react-dom',

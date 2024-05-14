@@ -44,19 +44,21 @@ export default defineConfig(env => mergeConfig(
           /* Hooks */
           variants: 'src/hooks/useVariants',
           /* Plugins */
-          'babel-plugin-iconify': 'src/plugins/babel-plugin-iconify',
+          'babel-plugin-iconify-extract': 'src/assets/icon/babel-plugin/extract.ts',
+          'babel-plugin-iconify-transform': 'src/assets/icon/babel-plugin/transform.ts',
         }
       },
       rollupOptions: {
         output: {
           chunkFileNames: 'chunks/[hash]/[name].cjs',
-          entryFileNames: (info) => info.name.includes('babel-plugin-iconify')
+          entryFileNames: (info) => info.name.includes('babel-plugin-')
             ? '[name].cjs'
             : '[name].js',
         },
         external: [
           /* Node */
           'fs',
+          'fs/promises',
           /* React */
           'react',
           'react-dom',

@@ -33,4 +33,5 @@ export type * from './widgets/checkbox/Checkbox.export';
 export type * from './hooks/useVariants';
 
 // Plugins
-export type * from './plugins/babel-plugin-iconify';
+export type * from './assets/icon/babel-plugin/extract';
+export type * from './assets/icon/babel-plugin/transform';

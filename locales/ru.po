@@ -21,7 +21,7 @@ msgstr "Добавить задачу"
 msgid "Dark"
 msgstr "Темная"
 
-#: ../../client/src/core/base/Menu.tsx:15
+#: ../../client/src/core/base/Menu.tsx:16
 msgid "Dashboard"
 msgstr "Пульт"
 
@@ -58,7 +58,7 @@ msgstr "Язык"
 msgid "Light"
 msgstr "Светлая"
 
-#: ../../client/src/core/base/Menu.tsx:24
+#: ../../client/src/core/base/Menu.tsx:25
 #: ../../client/src/settings/routes/ScreenSettings.tsx:17
 msgid "Settings"
 msgstr "Настройки"

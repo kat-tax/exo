@@ -140,14 +140,18 @@
       "import": "./gen/web/calendar.js",
       "require": "./gen/native/calendar.js"
     },
-    "./babel-plugin-iconify": {
-      "types": "./gen/types/babel-plugin-iconify.d.ts",
-      "require": "./gen/native/babel-plugin-iconify.cjs"
-    },
     "./checkbox.css": "./gen/web/checkbox.css",
     "./radio.css": "./gen/web/radio.css",
     "./slider.css": "./gen/web/slider.css",
-    "./switch.css": "./gen/web/switch.css"
+    "./switch.css": "./gen/web/switch.css",
+    "./babel-plugin-iconify-extract": {
+      "types": "./gen/types/babel-plugin-iconify-extract.d.ts",
+      "require": "./gen/native/babel-plugin-iconify-extract.cjs"
+    },
+    "./babel-plugin-iconify-transform": {
+      "types": "./gen/types/babel-plugin-iconify-transform.d.ts",
+      "require": "./gen/native/babel-plugin-iconify-transform.cjs"
+    }
   },
   "peerDependencies": {
     "@candlefinance/faster-image": ">=1",
