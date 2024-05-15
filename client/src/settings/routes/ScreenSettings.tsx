@@ -43,7 +43,12 @@ export default function ScreenSettings() {
             onValueChange={setLocale}>
             <Picker.Item label={t`Default`} value="" color={theme.colors.foreground}/>
             {Object.entries(locales).map(([value, label]) => (
-              <Picker.Item key={value} label={label} value={value} color={theme.colors.foreground}/>
+              <Picker.Item
+                key={value}
+                value={value}
+                label={label}
+                color={theme.colors.foreground}
+              />
             ))}
           </Picker>
         </View>
