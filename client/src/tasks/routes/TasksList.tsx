@@ -1,8 +1,8 @@
-import {t} from '@lingui/macro';
-import {Link} from 'react-exo/navigation';
 import {Text} from 'react-native';
-import {useStyles, createStyleSheet} from 'design/styles';
+import {Link} from 'react-exo/navigation';
+import {Trans} from '@lingui/macro';
 import {useLingui} from '@lingui/react';
+import {useStyles, createStyleSheet} from 'design/styles';
 import {useLists} from 'tasks/hooks/useLists';
 import {Page} from 'core/base/Page';
 
@@ -11,7 +11,7 @@ export default function TasksList() {
   const tasks = useLists();
   useLingui();
   return (
-    <Page title={t`Tasks`}>
+    <Page title={<Trans>Tasks</Trans>}>
       {tasks.map(id =>
         <Link key={id} to={`/tasks/${id}`}>
           <Text style={styles.link}>{`• ${id}`}</Text>
