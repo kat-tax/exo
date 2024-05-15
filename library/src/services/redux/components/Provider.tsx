@@ -6,7 +6,7 @@ export interface ProviderProps extends Redux.ProviderProps {
   loading?: React.ReactNode,
 }
 
-export function Provider(props: ProviderProps): JSX.Element {
+export function Provider(props: ProviderProps): React.ReactNode {
   return (
     <Redux.Provider {...props}>
       <PersistGate

@@ -1,6 +1,6 @@
 import type {StyleProp, ViewStyle} from 'react-native';
 
-export type ProgressComponent = (props: ProgressProps) => JSX.Element;
+export type ProgressComponent = (props: ProgressProps) => React.ReactNode;
 
 export interface ProgressProps {
   /** The progress of the bar from 0 to 100 */
@@ -8,7 +8,7 @@ export interface ProgressProps {
   /** Progress color */
   progressColor?: string,
   /** Custom element to render on top of the animated progress */
-  customElement?: JSX.Element,
+  customElement?: React.ReactNode,
   /** Display the progress bar at full width in it's container */
   fullWidth?: boolean,
   /** Override container style */
