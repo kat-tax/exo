@@ -1,4 +1,4 @@
-import {Text} from 'react-native';
+import {View, Text} from 'react-native';
 import {Picker} from 'react-exo/picker';
 import {Trans, t} from '@lingui/macro';
 import {useLingui} from '@lingui/react';
@@ -12,55 +12,66 @@ export default function ScreenSettings() {
   const {styles, theme} = useStyles(stylesheet);
   const [scheme, setScheme] = useScheme(true);
   const [locale, setLocale] = useLocale(true);
-
   useLingui();
-
   return (
-    <Page title={t`Settings`}>
-      <Text style={styles.label}>
-        <Trans>Theme</Trans>
-      </Text>
-      <Picker
-        style={styles.select}
-        selectedValue={scheme}
-        onValueChange={setScheme}>
-        <Picker.Item label={t`Default`} value="" color={theme.colors.foreground}/>
-        <Picker.Item label={t`Light`} value="light" color={theme.colors.foreground}/>
-        <Picker.Item label={t`Dark`} value="dark" color={theme.colors.foreground}/>
-      </Picker>
-      <Text style={styles.label}>
-        <Trans>Language</Trans>
-      </Text>
-      <Picker
-        style={styles.select}
-        selectedValue={locale}
-        onValueChange={setLocale}>
-        <Picker.Item label={t`Default`} value="" color={theme.colors.foreground}/>
-        {Object.entries(locales).map(([value, label]) => (
-          <Picker.Item
-            key={value}
-            label={label}
-            value={value}
-            color={theme.colors.foreground}
-          />
-        ))}
-      </Picker>
+    <Page title={<Trans>Settings</Trans>}>
+      <View style={styles.content}>
+        <View style={styles.option}>
+          <Text style={styles.label}>
+            <Trans>Theme</Trans>
+          </Text>
+          <Picker
+            style={styles.select}
+            itemStyle={styles.selectItem}
+            dropdownIconColor={theme.colors.foreground}
+            selectedValue={scheme}
+            onValueChange={setScheme}>
+            <Picker.Item label={t`Default`} value="" color={theme.colors.foreground}/>
+            <Picker.Item label={t`Light`} value="light" color={theme.colors.foreground}/>
+            <Picker.Item label={t`Dark`} value="dark" color={theme.colors.foreground}/>
+          </Picker>
+        </View>
+        <View style={styles.option}>
+          <Text style={styles.label}>
+            <Trans>Language</Trans>
+          </Text>
+          <Picker
+            style={styles.select}
+            itemStyle={styles.selectItem}
+            dropdownIconColor={theme.colors.foreground}
+            selectedValue={locale}
+            onValueChange={setLocale}>
+            <Picker.Item label={t`Default`} value="" color={theme.colors.foreground}/>
+            {Object.entries(locales).map(([value, label]) => (
+              <Picker.Item
+                key={value}
+                value={value}
+                label={label}
+                color={theme.colors.foreground}
+              />
+            ))}
+          </Picker>
+        </View>
+      </View>
     </Page>
   );
 }
 
 const stylesheet = createStyleSheet(theme => ({
+  content: {
+    gap: 16,
+  },
+  option: {
+    gap: 4,
+  },
   label: {
-    fontSize: 16,
-    marginTop: 16,
-    marginBottom: 8,
+    fontSize: 14,
     color: theme.colors.foreground,
   },
   select: {
-    width: 200,
-    padding: 8,
+    width: 160,
+  },
+  selectItem: {
     color: theme.colors.foreground,
-    borderColor: theme.colors.border,
-    backgroundColor: theme.colors.background,
   },
 }));

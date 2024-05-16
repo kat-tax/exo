@@ -11,6 +11,7 @@ export function Router() {
         <Nav.Route path="/" element={<$><Layout.Main/></$>}>
           <Nav.Route index element={<$><Screen.Home/></$>}/>
           <Nav.Route path="tasks" element={<$><Screen.TaskList/></$>}/>
+          <Nav.Route path="calendar" element={<$><Screen.Calendar/></$>}/>
           <Nav.Route path="tasks/:id" element={<$><Screen.TaskDetails/></$>}/>
           <Nav.Route path="settings" element={<$><Screen.Settings/></$>}/>
         </Nav.Route>

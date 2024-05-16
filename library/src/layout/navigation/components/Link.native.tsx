@@ -5,7 +5,7 @@ import {useLinkPressHandler} from '../hooks/useLinkPressHandler';
 import type {LinkNative} from './Link.interface';
 import type {GestureResponderEvent} from 'react-native';
 
-export function Link({replace = false, state, to, ...rest}: LinkNative): JSX.Element {
+export function Link({replace = false, state, to, ...rest}: LinkNative): React.ReactNode {
   const press = useLinkPressHandler(to, {replace, state});
   const handler = useCallback((e: GestureResponderEvent) => {
     if (!e.defaultPrevented)

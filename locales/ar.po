@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 2024-04-11 17:09+0800\n"
+"POT-Creation-Date: 2024-05-12 23:27+0900\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -13,65 +13,73 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: ../../client/src/tasks/base/TasksInput.tsx:23
+#: ../../client/src/tasks/base/TasksInput.tsx:21
 msgid "Add a task"
-msgstr "إضافة مهمة"
+msgstr "أضف مهمة"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:29
+#: ../../client/src/core/base/Menu.tsx:19
+msgid "Calendar"
+msgstr "التقويم"
+
+#: ../../client/src/settings/routes/ScreenSettings.tsx:31
 msgid "Dark"
-msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:27
-#: ../../client/src/settings/routes/ScreenSettings.tsx:38
-msgid "Default"
-msgstr ""
-
-#: ../../client/src/core/utils/date.ts:24
-msgid "Enjoy the night."
-msgstr "استمتع بالليل."
-
-#: ../../client/src/core/utils/date.ts:20
-msgid "Good afternoon."
-msgstr "مساء الخير."
-
-#: ../../client/src/core/utils/date.ts:22
-msgid "Good evening."
-msgstr "مساء الخير."
-
-#: ../../client/src/core/utils/date.ts:18
-msgid "Good morning."
-msgstr "صباح الخير."
+msgstr "داكن"
 
 #: ../../client/src/core/base/Menu.tsx:16
-#: ../../client/src/core/routes/ScreenHome.tsx:14
-msgid "Home"
-msgstr "الصفحة الرئيسية"
+msgid "Dashboard"
+msgstr "لوحة التحكم"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:32
+#: ../../client/src/settings/routes/ScreenSettings.tsx:29
+#: ../../client/src/settings/routes/ScreenSettings.tsx:44
+msgid "Default"
+msgstr "افتراضي"
+
+#: ../../client/src/core/utils/date.ts:14
+msgid "Enjoy the day"
+msgstr "استمتع باليوم"
+
+#: ../../client/src/core/utils/date.ts:12
+msgid "Enjoy the night"
+msgstr "استمتع بالليل"
+
+#: ../../client/src/core/utils/date.ts:8
+msgid "Good afternoon"
+msgstr "مساء الخير"
+
+#: ../../client/src/core/utils/date.ts:10
+msgid "Good evening"
+msgstr "مساء الخير"
+
+#: ../../client/src/core/utils/date.ts:6
+msgid "Good morning"
+msgstr "صباح الخير"
+
+#: ../../client/src/settings/routes/ScreenSettings.tsx:36
 msgid "Language"
 msgstr "اللغة"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:28
+#: ../../client/src/settings/routes/ScreenSettings.tsx:30
 msgid "Light"
-msgstr ""
+msgstr "فاتح"
 
-#: ../../client/src/core/base/Menu.tsx:25
-#: ../../client/src/settings/routes/ScreenSettings.tsx:19
+#: ../../client/src/core/base/Menu.tsx:31
+#: ../../client/src/settings/routes/ScreenSettings.tsx:17
 msgid "Settings"
 msgstr "الإعدادات"
 
-#: ../../client/src/tasks/routes/TasksList.tsx:11
+#: ../../client/src/core/base/Menu.tsx:22
+#: ../../client/src/tasks/routes/TasksList.tsx:14
 msgid "Tasks"
 msgstr "المهام"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:21
 msgid "Theme"
-msgstr "السمة"
+msgstr "الثيم"
 
 #: ../../client/src/core/hooks/useOnline.ts:14
 msgid "You are offline"
-msgstr ""
+msgstr "أنت غير متصل"
 
 #: ../../client/src/core/hooks/useOnline.ts:12
 msgid "You are online"
-msgstr ""
+msgstr "أنت متصل"

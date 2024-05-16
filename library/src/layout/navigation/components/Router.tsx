@@ -9,7 +9,7 @@ export interface RouterProps {
   children?: React.ReactNode,
 }
 
-export function Router({basename, children, history}: RouterProps): JSX.Element {
+export function Router({basename, children, history}: RouterProps): React.ReactNode {
   const [state, setState] = useState({
     location: history.location,
     action: history.action,

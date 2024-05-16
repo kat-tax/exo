@@ -39,10 +39,19 @@ const config: StorybookConfig = {
     builder: {
       name: '@storybook/builder-vite',
       options: {
-        viteConfigPath: '../../web/gen/vite.sb.js',
+        viteConfigPath: '../../bundler/gen/web/storybook.js',
       },
     },
     disableTelemetry: true,
+  },
+  async viteFinal(config) {
+    return {
+      ...config,
+      build: {
+        ...config.build,
+        chunkSizeWarningLimit: 800,
+      },
+    };
   }
 };
 

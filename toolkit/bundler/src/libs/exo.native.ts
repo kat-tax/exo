@@ -1,18 +1,16 @@
 import {defineConfig, mergeConfig} from 'vite';
-import baseConfig from './vite.base.js';
-import plugins from './plugins/lib/index.js';
+import nativeConfig from '../vite.native.js';
+
+import react from '@vitejs/plugin-react';
 
 export default defineConfig(env => mergeConfig(
-  baseConfig(env),
+  nativeConfig(env),
   defineConfig({
-    plugins,
     build: {
-      outDir: './gen',
-      cssMinify: 'lightningcss',
-      cssCodeSplit: true,
+      outDir: './gen/native',
       sourcemap: true,
       lib: {
-        formats: ['es', 'cjs'],
+        formats: ['cjs'],
         entry: {
           /* Entry */
           index: 'src/index.ts',
@@ -37,45 +35,64 @@ export default defineConfig(env => mergeConfig(
           toast: 'src/services/toast/Toast.export',
           /* Widgets */
           calendar: 'src/widgets/calendar/Calendar.export',
-          checkbox: 'src/widgets/checkbox/Checkbox.export',
+          //checkbox: 'src/widgets/checkbox/Checkbox.export',
           picker: 'src/widgets/picker/Picker.export',
-          progress: 'src/widgets/progress/Progress.export',
-          radio: 'src/widgets/radio/Radio.export',
+          //progress: 'src/widgets/progress/Progress.export',
+          //radio: 'src/widgets/radio/Radio.export',
           slider: 'src/widgets/slider/Slider.export',
-          switch: 'src/widgets/switch/Switch.export',
+          //switch: 'src/widgets/switch/Switch.export',
           /* Hooks */
           variants: 'src/hooks/useVariants',
+          /* Plugins */
+          'babel-plugin-iconify-extract': 'src/assets/icon/babel-plugin/extract.ts',
+          'babel-plugin-iconify-transform': 'src/assets/icon/babel-plugin/transform.ts',
         }
       },
       rollupOptions: {
+        output: {
+          chunkFileNames: 'chunks/[hash]/[name].cjs',
+          entryFileNames: (info) => info.name.includes('babel-plugin-')
+            ? '[name].cjs'
+            : '[name].js',
+        },
         external: [
+          /* Node */
+          'fs',
+          'fs/promises',
           /* React */
           'react',
           'react-dom',
           'react-native',
-          'react-native-web',
           'react/jsx-runtime',
           /* I18n */
           '@linguijs/core',
           '@linguijs/react',
           '@linguijs/macro',
-          /* Web */
-          '@vidstack/react',
-          '@dotlottie/common',
-          '@dotlottie/react-player'
+          /** Vendor */
+          '@candlefinance/faster-image',
+          '@marceloterreiro/flash-calendar',
+          '@react-native-community/checkbox',
+          '@react-native-community/netinfo',
+          '@react-native-community/slider',
+          '@react-native-picker/picker',
+          'react-native-bootsplash',
+          'react-native-gesture-handler',
+          'react-native-get-random-values',
+          'react-native-linear-gradient',
+          'react-native-mmkv',
+          'react-native-reanimated',
+          'react-native-safe-area-context',
+          'react-native-screens',
+          'react-native-skottie',
+          'react-native-svg',
+          'react-native-ui-lib',
+          'react-native-video',
         ],
-        output: {
-          chunkFileNames: '[format]/chunks/[hash]/[name].js',
-          entryFileNames: '[format]/[name].js',
-        },
       },
     },
-    optimizeDeps: {
-      exclude: [
-        '@dotlottie/react-player',
-        '@dotlottie/common'
-      ],
-    },
+    plugins: [
+      react(),
+    ],
   }),
 ));
 

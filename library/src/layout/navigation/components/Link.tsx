@@ -27,6 +27,7 @@ export const Link = forwardRef<HTMLAnchorElement, LinkWeb>(
         ref={ref}
         href={href}
         target={target}
+        style={{textDecoration: 'none'}}
         onClick={handler}
       />
     );

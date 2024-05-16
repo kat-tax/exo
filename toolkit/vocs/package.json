@@ -26,12 +26,12 @@
     "@types/fs-extra": "latest",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
+    "bundler": "workspace:*",
     "config": "workspace:*",
     "fs-extra": "latest",
     "tsx": "latest",
     "typescript": "^5.3.2",
     "vocs": "latest",
-    "web": "workspace:*",
     "yaml": "latest"
   }
 }

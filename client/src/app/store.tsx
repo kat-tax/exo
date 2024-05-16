@@ -1,7 +1,7 @@
 import * as Redux from 'react-exo/redux';
 import {Storage} from 'react-exo/storage';
 import {PageLoading} from 'core/base/PageLoading';
-import config from 'config';
+// import config from 'config';
 
 import core from 'core/store';
 import tasks from 'tasks/store';
@@ -17,9 +17,9 @@ export function Store(props: React.PropsWithChildren) {
 }
 
 const reducer = Redux.persistReducer({
-  key: config.APP_NAME,
+  key: 'EXO',
   version: 0,
-  storage: Storage.init(`${config.APP_NAME}::redux`, 0),
+  storage: Storage.init(`${'EXO'}::redux`, 0),
   blacklist: [
     Redux.history.context.routerReducer.name,
     core.reducer.name,

@@ -17,8 +17,6 @@ export function TasksList(props: TasksListProps) {
         <Pressable key={item} onPress={() => props.addComplete(item)}>
           <Text style={styles.text}>
             {`${index + 1}. `}
-          </Text>
-          <Text style={styles.text}>
             {item}
           </Text>
         </Pressable>
@@ -27,8 +25,6 @@ export function TasksList(props: TasksListProps) {
         <Pressable key={item} onPress={() => props.addActive(item)}>
           <Text style={[styles.text, styles.strike]}>
             {`${props.active.length + index + 1}. `}
-          </Text>
-          <Text style={styles.text}>
             {item}
           </Text>
         </Pressable>
@@ -37,18 +33,16 @@ export function TasksList(props: TasksListProps) {
   );
 }
 
-const stylesheet = createStyleSheet(_theme => ({
+const stylesheet = createStyleSheet(theme => ({
   list: {
     flex: 1,
     width: '100%',
     height: '100%',
-    marginVertical: 12,
-    marginHorizontal: 6,
   },
   text: {
-    color: '#000',
-    fontSize: 16,
-    lineHeight: 36,
+    fontSize: 14,
+    lineHeight: 24,
+    color: theme.colors.foreground,
   },
   strike: {
     textDecorationLine: 'line-through',

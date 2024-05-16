@@ -9,7 +9,7 @@ export type Tasks = Record<string, {
 export default createSlice({
   name: 'tasks',
   initialState: <Tasks> {
-    Demo: {active: ['Test'], complete: []},
+    'Shopping List': {active: ['Milk', 'Bread', 'Cheese'], complete: []},
   },
   selectors: {
     getLists: (tasks) => Object.keys(tasks),
@@ -25,7 +25,7 @@ export default createSlice({
         items.complete.splice(index, 1);
         items.active.push(item);
       } else if (!items.active.includes(item)) {
-        items.active.unshift(item);
+        items.active.push(item);
       }
       tasks[list] = items;
     },

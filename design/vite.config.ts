@@ -1,1 +1,1 @@
-export {default} from 'web/vite.design';
+export {default} from 'bundler/lib.design.web.cfg';

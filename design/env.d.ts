@@ -1,6 +1,11 @@
 import type {AppThemes, AppBreakpoints} from './styles';
 import type {SvgProps} from 'react-native-svg';
 
+declare module 'styles' {
+  export interface UnistylesThemes extends AppThemes {}
+  export interface UnistylesBreakpoints extends AppBreakpoints {}
+}
+
 declare module 'design/styles' {
   export interface UnistylesThemes extends AppThemes {}
   export interface UnistylesBreakpoints extends AppBreakpoints {}

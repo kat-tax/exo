@@ -5,7 +5,7 @@ export interface CardProps {
   /** The card header */
   header: string,
   /** The card thumbnail */
-  thumbnail?: JSX.Element,
+  thumbnail?: React.ReactNode,
   /** An identifier used for testing */
   testID?: string,
 }
@@ -13,7 +13,7 @@ export interface CardProps {
 /**
  * A simple card block component
  * */
-export function Card(props: CardProps): JSX.Element {
+export function Card(props: CardProps): React.ReactNode {
   const {styles} = useStyles(stylesheet);
 
   return (

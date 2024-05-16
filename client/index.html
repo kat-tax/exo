@@ -15,18 +15,30 @@
       font-feature-settings: 'liga' 1, 'calt' 1;
     }
 
+    html, body, #root {
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      display: flex;
+      background: #fff;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      html, body, #root {
+        background: #000;
+      }
+    }
+
     @supports (font-variation-settings: normal) {
       :root {
         font-family: __FONT_NAME__Variable, sans-serif;
       }
     }
 
-    html, body, #root {
-      height: 100%;
-      width: 100%;
-      margin: 0;
-      display: flex;
-      background: #000;
+    @media (prefers-reduced-motion: no-preference) {
+      html {
+        scroll-behavior: smooth;
+      }
     }
   </style>
 </head>

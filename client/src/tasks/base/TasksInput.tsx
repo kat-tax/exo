@@ -9,19 +9,17 @@ interface TasksInputProps {
 }
 
 export function TasksInput(props: TasksInputProps) {
-  const {styles} = useStyles(stylesheet);
+  const {styles, theme} = useStyles(stylesheet);
   const refInput = useRef<any>(null);
-
   useLingui();
-
   return (
     <TextInput
       autoFocus
       ref={refInput}
       style={styles.input}
-      placeholderTextColor="rgba(255, 255, 255, 0.5)"
-      placeholder={t`Add a task`}
       blurOnSubmit={false}
+      placeholder={t`Add a task`}
+      placeholderTextColor={theme.colors.mutedForeground}
       onSubmitEditing={e => {
         const input = e.nativeEvent.text;
         if (input) {
@@ -33,12 +31,11 @@ export function TasksInput(props: TasksInputProps) {
   );
 }
 
-const stylesheet = createStyleSheet(_theme => ({
+const stylesheet = createStyleSheet(theme => ({
   input: {
-    width: '100%',
-    padding: 12,
-    color: '#000',
-    borderColor: '#000',
-    borderWidth: 1,
+    width: 300,
+    padding: 8,
+    marginTop: 16,
+    color: theme.colors.foreground,
   },
 }));

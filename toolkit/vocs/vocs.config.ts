@@ -1,6 +1,6 @@
 import {defineConfig} from 'vocs';
 import {themes} from 'design/theme';
-import viteDocs from 'web/vite.docs';
+import viteDocs from 'bundler/web.docs.cfg';
 import sidebar from 'config/docs.sidebar';
 import config from 'config';
 
@@ -67,8 +67,8 @@ export default defineConfig({
     }
   },
   vite: viteDocs({
-    command: 'serve',
-    mode: 'development',
+    command: 'build',
+    mode: 'production',
   }),
   twoslash: {
     compilerOptions: {

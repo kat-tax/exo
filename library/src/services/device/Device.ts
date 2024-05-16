@@ -1,7 +1,7 @@
 import type {DeviceBase} from './Device.interface';
 
 export class DeviceService implements DeviceBase {
-  BootSplash = {
+  /*BootSplash = {
     hide: async () => {},
     isVisible: async () => false,
     useHideAnimation: () => ({
@@ -9,7 +9,7 @@ export class DeviceService implements DeviceBase {
       brand: {},
       container: {},
     }),
-  }
+  }*/
 
   share(url: string, title: string) {
     navigator.share({url, title}).catch(() => {});

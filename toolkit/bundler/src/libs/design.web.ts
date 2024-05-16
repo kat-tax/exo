@@ -1,18 +1,20 @@
 import {defineConfig, mergeConfig} from 'vite';
-import baseConfig from './vite.base.js';
-import plugins from './plugins/design/index.js';
+import webConfig from '../vite.web.js';
+
+import react from '@vitejs/plugin-react';
+import types from 'vite-plugin-dts';
+import {lingui} from '@lingui/vite-plugin';
 
 export default defineConfig(env => mergeConfig(
-  baseConfig(env),
+  webConfig(env),
   defineConfig({
-    plugins,
     build: {
-      outDir: './gen',
+      outDir: './gen/web',
       cssMinify: 'lightningcss',
       cssCodeSplit: true,
       sourcemap: true,
       lib: {
-        formats: ['es', 'cjs'],
+        formats: ['es'],
         entry: {
           index: 'index.ts',
           theme: 'theme.ts',
@@ -20,6 +22,9 @@ export default defineConfig(env => mergeConfig(
         }
       },
       rollupOptions: {
+        output: {
+          chunkFileNames: 'chunks/[hash]/[name].js',
+        },
         external: [
           /* React */
           'react',
@@ -32,11 +37,20 @@ export default defineConfig(env => mergeConfig(
           '@linguijs/react',
           '@linguijs/macro',
         ],
-        output: {
-          chunkFileNames: 'chunks/[format]/[hash]/[name].js',
-        },
       },
     },
+    plugins: [
+      lingui(),
+      types({
+        exclude: ['gen', 'vite.config.ts', 'lingui.config.ts'],
+        outDir: './gen/types',
+        insertTypesEntry: true,
+      }),
+      react({
+        babel: {
+          plugins: ['macros'],
+        },
+      }),
+    ],
   }),
 ));
-
