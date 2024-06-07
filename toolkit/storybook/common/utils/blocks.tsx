@@ -7,7 +7,7 @@ import {useState, useEffect} from 'react';
 import {ColorPalette, ColorItem, IconGallery, IconItem} from '@storybook/blocks';
 import {extractBasics, extractScales, getBasicProps} from 'utils/colors';
 import {loadIconSet} from 'utils/icons';
-import {pallete} from 'design/theme';
+import {palette} from 'design/theme';
 import {Icon} from 'react-exo/icon';
 
 export function Story(props: React.PropsWithChildren) {
@@ -21,8 +21,8 @@ export function Story(props: React.PropsWithChildren) {
 export function Colors() {
   return (
     <ColorPalette>
-      <ColorItem {...getBasicProps(extractBasics(pallete))}/>
-      {Object.entries(extractScales(pallete)).map(([name, colors]) => (
+      <ColorItem {...getBasicProps(extractBasics(palette))}/>
+      {Object.entries(extractScales(palette)).map(([name, colors]) => (
         <ColorItem
           key={name}
           title={name.charAt(0).toUpperCase() + name.slice(1)}
