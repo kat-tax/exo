@@ -61,16 +61,15 @@ async function processComponents(files: string[], paths: string[]) {
     if (demo) mdx = mdx.replace(/:::demo(.*?):::/gs, demo.trim());
     if (imports) mdx = mdx.replace(/:::imports(.*?):::/gs, imports.trim());
     mdx = mdx.replace(/:::usage:::/g, getCodeBlock(componentName, imports, demo));
-    const final = getDefaultImports(componentName) + '\n' + mdx;
+    const final = getDefaultImports() + '\n' + mdx;
     await ensureDir([output, ...base.split('/')].slice(0, -1).join('/'));
     await writeFile(`${output}/${base}.mdx`, final, 'utf8');
   });
 }
 
-function getDefaultImports(componentName: string) {
+function getDefaultImports() {
   return [
     `import {Button as SB} from 'vocs/components';`,
-    `import {${componentName}} from 'design';`,
   ].join('\n');
 }
 
