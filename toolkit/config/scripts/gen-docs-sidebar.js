@@ -33,9 +33,11 @@ const sidebar = [
     collapsed: false,
     items: componentsGroups.map(g => ({
       text: titleCase(g),
-      items: readdirSync(`${COMPONENTS}/${g}`).filter(excludeFiles).map(f => ({
-        link: `/components/${g}/${f}`,
-        text: getTitle(f, `${COMPONENTS}/${g}/${f}/${titleCase(f, true)}.docs.mdx`),
+      items: readdirSync(`${COMPONENTS}/${g}`).filter(excludeFiles).map(s => ({
+        items: readdirSync(`${COMPONENTS}/${g}/${s}`).filter(excludeFiles).map(f => ({
+          link: `/components/${g}/${s}/${f}`,
+          text: getTitle(f, `${COMPONENTS}/${g}/${s}/${f}/${titleCase(f, true)}.docs.mdx`),
+        })),
       })),
     })).filter(g => g.items.length),
   },
