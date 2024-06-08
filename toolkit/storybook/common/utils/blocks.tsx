@@ -4,18 +4,49 @@ import 'react-exo/radio.css';
 import 'react-exo/slider.css';
 
 import {useState, useEffect} from 'react';
+import {useInitialTheme, UnistylesRuntime} from 'design/styles';
 import {ColorPalette, ColorItem, IconGallery, IconItem} from '@storybook/blocks';
 import {extractBasics, extractScales, getBasicProps} from 'utils/colors';
+import {themes, palette, initialTheme} from 'design/theme';
 import {loadIconSet} from 'utils/icons';
-import {palette} from 'design/theme';
 import {Icon} from 'react-exo/icon';
 
-export function Story(props: React.PropsWithChildren) {
-  return (
-    <>
-      {props.children}
-    </>
-  );
+import type {Globals, Parameters} from '@storybook/types';
+
+export function Story(props: {
+  children: React.ReactNode,
+  globals: Globals,
+  parameters: Parameters,
+}) {
+  const {children, globals, parameters} = props;
+  const getCurrentTheme = () => {
+    let theme = initialTheme;
+    // Runtime theme
+    if (globals?.backgrounds) {
+      const color = globals?.backgrounds?.value;
+      if (color === 'transparent') {
+        theme = initialTheme;
+      } else {
+        const [name] = Object.entries(themes).find(([_, t]) =>
+          t.colors.background === color) || [initialTheme];
+        theme = name as never;
+      }
+    // Theme set in the toolbar
+    } else if (parameters?.backgrounds) {
+      theme = parameters?.backgrounds?.default;
+    }
+    return theme;
+  }
+
+  useInitialTheme(getCurrentTheme() as never);
+  
+  useEffect(() => {
+    const theme = getCurrentTheme();
+    console.log('[changed]', theme, globals.backgrounds.value, parameters.backgrounds);
+    UnistylesRuntime.setTheme(theme as never);
+  }, [parameters, globals]);
+
+  return <>{children}</>
 }
 
 export function Colors() {

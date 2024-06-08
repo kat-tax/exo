@@ -1,36 +1,18 @@
-import 'design/styles';
-
 import React from 'react';
 import {themes} from '@storybook/theming';
-import {initialTheme, themes as uniThemes} from 'design/theme';
+import {initialTheme, themes as appThemes} from 'design/theme';
 import {Story} from 'storybook-common/utils/blocks';
 
 import type {Preview} from '@storybook/react';
 
 const preview: Preview = {
   decorators: [
-    (Outlet) => (
-      <Story>
+    (Outlet, {globals, parameters}) => (
+      <Story {...{globals, parameters}}>
         <Outlet/>
       </Story>
     ),
   ],
-  globalTypes: {
-    theme: {
-      name: 'Theme',
-      description: 'Change the component theme',
-      defaultValue: initialTheme,
-      toolbar: {
-        icon: 'paintbrush',
-        dynamicTitle: true,
-        items: Object.keys(uniThemes).map((k) => ({
-          value: k,
-          title: k.charAt(0).toUpperCase() + k.slice(1),
-          icon: k === 'light' ? 'sun' : k === 'dark' ? 'moon' : '',
-        })),
-      },
-    },
-  },
   parameters: {
     layout: 'centered',
     docs: {
@@ -76,16 +58,13 @@ const preview: Preview = {
       },
     },
     backgrounds: {
-      values: [
-        {
-          name: 'Dark',
-          value: '#181818',
-        },
-        {
-          name: 'Light',
-          value: '#f3f3f3',
-        },
-      ],
+      default: initialTheme,
+      values: Object.keys(appThemes)
+      .sort((a, b) => a.localeCompare(b))
+      .map((t) => ({
+        name: t.charAt(0).toUpperCase() + t.slice(1),
+        value: appThemes[t || initialTheme]?.colors?.background || 'transparent',
+      })),
     },
   },
 };
