@@ -46,13 +46,5 @@
   "engines": {
     "node": ">=18"
   },
-  "packageManager": "pnpm@8.14.0",
-  "workspaces": [
-    "client/**",
-    "design/**",
-    "library/**",
-    "locales/**",
-    "toolkit/**",
-    "!**/test/**"
-  ]
+  "packageManager": "pnpm@8.14.0"
 }
