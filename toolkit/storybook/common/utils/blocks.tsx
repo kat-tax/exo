@@ -42,7 +42,6 @@ export function Story(props: {
   
   useEffect(() => {
     const theme = getCurrentTheme();
-    console.log('[changed]', theme, globals.backgrounds.value, parameters.backgrounds);
     UnistylesRuntime.setTheme(theme as never);
   }, [parameters, globals]);
 
