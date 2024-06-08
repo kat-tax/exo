@@ -34,6 +34,7 @@ const sidebar = [
     items: componentsGroups.map(g => ({
       text: titleCase(g),
       items: readdirSync(`${COMPONENTS}/${g}`).filter(excludeFiles).map(s => ({
+        text: titleCase(s),
         items: readdirSync(`${COMPONENTS}/${g}/${s}`).filter(excludeFiles).map(f => ({
           link: `/components/${g}/${s}/${f}`,
           text: getTitle(f, `${COMPONENTS}/${g}/${s}/${f}/${titleCase(f, true)}.docs.mdx`),
