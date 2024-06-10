@@ -1,7 +1,7 @@
 {
   "name": "design",
-  "type": "module",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "conc -c 'auto' 'pnpm:*-dev'",
     "build": "conc -c 'auto' -g 'pnpm:*-build'",
