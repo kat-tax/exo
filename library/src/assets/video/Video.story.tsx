@@ -1,4 +1,4 @@
-import {Video as Component} from 'react-exo/video';
+import {Video as Component} from './Video';
 import type {StoryObj, Meta} from '@storybook/react';
 
 type Story = StoryObj<typeof Component>;

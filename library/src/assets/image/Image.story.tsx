@@ -1,4 +1,4 @@
-import {Image as Component} from 'react-exo/image';
+import {Image as Component} from './Image';
 import type {StoryObj, Meta} from '@storybook/react';
 
 type Story = StoryObj<typeof Component>;

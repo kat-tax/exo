@@ -1,4 +1,4 @@
-import {Switch as Component} from 'react-exo/switch';
+import {Switch as Component} from './Switch';
 import type {StoryObj, Meta} from '@storybook/react';
 
 type Story = StoryObj<typeof Component>;

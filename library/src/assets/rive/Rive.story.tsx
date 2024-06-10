@@ -1,4 +1,4 @@
-import {Rive as Component} from 'react-exo/rive';
+import {Rive as Component} from './Rive';
 import type {StoryObj, Meta} from '@storybook/react';
 
 type Story = StoryObj<typeof Component>;

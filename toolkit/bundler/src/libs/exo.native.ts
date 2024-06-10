@@ -12,8 +12,6 @@ export default defineConfig(env => mergeConfig(
       lib: {
         formats: ['cjs'],
         entry: {
-          /* Entry */
-          index: 'src/index.ts',
           /* Assets */
           icon: 'src/assets/icon/Icon.export',
           image: 'src/assets/image/Image.export',

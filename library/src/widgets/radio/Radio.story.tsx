@@ -1,4 +1,5 @@
-import {RadioGroup, RadioButton} from 'react-exo/radio';
+import {RadioGroup} from './RadioGroup';
+import {RadioButton} from './RadioButton';
 import type {StoryObj, Meta} from '@storybook/react';
 
 type Story = StoryObj<typeof RadioGroup>;

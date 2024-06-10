@@ -1,4 +1,4 @@
-import {Icon as Component} from 'react-exo/icon';
+import {Icon as Component} from './Icon';
 import type {StoryObj, Meta} from '@storybook/react';
 
 type Story = StoryObj<typeof Component>;

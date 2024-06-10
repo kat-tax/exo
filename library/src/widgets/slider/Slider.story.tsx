@@ -1,4 +1,4 @@
-import {Slider as Component} from 'react-exo/slider';
+import {Slider as Component} from './Slider';
 import type {StoryObj, Meta} from '@storybook/react';
 
 type Story = StoryObj<typeof Component>;

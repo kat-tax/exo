@@ -1,4 +1,4 @@
-import {Lottie as Component} from 'react-exo/lottie';
+import {Lottie as Component} from './Lottie';
 import type {StoryObj, Meta} from '@storybook/react';
 
 type Story = StoryObj<typeof Component>;

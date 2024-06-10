@@ -1,4 +1,4 @@
-import {Checkbox as Component} from 'react-exo/checkbox';
+import {Checkbox as Component} from './Checkbox';
 import type {StoryObj, Meta} from '@storybook/react';
 
 type Story = StoryObj<typeof Component>;

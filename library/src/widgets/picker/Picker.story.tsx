@@ -1,4 +1,4 @@
-import {Picker as Component} from 'react-exo/picker';
+import {Picker as Component} from './Picker';
 import type {StoryObj, Meta} from '@storybook/react';
 
 type Story = StoryObj<typeof Component>;

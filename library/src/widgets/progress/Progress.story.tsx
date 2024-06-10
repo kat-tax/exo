@@ -1,4 +1,4 @@
-import {Progress as Component} from 'react-exo/progress';
+import {Progress as Component} from './Progress';
 import type {StoryObj, Meta} from '@storybook/react';
 
 type Story = StoryObj<typeof Component>;
