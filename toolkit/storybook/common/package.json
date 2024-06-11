@@ -6,7 +6,8 @@
     "@iconify/react": "^4.1.1",
     "@storybook/addon-essentials": "^8.0.10",
     "@storybook/blocks": "^8.0.10",
-    "design": "workspace:*"
+    "design": "workspace:react-exo-ui@*",
+    "react-exo-ui": "workspace:*"
   },
   "devDependencies": {
     "@types/react": "^18.2.0",
