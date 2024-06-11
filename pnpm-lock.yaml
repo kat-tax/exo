@@ -604,6 +604,9 @@ importers:
       '@lingui/react':
         specifier: ^4.10.0
         version: 4.10.0(react@18.3.0)
+      design:
+        specifier: workspace:react-exo-ui@*
+        version: link:../../../design
       react:
         specifier: ^18.2.0
         version: 18.3.0
@@ -613,6 +616,9 @@ importers:
       react-exo:
         specifier: workspace:*
         version: link:../../../library
+      react-exo-ui:
+        specifier: workspace:*
+        version: link:../../../design
       react-native:
         specifier: ^0.73.6
         version: 0.73.6(@babel/core@7.23.9)(@babel/preset-env@7.23.6)(react@18.3.0)
