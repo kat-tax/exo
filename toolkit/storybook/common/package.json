@@ -1,6 +1,7 @@
 {
   "name": "storybook-common",
   "type": "module",
+  "version": "0.0.0",
   "private": true,
   "dependencies": {
     "@iconify/react": "^4.1.1",

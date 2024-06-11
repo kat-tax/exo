@@ -1,6 +1,7 @@
 {
   "name": "config",
   "type": "module",
+  "version": "0.0.0",
   "private": true,
   "scripts": {
     "build": "pnpm run gen-locales && tsc && pnpm run gen-cfg && pnpm run gen-files",
