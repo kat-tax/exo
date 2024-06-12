@@ -13,8 +13,8 @@ export type {VStyleSheet};
 
 export function useVariants<S>(
   variants: Record<string, readonly string[]>,
-  states: Record<string, string>,
-  styles: S,
+  states: Record<string, string> = {},
+  styles: S = {} as S,
 ): {
   vstyles: VStyleSheet<S>,
 } {
