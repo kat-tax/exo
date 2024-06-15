@@ -3,8 +3,8 @@ import {StyleSheet} from 'react-native';
 
 /**
  * Clones an icon with the given icon styles
- * @param icon - The icon element to clone
- * @param styles - The styles to apply to the icon
+ * @param icon The icon element to clone
+ * @param styles The styles to apply to the icon
  * @returns A new react element with the given styles
  */
 export function createIcon(icon?: React.ReactElement, styles?: StyleSheet.NamedStyles<any>) {

@@ -11,6 +11,7 @@
     "@lingui/core": "^4.10.0",
     "@lingui/macro": "^4.10.0",
     "@lingui/react": "^4.10.0",
+    "@storybook/blocks": "^8.0.10",
     "design": "workspace:react-exo-ui@*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
