@@ -76,11 +76,6 @@
       "import": "./gen/web/motion.js",
       "require": "./gen/native/motion.js"
     },
-    "./variants": {
-      "types": "./gen/types/variants.d.ts",
-      "import": "./gen/web/variants.js",
-      "require": "./gen/native/variants.js"
-    },
     "./icon": {
       "types": "./gen/types/icon.d.ts",
       "import": "./gen/web/icon.js",
@@ -140,6 +135,11 @@
       "types": "./gen/types/calendar.d.ts",
       "import": "./gen/web/calendar.js",
       "require": "./gen/native/calendar.js"
+    },
+    "./utils": {
+      "types": "./gen/types/utils.d.ts",
+      "import": "./gen/web/utils.js",
+      "require": "./gen/native/utils.js"
     },
     "./checkbox.css": "./gen/web/checkbox.css",
     "./radio.css": "./gen/web/radio.css",

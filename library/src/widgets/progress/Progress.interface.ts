@@ -8,7 +8,7 @@ export interface ProgressProps {
   /** Progress color */
   progressColor?: string,
   /** Custom element to render on top of the animated progress */
-  customElement?: React.ReactNode,
+  customElement?: JSX.Element,
   /** Display the progress bar at full width in it's container */
   fullWidth?: boolean,
   /** Override container style */

@@ -47,8 +47,8 @@ export default defineConfig(env => mergeConfig(
           radio: 'src/widgets/radio/Radio.export',
           slider: 'src/widgets/slider/Slider.export',
           switch: 'src/widgets/switch/Switch.export',
-          /* Hooks */
-          variants: 'src/hooks/useVariants'
+          /* Utils */
+          utils: 'src/utilities/index.ts',
         }
       },
       rollupOptions: {

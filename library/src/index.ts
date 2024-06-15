@@ -29,9 +29,9 @@ export type * from './widgets/radio/Radio.export';
 export type * from './widgets/switch/Switch.export';
 export type * from './widgets/checkbox/Checkbox.export';
 
-// Hooks
-export type * from './hooks/useVariants';
-
 // Plugins
 export type * from './assets/icon/babel-plugin/extract';
 export type * from './assets/icon/babel-plugin/transform';
+
+// Utils
+export type * from './utilities';

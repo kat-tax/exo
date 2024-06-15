@@ -60,7 +60,7 @@ async function processComponents(files: string[], paths: string[]) {
     mdx = mdx.replace(/:::storybook:::/g, `<SB href="${config.LINK_STORYBOOK}/?path=/docs/components-${base.replace('/', '-')}">Storybook</SB>`);
     const demo = mdx.match(/:::demo(.*?):::/s)?.[1];
     const imports = mdx.match(/:::imports(.*?):::/s)?.[1];
-    if (demo) mdx = mdx.replace(/:::demo(.*?):::/gs, demo.trim());
+    if (demo) mdx = mdx.replace(/:::demo(.*?):::/gs, `<div style={{display: 'flex'}}>${demo.trim()}</div>`);
     if (imports) mdx = mdx.replace(/:::imports(.*?):::/gs, imports.trim());
     mdx = mdx.replace(/:::usage:::/g, getCodeBlock(imports, demo));
     const final = getDefaultImports() + '\n' + mdx;
@@ -84,6 +84,7 @@ function getCodeBlock(imports?: string, demo?: string) {
     imports ? imports?.trim() + '\n' : '',
     '// @log: ↓ Try the example',
     demo?.trim(),
+    '',
     '```',
   ].join('\n');
 }
