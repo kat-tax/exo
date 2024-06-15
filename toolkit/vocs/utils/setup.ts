@@ -50,7 +50,9 @@ async function processComponents(files: string[], paths: string[]) {
   files.flat(1).filter(f => f.endsWith('.mdx')).map(async path => {
     const {name, base} = getPartsFromDocPath(path);
     const component = await readFile(`${input}/${base}/${name}.tsx`, 'utf8');
-    const [doc] = parseDocs(component);
+    // TODO: remove this when parsing is fixed properly via babel options in parseDocs
+    const sanitized = component.replace(/as const|as any/g, '');
+    const [doc] = parseDocs(sanitized);
     const componentName = doc.displayName || '';
     let mdx = await readFile(`${input}/${base}/${name}.docs.mdx`, 'utf8');
     mdx = mdx.replace(/:::header:::/g, `\n# ${componentName}\n\n> ${doc.description}`);
@@ -60,7 +62,7 @@ async function processComponents(files: string[], paths: string[]) {
     const imports = mdx.match(/:::imports(.*?):::/s)?.[1];
     if (demo) mdx = mdx.replace(/:::demo(.*?):::/gs, demo.trim());
     if (imports) mdx = mdx.replace(/:::imports(.*?):::/gs, imports.trim());
-    mdx = mdx.replace(/:::usage:::/g, getCodeBlock(componentName, imports, demo));
+    mdx = mdx.replace(/:::usage:::/g, getCodeBlock(imports, demo));
     const final = getDefaultImports() + '\n' + mdx;
     await ensureDir([output, ...base.split('/')].slice(0, -1).join('/'));
     await writeFile(`${output}/${base}.mdx`, final, 'utf8');
@@ -73,13 +75,12 @@ function getDefaultImports() {
   ].join('\n');
 }
 
-function getCodeBlock(componentName: string, imports?: string, demo?: string) {
+function getCodeBlock(imports?: string, demo?: string) {
   return [
     '```tsx twoslash',
     'import React from \'react\';',
     '// ---cut---',
     '// @log: ↓ Import the component',
-    `import {${componentName}} from \'design\';`,
     imports ? imports?.trim() + '\n' : '',
     '// @log: ↓ Try the example',
     demo?.trim(),
