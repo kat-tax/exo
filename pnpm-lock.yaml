@@ -604,6 +604,9 @@ importers:
       '@lingui/react':
         specifier: ^4.10.0
         version: 4.10.0(react@18.3.0)
+      '@storybook/blocks':
+        specifier: ^8.0.10
+        version: 8.0.10(@types/react@18.3.0)(react-dom@18.3.0)(react@18.3.0)
       design:
         specifier: workspace:react-exo-ui@*
         version: link:../../../design
@@ -646,7 +649,7 @@ importers:
         version: 8.0.10
       '@storybook/addon-designs':
         specifier: ^8.0.1
-        version: 8.0.1(@storybook/theming@8.0.10)(react-dom@18.3.0)(react@18.3.0)
+        version: 8.0.1(@storybook/blocks@8.0.10)(@storybook/theming@8.0.10)(react-dom@18.3.0)(react@18.3.0)
       '@storybook/addon-essentials':
         specifier: 8.0.10
         version: 8.0.10(@types/react@18.3.0)(react-dom@18.3.0)(react@18.3.0)
@@ -7005,7 +7008,7 @@ packages:
       - supports-color
     dev: true
 
-  /@storybook/addon-designs@8.0.1(@storybook/theming@8.0.10)(react-dom@18.3.0)(react@18.3.0):
+  /@storybook/addon-designs@8.0.1(@storybook/blocks@8.0.10)(@storybook/theming@8.0.10)(react-dom@18.3.0)(react@18.3.0):
     resolution: {integrity: sha512-WiDkSD8ZYCs1CzIZUClcZ8ZF/9+YHAvYbiq0W69jQkyRPGfKSe/ZLXvte+bFKk+JJ0X68sk3nsaTlUQJHjltzw==}
     peerDependencies:
       '@storybook/blocks': ^8.0.0
@@ -7026,6 +7029,7 @@ packages:
         optional: true
     dependencies:
       '@figspec/react': 1.0.3(react@18.3.0)
+      '@storybook/blocks': 8.0.10(@types/react@18.3.0)(react-dom@18.3.0)(react@18.3.0)
       '@storybook/theming': 8.0.10(react-dom@18.3.0)(react@18.3.0)
       react: 18.3.0
       react-dom: 18.3.0(react@18.3.0)
@@ -7643,7 +7647,7 @@ packages:
       '@babel/parser': 7.23.9
       '@babel/traverse': 7.23.9
       '@babel/types': 7.24.5
-      '@storybook/csf': 0.1.2
+      '@storybook/csf': 0.1.7
       '@storybook/types': 8.0.8
       fs-extra: 11.2.0
       recast: 0.23.6
