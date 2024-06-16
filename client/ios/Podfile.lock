@@ -1186,7 +1186,6 @@ DEPENDENCIES:
   - ReactTestApp-DevSupport (from `../node_modules/react-native-test-app`)
   - ReactTestApp-Resources (from `..`)
   - rive-react-native (from `../node_modules/rive-react-native`)
-  - RNBootSplash (from `../node_modules/react-native-bootsplash`)
   - "RNCCheckbox (from `../node_modules/@react-native-community/checkbox`)"
   - "RNCPicker (from `../node_modules/@react-native-picker/picker`)"
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
@@ -1333,8 +1332,6 @@ EXTERNAL SOURCES:
     :path: ".."
   rive-react-native:
     :path: "../node_modules/rive-react-native"
-  RNBootSplash:
-    :path: "../node_modules/react-native-bootsplash"
   RNCCheckbox:
     :path: "../node_modules/@react-native-community/checkbox"
   RNCPicker:
