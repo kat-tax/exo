@@ -6,10 +6,8 @@
   "scripts": {
     "dev": "conc -c 'auto' 'pnpm:*-dev'",
     "build": "conc -c 'auto' -g 'pnpm:*-build'",
-
     "web-dev": "vite dev  -c ../toolkit/bundler/gen/libs/design.web.js --port 6406",
     "web-build": "vite build -c ../toolkit/bundler/gen/libs/design.web.js",
-
     "native-dev": "vite dev  -c ../toolkit/bundler/gen/libs/design.native.js --port 6506",
     "native-build": "vite build -c ../toolkit/bundler/gen/libs/design.native.js"
   },
@@ -48,6 +46,7 @@
     "vite-plugin-node-polyfills": "^0.21.0"
   },
   "devDependencies": {
+    "@storybook/blocks": "^8.0.10",
     "@storybook/react": "^8.0.8",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
