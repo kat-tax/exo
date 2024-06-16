@@ -33,7 +33,6 @@
     "docs:dev": "pnpm -F ./toolkit/vocs dev",
     "docs:build": "pnpm -F ./toolkit/vocs build",
 
-    "ci:deploy": "conc 'pnpm:storybook:build' 'pnpm:docs:build'",
     "postinstall": "pnpm config:build && pnpm bundler:build && pnpm translate:build && pnpm library:build && pnpm design:build"
   },
   "devDependencies": {
