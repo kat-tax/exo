@@ -34,7 +34,6 @@
     "docs:build": "pnpm -F ./toolkit/vocs build",
 
     "generate": "pnpm config:build && pnpm translate:build && pnpm bundler:build && pnpm library:build && pnpm design:build",
-    "ci-deploy": "conc 'pnpm:storybook:build' 'pnpm:docs:build'",
     "postinstall": "pnpm generate"
   },
   "devDependencies": {
