@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "conc -c '#646cff,#ef4242' 'pnpm:start-*'",
-    "build": "conc -c 'auto' -g 'pnpm:build-*'",
+    "dev": "conc -c 'auto' 'pnpm:start:*'",
+    "build": "conc -c 'auto' -g 'pnpm:build:*'",
 
     "web": "open http://localhost:6206",
     "ios": "react-native run-ios --no-packager",
@@ -13,15 +13,15 @@
     "windows": "react-native run-windows --no-packager",
     "visionos": "react-native run-visionos --no-packager",
 
-    "build-web": "vite build",
-    "_build-ios": "react-native bundle --entry-file index.js --platform ios --dev true --bundle-output dist/main.ios.jsbundle --assets-dest dist",
-    "_build-android": "react-native bundle --entry-file index.js --platform android --dev true --bundle-output dist/main.android.jsbundle --assets-dest dist/res",
-    "_build-macos": "react-native bundle --entry-file index.js --platform macos --dev true --bundle-output dist/main.macos.jsbundle --assets-dest dist",
-    "_build-windows": "react-native bundle --entry-file index.js --platform windows --dev true --bundle-output dist/main.windows.bundle --assets-dest dist",
-    "_build-visionos": "react-native bundle --entry-file index.js --platform ios --dev true --bundle-output dist/main.visionos.jsbundle --assets-dest dist",
+    "build:web": "vite build",
+    "_build:ios": "react-native bundle --entry-file index.js --platform ios --dev true --bundle-output dist/main.ios.jsbundle --assets-dest dist",
+    "_build:android": "react-native bundle --entry-file index.js --platform android --dev true --bundle-output dist/main.android.jsbundle --assets-dest dist/res",
+    "_build:macos": "react-native bundle --entry-file index.js --platform macos --dev true --bundle-output dist/main.macos.jsbundle --assets-dest dist",
+    "_build:windows": "react-native bundle --entry-file index.js --platform windows --dev true --bundle-output dist/main.windows.bundle --assets-dest dist",
+    "_build:visionos": "react-native bundle --entry-file index.js --platform ios --dev true --bundle-output dist/main.visionos.jsbundle --assets-dest dist",
     
-    "start-vite": "vite dev --port 6206",
-    "start-metro": "react-native rnx-start --reset-cache",
+    "start:vite": "vite dev --port 6206",
+    "start:metro": "react-native rnx-start --reset-cache",
 
     "generate": "pod install --project-directory=ios && pod install --project-directory=macos && pod install --project-directory=visionos",
     "_postinstall": "pnpm generate"

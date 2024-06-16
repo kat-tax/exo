@@ -4,15 +4,12 @@
   "type": "module",
   "types": "./gen/types/index.d.ts",
   "scripts": {
-    "dev": "conc -c 'auto' 'pnpm:*-dev'",
-    "build": "conc -c 'auto' -g 'pnpm:*-build'",
-
-    "web-dev": "vite dev  -c ../toolkit/bundler/gen/libs/exo.web.js --port 6606",
-    "web-build": "vite build -c ../toolkit/bundler/gen/libs/exo.web.js",
-
-    "native-dev": "vite dev  -c ../toolkit/bundler/gen/libs/exo.native.js --port 6706",
-    "native-build": "vite build -c ../toolkit/bundler/gen/libs/exo.native.js",
-
+    "dev": "conc -c 'auto' 'pnpm:*:dev'",
+    "build": "conc -c 'auto' -g 'pnpm:*:build'",
+    "web:dev": "vite dev -c ../toolkit/bundler/gen/libs/exo.web.js --port 6606",
+    "web:build": "vite build -c ../toolkit/bundler/gen/libs/exo.web.js",
+    "native:dev": "vite dev -c ../toolkit/bundler/gen/libs/exo.native.js --port 6706",
+    "native:build": "vite build -c ../toolkit/bundler/gen/libs/exo.native.js",
     "typedoc": "typedoc"
   },
   "exports": {
