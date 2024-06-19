@@ -1,42 +1,37 @@
-import type {StyleProp, ViewStyle, TextStyle, TextProps} from 'react-native';
+import type {StyleProp, ViewStyle, NativeMethods} from 'react-native';
 
 export type CheckboxComponent = (props: CheckboxProps) => JSX.Element;
 
 export interface CheckboxProps {
   /** Invoked with the new value when the value changes. */
   onValueChange?: (value: boolean) => void,
-  /** The value of the checkbox. */
+  /**
+   * Write-only property representing the value of the checkbox.
+   * Default value is false.
+   * 
+   * This is not a controlled component, you don't need to update the value.
+   */
   value?: boolean,
+  /** Used to get the ref for the native checkbox */
+  refNative?: React.Ref<NativeMethods>,
+  /** Used to get the ref for the web checkbox */
+  refWeb?: React.LegacyRef<HTMLButtonElement>,
   /** The identifier for the checkbox */
   id?: string,
-  /** The label of the checkbox */
-  label?: string,
+  /** Form input name (web only) */
+  name?: string,
+  /** Whether the checkbox selection is required (web only) */
+  required?: boolean,
   /** Whether the checkbox should be disabled */
   disabled?: boolean,
-  /** Whether the checkbox is an indeterminate state */
-  indeterminate?: boolean,
-  /** The checkbox border radius */
-  borderRadius?: number,
-  /** The icon that will appear when the checkbox is checked */
-  icon?: React.ReactNode,
-  /** The icon asset to use for the selected indication (accept only local assets) */
-  selectedIcon?: number,
-  /** If true, the checkbox will have the alternative outline style */
-  outline?: boolean,
-  /** The size of the checkbox. affect both width and height */
-  size?: number,
   /** The checkbox color */
-  color?: string,
-  /** The selected icon color */
-  iconColor?: string,
+  boxColor?: string,
+  /** The checkbox color when selected */
+  boxColorOn?: string,
+  /** The selected indicator color */
+  indicatorColor?: string,
   /** Additional styling */
   style?: StyleProp<ViewStyle>,
-  /** The style of the label */
-  labelStyle?: StyleProp<TextStyle>,
-  /** Props that will be passed to the checkbox label. */
-  labelProps?: Omit<TextProps, 'style'>,
-  /** Additional styling for checkbox and label container */
-  containerStyle?: StyleProp<ViewStyle>,
   /** The identifier used for testing */
   testID?: string,
 }

@@ -1,101 +1,59 @@
-import {Icon} from 'react-exo/icon';
 import {Trans} from '@lingui/macro';
-import {cloneElement} from 'react';
-import {View, Text, Platform} from 'react-native';
-import {useLocation, Link} from 'react-exo/navigation';
+import {Icon} from 'react-exo/icon';
+import {View, StyleSheet} from 'react-native';
 import {useStyles, createStyleSheet} from 'design/styles';
 import {useLists} from 'tasks/hooks/useLists';
+import {MenuItem} from './MenuItem';
 
-export function Menu() {
+interface MenuProps {
+  tabs?: boolean,
+}
+
+export function Menu(props: MenuProps) {
   const {styles} = useStyles(stylesheet);
   const lists = useLists();
   return (
-    <View style={styles.root}>
-      <View style={styles.fill}>
-        <MenuItem path="/" icon={<Icon name="ph:squares-four"/>}>
-          <Trans>Dashboard</Trans>
+    <View style={[styles.root, props.tabs && styles.rootTabs]}>
+      <MenuItem path="/" icon={<Icon name="ph:squares-four"/>} tab={props.tabs}>
+        <Trans>Dashboard</Trans>
+      </MenuItem>
+      <MenuItem path={`/design`} icon={<Icon name="ph:palette"/>} tab={props.tabs}>
+        <Trans>Design</Trans>
+      </MenuItem>
+      <MenuItem path={`/library`} icon={<Icon name="ph:package"/>} tab={props.tabs}>
+        <Trans>Library</Trans>
+      </MenuItem>
+      <MenuItem path={`/tasks`} icon={<Icon name="ph:list-checks"/>} tab={props.tabs}>
+        <Trans>Tasks</Trans>
+      </MenuItem>
+      {props.tabs ? null : lists.map(list =>
+        <MenuItem key={list} path={`/tasks/${list}`} sub>
+          {`• ${list}`}
         </MenuItem>
-        <MenuItem path="/calendar" icon={<Icon name="ph:calendar-dots"/>}>
-          <Trans>Calendar</Trans>
-        </MenuItem>
-        <MenuItem path={`/tasks`} icon={<Icon name="ph:list-checks"/>}>
-          <Trans>Tasks</Trans>
-        </MenuItem>
-        {lists.map(list =>
-          <MenuItem key={list} path={`/tasks/${list}`} submenu>
-            {`• ${list}`}
-          </MenuItem>
-        )}
-        <View style={styles.fill}/>
-        <MenuItem path="/settings" icon={<Icon name="ph:gear"/>}>
-          <Trans>Settings</Trans>
-        </MenuItem>
-      </View>
+      )}
+      <View style={styles.fill}/>
+      <MenuItem path="/settings" icon={<Icon name="ph:gear"/>} tab={props.tabs}>
+        <Trans>Settings</Trans>
+      </MenuItem>
     </View>
-  );
-}
-
-interface MenuItemProps extends React.PropsWithChildren {
-  path: string;
-  icon?: JSX.Element;
-  submenu?: boolean;
-}
-
-export function MenuItem(props: MenuItemProps) {
-  const {styles, theme} = useStyles(stylesheet);
-  const {pathname} = useLocation();
-  const isActive = props.path === decodeURIComponent(pathname);
-  return (
-    <Link to={props.path}>
-      <View style={[
-        styles.item,
-        props.submenu && styles.submenu,
-        isActive && styles.active,
-      ]}>
-        {props?.icon && cloneElement(props.icon, {
-          color: theme.colors.primary,
-          size: 16,
-        })}
-        <Text style={styles.link}>
-          {props.children}
-        </Text>
-      </View>
-    </Link>
   );
 }
 
 const stylesheet = createStyleSheet(theme => ({
   root: {
+    flex: 1,
     padding: 10,
-    height: '100%',
-    ...Platform.select({
-      default: {
-        backgroundColor: theme.colors.secondary,
-      },
-    }),
+    borderColor: theme.colors.border,
+    borderRightWidth: StyleSheet.hairlineWidth,
+    backgroundColor: theme.colors.secondary,
+  },
+  rootTabs: {
+    flexDirection: 'row',
+    gap: theme.display.space2,
+    borderTopWidth: StyleSheet.hairlineWidth,
+    borderRightWidth: 0,
   },
   fill: {
     flex: 1,
   },
-  item: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingHorizontal: 8,
-    paddingVertical: 1,
-    borderRadius: 5,
-  },
-  submenu: {
-    marginLeft: 8,
-  },
-  active: {
-    backgroundColor: 'rgba(255, 255, 255, 0.15)',
-    //backgroundColor: 'rgba(0, 0, 0, 0.07)',
-  },
-  link: {
-    fontSize: 11,
-    lineHeight: 24,
-    marginLeft: 4,
-    color: theme.colors.secondaryForeground,
-  },
 }));
-

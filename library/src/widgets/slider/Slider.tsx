@@ -1,45 +1,33 @@
-import {View} from 'react-native';
-import {fillDisplayRow} from '_lib/styles';
+import {StyleSheet, View} from 'react-native';
 import {colorWithOpacity} from '_lib/colors';
+import {fillDisplayRow} from '_lib/styles';
+
 import * as S from '@radix-ui/react-slider';
 
 import type {SliderComponent, SliderProps} from './Slider.interface';
 import './Slider.css';
 
 /**
- * A component that allows selection of a value within a range
+ * A component that allows ranged value selection
  */
 export const Slider: SliderComponent = (props: SliderProps) => {
-  const value = [props.value || 0];
-
   return (
-    <View
-      style={[
-        props.style,
-        {
-          height: 40,
-          minWidth: 100,
-          display: 'flex',
-          justifyContent: 'center',
-          marginHorizontal: 12,
-        },
-      ]}
-      testID={props.testID}>
+    <View style={[styles.root, props.style]} testID={props.testID}>
       <S.Root
+        name={props.name}
+        disabled={props.disabled}
+        step={props.step ?? 1}
+        min={props.lowerLimit ?? 0}
+        max={props.upperLimit ?? 1}
+        defaultValue={[props.value ?? 0]}
+        onValueChange={e => props.onChange && props.onChange(e[0] ?? 0)}
         style={{
-          ...fillDisplayRow,
           height: 20,
           cursor: 'pointer',
           userSelect: 'none',
           touchAction: 'none',
-        }}
-        disabled={props.disabled}
-        name={props.name}
-        defaultValue={value}
-        step={props.step || 1}
-        min={props.minimumValue || 0}
-        max={props.maximumValue || 100}
-        onValueChange={e => props.onChange && props.onChange(e[0] || 0)}>
+          ...fillDisplayRow,
+        }}>
         <SliderTrack color={props.trackColor}>
           <SliderRange color={props.rangeColor}/>
         </SliderTrack>
@@ -75,7 +63,7 @@ function SliderRange(props: {color?: string}) {
 
 function SliderThumb(props: {color?: string}) {
   return (
-    <S.Thumb className="slider-thumb" style={{
+    <S.Thumb className="exo-slider-thumb" style={{
       width: 12,
       height: 12,
       display: 'block',
@@ -85,3 +73,13 @@ function SliderThumb(props: {color?: string}) {
     }}/>
   );
 }
+
+const styles = StyleSheet.create({
+  root: {
+    display: 'flex',
+    justifyContent: 'center',
+    marginHorizontal: 12,
+    minWidth: 100,
+    height: 40,
+  },
+});

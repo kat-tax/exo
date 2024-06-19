@@ -17,10 +17,6 @@ export interface SliderProps {
    * value during dragging.
    */
   value?: number,
-  /** Initial minimum value of the slider. Default = 0. */
-  minimumValue?: number,
-  /** Initial maximum value of the slider. Default = 1. */
-  maximumValue?: number,
   /** The lower limit value of the slider. The user won't be able to slide below this limit. */
   lowerLimit?: number,
   /** The upper limit value of the slider. The user won't be able to slide above this limit. */

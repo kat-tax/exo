@@ -17,7 +17,7 @@ msgstr ""
 msgid "Add a task"
 msgstr "タスクを追加"
 
-#: ../../client/src/core/base/Menu.tsx:19
+#: ../../client/src/core/base/Menu.tsx:25
 msgid "Calendar"
 msgstr "カレンダー"
 
@@ -25,7 +25,7 @@ msgstr "カレンダー"
 msgid "Dark"
 msgstr "ダーク"
 
-#: ../../client/src/core/base/Menu.tsx:16
+#: ../../client/src/core/base/Menu.tsx:18
 msgid "Dashboard"
 msgstr "ダッシュボード"
 
@@ -33,6 +33,10 @@ msgstr "ダッシュボード"
 #: ../../client/src/settings/routes/ScreenSettings.tsx:44
 msgid "Default"
 msgstr "デフォルト"
+
+#: ../../client/src/core/base/Menu.tsx:21
+msgid "Design"
+msgstr ""
 
 #: ../../client/src/core/utils/date.ts:14
 msgid "Enjoy the day"
@@ -54,21 +58,27 @@ msgstr "こんばんは"
 msgid "Good morning"
 msgstr "おはようございます"
 
+#: ../../client/src/core/base/Menu.tsx:30
+msgid "Kitchen Sink"
+msgstr ""
+
 #: ../../client/src/settings/routes/ScreenSettings.tsx:36
 msgid "Language"
 msgstr "言語"
+
+#: ../../client/src/core/base/Menu.tsx:24
+msgid "Library"
+msgstr ""
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:30
 msgid "Light"
 msgstr "ライト"
 
-#: ../../client/src/core/base/Menu.tsx:31
-#: ../../client/src/settings/routes/ScreenSettings.tsx:17
+#: ../../client/src/core/base/Menu.tsx:36
 msgid "Settings"
 msgstr "設定"
 
-#: ../../client/src/core/base/Menu.tsx:22
-#: ../../client/src/tasks/routes/TasksList.tsx:14
+#: ../../client/src/core/base/Menu.tsx:27
 msgid "Tasks"
 msgstr "タスク"
 

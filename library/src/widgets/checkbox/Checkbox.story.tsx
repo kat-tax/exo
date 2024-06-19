@@ -10,7 +10,7 @@ const meta: Meta<typeof Component> = {
 
 export const Checkbox: Story = {
   args: {
-
+    value: true,
   },
 };
 

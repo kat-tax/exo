@@ -1,20 +1,26 @@
-import {useCallback} from 'react';
-import {View, StyleSheet} from 'react-native';
+import {useWindowDimensions, View} from 'react-native';
 import {useStyles, createStyleSheet} from 'design/styles';
 import {Outlet} from 'react-exo/navigation';
 import {Menu} from 'core/base/Menu';
 
 export const APP_MENU_WIDTH = 145;
+export const APP_MENU_TAB_HEIGHT = 64;
 
 export default function LayoutMain() {
   const {styles} = useStyles(stylesheet);
-  const openMenu = useCallback(() => {}, []);
+  const screen = useWindowDimensions();
+  const hasTabs = screen.width <= 660;
+  const vstyles = {
+    root: [styles.root, hasTabs && styles.rootTabs],
+    menu: [styles.menu, hasTabs && styles.menuTabs],
+  };
+
   return (
-    <View style={styles.root}>
-      <View style={styles.menu}>
-        <Menu/>
+    <View style={vstyles.root}>
+      <View style={vstyles.menu}>
+        <Menu tabs={hasTabs}/>
       </View>
-      <Outlet context={[openMenu]}/>
+      <Outlet/>
     </View>
   );
 }
@@ -25,9 +31,14 @@ const stylesheet = createStyleSheet(theme => ({
     flexDirection: 'row',
     backgroundColor: theme.colors.background,
   },
+  rootTabs: {
+    flexDirection: 'column-reverse',
+  },
   menu: {
     width: APP_MENU_WIDTH,
-    borderRightWidth: StyleSheet.hairlineWidth,
-    borderColor: theme.colors.border,
+  },
+  menuTabs: {
+    width: '100%',
+    height: APP_MENU_TAB_HEIGHT,
   },
 }));

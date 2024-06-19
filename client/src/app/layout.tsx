@@ -31,6 +31,6 @@ export function Layout(props: React.PropsWithChildren) {
       networkActivityIndicatorVisible={online === false}
     />
     {props.children}
-    <ToastRoot position='bottom-right'/>
+    <ToastRoot/>
   </>
 }

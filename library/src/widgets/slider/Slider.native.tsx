@@ -9,16 +9,14 @@ export const Slider: SliderComponent = (props: SliderProps) => {
       style={[styles.root, props.style]}
       testID={props.testID}
       disabled={props.disabled}
-      value={props.value}
-      step={props.step || 1}
-      minimumValue={props.minimumValue || 0}
-      maximumValue={props.maximumValue || 100}
-      lowerLimit={props.lowerLimit || 0}
-      upperLimit={props.upperLimit || 100}
+      step={(props.step ?? 100) / 100}
+      value={(props.value ?? 0) / 100}
+      onValueChange={e => props.onChange && props.onChange((e ?? 0) / 100)}
+      lowerLimit={(props.lowerLimit ?? 0) / 100}
+      upperLimit={(props.upperLimit ?? 100) / 100}
       maximumTrackTintColor={props.trackColor}
       minimumTrackTintColor={props.rangeColor || '#000'}
       thumbTintColor={props.thumbColor || '#000'}
-      onValueChange={props.onChange}
     />
   );
 }

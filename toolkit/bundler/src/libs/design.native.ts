@@ -10,8 +10,9 @@ export default defineConfig(env => mergeConfig(
     build: {
       outDir: './gen/native',
       cssMinify: 'lightningcss',
-      cssCodeSplit: true,
-      sourcemap: true,
+      cssCodeSplit: false,
+      sourcemap: false,
+      minify: false,
       lib: {
         formats: ['cjs'],
         entry: {
@@ -22,8 +23,8 @@ export default defineConfig(env => mergeConfig(
       },
       rollupOptions: {
         output: {
-          chunkFileNames: 'chunks/[hash]/[name].cjs',
           entryFileNames: '[name].js',
+          manualChunks: undefined,
         },
         external: [
           /* React */

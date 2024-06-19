@@ -1,4 +1,4 @@
-import {View, Text} from 'react-native';
+import {View, ScrollView, Text} from 'react-native';
 import {useStyles, createStyleSheet} from 'design/styles';
 
 export interface PageProps {
@@ -9,29 +9,34 @@ export interface PageProps {
 export function Page(props: PageProps) {
   const {styles} = useStyles(stylesheet);
   return (
-    <View style={styles.root}>
-      {props.title &&
-        <Text style={styles.header}>
-          {props.title}
-        </Text>
-      }
-      <View>
-        {props.children}
+    <ScrollView>
+      <View style={styles.root}>
+        {props.title &&
+          <Text style={styles.header}>
+            {props.title}
+          </Text>
+        }
+        <View>
+          {props.children}
+        </View>
       </View>
-    </View>
+    </ScrollView>
   );
 }
 
 const stylesheet = createStyleSheet(theme => ({
   root: {
     flex: 1,
-    gap: 24,
-    padding: 24,
+    maxWidth: 980,
+    gap: theme.display.space5,
+    padding: theme.display.space5,
     backgroundColor: theme.colors.background,
   },
   header: {
-    fontSize: 18,
-    fontWeight: 'bold',
+    fontSize: theme.font.headerSize,
+    fontWeight: theme.font.headerWeight,
+    lineHeight: theme.font.headerHeight,
+    letterSpacing: theme.font.headerSpacing,
     color: theme.colors.foreground,
   },
 }));

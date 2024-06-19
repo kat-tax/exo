@@ -8,7 +8,8 @@ export default defineConfig(env => mergeConfig(
   defineConfig({
     build: {
       outDir: './gen/native',
-      sourcemap: true,
+      sourcemap: false,
+      minify: false,
       lib: {
         formats: ['cjs'],
         entry: {
@@ -33,12 +34,12 @@ export default defineConfig(env => mergeConfig(
           toast: 'src/services/toast/Toast.export',
           /* Widgets */
           calendar: 'src/widgets/calendar/Calendar.export',
-          //checkbox: 'src/widgets/checkbox/Checkbox.export',
+          checkbox: 'src/widgets/checkbox/Checkbox.export',
           picker: 'src/widgets/picker/Picker.export',
           //progress: 'src/widgets/progress/Progress.export',
           //radio: 'src/widgets/radio/Radio.export',
           slider: 'src/widgets/slider/Slider.export',
-          //switch: 'src/widgets/switch/Switch.export',
+          switch: 'src/widgets/switch/Switch.export',
           /* Utils */
           utils: 'src/utilities/index.ts',
           /* Plugins */

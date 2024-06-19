@@ -878,13 +878,13 @@ PODS:
     - React-Core
   - react-native-safe-area-context (4.9.0):
     - React-Core
-  - react-native-skia (1.2.3):
+  - react-native-skia (1.3.6):
     - glog
     - RCT-Folly (= 2022.05.16.00)
     - React
     - React-callinvoker
     - React-Core
-  - react-native-skia-skottie (2.1.0):
+  - react-native-skia-skottie (2.1.4):
     - React
     - React-Core
     - react-native-skia
@@ -1094,8 +1094,6 @@ PODS:
     - React-Core
     - RiveRuntime (= 5.10.0)
   - RiveRuntime (5.10.0)
-  - RNBootSplash (5.5.2):
-    - React-Core
   - RNCCheckbox (0.5.17):
     - BEMCheckBox (~> 1.4)
     - React-Core
@@ -1385,8 +1383,8 @@ SPEC CHECKSUMS:
   react-native-mmkv: 1fdc81aa70c1aba09370718e6a63a09cbbbac8d2
   react-native-netinfo: bdb108d340cdb41875c9ced535977cac6d2ff321
   react-native-safe-area-context: b97eb6f9e3b7f437806c2ce5983f479f8eb5de4b
-  react-native-skia: 3ac80cc6de9c33e0a02b3a7b66c29dc6b6286211
-  react-native-skia-skottie: 3a451dd09dbc2c8d82d8ccaf4e93817ad5bbbf55
+  react-native-skia: 048fde70c0c593394cd9e8845af8536fe71f6f3e
+  react-native-skia-skottie: f4a802af26306ada17a61ce993638d2494adddcf
   react-native-slider: 7a39874fc1fcdfee48e448fa72cce0a8f2c7c5d6
   react-native-unistyles: 431618e5d043547ae250d89a77abe77562f3c3c7
   react-native-video: c26780b224543c62d5e1b2a7244a5cd1b50e8253
@@ -1417,7 +1415,6 @@ SPEC CHECKSUMS:
   ReactTestApp-Resources: 857244f3a23f2b3157b364fa06cf3e8866deff9c
   rive-react-native: 125db990f050d72c76aa37dc6c5cfaaf89f66086
   RiveRuntime: a859cd24f1100d924a5229567228063dd8a19a93
-  RNBootSplash: 878e64bcbebe59550e5a9d0edb6745d716d5f463
   RNCCheckbox: a3ca9978cb0846b981d28da4e9914bd437403d77
   RNCPicker: 3e2c37a8328f368ce14da050cdc8231deb5fc9f9
   RNGestureHandler: bc2cdb2dc42facdf34992ae364b8a728e19a3686

@@ -1,7 +1,7 @@
-.slider-thumb:hover {
+.exo-slider-thumb:hover {
   scale: 1.1;
 }
 
-.slider-thumb:active {
+.exo-slider-thumb:active {
   scale: 1.4;
 }

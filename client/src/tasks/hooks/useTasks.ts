@@ -8,9 +8,16 @@ export function useTasks(list?: string) {
   const dispatch = useDispatch();
 
   return {
-    active: useSelector((state: State) => tasks.selectors.getActive(state, list)),
-    complete: useSelector((state: State) => tasks.selectors.getComplete(state, list)),
-    addActive: (item: string) => dispatch(tasks.actions.add({list, item})),
-    addComplete: (item: string) => dispatch(tasks.actions.complete({list, item})),
+    active: useSelector((state: State) =>
+      tasks.selectors.getActive(state, list)),
+
+    complete: useSelector((state: State) =>
+      tasks.selectors.getComplete(state, list)),
+
+    addActive: (item: string) =>
+      dispatch(tasks.actions.add({list, item})),
+
+    addComplete: (item: string) =>
+      dispatch(tasks.actions.complete({list, item})),
   };
 }

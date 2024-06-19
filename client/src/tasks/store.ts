@@ -9,7 +9,17 @@ export type Tasks = Record<string, {
 export default createSlice({
   name: 'tasks',
   initialState: <Tasks> {
-    'Shopping List': {active: ['Milk', 'Bread', 'Cheese'], complete: []},
+    'Launch': {
+      active: [
+        'Web',
+        'Android',
+        'iOS',
+        'VisionOS',
+        'MacOS',
+        'Windows',
+      ],
+      complete: [],
+    },
   },
   selectors: {
     getLists: (tasks) => Object.keys(tasks),
