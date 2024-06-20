@@ -1,7 +1,7 @@
 import {Trans} from '@lingui/macro';
 import {Icon} from 'react-exo/icon';
-import {Switch} from 'react-exo/switch';
-//import {Checkbox} from 'react-exo/checkbox';
+//import {Switch} from 'react-exo/switch';
+import {Checkbox} from 'react-exo/checkbox';
 //import {Progress} from 'react-exo/progress';
 //import {Slider} from 'react-exo/slider';
 import {useStyles} from 'design/styles';
@@ -19,14 +19,14 @@ export default function ScreenHome() {
           color={theme.colors.primary}
         />
       </Section>
-      {/* <Section title="Checkbox">
+      <Section title="Checkbox">
         <Checkbox
           boxColor={theme.colors.border}
           boxColorOn={theme.colors.primary}
           indicatorColor={theme.colors.primary}
         />
-      </Section> */}
-      {/* <Section title="Slider">
+      </Section>
+      {/*<Section title="Slider">
         <Slider
           value={50}
           thumbColor={theme.colors.primary}
@@ -34,7 +34,7 @@ export default function ScreenHome() {
           trackColor={theme.colors.secondary}
           onChange={(value) => console.log(value)}
         />
-      </Section> */}
+      </Section>
       <Section title="Switch">
         <Switch
           value={false}

@@ -36,8 +36,8 @@ export default defineConfig(env => mergeConfig(
           calendar: 'src/widgets/calendar/Calendar.export',
           checkbox: 'src/widgets/checkbox/Checkbox.export',
           picker: 'src/widgets/picker/Picker.export',
-          //progress: 'src/widgets/progress/Progress.export',
-          //radio: 'src/widgets/radio/Radio.export',
+          progress: 'src/widgets/progress/Progress.export',
+          radio: 'src/widgets/radio/Radio.export',
           slider: 'src/widgets/slider/Slider.export',
           switch: 'src/widgets/switch/Switch.export',
           /* Utils */
@@ -84,6 +84,7 @@ export default defineConfig(env => mergeConfig(
           'react-native-skottie',
           'react-native-svg',
           'react-native-video',
+          'burnt',
         ],
       },
     },

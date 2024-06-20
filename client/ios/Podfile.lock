@@ -1084,8 +1084,6 @@ PODS:
     - React-CoreModules
     - React-RCTImage
     - React-RCTText
-  - ReactNativeUiLib (4.1.3):
-    - React
   - ReactTestApp-DevSupport (3.7.0):
     - React-Core
     - React-jsi
@@ -1180,7 +1178,6 @@ DEPENDENCIES:
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - "ReactNativeHost (from `../../node_modules/.pnpm/react-native-test-app@3.7.0_@callstack+react-native-visionos@0.73.10_react-native-macos@0.73._kudraiqpsikfmmfmsseu2enccm/node_modules/@rnx-kit/react-native-host`)"
   - ReactNativeNavigation (from `../node_modules/react-native-navigation`)
-  - ReactNativeUiLib (from `../node_modules/react-native-ui-lib`)
   - ReactTestApp-DevSupport (from `../node_modules/react-native-test-app`)
   - ReactTestApp-Resources (from `..`)
   - rive-react-native (from `../node_modules/rive-react-native`)
@@ -1322,8 +1319,6 @@ EXTERNAL SOURCES:
     :path: "../../node_modules/.pnpm/react-native-test-app@3.7.0_@callstack+react-native-visionos@0.73.10_react-native-macos@0.73._kudraiqpsikfmmfmsseu2enccm/node_modules/@rnx-kit/react-native-host"
   ReactNativeNavigation:
     :path: "../node_modules/react-native-navigation"
-  ReactNativeUiLib:
-    :path: "../node_modules/react-native-ui-lib"
   ReactTestApp-DevSupport:
     :path: "../node_modules/react-native-test-app"
   ReactTestApp-Resources:
@@ -1410,7 +1405,6 @@ SPEC CHECKSUMS:
   ReactCommon: 447281ad2034ea3252bf81a60d1f77d5afb0b636
   ReactNativeHost: 6cd1ed318d4137d8e067702461d466c0d0e67422
   ReactNativeNavigation: 86a23855d2ccc74ad3e59bff1595c2d4b76ed8cc
-  ReactNativeUiLib: e23a2b3d196aaaf561694cf76385c1ff3055bdc2
   ReactTestApp-DevSupport: 0a10a887d4de1b16dee5d836998da6b9b90bf535
   ReactTestApp-Resources: 857244f3a23f2b3157b364fa06cf3e8866deff9c
   rive-react-native: 125db990f050d72c76aa37dc6c5cfaaf89f66086

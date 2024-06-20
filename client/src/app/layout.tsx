@@ -1,5 +1,5 @@
 import {useEffect} from 'react';
-import {ToastRoot} from 'react-exo/toast';
+//import {ToastRoot} from 'react-exo/toast';
 //import {BootSplash} from 'react-exo/device';
 import {StatusBar, Appearance} from 'react-native';
 import {useInitialTheme, UnistylesRuntime} from 'design/styles';
@@ -31,6 +31,6 @@ export function Layout(props: React.PropsWithChildren) {
       networkActivityIndicatorVisible={online === false}
     />
     {props.children}
-    <ToastRoot/>
+    {/*<ToastRoot/>*/}
   </>
 }
