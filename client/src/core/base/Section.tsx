@@ -26,7 +26,7 @@ export function Section(props: SectionProps) {
 const stylesheet = createStyleSheet(theme => ({
   root: {
     gap: theme.display.space7,
-    marginBottom: theme.display.space7,
+    marginBottom: theme.display.space5,
     paddingBottom: theme.display.space7,
     paddingHorizontal: theme.display.space3,
     borderColor: theme.colors.border,

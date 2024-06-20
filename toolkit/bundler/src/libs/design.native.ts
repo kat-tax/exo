@@ -9,8 +9,6 @@ export default defineConfig(env => mergeConfig(
   defineConfig({
     build: {
       outDir: './gen/native',
-      cssMinify: 'lightningcss',
-      cssCodeSplit: false,
       sourcemap: false,
       minify: false,
       lib: {

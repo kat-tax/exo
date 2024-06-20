@@ -1,4 +1,4 @@
-import {createSlice} from 'react-exo/redux';
+import {createSlice, createSelector as $} from 'react-exo/redux';
 import type {PayloadAction} from 'react-exo/redux';
 
 export type Tasks = Record<string, {
@@ -19,10 +19,10 @@ export default createSlice({
         'Windows',
       ],
       complete: [],
-    },
+    }, 
   },
   selectors: {
-    getLists: (tasks) => Object.keys(tasks),
+    getLists: $(x => x, (tasks) => Object.keys(tasks)),
     getActive: (tasks, list: string) => tasks[list]?.active,
     getComplete: (tasks, list: string) => tasks[list]?.complete,
   },

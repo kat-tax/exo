@@ -1,39 +1,31 @@
-.switch-root {
+.exo-switch-root {
   all: unset;
   width: 42px;
   height: 25px;
-  background-color: #000;
   border-radius: 9999px;
   position: relative;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  background-color: #333;
+  border-radius: 99999px;
+  will-change: background-color;
+  transition: background-color 200ms ease-out;
 }
 
-.switch-root:focus {
-  box-shadow: 0 0 0 2px #000;
+.exo-switch-root[data-state='checked'] {
+  background-color: #666;
 }
 
-.switch-root[data-state='checked'] {
-  background-color: #000;
-}
-
-.switch-thumb {
+.exo-switch-thumb {
   display: block;
   width: 21px;
   height: 21px;
-  background-color: white;
-  border-radius: 9999px;
-  box-shadow: 0 2px 2px #000;
-  transition: transform 100ms;
-  transform: translateX(2px);
+  border-radius: 99999px;
+  background-color: #fff;
   will-change: transform;
+  transition: transform 200ms ease-out;
+  transform: translateX(2px);
 }
 
-.switch-thumb[data-state='checked'] {
+.exo-switch-thumb[data-state='checked'] {
   transform: translateX(19px);
-}
-
-.switch-label {
-  color: white;
-  font-size: 15px;
-  line-height: 1;
 }

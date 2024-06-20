@@ -18,10 +18,10 @@ msgid "Add a task"
 msgstr "Add a task"
 
 #: ../../client/src/core/base/Menu.tsx:25
-msgid "Calendar"
-msgstr "Calendar"
+#~ msgid "Calendar"
+#~ msgstr "Calendar"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:31
+#: ../../client/src/settings/routes/ScreenSettings.tsx:32
 msgid "Dark"
 msgstr "Dark"
 
@@ -29,12 +29,13 @@ msgstr "Dark"
 msgid "Dashboard"
 msgstr "Dashboard"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:29
-#: ../../client/src/settings/routes/ScreenSettings.tsx:44
+#: ../../client/src/settings/routes/ScreenSettings.tsx:30
+#: ../../client/src/settings/routes/ScreenSettings.tsx:47
 msgid "Default"
 msgstr "Default"
 
 #: ../../client/src/core/base/Menu.tsx:21
+#: ../../client/src/core/routes/ScreenDesign.tsx:10
 msgid "Design"
 msgstr "Design"
 
@@ -59,26 +60,29 @@ msgid "Good morning"
 msgstr "Good morning"
 
 #: ../../client/src/core/base/Menu.tsx:30
-msgid "Kitchen Sink"
-msgstr "Kitchen Sink"
+#~ msgid "Kitchen Sink"
+#~ msgstr "Kitchen Sink"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:36
+#: ../../client/src/settings/routes/ScreenSettings.tsx:38
 msgid "Language"
 msgstr "Language"
 
 #: ../../client/src/core/base/Menu.tsx:24
+#: ../../client/src/core/routes/ScreenLibrary.tsx:14
 msgid "Library"
 msgstr "Library"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:30
+#: ../../client/src/settings/routes/ScreenSettings.tsx:31
 msgid "Light"
 msgstr "Light"
 
 #: ../../client/src/core/base/Menu.tsx:36
+#: ../../client/src/settings/routes/ScreenSettings.tsx:17
 msgid "Settings"
 msgstr "Settings"
 
 #: ../../client/src/core/base/Menu.tsx:27
+#: ../../client/src/tasks/routes/TasksList.tsx:14
 msgid "Tasks"
 msgstr "Tasks"
 

@@ -9,14 +9,12 @@ export interface SwitchProps {
   value?: boolean,
   /** The identifier for the switch */
   id?: string,
-  /** The label to show the switch */
-  label?: string,
+  /** Form input name (web only) */
+  name?: string,
+  /** Whether the switch selection is required (web only) */
+  required?: boolean,
   /** Whether the switch should be disabled */
   disabled?: boolean,
-  /** The switch width */
-  width?: number,
-  /** The switch height */
-  height?: number,
   /** The switch background color when it's turned on */
   onColor?: ColorValue,
   /** The switch background color when it's turned off */
@@ -25,10 +23,6 @@ export interface SwitchProps {
   disabledColor?: ColorValue,
   /** The switch's thumb color */
   thumbColor?: ColorValue,
-  /** The switch's thumb size (width & height) */
-  thumbSize?: number,
-  /** The switch's thumb style */
-  thumbStyle?: StyleProp<ViewStyle>,
   /** Additional styling */
   style?: StyleProp<ViewStyle>,
   /** The identifier used for testing */

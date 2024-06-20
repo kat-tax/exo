@@ -173,7 +173,6 @@
     "react-native-screens": ">=3",
     "react-native-skottie": ">=2.1.1",
     "react-native-svg": ">=15",
-    "react-native-ui-lib": ">=7",
     "react-native-video": ">=5"
   },
   "dependencies": {
@@ -236,7 +235,6 @@
     "react-native-screens": "^3.30.1",
     "react-native-skottie": "^2.1.4",
     "react-native-svg": "^15.1.0",
-    "react-native-ui-lib": "^7.20.0",
     "react-native-url-polyfill": "^2.0.0",
     "react-native-video": "5.2.1",
     "react-native-web": "^0.19.10",

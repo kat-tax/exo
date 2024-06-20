@@ -49,10 +49,10 @@ export default defineConfig(env => mergeConfig(
       },
       rollupOptions: {
         output: {
-          chunkFileNames: 'chunks/[hash]/[name].cjs',
           entryFileNames: (info) => info.name.includes('babel-plugin-')
             ? '[name].cjs'
             : '[name].js',
+          manualChunks: undefined,
         },
         external: [
           /* Node */
@@ -83,7 +83,6 @@ export default defineConfig(env => mergeConfig(
           'react-native-screens',
           'react-native-skottie',
           'react-native-svg',
-          'react-native-ui-lib',
           'react-native-video',
         ],
       },
