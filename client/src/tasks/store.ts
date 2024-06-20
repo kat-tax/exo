@@ -22,9 +22,15 @@ export default createSlice({
     }, 
   },
   selectors: {
-    getLists: $(x => x, (tasks) => Object.keys(tasks)),
-    getActive: (tasks, list: string) => tasks[list]?.active,
-    getComplete: (tasks, list: string) => tasks[list]?.complete,
+    getLists: $((x: Tasks) => x, (tasks) =>
+      Object.keys(tasks)
+    ),
+    getActive: (tasks, list: string) => (
+      tasks[list]?.active
+    ),
+    getComplete: (tasks, list: string) => (
+      tasks[list]?.complete
+    ),
   },
   reducers: {
     add(tasks, action: PayloadAction<{list: string, item: string}>) {
