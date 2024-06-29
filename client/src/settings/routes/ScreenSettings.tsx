@@ -6,15 +6,19 @@ import {useStyles, createStyleSheet} from 'design/styles';
 import {useLocale} from 'settings/hooks/useLocale';
 import {useScheme} from 'settings/hooks/useScheme';
 import {locales} from 'config/locales';
-import {Page} from 'core/base/Page';
+import {Page} from 'app/base/Page';
 
 export default function ScreenSettings() {
   const {styles, theme} = useStyles(stylesheet);
   const [scheme, setScheme] = useScheme(true);
   const [locale, setLocale] = useLocale(true);
+
   useLingui();
+
   return (
-    <Page title={<Trans>Settings</Trans>}>
+    <Page
+      title={<Trans>Settings</Trans>}
+      message={<Trans>Manage your settings</Trans>}>
       <View style={styles.content}>
         <View style={styles.option}>
           <Text style={styles.label}>

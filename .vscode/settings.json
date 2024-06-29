@@ -2,6 +2,7 @@
   "material-icon-theme.activeIconPack": "react_redux",
   "material-icon-theme.folders.associations": {
     "output": "dist",
+    "dev": "shared",
     "bundler": "container",
     "client": "mobile",
     "guides": "content",
@@ -14,11 +15,14 @@
     "rive": "animation",
   },
   "material-icon-theme.files.associations": {
+    "app/layout.tsx": "renovate",
+    "app/provider.tsx": "dll",
     "app/index.tsx": "tree",
-    "layout.tsx": "renovate",
-    "provider.tsx": "dll",
-    "store.tsx": "redux-action",
+    "routes/index.tsx": "routing",
+    "routes/index.native.tsx": "routing",
     "store.ts": "redux-reducer",
+    "store/app.ts": "redux-reducer",
+    "store/index.tsx": "redux-action",
   },
   "typescript.tsserver.watchOptions": {
     "watchDirectory": "useFsEvents",

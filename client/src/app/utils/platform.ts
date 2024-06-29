@@ -30,14 +30,38 @@ export function isNative() {
 
 export function isTouch() {
   switch (Platform.OS) {
-    case 'android': return true;
-    case 'ios': return true;
-    case 'macos': return false;
-    case 'windows': return false;
-    case 'web': return navigator.maxTouchPoints > 0
-      || 'ontouchstart' in window;
-    default: return false;
+    case 'ios':
+    case 'android':
+      return true;
+    case 'macos':
+    case 'windows':
+      return false;
+    case 'web':
+      return navigator.maxTouchPoints > 0 || 'ontouchstart' in window;
+    default:
+      return false;
   }
+}
+
+export function isBrave() {
+  if (Platform.OS !== 'web') return false;
+  if ('brave' in navigator) {
+    // @ts-ignore
+    return navigator.brave.isBrave().then(e => e);
+  } else {
+    return false;
+  }
+}
+
+export function getPlatforms() {
+  return [
+    'Web',
+    'Android',
+    'iOS',
+    'VisionOS',
+    'MacOS',
+    'Windows',
+  ];
 }
 
 export function getClient() {

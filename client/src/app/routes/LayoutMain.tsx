@@ -1,7 +1,7 @@
 import {useWindowDimensions, View} from 'react-native';
 import {useStyles, createStyleSheet} from 'design/styles';
 import {Outlet} from 'react-exo/navigation';
-import {Menu} from 'core/base/Menu';
+import {Menu} from 'app/base/Menu';
 
 export const APP_MENU_WIDTH = 145;
 export const APP_MENU_TAB_HEIGHT = 64;

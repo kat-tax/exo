@@ -3,6 +3,7 @@ import {useStyles, createStyleSheet} from 'design/styles';
 
 export interface PageProps {
   title?: string | React.ReactNode,
+  message?: string | React.ReactNode,
   children?: React.ReactNode,
 }
 
@@ -14,6 +15,11 @@ export function Page(props: PageProps) {
         {props.title &&
           <Text style={styles.header}>
             {props.title}
+          </Text>
+        }
+        {props.message &&
+          <Text style={styles.message}>
+            {props.message}
           </Text>
         }
         <View>
@@ -38,5 +44,12 @@ const stylesheet = createStyleSheet(theme => ({
     lineHeight: theme.font.headerHeight,
     letterSpacing: theme.font.headerSpacing,
     color: theme.colors.foreground,
+  },
+  message: {
+    fontSize: theme.font.contentSize,
+    fontWeight: theme.font.contentWeight,
+    lineHeight: theme.font.contentHeight,
+    letterSpacing: theme.font.contentSpacing,
+    color: theme.colors.mutedForeground,
   },
 }));

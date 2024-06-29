@@ -69,7 +69,7 @@ function SliderThumb(props: {color?: string}) {
       display: 'block',
       borderRadius: 9999,
       backgroundColor: props.color || '#000',
-      transition: ' 0.2s cubic-bezier(0.215, 0.61, 0.355, 1)',
+      transition: '0.2s cubic-bezier(0.215, 0.61, 0.355, 1)',
     }}/>
   );
 }

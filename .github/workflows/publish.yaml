@@ -48,7 +48,7 @@ jobs:
         run: pnpm install
       # Docs
       - name: Build Docs
-        run: pnpm docs-build
+        run: pnpm docs:build
       - name: Upload to GitHub Pages
         uses: actions/upload-pages-artifact@v1
         with:

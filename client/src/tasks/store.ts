@@ -1,4 +1,6 @@
 import {createSlice, createSelector as $} from 'react-exo/redux';
+import {getPlatforms} from 'app/utils/platform';
+
 import type {PayloadAction} from 'react-exo/redux';
 
 export type Tasks = Record<string, {
@@ -10,20 +12,17 @@ export default createSlice({
   name: 'tasks',
   initialState: <Tasks> {
     'Launch': {
-      active: [
-        'Web',
-        'Android',
-        'iOS',
-        'VisionOS',
-        'MacOS',
-        'Windows',
-      ],
+      active: getPlatforms(),
       complete: [],
     }, 
   },
   selectors: {
     getLists: $((x: Tasks) => x, (tasks) =>
-      Object.keys(tasks)
+      Object.keys(tasks).map((list) => ({
+        id: list,
+        complete: tasks[list]?.active.length === 0 &&
+          tasks[list]?.complete.length > 0,
+      }))
     ),
     getActive: (tasks, list: string) => (
       tasks[list]?.active

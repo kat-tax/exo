@@ -1,17 +1,15 @@
-import {useLingui} from '@lingui/react';
 import {useParams} from 'react-exo/navigation';
 import {useTasks} from 'tasks/hooks/useTasks';
-import {TasksList} from 'tasks/base/TasksList';
+import {TaskItems} from 'tasks/base/TaskItems';
 import {TasksInput} from 'tasks/base/TasksInput';
-import {Page} from 'core/base/Page';
+import {Page} from 'app/base/Page';
 
 export default function TasksDetails() {
   const {id} = useParams<{id: string}>();
   const tasks = useTasks(id);
-  useLingui();
   return (
     <Page title={id}>
-      <TasksList {...tasks}/>
+      <TaskItems {...tasks}/>
       <TasksInput onSubmit={tasks.addActive}/>
     </Page>
   );

@@ -1,17 +1,19 @@
 import {Trans} from '@lingui/macro';
-import {Icon} from 'react-exo/icon';
-//import {Switch} from 'react-exo/switch';
-import {Checkbox} from 'react-exo/checkbox';
-//import {Progress} from 'react-exo/progress';
-//import {Slider} from 'react-exo/slider';
 import {useStyles} from 'design/styles';
-import {Section} from 'core/base/Section';
-import {Page} from 'core/base/Page';
+import {Section} from 'dev/base/Section';
+import {Page} from 'app/base/Page';
+import {Icon} from 'react-exo/icon';
+import {Checkbox} from 'react-exo/checkbox';
+import {Switch} from 'react-exo/switch';
+import {Slider} from 'react-exo/slider';
+import {Progress} from 'react-exo/progress';
 
 export default function ScreenHome() {
   const {theme} = useStyles();
   return (
-    <Page title={<Trans>Library</Trans>}>
+    <Page
+      title={<Trans>Library</Trans>}
+      message={<Trans>{`${11} components`}</Trans>}>
       <Section title="Icon">
         <Icon
           name="ph:cat"
@@ -26,15 +28,6 @@ export default function ScreenHome() {
           indicatorColor={theme.colors.primary}
         />
       </Section>
-      {/*<Section title="Slider">
-        <Slider
-          value={50}
-          thumbColor={theme.colors.primary}
-          rangeColor={theme.colors.primary}
-          trackColor={theme.colors.secondary}
-          onChange={(value) => console.log(value)}
-        />
-      </Section>
       <Section title="Switch">
         <Switch
           value={false}
@@ -43,13 +36,22 @@ export default function ScreenHome() {
           offColor={theme.colors.input}
         />
       </Section>
-      {/* <Section title="Progress">
+      <Section title="Slider">
+        <Slider
+          value={50}
+          thumbColor={theme.colors.primary}
+          rangeColor={theme.colors.primary}
+          trackColor={theme.colors.secondary}
+          onChange={(value) => console.log(value)}
+        />
+      </Section>
+      <Section title="Progress">
         <Progress
           progress={50}
           fullWidth={true}
           progressColor={theme.colors.primary}
         />
-      </Section> */}
+      </Section>
     </Page>
   );
 }

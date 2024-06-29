@@ -13,87 +13,120 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
+#: ../../client/src/dev/routes/ScreenDesign.tsx:12
+#: ../../client/src/dev/routes/ScreenLibrary.tsx:16
+msgid "{0} components"
+msgstr "{0} components"
+
 #: ../../client/src/tasks/base/TasksInput.tsx:21
 msgid "Add a task"
 msgstr "Add a task"
 
-#: ../../client/src/core/base/Menu.tsx:25
-#~ msgid "Calendar"
-#~ msgstr "Calendar"
+#: ../../client/src/app/base/Menu.tsx:73
+msgid "Audio"
+msgstr "Audio"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:32
+#: ../../client/src/app/base/Menu.tsx:31
+msgid "Calendar"
+msgstr "Calendar"
+
+#: ../../client/src/events/routes/ScreenCalendar.tsx:16
+msgid "Calendar Events"
+msgstr "Calendar Events"
+
+#: ../../client/src/app/base/PageTeaser.tsx:19
+msgid "Coming Soon"
+msgstr "Coming Soon"
+
+#: ../../client/src/settings/routes/ScreenSettings.tsx:36
 msgid "Dark"
 msgstr "Dark"
 
-#: ../../client/src/core/base/Menu.tsx:18
+#: ../../client/src/app/base/Menu.tsx:25
 msgid "Dashboard"
 msgstr "Dashboard"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:30
-#: ../../client/src/settings/routes/ScreenSettings.tsx:47
+#: ../../client/src/settings/routes/ScreenSettings.tsx:34
+#: ../../client/src/settings/routes/ScreenSettings.tsx:51
 msgid "Default"
 msgstr "Default"
 
-#: ../../client/src/core/base/Menu.tsx:21
-#: ../../client/src/core/routes/ScreenDesign.tsx:10
+#: ../../client/src/app/base/Menu.tsx:84
 msgid "Design"
 msgstr "Design"
 
-#: ../../client/src/core/utils/date.ts:14
+#: ../../client/src/home/utils/date.ts:14
 msgid "Enjoy the day"
 msgstr "Enjoy the day"
 
-#: ../../client/src/core/utils/date.ts:12
+#: ../../client/src/home/utils/date.ts:12
 msgid "Enjoy the night"
 msgstr "Enjoy the night"
 
-#: ../../client/src/core/utils/date.ts:8
+#: ../../client/src/app/base/Menu.tsx:55
+msgid "Files"
+msgstr "Files"
+
+#: ../../client/src/home/utils/date.ts:8
 msgid "Good afternoon"
 msgstr "Good afternoon"
 
-#: ../../client/src/core/utils/date.ts:10
+#: ../../client/src/home/utils/date.ts:10
 msgid "Good evening"
 msgstr "Good evening"
 
-#: ../../client/src/core/utils/date.ts:6
+#: ../../client/src/home/utils/date.ts:6
 msgid "Good morning"
 msgstr "Good morning"
 
 #: ../../client/src/core/base/Menu.tsx:30
-#~ msgid "Kitchen Sink"
-#~ msgstr "Kitchen Sink"
+msgid "Kitchen Sink"
+msgstr "Kitchen Sink"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:38
+#: ../../client/src/settings/routes/ScreenSettings.tsx:42
 msgid "Language"
 msgstr "Language"
 
-#: ../../client/src/core/base/Menu.tsx:24
-#: ../../client/src/core/routes/ScreenLibrary.tsx:14
+#: ../../client/src/app/base/Menu.tsx:90
 msgid "Library"
 msgstr "Library"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:31
+#: ../../client/src/settings/routes/ScreenSettings.tsx:35
 msgid "Light"
 msgstr "Light"
 
-#: ../../client/src/core/base/Menu.tsx:36
-#: ../../client/src/settings/routes/ScreenSettings.tsx:17
+#: ../../client/src/settings/routes/ScreenSettings.tsx:21
+msgid "Manage your settings"
+msgstr "Manage your settings"
+
+#: ../../client/src/app/base/Menu.tsx:31
+msgid "Music"
+msgstr "Music"
+
+#: ../../client/src/app/base/Menu.tsx:61
+msgid "Photos"
+msgstr "Photos"
+
+#: ../../client/src/app/base/Menu.tsx:98
 msgid "Settings"
 msgstr "Settings"
 
-#: ../../client/src/core/base/Menu.tsx:27
-#: ../../client/src/tasks/routes/TasksList.tsx:14
+#: ../../client/src/app/base/Menu.tsx:37
 msgid "Tasks"
 msgstr "Tasks"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:21
+#: ../../client/src/settings/routes/ScreenSettings.tsx:25
 msgid "Theme"
 msgstr "Theme"
 
-#: ../../client/src/core/hooks/useOnline.ts:14
+#: ../../client/src/app/base/Menu.tsx:67
+msgid "Videos"
+msgstr "Videos"
+
+#: ../../client/src/app/hooks/useOnline.ts:14
 msgid "You are offline"
 msgstr "You are offline"
 
-#: ../../client/src/core/hooks/useOnline.ts:12
+#: ../../client/src/app/hooks/useOnline.ts:12
 msgid "You are online"
 msgstr "You are online"

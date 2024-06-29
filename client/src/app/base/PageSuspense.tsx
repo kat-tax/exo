@@ -1,7 +1,7 @@
 import {Suspense} from 'react';
-import {PageLoading} from 'core/base/PageLoading';
+import {PageLoading} from 'app/base/PageLoading';
 
-export function LazyLoad(props: React.PropsWithChildren) {
+export function PageSuspense(props: React.PropsWithChildren) {
   return (
     <Suspense fallback={<PageLoading/>}>
       {props.children}

@@ -12,8 +12,8 @@ export function PageLoading(props: PageLoadingProps) {
   return (
     <View style={styles.root} {...props.container}>
       <ActivityIndicator
-        color={theme.colors.primary}
         size="large"
+        color={theme.colors.primary}
         {...props.indicator}
       />
     </View>

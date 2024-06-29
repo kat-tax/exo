@@ -1,14 +1,15 @@
 import {lazy} from 'react';
 
 export const Layout = {
-  Main: lazy(() => import('../../core/routes/LayoutMain')),
+  Main: lazy(() => import('./LayoutMain')),
 }
 
 export const Screen = {
-  Home: lazy(() => import('../../core/routes/ScreenHome')),
-  Design: lazy(() => import('../../core/routes/ScreenDesign')),
-  Library: lazy(() => import('../../core/routes/ScreenLibrary')),
-  TaskList: lazy(() => import('../../tasks/routes/TasksList')),
-  TaskDetails: lazy(() => import('../../tasks/routes/TasksDetails')),
+  Home: lazy(() => import('../../home/routes/ScreenHome')),
+  TaskList: lazy(() => import('../../tasks/routes/TaskList')),
+  TaskDetails: lazy(() => import('../../tasks/routes/TaskDetails')),
+  Calendar: lazy(() => import('../../events/routes/ScreenCalendar')),
   Settings: lazy(() => import('../../settings/routes/ScreenSettings')),
+  Design: lazy(() => import('../../dev/routes/ScreenDesign')),
+  Library: lazy(() => import('../../dev/routes/ScreenLibrary')),
 }

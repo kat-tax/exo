@@ -1,14 +1,14 @@
 import {useStyles, createStyleSheet} from 'design/styles';
 import {Text, Pressable, ScrollView} from 'react-native';
 
-interface TasksListProps {
+interface TaskItemsProps {
   active: string[],
   complete: string[],
   addActive: (item: string) => void,
   addComplete: (item: string) => void,
 }
 
-export function TasksList(props: TasksListProps) {
+export function TaskItems(props: TaskItemsProps) {
   const {styles} = useStyles(stylesheet);
 
   return (

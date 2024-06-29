@@ -1,9 +1,9 @@
 import * as Redux from 'react-exo/redux';
 import {Storage} from 'react-exo/storage';
-import {PageLoading} from 'core/base/PageLoading';
-// import config from 'config';
+import {PageLoading} from 'app/base/PageLoading';
+import config from 'config';
 
-import core from 'core/store';
+import app from './app';
 import tasks from 'tasks/store';
 import settings from 'settings/store';
 // Tip: import your new reducers here...
@@ -17,17 +17,17 @@ export function Store(props: React.PropsWithChildren) {
 }
 
 const reducer = Redux.persistReducer({
-  key: 'EXO',
-  version: 0,
-  storage: Storage.init(`${'EXO'}::redux`, 0),
+  key: config.APP_NAME,
+  version: config.STORE_VERSION,
+  storage: Storage.init(`${config.APP_NAME}::redux`, config.STORE_VERSION),
   blacklist: [
     Redux.history.context.routerReducer.name,
-    core.reducer.name,
+    app.reducer.name,
     // Tip: disable a reducer persisting to disk here...
   ],
 }, Redux.combineReducers({
   router: Redux.history.context.routerReducer,
-  core: core.reducer,
+  app: app.reducer,
   tasks: tasks.reducer,
   settings: settings.reducer,
   // Tip: add your new reducers here...

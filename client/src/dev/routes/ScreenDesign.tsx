@@ -1,13 +1,15 @@
 import {Trans} from '@lingui/macro';
 import {View} from 'react-native';
+import {Page} from 'app/base/Page';
+import {Section} from 'dev/base/Section';
 import {Icon} from 'react-exo/icon';
-import {Page} from 'core/base/Page';
-import {Section} from 'core/base/Section';
 import * as Design from 'design';
 
 export default function ScreenDesign() {
   return (
-    <Page title={<Trans>Design</Trans>}>
+    <Page
+      title={<Trans>Design</Trans>}
+      message={<Trans>{`${11} components`}</Trans>}>
       <Section title="Button">
         <Design.Button
           mode="Primary"

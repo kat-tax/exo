@@ -1,30 +1,22 @@
-import * as Nav from 'react-exo/navigation';
-import {Suspense} from 'react';
-import {history} from 'app/store';
+import {Router as _, Routes, Route} from 'react-exo/navigation';
+import {PageSuspense as $} from 'app/base/PageSuspense';
 import {Layout, Screen} from 'app/routes';
-import {PageLoading} from 'core/base/PageLoading';
+import {history} from 'app/store';
 
 export function Router() {
   return (
-    <Nav.Router {...{history}}>
-      <Nav.Routes>
-        <Nav.Route path="/" element={<$><Layout.Main/></$>}>
-          <Nav.Route index element={<$><Screen.Home/></$>}/>
-          <Nav.Route path="tasks" element={<$><Screen.TaskList/></$>}/>
-          <Nav.Route path="design" element={<$><Screen.Design/></$>}/>
-          <Nav.Route path="library" element={<$><Screen.Library/></$>}/>
-          <Nav.Route path="tasks/:id" element={<$><Screen.TaskDetails/></$>}/>
-          <Nav.Route path="settings" element={<$><Screen.Settings/></$>}/>
-        </Nav.Route>
-      </Nav.Routes>
-    </Nav.Router>
-  );
-}
-
-const $ = (props: React.PropsWithChildren) => {
-  return (
-    <Suspense fallback={<PageLoading/>}>
-      {props.children}
-    </Suspense>
+    <_ {...{history}}>
+      <Routes>
+        <Route path="/" element={<$><Layout.Main/></$>}>
+          <Route index element={<$><Screen.Home/></$>}/>
+          <Route path="calendar" element={<$><Screen.Calendar/></$>}/>
+          <Route path="tasks" element={<$><Screen.TaskList/></$>}/>
+          <Route path="tasks/:id" element={<$><Screen.TaskDetails/></$>}/>
+          <Route path="design" element={<$><Screen.Design/></$>}/>
+          <Route path="library" element={<$><Screen.Library/></$>}/>
+          <Route path="settings" element={<$><Screen.Settings/></$>}/>
+        </Route>
+      </Routes>
+    </_>
   );
 }

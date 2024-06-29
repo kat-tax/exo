@@ -38,8 +38,8 @@ const stylesheet = createStyleSheet(theme => ({
     alignContent: 'center',
   },
   content: {
-    flexWrap: 'wrap',
     width: '100%',
+    flexWrap: 'wrap',
     flexDirection: 'row',
     justifyContent: 'center',
     gap: theme.display.space3,

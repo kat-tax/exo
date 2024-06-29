@@ -1,9 +1,9 @@
 import {Trans} from '@lingui/react';
+import {Text} from 'react-native';
 import {useEffect, useState} from 'react';
 import {useStyles, createStyleSheet} from 'design/styles';
-import {getDayGreeting, getCurrentTime} from 'core/utils/date';
-import {Text} from 'react-native';
-import {Page} from 'core/base/Page';
+import {getDayGreeting, getCurrentTime} from 'home/utils/date';
+import {Page} from 'app/base/Page';
 
 export default function ScreenHome() {
   const {styles} = useStyles(stylesheet);
