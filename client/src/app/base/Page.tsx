@@ -42,10 +42,20 @@ export function Page(props: PageProps) {
 const stylesheet = createStyleSheet(theme => ({
   root: {
     flex: 1,
-    maxWidth: 980,
+    alignSelf: 'center',
     gap: theme.display.space5,
     padding: theme.display.space5,
     backgroundColor: theme.colors.background,
+    minWidth: {
+      initial: '100%',
+      md: 900,
+      xl: 1200,
+    },
+    maxWidth: {
+      initial: '100%',
+      md: 900,
+      xl: 1200,
+    },
   },
   rootFullWidth: {
     maxWidth: '100%',

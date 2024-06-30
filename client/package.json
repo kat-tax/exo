@@ -26,6 +26,7 @@
     "@ai-sdk/openai": "^0.0.34",
     "@callstack/react-native-visionos": "^0.73.0",
     "@candlefinance/faster-image": "^1.4.3",
+    "@expensify/react-native-live-markdown": "^0.1.96",
     "@lingui/core": "^4.10.0",
     "@lingui/macro": "^4.10.0",
     "@lingui/react": "^4.10.0",

@@ -40,9 +40,18 @@ const stylesheet = createStyleSheet(theme => ({
     height: '100%',
   },
   text: {
-    fontSize: 14,
-    lineHeight: 24,
+    fontFamily: theme.font.family,
+    fontWeight: theme.font.contentWeight,
+    letterSpacing: theme.font.contentSpacing,
     color: theme.colors.foreground,
+    fontSize: {
+      initial: theme.typography.size3,
+      md: theme.typography.size2,
+    },
+    lineHeight: {
+      initial: theme.typography.lineHeight7,
+      md: theme.typography.lineHeight2,
+    },
   },
   strike: {
     textDecorationLine: 'line-through',

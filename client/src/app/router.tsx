@@ -10,6 +10,8 @@ export function Router() {
         <Route path="/" element={<$><Layout.Main/></$>}>
           <Route index element={<$><Screen.Home/></$>}/>
           <Route path="calendar" element={<$><Screen.Calendar/></$>}/>
+          <Route path="notes" element={<$><Screen.TaskList/></$>}/>
+          <Route path="notes/:id" element={<$><Screen.TaskDetails/></$>}/>
           <Route path="tasks" element={<$><Screen.TaskList/></$>}/>
           <Route path="tasks/:id" element={<$><Screen.TaskDetails/></$>}/>
           <Route path="design" element={<$><Screen.Design/></$>}/>

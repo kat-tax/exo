@@ -7,9 +7,9 @@ export const APP_MENU_WIDTH = 145;
 export const APP_MENU_TAB_HEIGHT = 64;
 
 export default function LayoutMain() {
-  const {styles} = useStyles(stylesheet);
+  const {styles, theme} = useStyles(stylesheet);
   const screen = useWindowDimensions();
-  const hasTabs = screen.width <= 660;
+  const hasTabs = screen.width <= theme.breakpoints.sm;
   const vstyles = {
     root: [styles.root, hasTabs && styles.rootTabs],
     menu: [styles.menu, hasTabs && styles.menuTabs],
