@@ -29,7 +29,7 @@ export function Menu(props: MenuProps) {
       <MenuItem
         path="/calendar"
         label={t`Calendar`}
-        icon={<Icon name="ph:calendar"/>}
+        icon={<Icon name="ph:calendar-dots"/>}
         tab={props.tabs}
       />
       <MenuItem
@@ -47,35 +47,6 @@ export function Menu(props: MenuProps) {
           striked={complete}
         />
       )}
-      <View style={styles.fill}/>
-      {false &&
-        <>
-          <MenuItem
-            path="/media/files"
-            label={t`Files`}
-            icon={<Icon name="ph:file-text"/>}
-            tab={props.tabs}
-          />
-          <MenuItem
-            path="/media/photos"
-            label={t`Photos`}
-            icon={<Icon name="ph:image"/>}
-            tab={props.tabs}
-          />
-          <MenuItem
-            path="/media/videos"
-            label={t`Videos`}
-            icon={<Icon name="ph:video"/>}
-            tab={props.tabs}
-          />
-          <MenuItem
-            path="/media/audio"
-            label={t`Audio`}
-            icon={<Icon name="ph:music-notes-simple"/>}
-            tab={props.tabs}
-          />
-        </>
-      }
       <View style={styles.fill}/>
       {hasDevMenu &&
         <>

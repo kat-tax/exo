@@ -28,10 +28,20 @@ export function getTimeOfDay() {
   return 'unknown';
 }
 
-export function getCurrentTime() {
-  return new Date().toLocaleTimeString();
+export function getCurrentTime(timeStyle: 'short' | 'medium' | 'long' = 'medium') {
+  return new Date().toLocaleTimeString(undefined, {timeStyle});
 }
 
 export function getCurrentDate() {
   return new Date().toLocaleDateString();
+}
+
+export function formatDate(date: Date) {
+  return date.toLocaleDateString(undefined, {
+    month: '2-digit',
+    day: '2-digit',
+    year: '2-digit',
+    hour: 'numeric',
+    minute: 'numeric',
+  });
 }

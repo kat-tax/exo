@@ -22,6 +22,14 @@ msgstr "{0} components"
 msgid "Add a task"
 msgstr "Add a task"
 
+#: ../../client/src/home/routes/ScreenHome.tsx:35
+msgid "Alert"
+msgstr "Alert"
+
+#: ../../client/src/home/routes/ScreenHome.tsx:36
+msgid "Alert message"
+msgstr "Alert message"
+
 #: ../../client/src/app/base/Menu.tsx:73
 msgid "Audio"
 msgstr "Audio"
@@ -51,15 +59,16 @@ msgstr "Dashboard"
 msgid "Default"
 msgstr "Default"
 
-#: ../../client/src/app/base/Menu.tsx:84
+#: ../../client/src/app/base/Menu.tsx:55
+#: ../../client/src/dev/routes/ScreenDesign.tsx:11
 msgid "Design"
 msgstr "Design"
 
-#: ../../client/src/home/utils/date.ts:14
+#: ../../client/src/home/utils/time.ts:14
 msgid "Enjoy the day"
 msgstr "Enjoy the day"
 
-#: ../../client/src/home/utils/date.ts:12
+#: ../../client/src/home/utils/time.ts:12
 msgid "Enjoy the night"
 msgstr "Enjoy the night"
 
@@ -67,17 +76,21 @@ msgstr "Enjoy the night"
 msgid "Files"
 msgstr "Files"
 
-#: ../../client/src/home/utils/date.ts:8
+#: ../../client/src/home/utils/time.ts:8
 msgid "Good afternoon"
 msgstr "Good afternoon"
 
-#: ../../client/src/home/utils/date.ts:10
+#: ../../client/src/home/utils/time.ts:10
 msgid "Good evening"
 msgstr "Good evening"
 
-#: ../../client/src/home/utils/date.ts:6
+#: ../../client/src/home/utils/time.ts:6
 msgid "Good morning"
 msgstr "Good morning"
+
+#: ../../client/src/home/routes/ScreenHome.tsx:49
+msgid "Hello"
+msgstr "Hello"
 
 #: ../../client/src/core/base/Menu.tsx:30
 msgid "Kitchen Sink"
@@ -87,7 +100,8 @@ msgstr "Kitchen Sink"
 msgid "Language"
 msgstr "Language"
 
-#: ../../client/src/app/base/Menu.tsx:90
+#: ../../client/src/app/base/Menu.tsx:61
+#: ../../client/src/dev/routes/ScreenLibrary.tsx:15
 msgid "Library"
 msgstr "Library"
 
@@ -99,7 +113,7 @@ msgstr "Light"
 msgid "Manage your settings"
 msgstr "Manage your settings"
 
-#: ../../client/src/app/base/Menu.tsx:31
+#: ../../client/src/app/base/Menu.tsx:73
 msgid "Music"
 msgstr "Music"
 
@@ -107,11 +121,13 @@ msgstr "Music"
 msgid "Photos"
 msgstr "Photos"
 
-#: ../../client/src/app/base/Menu.tsx:98
+#: ../../client/src/app/base/Menu.tsx:69
+#: ../../client/src/settings/routes/ScreenSettings.tsx:20
 msgid "Settings"
 msgstr "Settings"
 
 #: ../../client/src/app/base/Menu.tsx:37
+#: ../../client/src/tasks/routes/TaskList.tsx:14
 msgid "Tasks"
 msgstr "Tasks"
 
@@ -122,6 +138,22 @@ msgstr "Theme"
 #: ../../client/src/app/base/Menu.tsx:67
 msgid "Videos"
 msgstr "Videos"
+
+#: ../../client/src/home/routes/ScreenHome.tsx:32
+msgid "Welcome back"
+msgstr "Welcome back"
+
+#: ../../client/src/home/routes/ScreenHome.tsx:25
+msgid "Welcome Back"
+msgstr "Welcome Back"
+
+#: ../../client/src/home/routes/ScreenHome.tsx:27
+msgid "Welcome, {Human}"
+msgstr "Welcome, {Human}"
+
+#: ../../client/src/home/routes/ScreenHome.tsx:25
+msgid "Welcome, {Syntax}"
+msgstr "Welcome, {Syntax}"
 
 #: ../../client/src/app/hooks/useOnline.ts:14
 msgid "You are offline"

@@ -4,6 +4,7 @@ import {PageLoading} from 'app/base/PageLoading';
 import config from 'config';
 
 import app from './app';
+import home from 'home/store';
 import tasks from 'tasks/store';
 import settings from 'settings/store';
 // Tip: import your new reducers here...
@@ -28,6 +29,7 @@ const reducer = Redux.persistReducer({
 }, Redux.combineReducers({
   router: Redux.history.context.routerReducer,
   app: app.reducer,
+  home: home.reducer,
   tasks: tasks.reducer,
   settings: settings.reducer,
   // Tip: add your new reducers here...

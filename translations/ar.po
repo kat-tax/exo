@@ -22,6 +22,14 @@ msgstr "{0} مكونينت"
 msgid "Add a task"
 msgstr "أضف مهمة"
 
+#: ../../client/src/home/routes/ScreenHome.tsx:35
+msgid "Alert"
+msgstr ""
+
+#: ../../client/src/home/routes/ScreenHome.tsx:36
+msgid "Alert message"
+msgstr ""
+
 #: ../../client/src/app/base/Menu.tsx:73
 msgid "Audio"
 msgstr ""
@@ -51,15 +59,16 @@ msgstr "لوحة التحكم"
 msgid "Default"
 msgstr "افتراضي"
 
-#: ../../client/src/app/base/Menu.tsx:84
+#: ../../client/src/app/base/Menu.tsx:55
+#: ../../client/src/dev/routes/ScreenDesign.tsx:11
 msgid "Design"
 msgstr "التصميم"
 
-#: ../../client/src/home/utils/date.ts:14
+#: ../../client/src/home/utils/time.ts:14
 msgid "Enjoy the day"
 msgstr "استمتع باليوم"
 
-#: ../../client/src/home/utils/date.ts:12
+#: ../../client/src/home/utils/time.ts:12
 msgid "Enjoy the night"
 msgstr "استمتع بالليل"
 
@@ -67,17 +76,21 @@ msgstr "استمتع بالليل"
 msgid "Files"
 msgstr ""
 
-#: ../../client/src/home/utils/date.ts:8
+#: ../../client/src/home/utils/time.ts:8
 msgid "Good afternoon"
 msgstr "مساء الخير"
 
-#: ../../client/src/home/utils/date.ts:10
+#: ../../client/src/home/utils/time.ts:10
 msgid "Good evening"
 msgstr "مساء الخير"
 
-#: ../../client/src/home/utils/date.ts:6
+#: ../../client/src/home/utils/time.ts:6
 msgid "Good morning"
 msgstr "صباح الخير"
+
+#: ../../client/src/home/routes/ScreenHome.tsx:49
+msgid "Hello"
+msgstr ""
 
 #: ../../client/src/core/base/Menu.tsx:30
 msgid "Kitchen Sink"
@@ -87,7 +100,8 @@ msgstr "الحاجة الخامية"
 msgid "Language"
 msgstr "اللغة"
 
-#: ../../client/src/app/base/Menu.tsx:90
+#: ../../client/src/app/base/Menu.tsx:61
+#: ../../client/src/dev/routes/ScreenLibrary.tsx:15
 msgid "Library"
 msgstr "مكتبة"
 
@@ -99,7 +113,7 @@ msgstr "فاتح"
 msgid "Manage your settings"
 msgstr "إدارة إعداداتك"
 
-#: ../../client/src/app/base/Menu.tsx:31
+#: ../../client/src/app/base/Menu.tsx:73
 msgid "Music"
 msgstr ""
 
@@ -107,11 +121,13 @@ msgstr ""
 msgid "Photos"
 msgstr ""
 
-#: ../../client/src/app/base/Menu.tsx:98
+#: ../../client/src/app/base/Menu.tsx:69
+#: ../../client/src/settings/routes/ScreenSettings.tsx:20
 msgid "Settings"
 msgstr "الإعدادات"
 
 #: ../../client/src/app/base/Menu.tsx:37
+#: ../../client/src/tasks/routes/TaskList.tsx:14
 msgid "Tasks"
 msgstr "المهام"
 
@@ -121,6 +137,22 @@ msgstr "الثيم"
 
 #: ../../client/src/app/base/Menu.tsx:67
 msgid "Videos"
+msgstr ""
+
+#: ../../client/src/home/routes/ScreenHome.tsx:32
+msgid "Welcome back"
+msgstr ""
+
+#: ../../client/src/home/routes/ScreenHome.tsx:25
+msgid "Welcome Back"
+msgstr ""
+
+#: ../../client/src/home/routes/ScreenHome.tsx:27
+msgid "Welcome, {Human}"
+msgstr ""
+
+#: ../../client/src/home/routes/ScreenHome.tsx:25
+msgid "Welcome, {Syntax}"
 msgstr ""
 
 #: ../../client/src/app/hooks/useOnline.ts:14
