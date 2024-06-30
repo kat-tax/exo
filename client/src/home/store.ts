@@ -6,7 +6,13 @@ export type Home = {
   prompts: Array<Prompt>;
 };
 
-export type Prompt = [string, string, number];
+export type Prompt = [
+  string,  // prompt
+  string,  // response
+  number,  // timestamp
+  boolean, // multiline
+  string,  // model
+];
 
 export default createSlice({
   name: 'home',
@@ -25,6 +31,9 @@ export default createSlice({
   reducers: {
     addPrompt(home, action: PayloadAction<Prompt>) {
       home.prompts.push(action.payload);
+    },
+    clearPrompts(home) {
+      home.prompts = [];
     },
   },
 });

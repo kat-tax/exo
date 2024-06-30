@@ -12,12 +12,11 @@ export type SchemeData = [
 export function useScheme(storedOnly?: boolean): SchemeData {
   const dispatch = useDispatch();
   const stored = useSelector(settings.selectors.getScheme);
-  const scheme = useColorScheme();
-
-  const setScheme = (newScheme: ColorSchemeName) =>
+  const value = useColorScheme();
+  const setter = (newScheme: ColorSchemeName) =>
     dispatch(settings.actions.setScheme(newScheme));
 
   return (stored || storedOnly)
-    ? [stored, setScheme]
-    : [scheme, setScheme];
+    ? [stored, setter]
+    : [value, setter];
 }

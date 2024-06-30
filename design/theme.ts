@@ -395,7 +395,7 @@ export const themes = {
       mutedForeground: palette.zinc400,
       accent: palette.zinc800,
       accentForeground: palette.zinc50,
-      info: palette.blue900,
+      info: palette.yellow500,
       success: palette.green900,
       warning: palette.yellow900,
       destructive: palette.red900,

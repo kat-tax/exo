@@ -30,9 +30,18 @@ msgstr "Alert"
 msgid "Alert message"
 msgstr "Alert message"
 
+#: ../../client/src/home/base/Prompt.tsx:49
+msgid "Ask anything..."
+msgstr "Ask anything..."
+
 #: ../../client/src/app/base/Menu.tsx:73
 msgid "Audio"
 msgstr "Audio"
+
+#: ../../client/src/settings/routes/ScreenSettings.tsx:57
+#: ../../client/src/settings/routes/ScreenSettings.tsx:74
+msgid "Auto"
+msgstr "Auto"
 
 #: ../../client/src/app/base/Menu.tsx:31
 msgid "Calendar"
@@ -42,11 +51,19 @@ msgstr "Calendar"
 msgid "Calendar Events"
 msgstr "Calendar Events"
 
+#: ../../client/src/settings/routes/ScreenSettings.tsx:137
+msgid "Clear"
+msgstr "Clear"
+
+#: ../../client/src/settings/routes/ScreenSettings.tsx:121
+msgid "Clear Prompt History"
+msgstr "Clear Prompt History"
+
 #: ../../client/src/app/base/PageTeaser.tsx:19
 msgid "Coming Soon"
 msgstr "Coming Soon"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:36
+#: ../../client/src/settings/routes/ScreenSettings.tsx:59
 msgid "Dark"
 msgstr "Dark"
 
@@ -64,6 +81,25 @@ msgstr "Default"
 msgid "Design"
 msgstr "Design"
 
+#: ../../client/src/settings/routes/ScreenSettings.tsx:34
+#: ../../client/src/settings/routes/ScreenSettings.tsx:51
+msgid "Detect System"
+msgstr "Detect System"
+
+#: ../../client/src/settings/routes/ScreenSettings.tsx:34
+#: ../../client/src/settings/routes/ScreenSettings.tsx:51
+msgid "Device Default"
+msgstr "Device Default"
+
+#: ../../client/src/settings/routes/ScreenSettings.tsx:34
+#: ../../client/src/settings/routes/ScreenSettings.tsx:51
+msgid "Device Preference"
+msgstr "Device Preference"
+
+#: ../../client/src/settings/routes/ScreenSettings.tsx:88
+msgid "Display Name"
+msgstr "Display Name"
+
 #: ../../client/src/home/utils/time.ts:14
 msgid "Enjoy the day"
 msgstr "Enjoy the day"
@@ -71,6 +107,42 @@ msgstr "Enjoy the day"
 #: ../../client/src/home/utils/time.ts:12
 msgid "Enjoy the night"
 msgstr "Enjoy the night"
+
+#: ../../client/src/settings/routes/ScreenSettings.tsx:94
+msgid "Enter alias"
+msgstr "Enter alias"
+
+#: ../../client/src/settings/routes/ScreenSettings.tsx:73
+msgid "Enter Alias"
+msgstr "Enter Alias"
+
+#: ../../client/src/settings/routes/ScreenSettings.tsx:109
+msgid "Enter api key"
+msgstr "Enter api key"
+
+#: ../../client/src/settings/routes/ScreenSettings.tsx:88
+msgid "Enter Groq API key"
+msgstr "Enter Groq API key"
+
+#: ../../client/src/settings/routes/ScreenSettings.tsx:73
+msgid "Enter your alias"
+msgstr "Enter your alias"
+
+#: ../../client/src/settings/routes/ScreenSettings.tsx:73
+msgid "Enter Your Alias"
+msgstr "Enter Your Alias"
+
+#: ../../client/src/settings/routes/ScreenSettings.tsx:88
+msgid "Enter your Groq API key"
+msgstr "Enter your Groq API key"
+
+#: ../../client/src/settings/routes/ScreenSettings.tsx:88
+msgid "Enter your key"
+msgstr "Enter your key"
+
+#: ../../client/src/settings/routes/ScreenSettings.tsx:73
+msgid "Enter Your Name"
+msgstr "Enter Your Name"
 
 #: ../../client/src/app/base/Menu.tsx:55
 msgid "Files"
@@ -88,15 +160,47 @@ msgstr "Good evening"
 msgid "Good morning"
 msgstr "Good morning"
 
+#: ../../client/src/settings/routes/ScreenSettings.tsx:103
+msgid "Groq API Key"
+msgstr "Groq API Key"
+
+#: ../../client/src/home/base/Prompt.tsx:45
+msgid "Groq API Key is missing"
+msgstr "Groq API Key is missing"
+
+#: ../../client/src/home/base/Prompt.tsx:45
+msgid "Groq API Key is not set"
+msgstr "Groq API Key is not set"
+
+#: ../../client/src/home/base/Prompt.tsx:45
+msgid "Groq API Key is not set!"
+msgstr "Groq API Key is not set!"
+
+#: ../../client/src/settings/routes/ScreenSettings.tsx:118
+msgid "Groq Model ID"
+msgstr "Groq Model ID"
+
 #: ../../client/src/home/routes/ScreenHome.tsx:49
 msgid "Hello"
 msgstr "Hello"
+
+#: ../../client/src/settings/routes/ScreenSettings.tsx:73
+msgid "Human"
+msgstr "Human"
+
+#: ../../client/src/settings/routes/ScreenSettings.tsx:73
+msgid "Input your alias"
+msgstr "Input your alias"
+
+#: ../../client/src/settings/routes/ScreenSettings.tsx:88
+msgid "Input your key"
+msgstr "Input your key"
 
 #: ../../client/src/core/base/Menu.tsx:30
 msgid "Kitchen Sink"
 msgstr "Kitchen Sink"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:42
+#: ../../client/src/settings/routes/ScreenSettings.tsx:65
 msgid "Language"
 msgstr "Language"
 
@@ -105,13 +209,25 @@ msgstr "Language"
 msgid "Library"
 msgstr "Library"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:35
+#: ../../client/src/settings/routes/ScreenSettings.tsx:58
 msgid "Light"
 msgstr "Light"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:21
+#: ../../client/src/settings/routes/ScreenSettings.tsx:44
 msgid "Manage your settings"
 msgstr "Manage your settings"
+
+#: ../../client/src/home/base/Prompt.tsx:45
+msgid "Missing API Key!"
+msgstr "Missing API Key!"
+
+#: ../../client/src/home/base/Prompt.tsx:45
+msgid "Missing Groq API Key"
+msgstr "Missing Groq API Key"
+
+#: ../../client/src/home/base/Prompt.tsx:45
+msgid "Missing the Groq API Key"
+msgstr "Missing the Groq API Key"
 
 #: ../../client/src/app/base/Menu.tsx:73
 msgid "Music"
@@ -121,17 +237,71 @@ msgstr "Music"
 msgid "Photos"
 msgstr "Photos"
 
-#: ../../client/src/app/base/Menu.tsx:69
-#: ../../client/src/settings/routes/ScreenSettings.tsx:20
+#: ../../client/src/home/base/Prompt.tsx:87
+msgid "Please enter a prompt"
+msgstr "Please enter a prompt"
+
+#: ../../client/src/home/base/Prompt.tsx:49
+msgid "Please set your Groq API Key"
+msgstr "Please set your Groq API Key"
+
+#: ../../client/src/settings/routes/ScreenSettings.tsx:121
+msgid "Privacy"
+msgstr "Privacy"
+
+#: ../../client/src/settings/routes/ScreenSettings.tsx:136
+msgid "Prompt History"
+msgstr "Prompt History"
+
+#: ../../client/src/settings/routes/ScreenSettings.tsx:73
+msgid "Provide your alias"
+msgstr "Provide your alias"
+
+#: ../../client/src/home/base/Prompt.tsx:45
+msgid "Set your \"Groq API Key\" in Settings"
+msgstr "Set your \"Groq API Key\" in Settings"
+
+#: ../../client/src/home/base/Prompt.tsx:45
+msgid "Set your API Key in Settings"
+msgstr "Set your API Key in Settings"
+
+#: ../../client/src/home/base/Prompt.tsx:45
+msgid "Set your Groq API Key"
+msgstr "Set your Groq API Key"
+
+#: ../../client/src/home/base/Prompt.tsx:45
+msgid "Set your Groq API Key in Settings"
+msgstr "Set your Groq API Key in Settings"
+
+#: ../../client/src/settings/routes/ScreenSettings.tsx:43
 msgid "Settings"
 msgstr "Settings"
+
+#: ../../client/src/settings/routes/ScreenSettings.tsx:34
+#: ../../client/src/settings/routes/ScreenSettings.tsx:51
+msgid "System"
+msgstr "System"
+
+#: ../../client/src/settings/routes/ScreenSettings.tsx:34
+#: ../../client/src/settings/routes/ScreenSettings.tsx:51
+msgid "System Default"
+msgstr "System Default"
+
+#: ../../client/src/settings/routes/ScreenSettings.tsx:34
+#: ../../client/src/settings/routes/ScreenSettings.tsx:51
+msgid "System Preference"
+msgstr "System Preference"
 
 #: ../../client/src/app/base/Menu.tsx:37
 #: ../../client/src/tasks/routes/TaskList.tsx:14
 msgid "Tasks"
 msgstr "Tasks"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:25
+#: ../../client/src/home/base/Prompt.tsx:45
+msgid "The Groq API Key is not set"
+msgstr "The Groq API Key is not set"
+
+#: ../../client/src/settings/routes/ScreenSettings.tsx:48
 msgid "Theme"
 msgstr "Theme"
 
@@ -147,6 +317,10 @@ msgstr "Welcome back"
 msgid "Welcome Back"
 msgstr "Welcome Back"
 
+#: ../../client/src/home/routes/ScreenHome.tsx:24
+msgid "Welcome, {displayName}"
+msgstr "Welcome, {displayName}"
+
 #: ../../client/src/home/routes/ScreenHome.tsx:27
 msgid "Welcome, {Human}"
 msgstr "Welcome, {Human}"
@@ -155,6 +329,10 @@ msgstr "Welcome, {Human}"
 msgid "Welcome, {Syntax}"
 msgstr "Welcome, {Syntax}"
 
+#: ../../client/src/home/routes/ScreenHome.tsx:24
+msgid "Welcome, Human"
+msgstr "Welcome, Human"
+
 #: ../../client/src/app/hooks/useOnline.ts:14
 msgid "You are offline"
 msgstr "You are offline"
@@ -162,3 +340,19 @@ msgstr "You are offline"
 #: ../../client/src/app/hooks/useOnline.ts:12
 msgid "You are online"
 msgstr "You are online"
+
+#: ../../client/src/settings/routes/ScreenSettings.tsx:73
+msgid "Your alias"
+msgstr "Your alias"
+
+#: ../../client/src/settings/routes/ScreenSettings.tsx:73
+msgid "Your Alias"
+msgstr "Your Alias"
+
+#: ../../client/src/settings/routes/ScreenSettings.tsx:88
+msgid "Your api key"
+msgstr "Your api key"
+
+#: ../../client/src/settings/routes/ScreenSettings.tsx:88
+msgid "Your key"
+msgstr "Your key"

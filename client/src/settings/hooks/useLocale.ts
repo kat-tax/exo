@@ -13,12 +13,11 @@ export type LocaleData = [
 export function useLocale(storedOnly?: boolean): LocaleData {
   const dispatch = useDispatch();
   const stored = useSelector(settings.selectors.getLocale);
-  const locale = useRef(I18n.getLocale() as Locales);
-
-  const setLocale = (newLocale: Locales) =>
+  const value = useRef(I18n.getLocale() as Locales);
+  const setter = (newLocale: Locales) =>
     dispatch(settings.actions.setLocale(newLocale));
 
   return (stored || storedOnly)
-    ? [stored || (storedOnly ? undefined : 'en'), setLocale]
-    : [locale?.current || 'en', setLocale];
+    ? [stored || (storedOnly ? undefined : 'en'), setter]
+    : [value?.current || 'en', setter];
 }

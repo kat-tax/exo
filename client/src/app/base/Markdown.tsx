@@ -21,7 +21,7 @@ export const Markdown = memo(({text}: {text: string}) => {
             gap: theme.display.space2,
             fontFamily: theme.font.family,
             letterSpacing: theme.font.spacing,
-            lineHeight: theme.typography.lineHeight2,
+            lineHeight: theme.typography.lineHeight5,
             color: theme.colors.foreground,
           },
           // Headings
@@ -114,12 +114,11 @@ export const Markdown = memo(({text}: {text: string}) => {
           code_inline: {
             borderWidth: 1,
             borderColor: theme.colors.border,
-            lineHeight: theme.font.labelHeight,
-            paddingVertical: theme.display.space1,
-            paddingHorizontal: theme.display.space2,
+            fontSize: theme.font.size,
+            padding: theme.display.space1,
             borderRadius: theme.display.radius3,
             backgroundColor: theme.colors.card,
-            color: theme.colors.cardForeground,
+            color: theme.colors.info,
             ...Platform.select({
               ios: {
                 fontFamily: 'Courier',
