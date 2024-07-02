@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 2024-05-12 23:27+0900\n"
+"POT-Creation-Date: 2024-07-01 21:00-0500\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -16,121 +16,33 @@ msgstr ""
 #: ../../client/src/dev/routes/ScreenDesign.tsx:12
 #: ../../client/src/dev/routes/ScreenLibrary.tsx:16
 msgid "{0} components"
-msgstr "{0} مكونينت"
+msgstr "{0} مكونت"
 
 #: ../../client/src/tasks/base/TasksInput.tsx:21
 msgid "Add a task"
-msgstr "أضف مهمة"
+msgstr "إضافة تسجيل"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:179
 msgid "AI"
-msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:184
-#~ msgid "AI Generation"
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:179
-#~ msgid "AI Inference"
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:184
-#~ msgid "AI LLM"
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:137
-#~ msgid "AI Settings"
-#~ msgstr ""
-
-#: ../../client/src/home/routes/ScreenHome.tsx:35
-#~ msgid "Alert"
-#~ msgstr ""
-
-#: ../../client/src/home/routes/ScreenHome.tsx:36
-#~ msgid "Alert message"
-#~ msgstr ""
+msgstr "ذكاء الصوت"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:268
 msgid "All Data"
-msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:273
-#~ msgid "App"
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:268
-#~ msgid "App Data"
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:137
-#~ msgid "Artificial Intelligence"
-#~ msgstr ""
+msgstr "كل البيانات"
 
 #: ../../client/src/home/base/Prompt.tsx:49
 msgid "Ask anything..."
-msgstr ""
-
-#: ../../client/src/app/base/Menu.tsx:73
-#~ msgid "Audio"
-#~ msgstr ""
+msgstr "استعلام أي شيء..."
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:100
 #: ../../client/src/settings/routes/ScreenSettings.tsx:128
 msgid "Auto"
-msgstr ""
+msgstr "تلقائي"
 
 #: ../../client/src/app/base/Menu.tsx:31
 #: ../../client/src/settings/routes/ScreenSettings.tsx:250
 msgid "Calendar"
-msgstr "التقويم"
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:182
-#~ msgid "Calendar Data"
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:213
-#~ msgid "Calendar Events"
-#~ msgstr "أحداد التقويم"
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:182
-#~ msgid "Calendar History"
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:137
-#~ msgid "Clear"
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:271
-#~ msgid "Clear all app data."
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:253
-#~ msgid "Clear all calendar data."
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:185
-#~ msgid "Clear all calendar events."
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:235
-#~ msgid "Clear all prompt data."
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:198
-#~ msgid "Clear all prompt history."
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:121
-#~ msgid "Clear Prompt History"
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:167
-#~ msgid "Clear your prompt history."
-#~ msgstr ""
-
-#: ../../client/src/app/base/PageTeaser.tsx:19
-#~ msgid "Coming Soon"
-#~ msgstr ""
+msgstr "تقويم"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:130
 msgid "Dark"
@@ -138,64 +50,40 @@ msgstr "داكن"
 
 #: ../../client/src/app/base/Menu.tsx:25
 msgid "Dashboard"
-msgstr "لوحة التحكم"
+msgstr "لوحة المعلومات"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:227
 msgid "Data"
-msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:227
-#~ msgid "Data Privacy"
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:34
-#: ../../client/src/settings/routes/ScreenSettings.tsx:51
-#~ msgid "Default"
-#~ msgstr "افتراضي"
+msgstr "بيانات"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:253
 msgid "Delete all calendar data."
-msgstr ""
+msgstr "حذف كل بيانات التقويم."
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:235
 msgid "Delete all prompt data."
-msgstr ""
+msgstr "حذف كل بيانات المسجيل."
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:271
 msgid "Delete the local database."
-msgstr ""
+msgstr "حذف قاعدة البيانات المحلية."
 
 #: ../../client/src/app/base/Menu.tsx:55
 #: ../../client/src/dev/routes/ScreenDesign.tsx:11
 msgid "Design"
-msgstr "التصميم"
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:34
-#: ../../client/src/settings/routes/ScreenSettings.tsx:51
-#~ msgid "Detect System"
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:34
-#: ../../client/src/settings/routes/ScreenSettings.tsx:51
-#~ msgid "Device Default"
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:34
-#: ../../client/src/settings/routes/ScreenSettings.tsx:51
-#~ msgid "Device Preference"
-#~ msgstr ""
+msgstr "تصميم"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:60
 msgid "Display"
-msgstr ""
+msgstr "عرض"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:65
 msgid "Display Name"
-msgstr ""
+msgstr "اسم العرض"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:158
 msgid "Distance"
-msgstr ""
+msgstr "مسافة"
 
 #: ../../client/src/home/utils/time.ts:14
 msgid "Enjoy the day"
@@ -203,123 +91,39 @@ msgstr "استمتع باليوم"
 
 #: ../../client/src/home/utils/time.ts:12
 msgid "Enjoy the night"
-msgstr "استمتع بالليل"
+msgstr "استمتع بالنهاية العصرية"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:75
 msgid "Enter alias"
-msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:73
-#~ msgid "Enter Alias"
-#~ msgstr ""
+msgstr "أدخل الاسم المستعار"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:194
 msgid "Enter api key"
-msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:88
-#~ msgid "Enter Groq API key"
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:73
-#~ msgid "Enter your alias"
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:73
-#~ msgid "Enter Your Alias"
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:88
-#~ msgid "Enter your Groq API key"
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:88
-#~ msgid "Enter your key"
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:73
-#~ msgid "Enter Your Name"
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:213
-#~ msgid "Event Data"
-#~ msgstr ""
-
-#: ../../client/src/app/base/Menu.tsx:55
-#~ msgid "Files"
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:60
-#~ msgid "General"
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:184
-#~ msgid "Generation"
-#~ msgstr ""
+msgstr "أدخل مفتاح API"
 
 #: ../../client/src/home/utils/time.ts:8
 msgid "Good afternoon"
-msgstr "مساء الخير"
+msgstr "صعود مسائي"
 
 #: ../../client/src/home/utils/time.ts:10
 msgid "Good evening"
-msgstr "مساء الخير"
+msgstr "صعود مسائي"
 
 #: ../../client/src/home/utils/time.ts:6
 msgid "Good morning"
-msgstr "صباح الخير"
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:184
-#~ msgid "GPT"
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:184
-#~ msgid "GPT-4"
-#~ msgstr ""
+msgstr "صعود مسائي"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:184
 msgid "Groq API Key"
-msgstr ""
-
-#: ../../client/src/home/base/Prompt.tsx:45
-#~ msgid "Groq API Key is missing"
-#~ msgstr ""
-
-#: ../../client/src/home/base/Prompt.tsx:45
-#~ msgid "Groq API Key is not set"
-#~ msgstr ""
-
-#: ../../client/src/home/base/Prompt.tsx:45
-#~ msgid "Groq API Key is not set!"
-#~ msgstr ""
+msgstr "مفتاح API Groq"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:204
 msgid "Groq Model ID"
-msgstr ""
-
-#: ../../client/src/home/routes/ScreenHome.tsx:49
-#~ msgid "Hello"
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:73
-#~ msgid "Human"
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:73
-#~ msgid "Input your alias"
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:88
-#~ msgid "Input your key"
-#~ msgstr ""
-
-#: ../../client/src/core/base/Menu.tsx:30
-#~ msgid "Kitchen Sink"
-#~ msgstr "الحاجة الخامية"
+msgstr "معرف النموذج Groq"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:85
 msgid "Language"
-msgstr "اللغة"
+msgstr "لغة"
 
 #: ../../client/src/app/base/Menu.tsx:61
 #: ../../client/src/dev/routes/ScreenLibrary.tsx:15
@@ -330,211 +134,76 @@ msgstr "مكتبة"
 msgid "Light"
 msgstr "فاتح"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:184
-#~ msgid "LLM"
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:184
-#~ msgid "Machine Learning"
-#~ msgstr ""
-
 #: ../../client/src/settings/routes/ScreenSettings.tsx:56
 msgid "Manage your settings"
 msgstr "إدارة إعداداتك"
 
-#: ../../client/src/home/base/Prompt.tsx:45
-#~ msgid "Missing API Key!"
-#~ msgstr ""
-
-#: ../../client/src/home/base/Prompt.tsx:45
-#~ msgid "Missing Groq API Key"
-#~ msgstr ""
-
-#: ../../client/src/home/base/Prompt.tsx:45
-#~ msgid "Missing the Groq API Key"
-#~ msgstr ""
-
-#: ../../client/src/app/base/Menu.tsx:73
-#~ msgid "Music"
-#~ msgstr ""
-
-#: ../../client/src/app/base/Menu.tsx:37
-#~ msgid "Notes"
-#~ msgstr ""
-
-#: ../../client/src/app/base/Menu.tsx:61
-#~ msgid "Photos"
-#~ msgstr ""
-
-#: ../../client/src/home/base/Prompt.tsx:87
-#~ msgid "Please enter a prompt"
-#~ msgstr ""
-
 #: ../../client/src/home/base/Prompt.tsx:49
 msgid "Please set your Groq API Key"
-msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:232
-#~ msgid "Privacy"
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:195
-#~ msgid "Prompt History"
-#~ msgstr ""
+msgstr "يرجى تعيين مفتاح API Groq الخاص بك"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:232
 msgid "Prompts"
-msgstr ""
+msgstr "مسجيلات"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:187
 msgid "Provide a key to use AI features."
-msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:192
-#~ msgid "Provide a key to use generation features."
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:73
-#~ msgid "Provide your alias"
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:216
-#~ msgid "Reset all calendar data."
-#~ msgstr ""
+msgstr "يرجى تعيين مفتاح لاستخدام ميزات الذكاء الصوتي."
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:207
 msgid "Select the AI model to use."
-msgstr ""
+msgstr "إختر نموذج الذكاء الصوتي المستخدم."
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:161
 msgid "Select the distance unit for the app."
-msgstr ""
+msgstr "إختر وحد المسافة للتطبيق."
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:89
 msgid "Select the language for the app."
-msgstr ""
+msgstr "إختر لغة التطبيق."
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:140
 msgid "Select the temperature unit for the app."
-msgstr ""
+msgstr "إختر وحد الحرارة للتطبيق."
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:118
 msgid "Select the theme for the app."
-msgstr ""
+msgstr "إختر وضع التطبيق."
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:68
 msgid "Set a display name for yourself."
-msgstr ""
-
-#: ../../client/src/home/base/Prompt.tsx:45
-#~ msgid "Set your \"Groq API Key\" in Settings"
-#~ msgstr ""
-
-#: ../../client/src/home/base/Prompt.tsx:45
-#~ msgid "Set your API Key in Settings"
-#~ msgstr ""
-
-#: ../../client/src/home/base/Prompt.tsx:45
-#~ msgid "Set your Groq API Key"
-#~ msgstr ""
-
-#: ../../client/src/home/base/Prompt.tsx:45
-#~ msgid "Set your Groq API Key in Settings"
-#~ msgstr ""
+msgstr "أعيد تعيين اسم العرض ليستعلمك."
 
 #: ../../client/src/app/base/Menu.tsx:69
 #: ../../client/src/settings/routes/ScreenSettings.tsx:55
 msgid "Settings"
-msgstr "الإعدادات"
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:34
-#: ../../client/src/settings/routes/ScreenSettings.tsx:51
-#~ msgid "System"
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:34
-#: ../../client/src/settings/routes/ScreenSettings.tsx:51
-#~ msgid "System Default"
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:34
-#: ../../client/src/settings/routes/ScreenSettings.tsx:51
-#~ msgid "System Preference"
-#~ msgstr ""
+msgstr "إعدادات"
 
 #: ../../client/src/app/base/Menu.tsx:37
 #: ../../client/src/tasks/routes/TaskList.tsx:14
 msgid "Tasks"
-msgstr "المهام"
+msgstr "مسجيلات"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:137
 msgid "Temperature"
-msgstr ""
-
-#: ../../client/src/home/base/Prompt.tsx:45
-#~ msgid "The Groq API Key is not set"
-#~ msgstr ""
+msgstr "حرارة"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:115
 msgid "Theme"
-msgstr "الثيم"
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:137
-#~ msgid "Unit Display"
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:179
-#~ msgid "Units"
-#~ msgstr ""
-
-#: ../../client/src/app/base/Menu.tsx:67
-#~ msgid "Videos"
-#~ msgstr ""
-
-#: ../../client/src/home/routes/ScreenHome.tsx:32
-#~ msgid "Welcome back"
-#~ msgstr ""
-
-#: ../../client/src/home/routes/ScreenHome.tsx:25
-#~ msgid "Welcome Back"
-#~ msgstr ""
+msgstr "وضع"
 
 #: ../../client/src/home/routes/ScreenHome.tsx:26
 msgid "Welcome, {displayName}"
-msgstr ""
-
-#: ../../client/src/home/routes/ScreenHome.tsx:27
-#~ msgid "Welcome, {Human}"
-#~ msgstr ""
-
-#: ../../client/src/home/routes/ScreenHome.tsx:25
-#~ msgid "Welcome, {Syntax}"
-#~ msgstr ""
+msgstr "مرحبا بك {displayName}"
 
 #: ../../client/src/home/routes/ScreenHome.tsx:26
 msgid "Welcome, Human"
-msgstr ""
+msgstr "مرحبا بك الشخص"
 
 #: ../../client/src/app/hooks/useOnline.ts:14
 msgid "You are offline"
-msgstr "أنت غير متصل"
+msgstr "ليس لديك إنترنت"
 
 #: ../../client/src/app/hooks/useOnline.ts:12
 msgid "You are online"
-msgstr "أنت متصل"
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:73
-#~ msgid "Your alias"
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:73
-#~ msgid "Your Alias"
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:88
-#~ msgid "Your api key"
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:88
-#~ msgid "Your key"
-#~ msgstr ""
+msgstr "ليس لديك إنترنت"

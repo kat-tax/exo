@@ -6,17 +6,17 @@ import {toast} from 'react-exo/toast';
 
 export function useOnline() {
   const [online, setOnline] = useState(false);
+  const {i18n} = useLingui()
 
   const handleConnectivity = (connected: boolean, init?: boolean) => {
     if (connected && !init) {
-      toast({title: t`You are online`, preset: 'done'});
+      toast({title: t(i18n)`You are online`, preset: 'done'});
     } else if (!connected) {
-      toast({title: t`You are offline`, preset: 'error'});
+      toast({title: t(i18n)`You are offline`, preset: 'error'});
     }
     setOnline(connected);
   }
 
-  useLingui();
   useEffect(() => {
     isOnline().then(connected => handleConnectivity(connected, true));
     return suscribeOnline(handleConnectivity);

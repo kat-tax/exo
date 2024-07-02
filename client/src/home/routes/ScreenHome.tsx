@@ -1,9 +1,7 @@
-import {t} from '@lingui/macro';
+import {Trans as T} from '@lingui/macro';
+import {Trans} from '@lingui/react';
 import {Text, View} from 'react-native';
-import {useState} from 'react';
-import {useLingui, Trans} from '@lingui/react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
-//import {MarkdownTextInput} from '@expensify/react-native-live-markdown';
 import {useClock} from 'home/hooks/useClock';
 import {useWeather} from 'home/hooks/useWeather';
 import {useDisplayName} from 'settings/hooks/useDisplayName';
@@ -13,17 +11,16 @@ import {Page} from 'app/base/Page';
 
 export default function ScreenHome() {
   const {styles} = useStyles(stylesheet);
-  const [text, setText] = useState('Hello, *world*!');
   const [displayName] = useDisplayName();
   const weather = useWeather();
   const clock = useClock();
 
-  useLingui();
-
   return (
     <Page
       title={<Trans id={getDayGreeting().id}/>}
-      message={displayName ? t`Welcome, ${displayName}` : t`Welcome, Human`}
+      message={displayName
+        ? <T>{`Welcome, ${displayName}`}</T>
+        : <T>{`Welcome, Human`}</T>}
       widget={
         <View style={styles.widget}>
           <Text style={styles.clock}>
@@ -35,10 +32,6 @@ export default function ScreenHome() {
         </View>
       }>
       <Prompt/>
-      {/* <MarkdownTextInput
-        value={text}
-        onChangeText={setText}
-      /> */}
     </Page>
   );
 }

@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 2024-05-12 23:27+0900\n"
+"POT-Creation-Date: 2024-07-01 21:00-0500\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -24,113 +24,25 @@ msgstr "タスクを追加"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:179
 msgid "AI"
-msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:184
-#~ msgid "AI Generation"
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:179
-#~ msgid "AI Inference"
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:184
-#~ msgid "AI LLM"
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:137
-#~ msgid "AI Settings"
-#~ msgstr ""
-
-#: ../../client/src/home/routes/ScreenHome.tsx:35
-#~ msgid "Alert"
-#~ msgstr ""
-
-#: ../../client/src/home/routes/ScreenHome.tsx:36
-#~ msgid "Alert message"
-#~ msgstr ""
+msgstr "AI"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:268
 msgid "All Data"
-msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:273
-#~ msgid "App"
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:268
-#~ msgid "App Data"
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:137
-#~ msgid "Artificial Intelligence"
-#~ msgstr ""
+msgstr "すべてのデータ"
 
 #: ../../client/src/home/base/Prompt.tsx:49
 msgid "Ask anything..."
-msgstr ""
-
-#: ../../client/src/app/base/Menu.tsx:73
-#~ msgid "Audio"
-#~ msgstr ""
+msgstr "なにか聞いてみましょう..."
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:100
 #: ../../client/src/settings/routes/ScreenSettings.tsx:128
 msgid "Auto"
-msgstr ""
+msgstr "自動"
 
 #: ../../client/src/app/base/Menu.tsx:31
 #: ../../client/src/settings/routes/ScreenSettings.tsx:250
 msgid "Calendar"
 msgstr "カレンダー"
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:182
-#~ msgid "Calendar Data"
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:213
-#~ msgid "Calendar Events"
-#~ msgstr "カレンダーイベント"
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:182
-#~ msgid "Calendar History"
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:137
-#~ msgid "Clear"
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:271
-#~ msgid "Clear all app data."
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:253
-#~ msgid "Clear all calendar data."
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:185
-#~ msgid "Clear all calendar events."
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:235
-#~ msgid "Clear all prompt data."
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:198
-#~ msgid "Clear all prompt history."
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:121
-#~ msgid "Clear Prompt History"
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:167
-#~ msgid "Clear your prompt history."
-#~ msgstr ""
-
-#: ../../client/src/app/base/PageTeaser.tsx:19
-#~ msgid "Coming Soon"
-#~ msgstr ""
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:130
 msgid "Dark"
@@ -142,180 +54,72 @@ msgstr "ダッシュボード"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:227
 msgid "Data"
-msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:227
-#~ msgid "Data Privacy"
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:34
-#: ../../client/src/settings/routes/ScreenSettings.tsx:51
-#~ msgid "Default"
-#~ msgstr "デフォルト"
+msgstr "データ"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:253
 msgid "Delete all calendar data."
-msgstr ""
+msgstr "すべてのカレンダーデータを削除"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:235
 msgid "Delete all prompt data."
-msgstr ""
+msgstr "すべてのプロンプトデータを削除"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:271
 msgid "Delete the local database."
-msgstr ""
+msgstr "ローカルデータベースを削除"
 
 #: ../../client/src/app/base/Menu.tsx:55
 #: ../../client/src/dev/routes/ScreenDesign.tsx:11
 msgid "Design"
 msgstr "デザイン"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:34
-#: ../../client/src/settings/routes/ScreenSettings.tsx:51
-#~ msgid "Detect System"
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:34
-#: ../../client/src/settings/routes/ScreenSettings.tsx:51
-#~ msgid "Device Default"
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:34
-#: ../../client/src/settings/routes/ScreenSettings.tsx:51
-#~ msgid "Device Preference"
-#~ msgstr ""
-
 #: ../../client/src/settings/routes/ScreenSettings.tsx:60
 msgid "Display"
-msgstr ""
+msgstr "表示"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:65
 msgid "Display Name"
-msgstr ""
+msgstr "表示名"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:158
 msgid "Distance"
-msgstr ""
+msgstr "距離"
 
 #: ../../client/src/home/utils/time.ts:14
 msgid "Enjoy the day"
-msgstr "楽しくないでください"
+msgstr "おつかみにくだけど"
 
 #: ../../client/src/home/utils/time.ts:12
 msgid "Enjoy the night"
-msgstr "夜を楽しんでください"
+msgstr "おつかみにくだけど"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:75
 msgid "Enter alias"
-msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:73
-#~ msgid "Enter Alias"
-#~ msgstr ""
+msgstr "エイリアスを入力"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:194
 msgid "Enter api key"
-msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:88
-#~ msgid "Enter Groq API key"
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:73
-#~ msgid "Enter your alias"
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:73
-#~ msgid "Enter Your Alias"
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:88
-#~ msgid "Enter your Groq API key"
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:88
-#~ msgid "Enter your key"
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:73
-#~ msgid "Enter Your Name"
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:213
-#~ msgid "Event Data"
-#~ msgstr ""
-
-#: ../../client/src/app/base/Menu.tsx:55
-#~ msgid "Files"
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:60
-#~ msgid "General"
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:184
-#~ msgid "Generation"
-#~ msgstr ""
+msgstr "APIキーを入力"
 
 #: ../../client/src/home/utils/time.ts:8
 msgid "Good afternoon"
-msgstr "こんにちは"
+msgstr "おつかみにくだけど"
 
 #: ../../client/src/home/utils/time.ts:10
 msgid "Good evening"
-msgstr "こんばんは"
+msgstr "おつかみにくだけど"
 
 #: ../../client/src/home/utils/time.ts:6
 msgid "Good morning"
-msgstr "おはようございます"
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:184
-#~ msgid "GPT"
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:184
-#~ msgid "GPT-4"
-#~ msgstr ""
+msgstr "おつかみにくだけど"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:184
 msgid "Groq API Key"
-msgstr ""
-
-#: ../../client/src/home/base/Prompt.tsx:45
-#~ msgid "Groq API Key is missing"
-#~ msgstr ""
-
-#: ../../client/src/home/base/Prompt.tsx:45
-#~ msgid "Groq API Key is not set"
-#~ msgstr ""
-
-#: ../../client/src/home/base/Prompt.tsx:45
-#~ msgid "Groq API Key is not set!"
-#~ msgstr ""
+msgstr "Groq APIキー"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:204
 msgid "Groq Model ID"
-msgstr ""
-
-#: ../../client/src/home/routes/ScreenHome.tsx:49
-#~ msgid "Hello"
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:73
-#~ msgid "Human"
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:73
-#~ msgid "Input your alias"
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:88
-#~ msgid "Input your key"
-#~ msgstr ""
-
-#: ../../client/src/core/base/Menu.tsx:30
-#~ msgid "Kitchen Sink"
-#~ msgstr "キッチンソース"
+msgstr "GroqモデルID"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:85
 msgid "Language"
@@ -330,137 +134,50 @@ msgstr "ライブラリ"
 msgid "Light"
 msgstr "ライト"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:184
-#~ msgid "LLM"
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:184
-#~ msgid "Machine Learning"
-#~ msgstr ""
-
 #: ../../client/src/settings/routes/ScreenSettings.tsx:56
 msgid "Manage your settings"
 msgstr "設定を管理"
 
-#: ../../client/src/home/base/Prompt.tsx:45
-#~ msgid "Missing API Key!"
-#~ msgstr ""
-
-#: ../../client/src/home/base/Prompt.tsx:45
-#~ msgid "Missing Groq API Key"
-#~ msgstr ""
-
-#: ../../client/src/home/base/Prompt.tsx:45
-#~ msgid "Missing the Groq API Key"
-#~ msgstr ""
-
-#: ../../client/src/app/base/Menu.tsx:73
-#~ msgid "Music"
-#~ msgstr ""
-
-#: ../../client/src/app/base/Menu.tsx:37
-#~ msgid "Notes"
-#~ msgstr ""
-
-#: ../../client/src/app/base/Menu.tsx:61
-#~ msgid "Photos"
-#~ msgstr ""
-
-#: ../../client/src/home/base/Prompt.tsx:87
-#~ msgid "Please enter a prompt"
-#~ msgstr ""
-
 #: ../../client/src/home/base/Prompt.tsx:49
 msgid "Please set your Groq API Key"
-msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:232
-#~ msgid "Privacy"
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:195
-#~ msgid "Prompt History"
-#~ msgstr ""
+msgstr "Groq APIキーを設定"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:232
 msgid "Prompts"
-msgstr ""
+msgstr "プロンプト"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:187
 msgid "Provide a key to use AI features."
-msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:192
-#~ msgid "Provide a key to use generation features."
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:73
-#~ msgid "Provide your alias"
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:216
-#~ msgid "Reset all calendar data."
-#~ msgstr ""
+msgstr "AI機能を使用するためのキーを提供"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:207
 msgid "Select the AI model to use."
-msgstr ""
+msgstr "使用するAIモデルを選択"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:161
 msgid "Select the distance unit for the app."
-msgstr ""
+msgstr "アプリの距離単位を選択"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:89
 msgid "Select the language for the app."
-msgstr ""
+msgstr "アプリの言語を選択"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:140
 msgid "Select the temperature unit for the app."
-msgstr ""
+msgstr "アプリの温度単位を選択"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:118
 msgid "Select the theme for the app."
-msgstr ""
+msgstr "アプリのテーマを選択"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:68
 msgid "Set a display name for yourself."
-msgstr ""
-
-#: ../../client/src/home/base/Prompt.tsx:45
-#~ msgid "Set your \"Groq API Key\" in Settings"
-#~ msgstr ""
-
-#: ../../client/src/home/base/Prompt.tsx:45
-#~ msgid "Set your API Key in Settings"
-#~ msgstr ""
-
-#: ../../client/src/home/base/Prompt.tsx:45
-#~ msgid "Set your Groq API Key"
-#~ msgstr ""
-
-#: ../../client/src/home/base/Prompt.tsx:45
-#~ msgid "Set your Groq API Key in Settings"
-#~ msgstr ""
+msgstr "自分の表示名を設定"
 
 #: ../../client/src/app/base/Menu.tsx:69
 #: ../../client/src/settings/routes/ScreenSettings.tsx:55
 msgid "Settings"
 msgstr "設定"
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:34
-#: ../../client/src/settings/routes/ScreenSettings.tsx:51
-#~ msgid "System"
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:34
-#: ../../client/src/settings/routes/ScreenSettings.tsx:51
-#~ msgid "System Default"
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:34
-#: ../../client/src/settings/routes/ScreenSettings.tsx:51
-#~ msgid "System Preference"
-#~ msgstr ""
 
 #: ../../client/src/app/base/Menu.tsx:37
 #: ../../client/src/tasks/routes/TaskList.tsx:14
@@ -469,72 +186,24 @@ msgstr "タスク"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:137
 msgid "Temperature"
-msgstr ""
-
-#: ../../client/src/home/base/Prompt.tsx:45
-#~ msgid "The Groq API Key is not set"
-#~ msgstr ""
+msgstr "温度"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:115
 msgid "Theme"
 msgstr "テーマ"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:137
-#~ msgid "Unit Display"
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:179
-#~ msgid "Units"
-#~ msgstr ""
-
-#: ../../client/src/app/base/Menu.tsx:67
-#~ msgid "Videos"
-#~ msgstr ""
-
-#: ../../client/src/home/routes/ScreenHome.tsx:32
-#~ msgid "Welcome back"
-#~ msgstr ""
-
-#: ../../client/src/home/routes/ScreenHome.tsx:25
-#~ msgid "Welcome Back"
-#~ msgstr ""
-
 #: ../../client/src/home/routes/ScreenHome.tsx:26
 msgid "Welcome, {displayName}"
-msgstr ""
-
-#: ../../client/src/home/routes/ScreenHome.tsx:27
-#~ msgid "Welcome, {Human}"
-#~ msgstr ""
-
-#: ../../client/src/home/routes/ScreenHome.tsx:25
-#~ msgid "Welcome, {Syntax}"
-#~ msgstr ""
+msgstr "ようこそ、{displayName}"
 
 #: ../../client/src/home/routes/ScreenHome.tsx:26
 msgid "Welcome, Human"
-msgstr ""
+msgstr "ようこそ、人間"
 
 #: ../../client/src/app/hooks/useOnline.ts:14
 msgid "You are offline"
-msgstr "オフラインです"
+msgstr "オフライン"
 
 #: ../../client/src/app/hooks/useOnline.ts:12
 msgid "You are online"
-msgstr "オンラインです"
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:73
-#~ msgid "Your alias"
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:73
-#~ msgid "Your Alias"
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:88
-#~ msgid "Your api key"
-#~ msgstr ""
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:88
-#~ msgid "Your key"
-#~ msgstr ""
+msgstr "オンライン"

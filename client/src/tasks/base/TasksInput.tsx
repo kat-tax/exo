@@ -9,22 +9,22 @@ interface TasksInputProps {
 }
 
 export function TasksInput(props: TasksInputProps) {
+  const ref = useRef<any>(null);
+  const {i18n} = useLingui();
   const {styles, theme} = useStyles(stylesheet);
-  const refInput = useRef<any>(null);
-  useLingui();
   return (
     <TextInput
       autoFocus
-      ref={refInput}
+      ref={ref}
       style={styles.input}
       blurOnSubmit={false}
-      placeholder={t`Add a task`}
+      placeholder={t(i18n)`Add a task`}
       placeholderTextColor={theme.colors.mutedForeground}
       onSubmitEditing={e => {
         const input = e.nativeEvent.text;
         if (input) {
           props.onSubmit(input);
-          refInput.current?.clear();
+          ref.current?.clear();
         }
       }}
     />

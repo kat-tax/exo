@@ -16,22 +16,23 @@ import {Page} from 'app/base/Page';
 import home from 'home/store';
 
 export default function ScreenSettings() {
+  const {i18n} = useLingui()
   const {styles, theme} = useStyles(stylesheet);
+  const [name, setName] = useDisplayName();
   const [locale, setLocale] = useLocale(true);
   const [scheme, setScheme] = useScheme(true);
-  const [name, setName] = useDisplayName();
-  const [groq, setGroq] = useGroqKey();
   const [model, setModel] = useGroqModel();
+  const [groq, setGroq] = useGroqKey();
   const dispatch = useDispatch();
 
   const resetPrompts = () => {
     // TODO: replace with modal
-    const confirmed = window.confirm('Are you sure you want to reset your prompt history?');
+    const confirmed = window.confirm(t(i18n)`Are you sure you want to reset your prompt history?`);
     if (confirmed) {
       dispatch(home.actions.clearPrompts());
       alert({
-        title: 'Prompt History Reset',
-        message: 'Your prompt history has been reset.',
+        title: t(i18n)`Prompt History Reset`,
+        message: t(i18n)`Your prompt history has been reset.`,
         preset: 'done',
       });
     }
@@ -39,17 +40,16 @@ export default function ScreenSettings() {
 
   const resetCalendar = () => {
     // TODO: replace with modal
-    const confirmed = window.confirm('Are you sure you want to reset your calendar data?');
+    const confirmed = window.confirm(t(i18n)`Are you sure you want to reset your calendar data?`);
     if (confirmed) {
       alert({
-        title: 'Calendar Data Reset',
-        message: 'Your calendar has been reset.',
+        title: t(i18n)`Calendar Data Reset`,
+        message: t(i18n)`Your calendar has been reset.`,
         preset: 'done',
       });
     }
   };
 
-  useLingui();
   return (
     <Page
       title={<Trans>Settings</Trans>}
@@ -72,7 +72,7 @@ export default function ScreenSettings() {
               <TextInput
                 style={styles.input}
                 selectTextOnFocus
-                placeholder={t`Enter alias`}
+                placeholder={t(i18n)`Enter alias`}
                 defaultValue={name}
                 placeholderTextColor={theme.colors.mutedForeground}
                 onChangeText={setName}
@@ -97,7 +97,7 @@ export default function ScreenSettings() {
                 dropdownIconColor={theme.colors.foreground}
                 selectedValue={locale}
                 onValueChange={setLocale}>
-                <Picker.Item label={t`Auto`} value="" color={theme.colors.foreground}/>
+                <Picker.Item label={t(i18n)`Auto`} value="" color={theme.colors.foreground}/>
                 {Object.entries(locales).map(([value, label]) => (
                   <Picker.Item
                     key={value}
@@ -191,7 +191,7 @@ export default function ScreenSettings() {
               <TextInput
                 style={styles.input}
                 selectTextOnFocus
-                placeholder={t`Enter api key`}
+                placeholder={t(i18n)`Enter api key`}
                 defaultValue={groq}
                 placeholderTextColor={theme.colors.mutedForeground}
                 onChangeText={setGroq}
@@ -237,7 +237,7 @@ export default function ScreenSettings() {
             </View>
             <View>
               <Button
-                label="Delete Prompts"
+                label={t(i18n)`Delete Prompts`}
                 mode="Destructive"
                 state="Default"
                 onPress={resetPrompts}
@@ -255,7 +255,7 @@ export default function ScreenSettings() {
             </View>
             <View>
               <Button
-                label="Delete Calendar"
+                label={t(i18n)`Delete Calendar`}
                 mode="Destructive"
                 state="Default"
                 onPress={resetCalendar}
@@ -273,10 +273,10 @@ export default function ScreenSettings() {
             </View>
             <View>
               <Button
-                onPress={undefined}
+                label={t(i18n)`Delete Database`}
                 mode="Destructive"
                 state="Default"
-                label="Delete Database"
+                onPress={undefined}
               />
             </View>
           </View>

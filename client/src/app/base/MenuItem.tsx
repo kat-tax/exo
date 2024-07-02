@@ -6,7 +6,7 @@ import {useScheme} from 'settings/hooks/useScheme';
 import {isTouch} from 'app/utils/platform';
 
 interface MenuItemProps extends React.PropsWithChildren {
-  label: string,
+  label: JSX.Element,
   path: string,
   icon?: JSX.Element,
   tab?: boolean,
@@ -75,7 +75,7 @@ const stylesheet = createStyleSheet(theme => ({
     marginLeft: 8,
   },
   tab: {
-    marginLeft: 4,
+    marginHorizontal: 4,
     lineHeight: 24,
     fontSize: 11,
     color: theme.colors.secondaryForeground,

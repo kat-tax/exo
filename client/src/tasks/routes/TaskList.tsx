@@ -1,15 +1,14 @@
 import {Text} from 'react-native';
 import {Link} from 'react-exo/navigation';
 import {Trans} from '@lingui/macro';
-import {useLingui} from '@lingui/react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useLists} from 'tasks/hooks/useLists';
 import {Page} from 'app/base/Page';
 
 export default function TasksList() {
-  const {styles} = useStyles(stylesheet);
   const tasks = useLists();
-  useLingui();
+  const {styles} = useStyles(stylesheet);
+
   return (
     <Page title={<Trans>Tasks</Trans>}>
       {tasks.map(({id, complete}) =>

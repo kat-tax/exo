@@ -1,8 +1,7 @@
-import {t} from '@lingui/macro';
+import {Trans} from '@lingui/macro';
 import {Icon} from 'react-exo/icon';
-import {useLingui} from '@lingui/react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {View, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet} from 'react-native';
 import {useLists} from 'tasks/hooks/useLists';
 import {MenuItem} from './MenuItem';
 import config from 'config';
@@ -15,26 +14,26 @@ export function Menu(props: MenuProps) {
   const {styles} = useStyles(stylesheet);
   const taskLists = useLists();
   const hasDevMenu = __DEV__ || config.LIB_NAME === 'react-exo';
-
-  useLingui();
-
   return (
-    <View style={[styles.root, props.tabs && styles.rootTabs]}>
+    <View style={[
+      styles.root,
+      props.tabs && styles.rootTabs,
+    ]}>
       <MenuItem
         path="/"
-        label={t`Dashboard`}
+        label={<Trans>Dashboard</Trans>}
         icon={<Icon name="ph:squares-four"/>}
         tab={props.tabs}
       />
       <MenuItem
         path="/calendar"
-        label={t`Calendar`}
+        label={<Trans>Calendar</Trans>}
         icon={<Icon name="ph:calendar-dots"/>}
         tab={props.tabs}
       />
       <MenuItem
         path="/tasks"
-        label={t`Tasks`}
+        label={<Trans>Tasks</Trans>}
         icon={<Icon name="ph:list-checks"/>}
         tab={props.tabs}
       />
@@ -43,7 +42,7 @@ export function Menu(props: MenuProps) {
           sub
           key={id}
           path={`/tasks/${id}`}
-          label={`• ${id}`}
+          label={<Text>• {id}</Text>}
           striked={complete}
         />
       )}
@@ -52,13 +51,13 @@ export function Menu(props: MenuProps) {
         <>
           <MenuItem
             path="/design"
-            label={t`Design`}
+            label={<Trans>Design</Trans>}
             icon={<Icon name="ph:palette"/>}
             tab={props.tabs}
           />
           <MenuItem
             path="/library"
-            label={t`Library`}
+            label={<Trans>Library</Trans>}
             icon={<Icon name="ph:package"/>}
             tab={props.tabs}
           />
@@ -66,7 +65,7 @@ export function Menu(props: MenuProps) {
       }
       <MenuItem
         path="/settings"
-        label={t`Settings`}
+        label={<Trans>Settings</Trans>}
         icon={<Icon name="ph:gear"/>}
         tab={props.tabs}
       />
