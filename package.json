@@ -14,7 +14,6 @@
     "translate:extract": "lingui extract --config ./toolkit/config/lingui.ts",
     "translate:compile": "lingui compile --config ./toolkit/config/lingui.ts",
 
-    "library:dev": "pnpm -F ./library dev",
     "library:build": "pnpm -F ./library build",
     "library:publish": "pnpm -F ./library publish",
 

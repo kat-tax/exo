@@ -35,7 +35,6 @@ export default defineConfig(env => mergeConfig(
           /* Services */
           device: 'src/services/device/Device.export',
           form: 'src/services/form/Form.export',
-          i18n: 'src/services/i18n/I18n.export',
           redux: 'src/services/redux/Redux.export',
           storage: 'src/services/storage/Storage.export',
           toast: 'src/services/toast/Toast.export',

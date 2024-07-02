@@ -2,11 +2,11 @@ import {useEffect} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {I18nManager, View} from 'react-native';
 import {I18nProvider} from '@lingui/react';
-import {i18n, loadLocale} from 'react-exo/i18n';
 import {GestureProvider} from 'react-exo/gesture';
+import {load, i18n} from 'app/locales';
 import {useLocale} from 'settings/hooks/useLocale';
 
-loadLocale('en');
+load('en');
 i18n.activate('en');
 
 export function Provider(props: React.PropsWithChildren) {
@@ -14,7 +14,7 @@ export function Provider(props: React.PropsWithChildren) {
   const {styles} = useStyles(stylesheet);
 
   useEffect(() => {
-    loadLocale(locale);
+    load(locale);
     I18nManager.forceRTL(locale === 'ar');
   }, [locale]);
 

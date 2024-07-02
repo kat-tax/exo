@@ -21,6 +21,9 @@ Device.share('https://exo.ult.dev', 'EXO is amazing!'); // [!code focus]
 const online = await Device.isOnline(); // [!code focus]
 const booting = await Device.BootSplash.isVisible(); // [!code focus]
 
+// @log: ↓ Detect device locale
+const locale = Device.getLocale(); // [!code focus]
+
 // @log: ↓ Or do whatever you want...
 Device. // [!code focus]
     // ^|

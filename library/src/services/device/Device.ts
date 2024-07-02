@@ -1,3 +1,4 @@
+import {sourceLocale} from 'config/locales';
 import type {DeviceBase} from './Device.interface';
 
 export class DeviceService implements DeviceBase {
@@ -27,5 +28,9 @@ export class DeviceService implements DeviceBase {
       window.removeEventListener('online', handler);
       window.removeEventListener('offline', handler);
     };
+  }
+
+  getLocale() {
+    return navigator.language.split('-').shift() || sourceLocale;
   }
 }

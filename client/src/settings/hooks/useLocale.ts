@@ -1,6 +1,6 @@
 import {useRef} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
-import {I18n} from 'react-exo/i18n';
+import {getLocale} from 'react-exo/device';
 import settings from 'settings/store';
 
 import type {Locales} from 'config/locales';
@@ -13,7 +13,7 @@ export type LocaleData = [
 export function useLocale(storedOnly?: boolean): LocaleData {
   const dispatch = useDispatch();
   const stored = useSelector(settings.selectors.getLocale);
-  const value = useRef(I18n.getLocale() as Locales);
+  const value = useRef(getLocale() as Locales);
   const setter = (newLocale: Locales) =>
     dispatch(settings.actions.setLocale(newLocale));
 

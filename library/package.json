@@ -23,11 +23,6 @@
       "import": "./gen/web/redux.js",
       "require": "./gen/native/redux.js"
     },
-    "./i18n": {
-      "types": "./gen/types/i18n.d.ts",
-      "import": "./gen/web/i18n.js",
-      "require": "./gen/native/i18n.js"
-    },
     "./device": {
       "types": "./gen/types/device.d.ts",
       "import": "./gen/web/device.js",

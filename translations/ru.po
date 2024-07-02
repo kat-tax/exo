@@ -30,6 +30,14 @@ msgstr "ИИ"
 msgid "All Data"
 msgstr "Все данные"
 
+#: ../../client/src/settings/routes/ScreenSettings.tsx:43
+msgid "Are you sure you want to reset your calendar data?"
+msgstr "Вы уверены, что хотите сбросить данные календаря?"
+
+#: ../../client/src/settings/routes/ScreenSettings.tsx:30
+msgid "Are you sure you want to reset your prompt history?"
+msgstr "Вы уверены, что хотите сбросить историю приглашений?"
+
 #: ../../client/src/home/base/Prompt.tsx:49
 msgid "Ask anything..."
 msgstr "Задайте любой вопрос..."
@@ -39,16 +47,20 @@ msgstr "Задайте любой вопрос..."
 msgid "Auto"
 msgstr "Авто"
 
-#: ../../client/src/app/base/Menu.tsx:31
+#: ../../client/src/app/base/Menu.tsx:30
 #: ../../client/src/settings/routes/ScreenSettings.tsx:250
 msgid "Calendar"
 msgstr "Календарь"
+
+#: ../../client/src/settings/routes/ScreenSettings.tsx:46
+msgid "Calendar Data Reset"
+msgstr "Сброс данных календаря"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:130
 msgid "Dark"
 msgstr "Тёмное"
 
-#: ../../client/src/app/base/Menu.tsx:25
+#: ../../client/src/app/base/Menu.tsx:24
 msgid "Dashboard"
 msgstr "Панель"
 
@@ -64,11 +76,23 @@ msgstr "Удалить все данные календаря."
 msgid "Delete all prompt data."
 msgstr "Удалить все данные приглашений."
 
+#: ../../client/src/settings/routes/ScreenSettings.tsx:258
+msgid "Delete Calendar"
+msgstr "Удалить календарь"
+
+#: ../../client/src/settings/routes/ScreenSettings.tsx:276
+msgid "Delete Database"
+msgstr "Удалить базу данных"
+
+#: ../../client/src/settings/routes/ScreenSettings.tsx:240
+msgid "Delete Prompts"
+msgstr "Удалить приглашения"
+
 #: ../../client/src/settings/routes/ScreenSettings.tsx:271
 msgid "Delete the local database."
 msgstr "Удалить локальную базу данных."
 
-#: ../../client/src/app/base/Menu.tsx:55
+#: ../../client/src/app/base/Menu.tsx:54
 #: ../../client/src/dev/routes/ScreenDesign.tsx:11
 msgid "Design"
 msgstr "Дизайн"
@@ -125,7 +149,7 @@ msgstr "Идентификатор модели Groq"
 msgid "Language"
 msgstr "Язык"
 
-#: ../../client/src/app/base/Menu.tsx:61
+#: ../../client/src/app/base/Menu.tsx:60
 #: ../../client/src/dev/routes/ScreenLibrary.tsx:15
 msgid "Library"
 msgstr "Библиотека"
@@ -141,6 +165,10 @@ msgstr "Управление настройками"
 #: ../../client/src/home/base/Prompt.tsx:49
 msgid "Please set your Groq API Key"
 msgstr "Пожалуйста, установите ключ API Groq"
+
+#: ../../client/src/settings/routes/ScreenSettings.tsx:34
+msgid "Prompt History Reset"
+msgstr "Сброс истории приглашений"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:232
 msgid "Prompts"
@@ -174,13 +202,13 @@ msgstr "Выберите тему для приложения."
 msgid "Set a display name for yourself."
 msgstr "Установите отображаемое имя для себя."
 
-#: ../../client/src/app/base/Menu.tsx:69
+#: ../../client/src/app/base/Menu.tsx:68
 #: ../../client/src/settings/routes/ScreenSettings.tsx:55
 msgid "Settings"
 msgstr "Настройки"
 
-#: ../../client/src/app/base/Menu.tsx:37
-#: ../../client/src/tasks/routes/TaskList.tsx:14
+#: ../../client/src/app/base/Menu.tsx:36
+#: ../../client/src/tasks/routes/TaskList.tsx:13
 msgid "Tasks"
 msgstr "Задачи"
 
@@ -192,18 +220,26 @@ msgstr "Температура"
 msgid "Theme"
 msgstr "Тема"
 
-#: ../../client/src/home/routes/ScreenHome.tsx:26
+#: ../../client/src/home/routes/ScreenHome.tsx:22
 msgid "Welcome, {displayName}"
 msgstr "Добро пожаловать, {displayName}"
 
-#: ../../client/src/home/routes/ScreenHome.tsx:26
+#: ../../client/src/home/routes/ScreenHome.tsx:23
 msgid "Welcome, Human"
 msgstr "Добро пожаловать, Человек"
 
-#: ../../client/src/app/hooks/useOnline.ts:14
+#: ../../client/src/app/hooks/useOnline.ts:15
 msgid "You are offline"
 msgstr "Вы оффлайн"
 
-#: ../../client/src/app/hooks/useOnline.ts:12
+#: ../../client/src/app/hooks/useOnline.ts:13
 msgid "You are online"
 msgstr "Вы онлайн"
+
+#: ../../client/src/settings/routes/ScreenSettings.tsx:47
+msgid "Your calendar has been reset."
+msgstr "Календарь был сброшен."
+
+#: ../../client/src/settings/routes/ScreenSettings.tsx:35
+msgid "Your prompt history has been reset."
+msgstr "История приглашений была сброшена."

@@ -17,7 +17,6 @@ export type * from './layout/safe-area/SafeArea.export';
 export type * from './services/storage/Storage.export';
 export type * from './services/device/Device.export';
 export type * from './services/redux/Redux.export';
-export type * from './services/i18n/I18n.export';
 export type * from './services/form/Form.export';
 
 // Widgets

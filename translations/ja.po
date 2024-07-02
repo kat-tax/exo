@@ -30,6 +30,14 @@ msgstr "AI"
 msgid "All Data"
 msgstr "すべてのデータ"
 
+#: ../../client/src/settings/routes/ScreenSettings.tsx:43
+msgid "Are you sure you want to reset your calendar data?"
+msgstr "カレンダーデータをリセットしますか？"
+
+#: ../../client/src/settings/routes/ScreenSettings.tsx:30
+msgid "Are you sure you want to reset your prompt history?"
+msgstr "プロンプト履歴をリセットしますか？"
+
 #: ../../client/src/home/base/Prompt.tsx:49
 msgid "Ask anything..."
 msgstr "なにか聞いてみましょう..."
@@ -39,16 +47,20 @@ msgstr "なにか聞いてみましょう..."
 msgid "Auto"
 msgstr "自動"
 
-#: ../../client/src/app/base/Menu.tsx:31
+#: ../../client/src/app/base/Menu.tsx:30
 #: ../../client/src/settings/routes/ScreenSettings.tsx:250
 msgid "Calendar"
 msgstr "カレンダー"
+
+#: ../../client/src/settings/routes/ScreenSettings.tsx:46
+msgid "Calendar Data Reset"
+msgstr "カレンダーデータをリセット"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:130
 msgid "Dark"
 msgstr "ダーク"
 
-#: ../../client/src/app/base/Menu.tsx:25
+#: ../../client/src/app/base/Menu.tsx:24
 msgid "Dashboard"
 msgstr "ダッシュボード"
 
@@ -64,11 +76,23 @@ msgstr "すべてのカレンダーデータを削除"
 msgid "Delete all prompt data."
 msgstr "すべてのプロンプトデータを削除"
 
+#: ../../client/src/settings/routes/ScreenSettings.tsx:258
+msgid "Delete Calendar"
+msgstr "カレンダーを削除"
+
+#: ../../client/src/settings/routes/ScreenSettings.tsx:276
+msgid "Delete Database"
+msgstr "データベースを削除"
+
+#: ../../client/src/settings/routes/ScreenSettings.tsx:240
+msgid "Delete Prompts"
+msgstr "プロンプトを削除"
+
 #: ../../client/src/settings/routes/ScreenSettings.tsx:271
 msgid "Delete the local database."
 msgstr "ローカルデータベースを削除"
 
-#: ../../client/src/app/base/Menu.tsx:55
+#: ../../client/src/app/base/Menu.tsx:54
 #: ../../client/src/dev/routes/ScreenDesign.tsx:11
 msgid "Design"
 msgstr "デザイン"
@@ -125,7 +149,7 @@ msgstr "GroqモデルID"
 msgid "Language"
 msgstr "言語"
 
-#: ../../client/src/app/base/Menu.tsx:61
+#: ../../client/src/app/base/Menu.tsx:60
 #: ../../client/src/dev/routes/ScreenLibrary.tsx:15
 msgid "Library"
 msgstr "ライブラリ"
@@ -141,6 +165,10 @@ msgstr "設定を管理"
 #: ../../client/src/home/base/Prompt.tsx:49
 msgid "Please set your Groq API Key"
 msgstr "Groq APIキーを設定"
+
+#: ../../client/src/settings/routes/ScreenSettings.tsx:34
+msgid "Prompt History Reset"
+msgstr "プロンプト履歴をリセット"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:232
 msgid "Prompts"
@@ -174,13 +202,13 @@ msgstr "アプリのテーマを選択"
 msgid "Set a display name for yourself."
 msgstr "自分の表示名を設定"
 
-#: ../../client/src/app/base/Menu.tsx:69
+#: ../../client/src/app/base/Menu.tsx:68
 #: ../../client/src/settings/routes/ScreenSettings.tsx:55
 msgid "Settings"
 msgstr "設定"
 
-#: ../../client/src/app/base/Menu.tsx:37
-#: ../../client/src/tasks/routes/TaskList.tsx:14
+#: ../../client/src/app/base/Menu.tsx:36
+#: ../../client/src/tasks/routes/TaskList.tsx:13
 msgid "Tasks"
 msgstr "タスク"
 
@@ -192,18 +220,26 @@ msgstr "温度"
 msgid "Theme"
 msgstr "テーマ"
 
-#: ../../client/src/home/routes/ScreenHome.tsx:26
+#: ../../client/src/home/routes/ScreenHome.tsx:22
 msgid "Welcome, {displayName}"
 msgstr "ようこそ、{displayName}"
 
-#: ../../client/src/home/routes/ScreenHome.tsx:26
+#: ../../client/src/home/routes/ScreenHome.tsx:23
 msgid "Welcome, Human"
 msgstr "ようこそ、人間"
 
-#: ../../client/src/app/hooks/useOnline.ts:14
+#: ../../client/src/app/hooks/useOnline.ts:15
 msgid "You are offline"
 msgstr "オフライン"
 
-#: ../../client/src/app/hooks/useOnline.ts:12
+#: ../../client/src/app/hooks/useOnline.ts:13
 msgid "You are online"
 msgstr "オンライン"
+
+#: ../../client/src/settings/routes/ScreenSettings.tsx:47
+msgid "Your calendar has been reset."
+msgstr "カレンダーがリセットされました。"
+
+#: ../../client/src/settings/routes/ScreenSettings.tsx:35
+msgid "Your prompt history has been reset."
+msgstr "プロンプト履歴がリセットされました。"
