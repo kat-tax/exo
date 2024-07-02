@@ -1,5 +1,5 @@
 import {useMemo} from 'react';
-import {useStyles} from 'design/styles';
+import {useStyles} from 'react-native-unistyles';
 import {StyleSheet} from 'react-native';
 import type {CalendarTheme} from 'react-exo/calendar';
 

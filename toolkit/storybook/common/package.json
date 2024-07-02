@@ -8,11 +8,12 @@
     "@storybook/addon-essentials": "^8.0.10",
     "@storybook/blocks": "^8.0.10",
     "design": "workspace:react-exo-ui@*",
-    "react-exo-ui": "workspace:*"
+    "react-exo-ui": "workspace:*",
+    "react-native-unistyles": "^2.7.1"
   },
   "devDependencies": {
-    "@types/react": "^18.2.0",
     "@storybook/types": "^8.1.6",
+    "@types/react": "^18.2.0",
     "babel-plugin-macros": "^3.1.0",
     "config": "workspace:*",
     "react-exo": "workspace:*",

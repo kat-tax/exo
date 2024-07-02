@@ -62,6 +62,7 @@ export default defineConfig(env => mergeConfig(
           'react',
           'react-dom',
           'react-native',
+          'react-native-unistyles',
           'react/jsx-runtime',
           /* I18n */
           '@linguijs/core',

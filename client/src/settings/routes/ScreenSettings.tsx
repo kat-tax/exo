@@ -5,7 +5,7 @@ import {Button} from 'design';
 import {Trans, t} from '@lingui/macro';
 import {useLingui} from '@lingui/react';
 import {useDispatch} from 'react-redux';
-import {useStyles, createStyleSheet} from 'design/styles';
+import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useDisplayName} from 'settings/hooks/useDisplayName';
 import {useGroqModel} from 'settings/hooks/useGroqModel';
 import {useGroqKey} from 'settings/hooks/useGroqKey';

@@ -1,5 +1,5 @@
 import {useWindowDimensions, View} from 'react-native';
-import {useStyles, createStyleSheet} from 'design/styles';
+import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {Outlet} from 'react-exo/navigation';
 import {Menu} from 'app/base/Menu';
 

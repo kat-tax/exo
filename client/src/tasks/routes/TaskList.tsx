@@ -2,7 +2,7 @@ import {Text} from 'react-native';
 import {Link} from 'react-exo/navigation';
 import {Trans} from '@lingui/macro';
 import {useLingui} from '@lingui/react';
-import {useStyles, createStyleSheet} from 'design/styles';
+import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useLists} from 'tasks/hooks/useLists';
 import {Page} from 'app/base/Page';
 

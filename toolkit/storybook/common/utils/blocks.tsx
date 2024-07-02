@@ -1,10 +1,12 @@
+import 'design/styles';
+
 import 'react-exo/checkbox.css';
 import 'react-exo/switch.css';
 import 'react-exo/radio.css';
 import 'react-exo/slider.css';
 
 import {useState, useEffect} from 'react';
-import {useInitialTheme, UnistylesRuntime} from 'design/styles';
+import {useInitialTheme, UnistylesRuntime} from 'react-native-unistyles';
 import {ColorPalette, ColorItem, IconGallery, IconItem} from '@storybook/blocks';
 import {extractBasics, extractScales, getBasicProps} from 'utils/colors';
 import {themes, palette, initialTheme} from 'design/theme';

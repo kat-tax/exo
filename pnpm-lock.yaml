@@ -68,9 +68,6 @@ importers:
       design:
         specifier: workspace:react-exo-ui@*
         version: link:../design
-      markdown-it-prism:
-        specifier: ^2.3.0
-        version: 2.3.0
       openmeteo:
         specifier: ^1.1.4
         version: 1.1.4
@@ -582,6 +579,9 @@ importers:
       react-exo-ui:
         specifier: workspace:*
         version: link:../../../design
+      react-native-unistyles:
+        specifier: ^2.7.1
+        version: 2.7.1(@react-native/normalize-colors@0.74.1)(react-native@0.73.6)(react@18.2.0)
     devDependencies:
       '@storybook/types':
         specifier: ^8.1.6
@@ -737,6 +737,9 @@ importers:
       react-native-svg:
         specifier: ^15.1.0
         version: 15.1.0(react-native@0.73.6)(react@18.3.0)
+      react-native-unistyles:
+        specifier: ^2.7.1
+        version: 2.7.1(@react-native/normalize-colors@0.74.1)(react-native-macos@0.73.24)(react-native-web@0.19.10)(react-native-windows@0.73.11)(react-native@0.73.6)(react@18.3.0)
       react-native-web:
         specifier: ^0.19.10
         version: 0.19.10(react-dom@18.3.0)(react@18.3.0)
@@ -13532,13 +13535,6 @@ packages:
     engines: {node: '>=16'}
     dev: true
 
-  /markdown-it-prism@2.3.0:
-    resolution: {integrity: sha512-ePtHY80gZyeje4bn3R3SL0jpd1C9HFaYffJW2Ma0YD+tspqa2v9TuVwUyFwboFu4jnFNcO8oPQROgbcYJbmBvw==}
-    engines: {node: '>=6.0.0'}
-    dependencies:
-      prismjs: 1.29.0
-    dev: false
-
   /markdown-it@10.0.0:
     resolution: {integrity: sha512-YWOP1j7UbDNz+TumYP1kpwnP0aEa711cJjrAQrzd0UXlbJfc5aAq0F/PZHjiioqDC1NKgvIMX+o+9Bk7yuM2dg==}
     hasBin: true
@@ -15491,11 +15487,6 @@ packages:
     resolution: {integrity: sha512-66hKPCr+72mlfiSjlEB1+45IjXSqvVAIy6mocupoww4tBFE9R9IhwwUGoI4G++Tc9Aq+2rxOt0RFU6gPcrte0A==}
     engines: {node: '>= 0.8'}
 
-  /prismjs@1.29.0:
-    resolution: {integrity: sha512-Kx/1w86q/epKcmte75LNrEoT+lX8pBpavuAbvJWRXar7Hz8jrtF+e3vY751p0R8H9HdArwaCTNDDzHg/ScJK1Q==}
-    engines: {node: '>=6'}
-    dev: false
-
   /process-nextick-args@2.0.1:
     resolution: {integrity: sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag==}
 
@@ -16133,6 +16124,29 @@ packages:
       react-native-windows: 0.73.11(@babel/core@7.23.9)(@babel/preset-env@7.23.6)(react-native@0.73.6)(react@18.3.0)
     dev: false
 
+  /react-native-unistyles@2.7.1(@react-native/normalize-colors@0.74.1)(react-native@0.73.6)(react@18.2.0):
+    resolution: {integrity: sha512-sYaDBsoX+2dfgak4YPWXvy1Hr9QFpGumBavn5wYF5dT3/Yl8F1VFol8SrvxRFfcqjpa+ENuKR6ylvmQXtQAbGQ==}
+    engines: {node: '>= 18.0.0'}
+    peerDependencies:
+      '@react-native/normalize-colors': '*'
+      react: '*'
+      react-native: '*'
+      react-native-macos: '*'
+      react-native-web: '*'
+      react-native-windows: '*'
+    peerDependenciesMeta:
+      react-native-macos:
+        optional: true
+      react-native-web:
+        optional: true
+      react-native-windows:
+        optional: true
+    dependencies:
+      '@react-native/normalize-colors': 0.74.1
+      react: 18.2.0
+      react-native: 0.73.6(@babel/core@7.23.9)(@babel/preset-env@7.23.6)(react@18.2.0)
+    dev: false
+
   /react-native-url-polyfill@2.0.0(react-native@0.73.6):
     resolution: {integrity: sha512-My330Do7/DvKnEvwQc0WdcBnFPploYKp9CYlefDXzIdEaA+PAhDYllkvGeEroEzvc4Kzzj2O4yVdz8v6fjRvhA==}
     peerDependencies:
@@ -16287,7 +16301,6 @@ packages:
       - encoding
       - supports-color
       - utf-8-validate
-    dev: true
 
   /react-native@0.73.6(@babel/core@7.23.9)(@babel/preset-env@7.23.6)(react@18.3.0):
     resolution: {integrity: sha512-oqmZe8D2/VolIzSPZw+oUd6j/bEmeRHwsLn1xLA5wllEYsZ5zNuMsDus235ONOnCRwexqof/J3aztyQswSmiaA==}
@@ -16508,7 +16521,6 @@ packages:
       object-assign: 4.1.1
       react: 18.2.0
       react-is: 18.3.0
-    dev: true
 
   /react-shallow-renderer@16.15.0(react@18.3.0):
     resolution: {integrity: sha512-oScf2FqQ9LFVQgA73vr86xl2NaOIX73rh+YFqcOp68CWj56tSfgtGKrEbyhCj0rSijyG9M1CYprTh39fBi5hzA==}

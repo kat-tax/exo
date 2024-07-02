@@ -1,17 +1,7 @@
 import type {AppThemes, AppBreakpoints} from './styles';
 import type {SvgProps} from 'react-native-svg';
 
-declare module 'react-exo-ui/styles' {
-  export interface UnistylesThemes extends AppThemes {}
-  export interface UnistylesBreakpoints extends AppBreakpoints {}
-}
-
-declare module 'design/styles' {
-  export interface UnistylesThemes extends AppThemes {}
-  export interface UnistylesBreakpoints extends AppBreakpoints {}
-}
-
-declare module 'styles' {
+declare module 'react-native-unistyles' {
   export interface UnistylesThemes extends AppThemes {}
   export interface UnistylesBreakpoints extends AppBreakpoints {}
 }

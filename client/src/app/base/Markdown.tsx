@@ -1,5 +1,5 @@
 import {memo} from 'react';
-import {useStyles} from 'design/styles';
+import {useStyles} from 'react-native-unistyles';
 import {ScrollView, Platform} from 'react-native';
 import Render from 'react-native-markdown-display';
 

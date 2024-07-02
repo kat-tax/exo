@@ -1,7 +1,7 @@
 import {t} from '@lingui/macro';
 import {useLingui} from '@lingui/react';
 import {useRef, useState} from 'react';
-import {useStyles, createStyleSheet} from 'design/styles';
+import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {Text, View, TextInput, Pressable} from 'react-native';
 import {Link} from 'react-exo/navigation';
 import {Markdown} from 'app/base/Markdown';

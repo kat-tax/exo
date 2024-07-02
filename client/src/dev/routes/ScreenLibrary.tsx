@@ -1,5 +1,5 @@
 import {Trans} from '@lingui/macro';
-import {useStyles} from 'design/styles';
+import {useStyles} from 'react-native-unistyles';
 import {Section} from 'dev/base/Section';
 import {Page} from 'app/base/Page';
 import {Icon} from 'react-exo/icon';

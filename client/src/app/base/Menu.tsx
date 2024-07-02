@@ -1,7 +1,7 @@
 import {t} from '@lingui/macro';
 import {Icon} from 'react-exo/icon';
 import {useLingui} from '@lingui/react';
-import {useStyles, createStyleSheet} from 'design/styles';
+import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {View, StyleSheet} from 'react-native';
 import {useLists} from 'tasks/hooks/useLists';
 import {MenuItem} from './MenuItem';

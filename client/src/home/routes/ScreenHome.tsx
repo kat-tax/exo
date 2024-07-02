@@ -2,7 +2,7 @@ import {t} from '@lingui/macro';
 import {Text, View} from 'react-native';
 import {useState} from 'react';
 import {useLingui, Trans} from '@lingui/react';
-import {useStyles, createStyleSheet} from 'design/styles';
+import {useStyles, createStyleSheet} from 'react-native-unistyles';
 //import {MarkdownTextInput} from '@expensify/react-native-live-markdown';
 import {useClock} from 'home/hooks/useClock';
 import {useWeather} from 'home/hooks/useWeather';

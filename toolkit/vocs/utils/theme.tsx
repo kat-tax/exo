@@ -1,5 +1,5 @@
 import {useEffect} from 'react';
-import {UnistylesRuntime} from 'design/styles';
+import {UnistylesRuntime} from 'react-native-unistyles';
 
 export function ThemeSwitcher(): React.ReactNode {
   useEffect(() => {

@@ -1,5 +1,5 @@
 import {View} from 'react-native';
-import {useStyles, createStyleSheet} from 'design/styles';
+import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useDateRange, toDateId, Calendar} from 'react-exo/calendar';
 import {useCalendarTheme} from 'events/hooks/useCalendarTheme';
 import {useLocale} from 'settings/hooks/useLocale';

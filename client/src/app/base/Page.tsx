@@ -1,5 +1,5 @@
 import {View, ScrollView, Text} from 'react-native';
-import {useStyles, createStyleSheet} from 'design/styles';
+import {useStyles, createStyleSheet} from 'react-native-unistyles';
 
 export interface PageProps {
   title?: string | React.ReactNode,

@@ -1,6 +1,6 @@
 import {cloneElement} from 'react';
 import {View, Text} from 'react-native';
-import {useStyles, createStyleSheet} from 'design/styles';
+import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useLocation, Link} from 'react-exo/navigation';
 import {useScheme} from 'settings/hooks/useScheme';
 import {isTouch} from 'app/utils/platform';
