@@ -15,7 +15,7 @@ import {Icon} from 'react-exo/icon';
 const DEFAULT_MODEL = 'llama3-8b-8192';
 
 export function Prompt() {
-  const {i18n} = useLingui()
+  const {i18n} = useLingui();
   const [model] = useGroqModel();
   const [apiKey] = useGroqKey();
   const {styles, theme} = useStyles(stylesheet);

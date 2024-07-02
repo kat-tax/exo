@@ -16,7 +16,7 @@ import {Page} from 'app/base/Page';
 import home from 'home/store';
 
 export default function ScreenSettings() {
-  const {i18n} = useLingui()
+  const {i18n} = useLingui();
   const {styles, theme} = useStyles(stylesheet);
   const [name, setName] = useDisplayName();
   const [locale, setLocale] = useLocale(true);
