@@ -1,8 +1,10 @@
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {View, Text} from 'react-native';
-import {Placeholder} from '../../../base/utilities/placeholder';
+import {Placeholder} from 'components/base/utilities/placeholder';
 
 export interface PanelProps {
+  header: string,
+  message: string,
   /** Used to locate this view in end-to-end tests. */
   testID?: string,
 }
@@ -18,10 +20,10 @@ export function Panel(props: PanelProps) {
       <View style={styles.contents} testID="5290:668">
         <View style={styles.title} testID="5525:470">
           <Text style={styles.header} testID="5290:669">
-            {`Header`}
+            {props.header}
           </Text>
           <Text style={styles.description} testID="5290:672">
-            {`Lorem ipsum dolor sit amet`}
+            {props.message}
           </Text>
         </View>
         <View style={styles.content} testID="5290:670">

@@ -49,7 +49,10 @@ const stylesheet = createStyleSheet(theme => ({
   root: {
     flexDirection: 'row',
     height: 36,
-    paddingHorizontal: theme.display.space4,
+    paddingTop: 0,
+    paddingLeft: theme.display.space4,
+    paddingBottom: 0,
+    paddingRight: theme.display.space4,
     justifyContent: 'center',
     alignItems: 'center',
     gap: theme.display.space2,

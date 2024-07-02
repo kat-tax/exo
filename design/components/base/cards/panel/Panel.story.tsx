@@ -9,7 +9,10 @@ const meta: Meta<typeof Component> = {
 };
 
 export const Panel: Story = {
-  // ...
+  args: {
+    header: 'Header',
+    message: 'Lorem ipsum dolor sit amet',
+  },
 };
 
 export default meta;
