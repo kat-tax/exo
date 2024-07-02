@@ -363,6 +363,7 @@ export const themes = {
       mutedForeground: palette.zinc500,
       accent: palette.zinc100,
       accentForeground: palette.zinc900,
+      info: palette.blue500,
       success: palette.green500,
       warning: palette.yellow500,
       destructive: palette.red500,

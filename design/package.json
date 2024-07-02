@@ -13,18 +13,15 @@
   },
   "exports": {
     ".": {
-      "types": "./gen/types/index.d.ts",
-      "import": "./gen/web/index.js",
+      "import": "./index.ts",
       "require": "./gen/native/index.js"
     },
     "./theme": {
-      "types": "./gen/types/theme.d.ts",
-      "import": "./gen/web/theme.js",
+      "import": "./theme.ts",
       "require": "./gen/native/theme.js"
     },
     "./styles": {
-      "types": "./gen/types/styles.d.ts",
-      "import": "./gen/web/styles.js",
+      "import": "./styles.ts",
       "require": "./gen/native/styles.js"
     },
     "./types": {
