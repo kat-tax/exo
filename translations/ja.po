@@ -220,11 +220,11 @@ msgstr "温度"
 msgid "Theme"
 msgstr "テーマ"
 
-#: ../../client/src/home/routes/ScreenHome.tsx:22
+#: ../../client/src/home/routes/ScreenHome.tsx:23
 msgid "Welcome, {displayName}"
 msgstr "ようこそ、{displayName}"
 
-#: ../../client/src/home/routes/ScreenHome.tsx:23
+#: ../../client/src/home/routes/ScreenHome.tsx:24
 msgid "Welcome, Human"
 msgstr "ようこそ、人間"
 

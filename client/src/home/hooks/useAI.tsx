@@ -49,7 +49,7 @@ export function useAI(
       }
     }
     setLoading(false);
-  }, [dispatch]);
+  }, [model]);
 
   const navigate = useCallback((
     e: NativeSyntheticEvent<TextInputKeyPressEventData>,
