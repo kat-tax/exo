@@ -11,7 +11,9 @@
     "macos": "react-native run-macos --no-packager --scheme EXO",
     "windows": "react-native run-windows --no-packager",
     "visionos": "react-native run-visionos --no-packager",
+    "desktop": "tauri dev",
     "build:web": "vite build",
+    "build:desktop": "tauri build",
     "_build:ios": "react-native bundle --entry-file index.js --platform ios --dev true --bundle-output dist/main.ios.jsbundle --assets-dest dist",
     "_build:android": "react-native bundle --entry-file index.js --platform android --dev true --bundle-output dist/main.android.jsbundle --assets-dest dist/res",
     "_build:macos": "react-native bundle --entry-file index.js --platform macos --dev true --bundle-output dist/main.macos.jsbundle --assets-dest dist",
@@ -19,14 +21,17 @@
     "_build:visionos": "react-native bundle --entry-file index.js --platform ios --dev true --bundle-output dist/main.visionos.jsbundle --assets-dest dist",
     "start:vite": "vite dev --port 6206",
     "start:metro": "react-native rnx-start --reset-cache",
-    "generate": "pod install --project-directory=ios && pod install --project-directory=macos && pod install --project-directory=visionos",
-    "_postinstall": "pnpm generate"
+
+    "generate:pods": "pod install --project-directory=ios && pod install --project-directory=macos && pod install --project-directory=visionos",
+    "generate:icons": "react-native-svg-app-icon generate && tauri icon ../design/assets/img/logo.png",
+    "generate:splash": "react-native generate-bootsplash ../design/assets/svg/logo.svg",
+
+    "_postinstall": "pnpm generate:*"
   },
   "dependencies": {
     "@ai-sdk/openai": "^0.0.34",
     "@callstack/react-native-visionos": "^0.73.0",
     "@candlefinance/faster-image": "^1.4.3",
-    "@expensify/react-native-live-markdown": "^0.1.96",
     "@lingui/core": "^4.10.0",
     "@lingui/macro": "^4.10.0",
     "@lingui/react": "^4.10.0",
@@ -36,6 +41,7 @@
     "@react-native-community/slider": "^4.5.2",
     "@react-native-picker/picker": "^2.7.5",
     "@shopify/react-native-skia": "1.3.6",
+    "@tauri-apps/api": "^1",
     "ai": "^3.2.15",
     "burnt": "^0.12.2",
     "design": "workspace:react-exo-ui@*",
@@ -45,6 +51,7 @@
     "react-exo": "workspace:*",
     "react-exo-ui": "workspace:*",
     "react-native": "^0.73.0",
+    "react-native-bootsplash": "^5.1.2",
     "react-native-gesture-handler": "^2.16.0",
     "react-native-get-random-values": "^1.11.0",
     "react-native-linear-gradient": "^2.8.3",
@@ -56,7 +63,9 @@
     "react-native-safe-area-context": "^4.9.0",
     "react-native-screens": "^3.30.1",
     "react-native-skottie": "^2.1.4",
-    "react-native-svg": "^15.1.0",
+    "react-native-svg": "^15.3.0",
+    "react-native-svg-app-icon": "^0.6.1",
+    "react-native-svg-transformer": "^1.4.0",
     "react-native-unistyles": "^2.7.1",
     "react-native-url-polyfill": "^2.0.0",
     "react-native-video": "5.2.1",
@@ -92,7 +101,8 @@
     "config": "workspace:*",
     "react-native-test-app": "^3.5.13",
     "react-test-renderer": "18.3.1",
-    "typescript": "^5.3.2"
+    "typescript": "^5.3.2",
+    "@tauri-apps/cli": "^1"
   },
   "browserslist": {
     "production": ">0.2%, not dead, not op_mini all",

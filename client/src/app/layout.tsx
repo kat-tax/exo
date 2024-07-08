@@ -1,8 +1,8 @@
 import {useEffect} from 'react';
 import {ToastRoot} from 'react-exo/toast';
-//import {BootSplash} from 'react-exo/device';
 import {StatusBar, Appearance} from 'react-native';
 import {useInitialTheme, UnistylesRuntime} from 'react-native-unistyles';
+//import Bootsplash from 'react-native-bootsplash';
 import {useOnline} from 'app/hooks/useOnline';
 import {useScheme} from 'settings/hooks/useScheme';
 
@@ -22,7 +22,7 @@ export function Layout(props: React.PropsWithChildren) {
   }, [scheme]);
 
   useEffect(() => {
-    //BootSplash.hide();
+    //Bootsplash.hide();
   }, []);
 
   return <>

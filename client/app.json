@@ -10,6 +10,10 @@
       "slug": "exo"
     }
   ],
+  "svgAppIcon": {
+    "foregroundPath": "../design/assets/svg/logo.svg",
+    "backgroundPath": "../design/assets/svg/logo-bg.svg"
+  },
   "resources": {
     "android": [
       "dist/res",

@@ -52,6 +52,7 @@ msgid "Auto"
 msgstr "Auto"
 
 #: ../../client/src/app/base/Menu.tsx:32
+#: ../../client/src/settings/routes/ScreenSettings.tsx:250
 msgid "Calendar"
 msgstr "Calendar"
 
@@ -96,6 +97,7 @@ msgid "Delete the local database."
 msgstr "Delete the local database."
 
 #: ../../client/src/app/base/Menu.tsx:56
+#: ../../client/src/dev/routes/ScreenDesign.tsx:11
 msgid "Design"
 msgstr "Design"
 
@@ -152,6 +154,7 @@ msgid "Language"
 msgstr "Language"
 
 #: ../../client/src/app/base/Menu.tsx:62
+#: ../../client/src/dev/routes/ScreenLibrary.tsx:15
 msgid "Library"
 msgstr "Library"
 
@@ -204,10 +207,12 @@ msgid "Set a display name for yourself."
 msgstr "Set a display name for yourself."
 
 #: ../../client/src/app/base/Menu.tsx:70
+#: ../../client/src/settings/routes/ScreenSettings.tsx:55
 msgid "Settings"
 msgstr "Settings"
 
 #: ../../client/src/app/base/Menu.tsx:38
+#: ../../client/src/tasks/routes/TaskList.tsx:13
 msgid "Tasks"
 msgstr "Tasks"
 

@@ -52,6 +52,7 @@ msgid "Auto"
 msgstr "تلقائي"
 
 #: ../../client/src/app/base/Menu.tsx:32
+#: ../../client/src/settings/routes/ScreenSettings.tsx:250
 msgid "Calendar"
 msgstr "تقويم"
 
@@ -96,6 +97,7 @@ msgid "Delete the local database."
 msgstr "حذف قاعدة البيانات المحلية."
 
 #: ../../client/src/app/base/Menu.tsx:56
+#: ../../client/src/dev/routes/ScreenDesign.tsx:11
 msgid "Design"
 msgstr "تصميم"
 
@@ -152,6 +154,7 @@ msgid "Language"
 msgstr "لغة"
 
 #: ../../client/src/app/base/Menu.tsx:62
+#: ../../client/src/dev/routes/ScreenLibrary.tsx:15
 msgid "Library"
 msgstr "مكتبة"
 
@@ -204,10 +207,12 @@ msgid "Set a display name for yourself."
 msgstr "أعيد تعيين اسم العرض ليستعلمك."
 
 #: ../../client/src/app/base/Menu.tsx:70
+#: ../../client/src/settings/routes/ScreenSettings.tsx:55
 msgid "Settings"
 msgstr "إعدادات"
 
 #: ../../client/src/app/base/Menu.tsx:38
+#: ../../client/src/tasks/routes/TaskList.tsx:13
 msgid "Tasks"
 msgstr "مسجيلات"
 

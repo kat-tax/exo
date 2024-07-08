@@ -52,6 +52,7 @@ msgid "Auto"
 msgstr "Авто"
 
 #: ../../client/src/app/base/Menu.tsx:32
+#: ../../client/src/settings/routes/ScreenSettings.tsx:250
 msgid "Calendar"
 msgstr "Календарь"
 
@@ -96,6 +97,7 @@ msgid "Delete the local database."
 msgstr "Удалить локальную базу данных."
 
 #: ../../client/src/app/base/Menu.tsx:56
+#: ../../client/src/dev/routes/ScreenDesign.tsx:11
 msgid "Design"
 msgstr "Дизайн"
 
@@ -152,6 +154,7 @@ msgid "Language"
 msgstr "Язык"
 
 #: ../../client/src/app/base/Menu.tsx:62
+#: ../../client/src/dev/routes/ScreenLibrary.tsx:15
 msgid "Library"
 msgstr "Библиотека"
 
@@ -204,10 +207,12 @@ msgid "Set a display name for yourself."
 msgstr "Установите отображаемое имя для себя."
 
 #: ../../client/src/app/base/Menu.tsx:70
+#: ../../client/src/settings/routes/ScreenSettings.tsx:55
 msgid "Settings"
 msgstr "Настройки"
 
 #: ../../client/src/app/base/Menu.tsx:38
+#: ../../client/src/tasks/routes/TaskList.tsx:13
 msgid "Tasks"
 msgstr "Задачи"
 
