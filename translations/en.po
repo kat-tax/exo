@@ -42,13 +42,16 @@ msgstr "Are you sure you want to reset your prompt history?"
 msgid "Ask anything..."
 msgstr "Ask anything..."
 
+#: ../../client/src/home/base/AiPrompt.tsx:49
+msgid "Ask anything... (or / for commands)"
+msgstr "Ask anything... (or / for commands)"
+
 #: ../../client/src/settings/routes/ScreenSettings.tsx:100
 #: ../../client/src/settings/routes/ScreenSettings.tsx:128
 msgid "Auto"
 msgstr "Auto"
 
-#: ../../client/src/app/base/Menu.tsx:30
-#: ../../client/src/settings/routes/ScreenSettings.tsx:250
+#: ../../client/src/app/base/Menu.tsx:32
 msgid "Calendar"
 msgstr "Calendar"
 
@@ -60,7 +63,7 @@ msgstr "Calendar Data Reset"
 msgid "Dark"
 msgstr "Dark"
 
-#: ../../client/src/app/base/Menu.tsx:24
+#: ../../client/src/app/base/Menu.tsx:26
 msgid "Dashboard"
 msgstr "Dashboard"
 
@@ -92,8 +95,7 @@ msgstr "Delete Prompts"
 msgid "Delete the local database."
 msgstr "Delete the local database."
 
-#: ../../client/src/app/base/Menu.tsx:54
-#: ../../client/src/dev/routes/ScreenDesign.tsx:11
+#: ../../client/src/app/base/Menu.tsx:56
 msgid "Design"
 msgstr "Design"
 
@@ -149,8 +151,7 @@ msgstr "Groq Model ID"
 msgid "Language"
 msgstr "Language"
 
-#: ../../client/src/app/base/Menu.tsx:60
-#: ../../client/src/dev/routes/ScreenLibrary.tsx:15
+#: ../../client/src/app/base/Menu.tsx:62
 msgid "Library"
 msgstr "Library"
 
@@ -162,7 +163,7 @@ msgstr "Light"
 msgid "Manage your settings"
 msgstr "Manage your settings"
 
-#: ../../client/src/home/base/Prompt.tsx:49
+#: ../../client/src/home/base/AiPrompt.tsx:49
 msgid "Please set your Groq API Key"
 msgstr "Please set your Groq API Key"
 
@@ -202,13 +203,11 @@ msgstr "Select the theme for the app."
 msgid "Set a display name for yourself."
 msgstr "Set a display name for yourself."
 
-#: ../../client/src/app/base/Menu.tsx:68
-#: ../../client/src/settings/routes/ScreenSettings.tsx:55
+#: ../../client/src/app/base/Menu.tsx:70
 msgid "Settings"
 msgstr "Settings"
 
-#: ../../client/src/app/base/Menu.tsx:36
-#: ../../client/src/tasks/routes/TaskList.tsx:13
+#: ../../client/src/app/base/Menu.tsx:38
 msgid "Tasks"
 msgstr "Tasks"
 
@@ -220,11 +219,11 @@ msgstr "Temperature"
 msgid "Theme"
 msgstr "Theme"
 
-#: ../../client/src/home/routes/ScreenHome.tsx:23
+#: ../../client/src/home/routes/ScreenHome.tsx:22
 msgid "Welcome, {displayName}"
 msgstr "Welcome, {displayName}"
 
-#: ../../client/src/home/routes/ScreenHome.tsx:24
+#: ../../client/src/home/routes/ScreenHome.tsx:23
 msgid "Welcome, Human"
 msgstr "Welcome, Human"
 

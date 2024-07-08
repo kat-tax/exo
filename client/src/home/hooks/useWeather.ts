@@ -8,7 +8,7 @@ export function useWeather() {
   const [weather, setWeather] = useState<Weather | null>(null);
   const [lat, lon] = useLocation();
 
-  // Update once
+  // Update when location changes
   useEffect(() => {
     console.log(lat, lon);
     if (!lat || !lon) return;

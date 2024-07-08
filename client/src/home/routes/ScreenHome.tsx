@@ -6,7 +6,7 @@ import {useClock} from 'home/hooks/useClock';
 import {useWeather} from 'home/hooks/useWeather';
 import {useDisplayName} from 'settings/hooks/useDisplayName';
 import {getDayGreeting} from 'home/utils/time';
-import {Prompt} from 'home/base/Prompt';
+import {AiPrompt} from 'home/base/AiPrompt';
 import {Page} from 'app/base/Page';
 
 export default function ScreenHome() {
@@ -31,7 +31,7 @@ export default function ScreenHome() {
           </Text>
         </View>
       }>
-      <Prompt/>
+      <AiPrompt/>
     </Page>
   );
 }

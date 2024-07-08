@@ -28,7 +28,6 @@ export default function ScreenCalendar() {
 const stylesheet = createStyleSheet(_theme => ({
   root: {
     flex: 1,
-    marginHorizontal: 'auto',
     paddingHorizontal: _theme.display.space5,
     maxWidth: 800,
   },

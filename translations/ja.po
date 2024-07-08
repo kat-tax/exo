@@ -42,13 +42,16 @@ msgstr "プロンプト履歴をリセットしますか？"
 msgid "Ask anything..."
 msgstr "なにか聞いてみましょう..."
 
+#: ../../client/src/home/base/AiPrompt.tsx:49
+msgid "Ask anything... (or / for commands)"
+msgstr ""
+
 #: ../../client/src/settings/routes/ScreenSettings.tsx:100
 #: ../../client/src/settings/routes/ScreenSettings.tsx:128
 msgid "Auto"
 msgstr "自動"
 
-#: ../../client/src/app/base/Menu.tsx:30
-#: ../../client/src/settings/routes/ScreenSettings.tsx:250
+#: ../../client/src/app/base/Menu.tsx:32
 msgid "Calendar"
 msgstr "カレンダー"
 
@@ -60,7 +63,7 @@ msgstr "カレンダーデータをリセット"
 msgid "Dark"
 msgstr "ダーク"
 
-#: ../../client/src/app/base/Menu.tsx:24
+#: ../../client/src/app/base/Menu.tsx:26
 msgid "Dashboard"
 msgstr "ダッシュボード"
 
@@ -92,8 +95,7 @@ msgstr "プロンプトを削除"
 msgid "Delete the local database."
 msgstr "ローカルデータベースを削除"
 
-#: ../../client/src/app/base/Menu.tsx:54
-#: ../../client/src/dev/routes/ScreenDesign.tsx:11
+#: ../../client/src/app/base/Menu.tsx:56
 msgid "Design"
 msgstr "デザイン"
 
@@ -149,8 +151,7 @@ msgstr "GroqモデルID"
 msgid "Language"
 msgstr "言語"
 
-#: ../../client/src/app/base/Menu.tsx:60
-#: ../../client/src/dev/routes/ScreenLibrary.tsx:15
+#: ../../client/src/app/base/Menu.tsx:62
 msgid "Library"
 msgstr "ライブラリ"
 
@@ -162,7 +163,7 @@ msgstr "ライト"
 msgid "Manage your settings"
 msgstr "設定を管理"
 
-#: ../../client/src/home/base/Prompt.tsx:49
+#: ../../client/src/home/base/AiPrompt.tsx:49
 msgid "Please set your Groq API Key"
 msgstr "Groq APIキーを設定"
 
@@ -202,13 +203,11 @@ msgstr "アプリのテーマを選択"
 msgid "Set a display name for yourself."
 msgstr "自分の表示名を設定"
 
-#: ../../client/src/app/base/Menu.tsx:68
-#: ../../client/src/settings/routes/ScreenSettings.tsx:55
+#: ../../client/src/app/base/Menu.tsx:70
 msgid "Settings"
 msgstr "設定"
 
-#: ../../client/src/app/base/Menu.tsx:36
-#: ../../client/src/tasks/routes/TaskList.tsx:13
+#: ../../client/src/app/base/Menu.tsx:38
 msgid "Tasks"
 msgstr "タスク"
 
@@ -220,11 +219,11 @@ msgstr "温度"
 msgid "Theme"
 msgstr "テーマ"
 
-#: ../../client/src/home/routes/ScreenHome.tsx:23
+#: ../../client/src/home/routes/ScreenHome.tsx:22
 msgid "Welcome, {displayName}"
 msgstr "ようこそ、{displayName}"
 
-#: ../../client/src/home/routes/ScreenHome.tsx:24
+#: ../../client/src/home/routes/ScreenHome.tsx:23
 msgid "Welcome, Human"
 msgstr "ようこそ、人間"
 
