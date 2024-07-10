@@ -19,6 +19,7 @@ export function Provider(props: React.PropsWithChildren) {
   }, [locale]);
 
   return (
+    // @ts-ignore "lang" is react-native-web prop
     <View style={styles.root} lang={locale}>
       <I18nProvider {...{i18n}}>
         <GestureProvider style={{flex: 1}}>

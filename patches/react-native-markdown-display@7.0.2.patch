@@ -1,0 +1,21 @@
+diff --git a/package.json b/package.json
+index 5a988ebb3f8d1ebe92f61ebebc36b1482b8efdd3..c7d4874c3abb153bd1dfc8442b0543fe4aab5499 100644
+--- a/package.json
++++ b/package.json
+@@ -2,7 +2,7 @@
+   "name": "react-native-markdown-display",
+   "version": "7.0.2",
+   "description": "Markdown renderer for react-native, with CommonMark spec support + adds syntax extensions & sugar (URL autolinking, typographer), originally created by Mient-jan Stelling as react-native-markdown-renderer",
+-  "main": "src/index.js",
++  "main": "src/index.jsx",
+   "types": "src/index.d.ts",
+   "scripts": {
+     "lint": "./node_modules/.bin/eslint --fix --cache ./src"
+diff --git a/src/index.js b/src/index.jsx
+similarity index 100%
+rename from src/index.js
+rename to src/index.jsx
+diff --git a/src/lib/renderRules.js b/src/lib/renderRules.jsx
+similarity index 100%
+rename from src/lib/renderRules.js
+rename to src/lib/renderRules.jsx

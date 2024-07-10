@@ -1,7 +1,7 @@
 import {memo} from 'react';
 import {useStyles} from 'react-native-unistyles';
 import {ScrollView, Platform} from 'react-native';
-import Render from 'react-native-markdown-display';
+import {Markdown as MarkdownBase} from 'react-exo/markdown';
 
 export const Markdown = memo(({text}: {text: string}) => {
   const {theme} = useStyles();
@@ -14,7 +14,7 @@ export const Markdown = memo(({text}: {text: string}) => {
     <ScrollView
       contentInsetAdjustmentBehavior="automatic"
       style={{height: '100%'}}>
-      <Render 
+      <MarkdownBase
         mergeStyle={false}
         style={{
           body: {
@@ -220,7 +220,7 @@ export const Markdown = memo(({text}: {text: string}) => {
           span: {},
         }}>
         {text}
-      </Render>
+      </MarkdownBase>
     </ScrollView>
   );
 })

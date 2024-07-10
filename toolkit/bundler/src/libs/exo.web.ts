@@ -4,6 +4,7 @@ import webConfig from '../vite.web.js';
 import react from '@vitejs/plugin-react';
 import types from 'vite-plugin-dts';
 import dynImportVar from '@rollup/plugin-dynamic-import-vars';
+import patchMarkdown from '../mod/fix-markdown-import.js';
 import patchCalendar from '../mod/fix-calendar-import.js';
 import patchMotion from '../mod/fix-motion-import.js';
 
@@ -79,6 +80,7 @@ export default defineConfig(env => mergeConfig(
     },
     plugins: [
       dynImportVar as any,
+      patchMarkdown,
       patchCalendar,
       patchMotion,
       types({

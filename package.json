@@ -4,32 +4,24 @@
   "scripts": {
     "start": "conc -c 'gray' 'pnpm:*:dev'",
     "build": "conc -c 'gray,auto' -g 'pnpm:*:build'",
-
     "config:build": "pnpm -F ./toolkit/config build",
     "bundler:build": "pnpm -F ./toolkit/bundler build",
-
     "translate:dev": "conc -P 'pnpm:translate:extract {1}' 'pnpm:translate:compile {1}' -- --watch",
     "translate:build": "pnpm translate:extract && pnpm translate:compile",
     "translate:extract": "lingui extract --clean --config ./toolkit/config/lingui.ts",
     "translate:compile": "lingui compile --config ./toolkit/config/lingui.ts",
-
     "library:build": "pnpm -F ./library build",
     "library:publish": "pnpm -F ./library publish",
-
     "design:build": "pnpm -F ./design build",
     "design:publish": "pnpm -F ./design publish",
-
     "client:dev": "pnpm -F ./client run dev",
     "client:build": "pnpm -F ./client run build",
-
     "storybook:dev": "conc 'pnpm:storybook:web' 'pnpm:storybook:native'",
     "storybook:build": "pnpm -F ./toolkit/storybook/web run build",
     "storybook:native": "pnpm -F ./toolkit/storybook/native run dev",
     "storybook:web": "pnpm -F ./toolkit/storybook/web run dev",
-
     "docs:dev": "pnpm -F ./toolkit/vocs dev",
     "docs:build": "pnpm -F ./toolkit/vocs build",
-
     "generate": "pnpm config:build && pnpm translate:build && pnpm bundler:build && pnpm library:build && pnpm design:build",
     "postinstall": "pnpm generate"
   },
@@ -43,5 +35,10 @@
   "engines": {
     "node": ">=18"
   },
-  "packageManager": "pnpm@8.14.0"
+  "packageManager": "pnpm@8.14.0",
+  "pnpm": {
+    "patchedDependencies": {
+      "react-native-markdown-display@7.0.2": "patches/react-native-markdown-display@7.0.2.patch"
+    }
+  }
 }
