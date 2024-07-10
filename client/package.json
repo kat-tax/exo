@@ -15,7 +15,7 @@
     "desktop": "tauri dev",
   
     "build:web": "vite build",
-    "build:desktop": "tauri build",
+    "build:desktop": "CI=true tauri build",
     "_build:ios": "react-native bundle --entry-file index.js --platform ios --dev true --bundle-output dist/main.ios.jsbundle --assets-dest dist",
     "_build:android": "react-native bundle --entry-file index.js --platform android --dev true --bundle-output dist/main.android.jsbundle --assets-dest dist/res",
     "_build:macos": "react-native bundle --entry-file index.js --platform macos --dev true --bundle-output dist/main.macos.jsbundle --assets-dest dist",
