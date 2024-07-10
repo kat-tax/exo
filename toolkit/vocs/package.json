@@ -34,7 +34,7 @@
     "fs-extra": "latest",
     "tsx": "latest",
     "typescript": "^5.3.2",
-    "vocs": "latest",
+    "vocs": "1.0.0-alpha.52",
     "yaml": "latest"
   }
 }
