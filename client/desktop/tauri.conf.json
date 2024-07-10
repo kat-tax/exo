@@ -1,11 +1,11 @@
 {
-  "package": {
-    "productName": "exo-desktop",
-    "version": "0.0.0"
-  },
   "build": {
     "devPath": "http://localhost:6206",
     "distDir": "../../output/client/web"
+  },
+  "package": {
+    "productName": "EXO",
+    "version": "0.0.0"
   },
   "tauri": {
     "windows": [
@@ -15,10 +15,6 @@
         "height": 600
       }
     ],
-    "systemTray": {
-      "iconPath": "icons/icon.png",
-      "iconAsTemplate": true
-    },
     "bundle": {
       "active": true,
       "targets": "all",

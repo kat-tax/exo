@@ -38,13 +38,9 @@ msgstr "カレンダーデータをリセットしますか？"
 msgid "Are you sure you want to reset your prompt history?"
 msgstr "プロンプト履歴をリセットしますか？"
 
-#: ../../client/src/home/base/Prompt.tsx:49
+#: ../../client/src/home/base/AiPrompt.tsx:49
 msgid "Ask anything..."
 msgstr "なにか聞いてみましょう..."
-
-#: ../../client/src/home/base/AiPrompt.tsx:49
-msgid "Ask anything... (or / for commands)"
-msgstr ""
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:100
 #: ../../client/src/settings/routes/ScreenSettings.tsx:128

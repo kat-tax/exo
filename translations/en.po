@@ -38,13 +38,9 @@ msgstr "Are you sure you want to reset your calendar data?"
 msgid "Are you sure you want to reset your prompt history?"
 msgstr "Are you sure you want to reset your prompt history?"
 
-#: ../../client/src/home/base/Prompt.tsx:49
+#: ../../client/src/home/base/AiPrompt.tsx:49
 msgid "Ask anything..."
 msgstr "Ask anything..."
-
-#: ../../client/src/home/base/AiPrompt.tsx:49
-msgid "Ask anything... (or / for commands)"
-msgstr "Ask anything... (or / for commands)"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:100
 #: ../../client/src/settings/routes/ScreenSettings.tsx:128

@@ -38,13 +38,9 @@ msgstr "Вы уверены, что хотите сбросить данные �
 msgid "Are you sure you want to reset your prompt history?"
 msgstr "Вы уверены, что хотите сбросить историю приглашений?"
 
-#: ../../client/src/home/base/Prompt.tsx:49
+#: ../../client/src/home/base/AiPrompt.tsx:49
 msgid "Ask anything..."
 msgstr "Задайте любой вопрос..."
-
-#: ../../client/src/home/base/AiPrompt.tsx:49
-msgid "Ask anything... (or / for commands)"
-msgstr ""
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:100
 #: ../../client/src/settings/routes/ScreenSettings.tsx:128

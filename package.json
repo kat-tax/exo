@@ -10,7 +10,7 @@
 
     "translate:dev": "conc -P 'pnpm:translate:extract {1}' 'pnpm:translate:compile {1}' -- --watch",
     "translate:build": "pnpm translate:extract && pnpm translate:compile",
-    "translate:extract": "lingui extract --config ./toolkit/config/lingui.ts",
+    "translate:extract": "lingui extract --clean --config ./toolkit/config/lingui.ts",
     "translate:compile": "lingui compile --config ./toolkit/config/lingui.ts",
 
     "library:build": "pnpm -F ./library build",
@@ -27,8 +27,8 @@
     "storybook:native": "pnpm -F ./toolkit/storybook/native run dev",
     "storybook:web": "pnpm -F ./toolkit/storybook/web run dev",
 
-    "docs:_dev": "pnpm -F ./toolkit/vocs dev",
-    "docs:_build": "pnpm -F ./toolkit/vocs build",
+    "docs:dev": "pnpm -F ./toolkit/vocs dev",
+    "docs:build": "pnpm -F ./toolkit/vocs build",
 
     "generate": "pnpm config:build && pnpm translate:build && pnpm bundler:build && pnpm library:build && pnpm design:build",
     "postinstall": "pnpm generate"

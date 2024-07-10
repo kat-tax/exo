@@ -1,5 +1,5 @@
 import {defineConfig} from 'vocs';
-import {themes} from 'design/theme';
+import {themes} from 'design/gen.theme';
 import viteDocs from 'bundler/web.docs.cfg';
 import sidebar from 'config/docs.sidebar';
 import config from 'config';

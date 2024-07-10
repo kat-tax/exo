@@ -46,7 +46,7 @@ export function AiPrompt() {
             <TextInput
               ref={input}
               style={styles.input}
-              placeholder={apiKey ? t(i18n)`Ask anything... (or / for commands)` : t(i18n)`Please set your Groq API Key`}
+              placeholder={apiKey ? t(i18n)`Ask anything...` : t(i18n)`Please set your Groq API Key`}
               placeholderTextColor={theme.colors.mutedForeground}
               onSubmitEditing={(e) => e.nativeEvent.text && ai.prompt(e.nativeEvent.text, multiline)}
               onKeyPress={(e) => ai.navigate(e, multiline ? () => setMultiline(false) : undefined)}

@@ -93,6 +93,11 @@
       "import": "./gen/web/rive.js",
       "require": "./gen/native/rive.js"
     },
+    "./markdown": {
+      "types": "./gen/types/markdown.d.ts",
+      "import": "./gen/web/markdown.js",
+      "require": "./gen/native/markdown.js"
+    },
     "./checkbox": {
       "types": "./gen/types/checkbox.d.ts",
       "import": "./gen/web/checkbox.js",
@@ -191,6 +196,7 @@
     "idb-keyval": "^6.2.1",
     "react-content-loader": "^7.0.0",
     "react-hook-form": "^7.51.3",
+    "react-native-markdown-display": "^7.0.2",
     "react-redux": "^9.1.2",
     "react-router": "^6.22.3",
     "redux": "^5.0.1",

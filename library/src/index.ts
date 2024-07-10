@@ -6,6 +6,7 @@ export type * from './assets/image/Image.export';
 export type * from './assets/video/Video.export';
 export type * from './assets/lottie/Lottie.export';
 export type * from './assets/rive/Rive.export';
+export type * from './assets/markdown/Markdown.export';
 
 // Layout
 export type * from './layout/navigation/Navigation.export';

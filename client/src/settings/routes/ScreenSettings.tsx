@@ -166,8 +166,8 @@ export default function ScreenSettings() {
                 style={styles.select}
                 itemStyle={styles.selectItem}
                 dropdownIconColor={theme.colors.foreground}
-                selectedValue={model}
-                onValueChange={setModel}>
+                selectedValue={undefined}
+                onValueChange={undefined}>
                 <Picker.Item label="Kilometers" value="km" color={theme.colors.foreground}/>
                 <Picker.Item label="Miles" value="mi" color={theme.colors.foreground}/>
               </Picker>

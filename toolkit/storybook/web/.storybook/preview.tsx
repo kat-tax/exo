@@ -42,6 +42,7 @@ const preview: Preview = {
               'Video',
               'Lottie',
               'Rive',
+              'Markdown',
             ],
             'Widgets', [
               'Calendar',

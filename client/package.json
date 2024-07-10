@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "conc -c 'auto' 'pnpm:start:*'",
     "build": "conc -c 'auto' -g 'pnpm:build:*'",
+
     "web": "open http://localhost:6206",
     "ios": "react-native run-ios --no-packager",
     "android": "react-native run-android --no-packager",
@@ -12,6 +13,7 @@
     "windows": "react-native run-windows --no-packager",
     "visionos": "react-native run-visionos --no-packager",
     "desktop": "tauri dev",
+  
     "build:web": "vite build",
     "build:desktop": "tauri build",
     "_build:ios": "react-native bundle --entry-file index.js --platform ios --dev true --bundle-output dist/main.ios.jsbundle --assets-dest dist",
@@ -19,6 +21,7 @@
     "_build:macos": "react-native bundle --entry-file index.js --platform macos --dev true --bundle-output dist/main.macos.jsbundle --assets-dest dist",
     "_build:windows": "react-native bundle --entry-file index.js --platform windows --dev true --bundle-output dist/main.windows.bundle --assets-dest dist",
     "_build:visionos": "react-native bundle --entry-file index.js --platform ios --dev true --bundle-output dist/main.visionos.jsbundle --assets-dest dist",
+    
     "start:vite": "vite dev --port 6206",
     "start:metro": "react-native rnx-start --reset-cache",
 
@@ -56,7 +59,6 @@
     "react-native-get-random-values": "^1.11.0",
     "react-native-linear-gradient": "^2.8.3",
     "react-native-macos": "^0.73.0",
-    "react-native-markdown-display": "^7.0.2",
     "react-native-mmkv": "^2.12.2",
     "react-native-navigation": "7.39.1",
     "react-native-reanimated": "^3.8.1",
