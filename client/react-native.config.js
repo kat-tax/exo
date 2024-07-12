@@ -3,20 +3,20 @@ const project = (() => {
     const {configureProjects} = require('react-native-test-app');
     return configureProjects({
       android: {
-        sourceDir: 'android',
+        sourceDir: 'app/android',
       },
       ios: {
-        sourceDir: 'ios',
+        sourceDir: 'app/ios',
       },
       macos: {
-        sourceDir: 'macos',
+        sourceDir: 'app/macos',
       },
       visionos: {
-        sourceDir: 'visionos',
+        sourceDir: 'app/visionos',
       },
       windows: {
-        sourceDir: 'windows',
-        solutionFile: 'windows/EXO.sln',
+        sourceDir: 'app/windows',
+        solutionFile: 'app/windows/EXO.sln',
       },
     });
   } catch (_) {

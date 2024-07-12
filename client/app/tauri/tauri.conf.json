@@ -1,7 +1,7 @@
 {
   "build": {
     "devPath": "http://localhost:6206",
-    "distDir": "../../output/client/web"
+    "distDir": "../../../output/client/web"
   },
   "package": {
     "productName": "EXO",
