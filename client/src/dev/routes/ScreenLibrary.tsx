@@ -1,6 +1,6 @@
 import {Trans} from '@lingui/macro';
 import {useStyles} from 'react-native-unistyles';
-import {Section} from 'dev/base/Section';
+import {Frame} from 'dev/base/Frame';
 import {Page} from 'app/base/Page';
 import {Icon} from 'react-exo/icon';
 import {Checkbox} from 'react-exo/checkbox';
@@ -14,29 +14,29 @@ export default function ScreenHome() {
     <Page
       title={<Trans>Library</Trans>}
       message={<Trans>{`${11} components`}</Trans>}>
-      <Section title="Icon">
+      <Frame title="Icon">
         <Icon
           name="ph:cat"
           size={36}
           color={theme.colors.primary}
         />
-      </Section>
-      <Section title="Checkbox">
+      </Frame>
+      <Frame title="Checkbox">
         <Checkbox
           boxColor={theme.colors.border}
           boxColorOn={theme.colors.primary}
           indicatorColor={theme.colors.primary}
         />
-      </Section>
-      <Section title="Switch">
+      </Frame>
+      <Frame title="Switch">
         <Switch
           value={false}
           onColor={theme.colors.primary}
           thumbColor={theme.colors.background}
           offColor={theme.colors.input}
         />
-      </Section>
-      <Section title="Slider">
+      </Frame>
+      <Frame title="Slider">
         <Slider
           value={50}
           thumbColor={theme.colors.primary}
@@ -44,14 +44,14 @@ export default function ScreenHome() {
           trackColor={theme.colors.secondary}
           onChange={(value) => console.log(value)}
         />
-      </Section>
-      <Section title="Progress">
+      </Frame>
+      <Frame title="Progress">
         <Progress
           progress={50}
           fullWidth={true}
           progressColor={theme.colors.primary}
         />
-      </Section>
+      </Frame>
     </Page>
   );
 }
