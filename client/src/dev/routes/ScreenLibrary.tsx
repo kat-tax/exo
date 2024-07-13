@@ -13,7 +13,7 @@ export default function ScreenHome() {
   return (
     <Page
       title={<Trans>Library</Trans>}
-      message={<Trans>{`${11} components`}</Trans>}>
+      message={<Trans>{`${5} components`}</Trans>}>
       <Frame title="Icon">
         <Icon
           name="ph:cat"
