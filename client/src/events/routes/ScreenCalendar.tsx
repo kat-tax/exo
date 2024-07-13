@@ -25,10 +25,10 @@ export default function ScreenCalendar() {
   );
 }
 
-const stylesheet = createStyleSheet(_theme => ({
+const stylesheet = createStyleSheet(theme => ({
   root: {
     flex: 1,
-    paddingHorizontal: _theme.display.space5,
     maxWidth: 800,
+    paddingHorizontal: theme.display.space5,
   },
 }));

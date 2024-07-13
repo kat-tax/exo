@@ -1,7 +1,7 @@
 import {Trans} from '@lingui/macro';
 import {View} from 'react-native';
 import {Page} from 'app/base/Page';
-import {Section} from 'dev/base/Section';
+import {Frame} from 'dev/base/Frame';
 import {Icon} from 'react-exo/icon';
 import * as Design from 'design';
 
@@ -10,7 +10,7 @@ export default function ScreenDesign() {
     <Page
       title={<Trans>Design</Trans>}
       message={<Trans>{`${11} components`}</Trans>}>
-      <Section title="Button">
+      <Frame title="Button">
         <Design.Button
           mode="Primary"
           state="Default"
@@ -31,8 +31,8 @@ export default function ScreenDesign() {
           state="Default"
           label="Text"
         />
-      </Section>
-      <Section title="Badge">
+      </Frame>
+      <Frame title="Badge">
         <Design.Badge label="Default"
           mode="Default"
           state="Default"
@@ -62,8 +62,8 @@ export default function ScreenDesign() {
           state="Default"
           showLabel={true}
         />
-      </Section>
-      <Section title="InputText">
+      </Frame>
+      <Frame title="InputText">
         <Design.InputText
           state="Empty"
           caption=""
@@ -73,8 +73,8 @@ export default function ScreenDesign() {
           showLabel={false}
           showCaption={false}
         />
-      </Section>
-      <Section title="InputEmail">
+      </Frame>
+      <Frame title="InputEmail">
         <Design.InputEmail
           state="Empty"
           caption=""
@@ -84,8 +84,8 @@ export default function ScreenDesign() {
           showLabel={false}
           showCaption={false}
         />
-      </Section>
-      <Section title="InputPassword">
+      </Frame>
+      <Frame title="InputPassword">
         <Design.InputPassword
           state="Empty"
           caption=""
@@ -95,8 +95,8 @@ export default function ScreenDesign() {
           showLabel={false}
           showCaption={false}
         />
-      </Section>
-      <Section title="Article">
+      </Frame>
+      <Frame title="Article">
         <Design.Article
           header="Lorem Ipsum"
           body="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
@@ -104,11 +104,14 @@ export default function ScreenDesign() {
           hasFooter={true}
           hasTags={false}
         />
-      </Section>
-      <Section title="Panel">
-        <Design.Panel/>
-      </Section>
-      <Section title="Prompt">
+      </Frame>
+      <Frame title="Panel">
+        <Design.Panel
+          header="Lorem Ipsum"
+          message="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+        />
+      </Frame>
+      <Frame title="Prompt">
         <View style={{flex: 1, maxWidth: 480}}>
           <Design.Prompt
             title="Lorem Ipsum"
@@ -123,8 +126,8 @@ export default function ScreenDesign() {
             }
           />
         </View>
-      </Section>
-      <Section title="Status">
+      </Frame>
+      <Frame title="Status">
         <Design.Status
           mode="Default"
           value="!"
@@ -150,8 +153,8 @@ export default function ScreenDesign() {
           value="!"
           hasValue={true}
         />
-      </Section>
-      <Section title="Alert">
+      </Frame>
+      <Frame title="Alert">
         <Design.Alert
           mode="Default"
           header="Lorem Ipsum"
@@ -166,7 +169,7 @@ export default function ScreenDesign() {
           hasIcon={true}
           icon={<Icon name="ph:warning"/>}
         />
-      </Section>
+      </Frame>
     </Page>
   );
 }

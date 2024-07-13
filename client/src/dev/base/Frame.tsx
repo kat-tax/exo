@@ -1,22 +1,19 @@
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {View, ScrollView, Text} from 'react-native';
 
-export interface SectionProps {
+export interface FrameProps {
   title: string,
   children?: React.ReactNode,
 }
 
-export function Section(props: SectionProps) {
+export function Frame(props: FrameProps) {
   const {styles} = useStyles(stylesheet);
   return (
     <View style={styles.root}>
       <Text style={styles.title}>
         {props.title}
       </Text>
-      <ScrollView
-        horizontal
-        style={styles.viewport}
-        contentContainerStyle={styles.content}>
+      <ScrollView horizontal contentContainerStyle={styles.content}>
         {props.children}
       </ScrollView>
     </View>
@@ -30,19 +27,9 @@ const stylesheet = createStyleSheet(theme => ({
     paddingBottom: theme.display.space7,
     paddingHorizontal: theme.display.space3,
     borderColor: theme.colors.border,
+    borderStyle: 'dashed',
     borderRadius: 4,
     borderWidth: 1,
-  },
-  viewport: {
-    flexWrap: 'wrap',
-    alignContent: 'center',
-  },
-  content: {
-    width: '100%',
-    flexWrap: 'wrap',
-    flexDirection: 'row',
-    justifyContent: 'center',
-    gap: theme.display.space3,
   },
   title: {
     padding: theme.display.space3,
@@ -53,5 +40,12 @@ const stylesheet = createStyleSheet(theme => ({
     lineHeight: theme.font.height,
     letterSpacing: theme.font.spacing,
     textAlign: 'center',
+  },
+  content: {
+    flexGrow: 1,
+    flexWrap: 'wrap',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    gap: theme.display.space3,
   },
 }));

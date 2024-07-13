@@ -1,4 +1,4 @@
-import * as Redux from 'react-exo/redux';
+import * as $ from 'react-exo/redux';
 import {Storage} from 'react-exo/storage';
 import {PageLoading} from 'app/base/PageLoading';
 import config from 'config';
@@ -7,45 +7,41 @@ import app from './app';
 import home from 'home/store';
 import tasks from 'tasks/store';
 import settings from 'settings/store';
-// Tip: import your new reducers here...
 
 export function Store(props: React.PropsWithChildren) {
   return (
-    <Redux.Provider store={store} loading={<PageLoading/>}>
+    <$.Provider store={store} loading={<PageLoading/>}>
       {props.children}
-    </Redux.Provider>
+    </$.Provider>
   )
 }
 
-const reducer = Redux.persistReducer({
+const reducer = $.persistReducer({
   key: config.APP_NAME,
   version: config.STORE_VERSION,
   storage: Storage.init(`${config.APP_NAME}::redux`, config.STORE_VERSION),
   blacklist: [
-    Redux.history.context.routerReducer.name,
+    $.history.context.routerReducer.name,
     app.reducer.name,
-    // Tip: disable a reducer persisting to disk here...
   ],
-}, Redux.combineReducers({
-  router: Redux.history.context.routerReducer,
+}, $.combineReducers({
+  router: $.history.context.routerReducer,
   app: app.reducer,
   home: home.reducer,
   tasks: tasks.reducer,
   settings: settings.reducer,
-  // Tip: add your new reducers here...
 }));
 
-const store = Redux.configureStore({
+const store = $.configureStore({
   reducer,
   devTools: __DEV__,
-  middleware: () => new Redux.Tuple(
-    Redux.history.context.routerMiddleware,
-    // Tip: add more middleware here...
+  middleware: () => new $.Tuple(
+    $.history.context.routerMiddleware,
   ),
 });
 
-Redux.history.init(store);
+$.history.init(store);
 
 export type State = ReturnType<typeof store.getState>
-export const history = Redux.history.state;
+export const history = $.history.state;
 export default store;
