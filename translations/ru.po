@@ -220,11 +220,11 @@ msgstr "Температура"
 msgid "Theme"
 msgstr "Тема"
 
-#: ../../client/src/home/routes/ScreenHome.tsx:22
+#: ../../client/src/home/routes/ScreenHome.tsx:28
 msgid "Welcome, {displayName}"
 msgstr "Добро пожаловать, {displayName}"
 
-#: ../../client/src/home/routes/ScreenHome.tsx:23
+#: ../../client/src/home/routes/ScreenHome.tsx:29
 msgid "Welcome, Human"
 msgstr "Добро пожаловать, Человек"
 

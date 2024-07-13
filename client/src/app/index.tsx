@@ -1,16 +1,19 @@
 import {Store} from 'app/store';
-import {Router} from 'app/router';
-import {Layout} from 'app/layout';
+import {Database} from 'app/data';
 import {Provider} from 'app/provider';
+import {Layout} from 'app/layout';
+import {Router} from 'app/router';
 
 export default () => {
   return (
     <Store>
-      <Provider>
-        <Layout>
-          <Router/>
-        </Layout>
-      </Provider>
+      <Database>
+        <Provider>
+          <Layout>
+            <Router/>
+          </Layout>
+        </Provider>
+      </Database>
     </Store>
   )
 }

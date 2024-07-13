@@ -22,9 +22,6 @@ export default defineConfig(env => mergeConfig(
         'react-native': 'react-native-web',
       },
     },
-    define: {
-      global: 'window',
-    },
     plugins: [
       nodePolyfills({
         include: ['process'],

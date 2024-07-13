@@ -4,6 +4,7 @@ import webConfig from '../vite.web.js';
 import cfg from 'config';
 import react from '@vitejs/plugin-react';
 import million from 'million/compiler';
+import {visualizer} from 'rollup-plugin-visualizer';
 import {lingui} from '@lingui/vite-plugin';
 
 export default defineConfig(env => mergeConfig(
@@ -12,11 +13,11 @@ export default defineConfig(env => mergeConfig(
     build: {
       outDir: '../output/client/web',
       emptyOutDir: true,
+      chunkSizeWarningLimit: 600,
       rollupOptions: {
         output: {
-          manualChunks: i => i.includes('node_modules')
-            ? 'vendor'
-            : null,
+          format: 'es',
+          manualChunks: getChunkName,
         }
       }
     },
@@ -44,7 +45,37 @@ export default defineConfig(env => mergeConfig(
             });
           return out;
         },
-      }
+      },
+      visualizer(),
     ],
+    optimizeDeps: {
+      exclude: ['@evolu/common-web'],
+    },
+    worker: {
+      format: 'es',
+    }
   }),
 ));
+
+function getChunkName(path: string) {
+  const ns = '/node_modules/';
+  return path.includes(ns)
+  ? (path.includes(ns + '@effect/')
+    || path.includes(ns + 'effect/')
+    || path.includes(ns + 'flatbuffers/')
+    || path.includes(ns + 'kysely/')
+    || path.includes(ns + '@scure/')
+    || path.includes(ns + '@noble/')
+    || path.includes(ns + '@evolu/')
+    || path.includes(ns + '@protobuf-ts/'))
+    ? 'data'
+    : (path.includes(ns + '@ai-sdk/')
+      || path.includes(ns + 'ai/')
+      || path.includes(ns + 'zod/')
+      || path.includes(ns + 'zod-to-json-schema/')
+      || path.includes(ns + 'secure-json-parse/')
+      || path.includes(ns + 'vite-plugin-node-polyfills/'))
+      ? 'ai'
+      : 'vendor'
+  : null
+}
