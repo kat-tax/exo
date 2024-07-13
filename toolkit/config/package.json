@@ -23,12 +23,12 @@
     "./tsconfig.node.json": "./typescript/node.tsconfig.json"
   },
   "dependencies": {
-    "react-native-ultimate-config": "latest"
+    "react-native-ultimate-config": "^6.0.1"
   },
   "devDependencies": {
-    "@lingui/conf": "^4.8.0",
+    "@lingui/conf": "^4.11.2",
     "gray-matter": "^4.0.3",
     "vocs": "1.0.0-alpha.52",
-    "typescript": "^5.3.2"
+    "typescript": "^5.5.3"
   }
 }

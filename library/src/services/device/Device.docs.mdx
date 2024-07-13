@@ -11,17 +11,13 @@ import React from 'react';
 // @log: ↓ Import the device service
 import {Device} from 'react-exo/device'; // [!code focus]
 
-// @log: ↓ Hide the boot splash screen
-await Device.BootSplash.hide(); // [!code focus]
-
 // @log: ↓ Share EXO with a friend :]
 Device.share('https://exo.ult.dev', 'EXO is amazing!'); // [!code focus]
 
-// @log: ↓ Query device states
+// @log: ↓ Query online status
 const online = await Device.isOnline(); // [!code focus]
-const booting = await Device.BootSplash.isVisible(); // [!code focus]
 
-// @log: ↓ Detect device locale
+// @log: ↓ Query device locale
 const locale = Device.getLocale(); // [!code focus]
 
 // @log: ↓ Or do whatever you want...

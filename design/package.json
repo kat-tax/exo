@@ -37,26 +37,26 @@
     }
   },
   "dependencies": {
-    "@lingui/core": "^4.10.0",
-    "@lingui/macro": "^4.10.0",
-    "@lingui/react": "^4.10.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "@lingui/core": "^4.11.2",
+    "@lingui/macro": "^4.11.2",
+    "@lingui/react": "^4.11.2",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
     "react-exo": "workspace:*",
-    "react-native": "^0.73.6",
-    "react-native-svg": "^15.1.0",
-    "react-native-unistyles": "^2.7.1",
-    "react-native-web": "^0.19.10",
+    "react-native": "^0.74.3",
+    "react-native-svg": "^15.4.0",
+    "react-native-unistyles": "^2.8.3",
+    "react-native-web": "^0.19.12",
     "react-redux": "^9.1.2",
-    "vite-plugin-node-polyfills": "^0.21.0"
+    "vite-plugin-node-polyfills": "^0.22.0"
   },
   "devDependencies": {
-    "@storybook/blocks": "^8.0.10",
-    "@storybook/react": "^8.0.8",
-    "@types/react": "^18.2.0",
-    "@types/react-dom": "^18.2.0",
+    "@storybook/blocks": "^8.2.2",
+    "@storybook/react": "^8.2.2",
+    "@types/react": "18.2.79",
+    "@types/react-dom": "18.2.25",
     "bundler": "workspace:*",
     "config": "workspace:*",
-    "typescript": "^5.3.2"
+    "typescript": "^5.5.3"
   }
 }
