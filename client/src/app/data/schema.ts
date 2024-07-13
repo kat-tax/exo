@@ -5,9 +5,6 @@ import * as S from '@effect/schema/Schema';
  * Data
  */
 
-export type SomeJson = typeof SomeJson.Type;
-export const SomeJson = S.Struct({foo: S.String, bar: S.Boolean});
-
 export type NonEmptyString50 = typeof NonEmptyString50.Type;
 export const NonEmptyString50 = _.String.pipe(
   S.minLength(1),
@@ -15,35 +12,60 @@ export const NonEmptyString50 = _.String.pipe(
   S.brand('NonEmptyString50'),
 );
 
+export type LabelData = typeof LabelData.Type;
+export const LabelData = S.Struct({icon: S.String, color: S.String});
+
 
 /**
  * Ids
  */
 
+export type ProfileId = typeof ProfileId.Type;
+export const ProfileId = _.id('Profile');
+
+export type AiPromptId = typeof AiPromptId.Type;
+export const AiPromptId = _.id('AiPrompt');
+
 export type TodoId = typeof TodoId.Type;
 export const TodoId = _.id('Todo');
 
-export type TodoCategoryId = typeof TodoCategoryId.Type;
-export const TodoCategoryId = _.id('TodoCategory');
-
+export type LabelId = typeof LabelId.Type;
+export const LabelId = _.id('Label');
 
 /**
  * Tables
  */
 
+export type ProfileTable = typeof ProfileTable.Type;
+export const ProfileTable = _.table({
+  id: ProfileId,
+  name: S.NullOr(NonEmptyString50),
+  groqKey: S.NullOr(_.NonEmptyString1000),
+  groqModel: S.NullOr(NonEmptyString50),
+});
+
+export type AiPromptTable = typeof AiPromptTable.Type;
+export const AiPromptTable = _.table({
+  id: AiPromptId,
+  model: NonEmptyString50,
+  prompt: _.NonEmptyString1000,
+  response: _.NonEmptyString1000,
+  isMultiline: S.NullOr(_.SqliteBoolean),
+});
+
 export type TodoTable = typeof TodoTable.Type;
 export const TodoTable = _.table({
   id: TodoId,
   title: _.NonEmptyString1000,
+  labelId: S.NullOr(LabelId),
   isCompleted: S.NullOr(_.SqliteBoolean),
-  categoryId: S.NullOr(TodoCategoryId),
 });
 
-export type TodoCategoryTable = typeof TodoCategoryTable.Type;
-export const TodoCategoryTable = _.table({
-  id: TodoCategoryId,
+export type LabelTable = typeof LabelTable.Type;
+export const LabelTable = _.table({
+  id: LabelId,
   name: NonEmptyString50,
-  json: S.NullOr(SomeJson),
+  data: S.NullOr(LabelData),
 });
 
 
@@ -53,8 +75,10 @@ export const TodoCategoryTable = _.table({
 
 export type Database = typeof Database.Type;
 export const Database = _.database({
+  profile: ProfileTable,
+  aiPrompt: AiPromptTable,
+  label: LabelTable,
   todo: TodoTable,
-  todoCategory: TodoCategoryTable,
 });
 
 
@@ -69,10 +93,10 @@ export const Database = _.database({
  */
 export const indexes = _.createIndexes((create) => [
   create('indexTodoCreatedAt').on('todo').column('createdAt'),
-  create('indexTodoCategoryCreatedAt').on('todoCategory').column('createdAt'),
+  create('indexLabelCreatedAt').on('label').column('createdAt'),
 ]);
 
-export interface TodoCategoryForSelect {
-  readonly id: TodoCategoryTable['id'];
-  readonly name: TodoCategoryTable['name'] | null;
+export interface LabelForSelect {
+  readonly id: LabelTable['id'];
+  readonly name: LabelTable['name'] | null;
 }

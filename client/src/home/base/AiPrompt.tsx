@@ -1,4 +1,5 @@
 import {t} from '@lingui/macro';
+import {useQuery} from '@evolu/react-native';
 import {useLingui} from '@lingui/react';
 import {useRef, useState} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
@@ -7,21 +8,22 @@ import {Link} from 'react-exo/navigation';
 import {Markdown} from 'app/base/Markdown';
 import {PageLoading} from 'app/base/PageLoading';
 import {formatDate} from 'home/utils/time';
-import {useGroqKey} from 'settings/hooks/useGroqKey';
-import {useGroqModel} from 'settings/hooks/useGroqModel';
 import {useAI} from 'home/hooks/useAI';
 import {Icon} from 'react-exo/icon';
+import {profile} from 'app/data';
 
 const DEFAULT_MODEL = 'llama3-8b-8192';
 
 export function AiPrompt() {
+  const {row} = useQuery(profile);
   const {i18n} = useLingui();
-  const [model] = useGroqModel();
-  const [apiKey] = useGroqKey();
   const {styles, theme} = useStyles(stylesheet);
   const [multiline, setMultiline] = useState(false);
+  const apiKey = row?.groqKey || '';
+  const model = row?.groqModel || DEFAULT_MODEL;
   const input = useRef<TextInput>(null);
-  const ai = useAI(apiKey, model || DEFAULT_MODEL, input);
+  const ai = useAI(apiKey, model, input);
+
   return (
     <>
       <View style={styles.prompt}>

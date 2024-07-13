@@ -1,31 +1,26 @@
 import {Trans as T} from '@lingui/macro';
 import {Trans} from '@lingui/react';
 import {Text, View} from 'react-native';
-import {useQuery} from '@evolu/react-native';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {useDisplayName} from 'settings/hooks/useDisplayName';
+import {useQuery} from '@evolu/react-native';
 import {useClock} from 'home/hooks/useClock';
 import {useWeather} from 'home/hooks/useWeather';
 import {getDayGreeting} from 'home/utils/time';
 import {AiPrompt} from 'home/base/AiPrompt';
 import {Page} from 'app/base/Page';
-import {todosWithCategories} from "app/data";
-
+import {profile} from 'app/data';
 
 export default function ScreenHome() {
+  const {row} = useQuery(profile);
   const {styles} = useStyles(stylesheet);
-  const [displayName] = useDisplayName();
   const weather = useWeather();
   const clock = useClock();
 
-  const {rows} = useQuery(todosWithCategories);
-  console.log(rows);
-  
   return (
     <Page
       title={<Trans id={getDayGreeting().id}/>}
-      message={displayName
-        ? <T>{`Welcome, ${displayName}`}</T>
+      message={row?.name
+        ? <T>{`Welcome, ${row.name}`}</T>
         : <T>{`Welcome, Human`}</T>}
       widget={
         <View style={styles.widget}>
@@ -38,11 +33,6 @@ export default function ScreenHome() {
         </View>
       }>
       <AiPrompt/>
-      <View>
-        {rows.map((row) => (
-          <Text key={row.id}>{row.title}</Text>
-        ))}
-      </View>
     </Page>
   );
 }

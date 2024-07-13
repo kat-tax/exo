@@ -8,51 +8,25 @@ export const createDatabase = () => _.createEvolu($.Database, {
   indexes: $.indexes,
   ...(__DEV__ && {syncUrl: 'http://localhost:4000'}),
   initialData: (evolu) => {
-    const {id: categoryId} = evolu.create('todoCategory', {
+    // Initial profile for new account
+    evolu.create('profile', {
+      name: null,
+      groqKey: null,
+      groqModel: S.decodeSync($.NonEmptyString50)('llama3-8b'),
+    });
+    // Dummy data
+    const {id: labelId} = evolu.create('label', {
       name: S.decodeSync($.NonEmptyString50)('Not Urgent'),
     });
     evolu.create('todo', {
       title: S.decodeSync(_.NonEmptyString1000)('Try React Suspense'),
-      categoryId,
+      labelId,
     });
   },
   // minimumLogLevel: 'trace',
 });
 
 export const evolu = createDatabase();
-
-export const todoCategories = evolu.createQuery((db) => db
-  .selectFrom('todoCategory')
-  .select(['id', 'name', 'json'])
-  .where('isDeleted', 'is not', _.cast(true))
-  // Filter null value and ensure non-null type.
-  .where('name', 'is not', null)
-  .$narrowType<{name: _.NotNull}>()
-  .orderBy('createdAt'),
-);
-
-// Evolu queries should be collocated. If necessary, they can be preloaded.
-export const todosWithCategories = evolu.createQuery((db) => db
-  .selectFrom('todo')
-  .select(['id', 'title', 'isCompleted', 'categoryId'])
-  .where('isDeleted', 'is not', _.cast(true))
-  // Filter null value and ensure non-null type.
-  .where('title', 'is not', null)
-  .$narrowType<{title: _.NotNull}>()
-  .orderBy('createdAt')
-  // https://kysely.dev/docs/recipes/relations
-  .select((eb) => [
-    _.jsonArrayFrom(eb
-      .selectFrom('todoCategory')
-      .select(['todoCategory.id', 'todoCategory.name'])
-      .where('isDeleted', 'is not', _.cast(true))
-      .orderBy('createdAt'),
-    ).as('categories'),
-  ]), {
-    // logQueryExecutionTime: true,
-    // logExplainQueryPlan: true,
-  },
-);
 
 export function Database(props: React.PropsWithChildren) {
   return (
@@ -61,3 +35,43 @@ export function Database(props: React.PropsWithChildren) {
     </_.EvoluProvider>
   )
 }
+
+export const profile = evolu.createQuery((db) => db
+  .selectFrom('profile')
+  .select(['id', 'name', 'groqKey', 'groqModel'])
+  .where('isDeleted', 'is not', _.cast(true))
+  .orderBy('createdAt')
+  .limit(1)
+);
+
+export const label = evolu.createQuery((db) => db
+  .selectFrom('label')
+  .select(['id', 'name', 'data'])
+  .where('isDeleted', 'is not', _.cast(true))
+  // Filter null value and ensure non-null type.
+  .where('name', 'is not', null)
+  .$narrowType<{name: _.NotNull}>()
+  .orderBy('createdAt')
+);
+
+export const note = evolu.createQuery((db) => db
+  .selectFrom('todo')
+  .select(['id', 'title', 'isCompleted', 'labelId'])
+  .where('isDeleted', 'is not', _.cast(true))
+  // Filter null value and ensure non-null type.
+  .where('title', 'is not', null)
+  .$narrowType<{title: _.NotNull}>()
+  .orderBy('createdAt')
+  // https://kysely.dev/docs/recipes/relations
+  .select((eb) => [
+    _.jsonArrayFrom(eb
+      .selectFrom('label')
+      .select(['label.id', 'label.name'])
+      .where('isDeleted', 'is not', _.cast(true))
+      .orderBy('createdAt'),
+    ).as('categories')
+  ]), {
+    // logQueryExecutionTime: true,
+    // logExplainQueryPlan: true,
+  },
+);

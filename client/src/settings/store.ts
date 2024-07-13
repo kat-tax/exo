@@ -7,9 +7,6 @@ import type {Locales} from 'config/locales';
 export type Settings = {
   locale?: Locales,
   scheme?: ColorSchemeName,
-  groqKey?: string,
-  groqModel?: string,
-  displayName?: string,
 }
 
 export default createSlice({
@@ -18,9 +15,6 @@ export default createSlice({
   selectors: {
     getLocale: (settings) => settings.locale,
     getScheme: (settings) => settings.scheme,
-    getGroqKey: (settings) => settings.groqKey,
-    getGroqModel: (settings) => settings.groqModel,
-    getDisplayName: (settings) => settings.displayName,
   },
   reducers: {
     setLocale(settings, action: PayloadAction<Locales>) {
@@ -28,15 +22,6 @@ export default createSlice({
     },
     setScheme(settings, action: PayloadAction<ColorSchemeName>) {
       settings.scheme = action.payload;
-    },
-    setGroqKey(settings, action: PayloadAction<string>) {
-      settings.groqKey = action.payload;
-    },
-    setGroqModel(settings, action: PayloadAction<string>) {
-      settings.groqModel = action.payload;
-    },
-    setDisplayName(settings, action: PayloadAction<string>) {
-      settings.displayName = action.payload;
     },
   },
 });

@@ -1,84 +1,148 @@
+import * as S from '@effect/schema/Schema';
 import {View, Text, TextInput, Platform} from 'react-native';
-import {Picker} from 'react-exo/picker';
-import {alert} from 'react-exo/toast';
-import {Button} from 'design';
+import {Effect, Either, Function} from 'effect';
 import {Trans, t} from '@lingui/macro';
+import {alert} from 'react-exo/toast';
+import {Picker} from 'react-exo/picker';
+import {useState} from 'react';
 import {useLingui} from '@lingui/react';
 import {useDispatch} from 'react-redux';
+import {useEvolu, useOwner, useQuery, parseMnemonic, NonEmptyString1000} from '@evolu/react-native';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {useDisplayName} from 'settings/hooks/useDisplayName';
-import {useGroqModel} from 'settings/hooks/useGroqModel';
-import {useGroqKey} from 'settings/hooks/useGroqKey';
-import {useLocale} from 'settings/hooks/useLocale';
 import {useScheme} from 'settings/hooks/useScheme';
-import {locales} from 'config/locales';
+import {useLocale} from 'settings/hooks/useLocale';
+import {Identicon} from 'app/base/Identicon';
 import {Page} from 'app/base/Page';
+import {Button} from 'design';
+import {locales} from 'config/locales';
+import {profile} from 'app/data';
 import home from 'home/store';
 
+import {Database, NonEmptyString50} from 'app/data/schema';
+
 export default function ScreenSettings() {
+  const evolu = useEvolu<Database>();
+  const owner = useOwner();
+  const {row} = useQuery(profile);
   const {i18n} = useLingui();
   const {styles, theme} = useStyles(stylesheet);
-  const [name, setName] = useDisplayName();
   const [locale, setLocale] = useLocale(true);
   const [scheme, setScheme] = useScheme(true);
-  const [model, setModel] = useGroqModel();
-  const [groq, setGroq] = useGroqKey();
+  const [isKeyVisible, setKeyVisible] = useState(false);
+
   const dispatch = useDispatch();
 
   const resetPrompts = () => {
-    // TODO: replace with modal
-    const confirmed = window.confirm(t(i18n)`Are you sure you want to reset your prompt history?`);
-    if (confirmed) {
-      dispatch(home.actions.clearPrompts());
-      alert({
-        title: t(i18n)`Prompt History Reset`,
-        message: t(i18n)`Your prompt history has been reset.`,
-        preset: 'done',
-      });
-    }
+    if (!window.confirm(t(i18n)`Are you sure you want to reset your prompt history?`)) return;
+    dispatch(home.actions.clearPrompts());
+    alert({
+      title: t(i18n)`Prompt History Reset`,
+      message: t(i18n)`Your prompt history has been reset.`,
+      preset: 'done',
+    });
   };
 
-  const resetCalendar = () => {
-    // TODO: replace with modal
-    const confirmed = window.confirm(t(i18n)`Are you sure you want to reset your calendar data?`);
-    if (confirmed) {
-      alert({
-        title: t(i18n)`Calendar Data Reset`,
-        message: t(i18n)`Your calendar has been reset.`,
-        preset: 'done',
-      });
-    }
+  const resetOwner = () => {
+    if (!window.confirm(t(i18n)`Are you sure you want to reset your local database? If data is not backed up on another device, it will be lost. This action cannot be undone.`)) return;
+    evolu.resetOwner();
+  };
+
+  const changeOwner = (key: string) => {
+    if (!key || key === owner?.mnemonic) return;
+    if (!window.confirm(t(i18n)`Are you sure you want to change the owner key? This will reset the local database. This action cannot be undone.`)) return;
+    Effect.runPromise(parseMnemonic(key))
+      .then(parsed => evolu.restoreOwner(parsed, {reload: true}))
+      .catch(error => alert(error));
+  };
+
+  const updateName = (text: string) => {
+    if (!row?.id) return;
+    Either.match(S.decodeUnknownEither(NonEmptyString50)(text), {
+      onLeft: Function.constVoid,
+      onRight: (name) => evolu.update('profile', {name, id: row.id}),
+    });
+  };
+
+  const updateGroqKey = (text: string) => {
+    if (!row?.id) return;
+    Either.match(S.decodeUnknownEither(NonEmptyString1000)(text), {
+      onLeft: Function.constVoid,
+      onRight: (groqKey) => evolu.update('profile', {groqKey, id: row.id}),
+    });
+  };
+
+  const updateGroqModel = (text: string) => {
+    if (!row?.id) return;
+    Either.match(S.decodeUnknownEither(NonEmptyString50)(text), {
+      onLeft: Function.constVoid,
+      onRight: (groqModel) => evolu.update('profile', {groqModel, id: row.id}),
+    });
   };
 
   return (
     <Page
       title={<Trans>Settings</Trans>}
-      message={<Trans>Manage your settings</Trans>}>
+      message={<Trans>Manage your settings</Trans>}
+      widget={<Identicon width={48} height={48}/>}>
       <View style={styles.content}>
         <View style={styles.group}>
           <Text style={styles.header}>
-            <Trans>Display</Trans>
+            <Trans>Account</Trans>
           </Text>
           <View style={styles.option}>
             <View style={styles.info}>
               <Text style={styles.label}>
-                <Trans>Display Name</Trans>
+                <Trans>User Name</Trans>
               </Text>
               <Text style={styles.description}>
-                <Trans>Set a display name for yourself.</Trans>
+                <Trans>Your name to display in the app.</Trans>
               </Text>
             </View>
             <View>
               <TextInput
                 style={styles.input}
-                selectTextOnFocus
-                placeholder={t(i18n)`Enter alias`}
-                defaultValue={name}
+                maxLength={50}
+                defaultValue={row?.name?.toString()}
+                onChangeText={updateName}
+                placeholder={t(i18n)`Enter your name`}
                 placeholderTextColor={theme.colors.mutedForeground}
-                onChangeText={setName}
               />
             </View>
           </View>
+          <View style={styles.option}>
+            <View style={styles.info}>
+              <Text style={styles.label}>
+                <Trans>Owner Key</Trans>
+              </Text>
+              <Text style={styles.description}>
+                <Trans>A mnemonic phrase for authentication.</Trans>
+              </Text>
+            </View>
+            <View style={styles.ownerKey}>
+              <TextInput
+                style={styles.input}
+                selectTextOnFocus
+                secureTextEntry={!isKeyVisible}
+                defaultValue={owner?.mnemonic}
+                placeholder={t(i18n)`Enter your mnemonic phrase`}
+                placeholderTextColor={theme.colors.mutedForeground}
+                importantForAutofill="no"
+                autoCapitalize="none"
+                autoComplete="off"
+                autoCorrect={false}
+                onFocus={() => setKeyVisible(true)}
+                onBlur={e => {
+                  setKeyVisible(false);
+                  changeOwner(e.nativeEvent.text);
+                }}
+              />
+            </View>
+          </View>
+        </View>
+        <View style={styles.group}>
+          <Text style={styles.header}>
+            <Trans>Display</Trans>
+          </Text>
           <View style={styles.option}>
             <View style={styles.info}>
               <Text style={styles.label}>
@@ -192,9 +256,9 @@ export default function ScreenSettings() {
                 style={styles.input}
                 selectTextOnFocus
                 placeholder={t(i18n)`Enter api key`}
-                defaultValue={groq}
+                defaultValue={row?.groqKey?.toString()}
                 placeholderTextColor={theme.colors.mutedForeground}
-                onChangeText={setGroq}
+                onBlur={e => updateGroqKey(e.nativeEvent.text)}
               />
             </View>
           </View>
@@ -212,8 +276,8 @@ export default function ScreenSettings() {
                 style={styles.select}
                 itemStyle={styles.selectItem}
                 dropdownIconColor={theme.colors.foreground}
-                selectedValue={model}
-                onValueChange={setModel}>
+                selectedValue={row?.groqModel?.toString()}
+                onValueChange={updateGroqModel}>
                 <Picker.Item label="llama3-8b" value="llama3-8b-8192" color={theme.colors.foreground}/>
                 <Picker.Item label="llama3-70b" value="llama3-70b-8192" color={theme.colors.foreground}/>
                 <Picker.Item label="mixtral-8x7b" value="mixtral-8x7b-32768" color={theme.colors.foreground}/>
@@ -247,24 +311,6 @@ export default function ScreenSettings() {
           <View style={styles.option}>
             <View style={styles.info}>
               <Text style={styles.label}>
-                <Trans>Calendar</Trans>
-              </Text>
-              <Text style={styles.description}>
-                <Trans>Delete all calendar data.</Trans>
-              </Text>
-            </View>
-            <View>
-              <Button
-                label={t(i18n)`Delete Calendar`}
-                mode="Destructive"
-                state="Default"
-                onPress={resetCalendar}
-              />
-            </View>
-          </View>
-          <View style={styles.option}>
-            <View style={styles.info}>
-              <Text style={styles.label}>
                 <Trans>All Data</Trans>
               </Text>
               <Text style={styles.description}>
@@ -276,7 +322,7 @@ export default function ScreenSettings() {
                 label={t(i18n)`Delete Database`}
                 mode="Destructive"
                 state="Default"
-                onPress={undefined}
+                onPress={resetOwner}
               />
             </View>
           </View>
@@ -385,5 +431,12 @@ const stylesheet = createStyleSheet(theme => ({
   },
   selectItem: {
     color: theme.colors.foreground,
+  },
+  ownerKey: {
+    flex: 1,
+    maxWidth: 500,
+    width: {
+      xs: '100%',
+    },
   },
 }));

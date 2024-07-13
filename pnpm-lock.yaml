@@ -82,6 +82,9 @@ importers:
       ai:
         specifier: ^3.2.22
         version: 3.2.22(react@18.2.0)(svelte@4.2.18)(vue@3.4.31)(zod@3.23.8)
+      blo:
+        specifier: ^1.2.0
+        version: 1.2.0
       burnt:
         specifier: ^0.12.2
         version: 0.12.2(expo@51.0.20)(react-dom@18.2.0)(react-native@0.74.3)(react@18.2.0)
@@ -10905,6 +10908,11 @@ packages:
       inherits: 2.0.4
       readable-stream: 3.6.2
     dev: true
+
+  /blo@1.2.0:
+    resolution: {integrity: sha512-bZES7RzJ14B4WBT3JuOHSOAvCBmUhqznrojQ8xRjN1Fx9X9N7R+rygOFS3k4wXel2nFg4lwzL3luAYzObaDLng==}
+    engines: {node: '>=16'}
+    dev: false
 
   /bn.js@4.12.0:
     resolution: {integrity: sha512-c98Bf3tPniI+scsdk237ku1Dc3ujXQTSgyiPUDEOe7tRkhrqridvh8klBv0HCEso1OLOYcHuCv/cS6DNxKH+ZA==}

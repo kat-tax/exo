@@ -8,5 +8,3 @@ import AppRoot from 'app';
 import config from 'config';
 
 AppRegistry.registerComponent(config.APP_NAME, () => AppRoot);
-
-console.log(config.APP_NAME);

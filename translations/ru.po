@@ -18,23 +18,31 @@ msgstr ""
 msgid "{0} components"
 msgstr "{0} компонентов"
 
+#: ../../client/src/settings/routes/ScreenSettings.tsx:101
+msgid "A mnemonic phrase for authentication."
+msgstr ""
+
 #: ../../client/src/tasks/base/TasksInput.tsx:21
 msgid "Add a task"
 msgstr "Добавить задачу"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:179
+#: ../../client/src/settings/routes/ScreenSettings.tsx:229
 msgid "AI"
 msgstr "ИИ"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:268
+#: ../../client/src/settings/routes/ScreenSettings.tsx:300
 msgid "All Data"
 msgstr "Все данные"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:43
-msgid "Are you sure you want to reset your calendar data?"
-msgstr "Вы уверены, что хотите сбросить данные календаря?"
+#: ../../client/src/settings/routes/ScreenSettings.tsx:57
+msgid "Are you sure you want to change the owner key? This will reset the local database. This action cannot be undone."
+msgstr ""
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:30
+#: ../../client/src/settings/routes/ScreenSettings.tsx:49
+msgid "Are you sure you want to reset your local database? If data is not backed up on another device, it will be lost. This action cannot be undone."
+msgstr ""
+
+#: ../../client/src/settings/routes/ScreenSettings.tsx:36
 msgid "Are you sure you want to reset your prompt history?"
 msgstr "Вы уверены, что хотите сбросить историю приглашений?"
 
@@ -42,21 +50,16 @@ msgstr "Вы уверены, что хотите сбросить историю
 msgid "Ask anything..."
 msgstr "Задайте любой вопрос..."
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:100
-#: ../../client/src/settings/routes/ScreenSettings.tsx:128
+#: ../../client/src/settings/routes/ScreenSettings.tsx:150
+#: ../../client/src/settings/routes/ScreenSettings.tsx:178
 msgid "Auto"
 msgstr "Авто"
 
 #: ../../client/src/app/base/Menu.tsx:32
-#: ../../client/src/settings/routes/ScreenSettings.tsx:250
 msgid "Calendar"
 msgstr "Календарь"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:46
-msgid "Calendar Data Reset"
-msgstr "Сброс данных календаря"
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:130
+#: ../../client/src/settings/routes/ScreenSettings.tsx:180
 msgid "Dark"
 msgstr "Тёмное"
 
@@ -64,31 +67,23 @@ msgstr "Тёмное"
 msgid "Dashboard"
 msgstr "Панель"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:227
+#: ../../client/src/settings/routes/ScreenSettings.tsx:277
 msgid "Data"
 msgstr "Данные"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:253
-msgid "Delete all calendar data."
-msgstr "Удалить все данные календаря."
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:235
+#: ../../client/src/settings/routes/ScreenSettings.tsx:285
 msgid "Delete all prompt data."
 msgstr "Удалить все данные приглашений."
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:258
-msgid "Delete Calendar"
-msgstr "Удалить календарь"
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:276
+#: ../../client/src/settings/routes/ScreenSettings.tsx:308
 msgid "Delete Database"
 msgstr "Удалить базу данных"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:240
+#: ../../client/src/settings/routes/ScreenSettings.tsx:290
 msgid "Delete Prompts"
 msgstr "Удалить приглашения"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:271
+#: ../../client/src/settings/routes/ScreenSettings.tsx:303
 msgid "Delete the local database."
 msgstr "Удалить локальную базу данных."
 
@@ -97,15 +92,11 @@ msgstr "Удалить локальную базу данных."
 msgid "Design"
 msgstr "Дизайн"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:60
+#: ../../client/src/settings/routes/ScreenSettings.tsx:130
 msgid "Display"
 msgstr "Отображение"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:65
-msgid "Display Name"
-msgstr "Отображаемое имя"
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:158
+#: ../../client/src/settings/routes/ScreenSettings.tsx:208
 msgid "Distance"
 msgstr "Расстояние"
 
@@ -117,13 +108,17 @@ msgstr "Наслаждайтесь днём"
 msgid "Enjoy the night"
 msgstr "Наслаждайтесь ночью"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:75
-msgid "Enter alias"
-msgstr "Введите псевдоним"
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:194
+#: ../../client/src/settings/routes/ScreenSettings.tsx:244
 msgid "Enter api key"
 msgstr "Введите ключ API"
+
+#: ../../client/src/settings/routes/ScreenSettings.tsx:110
+msgid "Enter your mnemonic phrase"
+msgstr ""
+
+#: ../../client/src/settings/routes/ScreenSettings.tsx:89
+msgid "Enter your name"
+msgstr ""
 
 #: ../../client/src/home/utils/time.ts:8
 msgid "Good afternoon"
@@ -137,15 +132,15 @@ msgstr "Добрый вечер"
 msgid "Good morning"
 msgstr "Доброе утро"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:184
+#: ../../client/src/settings/routes/ScreenSettings.tsx:234
 msgid "Groq API Key"
 msgstr "Ключ API Groq"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:204
+#: ../../client/src/settings/routes/ScreenSettings.tsx:254
 msgid "Groq Model ID"
 msgstr "Идентификатор модели Groq"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:85
+#: ../../client/src/settings/routes/ScreenSettings.tsx:135
 msgid "Language"
 msgstr "Язык"
 
@@ -154,56 +149,60 @@ msgstr "Язык"
 msgid "Library"
 msgstr "Библиотека"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:129
+#: ../../client/src/settings/routes/ScreenSettings.tsx:179
 msgid "Light"
 msgstr "Светлое"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:56
+#: ../../client/src/settings/routes/ScreenSettings.tsx:68
 msgid "Manage your settings"
 msgstr "Управление настройками"
+
+#: ../../client/src/settings/routes/ScreenSettings.tsx:98
+msgid "Owner Key"
+msgstr ""
 
 #: ../../client/src/home/base/AiPrompt.tsx:49
 msgid "Please set your Groq API Key"
 msgstr "Пожалуйста, установите ключ API Groq"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:34
+#: ../../client/src/settings/routes/ScreenSettings.tsx:72
+msgid "Profile"
+msgstr ""
+
+#: ../../client/src/settings/routes/ScreenSettings.tsx:40
 msgid "Prompt History Reset"
 msgstr "Сброс истории приглашений"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:232
+#: ../../client/src/settings/routes/ScreenSettings.tsx:282
 msgid "Prompts"
 msgstr "Приглашения"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:187
+#: ../../client/src/settings/routes/ScreenSettings.tsx:237
 msgid "Provide a key to use AI features."
 msgstr "Предоставьте ключ для использования функций ИИ."
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:207
+#: ../../client/src/settings/routes/ScreenSettings.tsx:257
 msgid "Select the AI model to use."
 msgstr "Выберите модель ИИ для использования."
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:161
+#: ../../client/src/settings/routes/ScreenSettings.tsx:211
 msgid "Select the distance unit for the app."
 msgstr "Выберите единицу измерения для приложения."
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:89
+#: ../../client/src/settings/routes/ScreenSettings.tsx:139
 msgid "Select the language for the app."
 msgstr "Выберите язык для приложения."
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:140
+#: ../../client/src/settings/routes/ScreenSettings.tsx:190
 msgid "Select the temperature unit for the app."
 msgstr "Выберите единицу измерения температуры для приложения."
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:118
+#: ../../client/src/settings/routes/ScreenSettings.tsx:168
 msgid "Select the theme for the app."
 msgstr "Выберите тему для приложения."
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:68
-msgid "Set a display name for yourself."
-msgstr "Установите отображаемое имя для себя."
-
 #: ../../client/src/app/base/Menu.tsx:70
-#: ../../client/src/settings/routes/ScreenSettings.tsx:55
+#: ../../client/src/settings/routes/ScreenSettings.tsx:67
 msgid "Settings"
 msgstr "Настройки"
 
@@ -212,19 +211,23 @@ msgstr "Настройки"
 msgid "Tasks"
 msgstr "Задачи"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:137
+#: ../../client/src/settings/routes/ScreenSettings.tsx:187
 msgid "Temperature"
 msgstr "Температура"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:115
+#: ../../client/src/settings/routes/ScreenSettings.tsx:165
 msgid "Theme"
 msgstr "Тема"
 
-#: ../../client/src/home/routes/ScreenHome.tsx:28
+#: ../../client/src/settings/routes/ScreenSettings.tsx:77
+msgid "User Name"
+msgstr ""
+
+#: ../../client/src/home/routes/ScreenHome.tsx:22
 msgid "Welcome, {displayName}"
 msgstr "Добро пожаловать, {displayName}"
 
-#: ../../client/src/home/routes/ScreenHome.tsx:29
+#: ../../client/src/home/routes/ScreenHome.tsx:23
 msgid "Welcome, Human"
 msgstr "Добро пожаловать, Человек"
 
@@ -236,10 +239,10 @@ msgstr "Вы оффлайн"
 msgid "You are online"
 msgstr "Вы онлайн"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:47
-msgid "Your calendar has been reset."
-msgstr "Календарь был сброшен."
+#: ../../client/src/settings/routes/ScreenSettings.tsx:80
+msgid "Your name to display in the app."
+msgstr ""
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:35
+#: ../../client/src/settings/routes/ScreenSettings.tsx:41
 msgid "Your prompt history has been reset."
 msgstr "История приглашений была сброшена."
