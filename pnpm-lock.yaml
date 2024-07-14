@@ -530,6 +530,15 @@ importers:
         specifier: ^0.26.4
         version: 0.26.4(typescript@5.5.3)
 
+  server:
+    dependencies:
+      '@evolu/server':
+        specifier: 7.0.13
+        version: 7.0.13(@evolu/common@5.2.3)(express@4.19.2)
+      effect:
+        specifier: 3.5.3
+        version: 3.5.3
+
   toolkit/bundler:
     devDependencies:
       '@lingui/core':
@@ -3995,6 +4004,24 @@ packages:
       '@evolu/common-react': 8.0.5(@evolu/common@5.2.3)(react@18.2.0)
       '@evolu/common-web': 8.1.1(@evolu/common@5.2.3)(@sqlite.org/sqlite-wasm@3.46.0-build2)
       react-dom: 18.2.0(react@18.2.0)
+    dev: false
+
+  /@evolu/server@7.0.13(@evolu/common@5.2.3)(express@4.19.2):
+    resolution: {integrity: sha512-Pov54pv9QIdZ/1Mw1DUaAhBML/+MkYJO422H0+PUmCJJ66nHVvhZlIwgb3FpVSUbtuqNmvzhyiZJLFE/NT7ZYQ==}
+    engines: {node: '>=16.15'}
+    peerDependencies:
+      '@evolu/common': ^5.2.3
+      express: ^4.19.2
+    dependencies:
+      '@evolu/common': 5.2.3(@effect/platform@0.58.27)(@effect/schema@0.68.23)(effect@3.5.3)
+      better-sqlite3: 11.1.2
+      body-parser: 1.20.2
+      cors: 2.8.5
+      effect: 3.5.3
+      express: 4.19.2
+      kysely: 0.27.4
+    transitivePeerDependencies:
+      - supports-color
     dev: false
 
   /@expo/bunyan@4.0.0:
@@ -10899,6 +10926,14 @@ packages:
       open: 8.4.2
     dev: false
 
+  /better-sqlite3@11.1.2:
+    resolution: {integrity: sha512-gujtFwavWU4MSPT+h9B+4pkvZdyOUkH54zgLdIrMmmmd4ZqiBIrRNBzNzYVFO417xo882uP5HBu4GjOfaSrIQw==}
+    requiresBuild: true
+    dependencies:
+      bindings: 1.5.0
+      prebuild-install: 7.1.2
+    dev: false
+
   /big-integer@1.6.52:
     resolution: {integrity: sha512-QxD8cf2eVqJOOz63z6JIN9BzvVs/dlySa5HGSBH5xtR8dPteIRQnBxxKqkNTiT6jbDTF6jAfrd4oMcND9RGbQg==}
     engines: {node: '>=0.6'}
@@ -10907,6 +10942,12 @@ packages:
   /binary-extensions@2.2.0:
     resolution: {integrity: sha512-jDctJ/IVQbZoJykoeHbhXpOlNBqGNcwXJKJog42E5HDPUwQTSdjCHdihjj0DlnheQ7blbT6dHOafNAiS8ooQKA==}
     engines: {node: '>=8'}
+
+  /bindings@1.5.0:
+    resolution: {integrity: sha512-p2q/t/mhvuOj/UeLlV6566GD/guowlr0hHxClI0W9m7MWYkL1F0hLo+0Aexs9HSPCtR1SXQ0TD3MMKrXZajbiQ==}
+    dependencies:
+      file-uri-to-path: 1.0.0
+    dev: false
 
   /bl@4.1.0:
     resolution: {integrity: sha512-1W07cM9gS6DcLperZfFSj+bWLtaPGSOHWhPiGzXmvVJbRLdG82sH/Kn8EtW1VqWVA54AKf2h5k5BbnIbwF3h6w==}
@@ -11681,6 +11722,14 @@ packages:
 
   /core-util-is@1.0.3:
     resolution: {integrity: sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==}
+
+  /cors@2.8.5:
+    resolution: {integrity: sha512-KIHbLJqu73RGr/hnbrO9uBeixNGuvSQjul/jdFvS/KFSIH1hWVd1ng7zOHx+YrEfInLG7q4n6GHQ9cDtxv/P6g==}
+    engines: {node: '>= 0.10'}
+    dependencies:
+      object-assign: 4.1.1
+      vary: 1.1.2
+    dev: false
 
   /cosmiconfig@5.2.1:
     resolution: {integrity: sha512-H65gsXo1SKjf8zmrJ67eJk8aIRKV5ff2D4uKZIBZShbhGSpEmsQOPW/SKMKYhSTrqR7ufy6RP69rPogdaPh/kA==}
@@ -13031,6 +13080,10 @@ packages:
     dependencies:
       escape-string-regexp: 1.0.5
     dev: true
+
+  /file-uri-to-path@1.0.0:
+    resolution: {integrity: sha512-0Zt+s3L7Vf1biwWZ29aARiVYLx7iMGnEUl9x33fbB/j3jR81u/O2LbqK+Bm1CDSNDKVtJ/YjwY7TUd5SkeLQLw==}
+    dev: false
 
   /fill-range@7.0.1:
     resolution: {integrity: sha512-qOo9F+dMUmC2Lcb4BbVvnKJxTPjCm+RRpe4gDuGrzkL7mEVl/djYSu2OdQ2Pa302N4oqkSg9ir6jaLWJ2USVpQ==}

@@ -4,4 +4,5 @@ packages:
   - 'library/**'
   - 'locales/**'
   - 'toolkit/**'
+  - 'server/**'
   - '!**/test/**'

@@ -24,3 +24,6 @@ PACKAGE_IOS: com.exo.ios
 PACKAGE_MACOS: com.exo.macos
 PACKAGE_ANDROID: com.exo.android
 PACKAGE_WINDOWS: com.exo.windows
+
+# Backend
+SYNC_HOST: 'https://evolu.world'

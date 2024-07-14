@@ -1,14 +1,15 @@
 import * as _ from '@evolu/react-native';
 import * as S from '@effect/schema/Schema';
 import * as $ from './schema';
+import config from 'config';
 
 export * from './schema';
 
 export const createDatabase = () => _.createEvolu($.Database, {
   indexes: $.indexes,
   syncUrl: __DEV__
-    ? 'http://localhost:4000'
-    : 'https://evolu.world',
+    ? 'http://localhost:6306'
+    : config.SYNC_HOST,
   initialData: (evolu) => {
     // Initial profile for new account
     evolu.create('profile', {
