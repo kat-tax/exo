@@ -64,6 +64,9 @@ importers:
       '@react-native-community/checkbox':
         specifier: ^0.5.17
         version: 0.5.17(react-native-windows@0.74.11)(react-native@0.74.3)(react@18.2.0)
+      '@react-native-community/geolocation':
+        specifier: ^3.3.0
+        version: 3.3.0(react-native@0.74.3)(react@18.2.0)
       '@react-native-community/netinfo':
         specifier: ^11.3.2
         version: 11.3.2(react-native@0.74.3)
@@ -7616,6 +7619,17 @@ packages:
       - encoding
       - supports-color
       - utf-8-validate
+
+  /@react-native-community/geolocation@3.3.0(react-native@0.74.3)(react@18.2.0):
+    resolution: {integrity: sha512-7DFeuotH7m7ImoXffN3TmlGSFn1XjvsaphPort0XZKipssYbdHiKhVVWG+jzisvDhcXikUc6nbUJgddVBL6RDg==}
+    engines: {node: '>=18.0.0'}
+    peerDependencies:
+      react: '*'
+      react-native: '*'
+    dependencies:
+      react: 18.2.0
+      react-native: 0.74.3(@babel/core@7.24.8)(@babel/preset-env@7.24.8)(@types/react@18.2.79)(react@18.2.0)
+    dev: false
 
   /@react-native-community/netinfo@11.3.2(react-native@0.74.3):
     resolution: {integrity: sha512-YsaS3Dutnzqd1BEoeC+DEcuNJedYRkN6Ef3kftT5Sm8ExnCF94C/nl4laNxuvFli3+Jz8Df3jO25Jn8A9S0h4w==}

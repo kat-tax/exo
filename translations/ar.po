@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 2024-07-01 21:00-0500\n"
+"POT-Creation-Date: 2024-07-13 12:42-0500\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -16,74 +16,78 @@ msgstr ""
 #: ../../client/src/dev/routes/ScreenDesign.tsx:12
 #: ../../client/src/dev/routes/ScreenLibrary.tsx:16
 msgid "{0} components"
-msgstr "{0} مكونت"
+msgstr "{0} مكونات"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:101
+#: ../../client/src/settings/routes/ScreenSettings.tsx:59
 msgid "A mnemonic phrase for authentication."
-msgstr ""
+msgstr "عبارة تذكيرية للمصادقة."
 
 #: ../../client/src/tasks/base/TasksInput.tsx:21
 msgid "Add a task"
-msgstr "إضافة تسجيل"
+msgstr "أضف مهمة"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:229
+#: ../../client/src/settings/routes/ScreenSettings.tsx:184
 msgid "AI"
-msgstr "ذكاء الصوت"
+msgstr "الذكاء الاصطناعي"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:300
+#: ../../client/src/settings/routes/ScreenSettings.tsx:255
 msgid "All Data"
 msgstr "كل البيانات"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:57
+#: ../../client/src/settings/hooks/useSettings.ts:58
 msgid "Are you sure you want to change the owner key? This will reset the local database. This action cannot be undone."
-msgstr ""
+msgstr "هل أنت متأكد أنك تريد تغيير مفتاح المالك؟ سيؤدي ذلك إلى إعادة تعيين قاعدة البيانات المحلية. لا يمكن التراجع عن هذا الإجراء."
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:49
+#: ../../client/src/settings/hooks/useSettings.ts:52
 msgid "Are you sure you want to reset your local database? If data is not backed up on another device, it will be lost. This action cannot be undone."
-msgstr ""
+msgstr "هل أنت متأكد أنك تريد إعادة تعيين قاعدة البيانات المحلية؟ إذا لم يتم نسخ البيانات احتياطيًا على جهاز آخر، فسيتم فقدها. لا يمكن التراجع عن هذا الإجراء."
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:36
+#: ../../client/src/settings/hooks/useSettings.ts:42
 msgid "Are you sure you want to reset your prompt history?"
-msgstr "هل أنت متأكد أنك تريد إعادة تعيين سجل الاستعلامات؟"
+msgstr "هل أنت متأكد أنك تريد إعادة تعيين سجل المطالبات الخاص بك؟"
 
-#: ../../client/src/home/base/AiPrompt.tsx:49
+#: ../../client/src/home/base/AiPrompt.tsx:51
 msgid "Ask anything..."
-msgstr "استعلام أي شيء..."
+msgstr "اسأل أي شيء..."
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:150
-#: ../../client/src/settings/routes/ScreenSettings.tsx:178
+#: ../../client/src/settings/routes/ScreenSettings.tsx:105
+#: ../../client/src/settings/routes/ScreenSettings.tsx:133
 msgid "Auto"
 msgstr "تلقائي"
 
 #: ../../client/src/app/base/Menu.tsx:32
 msgid "Calendar"
-msgstr "تقويم"
+msgstr "التقويم"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:180
+#: ../../client/src/settings/routes/ScreenSettings.tsx:155
+msgid "Celsius"
+msgstr "درجة مئوية"
+
+#: ../../client/src/settings/routes/ScreenSettings.tsx:135
 msgid "Dark"
 msgstr "داكن"
 
 #: ../../client/src/app/base/Menu.tsx:26
 msgid "Dashboard"
-msgstr "لوحة المعلومات"
+msgstr "لوحة القيادة"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:277
+#: ../../client/src/settings/routes/ScreenSettings.tsx:232
 msgid "Data"
-msgstr "بيانات"
+msgstr "البيانات"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:285
+#: ../../client/src/settings/routes/ScreenSettings.tsx:240
 msgid "Delete all prompt data."
-msgstr "حذف كل بيانات المسجيل."
+msgstr "حذف جميع بيانات المطالبات."
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:308
+#: ../../client/src/settings/routes/ScreenSettings.tsx:263
 msgid "Delete Database"
 msgstr "حذف قاعدة البيانات"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:290
+#: ../../client/src/settings/routes/ScreenSettings.tsx:245
 msgid "Delete Prompts"
-msgstr "حذف المسجيلات"
+msgstr "حذف المطالبات"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:303
+#: ../../client/src/settings/routes/ScreenSettings.tsx:258
 msgid "Delete the local database."
 msgstr "حذف قاعدة البيانات المحلية."
 
@@ -92,157 +96,181 @@ msgstr "حذف قاعدة البيانات المحلية."
 msgid "Design"
 msgstr "تصميم"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:130
+#: ../../client/src/settings/routes/ScreenSettings.tsx:85
 msgid "Display"
 msgstr "عرض"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:208
+#: ../../client/src/settings/routes/ScreenSettings.tsx:163
 msgid "Distance"
-msgstr "مسافة"
+msgstr "المسافة"
 
 #: ../../client/src/home/utils/time.ts:14
 msgid "Enjoy the day"
-msgstr "استمتع باليوم"
+msgstr "استمتع بيومك"
 
 #: ../../client/src/home/utils/time.ts:12
 msgid "Enjoy the night"
-msgstr "استمتع بالنهاية العصرية"
+msgstr "استمتع بليلتك"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:244
+#: ../../client/src/settings/routes/ScreenSettings.tsx:199
 msgid "Enter api key"
 msgstr "أدخل مفتاح API"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:110
+#: ../../client/src/settings/routes/ScreenSettings.tsx:68
 msgid "Enter your mnemonic phrase"
-msgstr ""
+msgstr "أدخل العبارة التذكيرية الخاصة بك"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:89
+#: ../../client/src/settings/routes/ScreenSettings.tsx:48
 msgid "Enter your name"
+msgstr "أدخل اسمك"
+
+#: ../../client/src/settings/routes/ScreenSettings.tsx:156
+msgid "Fahrenheit"
+msgstr "فهرنهايت"
+
+#: ../../client/src/home/hooks/useLocation.ts:22
+msgid "Geo Location Failure"
 msgstr ""
 
 #: ../../client/src/home/utils/time.ts:8
 msgid "Good afternoon"
-msgstr "صعود مسائي"
+msgstr "مساء الخير"
 
 #: ../../client/src/home/utils/time.ts:10
 msgid "Good evening"
-msgstr "صعود مسائي"
+msgstr "مساء الخير"
 
 #: ../../client/src/home/utils/time.ts:6
 msgid "Good morning"
-msgstr "صعود مسائي"
+msgstr "صباح الخير"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:234
+#: ../../client/src/settings/routes/ScreenSettings.tsx:189
 msgid "Groq API Key"
-msgstr "مفتاح API Groq"
+msgstr "مفتاح Groq API"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:254
+#: ../../client/src/home/hooks/useAI.tsx:40
+msgid "Groq Failure"
+msgstr ""
+
+#: ../../client/src/settings/routes/ScreenSettings.tsx:209
 msgid "Groq Model ID"
-msgstr "معرف النموذج Groq"
+msgstr "معرف نموذج Groq"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:135
+#: ../../client/src/settings/routes/ScreenSettings.tsx:176
+msgid "Kilometers"
+msgstr "كيلومترات"
+
+#: ../../client/src/settings/routes/ScreenSettings.tsx:90
 msgid "Language"
-msgstr "لغة"
+msgstr "اللغة"
 
 #: ../../client/src/app/base/Menu.tsx:62
 #: ../../client/src/dev/routes/ScreenLibrary.tsx:15
 msgid "Library"
 msgstr "مكتبة"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:179
+#: ../../client/src/settings/routes/ScreenSettings.tsx:134
 msgid "Light"
 msgstr "فاتح"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:68
+#: ../../client/src/settings/routes/ScreenSettings.tsx:26
 msgid "Manage your settings"
 msgstr "إدارة إعداداتك"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:98
-msgid "Owner Key"
+#: ../../client/src/settings/routes/ScreenSettings.tsx:177
+msgid "Miles"
+msgstr "أميال"
+
+#: ../../client/src/events/routes/ScreenCalendar.tsx:56
+msgid "No events scheduled."
 msgstr ""
 
-#: ../../client/src/home/base/AiPrompt.tsx:49
-msgid "Please set your Groq API Key"
-msgstr "يرجى تعيين مفتاح API Groq الخاص بك"
+#: ../../client/src/settings/routes/ScreenSettings.tsx:56
+msgid "Owner Key"
+msgstr "مفتاح المالك"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:72
+#: ../../client/src/home/base/AiPrompt.tsx:51
+msgid "Please set your Groq API Key"
+msgstr "يرجى تعيين مفتاح Groq API الخاص بك"
+
+#: ../../client/src/settings/routes/ScreenSettings.tsx:31
 msgid "Profile"
 msgstr ""
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:40
+#: ../../client/src/settings/hooks/useSettings.ts:45
 msgid "Prompt History Reset"
-msgstr "إعادة تعيين سجل الاستعلامات"
-
-#: ../../client/src/settings/routes/ScreenSettings.tsx:282
-msgid "Prompts"
-msgstr "مسجيلات"
+msgstr "إعادة تعيين سجل المطالبات"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:237
+msgid "Prompts"
+msgstr "المطالبات"
+
+#: ../../client/src/settings/routes/ScreenSettings.tsx:192
 msgid "Provide a key to use AI features."
-msgstr "يرجى تعيين مفتاح لاستخدام ميزات الذكاء الصوتي."
+msgstr "قدم مفتاحًا لاستخدام ميزات الذكاء الاصطناعي."
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:257
+#: ../../client/src/settings/routes/ScreenSettings.tsx:212
 msgid "Select the AI model to use."
-msgstr "إختر نموذج الذكاء الصوتي المستخدم."
+msgstr "حدد نموذج الذكاء الاصطناعي للاستخدام."
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:211
+#: ../../client/src/settings/routes/ScreenSettings.tsx:166
 msgid "Select the distance unit for the app."
-msgstr "إختر وحد المسافة للتطبيق."
+msgstr "حدد وحدة المسافة للتطبيق."
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:139
+#: ../../client/src/settings/routes/ScreenSettings.tsx:94
 msgid "Select the language for the app."
-msgstr "إختر لغة التطبيق."
+msgstr "حدد لغة التطبيق."
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:190
+#: ../../client/src/settings/routes/ScreenSettings.tsx:145
 msgid "Select the temperature unit for the app."
-msgstr "إختر وحد الحرارة للتطبيق."
+msgstr "حدد وحدة درجة الحرارة للتطبيق."
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:168
+#: ../../client/src/settings/routes/ScreenSettings.tsx:123
 msgid "Select the theme for the app."
-msgstr "إختر وضع التطبيق."
+msgstr "حدد سمة التطبيق."
 
 #: ../../client/src/app/base/Menu.tsx:70
-#: ../../client/src/settings/routes/ScreenSettings.tsx:67
+#: ../../client/src/settings/routes/ScreenSettings.tsx:25
 msgid "Settings"
-msgstr "إعدادات"
+msgstr "الإعدادات"
 
 #: ../../client/src/app/base/Menu.tsx:38
 #: ../../client/src/tasks/routes/TaskList.tsx:13
 msgid "Tasks"
-msgstr "مسجيلات"
+msgstr "المهام"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:187
+#: ../../client/src/settings/routes/ScreenSettings.tsx:142
 msgid "Temperature"
-msgstr "حرارة"
+msgstr "درجة الحرارة"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:165
+#: ../../client/src/settings/routes/ScreenSettings.tsx:120
 msgid "Theme"
-msgstr "وضع"
+msgstr "السمة"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:77
+#: ../../client/src/settings/routes/ScreenSettings.tsx:36
 msgid "User Name"
-msgstr ""
-
-#: ../../client/src/home/routes/ScreenHome.tsx:22
-msgid "Welcome, {displayName}"
-msgstr "مرحبا بك {displayName}"
+msgstr "اسم المستخدم"
 
 #: ../../client/src/home/routes/ScreenHome.tsx:23
+msgid "Welcome, {0}"
+msgstr "مرحبًا، {0}"
+
+#: ../../client/src/home/routes/ScreenHome.tsx:24
 msgid "Welcome, Human"
-msgstr "مرحبا بك الشخص"
+msgstr "مرحبًا، أيها الإنسان"
 
 #: ../../client/src/app/hooks/useOnline.ts:15
 msgid "You are offline"
-msgstr "ليس لديك إنترنت"
+msgstr "أنت غير متصل"
 
 #: ../../client/src/app/hooks/useOnline.ts:13
 msgid "You are online"
-msgstr "لديك إنترنت"
+msgstr "أنت متصل"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:80
+#: ../../client/src/settings/routes/ScreenSettings.tsx:39
 msgid "Your name to display in the app."
-msgstr ""
+msgstr "اسمك للعرض في التطبيق."
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:41
+#: ../../client/src/settings/hooks/useSettings.ts:46
 msgid "Your prompt history has been reset."
-msgstr "تم إعادة تعيين سجل الاستعلامات الخاص بك."
+msgstr "تمت إعادة تعيين سجل المطالبات الخاص بك."

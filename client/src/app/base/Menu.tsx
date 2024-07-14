@@ -80,7 +80,7 @@ export function Menu(props: MenuProps) {
 const stylesheet = createStyleSheet(theme => ({
   bg: {
     flex: 1,
-    backgroundColor: theme.colors.secondary,
+    backgroundColor: theme.colors.background,
   },
   root: {
     flex: 1,

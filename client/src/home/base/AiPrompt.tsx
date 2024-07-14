@@ -5,11 +5,11 @@ import {useRef, useState} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {Text, View, TextInput, Pressable} from 'react-native';
 import {Link} from 'react-exo/navigation';
+import {Icon} from 'react-exo/icon';
 import {Markdown} from 'app/base/Markdown';
 import {PageLoading} from 'app/base/PageLoading';
 import {formatDate} from 'home/utils/time';
 import {useAI} from 'home/hooks/useAI';
-import {Icon} from 'react-exo/icon';
 import {profile} from 'app/data';
 
 const DEFAULT_MODEL = 'llama3-8b-8192';
@@ -22,7 +22,7 @@ export function AiPrompt() {
   const apiKey = row?.groqKey || '';
   const model = row?.groqModel || DEFAULT_MODEL;
   const input = useRef<TextInput>(null);
-  const ai = useAI(apiKey, model, input);
+  const ai = useAI(input, model, apiKey);
 
   return (
     <>
@@ -31,15 +31,15 @@ export function AiPrompt() {
           <View style={styles.wrapper}>
             <TextInput
               style={styles.input}
-              value={ai.response?.[0]}
-              multiline={ai.response?.[3]}
-              numberOfLines={ai.response?.[3] ? 8 : undefined}
+              value={ai.response?.prompt ?? ''}
+              multiline={ai.response?.isMultiline ? true : false}
+              numberOfLines={ai.response?.isMultiline ? 8 : undefined}
               onKeyPress={(e) => ai.navigate(e)}
               autoFocus
               readOnly
             />
             <Text style={styles.timestamp}>
-              {`${formatDate(new Date(ai.response?.[2]))} (${ai.response?.[4] ?? DEFAULT_MODEL})`}
+              {`${formatDate(new Date(ai.response?.createdAt ?? ''))} (${ai.response?.model ?? DEFAULT_MODEL})`}
             </Text>
           </View>
         }
@@ -50,7 +50,7 @@ export function AiPrompt() {
               style={styles.input}
               placeholder={apiKey ? t(i18n)`Ask anything...` : t(i18n)`Please set your Groq API Key`}
               placeholderTextColor={theme.colors.mutedForeground}
-              onSubmitEditing={(e) => e.nativeEvent.text && ai.prompt(e.nativeEvent.text, multiline)}
+              onSubmitEditing={(e) => e.nativeEvent.text && ai.promptText(e.nativeEvent.text, multiline)}
               onKeyPress={(e) => ai.navigate(e, multiline ? () => setMultiline(false) : undefined)}
               blurOnSubmit={false}
               multiline={multiline}
@@ -89,7 +89,7 @@ export function AiPrompt() {
                 onPress={() => {
                   // @ts-ignore
                   const text = input.current?.value;
-                  if (text) ai.prompt(text, true);
+                  if (text) ai.promptText(text, true);
                 }}>
                 <Icon
                   name="ph:paper-plane-right"
@@ -103,7 +103,7 @@ export function AiPrompt() {
       </View>
       <View style={styles.response}>
         {ai.dirty && ai.response && !ai.loading &&
-          <Markdown text={ai.response[1]}/>
+          <Markdown text={ai.response?.response ?? ''}/>
         }
         {ai.loading &&
           <PageLoading indicator={{size: 'small'}}/>

@@ -6,7 +6,9 @@ export * from './schema';
 
 export const createDatabase = () => _.createEvolu($.Database, {
   indexes: $.indexes,
-  ...(__DEV__ && {syncUrl: 'http://localhost:4000'}),
+  syncUrl: __DEV__
+    ? 'http://localhost:4000'
+    : 'https://evolu.world',
   initialData: (evolu) => {
     // Initial profile for new account
     evolu.create('profile', {
@@ -36,7 +38,7 @@ export function Database(props: React.PropsWithChildren) {
   )
 }
 
-export const profile = evolu.createQuery((db) => db
+export const profile = evolu.createQuery(db => db
   .selectFrom('profile')
   .select(['id', 'name', 'groqKey', 'groqModel'])
   .where('isDeleted', 'is not', _.cast(true))
@@ -44,7 +46,7 @@ export const profile = evolu.createQuery((db) => db
   .limit(1)
 );
 
-export const label = evolu.createQuery((db) => db
+export const label = evolu.createQuery(db => db
   .selectFrom('label')
   .select(['id', 'name', 'data'])
   .where('isDeleted', 'is not', _.cast(true))
@@ -54,7 +56,21 @@ export const label = evolu.createQuery((db) => db
   .orderBy('createdAt')
 );
 
-export const note = evolu.createQuery((db) => db
+export const prompts = evolu.createQuery(db => db
+  .selectFrom('aiPrompt')
+  .select(['id'])
+  .where('isDeleted', 'is not', _.cast(true))
+  .orderBy('createdAt')
+);
+
+export const prompt = evolu.createQuery(db => db
+  .selectFrom('aiPrompt')
+  .select(['id', 'model', 'prompt', 'response', 'isMultiline', 'createdAt'])
+  .where('isDeleted', 'is not', _.cast(true))
+  .limit(1)
+);
+
+export const note = evolu.createQuery(db => db
   .selectFrom('todo')
   .select(['id', 'title', 'isCompleted', 'labelId'])
   .where('isDeleted', 'is not', _.cast(true))

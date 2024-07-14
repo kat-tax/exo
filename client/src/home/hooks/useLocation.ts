@@ -1,21 +1,36 @@
+import {t} from '@lingui/macro';
+import {toast} from 'react-exo/toast';
+import {useLingui} from '@lingui/react';
 import {useEffect, useState} from 'react';
+import Geolocation from '@react-native-community/geolocation';
 
 export type Location = [number, number];
 
 export function useLocation() {
   const [location, setLocation] = useState<Location>([0,0]);
+  const {i18n} = useLingui();
 
   useEffect(() => {
-    const query = () => {
-      navigator.geolocation.getCurrentPosition((position) => {
-        console.log(position);
+    const watchId = Geolocation.watchPosition(
+      (position) => {
         const {latitude, longitude} = position.coords;
         setLocation([latitude, longitude]);
-      });
-    }
-    query();
-    const i = setInterval(query, 1000);
-    return () => clearInterval(i);
+      },
+      (error) => {
+        toast({
+          preset: 'error',
+          title: t(i18n)`Geo Location Failure`,
+          message: error.message,
+        });
+      },
+      {
+        enableHighAccuracy: true,
+        interval: 2000,
+        distanceFilter: 2,
+        fastestInterval: 1000,
+      },
+    );
+    return () => Geolocation.clearWatch(watchId);
   }, []);
 
   return location;

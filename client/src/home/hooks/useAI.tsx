@@ -1,55 +1,49 @@
+import {t} from '@lingui/macro';
 import {generateText} from 'ai';
 import {createOpenAI} from '@ai-sdk/openai';
 import {useState, useMemo, useCallback} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
+import {useQuery, useEvolu, cast} from '@evolu/react-native';
+import {useLingui} from '@lingui/react';
+import {prompts, prompt} from 'app/data';
 import {toast} from 'react-exo/toast';
-
-import home from 'home/store';
 
 const baseURL = 'https://api.groq.com/openai/v1';
 
-import type {State} from 'app/store';
 import type {TextInput, NativeSyntheticEvent, TextInputKeyPressEventData} from 'react-native';
 
 export function useAI(
-  apiKey: string,
-  model: string,
   input: React.RefObject<TextInput>,
+  model: string,
+  apiKey: string,
 ) {
   const [index, setIndex] = useState<number | null>(null);
   const [dirty, setDirty] = useState(false);
   const [loading, setLoading] = useState(false);
-  const dispatch = useDispatch();
   const provider = useMemo(() => createOpenAI({baseURL, apiKey}), [apiKey]);
-  const response = useSelector((state: State) => home.selectors.getPrompt(state, index ?? 1));
-  const history = useSelector(home.selectors.getPromptCount);
+  const apiModel = useMemo(() => provider(model), [model, provider]);
+  //const response = useSelector((state: State) => home.selectors.getPrompt(state, index ?? 1));
+  const {create} = useEvolu();
+  const {rows} = useQuery(prompts);
+  const {row} = useQuery(prompt);
+  const {i18n} = useLingui();
 
-  const prompt = useCallback(async (prompt: string, multiLine?: boolean) => {
+  const promptText = useCallback(async (prompt: string, multi: boolean = false) => {
     setLoading(true);
     if (prompt.length > 0) {
       try {
-        const {text} = await generateText({
-          model: provider(model),
-          prompt,
-        });
-        dispatch(home.actions.addPrompt([
-          prompt,
-          text,
-          Date.now(),
-          multiLine ?? false,
-          model,
-        ]));
+        const {text} = await generateText({model: apiModel, prompt});
+        create('prompts', {prompt, text, model, isMultiLine: cast(multi)});
         setDirty(true);
       } catch (e) {
         toast({
-          title: 'Groq Failure',
-          message: (e as Error).message,
           preset: 'error',
+          title: t(i18n)`Groq Failure`,
+          message: (e as Error).message,
         });
       }
     }
     setLoading(false);
-  }, [model]);
+  }, [apiModel]);
 
   const navigate = useCallback((
     e: NativeSyntheticEvent<TextInputKeyPressEventData>,
@@ -66,7 +60,7 @@ export function useAI(
       e.preventDefault();
     } else if (key === 'ArrowUp') {
       if (clearMulti) return;
-      if (i >= history) return;
+      if (i >= rows.length) return;
       setDirty(true);
       setIndex(i + 1);
       e.preventDefault();
@@ -78,14 +72,14 @@ export function useAI(
       input.current?.clear();
       input.current?.focus();
     }
-  }, [index, history]);
+  }, [index, rows]);
 
   return {
-    response,
     loading,
-    prompt,
+    promptText,
     dirty,
     navigate,
-    archive: response && index !== null,
+    response: row,
+    archive: row && index !== null,
   };
 }

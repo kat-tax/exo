@@ -15,7 +15,6 @@ export const NonEmptyString50 = _.String.pipe(
 export type LabelData = typeof LabelData.Type;
 export const LabelData = S.Struct({icon: S.String, color: S.String});
 
-
 /**
  * Ids
  */
@@ -68,7 +67,6 @@ export const LabelTable = _.table({
   data: S.NullOr(LabelData),
 });
 
-
 /**
  * Databases
  */
@@ -80,7 +78,6 @@ export const Database = _.database({
   label: LabelTable,
   todo: TodoTable,
 });
-
 
 /**
  * Indexes

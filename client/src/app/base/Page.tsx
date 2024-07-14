@@ -45,7 +45,6 @@ const stylesheet = createStyleSheet(theme => ({
     alignSelf: 'center',
     gap: theme.display.space5,
     padding: theme.display.space5,
-    backgroundColor: theme.colors.background,
     minWidth: {
       initial: '100%',
       md: 900,
@@ -67,6 +66,7 @@ const stylesheet = createStyleSheet(theme => ({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'flex-start',
+    marginTop: theme.display.space5,
     marginBottom: theme.display.space3,
   },
   title: {

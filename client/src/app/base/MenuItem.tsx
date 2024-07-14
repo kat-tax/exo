@@ -21,7 +21,7 @@ export function MenuItem(props: MenuItemProps) {
   const itemActive = props.path === decodeURIComponent(pathname);
   const isDarkMode = scheme === 'dark';
   const backgroundColor = isDarkMode
-    ? 'rgba(255, 255, 255, 0.15)'
+    ? 'rgba(255, 255, 255, 0.09)'
     : 'rgba(0, 0, 0, 0.07)';
 
   return (

@@ -1,83 +1,24 @@
-import * as S from '@effect/schema/Schema';
 import {View, Text, TextInput, Platform} from 'react-native';
-import {Effect, Either, Function} from 'effect';
 import {Trans, t} from '@lingui/macro';
-import {alert} from 'react-exo/toast';
 import {Picker} from 'react-exo/picker';
 import {useState} from 'react';
 import {useLingui} from '@lingui/react';
-import {useDispatch} from 'react-redux';
-import {useEvolu, useOwner, useQuery, parseMnemonic, NonEmptyString1000} from '@evolu/react-native';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
+import {useSettings} from 'settings/hooks/useSettings';
 import {useScheme} from 'settings/hooks/useScheme';
 import {useLocale} from 'settings/hooks/useLocale';
 import {Identicon} from 'app/base/Identicon';
 import {Page} from 'app/base/Page';
 import {Button} from 'design';
 import {locales} from 'config/locales';
-import {profile} from 'app/data';
-import home from 'home/store';
-
-import {Database, NonEmptyString50} from 'app/data/schema';
 
 export default function ScreenSettings() {
-  const evolu = useEvolu<Database>();
-  const owner = useOwner();
-  const {row} = useQuery(profile);
+  const settings = useSettings();
   const {i18n} = useLingui();
   const {styles, theme} = useStyles(stylesheet);
   const [locale, setLocale] = useLocale(true);
   const [scheme, setScheme] = useScheme(true);
   const [isKeyVisible, setKeyVisible] = useState(false);
-
-  const dispatch = useDispatch();
-
-  const resetPrompts = () => {
-    if (!window.confirm(t(i18n)`Are you sure you want to reset your prompt history?`)) return;
-    dispatch(home.actions.clearPrompts());
-    alert({
-      title: t(i18n)`Prompt History Reset`,
-      message: t(i18n)`Your prompt history has been reset.`,
-      preset: 'done',
-    });
-  };
-
-  const resetOwner = () => {
-    if (!window.confirm(t(i18n)`Are you sure you want to reset your local database? If data is not backed up on another device, it will be lost. This action cannot be undone.`)) return;
-    evolu.resetOwner();
-  };
-
-  const changeOwner = (key: string) => {
-    if (!key || key === owner?.mnemonic) return;
-    if (!window.confirm(t(i18n)`Are you sure you want to change the owner key? This will reset the local database. This action cannot be undone.`)) return;
-    Effect.runPromise(parseMnemonic(key))
-      .then(parsed => evolu.restoreOwner(parsed, {reload: true}))
-      .catch(error => alert(error));
-  };
-
-  const updateName = (text: string) => {
-    if (!row?.id) return;
-    Either.match(S.decodeUnknownEither(NonEmptyString50)(text), {
-      onLeft: Function.constVoid,
-      onRight: (name) => evolu.update('profile', {name, id: row.id}),
-    });
-  };
-
-  const updateGroqKey = (text: string) => {
-    if (!row?.id) return;
-    Either.match(S.decodeUnknownEither(NonEmptyString1000)(text), {
-      onLeft: Function.constVoid,
-      onRight: (groqKey) => evolu.update('profile', {groqKey, id: row.id}),
-    });
-  };
-
-  const updateGroqModel = (text: string) => {
-    if (!row?.id) return;
-    Either.match(S.decodeUnknownEither(NonEmptyString50)(text), {
-      onLeft: Function.constVoid,
-      onRight: (groqModel) => evolu.update('profile', {groqModel, id: row.id}),
-    });
-  };
 
   return (
     <Page
@@ -87,7 +28,7 @@ export default function ScreenSettings() {
       <View style={styles.content}>
         <View style={styles.group}>
           <Text style={styles.header}>
-            <Trans>Account</Trans>
+            <Trans>Profile</Trans>
           </Text>
           <View style={styles.option}>
             <View style={styles.info}>
@@ -102,8 +43,8 @@ export default function ScreenSettings() {
               <TextInput
                 style={styles.input}
                 maxLength={50}
-                defaultValue={row?.name?.toString()}
-                onChangeText={updateName}
+                defaultValue={settings.profile?.name?.toString()}
+                onChangeText={settings.updateName}
                 placeholder={t(i18n)`Enter your name`}
                 placeholderTextColor={theme.colors.mutedForeground}
               />
@@ -123,7 +64,7 @@ export default function ScreenSettings() {
                 style={styles.input}
                 selectTextOnFocus
                 secureTextEntry={!isKeyVisible}
-                defaultValue={owner?.mnemonic}
+                defaultValue={settings.owner?.mnemonic}
                 placeholder={t(i18n)`Enter your mnemonic phrase`}
                 placeholderTextColor={theme.colors.mutedForeground}
                 importantForAutofill="no"
@@ -133,7 +74,7 @@ export default function ScreenSettings() {
                 onFocus={() => setKeyVisible(true)}
                 onBlur={e => {
                   setKeyVisible(false);
-                  changeOwner(e.nativeEvent.text);
+                  settings.changeOwner(e.nativeEvent.text);
                 }}
               />
             </View>
@@ -211,8 +152,8 @@ export default function ScreenSettings() {
                 dropdownIconColor={theme.colors.foreground}
                 selectedValue={undefined}
                 onValueChange={undefined}>
-                <Picker.Item label="Celsius" value="c" color={theme.colors.foreground}/>
-                <Picker.Item label="Fahrenheit" value="f" color={theme.colors.foreground}/>
+                <Picker.Item label={t(i18n)`Celsius`} value="c" color={theme.colors.foreground}/>
+                <Picker.Item label={t(i18n)`Fahrenheit`} value="f" color={theme.colors.foreground}/>
               </Picker>
             </View>
           </View>
@@ -232,8 +173,8 @@ export default function ScreenSettings() {
                 dropdownIconColor={theme.colors.foreground}
                 selectedValue={undefined}
                 onValueChange={undefined}>
-                <Picker.Item label="Kilometers" value="km" color={theme.colors.foreground}/>
-                <Picker.Item label="Miles" value="mi" color={theme.colors.foreground}/>
+                <Picker.Item label={t(i18n)`Kilometers`} value="km" color={theme.colors.foreground}/>
+                <Picker.Item label={t(i18n)`Miles`} value="mi" color={theme.colors.foreground}/>
               </Picker>
             </View>
           </View>
@@ -256,9 +197,9 @@ export default function ScreenSettings() {
                 style={styles.input}
                 selectTextOnFocus
                 placeholder={t(i18n)`Enter api key`}
-                defaultValue={row?.groqKey?.toString()}
+                defaultValue={settings.profile?.groqKey?.toString()}
                 placeholderTextColor={theme.colors.mutedForeground}
-                onBlur={e => updateGroqKey(e.nativeEvent.text)}
+                onBlur={e => settings.updateGroqKey(e.nativeEvent.text)}
               />
             </View>
           </View>
@@ -276,8 +217,8 @@ export default function ScreenSettings() {
                 style={styles.select}
                 itemStyle={styles.selectItem}
                 dropdownIconColor={theme.colors.foreground}
-                selectedValue={row?.groqModel?.toString()}
-                onValueChange={updateGroqModel}>
+                selectedValue={settings.profile?.groqModel?.toString()}
+                onValueChange={settings.updateGroqModel}>
                 <Picker.Item label="llama3-8b" value="llama3-8b-8192" color={theme.colors.foreground}/>
                 <Picker.Item label="llama3-70b" value="llama3-70b-8192" color={theme.colors.foreground}/>
                 <Picker.Item label="mixtral-8x7b" value="mixtral-8x7b-32768" color={theme.colors.foreground}/>
@@ -304,7 +245,7 @@ export default function ScreenSettings() {
                 label={t(i18n)`Delete Prompts`}
                 mode="Destructive"
                 state="Default"
-                onPress={resetPrompts}
+                onPress={settings.resetPrompts}
               />
             </View>
           </View>
@@ -322,7 +263,7 @@ export default function ScreenSettings() {
                 label={t(i18n)`Delete Database`}
                 mode="Destructive"
                 state="Default"
-                onPress={resetOwner}
+                onPress={settings.resetOwner}
               />
             </View>
           </View>
@@ -331,7 +272,6 @@ export default function ScreenSettings() {
     </Page>
   );
 }
-
 
 const stylesheet = createStyleSheet(theme => ({
   content: {

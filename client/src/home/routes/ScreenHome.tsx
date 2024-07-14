@@ -1,5 +1,5 @@
-import {Trans as T} from '@lingui/macro';
 import {Trans} from '@lingui/react';
+import {Trans as T} from '@lingui/macro';
 import {Text, View} from 'react-native';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useQuery} from '@evolu/react-native';
@@ -14,14 +14,15 @@ export default function ScreenHome() {
   const {row} = useQuery(profile);
   const {styles} = useStyles(stylesheet);
   const weather = useWeather();
-  const clock = useClock();
+  const clock = useClock('medium');
 
   return (
     <Page
       title={<Trans id={getDayGreeting().id}/>}
       message={row?.name
         ? <T>{`Welcome, ${row.name}`}</T>
-        : <T>{`Welcome, Human`}</T>}
+        : <T>{`Welcome, Human`}</T>
+      }
       widget={
         <View style={styles.widget}>
           <Text style={styles.clock}>

@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 2024-07-01 21:00-0500\n"
+"POT-Creation-Date: 2024-07-13 12:42-0500\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -18,40 +18,40 @@ msgstr ""
 msgid "{0} components"
 msgstr "{0} コンポーネント"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:101
+#: ../../client/src/settings/routes/ScreenSettings.tsx:59
 msgid "A mnemonic phrase for authentication."
-msgstr ""
+msgstr "認証のためのニーモニックフレーズ。"
 
 #: ../../client/src/tasks/base/TasksInput.tsx:21
 msgid "Add a task"
 msgstr "タスクを追加"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:229
+#: ../../client/src/settings/routes/ScreenSettings.tsx:184
 msgid "AI"
 msgstr "AI"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:300
+#: ../../client/src/settings/routes/ScreenSettings.tsx:255
 msgid "All Data"
 msgstr "すべてのデータ"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:57
+#: ../../client/src/settings/hooks/useSettings.ts:58
 msgid "Are you sure you want to change the owner key? This will reset the local database. This action cannot be undone."
-msgstr ""
+msgstr "オーナーキーを変更してもよろしいですか？これによりローカルデータベースがリセットされます。この操作は元に戻せません。"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:49
+#: ../../client/src/settings/hooks/useSettings.ts:52
 msgid "Are you sure you want to reset your local database? If data is not backed up on another device, it will be lost. This action cannot be undone."
-msgstr ""
+msgstr "ローカルデータベースをリセットしてもよろしいですか？データが他のデバイスにバックアップされていない場合、失われます。この操作は元に戻せません。"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:36
+#: ../../client/src/settings/hooks/useSettings.ts:42
 msgid "Are you sure you want to reset your prompt history?"
-msgstr "プロンプト履歴をリセットしますか？"
+msgstr "プロンプト履歴をリセットしてもよろしいですか？"
 
-#: ../../client/src/home/base/AiPrompt.tsx:49
+#: ../../client/src/home/base/AiPrompt.tsx:51
 msgid "Ask anything..."
-msgstr "なにか聞いてみましょう..."
+msgstr "何でも聞いてください..."
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:150
-#: ../../client/src/settings/routes/ScreenSettings.tsx:178
+#: ../../client/src/settings/routes/ScreenSettings.tsx:105
+#: ../../client/src/settings/routes/ScreenSettings.tsx:133
 msgid "Auto"
 msgstr "自動"
 
@@ -59,7 +59,11 @@ msgstr "自動"
 msgid "Calendar"
 msgstr "カレンダー"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:180
+#: ../../client/src/settings/routes/ScreenSettings.tsx:155
+msgid "Celsius"
+msgstr "摂氏"
+
+#: ../../client/src/settings/routes/ScreenSettings.tsx:135
 msgid "Dark"
 msgstr "ダーク"
 
@@ -67,23 +71,23 @@ msgstr "ダーク"
 msgid "Dashboard"
 msgstr "ダッシュボード"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:277
+#: ../../client/src/settings/routes/ScreenSettings.tsx:232
 msgid "Data"
 msgstr "データ"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:285
+#: ../../client/src/settings/routes/ScreenSettings.tsx:240
 msgid "Delete all prompt data."
-msgstr "すべてのプロンプトデータを削除"
+msgstr "すべてのプロンプトデータを削除。"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:308
+#: ../../client/src/settings/routes/ScreenSettings.tsx:263
 msgid "Delete Database"
 msgstr "データベースを削除"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:290
+#: ../../client/src/settings/routes/ScreenSettings.tsx:245
 msgid "Delete Prompts"
 msgstr "プロンプトを削除"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:303
+#: ../../client/src/settings/routes/ScreenSettings.tsx:258
 msgid "Delete the local database."
 msgstr "ローカルデータベースを削除"
 
@@ -92,55 +96,71 @@ msgstr "ローカルデータベースを削除"
 msgid "Design"
 msgstr "デザイン"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:130
+#: ../../client/src/settings/routes/ScreenSettings.tsx:85
 msgid "Display"
 msgstr "表示"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:208
+#: ../../client/src/settings/routes/ScreenSettings.tsx:163
 msgid "Distance"
 msgstr "距離"
 
 #: ../../client/src/home/utils/time.ts:14
 msgid "Enjoy the day"
-msgstr "おつかみにくだけど"
+msgstr "良い一日を"
 
 #: ../../client/src/home/utils/time.ts:12
 msgid "Enjoy the night"
-msgstr "おつかみにくだけど"
+msgstr "良い夜を"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:244
+#: ../../client/src/settings/routes/ScreenSettings.tsx:199
 msgid "Enter api key"
 msgstr "APIキーを入力"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:110
+#: ../../client/src/settings/routes/ScreenSettings.tsx:68
 msgid "Enter your mnemonic phrase"
-msgstr ""
+msgstr "ニーモニックフレーズを入力"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:89
+#: ../../client/src/settings/routes/ScreenSettings.tsx:48
 msgid "Enter your name"
+msgstr "名前を入力"
+
+#: ../../client/src/settings/routes/ScreenSettings.tsx:156
+msgid "Fahrenheit"
+msgstr "華氏"
+
+#: ../../client/src/home/hooks/useLocation.ts:22
+msgid "Geo Location Failure"
 msgstr ""
 
 #: ../../client/src/home/utils/time.ts:8
 msgid "Good afternoon"
-msgstr "おつかみにくだけど"
+msgstr "こんにちは"
 
 #: ../../client/src/home/utils/time.ts:10
 msgid "Good evening"
-msgstr "おつかみにくだけど"
+msgstr "こんばんは"
 
 #: ../../client/src/home/utils/time.ts:6
 msgid "Good morning"
-msgstr "おつかみにくだけど"
+msgstr "おはようございます"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:234
+#: ../../client/src/settings/routes/ScreenSettings.tsx:189
 msgid "Groq API Key"
 msgstr "Groq APIキー"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:254
+#: ../../client/src/home/hooks/useAI.tsx:40
+msgid "Groq Failure"
+msgstr ""
+
+#: ../../client/src/settings/routes/ScreenSettings.tsx:209
 msgid "Groq Model ID"
 msgstr "GroqモデルID"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:135
+#: ../../client/src/settings/routes/ScreenSettings.tsx:176
+msgid "Kilometers"
+msgstr "キロメートル"
+
+#: ../../client/src/settings/routes/ScreenSettings.tsx:90
 msgid "Language"
 msgstr "言語"
 
@@ -149,60 +169,68 @@ msgstr "言語"
 msgid "Library"
 msgstr "ライブラリ"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:179
+#: ../../client/src/settings/routes/ScreenSettings.tsx:134
 msgid "Light"
 msgstr "ライト"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:68
+#: ../../client/src/settings/routes/ScreenSettings.tsx:26
 msgid "Manage your settings"
 msgstr "設定を管理"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:98
-msgid "Owner Key"
+#: ../../client/src/settings/routes/ScreenSettings.tsx:177
+msgid "Miles"
+msgstr "マイル"
+
+#: ../../client/src/events/routes/ScreenCalendar.tsx:56
+msgid "No events scheduled."
 msgstr ""
 
-#: ../../client/src/home/base/AiPrompt.tsx:49
-msgid "Please set your Groq API Key"
-msgstr "Groq APIキーを設定"
+#: ../../client/src/settings/routes/ScreenSettings.tsx:56
+msgid "Owner Key"
+msgstr "オーナーキー"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:72
+#: ../../client/src/home/base/AiPrompt.tsx:51
+msgid "Please set your Groq API Key"
+msgstr "Groq APIキーを設定してください"
+
+#: ../../client/src/settings/routes/ScreenSettings.tsx:31
 msgid "Profile"
 msgstr ""
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:40
+#: ../../client/src/settings/hooks/useSettings.ts:45
 msgid "Prompt History Reset"
-msgstr "プロンプト履歴をリセット"
+msgstr "プロンプト履歴のリセット"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:282
+#: ../../client/src/settings/routes/ScreenSettings.tsx:237
 msgid "Prompts"
 msgstr "プロンプト"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:237
+#: ../../client/src/settings/routes/ScreenSettings.tsx:192
 msgid "Provide a key to use AI features."
-msgstr "AI機能を使用するためのキーを提供"
+msgstr "AI機能を使用するためのキーを提供。"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:257
+#: ../../client/src/settings/routes/ScreenSettings.tsx:212
 msgid "Select the AI model to use."
-msgstr "使用するAIモデルを選択"
+msgstr "使用するAIモデルを選択。"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:211
+#: ../../client/src/settings/routes/ScreenSettings.tsx:166
 msgid "Select the distance unit for the app."
-msgstr "アプリの距離単位を選択"
+msgstr "アプリの距離単位を選択。"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:139
+#: ../../client/src/settings/routes/ScreenSettings.tsx:94
 msgid "Select the language for the app."
-msgstr "アプリの言語を選択"
+msgstr "アプリの言語を選択。"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:190
+#: ../../client/src/settings/routes/ScreenSettings.tsx:145
 msgid "Select the temperature unit for the app."
-msgstr "アプリの温度単位を選択"
+msgstr "アプリの温度単位を選択。"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:168
+#: ../../client/src/settings/routes/ScreenSettings.tsx:123
 msgid "Select the theme for the app."
-msgstr "アプリのテーマを選択"
+msgstr "アプリのテーマを選択。"
 
 #: ../../client/src/app/base/Menu.tsx:70
-#: ../../client/src/settings/routes/ScreenSettings.tsx:67
+#: ../../client/src/settings/routes/ScreenSettings.tsx:25
 msgid "Settings"
 msgstr "設定"
 
@@ -211,38 +239,38 @@ msgstr "設定"
 msgid "Tasks"
 msgstr "タスク"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:187
+#: ../../client/src/settings/routes/ScreenSettings.tsx:142
 msgid "Temperature"
 msgstr "温度"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:165
+#: ../../client/src/settings/routes/ScreenSettings.tsx:120
 msgid "Theme"
 msgstr "テーマ"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:77
+#: ../../client/src/settings/routes/ScreenSettings.tsx:36
 msgid "User Name"
-msgstr ""
-
-#: ../../client/src/home/routes/ScreenHome.tsx:22
-msgid "Welcome, {displayName}"
-msgstr "ようこそ、{displayName}"
+msgstr "ユーザー名"
 
 #: ../../client/src/home/routes/ScreenHome.tsx:23
+msgid "Welcome, {0}"
+msgstr "ようこそ、{0}"
+
+#: ../../client/src/home/routes/ScreenHome.tsx:24
 msgid "Welcome, Human"
 msgstr "ようこそ、人間"
 
 #: ../../client/src/app/hooks/useOnline.ts:15
 msgid "You are offline"
-msgstr "オフライン"
+msgstr "オフラインです"
 
 #: ../../client/src/app/hooks/useOnline.ts:13
 msgid "You are online"
-msgstr "オンライン"
+msgstr "オンラインです"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:80
+#: ../../client/src/settings/routes/ScreenSettings.tsx:39
 msgid "Your name to display in the app."
-msgstr ""
+msgstr "アプリに表示する名前。"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:41
+#: ../../client/src/settings/hooks/useSettings.ts:46
 msgid "Your prompt history has been reset."
 msgstr "プロンプト履歴がリセットされました。"

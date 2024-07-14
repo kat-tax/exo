@@ -40,6 +40,7 @@
     "@lingui/react": "^4.11.2",
     "@marceloterreiro/flash-calendar": "^1.0.0",
     "@react-native-community/checkbox": "^0.5.17",
+    "@react-native-community/geolocation": "^3.3.0",
     "@react-native-community/netinfo": "^11.3.2",
     "@react-native-community/slider": "^4.5.2",
     "@react-native-picker/picker": "^2.7.7",
