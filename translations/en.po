@@ -100,6 +100,7 @@ msgid "Delete the local database."
 msgstr "Delete the local database."
 
 #: ../../client/src/app/base/Menu.tsx:66
+#: ../../client/src/dev/routes/ScreenDesign.tsx:11
 msgid "Design"
 msgstr "Design"
 
@@ -176,6 +177,7 @@ msgid "Language"
 msgstr "Language"
 
 #: ../../client/src/app/base/Menu.tsx:72
+#: ../../client/src/dev/routes/ScreenLibrary.tsx:15
 msgid "Library"
 msgstr "Library"
 
@@ -244,10 +246,12 @@ msgid "Select the theme for the app."
 msgstr "Select the theme for the app."
 
 #: ../../client/src/app/base/Menu.tsx:80
+#: ../../client/src/settings/routes/ScreenSettings.tsx:25
 msgid "Settings"
 msgstr "Settings"
 
 #: ../../client/src/app/base/Menu.tsx:48
+#: ../../client/src/tasks/routes/TaskList.tsx:13
 msgid "Tasks"
 msgstr "Tasks"
 

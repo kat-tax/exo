@@ -10,11 +10,12 @@ export type * from './assets/markdown/Markdown.export';
 
 // Layout
 export type * from './layout/navigation/Navigation.export';
-export type * from './layout/motion/Motion.export';
-export type * from './layout/gesture/Gesture.export';
 export type * from './layout/safe-area/SafeArea.export';
+export type * from './layout/gesture/Gesture.export';
+export type * from './layout/motion/Motion.export';
 
 // Services
+export type * from './services/filesystem/FileSystem.export';
 export type * from './services/storage/Storage.export';
 export type * from './services/device/Device.export';
 export type * from './services/redux/Redux.export';

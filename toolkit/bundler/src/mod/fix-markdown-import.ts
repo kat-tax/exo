@@ -16,8 +16,8 @@ export default <Plugin> {
     await writeFile(
       target,
       contents.replace(
-        'import ho, { Linking as',
-        'import * as ho from "react-native";import { Linking as'
+        'import uo, { Linking as',
+        'import * as uo from "react-native";import { Linking as'
       )
     )
   }

@@ -7,8 +7,8 @@ import {Text, View, TextInput, Pressable} from 'react-native';
 import {Link} from 'react-exo/navigation';
 import {Icon} from 'react-exo/icon';
 import {useAI} from 'home/hooks/useAI';
+import {Markdown} from 'app/widgets/Markdown';
 import {PageLoading} from 'app/base/PageLoading';
-import {PreviewMarkdown} from 'app/base/PreviewMarkdown';
 import {formatDate} from 'home/utils/time';
 import {profile} from 'app/data';
 
@@ -102,7 +102,7 @@ export function AiPrompt() {
       </View>
       <View style={styles.response}>
         {ai.dirty && ai.response && !ai.loading &&
-          <PreviewMarkdown text={ai.response?.response ?? ''}/>
+          <Markdown text={ai.response?.response ?? ''}/>
         }
         {ai.loading &&
           <PageLoading indicator={{size: 'small'}}/>

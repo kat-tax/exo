@@ -11,10 +11,10 @@ import {Page} from 'app/base/Page';
 import {profile} from 'app/data';
 
 export default function ScreenHome() {
-  const {row} = useQuery(profile);
   const {styles} = useStyles(stylesheet);
-  const weather = useWeather();
+  const {row} = useQuery(profile);
   const clock = useClock('medium');
+  const weather = useWeather();
 
   return (
     <Page

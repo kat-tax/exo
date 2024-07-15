@@ -33,6 +33,11 @@
       "import": "./gen/web/navigation.js",
       "require": "./gen/native/navigation.js"
     },
+    "./filesystem": {
+      "types": "./gen/types/filesystem.d.ts",
+      "import": "./gen/web/filesystem.js",
+      "require": "./gen/native/filesystem.js"
+    },
     "./storage": {
       "types": "./gen/types/storage.d.ts",
       "import": "./gen/web/storage.js",
@@ -176,6 +181,9 @@
     "react-native-video": ">=5"
   },
   "dependencies": {
+    "@humanfs/core": "^0.18.2",
+    "@humanfs/memory": "^0.19.2",
+    "@humanfs/web": "^0.13.3",
     "@iconify/react": "^5.0.1",
     "@iconify/json": "^2.2.227",
     "@iconify/utils": "^2.1.25",

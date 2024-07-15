@@ -7,7 +7,7 @@ import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useSettings} from 'settings/hooks/useSettings';
 import {useScheme} from 'settings/hooks/useScheme';
 import {useLocale} from 'settings/hooks/useLocale';
-import {Identicon} from 'app/base/Identicon';
+import {Identicon} from 'app/widgets/Identicon';
 import {Page} from 'app/base/Page';
 import {Button} from 'design';
 import {locales} from 'config/locales';

@@ -1,11 +1,11 @@
 import {t} from '@lingui/macro';
-import {useLingui} from '@lingui/react';
 import {Icon} from 'react-exo/icon';
 import {View, Text, Pressable} from 'react-native';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import * as Dropdown from 'app/base/Dropdown';
+import {useLingui} from '@lingui/react';
 import {useProfile} from 'app/hooks/useProfile';
-import {Identicon} from 'app/base/Identicon';
+import {Identicon} from 'app/widgets/Identicon';
+import * as Dropdown from 'app/widgets/Dropdown';
 
 export function MenuHeader() {
   const {styles, theme} = useStyles(stylesheet);

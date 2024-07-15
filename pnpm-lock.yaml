@@ -339,6 +339,15 @@ importers:
 
   library:
     dependencies:
+      '@humanfs/core':
+        specifier: ^0.18.2
+        version: 0.18.2
+      '@humanfs/memory':
+        specifier: ^0.19.2
+        version: 0.19.2
+      '@humanfs/web':
+        specifier: ^0.13.3
+        version: 0.13.3
       '@iconify/json':
         specifier: ^2.2.227
         version: 2.2.227
@@ -4514,6 +4523,25 @@ packages:
     resolution: {integrity: sha512-W+Gy16xWZMgB8hYU4XInCwE746y8V3VDTH1J3+EhUBqbCzk4zEXo1p6dv3BiCD5O6Z4aHuoCW+mRKoJgUn3ZCA==}
     engines: {node: '>=18.14.1'}
     dev: true
+
+  /@humanfs/core@0.18.2:
+    resolution: {integrity: sha512-2ZFEE4hN5cXBwDgyYUI9M2PMTaB5iP7BsRVl6pHbu+OOOHn6LdO+cjtrm5bBwjKZkJTq6TEpEAH1Tm/7T4aDhA==}
+    engines: {node: '>=18.18.0'}
+    dev: false
+
+  /@humanfs/memory@0.19.2:
+    resolution: {integrity: sha512-oYknjokgXwrSl+H/sAfnEGB8M7EIzachyz7qfLmHi5qlR7hUHngkdISKUZTGopGV7CS49eYMnhF6Ca/6LvY5Cw==}
+    engines: {node: '>=18.18.0'}
+    dependencies:
+      '@humanfs/core': 0.18.2
+    dev: false
+
+  /@humanfs/web@0.13.3:
+    resolution: {integrity: sha512-giMt36gqu0fY36AEFi+oyNT1zKBQqukzZ5mK6XX+UpRPsWOvY670kWkhdx7n5QzuXdm9BrZww4CIBSgUNaUeQg==}
+    engines: {node: '>=18.18.0'}
+    dependencies:
+      '@humanfs/core': 0.18.2
+    dev: false
 
   /@iconify/json@2.2.227:
     resolution: {integrity: sha512-MFSbYNpLJXHashfMAKox00XKK1ATEUMxOcqOBgdV+dsiscE9EOeApLpmyZ88+FQq7uDZea0l1YS63eSnVN5Yjw==}
