@@ -13,6 +13,14 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
+#: ../../client/src/app/base/MenuFooter.tsx:18
+msgid "{0} • Build {build} - {date}"
+msgstr ""
+
+#: ../../client/src/app/base/MenuFooter.tsx:17
+msgid "{0} • Local Build - {date}"
+msgstr ""
+
 #: ../../client/src/dev/routes/ScreenDesign.tsx:12
 #: ../../client/src/dev/routes/ScreenLibrary.tsx:16
 msgid "{0} components"
@@ -34,15 +42,15 @@ msgstr "ИИ"
 msgid "All Data"
 msgstr "Все данные"
 
-#: ../../client/src/settings/hooks/useSettings.ts:58
+#: ../../client/src/settings/hooks/useSettings.ts:56
 msgid "Are you sure you want to change the owner key? This will reset the local database. This action cannot be undone."
 msgstr "Вы уверены, что хотите изменить ключ владельца? Это сбросит локальную базу данных. Это действие нельзя отменить."
 
-#: ../../client/src/settings/hooks/useSettings.ts:52
+#: ../../client/src/settings/hooks/useSettings.ts:50
 msgid "Are you sure you want to reset your local database? If data is not backed up on another device, it will be lost. This action cannot be undone."
 msgstr "Вы уверены, что хотите сбросить локальную базу данных? Если данные не будут сохранены на другом устройстве, они будут потеряны. Это действие нельзя отменить."
 
-#: ../../client/src/settings/hooks/useSettings.ts:42
+#: ../../client/src/settings/hooks/useSettings.ts:41
 msgid "Are you sure you want to reset your prompt history?"
 msgstr "Вы уверены, что хотите сбросить историю запросов?"
 
@@ -55,7 +63,7 @@ msgstr "Спросите что угодно..."
 msgid "Auto"
 msgstr "Авто"
 
-#: ../../client/src/app/base/Menu.tsx:32
+#: ../../client/src/app/base/Menu.tsx:42
 msgid "Calendar"
 msgstr "Календарь"
 
@@ -67,7 +75,7 @@ msgstr "Цельсий"
 msgid "Dark"
 msgstr "Темный"
 
-#: ../../client/src/app/base/Menu.tsx:26
+#: ../../client/src/app/base/Menu.tsx:36
 msgid "Dashboard"
 msgstr "Панель"
 
@@ -91,8 +99,7 @@ msgstr "Удалить запросы"
 msgid "Delete the local database."
 msgstr "Удалить локальную базу данных."
 
-#: ../../client/src/app/base/Menu.tsx:56
-#: ../../client/src/dev/routes/ScreenDesign.tsx:11
+#: ../../client/src/app/base/Menu.tsx:66
 msgid "Design"
 msgstr "Дизайн"
 
@@ -130,7 +137,7 @@ msgstr "Фаренгейт"
 
 #: ../../client/src/home/hooks/useLocation.ts:22
 msgid "Geo Location Failure"
-msgstr ""
+msgstr "Неудача в геолокации"
 
 #: ../../client/src/home/utils/time.ts:8
 msgid "Good afternoon"
@@ -150,11 +157,15 @@ msgstr "Ключ API Groq"
 
 #: ../../client/src/home/hooks/useAI.tsx:40
 msgid "Groq Failure"
-msgstr ""
+msgstr "Неудача в Groq"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:209
 msgid "Groq Model ID"
 msgstr "ID модели Groq"
+
+#: ../../client/src/app/base/MenuHeader.tsx:23
+msgid "Human"
+msgstr "Человек"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:176
 msgid "Kilometers"
@@ -164,14 +175,17 @@ msgstr "Километры"
 msgid "Language"
 msgstr "Язык"
 
-#: ../../client/src/app/base/Menu.tsx:62
-#: ../../client/src/dev/routes/ScreenLibrary.tsx:15
+#: ../../client/src/app/base/Menu.tsx:72
 msgid "Library"
 msgstr "Библиотека"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:134
 msgid "Light"
 msgstr "Светлый"
+
+#: ../../client/src/app/base/MenuHeader.tsx:47
+msgid "Logout"
+msgstr ""
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:26
 msgid "Manage your settings"
@@ -181,9 +195,9 @@ msgstr "Управляйте своими настройками"
 msgid "Miles"
 msgstr "Мили"
 
-#: ../../client/src/events/routes/ScreenCalendar.tsx:56
+#: ../../client/src/events/routes/ScreenCalendar.tsx:58
 msgid "No events scheduled."
-msgstr ""
+msgstr "Нет запланированных событий."
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:56
 msgid "Owner Key"
@@ -195,9 +209,9 @@ msgstr "Пожалуйста, установите ваш ключ API Groq"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:31
 msgid "Profile"
-msgstr ""
+msgstr "Профиль"
 
-#: ../../client/src/settings/hooks/useSettings.ts:45
+#: ../../client/src/settings/hooks/useSettings.ts:43
 msgid "Prompt History Reset"
 msgstr "Сброс истории запросов"
 
@@ -229,13 +243,11 @@ msgstr "Выберите единицу измерения температур�
 msgid "Select the theme for the app."
 msgstr "Выберите тему для приложения."
 
-#: ../../client/src/app/base/Menu.tsx:70
-#: ../../client/src/settings/routes/ScreenSettings.tsx:25
+#: ../../client/src/app/base/Menu.tsx:80
 msgid "Settings"
 msgstr "Настройки"
 
-#: ../../client/src/app/base/Menu.tsx:38
-#: ../../client/src/tasks/routes/TaskList.tsx:13
+#: ../../client/src/app/base/Menu.tsx:48
 msgid "Tasks"
 msgstr "Задачи"
 
@@ -271,6 +283,6 @@ msgstr "Вы в сети"
 msgid "Your name to display in the app."
 msgstr "Ваше имя для отображения в приложении."
 
-#: ../../client/src/settings/hooks/useSettings.ts:46
+#: ../../client/src/settings/hooks/useSettings.ts:44
 msgid "Your prompt history has been reset."
 msgstr "Ваша история запросов была сброшена."

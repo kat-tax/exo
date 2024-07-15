@@ -13,6 +13,14 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
+#: ../../client/src/app/base/MenuFooter.tsx:18
+msgid "{0} • Build {build} - {date}"
+msgstr ""
+
+#: ../../client/src/app/base/MenuFooter.tsx:17
+msgid "{0} • Local Build - {date}"
+msgstr ""
+
 #: ../../client/src/dev/routes/ScreenDesign.tsx:12
 #: ../../client/src/dev/routes/ScreenLibrary.tsx:16
 msgid "{0} components"
@@ -34,15 +42,15 @@ msgstr "AI"
 msgid "All Data"
 msgstr "すべてのデータ"
 
-#: ../../client/src/settings/hooks/useSettings.ts:58
+#: ../../client/src/settings/hooks/useSettings.ts:56
 msgid "Are you sure you want to change the owner key? This will reset the local database. This action cannot be undone."
 msgstr "オーナーキーを変更してもよろしいですか？これによりローカルデータベースがリセットされます。この操作は元に戻せません。"
 
-#: ../../client/src/settings/hooks/useSettings.ts:52
+#: ../../client/src/settings/hooks/useSettings.ts:50
 msgid "Are you sure you want to reset your local database? If data is not backed up on another device, it will be lost. This action cannot be undone."
 msgstr "ローカルデータベースをリセットしてもよろしいですか？データが他のデバイスにバックアップされていない場合、失われます。この操作は元に戻せません。"
 
-#: ../../client/src/settings/hooks/useSettings.ts:42
+#: ../../client/src/settings/hooks/useSettings.ts:41
 msgid "Are you sure you want to reset your prompt history?"
 msgstr "プロンプト履歴をリセットしてもよろしいですか？"
 
@@ -55,7 +63,7 @@ msgstr "何でも聞いてください..."
 msgid "Auto"
 msgstr "自動"
 
-#: ../../client/src/app/base/Menu.tsx:32
+#: ../../client/src/app/base/Menu.tsx:42
 msgid "Calendar"
 msgstr "カレンダー"
 
@@ -67,7 +75,7 @@ msgstr "摂氏"
 msgid "Dark"
 msgstr "ダーク"
 
-#: ../../client/src/app/base/Menu.tsx:26
+#: ../../client/src/app/base/Menu.tsx:36
 msgid "Dashboard"
 msgstr "ダッシュボード"
 
@@ -91,8 +99,7 @@ msgstr "プロンプトを削除"
 msgid "Delete the local database."
 msgstr "ローカルデータベースを削除"
 
-#: ../../client/src/app/base/Menu.tsx:56
-#: ../../client/src/dev/routes/ScreenDesign.tsx:11
+#: ../../client/src/app/base/Menu.tsx:66
 msgid "Design"
 msgstr "デザイン"
 
@@ -130,7 +137,7 @@ msgstr "華氏"
 
 #: ../../client/src/home/hooks/useLocation.ts:22
 msgid "Geo Location Failure"
-msgstr ""
+msgstr "地理情報の取得に失敗"
 
 #: ../../client/src/home/utils/time.ts:8
 msgid "Good afternoon"
@@ -150,11 +157,15 @@ msgstr "Groq APIキー"
 
 #: ../../client/src/home/hooks/useAI.tsx:40
 msgid "Groq Failure"
-msgstr ""
+msgstr "Groq失敗"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:209
 msgid "Groq Model ID"
 msgstr "GroqモデルID"
+
+#: ../../client/src/app/base/MenuHeader.tsx:23
+msgid "Human"
+msgstr "人間"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:176
 msgid "Kilometers"
@@ -164,14 +175,17 @@ msgstr "キロメートル"
 msgid "Language"
 msgstr "言語"
 
-#: ../../client/src/app/base/Menu.tsx:62
-#: ../../client/src/dev/routes/ScreenLibrary.tsx:15
+#: ../../client/src/app/base/Menu.tsx:72
 msgid "Library"
 msgstr "ライブラリ"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:134
 msgid "Light"
 msgstr "ライト"
+
+#: ../../client/src/app/base/MenuHeader.tsx:47
+msgid "Logout"
+msgstr ""
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:26
 msgid "Manage your settings"
@@ -181,9 +195,9 @@ msgstr "設定を管理"
 msgid "Miles"
 msgstr "マイル"
 
-#: ../../client/src/events/routes/ScreenCalendar.tsx:56
+#: ../../client/src/events/routes/ScreenCalendar.tsx:58
 msgid "No events scheduled."
-msgstr ""
+msgstr "予定されているイベントはありません。"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:56
 msgid "Owner Key"
@@ -195,9 +209,9 @@ msgstr "Groq APIキーを設定してください"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:31
 msgid "Profile"
-msgstr ""
+msgstr "プロフィール"
 
-#: ../../client/src/settings/hooks/useSettings.ts:45
+#: ../../client/src/settings/hooks/useSettings.ts:43
 msgid "Prompt History Reset"
 msgstr "プロンプト履歴のリセット"
 
@@ -229,13 +243,11 @@ msgstr "アプリの温度単位を選択。"
 msgid "Select the theme for the app."
 msgstr "アプリのテーマを選択。"
 
-#: ../../client/src/app/base/Menu.tsx:70
-#: ../../client/src/settings/routes/ScreenSettings.tsx:25
+#: ../../client/src/app/base/Menu.tsx:80
 msgid "Settings"
 msgstr "設定"
 
-#: ../../client/src/app/base/Menu.tsx:38
-#: ../../client/src/tasks/routes/TaskList.tsx:13
+#: ../../client/src/app/base/Menu.tsx:48
 msgid "Tasks"
 msgstr "タスク"
 
@@ -271,6 +283,6 @@ msgstr "オンラインです"
 msgid "Your name to display in the app."
 msgstr "アプリに表示する名前。"
 
-#: ../../client/src/settings/hooks/useSettings.ts:46
+#: ../../client/src/settings/hooks/useSettings.ts:44
 msgid "Your prompt history has been reset."
 msgstr "プロンプト履歴がリセットされました。"

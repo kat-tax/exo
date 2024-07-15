@@ -1,46 +1,44 @@
 import {t} from '@lingui/macro';
 import {alert} from 'react-exo/toast';
 import {useLingui} from '@lingui/react';
-import {useEvolu, useOwner, useQuery, parseMnemonic, NonEmptyString1000} from '@evolu/react-native';
-import {Effect, Either, Function} from 'effect';
-import {profile} from 'app/data';
-import * as S from '@effect/schema/Schema';
-
+import {useEvolu, useOwner, parseMnemonic, NonEmptyString1000} from '@evolu/react-native';
 import {Database, NonEmptyString50} from 'app/data/schema';
+import {useProfile} from 'app/hooks/useProfile';
+import {Effect, Either, Function} from 'effect';
+import * as S from '@effect/schema/Schema';
 
 export function useSettings() {
   const evolu = useEvolu<Database>();
   const owner = useOwner();
-  const {row} = useQuery(profile);
+  const profile = useProfile();
   const {i18n} = useLingui();
 
   const updateName = (text: string) => {
-    if (!row?.id) return;
+    if (!profile?.id) return;
     Either.match(S.decodeUnknownEither(NonEmptyString50)(text), {
       onLeft: Function.constVoid,
-      onRight: (name) => evolu.update('profile', {name, id: row.id}),
+      onRight: (name) => evolu.update('profile', {name, id: profile.id}),
     });
   };
 
   const updateGroqKey = (text: string) => {
-    if (!row?.id) return;
+    if (!profile?.id) return;
     Either.match(S.decodeUnknownEither(NonEmptyString1000)(text), {
       onLeft: Function.constVoid,
-      onRight: (groqKey) => evolu.update('profile', {groqKey, id: row.id}),
+      onRight: (groqKey) => evolu.update('profile', {groqKey, id: profile.id}),
     });
   };
 
   const updateGroqModel = (text: string) => {
-    if (!row?.id) return;
+    if (!profile?.id) return;
     Either.match(S.decodeUnknownEither(NonEmptyString50)(text), {
       onLeft: Function.constVoid,
-      onRight: (groqModel) => evolu.update('profile', {groqModel, id: row.id}),
+      onRight: (groqModel) => evolu.update('profile', {groqModel, id: profile.id}),
     });
   };
 
   const resetPrompts = () => {
     if (!window.confirm(t(i18n)`Are you sure you want to reset your prompt history?`)) return;
-    // dispatch(home.actions.clearPrompts());
     alert({
       title: t(i18n)`Prompt History Reset`,
       message: t(i18n)`Your prompt history has been reset.`,
@@ -63,7 +61,7 @@ export function useSettings() {
 
   return {
     owner,
-    profile: row,
+    profile,
     updateName,
     updateGroqKey,
     updateGroqModel,

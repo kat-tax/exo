@@ -1,4 +1,4 @@
-import * as _ from '@evolu/react-native';
+import * as _ from '@evolu/common';
 import * as S from '@effect/schema/Schema';
 
 /**

@@ -5,7 +5,6 @@
   "scripts": {
     "start": "conc -c 'auto' 'pnpm:start:*'",
     "build": "conc -c 'auto' -g 'pnpm:build:*'",
-    
     "web": "open http://localhost:6206",
     "tauri": "tauri dev",
     "android": "react-native run-android --no-packager",
@@ -13,7 +12,6 @@
     "macos": "react-native run-macos --no-packager --scheme EXO",
     "visionos": "react-native run-visionos --no-packager",
     "windows": "react-native run-windows --no-packager",
-    
     "build:web": "vite build",
     "build:tauri": "CI=true tauri build",
     "_build:android": "react-native bundle --entry-file index.js --platform android --dev true --bundle-output dist/main.android.jsbundle --assets-dest dist/res",
@@ -21,10 +19,8 @@
     "_build:macos": "react-native bundle --entry-file index.js --platform macos --dev true --bundle-output dist/main.macos.jsbundle --assets-dest dist",
     "_build:visionos": "react-native bundle --entry-file index.js --platform ios --dev true --bundle-output dist/main.visionos.jsbundle --assets-dest dist",
     "_build:windows": "react-native bundle --entry-file index.js --platform windows --dev true --bundle-output dist/main.windows.bundle --assets-dest dist",
-    
     "start:vite": "vite dev --port 6206",
     "start:metro": "react-native rnx-start --reset-cache",
-    
     "generate:pods": "pod install --project-directory=ios && pod install --project-directory=macos && pod install --project-directory=visionos",
     "generate:icons": "react-native-svg-app-icon generate && tauri icon ../design/assets/img/logo.png",
     "generate:splash": "react-native generate-bootsplash ../design/assets/svg/logo.svg",
@@ -47,6 +43,7 @@
     "@react-native-community/geolocation": "^3.3.0",
     "@react-native-community/netinfo": "^11.3.2",
     "@react-native-community/slider": "^4.5.2",
+    "@react-native-menu/menu": "^1.1.2",
     "@react-native-picker/picker": "^2.7.7",
     "@shopify/react-native-skia": "1.3.8",
     "@tauri-apps/api": "^1.6.0",
@@ -64,6 +61,7 @@
     "react-native-bootsplash": "^5.5.3",
     "react-native-gesture-handler": "^2.17.1",
     "react-native-get-random-values": "^1.11.0",
+    "react-native-ios-context-menu": "2.5.1",
     "react-native-linear-gradient": "^2.8.3",
     "react-native-macos": "^0.73.33",
     "react-native-mmkv": "^2.12.2",
@@ -83,7 +81,8 @@
     "react-native-windows": "^0.74.11",
     "react-redux": "^9.1.2",
     "rive-react-native": "^7.3.0",
-    "vite-plugin-node-polyfills": "^0.22.0"
+    "vite-plugin-node-polyfills": "^0.22.0",
+    "zeego": "^1.10.0"
   },
   "devDependencies": {
     "@babel/core": "^7.24.8",

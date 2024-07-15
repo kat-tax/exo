@@ -33,13 +33,15 @@ export default function ScreenCalendar() {
 
   return (
     <View style={styles.root}>
-      <Calendar.List
-        theme={calendarTheme}
-        calendarFormatLocale={locale}
-        calendarInitialMonthId={today}
-        calendarActiveDateRanges={range.calendarActiveDateRanges}
-        onCalendarDayPress={range.onCalendarDayPress}
-      />
+      <View style={styles.calendar}>
+        <Calendar.List
+          theme={calendarTheme}
+          calendarFormatLocale={locale}
+          calendarInitialMonthId={today}
+          calendarActiveDateRanges={range.calendarActiveDateRanges}
+          onCalendarDayPress={range.onCalendarDayPress}
+        />
+      </View>
       <View style={styles.panel}>
         {hasEvent
           ? <Alert
@@ -68,6 +70,13 @@ const stylesheet = createStyleSheet(theme => ({
     flexDirection: {
       initial: 'column',
       xs: 'row',
+    },
+  },
+  calendar: {
+    flex: 1,
+    marginHorizontal: {
+      initial: 0,
+      xs: theme.display.space3,
     },
   },
   panel: {

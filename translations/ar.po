@@ -13,6 +13,14 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
+#: ../../client/src/app/base/MenuFooter.tsx:18
+msgid "{0} • Build {build} - {date}"
+msgstr ""
+
+#: ../../client/src/app/base/MenuFooter.tsx:17
+msgid "{0} • Local Build - {date}"
+msgstr ""
+
 #: ../../client/src/dev/routes/ScreenDesign.tsx:12
 #: ../../client/src/dev/routes/ScreenLibrary.tsx:16
 msgid "{0} components"
@@ -34,15 +42,15 @@ msgstr "الذكاء الاصطناعي"
 msgid "All Data"
 msgstr "كل البيانات"
 
-#: ../../client/src/settings/hooks/useSettings.ts:58
+#: ../../client/src/settings/hooks/useSettings.ts:56
 msgid "Are you sure you want to change the owner key? This will reset the local database. This action cannot be undone."
 msgstr "هل أنت متأكد أنك تريد تغيير مفتاح المالك؟ سيؤدي ذلك إلى إعادة تعيين قاعدة البيانات المحلية. لا يمكن التراجع عن هذا الإجراء."
 
-#: ../../client/src/settings/hooks/useSettings.ts:52
+#: ../../client/src/settings/hooks/useSettings.ts:50
 msgid "Are you sure you want to reset your local database? If data is not backed up on another device, it will be lost. This action cannot be undone."
 msgstr "هل أنت متأكد أنك تريد إعادة تعيين قاعدة البيانات المحلية؟ إذا لم يتم نسخ البيانات احتياطيًا على جهاز آخر، فسيتم فقدها. لا يمكن التراجع عن هذا الإجراء."
 
-#: ../../client/src/settings/hooks/useSettings.ts:42
+#: ../../client/src/settings/hooks/useSettings.ts:41
 msgid "Are you sure you want to reset your prompt history?"
 msgstr "هل أنت متأكد أنك تريد إعادة تعيين سجل المطالبات الخاص بك؟"
 
@@ -55,7 +63,7 @@ msgstr "اسأل أي شيء..."
 msgid "Auto"
 msgstr "تلقائي"
 
-#: ../../client/src/app/base/Menu.tsx:32
+#: ../../client/src/app/base/Menu.tsx:42
 msgid "Calendar"
 msgstr "التقويم"
 
@@ -67,7 +75,7 @@ msgstr "درجة مئوية"
 msgid "Dark"
 msgstr "داكن"
 
-#: ../../client/src/app/base/Menu.tsx:26
+#: ../../client/src/app/base/Menu.tsx:36
 msgid "Dashboard"
 msgstr "لوحة القيادة"
 
@@ -91,8 +99,7 @@ msgstr "حذف المطالبات"
 msgid "Delete the local database."
 msgstr "حذف قاعدة البيانات المحلية."
 
-#: ../../client/src/app/base/Menu.tsx:56
-#: ../../client/src/dev/routes/ScreenDesign.tsx:11
+#: ../../client/src/app/base/Menu.tsx:66
 msgid "Design"
 msgstr "تصميم"
 
@@ -130,7 +137,7 @@ msgstr "فهرنهايت"
 
 #: ../../client/src/home/hooks/useLocation.ts:22
 msgid "Geo Location Failure"
-msgstr ""
+msgstr "فشل الموقع الجغرافي"
 
 #: ../../client/src/home/utils/time.ts:8
 msgid "Good afternoon"
@@ -150,11 +157,15 @@ msgstr "مفتاح Groq API"
 
 #: ../../client/src/home/hooks/useAI.tsx:40
 msgid "Groq Failure"
-msgstr ""
+msgstr "فشل Groq"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:209
 msgid "Groq Model ID"
 msgstr "معرف نموذج Groq"
+
+#: ../../client/src/app/base/MenuHeader.tsx:23
+msgid "Human"
+msgstr "إنسان"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:176
 msgid "Kilometers"
@@ -164,14 +175,17 @@ msgstr "كيلومترات"
 msgid "Language"
 msgstr "اللغة"
 
-#: ../../client/src/app/base/Menu.tsx:62
-#: ../../client/src/dev/routes/ScreenLibrary.tsx:15
+#: ../../client/src/app/base/Menu.tsx:72
 msgid "Library"
 msgstr "مكتبة"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:134
 msgid "Light"
 msgstr "فاتح"
+
+#: ../../client/src/app/base/MenuHeader.tsx:47
+msgid "Logout"
+msgstr ""
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:26
 msgid "Manage your settings"
@@ -181,9 +195,9 @@ msgstr "إدارة إعداداتك"
 msgid "Miles"
 msgstr "أميال"
 
-#: ../../client/src/events/routes/ScreenCalendar.tsx:56
+#: ../../client/src/events/routes/ScreenCalendar.tsx:58
 msgid "No events scheduled."
-msgstr ""
+msgstr "لا يوجد أحداث مجدولة."
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:56
 msgid "Owner Key"
@@ -195,9 +209,9 @@ msgstr "يرجى تعيين مفتاح Groq API الخاص بك"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:31
 msgid "Profile"
-msgstr ""
+msgstr "الملف الشخصي"
 
-#: ../../client/src/settings/hooks/useSettings.ts:45
+#: ../../client/src/settings/hooks/useSettings.ts:43
 msgid "Prompt History Reset"
 msgstr "إعادة تعيين سجل المطالبات"
 
@@ -229,13 +243,11 @@ msgstr "حدد وحدة درجة الحرارة للتطبيق."
 msgid "Select the theme for the app."
 msgstr "حدد سمة التطبيق."
 
-#: ../../client/src/app/base/Menu.tsx:70
-#: ../../client/src/settings/routes/ScreenSettings.tsx:25
+#: ../../client/src/app/base/Menu.tsx:80
 msgid "Settings"
 msgstr "الإعدادات"
 
-#: ../../client/src/app/base/Menu.tsx:38
-#: ../../client/src/tasks/routes/TaskList.tsx:13
+#: ../../client/src/app/base/Menu.tsx:48
 msgid "Tasks"
 msgstr "المهام"
 
@@ -271,6 +283,6 @@ msgstr "أنت متصل"
 msgid "Your name to display in the app."
 msgstr "اسمك للعرض في التطبيق."
 
-#: ../../client/src/settings/hooks/useSettings.ts:46
+#: ../../client/src/settings/hooks/useSettings.ts:44
 msgid "Your prompt history has been reset."
 msgstr "تمت إعادة تعيين سجل المطالبات الخاص بك."

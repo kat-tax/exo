@@ -13,11 +13,11 @@ export default defineConfig(env => mergeConfig(
     build: {
       outDir: '../output/client/web',
       emptyOutDir: true,
-      chunkSizeWarningLimit: 600,
+      chunkSizeWarningLimit: 1000,
       rollupOptions: {
         output: {
           format: 'es',
-          manualChunks: getChunkName,
+          chunkFileNames: '[name]-[hash].js',
         }
       }
     },
@@ -56,26 +56,3 @@ export default defineConfig(env => mergeConfig(
     }
   }),
 ));
-
-function getChunkName(path: string) {
-  const ns = '/node_modules/';
-  return path.includes(ns)
-  ? (path.includes(ns + '@effect/')
-    || path.includes(ns + 'effect/')
-    || path.includes(ns + 'flatbuffers/')
-    || path.includes(ns + 'kysely/')
-    || path.includes(ns + '@scure/')
-    || path.includes(ns + '@noble/')
-    || path.includes(ns + '@evolu/')
-    || path.includes(ns + '@protobuf-ts/'))
-    ? 'data'
-    : (path.includes(ns + '@ai-sdk/')
-      || path.includes(ns + 'ai/')
-      || path.includes(ns + 'zod/')
-      || path.includes(ns + 'zod-to-json-schema/')
-      || path.includes(ns + 'secure-json-parse/')
-      || path.includes(ns + 'vite-plugin-node-polyfills/'))
-      ? 'ai'
-      : 'vendor'
-  : null
-}

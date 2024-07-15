@@ -3,7 +3,7 @@ import {useStyles} from 'react-native-unistyles';
 import {ScrollView, Platform} from 'react-native';
 import {Markdown as MarkdownBase} from 'react-exo/markdown';
 
-export const Markdown = memo(({text}: {text: string}) => {
+export const PreviewMarkdown = memo(({text}: {text: string}) => {
   const {theme} = useStyles();
 
   if (!text) {

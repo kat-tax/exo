@@ -3,7 +3,7 @@ import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {Outlet} from 'react-exo/navigation';
 import {Menu} from 'app/base/Menu';
 
-export const APP_MENU_WIDTH = 145;
+export const APP_MENU_WIDTH = 177;
 export const APP_MENU_TAB_HEIGHT = 64;
 
 export default function LayoutMain() {

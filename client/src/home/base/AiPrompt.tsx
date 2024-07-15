@@ -6,10 +6,10 @@ import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {Text, View, TextInput, Pressable} from 'react-native';
 import {Link} from 'react-exo/navigation';
 import {Icon} from 'react-exo/icon';
-import {Markdown} from 'app/base/Markdown';
-import {PageLoading} from 'app/base/PageLoading';
-import {formatDate} from 'home/utils/time';
 import {useAI} from 'home/hooks/useAI';
+import {PageLoading} from 'app/base/PageLoading';
+import {PreviewMarkdown} from 'app/base/PreviewMarkdown';
+import {formatDate} from 'home/utils/time';
 import {profile} from 'app/data';
 
 const DEFAULT_MODEL = 'llama3-8b-8192';
@@ -103,7 +103,7 @@ export function AiPrompt() {
       </View>
       <View style={styles.response}>
         {ai.dirty && ai.response && !ai.loading &&
-          <Markdown text={ai.response?.response ?? ''}/>
+          <PreviewMarkdown text={ai.response?.response ?? ''}/>
         }
         {ai.loading &&
           <PageLoading indicator={{size: 'small'}}/>

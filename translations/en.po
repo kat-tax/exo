@@ -13,6 +13,14 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
+#: ../../client/src/app/base/MenuFooter.tsx:18
+msgid "{0} • Build {build} - {date}"
+msgstr "{0} • Build {build} - {date}"
+
+#: ../../client/src/app/base/MenuFooter.tsx:17
+msgid "{0} • Local Build - {date}"
+msgstr "{0} • Local Build - {date}"
+
 #: ../../client/src/dev/routes/ScreenDesign.tsx:12
 #: ../../client/src/dev/routes/ScreenLibrary.tsx:16
 msgid "{0} components"
@@ -34,15 +42,15 @@ msgstr "AI"
 msgid "All Data"
 msgstr "All Data"
 
-#: ../../client/src/settings/hooks/useSettings.ts:58
+#: ../../client/src/settings/hooks/useSettings.ts:56
 msgid "Are you sure you want to change the owner key? This will reset the local database. This action cannot be undone."
 msgstr "Are you sure you want to change the owner key? This will reset the local database. This action cannot be undone."
 
-#: ../../client/src/settings/hooks/useSettings.ts:52
+#: ../../client/src/settings/hooks/useSettings.ts:50
 msgid "Are you sure you want to reset your local database? If data is not backed up on another device, it will be lost. This action cannot be undone."
 msgstr "Are you sure you want to reset your local database? If data is not backed up on another device, it will be lost. This action cannot be undone."
 
-#: ../../client/src/settings/hooks/useSettings.ts:42
+#: ../../client/src/settings/hooks/useSettings.ts:41
 msgid "Are you sure you want to reset your prompt history?"
 msgstr "Are you sure you want to reset your prompt history?"
 
@@ -55,7 +63,7 @@ msgstr "Ask anything..."
 msgid "Auto"
 msgstr "Auto"
 
-#: ../../client/src/app/base/Menu.tsx:32
+#: ../../client/src/app/base/Menu.tsx:42
 msgid "Calendar"
 msgstr "Calendar"
 
@@ -67,7 +75,7 @@ msgstr "Celsius"
 msgid "Dark"
 msgstr "Dark"
 
-#: ../../client/src/app/base/Menu.tsx:26
+#: ../../client/src/app/base/Menu.tsx:36
 msgid "Dashboard"
 msgstr "Dashboard"
 
@@ -91,8 +99,7 @@ msgstr "Delete Prompts"
 msgid "Delete the local database."
 msgstr "Delete the local database."
 
-#: ../../client/src/app/base/Menu.tsx:56
-#: ../../client/src/dev/routes/ScreenDesign.tsx:11
+#: ../../client/src/app/base/Menu.tsx:66
 msgid "Design"
 msgstr "Design"
 
@@ -156,6 +163,10 @@ msgstr "Groq Failure"
 msgid "Groq Model ID"
 msgstr "Groq Model ID"
 
+#: ../../client/src/app/base/MenuHeader.tsx:23
+msgid "Human"
+msgstr "Human"
+
 #: ../../client/src/settings/routes/ScreenSettings.tsx:176
 msgid "Kilometers"
 msgstr "Kilometers"
@@ -164,14 +175,17 @@ msgstr "Kilometers"
 msgid "Language"
 msgstr "Language"
 
-#: ../../client/src/app/base/Menu.tsx:62
-#: ../../client/src/dev/routes/ScreenLibrary.tsx:15
+#: ../../client/src/app/base/Menu.tsx:72
 msgid "Library"
 msgstr "Library"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:134
 msgid "Light"
 msgstr "Light"
+
+#: ../../client/src/app/base/MenuHeader.tsx:47
+msgid "Logout"
+msgstr "Logout"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:26
 msgid "Manage your settings"
@@ -181,7 +195,7 @@ msgstr "Manage your settings"
 msgid "Miles"
 msgstr "Miles"
 
-#: ../../client/src/events/routes/ScreenCalendar.tsx:56
+#: ../../client/src/events/routes/ScreenCalendar.tsx:58
 msgid "No events scheduled."
 msgstr "No events scheduled."
 
@@ -197,7 +211,7 @@ msgstr "Please set your Groq API Key"
 msgid "Profile"
 msgstr "Profile"
 
-#: ../../client/src/settings/hooks/useSettings.ts:45
+#: ../../client/src/settings/hooks/useSettings.ts:43
 msgid "Prompt History Reset"
 msgstr "Prompt History Reset"
 
@@ -229,13 +243,11 @@ msgstr "Select the temperature unit for the app."
 msgid "Select the theme for the app."
 msgstr "Select the theme for the app."
 
-#: ../../client/src/app/base/Menu.tsx:70
-#: ../../client/src/settings/routes/ScreenSettings.tsx:25
+#: ../../client/src/app/base/Menu.tsx:80
 msgid "Settings"
 msgstr "Settings"
 
-#: ../../client/src/app/base/Menu.tsx:38
-#: ../../client/src/tasks/routes/TaskList.tsx:13
+#: ../../client/src/app/base/Menu.tsx:48
 msgid "Tasks"
 msgstr "Tasks"
 
@@ -271,6 +283,6 @@ msgstr "You are online"
 msgid "Your name to display in the app."
 msgstr "Your name to display in the app."
 
-#: ../../client/src/settings/hooks/useSettings.ts:46
+#: ../../client/src/settings/hooks/useSettings.ts:44
 msgid "Your prompt history has been reset."
 msgstr "Your prompt history has been reset."
