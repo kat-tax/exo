@@ -56,7 +56,6 @@ export function AiPrompt() {
               multiline={multiline}
               numberOfLines={multiline ? 8 : undefined}
               readOnly={!apiKey}
-              selectTextOnFocus
               autoFocus
             />
             {!apiKey &&

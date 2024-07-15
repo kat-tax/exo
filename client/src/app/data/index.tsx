@@ -64,10 +64,11 @@ export const prompts = evolu.createQuery(db => db
   .orderBy('createdAt')
 );
 
-export const prompt = evolu.createQuery(db => db
+export const prompt = (id: $.AiPromptId) => evolu.createQuery(db => db
   .selectFrom('aiPrompt')
   .select(['id', 'model', 'prompt', 'response', 'isMultiline', 'createdAt'])
   .where('isDeleted', 'is not', _.cast(true))
+  .where('id', '=', id)
   .limit(1)
 );
 

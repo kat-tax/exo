@@ -4,7 +4,6 @@ import {PageLoading} from 'app/base/PageLoading';
 import config from 'config';
 
 import app from './app';
-import home from 'home/store';
 import tasks from 'tasks/store';
 import settings from 'settings/store';
 
@@ -27,7 +26,6 @@ const reducer = $.persistReducer({
 }, $.combineReducers({
   router: $.history.context.routerReducer,
   app: app.reducer,
-  home: home.reducer,
   tasks: tasks.reducer,
   settings: settings.reducer,
 }));

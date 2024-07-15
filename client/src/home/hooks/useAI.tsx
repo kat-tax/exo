@@ -21,10 +21,9 @@ export function useAI(
   const [loading, setLoading] = useState(false);
   const provider = useMemo(() => createOpenAI({baseURL, apiKey}), [apiKey]);
   const apiModel = useMemo(() => provider(model), [model, provider]);
-  //const response = useSelector((state: State) => home.selectors.getPrompt(state, index ?? 1));
   const {create} = useEvolu();
   const {rows} = useQuery(prompts);
-  const {row} = useQuery(prompt);
+  const {row} = useQuery(prompt(rows[Math.abs((rows.length - (index ?? 1)) % rows.length)]?.id));
   const {i18n} = useLingui();
 
   const promptText = useCallback(async (prompt: string, multi: boolean = false) => {
@@ -32,7 +31,12 @@ export function useAI(
     if (prompt.length > 0) {
       try {
         const {text} = await generateText({model: apiModel, prompt});
-        create('prompts', {prompt, text, model, isMultiLine: cast(multi)});
+        create('AiPrompt', {
+          model,
+          prompt,
+          response: text,
+          isMultiLine: cast(multi),
+        });
         setDirty(true);
       } catch (e) {
         toast({
@@ -71,6 +75,10 @@ export function useAI(
       e.preventDefault();
       input.current?.clear();
       input.current?.focus();
+    } else {
+      input.current?.focus();
+      setDirty(false);
+      setIndex(null);
     }
   }, [index, rows]);
 

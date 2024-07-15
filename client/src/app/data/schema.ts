@@ -91,6 +91,7 @@ export const Database = _.database({
 export const indexes = _.createIndexes((create) => [
   create('indexTodoCreatedAt').on('todo').column('createdAt'),
   create('indexLabelCreatedAt').on('label').column('createdAt'),
+  create('indexAiPromptCreatedAt').on('aiPrompt').column('createdAt'),
 ]);
 
 export interface LabelForSelect {

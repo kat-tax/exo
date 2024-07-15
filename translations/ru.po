@@ -135,7 +135,7 @@ msgstr "Введите ваше имя"
 msgid "Fahrenheit"
 msgstr "Фаренгейт"
 
-#: ../../client/src/home/hooks/useLocation.ts:22
+#: ../../client/src/home/hooks/useLocation.ts:23
 msgid "Geo Location Failure"
 msgstr "Неудача в геолокации"
 
@@ -155,7 +155,7 @@ msgstr "Доброе утро"
 msgid "Groq API Key"
 msgstr "Ключ API Groq"
 
-#: ../../client/src/home/hooks/useAI.tsx:40
+#: ../../client/src/home/hooks/useAI.tsx:44
 msgid "Groq Failure"
 msgstr "Неудача в Groq"
 

@@ -10,6 +10,7 @@ export function useLocation() {
   const [location, setLocation] = useState<Location>([0,0]);
   const {i18n} = useLingui();
 
+  // Watch for location updates
   useEffect(() => {
     const watchId = Geolocation.watchPosition(
       (position) => {
@@ -25,9 +26,9 @@ export function useLocation() {
       },
       {
         enableHighAccuracy: true,
-        interval: 2000,
+        fastestInterval: 5000,
+        interval: 10000,
         distanceFilter: 2,
-        fastestInterval: 1000,
       },
     );
     return () => Geolocation.clearWatch(watchId);

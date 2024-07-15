@@ -135,7 +135,7 @@ msgstr "Enter your name"
 msgid "Fahrenheit"
 msgstr "Fahrenheit"
 
-#: ../../client/src/home/hooks/useLocation.ts:22
+#: ../../client/src/home/hooks/useLocation.ts:23
 msgid "Geo Location Failure"
 msgstr "Geo Location Failure"
 
@@ -155,7 +155,7 @@ msgstr "Good morning"
 msgid "Groq API Key"
 msgstr "Groq API Key"
 
-#: ../../client/src/home/hooks/useAI.tsx:40
+#: ../../client/src/home/hooks/useAI.tsx:44
 msgid "Groq Failure"
 msgstr "Groq Failure"
 

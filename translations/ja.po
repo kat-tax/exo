@@ -135,7 +135,7 @@ msgstr "名前を入力"
 msgid "Fahrenheit"
 msgstr "華氏"
 
-#: ../../client/src/home/hooks/useLocation.ts:22
+#: ../../client/src/home/hooks/useLocation.ts:23
 msgid "Geo Location Failure"
 msgstr "地理情報の取得に失敗"
 
@@ -155,7 +155,7 @@ msgstr "おはようございます"
 msgid "Groq API Key"
 msgstr "Groq APIキー"
 
-#: ../../client/src/home/hooks/useAI.tsx:40
+#: ../../client/src/home/hooks/useAI.tsx:44
 msgid "Groq Failure"
 msgstr "Groq失敗"
 
