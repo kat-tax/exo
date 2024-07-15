@@ -1,5 +1,6 @@
 import {i18n} from '@lingui/core';
-import {sourceLocale, Locales} from 'config/locales';
+import {sourceLocale} from 'config/locales';
+import type {Locales} from 'config/locales';
 
 export {i18n};
 export async function load(locale: Locales = sourceLocale) {

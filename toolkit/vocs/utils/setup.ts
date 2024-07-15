@@ -63,7 +63,7 @@ async function processComponents(files: string[], paths: string[]) {
     if (demo) mdx = mdx.replace(/:::demo(.*?):::/gs, `<div style={{display: 'flex'}}>${demo.trim()}</div>`);
     if (imports) mdx = mdx.replace(/:::imports(.*?):::/gs, imports.trim());
     mdx = mdx.replace(/:::usage:::/g, getCodeBlock(imports, demo));
-    const final = getDefaultImports() + '\n' + mdx;
+    const final = `${getDefaultImports()}\n${mdx}`;
     await ensureDir([output, ...base.split('/')].slice(0, -1).join('/'));
     await writeFile(`${output}/${base}.mdx`, final, 'utf8');
   });
@@ -81,7 +81,7 @@ function getCodeBlock(imports?: string, demo?: string) {
     'import React from \'react\';',
     '// ---cut---',
     '// @log: ↓ Import the component',
-    imports ? imports?.trim() + '\n' : '',
+    imports ? `${imports?.trim()}\n` : '',
     '// @log: ↓ Try the example',
     demo?.trim(),
     '',

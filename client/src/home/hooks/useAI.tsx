@@ -26,7 +26,7 @@ export function useAI(
   const {row} = useQuery(prompt(rows[Math.abs((rows.length - (index ?? 1)) % rows.length)]?.id));
   const {i18n} = useLingui();
 
-  const promptText = useCallback(async (prompt: string, multi: boolean = false) => {
+  const promptText = useCallback(async (prompt: string, multi = false) => {
     setLoading(true);
     if (prompt.length > 0) {
       try {
@@ -47,7 +47,7 @@ export function useAI(
       }
     }
     setLoading(false);
-  }, [apiModel]);
+  }, [apiModel, i18n, model, create]);
 
   const navigate = useCallback((
     e: NativeSyntheticEvent<TextInputKeyPressEventData>,
@@ -80,7 +80,7 @@ export function useAI(
       setDirty(false);
       setIndex(null);
     }
-  }, [index, rows]);
+  }, [index, rows, input]);
 
   return {
     loading,

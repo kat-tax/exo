@@ -21,7 +21,7 @@ export default function ScreenHome() {
       title={<Trans id={getDayGreeting().id}/>}
       message={row?.name
         ? <T>{`Welcome, ${row.name}`}</T>
-        : <T>{`Welcome, Human`}</T>
+        : <T>{'Welcome, Human'}</T>
       }
       widget={
         <View style={styles.widget}>

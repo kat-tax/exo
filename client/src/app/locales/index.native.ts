@@ -1,5 +1,6 @@
 import {i18n} from '@lingui/core';
-import {sourceLocale, Locales} from 'config/locales';
+import {sourceLocale} from 'config/locales';
+import type {Locales} from 'config/locales';
 
 import {messages as en} from './messages/en';
 import {messages as ru} from './messages/ru';

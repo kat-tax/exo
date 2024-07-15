@@ -11,7 +11,7 @@ export const Slider: SliderComponent = (props: SliderProps) => {
       disabled={props.disabled}
       step={(props.step ?? 100) / 100}
       value={(props.value ?? 0) / 100}
-      onValueChange={e => props.onChange && props.onChange((e ?? 0) / 100)}
+      onValueChange={e => props?.onChange?.((e ?? 0) / 100)}
       lowerLimit={(props.lowerLimit ?? 0) / 100}
       upperLimit={(props.upperLimit ?? 100) / 100}
       maximumTrackTintColor={props.trackColor}

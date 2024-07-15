@@ -21,10 +21,10 @@ export function Router({basename, children, history}: RouterProps): React.ReactN
     <RouterBase
       navigator={history}
       basename={basename}
-      children={children}
       location={state.location}
-      navigationType={state.action}
-    />
+      navigationType={state.action}>
+      {children}
+    </RouterBase>
   );
 }
 

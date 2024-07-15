@@ -6,9 +6,7 @@ import {Markdown as MarkdownBase} from 'react-exo/markdown';
 export const Markdown = memo(({text}: {text: string}) => {
   const {theme} = useStyles();
 
-  if (!text) {
-    return null;
-  }
+  if (!text) return null;
 
   return (
     <ScrollView

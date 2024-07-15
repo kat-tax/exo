@@ -48,9 +48,8 @@ export function isBrave() {
   if ('brave' in navigator) {
     // @ts-ignore
     return navigator.brave.isBrave().then(e => e);
-  } else {
-    return false;
   }
+  return false;
 }
 
 export function getPlatforms() {

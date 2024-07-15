@@ -8,7 +8,7 @@ export const Rive: RiveComponent = (props: RiveProps) => {
     <View style={props.style} testID={props.testID}>
       <RiveBase
         src={props.url}
-        ref={props.ref}
+        ref={props.refWeb}
       />
     </View>
   );

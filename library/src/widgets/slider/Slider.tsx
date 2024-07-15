@@ -20,7 +20,7 @@ export const Slider: SliderComponent = (props: SliderProps) => {
         min={props.lowerLimit ?? 0}
         max={props.upperLimit ?? 1}
         defaultValue={[props.value ?? 0]}
-        onValueChange={e => props.onChange && props.onChange(e[0] ?? 0)}
+        onValueChange={e => props?.onChange?.(e[0] ?? 0)}
         style={{
           height: 20,
           cursor: 'pointer',

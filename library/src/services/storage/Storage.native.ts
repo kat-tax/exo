@@ -1,5 +1,5 @@
 import {MMKV} from 'react-native-mmkv';
-import {StorageDataCheck} from './Storage.interface';
+import {validator} from './Storage.interface';
 import type {StorageBase, StorageDB} from './Storage.interface';
 
 export class StorageService implements StorageBase {
@@ -8,13 +8,13 @@ export class StorageService implements StorageBase {
     return <StorageDB>{
       getItem: async (k, i) => {
         switch (true) {
-          case StorageDataCheck.isBoolean(i):
+          case validator.isBoolean(i):
             return db.getBoolean(k) ?? i;
-          case StorageDataCheck.isString(i):
+          case validator.isString(i):
             return db.getString(k) ?? i;
-          case StorageDataCheck.isNumber(i):
+          case validator.isNumber(i):
             return db.getNumber(k) ?? i;
-          case StorageDataCheck.isUint8Array(i):
+          case validator.isUint8Array(i):
             return db.getBuffer(k) ?? i;
           default:
             return undefined;

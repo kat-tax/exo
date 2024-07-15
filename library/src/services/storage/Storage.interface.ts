@@ -63,25 +63,25 @@ export interface StorageDB extends Persist {
 /**
  * A utility class to validate data types
  */
-export class StorageDataCheck {
+export const validator = {
   /** Checks if the value is a boolean */
-  static isBoolean = (v?: unknown): v is boolean =>
-    typeof v === 'boolean' || v === undefined
+  isBoolean: (v?: unknown): v is boolean =>
+    typeof v === 'boolean' || v === undefined,
   /** Checks if the value is a string */
-  static isString = (v?: unknown): v is string =>
-    typeof v === 'string' || v === undefined
+  isString: (v?: unknown): v is string =>
+    typeof v === 'string' || v === undefined,
   /** Checks if the value is a number */
-  static isNumber = (v?: unknown): v is number =>
-    typeof v === 'number' || v === undefined
+  isNumber: (v?: unknown): v is number =>
+    typeof v === 'number' || v === undefined,
   /** Checks if the value is a Uint8Array */
-  static isUint8Array = (v?: unknown): v is Uint8Array =>
-    v instanceof Uint8Array || v === undefined
+  isUint8Array: (v?: unknown): v is Uint8Array =>
+    v instanceof Uint8Array || v === undefined,
 }
 
 type ItemAllowedType<T extends Primitive = string, I = T> = T extends I ? Constructor<I> | ItemInstance<T> : undefined;
 type ItemReturnType<T extends Primitive = string, I = T> = T extends I ? Widen<ItemInstance<T>> : undefined;
 type ItemInstance<T> = T extends Constructor<infer U> ? U : T;
-type Constructor<T = Primitive> = new (...args: any[]) => T;
+type Constructor<T = Primitive> = new (...args: unknown[]) => T;
 type Primitive = string | number | boolean | Uint8Array;
 type Widen<T> = 
  T extends boolean ? boolean :

@@ -16,20 +16,20 @@ export default function ScreenCalendar() {
   const range = useDateRange();
 
   const hasEvent = false;
-  const demoEventStartDate = new Date('2024-07-28T12:00:00');
-  const demoEventEndDate = new Date('2024-07-28T14:00:00');
-  const demoEventTitle = 'Birthday – Shiner, TX';
-  const demoEventDesc = demoEventStartDate.toLocaleDateString(locale, {
+  const demoStart = new Date('2024-07-28T12:00:00');
+  const demoEnd = new Date('2024-07-28T14:00:00');
+  const demoTitle = 'Birthday – Shiner, TX';
+  const demo = `${demoStart.toLocaleDateString(locale, {
     weekday: 'short',
     month: 'long',
     day: 'numeric',
-  }) + ' • ' + demoEventStartDate.toLocaleTimeString(locale, {
+  })} • ${demoStart.toLocaleTimeString(locale, {
     hour: 'numeric',
     minute: '2-digit',
-  }) + ' - ' + demoEventEndDate.toLocaleTimeString(locale, {
+  })} - ${demoEnd.toLocaleTimeString(locale, {
     hour: 'numeric',
     minute: '2-digit',
-  });
+  })}`;
 
   return (
     <View style={styles.root}>
@@ -46,8 +46,8 @@ export default function ScreenCalendar() {
         {hasEvent
           ? <Alert
               mode="Default"
-              header={demoEventTitle}
-              body={demoEventDesc}
+              header={demoTitle}
+              body={demo}
               hasIcon
               icon={
                 <Icon name="ph:cake"/>

@@ -9,7 +9,7 @@ interface TasksInputProps {
 }
 
 export function TasksInput(props: TasksInputProps) {
-  const ref = useRef<any>(null);
+  const ref = useRef<TextInput>(null);
   const {i18n} = useLingui();
   const {styles, theme} = useStyles(stylesheet);
   return (

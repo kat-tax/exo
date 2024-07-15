@@ -24,18 +24,18 @@ export function useSearchParams(init?: URLSearchParamsInit): URLSearchParamsData
   const searchInit = useRef(createSearchParams(init));
   const searchParams = useMemo(() => {
     const params = createSearchParams(location.search);
-    for (let key of searchInit.current.keys()) {
+    for (const key of searchInit.current.keys()) {
       if (!params.has(key)) {
-        searchInit.current.getAll(key).forEach((value) => {
+        for (const value of searchInit.current.getAll(key)) {
           params.append(key, value);
-        });
+        }
       }
     }
     return params;
   }, [location.search]);
 
   const setSearchParams: SetURLSearchParams = useCallback((init, opts) =>
-    navigate('?' + createSearchParams(init), opts)
+    navigate(`?${createSearchParams(init)}`, opts)
   , [navigate]);
 
   return [searchParams, setSearchParams];

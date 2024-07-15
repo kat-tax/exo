@@ -14,7 +14,7 @@ import type {To} from 'react-router';
   {target, replace: replaceProp, state}: {
     target?: React.HTMLAttributeAnchorTarget;
     replace?: boolean;
-    state?: any;
+    state?: unknown;
   } = {}
 ): (e: React.MouseEvent<E, MouseEvent>) => void {
 

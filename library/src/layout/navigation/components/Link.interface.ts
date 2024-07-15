@@ -3,7 +3,7 @@ import type {PressableProps} from 'react-native';
 
 export interface LinkBase {
   to: To,
-  state?: any,
+  state?: unknown,
   replace?: boolean,
 }
 

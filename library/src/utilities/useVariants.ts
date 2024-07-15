@@ -1,4 +1,4 @@
-import {useMemo} from 'react';
+import {useMemo, useCallback} from 'react';
 import {titleCase} from '_lib/string';
 
 import type {PressableStateCallbackType} from 'react-native';
@@ -18,17 +18,19 @@ export function useVariants<S>(
 ): {
   vstyles: VStyleSheet<S>,
 } {
-  const isVState = (v: string): boolean => v.toLowerCase() === 'state';
+  const isVState = useCallback((v: string): boolean =>
+    v.toLowerCase() === 'state'
+  , []);
 
-  const buildStyles = (slug: VStyleKey<S>, styles: S) => {
+  const buildStyles = useCallback((slug: VStyleKey<S>, styles: S) => {
     const vstyles: [VStyleCond, VStyleMod<S>][] = [[null, styles[slug]]];
     const vnames = Object.entries(variants).sort((a, b) => a[0].localeCompare(b[0]));
     // Sort and and loop through all vars
-    vnames.forEach(([v1, primary]) => {
+    for (const [v1, primary] of vnames) {
       // Single variant for this component
       if (vnames.length === 1) {
         // Loop through all values for the variant
-        primary.forEach(v1v => {
+        for (const v1v of primary) {
           // Build id for this variant combination
           const vkey = `${slug}${titleCase(v1)}${v1v}` as VStyleKey<S>;
           // Look up the id in the stylesheet
@@ -44,18 +46,18 @@ export function useVariants<S>(
           );
           // Add the variant combo style to styles
           vstyles.push([vcond, vstyle]);
-        });
+        }
       // Multiple variants, create compound styles
       } else {
         // Prevent state from being used as primary variant (it's a secondary)
         if (isVState(v1)) return;
         // Loop through all values for the variant
-        primary.forEach(v1v => {
+        for (const v1v of primary) {
           // For this value, loop all values of the other variants
-          vnames.forEach(([v2, secondary]) => {
+          for (const [v2, secondary] of vnames) {
             if (v1 === v2) return;
             // Loop through all the values in the other variant
-            secondary.forEach(v2v => {
+            for (const v2v of secondary) {
               // Build id for this variant combination
               const vkey = `${slug}${titleCase(v1)}${v1v}${titleCase(v2)}${v2v}` as VStyleKey<S>;
               // Look up the id in the stylesheet
@@ -73,15 +75,15 @@ export function useVariants<S>(
               );
               // Add the variant combo style to styles
               vstyles.push([vcond, vstyle]);
-            });
-          });
-        });
+            }
+          }
+        }
       }
-    });
+    }
     return vstyles;
-  }
+  }, [variants, states, isVState]);
 
-  const proxyStyles = (o: S): VStyleSheet<S> => {
+  const proxyStyles = useCallback((o: S): VStyleSheet<S> => {
     // Cache the styles for each variant combo as they are accessed
     const cache = new Map<string, ReturnType<typeof buildStyles>>();
     // Create empty object to proxy the styles, inherit types from stylesheet
@@ -96,6 +98,8 @@ export function useVariants<S>(
           styles = buildStyles(k, o);
           cache.set(k, styles);
         }
+        // Still no styles found, return empty array
+        if (!styles) return [];
         // Return styles that match the current variant values and/or state
         return styles
           .filter(([c]) => c === null || c?.(e))
@@ -103,9 +107,9 @@ export function useVariants<S>(
       };
     }
     return proxy;
-  };
+  }, [buildStyles]);
 
   return {
-    vstyles: useMemo(() => proxyStyles(styles), [styles]),
+    vstyles: useMemo(() => proxyStyles(styles), [styles, proxyStyles]),
   };
 }

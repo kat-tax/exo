@@ -5,7 +5,7 @@ import 'react-exo/switch.css';
 import 'react-exo/radio.css';
 import 'react-exo/slider.css';
 
-import {useState, useEffect} from 'react';
+import {useState, useEffect, useCallback} from 'react';
 import {useInitialTheme, UnistylesRuntime} from 'react-native-unistyles';
 import {ColorPalette, ColorItem, IconGallery, IconItem} from '@storybook/blocks';
 import {extractBasics, extractScales, getBasicProps} from 'utils/colors';
@@ -21,7 +21,7 @@ export function Story(props: {
   parameters: Parameters,
 }) {
   const {children, globals, parameters} = props;
-  const getCurrentTheme = () => {
+  const getCurrentTheme = useCallback(() => {
     let theme = initialTheme;
     // Runtime theme
     if (globals?.backgrounds) {
@@ -38,14 +38,14 @@ export function Story(props: {
       theme = parameters?.backgrounds?.default;
     }
     return theme;
-  }
+  }, [globals, parameters]);
 
   useInitialTheme(getCurrentTheme() as never);
   
   useEffect(() => {
     const theme = getCurrentTheme();
     UnistylesRuntime.setTheme(theme as never);
-  }, [parameters, globals]);
+  }, [getCurrentTheme]);
 
   return <>{children}</>
 }

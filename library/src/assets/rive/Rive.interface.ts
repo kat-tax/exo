@@ -1,5 +1,5 @@
 import type {ViewStyle} from 'react-native';
-import type {Alignment, Fit} from 'rive-react-native';
+import type {Alignment, Fit, RiveRef} from 'rive-react-native';
 
 export type RiveComponent = (props: RiveProps) => JSX.Element;
 
@@ -28,5 +28,8 @@ export interface RiveProps {
   stateMachineName?: string | undefined,
   /** The identifier used for testing */
   testID?: string,
-  ref?: any,
+  /** Ref for the web canvas element. */
+  refWeb?: React.LegacyRef<HTMLCanvasElement>,
+  /** Ref for the native rive view. */
+  refNative?: React.LegacyRef<RiveRef>,
 }

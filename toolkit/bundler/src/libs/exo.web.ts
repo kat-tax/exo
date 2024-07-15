@@ -8,6 +8,8 @@ import patchMarkdown from '../mod/fix-markdown-import.js';
 import patchCalendar from '../mod/fix-calendar-import.js';
 import patchMotion from '../mod/fix-motion-import.js';
 
+import type {PluginOption} from 'vite';
+
 export default defineConfig(env => mergeConfig(
   webConfig(env),
   defineConfig({
@@ -87,7 +89,7 @@ export default defineConfig(env => mergeConfig(
       ],
     },
     plugins: [
-      dynImportVar as any,
+      dynImportVar as unknown as PluginOption,
       patchMarkdown,
       patchCalendar,
       patchMotion,

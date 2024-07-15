@@ -2,10 +2,12 @@ import {t} from '@lingui/macro';
 import {alert} from 'react-exo/toast';
 import {useLingui} from '@lingui/react';
 import {useEvolu, useOwner, parseMnemonic, NonEmptyString1000} from '@evolu/react-native';
-import {Database, NonEmptyString50} from 'app/data/schema';
+import {NonEmptyString50} from 'app/data/schema';
 import {useProfile} from 'app/hooks/useProfile';
 import {Effect, Either, Function} from 'effect';
 import * as S from '@effect/schema/Schema';
+
+import type {Database} from 'app/data/schema';
 
 export function useSettings() {
   const evolu = useEvolu<Database>();

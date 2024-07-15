@@ -32,7 +32,7 @@ export function useLocation() {
       },
     );
     return () => Geolocation.clearWatch(watchId);
-  }, []);
+  }, [i18n]);
 
   return location;
 }

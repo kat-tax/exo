@@ -9,7 +9,7 @@ export function useClock(timeFormat: 'short' | 'medium' | 'long' = 'short') {
     const i = setInterval(() =>
       setClock(getCurrentTime(timeFormat)), 1000);
     return () => clearInterval(i);
-  }, []);
+  }, [timeFormat]);
 
   return clock;
 }

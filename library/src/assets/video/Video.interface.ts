@@ -1,5 +1,5 @@
-import type {VideoProperties as VideoProps} from 'react-native-video';
+import type {ReactVideoProps as VideoProps} from 'react-native-video';
 
 export type VideoComponent = (props: VideoProps) => JSX.Element;
 
-export {VideoProps};
+export type {VideoProps};

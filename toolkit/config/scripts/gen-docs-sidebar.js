@@ -60,7 +60,7 @@ const sidebar = [
 
 writeFileSync(
   './gen/docs.sidebar.js',
-  'export default ' + JSON.stringify(sidebar, null, 2)
+  `export default ${JSON.stringify(sidebar, null, 2)}`
 );
 
 // Helpers

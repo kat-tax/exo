@@ -47,24 +47,24 @@ export async function getCurrentWeather(lat: number, long: number): Promise<Weat
 
   const url = 'https://api.open-meteo.com/v1/forecast';
   const res = await fetchWeatherApi(url, params);
-  const cur = res[0].current()!;
+  const cur = res[0].current();
 
   return {
-    temperature2m: round(cur.variables(0)!.value(), 0),
-    relativeHumidity2m: round(cur.variables(1)!.value(), 0),
-    apparentTemperature: round(cur.variables(2)!.value(), 0),
-    isDay: cur.variables(3)!.value(),
-    precipitation: round(cur.variables(4)!.value(), 0),
-    rain: round(cur.variables(5)!.value(), 0),
-    showers: round(cur.variables(6)!.value(), 0),
-    snowfall: round(cur.variables(7)!.value(), 0),
-    weatherCode: cur.variables(8)!.value(),
-    cloudCover: round(cur.variables(9)!.value(), 0),
-    pressureMsl: round(cur.variables(10)!.value(), 0),
-    surfacePressure: round(cur.variables(11)!.value(), 0),
-    windSpeed10m: round(cur.variables(12)!.value(), 0),
-    windDirection10m: round(cur.variables(13)!.value(), 0),
-    windGusts10m: round(cur.variables(14)!.value(), 0),
+    temperature2m: round(cur?.variables(0)?.value() ?? 0, 0),
+    relativeHumidity2m: round(cur?.variables(1)?.value() ?? 0, 0),
+    apparentTemperature: round(cur?.variables(2)?.value() ?? 0, 0),
+    isDay: cur?.variables(3)?.value() ?? 0,
+    precipitation: round(cur?.variables(4)?.value() ?? 0, 0),
+    rain: round(cur?.variables(5)?.value() ?? 0, 0),
+    showers: round(cur?.variables(6)?.value() ?? 0, 0),
+    snowfall: round(cur?.variables(7)?.value() ?? 0, 0),
+    weatherCode: cur?.variables(8)?.value() ?? 0,
+    cloudCover: round(cur?.variables(9)?.value() ?? 0, 0),
+    pressureMsl: round(cur?.variables(10)?.value() ?? 0, 0),
+    surfacePressure: round(cur?.variables(11)?.value() ?? 0, 0),
+    windSpeed10m: round(cur?.variables(12)?.value() ?? 0, 0),
+    windDirection10m: round(cur?.variables(13)?.value() ?? 0, 0),
+    windGusts10m: round(cur?.variables(14)?.value() ?? 0, 0),
   }
 }
 

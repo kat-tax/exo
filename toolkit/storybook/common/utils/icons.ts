@@ -29,13 +29,11 @@ function filterIconsBySuffix(
   items: string[],
 ): string[] {
   // Suffix is an empty string, filter out all suffixes
-  if (suffix === '') {
+  if (suffix === '')
     return items.filter(i => !Object.keys(suffixes).filter(Boolean).some(s => i.endsWith(s)));
   // Suffix matches in the suffixes object, use specified suffix
-  } else if (suffixes.hasOwnProperty(suffix)) {
+  if (Object.prototype.hasOwnProperty.call(suffixes, suffix))
     return items.filter(i => i.endsWith(suffix));
   // If the suffix is not in the suffixes object, return the original array
-  } else {
-    return items;
-  }
+  return items;
 }

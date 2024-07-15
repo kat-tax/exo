@@ -11,9 +11,9 @@ const meta: Meta<typeof Component> = {
 export const Picker: Story = {
   args: {
     children: [
-      <Component.Item label="Default" value=""/>,
-      <Component.Item label="Light" value="light"/>,
-      <Component.Item label="Dark" value="dark"/>,
+      <Component.Item key="default" label="Default" value=""/>,
+      <Component.Item key="light" label="Light" value="light"/>,
+      <Component.Item key="dark" label="Dark" value="dark"/>,
     ]
   },
 };

@@ -10,7 +10,7 @@ import type {GestureResponderEvent} from 'react-native';
  */
  export function useLinkPressHandler(
   to: To,
-  {replace, state}: {replace?: boolean, state?: any} = {}
+  {replace, state}: {replace?: boolean, state?: unknown} = {}
 ): (e: GestureResponderEvent) => void {
   const navigate = useNavigate();
   return () => navigate(to, {replace, state});

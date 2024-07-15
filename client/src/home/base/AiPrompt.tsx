@@ -32,7 +32,7 @@ export function AiPrompt() {
             <TextInput
               style={styles.input}
               value={ai.response?.prompt ?? ''}
-              multiline={ai.response?.isMultiline ? true : false}
+              multiline={Boolean(ai.response?.isMultiline)}
               numberOfLines={ai.response?.isMultiline ? 8 : undefined}
               onKeyPress={(e) => ai.navigate(e)}
               autoFocus
