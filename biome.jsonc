@@ -13,9 +13,7 @@
     "enabled": false
   },
   "formatter": {
-    "indentWidth": 2,
-    "indentStyle": "space",
-    "lineWidth": 180
+    "enabled": false
   },
   "javascript": {
     "formatter": {
