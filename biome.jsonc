@@ -9,10 +9,10 @@
       }
     }
   },
-  "organizeImports": {
+  "formatter": {
     "enabled": false
   },
-  "formatter": {
+  "organizeImports": {
     "enabled": false
   },
   "javascript": {
