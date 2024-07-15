@@ -6,16 +6,14 @@ import config from 'config';
 export * from './schema';
 
 export const createDatabase = () => _.createEvolu($.Database, {
+  syncUrl: __DEV__ ? 'http://localhost:6306' : config.SYNC_HOST,
   indexes: $.indexes,
-  syncUrl: __DEV__
-    ? 'http://localhost:6306'
-    : config.SYNC_HOST,
   initialData: (evolu) => {
     // Initial profile for new account
     evolu.create('profile', {
       name: null,
       groqKey: null,
-      groqModel: S.decodeSync($.NonEmptyString50)('llama3-8b'),
+      groqModel: S.decodeSync($.NonEmptyString50)('llama3-8b-8192'),
     });
     // Dummy data
     const {id: labelId} = evolu.create('label', {

@@ -183,7 +183,7 @@ msgstr "مكتبة"
 msgid "Light"
 msgstr "فاتح"
 
-#: ../../client/src/app/base/MenuHeader.tsx:47
+#: ../../client/src/app/base/MenuHeader.tsx:59
 msgid "Logout"
 msgstr ""
 

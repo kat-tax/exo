@@ -183,7 +183,7 @@ msgstr "Library"
 msgid "Light"
 msgstr "Light"
 
-#: ../../client/src/app/base/MenuHeader.tsx:47
+#: ../../client/src/app/base/MenuHeader.tsx:59
 msgid "Logout"
 msgstr "Logout"
 

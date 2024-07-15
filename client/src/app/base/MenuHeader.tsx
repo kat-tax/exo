@@ -22,14 +22,26 @@ export function MenuHeader() {
               <Text style={styles.name}>
                 {profile?.name ?? t(i18n)`Human`}
               </Text>
-              <Icon name="ph:caret-down" size={12} color={theme.colors.mutedForeground}/>
+              <Icon
+                name="ph:caret-down"
+                color={theme.colors.mutedForeground}
+                size={12}
+              />
             </View>
             <View style={styles.fill}/>
             <Pressable onPress={() => console.log('Menu action not implemented')}>
-              <Icon name="ph:magnifying-glass" size={16} color={theme.colors.mutedForeground}/>
+              <Icon
+                name="ph:magnifying-glass"
+                color={theme.colors.mutedForeground}
+                size={16}
+              />
             </Pressable>
             <Pressable onPress={() => console.log('Menu action not implemented')}>
-              <Icon name="ph:note-pencil" size={16} color={theme.colors.mutedForeground}/>
+              <Icon
+                name="ph:note-pencil"
+                color={theme.colors.mutedForeground}
+                size={16}
+              />
             </Pressable>
           </View>
         </Dropdown.Trigger>

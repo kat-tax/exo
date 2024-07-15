@@ -183,7 +183,7 @@ msgstr "Библиотека"
 msgid "Light"
 msgstr "Светлый"
 
-#: ../../client/src/app/base/MenuHeader.tsx:47
+#: ../../client/src/app/base/MenuHeader.tsx:59
 msgid "Logout"
 msgstr ""
 

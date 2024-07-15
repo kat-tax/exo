@@ -5,8 +5,8 @@ import {isOnline, suscribeOnline} from 'react-exo/device';
 import {toast} from 'react-exo/toast';
 
 export function useOnline() {
-  const [online, setOnline] = useState(false);
   const {i18n} = useLingui();
+  const [online, setOnline] = useState(false);
 
   const handleConnectivity = (connected: boolean, init?: boolean) => {
     if (connected && !init) {
