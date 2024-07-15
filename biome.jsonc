@@ -9,14 +9,29 @@
       }
     }
   },
-  "overrides": [{
-    "include": ["client/src/**"],
-    "linter": {
-      "rules": {
-        "complexity": {
-          "useLiteralKeys": "off"
+  "files": {
+    "ignore": ["output", "gen", ".vscode", "client/app"]
+  },
+  "overrides": [
+    {
+      "include": ["client/**"],
+      "linter": {
+        "rules": {
+          "complexity": {
+            "useLiteralKeys": "off"
+          }
+        }
+      }
+    },
+    {
+      "include": ["design/**"],
+      "linter": {
+        "rules": {
+          "suspicious": {
+            "noExplicitAny": "off"
+          }
         }
       }
     }
-  }]
+  ]
 }

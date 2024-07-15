@@ -3,7 +3,7 @@ import type * as t from '@babel/types';
 import type * as i from '@iconify/react/dist/iconify.js';
 
 import {stringToIcon, getIconData} from '@iconify/utils';
-import {readdirSync, readFileSync, writeFileSync, mkdirSync, existsSync} from 'fs';
+import {readdirSync, readFileSync, writeFileSync, mkdirSync, existsSync} from 'node:fs';
 
 export const loadedIcons = new Map<string, boolean>();
 export const iconJsonCache = new Map<string, i.IconifyJSON>();
@@ -57,7 +57,8 @@ export async function fetchIconSetJSON(set: string, icons: string[]): Promise<i.
 
 export function saveIconSet(set: string, json: i.IconifyJSON, icons: string[]) {
   iconJsonCache.set(set, json);
-  icons.forEach(icon => loadedIcons.set(`${set}:${icon}`, true));
+  for (const icon of icons)
+    loadedIcons.set(`${set}:${icon}`, true);
   mkdirSync(DIR_CACHE, {recursive: true});
   writeFileSync(`${DIR_CACHE}/${set}.json`, JSON.stringify(json, null, 2));
 }
@@ -66,10 +67,10 @@ export function loadIconSets() {
   if (!existsSync(DIR_CACHE)) return;
   const files = readdirSync(DIR_CACHE);
   const sets = files.filter(file => file.endsWith('.json'));
-  sets.forEach(set => {
+  for (const set of sets) {
     const json = readFileSync(`${DIR_CACHE}/${set}`, 'utf-8');
     iconJsonCache.set(set, JSON.parse(json) as i.IconifyJSON);
-  });
+  }
 }
 
 loadIconSets();

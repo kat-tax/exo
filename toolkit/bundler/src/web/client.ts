@@ -39,10 +39,9 @@ export default defineConfig(env => mergeConfig(
         name: 'index-html-config',
         transformIndexHtml(html) {
           let out = html;
-          Object.entries(cfg).map(([key, value]) =>
-            [new RegExp(`__${key}__`, 'g'), value]).forEach(([reg, val]) => {
-              out = out.replace(reg as any, val as any);
-            });
+          for (const [key, value] of Object.entries(cfg)) {
+            out = out.replace(new RegExp(`__${key}__`, 'g'), value);
+          }
           return out;
         },
       },
