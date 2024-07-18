@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build": "pnpm gen:locales && tsc && pnpm gen:cfg && pnpm gen:files",
+    "build": "pnpm gen:cfg && pnpm gen:locales && tsc && pnpm gen:files",
     "gen:cfg": "rnuc --project-root ../../client --lib-root ./node_modules/react-native-ultimate-config ../../config.yaml",
     "gen:files": "node ./scripts/gen-app-json.js && node ./scripts/gen-docs-sidebar.js",
     "gen:locales": "node ./scripts/gen-user-locales.js"
