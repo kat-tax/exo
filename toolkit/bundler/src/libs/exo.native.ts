@@ -29,9 +29,9 @@ export default defineConfig(env => mergeConfig(
           /* Services */
           device: 'src/services/device/Device.export',
           form: 'src/services/form/Form.export',
+          fs: 'src/services/fs/Fs.export',
           redux: 'src/services/redux/Redux.export',
           storage: 'src/services/storage/Storage.export',
-          filesystem: 'src/services/filesystem/FileSystem.export',
           toast: 'src/services/toast/Toast.export',
           /* Widgets */
           calendar: 'src/widgets/calendar/Calendar.export',

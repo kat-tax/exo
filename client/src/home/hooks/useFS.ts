@@ -1,5 +1,5 @@
 import {useMemo} from 'react';
-import {WebHfs} from 'react-exo/filesystem';
+import {WebHfs} from 'react-exo/fs';
 
 export function useFS() {
   const fs = useMemo(async () => {

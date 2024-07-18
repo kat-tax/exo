@@ -33,10 +33,10 @@
       "import": "./gen/web/navigation.js",
       "require": "./gen/native/navigation.js"
     },
-    "./filesystem": {
-      "types": "./gen/types/filesystem.d.ts",
-      "import": "./gen/web/filesystem.js",
-      "require": "./gen/native/filesystem.js"
+    "./fs": {
+      "types": "./gen/types/fs.d.ts",
+      "import": "./gen/web/fs.js",
+      "require": "./gen/native/fs.js"
     },
     "./storage": {
       "types": "./gen/types/storage.d.ts",
