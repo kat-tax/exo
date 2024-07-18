@@ -42,15 +42,15 @@ msgstr "AI"
 msgid "All Data"
 msgstr "すべてのデータ"
 
-#: ../../client/src/settings/hooks/useSettings.ts:56
+#: ../../client/src/settings/hooks/useSettings.ts:58
 msgid "Are you sure you want to change the owner key? This will reset the local database. This action cannot be undone."
 msgstr "オーナーキーを変更してもよろしいですか？これによりローカルデータベースがリセットされます。この操作は元に戻せません。"
 
-#: ../../client/src/settings/hooks/useSettings.ts:50
+#: ../../client/src/settings/hooks/useSettings.ts:52
 msgid "Are you sure you want to reset your local database? If data is not backed up on another device, it will be lost. This action cannot be undone."
 msgstr "ローカルデータベースをリセットしてもよろしいですか？データが他のデバイスにバックアップされていない場合、失われます。この操作は元に戻せません。"
 
-#: ../../client/src/settings/hooks/useSettings.ts:41
+#: ../../client/src/settings/hooks/useSettings.ts:43
 msgid "Are you sure you want to reset your prompt history?"
 msgstr "プロンプト履歴をリセットしてもよろしいですか？"
 
@@ -213,7 +213,7 @@ msgstr "Groq APIキーを設定してください"
 msgid "Profile"
 msgstr "プロフィール"
 
-#: ../../client/src/settings/hooks/useSettings.ts:43
+#: ../../client/src/settings/hooks/useSettings.ts:45
 msgid "Prompt History Reset"
 msgstr "プロンプト履歴のリセット"
 
@@ -275,11 +275,11 @@ msgstr "ようこそ、{0}"
 msgid "Welcome, Human"
 msgstr "ようこそ、人間"
 
-#: ../../client/src/app/hooks/useOnline.ts:15
+#: ../../client/src/app/hooks/useOnline.ts:16
 msgid "You are offline"
 msgstr "オフラインです"
 
-#: ../../client/src/app/hooks/useOnline.ts:13
+#: ../../client/src/app/hooks/useOnline.ts:14
 msgid "You are online"
 msgstr "オンラインです"
 
@@ -287,6 +287,6 @@ msgstr "オンラインです"
 msgid "Your name to display in the app."
 msgstr "アプリに表示する名前。"
 
-#: ../../client/src/settings/hooks/useSettings.ts:44
+#: ../../client/src/settings/hooks/useSettings.ts:46
 msgid "Your prompt history has been reset."
 msgstr "プロンプト履歴がリセットされました。"

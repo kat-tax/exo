@@ -42,15 +42,15 @@ msgstr "AI"
 msgid "All Data"
 msgstr "All Data"
 
-#: ../../client/src/settings/hooks/useSettings.ts:56
+#: ../../client/src/settings/hooks/useSettings.ts:58
 msgid "Are you sure you want to change the owner key? This will reset the local database. This action cannot be undone."
 msgstr "Are you sure you want to change the owner key? This will reset the local database. This action cannot be undone."
 
-#: ../../client/src/settings/hooks/useSettings.ts:50
+#: ../../client/src/settings/hooks/useSettings.ts:52
 msgid "Are you sure you want to reset your local database? If data is not backed up on another device, it will be lost. This action cannot be undone."
 msgstr "Are you sure you want to reset your local database? If data is not backed up on another device, it will be lost. This action cannot be undone."
 
-#: ../../client/src/settings/hooks/useSettings.ts:41
+#: ../../client/src/settings/hooks/useSettings.ts:43
 msgid "Are you sure you want to reset your prompt history?"
 msgstr "Are you sure you want to reset your prompt history?"
 
@@ -213,7 +213,7 @@ msgstr "Please set your Groq API Key"
 msgid "Profile"
 msgstr "Profile"
 
-#: ../../client/src/settings/hooks/useSettings.ts:43
+#: ../../client/src/settings/hooks/useSettings.ts:45
 msgid "Prompt History Reset"
 msgstr "Prompt History Reset"
 
@@ -275,11 +275,11 @@ msgstr "Welcome, {0}"
 msgid "Welcome, Human"
 msgstr "Welcome, Human"
 
-#: ../../client/src/app/hooks/useOnline.ts:15
+#: ../../client/src/app/hooks/useOnline.ts:16
 msgid "You are offline"
 msgstr "You are offline"
 
-#: ../../client/src/app/hooks/useOnline.ts:13
+#: ../../client/src/app/hooks/useOnline.ts:14
 msgid "You are online"
 msgstr "You are online"
 
@@ -287,6 +287,6 @@ msgstr "You are online"
 msgid "Your name to display in the app."
 msgstr "Your name to display in the app."
 
-#: ../../client/src/settings/hooks/useSettings.ts:44
+#: ../../client/src/settings/hooks/useSettings.ts:46
 msgid "Your prompt history has been reset."
 msgstr "Your prompt history has been reset."

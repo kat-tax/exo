@@ -42,15 +42,15 @@ msgstr "الذكاء الاصطناعي"
 msgid "All Data"
 msgstr "كل البيانات"
 
-#: ../../client/src/settings/hooks/useSettings.ts:56
+#: ../../client/src/settings/hooks/useSettings.ts:58
 msgid "Are you sure you want to change the owner key? This will reset the local database. This action cannot be undone."
 msgstr "هل أنت متأكد أنك تريد تغيير مفتاح المالك؟ سيؤدي ذلك إلى إعادة تعيين قاعدة البيانات المحلية. لا يمكن التراجع عن هذا الإجراء."
 
-#: ../../client/src/settings/hooks/useSettings.ts:50
+#: ../../client/src/settings/hooks/useSettings.ts:52
 msgid "Are you sure you want to reset your local database? If data is not backed up on another device, it will be lost. This action cannot be undone."
 msgstr "هل أنت متأكد أنك تريد إعادة تعيين قاعدة البيانات المحلية؟ إذا لم يتم نسخ البيانات احتياطيًا على جهاز آخر، فسيتم فقدها. لا يمكن التراجع عن هذا الإجراء."
 
-#: ../../client/src/settings/hooks/useSettings.ts:41
+#: ../../client/src/settings/hooks/useSettings.ts:43
 msgid "Are you sure you want to reset your prompt history?"
 msgstr "هل أنت متأكد أنك تريد إعادة تعيين سجل المطالبات الخاص بك؟"
 
@@ -213,7 +213,7 @@ msgstr "يرجى تعيين مفتاح Groq API الخاص بك"
 msgid "Profile"
 msgstr "الملف الشخصي"
 
-#: ../../client/src/settings/hooks/useSettings.ts:43
+#: ../../client/src/settings/hooks/useSettings.ts:45
 msgid "Prompt History Reset"
 msgstr "إعادة تعيين سجل المطالبات"
 
@@ -275,11 +275,11 @@ msgstr "مرحبًا، {0}"
 msgid "Welcome, Human"
 msgstr "مرحبًا، أيها الإنسان"
 
-#: ../../client/src/app/hooks/useOnline.ts:15
+#: ../../client/src/app/hooks/useOnline.ts:16
 msgid "You are offline"
 msgstr "أنت غير متصل"
 
-#: ../../client/src/app/hooks/useOnline.ts:13
+#: ../../client/src/app/hooks/useOnline.ts:14
 msgid "You are online"
 msgstr "أنت متصل"
 
@@ -287,6 +287,6 @@ msgstr "أنت متصل"
 msgid "Your name to display in the app."
 msgstr "اسمك للعرض في التطبيق."
 
-#: ../../client/src/settings/hooks/useSettings.ts:44
+#: ../../client/src/settings/hooks/useSettings.ts:46
 msgid "Your prompt history has been reset."
 msgstr "تمت إعادة تعيين سجل المطالبات الخاص بك."

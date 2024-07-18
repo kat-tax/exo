@@ -42,15 +42,15 @@ msgstr "ИИ"
 msgid "All Data"
 msgstr "Все данные"
 
-#: ../../client/src/settings/hooks/useSettings.ts:56
+#: ../../client/src/settings/hooks/useSettings.ts:58
 msgid "Are you sure you want to change the owner key? This will reset the local database. This action cannot be undone."
 msgstr "Вы уверены, что хотите изменить ключ владельца? Это сбросит локальную базу данных. Это действие нельзя отменить."
 
-#: ../../client/src/settings/hooks/useSettings.ts:50
+#: ../../client/src/settings/hooks/useSettings.ts:52
 msgid "Are you sure you want to reset your local database? If data is not backed up on another device, it will be lost. This action cannot be undone."
 msgstr "Вы уверены, что хотите сбросить локальную базу данных? Если данные не будут сохранены на другом устройстве, они будут потеряны. Это действие нельзя отменить."
 
-#: ../../client/src/settings/hooks/useSettings.ts:41
+#: ../../client/src/settings/hooks/useSettings.ts:43
 msgid "Are you sure you want to reset your prompt history?"
 msgstr "Вы уверены, что хотите сбросить историю запросов?"
 
@@ -213,7 +213,7 @@ msgstr "Пожалуйста, установите ваш ключ API Groq"
 msgid "Profile"
 msgstr "Профиль"
 
-#: ../../client/src/settings/hooks/useSettings.ts:43
+#: ../../client/src/settings/hooks/useSettings.ts:45
 msgid "Prompt History Reset"
 msgstr "Сброс истории запросов"
 
@@ -275,11 +275,11 @@ msgstr "Добро пожаловать, {0}"
 msgid "Welcome, Human"
 msgstr "Добро пожаловать, человек"
 
-#: ../../client/src/app/hooks/useOnline.ts:15
+#: ../../client/src/app/hooks/useOnline.ts:16
 msgid "You are offline"
 msgstr "Вы не в сети"
 
-#: ../../client/src/app/hooks/useOnline.ts:13
+#: ../../client/src/app/hooks/useOnline.ts:14
 msgid "You are online"
 msgstr "Вы в сети"
 
@@ -287,6 +287,6 @@ msgstr "Вы в сети"
 msgid "Your name to display in the app."
 msgstr "Ваше имя для отображения в приложении."
 
-#: ../../client/src/settings/hooks/useSettings.ts:44
+#: ../../client/src/settings/hooks/useSettings.ts:46
 msgid "Your prompt history has been reset."
 msgstr "Ваша история запросов была сброшена."
