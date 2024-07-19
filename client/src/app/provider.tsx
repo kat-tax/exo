@@ -1,10 +1,10 @@
 import {useEffect} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {I18nManager, View} from 'react-native';
-import {I18nProvider} from '@lingui/react';
 import {GestureProvider} from 'react-exo/gesture';
-import {load, i18n} from 'app/locales';
+import {I18nProvider} from '@lingui/react';
 import {useLocale} from 'settings/hooks/useLocale';
+import {load, i18n} from 'app/locales';
 
 load('en');
 i18n.activate('en');

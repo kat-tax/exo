@@ -83,8 +83,8 @@ export const LabelTable = _.table({
 
 // Databases
 
-export type Database = typeof Database.Type;
-export const Database = _.database({
+export type DB = typeof DB.Type;
+export const DB = _.database({
   aiPrompt: AiPromptTable,
   profile: ProfileTable,
   device: DeviceTable,

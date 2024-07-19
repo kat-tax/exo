@@ -69,7 +69,7 @@ const stylesheet = createStyleSheet(theme => ({
     flex: 1,
     flexDirection: {
       initial: 'column',
-      xs: 'row',
+      sm: 'row',
     },
   },
   calendar: {
@@ -93,11 +93,11 @@ const stylesheet = createStyleSheet(theme => ({
     borderColor: theme.colors.secondary,
     borderLeftWidth: {
       initial: 0,
-      xs: 1,
+      sm: 1,
     },
     borderTopWidth: {
       initial: 1,
-      xs: 0,
+      sm: 0,
     },
   },
   empty: {

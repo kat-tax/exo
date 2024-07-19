@@ -2,7 +2,7 @@ import {Outlet} from 'react-exo/navigation';
 import {StatusBar} from 'react-native';
 import {useWindowDimensions, View} from 'react-native';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {useDevice} from 'app/hooks/useDevice';
+import {useDeviceSession} from 'app/hooks/useDeviceSession';
 import {Menu} from 'app/base/Menu';
 
 export const APP_MENU_WIDTH = 146;
@@ -11,16 +11,16 @@ export const APP_MENU_TAB_HEIGHT = 64;
 export default function LayoutMain() {
   const {styles, theme} = useStyles(stylesheet);
   const screen = useWindowDimensions();
-  const device = useDevice();
+  const device = useDeviceSession();
 
-  const hasTabs = screen.width <= theme.breakpoints.sm;
+  const hasTabs = screen.width <= theme.breakpoints.xs;
   const vstyles = {
     root: [styles.root, hasTabs && styles.rootTabs],
     menu: [styles.menu, hasTabs && styles.menuTabs],
   };
 
   return <>
-    <StatusBar networkActivityIndicatorVisible={!device.online}/>
+    <StatusBar networkActivityIndicatorVisible={!device?.online}/>
     <View style={vstyles.root}>
       <View style={vstyles.menu}>
         <Menu tabs={hasTabs}/>

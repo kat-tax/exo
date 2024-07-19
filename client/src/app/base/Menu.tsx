@@ -3,21 +3,20 @@ import {View, ScrollView, Text, StyleSheet} from 'react-native';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useRTL} from 'react-exo/utils';
 import {useLists} from 'tasks/hooks/useLists';
+import {MenuItem} from 'app/base/MenuItem';
+import {MenuSection} from 'app/base/MenuSection';
+import {MenuHeader} from 'app/base/MenuHeader';
+import {MenuFooter} from 'app/base/MenuFooter';
 import {isTouch} from 'app/utils/platform';
-
-import {MenuHeader} from './MenuHeader';
-import {MenuFooter} from './MenuFooter';
-import {MenuSection} from './MenuSection';
-import {MenuItem} from './MenuItem';
 
 interface MenuProps {
   tabs?: boolean,
 }
 
 export function Menu(props: MenuProps) {
-  const {styles, theme} = useStyles(stylesheet);
-  const lists = useLists();
   const rtl = useRTL();
+  const lists = useLists();
+  const {styles, theme} = useStyles(stylesheet);
   const {tabs} = props;
 
   return (
@@ -34,7 +33,7 @@ export function Menu(props: MenuProps) {
           <MenuItem
             path="/"
             icon="ph:squares-four"
-            label={<Trans>Home</Trans>}
+            label={<Trans>Dashboard</Trans>}
             tab={tabs}
           />
           <MenuItem
@@ -43,28 +42,16 @@ export function Menu(props: MenuProps) {
             label={<Trans>Inbox</Trans>}
             tab={tabs}
           />
-          <MenuItem
-            path="/map"
-            icon="ph:map-trifold"
-            label={<Trans>Map</Trans>}
-            tab={tabs}
-          />
           {tabs &&
             <View style={styles.spacer}/>
           }
           <MenuSection
-            label={<Trans>Productivity</Trans>}
+            label={<Trans>Tools</Trans>}
             tabs={tabs}>
             <MenuItem
-              path="/files"
-              icon="ph:folder"
-              label={<Trans>Files</Trans>}
-              tab={tabs}
-            />
-            <MenuItem
-              path="/notes"
-              icon="ph:note"
-              label={<Trans>Notes</Trans>}
+              path="/map"
+              icon="ph:map-trifold"
+              label={<Trans>Maps</Trans>}
               tab={tabs}
             />
             <MenuItem
@@ -79,13 +66,30 @@ export function Menu(props: MenuProps) {
               label={<Trans>Alarms</Trans>}
               tab={tabs}
             />
+            <MenuItem
+              path="/notes"
+              icon="ph:note"
+              label={<Trans>Notes</Trans>}
+              tab={tabs}
+            />
           </MenuSection>
           <MenuSection
-            disabled
-            label={<Trans>Entertainment</Trans>}
+            label={<Trans>Media</Trans>}
             tabs={tabs}>
             <MenuItem
-              path="/games"
+              path="/files"
+              icon="ph:folder"
+              label={<Trans>Files</Trans>}
+              tab={tabs}
+            />
+            <MenuItem
+              path="/docs"
+              icon="ph:file"
+              label={<Trans>Docs</Trans>}
+              tab={tabs}
+            />
+            <MenuItem
+              path="/roms"
               icon="ph:game-controller"
               label={<Trans>Games</Trans>}
               tab={tabs}
@@ -115,7 +119,7 @@ export function Menu(props: MenuProps) {
             {tabs ? null : lists.map(({id, complete}) =>
               <MenuItem
                 key={id}
-                path={`/tasks/${id}`}
+                path={`/note/${id}`}
                 icon="ph:rocket"
                 color={theme.palette.purple400}
                 label={<Text>{id}</Text>}

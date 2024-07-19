@@ -18,7 +18,7 @@ export type Weather = {
   weatherCode: number,
 }
   
-export async function getCurrentWeather([lat, lon]: [number, number]): Promise<Weather> {
+export async function getCurrentWeather([lat, lon]: readonly [number, number]): Promise<Weather> {
   const params = {
     latitude: lat,
     longitude: lon,

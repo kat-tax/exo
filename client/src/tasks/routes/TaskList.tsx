@@ -12,7 +12,7 @@ export default function TasksList() {
   return (
     <Page title={<Trans>Tasks</Trans>}>
       {tasks.map(({id, complete}) =>
-        <Link key={id} to={`/tasks/${id}`}>
+        <Link key={id} to={`/note/${id}`}>
           <Text style={[styles.link, complete && styles.strike]}>
             {`• ${id}`}
           </Text>

@@ -11,14 +11,14 @@ export function Router() {
           <Route index element={<$><Screen.Home/></$>}/>
           <Route path="inbox" element={<$><Screen.Home/></$>}/>
           <Route path="map" element={<$><Screen.Map/></$>}/>
-          <Route path="files" element={<$><Screen.Home/></$>}/>
-          <Route path="files/:id" element={<$><Screen.Home/></$>}/>
-          <Route path="notes" element={<$><Screen.TaskList/></$>}/>
-          <Route path="notes/:id" element={<$><Screen.TaskDetails/></$>}/>
           <Route path="events" element={<$><Screen.Calendar/></$>}/>
-          <Route path="events/:id" element={<$><Screen.Calendar/></$>}/>
+          <Route path="event/:id" element={<$><Screen.Calendar/></$>}/>
+          <Route path="files" element={<$><Screen.Home/></$>}/>
+          <Route path="file/:id" element={<$><Screen.Home/></$>}/>
+          <Route path="notes" element={<$><Screen.TaskList/></$>}/>
+          <Route path="note/:id" element={<$><Screen.TaskDetails/></$>}/>
           <Route path="alarms" element={<$><Screen.Home/></$>}/>
-          <Route path="alarms/:id" element={<$><Screen.Home/></$>}/>
+          <Route path="alarm/:id" element={<$><Screen.Home/></$>}/>
           <Route path="design" element={<$><Screen.Design/></$>}/>
           <Route path="library" element={<$><Screen.Library/></$>}/>
           <Route path="settings" element={<$><Screen.Settings/></$>}/>

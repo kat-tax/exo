@@ -7,9 +7,9 @@ import {Link} from 'react-exo/navigation';
 import {Icon} from 'react-exo/icon';
 import {Markdown} from 'app/widgets/Markdown';
 import {PageLoading} from 'app/base/PageLoading';
-import {useProfile} from 'app/hooks/useProfile';
-import {useAI} from 'home/hooks/useAI';
 import {formatDate} from 'home/utils/time';
+import {useAI} from 'home/hooks/useAI';
+import {useProfile} from 'app/data';
 
 const DEFAULT_MODEL = 'llama3-8b-8192';
 
@@ -71,7 +71,7 @@ export function AiPrompt() {
                 </Link>
               </View>
             }
-            {apiKey &&
+            {Boolean(apiKey) &&
               <Pressable
                 style={[styles.button, {top: 0}]}
                 onPress={() => setMultiline(!multiline)}>

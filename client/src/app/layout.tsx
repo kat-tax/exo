@@ -1,12 +1,13 @@
 import {useEffect} from 'react';
-import {ToastRoot} from 'react-exo/toast';
-import {StatusBar, Appearance} from 'react-native';
 import {useInitialTheme, UnistylesRuntime} from 'react-native-unistyles';
+import {StatusBar, Appearance} from 'react-native';
+import {ToastRoot} from 'react-exo/toast';
 //import Bootsplash from 'react-native-bootsplash';
 import {useScheme} from 'settings/hooks/useScheme';
 
 export function Layout(props: React.PropsWithChildren) {
   const [scheme] = useScheme();
+  const isDark = scheme === 'dark';
 
   useInitialTheme(scheme || 'light');
   
@@ -24,8 +25,12 @@ export function Layout(props: React.PropsWithChildren) {
   }, []);
 
   return <>
-    <StatusBar barStyle={scheme === 'dark' ? 'light-content' : 'dark-content'}/>
+    <StatusBar barStyle={isDark ? 'light-content' : 'dark-content'}/>
     {props.children}
-    <ToastRoot/>
+    <ToastRoot
+      theme={isDark ? 'dark' : 'light'}
+      position="bottom-center"
+      offset={12}
+    />
   </>
 }

@@ -2,18 +2,18 @@ import {t} from '@lingui/macro';
 import {alert} from 'react-exo/toast';
 import {useLingui} from '@lingui/react';
 import {useEvolu, useOwner, parseMnemonic, NonEmptyString1000} from '@evolu/react-native';
-import {useProfile} from 'app/hooks/useProfile';
+import {useProfile} from 'app/data';
 import {String50} from 'app/data/schema';
 import {Effect, Either, Function} from 'effect';
 import * as S from '@effect/schema/Schema';
 
-import type {Database} from 'app/data/schema';
+import type {DB} from 'app/data/schema';
 
 export function useSettings() {
-  const evolu = useEvolu<Database>();
+  const {i18n} = useLingui();
+  const evolu = useEvolu<DB>();
   const owner = useOwner();
   const profile = useProfile();
-  const {i18n} = useLingui();
 
   const updateName = (text: string) => {
     if (!profile?.id) return;
