@@ -13,7 +13,7 @@
     "visionos": "react-native run-visionos --no-packager",
     "windows": "react-native run-windows --no-packager",
     "build:web": "vite build",
-    "build:tauri": "CI=true tauri build",
+    "_build:tauri": "CI=true tauri build",
     "_build:android": "react-native bundle --entry-file index.js --platform android --dev true --bundle-output dist/main.android.jsbundle --assets-dest dist/res",
     "_build:ios": "react-native bundle --entry-file index.js --platform ios --dev true --bundle-output dist/main.ios.jsbundle --assets-dest dist",
     "_build:macos": "react-native bundle --entry-file index.js --platform macos --dev true --bundle-output dist/main.macos.jsbundle --assets-dest dist",
