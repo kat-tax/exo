@@ -31,7 +31,6 @@ export function MenuSection(props: MenuSectionProps) {
           },
         ]}>
       <Text
-        selectable={false}
         style={styles.label}>
         {props.label}
       </Text>
@@ -55,6 +54,7 @@ const stylesheet = createStyleSheet(theme => ({
     backgroundColor: theme.colors.muted,
   },
   label: {
+    userSelect: 'none',
     marginRight: theme.display.space1,
     color: theme.colors.mutedForeground,
     lineHeight: 11,

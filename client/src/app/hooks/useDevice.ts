@@ -1,35 +1,40 @@
-import {useEffect} from 'react';
-import {useSelector} from 'react-redux';
 import {useEvolu, useQuery} from '@evolu/react-native';
-import {useLocation} from 'home/hooks/useLocation';
+import {useEffect, useMemo} from 'react';
+import {useSelector} from 'react-redux';
+import {useCoords} from 'app/hooks/useCoords';
+import {useOnline} from 'app/hooks/useOnline';
 import {device} from 'app/data';
 import app from 'app/store/app';
 
 import type {Database} from 'app/data/schema';
 
 export function useDevice() {
-  const uuid = useSelector(app.selectors.getDevice);
+  const online = useOnline();
   const evolu = useEvolu<Database>();
+  const uuid = useSelector(app.selectors.getDevice);
   const {row} = useQuery(device(uuid));
-  const {position, authorized} = useLocation(row?.location);
-  console.log(uuid, row, position, authorized);
+  const {coords} = useCoords();
   
   useEffect(() => {
-    const location = authorized &&position ? {
-      latitude: position[0],
-      longitude: position[1],
-    } : undefined;
     if (!row) {
       evolu.create('device', {
-        location,
         uuid,
+        online,
+        coords,
       });
     } else {
-      evolu.createOrUpdate('device', {
+      evolu.update('device', {
         id: row?.id,
-        location,
         uuid,
+        online,
+        coords,
       });
     }
-  }, [uuid, position, evolu, row, authorized]);
+  }, [uuid, row, coords, online, evolu]);
+
+  // Return memoized values
+  return useMemo(
+    () => ({id: row?.id, uuid, coords, online}),
+    [row?.id, uuid, coords, online],
+  );
 }

@@ -20,10 +20,6 @@ export function MenuItem(props: MenuItemProps) {
   const {pathname} = useLocation();
   const {styles, theme} = useStyles(stylesheet);
   const itemActive = props.path === decodeURIComponent(pathname);
-  const isDarkMode = scheme === 'dark';
-  const backgroundColor = isDarkMode
-    ? 'rgba(255, 255, 255, 0.09)'
-    : 'rgba(0, 0, 0, 0.07)';
 
   return (
     <Link to={props.path}>
@@ -31,21 +27,24 @@ export function MenuItem(props: MenuItemProps) {
         styles.item,
         props.tab && styles.itemTab,
         props.sub && styles.itemSub,
-        itemActive && {backgroundColor},
+        itemActive && {
+          backgroundColor: scheme === 'dark'
+            ? 'rgba(255, 255, 255, 0.09)'
+            : 'rgba(0, 0, 0, 0.07)'
+        },
       ]}>
         {props.icon &&
           <Icon
             name={props.icon}
             size={props.tab ? 20 : 16}
             color={props.color
-              || props.tab
+              || (props.tab
                 ? theme.colors.foreground
-                : theme.colors.mutedForeground}
+                : theme.colors.mutedForeground)}
           />
         }
         {!props.tab &&
           <Text
-            selectable={false}
             style={[
               styles.tab,
               props.striked && styles.tabStriked,
@@ -75,6 +74,7 @@ const stylesheet = createStyleSheet(theme => ({
     marginLeft: 8,
   },
   tab: {
+    userSelect: 'none',
     marginHorizontal: theme.display.space1,
     color: theme.colors.secondaryForeground,
     lineHeight: 24,

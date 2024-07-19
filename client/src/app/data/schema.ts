@@ -12,11 +12,8 @@ export const String50 = _.String.pipe(
 
 // Data
 
-export type Location = typeof Location.Type;
-export const Location = S.Struct({
-  latitude: S.Number,
-  longitude: S.Number,
-});
+export type Coords = typeof Coords.Type;
+export const Coords = S.Tuple(S.Number, S.Number);
 
 export type Label = typeof Label.Type;
 export const Label = S.Struct({
@@ -56,7 +53,8 @@ export const DeviceTable = _.table({
   id: DeviceId,
   uuid: String50,
   name: S.NullOr(String50),
-  location: S.NullOr(Location),
+  coords: S.NullOr(Coords),
+  online: S.NullOr(_.SqliteBoolean),
 });
 
 export type AiPromptTable = typeof AiPromptTable.Type;

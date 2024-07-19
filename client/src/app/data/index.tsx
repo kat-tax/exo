@@ -39,7 +39,7 @@ export function Database(props: React.PropsWithChildren) {
 
 export const device = (id: $.String50) => evolu.createQuery(db => db
   .selectFrom('device')
-  .select(['id', 'location'])
+  .select(['id', 'coords'])
   .where('isDeleted', 'is not', _.cast(true))
   .where('uuid', '=', id)
   .orderBy('createdAt')

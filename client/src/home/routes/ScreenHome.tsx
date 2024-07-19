@@ -2,6 +2,7 @@ import {Trans} from '@lingui/react';
 import {Trans as T} from '@lingui/macro';
 import {Text, View} from 'react-native';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
+import {useOutletContext} from 'react-exo/navigation';
 import {useProfile} from 'app/hooks/useProfile';
 import {useClock} from 'home/hooks/useClock';
 import {useWeather} from 'home/hooks/useWeather';
@@ -9,11 +10,14 @@ import {getDayGreeting} from 'home/utils/time';
 import {AiPrompt} from 'home/base/AiPrompt';
 import {Page} from 'app/base/Page';
 
+import type {useDevice} from 'app/hooks/useDevice';
+
 export default function ScreenHome() {
   const {styles} = useStyles(stylesheet);
+  const {coords} = useOutletContext<ReturnType<typeof useDevice>>();
   const profile = useProfile();
+  const weather = useWeather(coords);
   const clock = useClock();
-  const weather = useWeather();
 
   return (
     <Page
@@ -27,14 +31,7 @@ export default function ScreenHome() {
           <Text style={styles.clock}>
             {clock}
           </Text>
-          <Text
-            style={[
-              styles.weather,
-              !weather.authorized && styles.weatherPrompt,
-            ]}
-            onPress={!weather.authorized
-              ? weather.request
-              : undefined}>
+          <Text style={styles.weather}>
             {weather.text}
           </Text>
         </View>
@@ -65,8 +62,5 @@ const stylesheet = createStyleSheet(theme => ({
     letterSpacing: theme.font.contentSpacing,
     color: theme.colors.mutedForeground,
     alignSelf: 'flex-end',
-  },
-  weatherPrompt: {
-    color: theme.colors.mutedForeground,
   },
 }));

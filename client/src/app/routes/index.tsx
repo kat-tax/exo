@@ -6,6 +6,7 @@ export const Layout = {
 
 export const Screen = {
   Home: lazy(() => import('../../home/routes/ScreenHome')),
+  Map: lazy(() => import('../../map/routes/ScreenMap')),
   TaskList: lazy(() => import('../../tasks/routes/TaskList')),
   TaskDetails: lazy(() => import('../../tasks/routes/TaskDetails')),
   Calendar: lazy(() => import('../../events/routes/ScreenCalendar')),

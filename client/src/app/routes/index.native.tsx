@@ -4,6 +4,7 @@ export const Layout = {
 
 export const Screen = {
   Home: require('../../home/routes/ScreenHome').default,
+  Map: require('../../map/routes/ScreenMap').default,
   TaskList: require('../../tasks/routes/TaskList').default,
   TaskDetails: require('../../tasks/routes/TaskDetails').default,
   Calendar: require('../../events/routes/ScreenCalendar').default,

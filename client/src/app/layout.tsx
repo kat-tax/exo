@@ -3,15 +3,11 @@ import {ToastRoot} from 'react-exo/toast';
 import {StatusBar, Appearance} from 'react-native';
 import {useInitialTheme, UnistylesRuntime} from 'react-native-unistyles';
 //import Bootsplash from 'react-native-bootsplash';
-import {useDevice} from 'app/hooks/useDevice';
-import {useOnline} from 'app/hooks/useOnline';
 import {useScheme} from 'settings/hooks/useScheme';
 
 export function Layout(props: React.PropsWithChildren) {
-  const online = useOnline();
   const [scheme] = useScheme();
 
-  useDevice();
   useInitialTheme(scheme || 'light');
   
   useEffect(() => {
@@ -28,10 +24,7 @@ export function Layout(props: React.PropsWithChildren) {
   }, []);
 
   return <>
-    <StatusBar
-      barStyle={scheme === 'dark' ? 'light-content' : 'dark-content'}
-      networkActivityIndicatorVisible={online === false}
-    />
+    <StatusBar barStyle={scheme === 'dark' ? 'light-content' : 'dark-content'}/>
     {props.children}
     <ToastRoot/>
   </>

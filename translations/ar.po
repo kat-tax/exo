@@ -13,44 +13,8 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: ../../client/src/home/hooks/useWeather.ts:19
-msgid "[allow location for weather]"
-msgstr ""
-
-#: ../../client/src/home/hooks/useWeather.ts:19
-msgid "[allow location]"
-msgstr ""
-
-#: ../../client/src/home/hooks/useWeather.ts:19
-msgid "[click to allow location for location]"
-msgstr ""
-
-#: ../../client/src/home/hooks/useWeather.ts:19
-msgid "[Enable location]"
-msgstr ""
-
-#: ../../client/src/home/hooks/useWeather.ts:19
-msgid "[press to allow location for location]"
-msgstr ""
-
-#: ../../client/src/home/hooks/useWeather.ts:19
-msgid "[press to allow location for weather]"
-msgstr ""
-
 #: ../../client/src/app/base/MenuFooter.tsx:13
 msgid "{0} • Build {build}"
-msgstr ""
-
-#: ../../client/src/app/base/MenuFooter.tsx:18
-msgid "{0} • Build {build} - {date}"
-msgstr ""
-
-#: ../../client/src/app/base/MenuFooter.tsx:16
-msgid "{0} • Local Build"
-msgstr ""
-
-#: ../../client/src/app/base/MenuFooter.tsx:17
-msgid "{0} • Local Build - {date}"
 msgstr ""
 
 #: ../../client/src/dev/routes/ScreenDesign.tsx:12
@@ -70,10 +34,6 @@ msgstr "أضف مهمة"
 msgid "AI"
 msgstr "الذكاء الاصطناعي"
 
-#: ../../client/src/app/base/Menu.tsx:58
-msgid "Alarm"
-msgstr ""
-
 #: ../../client/src/app/base/Menu.tsx:79
 msgid "Alarms"
 msgstr ""
@@ -81,14 +41,6 @@ msgstr ""
 #: ../../client/src/settings/routes/ScreenSettings.tsx:255
 msgid "All Data"
 msgstr "كل البيانات"
-
-#: ../../client/src/home/hooks/useWeather.ts:19
-msgid "Allow location (for weather)"
-msgstr ""
-
-#: ../../client/src/app/base/Menu.tsx:52
-msgid "Apps"
-msgstr ""
 
 #: ../../client/src/settings/hooks/useSettings.ts:58
 msgid "Are you sure you want to change the owner key? This will reset the local database. This action cannot be undone."
@@ -106,50 +58,18 @@ msgstr "هل أنت متأكد أنك تريد إعادة تعيين سجل ال
 msgid "Ask anything..."
 msgstr "اسأل أي شيء..."
 
-#: ../../client/src/app/base/Menu.tsx:107
-msgid "Audio"
-msgstr ""
-
-#: ../../client/src/home/hooks/useWeather.ts:19
-msgid "Authorize for weather"
-msgstr ""
-
-#: ../../client/src/home/hooks/useWeather.ts:24
-msgid "Authorizing..."
-msgstr ""
-
 #: ../../client/src/settings/routes/ScreenSettings.tsx:105
 #: ../../client/src/settings/routes/ScreenSettings.tsx:133
 msgid "Auto"
 msgstr "تلقائي"
 
-#: ../../client/src/app/base/Menu.tsx:89
-msgid "Browse"
-msgstr ""
-
-#: ../../client/src/app/base/Menu.tsx:64
-msgid "Calendar"
-msgstr "التقويم"
-
 #: ../../client/src/settings/routes/ScreenSettings.tsx:155
 msgid "Celsius"
 msgstr "درجة مئوية"
 
-#: ../../client/src/home/hooks/useWeather.ts:19
-msgid "Click here for weather"
-msgstr ""
-
-#: ../../client/src/app/base/Menu.tsx:58
-msgid "Clock"
-msgstr ""
-
 #: ../../client/src/settings/routes/ScreenSettings.tsx:135
 msgid "Dark"
 msgstr "داكن"
-
-#: ../../client/src/app/base/Menu.tsx:36
-msgid "Dashboard"
-msgstr "لوحة القيادة"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:232
 msgid "Data"
@@ -172,23 +92,12 @@ msgid "Delete the local database."
 msgstr "حذف قاعدة البيانات المحلية."
 
 #: ../../client/src/app/base/Menu.tsx:135
+#: ../../client/src/dev/routes/ScreenDesign.tsx:11
 msgid "Design"
 msgstr "تصميم"
 
-#: ../../client/src/app/base/Menu.tsx:132
-msgid "Design Kit"
-msgstr ""
-
-#: ../../client/src/app/base/Menu.tsx:132
-msgid "Dev Mode"
-msgstr ""
-
 #: ../../client/src/app/base/Menu.tsx:130
 msgid "Developer Mode"
-msgstr ""
-
-#: ../../client/src/app/base/Menu.tsx:119
-msgid "Development"
 msgstr ""
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:85
@@ -198,14 +107,6 @@ msgstr "عرض"
 #: ../../client/src/settings/routes/ScreenSettings.tsx:163
 msgid "Distance"
 msgstr "المسافة"
-
-#: ../../client/src/home/hooks/useWeather.ts:19
-msgid "Enable location"
-msgstr ""
-
-#: ../../client/src/home/hooks/useWeather.ts:19
-msgid "Enable weather"
-msgstr ""
 
 #: ../../client/src/home/utils/time.ts:14
 msgid "Enjoy the day"
@@ -251,11 +152,7 @@ msgstr ""
 msgid "Games"
 msgstr ""
 
-#: ../../client/src/home/hooks/useWeather.ts:24
-msgid "Geo Failure"
-msgstr ""
-
-#: ../../client/src/home/hooks/useLocation.ts:35
+#: ../../client/src/app/hooks/useCoords.ts:28
 msgid "Geo Location Failure"
 msgstr "فشل الموقع الجغرافي"
 
@@ -287,13 +184,9 @@ msgstr "معرف نموذج Groq"
 msgid "Home"
 msgstr ""
 
-#: ../../client/src/app/base/MenuHeader.tsx:23
+#: ../../client/src/app/base/MenuHeader.tsx:20
 msgid "Human"
 msgstr "إنسان"
-
-#: ../../client/src/app/base/Menu.tsx:89
-msgid "Images"
-msgstr ""
 
 #: ../../client/src/app/base/Menu.tsx:43
 msgid "Inbox"
@@ -308,27 +201,16 @@ msgid "Language"
 msgstr "اللغة"
 
 #: ../../client/src/app/base/Menu.tsx:141
+#: ../../client/src/dev/routes/ScreenLibrary.tsx:15
 msgid "Library"
 msgstr "مكتبة"
-
-#: ../../client/src/app/base/Menu.tsx:54
-msgid "Life"
-msgstr ""
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:134
 msgid "Light"
 msgstr "فاتح"
 
-#: ../../client/src/app/base/Menu.tsx:42
-msgid "Live"
-msgstr ""
-
-#: ../../client/src/home/hooks/useWeather.ts:13
+#: ../../client/src/home/hooks/useWeather.ts:11
 msgid "Loading..."
-msgstr ""
-
-#: ../../client/src/app/base/MenuHeader.tsx:47
-msgid "Logout"
 msgstr ""
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:26
@@ -339,22 +221,6 @@ msgstr "إدارة إعداداتك"
 msgid "Map"
 msgstr ""
 
-#: ../../client/src/app/base/Menu.tsx:43
-msgid "Map View"
-msgstr ""
-
-#: ../../client/src/app/base/Menu.tsx:52
-msgid "Maps"
-msgstr ""
-
-#: ../../client/src/app/base/Menu.tsx:80
-msgid "Media"
-msgstr ""
-
-#: ../../client/src/app/base/Menu.tsx:85
-msgid "Media Browser"
-msgstr ""
-
 #: ../../client/src/settings/routes/ScreenSettings.tsx:177
 msgid "Miles"
 msgstr "أميال"
@@ -363,13 +229,9 @@ msgstr "أميال"
 msgid "Music"
 msgstr ""
 
-#: ../../client/src/events/routes/ScreenCalendar.tsx:58
+#: ../../client/src/map/routes/ScreenMap.tsx:58
 msgid "No events scheduled."
 msgstr "لا يوجد أحداث مجدولة."
-
-#: ../../client/src/app/base/Menu.tsx:70
-msgid "Notebook"
-msgstr ""
 
 #: ../../client/src/app/base/Menu.tsx:67
 msgid "Notes"
@@ -379,16 +241,8 @@ msgstr ""
 msgid "Owner Key"
 msgstr "مفتاح المالك"
 
-#: ../../client/src/app/base/Menu.tsx:42
-msgid "Personal"
-msgstr ""
-
 #: ../../client/src/app/base/Menu.tsx:96
 msgid "Photos"
-msgstr ""
-
-#: ../../client/src/app/base/Menu.tsx:42
-msgid "Planning"
 msgstr ""
 
 #: ../../client/src/home/base/AiPrompt.tsx:51
@@ -436,28 +290,17 @@ msgid "Select the theme for the app."
 msgstr "حدد سمة التطبيق."
 
 #: ../../client/src/app/base/Menu.tsx:149
+#: ../../client/src/settings/routes/ScreenSettings.tsx:25
 msgid "Settings"
 msgstr "الإعدادات"
 
-#: ../../client/src/home/hooks/useWeather.ts:19
-msgid "Tap to allow location (for weather)"
-msgstr ""
-
-#: ../../client/src/home/hooks/useWeather.ts:19
-msgid "Tap to enable weather"
-msgstr ""
-
-#: ../../client/src/app/base/Menu.tsx:52
+#: ../../client/src/tasks/routes/TaskList.tsx:13
 msgid "Tasks"
 msgstr "المهام"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:142
 msgid "Temperature"
 msgstr "درجة الحرارة"
-
-#: ../../client/src/app/base/Menu.tsx:58
-msgid "Theater"
-msgstr ""
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:120
 msgid "Theme"
@@ -471,17 +314,13 @@ msgstr "اسم المستخدم"
 msgid "Videos"
 msgstr ""
 
-#: ../../client/src/home/routes/ScreenHome.tsx:22
+#: ../../client/src/home/routes/ScreenHome.tsx:26
 msgid "Welcome, {0}"
 msgstr "مرحبًا، {0}"
 
-#: ../../client/src/home/routes/ScreenHome.tsx:23
+#: ../../client/src/home/routes/ScreenHome.tsx:27
 msgid "Welcome, Human"
 msgstr "مرحبًا، أيها الإنسان"
-
-#: ../../client/src/app/base/Menu.tsx:42
-msgid "World"
-msgstr ""
 
 #: ../../client/src/app/hooks/useOnline.ts:16
 msgid "You are offline"

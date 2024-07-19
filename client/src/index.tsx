@@ -1,3 +1,4 @@
+import 'maplibre-gl/dist/maplibre-gl.css';
 import 'react-exo/checkbox.css';
 import 'react-exo/switch.css';
 import 'react-exo/radio.css';
