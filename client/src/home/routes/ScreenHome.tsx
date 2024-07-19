@@ -2,25 +2,24 @@ import {Trans} from '@lingui/react';
 import {Trans as T} from '@lingui/macro';
 import {Text, View} from 'react-native';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {useQuery} from '@evolu/react-native';
+import {useProfile} from 'app/hooks/useProfile';
 import {useClock} from 'home/hooks/useClock';
 import {useWeather} from 'home/hooks/useWeather';
 import {getDayGreeting} from 'home/utils/time';
 import {AiPrompt} from 'home/base/AiPrompt';
 import {Page} from 'app/base/Page';
-import {profile} from 'app/data';
 
 export default function ScreenHome() {
   const {styles} = useStyles(stylesheet);
-  const {row} = useQuery(profile);
-  const clock = useClock('medium');
+  const profile = useProfile();
+  const clock = useClock();
   const weather = useWeather();
 
   return (
     <Page
       title={<Trans id={getDayGreeting().id}/>}
-      message={row?.name
-        ? <T>{`Welcome, ${row.name}`}</T>
+      message={profile?.name
+        ? <T>{`Welcome, ${profile.name}`}</T>
         : <T>{'Welcome, Human'}</T>
       }
       widget={
@@ -28,8 +27,15 @@ export default function ScreenHome() {
           <Text style={styles.clock}>
             {clock}
           </Text>
-          <Text style={styles.weather}>
-            {weather}
+          <Text
+            style={[
+              styles.weather,
+              !weather.authorized && styles.weatherPrompt,
+            ]}
+            onPress={!weather.authorized
+              ? weather.request
+              : undefined}>
+            {weather.text}
           </Text>
         </View>
       }>
@@ -57,7 +63,10 @@ const stylesheet = createStyleSheet(theme => ({
     fontFamily: theme.font.family,
     fontSize: theme.font.contentSize,
     letterSpacing: theme.font.contentSpacing,
-    color: theme.colors.foreground,
+    color: theme.colors.mutedForeground,
     alignSelf: 'flex-end',
+  },
+  weatherPrompt: {
+    color: theme.colors.mutedForeground,
   },
 }));

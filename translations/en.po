@@ -13,9 +13,41 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
+#: ../../client/src/home/hooks/useWeather.ts:19
+msgid "[allow location for weather]"
+msgstr "[allow location for weather]"
+
+#: ../../client/src/home/hooks/useWeather.ts:19
+msgid "[allow location]"
+msgstr "[allow location]"
+
+#: ../../client/src/home/hooks/useWeather.ts:19
+msgid "[click to allow location for location]"
+msgstr "[click to allow location for location]"
+
+#: ../../client/src/home/hooks/useWeather.ts:19
+msgid "[Enable location]"
+msgstr "[Enable location]"
+
+#: ../../client/src/home/hooks/useWeather.ts:19
+msgid "[press to allow location for location]"
+msgstr "[press to allow location for location]"
+
+#: ../../client/src/home/hooks/useWeather.ts:19
+msgid "[press to allow location for weather]"
+msgstr "[press to allow location for weather]"
+
+#: ../../client/src/app/base/MenuFooter.tsx:13
+msgid "{0} • Build {build}"
+msgstr "{0} • Build {build}"
+
 #: ../../client/src/app/base/MenuFooter.tsx:18
 msgid "{0} • Build {build} - {date}"
 msgstr "{0} • Build {build} - {date}"
+
+#: ../../client/src/app/base/MenuFooter.tsx:16
+msgid "{0} • Local Build"
+msgstr "{0} • Local Build"
 
 #: ../../client/src/app/base/MenuFooter.tsx:17
 msgid "{0} • Local Build - {date}"
@@ -38,9 +70,25 @@ msgstr "Add a task"
 msgid "AI"
 msgstr "AI"
 
+#: ../../client/src/app/base/Menu.tsx:58
+msgid "Alarm"
+msgstr "Alarm"
+
+#: ../../client/src/app/base/Menu.tsx:79
+msgid "Alarms"
+msgstr "Alarms"
+
 #: ../../client/src/settings/routes/ScreenSettings.tsx:255
 msgid "All Data"
 msgstr "All Data"
+
+#: ../../client/src/home/hooks/useWeather.ts:19
+msgid "Allow location (for weather)"
+msgstr "Allow location (for weather)"
+
+#: ../../client/src/app/base/Menu.tsx:52
+msgid "Apps"
+msgstr "Apps"
 
 #: ../../client/src/settings/hooks/useSettings.ts:58
 msgid "Are you sure you want to change the owner key? This will reset the local database. This action cannot be undone."
@@ -58,18 +106,42 @@ msgstr "Are you sure you want to reset your prompt history?"
 msgid "Ask anything..."
 msgstr "Ask anything..."
 
+#: ../../client/src/app/base/Menu.tsx:107
+msgid "Audio"
+msgstr "Audio"
+
+#: ../../client/src/home/hooks/useWeather.ts:19
+msgid "Authorize for weather"
+msgstr "Authorize for weather"
+
+#: ../../client/src/home/hooks/useWeather.ts:24
+msgid "Authorizing..."
+msgstr "Authorizing..."
+
 #: ../../client/src/settings/routes/ScreenSettings.tsx:105
 #: ../../client/src/settings/routes/ScreenSettings.tsx:133
 msgid "Auto"
 msgstr "Auto"
 
-#: ../../client/src/app/base/Menu.tsx:42
+#: ../../client/src/app/base/Menu.tsx:89
+msgid "Browse"
+msgstr "Browse"
+
+#: ../../client/src/app/base/Menu.tsx:64
 msgid "Calendar"
 msgstr "Calendar"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:155
 msgid "Celsius"
 msgstr "Celsius"
+
+#: ../../client/src/home/hooks/useWeather.ts:19
+msgid "Click here for weather"
+msgstr "Click here for weather"
+
+#: ../../client/src/app/base/Menu.tsx:58
+msgid "Clock"
+msgstr "Clock"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:135
 msgid "Dark"
@@ -99,10 +171,25 @@ msgstr "Delete Prompts"
 msgid "Delete the local database."
 msgstr "Delete the local database."
 
-#: ../../client/src/app/base/Menu.tsx:66
-#: ../../client/src/dev/routes/ScreenDesign.tsx:11
+#: ../../client/src/app/base/Menu.tsx:135
 msgid "Design"
 msgstr "Design"
+
+#: ../../client/src/app/base/Menu.tsx:132
+msgid "Design Kit"
+msgstr "Design Kit"
+
+#: ../../client/src/app/base/Menu.tsx:132
+msgid "Dev Mode"
+msgstr "Dev Mode"
+
+#: ../../client/src/app/base/Menu.tsx:130
+msgid "Developer Mode"
+msgstr "Developer Mode"
+
+#: ../../client/src/app/base/Menu.tsx:119
+msgid "Development"
+msgstr "Development"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:85
 msgid "Display"
@@ -111,6 +198,14 @@ msgstr "Display"
 #: ../../client/src/settings/routes/ScreenSettings.tsx:163
 msgid "Distance"
 msgstr "Distance"
+
+#: ../../client/src/home/hooks/useWeather.ts:19
+msgid "Enable location"
+msgstr "Enable location"
+
+#: ../../client/src/home/hooks/useWeather.ts:19
+msgid "Enable weather"
+msgstr "Enable weather"
 
 #: ../../client/src/home/utils/time.ts:14
 msgid "Enjoy the day"
@@ -132,11 +227,35 @@ msgstr "Enter your mnemonic phrase"
 msgid "Enter your name"
 msgstr "Enter your name"
 
+#: ../../client/src/app/base/Menu.tsx:85
+msgid "Entertainment"
+msgstr "Entertainment"
+
+#: ../../client/src/app/base/Menu.tsx:73
+msgid "Events"
+msgstr "Events"
+
 #: ../../client/src/settings/routes/ScreenSettings.tsx:156
 msgid "Fahrenheit"
 msgstr "Fahrenheit"
 
-#: ../../client/src/home/hooks/useLocation.ts:23
+#: ../../client/src/app/base/Menu.tsx:113
+msgid "Favorites"
+msgstr "Favorites"
+
+#: ../../client/src/app/base/Menu.tsx:61
+msgid "Files"
+msgstr "Files"
+
+#: ../../client/src/app/base/Menu.tsx:90
+msgid "Games"
+msgstr "Games"
+
+#: ../../client/src/home/hooks/useWeather.ts:24
+msgid "Geo Failure"
+msgstr "Geo Failure"
+
+#: ../../client/src/home/hooks/useLocation.ts:35
 msgid "Geo Location Failure"
 msgstr "Geo Location Failure"
 
@@ -164,9 +283,21 @@ msgstr "Groq Failure"
 msgid "Groq Model ID"
 msgstr "Groq Model ID"
 
+#: ../../client/src/app/base/Menu.tsx:37
+msgid "Home"
+msgstr "Home"
+
 #: ../../client/src/app/base/MenuHeader.tsx:23
 msgid "Human"
 msgstr "Human"
+
+#: ../../client/src/app/base/Menu.tsx:89
+msgid "Images"
+msgstr "Images"
+
+#: ../../client/src/app/base/Menu.tsx:43
+msgid "Inbox"
+msgstr "Inbox"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:176
 msgid "Kilometers"
@@ -176,16 +307,27 @@ msgstr "Kilometers"
 msgid "Language"
 msgstr "Language"
 
-#: ../../client/src/app/base/Menu.tsx:72
-#: ../../client/src/dev/routes/ScreenLibrary.tsx:15
+#: ../../client/src/app/base/Menu.tsx:141
 msgid "Library"
 msgstr "Library"
+
+#: ../../client/src/app/base/Menu.tsx:54
+msgid "Life"
+msgstr "Life"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:134
 msgid "Light"
 msgstr "Light"
 
-#: ../../client/src/app/base/MenuHeader.tsx:59
+#: ../../client/src/app/base/Menu.tsx:42
+msgid "Live"
+msgstr "Live"
+
+#: ../../client/src/home/hooks/useWeather.ts:13
+msgid "Loading..."
+msgstr "Loading..."
+
+#: ../../client/src/app/base/MenuHeader.tsx:47
 msgid "Logout"
 msgstr "Logout"
 
@@ -193,21 +335,69 @@ msgstr "Logout"
 msgid "Manage your settings"
 msgstr "Manage your settings"
 
+#: ../../client/src/app/base/Menu.tsx:49
+msgid "Map"
+msgstr "Map"
+
+#: ../../client/src/app/base/Menu.tsx:43
+msgid "Map View"
+msgstr "Map View"
+
+#: ../../client/src/app/base/Menu.tsx:52
+msgid "Maps"
+msgstr "Maps"
+
+#: ../../client/src/app/base/Menu.tsx:80
+msgid "Media"
+msgstr "Media"
+
+#: ../../client/src/app/base/Menu.tsx:85
+msgid "Media Browser"
+msgstr "Media Browser"
+
 #: ../../client/src/settings/routes/ScreenSettings.tsx:177
 msgid "Miles"
 msgstr "Miles"
+
+#: ../../client/src/app/base/Menu.tsx:108
+msgid "Music"
+msgstr "Music"
 
 #: ../../client/src/events/routes/ScreenCalendar.tsx:58
 msgid "No events scheduled."
 msgstr "No events scheduled."
 
+#: ../../client/src/app/base/Menu.tsx:70
+msgid "Notebook"
+msgstr "Notebook"
+
+#: ../../client/src/app/base/Menu.tsx:67
+msgid "Notes"
+msgstr "Notes"
+
 #: ../../client/src/settings/routes/ScreenSettings.tsx:56
 msgid "Owner Key"
 msgstr "Owner Key"
 
+#: ../../client/src/app/base/Menu.tsx:42
+msgid "Personal"
+msgstr "Personal"
+
+#: ../../client/src/app/base/Menu.tsx:96
+msgid "Photos"
+msgstr "Photos"
+
+#: ../../client/src/app/base/Menu.tsx:42
+msgid "Planning"
+msgstr "Planning"
+
 #: ../../client/src/home/base/AiPrompt.tsx:51
 msgid "Please set your Groq API Key"
 msgstr "Please set your Groq API Key"
+
+#: ../../client/src/app/base/Menu.tsx:56
+msgid "Productivity"
+msgstr "Productivity"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:31
 msgid "Profile"
@@ -245,19 +435,29 @@ msgstr "Select the temperature unit for the app."
 msgid "Select the theme for the app."
 msgstr "Select the theme for the app."
 
-#: ../../client/src/app/base/Menu.tsx:80
-#: ../../client/src/settings/routes/ScreenSettings.tsx:25
+#: ../../client/src/app/base/Menu.tsx:149
 msgid "Settings"
 msgstr "Settings"
 
-#: ../../client/src/app/base/Menu.tsx:48
-#: ../../client/src/tasks/routes/TaskList.tsx:13
+#: ../../client/src/home/hooks/useWeather.ts:19
+msgid "Tap to allow location (for weather)"
+msgstr "Tap to allow location (for weather)"
+
+#: ../../client/src/home/hooks/useWeather.ts:19
+msgid "Tap to enable weather"
+msgstr "Tap to enable weather"
+
+#: ../../client/src/app/base/Menu.tsx:52
 msgid "Tasks"
 msgstr "Tasks"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:142
 msgid "Temperature"
 msgstr "Temperature"
+
+#: ../../client/src/app/base/Menu.tsx:58
+msgid "Theater"
+msgstr "Theater"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:120
 msgid "Theme"
@@ -267,13 +467,21 @@ msgstr "Theme"
 msgid "User Name"
 msgstr "User Name"
 
-#: ../../client/src/home/routes/ScreenHome.tsx:23
+#: ../../client/src/app/base/Menu.tsx:102
+msgid "Videos"
+msgstr "Videos"
+
+#: ../../client/src/home/routes/ScreenHome.tsx:22
 msgid "Welcome, {0}"
 msgstr "Welcome, {0}"
 
-#: ../../client/src/home/routes/ScreenHome.tsx:24
+#: ../../client/src/home/routes/ScreenHome.tsx:23
 msgid "Welcome, Human"
 msgstr "Welcome, Human"
+
+#: ../../client/src/app/base/Menu.tsx:42
+msgid "World"
+msgstr "World"
 
 #: ../../client/src/app/hooks/useOnline.ts:16
 msgid "You are offline"

@@ -19,37 +19,25 @@ export function MenuHeader() {
           <View style={styles.header}>
             <Identicon width={20} height={20}/>
             <View style={styles.info}>
-              <Text style={styles.name}>
+              <Text selectable={false} style={styles.name}>
                 {profile?.name ?? t(i18n)`Human`}
               </Text>
-              <Icon
-                name="ph:caret-down"
-                color={theme.colors.mutedForeground}
-                size={12}
-              />
             </View>
             <View style={styles.fill}/>
-            <Pressable onPress={() => console.log('Menu action not implemented')}>
-              <Icon
-                name="ph:magnifying-glass"
-                color={theme.colors.mutedForeground}
-                size={16}
-              />
-            </Pressable>
-            <Pressable onPress={() => console.log('Menu action not implemented')}>
-              <Icon
-                name="ph:note-pencil"
-                color={theme.colors.mutedForeground}
-                size={16}
-              />
-            </Pressable>
+              <Pressable onPress={() => {}}>
+                <Icon
+                  name="ph:magnifying-glass"
+                  color={theme.colors.mutedForeground}
+                  size={16}
+                />
+              </Pressable>
           </View>
         </Dropdown.Trigger>
         {false &&        
           <Dropdown.Content
             loop
-            side="bottom"
             align="end"
+            side="bottom"
             sideOffset={10}
             alignOffset={10}
             avoidCollisions
@@ -68,13 +56,14 @@ export function MenuHeader() {
 
 const stylesheet = createStyleSheet(theme => ({
   root: {
-    marginBottom: theme.display.space2,
+    marginBottom: theme.display.space3,
   },
   header: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: theme.display.space2,
     padding: theme.display.space2,
+    paddingRight: theme.display.space1,
   },
   fill: {
     flex: 1,

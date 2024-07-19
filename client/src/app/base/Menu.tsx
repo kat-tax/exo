@@ -1,14 +1,13 @@
 import {Trans} from '@lingui/macro';
-import {Icon} from 'react-exo/icon';
 import {View, ScrollView, Text, StyleSheet} from 'react-native';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useRTL} from 'react-exo/utils';
 import {useLists} from 'tasks/hooks/useLists';
 import {isTouch} from 'app/utils/platform';
-import config from 'config';
 
 import {MenuHeader} from './MenuHeader';
 import {MenuFooter} from './MenuFooter';
+import {MenuSection} from './MenuSection';
 import {MenuItem} from './MenuItem';
 
 interface MenuProps {
@@ -16,74 +15,145 @@ interface MenuProps {
 }
 
 export function Menu(props: MenuProps) {
-  const rtl = useRTL();
+  const {styles, theme} = useStyles(stylesheet);
   const lists = useLists();
-  const {styles} = useStyles(stylesheet);
-  const hasDevMenu = __DEV__ || config.LIB_NAME === 'react-exo';
+  const rtl = useRTL();
+  const {tabs} = props;
+
   return (
     <View style={styles.bg}>
-      <ScrollView horizontal={props.tabs} contentContainerStyle={{flexGrow: 1}}>
+      <ScrollView horizontal={tabs} contentContainerStyle={{flexGrow: 1}}>
         <View style={[
           styles.root,
           rtl && styles.rootRTL,
-          props.tabs && styles.rootTabs,
+          tabs && styles.rootTabs,
         ]}>
-          <View style={styles.header}>
+          {!tabs &&
             <MenuHeader/>
-          </View>
+          }
           <MenuItem
             path="/"
-            label={<Trans>Dashboard</Trans>}
-            icon={<Icon name="ph:squares-four"/>}
-            tab={props.tabs}
+            icon="ph:squares-four"
+            label={<Trans>Home</Trans>}
+            tab={tabs}
           />
           <MenuItem
-            path="/calendar"
-            label={<Trans>Calendar</Trans>}
-            icon={<Icon name="ph:calendar-dots"/>}
-            tab={props.tabs}
+            path="/inbox"
+            icon="ph:tray"
+            label={<Trans>Inbox</Trans>}
+            tab={tabs}
           />
           <MenuItem
-            path="/tasks"
-            label={<Trans>Tasks</Trans>}
-            icon={<Icon name="ph:list-checks"/>}
-            tab={props.tabs}
+            path="/map"
+            icon="ph:map-trifold"
+            label={<Trans>Map</Trans>}
+            tab={tabs}
           />
-          {props.tabs ? null : lists.map(({id, complete}) =>
+          {tabs &&
+            <View style={styles.spacer}/>
+          }
+          <MenuSection
+            label={<Trans>Productivity</Trans>}
+            tabs={tabs}>
             <MenuItem
-              sub
-              key={id}
-              path={`/tasks/${id}`}
-              label={<Text>• {id}</Text>}
-              striked={complete}
+              path="/files"
+              icon="ph:folder"
+              label={<Trans>Files</Trans>}
+              tab={tabs}
             />
-          )}
-          <View style={styles.fill}/>
-          {hasDevMenu &&
-            <>
+            <MenuItem
+              path="/notes"
+              icon="ph:note"
+              label={<Trans>Notes</Trans>}
+              tab={tabs}
+            />
+            <MenuItem
+              path="/events"
+              icon="ph:calendar-dots"
+              label={<Trans>Events</Trans>}
+              tab={tabs}
+            />
+            <MenuItem
+              path="/alarms"
+              icon="ph:alarm"
+              label={<Trans>Alarms</Trans>}
+              tab={tabs}
+            />
+          </MenuSection>
+          <MenuSection
+            disabled
+            label={<Trans>Entertainment</Trans>}
+            tabs={tabs}>
+            <MenuItem
+              path="/games"
+              icon="ph:game-controller"
+              label={<Trans>Games</Trans>}
+              tab={tabs}
+            />
+            <MenuItem
+              path="/photos"
+              icon="ph:image"
+              label={<Trans>Photos</Trans>}
+              tab={tabs}
+            />
+            <MenuItem
+              path="/videos"
+              icon="ph:video"
+              label={<Trans>Videos</Trans>}
+              tab={tabs}
+            />
+            <MenuItem
+              path="/music"
+              icon="ph:music-notes"
+              label={<Trans>Music</Trans>}
+              tab={tabs}
+            />
+          </MenuSection>
+          <MenuSection
+            label={<Trans>Favorites</Trans>}
+            tabs={tabs}>
+            {tabs ? null : lists.map(({id, complete}) =>
+              <MenuItem
+                key={id}
+                path={`/tasks/${id}`}
+                icon="ph:rocket"
+                color={theme.palette.purple400}
+                label={<Text>{id}</Text>}
+                striked={complete}
+              />
+            )}
+          </MenuSection>
+          <View style={styles.spacer}/>
+          {__DEV__ &&
+            <MenuSection
+              closed
+              label={<Trans>Developer Mode</Trans>}
+              tabs={tabs}>
               <MenuItem
                 path="/design"
+                icon="ph:palette"
                 label={<Trans>Design</Trans>}
-                icon={<Icon name="ph:palette"/>}
-                tab={props.tabs}
+                tab={tabs}
               />
               <MenuItem
                 path="/library"
+                icon="ph:package"
                 label={<Trans>Library</Trans>}
-                icon={<Icon name="ph:package"/>}
-                tab={props.tabs}
+                tab={tabs}
               />
-            </>
+            </MenuSection>
           }
           <MenuItem
             path="/settings"
+            icon="ph:gear"
             label={<Trans>Settings</Trans>}
-            icon={<Icon name="ph:gear"/>}
-            tab={props.tabs}
+            tab={tabs}
           />
-          <View style={styles.footer}>
-            <MenuFooter/>
-          </View>
+          {!__DEV__ &&
+            <View style={styles.footer}>
+              <MenuFooter/>
+            </View>
+          }
         </View>
       </ScrollView>
     </View>
@@ -106,25 +176,24 @@ const stylesheet = createStyleSheet(theme => ({
     borderLeftWidth: StyleSheet.hairlineWidth,
   },
   rootTabs: {
+    alignItems: 'center',
     flexDirection: 'row',
     gap: theme.display.space2,
     borderTopWidth: StyleSheet.hairlineWidth,
     borderRightWidth: 0,
   },
-  header: {
-    display: {
-      initial: 'none',
-      sm: 'flex',
-    },
-  },
   footer: {
     display: {
       initial: 'none',
-      sm: 'flex',
+      xs: 'flex',
     },
   },
-  fill: {
+  spacer: {
     flex: 1,
+    display: {
+      initial: 'none',
+      xs: 'flex',
+    },
   },
   build: {
     color: theme.colors.mutedForeground,

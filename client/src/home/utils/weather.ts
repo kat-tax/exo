@@ -18,10 +18,10 @@ export type Weather = {
   weatherCode: number,
 }
   
-export async function getCurrentWeather(lat: number, long: number): Promise<Weather> {
+export async function getCurrentWeather([lat, lon]: [number, number]): Promise<Weather> {
   const params = {
     latitude: lat,
-    longitude: long,
+    longitude: lon,
     timezone: 'auto',
     wind_speed_unit: 'mph',
     temperature_unit: 'fahrenheit',

@@ -13,11 +13,11 @@ export const createDatabase = () => _.createEvolu($.Database, {
     evolu.create('profile', {
       name: null,
       groqKey: null,
-      groqModel: S.decodeSync($.NonEmptyString50)('llama3-8b-8192'),
+      groqModel: S.decodeSync($.String50)('llama3-8b-8192'),
     });
     // Dummy data
     const {id: labelId} = evolu.create('label', {
-      name: S.decodeSync($.NonEmptyString50)('Not Urgent'),
+      name: S.decodeSync($.String50)('Not Urgent'),
     });
     evolu.create('todo', {
       title: S.decodeSync(_.NonEmptyString1000)('Try React Suspense'),
@@ -36,6 +36,15 @@ export function Database(props: React.PropsWithChildren) {
     </_.EvoluProvider>
   )
 }
+
+export const device = (id: $.String50) => evolu.createQuery(db => db
+  .selectFrom('device')
+  .select(['id', 'location'])
+  .where('isDeleted', 'is not', _.cast(true))
+  .where('uuid', '=', id)
+  .orderBy('createdAt')
+  .limit(1)
+);
 
 export const profile = evolu.createQuery(db => db
   .selectFrom('profile')

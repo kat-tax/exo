@@ -2,8 +2,8 @@ import {t} from '@lingui/macro';
 import {alert} from 'react-exo/toast';
 import {useLingui} from '@lingui/react';
 import {useEvolu, useOwner, parseMnemonic, NonEmptyString1000} from '@evolu/react-native';
-import {NonEmptyString50} from 'app/data/schema';
 import {useProfile} from 'app/hooks/useProfile';
+import {String50} from 'app/data/schema';
 import {Effect, Either, Function} from 'effect';
 import * as S from '@effect/schema/Schema';
 
@@ -17,7 +17,7 @@ export function useSettings() {
 
   const updateName = (text: string) => {
     if (!profile?.id) return;
-    Either.match(S.decodeUnknownEither(NonEmptyString50)(text), {
+    Either.match(S.decodeUnknownEither(String50)(text), {
       onLeft: Function.constVoid,
       onRight: (name) => evolu.update('profile', {name, id: profile.id}),
     });
@@ -33,7 +33,7 @@ export function useSettings() {
 
   const updateGroqModel = (text: string) => {
     if (!profile?.id) return;
-    Either.match(S.decodeUnknownEither(NonEmptyString50)(text), {
+    Either.match(S.decodeUnknownEither(String50)(text), {
       onLeft: Function.constVoid,
       onRight: (groqModel) => evolu.update('profile', {groqModel, id: profile.id}),
     });

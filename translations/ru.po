@@ -13,8 +13,40 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
+#: ../../client/src/home/hooks/useWeather.ts:19
+msgid "[allow location for weather]"
+msgstr ""
+
+#: ../../client/src/home/hooks/useWeather.ts:19
+msgid "[allow location]"
+msgstr ""
+
+#: ../../client/src/home/hooks/useWeather.ts:19
+msgid "[click to allow location for location]"
+msgstr ""
+
+#: ../../client/src/home/hooks/useWeather.ts:19
+msgid "[Enable location]"
+msgstr ""
+
+#: ../../client/src/home/hooks/useWeather.ts:19
+msgid "[press to allow location for location]"
+msgstr ""
+
+#: ../../client/src/home/hooks/useWeather.ts:19
+msgid "[press to allow location for weather]"
+msgstr ""
+
+#: ../../client/src/app/base/MenuFooter.tsx:13
+msgid "{0} • Build {build}"
+msgstr ""
+
 #: ../../client/src/app/base/MenuFooter.tsx:18
 msgid "{0} • Build {build} - {date}"
+msgstr ""
+
+#: ../../client/src/app/base/MenuFooter.tsx:16
+msgid "{0} • Local Build"
 msgstr ""
 
 #: ../../client/src/app/base/MenuFooter.tsx:17
@@ -38,9 +70,25 @@ msgstr "Добавить задачу"
 msgid "AI"
 msgstr "ИИ"
 
+#: ../../client/src/app/base/Menu.tsx:58
+msgid "Alarm"
+msgstr ""
+
+#: ../../client/src/app/base/Menu.tsx:79
+msgid "Alarms"
+msgstr ""
+
 #: ../../client/src/settings/routes/ScreenSettings.tsx:255
 msgid "All Data"
 msgstr "Все данные"
+
+#: ../../client/src/home/hooks/useWeather.ts:19
+msgid "Allow location (for weather)"
+msgstr ""
+
+#: ../../client/src/app/base/Menu.tsx:52
+msgid "Apps"
+msgstr ""
 
 #: ../../client/src/settings/hooks/useSettings.ts:58
 msgid "Are you sure you want to change the owner key? This will reset the local database. This action cannot be undone."
@@ -58,18 +106,42 @@ msgstr "Вы уверены, что хотите сбросить историю
 msgid "Ask anything..."
 msgstr "Спросите что угодно..."
 
+#: ../../client/src/app/base/Menu.tsx:107
+msgid "Audio"
+msgstr ""
+
+#: ../../client/src/home/hooks/useWeather.ts:19
+msgid "Authorize for weather"
+msgstr ""
+
+#: ../../client/src/home/hooks/useWeather.ts:24
+msgid "Authorizing..."
+msgstr ""
+
 #: ../../client/src/settings/routes/ScreenSettings.tsx:105
 #: ../../client/src/settings/routes/ScreenSettings.tsx:133
 msgid "Auto"
 msgstr "Авто"
 
-#: ../../client/src/app/base/Menu.tsx:42
+#: ../../client/src/app/base/Menu.tsx:89
+msgid "Browse"
+msgstr ""
+
+#: ../../client/src/app/base/Menu.tsx:64
 msgid "Calendar"
 msgstr "Календарь"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:155
 msgid "Celsius"
 msgstr "Цельсий"
+
+#: ../../client/src/home/hooks/useWeather.ts:19
+msgid "Click here for weather"
+msgstr ""
+
+#: ../../client/src/app/base/Menu.tsx:58
+msgid "Clock"
+msgstr ""
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:135
 msgid "Dark"
@@ -99,10 +171,25 @@ msgstr "Удалить запросы"
 msgid "Delete the local database."
 msgstr "Удалить локальную базу данных."
 
-#: ../../client/src/app/base/Menu.tsx:66
-#: ../../client/src/dev/routes/ScreenDesign.tsx:11
+#: ../../client/src/app/base/Menu.tsx:135
 msgid "Design"
 msgstr "Дизайн"
+
+#: ../../client/src/app/base/Menu.tsx:132
+msgid "Design Kit"
+msgstr ""
+
+#: ../../client/src/app/base/Menu.tsx:132
+msgid "Dev Mode"
+msgstr ""
+
+#: ../../client/src/app/base/Menu.tsx:130
+msgid "Developer Mode"
+msgstr ""
+
+#: ../../client/src/app/base/Menu.tsx:119
+msgid "Development"
+msgstr ""
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:85
 msgid "Display"
@@ -111,6 +198,14 @@ msgstr "Дисплей"
 #: ../../client/src/settings/routes/ScreenSettings.tsx:163
 msgid "Distance"
 msgstr "Расстояние"
+
+#: ../../client/src/home/hooks/useWeather.ts:19
+msgid "Enable location"
+msgstr ""
+
+#: ../../client/src/home/hooks/useWeather.ts:19
+msgid "Enable weather"
+msgstr ""
 
 #: ../../client/src/home/utils/time.ts:14
 msgid "Enjoy the day"
@@ -132,11 +227,35 @@ msgstr "Введите свою мнемоническую фразу"
 msgid "Enter your name"
 msgstr "Введите ваше имя"
 
+#: ../../client/src/app/base/Menu.tsx:85
+msgid "Entertainment"
+msgstr ""
+
+#: ../../client/src/app/base/Menu.tsx:73
+msgid "Events"
+msgstr ""
+
 #: ../../client/src/settings/routes/ScreenSettings.tsx:156
 msgid "Fahrenheit"
 msgstr "Фаренгейт"
 
-#: ../../client/src/home/hooks/useLocation.ts:23
+#: ../../client/src/app/base/Menu.tsx:113
+msgid "Favorites"
+msgstr ""
+
+#: ../../client/src/app/base/Menu.tsx:61
+msgid "Files"
+msgstr ""
+
+#: ../../client/src/app/base/Menu.tsx:90
+msgid "Games"
+msgstr ""
+
+#: ../../client/src/home/hooks/useWeather.ts:24
+msgid "Geo Failure"
+msgstr ""
+
+#: ../../client/src/home/hooks/useLocation.ts:35
 msgid "Geo Location Failure"
 msgstr "Неудача в геолокации"
 
@@ -164,9 +283,21 @@ msgstr "Неудача в Groq"
 msgid "Groq Model ID"
 msgstr "ID модели Groq"
 
+#: ../../client/src/app/base/Menu.tsx:37
+msgid "Home"
+msgstr ""
+
 #: ../../client/src/app/base/MenuHeader.tsx:23
 msgid "Human"
 msgstr "Человек"
+
+#: ../../client/src/app/base/Menu.tsx:89
+msgid "Images"
+msgstr ""
+
+#: ../../client/src/app/base/Menu.tsx:43
+msgid "Inbox"
+msgstr ""
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:176
 msgid "Kilometers"
@@ -176,16 +307,27 @@ msgstr "Километры"
 msgid "Language"
 msgstr "Язык"
 
-#: ../../client/src/app/base/Menu.tsx:72
-#: ../../client/src/dev/routes/ScreenLibrary.tsx:15
+#: ../../client/src/app/base/Menu.tsx:141
 msgid "Library"
 msgstr "Библиотека"
+
+#: ../../client/src/app/base/Menu.tsx:54
+msgid "Life"
+msgstr ""
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:134
 msgid "Light"
 msgstr "Светлый"
 
-#: ../../client/src/app/base/MenuHeader.tsx:59
+#: ../../client/src/app/base/Menu.tsx:42
+msgid "Live"
+msgstr ""
+
+#: ../../client/src/home/hooks/useWeather.ts:13
+msgid "Loading..."
+msgstr ""
+
+#: ../../client/src/app/base/MenuHeader.tsx:47
 msgid "Logout"
 msgstr ""
 
@@ -193,21 +335,69 @@ msgstr ""
 msgid "Manage your settings"
 msgstr "Управляйте своими настройками"
 
+#: ../../client/src/app/base/Menu.tsx:49
+msgid "Map"
+msgstr ""
+
+#: ../../client/src/app/base/Menu.tsx:43
+msgid "Map View"
+msgstr ""
+
+#: ../../client/src/app/base/Menu.tsx:52
+msgid "Maps"
+msgstr ""
+
+#: ../../client/src/app/base/Menu.tsx:80
+msgid "Media"
+msgstr ""
+
+#: ../../client/src/app/base/Menu.tsx:85
+msgid "Media Browser"
+msgstr ""
+
 #: ../../client/src/settings/routes/ScreenSettings.tsx:177
 msgid "Miles"
 msgstr "Мили"
+
+#: ../../client/src/app/base/Menu.tsx:108
+msgid "Music"
+msgstr ""
 
 #: ../../client/src/events/routes/ScreenCalendar.tsx:58
 msgid "No events scheduled."
 msgstr "Нет запланированных событий."
 
+#: ../../client/src/app/base/Menu.tsx:70
+msgid "Notebook"
+msgstr ""
+
+#: ../../client/src/app/base/Menu.tsx:67
+msgid "Notes"
+msgstr ""
+
 #: ../../client/src/settings/routes/ScreenSettings.tsx:56
 msgid "Owner Key"
 msgstr "Ключ владельца"
 
+#: ../../client/src/app/base/Menu.tsx:42
+msgid "Personal"
+msgstr ""
+
+#: ../../client/src/app/base/Menu.tsx:96
+msgid "Photos"
+msgstr ""
+
+#: ../../client/src/app/base/Menu.tsx:42
+msgid "Planning"
+msgstr ""
+
 #: ../../client/src/home/base/AiPrompt.tsx:51
 msgid "Please set your Groq API Key"
 msgstr "Пожалуйста, установите ваш ключ API Groq"
+
+#: ../../client/src/app/base/Menu.tsx:56
+msgid "Productivity"
+msgstr ""
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:31
 msgid "Profile"
@@ -245,19 +435,29 @@ msgstr "Выберите единицу измерения температур�
 msgid "Select the theme for the app."
 msgstr "Выберите тему для приложения."
 
-#: ../../client/src/app/base/Menu.tsx:80
-#: ../../client/src/settings/routes/ScreenSettings.tsx:25
+#: ../../client/src/app/base/Menu.tsx:149
 msgid "Settings"
 msgstr "Настройки"
 
-#: ../../client/src/app/base/Menu.tsx:48
-#: ../../client/src/tasks/routes/TaskList.tsx:13
+#: ../../client/src/home/hooks/useWeather.ts:19
+msgid "Tap to allow location (for weather)"
+msgstr ""
+
+#: ../../client/src/home/hooks/useWeather.ts:19
+msgid "Tap to enable weather"
+msgstr ""
+
+#: ../../client/src/app/base/Menu.tsx:52
 msgid "Tasks"
 msgstr "Задачи"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:142
 msgid "Temperature"
 msgstr "Температура"
+
+#: ../../client/src/app/base/Menu.tsx:58
+msgid "Theater"
+msgstr ""
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:120
 msgid "Theme"
@@ -267,13 +467,21 @@ msgstr "Тема"
 msgid "User Name"
 msgstr "Имя пользователя"
 
-#: ../../client/src/home/routes/ScreenHome.tsx:23
+#: ../../client/src/app/base/Menu.tsx:102
+msgid "Videos"
+msgstr ""
+
+#: ../../client/src/home/routes/ScreenHome.tsx:22
 msgid "Welcome, {0}"
 msgstr "Добро пожаловать, {0}"
 
-#: ../../client/src/home/routes/ScreenHome.tsx:24
+#: ../../client/src/home/routes/ScreenHome.tsx:23
 msgid "Welcome, Human"
 msgstr "Добро пожаловать, человек"
+
+#: ../../client/src/app/base/Menu.tsx:42
+msgid "World"
+msgstr ""
 
 #: ../../client/src/app/hooks/useOnline.ts:16
 msgid "You are offline"

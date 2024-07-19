@@ -13,7 +13,7 @@ export function Page(props: PageProps) {
   const {styles} = useStyles(stylesheet);
   return (
     <ScrollView>
-      <View style={[styles.root, props.fullWidth && styles.rootFullWidth]}>
+      <View style={[styles.root, props.fullWidth && styles.rootFull]}>
         <View style={styles.header}>
           <View style={styles.greeting}>
             {props.title &&
@@ -45,19 +45,18 @@ const stylesheet = createStyleSheet(theme => ({
     alignSelf: 'center',
     gap: theme.display.space5,
     padding: theme.display.space5,
-    minWidth: {
+    width: {
       initial: '100%',
-      md: 900,
-      xl: 1200,
-    },
-    maxWidth: {
-      initial: '100%',
-      md: 900,
-      xl: 1200,
+      md: 640, // 480p
+      lg: 900, // HD+
+      xl: 1280, // 720p
+      xxxl: 1920, // 1080p
+      xxxxl: 2560, // 2K
+      xxxxxl: 3840, // 4K
     },
   },
-  rootFullWidth: {
-    maxWidth: '100%',
+  rootFull: {
+    width: '100%',
   },
   greeting: {
     gap: theme.display.space2,
@@ -66,7 +65,6 @@ const stylesheet = createStyleSheet(theme => ({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'flex-start',
-    marginTop: theme.display.space5,
     marginBottom: theme.display.space3,
   },
   title: {
@@ -79,7 +77,7 @@ const stylesheet = createStyleSheet(theme => ({
   message: {
     fontFamily: theme.font.family,
     fontSize: theme.font.contentSize,
-    fontWeight: theme.font.contentWeight,
+    fontWeight: '300',
     letterSpacing: theme.font.contentSpacing,
     color: theme.colors.mutedForeground,
   },

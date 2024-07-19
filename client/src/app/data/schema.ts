@@ -1,26 +1,36 @@
 import * as _ from '@evolu/common';
 import * as S from '@effect/schema/Schema';
 
-/**
- * Data
- */
+// Primitives
 
-export type NonEmptyString50 = typeof NonEmptyString50.Type;
-export const NonEmptyString50 = _.String.pipe(
+export type String50 = typeof String50.Type;
+export const String50 = _.String.pipe(
   S.minLength(1),
   S.maxLength(50),
-  S.brand('NonEmptyString50'),
+  S.brand('String50'),
 );
 
-export type LabelData = typeof LabelData.Type;
-export const LabelData = S.Struct({icon: S.String, color: S.String});
+// Data
 
-/**
- * Ids
- */
+export type Location = typeof Location.Type;
+export const Location = S.Struct({
+  latitude: S.Number,
+  longitude: S.Number,
+});
+
+export type Label = typeof Label.Type;
+export const Label = S.Struct({
+  icon: S.String,
+  color: S.String,
+});
+
+// Ids
 
 export type ProfileId = typeof ProfileId.Type;
 export const ProfileId = _.id('Profile');
+
+export type DeviceId = typeof DeviceId.Type;
+export const DeviceId = _.id('Device');
 
 export type AiPromptId = typeof AiPromptId.Type;
 export const AiPromptId = _.id('AiPrompt');
@@ -31,22 +41,28 @@ export const TodoId = _.id('Todo');
 export type LabelId = typeof LabelId.Type;
 export const LabelId = _.id('Label');
 
-/**
- * Tables
- */
+// Tables
 
 export type ProfileTable = typeof ProfileTable.Type;
 export const ProfileTable = _.table({
   id: ProfileId,
-  name: S.NullOr(NonEmptyString50),
+  name: S.NullOr(String50),
   groqKey: S.NullOr(_.NonEmptyString1000),
-  groqModel: S.NullOr(NonEmptyString50),
+  groqModel: S.NullOr(String50),
+});
+
+export type DeviceTable = typeof DeviceTable.Type;
+export const DeviceTable = _.table({
+  id: DeviceId,
+  uuid: String50,
+  name: S.NullOr(String50),
+  location: S.NullOr(Location),
 });
 
 export type AiPromptTable = typeof AiPromptTable.Type;
 export const AiPromptTable = _.table({
   id: AiPromptId,
-  model: NonEmptyString50,
+  model: String50,
   prompt: _.NonEmptyString1000,
   response: _.NonEmptyString1000,
   isMultiline: S.NullOr(_.SqliteBoolean),
@@ -63,18 +79,17 @@ export const TodoTable = _.table({
 export type LabelTable = typeof LabelTable.Type;
 export const LabelTable = _.table({
   id: LabelId,
-  name: NonEmptyString50,
-  data: S.NullOr(LabelData),
+  name: String50,
+  data: S.NullOr(Label),
 });
 
-/**
- * Databases
- */
+// Databases
 
 export type Database = typeof Database.Type;
 export const Database = _.database({
-  profile: ProfileTable,
   aiPrompt: AiPromptTable,
+  profile: ProfileTable,
+  device: DeviceTable,
   label: LabelTable,
   todo: TodoTable,
 });
@@ -89,12 +104,8 @@ export const Database = _.database({
  * See https://www.evolu.dev/docs/indexes
  */
 export const indexes = _.createIndexes((create) => [
+  create('indexDeviceUuid').on('device').column('uuid'),
   create('indexTodoCreatedAt').on('todo').column('createdAt'),
   create('indexLabelCreatedAt').on('label').column('createdAt'),
   create('indexAiPromptCreatedAt').on('aiPrompt').column('createdAt'),
 ]);
-
-export interface LabelForSelect {
-  readonly id: LabelTable['id'];
-  readonly name: LabelTable['name'] | null;
-}

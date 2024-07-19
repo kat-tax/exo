@@ -12,7 +12,7 @@ i18n.activate('en');
 export function Provider(props: React.PropsWithChildren) {
   const [locale] = useLocale();
   const {styles} = useStyles(stylesheet);
-
+  
   useEffect(() => {
     load(locale);
     I18nManager.forceRTL(locale === 'ar');

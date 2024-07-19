@@ -1,4 +1,4 @@
-import {cloneElement} from 'react';
+import {Icon} from 'react-exo/icon';
 import {View, Text} from 'react-native';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useLocation, Link} from 'react-exo/navigation';
@@ -8,7 +8,8 @@ import {isTouch} from 'app/utils/platform';
 interface MenuItemProps extends React.PropsWithChildren {
   label: JSX.Element,
   path: string,
-  icon?: JSX.Element,
+  icon?: string,
+  color?: string,
   tab?: boolean,
   sub?: boolean,
   striked?: boolean,
@@ -32,42 +33,41 @@ export function MenuItem(props: MenuItemProps) {
         props.sub && styles.itemSub,
         itemActive && {backgroundColor},
       ]}>
-        {props.icon && cloneElement(props.icon, {
-          size: props.tab ? 20 : 16,
-          color: theme.colors.primary,
-        })}
-        {props.tab ? null : (
-          <Text style={[
-            styles.tab,
-            props.striked && styles.tabStriked,
-          ]}>
+        {props.icon &&
+          <Icon
+            name={props.icon}
+            size={props.tab ? 20 : 16}
+            color={props.color
+              || props.tab
+                ? theme.colors.foreground
+                : theme.colors.mutedForeground}
+          />
+        }
+        {!props.tab &&
+          <Text
+            selectable={false}
+            style={[
+              styles.tab,
+              props.striked && styles.tabStriked,
+            ]}>
             {props.label}
           </Text>
-        )}
+        }
       </View>
     </Link>
   );
 }
 
 const stylesheet = createStyleSheet(theme => ({
-  root: {
-    flex: 1,
-    padding: 10,
-    backgroundColor: theme.colors.secondary,
-  },
-  rootTabs: {
-    flexDirection: 'row',
-  },
   item: {
-    paddingVertical: 1,
-    paddingHorizontal: 8,
     alignItems: 'center',
     flexDirection: 'row',
-    borderRadius: 5,
+    borderRadius: theme.display.radius1,
+    paddingHorizontal: theme.display.space2,
   },
   itemTab: {
     width: 40,
-    paddingVertical: 12,
+    paddingVertical: theme.display.space2,
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -75,13 +75,13 @@ const stylesheet = createStyleSheet(theme => ({
     marginLeft: 8,
   },
   tab: {
-    marginHorizontal: 4,
+    marginHorizontal: theme.display.space1,
+    color: theme.colors.secondaryForeground,
     lineHeight: 24,
     fontSize: 11,
-    color: theme.colors.secondaryForeground,
     ...isTouch() && {
-      marginLeft: 8,
-      lineHeight: 36,
+      marginLeft: theme.display.space2,
+      lineHeight: 32,
       fontSize: 12,
     },
   },

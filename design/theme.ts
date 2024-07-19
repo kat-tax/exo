@@ -15,6 +15,12 @@ export const breakpoints = {
   xl: 1640,
   /** Televisions */
   xxl: 1920,
+  /** 2K */
+  xxxl: 2560,
+  /** 4K */
+  xxxxl: 3840,
+  /** 8K */
+  xxxxxl: 7680,
 } as const;
 
 export const display = {

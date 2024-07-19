@@ -73,14 +73,20 @@ const stylesheet = createStyleSheet(theme => ({
     },
   },
   calendar: {
-    flex: 1,
+    flex: {
+      initial: 1,
+      md: 2,
+    },
     marginHorizontal: {
       initial: 0,
       xs: theme.display.space3,
     },
   },
   panel: {
-    flex: 1,
+    flex: {
+      initial: 0,
+      xs: 1,
+    },
     gap: theme.display.space3,
     flexWrap: 'wrap',
     padding: theme.display.space5,
