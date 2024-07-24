@@ -22,7 +22,7 @@ msgstr "{0} • Сборка {build}"
 msgid "{0} components"
 msgstr "{0} компонентов"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:46
+#: ../../client/src/settings/routes/ScreenSettings.tsx:52
 msgid "A mnemonic phrase for authentication."
 msgstr "Мнемоническая фраза для аутентификации."
 
@@ -30,7 +30,7 @@ msgstr "Мнемоническая фраза для аутентификаци�
 msgid "Add a task"
 msgstr "Добавить задачу"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:130
+#: ../../client/src/settings/routes/ScreenSettings.tsx:136
 msgid "AI"
 msgstr "ИИ"
 
@@ -38,7 +38,7 @@ msgstr "ИИ"
 msgid "Alarms"
 msgstr "Будильники"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:171
+#: ../../client/src/settings/routes/ScreenSettings.tsx:177
 msgid "All Data"
 msgstr "Все данные"
 
@@ -58,16 +58,16 @@ msgstr "Вы уверены, что хотите сбросить историю
 msgid "Ask anything..."
 msgstr "Спросите что угодно..."
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:78
-#: ../../client/src/settings/routes/ScreenSettings.tsx:98
+#: ../../client/src/settings/routes/ScreenSettings.tsx:84
+#: ../../client/src/settings/routes/ScreenSettings.tsx:104
 msgid "Auto"
 msgstr "Авто"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:112
+#: ../../client/src/settings/routes/ScreenSettings.tsx:118
 msgid "Celsius"
 msgstr "Цельсий"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:100
+#: ../../client/src/settings/routes/ScreenSettings.tsx:106
 msgid "Dark"
 msgstr "Темная"
 
@@ -75,23 +75,23 @@ msgstr "Темная"
 msgid "Dashboard"
 msgstr "Дашборд"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:159
+#: ../../client/src/settings/routes/ScreenSettings.tsx:165
 msgid "Data"
 msgstr "Данные"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:162
+#: ../../client/src/settings/routes/ScreenSettings.tsx:168
 msgid "Delete all prompt data."
 msgstr "Удалить все данные запросов."
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:174
+#: ../../client/src/settings/routes/ScreenSettings.tsx:180
 msgid "Delete Database"
 msgstr "Удалить базу данных"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:164
+#: ../../client/src/settings/routes/ScreenSettings.tsx:170
 msgid "Delete Prompts"
 msgstr "Удалить запросы"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:172
+#: ../../client/src/settings/routes/ScreenSettings.tsx:178
 msgid "Delete the local database."
 msgstr "Удалить локальную базу данных."
 
@@ -104,11 +104,11 @@ msgstr "Дизайн"
 msgid "Developer Mode"
 msgstr "Разработка"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:68
+#: ../../client/src/settings/routes/ScreenSettings.tsx:74
 msgid "Display"
 msgstr "Отображение"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:117
+#: ../../client/src/settings/routes/ScreenSettings.tsx:123
 msgid "Distance"
 msgstr "Расстояние"
 
@@ -124,15 +124,15 @@ msgstr "Хорошего дня"
 msgid "Enjoy the night"
 msgstr "Приятной ночи"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:137
+#: ../../client/src/settings/routes/ScreenSettings.tsx:143
 msgid "Enter api key"
 msgstr "Введите API ключ"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:53
+#: ../../client/src/settings/routes/ScreenSettings.tsx:59
 msgid "Enter your mnemonic phrase"
 msgstr "Введите вашу мнемоническую фразу"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:40
+#: ../../client/src/settings/routes/ScreenSettings.tsx:46
 msgid "Enter your name"
 msgstr "Введите ваше имя"
 
@@ -140,7 +140,7 @@ msgstr "Введите ваше имя"
 msgid "Events"
 msgstr "События"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:113
+#: ../../client/src/settings/routes/ScreenSettings.tsx:119
 msgid "Fahrenheit"
 msgstr "Фаренгейт"
 
@@ -172,7 +172,7 @@ msgstr "Добрый вечер"
 msgid "Good morning"
 msgstr "Доброе утро"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:132
+#: ../../client/src/settings/routes/ScreenSettings.tsx:138
 msgid "Groq API Key"
 msgstr "API ключ Groq"
 
@@ -180,11 +180,11 @@ msgstr "API ключ Groq"
 msgid "Groq Failure"
 msgstr "Ошибка Groq"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:144
+#: ../../client/src/settings/routes/ScreenSettings.tsx:150
 msgid "Groq Model ID"
 msgstr "ID модели Groq"
 
-#: ../../client/src/app/base/MenuHeader.tsx:22
+#: ../../client/src/app/base/MenuHeader.tsx:27
 msgid "Human"
 msgstr "Человек"
 
@@ -192,11 +192,11 @@ msgstr "Человек"
 msgid "Inbox"
 msgstr "Входящие"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:125
+#: ../../client/src/settings/routes/ScreenSettings.tsx:131
 msgid "Kilometers"
 msgstr "Километры"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:70
+#: ../../client/src/settings/routes/ScreenSettings.tsx:76
 msgid "Language"
 msgstr "Язык"
 
@@ -205,7 +205,7 @@ msgstr "Язык"
 msgid "Library"
 msgstr "Библиотека"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:99
+#: ../../client/src/settings/routes/ScreenSettings.tsx:105
 msgid "Light"
 msgstr "Светлая"
 
@@ -225,7 +225,7 @@ msgstr "Карты"
 msgid "Media"
 msgstr "Медиа"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:126
+#: ../../client/src/settings/routes/ScreenSettings.tsx:132
 msgid "Miles"
 msgstr "Мили"
 
@@ -241,7 +241,7 @@ msgstr "Нет запланированных событий."
 msgid "Notes"
 msgstr "Заметки"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:45
+#: ../../client/src/settings/routes/ScreenSettings.tsx:51
 msgid "Owner Key"
 msgstr "Ключ владельца"
 
@@ -253,7 +253,7 @@ msgstr "Фотографии"
 msgid "Please set your Groq API Key"
 msgstr "Пожалуйста, установите ваш API ключ Groq"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:31
+#: ../../client/src/settings/routes/ScreenSettings.tsx:37
 msgid "Profile"
 msgstr "Профиль"
 
@@ -261,31 +261,31 @@ msgstr "Профиль"
 msgid "Prompt History Reset"
 msgstr "Сброс истории запросов"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:161
+#: ../../client/src/settings/routes/ScreenSettings.tsx:167
 msgid "Prompts"
 msgstr "Запросы"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:133
+#: ../../client/src/settings/routes/ScreenSettings.tsx:139
 msgid "Provide a key to use AI features."
 msgstr "Предоставьте ключ для использования функций ИИ."
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:145
+#: ../../client/src/settings/routes/ScreenSettings.tsx:151
 msgid "Select the AI model to use."
 msgstr "Выберите модель ИИ для использования."
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:118
+#: ../../client/src/settings/routes/ScreenSettings.tsx:124
 msgid "Select the distance unit for the app."
 msgstr "Выберите единицу измерения расстояния для приложения."
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:71
+#: ../../client/src/settings/routes/ScreenSettings.tsx:77
 msgid "Select the language for the app."
 msgstr "Выберите язык для приложения."
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:105
+#: ../../client/src/settings/routes/ScreenSettings.tsx:111
 msgid "Select the temperature unit for the app."
 msgstr "Выберите единицу измерения температуры для приложения."
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:91
+#: ../../client/src/settings/routes/ScreenSettings.tsx:97
 msgid "Select the theme for the app."
 msgstr "Выберите тему для приложения."
 
@@ -297,11 +297,11 @@ msgstr "Настройки"
 msgid "Tasks"
 msgstr "Задачи"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:104
+#: ../../client/src/settings/routes/ScreenSettings.tsx:110
 msgid "Temperature"
 msgstr "Температура"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:90
+#: ../../client/src/settings/routes/ScreenSettings.tsx:96
 msgid "Theme"
 msgstr "Тема"
 
@@ -309,7 +309,7 @@ msgstr "Тема"
 msgid "Tools"
 msgstr "Инструменты"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:33
+#: ../../client/src/settings/routes/ScreenSettings.tsx:39
 msgid "User Name"
 msgstr "Имя пользователя"
 
@@ -333,7 +333,7 @@ msgstr "Вы не в сети"
 msgid "You are online"
 msgstr "Вы в сети"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:34
+#: ../../client/src/settings/routes/ScreenSettings.tsx:40
 msgid "Your name to display in the app."
 msgstr "Ваше имя для отображения в приложении."
 

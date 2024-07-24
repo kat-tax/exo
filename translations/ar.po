@@ -22,7 +22,7 @@ msgstr "{0} • الإصدار {build}"
 msgid "{0} components"
 msgstr "{0} مكونات"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:46
+#: ../../client/src/settings/routes/ScreenSettings.tsx:52
 msgid "A mnemonic phrase for authentication."
 msgstr "عبارة تذكيرية للمصادقة."
 
@@ -30,7 +30,7 @@ msgstr "عبارة تذكيرية للمصادقة."
 msgid "Add a task"
 msgstr "إضافة مهمة"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:130
+#: ../../client/src/settings/routes/ScreenSettings.tsx:136
 msgid "AI"
 msgstr "الذكاء الاصطناعي"
 
@@ -38,7 +38,7 @@ msgstr "الذكاء الاصطناعي"
 msgid "Alarms"
 msgstr "المنبهات"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:171
+#: ../../client/src/settings/routes/ScreenSettings.tsx:177
 msgid "All Data"
 msgstr "جميع البيانات"
 
@@ -58,16 +58,16 @@ msgstr "هل أنت متأكد أنك تريد إعادة تعيين سجل ال
 msgid "Ask anything..."
 msgstr "اسأل أي شيء..."
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:78
-#: ../../client/src/settings/routes/ScreenSettings.tsx:98
+#: ../../client/src/settings/routes/ScreenSettings.tsx:84
+#: ../../client/src/settings/routes/ScreenSettings.tsx:104
 msgid "Auto"
 msgstr "تلقائي"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:112
+#: ../../client/src/settings/routes/ScreenSettings.tsx:118
 msgid "Celsius"
 msgstr "سيلزيوس"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:100
+#: ../../client/src/settings/routes/ScreenSettings.tsx:106
 msgid "Dark"
 msgstr "داكن"
 
@@ -75,23 +75,23 @@ msgstr "داكن"
 msgid "Dashboard"
 msgstr "لوحة التحكم"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:159
+#: ../../client/src/settings/routes/ScreenSettings.tsx:165
 msgid "Data"
 msgstr "البيانات"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:162
+#: ../../client/src/settings/routes/ScreenSettings.tsx:168
 msgid "Delete all prompt data."
 msgstr "حذف جميع بيانات الأوامر."
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:174
+#: ../../client/src/settings/routes/ScreenSettings.tsx:180
 msgid "Delete Database"
 msgstr "حذف قاعدة البيانات"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:164
+#: ../../client/src/settings/routes/ScreenSettings.tsx:170
 msgid "Delete Prompts"
 msgstr "حذف الأوامر"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:172
+#: ../../client/src/settings/routes/ScreenSettings.tsx:178
 msgid "Delete the local database."
 msgstr "حذف قاعدة البيانات المحلية."
 
@@ -104,11 +104,11 @@ msgstr "التصميم"
 msgid "Developer Mode"
 msgstr "وضع المطور"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:68
+#: ../../client/src/settings/routes/ScreenSettings.tsx:74
 msgid "Display"
 msgstr "العرض"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:117
+#: ../../client/src/settings/routes/ScreenSettings.tsx:123
 msgid "Distance"
 msgstr "المسافة"
 
@@ -124,15 +124,15 @@ msgstr "استمتع باليوم"
 msgid "Enjoy the night"
 msgstr "استمتع بالليل"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:137
+#: ../../client/src/settings/routes/ScreenSettings.tsx:143
 msgid "Enter api key"
 msgstr "أدخل مفتاح API"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:53
+#: ../../client/src/settings/routes/ScreenSettings.tsx:59
 msgid "Enter your mnemonic phrase"
 msgstr "أدخل عبارتك التذكيرية"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:40
+#: ../../client/src/settings/routes/ScreenSettings.tsx:46
 msgid "Enter your name"
 msgstr "أدخل اسمك"
 
@@ -140,7 +140,7 @@ msgstr "أدخل اسمك"
 msgid "Events"
 msgstr "الأحداث"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:113
+#: ../../client/src/settings/routes/ScreenSettings.tsx:119
 msgid "Fahrenheit"
 msgstr "فهرنهايت"
 
@@ -172,7 +172,7 @@ msgstr "مساء الخير"
 msgid "Good morning"
 msgstr "صباح الخير"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:132
+#: ../../client/src/settings/routes/ScreenSettings.tsx:138
 msgid "Groq API Key"
 msgstr "مفتاح Groq API"
 
@@ -180,11 +180,11 @@ msgstr "مفتاح Groq API"
 msgid "Groq Failure"
 msgstr "فشل Groq"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:144
+#: ../../client/src/settings/routes/ScreenSettings.tsx:150
 msgid "Groq Model ID"
 msgstr "معرف نموذج Groq"
 
-#: ../../client/src/app/base/MenuHeader.tsx:22
+#: ../../client/src/app/base/MenuHeader.tsx:27
 msgid "Human"
 msgstr "الإنسان"
 
@@ -192,11 +192,11 @@ msgstr "الإنسان"
 msgid "Inbox"
 msgstr "صندوق الوارد"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:125
+#: ../../client/src/settings/routes/ScreenSettings.tsx:131
 msgid "Kilometers"
 msgstr "كيلومترات"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:70
+#: ../../client/src/settings/routes/ScreenSettings.tsx:76
 msgid "Language"
 msgstr "اللغة"
 
@@ -205,7 +205,7 @@ msgstr "اللغة"
 msgid "Library"
 msgstr "المكتبة"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:99
+#: ../../client/src/settings/routes/ScreenSettings.tsx:105
 msgid "Light"
 msgstr "فاتح"
 
@@ -225,7 +225,7 @@ msgstr "الخرائط"
 msgid "Media"
 msgstr "الوسائط"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:126
+#: ../../client/src/settings/routes/ScreenSettings.tsx:132
 msgid "Miles"
 msgstr "أميال"
 
@@ -241,7 +241,7 @@ msgstr "لا توجد أحداث مجدولة."
 msgid "Notes"
 msgstr "الملاحظات"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:45
+#: ../../client/src/settings/routes/ScreenSettings.tsx:51
 msgid "Owner Key"
 msgstr "مفتاح المالك"
 
@@ -253,7 +253,7 @@ msgstr "الصور"
 msgid "Please set your Groq API Key"
 msgstr "يرجى تعيين مفتاح Groq API الخاص بك"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:31
+#: ../../client/src/settings/routes/ScreenSettings.tsx:37
 msgid "Profile"
 msgstr "الملف الشخصي"
 
@@ -261,31 +261,31 @@ msgstr "الملف الشخصي"
 msgid "Prompt History Reset"
 msgstr "إعادة تعيين سجل الأوامر"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:161
+#: ../../client/src/settings/routes/ScreenSettings.tsx:167
 msgid "Prompts"
 msgstr "الأوامر"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:133
+#: ../../client/src/settings/routes/ScreenSettings.tsx:139
 msgid "Provide a key to use AI features."
 msgstr "قدم مفتاحًا لاستخدام ميزات الذكاء الاصطناعي."
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:145
+#: ../../client/src/settings/routes/ScreenSettings.tsx:151
 msgid "Select the AI model to use."
 msgstr "اختر نموذج الذكاء الاصطناعي للاستخدام."
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:118
+#: ../../client/src/settings/routes/ScreenSettings.tsx:124
 msgid "Select the distance unit for the app."
 msgstr "اختر وحدة المسافة للتطبيق."
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:71
+#: ../../client/src/settings/routes/ScreenSettings.tsx:77
 msgid "Select the language for the app."
 msgstr "اختر لغة التطبيق."
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:105
+#: ../../client/src/settings/routes/ScreenSettings.tsx:111
 msgid "Select the temperature unit for the app."
 msgstr "اختر وحدة درجة الحرارة للتطبيق."
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:91
+#: ../../client/src/settings/routes/ScreenSettings.tsx:97
 msgid "Select the theme for the app."
 msgstr "اختر سمة التطبيق."
 
@@ -297,11 +297,11 @@ msgstr "الإعدادات"
 msgid "Tasks"
 msgstr "المهام"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:104
+#: ../../client/src/settings/routes/ScreenSettings.tsx:110
 msgid "Temperature"
 msgstr "درجة الحرارة"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:90
+#: ../../client/src/settings/routes/ScreenSettings.tsx:96
 msgid "Theme"
 msgstr "السمة"
 
@@ -309,7 +309,7 @@ msgstr "السمة"
 msgid "Tools"
 msgstr "الأدوات"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:33
+#: ../../client/src/settings/routes/ScreenSettings.tsx:39
 msgid "User Name"
 msgstr "اسم المستخدم"
 
@@ -333,7 +333,7 @@ msgstr "أنت غير متصل بالإنترنت"
 msgid "You are online"
 msgstr "أنت متصل بالإنترنت"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:34
+#: ../../client/src/settings/routes/ScreenSettings.tsx:40
 msgid "Your name to display in the app."
 msgstr "اسمك لعرضه في التطبيق."
 

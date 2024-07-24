@@ -16,7 +16,12 @@ export function MenuHeader(props: MenuProps) {
   return (
     <View style={styles.root}>
       <View style={styles.header}>
-        <Identicon id={owner?.id} width={20} height={20}/>
+        <Identicon
+          id={owner?.id}
+          width={20}
+          height={20}
+          link="/settings"
+        />
         <View style={styles.info}>
           <Text selectable style={styles.name}>
             {props?.profile?.name ?? t(i18n)`Human`}

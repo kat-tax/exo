@@ -26,7 +26,13 @@ export default function ScreenSettings() {
     <Page
       title={<Trans>Settings</Trans>}
       message={<Trans>Manage your settings</Trans>}
-      widget={<Identicon id={settings.owner?.id} width={48} height={48}/>}>
+      widget={
+        <Identicon
+          id={settings.owner?.id}
+          width={48}
+          height={48}
+        />
+      }>
       <View style={styles.root}>
         <SettingsGroup title={t(i18n)`Profile`}>
           <SettingsOption
