@@ -5,7 +5,7 @@ import {useStyles} from 'react-native-unistyles';
 import type {MarkerProps} from 'react-map-gl/maplibre';
 
 interface MarkerDeviceProps extends MarkerProps {
-  online: 0 | 1,
+  online: boolean,
   isSelf: boolean,
 }
 

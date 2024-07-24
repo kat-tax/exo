@@ -35,7 +35,7 @@ export default function ScreenMap() {
         {devices.map(d => (
           <MarkerDevice
             key={d.id}
-            online={d.online ?? 0}
+            online={Boolean(d?.online)}
             isSelf={d.id === device?.id}
             latitude={d.coords?.[0] ?? 0}
             longitude={d.coords?.[1] ?? 0}
