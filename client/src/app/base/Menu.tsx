@@ -42,9 +42,7 @@ export function Menu(props: MenuProps) {
           {tabs &&
             <View style={styles.spacer}/>
           }
-          <MenuSection
-            label={<Trans>Tools</Trans>}
-            tabs={tabs}>
+          <MenuSection label={<Trans>Tools</Trans>} {...{tabs}}>
             <MenuItem
               path="/map"
               icon="ph:map-trifold"
@@ -70,9 +68,11 @@ export function Menu(props: MenuProps) {
               {...{tabs}}
             />
           </MenuSection>
-          <MenuSection
-            label={<Trans>Media</Trans>}
-            tabs={tabs}>
+          <MenuSection label={<Trans>Media</Trans>} {...{tabs}} action={{
+            icon: 'ph:upload',
+            label: 'Add Folder',
+            onPress: console.log,
+          }}>
             <MenuItem
               path="/files"
               icon="ph:folder"
@@ -110,9 +110,7 @@ export function Menu(props: MenuProps) {
               {...{tabs}}
             />
           </MenuSection>
-          <MenuSection
-            label={<Trans>Favorites</Trans>}
-            tabs={tabs}>
+          <MenuSection label={<Trans>Favorites</Trans>} {...{tabs}}>
             {tabs ? null : lists.map(({id, complete}) =>
               <MenuItem
                 key={id}
@@ -126,10 +124,7 @@ export function Menu(props: MenuProps) {
           </MenuSection>
           <View style={styles.spacer}/>
           {__DEV__ &&
-            <MenuSection
-              closed
-              label={<Trans>Developer Mode</Trans>}
-              tabs={tabs}>
+            <MenuSection closed label={<Trans>Developer Mode</Trans>} {...{tabs}}>
               <MenuItem
                 path="/design"
                 icon="ph:palette"

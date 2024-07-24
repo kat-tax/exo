@@ -34,7 +34,7 @@ msgstr "إضافة مهمة"
 msgid "AI"
 msgstr "الذكاء الاصطناعي"
 
-#: ../../client/src/app/base/Menu.tsx:63
+#: ../../client/src/app/base/Menu.tsx:61
 msgid "Alarms"
 msgstr "المنبهات"
 
@@ -63,7 +63,7 @@ msgstr "اسأل أي شيء..."
 msgid "Auto"
 msgstr "تلقائي"
 
-#: ../../client/src/app/base/Menu.tsx:57
+#: ../../client/src/app/base/Menu.tsx:55
 msgid "Calendar"
 msgstr ""
 
@@ -103,11 +103,11 @@ msgstr "حذف الأوامر"
 msgid "Delete the local database."
 msgstr "حذف قاعدة البيانات المحلية."
 
-#: ../../client/src/app/base/Menu.tsx:136
+#: ../../client/src/app/base/Menu.tsx:131
 msgid "Design"
 msgstr "التصميم"
 
-#: ../../client/src/app/base/Menu.tsx:131
+#: ../../client/src/app/base/Menu.tsx:127
 msgid "Developer Mode"
 msgstr "وضع المطور"
 
@@ -151,7 +151,7 @@ msgstr "الأحداث"
 msgid "Fahrenheit"
 msgstr "فهرنهايت"
 
-#: ../../client/src/app/base/Menu.tsx:114
+#: ../../client/src/app/base/Menu.tsx:113
 msgid "Favorites"
 msgstr "المفضلة"
 
@@ -207,7 +207,7 @@ msgstr "كيلومترات"
 msgid "Language"
 msgstr "اللغة"
 
-#: ../../client/src/app/base/Menu.tsx:142
+#: ../../client/src/app/base/Menu.tsx:137
 msgid "Library"
 msgstr "المكتبة"
 
@@ -223,11 +223,11 @@ msgstr "جاري التحميل..."
 msgid "Manage your settings"
 msgstr "إدارة إعداداتك"
 
-#: ../../client/src/app/base/Menu.tsx:51
+#: ../../client/src/app/base/Menu.tsx:49
 msgid "Maps"
 msgstr "الخرائط"
 
-#: ../../client/src/app/base/Menu.tsx:74
+#: ../../client/src/app/base/Menu.tsx:71
 msgid "Media"
 msgstr "الوسائط"
 
@@ -243,7 +243,7 @@ msgstr "الموسيقى"
 msgid "No events scheduled."
 msgstr "لا توجد أحداث مجدولة."
 
-#: ../../client/src/app/base/Menu.tsx:69
+#: ../../client/src/app/base/Menu.tsx:67
 msgid "Notes"
 msgstr "الملاحظات"
 
@@ -295,7 +295,7 @@ msgstr "اختر وحدة درجة الحرارة للتطبيق."
 msgid "Select the theme for the app."
 msgstr "اختر سمة التطبيق."
 
-#: ../../client/src/app/base/Menu.tsx:150
+#: ../../client/src/app/base/Menu.tsx:145
 msgid "Settings"
 msgstr "الإعدادات"
 
@@ -311,7 +311,7 @@ msgstr "درجة الحرارة"
 msgid "Theme"
 msgstr "السمة"
 
-#: ../../client/src/app/base/Menu.tsx:46
+#: ../../client/src/app/base/Menu.tsx:45
 msgid "Tools"
 msgstr "الأدوات"
 

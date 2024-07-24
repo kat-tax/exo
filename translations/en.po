@@ -34,7 +34,7 @@ msgstr "Add a task"
 msgid "AI"
 msgstr "AI"
 
-#: ../../client/src/app/base/Menu.tsx:63
+#: ../../client/src/app/base/Menu.tsx:61
 msgid "Alarms"
 msgstr "Alarms"
 
@@ -63,7 +63,7 @@ msgstr "Ask anything..."
 msgid "Auto"
 msgstr "Auto"
 
-#: ../../client/src/app/base/Menu.tsx:57
+#: ../../client/src/app/base/Menu.tsx:55
 msgid "Calendar"
 msgstr "Calendar"
 
@@ -103,11 +103,11 @@ msgstr "Delete Prompts"
 msgid "Delete the local database."
 msgstr "Delete the local database."
 
-#: ../../client/src/app/base/Menu.tsx:136
+#: ../../client/src/app/base/Menu.tsx:131
 msgid "Design"
 msgstr "Design"
 
-#: ../../client/src/app/base/Menu.tsx:131
+#: ../../client/src/app/base/Menu.tsx:127
 msgid "Developer Mode"
 msgstr "Developer Mode"
 
@@ -151,7 +151,7 @@ msgstr "Events"
 msgid "Fahrenheit"
 msgstr "Fahrenheit"
 
-#: ../../client/src/app/base/Menu.tsx:114
+#: ../../client/src/app/base/Menu.tsx:113
 msgid "Favorites"
 msgstr "Favorites"
 
@@ -207,7 +207,7 @@ msgstr "Kilometers"
 msgid "Language"
 msgstr "Language"
 
-#: ../../client/src/app/base/Menu.tsx:142
+#: ../../client/src/app/base/Menu.tsx:137
 msgid "Library"
 msgstr "Library"
 
@@ -223,11 +223,11 @@ msgstr "Loading..."
 msgid "Manage your settings"
 msgstr "Manage your settings"
 
-#: ../../client/src/app/base/Menu.tsx:51
+#: ../../client/src/app/base/Menu.tsx:49
 msgid "Maps"
 msgstr "Maps"
 
-#: ../../client/src/app/base/Menu.tsx:74
+#: ../../client/src/app/base/Menu.tsx:71
 msgid "Media"
 msgstr "Media"
 
@@ -243,7 +243,7 @@ msgstr "Music"
 msgid "No events scheduled."
 msgstr "No events scheduled."
 
-#: ../../client/src/app/base/Menu.tsx:69
+#: ../../client/src/app/base/Menu.tsx:67
 msgid "Notes"
 msgstr "Notes"
 
@@ -295,7 +295,7 @@ msgstr "Select the temperature unit for the app."
 msgid "Select the theme for the app."
 msgstr "Select the theme for the app."
 
-#: ../../client/src/app/base/Menu.tsx:150
+#: ../../client/src/app/base/Menu.tsx:145
 msgid "Settings"
 msgstr "Settings"
 
@@ -311,7 +311,7 @@ msgstr "Temperature"
 msgid "Theme"
 msgstr "Theme"
 
-#: ../../client/src/app/base/Menu.tsx:46
+#: ../../client/src/app/base/Menu.tsx:45
 msgid "Tools"
 msgstr "Tools"
 
