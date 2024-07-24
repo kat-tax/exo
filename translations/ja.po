@@ -63,9 +63,17 @@ msgstr "何でも聞いてください..."
 msgid "Auto"
 msgstr "自動"
 
+#: ../../client/src/app/base/Menu.tsx:57
+msgid "Calendar"
+msgstr ""
+
 #: ../../client/src/settings/routes/ScreenSettings.tsx:118
 msgid "Celsius"
 msgstr "摂氏"
+
+#: ../../client/src/app/routes/ScreenTeaser.tsx:11
+msgid "Coming soon..."
+msgstr ""
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:106
 msgid "Dark"
@@ -96,7 +104,6 @@ msgid "Delete the local database."
 msgstr "ローカルデータベースを削除します。"
 
 #: ../../client/src/app/base/Menu.tsx:136
-#: ../../client/src/dev/routes/ScreenDesign.tsx:11
 msgid "Design"
 msgstr "デザイン"
 
@@ -201,7 +208,6 @@ msgid "Language"
 msgstr "言語"
 
 #: ../../client/src/app/base/Menu.tsx:142
-#: ../../client/src/dev/routes/ScreenLibrary.tsx:15
 msgid "Library"
 msgstr "ライブラリ"
 
@@ -233,7 +239,7 @@ msgstr "マイル"
 msgid "Music"
 msgstr "音楽"
 
-#: ../../client/src/events/routes/ScreenCalendar.tsx:58
+#: ../../client/src/events/routes/ScreenCalendar.tsx:34
 msgid "No events scheduled."
 msgstr "予定されているイベントはありません。"
 
@@ -289,7 +295,7 @@ msgstr "アプリの温度単位を選択してください。"
 msgid "Select the theme for the app."
 msgstr "アプリのテーマを選択してください。"
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:27
+#: ../../client/src/app/base/Menu.tsx:150
 msgid "Settings"
 msgstr "設定"
 

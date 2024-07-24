@@ -8,20 +8,29 @@ export function Router() {
     <_ {...{history}}>
       <Routes>
         <Route path="/" element={<$><Layout.Main/></$>}>
+          {/* General */}
           <Route index element={<$><Screen.Home/></$>}/>
-          <Route path="inbox" element={<$><Screen.Home/></$>}/>
+          <Route path="inbox" element={<$><Screen.Teaser/></$>}/>
+          <Route path="settings" element={<$><Screen.Settings/></$>}/>
+          {/* Tools */}
           <Route path="map" element={<$><Screen.Map/></$>}/>
-          <Route path="events" element={<$><Screen.Calendar/></$>}/>
-          <Route path="event/:id" element={<$><Screen.Calendar/></$>}/>
-          <Route path="files" element={<$><Screen.Home/></$>}/>
-          <Route path="file/:id" element={<$><Screen.Home/></$>}/>
+          <Route path="calendar" element={<$><Screen.Calendar/></$>}/>
+          <Route path="event/:id" element={<$><Screen.Teaser/></$>}/>
+          <Route path="alarms" element={<$><Screen.Teaser/></$>}/>
+          <Route path="alarm/:id" element={<$><Screen.Teaser/></$>}/>
           <Route path="notes" element={<$><Screen.TaskList/></$>}/>
           <Route path="note/:id" element={<$><Screen.TaskDetails/></$>}/>
-          <Route path="alarms" element={<$><Screen.Home/></$>}/>
-          <Route path="alarm/:id" element={<$><Screen.Home/></$>}/>
+          {/* Media */}
+          <Route path="files" element={<$><Screen.Teaser/></$>}/>
+          <Route path="file/:id" element={<$><Screen.Teaser/></$>}/>
+          <Route path="docs" element={<$><Screen.Teaser/></$>}/>
+          <Route path="games" element={<$><Screen.Teaser/></$>}/>
+          <Route path="photos" element={<$><Screen.Teaser/></$>}/>
+          <Route path="videos" element={<$><Screen.Teaser/></$>}/>
+          <Route path="music" element={<$><Screen.Teaser/></$>}/>
+          {/* Dev */}
           <Route path="design" element={<$><Screen.Design/></$>}/>
           <Route path="library" element={<$><Screen.Library/></$>}/>
-          <Route path="settings" element={<$><Screen.Settings/></$>}/>
         </Route>
       </Routes>
     </_>

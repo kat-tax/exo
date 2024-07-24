@@ -63,9 +63,17 @@ msgstr "Спросите что угодно..."
 msgid "Auto"
 msgstr "Авто"
 
+#: ../../client/src/app/base/Menu.tsx:57
+msgid "Calendar"
+msgstr ""
+
 #: ../../client/src/settings/routes/ScreenSettings.tsx:118
 msgid "Celsius"
 msgstr "Цельсий"
+
+#: ../../client/src/app/routes/ScreenTeaser.tsx:11
+msgid "Coming soon..."
+msgstr ""
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:106
 msgid "Dark"
@@ -96,7 +104,6 @@ msgid "Delete the local database."
 msgstr "Удалить локальную базу данных."
 
 #: ../../client/src/app/base/Menu.tsx:136
-#: ../../client/src/dev/routes/ScreenDesign.tsx:11
 msgid "Design"
 msgstr "Дизайн"
 
@@ -201,7 +208,6 @@ msgid "Language"
 msgstr "Язык"
 
 #: ../../client/src/app/base/Menu.tsx:142
-#: ../../client/src/dev/routes/ScreenLibrary.tsx:15
 msgid "Library"
 msgstr "Библиотека"
 
@@ -233,7 +239,7 @@ msgstr "Мили"
 msgid "Music"
 msgstr "Музыка"
 
-#: ../../client/src/events/routes/ScreenCalendar.tsx:58
+#: ../../client/src/events/routes/ScreenCalendar.tsx:34
 msgid "No events scheduled."
 msgstr "Нет запланированных событий."
 
@@ -289,7 +295,7 @@ msgstr "Выберите единицу измерения температур�
 msgid "Select the theme for the app."
 msgstr "Выберите тему для приложения."
 
-#: ../../client/src/settings/routes/ScreenSettings.tsx:27
+#: ../../client/src/app/base/Menu.tsx:150
 msgid "Settings"
 msgstr "Настройки"
 

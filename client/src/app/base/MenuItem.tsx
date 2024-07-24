@@ -10,7 +10,7 @@ interface MenuItemProps extends React.PropsWithChildren {
   path: string,
   icon?: string,
   color?: string,
-  tab?: boolean,
+  tabs?: boolean,
   sub?: boolean,
   striked?: boolean,
 }
@@ -25,7 +25,7 @@ export function MenuItem(props: MenuItemProps) {
     <Link to={props.path}>
       <View style={[
         styles.item,
-        props.tab && styles.itemTab,
+        props.tabs && styles.itemTab,
         props.sub && styles.itemSub,
         itemActive && {
           backgroundColor: scheme === 'dark'
@@ -36,14 +36,14 @@ export function MenuItem(props: MenuItemProps) {
         {props.icon &&
           <Icon
             name={props.icon}
-            size={props.tab ? 20 : 16}
+            size={props.tabs ? 20 : 16}
             color={props.color
-              || (props.tab
+              || (props.tabs
                 ? theme.colors.foreground
                 : theme.colors.mutedForeground)}
           />
         }
-        {!props.tab &&
+        {!props.tabs &&
           <Text
             style={[
               styles.tab,

@@ -1,11 +1,10 @@
 import {Trans} from '@lingui/macro';
-import {Icon} from 'react-exo/icon';
 import {View, Text} from 'react-native';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useDateRange, toDateId, Calendar} from 'react-exo/calendar';
 import {useCalendarTheme} from 'events/hooks/useCalendarTheme';
 import {useLocale} from 'settings/hooks/useLocale';
-import {Alert} from 'design';
+import {Event} from 'events/base/Event';
 
 const today = toDateId(new Date());
 
@@ -14,22 +13,7 @@ export default function ScreenCalendar() {
   const calendarTheme = useCalendarTheme();
   const [locale] = useLocale();
   const range = useDateRange();
-
   const hasEvent = false;
-  const demoStart = new Date('2024-07-28T12:00:00');
-  const demoEnd = new Date('2024-07-28T14:00:00');
-  const demoTitle = 'Birthday – Shiner, TX';
-  const demo = `${demoStart.toLocaleDateString(locale, {
-    weekday: 'short',
-    month: 'long',
-    day: 'numeric',
-  })} • ${demoStart.toLocaleTimeString(locale, {
-    hour: 'numeric',
-    minute: '2-digit',
-  })} - ${demoEnd.toLocaleTimeString(locale, {
-    hour: 'numeric',
-    minute: '2-digit',
-  })}`;
 
   return (
     <View style={styles.root}>
@@ -44,15 +28,7 @@ export default function ScreenCalendar() {
       </View>
       <View style={styles.panel}>
         {hasEvent
-          ? <Alert
-              mode="Default"
-              header={demoTitle}
-              body={demo}
-              hasIcon
-              icon={
-                <Icon name="ph:cake"/>
-              }
-            />
+          ? <Event/>
           : <View style={styles.empty}>
               <Text style={styles.emptyText}>
                 <Trans>No events scheduled.</Trans>

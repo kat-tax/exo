@@ -31,13 +31,13 @@ export function Menu(props: MenuProps) {
             path="/"
             icon="ph:squares-four"
             label={<Trans>Dashboard</Trans>}
-            tab={tabs}
+            {...{tabs}}
           />
           <MenuItem
             path="/inbox"
             icon="ph:tray"
             label={<Trans>Inbox</Trans>}
-            tab={tabs}
+            {...{tabs}}
           />
           {tabs &&
             <View style={styles.spacer}/>
@@ -49,25 +49,25 @@ export function Menu(props: MenuProps) {
               path="/map"
               icon="ph:map-trifold"
               label={<Trans>Maps</Trans>}
-              tab={tabs}
+              {...{tabs}}
             />
             <MenuItem
-              path="/events"
+              path="/calendar"
               icon="ph:calendar-dots"
-              label={<Trans>Events</Trans>}
-              tab={tabs}
+              label={<Trans>Calendar</Trans>}
+              {...{tabs}}
             />
             <MenuItem
               path="/alarms"
               icon="ph:alarm"
               label={<Trans>Alarms</Trans>}
-              tab={tabs}
+              {...{tabs}}
             />
             <MenuItem
               path="/notes"
               icon="ph:note"
               label={<Trans>Notes</Trans>}
-              tab={tabs}
+              {...{tabs}}
             />
           </MenuSection>
           <MenuSection
@@ -77,37 +77,37 @@ export function Menu(props: MenuProps) {
               path="/files"
               icon="ph:folder"
               label={<Trans>Files</Trans>}
-              tab={tabs}
+              {...{tabs}}
             />
             <MenuItem
               path="/docs"
               icon="ph:file"
               label={<Trans>Docs</Trans>}
-              tab={tabs}
+              {...{tabs}}
             />
             <MenuItem
-              path="/roms"
+              path="/games"
               icon="ph:game-controller"
               label={<Trans>Games</Trans>}
-              tab={tabs}
+              {...{tabs}}
             />
             <MenuItem
               path="/photos"
               icon="ph:image"
               label={<Trans>Photos</Trans>}
-              tab={tabs}
+              {...{tabs}}
             />
             <MenuItem
               path="/videos"
               icon="ph:video"
               label={<Trans>Videos</Trans>}
-              tab={tabs}
+              {...{tabs}}
             />
             <MenuItem
               path="/music"
               icon="ph:music-notes"
               label={<Trans>Music</Trans>}
-              tab={tabs}
+              {...{tabs}}
             />
           </MenuSection>
           <MenuSection
@@ -134,13 +134,13 @@ export function Menu(props: MenuProps) {
                 path="/design"
                 icon="ph:palette"
                 label={<Trans>Design</Trans>}
-                tab={tabs}
+                {...{tabs}}
               />
               <MenuItem
                 path="/library"
                 icon="ph:package"
                 label={<Trans>Library</Trans>}
-                tab={tabs}
+                {...{tabs}}
               />
             </MenuSection>
           }
@@ -148,7 +148,7 @@ export function Menu(props: MenuProps) {
             path="/settings"
             icon="ph:gear"
             label={<Trans>Settings</Trans>}
-            tab={tabs}
+            {...{tabs}}
           />
           {!__DEV__ &&
             <View style={styles.footer}>
