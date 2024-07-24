@@ -3,12 +3,12 @@ import {Icon} from 'react-exo/icon';
 import {View, Text, Pressable} from 'react-native';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useLingui} from '@lingui/react';
-import {useAppContext} from 'app/routes/useAppContext';
 import {Identicon} from 'app/widgets/Identicon';
 
-export function MenuHeader() {
+import type {MenuProps} from 'app/base/Menu';
+
+export function MenuHeader(props: MenuProps) {
   const {styles, theme} = useStyles(stylesheet);
-  const {profile} = useAppContext();
   const {i18n} = useLingui();
 
   return (
@@ -17,7 +17,7 @@ export function MenuHeader() {
         <Identicon width={20} height={20}/>
         <View style={styles.info}>
           <Text style={styles.name}>
-            {profile?.name ?? t(i18n)`Human`}
+            {props?.profile?.name ?? t(i18n)`Human`}
           </Text>
         </View>
         <View style={styles.fill}/>

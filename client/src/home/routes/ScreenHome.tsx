@@ -1,5 +1,5 @@
-import {Trans} from '@lingui/macro';
-import {Trans as T} from '@lingui/react';
+import {Trans} from '@lingui/react';
+import {Trans as T} from '@lingui/macro';
 import {Text, View} from 'react-native';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useAppContext} from 'app/routes/useAppContext';
@@ -17,10 +17,10 @@ export default function ScreenHome() {
 
   return (
     <Page
-      title={<T id={getDayGreeting().id}/>}
+      title={<Trans id={getDayGreeting().id}/>}
       message={profile
-        ? <Trans>{`Welcome, ${profile.name}`}</Trans>
-        : <Trans>{'Welcome, Human'}</Trans>
+        ? <T>{`Welcome, ${profile.name}`}</T>
+        : <T>{'Welcome, Human'}</T>
       }
       widget={
         <View style={styles.widget}>

@@ -34,7 +34,7 @@ msgstr "إضافة مهمة"
 msgid "AI"
 msgstr "الذكاء الاصطناعي"
 
-#: ../../client/src/app/base/Menu.tsx:60
+#: ../../client/src/app/base/Menu.tsx:63
 msgid "Alarms"
 msgstr "المنبهات"
 
@@ -71,7 +71,7 @@ msgstr "سيلزيوس"
 msgid "Dark"
 msgstr "داكن"
 
-#: ../../client/src/app/base/Menu.tsx:30
+#: ../../client/src/app/base/Menu.tsx:33
 msgid "Dashboard"
 msgstr "لوحة التحكم"
 
@@ -95,12 +95,11 @@ msgstr "حذف الأوامر"
 msgid "Delete the local database."
 msgstr "حذف قاعدة البيانات المحلية."
 
-#: ../../client/src/app/base/Menu.tsx:133
-#: ../../client/src/dev/routes/ScreenDesign.tsx:11
+#: ../../client/src/app/base/Menu.tsx:136
 msgid "Design"
 msgstr "التصميم"
 
-#: ../../client/src/app/base/Menu.tsx:128
+#: ../../client/src/app/base/Menu.tsx:131
 msgid "Developer Mode"
 msgstr "وضع المطور"
 
@@ -112,7 +111,7 @@ msgstr "العرض"
 msgid "Distance"
 msgstr "المسافة"
 
-#: ../../client/src/app/base/Menu.tsx:82
+#: ../../client/src/app/base/Menu.tsx:85
 msgid "Docs"
 msgstr "المستندات"
 
@@ -136,7 +135,7 @@ msgstr "أدخل عبارتك التذكيرية"
 msgid "Enter your name"
 msgstr "أدخل اسمك"
 
-#: ../../client/src/app/base/Menu.tsx:54
+#: ../../client/src/app/base/Menu.tsx:57
 msgid "Events"
 msgstr "الأحداث"
 
@@ -144,15 +143,15 @@ msgstr "الأحداث"
 msgid "Fahrenheit"
 msgstr "فهرنهايت"
 
-#: ../../client/src/app/base/Menu.tsx:111
+#: ../../client/src/app/base/Menu.tsx:114
 msgid "Favorites"
 msgstr "المفضلة"
 
-#: ../../client/src/app/base/Menu.tsx:76
+#: ../../client/src/app/base/Menu.tsx:79
 msgid "Files"
 msgstr "الملفات"
 
-#: ../../client/src/app/base/Menu.tsx:88
+#: ../../client/src/app/base/Menu.tsx:91
 msgid "Games"
 msgstr "الألعاب"
 
@@ -188,7 +187,7 @@ msgstr "معرف نموذج Groq"
 msgid "Human"
 msgstr "الإنسان"
 
-#: ../../client/src/app/base/Menu.tsx:36
+#: ../../client/src/app/base/Menu.tsx:39
 msgid "Inbox"
 msgstr "صندوق الوارد"
 
@@ -200,8 +199,7 @@ msgstr "كيلومترات"
 msgid "Language"
 msgstr "اللغة"
 
-#: ../../client/src/app/base/Menu.tsx:139
-#: ../../client/src/dev/routes/ScreenLibrary.tsx:15
+#: ../../client/src/app/base/Menu.tsx:142
 msgid "Library"
 msgstr "المكتبة"
 
@@ -217,11 +215,11 @@ msgstr "جاري التحميل..."
 msgid "Manage your settings"
 msgstr "إدارة إعداداتك"
 
-#: ../../client/src/app/base/Menu.tsx:48
+#: ../../client/src/app/base/Menu.tsx:51
 msgid "Maps"
 msgstr "الخرائط"
 
-#: ../../client/src/app/base/Menu.tsx:71
+#: ../../client/src/app/base/Menu.tsx:74
 msgid "Media"
 msgstr "الوسائط"
 
@@ -229,7 +227,7 @@ msgstr "الوسائط"
 msgid "Miles"
 msgstr "أميال"
 
-#: ../../client/src/app/base/Menu.tsx:106
+#: ../../client/src/app/base/Menu.tsx:109
 msgid "Music"
 msgstr "الموسيقى"
 
@@ -237,7 +235,7 @@ msgstr "الموسيقى"
 msgid "No events scheduled."
 msgstr "لا توجد أحداث مجدولة."
 
-#: ../../client/src/app/base/Menu.tsx:66
+#: ../../client/src/app/base/Menu.tsx:69
 msgid "Notes"
 msgstr "الملاحظات"
 
@@ -245,7 +243,7 @@ msgstr "الملاحظات"
 msgid "Owner Key"
 msgstr "مفتاح المالك"
 
-#: ../../client/src/app/base/Menu.tsx:94
+#: ../../client/src/app/base/Menu.tsx:97
 msgid "Photos"
 msgstr "الصور"
 
@@ -289,8 +287,7 @@ msgstr "اختر وحدة درجة الحرارة للتطبيق."
 msgid "Select the theme for the app."
 msgstr "اختر سمة التطبيق."
 
-#: ../../client/src/app/base/Menu.tsx:147
-#: ../../client/src/settings/routes/ScreenSettings.tsx:25
+#: ../../client/src/app/base/Menu.tsx:150
 msgid "Settings"
 msgstr "الإعدادات"
 
@@ -306,7 +303,7 @@ msgstr "درجة الحرارة"
 msgid "Theme"
 msgstr "السمة"
 
-#: ../../client/src/app/base/Menu.tsx:43
+#: ../../client/src/app/base/Menu.tsx:46
 msgid "Tools"
 msgstr "الأدوات"
 
@@ -314,7 +311,7 @@ msgstr "الأدوات"
 msgid "User Name"
 msgstr "اسم المستخدم"
 
-#: ../../client/src/app/base/Menu.tsx:100
+#: ../../client/src/app/base/Menu.tsx:103
 msgid "Videos"
 msgstr "مقاطع الفيديو"
 

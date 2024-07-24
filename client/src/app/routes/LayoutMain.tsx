@@ -26,7 +26,7 @@ export default function LayoutMain() {
     <StatusBar networkActivityIndicatorVisible={!device?.online}/>
     <View style={vstyles.root}>
       <View style={vstyles.menu}>
-        <Menu tabs={hasTabs}/>
+        <Menu tabs={hasTabs} profile={profile}/>
       </View>
       <Outlet context={{device, profile} as ReturnType<typeof useAppContext>}/>
     </View>

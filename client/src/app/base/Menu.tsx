@@ -8,7 +8,10 @@ import {MenuSection} from 'app/base/MenuSection';
 import {MenuItem} from 'app/base/MenuItem';
 import {isTouch} from 'app/utils/platform';
 
-interface MenuProps {
+import type {useProfile} from 'app/data';
+
+export interface MenuProps {
+  profile?: ReturnType<typeof useProfile>,
   tabs?: boolean,
 }
 
@@ -22,7 +25,7 @@ export function Menu(props: MenuProps) {
       <ScrollView horizontal={tabs} contentContainerStyle={{flexGrow: 1}}>
         <View style={[styles.root, tabs && styles.rootTabs]}>
           {!tabs &&
-            <MenuHeader/>
+            <MenuHeader {...props}/>
           }
           <MenuItem
             path="/"

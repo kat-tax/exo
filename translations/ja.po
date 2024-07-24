@@ -34,7 +34,7 @@ msgstr "タスクを追加"
 msgid "AI"
 msgstr "AI"
 
-#: ../../client/src/app/base/Menu.tsx:60
+#: ../../client/src/app/base/Menu.tsx:63
 msgid "Alarms"
 msgstr "アラーム"
 
@@ -71,7 +71,7 @@ msgstr "摂氏"
 msgid "Dark"
 msgstr "ダーク"
 
-#: ../../client/src/app/base/Menu.tsx:30
+#: ../../client/src/app/base/Menu.tsx:33
 msgid "Dashboard"
 msgstr "ダッシュボード"
 
@@ -95,12 +95,11 @@ msgstr "プロンプトを削除"
 msgid "Delete the local database."
 msgstr "ローカルデータベースを削除します。"
 
-#: ../../client/src/app/base/Menu.tsx:133
-#: ../../client/src/dev/routes/ScreenDesign.tsx:11
+#: ../../client/src/app/base/Menu.tsx:136
 msgid "Design"
 msgstr "デザイン"
 
-#: ../../client/src/app/base/Menu.tsx:128
+#: ../../client/src/app/base/Menu.tsx:131
 msgid "Developer Mode"
 msgstr "開発者モード"
 
@@ -112,7 +111,7 @@ msgstr "表示"
 msgid "Distance"
 msgstr "距離"
 
-#: ../../client/src/app/base/Menu.tsx:82
+#: ../../client/src/app/base/Menu.tsx:85
 msgid "Docs"
 msgstr "ドキュメント"
 
@@ -136,7 +135,7 @@ msgstr "ニーモニックフレーズを入力してください"
 msgid "Enter your name"
 msgstr "名前を入力してください"
 
-#: ../../client/src/app/base/Menu.tsx:54
+#: ../../client/src/app/base/Menu.tsx:57
 msgid "Events"
 msgstr "イベント"
 
@@ -144,15 +143,15 @@ msgstr "イベント"
 msgid "Fahrenheit"
 msgstr "華氏"
 
-#: ../../client/src/app/base/Menu.tsx:111
+#: ../../client/src/app/base/Menu.tsx:114
 msgid "Favorites"
 msgstr "お気に入り"
 
-#: ../../client/src/app/base/Menu.tsx:76
+#: ../../client/src/app/base/Menu.tsx:79
 msgid "Files"
 msgstr "ファイル"
 
-#: ../../client/src/app/base/Menu.tsx:88
+#: ../../client/src/app/base/Menu.tsx:91
 msgid "Games"
 msgstr "ゲーム"
 
@@ -188,7 +187,7 @@ msgstr "GroqモデルID"
 msgid "Human"
 msgstr "人間"
 
-#: ../../client/src/app/base/Menu.tsx:36
+#: ../../client/src/app/base/Menu.tsx:39
 msgid "Inbox"
 msgstr "受信トレイ"
 
@@ -200,8 +199,7 @@ msgstr "キロメートル"
 msgid "Language"
 msgstr "言語"
 
-#: ../../client/src/app/base/Menu.tsx:139
-#: ../../client/src/dev/routes/ScreenLibrary.tsx:15
+#: ../../client/src/app/base/Menu.tsx:142
 msgid "Library"
 msgstr "ライブラリ"
 
@@ -217,11 +215,11 @@ msgstr "読み込み中..."
 msgid "Manage your settings"
 msgstr "設定を管理"
 
-#: ../../client/src/app/base/Menu.tsx:48
+#: ../../client/src/app/base/Menu.tsx:51
 msgid "Maps"
 msgstr "地図"
 
-#: ../../client/src/app/base/Menu.tsx:71
+#: ../../client/src/app/base/Menu.tsx:74
 msgid "Media"
 msgstr "メディア"
 
@@ -229,7 +227,7 @@ msgstr "メディア"
 msgid "Miles"
 msgstr "マイル"
 
-#: ../../client/src/app/base/Menu.tsx:106
+#: ../../client/src/app/base/Menu.tsx:109
 msgid "Music"
 msgstr "音楽"
 
@@ -237,7 +235,7 @@ msgstr "音楽"
 msgid "No events scheduled."
 msgstr "予定されているイベントはありません。"
 
-#: ../../client/src/app/base/Menu.tsx:66
+#: ../../client/src/app/base/Menu.tsx:69
 msgid "Notes"
 msgstr "メモ"
 
@@ -245,7 +243,7 @@ msgstr "メモ"
 msgid "Owner Key"
 msgstr "オーナーキー"
 
-#: ../../client/src/app/base/Menu.tsx:94
+#: ../../client/src/app/base/Menu.tsx:97
 msgid "Photos"
 msgstr "写真"
 
@@ -289,8 +287,7 @@ msgstr "アプリの温度単位を選択してください。"
 msgid "Select the theme for the app."
 msgstr "アプリのテーマを選択してください。"
 
-#: ../../client/src/app/base/Menu.tsx:147
-#: ../../client/src/settings/routes/ScreenSettings.tsx:25
+#: ../../client/src/app/base/Menu.tsx:150
 msgid "Settings"
 msgstr "設定"
 
@@ -306,7 +303,7 @@ msgstr "温度"
 msgid "Theme"
 msgstr "テーマ"
 
-#: ../../client/src/app/base/Menu.tsx:43
+#: ../../client/src/app/base/Menu.tsx:46
 msgid "Tools"
 msgstr "ツール"
 
@@ -314,7 +311,7 @@ msgstr "ツール"
 msgid "User Name"
 msgstr "ユーザー名"
 
-#: ../../client/src/app/base/Menu.tsx:100
+#: ../../client/src/app/base/Menu.tsx:103
 msgid "Videos"
 msgstr "動画"
 

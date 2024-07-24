@@ -34,7 +34,7 @@ msgstr "Add a task"
 msgid "AI"
 msgstr "AI"
 
-#: ../../client/src/app/base/Menu.tsx:60
+#: ../../client/src/app/base/Menu.tsx:63
 msgid "Alarms"
 msgstr "Alarms"
 
@@ -71,7 +71,7 @@ msgstr "Celsius"
 msgid "Dark"
 msgstr "Dark"
 
-#: ../../client/src/app/base/Menu.tsx:30
+#: ../../client/src/app/base/Menu.tsx:33
 msgid "Dashboard"
 msgstr "Dashboard"
 
@@ -95,12 +95,11 @@ msgstr "Delete Prompts"
 msgid "Delete the local database."
 msgstr "Delete the local database."
 
-#: ../../client/src/app/base/Menu.tsx:133
-#: ../../client/src/dev/routes/ScreenDesign.tsx:11
+#: ../../client/src/app/base/Menu.tsx:136
 msgid "Design"
 msgstr "Design"
 
-#: ../../client/src/app/base/Menu.tsx:128
+#: ../../client/src/app/base/Menu.tsx:131
 msgid "Developer Mode"
 msgstr "Developer Mode"
 
@@ -112,7 +111,7 @@ msgstr "Display"
 msgid "Distance"
 msgstr "Distance"
 
-#: ../../client/src/app/base/Menu.tsx:82
+#: ../../client/src/app/base/Menu.tsx:85
 msgid "Docs"
 msgstr "Docs"
 
@@ -136,7 +135,7 @@ msgstr "Enter your mnemonic phrase"
 msgid "Enter your name"
 msgstr "Enter your name"
 
-#: ../../client/src/app/base/Menu.tsx:54
+#: ../../client/src/app/base/Menu.tsx:57
 msgid "Events"
 msgstr "Events"
 
@@ -144,15 +143,15 @@ msgstr "Events"
 msgid "Fahrenheit"
 msgstr "Fahrenheit"
 
-#: ../../client/src/app/base/Menu.tsx:111
+#: ../../client/src/app/base/Menu.tsx:114
 msgid "Favorites"
 msgstr "Favorites"
 
-#: ../../client/src/app/base/Menu.tsx:76
+#: ../../client/src/app/base/Menu.tsx:79
 msgid "Files"
 msgstr "Files"
 
-#: ../../client/src/app/base/Menu.tsx:88
+#: ../../client/src/app/base/Menu.tsx:91
 msgid "Games"
 msgstr "Games"
 
@@ -188,7 +187,7 @@ msgstr "Groq Model ID"
 msgid "Human"
 msgstr "Human"
 
-#: ../../client/src/app/base/Menu.tsx:36
+#: ../../client/src/app/base/Menu.tsx:39
 msgid "Inbox"
 msgstr "Inbox"
 
@@ -200,8 +199,7 @@ msgstr "Kilometers"
 msgid "Language"
 msgstr "Language"
 
-#: ../../client/src/app/base/Menu.tsx:139
-#: ../../client/src/dev/routes/ScreenLibrary.tsx:15
+#: ../../client/src/app/base/Menu.tsx:142
 msgid "Library"
 msgstr "Library"
 
@@ -217,11 +215,11 @@ msgstr "Loading..."
 msgid "Manage your settings"
 msgstr "Manage your settings"
 
-#: ../../client/src/app/base/Menu.tsx:48
+#: ../../client/src/app/base/Menu.tsx:51
 msgid "Maps"
 msgstr "Maps"
 
-#: ../../client/src/app/base/Menu.tsx:71
+#: ../../client/src/app/base/Menu.tsx:74
 msgid "Media"
 msgstr "Media"
 
@@ -229,7 +227,7 @@ msgstr "Media"
 msgid "Miles"
 msgstr "Miles"
 
-#: ../../client/src/app/base/Menu.tsx:106
+#: ../../client/src/app/base/Menu.tsx:109
 msgid "Music"
 msgstr "Music"
 
@@ -237,7 +235,7 @@ msgstr "Music"
 msgid "No events scheduled."
 msgstr "No events scheduled."
 
-#: ../../client/src/app/base/Menu.tsx:66
+#: ../../client/src/app/base/Menu.tsx:69
 msgid "Notes"
 msgstr "Notes"
 
@@ -245,7 +243,7 @@ msgstr "Notes"
 msgid "Owner Key"
 msgstr "Owner Key"
 
-#: ../../client/src/app/base/Menu.tsx:94
+#: ../../client/src/app/base/Menu.tsx:97
 msgid "Photos"
 msgstr "Photos"
 
@@ -289,8 +287,7 @@ msgstr "Select the temperature unit for the app."
 msgid "Select the theme for the app."
 msgstr "Select the theme for the app."
 
-#: ../../client/src/app/base/Menu.tsx:147
-#: ../../client/src/settings/routes/ScreenSettings.tsx:25
+#: ../../client/src/app/base/Menu.tsx:150
 msgid "Settings"
 msgstr "Settings"
 
@@ -306,7 +303,7 @@ msgstr "Temperature"
 msgid "Theme"
 msgstr "Theme"
 
-#: ../../client/src/app/base/Menu.tsx:43
+#: ../../client/src/app/base/Menu.tsx:46
 msgid "Tools"
 msgstr "Tools"
 
@@ -314,7 +311,7 @@ msgstr "Tools"
 msgid "User Name"
 msgstr "User Name"
 
-#: ../../client/src/app/base/Menu.tsx:100
+#: ../../client/src/app/base/Menu.tsx:103
 msgid "Videos"
 msgstr "Videos"
 
