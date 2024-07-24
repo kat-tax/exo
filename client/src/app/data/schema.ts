@@ -41,16 +41,16 @@ export const IdLabel = _.id('Label');
 
 // Tables
 
-export type ProfileTable = typeof ProfileTable.Type;
-export const ProfileTable = _.table({
+export type TableProfile = typeof TableProfile.Type;
+export const TableProfile = _.table({
   id: IdProfile,
   name: S.NullOr(String50),
   groqKey: S.NullOr(_.NonEmptyString1000),
   groqModel: S.NullOr(String50),
 });
 
-export type DeviceTable = typeof DeviceTable.Type;
-export const DeviceTable = _.table({
+export type TableDevice = typeof TableDevice.Type;
+export const TableDevice = _.table({
   id: IdDevice,
   uuid: String50,
   name: S.NullOr(String50),
@@ -58,8 +58,8 @@ export const DeviceTable = _.table({
   online: S.NullOr(_.SqliteBoolean),
 });
 
-export type AiPromptTable = typeof AiPromptTable.Type;
-export const AiPromptTable = _.table({
+export type TableAiPrompt = typeof TableAiPrompt.Type;
+export const TableAiPrompt = _.table({
   id: IdAiPrompt,
   model: String50,
   prompt: _.NonEmptyString1000,
@@ -67,16 +67,16 @@ export const AiPromptTable = _.table({
   isMultiline: S.NullOr(_.SqliteBoolean),
 });
 
-export type TodoTable = typeof TodoTable.Type;
-export const TodoTable = _.table({
+export type TableTodo = typeof TableTodo.Type;
+export const TableTodo = _.table({
   id: IdTodo,
   title: _.NonEmptyString1000,
   labelId: S.NullOr(IdLabel),
   isCompleted: S.NullOr(_.SqliteBoolean),
 });
 
-export type LabelTable = typeof LabelTable.Type;
-export const LabelTable = _.table({
+export type TableLabel = typeof TableLabel.Type;
+export const TableLabel = _.table({
   id: IdLabel,
   name: String50,
   data: S.NullOr(Label),
@@ -86,11 +86,11 @@ export const LabelTable = _.table({
 
 export type DB = typeof DB.Type;
 export const DB = _.database({
-  aiPrompt: AiPromptTable,
-  profile: ProfileTable,
-  device: DeviceTable,
-  label: LabelTable,
-  todo: TodoTable,
+  aiPrompt: TableAiPrompt,
+  profile: TableProfile,
+  device: TableDevice,
+  label: TableLabel,
+  todo: TableTodo,
 });
 
 /**

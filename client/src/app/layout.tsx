@@ -3,7 +3,7 @@ import {useInitialTheme, UnistylesRuntime} from 'react-native-unistyles';
 import {StatusBar, Appearance} from 'react-native';
 import {ToastRoot} from 'react-exo/toast';
 import {useScheme} from 'settings/hooks/useScheme';
-import Bootsplash from 'react-native-bootsplash/src/index';
+//import Bootsplash from 'react-native-bootsplash';
 
 export function Layout(props: React.PropsWithChildren) {
   const [scheme] = useScheme();
@@ -21,7 +21,7 @@ export function Layout(props: React.PropsWithChildren) {
   }, [scheme]);
 
   useEffect(() => {
-    Bootsplash.hide();
+    //Bootsplash.hide();
   }, []);
 
   return <>

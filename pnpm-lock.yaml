@@ -273,8 +273,8 @@ importers:
         specifier: ^3.8.13
         version: 3.8.13(@callstack/react-native-visionos@0.74.4)(react-native-macos@0.73.33)(react-native-windows@0.74.12)(react-native@0.74.3)(react@18.2.0)
       react-test-renderer:
-        specifier: 18.3.1
-        version: 18.3.1(react@18.2.0)
+        specifier: 18.2.0
+        version: 18.2.0(react@18.2.0)
       typescript:
         specifier: ^5.5.4
         version: 5.5.4
@@ -554,11 +554,11 @@ importers:
   server:
     dependencies:
       '@evolu/server':
-        specifier: 7.0.13
-        version: 7.0.13(@evolu/common@5.3.0)(express@4.19.2)
+        specifier: 7.1.0
+        version: 7.1.0(@evolu/common@5.3.0)(express@4.19.2)
       effect:
-        specifier: 3.5.3
-        version: 3.5.3
+        specifier: 3.5.7
+        version: 3.5.7
 
   toolkit/bundler:
     devDependencies:
@@ -1147,7 +1147,7 @@ packages:
   /@babel/generator@7.2.0:
     resolution: {integrity: sha512-BA75MVfRlFQG2EZgFYIwyT1r6xSkwfP2bdkY/kLZusEYWiJs4xCowab/alaEaT0wSvmVuXGqiefeBlP+7V1yKg==}
     dependencies:
-      '@babel/types': 7.24.8
+      '@babel/types': 7.24.9
       jsesc: 2.5.2
       lodash: 4.17.21
       source-map: 0.5.7
@@ -1345,7 +1345,7 @@ packages:
     resolution: {integrity: sha512-0NFvs3VkuSYbFi1x2Vd6tKrywq+z/cLeYC/RJNFrIX/30Bf5aiGYbtvGXolEktzJH8o5E5KJ3tT+nkxuuZFVlA==}
     engines: {node: '>=6.9.0'}
     dependencies:
-      '@babel/types': 7.24.8
+      '@babel/types': 7.24.9
     dev: false
 
   /@babel/helper-module-imports@7.22.15:
@@ -3186,18 +3186,6 @@ packages:
     resolution: {integrity: sha512-CcxmJIvUb1vsFheuGGVSQf4KdPZC44XolpUT34+vlal+LyQoBUOn31pjFET5M9ctOxEpt8xa0M3/2M7uUiAoJw==}
     dev: false
 
-  /@effect/platform@0.59.3(@effect/schema@0.68.27)(effect@3.5.3):
-    resolution: {integrity: sha512-DHR4Hl+hhTCzjs1ykRIyzwaala4JMtPVnReLea29hn+M3fKzloic7UpyCkTO7aJdFjthUtAKcW2mr2lDtuqlDA==}
-    peerDependencies:
-      '@effect/schema': ^0.68.27
-      effect: ^3.5.7
-    dependencies:
-      '@effect/schema': 0.68.27(effect@3.5.3)
-      effect: 3.5.3
-      find-my-way-ts: 0.1.5
-      multipasta: 0.2.2
-    dev: false
-
   /@effect/platform@0.59.3(@effect/schema@0.68.27)(effect@3.5.7):
     resolution: {integrity: sha512-DHR4Hl+hhTCzjs1ykRIyzwaala4JMtPVnReLea29hn+M3fKzloic7UpyCkTO7aJdFjthUtAKcW2mr2lDtuqlDA==}
     peerDependencies:
@@ -3208,15 +3196,6 @@ packages:
       effect: 3.5.7
       find-my-way-ts: 0.1.5
       multipasta: 0.2.2
-    dev: false
-
-  /@effect/schema@0.68.27(effect@3.5.3):
-    resolution: {integrity: sha512-/rmIb+4QaQTecdTfeYSZtNikIV+BeIbYDl/hpgBTaS96en7pKNW5hcygFQhdocjKguIL7Y/be+oUrVafWV60ew==}
-    peerDependencies:
-      effect: ^3.5.7
-    dependencies:
-      effect: 3.5.3
-      fast-check: 3.20.0
     dev: false
 
   /@effect/schema@0.68.27(effect@3.5.7):
@@ -4041,25 +4020,6 @@ packages:
       '@sqlite.org/sqlite-wasm': 3.46.0-build2
     dev: false
 
-  /@evolu/common@5.3.0(@effect/platform@0.59.3)(@effect/schema@0.68.27)(effect@3.5.3):
-    resolution: {integrity: sha512-C78DxFMkJGRxb9hUrsntZS2ceEF8a1rwk6EUaNLV7g94MbwbGu7NYjikBWgR3bdC2iqpE180SK4f9LPMl81SwQ==}
-    engines: {node: '>=18.16'}
-    peerDependencies:
-      '@effect/platform': ^0.59.0
-      '@effect/schema': ^0.68.0
-      effect: ^3.1.2
-    dependencies:
-      '@effect/platform': 0.59.3(@effect/schema@0.68.27)(effect@3.5.3)
-      '@effect/schema': 0.68.27(effect@3.5.3)
-      '@noble/ciphers': 0.5.3
-      '@noble/hashes': 1.4.0
-      '@protobuf-ts/runtime': 2.9.4
-      '@scure/bip39': 1.3.0
-      effect: 3.5.3
-      kysely: 0.27.4
-      nanoid: 5.0.7
-    dev: false
-
   /@evolu/common@5.3.0(@effect/platform@0.59.3)(@effect/schema@0.68.27)(effect@3.5.7):
     resolution: {integrity: sha512-C78DxFMkJGRxb9hUrsntZS2ceEF8a1rwk6EUaNLV7g94MbwbGu7NYjikBWgR3bdC2iqpE180SK4f9LPMl81SwQ==}
     engines: {node: '>=18.16'}
@@ -4113,22 +4073,25 @@ packages:
       react-dom: 18.2.0(react@18.2.0)
     dev: false
 
-  /@evolu/server@7.0.13(@evolu/common@5.3.0)(express@4.19.2):
-    resolution: {integrity: sha512-Pov54pv9QIdZ/1Mw1DUaAhBML/+MkYJO422H0+PUmCJJ66nHVvhZlIwgb3FpVSUbtuqNmvzhyiZJLFE/NT7ZYQ==}
+  /@evolu/server@7.1.0(@evolu/common@5.3.0)(express@4.19.2):
+    resolution: {integrity: sha512-AuPY923TBzutOvnCU1W4B0992AvzjHlND0F2ZowHpeUwevSfc5ucqU/7bStOwpINkvui/mxT664cIJdwXPf0PA==}
     engines: {node: '>=16.15'}
     peerDependencies:
-      '@evolu/common': ^5.2.3
+      '@evolu/common': ^5.3.0
       express: ^4.19.2
     dependencies:
-      '@evolu/common': 5.3.0(@effect/platform@0.59.3)(@effect/schema@0.68.27)(effect@3.5.3)
+      '@evolu/common': 5.3.0(@effect/platform@0.59.3)(@effect/schema@0.68.27)(effect@3.5.7)
       better-sqlite3: 11.1.2
       body-parser: 1.20.2
       cors: 2.8.5
       effect: 3.5.7
       express: 4.19.2
       kysely: 0.27.4
+      ws: 8.18.0
     transitivePeerDependencies:
+      - bufferutil
       - supports-color
+      - utf-8-validate
     dev: false
 
   /@expo/bunyan@4.0.0:
@@ -4221,7 +4184,7 @@ packages:
       text-table: 0.2.0
       url-join: 4.0.0
       wrap-ansi: 7.0.0
-      ws: 8.15.1
+      ws: 8.18.0
     transitivePeerDependencies:
       - bufferutil
       - encoding
@@ -4358,9 +4321,9 @@ packages:
     resolution: {integrity: sha512-YGpTlVc1/6EPzPbt0LZt92Bwrpjngulup6uHSTRbwn/heMPfFaVv1Y4VE3GAUkx7/Qwu+dTVIV0Kys4pLOAIiw==}
     dependencies:
       '@babel/core': 7.24.9
-      '@babel/generator': 7.24.8
+      '@babel/generator': 7.24.10
       '@babel/parser': 7.24.8
-      '@babel/types': 7.24.8
+      '@babel/types': 7.24.9
       '@expo/config': 9.0.3
       '@expo/env': 0.3.0
       '@expo/json-file': 8.3.0
@@ -11211,7 +11174,7 @@ packages:
     resolution: {integrity: sha512-OUDKms8qmcm5bX0D+sJWC1YcKcd7AZ2aJ7eY6gkR+Xr7PDfkXLbqAld4Qs9B0ntjVbUMEtW/PjlQrxDtY4raHg==}
     dependencies:
       '@babel/generator': 7.2.0
-      '@babel/types': 7.24.8
+      '@babel/types': 7.24.9
       chalk: 4.1.2
       invariant: 2.2.4
       pretty-format: 24.9.0
@@ -12742,10 +12705,6 @@ packages:
 
   /ee-first@1.1.1:
     resolution: {integrity: sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==}
-
-  /effect@3.5.3:
-    resolution: {integrity: sha512-emKAbdsB4jTeppa6fdfdWGhbEjKdvr1xfltpGIwiR46mD97JvWlpbrTIdqDCCizuMbxVys6YrSjKL7aHHa93Gg==}
-    dev: false
 
   /effect@3.5.7:
     resolution: {integrity: sha512-PzEncc0R3ZZhqNTR+fXrSX+anF/4Ai6ftKie1ZrUUWY7WPE7d4KjB6wjpeWoGMOC7xWFPGSkBBUudyJN1mx3+g==}
@@ -16684,7 +16643,7 @@ packages:
     peerDependencies:
       tailwindcss: ~3
     dependencies:
-      '@babel/generator': 7.24.8
+      '@babel/generator': 7.24.10
       '@babel/helper-module-imports': 7.18.6
       '@babel/types': 7.19.0
       css-mediaquery: 0.1.2
@@ -18760,10 +18719,10 @@ packages:
       tslib: 2.6.3
     dev: true
 
-  /react-test-renderer@18.3.1(react@18.2.0):
-    resolution: {integrity: sha512-KkAgygexHUkQqtvvx/otwxtuFu5cVjfzTCtjXLH9boS19/Nbtg84zS7wIQn39G8IlrhThBpQsMKkq5ZHZIYFXA==}
+  /react-test-renderer@18.2.0(react@18.2.0):
+    resolution: {integrity: sha512-JWD+aQ0lh2gvh4NM3bBM42Kx+XybOxCpgYK7F8ugAlpaTSnWsX+39Z4XkOykGZAHrjwwTZT3x3KxswVWxHPUqA==}
     peerDependencies:
-      react: ^18.3.1
+      react: ^18.2.0
     dependencies:
       react: 18.2.0
       react-is: 18.3.1
@@ -21490,6 +21449,19 @@ packages:
         optional: true
       utf-8-validate:
         optional: true
+
+  /ws@8.18.0:
+    resolution: {integrity: sha512-8VbfWfHLbbwu3+N6OKsOMpBdT4kXPDDB9cJk2bJ6mh9ucxdlnNvH1e+roYkKmN9Nxw2yjz7VzeO9oOz2zJ04Pw==}
+    engines: {node: '>=10.0.0'}
+    peerDependencies:
+      bufferutil: ^4.0.1
+      utf-8-validate: '>=5.0.2'
+    peerDependenciesMeta:
+      bufferutil:
+        optional: true
+      utf-8-validate:
+        optional: true
+    dev: false
 
   /xcode@3.0.1:
     resolution: {integrity: sha512-kCz5k7J7XbJtjABOvkc5lJmkiDh8VhjVCGNiqdKCscmVpdVUpEAyXv1xmCLkQJ5dsHqx3IPO4XW+NTDhU/fatA==}

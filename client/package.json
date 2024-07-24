@@ -111,7 +111,7 @@
     "concurrently": "latest",
     "config": "workspace:*",
     "react-native-test-app": "^3.8.13",
-    "react-test-renderer": "18.3.1",
+    "react-test-renderer": "18.2.0",
     "typescript": "^5.5.4"
   },
   "browserslist": {
