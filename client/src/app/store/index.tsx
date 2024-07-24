@@ -41,6 +41,7 @@ const store = $.configureStore({
   ),
 });
 
+// https://github.com/salvoravida/redux-first-history
 $.history.init(store);
 
 export type State = ReturnType<typeof store.getState>

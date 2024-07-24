@@ -48,7 +48,9 @@ export default defineConfig(env => mergeConfig(
       visualizer(),
     ],
     optimizeDeps: {
-      exclude: ['@evolu/common-web'],
+      exclude: [
+        '@evolu/common-web',
+      ],
     },
     worker: {
       format: 'es',

@@ -41,7 +41,6 @@ export default defineConfig(env => mergeConfig(
           gesture: 'src/layout/gesture/Gesture.export',
           motion: 'src/layout/motion/Motion.export',
           navigation: 'src/layout/navigation/Navigation.export',
-          safearea: 'src/layout/safe-area/SafeArea.export',
           skeleton: 'src/layout/skeleton/Skeleton.export',
           /* Services */
           device: 'src/services/device/Device.export',

@@ -1,5 +1,5 @@
 import * as _ from '@evolu/react-native';
-import * as S from './schema';
+import * as S from 'app/data/schema';
 import config from 'config';
 
 export * from './schema';
@@ -69,7 +69,7 @@ export const prompts = evolu.createQuery(db => db
   .orderBy('createdAt')
 );
 
-export const prompt = (id: S.AiPromptId) => evolu.createQuery(db => db
+export const prompt = (id: S.IdAiPrompt) => evolu.createQuery(db => db
   .selectFrom('aiPrompt')
   .select(['id', 'model', 'prompt', 'response', 'isMultiline', 'createdAt'])
   .where('isDeleted', 'is not', _.cast(true))

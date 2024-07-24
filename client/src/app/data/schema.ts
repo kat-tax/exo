@@ -24,26 +24,26 @@ export const Label = S.Struct({
 
 // Ids
 
-export type ProfileId = typeof ProfileId.Type;
-export const ProfileId = _.id('Profile');
+export type IdProfile = typeof IdProfile.Type;
+export const IdProfile = _.id('Profile');
 
-export type DeviceId = typeof DeviceId.Type;
-export const DeviceId = _.id('Device');
+export type IdDevice = typeof IdDevice.Type;
+export const IdDevice = _.id('Device');
 
-export type AiPromptId = typeof AiPromptId.Type;
-export const AiPromptId = _.id('AiPrompt');
+export type IdAiPrompt = typeof IdAiPrompt.Type;
+export const IdAiPrompt = _.id('AiPrompt');
 
-export type TodoId = typeof TodoId.Type;
-export const TodoId = _.id('Todo');
+export type IdTodo = typeof IdTodo.Type;
+export const IdTodo = _.id('Todo');
 
-export type LabelId = typeof LabelId.Type;
-export const LabelId = _.id('Label');
+export type IdLabel = typeof IdLabel.Type;
+export const IdLabel = _.id('Label');
 
 // Tables
 
 export type ProfileTable = typeof ProfileTable.Type;
 export const ProfileTable = _.table({
-  id: ProfileId,
+  id: IdProfile,
   name: S.NullOr(String50),
   groqKey: S.NullOr(_.NonEmptyString1000),
   groqModel: S.NullOr(String50),
@@ -51,7 +51,7 @@ export const ProfileTable = _.table({
 
 export type DeviceTable = typeof DeviceTable.Type;
 export const DeviceTable = _.table({
-  id: DeviceId,
+  id: IdDevice,
   uuid: String50,
   name: S.NullOr(String50),
   coords: S.NullOr(Coords),
@@ -60,7 +60,7 @@ export const DeviceTable = _.table({
 
 export type AiPromptTable = typeof AiPromptTable.Type;
 export const AiPromptTable = _.table({
-  id: AiPromptId,
+  id: IdAiPrompt,
   model: String50,
   prompt: _.NonEmptyString1000,
   response: _.NonEmptyString1000,
@@ -69,15 +69,15 @@ export const AiPromptTable = _.table({
 
 export type TodoTable = typeof TodoTable.Type;
 export const TodoTable = _.table({
-  id: TodoId,
+  id: IdTodo,
   title: _.NonEmptyString1000,
-  labelId: S.NullOr(LabelId),
+  labelId: S.NullOr(IdLabel),
   isCompleted: S.NullOr(_.SqliteBoolean),
 });
 
 export type LabelTable = typeof LabelTable.Type;
 export const LabelTable = _.table({
-  id: LabelId,
+  id: IdLabel,
   name: String50,
   data: S.NullOr(Label),
 });

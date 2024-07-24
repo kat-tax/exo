@@ -58,11 +58,6 @@
       "import": "./gen/web/gesture.js",
       "require": "./gen/native/gesture.js"
     },
-    "./safearea": {
-      "types": "./gen/types/safearea.d.ts",
-      "import": "./gen/web/safearea.js",
-      "require": "./gen/native/safearea.js"
-    },
     "./skeleton": {
       "types": "./gen/types/skeleton.d.ts",
       "import": "./gen/web/skeleton.js",
@@ -174,7 +169,6 @@
     "react-native-linear-gradient": ">=2",
     "react-native-mmkv": ">=2",
     "react-native-reanimated": ">=3",
-    "react-native-safe-area-context": ">=4",
     "react-native-screens": ">=3",
     "react-native-skottie": ">=2.1.1",
     "react-native-svg": ">=15",
@@ -240,7 +234,6 @@
     "react-native-mmkv": "^2.12.2",
     "react-native-navigation": "7.40.1",
     "react-native-reanimated": "^3.14.0",
-    "react-native-safe-area-context": "^4.10.8",
     "react-native-screens": "^3.32.0",
     "react-native-skottie": "^2.1.4",
     "react-native-svg": "^15.4.0",

@@ -10,7 +10,6 @@ export type * from './assets/markdown/Markdown.export';
 
 // Layout
 export type * from './layout/navigation/Navigation.export';
-export type * from './layout/safe-area/SafeArea.export';
 export type * from './layout/gesture/Gesture.export';
 export type * from './layout/motion/Motion.export';
 
