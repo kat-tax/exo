@@ -42,15 +42,15 @@ msgstr "Будильники"
 msgid "All Data"
 msgstr "Все данные"
 
-#: ../../client/src/settings/hooks/useSettings.ts:56
+#: ../../client/src/settings/hooks/useSettings.ts:57
 msgid "Are you sure you want to change the owner key? This will reset the local database. This action cannot be undone."
 msgstr "Вы уверены, что хотите изменить ключ владельца? Это приведет к сбросу локальной базы данных. Это действие нельзя отменить."
 
-#: ../../client/src/settings/hooks/useSettings.ts:50
+#: ../../client/src/settings/hooks/useSettings.ts:51
 msgid "Are you sure you want to reset your local database? If data is not backed up on another device, it will be lost. This action cannot be undone."
 msgstr "Вы уверены, что хотите сбросить вашу локальную базу данных? Если данные не сохранены на другом устройстве, они будут потеряны. Это действие нельзя отменить."
 
-#: ../../client/src/settings/hooks/useSettings.ts:41
+#: ../../client/src/settings/hooks/useSettings.ts:42
 msgid "Are you sure you want to reset your prompt history?"
 msgstr "Вы уверены, что хотите сбросить историю ваших запросов?"
 
@@ -257,7 +257,7 @@ msgstr "Пожалуйста, установите ваш API ключ Groq"
 msgid "Profile"
 msgstr "Профиль"
 
-#: ../../client/src/settings/hooks/useSettings.ts:43
+#: ../../client/src/settings/hooks/useSettings.ts:44
 msgid "Prompt History Reset"
 msgstr "Сброс истории запросов"
 
@@ -318,11 +318,11 @@ msgstr "Имя пользователя"
 msgid "Videos"
 msgstr "Видео"
 
-#: ../../client/src/home/routes/ScreenHome.tsx:26
+#: ../../client/src/home/routes/ScreenHome.tsx:22
 msgid "Welcome, {0}"
 msgstr "Добро пожаловать, {0}"
 
-#: ../../client/src/home/routes/ScreenHome.tsx:27
+#: ../../client/src/home/routes/ScreenHome.tsx:23
 msgid "Welcome, Human"
 msgstr "Добро пожаловать, Человек"
 
@@ -338,6 +338,6 @@ msgstr "Вы в сети"
 msgid "Your name to display in the app."
 msgstr "Ваше имя для отображения в приложении."
 
-#: ../../client/src/settings/hooks/useSettings.ts:44
+#: ../../client/src/settings/hooks/useSettings.ts:45
 msgid "Your prompt history has been reset."
 msgstr "История ваших запросов была сброшена."

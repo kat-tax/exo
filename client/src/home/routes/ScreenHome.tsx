@@ -2,21 +2,17 @@ import {Trans} from '@lingui/react';
 import {Trans as T} from '@lingui/macro';
 import {Text, View} from 'react-native';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {useOutletContext} from 'react-exo/navigation';
-import {useProfile} from 'app/data';
+import {useAppContext} from 'app/routes/useAppContext';
 import {useClock} from 'home/hooks/useClock';
 import {useWeather} from 'home/hooks/useWeather';
 import {getDayGreeting} from 'home/utils/time';
 import {AiPrompt} from 'home/base/AiPrompt';
 import {Page} from 'app/base/Page';
 
-import type {useDeviceSession} from 'app/hooks/useDeviceSession';
-
 export default function ScreenHome() {
+  const {device, profile} = useAppContext();
   const {styles} = useStyles(stylesheet);
-  const device = useOutletContext<ReturnType<typeof useDeviceSession>>();
   const weather = useWeather(device?.coords);
-  const profile = useProfile();
   const clock = useClock('medium');
 
   return (
@@ -36,7 +32,7 @@ export default function ScreenHome() {
           </Text>
         </View>
       }>
-      <AiPrompt/>
+      {/* <AiPrompt/> */}
     </Page>
   );
 }

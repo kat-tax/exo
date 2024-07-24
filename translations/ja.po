@@ -42,15 +42,15 @@ msgstr "アラーム"
 msgid "All Data"
 msgstr "すべてのデータ"
 
-#: ../../client/src/settings/hooks/useSettings.ts:56
+#: ../../client/src/settings/hooks/useSettings.ts:57
 msgid "Are you sure you want to change the owner key? This will reset the local database. This action cannot be undone."
 msgstr "オーナーキーを変更してもよろしいですか？これによりローカルデータベースがリセットされます。この操作は元に戻せません。"
 
-#: ../../client/src/settings/hooks/useSettings.ts:50
+#: ../../client/src/settings/hooks/useSettings.ts:51
 msgid "Are you sure you want to reset your local database? If data is not backed up on another device, it will be lost. This action cannot be undone."
 msgstr "ローカルデータベースをリセットしてもよろしいですか？他のデバイスにバックアップされていないデータは失われます。この操作は元に戻せません。"
 
-#: ../../client/src/settings/hooks/useSettings.ts:41
+#: ../../client/src/settings/hooks/useSettings.ts:42
 msgid "Are you sure you want to reset your prompt history?"
 msgstr "プロンプト履歴をリセットしてもよろしいですか？"
 
@@ -257,7 +257,7 @@ msgstr "Groq APIキーを設定してください"
 msgid "Profile"
 msgstr "プロフィール"
 
-#: ../../client/src/settings/hooks/useSettings.ts:43
+#: ../../client/src/settings/hooks/useSettings.ts:44
 msgid "Prompt History Reset"
 msgstr "プロンプト履歴のリセット"
 
@@ -318,11 +318,11 @@ msgstr "ユーザー名"
 msgid "Videos"
 msgstr "動画"
 
-#: ../../client/src/home/routes/ScreenHome.tsx:26
+#: ../../client/src/home/routes/ScreenHome.tsx:22
 msgid "Welcome, {0}"
 msgstr "ようこそ、{0}さん"
 
-#: ../../client/src/home/routes/ScreenHome.tsx:27
+#: ../../client/src/home/routes/ScreenHome.tsx:23
 msgid "Welcome, Human"
 msgstr "ようこそ、人間さん"
 
@@ -338,6 +338,6 @@ msgstr "オンラインです"
 msgid "Your name to display in the app."
 msgstr "アプリに表示する名前。"
 
-#: ../../client/src/settings/hooks/useSettings.ts:44
+#: ../../client/src/settings/hooks/useSettings.ts:45
 msgid "Your prompt history has been reset."
 msgstr "プロンプト履歴がリセットされました。"

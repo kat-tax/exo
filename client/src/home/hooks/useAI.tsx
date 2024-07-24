@@ -16,15 +16,15 @@ export function useAI(
   model: string,
   apiKey: string,
 ) {
+  const {i18n} = useLingui();
+  const {create} = useEvolu();
   const [index, setIndex] = useState<number | null>(null);
   const [dirty, setDirty] = useState(false);
   const [loading, setLoading] = useState(false);
   const provider = useMemo(() => createOpenAI({baseURL, apiKey}), [apiKey]);
   const apiModel = useMemo(() => provider(model), [model, provider]);
-  const {create} = useEvolu();
   const {rows} = useQuery(prompts);
   const {row} = useQuery(prompt(rows[Math.abs((rows.length - (index ?? 1)) % rows.length)]?.id));
-  const {i18n} = useLingui();
 
   const promptText = useCallback(async (prompt: string, multi = false) => {
     setLoading(true);

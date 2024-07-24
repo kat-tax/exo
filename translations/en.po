@@ -42,15 +42,15 @@ msgstr "Alarms"
 msgid "All Data"
 msgstr "All Data"
 
-#: ../../client/src/settings/hooks/useSettings.ts:56
+#: ../../client/src/settings/hooks/useSettings.ts:57
 msgid "Are you sure you want to change the owner key? This will reset the local database. This action cannot be undone."
 msgstr "Are you sure you want to change the owner key? This will reset the local database. This action cannot be undone."
 
-#: ../../client/src/settings/hooks/useSettings.ts:50
+#: ../../client/src/settings/hooks/useSettings.ts:51
 msgid "Are you sure you want to reset your local database? If data is not backed up on another device, it will be lost. This action cannot be undone."
 msgstr "Are you sure you want to reset your local database? If data is not backed up on another device, it will be lost. This action cannot be undone."
 
-#: ../../client/src/settings/hooks/useSettings.ts:41
+#: ../../client/src/settings/hooks/useSettings.ts:42
 msgid "Are you sure you want to reset your prompt history?"
 msgstr "Are you sure you want to reset your prompt history?"
 
@@ -257,7 +257,7 @@ msgstr "Please set your Groq API Key"
 msgid "Profile"
 msgstr "Profile"
 
-#: ../../client/src/settings/hooks/useSettings.ts:43
+#: ../../client/src/settings/hooks/useSettings.ts:44
 msgid "Prompt History Reset"
 msgstr "Prompt History Reset"
 
@@ -318,11 +318,11 @@ msgstr "User Name"
 msgid "Videos"
 msgstr "Videos"
 
-#: ../../client/src/home/routes/ScreenHome.tsx:26
+#: ../../client/src/home/routes/ScreenHome.tsx:22
 msgid "Welcome, {0}"
 msgstr "Welcome, {0}"
 
-#: ../../client/src/home/routes/ScreenHome.tsx:27
+#: ../../client/src/home/routes/ScreenHome.tsx:23
 msgid "Welcome, Human"
 msgstr "Welcome, Human"
 
@@ -338,6 +338,6 @@ msgstr "You are online"
 msgid "Your name to display in the app."
 msgstr "Your name to display in the app."
 
-#: ../../client/src/settings/hooks/useSettings.ts:44
+#: ../../client/src/settings/hooks/useSettings.ts:45
 msgid "Your prompt history has been reset."
 msgstr "Your prompt history has been reset."

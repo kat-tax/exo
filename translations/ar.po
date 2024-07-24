@@ -42,15 +42,15 @@ msgstr "المنبهات"
 msgid "All Data"
 msgstr "جميع البيانات"
 
-#: ../../client/src/settings/hooks/useSettings.ts:56
+#: ../../client/src/settings/hooks/useSettings.ts:57
 msgid "Are you sure you want to change the owner key? This will reset the local database. This action cannot be undone."
 msgstr "هل أنت متأكد أنك تريد تغيير مفتاح المالك؟ سيؤدي هذا إلى إعادة تعيين قاعدة البيانات المحلية. لا يمكن التراجع عن هذا الإجراء."
 
-#: ../../client/src/settings/hooks/useSettings.ts:50
+#: ../../client/src/settings/hooks/useSettings.ts:51
 msgid "Are you sure you want to reset your local database? If data is not backed up on another device, it will be lost. This action cannot be undone."
 msgstr "هل أنت متأكد أنك تريد إعادة تعيين قاعدة البيانات المحلية الخاصة بك؟ إذا لم يتم نسخ البيانات احتياطيًا على جهاز آخر، فستفقد. لا يمكن التراجع عن هذا الإجراء."
 
-#: ../../client/src/settings/hooks/useSettings.ts:41
+#: ../../client/src/settings/hooks/useSettings.ts:42
 msgid "Are you sure you want to reset your prompt history?"
 msgstr "هل أنت متأكد أنك تريد إعادة تعيين سجل الأوامر الخاص بك؟"
 
@@ -257,7 +257,7 @@ msgstr "يرجى تعيين مفتاح Groq API الخاص بك"
 msgid "Profile"
 msgstr "الملف الشخصي"
 
-#: ../../client/src/settings/hooks/useSettings.ts:43
+#: ../../client/src/settings/hooks/useSettings.ts:44
 msgid "Prompt History Reset"
 msgstr "إعادة تعيين سجل الأوامر"
 
@@ -318,11 +318,11 @@ msgstr "اسم المستخدم"
 msgid "Videos"
 msgstr "مقاطع الفيديو"
 
-#: ../../client/src/home/routes/ScreenHome.tsx:26
+#: ../../client/src/home/routes/ScreenHome.tsx:22
 msgid "Welcome, {0}"
 msgstr "مرحبًا، {0}"
 
-#: ../../client/src/home/routes/ScreenHome.tsx:27
+#: ../../client/src/home/routes/ScreenHome.tsx:23
 msgid "Welcome, Human"
 msgstr "مرحبًا، أيها الإنسان"
 
@@ -338,6 +338,6 @@ msgstr "أنت متصل بالإنترنت"
 msgid "Your name to display in the app."
 msgstr "اسمك لعرضه في التطبيق."
 
-#: ../../client/src/settings/hooks/useSettings.ts:44
+#: ../../client/src/settings/hooks/useSettings.ts:45
 msgid "Your prompt history has been reset."
 msgstr "تم إعادة تعيين سجل الأوامر الخاص بك."
