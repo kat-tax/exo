@@ -42,32 +42,6 @@ export function Menu(props: MenuProps) {
           {tabs &&
             <View style={styles.spacer}/>
           }
-          <MenuSection label={<Trans>Tools</Trans>} {...{tabs}}>
-            <MenuItem
-              path="/map"
-              icon="ph:map-trifold"
-              label={<Trans>Maps</Trans>}
-              {...{tabs}}
-            />
-            <MenuItem
-              path="/calendar"
-              icon="ph:calendar-dots"
-              label={<Trans>Calendar</Trans>}
-              {...{tabs}}
-            />
-            <MenuItem
-              path="/alarms"
-              icon="ph:alarm"
-              label={<Trans>Alarms</Trans>}
-              {...{tabs}}
-            />
-            <MenuItem
-              path="/notes"
-              icon="ph:note"
-              label={<Trans>Notes</Trans>}
-              {...{tabs}}
-            />
-          </MenuSection>
           <MenuSection label={<Trans>Media</Trans>} {...{tabs}} action={{
             icon: 'ph:upload',
             label: 'Add Folder',
@@ -81,14 +55,14 @@ export function Menu(props: MenuProps) {
             />
             <MenuItem
               path="/docs"
-              icon="ph:file"
+              icon="ph:file-text"
               label={<Trans>Docs</Trans>}
               {...{tabs}}
             />
             <MenuItem
-              path="/games"
-              icon="ph:game-controller"
-              label={<Trans>Games</Trans>}
+              path="/music"
+              icon="ph:music-notes"
+              label={<Trans>Music</Trans>}
               {...{tabs}}
             />
             <MenuItem
@@ -104,9 +78,41 @@ export function Menu(props: MenuProps) {
               {...{tabs}}
             />
             <MenuItem
-              path="/music"
-              icon="ph:music-notes"
-              label={<Trans>Music</Trans>}
+              path="/games"
+              icon="ph:game-controller"
+              label={<Trans>Games</Trans>}
+              {...{tabs}}
+            />
+            <MenuItem
+              path="/books"
+              icon="ph:book-open-text"
+              label={<Trans>Books</Trans>}
+              {...{tabs}}
+            />
+          </MenuSection>
+          <MenuSection label={<Trans>World</Trans>} {...{tabs}}>
+            <MenuItem
+              path="/maps"
+              icon="ph:map-trifold"
+              label={<Trans>Maps</Trans>}
+              {...{tabs}}
+            />
+            <MenuItem
+              path="/feeds"
+              icon="ph:rss"
+              label={<Trans>Feeds</Trans>}
+              {...{tabs}}
+            />
+            <MenuItem
+              path="/events"
+              icon="ph:calendar-dots"
+              label={<Trans>Events</Trans>}
+              {...{tabs}}
+            />
+            <MenuItem
+              path="/alarms"
+              icon="ph:alarm"
+              label={<Trans>Alarms</Trans>}
               {...{tabs}}
             />
           </MenuSection>
