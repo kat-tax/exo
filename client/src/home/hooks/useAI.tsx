@@ -1,11 +1,11 @@
 import {t} from '@lingui/macro';
+import {toast} from 'react-exo/toast';
 import {generateText} from 'ai';
 import {createOpenAI} from '@ai-sdk/openai';
-import {useState, useMemo, useCallback} from 'react';
-import {useQuery, useEvolu, cast} from '@evolu/react-native';
 import {useLingui} from '@lingui/react';
-import {prompts, prompt} from 'app/data';
-import {toast} from 'react-exo/toast';
+import {useEvolu, cast} from '@evolu/react-native';
+import {useState, useMemo, useCallback} from 'react';
+import {usePrompt, usePrompts} from 'app/data';
 
 const baseURL = 'https://api.groq.com/openai/v1';
 
@@ -21,16 +21,15 @@ export function useAI(
   const [index, setIndex] = useState<number | null>(null);
   const [dirty, setDirty] = useState(false);
   const [loading, setLoading] = useState(false);
-  const provider = useMemo(() => createOpenAI({baseURL, apiKey}), [apiKey]);
-  const apiModel = useMemo(() => provider(model), [model, provider]);
-  const {rows} = useQuery(prompts);
-  const {row} = useQuery(prompt(rows[Math.abs((rows.length - (index ?? 1)) % rows.length)]?.id));
+  const prompts = usePrompts();
+  const prompt = usePrompt(prompts[Math.abs((prompts.length - (index ?? 1)) % prompts.length)]?.id);
+  const groq = useMemo(() => createOpenAI({baseURL, apiKey}), [apiKey]);
 
   const promptText = useCallback(async (prompt: string, multi = false) => {
     setLoading(true);
     if (prompt.length > 0) {
       try {
-        const {text} = await generateText({model: apiModel, prompt});
+        const {text} = await generateText({model: groq(model), prompt});
         create('AiPrompt', {
           model,
           prompt,
@@ -47,7 +46,7 @@ export function useAI(
       }
     }
     setLoading(false);
-  }, [apiModel, i18n, model, create]);
+  }, [model, groq, create, i18n]);
 
   const navigate = useCallback((
     e: NativeSyntheticEvent<TextInputKeyPressEventData>,
@@ -64,7 +63,7 @@ export function useAI(
       e.preventDefault();
     } else if (key === 'ArrowUp') {
       if (clearMulti) return;
-      if (i >= rows.length) return;
+      if (i >= prompts.length) return;
       setDirty(true);
       setIndex(i + 1);
       e.preventDefault();
@@ -80,14 +79,14 @@ export function useAI(
       setDirty(false);
       setIndex(null);
     }
-  }, [index, rows, input]);
+  }, [index, prompts, input]);
 
   return {
     loading,
     promptText,
     dirty,
     navigate,
-    response: row,
-    archive: row && index !== null,
+    response: prompt,
+    archive: prompt && index !== null,
   };
 }

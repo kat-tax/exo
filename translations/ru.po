@@ -176,7 +176,7 @@ msgstr "Доброе утро"
 msgid "Groq API Key"
 msgstr "API ключ Groq"
 
-#: ../../client/src/home/hooks/useAI.tsx:44
+#: ../../client/src/home/hooks/useAI.tsx:43
 msgid "Groq Failure"
 msgstr "Ошибка Groq"
 

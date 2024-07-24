@@ -3,8 +3,8 @@ import {Trans as T} from '@lingui/macro';
 import {Text, View} from 'react-native';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useAppContext} from 'app/routes/useAppContext';
-import {useClock} from 'home/hooks/useClock';
 import {useWeather} from 'home/hooks/useWeather';
+import {useClock} from 'home/hooks/useClock';
 import {getDayGreeting} from 'home/utils/time';
 import {AiPrompt} from 'home/base/AiPrompt';
 import {Page} from 'app/base/Page';
@@ -32,7 +32,7 @@ export default function ScreenHome() {
           </Text>
         </View>
       }>
-      {/* <AiPrompt/> */}
+      <AiPrompt/>
     </Page>
   );
 }

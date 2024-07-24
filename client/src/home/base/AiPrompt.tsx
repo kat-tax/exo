@@ -3,7 +3,7 @@ import {Icon} from 'react-exo/icon';
 import {Link} from 'react-exo/navigation';
 import {Text, View, TextInput, Pressable} from 'react-native';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {useRef, useState} from 'react';
+import {useRef, useState, useMemo, memo} from 'react';
 import {useLingui} from '@lingui/react';
 import {useAppContext} from 'app/routes/useAppContext';
 import {useAI} from 'home/hooks/useAI';
@@ -13,14 +13,14 @@ import {Markdown} from 'app/widgets/Markdown';
 
 const DEFAULT_MODEL = 'llama3-8b-8192';
 
-export function AiPrompt() {
+export const AiPrompt = memo(() => {
   const [multiline, setMultiline] = useState(false);
   const {styles, theme} = useStyles(stylesheet);
   const {profile} = useAppContext();
   const {i18n} = useLingui();
   const input = useRef<TextInput>(null);
-  const apiKey = profile?.groqKey || '';
-  const model = profile?.groqModel || DEFAULT_MODEL;
+  const apiKey = useMemo(() => profile?.groqKey || '', [profile]);
+  const model = useMemo(() => profile?.groqModel || DEFAULT_MODEL, [profile]);
   const ai = useAI(input, model, apiKey);
 
   return (
@@ -109,7 +109,7 @@ export function AiPrompt() {
       </View>
     </>
   );
-}
+});
 
 const stylesheet = createStyleSheet(theme => ({
   prompt: {

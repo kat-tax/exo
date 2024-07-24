@@ -176,7 +176,7 @@ msgstr "صباح الخير"
 msgid "Groq API Key"
 msgstr "مفتاح Groq API"
 
-#: ../../client/src/home/hooks/useAI.tsx:44
+#: ../../client/src/home/hooks/useAI.tsx:43
 msgid "Groq Failure"
 msgstr "فشل Groq"
 

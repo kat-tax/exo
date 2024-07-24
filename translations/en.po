@@ -176,7 +176,7 @@ msgstr "Good morning"
 msgid "Groq API Key"
 msgstr "Groq API Key"
 
-#: ../../client/src/home/hooks/useAI.tsx:44
+#: ../../client/src/home/hooks/useAI.tsx:43
 msgid "Groq Failure"
 msgstr "Groq Failure"
 

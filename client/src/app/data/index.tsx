@@ -40,7 +40,6 @@ export const device = (uuid: S.String50) => evolu.createQuery(db => db
   .select(['id', 'uuid', 'name', 'coords', 'online'])
   .where('isDeleted', 'is not', _.cast(true))
   .where('uuid', '=', uuid)
-  .orderBy('createdAt')
   .limit(1)
 );
 
@@ -53,7 +52,8 @@ export const profile = evolu.createQuery(db => db
   .limit(1)
 );
 
-export const label = evolu.createQuery(db => db
+export const useLabels = () => _.useQuery(labels).rows;
+export const labels = evolu.createQuery(db => db
   .selectFrom('label')
   .select(['id', 'name', 'data'])
   .where('isDeleted', 'is not', _.cast(true))
@@ -62,6 +62,7 @@ export const label = evolu.createQuery(db => db
   .orderBy('createdAt')
 );
 
+export const usePrompts = () => _.useQuery(prompts).rows;
 export const prompts = evolu.createQuery(db => db
   .selectFrom('aiPrompt')
   .select(['id'])
@@ -69,6 +70,7 @@ export const prompts = evolu.createQuery(db => db
   .orderBy('createdAt')
 );
 
+export const usePrompt = (id: S.IdAiPrompt) => _.useQuery(prompt(id)).row;
 export const prompt = (id: S.IdAiPrompt) => evolu.createQuery(db => db
   .selectFrom('aiPrompt')
   .select(['id', 'model', 'prompt', 'response', 'isMultiline', 'createdAt'])
@@ -77,7 +79,8 @@ export const prompt = (id: S.IdAiPrompt) => evolu.createQuery(db => db
   .limit(1)
 );
 
-export const note = evolu.createQuery(db => db
+export const useNotes = () => _.useQuery(notes).rows;
+export const notes = evolu.createQuery(db => db
   .selectFrom('todo')
   .select(['id', 'title', 'isCompleted', 'labelId'])
   .where('isDeleted', 'is not', _.cast(true))
