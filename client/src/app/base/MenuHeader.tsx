@@ -1,8 +1,8 @@
 import {t} from '@lingui/macro';
 import {Icon} from 'react-exo/icon';
 import {View, Text, Pressable} from 'react-native';
-import {useLingui} from '@lingui/react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
+import {useLingui} from '@lingui/react';
 import {useAppContext} from 'app/routes/useAppContext';
 import {Identicon} from 'app/widgets/Identicon';
 
@@ -54,12 +54,12 @@ const stylesheet = createStyleSheet(theme => ({
   },
   name: {
     userSelect: 'none',
-    color: theme.colors.foreground,
-    fontFamily: theme.font.family,
     fontWeight: '500',
+    fontFamily: theme.font.family,
     fontSize: theme.font.size,
     lineHeight: theme.font.height,
     letterSpacing: theme.font.spacing,
+    color: theme.colors.foreground,
   },
 }));
 

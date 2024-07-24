@@ -18,19 +18,19 @@ export function MenuFooter() {
 
 const stylesheet = createStyleSheet(theme => ({
   root: {
-    marginTop: theme.display.space2,
     flexDirection: 'row',
     alignItems: 'center',
     gap: theme.display.space2,
     padding: theme.display.space2,
+    marginTop: theme.display.space2,
   },
   build: {
-    color: theme.colors.mutedForeground,
+    fontSize: 9,
     fontFamily: theme.font.family,
     fontWeight: theme.font.weight,
-    fontSize: 9,
     lineHeight: theme.font.height,
     letterSpacing: theme.font.spacing,
+    color: theme.colors.mutedForeground,
   },
 }));
 

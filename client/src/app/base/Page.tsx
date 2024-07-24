@@ -62,8 +62,8 @@ const stylesheet = createStyleSheet(theme => ({
   },
   header: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
     alignItems: 'flex-start',
+    justifyContent: 'space-between',
     marginBottom: theme.display.space3,
   },
   title: {
@@ -74,9 +74,9 @@ const stylesheet = createStyleSheet(theme => ({
     color: theme.colors.foreground,
   },
   message: {
+    fontWeight: '300',
     fontFamily: theme.font.family,
     fontSize: theme.font.contentSize,
-    fontWeight: '300',
     letterSpacing: theme.font.contentSpacing,
     color: theme.colors.mutedForeground,
   },

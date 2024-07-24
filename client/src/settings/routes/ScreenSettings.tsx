@@ -325,9 +325,9 @@ const stylesheet = createStyleSheet(theme => ({
     color: theme.colors.foreground,
   },
   description: {
+    fontWeight: '300',
     fontFamily: theme.font.family,
     fontSize: theme.font.size,
-    fontWeight: '300',
     lineHeight: theme.font.height,
     letterSpacing: theme.font.spacing,
     color: theme.colors.mutedForeground,

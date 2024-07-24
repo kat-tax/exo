@@ -59,16 +59,16 @@ export function MenuItem(props: MenuItemProps) {
 
 const stylesheet = createStyleSheet(theme => ({
   item: {
-    alignItems: 'center',
     flexDirection: 'row',
+    alignItems: 'center',
     borderRadius: theme.display.radius1,
     paddingHorizontal: theme.display.space2,
   },
   itemTab: {
     width: 40,
-    paddingVertical: theme.display.space2,
-    justifyContent: 'center',
     alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: theme.display.space2,
   },
   itemSub: {
     marginLeft: 8,
