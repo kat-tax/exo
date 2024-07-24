@@ -1,7 +1,6 @@
+import config from 'config';
 import * as _ from '@evolu/react-native';
 import * as S from 'app/data/schema';
-import config from 'config';
-
 export * from './schema';
 
 export const evolu = _.createEvolu(S.DB, {
