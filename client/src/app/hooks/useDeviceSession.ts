@@ -1,9 +1,9 @@
+import {useEffect, useMemo} from 'react';
 import {useSelector} from 'react-redux';
 import {useEvolu, cast} from '@evolu/react-native';
-import {useEffect, useMemo} from 'react';
 import {useDevice, useDevices} from 'app/data';
-import {useOnline} from 'app/hooks/useOnline';
 import {useGeolocation} from 'app/hooks/useGeolocation';
+import {useOnline} from 'app/hooks/useOnline';
 import app from 'app/store/app';
 
 import type {DB} from 'app/data';

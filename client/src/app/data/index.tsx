@@ -1,28 +1,22 @@
 import * as _ from '@evolu/react-native';
-import * as S from '@effect/schema/Schema';
-import * as $ from './schema';
+import * as S from './schema';
 import config from 'config';
 
 export * from './schema';
 
-export const createDatabase = () => _.createEvolu($.DB, {
+export const evolu = _.createEvolu(S.DB, {
+  name: `${config.APP_NAME}::0001`,
   syncUrl: __DEV__ ? 'http://localhost:6306' : config.SYNC_HOST,
-  indexes: $.indexes,
-  name: `${config.APP_NAME}::2`,
-  initialData: (evolu) => {
-    // Initial profile for new account
-    evolu.create('profile', {
+  minimumLogLevel: __DEV__ ? 'trace' : 'warning',
+  indexes: S.indexes,
+  initialData: (init) => {
+    init.create('profile', {
       name: null,
       groqKey: null,
-      groqModel: S.decodeSync($.String50)('llama3-8b-8192'),
+      groqModel: S.decodeSync(S.String50)('llama3-8b-8192'),
     });
   },
-  // minimumLogLevel: 'trace',
 });
-
-
-
-export const evolu = createDatabase();
 
 export function Database(props: React.PropsWithChildren) {
   return (
@@ -40,8 +34,8 @@ export const devices = evolu.createQuery(db => db
   .orderBy('createdAt')
 );
 
-export const useDevice = (uuid: $.String50) => _.useQuery(device(uuid)).row;
-export const device = (uuid: $.String50) => evolu.createQuery(db => db
+export const useDevice = (uuid: S.String50) => _.useQuery(device(uuid)).row;
+export const device = (uuid: S.String50) => evolu.createQuery(db => db
   .selectFrom('device')
   .select(['id', 'uuid', 'name', 'coords', 'online'])
   .where('isDeleted', 'is not', _.cast(true))
@@ -75,7 +69,7 @@ export const prompts = evolu.createQuery(db => db
   .orderBy('createdAt')
 );
 
-export const prompt = (id: $.AiPromptId) => evolu.createQuery(db => db
+export const prompt = (id: S.AiPromptId) => evolu.createQuery(db => db
   .selectFrom('aiPrompt')
   .select(['id', 'model', 'prompt', 'response', 'isMultiline', 'createdAt'])
   .where('isDeleted', 'is not', _.cast(true))

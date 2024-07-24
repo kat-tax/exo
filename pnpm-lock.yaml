@@ -173,8 +173,8 @@ importers:
         specifier: ^1.5.0
         version: 1.5.0(react-native-svg@15.4.0)(react-native@0.74.3)(typescript@5.5.3)
       react-native-unistyles:
-        specifier: ^2.8.3
-        version: 2.8.3(@react-native/normalize-colors@0.74.85)(react-native-macos@0.73.33)(react-native-web@0.19.12)(react-native-windows@0.74.11)(react-native@0.74.3)(react@18.2.0)
+        specifier: ^2.9.0
+        version: 2.9.0(@react-native/normalize-colors@0.74.85)(react-native-macos@0.73.33)(react-native-web@0.19.12)(react-native-windows@0.74.11)(react-native@0.74.3)(react@18.2.0)
       react-native-url-polyfill:
         specifier: ^2.0.0
         version: 2.0.0(react-native@0.74.3)
@@ -309,8 +309,8 @@ importers:
         specifier: ^15.4.0
         version: 15.4.0(react-native@0.74.3)(react@18.2.0)
       react-native-unistyles:
-        specifier: ^2.8.3
-        version: 2.8.3(@react-native/normalize-colors@0.74.85)(react-native-macos@0.73.33)(react-native-web@0.19.12)(react-native-windows@0.74.11)(react-native@0.74.3)(react@18.2.0)
+        specifier: ^2.9.0
+        version: 2.9.0(@react-native/normalize-colors@0.74.85)(react-native-macos@0.73.33)(react-native-web@0.19.12)(react-native-windows@0.74.11)(react-native@0.74.3)(react@18.2.0)
       react-native-web:
         specifier: ^0.19.12
         version: 0.19.12(react-dom@18.2.0)(react@18.2.0)
@@ -660,8 +660,8 @@ importers:
         specifier: workspace:*
         version: link:../../../design
       react-native-unistyles:
-        specifier: ^2.8.3
-        version: 2.8.3(@react-native/normalize-colors@0.74.85)(react-native@0.74.3)(react@18.2.0)
+        specifier: ^2.9.0
+        version: 2.9.0(@react-native/normalize-colors@0.74.85)(react-native@0.74.3)(react@18.2.0)
     devDependencies:
       '@storybook/types':
         specifier: ^8.2.2
@@ -821,8 +821,8 @@ importers:
         specifier: ^15.4.0
         version: 15.4.0(react-native@0.74.3)(react@18.2.0)
       react-native-unistyles:
-        specifier: ^2.8.3
-        version: 2.8.3(@react-native/normalize-colors@0.74.85)(react-native-macos@0.73.33)(react-native-web@0.19.12)(react-native-windows@0.74.11)(react-native@0.74.3)(react@18.2.0)
+        specifier: ^2.9.0
+        version: 2.9.0(@react-native/normalize-colors@0.74.85)(react-native-macos@0.73.33)(react-native-web@0.19.12)(react-native-windows@0.74.11)(react-native@0.74.3)(react@18.2.0)
       react-native-web:
         specifier: ^0.19.12
         version: 0.19.12(react-dom@18.2.0)(react@18.2.0)
@@ -18080,8 +18080,8 @@ packages:
       yargs: 17.7.2
     dev: false
 
-  /react-native-unistyles@2.8.3(@react-native/normalize-colors@0.74.85)(react-native-macos@0.73.33)(react-native-web@0.19.12)(react-native-windows@0.74.11)(react-native@0.74.3)(react@18.2.0):
-    resolution: {integrity: sha512-08pst26iUgRuYhG8IIflJ6zWcB/KQkEML2zg7r+SX4WGmvTDFXiqfJjAtLNr13zwkmNCx0b79i5tin2sXmuqKA==}
+  /react-native-unistyles@2.9.0(@react-native/normalize-colors@0.74.85)(react-native-macos@0.73.33)(react-native-web@0.19.12)(react-native-windows@0.74.11)(react-native@0.74.3)(react@18.2.0):
+    resolution: {integrity: sha512-YpnKPQfUbr4ku/z9cjv/2+oSBOXu2lD0Uekw/dlQtsZKYSCdDcMAlThqpj7RcN+R2JocoAMcguMVmYHXyI+ung==}
     engines: {node: '>= 18.0.0'}
     peerDependencies:
       '@react-native/normalize-colors': '*'
@@ -18106,8 +18106,8 @@ packages:
       react-native-windows: 0.74.11(@babel/core@7.24.8)(@babel/preset-env@7.24.8)(@types/react@18.2.79)(react-native@0.74.3)(react@18.2.0)
     dev: false
 
-  /react-native-unistyles@2.8.3(@react-native/normalize-colors@0.74.85)(react-native@0.74.3)(react@18.2.0):
-    resolution: {integrity: sha512-08pst26iUgRuYhG8IIflJ6zWcB/KQkEML2zg7r+SX4WGmvTDFXiqfJjAtLNr13zwkmNCx0b79i5tin2sXmuqKA==}
+  /react-native-unistyles@2.9.0(@react-native/normalize-colors@0.74.85)(react-native@0.74.3)(react@18.2.0):
+    resolution: {integrity: sha512-YpnKPQfUbr4ku/z9cjv/2+oSBOXu2lD0Uekw/dlQtsZKYSCdDcMAlThqpj7RcN+R2JocoAMcguMVmYHXyI+ung==}
     engines: {node: '>= 18.0.0'}
     peerDependencies:
       '@react-native/normalize-colors': '*'

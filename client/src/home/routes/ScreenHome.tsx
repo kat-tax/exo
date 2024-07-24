@@ -17,7 +17,7 @@ export default function ScreenHome() {
   const device = useOutletContext<ReturnType<typeof useDeviceSession>>();
   const weather = useWeather(device?.coords);
   const profile = useProfile();
-  const clock = useClock();
+  const clock = useClock('medium');
 
   return (
     <Page

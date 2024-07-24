@@ -1,15 +1,17 @@
 import {useEffect, useState} from 'react';
 import {getCurrentTime} from 'home/utils/time';
+import {useLocale} from 'settings/hooks/useLocale';
 
 export function useClock(timeFormat: 'short' | 'medium' | 'long' = 'short') {
-  const [clock, setClock] = useState(getCurrentTime(timeFormat));
+  const [locale] = useLocale();
+  const [clock, setClock] = useState(getCurrentTime(locale, timeFormat));
 
   // Update every second
   useEffect(() => {
     const i = setInterval(() =>
-      setClock(getCurrentTime(timeFormat)), 1000);
+      setClock(getCurrentTime(locale, timeFormat)), 1000);
     return () => clearInterval(i);
-  }, [timeFormat]);
+  }, [locale, timeFormat]);
 
   return clock;
 }

@@ -1,5 +1,6 @@
 import * as _ from '@evolu/common';
 import * as S from '@effect/schema/Schema';
+export * from '@effect/schema/Schema';
 
 // Primitives
 

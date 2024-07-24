@@ -20,7 +20,7 @@
     "react-exo-ui": "workspace:*",
     "react-native": "^0.74.3",
     "react-native-svg": "^15.4.0",
-    "react-native-unistyles": "^2.8.3",
+    "react-native-unistyles": "^2.9.0",
     "react-native-web": "^0.19.12",
     "react-redux": "^9.1.2",
     "vite-plugin-node-polyfills": "^0.22.0"

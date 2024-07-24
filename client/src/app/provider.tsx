@@ -1,6 +1,6 @@
 import {useEffect} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {I18nManager, View} from 'react-native';
+import {I18nManager, View, Platform} from 'react-native';
 import {GestureProvider} from 'react-exo/gesture';
 import {I18nProvider} from '@lingui/react';
 import {useLocale} from 'settings/hooks/useLocale';
@@ -15,12 +15,16 @@ export function Provider(props: React.PropsWithChildren) {
   
   useEffect(() => {
     load(locale);
-    I18nManager.forceRTL(locale === 'ar');
+    const isRtl = locale === 'ar';
+    if (Platform.OS === 'web') {
+      document.documentElement.dir = isRtl ? 'rtl' : 'ltr';
+    } else {
+      I18nManager.forceRTL(isRtl);
+    }
   }, [locale]);
 
   return (
-    // @ts-ignore "lang" is react-native-web prop
-    <View style={styles.root} lang={locale}>
+    <View style={styles.root}>
       <I18nProvider {...{i18n}}>
         <GestureProvider style={{flex: 1}}>
           {props.children}

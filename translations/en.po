@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 2024-07-13 12:42-0500\n"
+"POT-Creation-Date: 2024-07-23 13:59-0500\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -34,7 +34,7 @@ msgstr "Add a task"
 msgid "AI"
 msgstr "AI"
 
-#: ../../client/src/app/base/Menu.tsx:66
+#: ../../client/src/app/base/Menu.tsx:60
 msgid "Alarms"
 msgstr "Alarms"
 
@@ -42,50 +42,26 @@ msgstr "Alarms"
 msgid "All Data"
 msgstr "All Data"
 
-#: ../../client/src/app/base/Menu.tsx:50
-msgid "App"
-msgstr "App"
-
-#: ../../client/src/app/base/Menu.tsx:50
-msgid "Apps"
-msgstr "Apps"
-
-#: ../../client/src/app/base/Menu.tsx:101
-msgid "Arcade"
-msgstr "Arcade"
-
-#: ../../client/src/settings/hooks/useSettings.ts:58
+#: ../../client/src/settings/hooks/useSettings.ts:56
 msgid "Are you sure you want to change the owner key? This will reset the local database. This action cannot be undone."
 msgstr "Are you sure you want to change the owner key? This will reset the local database. This action cannot be undone."
 
-#: ../../client/src/settings/hooks/useSettings.ts:52
+#: ../../client/src/settings/hooks/useSettings.ts:50
 msgid "Are you sure you want to reset your local database? If data is not backed up on another device, it will be lost. This action cannot be undone."
 msgstr "Are you sure you want to reset your local database? If data is not backed up on another device, it will be lost. This action cannot be undone."
 
-#: ../../client/src/settings/hooks/useSettings.ts:43
+#: ../../client/src/settings/hooks/useSettings.ts:41
 msgid "Are you sure you want to reset your prompt history?"
 msgstr "Are you sure you want to reset your prompt history?"
 
-#: ../../client/src/home/base/AiPrompt.tsx:51
+#: ../../client/src/home/base/AiPrompt.tsx:50
 msgid "Ask anything..."
 msgstr "Ask anything..."
-
-#: ../../client/src/app/base/Menu.tsx:101
-msgid "Audio"
-msgstr "Audio"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:105
 #: ../../client/src/settings/routes/ScreenSettings.tsx:133
 msgid "Auto"
 msgstr "Auto"
-
-#: ../../client/src/app/base/Menu.tsx:43
-msgid "Cal"
-msgstr "Cal"
-
-#: ../../client/src/app/base/Menu.tsx:67
-msgid "Calendar"
-msgstr "Calendar"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:155
 msgid "Celsius"
@@ -95,7 +71,7 @@ msgstr "Celsius"
 msgid "Dark"
 msgstr "Dark"
 
-#: ../../client/src/app/base/Menu.tsx:36
+#: ../../client/src/app/base/Menu.tsx:30
 msgid "Dashboard"
 msgstr "Dashboard"
 
@@ -119,17 +95,13 @@ msgstr "Delete Prompts"
 msgid "Delete the local database."
 msgstr "Delete the local database."
 
-#: ../../client/src/app/base/Menu.tsx:139
+#: ../../client/src/app/base/Menu.tsx:133
 msgid "Design"
 msgstr "Design"
 
-#: ../../client/src/app/base/Menu.tsx:134
+#: ../../client/src/app/base/Menu.tsx:128
 msgid "Developer Mode"
 msgstr "Developer Mode"
-
-#: ../../client/src/app/base/Menu.tsx:49
-msgid "Devices"
-msgstr "Devices"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:85
 msgid "Display"
@@ -139,23 +111,15 @@ msgstr "Display"
 msgid "Distance"
 msgstr "Distance"
 
-#: ../../client/src/app/base/Menu.tsx:88
+#: ../../client/src/app/base/Menu.tsx:82
 msgid "Docs"
 msgstr "Docs"
 
-#: ../../client/src/app/base/Menu.tsx:83
-msgid "Documents"
-msgstr "Documents"
-
-#: ../../client/src/app/base/Menu.tsx:78
-msgid "Drive"
-msgstr "Drive"
-
-#: ../../client/src/home/utils/time.ts:14
+#: ../../client/src/home/utils/time.ts:15
 msgid "Enjoy the day"
 msgstr "Enjoy the day"
 
-#: ../../client/src/home/utils/time.ts:12
+#: ../../client/src/home/utils/time.ts:13
 msgid "Enjoy the night"
 msgstr "Enjoy the night"
 
@@ -171,11 +135,7 @@ msgstr "Enter your mnemonic phrase"
 msgid "Enter your name"
 msgstr "Enter your name"
 
-#: ../../client/src/app/base/Menu.tsx:78
-msgid "Entertainment"
-msgstr "Entertainment"
-
-#: ../../client/src/app/base/Menu.tsx:60
+#: ../../client/src/app/base/Menu.tsx:54
 msgid "Events"
 msgstr "Events"
 
@@ -183,61 +143,33 @@ msgstr "Events"
 msgid "Fahrenheit"
 msgstr "Fahrenheit"
 
-#: ../../client/src/app/hooks/useGeoLoc.ts:14
-msgid "Failed to get location"
-msgstr "Failed to get location"
-
-#: ../../client/src/app/base/Menu.tsx:117
+#: ../../client/src/app/base/Menu.tsx:111
 msgid "Favorites"
 msgstr "Favorites"
 
-#: ../../client/src/app/base/Menu.tsx:82
+#: ../../client/src/app/base/Menu.tsx:76
 msgid "Files"
 msgstr "Files"
 
-#: ../../client/src/app/base/Menu.tsx:101
-msgid "Game"
-msgstr "Game"
-
-#: ../../client/src/app/base/Menu.tsx:94
+#: ../../client/src/app/base/Menu.tsx:88
 msgid "Games"
 msgstr "Games"
-
-#: ../../client/src/app/hooks/useGeoLoc.ts:14
-msgid "Geo Failure"
-msgstr "Geo Failure"
-
-#: ../../client/src/app/hooks/useGeolocation.ts:14
-msgid "Geo Location Error"
-msgstr "Geo Location Error"
-
-#: ../../client/src/app/hooks/useGeoLoc.ts:14
-msgid "Geo Location Failure"
-msgstr "Geo Location Failure"
 
 #: ../../client/src/app/hooks/useGeolocation.ts:14
 msgid "Geolocation Error"
 msgstr "Geolocation Error"
 
-#: ../../client/src/app/hooks/useGeoLoc.ts:14
-msgid "Geolocation Failure"
-msgstr "Geolocation Failure"
-
-#: ../../client/src/home/utils/time.ts:8
+#: ../../client/src/home/utils/time.ts:9
 msgid "Good afternoon"
 msgstr "Good afternoon"
 
-#: ../../client/src/home/utils/time.ts:10
+#: ../../client/src/home/utils/time.ts:11
 msgid "Good evening"
 msgstr "Good evening"
 
-#: ../../client/src/home/utils/time.ts:6
+#: ../../client/src/home/utils/time.ts:7
 msgid "Good morning"
 msgstr "Good morning"
-
-#: ../../client/src/app/hooks/useGeoLoc.ts:14
-msgid "GPS Error"
-msgstr "GPS Error"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:189
 msgid "Groq API Key"
@@ -251,19 +183,11 @@ msgstr "Groq Failure"
 msgid "Groq Model ID"
 msgstr "Groq Model ID"
 
-#: ../../client/src/app/base/Menu.tsx:37
-msgid "Home"
-msgstr "Home"
-
 #: ../../client/src/app/base/MenuHeader.tsx:20
 msgid "Human"
 msgstr "Human"
 
-#: ../../client/src/app/base/Menu.tsx:89
-msgid "Images"
-msgstr "Images"
-
-#: ../../client/src/app/base/Menu.tsx:42
+#: ../../client/src/app/base/Menu.tsx:36
 msgid "Inbox"
 msgstr "Inbox"
 
@@ -275,7 +199,7 @@ msgstr "Kilometers"
 msgid "Language"
 msgstr "Language"
 
-#: ../../client/src/app/base/Menu.tsx:145
+#: ../../client/src/app/base/Menu.tsx:139
 msgid "Library"
 msgstr "Library"
 
@@ -291,23 +215,11 @@ msgstr "Loading..."
 msgid "Manage your settings"
 msgstr "Manage your settings"
 
-#: ../../client/src/app/base/Menu.tsx:55
-msgid "Map"
-msgstr "Map"
-
-#: ../../client/src/app/base/Menu.tsx:54
+#: ../../client/src/app/base/Menu.tsx:48
 msgid "Maps"
 msgstr "Maps"
 
-#: ../../client/src/app/base/Menu.tsx:49
-msgid "Mapv"
-msgstr "Mapv"
-
-#: ../../client/src/app/base/Menu.tsx:49
-msgid "Mapview"
-msgstr "Mapview"
-
-#: ../../client/src/app/base/Menu.tsx:77
+#: ../../client/src/app/base/Menu.tsx:71
 msgid "Media"
 msgstr "Media"
 
@@ -315,11 +227,7 @@ msgstr "Media"
 msgid "Miles"
 msgstr "Miles"
 
-#: ../../client/src/app/base/Menu.tsx:101
-msgid "Movies"
-msgstr "Movies"
-
-#: ../../client/src/app/base/Menu.tsx:112
+#: ../../client/src/app/base/Menu.tsx:106
 msgid "Music"
 msgstr "Music"
 
@@ -327,7 +235,7 @@ msgstr "Music"
 msgid "No events scheduled."
 msgstr "No events scheduled."
 
-#: ../../client/src/app/base/Menu.tsx:72
+#: ../../client/src/app/base/Menu.tsx:66
 msgid "Notes"
 msgstr "Notes"
 
@@ -335,23 +243,19 @@ msgstr "Notes"
 msgid "Owner Key"
 msgstr "Owner Key"
 
-#: ../../client/src/app/base/Menu.tsx:100
+#: ../../client/src/app/base/Menu.tsx:94
 msgid "Photos"
 msgstr "Photos"
 
-#: ../../client/src/home/base/AiPrompt.tsx:51
+#: ../../client/src/home/base/AiPrompt.tsx:50
 msgid "Please set your Groq API Key"
 msgstr "Please set your Groq API Key"
-
-#: ../../client/src/app/base/Menu.tsx:56
-msgid "Productivity"
-msgstr "Productivity"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:31
 msgid "Profile"
 msgstr "Profile"
 
-#: ../../client/src/settings/hooks/useSettings.ts:45
+#: ../../client/src/settings/hooks/useSettings.ts:43
 msgid "Prompt History Reset"
 msgstr "Prompt History Reset"
 
@@ -362,10 +266,6 @@ msgstr "Prompts"
 #: ../../client/src/settings/routes/ScreenSettings.tsx:192
 msgid "Provide a key to use AI features."
 msgstr "Provide a key to use AI features."
-
-#: ../../client/src/app/base/Menu.tsx:107
-msgid "Roms"
-msgstr "Roms"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:212
 msgid "Select the AI model to use."
@@ -387,13 +287,9 @@ msgstr "Select the temperature unit for the app."
 msgid "Select the theme for the app."
 msgstr "Select the theme for the app."
 
-#: ../../client/src/app/base/Menu.tsx:153
+#: ../../client/src/app/base/Menu.tsx:147
 msgid "Settings"
 msgstr "Settings"
-
-#: ../../client/src/app/base/Menu.tsx:95
-msgid "Shows"
-msgstr "Shows"
 
 #: ../../client/src/tasks/routes/TaskList.tsx:13
 msgid "Tasks"
@@ -407,7 +303,7 @@ msgstr "Temperature"
 msgid "Theme"
 msgstr "Theme"
 
-#: ../../client/src/app/base/Menu.tsx:49
+#: ../../client/src/app/base/Menu.tsx:43
 msgid "Tools"
 msgstr "Tools"
 
@@ -415,7 +311,7 @@ msgstr "Tools"
 msgid "User Name"
 msgstr "User Name"
 
-#: ../../client/src/app/base/Menu.tsx:106
+#: ../../client/src/app/base/Menu.tsx:100
 msgid "Videos"
 msgstr "Videos"
 
@@ -439,6 +335,6 @@ msgstr "You are online"
 msgid "Your name to display in the app."
 msgstr "Your name to display in the app."
 
-#: ../../client/src/settings/hooks/useSettings.ts:46
+#: ../../client/src/settings/hooks/useSettings.ts:44
 msgid "Your prompt history has been reset."
 msgstr "Your prompt history has been reset."

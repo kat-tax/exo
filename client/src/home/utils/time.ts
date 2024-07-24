@@ -1,4 +1,5 @@
 import {msg} from '@lingui/macro';
+import type {Locales} from 'config/locales';
 
 export function getDayGreeting() {
   switch (getTimeOfDay()) {
@@ -28,8 +29,11 @@ export function getTimeOfDay() {
   return 'unknown';
 }
 
-export function getCurrentTime(timeStyle: 'short' | 'medium' | 'long' = 'medium') {
-  return new Date().toLocaleTimeString(undefined, {timeStyle});
+export function getCurrentTime(
+  language?: Locales,
+  timeStyle: 'short' | 'medium' | 'long' = 'medium',
+) {
+  return new Date().toLocaleTimeString(language, {timeStyle});
 }
 
 export function getCurrentDate() {

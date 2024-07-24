@@ -1,15 +1,15 @@
 import {t} from '@lingui/macro';
-import {useLingui} from '@lingui/react';
-import {useRef, useState} from 'react';
-import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {Text, View, TextInput, Pressable} from 'react-native';
-import {Link} from 'react-exo/navigation';
 import {Icon} from 'react-exo/icon';
-import {Markdown} from 'app/widgets/Markdown';
-import {PageLoading} from 'app/base/PageLoading';
-import {formatDate} from 'home/utils/time';
-import {useAI} from 'home/hooks/useAI';
+import {Link} from 'react-exo/navigation';
+import {Text, View, TextInput, Pressable} from 'react-native';
+import {useStyles, createStyleSheet} from 'react-native-unistyles';
+import {useRef, useState} from 'react';
+import {useLingui} from '@lingui/react';
 import {useProfile} from 'app/data';
+import {useAI} from 'home/hooks/useAI';
+import {formatDate} from 'home/utils/time';
+import {PageLoading} from 'app/base/PageLoading';
+import {Markdown} from 'app/widgets/Markdown';
 
 const DEFAULT_MODEL = 'llama3-8b-8192';
 
@@ -17,11 +17,10 @@ export function AiPrompt() {
   const [multiline, setMultiline] = useState(false);
   const {styles, theme} = useStyles(stylesheet);
   const {i18n} = useLingui();
+  const input = useRef<TextInput>(null);
   const profile = useProfile();
-
   const apiKey = profile?.groqKey || '';
   const model = profile?.groqModel || DEFAULT_MODEL;
-  const input = useRef<TextInput>(null);
   const ai = useAI(input, model, apiKey);
 
   return (

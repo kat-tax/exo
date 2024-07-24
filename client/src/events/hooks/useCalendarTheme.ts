@@ -1,11 +1,10 @@
 import {useMemo} from 'react';
-import {useStyles} from 'react-native-unistyles';
-import {StyleSheet} from 'react-native';
+import {useStyles, UnistylesRuntime} from 'react-native-unistyles';
+
 import type {CalendarTheme} from 'react-exo/calendar';
 
 export function useCalendarTheme(): CalendarTheme {
   const {theme} = useStyles();
-
   return useMemo(() => ({
     rowMonth: {
       container: {
@@ -24,7 +23,7 @@ export function useCalendarTheme(): CalendarTheme {
     rowWeek: {
       container: {
         borderStyle: 'solid',
-        borderBottomWidth: StyleSheet.hairlineWidth,
+        borderBottomWidth: UnistylesRuntime.hairlineWidth,
         borderBottomColor: theme.colors.border,
       },
     },

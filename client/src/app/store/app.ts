@@ -1,7 +1,7 @@
 import {createSlice} from 'react-exo/redux';
 import {uuid} from 'app/utils/random';
 
-import type {String50} from 'app/data/schema';
+import type {String50} from 'app/data';
 import type {PayloadAction} from 'react-exo/redux';
 
 export type App = {

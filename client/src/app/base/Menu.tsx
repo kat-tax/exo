@@ -1,12 +1,11 @@
 import {Trans} from '@lingui/macro';
-import {View, ScrollView, Text, StyleSheet} from 'react-native';
+import {View, ScrollView, Text} from 'react-native';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {useRTL} from 'react-exo/utils';
 import {useLists} from 'tasks/hooks/useLists';
-import {MenuItem} from 'app/base/MenuItem';
-import {MenuSection} from 'app/base/MenuSection';
 import {MenuHeader} from 'app/base/MenuHeader';
 import {MenuFooter} from 'app/base/MenuFooter';
+import {MenuSection} from 'app/base/MenuSection';
+import {MenuItem} from 'app/base/MenuItem';
 import {isTouch} from 'app/utils/platform';
 
 interface MenuProps {
@@ -14,19 +13,14 @@ interface MenuProps {
 }
 
 export function Menu(props: MenuProps) {
-  const rtl = useRTL();
   const lists = useLists();
-  const {styles, theme} = useStyles(stylesheet);
   const {tabs} = props;
+  const {styles, theme} = useStyles(stylesheet);
 
   return (
     <View style={styles.bg}>
       <ScrollView horizontal={tabs} contentContainerStyle={{flexGrow: 1}}>
-        <View style={[
-          styles.root,
-          rtl && styles.rootRTL,
-          tabs && styles.rootTabs,
-        ]}>
+        <View style={[styles.root, tabs && styles.rootTabs]}>
           {!tabs &&
             <MenuHeader/>
           }
@@ -164,7 +158,7 @@ export function Menu(props: MenuProps) {
   );
 }
 
-const stylesheet = createStyleSheet(theme => ({
+const stylesheet = createStyleSheet((theme, rt) => ({
   bg: {
     flex: 1,
     backgroundColor: theme.colors.background,
@@ -173,18 +167,16 @@ const stylesheet = createStyleSheet(theme => ({
     flex: 1,
     padding: 10,
     borderColor: theme.colors.border,
-    borderRightWidth: StyleSheet.hairlineWidth,
-  },
-  rootRTL: {
-    borderRightWidth: 0,
-    borderLeftWidth: StyleSheet.hairlineWidth,
+    borderRightWidth: rt.rtl ? 0 : rt.hairlineWidth,
+    borderLeftWidth: rt.rtl ? rt.hairlineWidth : 0,
   },
   rootTabs: {
     alignItems: 'center',
     flexDirection: 'row',
     gap: theme.display.space2,
-    borderTopWidth: StyleSheet.hairlineWidth,
+    borderTopWidth: rt.hairlineWidth,
     borderRightWidth: 0,
+    borderLeftWidth: 0,
   },
   footer: {
     display: {

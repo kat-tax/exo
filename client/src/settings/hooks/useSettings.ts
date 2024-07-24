@@ -2,12 +2,10 @@ import {t} from '@lingui/macro';
 import {alert} from 'react-exo/toast';
 import {useLingui} from '@lingui/react';
 import {useEvolu, useOwner, parseMnemonic, NonEmptyString1000} from '@evolu/react-native';
-import {useProfile} from 'app/data';
-import {String50} from 'app/data/schema';
+import {useProfile, String50, decodeUnknownEither} from 'app/data';
 import {Effect, Either, Function} from 'effect';
-import * as S from '@effect/schema/Schema';
 
-import type {DB} from 'app/data/schema';
+import type {DB} from 'app/data';
 
 export function useSettings() {
   const {i18n} = useLingui();
@@ -17,7 +15,7 @@ export function useSettings() {
 
   const updateName = (text: string) => {
     if (!profile?.id) return;
-    Either.match(S.decodeUnknownEither(String50)(text), {
+    Either.match(decodeUnknownEither(String50)(text), {
       onLeft: Function.constVoid,
       onRight: (name) => evolu.update('profile', {name, id: profile.id}),
     });
@@ -25,7 +23,7 @@ export function useSettings() {
 
   const updateGroqKey = (text: string) => {
     if (!profile?.id) return;
-    Either.match(S.decodeUnknownEither(NonEmptyString1000)(text), {
+    Either.match(decodeUnknownEither(NonEmptyString1000)(text), {
       onLeft: Function.constVoid,
       onRight: (groqKey) => evolu.update('profile', {groqKey, id: profile.id}),
     });
@@ -33,7 +31,7 @@ export function useSettings() {
 
   const updateGroqModel = (text: string) => {
     if (!profile?.id) return;
-    Either.match(S.decodeUnknownEither(String50)(text), {
+    Either.match(decodeUnknownEither(String50)(text), {
       onLeft: Function.constVoid,
       onRight: (groqModel) => evolu.update('profile', {groqModel, id: profile.id}),
     });
