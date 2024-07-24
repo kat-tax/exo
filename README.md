@@ -12,7 +12,7 @@
     <a href="https://exo.fig.run" _target="blank">
     Storybook
   </a> |
-  <a href="https://web.exo.ult.dev" _target="blank">
+  <a href="https://fov.tv" _target="blank">
     Web Demo
   </a>
 </p>
