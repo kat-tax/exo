@@ -17,6 +17,7 @@ msgstr ""
 msgid "{0} • Build {build}"
 msgstr "{0} • Build {build}"
 
+#: ../../client/src/dev/routes/ScreenDesign.tsx:12
 #: ../../client/src/dev/routes/ScreenLibrary.tsx:16
 msgid "{0} components"
 msgstr "{0} components"
@@ -94,6 +95,7 @@ msgstr "Delete Prompts"
 msgid "Delete the local database."
 msgstr "Delete the local database."
 
+#: ../../client/src/app/base/Menu.tsx:133
 #: ../../client/src/dev/routes/ScreenDesign.tsx:11
 msgid "Design"
 msgstr "Design"
@@ -198,6 +200,7 @@ msgstr "Kilometers"
 msgid "Language"
 msgstr "Language"
 
+#: ../../client/src/app/base/Menu.tsx:139
 #: ../../client/src/dev/routes/ScreenLibrary.tsx:15
 msgid "Library"
 msgstr "Library"
@@ -287,6 +290,7 @@ msgid "Select the theme for the app."
 msgstr "Select the theme for the app."
 
 #: ../../client/src/app/base/Menu.tsx:147
+#: ../../client/src/settings/routes/ScreenSettings.tsx:25
 msgid "Settings"
 msgstr "Settings"
 

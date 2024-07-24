@@ -1,8 +1,5 @@
+import * as Tauri from '@tauri-apps/api/core';
 import {Platform} from 'react-native';
-
-export function isTV() {
-  return Platform.isTV;
-}
 
 export function isWeb() {
   return Platform.OS === 'web';
@@ -28,6 +25,14 @@ export function isNative() {
   return Platform.OS !== 'web';
 }
 
+export function isTV() {
+  return Platform.isTV;
+}
+
+export function isTauri() {
+  return Tauri.isTauri;
+}
+
 export function isTouch() {
   switch (Platform.OS) {
     case 'ios':
@@ -43,11 +48,13 @@ export function isTouch() {
   }
 }
 
-export function isBrave() {
-  if (Platform.OS !== 'web') return false;
+export async function isBrave() {
+  if (!isWeb())
+    return false;
   if ('brave' in navigator) {
-    // @ts-ignore
-    return navigator.brave.isBrave().then(e => e);
+    return await (navigator.brave as {
+      isBrave: () => Promise<boolean>,
+    }).isBrave();
   }
   return false;
 }
@@ -64,7 +71,7 @@ export function getPlatforms() {
 }
 
 export function getClient() {
-  if (Platform.OS === 'web')
-    return navigator.userAgent.slice(0, 255);
-  return Platform.OS;
+  return isWeb()
+    ? navigator.userAgent.slice(0, 255)
+    : Platform.OS;
 }

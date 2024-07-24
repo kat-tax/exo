@@ -17,6 +17,7 @@ msgstr ""
 msgid "{0} • Build {build}"
 msgstr "{0} • ビルド {build}"
 
+#: ../../client/src/dev/routes/ScreenDesign.tsx:12
 #: ../../client/src/dev/routes/ScreenLibrary.tsx:16
 msgid "{0} components"
 msgstr "{0} コンポーネント"
@@ -94,6 +95,7 @@ msgstr "プロンプトを削除"
 msgid "Delete the local database."
 msgstr "ローカルデータベースを削除します。"
 
+#: ../../client/src/app/base/Menu.tsx:133
 #: ../../client/src/dev/routes/ScreenDesign.tsx:11
 msgid "Design"
 msgstr "デザイン"
@@ -198,6 +200,7 @@ msgstr "キロメートル"
 msgid "Language"
 msgstr "言語"
 
+#: ../../client/src/app/base/Menu.tsx:139
 #: ../../client/src/dev/routes/ScreenLibrary.tsx:15
 msgid "Library"
 msgstr "ライブラリ"
@@ -287,6 +290,7 @@ msgid "Select the theme for the app."
 msgstr "アプリのテーマを選択してください。"
 
 #: ../../client/src/app/base/Menu.tsx:147
+#: ../../client/src/settings/routes/ScreenSettings.tsx:25
 msgid "Settings"
 msgstr "設定"
 
