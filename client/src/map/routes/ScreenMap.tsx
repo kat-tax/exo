@@ -1,21 +1,20 @@
-import Map, {Marker} from 'react-map-gl/maplibre';
-import {Icon} from 'react-exo/icon';
+import Map from 'react-map-gl/maplibre';
 import {View} from 'react-native';
 import {useState} from 'react';
 import {useDevices} from 'app/data';
-import {useOutletContext} from 'react-exo/navigation';
+import {useAppContext} from 'app/routes/useAppContext';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useScheme} from 'settings/hooks/useScheme';
+import {MarkerDevice} from 'map/base/MarkerDevice';
 
-import type {useDeviceSession} from 'app/hooks/useDeviceSession';
-
-const MAPTILER_API_KEY = 'UbdBChbHpiVOSIdTJWvV';
+const MAPTILER_URL = 'https://api.maptiler.com/maps/';
+const MAPTILER_KEY = 'UbdBChbHpiVOSIdTJWvV';
 
 export default function ScreenMap() {
-  const device = useOutletContext<ReturnType<typeof useDeviceSession>>();
   const devices = useDevices();
+  const {device} = useAppContext();
   const [scheme] = useScheme();
-  const {styles, theme} = useStyles(stylesheet);
+  const {styles} = useStyles(stylesheet);
   const [viewState, setViewState] = useState({
     latitude: device?.coords?.[0] ?? 0,
     longitude: device?.coords?.[1] ?? 0,
@@ -31,19 +30,16 @@ export default function ScreenMap() {
       <Map
         {...viewState}
         style={{width: '100%', height: '100%'}}
-        mapStyle={`https://api.maptiler.com/maps/${mapId}/style.json?key=${MAPTILER_API_KEY}`}
+        mapStyle={`${MAPTILER_URL}${mapId}/style.json?key=${MAPTILER_KEY}`}
         onMove={e => setViewState(e.viewState)}>
-        {devices.map(device => (
-          <Marker
-            key={device.id}
-            latitude={device.coords?.[0] ?? 0}
-            longitude={device.coords?.[1] ?? 0}>
-            <Icon
-              name="ph:map-pin"
-              color={theme.colors.primary}
-              size={32}
-            />
-          </Marker>
+        {devices.map(d => (
+          <MarkerDevice
+            key={d.id}
+            online={d.online ?? 0}
+            isSelf={d.id === device?.id}
+            latitude={d.coords?.[0] ?? 0}
+            longitude={d.coords?.[1] ?? 0}
+          />
         ))}
       </Map>
     </View>

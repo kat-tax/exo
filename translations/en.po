@@ -96,6 +96,7 @@ msgid "Delete the local database."
 msgstr "Delete the local database."
 
 #: ../../client/src/app/base/Menu.tsx:136
+#: ../../client/src/dev/routes/ScreenDesign.tsx:11
 msgid "Design"
 msgstr "Design"
 
@@ -183,7 +184,7 @@ msgstr "Groq Failure"
 msgid "Groq Model ID"
 msgstr "Groq Model ID"
 
-#: ../../client/src/app/base/MenuHeader.tsx:20
+#: ../../client/src/app/base/MenuHeader.tsx:22
 msgid "Human"
 msgstr "Human"
 
@@ -200,6 +201,7 @@ msgid "Language"
 msgstr "Language"
 
 #: ../../client/src/app/base/Menu.tsx:142
+#: ../../client/src/dev/routes/ScreenLibrary.tsx:15
 msgid "Library"
 msgstr "Library"
 
@@ -288,6 +290,7 @@ msgid "Select the theme for the app."
 msgstr "Select the theme for the app."
 
 #: ../../client/src/app/base/Menu.tsx:150
+#: ../../client/src/settings/routes/ScreenSettings.tsx:25
 msgid "Settings"
 msgstr "Settings"
 

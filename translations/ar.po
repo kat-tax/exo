@@ -96,6 +96,7 @@ msgid "Delete the local database."
 msgstr "حذف قاعدة البيانات المحلية."
 
 #: ../../client/src/app/base/Menu.tsx:136
+#: ../../client/src/dev/routes/ScreenDesign.tsx:11
 msgid "Design"
 msgstr "التصميم"
 
@@ -183,7 +184,7 @@ msgstr "فشل Groq"
 msgid "Groq Model ID"
 msgstr "معرف نموذج Groq"
 
-#: ../../client/src/app/base/MenuHeader.tsx:20
+#: ../../client/src/app/base/MenuHeader.tsx:22
 msgid "Human"
 msgstr "الإنسان"
 
@@ -200,6 +201,7 @@ msgid "Language"
 msgstr "اللغة"
 
 #: ../../client/src/app/base/Menu.tsx:142
+#: ../../client/src/dev/routes/ScreenLibrary.tsx:15
 msgid "Library"
 msgstr "المكتبة"
 
@@ -288,6 +290,7 @@ msgid "Select the theme for the app."
 msgstr "اختر سمة التطبيق."
 
 #: ../../client/src/app/base/Menu.tsx:150
+#: ../../client/src/settings/routes/ScreenSettings.tsx:25
 msgid "Settings"
 msgstr "الإعدادات"
 

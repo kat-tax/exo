@@ -3,6 +3,7 @@ import {Icon} from 'react-exo/icon';
 import {View, Text, Pressable} from 'react-native';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useLingui} from '@lingui/react';
+import {useOwner} from '@evolu/react-native';
 import {Identicon} from 'app/widgets/Identicon';
 
 import type {MenuProps} from 'app/base/Menu';
@@ -10,13 +11,14 @@ import type {MenuProps} from 'app/base/Menu';
 export function MenuHeader(props: MenuProps) {
   const {styles, theme} = useStyles(stylesheet);
   const {i18n} = useLingui();
+  const owner = useOwner();
 
   return (
     <View style={styles.root}>
       <View style={styles.header}>
-        <Identicon width={20} height={20}/>
+        <Identicon id={owner?.id} width={20} height={20}/>
         <View style={styles.info}>
-          <Text style={styles.name}>
+          <Text selectable style={styles.name}>
             {props?.profile?.name ?? t(i18n)`Human`}
           </Text>
         </View>
