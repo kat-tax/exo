@@ -29,7 +29,6 @@ export function MenuSection(props: MenuSectionProps) {
     <>
       <Pressable
         onPress={() => setOpen(!open)}
-        // @ts-ignore
         style={({hovered}) => [
           styles.trigger,
           hovered && {
@@ -56,7 +55,6 @@ export function MenuSection(props: MenuSectionProps) {
               accessibilityLabel={props.action.label}
               style={(e) => [
                 styles.action,
-                // @ts-ignore
                 (e.hovered || root.hovered) && styles.actionVisible,
               ]}>
               {action =>
@@ -64,7 +62,6 @@ export function MenuSection(props: MenuSectionProps) {
                   size={16}
                   name={props.action?.icon || ''}
                   color={
-                    // @ts-ignore
                     action.hovered
                       ? theme.colors.foreground
                       : theme.colors.mutedForeground
