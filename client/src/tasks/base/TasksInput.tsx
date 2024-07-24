@@ -5,7 +5,7 @@ import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {TextInput} from 'react-native';
 
 interface TasksInputProps {
-  onSubmit: (input: string) => void;
+  onSubmit: (input: string) => void,
 }
 
 export function TasksInput(props: TasksInputProps) {

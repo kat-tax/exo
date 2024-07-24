@@ -1,12 +1,12 @@
-import {Trans} from '@lingui/macro';
 import {useStyles} from 'react-native-unistyles';
-import {Frame} from 'dev/base/Frame';
-import {Page} from 'app/base/Page';
+import {Trans} from '@lingui/macro';
 import {Icon} from 'react-exo/icon';
-import {Checkbox} from 'react-exo/checkbox';
 import {Switch} from 'react-exo/switch';
 import {Slider} from 'react-exo/slider';
+import {Checkbox} from 'react-exo/checkbox';
 import {Progress} from 'react-exo/progress';
+import {Frame} from 'dev/base/Frame';
+import {Page} from 'app/base/Page';
 
 export default function ScreenHome() {
   const {theme} = useStyles();

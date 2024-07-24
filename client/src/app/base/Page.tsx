@@ -1,10 +1,9 @@
 import {View, ScrollView, Text} from 'react-native';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 
-export interface PageProps {
+export interface PageProps extends React.PropsWithChildren {
   title?: string | React.ReactNode,
   message?: string | React.ReactNode,
-  children?: React.ReactNode,
   widget?: React.ReactNode,
   fullWidth?: boolean,
 }

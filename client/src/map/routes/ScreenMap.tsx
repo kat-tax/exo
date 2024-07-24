@@ -50,7 +50,7 @@ export default function ScreenMap() {
   );
 }
 
-const stylesheet = createStyleSheet(_theme => ({
+const stylesheet = createStyleSheet(() => ({
   root: {
     flex: 1,
   },

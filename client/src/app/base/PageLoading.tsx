@@ -3,8 +3,8 @@ import {View, ActivityIndicator} from 'react-native';
 import type {ViewProps, ActivityIndicatorProps} from 'react-native';
 
 export interface PageLoadingProps {
-  container?: ViewProps;
-  indicator?: ActivityIndicatorProps;
+  container?: ViewProps,
+  indicator?: ActivityIndicatorProps,
 }
 
 export function PageLoading(props: PageLoadingProps) {
