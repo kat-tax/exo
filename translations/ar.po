@@ -34,7 +34,7 @@ msgstr "إضافة مهمة"
 msgid "AI"
 msgstr "الذكاء الاصطناعي"
 
-#: ../../client/src/app/base/Menu.tsx:61
+#: ../../client/src/app/base/Menu.tsx:115
 msgid "Alarms"
 msgstr "المنبهات"
 
@@ -63,17 +63,13 @@ msgstr "اسأل أي شيء..."
 msgid "Auto"
 msgstr "تلقائي"
 
-#: ../../client/src/app/base/Menu.tsx:55
-msgid "Calendar"
-msgstr ""
+#: ../../client/src/app/base/Menu.tsx:89
+msgid "Books"
+msgstr "كتب"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:118
 msgid "Celsius"
 msgstr "سيلزيوس"
-
-#: ../../client/src/app/routes/ScreenTeaser.tsx:11
-msgid "Coming soon..."
-msgstr ""
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:106
 msgid "Dark"
@@ -103,11 +99,12 @@ msgstr "حذف الأوامر"
 msgid "Delete the local database."
 msgstr "حذف قاعدة البيانات المحلية."
 
-#: ../../client/src/app/base/Menu.tsx:131
+#: ../../client/src/app/base/Menu.tsx:137
+#: ../../client/src/dev/routes/ScreenDesign.tsx:11
 msgid "Design"
 msgstr "التصميم"
 
-#: ../../client/src/app/base/Menu.tsx:127
+#: ../../client/src/app/base/Menu.tsx:133
 msgid "Developer Mode"
 msgstr "وضع المطور"
 
@@ -119,7 +116,7 @@ msgstr "العرض"
 msgid "Distance"
 msgstr "المسافة"
 
-#: ../../client/src/app/base/Menu.tsx:85
+#: ../../client/src/app/base/Menu.tsx:59
 msgid "Docs"
 msgstr "المستندات"
 
@@ -143,7 +140,7 @@ msgstr "أدخل عبارتك التذكيرية"
 msgid "Enter your name"
 msgstr "أدخل اسمك"
 
-#: ../../client/src/app/base/Menu.tsx:57
+#: ../../client/src/app/base/Menu.tsx:109
 msgid "Events"
 msgstr "الأحداث"
 
@@ -151,15 +148,19 @@ msgstr "الأحداث"
 msgid "Fahrenheit"
 msgstr "فهرنهايت"
 
-#: ../../client/src/app/base/Menu.tsx:113
+#: ../../client/src/app/base/Menu.tsx:119
 msgid "Favorites"
 msgstr "المفضلة"
 
-#: ../../client/src/app/base/Menu.tsx:79
+#: ../../client/src/app/base/Menu.tsx:103
+msgid "Feeds"
+msgstr "المواضيع"
+
+#: ../../client/src/app/base/Menu.tsx:53
 msgid "Files"
 msgstr "الملفات"
 
-#: ../../client/src/app/base/Menu.tsx:91
+#: ../../client/src/app/base/Menu.tsx:83
 msgid "Games"
 msgstr "الألعاب"
 
@@ -207,7 +208,8 @@ msgstr "كيلومترات"
 msgid "Language"
 msgstr "اللغة"
 
-#: ../../client/src/app/base/Menu.tsx:137
+#: ../../client/src/app/base/Menu.tsx:143
+#: ../../client/src/dev/routes/ScreenLibrary.tsx:15
 msgid "Library"
 msgstr "المكتبة"
 
@@ -223,11 +225,11 @@ msgstr "جاري التحميل..."
 msgid "Manage your settings"
 msgstr "إدارة إعداداتك"
 
-#: ../../client/src/app/base/Menu.tsx:49
+#: ../../client/src/app/base/Menu.tsx:97
 msgid "Maps"
 msgstr "الخرائط"
 
-#: ../../client/src/app/base/Menu.tsx:71
+#: ../../client/src/app/base/Menu.tsx:45
 msgid "Media"
 msgstr "الوسائط"
 
@@ -235,7 +237,7 @@ msgstr "الوسائط"
 msgid "Miles"
 msgstr "أميال"
 
-#: ../../client/src/app/base/Menu.tsx:109
+#: ../../client/src/app/base/Menu.tsx:65
 msgid "Music"
 msgstr "الموسيقى"
 
@@ -243,15 +245,11 @@ msgstr "الموسيقى"
 msgid "No events scheduled."
 msgstr "لا توجد أحداث مجدولة."
 
-#: ../../client/src/app/base/Menu.tsx:67
-msgid "Notes"
-msgstr "الملاحظات"
-
 #: ../../client/src/settings/routes/ScreenSettings.tsx:51
 msgid "Owner Key"
 msgstr "مفتاح المالك"
 
-#: ../../client/src/app/base/Menu.tsx:97
+#: ../../client/src/app/base/Menu.tsx:71
 msgid "Photos"
 msgstr "الصور"
 
@@ -295,7 +293,8 @@ msgstr "اختر وحدة درجة الحرارة للتطبيق."
 msgid "Select the theme for the app."
 msgstr "اختر سمة التطبيق."
 
-#: ../../client/src/app/base/Menu.tsx:145
+#: ../../client/src/app/base/Menu.tsx:151
+#: ../../client/src/settings/routes/ScreenSettings.tsx:27
 msgid "Settings"
 msgstr "الإعدادات"
 
@@ -311,15 +310,11 @@ msgstr "درجة الحرارة"
 msgid "Theme"
 msgstr "السمة"
 
-#: ../../client/src/app/base/Menu.tsx:45
-msgid "Tools"
-msgstr "الأدوات"
-
 #: ../../client/src/settings/routes/ScreenSettings.tsx:39
 msgid "User Name"
 msgstr "اسم المستخدم"
 
-#: ../../client/src/app/base/Menu.tsx:103
+#: ../../client/src/app/base/Menu.tsx:77
 msgid "Videos"
 msgstr "مقاطع الفيديو"
 
@@ -334,6 +329,10 @@ msgstr "مرحبًا، أيها الإنسان"
 #: ../../client/src/app/routes/ScreenTeaser.tsx:12
 msgid "Work in progress..."
 msgstr "جاري العمل..."
+
+#: ../../client/src/app/base/Menu.tsx:93
+msgid "World"
+msgstr "العالم"
 
 #: ../../client/src/app/hooks/useOnline.ts:16
 msgid "You are offline"

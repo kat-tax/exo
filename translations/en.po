@@ -34,7 +34,7 @@ msgstr "Add a task"
 msgid "AI"
 msgstr "AI"
 
-#: ../../client/src/app/base/Menu.tsx:61
+#: ../../client/src/app/base/Menu.tsx:115
 msgid "Alarms"
 msgstr "Alarms"
 
@@ -63,17 +63,13 @@ msgstr "Ask anything..."
 msgid "Auto"
 msgstr "Auto"
 
-#: ../../client/src/app/base/Menu.tsx:55
-msgid "Calendar"
-msgstr "Calendar"
+#: ../../client/src/app/base/Menu.tsx:89
+msgid "Books"
+msgstr "Books"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:118
 msgid "Celsius"
 msgstr "Celsius"
-
-#: ../../client/src/app/routes/ScreenTeaser.tsx:11
-msgid "Coming soon..."
-msgstr "Coming soon..."
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:106
 msgid "Dark"
@@ -103,11 +99,12 @@ msgstr "Delete Prompts"
 msgid "Delete the local database."
 msgstr "Delete the local database."
 
-#: ../../client/src/app/base/Menu.tsx:131
+#: ../../client/src/app/base/Menu.tsx:137
+#: ../../client/src/dev/routes/ScreenDesign.tsx:11
 msgid "Design"
 msgstr "Design"
 
-#: ../../client/src/app/base/Menu.tsx:127
+#: ../../client/src/app/base/Menu.tsx:133
 msgid "Developer Mode"
 msgstr "Developer Mode"
 
@@ -119,7 +116,7 @@ msgstr "Display"
 msgid "Distance"
 msgstr "Distance"
 
-#: ../../client/src/app/base/Menu.tsx:85
+#: ../../client/src/app/base/Menu.tsx:59
 msgid "Docs"
 msgstr "Docs"
 
@@ -143,7 +140,7 @@ msgstr "Enter your mnemonic phrase"
 msgid "Enter your name"
 msgstr "Enter your name"
 
-#: ../../client/src/app/base/Menu.tsx:57
+#: ../../client/src/app/base/Menu.tsx:109
 msgid "Events"
 msgstr "Events"
 
@@ -151,15 +148,19 @@ msgstr "Events"
 msgid "Fahrenheit"
 msgstr "Fahrenheit"
 
-#: ../../client/src/app/base/Menu.tsx:113
+#: ../../client/src/app/base/Menu.tsx:119
 msgid "Favorites"
 msgstr "Favorites"
 
-#: ../../client/src/app/base/Menu.tsx:79
+#: ../../client/src/app/base/Menu.tsx:103
+msgid "Feeds"
+msgstr "Feeds"
+
+#: ../../client/src/app/base/Menu.tsx:53
 msgid "Files"
 msgstr "Files"
 
-#: ../../client/src/app/base/Menu.tsx:91
+#: ../../client/src/app/base/Menu.tsx:83
 msgid "Games"
 msgstr "Games"
 
@@ -207,7 +208,8 @@ msgstr "Kilometers"
 msgid "Language"
 msgstr "Language"
 
-#: ../../client/src/app/base/Menu.tsx:137
+#: ../../client/src/app/base/Menu.tsx:143
+#: ../../client/src/dev/routes/ScreenLibrary.tsx:15
 msgid "Library"
 msgstr "Library"
 
@@ -223,11 +225,11 @@ msgstr "Loading..."
 msgid "Manage your settings"
 msgstr "Manage your settings"
 
-#: ../../client/src/app/base/Menu.tsx:49
+#: ../../client/src/app/base/Menu.tsx:97
 msgid "Maps"
 msgstr "Maps"
 
-#: ../../client/src/app/base/Menu.tsx:71
+#: ../../client/src/app/base/Menu.tsx:45
 msgid "Media"
 msgstr "Media"
 
@@ -235,7 +237,7 @@ msgstr "Media"
 msgid "Miles"
 msgstr "Miles"
 
-#: ../../client/src/app/base/Menu.tsx:109
+#: ../../client/src/app/base/Menu.tsx:65
 msgid "Music"
 msgstr "Music"
 
@@ -243,15 +245,11 @@ msgstr "Music"
 msgid "No events scheduled."
 msgstr "No events scheduled."
 
-#: ../../client/src/app/base/Menu.tsx:67
-msgid "Notes"
-msgstr "Notes"
-
 #: ../../client/src/settings/routes/ScreenSettings.tsx:51
 msgid "Owner Key"
 msgstr "Owner Key"
 
-#: ../../client/src/app/base/Menu.tsx:97
+#: ../../client/src/app/base/Menu.tsx:71
 msgid "Photos"
 msgstr "Photos"
 
@@ -295,7 +293,8 @@ msgstr "Select the temperature unit for the app."
 msgid "Select the theme for the app."
 msgstr "Select the theme for the app."
 
-#: ../../client/src/app/base/Menu.tsx:145
+#: ../../client/src/app/base/Menu.tsx:151
+#: ../../client/src/settings/routes/ScreenSettings.tsx:27
 msgid "Settings"
 msgstr "Settings"
 
@@ -311,15 +310,11 @@ msgstr "Temperature"
 msgid "Theme"
 msgstr "Theme"
 
-#: ../../client/src/app/base/Menu.tsx:45
-msgid "Tools"
-msgstr "Tools"
-
 #: ../../client/src/settings/routes/ScreenSettings.tsx:39
 msgid "User Name"
 msgstr "User Name"
 
-#: ../../client/src/app/base/Menu.tsx:103
+#: ../../client/src/app/base/Menu.tsx:77
 msgid "Videos"
 msgstr "Videos"
 
@@ -334,6 +329,10 @@ msgstr "Welcome, Human"
 #: ../../client/src/app/routes/ScreenTeaser.tsx:12
 msgid "Work in progress..."
 msgstr "Work in progress..."
+
+#: ../../client/src/app/base/Menu.tsx:93
+msgid "World"
+msgstr "World"
 
 #: ../../client/src/app/hooks/useOnline.ts:16
 msgid "You are offline"
