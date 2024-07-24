@@ -2,7 +2,7 @@ import {Trans} from '@lingui/react';
 import {Trans as T} from '@lingui/macro';
 import {Text, View} from 'react-native';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {useAppContext} from 'app/routes/useAppContext';
+import {useAppContext} from 'app/hooks/useAppContext';
 import {useWeather} from 'home/hooks/useWeather';
 import {useClock} from 'home/hooks/useClock';
 import {getDayGreeting} from 'home/utils/time';

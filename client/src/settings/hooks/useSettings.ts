@@ -2,7 +2,7 @@ import {t} from '@lingui/macro';
 import {alert} from 'react-exo/toast';
 import {useLingui} from '@lingui/react';
 import {useEvolu, useOwner, parseMnemonic, NonEmptyString1000} from '@evolu/react-native';
-import {useAppContext} from 'app/routes/useAppContext';
+import {useAppContext} from 'app/hooks/useAppContext';
 import {String50, decodeUnknownEither} from 'app/data';
 import {Effect, Either, Function} from 'effect';
 

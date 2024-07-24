@@ -5,7 +5,7 @@ import {Text, View, TextInput, Pressable} from 'react-native';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useRef, useState, useMemo, memo} from 'react';
 import {useLingui} from '@lingui/react';
-import {useAppContext} from 'app/routes/useAppContext';
+import {useAppContext} from 'app/hooks/useAppContext';
 import {useAI} from 'home/hooks/useAI';
 import {formatDate} from 'home/utils/time';
 import {PageLoading} from 'app/base/PageLoading';

@@ -2,7 +2,7 @@ import Map from 'react-map-gl/maplibre';
 import {View} from 'react-native';
 import {useState} from 'react';
 import {useDevices} from 'app/data';
-import {useAppContext} from 'app/routes/useAppContext';
+import {useAppContext} from 'app/hooks/useAppContext';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useScheme} from 'settings/hooks/useScheme';
 import {MarkerDevice} from 'map/base/MarkerDevice';

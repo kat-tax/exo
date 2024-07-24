@@ -6,7 +6,7 @@ import {useDeviceSession} from 'app/hooks/useDeviceSession';
 import {useProfile} from 'app/data';
 import {Menu} from 'app/base/Menu';
 
-import type {useAppContext} from 'app/routes/useAppContext';
+import type {useAppContext} from 'app/hooks/useAppContext';
 
 export const APP_MENU_WIDTH = 146;
 export const APP_MENU_TAB_HEIGHT = 64;
