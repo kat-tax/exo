@@ -331,6 +331,10 @@ msgstr "Добро пожаловать, {0}"
 msgid "Welcome, Human"
 msgstr "Добро пожаловать, Человек"
 
+#: ../../client/src/app/routes/ScreenTeaser.tsx:12
+msgid "Work in progress..."
+msgstr "В работе..."
+
 #: ../../client/src/app/hooks/useOnline.ts:16
 msgid "You are offline"
 msgstr "Вы не в сети"

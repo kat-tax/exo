@@ -331,6 +331,10 @@ msgstr "مرحبًا، {0}"
 msgid "Welcome, Human"
 msgstr "مرحبًا، أيها الإنسان"
 
+#: ../../client/src/app/routes/ScreenTeaser.tsx:12
+msgid "Work in progress..."
+msgstr "جاري العمل..."
+
 #: ../../client/src/app/hooks/useOnline.ts:16
 msgid "You are offline"
 msgstr "أنت غير متصل بالإنترنت"

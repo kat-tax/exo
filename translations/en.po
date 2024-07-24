@@ -331,6 +331,10 @@ msgstr "Welcome, {0}"
 msgid "Welcome, Human"
 msgstr "Welcome, Human"
 
+#: ../../client/src/app/routes/ScreenTeaser.tsx:12
+msgid "Work in progress..."
+msgstr "Work in progress..."
+
 #: ../../client/src/app/hooks/useOnline.ts:16
 msgid "You are offline"
 msgstr "You are offline"

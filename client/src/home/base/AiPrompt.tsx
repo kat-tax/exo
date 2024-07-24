@@ -114,15 +114,16 @@ export const AiPrompt = memo(() => {
 const stylesheet = createStyleSheet(theme => ({
   prompt: {
     flex: 1,
-    gap: theme.display.space5,
     alignItems: 'center',
+    gap: theme.display.space5,
   },
   response: {
-    gap: theme.display.space5,
     alignItems: 'center',
+    gap: theme.display.space5,
   },
   input: {
     flex: 1,
+    width: '100%',
     borderWidth: 1,
     borderColor: theme.colors.border,
     borderRadius: theme.display.radius3,
@@ -135,25 +136,24 @@ const stylesheet = createStyleSheet(theme => ({
     lineHeight: theme.font.inputHeight,
     letterSpacing: theme.font.inputSpacing,
     color: theme.colors.foreground,
-    width: '100%',
   },
   wrapper: {
     width: '100%',
   },
   timestamp: {
-    position: 'absolute',
-    right: 6,
     top: 7,
-    color: 'rgb(255, 255, 255)',
-    backgroundColor: 'rgba(0, 0, 0, 0.8)',
+    right: 6,
+    position: 'absolute',
     paddingHorizontal: theme.display.space2,
     paddingVertical: theme.display.space1,
     borderRadius: theme.display.radius2,
+    backgroundColor: 'rgba(0, 0, 0, 0.8)',
     fontSize: theme.font.size,
     fontFamily: theme.font.family,
     fontWeight: theme.font.weight,
     lineHeight: theme.font.height,
     letterSpacing: theme.font.spacing,
+    color: 'rgb(255, 255, 255)',
   },
   button: {
     position: 'absolute',

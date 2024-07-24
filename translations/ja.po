@@ -331,6 +331,10 @@ msgstr "ようこそ、{0}さん"
 msgid "Welcome, Human"
 msgstr "ようこそ、人間さん"
 
+#: ../../client/src/app/routes/ScreenTeaser.tsx:12
+msgid "Work in progress..."
+msgstr "作業中..."
+
 #: ../../client/src/app/hooks/useOnline.ts:16
 msgid "You are offline"
 msgstr "オフラインです"
