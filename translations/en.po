@@ -100,7 +100,6 @@ msgid "Delete the local database."
 msgstr "Delete the local database."
 
 #: ../../client/src/app/base/Menu.tsx:137
-#: ../../client/src/dev/routes/ScreenDesign.tsx:11
 msgid "Design"
 msgstr "Design"
 
@@ -209,7 +208,6 @@ msgid "Language"
 msgstr "Language"
 
 #: ../../client/src/app/base/Menu.tsx:143
-#: ../../client/src/dev/routes/ScreenLibrary.tsx:15
 msgid "Library"
 msgstr "Library"
 
@@ -225,7 +223,7 @@ msgstr "Loading..."
 msgid "Manage your settings"
 msgstr "Manage your settings"
 
-#: ../../client/src/app/base/Menu.tsx:97
+#: ../../client/src/app/base/Menu.tsx:103
 msgid "Maps"
 msgstr "Maps"
 
@@ -240,6 +238,10 @@ msgstr "Miles"
 #: ../../client/src/app/base/Menu.tsx:65
 msgid "Music"
 msgstr "Music"
+
+#: ../../client/src/app/base/Menu.tsx:97
+msgid "News"
+msgstr "News"
 
 #: ../../client/src/events/routes/ScreenCalendar.tsx:34
 msgid "No events scheduled."
@@ -294,7 +296,6 @@ msgid "Select the theme for the app."
 msgstr "Select the theme for the app."
 
 #: ../../client/src/app/base/Menu.tsx:151
-#: ../../client/src/settings/routes/ScreenSettings.tsx:27
 msgid "Settings"
 msgstr "Settings"
 

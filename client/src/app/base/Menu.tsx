@@ -92,15 +92,15 @@ export function Menu(props: MenuProps) {
           </MenuSection>
           <MenuSection label={<Trans>World</Trans>} {...{tabs}}>
             <MenuItem
-              path="/maps"
-              icon="ph:map-trifold"
-              label={<Trans>Maps</Trans>}
+              path="/news"
+              icon="ph:rss"
+              label={<Trans>News</Trans>}
               {...{tabs}}
             />
             <MenuItem
-              path="/feeds"
-              icon="ph:rss"
-              label={<Trans>Feeds</Trans>}
+              path="/maps"
+              icon="ph:map-trifold"
+              label={<Trans>Maps</Trans>}
               {...{tabs}}
             />
             <MenuItem

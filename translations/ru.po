@@ -100,7 +100,6 @@ msgid "Delete the local database."
 msgstr "Удалить локальную базу данных."
 
 #: ../../client/src/app/base/Menu.tsx:137
-#: ../../client/src/dev/routes/ScreenDesign.tsx:11
 msgid "Design"
 msgstr "Дизайн"
 
@@ -209,7 +208,6 @@ msgid "Language"
 msgstr "Язык"
 
 #: ../../client/src/app/base/Menu.tsx:143
-#: ../../client/src/dev/routes/ScreenLibrary.tsx:15
 msgid "Library"
 msgstr "Библиотека"
 
@@ -225,7 +223,7 @@ msgstr "Загрузка..."
 msgid "Manage your settings"
 msgstr "Управление настройками"
 
-#: ../../client/src/app/base/Menu.tsx:97
+#: ../../client/src/app/base/Menu.tsx:103
 msgid "Maps"
 msgstr "Карты"
 
@@ -240,6 +238,10 @@ msgstr "Мили"
 #: ../../client/src/app/base/Menu.tsx:65
 msgid "Music"
 msgstr "Музыка"
+
+#: ../../client/src/app/base/Menu.tsx:97
+msgid "News"
+msgstr ""
 
 #: ../../client/src/events/routes/ScreenCalendar.tsx:34
 msgid "No events scheduled."
@@ -294,7 +296,6 @@ msgid "Select the theme for the app."
 msgstr "Выберите тему для приложения."
 
 #: ../../client/src/app/base/Menu.tsx:151
-#: ../../client/src/settings/routes/ScreenSettings.tsx:27
 msgid "Settings"
 msgstr "Настройки"
 

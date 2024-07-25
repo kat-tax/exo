@@ -100,7 +100,6 @@ msgid "Delete the local database."
 msgstr "ローカルデータベースを削除します。"
 
 #: ../../client/src/app/base/Menu.tsx:137
-#: ../../client/src/dev/routes/ScreenDesign.tsx:11
 msgid "Design"
 msgstr "デザイン"
 
@@ -209,7 +208,6 @@ msgid "Language"
 msgstr "言語"
 
 #: ../../client/src/app/base/Menu.tsx:143
-#: ../../client/src/dev/routes/ScreenLibrary.tsx:15
 msgid "Library"
 msgstr "ライブラリ"
 
@@ -225,7 +223,7 @@ msgstr "読み込み中..."
 msgid "Manage your settings"
 msgstr "設定を管理"
 
-#: ../../client/src/app/base/Menu.tsx:97
+#: ../../client/src/app/base/Menu.tsx:103
 msgid "Maps"
 msgstr "地図"
 
@@ -240,6 +238,10 @@ msgstr "マイル"
 #: ../../client/src/app/base/Menu.tsx:65
 msgid "Music"
 msgstr "音楽"
+
+#: ../../client/src/app/base/Menu.tsx:97
+msgid "News"
+msgstr ""
 
 #: ../../client/src/events/routes/ScreenCalendar.tsx:34
 msgid "No events scheduled."
@@ -294,7 +296,6 @@ msgid "Select the theme for the app."
 msgstr "アプリのテーマを選択してください。"
 
 #: ../../client/src/app/base/Menu.tsx:151
-#: ../../client/src/settings/routes/ScreenSettings.tsx:27
 msgid "Settings"
 msgstr "設定"
 
