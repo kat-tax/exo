@@ -8,6 +8,7 @@ const chunkSize = 4E7;
 self.onmessage = async (e: MessageEvent<{path: string}>) => {
   const root = await navigator.storage.getDirectory();
   const file = await getFileHandle(root, e.data.path);
+
   if (!file) {
     throw new Error('Unable to get file handle');
   }
