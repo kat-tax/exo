@@ -38,6 +38,7 @@ async function hashChunk(
 ) {
   const buffer = new ArrayBuffer(size);
   file.read(buffer, {at: 0});
+  file.close();
   try {
     const digest = await crypto.subtle.digest('SHA-256', buffer);
     return Array.from(new Uint8Array(digest))
@@ -55,25 +56,24 @@ async function hashFile(
 ) {
   let bytes = 0;
 
-  const fileHash = await createSHA256();
+  const sha256 = await createSHA256();
   const unitSize = Math.min(chunkSize, size);
   const unitCount = Math.floor(size / unitSize);
+
+  sha256.init();
   
-  const process = async (unit: number): Promise<string> => {
+  for (let unit = 0; unit < unitCount; unit++) {
     const start = unitSize * unit;
     const end = Math.min(unitSize * (unit + 1), size);
     const buffer = new ArrayBuffer(end - start);
     file.read(buffer, {at: start});
-    fileHash.update(new Uint8Array(buffer));
+    sha256.update(new Uint8Array(buffer));
     bytes += buffer.byteLength;
     progress(bytes);
-    return (unit === unitCount)
-      ? fileHash.digest('hex')
-      : process(unit + 1);
-  };
+  }
 
-  fileHash.init();
-  return process(0);
+  file.close();
+  return sha256.digest('hex');
 }
 
 async function getFileHandle(

@@ -1,3 +1,6 @@
+// @ts-ignore
+import HashWorker from './WebHasher.worker?worker&inline';
+
 const _workers = new Map<number, Worker>();
 
 async function start(
@@ -5,9 +8,9 @@ async function start(
   jobId?: number,
   progress?: (bytes: number) => void,
 ) {
-  const worker = new Worker(new URL('./WebHasher.worker.ts', import.meta.url));
-  jobId && _workers.set(jobId, worker);
+  const worker: Worker = new HashWorker();
   worker.postMessage({path});
+  jobId && _workers.set(jobId, worker);
 
   return new Promise<string>((resolve, reject) => {
     worker.onmessage = (e) => {

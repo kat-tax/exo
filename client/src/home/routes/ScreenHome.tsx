@@ -1,6 +1,9 @@
+import {hashFile} from 'react-exo/fs';
+import {useCallback} from 'react';
+
 import {Trans} from '@lingui/react';
 import {Trans as T} from '@lingui/macro';
-import {Text, View} from 'react-native';
+import {Text, View, Button} from 'react-native';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useAppContext} from 'app/hooks/useAppContext';
 import {useWeather} from 'home/hooks/useWeather';
@@ -14,6 +17,28 @@ export default function ScreenHome() {
   const {styles} = useStyles(stylesheet);
   const weather = useWeather(device?.coords);
   const clock = useClock('medium');
+
+  const test = useCallback(() => {
+    async function test() {
+      try {
+        // @ts-ignore
+        const [fileHandle] = await window.showOpenFilePicker();
+        const opfsRoot = await navigator.storage.getDirectory();
+        const targetDir = await opfsRoot.getDirectoryHandle('example', {create: true});
+        const targetFile = await targetDir.getFileHandle('test.zip', {create: true});
+        const sourceFile: File = await fileHandle.getFile();
+        const stream = await targetFile.createWritable();
+        await sourceFile.stream().pipeTo(stream);
+        const hash = await hashFile('example/test.zip', 1, (bytes) => {
+          console.log('[fs] progress', (bytes / sourceFile.size) * 100);
+        });
+        console.log('[fs] file', hash);
+      } catch (error) {
+        console.error('[fs] error', error);
+      }
+    }
+    test();
+  }, []);
 
   return (
     <Page
@@ -33,6 +58,10 @@ export default function ScreenHome() {
         </View>
       }>
       <AiPrompt/>
+      <Button
+        title="Test"
+        onPress={test}
+      />
     </Page>
   );
 }
