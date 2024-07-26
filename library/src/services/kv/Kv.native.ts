@@ -1,11 +1,11 @@
 import {MMKV} from 'react-native-mmkv';
-import {validator} from './Storage.interface';
-import type {StorageBase, StorageDB} from './Storage.interface';
+import {validator} from './Kv.interface';
+import type {KVBase, KVDatabase} from './Kv.interface';
 
-export class StorageService implements StorageBase {
+export class KVService implements KVBase {
   init(id: string, version: number) {
     const db = new MMKV({id, path: `v${version}`});
-    return <StorageDB>{
+    return <KVDatabase>{
       getItem: async (k, i) => {
         switch (true) {
           case validator.isBoolean(i):

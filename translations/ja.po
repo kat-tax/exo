@@ -100,6 +100,7 @@ msgid "Delete the local database."
 msgstr "ローカルデータベースを削除します。"
 
 #: ../../client/src/app/base/Menu.tsx:137
+#: ../../client/src/dev/routes/ScreenDesign.tsx:11
 msgid "Design"
 msgstr "デザイン"
 
@@ -150,10 +151,6 @@ msgstr "華氏"
 #: ../../client/src/app/base/Menu.tsx:119
 msgid "Favorites"
 msgstr "お気に入り"
-
-#: ../../client/src/app/base/Menu.tsx:103
-msgid "Feeds"
-msgstr "フィード"
 
 #: ../../client/src/app/base/Menu.tsx:53
 msgid "Files"
@@ -208,6 +205,7 @@ msgid "Language"
 msgstr "言語"
 
 #: ../../client/src/app/base/Menu.tsx:143
+#: ../../client/src/dev/routes/ScreenLibrary.tsx:15
 msgid "Library"
 msgstr "ライブラリ"
 
@@ -296,6 +294,7 @@ msgid "Select the theme for the app."
 msgstr "アプリのテーマを選択してください。"
 
 #: ../../client/src/app/base/Menu.tsx:151
+#: ../../client/src/settings/routes/ScreenSettings.tsx:27
 msgid "Settings"
 msgstr "設定"
 

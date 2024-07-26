@@ -100,6 +100,7 @@ msgid "Delete the local database."
 msgstr "حذف قاعدة البيانات المحلية."
 
 #: ../../client/src/app/base/Menu.tsx:137
+#: ../../client/src/dev/routes/ScreenDesign.tsx:11
 msgid "Design"
 msgstr "التصميم"
 
@@ -150,10 +151,6 @@ msgstr "فهرنهايت"
 #: ../../client/src/app/base/Menu.tsx:119
 msgid "Favorites"
 msgstr "المفضلة"
-
-#: ../../client/src/app/base/Menu.tsx:103
-msgid "Feeds"
-msgstr "المواضيع"
 
 #: ../../client/src/app/base/Menu.tsx:53
 msgid "Files"
@@ -208,6 +205,7 @@ msgid "Language"
 msgstr "اللغة"
 
 #: ../../client/src/app/base/Menu.tsx:143
+#: ../../client/src/dev/routes/ScreenLibrary.tsx:15
 msgid "Library"
 msgstr "المكتبة"
 
@@ -296,6 +294,7 @@ msgid "Select the theme for the app."
 msgstr "اختر سمة التطبيق."
 
 #: ../../client/src/app/base/Menu.tsx:151
+#: ../../client/src/settings/routes/ScreenSettings.tsx:27
 msgid "Settings"
 msgstr "الإعدادات"
 

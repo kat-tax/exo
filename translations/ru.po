@@ -100,6 +100,7 @@ msgid "Delete the local database."
 msgstr "Удалить локальную базу данных."
 
 #: ../../client/src/app/base/Menu.tsx:137
+#: ../../client/src/dev/routes/ScreenDesign.tsx:11
 msgid "Design"
 msgstr "Дизайн"
 
@@ -150,10 +151,6 @@ msgstr "Фаренгейт"
 #: ../../client/src/app/base/Menu.tsx:119
 msgid "Favorites"
 msgstr "Избранное"
-
-#: ../../client/src/app/base/Menu.tsx:103
-msgid "Feeds"
-msgstr "Лента"
 
 #: ../../client/src/app/base/Menu.tsx:53
 msgid "Files"
@@ -208,6 +205,7 @@ msgid "Language"
 msgstr "Язык"
 
 #: ../../client/src/app/base/Menu.tsx:143
+#: ../../client/src/dev/routes/ScreenLibrary.tsx:15
 msgid "Library"
 msgstr "Библиотека"
 
@@ -296,6 +294,7 @@ msgid "Select the theme for the app."
 msgstr "Выберите тему для приложения."
 
 #: ../../client/src/app/base/Menu.tsx:151
+#: ../../client/src/settings/routes/ScreenSettings.tsx:27
 msgid "Settings"
 msgstr "Настройки"
 

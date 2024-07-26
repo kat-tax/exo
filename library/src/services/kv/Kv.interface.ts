@@ -1,25 +1,25 @@
-import type {Storage as Persist} from 'redux-persist';
+import type {Storage} from 'redux-persist';
 
 /**
  * A service to manage persistent KV databases.
  * 
  * Supports `string`, `number`, `boolean`, and `Uint8Array` values, indexed by `string` keys.
  */
-export interface StorageBase {
+export interface KVBase {
   /**
-   * Initializes a storage database
+   * Initializes a KV database
    * 
    * @param id The unique identifier for the database
    * @param version The version of the database
-   * @returns The storage database
+   * @returns The KV database
    */
-  init(id: string, version: number): StorageDB
+  init(id: string, version: number): KVDatabase
 }
 
 /**
- * The storage database interface
+ * The KV database interface
  */
-export interface StorageDB extends Persist {
+export interface KVDatabase extends Storage {
   /** 
    * Gets a value from a key
    * 

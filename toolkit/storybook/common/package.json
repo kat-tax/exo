@@ -5,19 +5,19 @@
   "private": true,
   "dependencies": {
     "@iconify/react": "^5.0.1",
-    "@storybook/addon-essentials": "^8.2.2",
-    "@storybook/blocks": "^8.2.2",
+    "@storybook/addon-essentials": "^8.2.6",
+    "@storybook/blocks": "^8.2.6",
     "design": "workspace:react-exo-ui@*",
     "react-exo-ui": "workspace:*",
     "react-native-unistyles": "^2.9.0"
   },
   "devDependencies": {
-    "@storybook/types": "^8.2.2",
+    "@storybook/types": "^8.2.6",
     "@types/react": "^18.3.3",
     "babel-plugin-macros": "^3.1.0",
     "config": "workspace:*",
     "react-exo": "workspace:*",
     "react-native": "^0.74.3",
-    "typescript": "^5.5.3"
+    "typescript": "^5.5.4"
   }
 }

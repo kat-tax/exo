@@ -1,5 +1,5 @@
 import * as $ from 'react-exo/redux';
-import {Storage} from 'react-exo/storage';
+import {KV} from 'react-exo/kv';
 import {PageLoading} from 'app/base/PageLoading';
 import config from 'config';
 
@@ -20,7 +20,7 @@ export function Store(props: React.PropsWithChildren) {
 const reducer = $.persistReducer({
   key: config.APP_NAME,
   version: config.STORE_VERSION,
-  storage: Storage.init(`${config.APP_NAME}::redux`, config.STORE_VERSION),
+  storage: KV.init(`${config.APP_NAME}::redux`, config.STORE_VERSION),
   blacklist: [
     $.history.context.routerReducer.name,
     app.reducer.name,

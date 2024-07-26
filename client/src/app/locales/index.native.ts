@@ -1,4 +1,5 @@
 import {i18n} from '@lingui/core';
+import {isRTL} from 'app/locales/isRTL';
 import {sourceLocale} from 'config/locales';
 import type {Locales} from 'config/locales';
 
@@ -9,7 +10,8 @@ import {messages as ar} from './messages/ar';
 
 const locales = {en, ru, ja, ar};
 
-export {i18n};
+export {i18n, isRTL};
+
 export async function load(locale: Locales = sourceLocale) {
   const messages = locales[locale];
   i18n.loadAndActivate({locale, messages});

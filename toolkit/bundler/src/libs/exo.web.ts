@@ -45,9 +45,9 @@ export default defineConfig(env => mergeConfig(
           /* Services */
           device: 'src/services/device/Device.export',
           form: 'src/services/form/Form.export',
-          fs: 'src/services/fs/Fs.export',
+          fs: 'src/services/fsx/Fsx.export',
+          kv: 'src/services/kv/Kv.export',
           redux: 'src/services/redux/Redux.export',
-          storage: 'src/services/storage/Storage.export',
           toast: 'src/services/toast/Toast.export',
           /* Widgets */
           calendar: 'src/widgets/calendar/Calendar.export',
@@ -79,6 +79,7 @@ export default defineConfig(env => mergeConfig(
           '@linguijs/macro',
           /* Vendor */
           '@vidstack/react',
+          '@shopify/flash-list',
         ],
       },
     },

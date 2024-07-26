@@ -51,12 +51,12 @@
     "vite-plugin-node-polyfills": "^0.22.0"
   },
   "devDependencies": {
-    "@storybook/blocks": "^8.2.2",
-    "@storybook/react": "^8.2.2",
+    "@storybook/blocks": "^8.2.6",
+    "@storybook/react": "^8.2.6",
     "@types/react": "18.2.79",
     "@types/react-dom": "18.2.25",
     "bundler": "workspace:*",
     "config": "workspace:*",
-    "typescript": "^5.5.3"
+    "typescript": "^5.5.4"
   }
 }
