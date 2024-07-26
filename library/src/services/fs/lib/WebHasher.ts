@@ -5,11 +5,12 @@ const _workers = new Map<number, Worker>();
 
 async function start(
   path: string,
-  jobId?: number,
   progress?: (bytes: number) => void,
+  chunkSize = 1E7,
+  jobId?: number,
 ) {
   const worker: Worker = new HashWorker();
-  worker.postMessage({path});
+  worker.postMessage({path, chunkSize});
   jobId && _workers.set(jobId, worker);
 
   return new Promise<string>((resolve, reject) => {

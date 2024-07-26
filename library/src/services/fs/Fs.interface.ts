@@ -11,8 +11,9 @@ export interface FSBase {
 
   hashFile: (
     path: string,
-    jobId?: number,
     progress?: (bytes: number) => void,
+    chunkSize?: number,
+    jobId?: number,
   ) => Promise<string>,
 
   cancelHash: (id: number) => void,

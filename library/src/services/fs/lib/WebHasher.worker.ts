@@ -3,18 +3,21 @@
 import {sha256, createSHA256} from 'hash-wasm';
 import {Path} from '@humanfs/core';
 
-const chunkSize = 4E7;
-
-self.onmessage = async (e: MessageEvent<{path: string}>) => {
+self.onmessage = async (e: MessageEvent<{
+  path: string,
+  chunkSize: number,
+}>) => {
+  const {path, chunkSize} = e.data;
   const root = await navigator.storage.getDirectory();
-  const file = await getFileHandle(root, e.data.path);
+  const file = await getFileHandle(root, path);
 
   if (!file) {
     throw new Error('Unable to get file handle');
   }
   
   const size = file.getSize();
-  if (size <= chunkSize) {
+  const disable = true;
+  if (!disable && size <= chunkSize) {
     try {
       const hash = await hashChunk(file, size);
       self.postMessage({type: 'hash::complete', payload: hash});
@@ -23,7 +26,7 @@ self.onmessage = async (e: MessageEvent<{path: string}>) => {
     }
   } else {
     try {
-      const hash = await hashFile(file, size, (bytes) =>
+      const hash = await hashFile(file, size, chunkSize, (bytes) =>
         self.postMessage({type: 'hash::progress', payload: bytes}));
       self.postMessage({type: 'hash::complete', payload: hash});
     } catch (error) {
@@ -52,6 +55,7 @@ async function hashChunk(
 async function hashFile(
   file: FileSystemSyncAccessHandle,
   size: number,
+  chunkSize: number,
   progress: (bytes: number) => void,
 ) {
   let bytes = 0;
@@ -65,6 +69,7 @@ async function hashFile(
   for (let unit = 0; unit < unitCount; unit++) {
     const start = unitSize * unit;
     const end = Math.min(unitSize * (unit + 1), size);
+    console.log('[fs] unit', unit, start, end);
     const buffer = new ArrayBuffer(end - start);
     file.read(buffer, {at: start});
     sha256.update(new Uint8Array(buffer));

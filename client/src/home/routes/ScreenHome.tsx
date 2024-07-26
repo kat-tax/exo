@@ -29,10 +29,12 @@ export default function ScreenHome() {
         const sourceFile: File = await fileHandle.getFile();
         const stream = await targetFile.createWritable();
         await sourceFile.stream().pipeTo(stream);
-        const hash = await hashFile('example/test.zip', 1, (bytes) => {
-          console.log('[fs] progress', (bytes / sourceFile.size) * 100);
+        const start = performance.now();
+        const hash = await hashFile('example/test.zip', (e) => {
+          console.log('[fs] progress', (e / sourceFile.size) * 100);
         });
         console.log('[fs] file', hash);
+        console.log('[fs] time', performance.now() - start);
       } catch (error) {
         console.error('[fs] error', error);
       }

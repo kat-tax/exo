@@ -16,8 +16,9 @@ export class FSService implements FSBase {
 
   async hashFile(
     path: string,
-    _jobId?: number,
     _progress?: (bytes: number) => void,
+    _chunkSize?: number,
+    _jobId?: number,
   ) {
     return FileSystem.hash(path, 'SHA-256');
   }

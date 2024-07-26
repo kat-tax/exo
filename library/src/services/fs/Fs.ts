@@ -16,10 +16,11 @@ export class FSService implements FSBase {
 
   async hashFile(
     path: string,
-    jobId?: number,
     progress?: (bytes: number) => void,
+    chunkSize?: number,
+    jobId?: number,
   ) {
-    return Hasher.start(path, jobId, progress);
+    return Hasher.start(path, progress, jobId, chunkSize);
   }
 
   async cancelHash(jobId: number) {
