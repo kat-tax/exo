@@ -1,5 +1,4 @@
 import type {HfsImpl} from '@humanfs/types';
-import type {HashAlgorithm} from 'react-native-file-access';
 
 export interface FSBase {
   init(): Promise<HfsImpl>,
@@ -11,7 +10,10 @@ export interface FSBase {
   }>,
 
   hashFile: (
-    filePath: string,
-    algorithm: HashAlgorithm,
+    path: string,
+    jobId?: number,
+    progress?: (bytes: number) => void,
   ) => Promise<string>,
+
+  cancelHash: (id: number) => void,
 }

@@ -28,7 +28,7 @@ export default defineConfig(env => mergeConfig(
           /* Services */
           device: 'src/services/device/Device.export',
           form: 'src/services/form/Form.export',
-          fs: 'src/services/fsx/Fsx.export',
+          fs: 'src/services/fs/Fs.export',
           kv: 'src/services/kv/Kv.export',
           redux: 'src/services/redux/Redux.export',
           toast: 'src/services/toast/Toast.export',

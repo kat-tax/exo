@@ -17,7 +17,7 @@ export type * from './layout/motion/Motion.export';
 export type * from './services/device/Device.export';
 export type * from './services/redux/Redux.export';
 export type * from './services/form/Form.export';
-export type * from './services/fsx/Fsx.export';
+export type * from './services/fs/Fs.export';
 export type * from './services/kv/Kv.export';
 
 // Widgets

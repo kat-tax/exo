@@ -10,7 +10,7 @@ type FSError = {code: string};
 /**
  * A class representing React Native implementation of Hfs.
  */
-export class ReactNativeHfsImpl implements HfsImpl {
+export class NativeHfsImpl implements HfsImpl {
   /**
    * The file system module to use.
    */
@@ -63,7 +63,7 @@ export class ReactNativeHfsImpl implements HfsImpl {
 
     return this.#retrier.retry(op).catch(async (error: FSError) => {
       if (error.code === 'ENOENT')
-        return await this.createDirectory(Util.dirname(filePath)).then(op);
+        return this.createDirectory(Util.dirname(filePath)).then(op);
       throw error;
     });
   }
@@ -85,7 +85,7 @@ export class ReactNativeHfsImpl implements HfsImpl {
 
     return this.#retrier.retry(op).catch(async (error: FSError) => {
       if (error.code === 'ENOENT')
-        return await this.createDirectory(Util.dirname(filePath)).then(op);
+        return this.createDirectory(Util.dirname(filePath)).then(op);
       throw error;
     });
   }
@@ -250,13 +250,13 @@ export class ReactNativeHfsImpl implements HfsImpl {
 /**
  * A class representing a file system utility library.
  */
-export class ReactNativeHfs extends Hfs implements HfsImpl {
+export class NativeHfs extends Hfs implements HfsImpl {
   /**
    * Creates a new instance.
    */
   constructor({root}: {root: typeof FileSystem}) {
-    super({impl: new ReactNativeHfsImpl({root})});
+    super({impl: new NativeHfsImpl({root})});
   }
 }
 
-export default new ReactNativeHfs({root: FileSystem});
+export const hfs = new NativeHfs({root: FileSystem});

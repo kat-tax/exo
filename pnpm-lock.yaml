@@ -405,6 +405,9 @@ importers:
       burnt:
         specifier: ^0.12.2
         version: 0.12.2(expo@51.0.20)(react-dom@18.2.0)(react-native@0.74.3)(react@18.2.0)
+      hash-wasm:
+        specifier: ^4.11.0
+        version: 4.11.0
       history:
         specifier: ^5.3.0
         version: 5.3.0
@@ -5033,7 +5036,7 @@ packages:
       '@babel/runtime': 7.24.8
       '@babel/types': 7.23.9
       '@lingui/babel-plugin-extract-messages': 4.8.0
-      '@lingui/conf': 4.8.0
+      '@lingui/conf': 4.8.0(typescript@5.5.4)
       '@lingui/core': 4.8.0
       '@lingui/format-po': 4.8.0
       '@lingui/message-utils': 4.8.0
@@ -5074,20 +5077,6 @@ packages:
     transitivePeerDependencies:
       - typescript
 
-  /@lingui/conf@4.8.0:
-    resolution: {integrity: sha512-7Vfa25kjY0KBHxrIDIF5QM7jCFRkZO5OjmsJ7xnTYwYhU91gytWcCz7pMn20rLW931w+K+QyIGBroHu60Sj3zA==}
-    engines: {node: '>=16.0.0'}
-    dependencies:
-      '@babel/runtime': 7.24.8
-      chalk: 4.1.2
-      cosmiconfig: 8.3.6(typescript@5.5.4)
-      jest-validate: 29.7.0
-      jiti: 1.21.0
-      lodash.get: 4.4.2
-    transitivePeerDependencies:
-      - typescript
-    dev: true
-
   /@lingui/conf@4.8.0(typescript@5.5.4):
     resolution: {integrity: sha512-7Vfa25kjY0KBHxrIDIF5QM7jCFRkZO5OjmsJ7xnTYwYhU91gytWcCz7pMn20rLW931w+K+QyIGBroHu60Sj3zA==}
     engines: {node: '>=16.0.0'}
@@ -5100,7 +5089,6 @@ packages:
       lodash.get: 4.4.2
     transitivePeerDependencies:
       - typescript
-    dev: false
 
   /@lingui/core@4.11.2:
     resolution: {integrity: sha512-5wFmpHeDbLXEqaEUwlayS4SoqrCbDI3/bVRlwhmdNCeUcUYWh+7dTDlQnp4tPek1x1dEppABIkdN/0qLDdKcBQ==}
@@ -5134,7 +5122,7 @@ packages:
     resolution: {integrity: sha512-EnVZInemKaVChkh/kecZqxktwFgsb5dpF9cAm6FVH+xdKvVLKViWPcZSUPR2y4I3YS8eAtfpBapwoyAVeQo68A==}
     engines: {node: '>=16.0.0'}
     dependencies:
-      '@lingui/conf': 4.8.0
+      '@lingui/conf': 4.8.0(typescript@5.5.4)
       '@lingui/message-utils': 4.8.0
       date-fns: 3.6.0
       pofile: 1.1.4
@@ -13949,6 +13937,10 @@ packages:
       inherits: 2.0.4
       readable-stream: 3.6.2
       safe-buffer: 5.2.1
+
+  /hash-wasm@4.11.0:
+    resolution: {integrity: sha512-HVusNXlVqHe0fzIzdQOGolnFN6mX/fqcrSAOcTBXdvzrXVHwTz11vXeKRmkR5gTuwVpvHZEIyKoePDvuAR+XwQ==}
+    dev: false
 
   /hash.js@1.1.7:
     resolution: {integrity: sha512-taOaskGt4z4SOANNseOviYDvjEJinIkRgmp7LbKP2YTTmVxWBl87s/uzK9r+44BclBSp2X7K1hqeNfz9JbBeXA==}
