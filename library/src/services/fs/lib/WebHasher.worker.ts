@@ -1,7 +1,7 @@
 /// <reference lib="webworker"/>
 
-import {sha256, createSHA256} from 'hash-wasm';
 import {Path} from '@humanfs/core';
+import {Sha256} from './sha256';
 
 self.onmessage = async (e: MessageEvent<{
   path: string,
@@ -44,11 +44,11 @@ async function hashChunk(
   file.close();
   try {
     const digest = await crypto.subtle.digest('SHA-256', buffer);
-    return Array.from(new Uint8Array(digest))
-      .map(b => b.toString(16).padStart(2, '0'))
-      .join('');
+    return bytesToHex(new Uint8Array(digest));
   } catch (e) {
-    return await sha256(new Uint8Array(buffer));
+    const digest = Sha256.bytes(new Uint8Array(buffer));
+    if (!digest) throw new Error('Unable to hash chunk');
+    return bytesToHex(digest);
   }
 }
 
@@ -60,25 +60,24 @@ async function hashFile(
 ) {
   let bytes = 0;
 
-  const sha256 = await createSHA256();
+  const sha256 = new Sha256();
   const unitSize = Math.min(chunkSize, size);
   const unitCount = Math.floor(size / unitSize);
-
-  sha256.init();
   
-  for (let unit = 0; unit < unitCount; unit++) {
+  for (let unit = 0; unit <= unitCount; unit++) {
     const start = unitSize * unit;
     const end = Math.min(unitSize * (unit + 1), size);
-    console.log('[fs] unit', unit, start, end);
-    const buffer = new ArrayBuffer(end - start);
-    file.read(buffer, {at: start});
-    sha256.update(new Uint8Array(buffer));
-    bytes += buffer.byteLength;
+    const dat = new ArrayBuffer(end - start);
+    file.read(dat, {at: start});
+    sha256.process(new Uint8Array(dat));
+    bytes += dat.byteLength;
     progress(bytes);
   }
 
   file.close();
-  return sha256.digest('hex');
+  const digest = sha256.finish().result;
+  if (!digest) throw new Error('Unable to hash file');
+  return bytesToHex(digest);
 }
 
 async function getFileHandle(
@@ -109,4 +108,10 @@ async function getFileHandle(
   }
 
   return undefined;
+}
+
+export function bytesToHex(data: Uint8Array): string {
+  return Array.from(data)
+    .map(b => b.toString(16).padStart(2, '0'))
+    .join('');
 }
