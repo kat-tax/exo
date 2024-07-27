@@ -1,10 +1,11 @@
 import {Trans} from '@lingui/macro';
 import {View, ScrollView, Text} from 'react-native';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
+import {useFileSystem} from 'app/hooks/useFileSystem';
 import {useLists} from 'tasks/hooks/useLists';
 import {MenuHeader} from 'app/base/MenuHeader';
-import {MenuFooter} from 'app/base/MenuFooter';
 import {MenuSection} from 'app/base/MenuSection';
+import {WidgetStorage} from 'app/base/WidgetStorage';
 import {MenuItem} from 'app/base/MenuItem';
 import {isTouch} from 'app/utils/platform';
 
@@ -18,7 +19,9 @@ export interface MenuProps {
 export function Menu(props: MenuProps) {
   const lists = useLists();
   const {tabs} = props;
+  const {importFolder} = useFileSystem();
   const {styles, theme} = useStyles(stylesheet);
+  const itemMode = tabs ? 'tab' : 'default';
 
   return (
     <View style={styles.bg}>
@@ -31,13 +34,13 @@ export function Menu(props: MenuProps) {
             path="/"
             icon="ph:squares-four"
             label={<Trans>Dashboard</Trans>}
-            {...{tabs}}
+            mode={itemMode}
           />
           <MenuItem
             path="/inbox"
             icon="ph:tray"
             label={<Trans>Inbox</Trans>}
-            {...{tabs}}
+            mode={itemMode}
           />
           {tabs &&
             <View style={styles.spacer}/>
@@ -45,49 +48,49 @@ export function Menu(props: MenuProps) {
           <MenuSection label={<Trans>Media</Trans>} {...{tabs}} action={{
             icon: 'ph:upload',
             label: 'Add Folder',
-            onPress: console.log,
+            onPress: importFolder,
           }}>
             <MenuItem
               path="/files"
               icon="ph:folder"
               label={<Trans>Files</Trans>}
-              {...{tabs}}
+              mode={itemMode}
             />
             <MenuItem
               path="/docs"
               icon="ph:file-text"
               label={<Trans>Docs</Trans>}
-              {...{tabs}}
+              mode={itemMode}
             />
             <MenuItem
               path="/music"
               icon="ph:music-notes"
               label={<Trans>Music</Trans>}
-              {...{tabs}}
+              mode={itemMode}
             />
             <MenuItem
               path="/photos"
               icon="ph:image"
               label={<Trans>Photos</Trans>}
-              {...{tabs}}
+              mode={itemMode}
             />
             <MenuItem
               path="/videos"
               icon="ph:video"
               label={<Trans>Videos</Trans>}
-              {...{tabs}}
+              mode={itemMode}
             />
             <MenuItem
               path="/games"
               icon="ph:game-controller"
               label={<Trans>Games</Trans>}
-              {...{tabs}}
+              mode={itemMode}
             />
             <MenuItem
               path="/books"
               icon="ph:book-open-text"
               label={<Trans>Books</Trans>}
-              {...{tabs}}
+              mode={itemMode}
             />
           </MenuSection>
           <MenuSection label={<Trans>World</Trans>} {...{tabs}}>
@@ -95,66 +98,73 @@ export function Menu(props: MenuProps) {
               path="/news"
               icon="ph:rss"
               label={<Trans>News</Trans>}
-              {...{tabs}}
+              mode={itemMode}
             />
             <MenuItem
               path="/maps"
               icon="ph:map-trifold"
               label={<Trans>Maps</Trans>}
-              {...{tabs}}
+              mode={itemMode}
             />
             <MenuItem
               path="/events"
               icon="ph:calendar-dots"
               label={<Trans>Events</Trans>}
-              {...{tabs}}
+              mode={itemMode}
             />
             <MenuItem
               path="/alarms"
               icon="ph:alarm"
               label={<Trans>Alarms</Trans>}
-              {...{tabs}}
+              mode={itemMode}
             />
           </MenuSection>
           <MenuSection label={<Trans>Favorites</Trans>} {...{tabs}}>
-            {tabs ? null : lists.map(({id, complete}) =>
+            {tabs ? null : lists.map(({id}) =>
               <MenuItem
                 key={id}
                 path={`/note/${id}`}
                 icon="ph:rocket"
                 color={theme.palette.purple400}
                 label={<Text>{id}</Text>}
-                striked={complete}
+                mode="subitem"
               />
             )}
           </MenuSection>
-          <View style={styles.spacer}/>
           {__DEV__ &&
-            <MenuSection closed label={<Trans>Developer Mode</Trans>} {...{tabs}}>
+            <MenuSection closed label={<Trans>Dev Mode</Trans>} {...{tabs}}>
               <MenuItem
                 path="/design"
                 icon="ph:palette"
                 label={<Trans>Design</Trans>}
-                {...{tabs}}
+                mode={itemMode}
               />
               <MenuItem
                 path="/library"
                 icon="ph:package"
                 label={<Trans>Library</Trans>}
-                {...{tabs}}
+                mode={itemMode}
               />
             </MenuSection>
           }
-          <MenuItem
-            path="/settings"
-            icon="ph:gear"
-            label={<Trans>Settings</Trans>}
-            {...{tabs}}
-          />
-          {!__DEV__ &&
-            <View style={styles.footer}>
-              <MenuFooter/>
-            </View>
+          <View style={styles.spacer}/>
+          {tabs
+            ? <MenuItem
+                path="/settings"
+                icon="ph:gear"
+                label={<Trans>Settings</Trans>}
+                mode={itemMode}
+              />
+            : <View style={styles.footer}>
+                <WidgetStorage actions={
+                  <MenuItem
+                    path="/settings"
+                    icon="ph:gear"
+                    label={<Trans>Settings</Trans>}
+                    mode="action"
+                  />
+                }/>
+              </View>
           }
         </View>
       </ScrollView>
@@ -183,6 +193,8 @@ const stylesheet = createStyleSheet((theme, rt) => ({
     borderLeftWidth: 0,
   },
   footer: {
+    gap: theme.display.space2,
+    marginTop: theme.display.space5,
     display: {
       initial: 'none',
       xs: 'flex',

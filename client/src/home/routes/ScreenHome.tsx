@@ -1,9 +1,8 @@
 import {Trans} from '@lingui/react';
 import {Trans as T} from '@lingui/macro';
-import {Text, View, Button} from 'react-native';
+import {Text, View} from 'react-native';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useAppContext} from 'app/hooks/useAppContext';
-import {useFileSystem} from 'app/hooks/useFileSystem';
 import {useWeather} from 'home/hooks/useWeather';
 import {useClock} from 'home/hooks/useClock';
 import {getDayGreeting} from 'home/utils/time';
@@ -15,7 +14,6 @@ export default function ScreenHome() {
   const {styles} = useStyles(stylesheet);
   const weather = useWeather(device?.coords);
   const clock = useClock('medium');
-  const {test} = useFileSystem();
 
   return (
     <Page
@@ -35,10 +33,6 @@ export default function ScreenHome() {
         </View>
       }>
       <AiPrompt/>
-      <Button
-        title="Test"
-        onPress={test}
-      />
     </Page>
   );
 }

@@ -13,10 +13,6 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: ../../client/src/app/base/MenuFooter.tsx:13
-msgid "{0} • Build {build}"
-msgstr "{0} • ビルド {build}"
-
 #: ../../client/src/dev/routes/ScreenDesign.tsx:12
 #: ../../client/src/dev/routes/ScreenLibrary.tsx:16
 msgid "{0} components"
@@ -34,7 +30,7 @@ msgstr "タスクを追加"
 msgid "AI"
 msgstr "AI"
 
-#: ../../client/src/app/base/Menu.tsx:115
+#: ../../client/src/app/base/Menu.tsx:118
 msgid "Alarms"
 msgstr "アラーム"
 
@@ -63,7 +59,7 @@ msgstr "何でも聞いてください..."
 msgid "Auto"
 msgstr "自動"
 
-#: ../../client/src/app/base/Menu.tsx:89
+#: ../../client/src/app/base/Menu.tsx:92
 msgid "Books"
 msgstr "本"
 
@@ -75,7 +71,7 @@ msgstr "摂氏"
 msgid "Dark"
 msgstr "ダーク"
 
-#: ../../client/src/app/base/Menu.tsx:33
+#: ../../client/src/app/base/Menu.tsx:36
 msgid "Dashboard"
 msgstr "ダッシュボード"
 
@@ -99,14 +95,13 @@ msgstr "プロンプトを削除"
 msgid "Delete the local database."
 msgstr "ローカルデータベースを削除します。"
 
-#: ../../client/src/app/base/Menu.tsx:137
-#: ../../client/src/dev/routes/ScreenDesign.tsx:11
+#: ../../client/src/app/base/Menu.tsx:139
 msgid "Design"
 msgstr "デザイン"
 
-#: ../../client/src/app/base/Menu.tsx:133
-msgid "Developer Mode"
-msgstr "開発者モード"
+#: ../../client/src/app/base/Menu.tsx:135
+msgid "Dev Mode"
+msgstr ""
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:74
 msgid "Display"
@@ -116,7 +111,7 @@ msgstr "表示"
 msgid "Distance"
 msgstr "距離"
 
-#: ../../client/src/app/base/Menu.tsx:59
+#: ../../client/src/app/base/Menu.tsx:62
 msgid "Docs"
 msgstr "ドキュメント"
 
@@ -140,7 +135,7 @@ msgstr "ニーモニックフレーズを入力してください"
 msgid "Enter your name"
 msgstr "名前を入力してください"
 
-#: ../../client/src/app/base/Menu.tsx:109
+#: ../../client/src/app/base/Menu.tsx:112
 msgid "Events"
 msgstr "イベント"
 
@@ -148,15 +143,15 @@ msgstr "イベント"
 msgid "Fahrenheit"
 msgstr "華氏"
 
-#: ../../client/src/app/base/Menu.tsx:119
+#: ../../client/src/app/base/Menu.tsx:122
 msgid "Favorites"
 msgstr "お気に入り"
 
-#: ../../client/src/app/base/Menu.tsx:53
+#: ../../client/src/app/base/Menu.tsx:56
 msgid "Files"
 msgstr "ファイル"
 
-#: ../../client/src/app/base/Menu.tsx:83
+#: ../../client/src/app/base/Menu.tsx:86
 msgid "Games"
 msgstr "ゲーム"
 
@@ -192,7 +187,7 @@ msgstr "GroqモデルID"
 msgid "Human"
 msgstr "人間"
 
-#: ../../client/src/app/base/Menu.tsx:39
+#: ../../client/src/app/base/Menu.tsx:42
 msgid "Inbox"
 msgstr "受信トレイ"
 
@@ -204,8 +199,7 @@ msgstr "キロメートル"
 msgid "Language"
 msgstr "言語"
 
-#: ../../client/src/app/base/Menu.tsx:143
-#: ../../client/src/dev/routes/ScreenLibrary.tsx:15
+#: ../../client/src/app/base/Menu.tsx:145
 msgid "Library"
 msgstr "ライブラリ"
 
@@ -221,11 +215,11 @@ msgstr "読み込み中..."
 msgid "Manage your settings"
 msgstr "設定を管理"
 
-#: ../../client/src/app/base/Menu.tsx:103
+#: ../../client/src/app/base/Menu.tsx:106
 msgid "Maps"
 msgstr "地図"
 
-#: ../../client/src/app/base/Menu.tsx:45
+#: ../../client/src/app/base/Menu.tsx:48
 msgid "Media"
 msgstr "メディア"
 
@@ -233,11 +227,11 @@ msgstr "メディア"
 msgid "Miles"
 msgstr "マイル"
 
-#: ../../client/src/app/base/Menu.tsx:65
+#: ../../client/src/app/base/Menu.tsx:68
 msgid "Music"
 msgstr "音楽"
 
-#: ../../client/src/app/base/Menu.tsx:97
+#: ../../client/src/app/base/Menu.tsx:100
 msgid "News"
 msgstr ""
 
@@ -249,7 +243,7 @@ msgstr "予定されているイベントはありません。"
 msgid "Owner Key"
 msgstr "オーナーキー"
 
-#: ../../client/src/app/base/Menu.tsx:71
+#: ../../client/src/app/base/Menu.tsx:74
 msgid "Photos"
 msgstr "写真"
 
@@ -293,8 +287,8 @@ msgstr "アプリの温度単位を選択してください。"
 msgid "Select the theme for the app."
 msgstr "アプリのテーマを選択してください。"
 
-#: ../../client/src/app/base/Menu.tsx:151
-#: ../../client/src/settings/routes/ScreenSettings.tsx:27
+#: ../../client/src/app/base/Menu.tsx:155
+#: ../../client/src/app/base/Menu.tsx:163
 msgid "Settings"
 msgstr "設定"
 
@@ -314,15 +308,15 @@ msgstr "テーマ"
 msgid "User Name"
 msgstr "ユーザー名"
 
-#: ../../client/src/app/base/Menu.tsx:77
+#: ../../client/src/app/base/Menu.tsx:80
 msgid "Videos"
 msgstr "動画"
 
-#: ../../client/src/home/routes/ScreenHome.tsx:24
+#: ../../client/src/home/routes/ScreenHome.tsx:22
 msgid "Welcome, {0}"
 msgstr "ようこそ、{0}さん"
 
-#: ../../client/src/home/routes/ScreenHome.tsx:25
+#: ../../client/src/home/routes/ScreenHome.tsx:23
 msgid "Welcome, Human"
 msgstr "ようこそ、人間さん"
 
@@ -330,7 +324,7 @@ msgstr "ようこそ、人間さん"
 msgid "Work in progress..."
 msgstr "作業中..."
 
-#: ../../client/src/app/base/Menu.tsx:93
+#: ../../client/src/app/base/Menu.tsx:96
 msgid "World"
 msgstr "ワールド"
 

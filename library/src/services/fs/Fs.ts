@@ -20,12 +20,25 @@ export class FSService implements FSBase {
     return file;
   }
 
-  async importFile(file: FileSystemFileHandle) {
+  async openFolder() {
+    // @ts-ignore
+    const [folder]: FileSystemDirectoryHandle[] = await window.showDirectoryPicker();
+    return folder;
+  }
+
+  async importFile(fileHandle: FileSystemFileHandle) {
     const folder = await navigator.storage.getDirectory();
-    const target = await folder.getFileHandle(file.name, {create: true});
-    const source = await file.getFile();
+    const target = await folder.getFileHandle(fileHandle.name, {create: true});
     const stream = await target.createWritable();
+    const source = await fileHandle.getFile();
     await source.stream().pipeTo(stream);
+    return target;
+  }
+
+  async importFolder(folderHandle: FileSystemDirectoryHandle) {
+    const root = await navigator.storage.getDirectory();
+    const target = await root.getDirectoryHandle(folderHandle.name, {create: true});
+    return target;
   }
 
   async hashFile(

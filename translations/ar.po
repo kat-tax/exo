@@ -13,10 +13,6 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: ../../client/src/app/base/MenuFooter.tsx:13
-msgid "{0} • Build {build}"
-msgstr "{0} • الإصدار {build}"
-
 #: ../../client/src/dev/routes/ScreenDesign.tsx:12
 #: ../../client/src/dev/routes/ScreenLibrary.tsx:16
 msgid "{0} components"
@@ -34,7 +30,7 @@ msgstr "إضافة مهمة"
 msgid "AI"
 msgstr "الذكاء الاصطناعي"
 
-#: ../../client/src/app/base/Menu.tsx:115
+#: ../../client/src/app/base/Menu.tsx:118
 msgid "Alarms"
 msgstr "المنبهات"
 
@@ -63,7 +59,7 @@ msgstr "اسأل أي شيء..."
 msgid "Auto"
 msgstr "تلقائي"
 
-#: ../../client/src/app/base/Menu.tsx:89
+#: ../../client/src/app/base/Menu.tsx:92
 msgid "Books"
 msgstr "كتب"
 
@@ -75,7 +71,7 @@ msgstr "سيلزيوس"
 msgid "Dark"
 msgstr "داكن"
 
-#: ../../client/src/app/base/Menu.tsx:33
+#: ../../client/src/app/base/Menu.tsx:36
 msgid "Dashboard"
 msgstr "لوحة التحكم"
 
@@ -99,14 +95,13 @@ msgstr "حذف الأوامر"
 msgid "Delete the local database."
 msgstr "حذف قاعدة البيانات المحلية."
 
-#: ../../client/src/app/base/Menu.tsx:137
-#: ../../client/src/dev/routes/ScreenDesign.tsx:11
+#: ../../client/src/app/base/Menu.tsx:139
 msgid "Design"
 msgstr "التصميم"
 
-#: ../../client/src/app/base/Menu.tsx:133
-msgid "Developer Mode"
-msgstr "وضع المطور"
+#: ../../client/src/app/base/Menu.tsx:135
+msgid "Dev Mode"
+msgstr ""
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:74
 msgid "Display"
@@ -116,7 +111,7 @@ msgstr "العرض"
 msgid "Distance"
 msgstr "المسافة"
 
-#: ../../client/src/app/base/Menu.tsx:59
+#: ../../client/src/app/base/Menu.tsx:62
 msgid "Docs"
 msgstr "المستندات"
 
@@ -140,7 +135,7 @@ msgstr "أدخل عبارتك التذكيرية"
 msgid "Enter your name"
 msgstr "أدخل اسمك"
 
-#: ../../client/src/app/base/Menu.tsx:109
+#: ../../client/src/app/base/Menu.tsx:112
 msgid "Events"
 msgstr "الأحداث"
 
@@ -148,15 +143,15 @@ msgstr "الأحداث"
 msgid "Fahrenheit"
 msgstr "فهرنهايت"
 
-#: ../../client/src/app/base/Menu.tsx:119
+#: ../../client/src/app/base/Menu.tsx:122
 msgid "Favorites"
 msgstr "المفضلة"
 
-#: ../../client/src/app/base/Menu.tsx:53
+#: ../../client/src/app/base/Menu.tsx:56
 msgid "Files"
 msgstr "الملفات"
 
-#: ../../client/src/app/base/Menu.tsx:83
+#: ../../client/src/app/base/Menu.tsx:86
 msgid "Games"
 msgstr "الألعاب"
 
@@ -192,7 +187,7 @@ msgstr "معرف نموذج Groq"
 msgid "Human"
 msgstr "الإنسان"
 
-#: ../../client/src/app/base/Menu.tsx:39
+#: ../../client/src/app/base/Menu.tsx:42
 msgid "Inbox"
 msgstr "صندوق الوارد"
 
@@ -204,8 +199,7 @@ msgstr "كيلومترات"
 msgid "Language"
 msgstr "اللغة"
 
-#: ../../client/src/app/base/Menu.tsx:143
-#: ../../client/src/dev/routes/ScreenLibrary.tsx:15
+#: ../../client/src/app/base/Menu.tsx:145
 msgid "Library"
 msgstr "المكتبة"
 
@@ -221,11 +215,11 @@ msgstr "جاري التحميل..."
 msgid "Manage your settings"
 msgstr "إدارة إعداداتك"
 
-#: ../../client/src/app/base/Menu.tsx:103
+#: ../../client/src/app/base/Menu.tsx:106
 msgid "Maps"
 msgstr "الخرائط"
 
-#: ../../client/src/app/base/Menu.tsx:45
+#: ../../client/src/app/base/Menu.tsx:48
 msgid "Media"
 msgstr "الوسائط"
 
@@ -233,11 +227,11 @@ msgstr "الوسائط"
 msgid "Miles"
 msgstr "أميال"
 
-#: ../../client/src/app/base/Menu.tsx:65
+#: ../../client/src/app/base/Menu.tsx:68
 msgid "Music"
 msgstr "الموسيقى"
 
-#: ../../client/src/app/base/Menu.tsx:97
+#: ../../client/src/app/base/Menu.tsx:100
 msgid "News"
 msgstr ""
 
@@ -249,7 +243,7 @@ msgstr "لا توجد أحداث مجدولة."
 msgid "Owner Key"
 msgstr "مفتاح المالك"
 
-#: ../../client/src/app/base/Menu.tsx:71
+#: ../../client/src/app/base/Menu.tsx:74
 msgid "Photos"
 msgstr "الصور"
 
@@ -293,8 +287,8 @@ msgstr "اختر وحدة درجة الحرارة للتطبيق."
 msgid "Select the theme for the app."
 msgstr "اختر سمة التطبيق."
 
-#: ../../client/src/app/base/Menu.tsx:151
-#: ../../client/src/settings/routes/ScreenSettings.tsx:27
+#: ../../client/src/app/base/Menu.tsx:155
+#: ../../client/src/app/base/Menu.tsx:163
 msgid "Settings"
 msgstr "الإعدادات"
 
@@ -314,15 +308,15 @@ msgstr "السمة"
 msgid "User Name"
 msgstr "اسم المستخدم"
 
-#: ../../client/src/app/base/Menu.tsx:77
+#: ../../client/src/app/base/Menu.tsx:80
 msgid "Videos"
 msgstr "مقاطع الفيديو"
 
-#: ../../client/src/home/routes/ScreenHome.tsx:24
+#: ../../client/src/home/routes/ScreenHome.tsx:22
 msgid "Welcome, {0}"
 msgstr "مرحبًا، {0}"
 
-#: ../../client/src/home/routes/ScreenHome.tsx:25
+#: ../../client/src/home/routes/ScreenHome.tsx:23
 msgid "Welcome, Human"
 msgstr "مرحبًا، أيها الإنسان"
 
@@ -330,7 +324,7 @@ msgstr "مرحبًا، أيها الإنسان"
 msgid "Work in progress..."
 msgstr "جاري العمل..."
 
-#: ../../client/src/app/base/Menu.tsx:93
+#: ../../client/src/app/base/Menu.tsx:96
 msgid "World"
 msgstr "العالم"
 

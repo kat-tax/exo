@@ -3,9 +3,18 @@
 import {Sha256} from './sha256';
 import {Path} from '@humanfs/core';
 
+// @ts-ignore
+// biome-ignore lint/complexity/useLiteralKeys: TS doesn't know about deviceMemory
+const MEMORY = navigator['deviceMemory'] || 0.2;
+const CORES = Math.max(navigator.hardwareConcurrency || 1, 5);
+
 const MEGABYTE = 1024 * 1024;
+const GIGABYTE = 1024 * MEGABYTE;
 const CHUNK_SIZE = 1 * MEGABYTE;
-const CHUNK_THRESHOLD = 50 * MEGABYTE;
+const INCREMENT_THRESHOLD = Math.max(
+  20 * MEGABYTE,
+  (MEMORY / CORES) * GIGABYTE - (200 * MEGABYTE),
+);
 
 self.onmessage = async (e: MessageEvent<string | FileSystemFileHandle>) => {
   let file: File | FileSystemSyncAccessHandle;
@@ -25,7 +34,7 @@ self.onmessage = async (e: MessageEvent<string | FileSystemFileHandle>) => {
   }
   
   // Not big enough to incremental hash
-  if (total <= CHUNK_THRESHOLD) {
+  if (total <= INCREMENT_THRESHOLD) {
     try {
       const hash = await hashSimple(file, total);
       self.postMessage({type: 'hash::complete', payload: hash});

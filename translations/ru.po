@@ -13,10 +13,6 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: ../../client/src/app/base/MenuFooter.tsx:13
-msgid "{0} • Build {build}"
-msgstr "{0} • Сборка {build}"
-
 #: ../../client/src/dev/routes/ScreenDesign.tsx:12
 #: ../../client/src/dev/routes/ScreenLibrary.tsx:16
 msgid "{0} components"
@@ -34,7 +30,7 @@ msgstr "Добавить задачу"
 msgid "AI"
 msgstr "ИИ"
 
-#: ../../client/src/app/base/Menu.tsx:115
+#: ../../client/src/app/base/Menu.tsx:118
 msgid "Alarms"
 msgstr "Будильники"
 
@@ -63,7 +59,7 @@ msgstr "Спросите что угодно..."
 msgid "Auto"
 msgstr "Авто"
 
-#: ../../client/src/app/base/Menu.tsx:89
+#: ../../client/src/app/base/Menu.tsx:92
 msgid "Books"
 msgstr "Книги"
 
@@ -75,7 +71,7 @@ msgstr "Цельсий"
 msgid "Dark"
 msgstr "Темная"
 
-#: ../../client/src/app/base/Menu.tsx:33
+#: ../../client/src/app/base/Menu.tsx:36
 msgid "Dashboard"
 msgstr "Дашборд"
 
@@ -99,14 +95,13 @@ msgstr "Удалить запросы"
 msgid "Delete the local database."
 msgstr "Удалить локальную базу данных."
 
-#: ../../client/src/app/base/Menu.tsx:137
-#: ../../client/src/dev/routes/ScreenDesign.tsx:11
+#: ../../client/src/app/base/Menu.tsx:139
 msgid "Design"
 msgstr "Дизайн"
 
-#: ../../client/src/app/base/Menu.tsx:133
-msgid "Developer Mode"
-msgstr "Разработка"
+#: ../../client/src/app/base/Menu.tsx:135
+msgid "Dev Mode"
+msgstr ""
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:74
 msgid "Display"
@@ -116,7 +111,7 @@ msgstr "Отображение"
 msgid "Distance"
 msgstr "Расстояние"
 
-#: ../../client/src/app/base/Menu.tsx:59
+#: ../../client/src/app/base/Menu.tsx:62
 msgid "Docs"
 msgstr "Документы"
 
@@ -140,7 +135,7 @@ msgstr "Введите вашу мнемоническую фразу"
 msgid "Enter your name"
 msgstr "Введите ваше имя"
 
-#: ../../client/src/app/base/Menu.tsx:109
+#: ../../client/src/app/base/Menu.tsx:112
 msgid "Events"
 msgstr "События"
 
@@ -148,15 +143,15 @@ msgstr "События"
 msgid "Fahrenheit"
 msgstr "Фаренгейт"
 
-#: ../../client/src/app/base/Menu.tsx:119
+#: ../../client/src/app/base/Menu.tsx:122
 msgid "Favorites"
 msgstr "Избранное"
 
-#: ../../client/src/app/base/Menu.tsx:53
+#: ../../client/src/app/base/Menu.tsx:56
 msgid "Files"
 msgstr "Файлы"
 
-#: ../../client/src/app/base/Menu.tsx:83
+#: ../../client/src/app/base/Menu.tsx:86
 msgid "Games"
 msgstr "Игры"
 
@@ -192,7 +187,7 @@ msgstr "ID модели Groq"
 msgid "Human"
 msgstr "Человек"
 
-#: ../../client/src/app/base/Menu.tsx:39
+#: ../../client/src/app/base/Menu.tsx:42
 msgid "Inbox"
 msgstr "Входящие"
 
@@ -204,8 +199,7 @@ msgstr "Километры"
 msgid "Language"
 msgstr "Язык"
 
-#: ../../client/src/app/base/Menu.tsx:143
-#: ../../client/src/dev/routes/ScreenLibrary.tsx:15
+#: ../../client/src/app/base/Menu.tsx:145
 msgid "Library"
 msgstr "Библиотека"
 
@@ -221,11 +215,11 @@ msgstr "Загрузка..."
 msgid "Manage your settings"
 msgstr "Управление настройками"
 
-#: ../../client/src/app/base/Menu.tsx:103
+#: ../../client/src/app/base/Menu.tsx:106
 msgid "Maps"
 msgstr "Карты"
 
-#: ../../client/src/app/base/Menu.tsx:45
+#: ../../client/src/app/base/Menu.tsx:48
 msgid "Media"
 msgstr "Медиа"
 
@@ -233,11 +227,11 @@ msgstr "Медиа"
 msgid "Miles"
 msgstr "Мили"
 
-#: ../../client/src/app/base/Menu.tsx:65
+#: ../../client/src/app/base/Menu.tsx:68
 msgid "Music"
 msgstr "Музыка"
 
-#: ../../client/src/app/base/Menu.tsx:97
+#: ../../client/src/app/base/Menu.tsx:100
 msgid "News"
 msgstr ""
 
@@ -249,7 +243,7 @@ msgstr "Нет запланированных событий."
 msgid "Owner Key"
 msgstr "Ключ владельца"
 
-#: ../../client/src/app/base/Menu.tsx:71
+#: ../../client/src/app/base/Menu.tsx:74
 msgid "Photos"
 msgstr "Фотографии"
 
@@ -293,8 +287,8 @@ msgstr "Выберите единицу измерения температур�
 msgid "Select the theme for the app."
 msgstr "Выберите тему для приложения."
 
-#: ../../client/src/app/base/Menu.tsx:151
-#: ../../client/src/settings/routes/ScreenSettings.tsx:27
+#: ../../client/src/app/base/Menu.tsx:155
+#: ../../client/src/app/base/Menu.tsx:163
 msgid "Settings"
 msgstr "Настройки"
 
@@ -314,15 +308,15 @@ msgstr "Тема"
 msgid "User Name"
 msgstr "Имя пользователя"
 
-#: ../../client/src/app/base/Menu.tsx:77
+#: ../../client/src/app/base/Menu.tsx:80
 msgid "Videos"
 msgstr "Видео"
 
-#: ../../client/src/home/routes/ScreenHome.tsx:24
+#: ../../client/src/home/routes/ScreenHome.tsx:22
 msgid "Welcome, {0}"
 msgstr "Добро пожаловать, {0}"
 
-#: ../../client/src/home/routes/ScreenHome.tsx:25
+#: ../../client/src/home/routes/ScreenHome.tsx:23
 msgid "Welcome, Human"
 msgstr "Добро пожаловать, Человек"
 
@@ -330,7 +324,7 @@ msgstr "Добро пожаловать, Человек"
 msgid "Work in progress..."
 msgstr "В работе..."
 
-#: ../../client/src/app/base/Menu.tsx:93
+#: ../../client/src/app/base/Menu.tsx:96
 msgid "World"
 msgstr "Мир"
 

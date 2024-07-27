@@ -10,24 +10,28 @@ interface MenuItemProps extends React.PropsWithChildren {
   path: string,
   icon?: string,
   color?: string,
-  tabs?: boolean,
-  sub?: boolean,
-  striked?: boolean,
+  mode?: 'default' | 'subitem' | 'tab' | 'action',
 }
 
 export function MenuItem(props: MenuItemProps) {
-  const [scheme] = useScheme();
-  const {pathname} = useLocation();
   const {styles, theme} = useStyles(stylesheet);
-  const itemActive = props.path === decodeURIComponent(pathname);
+  const {pathname} = useLocation();
+  const [scheme] = useScheme();
+
+  const mode = props.mode ?? 'default';
+  const isTab = mode === 'tab';
+  const isDefault = mode === 'default';
+  const isSubitem = mode === 'subitem';
+  const isAction = mode === 'action';
+  const isActive = props.path === decodeURIComponent(pathname);
 
   return (
     <Link to={props.path}>
       <View style={[
         styles.item,
-        props.tabs && styles.itemTab,
-        props.sub && styles.itemSub,
-        itemActive && {
+        isTab && styles.itemTab,
+        isAction && styles.itemAction,
+        isActive && {
           backgroundColor: scheme === 'dark'
             ? 'rgba(255, 255, 255, 0.09)'
             : 'rgba(0, 0, 0, 0.07)'
@@ -36,19 +40,15 @@ export function MenuItem(props: MenuItemProps) {
         {props.icon &&
           <Icon
             name={props.icon}
-            size={props.tabs ? 20 : 16}
+            size={isAction ? 14 : isTab ? 20 : 16}
             color={props.color
-              || (props.tabs
+              || ((isTab || (isAction && isActive))
                 ? theme.colors.foreground
                 : theme.colors.mutedForeground)}
           />
         }
-        {!props.tabs &&
-          <Text
-            style={[
-              styles.tab,
-              props.striked && styles.tabStriked,
-            ]}>
+        {(isDefault || isSubitem) &&
+          <Text style={styles.label}>
             {props.label}
           </Text>
         }
@@ -70,10 +70,11 @@ const stylesheet = createStyleSheet(theme => ({
     justifyContent: 'center',
     paddingVertical: theme.display.space2,
   },
-  itemSub: {
-    marginLeft: 8,
+  itemAction: {
+    paddingHorizontal: theme.display.space1,
+    paddingVertical: theme.display.space1,
   },
-  tab: {
+  label: {
     userSelect: 'none',
     marginHorizontal: theme.display.space1,
     color: theme.colors.secondaryForeground,
@@ -84,9 +85,6 @@ const stylesheet = createStyleSheet(theme => ({
       lineHeight: 32,
       fontSize: 12,
     },
-  },
-  tabStriked: {
-    textDecorationLine: 'line-through',
   },
 }));
 

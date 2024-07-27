@@ -18,8 +18,16 @@ export class FSService implements FSBase {
     return null;
   }
 
-  async importFile(_fileHandle: FileSystemFileHandle) {
-    return;
+  async openFolder() {
+    return null;
+  }
+
+  async importFile(fileHandle: FileSystemFileHandle) {
+    return fileHandle;
+  }
+
+  async importFolder(dirHandle: FileSystemDirectoryHandle) {
+    return dirHandle;
   }
 
   async hashFile(
