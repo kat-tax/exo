@@ -318,11 +318,11 @@ msgstr "اسم المستخدم"
 msgid "Videos"
 msgstr "مقاطع الفيديو"
 
-#: ../../client/src/home/routes/ScreenHome.tsx:49
+#: ../../client/src/home/routes/ScreenHome.tsx:24
 msgid "Welcome, {0}"
 msgstr "مرحبًا، {0}"
 
-#: ../../client/src/home/routes/ScreenHome.tsx:50
+#: ../../client/src/home/routes/ScreenHome.tsx:25
 msgid "Welcome, Human"
 msgstr "مرحبًا، أيها الإنسان"
 

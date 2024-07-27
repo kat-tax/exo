@@ -14,13 +14,26 @@ export class FSService implements FSBase {
     return {total, used, free: total - used};
   }
 
+  async openFile() {
+    // @ts-ignore
+    const [file]: FileSystemFileHandle[] = await window.showOpenFilePicker();
+    return file;
+  }
+
+  async importFile(file: FileSystemFileHandle) {
+    const folder = await navigator.storage.getDirectory();
+    const target = await folder.getFileHandle(file.name, {create: true});
+    const source = await file.getFile();
+    const stream = await target.createWritable();
+    await source.stream().pipeTo(stream);
+  }
+
   async hashFile(
-    path: string,
-    progress?: (bytes: number) => void,
-    chunkSize?: number,
+    pathOrFileHandle: string | FileSystemFileHandle,
+    progress?: (bytes: number, total: number) => void,
     jobId?: number,
   ) {
-    return Hasher.start(path, progress, jobId, chunkSize);
+    return Hasher.start(pathOrFileHandle, progress, jobId);
   }
 
   async cancelHash(jobId: number) {

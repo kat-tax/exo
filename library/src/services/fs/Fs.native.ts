@@ -14,13 +14,23 @@ export class FSService implements FSBase {
     return {total, free, used: total - free};
   }
 
+  async openFile() {
+    return null;
+  }
+
+  async importFile(_fileHandle: FileSystemFileHandle) {
+    return;
+  }
+
   async hashFile(
-    path: string,
-    _progress?: (bytes: number) => void,
+    pathOrFileHandle: string | FileSystemFileHandle,
+    _progress?: (bytes: number, total: number) => void,
     _chunkSize?: number,
     _jobId?: number,
   ) {
-    return FileSystem.hash(path, 'SHA-256');
+    if (typeof pathOrFileHandle !== 'string')
+      throw new Error('[hashFile] file input not supported on native');
+    return FileSystem.hash(pathOrFileHandle, 'SHA-256');
   }
 
   async cancelHash(jobId: number) {

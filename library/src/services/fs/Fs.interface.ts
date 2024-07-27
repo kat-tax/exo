@@ -9,9 +9,17 @@ export interface FSBase {
     total: number,
   }>,
 
+  openFile(): Promise<FileSystemFileHandle | null>,
+
+  /** Web only */
+  importFile: (
+    fileHandle: FileSystemFileHandle,
+    progress?: (bytes: number, total: number) => void,
+  ) => Promise<void>,
+
   hashFile: (
-    path: string,
-    progress?: (bytes: number) => void,
+    pathOrFileHandle: string | FileSystemFileHandle,
+    progress?: (bytes: number, total: number) => void,
     chunkSize?: number,
     jobId?: number,
   ) => Promise<string>,

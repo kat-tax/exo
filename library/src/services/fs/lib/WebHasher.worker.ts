@@ -1,33 +1,42 @@
 /// <reference lib="webworker"/>
 
-import {Path} from '@humanfs/core';
 import {Sha256} from './sha256';
+import {Path} from '@humanfs/core';
 
-self.onmessage = async (e: MessageEvent<{
-  path: string,
-  chunkSize: number,
-}>) => {
-  const {path, chunkSize} = e.data;
-  const root = await navigator.storage.getDirectory();
-  const file = await getFileHandle(root, path);
+const MEGABYTE = 1024 * 1024;
+const CHUNK_SIZE = 1 * MEGABYTE;
+const CHUNK_THRESHOLD = 50 * MEGABYTE;
 
-  if (!file) {
-    throw new Error('Unable to get file handle');
+self.onmessage = async (e: MessageEvent<string | FileSystemFileHandle>) => {
+  let file: File | FileSystemSyncAccessHandle;
+  let total: number;
+
+  // Sync access to OPFS
+  if (typeof e.data === 'string') {
+    const root = await navigator.storage.getDirectory();
+    const handle = await getFileHandle(root, e.data);
+    if (!handle) throw new Error('Unable to get file handle');
+    file = handle;
+    total = file.getSize();
+  // Async access to File
+  } else {
+    file = await e.data.getFile();
+    total = file.size;
   }
   
-  const size = file.getSize();
-  const disable = true;
-  if (!disable && size <= chunkSize) {
+  // Not big enough to incremental hash
+  if (total <= CHUNK_THRESHOLD) {
     try {
-      const hash = await hashChunk(file, size);
+      const hash = await hashSimple(file, total);
       self.postMessage({type: 'hash::complete', payload: hash});
     } catch (error) {
       self.postMessage({type: 'hash::failure', payload: error});
     }
+  // Incremental hashing
   } else {
     try {
-      const hash = await hashFile(file, size, chunkSize, (bytes) =>
-        self.postMessage({type: 'hash::progress', payload: bytes}));
+      const hash = await hashIncremental(file, total, (bytes) =>
+        self.postMessage({type: 'hash::progress', payload: {bytes, total}}));
       self.postMessage({type: 'hash::complete', payload: hash});
     } catch (error) {
       self.postMessage({type: 'hash::failure', payload: error});
@@ -35,16 +44,27 @@ self.onmessage = async (e: MessageEvent<{
   }
 };
 
-async function hashChunk(
-  file: FileSystemSyncAccessHandle,
-  size: number,
+async function hashSimple(
+  file: File | FileSystemSyncAccessHandle,
+  total: number,
 ) {
-  const buffer = new ArrayBuffer(size);
-  file.read(buffer, {at: 0});
-  file.close();
+  let buffer: ArrayBuffer;
+
+  // Async access to File
+  if (file instanceof File) {
+    buffer = await file.arrayBuffer();
+  // Sync access to OPFS
+  } else {
+    buffer = new ArrayBuffer(total);
+    file.read(buffer, {at: 0});
+    file.close();
+  }
+
+  // Use Crypto Subtle if available
   try {
     const digest = await crypto.subtle.digest('SHA-256', buffer);
     return bytesToHex(new Uint8Array(digest));
+  // Fallback to ASM implementation
   } catch (e) {
     const digest = Sha256.bytes(new Uint8Array(buffer));
     if (!digest) throw new Error('Unable to hash chunk');
@@ -52,30 +72,42 @@ async function hashChunk(
   }
 }
 
-async function hashFile(
-  file: FileSystemSyncAccessHandle,
-  size: number,
-  chunkSize: number,
+async function hashIncremental(
+  file: File | FileSystemSyncAccessHandle,
+  total: number,
   progress: (bytes: number) => void,
 ) {
+  const hash = new Sha256();
   let bytes = 0;
 
-  const sha256 = new Sha256();
-  const unitSize = Math.min(chunkSize, size);
-  const unitCount = Math.floor(size / unitSize);
-  
-  for (let unit = 0; unit <= unitCount; unit++) {
-    const start = unitSize * unit;
-    const end = Math.min(unitSize * (unit + 1), size);
-    const dat = new ArrayBuffer(end - start);
-    file.read(dat, {at: start});
-    sha256.process(new Uint8Array(dat));
-    bytes += dat.byteLength;
-    progress(bytes);
+  // Async access to File
+  if (file instanceof File) {
+    const stream = file.stream();
+    await stream.pipeTo(new WritableStream({
+      write(chunk) {
+        hash.process(chunk);
+        bytes += chunk.byteLength;
+        progress(bytes);
+      }
+    }));
+  // Sync access to OPFS
+  } else {
+    const unitSize = Math.min(CHUNK_SIZE, total);
+    const unitCount = Math.floor(total / unitSize);
+    for (let unit = 0; unit <= unitCount; unit++) {
+      const start = unitSize * unit;
+      const end = Math.min(unitSize * (unit + 1), total);
+      const dat = new ArrayBuffer(end - start);
+      file.read(dat, {at: start});
+      hash.process(new Uint8Array(dat));
+      bytes += dat.byteLength;
+      progress(bytes);
+    }
+    file.close();
   }
 
-  file.close();
-  const digest = sha256.finish().result;
+  // Finish hashing
+  const digest = hash.finish().result;
   if (!digest) throw new Error('Unable to hash file');
   return bytesToHex(digest);
 }
@@ -110,7 +142,7 @@ async function getFileHandle(
   return undefined;
 }
 
-export function bytesToHex(data: Uint8Array): string {
+function bytesToHex(data: Uint8Array): string {
   return Array.from(data)
     .map(b => b.toString(16).padStart(2, '0'))
     .join('');

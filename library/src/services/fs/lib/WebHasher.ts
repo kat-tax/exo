@@ -4,31 +4,34 @@ import HashWorker from './WebHasher.worker?worker&inline';
 const _workers = new Map<number, Worker>();
 
 async function start(
-  path: string,
-  progress?: (bytes: number) => void,
-  chunkSize = 1E7,
+  pathOrFileHandle: string | FileSystemFileHandle,
+  progress?: (bytes: number, total: number) => void,
   jobId?: number,
 ) {
   const worker: Worker = new HashWorker();
-  worker.postMessage({path, chunkSize});
+  worker.postMessage(pathOrFileHandle);
   jobId && _workers.set(jobId, worker);
 
   return new Promise<string>((resolve, reject) => {
     worker.onmessage = (e) => {
       switch (e.data.type) {
-        case 'hash::progress':
-          progress?.(e.data.payload);
+        case 'hash::progress': {
+          const {bytes, total} = e.data.payload;
+          progress?.(bytes, total);
           break;
-        case 'hash::complete':
+        }
+        case 'hash::complete': {
           resolve(e.data.payload);
           worker.terminate();
           jobId && _workers.delete(jobId);
           break;
-        case 'hash::failure':
+        }
+        case 'hash::failure': {
           reject(e.data.payload);
           worker.terminate();
           jobId && _workers.delete(jobId);
           break;
+        }
       }
     };
 

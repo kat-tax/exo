@@ -1,11 +1,9 @@
-import {hashFile} from 'react-exo/fs';
-import {useCallback} from 'react';
-
 import {Trans} from '@lingui/react';
 import {Trans as T} from '@lingui/macro';
 import {Text, View, Button} from 'react-native';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useAppContext} from 'app/hooks/useAppContext';
+import {useFileSystem} from 'app/hooks/useFileSystem';
 import {useWeather} from 'home/hooks/useWeather';
 import {useClock} from 'home/hooks/useClock';
 import {getDayGreeting} from 'home/utils/time';
@@ -17,30 +15,7 @@ export default function ScreenHome() {
   const {styles} = useStyles(stylesheet);
   const weather = useWeather(device?.coords);
   const clock = useClock('medium');
-
-  const test = useCallback(() => {
-    async function test() {
-      try {
-        // @ts-ignore
-        const [fileHandle] = await window.showOpenFilePicker();
-        const opfsRoot = await navigator.storage.getDirectory();
-        const targetDir = await opfsRoot.getDirectoryHandle('example', {create: true});
-        const targetFile = await targetDir.getFileHandle('test.zip', {create: true});
-        const sourceFile: File = await fileHandle.getFile();
-        const stream = await targetFile.createWritable();
-        await sourceFile.stream().pipeTo(stream);
-        const start = performance.now();
-        const hash = await hashFile('example/test.zip', (e) => {
-          console.log('[fs] progress', (e / sourceFile.size) * 100);
-        });
-        console.log('[fs] file', hash);
-        console.log('[fs] time', performance.now() - start);
-      } catch (error) {
-        console.error('[fs] error', error);
-      }
-    }
-    test();
-  }, []);
+  const {test} = useFileSystem();
 
   return (
     <Page
