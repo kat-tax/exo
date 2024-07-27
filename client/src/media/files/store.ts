@@ -3,21 +3,21 @@ import {getPlatforms} from 'app/utils/platform';
 
 import type {PayloadAction} from 'react-exo/redux';
 
-export type Tasks = Record<string, {
+export type Files = Record<string, {
   active: string[],
   complete: string[],
 }>
 
 export default createSlice({
-  name: 'tasks',
-  initialState: <Tasks> {
+  name: 'files',
+  initialState: <Files> {
     'Launch': {
       active: getPlatforms(),
       complete: [],
     }, 
   },
   selectors: {
-    getLists: $((x: Tasks) => x, (tasks) =>
+    getLists: $((x: Files) => x, (tasks) =>
       Object.keys(tasks).map((list) => ({
         id: list,
         complete: tasks[list]?.active.length === 0 &&

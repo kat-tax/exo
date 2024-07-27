@@ -3,13 +3,17 @@ export const Layout = {
 }
 
 export const Screen = {
-  Teaser: require('./ScreenTeaser').default,
+  // General
   Home: require('../../home/routes/ScreenHome').default,
-  Map: require('../../map/routes/ScreenMap').default,
-  Calendar: require('../../events/routes/ScreenCalendar').default,
-  TaskList: require('../../tasks/routes/TaskList').default,
-  TaskDetails: require('../../tasks/routes/TaskDetails').default,
   Settings: require('../../settings/routes/ScreenSettings').default,
+  Teaser: require('./ScreenTeaser').default,
+  // Media
+  Files: require('../../media/files/routes/ScreenFiles').default,
+  Preview: require('../../media/files/routes/ScreenPreview').default,
+  // World
+  Map: require('../../world/map/routes/ScreenMap').default,
+  Calendar: require('../../world/events/routes/ScreenCalendar').default,
+  // Dev
   Design: require('../../dev/routes/ScreenDesign').default,
   Library: require('../../dev/routes/ScreenLibrary').default,
 }

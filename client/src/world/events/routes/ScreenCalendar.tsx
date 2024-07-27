@@ -2,9 +2,9 @@ import {Trans} from '@lingui/macro';
 import {View, Text} from 'react-native';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useDateRange, toDateId, Calendar} from 'react-exo/calendar';
-import {useCalendarTheme} from 'events/hooks/useCalendarTheme';
+import {useCalendarTheme} from 'world/events/hooks/useCalendarTheme';
 import {useLocale} from 'settings/hooks/useLocale';
-import {Event} from 'events/base/Event';
+import {Event} from 'world/events/base/Event';
 
 const today = toDateId(new Date());
 

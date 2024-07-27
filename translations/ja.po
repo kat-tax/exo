@@ -235,7 +235,7 @@ msgstr "音楽"
 msgid "News"
 msgstr ""
 
-#: ../../client/src/events/routes/ScreenCalendar.tsx:34
+#: ../../client/src/world/events/routes/ScreenCalendar.tsx:34
 msgid "No events scheduled."
 msgstr "予定されているイベントはありません。"
 
@@ -292,7 +292,7 @@ msgstr "アプリのテーマを選択してください。"
 msgid "Settings"
 msgstr "設定"
 
-#: ../../client/src/tasks/routes/TaskList.tsx:13
+#: ../../client/src/media/files/routes/ScreenFiles.tsx:13
 msgid "Tasks"
 msgstr "タスク"
 

@@ -2,7 +2,7 @@ import {Trans} from '@lingui/macro';
 import {View, ScrollView, Text} from 'react-native';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useFileSystem} from 'app/hooks/useFileSystem';
-import {useLists} from 'tasks/hooks/useLists';
+import {useLists} from 'media/files/hooks/useLists';
 import {MenuHeader} from 'app/base/MenuHeader';
 import {MenuSection} from 'app/base/MenuSection';
 import {WidgetStorage} from 'app/base/WidgetStorage';
@@ -19,7 +19,7 @@ export interface MenuProps {
 export function Menu(props: MenuProps) {
   const lists = useLists();
   const {tabs} = props;
-  const {importFolder} = useFileSystem();
+  const {importFile} = useFileSystem();
   const {styles, theme} = useStyles(stylesheet);
   const itemMode = tabs ? 'tab' : 'default';
 
@@ -47,8 +47,8 @@ export function Menu(props: MenuProps) {
           }
           <MenuSection label={<Trans>Media</Trans>} {...{tabs}} action={{
             icon: 'ph:upload',
-            label: 'Add Folder',
-            onPress: importFolder,
+            label: 'Import Files',
+            onPress: importFile,
           }}>
             <MenuItem
               path="/files"

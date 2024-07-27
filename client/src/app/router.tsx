@@ -13,8 +13,8 @@ export function Router() {
           <Route path="inbox" element={<$><Screen.Teaser/></$>}/>
           <Route path="settings" element={<$><Screen.Settings/></$>}/>
           {/* Media */}
-          <Route path="files" element={<$><Screen.Teaser/></$>}/>
-          <Route path="file/:id" element={<$><Screen.Teaser/></$>}/>
+          <Route path="files" element={<$><Screen.Files/></$>}/>
+          <Route path="file/:id" element={<$><Screen.Preview/></$>}/>
           <Route path="docs" element={<$><Screen.Teaser/></$>}/>
           <Route path="music" element={<$><Screen.Teaser/></$>}/>
           <Route path="photos" element={<$><Screen.Teaser/></$>}/>

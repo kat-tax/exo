@@ -5,13 +5,17 @@ export const Layout = {
 }
 
 export const Screen = {
-  Teaser: lazy(() => import('./ScreenTeaser')),
+  // General
   Home: lazy(() => import('../../home/routes/ScreenHome')),
-  Map: lazy(() => import('../../map/routes/ScreenMap')),
-  Calendar: lazy(() => import('../../events/routes/ScreenCalendar')),
-  TaskList: lazy(() => import('../../tasks/routes/TaskList')),
-  TaskDetails: lazy(() => import('../../tasks/routes/TaskDetails')),
   Settings: lazy(() => import('../../settings/routes/ScreenSettings')),
+  Teaser: lazy(() => import('./ScreenTeaser')),
+  // Media
+  Files: lazy(() => import('../../media/files/routes/ScreenFiles')),
+  Preview: lazy(() => import('../../media/files/routes/ScreenPreview')),
+  // World
+  Map: lazy(() => import('../../world/map/routes/ScreenMap')),
+  Calendar: lazy(() => import('../../world/events/routes/ScreenCalendar')),
+  // Dev
   Design: lazy(() => import('../../dev/routes/ScreenDesign')),
   Library: lazy(() => import('../../dev/routes/ScreenLibrary')),
 }

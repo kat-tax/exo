@@ -235,7 +235,7 @@ msgstr "الموسيقى"
 msgid "News"
 msgstr ""
 
-#: ../../client/src/events/routes/ScreenCalendar.tsx:34
+#: ../../client/src/world/events/routes/ScreenCalendar.tsx:34
 msgid "No events scheduled."
 msgstr "لا توجد أحداث مجدولة."
 
@@ -292,7 +292,7 @@ msgstr "اختر سمة التطبيق."
 msgid "Settings"
 msgstr "الإعدادات"
 
-#: ../../client/src/tasks/routes/TaskList.tsx:13
+#: ../../client/src/media/files/routes/ScreenFiles.tsx:13
 msgid "Tasks"
 msgstr "المهام"
 
