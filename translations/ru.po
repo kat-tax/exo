@@ -99,6 +99,10 @@ msgstr "Дизайн"
 msgid "Dev Mode"
 msgstr ""
 
+#: ../../client/src/media/files/base/WatermarkEmpty.tsx:9
+msgid "Directory is empty"
+msgstr ""
+
 #: ../../client/src/settings/routes/ScreenSettings.tsx:72
 msgid "Display"
 msgstr "Отображение"
@@ -113,6 +117,10 @@ msgstr "Документы"
 
 #: ../../client/src/app/base/Menu.tsx:62
 msgid "Documents"
+msgstr ""
+
+#: ../../client/src/media/files/base/WatermarkNotSupported.tsx:10
+msgid "Download"
 msgstr ""
 
 #: ../../client/src/app/base/Menu.tsx:98
@@ -151,11 +159,35 @@ msgstr "Фаренгейт"
 msgid "Favorites"
 msgstr "Избранное"
 
+#: ../../client/src/media/files/base/WatermarkNotSupported.tsx:9
+msgid "File cannot be previewed"
+msgstr ""
+
+#: ../../client/src/media/files/base/WatermarkNotSupported.tsx:9
+msgid "File preview unsupported"
+msgstr ""
+
+#: ../../client/src/media/files/base/WatermarkNotSupported.tsx:9
+msgid "File type unsupported"
+msgstr ""
+
 #: ../../client/src/app/base/Menu.tsx:59
 msgid "Files"
 msgstr "Файлы"
 
-#: ../../client/src/media/files/base/WatermarkNotSupported.tsx:12
+#: ../../client/src/media/files/base/WatermarkEmpty.tsx:9
+msgid "Folder contents are empty"
+msgstr ""
+
+#: ../../client/src/media/files/base/WatermarkEmpty.tsx:9
+msgid "Folder has no contents"
+msgstr ""
+
+#: ../../client/src/media/files/base/WatermarkEmpty.tsx:9
+msgid "Folder has no files"
+msgstr ""
+
+#: ../../client/src/media/files/base/WatermarkEmpty.tsx:9
 msgid "Folder is empty"
 msgstr ""
 
@@ -194,6 +226,10 @@ msgstr "ID модели Groq"
 #: ../../client/src/app/base/MenuHeader.tsx:27
 msgid "Human"
 msgstr "Человек"
+
+#: ../../client/src/media/files/base/WatermarkEmpty.tsx:10
+msgid "Import"
+msgstr ""
 
 #: ../../client/src/app/base/Menu.tsx:42
 msgid "Inbox"
@@ -250,6 +286,10 @@ msgstr ""
 #: ../../client/src/world/events/routes/ScreenCalendar.tsx:34
 msgid "No events scheduled."
 msgstr "Нет запланированных событий."
+
+#: ../../client/src/media/files/base/WatermarkNotSupported.tsx:9
+msgid "No preview available"
+msgstr ""
 
 #: ../../client/src/media/files/base/WatermarkNotSupported.tsx:12
 msgid "No Preview Available"

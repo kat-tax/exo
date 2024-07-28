@@ -1,42 +1,17 @@
-import {Trans} from '@lingui/macro';
-import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {View, Text} from 'react-native';
-import {Button} from 'design';
+import {t} from '@lingui/macro';
+import {useLingui} from '@lingui/react';
+import {Watermark} from './Watermark';
 
 export function WatermarkNotSupported() {
-  const {styles} = useStyles(stylesheet);
-
+  const {i18n} = useLingui();
   return (
-    <View style={styles.root}>
-      <Text style={styles.text}>
-        <Trans>No Preview Available</Trans>
-      </Text>
-      <Button
-        label="Download"
-        mode="Primary"
-        state="Default"
-        onPress={() => {
-          console.log('Download');
-        }}
-      />
-    </View>
+    <Watermark
+      title={t(i18n)`File cannot be previewed`}
+      label={t(i18n)`Download`}
+      icon="ph:download"
+      onAction={() => {
+        console.log('Download');
+      }}
+    />
   );
 }
-
-const stylesheet = createStyleSheet(theme => ({
-  root: {
-    flex: 1,
-    gap: theme.display.space3,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginBottom: theme.display.space9,
-  },
-  text: {
-    fontFamily: theme.font.family,
-    fontSize: theme.font.contentSize,
-    fontWeight: theme.font.contentWeight,
-    lineHeight: theme.font.contentHeight,
-    letterSpacing: theme.font.contentSpacing,
-    color: theme.colors.mutedForeground,
-  },
-}));

@@ -99,6 +99,10 @@ msgstr "Design"
 msgid "Dev Mode"
 msgstr "Dev Mode"
 
+#: ../../client/src/media/files/base/WatermarkEmpty.tsx:9
+msgid "Directory is empty"
+msgstr "Directory is empty"
+
 #: ../../client/src/settings/routes/ScreenSettings.tsx:72
 msgid "Display"
 msgstr "Display"
@@ -114,6 +118,10 @@ msgstr "Docs"
 #: ../../client/src/app/base/Menu.tsx:62
 msgid "Documents"
 msgstr "Documents"
+
+#: ../../client/src/media/files/base/WatermarkNotSupported.tsx:10
+msgid "Download"
+msgstr "Download"
 
 #: ../../client/src/app/base/Menu.tsx:98
 msgid "Downloads"
@@ -151,11 +159,35 @@ msgstr "Fahrenheit"
 msgid "Favorites"
 msgstr "Favorites"
 
+#: ../../client/src/media/files/base/WatermarkNotSupported.tsx:9
+msgid "File cannot be previewed"
+msgstr "File cannot be previewed"
+
+#: ../../client/src/media/files/base/WatermarkNotSupported.tsx:9
+msgid "File preview unsupported"
+msgstr "File preview unsupported"
+
+#: ../../client/src/media/files/base/WatermarkNotSupported.tsx:9
+msgid "File type unsupported"
+msgstr "File type unsupported"
+
 #: ../../client/src/app/base/Menu.tsx:59
 msgid "Files"
 msgstr "Files"
 
-#: ../../client/src/media/files/base/WatermarkNotSupported.tsx:12
+#: ../../client/src/media/files/base/WatermarkEmpty.tsx:9
+msgid "Folder contents are empty"
+msgstr "Folder contents are empty"
+
+#: ../../client/src/media/files/base/WatermarkEmpty.tsx:9
+msgid "Folder has no contents"
+msgstr "Folder has no contents"
+
+#: ../../client/src/media/files/base/WatermarkEmpty.tsx:9
+msgid "Folder has no files"
+msgstr "Folder has no files"
+
+#: ../../client/src/media/files/base/WatermarkEmpty.tsx:9
 msgid "Folder is empty"
 msgstr "Folder is empty"
 
@@ -194,6 +226,10 @@ msgstr "Groq Model ID"
 #: ../../client/src/app/base/MenuHeader.tsx:27
 msgid "Human"
 msgstr "Human"
+
+#: ../../client/src/media/files/base/WatermarkEmpty.tsx:10
+msgid "Import"
+msgstr "Import"
 
 #: ../../client/src/app/base/Menu.tsx:42
 msgid "Inbox"
@@ -250,6 +286,10 @@ msgstr "News"
 #: ../../client/src/world/events/routes/ScreenCalendar.tsx:34
 msgid "No events scheduled."
 msgstr "No events scheduled."
+
+#: ../../client/src/media/files/base/WatermarkNotSupported.tsx:9
+msgid "No preview available"
+msgstr "No preview available"
 
 #: ../../client/src/media/files/base/WatermarkNotSupported.tsx:12
 msgid "No Preview Available"
