@@ -11,7 +11,7 @@ export interface PageProps extends React.PropsWithChildren {
 export function Page(props: PageProps) {
   const {styles} = useStyles(stylesheet);
   return (
-    <ScrollView>
+    <ScrollView contentContainerStyle={{flex: 1}}>
       <View style={[styles.root, props.fullWidth && styles.rootFull]}>
         <View style={styles.header}>
           <View style={styles.greeting}>

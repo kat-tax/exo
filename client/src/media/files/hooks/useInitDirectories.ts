@@ -14,14 +14,13 @@ const INIT_DIRECTORIES = [
 
 export function useInitDirectories() {
   useEffect(() => {
-    const init = async () => {
+    (async () => {
       const hfs = await fs.init();
       await Promise.all(INIT_DIRECTORIES.map(async (dir) => {
         if (!await hfs.isDirectory?.(dir)) {
           await hfs.createDirectory?.(dir);
         }
       }));
-    }
-    init();
+    })();
   }, []);
 }
