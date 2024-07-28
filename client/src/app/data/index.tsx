@@ -6,7 +6,7 @@ export * from './schema';
 export const evolu = _.createEvolu(S.DB, {
   name: `${config.APP_NAME}::0002`,
   syncUrl: __DEV__ ? 'http://localhost:6306' : config.SYNC_HOST,
-  minimumLogLevel: __DEV__ ? 'trace' : 'warning',
+  minimumLogLevel: !__DEV__ ? 'trace' : 'warning',
   indexes: S.indexes,
   initialData: (init) => {
     init.create('profile', {

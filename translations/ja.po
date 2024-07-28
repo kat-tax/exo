@@ -22,10 +22,6 @@ msgstr "{0} コンポーネント"
 msgid "A mnemonic phrase for authentication."
 msgstr "認証用のニーモニックフレーズ。"
 
-#: ../../client/src/tasks/base/TasksInput.tsx:21
-msgid "Add a task"
-msgstr "タスクを追加"
-
 #: ../../client/src/settings/routes/ScreenSettings.tsx:136
 msgid "AI"
 msgstr "AI"
@@ -227,6 +223,10 @@ msgstr "メディア"
 msgid "Miles"
 msgstr "マイル"
 
+#: ../../client/src/app/base/Menu.tsx:80
+msgid "Movies"
+msgstr ""
+
 #: ../../client/src/app/base/Menu.tsx:68
 msgid "Music"
 msgstr "音楽"
@@ -246,6 +246,10 @@ msgstr "オーナーキー"
 #: ../../client/src/app/base/Menu.tsx:74
 msgid "Photos"
 msgstr "写真"
+
+#: ../../client/src/app/base/Menu.tsx:74
+msgid "Pictures"
+msgstr ""
 
 #: ../../client/src/home/base/AiPrompt.tsx:50
 msgid "Please set your Groq API Key"
@@ -291,10 +295,6 @@ msgstr "アプリのテーマを選択してください。"
 #: ../../client/src/app/base/Menu.tsx:163
 msgid "Settings"
 msgstr "設定"
-
-#: ../../client/src/media/files/routes/ScreenFiles.tsx:13
-msgid "Tasks"
-msgstr "タスク"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:110
 msgid "Temperature"

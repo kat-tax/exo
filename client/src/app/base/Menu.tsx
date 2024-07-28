@@ -51,43 +51,43 @@ export function Menu(props: MenuProps) {
             onPress: importFile,
           }}>
             <MenuItem
-              path="/files"
+              path="/browse"
               icon="ph:folder"
               label={<Trans>Files</Trans>}
               mode={itemMode}
             />
             <MenuItem
-              path="/docs"
+              path="/browse/documents"
               icon="ph:file-text"
               label={<Trans>Docs</Trans>}
               mode={itemMode}
             />
             <MenuItem
-              path="/music"
+              path="/browse/music"
               icon="ph:music-notes"
               label={<Trans>Music</Trans>}
               mode={itemMode}
             />
             <MenuItem
-              path="/photos"
+              path="/browse/pictures"
               icon="ph:image"
-              label={<Trans>Photos</Trans>}
+              label={<Trans>Pictures</Trans>}
               mode={itemMode}
             />
             <MenuItem
-              path="/videos"
+              path="/browse/videos"
               icon="ph:video"
-              label={<Trans>Videos</Trans>}
+              label={<Trans>Movies</Trans>}
               mode={itemMode}
             />
             <MenuItem
-              path="/games"
+              path="/browse/games"
               icon="ph:game-controller"
               label={<Trans>Games</Trans>}
               mode={itemMode}
             />
             <MenuItem
-              path="/books"
+              path="/browse/books"
               icon="ph:book-open-text"
               label={<Trans>Books</Trans>}
               mode={itemMode}

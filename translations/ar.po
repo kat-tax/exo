@@ -22,10 +22,6 @@ msgstr "{0} مكونات"
 msgid "A mnemonic phrase for authentication."
 msgstr "عبارة تذكيرية للمصادقة."
 
-#: ../../client/src/tasks/base/TasksInput.tsx:21
-msgid "Add a task"
-msgstr "إضافة مهمة"
-
 #: ../../client/src/settings/routes/ScreenSettings.tsx:136
 msgid "AI"
 msgstr "الذكاء الاصطناعي"
@@ -227,6 +223,10 @@ msgstr "الوسائط"
 msgid "Miles"
 msgstr "أميال"
 
+#: ../../client/src/app/base/Menu.tsx:80
+msgid "Movies"
+msgstr ""
+
 #: ../../client/src/app/base/Menu.tsx:68
 msgid "Music"
 msgstr "الموسيقى"
@@ -246,6 +246,10 @@ msgstr "مفتاح المالك"
 #: ../../client/src/app/base/Menu.tsx:74
 msgid "Photos"
 msgstr "الصور"
+
+#: ../../client/src/app/base/Menu.tsx:74
+msgid "Pictures"
+msgstr ""
 
 #: ../../client/src/home/base/AiPrompt.tsx:50
 msgid "Please set your Groq API Key"
@@ -291,10 +295,6 @@ msgstr "اختر سمة التطبيق."
 #: ../../client/src/app/base/Menu.tsx:163
 msgid "Settings"
 msgstr "الإعدادات"
-
-#: ../../client/src/media/files/routes/ScreenFiles.tsx:13
-msgid "Tasks"
-msgstr "المهام"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:110
 msgid "Temperature"

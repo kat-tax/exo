@@ -22,10 +22,6 @@ msgstr "{0} компонентов"
 msgid "A mnemonic phrase for authentication."
 msgstr "Мнемоническая фраза для аутентификации."
 
-#: ../../client/src/tasks/base/TasksInput.tsx:21
-msgid "Add a task"
-msgstr "Добавить задачу"
-
 #: ../../client/src/settings/routes/ScreenSettings.tsx:136
 msgid "AI"
 msgstr "ИИ"
@@ -227,6 +223,10 @@ msgstr "Медиа"
 msgid "Miles"
 msgstr "Мили"
 
+#: ../../client/src/app/base/Menu.tsx:80
+msgid "Movies"
+msgstr ""
+
 #: ../../client/src/app/base/Menu.tsx:68
 msgid "Music"
 msgstr "Музыка"
@@ -246,6 +246,10 @@ msgstr "Ключ владельца"
 #: ../../client/src/app/base/Menu.tsx:74
 msgid "Photos"
 msgstr "Фотографии"
+
+#: ../../client/src/app/base/Menu.tsx:74
+msgid "Pictures"
+msgstr ""
 
 #: ../../client/src/home/base/AiPrompt.tsx:50
 msgid "Please set your Groq API Key"
@@ -291,10 +295,6 @@ msgstr "Выберите тему для приложения."
 #: ../../client/src/app/base/Menu.tsx:163
 msgid "Settings"
 msgstr "Настройки"
-
-#: ../../client/src/media/files/routes/ScreenFiles.tsx:13
-msgid "Tasks"
-msgstr "Задачи"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:110
 msgid "Temperature"

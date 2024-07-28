@@ -1,9 +1,11 @@
 import {hfs} from '@humanfs/web';
 import Hasher from './lib/WebHasher';
+
 import type {FSBase} from './Fs.interface';
+import type {HfsImpl} from '@humanfs/web';
 
 export class FSService implements FSBase {
-  async init() {
+  async init(): Promise<HfsImpl> {
     return hfs;
   }
 

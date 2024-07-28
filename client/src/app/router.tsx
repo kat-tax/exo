@@ -13,14 +13,8 @@ export function Router() {
           <Route path="inbox" element={<$><Screen.Teaser/></$>}/>
           <Route path="settings" element={<$><Screen.Settings/></$>}/>
           {/* Media */}
-          <Route path="files" element={<$><Screen.Files/></$>}/>
-          <Route path="file/:id" element={<$><Screen.Preview/></$>}/>
-          <Route path="docs" element={<$><Screen.Teaser/></$>}/>
-          <Route path="music" element={<$><Screen.Teaser/></$>}/>
-          <Route path="photos" element={<$><Screen.Teaser/></$>}/>
-          <Route path="videos" element={<$><Screen.Teaser/></$>}/>
-          <Route path="games" element={<$><Screen.Teaser/></$>}/>
-          <Route path="books" element={<$><Screen.Teaser/></$>}/>
+          <Route path="file/*" element={<$><Screen.FilePreview/></$>}/>
+          <Route path="browse/*" element={<$><Screen.Directory/></$>}/>
           {/* World */}
           <Route path="news" element={<$><Screen.Teaser/></$>}/>
           <Route path="maps" element={<$><Screen.Map/></$>}/>

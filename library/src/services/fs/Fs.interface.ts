@@ -1,4 +1,5 @@
-import type {HfsImpl} from '@humanfs/types';
+import type {HfsImpl, HfsDirectoryEntry} from '@humanfs/types';
+export type {HfsImpl, HfsDirectoryEntry};
 
 export interface FSBase {
   init(): Promise<HfsImpl>,

@@ -10,8 +10,8 @@ export const Screen = {
   Settings: lazy(() => import('../../settings/routes/ScreenSettings')),
   Teaser: lazy(() => import('./ScreenTeaser')),
   // Media
-  Files: lazy(() => import('../../media/files/routes/ScreenFiles')),
-  Preview: lazy(() => import('../../media/files/routes/ScreenPreview')),
+  Directory: lazy(() => import('../../media/files/routes/ScreenDirectory')),
+  FilePreview: lazy(() => import('../../media/files/routes/ScreenFilePreview')),
   // World
   Map: lazy(() => import('../../world/map/routes/ScreenMap')),
   Calendar: lazy(() => import('../../world/events/routes/ScreenCalendar')),

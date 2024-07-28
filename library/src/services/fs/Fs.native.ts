@@ -1,5 +1,6 @@
 import {hfs} from './lib/NativeHfs';
 import {FileSystem} from 'react-native-file-access';
+
 import type {FSBase} from './Fs.interface';
 
 export class FSService implements FSBase {
