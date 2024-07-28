@@ -111,6 +111,14 @@ msgstr "距離"
 msgid "Docs"
 msgstr "ドキュメント"
 
+#: ../../client/src/app/base/Menu.tsx:62
+msgid "Documents"
+msgstr ""
+
+#: ../../client/src/app/base/Menu.tsx:98
+msgid "Downloads"
+msgstr ""
+
 #: ../../client/src/home/utils/time.ts:15
 msgid "Enjoy the day"
 msgstr "良い一日を"

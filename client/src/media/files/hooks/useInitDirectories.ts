@@ -2,14 +2,14 @@ import {fs} from 'react-exo/fs';
 import {useEffect} from 'react';
 
 const INIT_DIRECTORIES = [
-  'desktop',
   'documents',
-  'downloads',
   'music',
   'pictures',
   'videos',
   'games',
   'books',
+  'downloads',
+  'uploads',
 ];
 
 export function useInitDirectories() {

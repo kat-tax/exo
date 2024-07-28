@@ -11,7 +11,9 @@ export default function ScreenDirectory() {
   const {styles} = useStyles(stylesheet);
   const path = resolve(pathname);
   const dir = useDirectory(path.join('/'));
+
   useInitDirectories();
+
   return (
     <View style={styles.root}>
       {dir?.map(entry => (

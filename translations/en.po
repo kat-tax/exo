@@ -111,6 +111,14 @@ msgstr "Distance"
 msgid "Docs"
 msgstr "Docs"
 
+#: ../../client/src/app/base/Menu.tsx:62
+msgid "Documents"
+msgstr "Documents"
+
+#: ../../client/src/app/base/Menu.tsx:98
+msgid "Downloads"
+msgstr "Downloads"
+
 #: ../../client/src/home/utils/time.ts:15
 msgid "Enjoy the day"
 msgstr "Enjoy the day"
