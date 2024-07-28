@@ -50,25 +50,23 @@ export default function ScreenSettings() {
           <SettingsOption
             label={t(i18n)`Owner Key`}
             description={t(i18n)`A mnemonic phrase for authentication.`}>
-            <View style={styles.ownerKey}>
-              <TextInput
-                style={styles.input}
-                selectTextOnFocus
-                secureTextEntry={!isKeyVisible}
-                defaultValue={settings.owner?.mnemonic}
-                placeholder={t(i18n)`Enter your mnemonic phrase`}
-                placeholderTextColor={theme.colors.mutedForeground}
-                importantForAutofill="no"
-                autoCapitalize="none"
-                autoComplete="off"
-                autoCorrect={false}
-                onFocus={() => setKeyVisible(true)}
-                onBlur={e => {
-                  setKeyVisible(false);
-                  settings.changeOwner(e.nativeEvent.text);
-                }}
-              />
-            </View>
+            <TextInput
+              style={styles.input}
+              selectTextOnFocus
+              secureTextEntry={!isKeyVisible}
+              defaultValue={settings.owner?.mnemonic}
+              placeholder={t(i18n)`Enter your mnemonic phrase`}
+              placeholderTextColor={theme.colors.mutedForeground}
+              importantForAutofill="no"
+              autoCapitalize="none"
+              autoComplete="off"
+              autoCorrect={false}
+              onFocus={() => setKeyVisible(true)}
+              onBlur={e => {
+                setKeyVisible(false);
+                settings.changeOwner(e.nativeEvent.text);
+              }}
+            />
           </SettingsOption>
         </SettingsGroup>
         <SettingsGroup title={t(i18n)`Display`}>
@@ -239,12 +237,5 @@ const stylesheet = createStyleSheet(theme => ({
   },
   selectItem: {
     color: theme.colors.foreground,
-  },
-  ownerKey: {
-    flex: 1,
-    maxWidth: 500,
-    width: {
-      xs: '100%',
-    },
   },
 }));
