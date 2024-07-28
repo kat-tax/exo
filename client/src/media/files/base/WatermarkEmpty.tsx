@@ -1,16 +1,22 @@
 import {t} from '@lingui/macro';
 import {useLingui} from '@lingui/react';
+import {useFileSystem} from 'app/hooks/useFileSystem';
 import {Watermark} from './Watermark';
 
-export function WatermarkEmpty() {
+interface WatermarkEmptyProps {
+  path?: string;
+}
+
+export function WatermarkEmpty({path = '.'}: WatermarkEmptyProps) {
   const {i18n} = useLingui();
+  const {importDirectory} = useFileSystem();
   return (
     <Watermark
       title={t(i18n)`Directory is empty`}
       label={t(i18n)`Import`}
       icon="ph:upload"
-      onAction={() => {
-        console.log('Upload');
+      onAction={async () => {
+        await importDirectory(path);
       }}
     />
   );

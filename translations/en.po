@@ -92,6 +92,7 @@ msgid "Delete the local database."
 msgstr "Delete the local database."
 
 #: ../../client/src/app/base/Menu.tsx:149
+#: ../../client/src/dev/routes/ScreenDesign.tsx:11
 msgid "Design"
 msgstr "Design"
 
@@ -99,7 +100,7 @@ msgstr "Design"
 msgid "Dev Mode"
 msgstr "Dev Mode"
 
-#: ../../client/src/media/files/base/WatermarkEmpty.tsx:9
+#: ../../client/src/media/files/base/WatermarkEmpty.tsx:15
 msgid "Directory is empty"
 msgstr "Directory is empty"
 
@@ -115,17 +116,9 @@ msgstr "Distance"
 msgid "Docs"
 msgstr "Docs"
 
-#: ../../client/src/app/base/Menu.tsx:62
-msgid "Documents"
-msgstr "Documents"
-
 #: ../../client/src/media/files/base/WatermarkNotSupported.tsx:10
 msgid "Download"
 msgstr "Download"
-
-#: ../../client/src/app/base/Menu.tsx:98
-msgid "Downloads"
-msgstr "Downloads"
 
 #: ../../client/src/home/utils/time.ts:15
 msgid "Enjoy the day"
@@ -163,33 +156,9 @@ msgstr "Favorites"
 msgid "File cannot be previewed"
 msgstr "File cannot be previewed"
 
-#: ../../client/src/media/files/base/WatermarkNotSupported.tsx:9
-msgid "File preview unsupported"
-msgstr "File preview unsupported"
-
-#: ../../client/src/media/files/base/WatermarkNotSupported.tsx:9
-msgid "File type unsupported"
-msgstr "File type unsupported"
-
 #: ../../client/src/app/base/Menu.tsx:59
 msgid "Files"
 msgstr "Files"
-
-#: ../../client/src/media/files/base/WatermarkEmpty.tsx:9
-msgid "Folder contents are empty"
-msgstr "Folder contents are empty"
-
-#: ../../client/src/media/files/base/WatermarkEmpty.tsx:9
-msgid "Folder has no contents"
-msgstr "Folder has no contents"
-
-#: ../../client/src/media/files/base/WatermarkEmpty.tsx:9
-msgid "Folder has no files"
-msgstr "Folder has no files"
-
-#: ../../client/src/media/files/base/WatermarkEmpty.tsx:9
-msgid "Folder is empty"
-msgstr "Folder is empty"
 
 #: ../../client/src/app/base/Menu.tsx:89
 msgid "Games"
@@ -227,7 +196,7 @@ msgstr "Groq Model ID"
 msgid "Human"
 msgstr "Human"
 
-#: ../../client/src/media/files/base/WatermarkEmpty.tsx:10
+#: ../../client/src/media/files/base/WatermarkEmpty.tsx:16
 msgid "Import"
 msgstr "Import"
 
@@ -244,6 +213,7 @@ msgid "Language"
 msgstr "Language"
 
 #: ../../client/src/app/base/Menu.tsx:155
+#: ../../client/src/dev/routes/ScreenLibrary.tsx:15
 msgid "Library"
 msgstr "Library"
 
@@ -287,21 +257,9 @@ msgstr "News"
 msgid "No events scheduled."
 msgstr "No events scheduled."
 
-#: ../../client/src/media/files/base/WatermarkNotSupported.tsx:9
-msgid "No preview available"
-msgstr "No preview available"
-
-#: ../../client/src/media/files/base/WatermarkNotSupported.tsx:12
-msgid "No Preview Available"
-msgstr "No Preview Available"
-
 #: ../../client/src/settings/routes/ScreenSettings.tsx:51
 msgid "Owner Key"
 msgstr "Owner Key"
-
-#: ../../client/src/app/base/Menu.tsx:74
-msgid "Photos"
-msgstr "Photos"
 
 #: ../../client/src/app/base/Menu.tsx:77
 msgid "Pictures"
@@ -347,6 +305,8 @@ msgstr "Select the temperature unit for the app."
 msgid "Select the theme for the app."
 msgstr "Select the theme for the app."
 
+#: ../../client/src/app/base/Menu.tsx:165
+#: ../../client/src/app/base/Menu.tsx:173
 #: ../../client/src/settings/routes/ScreenSettings.tsx:27
 msgid "Settings"
 msgstr "Settings"
@@ -359,17 +319,9 @@ msgstr "Temperature"
 msgid "Theme"
 msgstr "Theme"
 
-#: ../../client/src/media/files/base/WatermarkNotSupported.tsx:12
-msgid "Unsupported file type"
-msgstr "Unsupported file type"
-
 #: ../../client/src/settings/routes/ScreenSettings.tsx:39
 msgid "User Name"
 msgstr "User Name"
-
-#: ../../client/src/app/base/Menu.tsx:80
-msgid "Videos"
-msgstr "Videos"
 
 #: ../../client/src/home/routes/ScreenHome.tsx:22
 msgid "Welcome, {0}"
@@ -379,7 +331,7 @@ msgstr "Welcome, {0}"
 msgid "Welcome, Human"
 msgstr "Welcome, Human"
 
-#: ../../client/src/media/files/base/WatermarkEmptyDir.tsx:12
+#: ../../client/src/app/routes/ScreenTeaser.tsx:12
 msgid "Work in progress..."
 msgstr "Work in progress..."
 

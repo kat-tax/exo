@@ -25,7 +25,7 @@ export default function ScreenDirectory() {
         />
       ))}
       {dir?.length === 0 &&
-        <WatermarkEmpty/>
+        <WatermarkEmpty path={path.join('/')}/>
       }
     </View>
   );

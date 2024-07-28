@@ -19,7 +19,7 @@ export class FSService implements FSBase {
     return null;
   }
 
-  async openFolder() {
+  async openDirectory() {
     return null;
   }
 
@@ -27,7 +27,7 @@ export class FSService implements FSBase {
     return fileHandle;
   }
 
-  async importFolder(dirHandle: FileSystemDirectoryHandle) {
+  async importDirectory(dirHandle: FileSystemDirectoryHandle) {
     return dirHandle;
   }
 

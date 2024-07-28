@@ -10,11 +10,14 @@ export function useDirectory(path: string) {
     (async () => {
       const hfs = await fs.init();
       const entries: HfsDirectoryEntry[] = [];
-      for await (const entry of hfs.list?.(path || '.') ?? [])
+      for await (const entry of hfs.list?.(path || '.') ?? []) {
+        if (entry.name.startsWith('.')) continue;
+        if (entry.name.endsWith('.crswap')) continue;
         entries.push(entry);
+      }
       setEntries(entries);
     })();
-  }, [path]);
+  });
 
   return entries;
 }

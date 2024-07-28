@@ -12,7 +12,7 @@ export interface FSBase {
 
   openFile(): Promise<FileSystemFileHandle | null>,
 
-  openFolder(): Promise<FileSystemDirectoryHandle | null>,
+  openDirectory(options?: OpenDirectoryOptions): Promise<FileSystemDirectoryHandle | null>,
 
   /** Web only, on native returns the same file handle */
   importFile: (
@@ -21,8 +21,9 @@ export interface FSBase {
   ) => Promise<FileSystemFileHandle>,
 
   /** Web only, on native returns the same directory handle */
-  importFolder: (
+  importDirectory: (
     dirHandle: FileSystemDirectoryHandle,
+    importPath: string,
     progress?: (bytes: number, total: number) => void,
   ) => Promise<FileSystemDirectoryHandle>,
 
@@ -34,4 +35,10 @@ export interface FSBase {
   ) => Promise<string>,
 
   cancelHash: (id: number) => void,
+}
+
+export type OpenDirectoryOptions = {
+  id?: string,
+  mode?: 'read' | 'readwrite',
+  startIn?: 'desktop' | 'documents' | 'downloads' | 'music' | 'pictures' | 'videos',
 }

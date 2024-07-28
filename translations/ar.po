@@ -92,6 +92,7 @@ msgid "Delete the local database."
 msgstr "حذف قاعدة البيانات المحلية."
 
 #: ../../client/src/app/base/Menu.tsx:149
+#: ../../client/src/dev/routes/ScreenDesign.tsx:11
 msgid "Design"
 msgstr "التصميم"
 
@@ -99,7 +100,7 @@ msgstr "التصميم"
 msgid "Dev Mode"
 msgstr ""
 
-#: ../../client/src/media/files/base/WatermarkEmpty.tsx:9
+#: ../../client/src/media/files/base/WatermarkEmpty.tsx:15
 msgid "Directory is empty"
 msgstr ""
 
@@ -115,16 +116,8 @@ msgstr "المسافة"
 msgid "Docs"
 msgstr "المستندات"
 
-#: ../../client/src/app/base/Menu.tsx:62
-msgid "Documents"
-msgstr ""
-
 #: ../../client/src/media/files/base/WatermarkNotSupported.tsx:10
 msgid "Download"
-msgstr ""
-
-#: ../../client/src/app/base/Menu.tsx:98
-msgid "Downloads"
 msgstr ""
 
 #: ../../client/src/home/utils/time.ts:15
@@ -163,33 +156,9 @@ msgstr "المفضلة"
 msgid "File cannot be previewed"
 msgstr ""
 
-#: ../../client/src/media/files/base/WatermarkNotSupported.tsx:9
-msgid "File preview unsupported"
-msgstr ""
-
-#: ../../client/src/media/files/base/WatermarkNotSupported.tsx:9
-msgid "File type unsupported"
-msgstr ""
-
 #: ../../client/src/app/base/Menu.tsx:59
 msgid "Files"
 msgstr "الملفات"
-
-#: ../../client/src/media/files/base/WatermarkEmpty.tsx:9
-msgid "Folder contents are empty"
-msgstr ""
-
-#: ../../client/src/media/files/base/WatermarkEmpty.tsx:9
-msgid "Folder has no contents"
-msgstr ""
-
-#: ../../client/src/media/files/base/WatermarkEmpty.tsx:9
-msgid "Folder has no files"
-msgstr ""
-
-#: ../../client/src/media/files/base/WatermarkEmpty.tsx:9
-msgid "Folder is empty"
-msgstr ""
 
 #: ../../client/src/app/base/Menu.tsx:89
 msgid "Games"
@@ -227,7 +196,7 @@ msgstr "معرف نموذج Groq"
 msgid "Human"
 msgstr "الإنسان"
 
-#: ../../client/src/media/files/base/WatermarkEmpty.tsx:10
+#: ../../client/src/media/files/base/WatermarkEmpty.tsx:16
 msgid "Import"
 msgstr ""
 
@@ -244,6 +213,7 @@ msgid "Language"
 msgstr "اللغة"
 
 #: ../../client/src/app/base/Menu.tsx:155
+#: ../../client/src/dev/routes/ScreenLibrary.tsx:15
 msgid "Library"
 msgstr "المكتبة"
 
@@ -287,21 +257,9 @@ msgstr ""
 msgid "No events scheduled."
 msgstr "لا توجد أحداث مجدولة."
 
-#: ../../client/src/media/files/base/WatermarkNotSupported.tsx:9
-msgid "No preview available"
-msgstr ""
-
-#: ../../client/src/media/files/base/WatermarkNotSupported.tsx:12
-msgid "No Preview Available"
-msgstr ""
-
 #: ../../client/src/settings/routes/ScreenSettings.tsx:51
 msgid "Owner Key"
 msgstr "مفتاح المالك"
-
-#: ../../client/src/app/base/Menu.tsx:74
-msgid "Photos"
-msgstr "الصور"
 
 #: ../../client/src/app/base/Menu.tsx:77
 msgid "Pictures"
@@ -347,6 +305,8 @@ msgstr "اختر وحدة درجة الحرارة للتطبيق."
 msgid "Select the theme for the app."
 msgstr "اختر سمة التطبيق."
 
+#: ../../client/src/app/base/Menu.tsx:165
+#: ../../client/src/app/base/Menu.tsx:173
 #: ../../client/src/settings/routes/ScreenSettings.tsx:27
 msgid "Settings"
 msgstr "الإعدادات"
@@ -359,17 +319,9 @@ msgstr "درجة الحرارة"
 msgid "Theme"
 msgstr "السمة"
 
-#: ../../client/src/media/files/base/WatermarkNotSupported.tsx:12
-msgid "Unsupported file type"
-msgstr ""
-
 #: ../../client/src/settings/routes/ScreenSettings.tsx:39
 msgid "User Name"
 msgstr "اسم المستخدم"
-
-#: ../../client/src/app/base/Menu.tsx:80
-msgid "Videos"
-msgstr "مقاطع الفيديو"
 
 #: ../../client/src/home/routes/ScreenHome.tsx:22
 msgid "Welcome, {0}"
@@ -379,7 +331,7 @@ msgstr "مرحبًا، {0}"
 msgid "Welcome, Human"
 msgstr "مرحبًا، أيها الإنسان"
 
-#: ../../client/src/media/files/base/WatermarkEmptyDir.tsx:12
+#: ../../client/src/app/routes/ScreenTeaser.tsx:12
 msgid "Work in progress..."
 msgstr "جاري العمل..."
 

@@ -1,8 +1,8 @@
 import {hfs} from '@humanfs/web';
 import Hasher from './lib/WebHasher';
 
-import type {FSBase} from './Fs.interface';
 import type {HfsImpl} from '@humanfs/web';
+import type {FSBase, OpenDirectoryOptions} from './Fs.interface';
 
 export class FSService implements FSBase {
   async init(): Promise<HfsImpl> {
@@ -22,9 +22,9 @@ export class FSService implements FSBase {
     return file;
   }
 
-  async openFolder() {
+  async openDirectory(options?: OpenDirectoryOptions) {
     // @ts-ignore
-    const [folder]: FileSystemDirectoryHandle[] = await window.showDirectoryPicker();
+    const [folder]: FileSystemDirectoryHandle[] = await window.showDirectoryPicker(options);
     return folder;
   }
 
@@ -37,9 +37,9 @@ export class FSService implements FSBase {
     return target;
   }
 
-  async importFolder(folderHandle: FileSystemDirectoryHandle) {
+  async importDirectory(_dirHandle: FileSystemDirectoryHandle, importPath: string) {
     const root = await navigator.storage.getDirectory();
-    const target = await root.getDirectoryHandle(folderHandle.name, {create: true});
+    const target = await root.getDirectoryHandle(importPath, {create: true});
     return target;
   }
 

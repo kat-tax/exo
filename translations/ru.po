@@ -92,6 +92,7 @@ msgid "Delete the local database."
 msgstr "Удалить локальную базу данных."
 
 #: ../../client/src/app/base/Menu.tsx:149
+#: ../../client/src/dev/routes/ScreenDesign.tsx:11
 msgid "Design"
 msgstr "Дизайн"
 
@@ -99,7 +100,7 @@ msgstr "Дизайн"
 msgid "Dev Mode"
 msgstr ""
 
-#: ../../client/src/media/files/base/WatermarkEmpty.tsx:9
+#: ../../client/src/media/files/base/WatermarkEmpty.tsx:15
 msgid "Directory is empty"
 msgstr ""
 
@@ -115,16 +116,8 @@ msgstr "Расстояние"
 msgid "Docs"
 msgstr "Документы"
 
-#: ../../client/src/app/base/Menu.tsx:62
-msgid "Documents"
-msgstr ""
-
 #: ../../client/src/media/files/base/WatermarkNotSupported.tsx:10
 msgid "Download"
-msgstr ""
-
-#: ../../client/src/app/base/Menu.tsx:98
-msgid "Downloads"
 msgstr ""
 
 #: ../../client/src/home/utils/time.ts:15
@@ -163,33 +156,9 @@ msgstr "Избранное"
 msgid "File cannot be previewed"
 msgstr ""
 
-#: ../../client/src/media/files/base/WatermarkNotSupported.tsx:9
-msgid "File preview unsupported"
-msgstr ""
-
-#: ../../client/src/media/files/base/WatermarkNotSupported.tsx:9
-msgid "File type unsupported"
-msgstr ""
-
 #: ../../client/src/app/base/Menu.tsx:59
 msgid "Files"
 msgstr "Файлы"
-
-#: ../../client/src/media/files/base/WatermarkEmpty.tsx:9
-msgid "Folder contents are empty"
-msgstr ""
-
-#: ../../client/src/media/files/base/WatermarkEmpty.tsx:9
-msgid "Folder has no contents"
-msgstr ""
-
-#: ../../client/src/media/files/base/WatermarkEmpty.tsx:9
-msgid "Folder has no files"
-msgstr ""
-
-#: ../../client/src/media/files/base/WatermarkEmpty.tsx:9
-msgid "Folder is empty"
-msgstr ""
 
 #: ../../client/src/app/base/Menu.tsx:89
 msgid "Games"
@@ -227,7 +196,7 @@ msgstr "ID модели Groq"
 msgid "Human"
 msgstr "Человек"
 
-#: ../../client/src/media/files/base/WatermarkEmpty.tsx:10
+#: ../../client/src/media/files/base/WatermarkEmpty.tsx:16
 msgid "Import"
 msgstr ""
 
@@ -244,6 +213,7 @@ msgid "Language"
 msgstr "Язык"
 
 #: ../../client/src/app/base/Menu.tsx:155
+#: ../../client/src/dev/routes/ScreenLibrary.tsx:15
 msgid "Library"
 msgstr "Библиотека"
 
@@ -287,21 +257,9 @@ msgstr ""
 msgid "No events scheduled."
 msgstr "Нет запланированных событий."
 
-#: ../../client/src/media/files/base/WatermarkNotSupported.tsx:9
-msgid "No preview available"
-msgstr ""
-
-#: ../../client/src/media/files/base/WatermarkNotSupported.tsx:12
-msgid "No Preview Available"
-msgstr ""
-
 #: ../../client/src/settings/routes/ScreenSettings.tsx:51
 msgid "Owner Key"
 msgstr "Ключ владельца"
-
-#: ../../client/src/app/base/Menu.tsx:74
-msgid "Photos"
-msgstr "Фотографии"
 
 #: ../../client/src/app/base/Menu.tsx:77
 msgid "Pictures"
@@ -347,6 +305,8 @@ msgstr "Выберите единицу измерения температур�
 msgid "Select the theme for the app."
 msgstr "Выберите тему для приложения."
 
+#: ../../client/src/app/base/Menu.tsx:165
+#: ../../client/src/app/base/Menu.tsx:173
 #: ../../client/src/settings/routes/ScreenSettings.tsx:27
 msgid "Settings"
 msgstr "Настройки"
@@ -359,17 +319,9 @@ msgstr "Температура"
 msgid "Theme"
 msgstr "Тема"
 
-#: ../../client/src/media/files/base/WatermarkNotSupported.tsx:12
-msgid "Unsupported file type"
-msgstr ""
-
 #: ../../client/src/settings/routes/ScreenSettings.tsx:39
 msgid "User Name"
 msgstr "Имя пользователя"
-
-#: ../../client/src/app/base/Menu.tsx:80
-msgid "Videos"
-msgstr "Видео"
 
 #: ../../client/src/home/routes/ScreenHome.tsx:22
 msgid "Welcome, {0}"
@@ -379,7 +331,7 @@ msgstr "Добро пожаловать, {0}"
 msgid "Welcome, Human"
 msgstr "Добро пожаловать, Человек"
 
-#: ../../client/src/media/files/base/WatermarkEmptyDir.tsx:12
+#: ../../client/src/app/routes/ScreenTeaser.tsx:12
 msgid "Work in progress..."
 msgstr "В работе..."
 

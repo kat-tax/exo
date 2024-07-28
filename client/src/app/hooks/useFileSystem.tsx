@@ -1,14 +1,29 @@
 import {useCallback} from 'react';
 import {fs} from 'react-exo/fs';
 
+import type {OpenDirectoryOptions} from 'react-exo/fs';
+
 export function useFileSystem() {
-  const importFolder = useCallback(async () => {
-    const folder = await fs.openFolder();
-    console.log('[fs] folder', folder);
-    const start = performance.now();
-    const copy = await fs.importFolder(folder);
-    console.log('[fs] import folder', copy, performance.now() - start);
+  const getOpenDirectoryInit = useCallback((path: string) => {
+    let startIn: OpenDirectoryOptions['startIn'];
+    switch (path) {
+      case 'documents': startIn = 'documents'; break;
+      case 'pictures': startIn = 'pictures'; break;
+      case 'videos': startIn = 'videos'; break;
+      case 'music': startIn = 'music'; break;
+      case 'downloads': startIn = 'downloads'; break;
+      default: startIn = 'desktop';
+    }
+    return startIn;
   }, []);
+
+  const importDirectory = useCallback(async (path = '.') => {
+    const startIn = getOpenDirectoryInit(path);
+    const dir = await fs.openDirectory({id: path, startIn, mode: 'read'});
+    const start = performance.now();
+    const copy = await fs.importDirectory(dir, path);
+    console.log('[fs] import dir', copy, performance.now() - start);
+  }, [getOpenDirectoryInit]);
 
   const importFile = useCallback(async () => {
     const file = await fs.openFile();
@@ -29,8 +44,10 @@ export function useFileSystem() {
   }, []);
 
   return {
-    importFolder,
+    getOpenDirectoryInit,
+    importDirectory,
     importFile,
     hashFile,
   };
 }
+
