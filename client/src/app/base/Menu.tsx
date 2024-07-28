@@ -45,11 +45,14 @@ export function Menu(props: MenuProps) {
           {tabs &&
             <View style={styles.spacer}/>
           }
-          <MenuSection label={<Trans>Media</Trans>} {...{tabs}} action={{
-            icon: 'ph:upload',
-            label: 'Import Files',
-            onPress: importFile,
-          }}>
+          <MenuSection
+            label={<Trans>Media</Trans>}
+            mode={itemMode}
+            action={{
+              icon: 'ph:upload',
+              label: 'Import Files',
+              onPress: importFile,
+            }}>
             <MenuItem
               path="/browse"
               icon="ph:folder"
@@ -93,7 +96,9 @@ export function Menu(props: MenuProps) {
               mode={itemMode}
             />
           </MenuSection>
-          <MenuSection label={<Trans>World</Trans>} {...{tabs}}>
+          <MenuSection
+            label={<Trans>World</Trans>}
+            mode={itemMode}>
             <MenuItem
               path="/news"
               icon="ph:rss"
@@ -119,7 +124,9 @@ export function Menu(props: MenuProps) {
               mode={itemMode}
             />
           </MenuSection>
-          <MenuSection label={<Trans>Favorites</Trans>} {...{tabs}}>
+          <MenuSection
+            label={<Trans>Favorites</Trans>}
+            mode={itemMode}>
             {tabs ? null : lists.map(({id}) =>
               <MenuItem
                 key={id}
@@ -132,7 +139,10 @@ export function Menu(props: MenuProps) {
             )}
           </MenuSection>
           {__DEV__ &&
-            <MenuSection closed label={<Trans>Dev Mode</Trans>} {...{tabs}}>
+            <MenuSection
+              closed
+              label={<Trans>Dev Mode</Trans>}
+              mode={itemMode}>
               <MenuItem
                 path="/design"
                 icon="ph:palette"

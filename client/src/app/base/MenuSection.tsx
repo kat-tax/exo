@@ -7,7 +7,7 @@ import {isTouch} from 'app/utils/platform';
 
 interface MenuSectionProps extends React.PropsWithChildren {
   label: JSX.Element,
-  tabs?: boolean,
+  mode?: 'default' | 'tab',
   closed?: boolean,
   disabled?: boolean,
   action?: {
@@ -23,7 +23,7 @@ export function MenuSection(props: MenuSectionProps) {
   const [open, setOpen] = useState(!props.closed);
 
   if (props.disabled) return null;
-  if (props.tabs) return props.children
+  if (props.mode === 'tab') return props.children;
 
   return (
     <>

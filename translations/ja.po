@@ -26,7 +26,7 @@ msgstr "認証用のニーモニックフレーズ。"
 msgid "AI"
 msgstr "AI"
 
-#: ../../client/src/app/base/Menu.tsx:118
+#: ../../client/src/app/base/Menu.tsx:123
 msgid "Alarms"
 msgstr "アラーム"
 
@@ -55,7 +55,7 @@ msgstr "何でも聞いてください..."
 msgid "Auto"
 msgstr "自動"
 
-#: ../../client/src/app/base/Menu.tsx:92
+#: ../../client/src/app/base/Menu.tsx:95
 msgid "Books"
 msgstr "本"
 
@@ -91,11 +91,11 @@ msgstr "プロンプトを削除"
 msgid "Delete the local database."
 msgstr "ローカルデータベースを削除します。"
 
-#: ../../client/src/app/base/Menu.tsx:139
+#: ../../client/src/app/base/Menu.tsx:149
 msgid "Design"
 msgstr "デザイン"
 
-#: ../../client/src/app/base/Menu.tsx:135
+#: ../../client/src/app/base/Menu.tsx:144
 msgid "Dev Mode"
 msgstr ""
 
@@ -107,7 +107,7 @@ msgstr "表示"
 msgid "Distance"
 msgstr "距離"
 
-#: ../../client/src/app/base/Menu.tsx:62
+#: ../../client/src/app/base/Menu.tsx:65
 msgid "Docs"
 msgstr "ドキュメント"
 
@@ -139,7 +139,7 @@ msgstr "ニーモニックフレーズを入力してください"
 msgid "Enter your name"
 msgstr "名前を入力してください"
 
-#: ../../client/src/app/base/Menu.tsx:112
+#: ../../client/src/app/base/Menu.tsx:117
 msgid "Events"
 msgstr "イベント"
 
@@ -147,15 +147,19 @@ msgstr "イベント"
 msgid "Fahrenheit"
 msgstr "華氏"
 
-#: ../../client/src/app/base/Menu.tsx:122
+#: ../../client/src/app/base/Menu.tsx:128
 msgid "Favorites"
 msgstr "お気に入り"
 
-#: ../../client/src/app/base/Menu.tsx:56
+#: ../../client/src/app/base/Menu.tsx:59
 msgid "Files"
 msgstr "ファイル"
 
-#: ../../client/src/app/base/Menu.tsx:86
+#: ../../client/src/media/files/base/WatermarkNotSupported.tsx:12
+msgid "Folder is empty"
+msgstr ""
+
+#: ../../client/src/app/base/Menu.tsx:89
 msgid "Games"
 msgstr "ゲーム"
 
@@ -203,7 +207,7 @@ msgstr "キロメートル"
 msgid "Language"
 msgstr "言語"
 
-#: ../../client/src/app/base/Menu.tsx:145
+#: ../../client/src/app/base/Menu.tsx:155
 msgid "Library"
 msgstr "ライブラリ"
 
@@ -219,11 +223,11 @@ msgstr "読み込み中..."
 msgid "Manage your settings"
 msgstr "設定を管理"
 
-#: ../../client/src/app/base/Menu.tsx:106
+#: ../../client/src/app/base/Menu.tsx:111
 msgid "Maps"
 msgstr "地図"
 
-#: ../../client/src/app/base/Menu.tsx:48
+#: ../../client/src/app/base/Menu.tsx:49
 msgid "Media"
 msgstr "メディア"
 
@@ -231,21 +235,25 @@ msgstr "メディア"
 msgid "Miles"
 msgstr "マイル"
 
-#: ../../client/src/app/base/Menu.tsx:80
+#: ../../client/src/app/base/Menu.tsx:83
 msgid "Movies"
 msgstr ""
 
-#: ../../client/src/app/base/Menu.tsx:68
+#: ../../client/src/app/base/Menu.tsx:71
 msgid "Music"
 msgstr "音楽"
 
-#: ../../client/src/app/base/Menu.tsx:100
+#: ../../client/src/app/base/Menu.tsx:105
 msgid "News"
 msgstr ""
 
 #: ../../client/src/world/events/routes/ScreenCalendar.tsx:34
 msgid "No events scheduled."
 msgstr "予定されているイベントはありません。"
+
+#: ../../client/src/media/files/base/WatermarkNotSupported.tsx:12
+msgid "No Preview Available"
+msgstr ""
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:51
 msgid "Owner Key"
@@ -255,7 +263,7 @@ msgstr "オーナーキー"
 msgid "Photos"
 msgstr "写真"
 
-#: ../../client/src/app/base/Menu.tsx:74
+#: ../../client/src/app/base/Menu.tsx:77
 msgid "Pictures"
 msgstr ""
 
@@ -311,6 +319,10 @@ msgstr "温度"
 msgid "Theme"
 msgstr "テーマ"
 
+#: ../../client/src/media/files/base/WatermarkNotSupported.tsx:12
+msgid "Unsupported file type"
+msgstr ""
+
 #: ../../client/src/settings/routes/ScreenSettings.tsx:39
 msgid "User Name"
 msgstr "ユーザー名"
@@ -327,11 +339,11 @@ msgstr "ようこそ、{0}さん"
 msgid "Welcome, Human"
 msgstr "ようこそ、人間さん"
 
-#: ../../client/src/app/routes/ScreenTeaser.tsx:12
+#: ../../client/src/media/files/base/WatermarkEmptyDir.tsx:12
 msgid "Work in progress..."
 msgstr "作業中..."
 
-#: ../../client/src/app/base/Menu.tsx:96
+#: ../../client/src/app/base/Menu.tsx:100
 msgid "World"
 msgstr "ワールド"
 

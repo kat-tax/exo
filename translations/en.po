@@ -26,7 +26,7 @@ msgstr "A mnemonic phrase for authentication."
 msgid "AI"
 msgstr "AI"
 
-#: ../../client/src/app/base/Menu.tsx:118
+#: ../../client/src/app/base/Menu.tsx:123
 msgid "Alarms"
 msgstr "Alarms"
 
@@ -55,7 +55,7 @@ msgstr "Ask anything..."
 msgid "Auto"
 msgstr "Auto"
 
-#: ../../client/src/app/base/Menu.tsx:92
+#: ../../client/src/app/base/Menu.tsx:95
 msgid "Books"
 msgstr "Books"
 
@@ -91,11 +91,11 @@ msgstr "Delete Prompts"
 msgid "Delete the local database."
 msgstr "Delete the local database."
 
-#: ../../client/src/app/base/Menu.tsx:139
+#: ../../client/src/app/base/Menu.tsx:149
 msgid "Design"
 msgstr "Design"
 
-#: ../../client/src/app/base/Menu.tsx:135
+#: ../../client/src/app/base/Menu.tsx:144
 msgid "Dev Mode"
 msgstr "Dev Mode"
 
@@ -107,7 +107,7 @@ msgstr "Display"
 msgid "Distance"
 msgstr "Distance"
 
-#: ../../client/src/app/base/Menu.tsx:62
+#: ../../client/src/app/base/Menu.tsx:65
 msgid "Docs"
 msgstr "Docs"
 
@@ -139,7 +139,7 @@ msgstr "Enter your mnemonic phrase"
 msgid "Enter your name"
 msgstr "Enter your name"
 
-#: ../../client/src/app/base/Menu.tsx:112
+#: ../../client/src/app/base/Menu.tsx:117
 msgid "Events"
 msgstr "Events"
 
@@ -147,15 +147,19 @@ msgstr "Events"
 msgid "Fahrenheit"
 msgstr "Fahrenheit"
 
-#: ../../client/src/app/base/Menu.tsx:122
+#: ../../client/src/app/base/Menu.tsx:128
 msgid "Favorites"
 msgstr "Favorites"
 
-#: ../../client/src/app/base/Menu.tsx:56
+#: ../../client/src/app/base/Menu.tsx:59
 msgid "Files"
 msgstr "Files"
 
-#: ../../client/src/app/base/Menu.tsx:86
+#: ../../client/src/media/files/base/WatermarkNotSupported.tsx:12
+msgid "Folder is empty"
+msgstr "Folder is empty"
+
+#: ../../client/src/app/base/Menu.tsx:89
 msgid "Games"
 msgstr "Games"
 
@@ -203,7 +207,7 @@ msgstr "Kilometers"
 msgid "Language"
 msgstr "Language"
 
-#: ../../client/src/app/base/Menu.tsx:145
+#: ../../client/src/app/base/Menu.tsx:155
 msgid "Library"
 msgstr "Library"
 
@@ -219,11 +223,11 @@ msgstr "Loading..."
 msgid "Manage your settings"
 msgstr "Manage your settings"
 
-#: ../../client/src/app/base/Menu.tsx:106
+#: ../../client/src/app/base/Menu.tsx:111
 msgid "Maps"
 msgstr "Maps"
 
-#: ../../client/src/app/base/Menu.tsx:48
+#: ../../client/src/app/base/Menu.tsx:49
 msgid "Media"
 msgstr "Media"
 
@@ -231,21 +235,25 @@ msgstr "Media"
 msgid "Miles"
 msgstr "Miles"
 
-#: ../../client/src/app/base/Menu.tsx:80
+#: ../../client/src/app/base/Menu.tsx:83
 msgid "Movies"
 msgstr "Movies"
 
-#: ../../client/src/app/base/Menu.tsx:68
+#: ../../client/src/app/base/Menu.tsx:71
 msgid "Music"
 msgstr "Music"
 
-#: ../../client/src/app/base/Menu.tsx:100
+#: ../../client/src/app/base/Menu.tsx:105
 msgid "News"
 msgstr "News"
 
 #: ../../client/src/world/events/routes/ScreenCalendar.tsx:34
 msgid "No events scheduled."
 msgstr "No events scheduled."
+
+#: ../../client/src/media/files/base/WatermarkNotSupported.tsx:12
+msgid "No Preview Available"
+msgstr "No Preview Available"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:51
 msgid "Owner Key"
@@ -255,7 +263,7 @@ msgstr "Owner Key"
 msgid "Photos"
 msgstr "Photos"
 
-#: ../../client/src/app/base/Menu.tsx:74
+#: ../../client/src/app/base/Menu.tsx:77
 msgid "Pictures"
 msgstr "Pictures"
 
@@ -311,6 +319,10 @@ msgstr "Temperature"
 msgid "Theme"
 msgstr "Theme"
 
+#: ../../client/src/media/files/base/WatermarkNotSupported.tsx:12
+msgid "Unsupported file type"
+msgstr "Unsupported file type"
+
 #: ../../client/src/settings/routes/ScreenSettings.tsx:39
 msgid "User Name"
 msgstr "User Name"
@@ -327,11 +339,11 @@ msgstr "Welcome, {0}"
 msgid "Welcome, Human"
 msgstr "Welcome, Human"
 
-#: ../../client/src/app/routes/ScreenTeaser.tsx:12
+#: ../../client/src/media/files/base/WatermarkEmptyDir.tsx:12
 msgid "Work in progress..."
 msgstr "Work in progress..."
 
-#: ../../client/src/app/base/Menu.tsx:96
+#: ../../client/src/app/base/Menu.tsx:100
 msgid "World"
 msgstr "World"
 

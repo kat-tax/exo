@@ -4,6 +4,7 @@ import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useInitDirectories} from 'media/files/hooks/useInitDirectories';
 import {useDirectory} from 'media/files/hooks/useDirectory';
 import {DirectoryEntry} from 'media/files/base/DirectoryEntry';
+import {WatermarkEmpty} from 'media/files/base/WatermarkEmpty';
 import {resolve} from 'media/files/utils/path';
 
 export default function ScreenDirectory() {
@@ -23,6 +24,9 @@ export default function ScreenDirectory() {
           path={path.join('/')}
         />
       ))}
+      {dir?.length === 0 &&
+        <WatermarkEmpty/>
+      }
     </View>
   );
 }

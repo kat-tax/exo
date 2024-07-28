@@ -1,6 +1,6 @@
-import {Text} from 'react-native';
 import {useLocation} from 'react-exo/navigation';
 import {PreviewPDF} from 'media/files/base/PreviewPDF';
+import {WatermarkNotSupported} from 'media/files/base/WatermarkNotSupported';
 import {resolve} from 'media/files/utils/path';
 import {Page} from 'app/base/Page';
 
@@ -14,14 +14,10 @@ export default function ScreenFilePreview() {
   let viewer: React.ReactNode;
   switch (ext) {
     case 'pdf':
-      viewer = (
-        <PreviewPDF path={path.join('/')}/>
-      );
+      viewer = <PreviewPDF path={path.join('/')}/>
       break;
     default:
-      viewer = (
-        <Text>Unsupported file type</Text>
-      );
+      viewer = <WatermarkNotSupported/>
   }
 
   return (
