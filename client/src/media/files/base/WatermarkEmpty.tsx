@@ -12,7 +12,7 @@ export function WatermarkEmpty({path = '.'}: WatermarkEmptyProps) {
   const {importDirectory} = useFileSystem();
   return (
     <Watermark
-      title={t(i18n)`Directory is empty`}
+      title={t(i18n)`Directory is empty.`}
       label={t(i18n)`Import`}
       icon="ph:upload"
       onAction={async () => {

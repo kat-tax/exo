@@ -15,18 +15,20 @@ export function Watermark(props: WatermarkProps) {
 
   return (
     <View style={styles.root}>
-      <Text style={styles.text}>
-        {props.title}
-      </Text>
-      <Button
-        mode="Primary"
-        state="Default"
-        label={props.label}
-        onPress={props.onAction}
-        icon={<Icon name={props.icon}/>}
-        showIcon
-      />
-      {props.children}
+      <View style={styles.contents}>
+        <Text style={styles.text}>
+          {props.title}
+        </Text>
+        <Button
+          mode="Primary"
+          state="Default"
+          label={props.label}
+          onPress={props.onAction}
+          icon={<Icon name={props.icon}/>}
+          showIcon
+        />
+        {props.children}
+      </View>
     </View>
   );
 }
@@ -36,8 +38,15 @@ const stylesheet = createStyleSheet(theme => ({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  contents: {
     gap: theme.display.space5,
-    marginBottom: theme.display.space9,
+    padding: theme.display.space9,
+    paddingHorizontal: theme.display.space9 * 2,
+    borderStyle: 'dashed',
+    borderWidth: 1,
+    borderColor: theme.colors.muted,
+    borderRadius: theme.display.radius3,
   },
   text: {
     fontFamily: theme.font.family,

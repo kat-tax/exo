@@ -104,6 +104,22 @@ msgstr ""
 msgid "Directory is empty"
 msgstr ""
 
+#: ../../client/src/media/files/base/WatermarkEmpty.tsx:15
+msgid "Directory is empty."
+msgstr ""
+
+#: ../../client/src/media/files/base/WatermarkEmpty.tsx:15
+msgid "Directory is empty. Press import or drag and drop a directory here."
+msgstr ""
+
+#: ../../client/src/media/files/base/WatermarkEmpty.tsx:15
+msgid "Directory is empty. Press import or drag and drop files here."
+msgstr ""
+
+#: ../../client/src/media/files/base/WatermarkEmpty.tsx:15
+msgid "Directory is empty. Press import or drag and drop."
+msgstr ""
+
 #: ../../client/src/settings/routes/ScreenSettings.tsx:72
 msgid "Display"
 msgstr "表示"
