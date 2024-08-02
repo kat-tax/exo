@@ -26,22 +26,71 @@ export function File(props: FileProps) {
 
   const renderer = useMemo(() => {
     if (!ext) return null;
+    const $ = {path, name};
     switch (ext) {
+      // Documents
       case 'pdf':
-        return <FilePDF {...{path, name}}/>
+        return <FilePDF {...$}/>
+      // Roms
+      case 'n64':
+      case 'v64':
+      case 'z64':
+        return <FileGame {...$} platform="n64"/>
       case 'gb':
       case 'gbc':
-        return <FileGame {...{path, name}} platform="gb"/>
+        return <FileGame {...$} platform="gb"/>
       case 'gba':
-        return <FileGame {...{path, name}} platform="gba"/>
+        return <FileGame {...$} platform="gba"/>
+      case 'nds':
+        return <FileGame {...$} platform="nds"/>
       case 'nes':
-        return <FileGame {...{path, name}} platform="nes"/>
-      case 'snes':
-        return <FileGame {...{path, name}} platform="snes"/>
-      case 'z64':
-        return <FileGame {...{path, name}} platform="n64"/>
+        return <FileGame {...$} platform="nes"/>
+      case 'sfc':
+      case 'smc':
+        return <FileGame {...$} platform="snes"/>
+      case 'psx':
+        return <FileGame {...$} platform="psx"/>
+      case 'gen':
+        return <FileGame {...$} platform="segaMD"/>
+      case 'sms':
+        return <FileGame {...$} platform="segaMS"/>
+      case 'gg':
+        return <FileGame {...$} platform="segaGG"/>
+      case 'scd':
+        return <FileGame {...$} platform="segaCD"/>
+      case '32x':
+        return <FileGame {...$} platform="sega32x"/>
+      case 'sat':
+        return <FileGame {...$} platform="segaSaturn"/>
+      case 'a78':
+        return <FileGame {...$} platform="atari7800"/>
+      case 'a26':
+        return <FileGame {...$} platform="atari2600"/>
+      case 'jag':
+      case 'j64':
+        return <FileGame {...$} platform="jaguar"/>
+      case 'lnx':
+        return <FileGame {...$} platform="lynx"/>
+      case 'pce':
+        return <FileGame {...$} platform="pce"/>
+      case 'pcfx':
+        return <FileGame {...$} platform="pcfx"/>
+      case 'ngp':
+        return <FileGame {...$} platform="ngp"/>
+      case 'vb':
+        return <FileGame {...$} platform="vb"/>
+      case 'ws':
+      case 'wsc':
+        return <FileGame {...$} platform="ws"/>
+      case 'col':
+        return <FileGame {...$} platform="coleco"/>
+      case 'd64':
+      case 't64':
+      case 'prg':
+        return <FileGame {...$} platform="vice_x64"/>
+      // Unsupported
       default:
-        return <FileDownload {...{path, name}}/>
+        return <FileDownload {...$}/>
     }
   }, [ext, name, path]);
 
