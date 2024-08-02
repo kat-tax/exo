@@ -36,6 +36,7 @@ export default defineConfig(env => mergeConfig(
           video: 'src/assets/video/Video.export',
           lottie: 'src/assets/lottie/Lottie.export',
           rive: 'src/assets/rive/Rive.export',
+          game: 'src/assets/game/Game.export',
           markdown: 'src/assets/markdown/Markdown.export',
           /* Layout */
           gesture: 'src/layout/gesture/Gesture.export',

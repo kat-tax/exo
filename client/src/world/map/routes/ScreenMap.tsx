@@ -6,6 +6,8 @@ import {useAppContext} from 'app/hooks/useAppContext';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useScheme} from 'settings/hooks/useScheme';
 import {MarkerDevice} from 'world/map/base/MarkerDevice';
+import {MarkerSchool} from 'world/map/base/MarkerSchool';
+import schools from 'world/map/utils/schools';
 
 const MAPTILER_URL = 'https://api.maptiler.com/maps/';
 const MAPTILER_KEY = 'UbdBChbHpiVOSIdTJWvV';
@@ -41,6 +43,23 @@ export default function ScreenMap() {
             longitude={d.coords?.[1] ?? 0}
           />
         ))}
+        {schools.map(s => {
+          const [id, coords, name, address] = s;
+          const [lat, lng] = coords
+            .split(',')
+            .map(e => e.trim())
+            .map(Number);
+          return (
+            <MarkerSchool
+              id={id}
+              key={id}
+              name={name}
+              latitude={lat}
+              longitude={lng}
+              address={address}
+            />
+          );
+        })}
       </Map>
     </View>
   );

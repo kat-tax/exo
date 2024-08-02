@@ -2,15 +2,20 @@ import {t} from '@lingui/macro';
 import {useLingui} from '@lingui/react';
 import {Watermark} from './Watermark';
 
-export function WatermarkNotSupported() {
+interface FileDownload {
+  path: string,
+  name: string,
+}
+
+export function FileDownload(props: FileDownload) {
   const {i18n} = useLingui();
   return (
     <Watermark
-      title={t(i18n)`File cannot be previewed`}
+      title={props.name}
       label={t(i18n)`Download`}
       icon="ph:download"
       onAction={() => {
-        console.log('Download');
+        console.log('Download', props.path);
       }}
     />
   );

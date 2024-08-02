@@ -2,7 +2,6 @@ import {Icon} from 'react-exo/icon';
 import {View, Text} from 'react-native';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useLocation, Link} from 'react-exo/navigation';
-import {useScheme} from 'settings/hooks/useScheme';
 import {isTouch} from 'app/utils/platform';
 
 interface MenuItemProps extends React.PropsWithChildren {
@@ -16,7 +15,6 @@ interface MenuItemProps extends React.PropsWithChildren {
 export function MenuItem(props: MenuItemProps) {
   const {styles, theme} = useStyles(stylesheet);
   const {pathname} = useLocation();
-  const [scheme] = useScheme();
 
   const mode = props.mode ?? 'default';
   const isTab = mode === 'tab';
@@ -31,11 +29,7 @@ export function MenuItem(props: MenuItemProps) {
         styles.item,
         isTab && styles.itemTab,
         isAction && styles.itemAction,
-        isActive && {
-          backgroundColor: scheme === 'dark'
-            ? 'rgba(255, 255, 255, 0.09)'
-            : 'rgba(0, 0, 0, 0.07)'
-        },
+        isActive && styles.itemActive,
       ]}>
         {props.icon &&
           <Icon
@@ -73,6 +67,9 @@ const stylesheet = createStyleSheet(theme => ({
   itemAction: {
     paddingHorizontal: theme.display.space1,
     paddingVertical: theme.display.space1,
+  },
+  itemActive: {
+    backgroundColor: theme.colors.card,
   },
   label: {
     userSelect: 'none',

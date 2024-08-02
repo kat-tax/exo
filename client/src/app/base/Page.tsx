@@ -11,26 +11,22 @@ export interface PageProps extends React.PropsWithChildren {
 export function Page(props: PageProps) {
   const {styles} = useStyles(stylesheet);
   return (
-    <ScrollView contentContainerStyle={{flex: 1}}>
-      <View style={[styles.root, props.fullWidth && styles.rootFull]}>
+    <ScrollView style={styles.root} contentContainerStyle={{flex: 1}}>
+      <View style={[styles.content, props.fullWidth && styles.contentFull]}>
         <View style={styles.header}>
           <View style={styles.greeting}>
-            {props.title &&
+            {Boolean(props.title) &&
               <Text style={styles.title}>
                 {props.title}
               </Text>
             }
-            {props.message &&
+            {Boolean(props.message) &&
               <Text style={styles.message}>
                 {props.message}
               </Text>
             }
           </View>
-          {props.widget &&
-            <View>
-              {props.widget}
-            </View>
-          }
+          {props.widget}
         </View>
         {props.children}
       </View>
@@ -38,8 +34,15 @@ export function Page(props: PageProps) {
   );
 }
 
-const stylesheet = createStyleSheet(theme => ({
+const stylesheet = createStyleSheet((theme, rt) => ({
   root: {
+    margin: theme.display.space2,
+    borderWidth: rt.hairlineWidth,
+    borderColor: theme.colors.border,
+    borderRadius: theme.display.radius2,
+    backgroundColor: theme.colors.card,
+  },
+  content: {
     flex: 1,
     alignSelf: 'center',
     gap: theme.display.space5,
@@ -54,7 +57,7 @@ const stylesheet = createStyleSheet(theme => ({
       xxxxxl: 3840, // 4K
     },
   },
-  rootFull: {
+  contentFull: {
     width: '100%',
   },
   greeting: {

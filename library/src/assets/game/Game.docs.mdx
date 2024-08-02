@@ -1,0 +1,33 @@
+import {Game} from 'react-exo/game';
+
+# Game Asset
+
+> A component that renders an emulator for a rom
+
+<Game
+  url="https://get.ult.dev/samples/game.rom"
+/>
+
+```tsx twoslash
+import React from 'react';
+// ---cut---
+// @log: ↓ Import the component
+import {Game} from 'react-exo/game';
+
+// @log: ↓ Try the example
+<Game
+  url="https://get.ult.dev/samples/game.rom"
+  bios="[path to platform bios file]"
+  platform="nes"
+/>
+```
+
+## Platform Support
+
+| Platform | Technology | Functional | Notes |
+| -------- | ---------- | :--------: | :---: |
+| Web | [emulatorjs](https://emulatorjs.org) | ✅ | - |
+| Android | [emulatorjs](https://emulatorjs.org) | ✅ | - |
+| iOS | [emulatorjs](https://emulatorjs.org) | ✅ | - |
+| MacOS | [emulatorjs](https://emulatorjs.org) | ✅ | - |
+| Windows | [emulatorjs](https://emulatorjs.org) | ✅ | - |

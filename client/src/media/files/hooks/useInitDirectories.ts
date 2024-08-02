@@ -1,7 +1,7 @@
 import {fs} from 'react-exo/fs';
 import {useEffect} from 'react';
 
-const INIT_DIRECTORIES = [
+export const INIT_DIRECTORIES = [
   'documents',
   'music',
   'pictures',

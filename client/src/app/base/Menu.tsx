@@ -3,10 +3,10 @@ import {View, ScrollView, Text} from 'react-native';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useFileSystem} from 'app/hooks/useFileSystem';
 import {useLists} from 'media/files/hooks/useLists';
+import {MenuItem} from 'app/base/MenuItem';
 import {MenuHeader} from 'app/base/MenuHeader';
 import {MenuSection} from 'app/base/MenuSection';
 import {WidgetStorage} from 'app/base/WidgetStorage';
-import {MenuItem} from 'app/base/MenuItem';
 import {isTouch} from 'app/utils/platform';
 
 import type {useProfile} from 'app/data';
@@ -26,7 +26,7 @@ export function Menu(props: MenuProps) {
   return (
     <View style={styles.bg}>
       <ScrollView horizontal={tabs} contentContainerStyle={{flexGrow: 1}}>
-        <View style={[styles.root, tabs && styles.rootTabs]}>
+        <View style={[styles.root, tabs && styles.tabs]}>
           {!tabs &&
             <MenuHeader {...props}/>
           }
@@ -182,7 +182,7 @@ export function Menu(props: MenuProps) {
   );
 }
 
-const stylesheet = createStyleSheet((theme, rt) => ({
+const stylesheet = createStyleSheet((theme) => ({
   bg: {
     flex: 1,
     backgroundColor: theme.colors.background,
@@ -190,17 +190,11 @@ const stylesheet = createStyleSheet((theme, rt) => ({
   root: {
     flex: 1,
     padding: 10,
-    borderColor: theme.colors.border,
-    borderRightWidth: rt.rtl ? 0 : rt.hairlineWidth,
-    borderLeftWidth: rt.rtl ? rt.hairlineWidth : 0,
   },
-  rootTabs: {
+  tabs: {
     alignItems: 'center',
     flexDirection: 'row',
     gap: theme.display.space2,
-    borderTopWidth: rt.hairlineWidth,
-    borderRightWidth: 0,
-    borderLeftWidth: 0,
   },
   footer: {
     gap: theme.display.space2,

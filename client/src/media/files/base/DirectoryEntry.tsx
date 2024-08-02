@@ -13,12 +13,15 @@ interface DirectoryEntry {
 export function DirectoryEntry(props: DirectoryEntry) {
   const {styles} = useStyles(stylesheet);
   const {entry} = props;
-  const base = `/${entry.isDirectory ? 'browse' : 'file'}`;
-  const path = props.path ? `${base}/${props.path}` : base;
+  const path = entry.isFile
+    ? `#${entry.name}`
+    : `${entry.name}`;
   return (
     <View style={styles.root}>
-      <Link to={`${path}/${entry.name}`}>
-        <DirectoryEntryRow name={entry.name}/>
+      <Link to={path}>
+        <DirectoryEntryRow
+          name={entry.name}
+        />
       </Link>
     </View>
   );

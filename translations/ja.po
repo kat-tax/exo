@@ -92,7 +92,6 @@ msgid "Delete the local database."
 msgstr "ローカルデータベースを削除します。"
 
 #: ../../client/src/app/base/Menu.tsx:149
-#: ../../client/src/dev/routes/ScreenDesign.tsx:11
 msgid "Design"
 msgstr "デザイン"
 
@@ -101,23 +100,7 @@ msgid "Dev Mode"
 msgstr ""
 
 #: ../../client/src/media/files/base/WatermarkEmpty.tsx:15
-msgid "Directory is empty"
-msgstr ""
-
-#: ../../client/src/media/files/base/WatermarkEmpty.tsx:15
 msgid "Directory is empty."
-msgstr ""
-
-#: ../../client/src/media/files/base/WatermarkEmpty.tsx:15
-msgid "Directory is empty. Press import or drag and drop a directory here."
-msgstr ""
-
-#: ../../client/src/media/files/base/WatermarkEmpty.tsx:15
-msgid "Directory is empty. Press import or drag and drop files here."
-msgstr ""
-
-#: ../../client/src/media/files/base/WatermarkEmpty.tsx:15
-msgid "Directory is empty. Press import or drag and drop."
 msgstr ""
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:72
@@ -132,7 +115,7 @@ msgstr "距離"
 msgid "Docs"
 msgstr "ドキュメント"
 
-#: ../../client/src/media/files/base/WatermarkNotSupported.tsx:10
+#: ../../client/src/media/files/base/FileDownload.tsx:15
 msgid "Download"
 msgstr ""
 
@@ -229,7 +212,6 @@ msgid "Language"
 msgstr "言語"
 
 #: ../../client/src/app/base/Menu.tsx:155
-#: ../../client/src/dev/routes/ScreenLibrary.tsx:15
 msgid "Library"
 msgstr "ライブラリ"
 
@@ -269,7 +251,7 @@ msgstr "音楽"
 msgid "News"
 msgstr ""
 
-#: ../../client/src/world/events/routes/ScreenCalendar.tsx:34
+#: ../../client/src/world/events/routes/ScreenCalendar.tsx:36
 msgid "No events scheduled."
 msgstr "予定されているイベントはありません。"
 
@@ -284,6 +266,10 @@ msgstr ""
 #: ../../client/src/home/base/AiPrompt.tsx:50
 msgid "Please set your Groq API Key"
 msgstr "Groq APIキーを設定してください"
+
+#: ../../client/src/media/files/base/RendererDownload.tsx:9
+msgid "Preview Unavailable"
+msgstr ""
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:37
 msgid "Profile"
@@ -323,7 +309,6 @@ msgstr "アプリのテーマを選択してください。"
 
 #: ../../client/src/app/base/Menu.tsx:165
 #: ../../client/src/app/base/Menu.tsx:173
-#: ../../client/src/settings/routes/ScreenSettings.tsx:27
 msgid "Settings"
 msgstr "設定"
 
@@ -347,7 +332,7 @@ msgstr "ようこそ、{0}さん"
 msgid "Welcome, Human"
 msgstr "ようこそ、人間さん"
 
-#: ../../client/src/app/routes/ScreenTeaser.tsx:12
+#: ../../client/src/app/routes/ScreenTeaser.tsx:14
 msgid "Work in progress..."
 msgstr "作業中..."
 

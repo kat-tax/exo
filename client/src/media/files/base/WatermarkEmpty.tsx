@@ -15,6 +15,7 @@ export function WatermarkEmpty({path = '.'}: WatermarkEmptyProps) {
       title={t(i18n)`Directory is empty.`}
       label={t(i18n)`Import`}
       icon="ph:upload"
+      dnd={true}
       onAction={async () => {
         await importDirectory(path);
       }}

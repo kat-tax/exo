@@ -1,10 +1,11 @@
-import {Outlet} from 'react-exo/navigation';
-import {StatusBar} from 'react-native';
-import {useWindowDimensions, View} from 'react-native';
+import {useState, useEffect} from 'react';
+import {useLocation, Outlet} from 'react-exo/navigation';
+import {useWindowDimensions, View, StatusBar} from 'react-native';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useDeviceSession} from 'app/hooks/useDeviceSession';
 import {useProfile} from 'app/data';
 import {Menu} from 'app/base/Menu';
+import {File} from 'media/files/base/File';
 
 import type {useAppContext} from 'app/hooks/useAppContext';
 
@@ -12,25 +13,45 @@ export const APP_MENU_WIDTH = 146;
 export const APP_MENU_TAB_HEIGHT = 64;
 
 export default function LayoutMain() {
-  const {styles, theme} = useStyles(stylesheet);
-  const profile = useProfile();
   const screen = useWindowDimensions();
   const device = useDeviceSession();
-  const hasTabs = screen.width <= theme.breakpoints.xs;
+  const profile = useProfile();
+  const {styles, theme} = useStyles(stylesheet);
+  const {pathname, hash} = useLocation();
+  const [pinnedFile, setPinnedFile] = useState(`${pathname}/${hash?.slice(1)}`);
+  const [pinMaximized, setPinMaximized] = useState(true);
+  const context: ReturnType<typeof useAppContext> = {device, profile};
+  const tabs = screen.width <= theme.breakpoints.xs;
   const vstyles = {
-    root: [styles.root, hasTabs && styles.rootTabs],
-    menu: [styles.menu, hasTabs && styles.menuTabs],
+    root: [styles.root, tabs && styles.rootTabs],
+    menu: [styles.menu, tabs && styles.menuTabs],
   };
+
+  useEffect(() => {
+    if (hash) {
+      const path = `${pathname}/${hash?.slice(1)}`;
+      if (path !== pinnedFile) {
+        setPinnedFile(path);
+      }
+      setPinMaximized(true);
+    } else {
+      setPinMaximized(false);
+    }
+  }, [hash, pathname, pinnedFile]);
 
   return <>
     <StatusBar networkActivityIndicatorVisible={!device?.online}/>
     <View style={vstyles.root}>
       <View style={vstyles.menu}>
-        <Menu tabs={hasTabs} profile={profile}/>
+        <Menu {...{tabs, profile}}/>
       </View>
-      <Outlet context={{device, profile} as ReturnType<typeof useAppContext>}/>
+      <Outlet {...{context}}/>
+      <File
+        file={pinnedFile}
+        maximized={pinMaximized}
+      />
     </View>
-  </>
+  </>;
 }
 
 const stylesheet = createStyleSheet(theme => ({

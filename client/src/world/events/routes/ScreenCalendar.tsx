@@ -5,6 +5,7 @@ import {useDateRange, toDateId, Calendar} from 'react-exo/calendar';
 import {useCalendarTheme} from 'world/events/hooks/useCalendarTheme';
 import {useLocale} from 'settings/hooks/useLocale';
 import {Event} from 'world/events/base/Event';
+import {Page} from 'app/base/Page';
 
 const today = toDateId(new Date());
 
@@ -16,27 +17,29 @@ export default function ScreenCalendar() {
   const hasEvent = false;
 
   return (
-    <View style={styles.root}>
-      <View style={styles.calendar}>
-        <Calendar.List
-          theme={calendarTheme}
-          calendarFormatLocale={locale}
-          calendarInitialMonthId={today}
-          calendarActiveDateRanges={range.calendarActiveDateRanges}
-          onCalendarDayPress={range.onCalendarDayPress}
-        />
+    <Page fullWidth>
+      <View style={styles.root}>
+        <View style={styles.calendar}>
+          <Calendar.List
+            theme={calendarTheme}
+            calendarFormatLocale={locale}
+            calendarInitialMonthId={today}
+            calendarActiveDateRanges={range.calendarActiveDateRanges}
+            onCalendarDayPress={range.onCalendarDayPress}
+          />
+        </View>
+        <View style={styles.panel}>
+          {hasEvent
+            ? <Event/>
+            : <View style={styles.empty}>
+                <Text style={styles.emptyText}>
+                  <Trans>No events scheduled.</Trans>
+                </Text>
+              </View>
+          }
+        </View>
       </View>
-      <View style={styles.panel}>
-        {hasEvent
-          ? <Event/>
-          : <View style={styles.empty}>
-              <Text style={styles.emptyText}>
-                <Trans>No events scheduled.</Trans>
-              </Text>
-            </View>
-        }
-      </View>
-    </View>
+    </Page>
   );
 }
 

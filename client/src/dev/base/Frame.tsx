@@ -20,16 +20,16 @@ export function Frame(props: FrameProps) {
   );
 }
 
-const stylesheet = createStyleSheet(theme => ({
+const stylesheet = createStyleSheet((theme, rt) => ({
   root: {
     gap: theme.display.space7,
     marginBottom: theme.display.space5,
-    paddingBottom: theme.display.space7,
+    paddingBottom: theme.display.space5,
     paddingHorizontal: theme.display.space3,
     borderColor: theme.colors.border,
+    borderWidth: rt.hairlineWidth,
     borderStyle: 'dashed',
     borderRadius: 4,
-    borderWidth: 1,
   },
   title: {
     padding: theme.display.space3,

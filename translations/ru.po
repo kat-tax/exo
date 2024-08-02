@@ -92,7 +92,6 @@ msgid "Delete the local database."
 msgstr "Удалить локальную базу данных."
 
 #: ../../client/src/app/base/Menu.tsx:149
-#: ../../client/src/dev/routes/ScreenDesign.tsx:11
 msgid "Design"
 msgstr "Дизайн"
 
@@ -101,23 +100,7 @@ msgid "Dev Mode"
 msgstr ""
 
 #: ../../client/src/media/files/base/WatermarkEmpty.tsx:15
-msgid "Directory is empty"
-msgstr ""
-
-#: ../../client/src/media/files/base/WatermarkEmpty.tsx:15
 msgid "Directory is empty."
-msgstr ""
-
-#: ../../client/src/media/files/base/WatermarkEmpty.tsx:15
-msgid "Directory is empty. Press import or drag and drop a directory here."
-msgstr ""
-
-#: ../../client/src/media/files/base/WatermarkEmpty.tsx:15
-msgid "Directory is empty. Press import or drag and drop files here."
-msgstr ""
-
-#: ../../client/src/media/files/base/WatermarkEmpty.tsx:15
-msgid "Directory is empty. Press import or drag and drop."
 msgstr ""
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:72
@@ -132,7 +115,7 @@ msgstr "Расстояние"
 msgid "Docs"
 msgstr "Документы"
 
-#: ../../client/src/media/files/base/WatermarkNotSupported.tsx:10
+#: ../../client/src/media/files/base/FileDownload.tsx:15
 msgid "Download"
 msgstr ""
 
@@ -229,7 +212,6 @@ msgid "Language"
 msgstr "Язык"
 
 #: ../../client/src/app/base/Menu.tsx:155
-#: ../../client/src/dev/routes/ScreenLibrary.tsx:15
 msgid "Library"
 msgstr "Библиотека"
 
@@ -269,7 +251,7 @@ msgstr "Музыка"
 msgid "News"
 msgstr ""
 
-#: ../../client/src/world/events/routes/ScreenCalendar.tsx:34
+#: ../../client/src/world/events/routes/ScreenCalendar.tsx:36
 msgid "No events scheduled."
 msgstr "Нет запланированных событий."
 
@@ -284,6 +266,10 @@ msgstr ""
 #: ../../client/src/home/base/AiPrompt.tsx:50
 msgid "Please set your Groq API Key"
 msgstr "Пожалуйста, установите ваш API ключ Groq"
+
+#: ../../client/src/media/files/base/RendererDownload.tsx:9
+msgid "Preview Unavailable"
+msgstr ""
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:37
 msgid "Profile"
@@ -323,7 +309,6 @@ msgstr "Выберите тему для приложения."
 
 #: ../../client/src/app/base/Menu.tsx:165
 #: ../../client/src/app/base/Menu.tsx:173
-#: ../../client/src/settings/routes/ScreenSettings.tsx:27
 msgid "Settings"
 msgstr "Настройки"
 
@@ -347,7 +332,7 @@ msgstr "Добро пожаловать, {0}"
 msgid "Welcome, Human"
 msgstr "Добро пожаловать, Человек"
 
-#: ../../client/src/app/routes/ScreenTeaser.tsx:12
+#: ../../client/src/app/routes/ScreenTeaser.tsx:14
 msgid "Work in progress..."
 msgstr "В работе..."
 

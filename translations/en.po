@@ -92,7 +92,6 @@ msgid "Delete the local database."
 msgstr "Delete the local database."
 
 #: ../../client/src/app/base/Menu.tsx:149
-#: ../../client/src/dev/routes/ScreenDesign.tsx:11
 msgid "Design"
 msgstr "Design"
 
@@ -101,24 +100,8 @@ msgid "Dev Mode"
 msgstr "Dev Mode"
 
 #: ../../client/src/media/files/base/WatermarkEmpty.tsx:15
-msgid "Directory is empty"
-msgstr "Directory is empty"
-
-#: ../../client/src/media/files/base/WatermarkEmpty.tsx:15
 msgid "Directory is empty."
 msgstr "Directory is empty."
-
-#: ../../client/src/media/files/base/WatermarkEmpty.tsx:15
-msgid "Directory is empty. Press import or drag and drop a directory here."
-msgstr "Directory is empty. Press import or drag and drop a directory here."
-
-#: ../../client/src/media/files/base/WatermarkEmpty.tsx:15
-msgid "Directory is empty. Press import or drag and drop files here."
-msgstr "Directory is empty. Press import or drag and drop files here."
-
-#: ../../client/src/media/files/base/WatermarkEmpty.tsx:15
-msgid "Directory is empty. Press import or drag and drop."
-msgstr "Directory is empty. Press import or drag and drop."
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:72
 msgid "Display"
@@ -132,7 +115,7 @@ msgstr "Distance"
 msgid "Docs"
 msgstr "Docs"
 
-#: ../../client/src/media/files/base/WatermarkNotSupported.tsx:10
+#: ../../client/src/media/files/base/FileDownload.tsx:15
 msgid "Download"
 msgstr "Download"
 
@@ -229,7 +212,6 @@ msgid "Language"
 msgstr "Language"
 
 #: ../../client/src/app/base/Menu.tsx:155
-#: ../../client/src/dev/routes/ScreenLibrary.tsx:15
 msgid "Library"
 msgstr "Library"
 
@@ -269,7 +251,7 @@ msgstr "Music"
 msgid "News"
 msgstr "News"
 
-#: ../../client/src/world/events/routes/ScreenCalendar.tsx:34
+#: ../../client/src/world/events/routes/ScreenCalendar.tsx:36
 msgid "No events scheduled."
 msgstr "No events scheduled."
 
@@ -284,6 +266,10 @@ msgstr "Pictures"
 #: ../../client/src/home/base/AiPrompt.tsx:50
 msgid "Please set your Groq API Key"
 msgstr "Please set your Groq API Key"
+
+#: ../../client/src/media/files/base/RendererDownload.tsx:9
+msgid "Preview Unavailable"
+msgstr "Preview Unavailable"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:37
 msgid "Profile"
@@ -323,7 +309,6 @@ msgstr "Select the theme for the app."
 
 #: ../../client/src/app/base/Menu.tsx:165
 #: ../../client/src/app/base/Menu.tsx:173
-#: ../../client/src/settings/routes/ScreenSettings.tsx:27
 msgid "Settings"
 msgstr "Settings"
 
@@ -347,7 +332,7 @@ msgstr "Welcome, {0}"
 msgid "Welcome, Human"
 msgstr "Welcome, Human"
 
-#: ../../client/src/app/routes/ScreenTeaser.tsx:12
+#: ../../client/src/app/routes/ScreenTeaser.tsx:14
 msgid "Work in progress..."
 msgstr "Work in progress..."
 

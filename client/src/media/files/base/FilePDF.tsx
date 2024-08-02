@@ -2,18 +2,19 @@ import {View} from 'react-native';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useFileDataURL} from 'media/files/hooks/useFileDataURL';
 
-interface PreviewPDF {
+interface FilePDF {
   path: string,
+  name: string,
 }
 
-export function PreviewPDF(props: PreviewPDF) {
+export function FilePDF(props: FilePDF) {
   const {styles} = useStyles(stylesheet);
-  const dataURL = useFileDataURL(props.path, 'application/pdf');
+  const urlPdf = useFileDataURL(props.path, 'application/pdf');
 
   return (
     <View style={styles.root}>
       <embed
-        src={dataURL}
+        src={urlPdf}
         style={{height: '100%', width: '100%'}}
         type="application/pdf"
         height="100%"

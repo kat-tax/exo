@@ -93,6 +93,11 @@
       "import": "./gen/web/rive.js",
       "require": "./gen/native/rive.js"
     },
+    "./game": {
+      "types": "./gen/types/game.d.ts",
+      "import": "./gen/web/game.js",
+      "require": "./gen/native/game.js"
+    },
     "./markdown": {
       "types": "./gen/types/markdown.d.ts",
       "import": "./gen/web/markdown.js",
@@ -246,7 +251,7 @@
     "react-native-video": "6.4.3",
     "react-native-web": "^0.19.12",
     "react-native-web-linear-gradient": "^1.1.2",
-    "react-native-windows": "0.74.11",
+    "react-native-windows": "0.74.13",
     "rive-react-native": "^7.3.0",
     "typedoc": "^0.26.5"
   }

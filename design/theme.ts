@@ -389,7 +389,7 @@ export const themes = {
     colors: {
       background: palette.zinc950,
       foreground: palette.zinc50,
-      card: palette.zinc950,
+      card: palette.zinc900,
       cardForeground: palette.zinc50,
       popover: palette.zinc950,
       popoverForeground: palette.zinc50,

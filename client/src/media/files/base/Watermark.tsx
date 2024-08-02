@@ -7,6 +7,7 @@ interface WatermarkProps extends React.PropsWithChildren {
   title: string,
   label: string,
   icon: string,
+  dnd?: boolean,
   onAction: () => void,
 }
 
@@ -15,7 +16,7 @@ export function Watermark(props: WatermarkProps) {
 
   return (
     <View style={styles.root}>
-      <View style={styles.contents}>
+      <View style={[styles.box, props.dnd && styles.boxDnd]}>
         <Text style={styles.text}>
           {props.title}
         </Text>
@@ -39,14 +40,18 @@ const stylesheet = createStyleSheet(theme => ({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  contents: {
+  box: {
     gap: theme.display.space5,
     padding: theme.display.space9,
-    paddingHorizontal: theme.display.space9 * 2,
+    paddingHorizontal: theme.display.space9,
     borderStyle: 'dashed',
-    borderWidth: 1,
+    borderWidth: 0,
     borderColor: theme.colors.muted,
     borderRadius: theme.display.radius3,
+  },
+  boxDnd: {
+    borderWidth: 1,
+    paddingHorizontal: theme.display.space9 * 2,
   },
   text: {
     fontFamily: theme.font.family,

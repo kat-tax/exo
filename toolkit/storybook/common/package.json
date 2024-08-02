@@ -9,7 +9,7 @@
     "@storybook/blocks": "^8.2.6",
     "design": "workspace:react-exo-ui@*",
     "react-exo-ui": "workspace:*",
-    "react-native-unistyles": "^2.9.0"
+    "react-native-unistyles": "^2.9.1"
   },
   "devDependencies": {
     "@storybook/types": "^8.2.6",

@@ -119,6 +119,7 @@ const stylesheet = createStyleSheet(theme => ({
   },
   response: {
     alignItems: 'center',
+    marginTop: theme.display.space7,
     gap: theme.display.space5,
   },
   input: {
