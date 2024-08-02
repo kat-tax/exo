@@ -49,6 +49,7 @@ export default function LayoutMain() {
       <File
         file={pinnedFile}
         maximized={pinMaximized}
+        close={() => setPinnedFile('')}
       />
     </View>
   </>;

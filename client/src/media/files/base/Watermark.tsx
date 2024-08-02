@@ -54,6 +54,7 @@ const stylesheet = createStyleSheet(theme => ({
     paddingHorizontal: theme.display.space9 * 2,
   },
   text: {
+    textAlign: 'center',
     fontFamily: theme.font.family,
     fontSize: theme.font.contentSize,
     fontWeight: theme.font.contentWeight,

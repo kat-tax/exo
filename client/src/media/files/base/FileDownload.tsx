@@ -11,7 +11,7 @@ export function FileDownload(props: FileDownload) {
   const {i18n} = useLingui();
   return (
     <Watermark
-      title={props.name}
+      title={props.path}
       label={t(i18n)`Download`}
       icon="ph:download"
       onAction={() => {

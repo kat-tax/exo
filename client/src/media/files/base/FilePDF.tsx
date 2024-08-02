@@ -14,7 +14,8 @@ export function FilePDF(props: FilePDF) {
   return (
     <View style={styles.root}>
       <embed
-        src={urlPdf}
+        title={props.name}
+        src={`${urlPdf}#view=FitH&navpanes=0`}
         style={{height: '100%', width: '100%'}}
         type="application/pdf"
         height="100%"
