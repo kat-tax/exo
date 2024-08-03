@@ -3,9 +3,11 @@ import {useNavigate} from 'react-exo/navigation';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {View, Pressable} from 'react-native';
 import {Icon} from 'react-exo/icon';
-import {resolve} from 'media/files/utils/path';
+import {resolve} from 'media/utils/path';
 
 import {FileDownload} from './FileDownload';
+import {FileMarkdown} from './FileMarkdown';
+import {FileImage} from './FileImage';
 import {FileGame} from './FileGame';
 import {FilePDF} from './FilePDF';
 
@@ -21,16 +23,36 @@ export function File(props: FileProps) {
   const navigate = useNavigate();
   const parts = resolve(file);
   const path = parts.join('/');
-  const [name, ext] = parts.slice(-1)[0].split('.') ?? [];
-  const fileUrl = `/browse/${parts.slice(0, -1).join('/')}#${name}.${ext}`;
+  const [name, extension] = parts.slice(-1)[0].split('.') ?? [];
+  const fileUrl = `/browse/${parts.slice(0, -1).join('/')}#${name}.${extension}`;
 
   const renderer = useMemo(() => {
-    if (!ext) return null;
-    const $ = {path, name};
-    switch (ext) {
+    if (!extension) return null;
+    const $ = {path, name, extension, maximized};
+    switch (extension) {
+      // Images
+      case 'jpg':
+      case 'jpeg':
+      case 'png':
+      case 'gif':
+      case 'bmp':
+      case 'ico':
+      case 'tiff':
+      case 'webp':
+      case 'avif':
+      case 'heic':
+      case 'heif':
+      case 'svg':
+      case 'raw':
+        return <FileImage {...$}/>
       // Documents
       case 'pdf':
         return <FilePDF {...$}/>
+      // Markdown
+      case 'md':
+      case 'mdx':
+      case 'markdown':
+        return <FileMarkdown {...$}/>
       // Roms
       case 'n64':
       case 'v64':
@@ -92,10 +114,10 @@ export function File(props: FileProps) {
       default:
         return <FileDownload {...$}/>
     }
-  }, [ext, name, path]);
+  }, [extension, name, path, maximized]);
 
   const resolution = useMemo(() => {
-    switch (ext) {
+    switch (extension) {
       case 'gb':
       case 'gbc':
       case 'gba':
@@ -105,7 +127,7 @@ export function File(props: FileProps) {
       default:
         return [320, 240];
     }
-  }, [ext]);
+  }, [extension]);
 
   return renderer ? (
     <Pressable
@@ -129,7 +151,7 @@ export function File(props: FileProps) {
               <Icon
                 name="ph:x"
                 size={20}
-                color={close.hovered
+                color={close.hovered || !root.hovered
                   ? theme.colors.foreground
                   : theme.colors.mutedForeground
                 }

@@ -115,7 +115,7 @@ msgstr "المسافة"
 msgid "Docs"
 msgstr "المستندات"
 
-#: ../../client/src/media/files/base/FileDownload.tsx:15
+#: ../../client/src/media/files/base/FileDownload.tsx:17
 msgid "Download"
 msgstr ""
 
@@ -150,10 +150,6 @@ msgstr "فهرنهايت"
 #: ../../client/src/app/base/Menu.tsx:128
 msgid "Favorites"
 msgstr "المفضلة"
-
-#: ../../client/src/media/files/base/WatermarkNotSupported.tsx:9
-msgid "File cannot be previewed"
-msgstr ""
 
 #: ../../client/src/app/base/Menu.tsx:59
 msgid "Files"
@@ -251,7 +247,7 @@ msgstr "الموسيقى"
 msgid "News"
 msgstr ""
 
-#: ../../client/src/world/events/routes/ScreenCalendar.tsx:36
+#: ../../client/src/world/routes/ScreenCalendar.tsx:36
 msgid "No events scheduled."
 msgstr "لا توجد أحداث مجدولة."
 
@@ -266,10 +262,6 @@ msgstr ""
 #: ../../client/src/home/base/AiPrompt.tsx:50
 msgid "Please set your Groq API Key"
 msgstr "يرجى تعيين مفتاح Groq API الخاص بك"
-
-#: ../../client/src/media/files/base/RendererDownload.tsx:9
-msgid "Preview Unavailable"
-msgstr ""
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:37
 msgid "Profile"

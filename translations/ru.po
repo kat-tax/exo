@@ -115,7 +115,7 @@ msgstr "Расстояние"
 msgid "Docs"
 msgstr "Документы"
 
-#: ../../client/src/media/files/base/FileDownload.tsx:15
+#: ../../client/src/media/files/base/FileDownload.tsx:17
 msgid "Download"
 msgstr ""
 
@@ -150,10 +150,6 @@ msgstr "Фаренгейт"
 #: ../../client/src/app/base/Menu.tsx:128
 msgid "Favorites"
 msgstr "Избранное"
-
-#: ../../client/src/media/files/base/WatermarkNotSupported.tsx:9
-msgid "File cannot be previewed"
-msgstr ""
 
 #: ../../client/src/app/base/Menu.tsx:59
 msgid "Files"
@@ -251,7 +247,7 @@ msgstr "Музыка"
 msgid "News"
 msgstr ""
 
-#: ../../client/src/world/events/routes/ScreenCalendar.tsx:36
+#: ../../client/src/world/routes/ScreenCalendar.tsx:36
 msgid "No events scheduled."
 msgstr "Нет запланированных событий."
 
@@ -266,10 +262,6 @@ msgstr ""
 #: ../../client/src/home/base/AiPrompt.tsx:50
 msgid "Please set your Groq API Key"
 msgstr "Пожалуйста, установите ваш API ключ Groq"
-
-#: ../../client/src/media/files/base/RendererDownload.tsx:9
-msgid "Preview Unavailable"
-msgstr ""
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:37
 msgid "Profile"

@@ -6,6 +6,7 @@ interface DirectoryEntryRow {
   name: string,
 }
 
+// https://github.com/kat-tax/vslite/tree/master/src/icons
 export function DirectoryEntryRow(props: DirectoryEntryRow) {
   const {styles} = useStyles(stylesheet);
   return (

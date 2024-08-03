@@ -4,7 +4,7 @@ import {PageLoading} from 'app/base/PageLoading';
 import config from 'config';
 
 import app from './app';
-import files from 'media/files/store';
+import media from 'media/store';
 import settings from 'settings/store';
 
 // https://redux-toolkit.js.org/tutorials/rtk-query/#wrap-your-application-with-the-provider
@@ -28,7 +28,7 @@ const reducer = $.persistReducer({
 }, $.combineReducers({
   router: $.history.context.routerReducer,
   app: app.reducer,
-  files: files.reducer,
+  media: media.reducer,
   settings: settings.reducer,
 }));
 

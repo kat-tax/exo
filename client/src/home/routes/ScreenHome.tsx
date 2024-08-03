@@ -18,7 +18,7 @@ export default function ScreenHome() {
   return (
     <Page
       title={<Trans id={getDayGreeting().id}/>}
-      message={profile
+      message={profile?.name
         ? <T>{`Welcome, ${profile.name}`}</T>
         : <T>{'Welcome, Human'}</T>
       }

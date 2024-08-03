@@ -1,15 +1,15 @@
 import {t} from '@lingui/macro';
 import {Icon} from 'react-exo/icon';
 import {Link} from 'react-exo/navigation';
-import {Text, View, TextInput, Pressable} from 'react-native';
-import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {useRef, useState, useMemo, memo} from 'react';
 import {useLingui} from '@lingui/react';
+import {useRef, useState, useMemo, memo} from 'react';
+import {useStyles, createStyleSheet} from 'react-native-unistyles';
+import {Text, View, TextInput, Pressable} from 'react-native';
 import {useAppContext} from 'app/hooks/useAppContext';
-import {useAI} from 'home/hooks/useAI';
-import {formatDate} from 'home/utils/time';
 import {PageLoading} from 'app/base/PageLoading';
 import {Markdown} from 'app/widgets/Markdown';
+import {formatDate} from 'home/utils/time';
+import {useAI} from 'home/hooks/useAI';
 
 const DEFAULT_MODEL = 'llama3-8b-8192';
 

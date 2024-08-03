@@ -1,9 +1,9 @@
 import {fs} from 'react-exo/fs';
 import {useState, useEffect} from 'react';
 
-export function useFileDataURL(path: string, type = 'application/octet-stream') {
+export function useFileUrl(path: string, type = 'application/octet-stream') {
   const [dataURL, setDataURL] = useState<string>();
-  console.log(path);
+
   useEffect(() => {
     let url: string | undefined;
     (async () => {

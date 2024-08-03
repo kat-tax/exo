@@ -115,7 +115,7 @@ msgstr "Distance"
 msgid "Docs"
 msgstr "Docs"
 
-#: ../../client/src/media/files/base/FileDownload.tsx:15
+#: ../../client/src/media/files/base/FileDownload.tsx:17
 msgid "Download"
 msgstr "Download"
 
@@ -150,10 +150,6 @@ msgstr "Fahrenheit"
 #: ../../client/src/app/base/Menu.tsx:128
 msgid "Favorites"
 msgstr "Favorites"
-
-#: ../../client/src/media/files/base/WatermarkNotSupported.tsx:9
-msgid "File cannot be previewed"
-msgstr "File cannot be previewed"
 
 #: ../../client/src/app/base/Menu.tsx:59
 msgid "Files"
@@ -251,7 +247,7 @@ msgstr "Music"
 msgid "News"
 msgstr "News"
 
-#: ../../client/src/world/events/routes/ScreenCalendar.tsx:36
+#: ../../client/src/world/routes/ScreenCalendar.tsx:36
 msgid "No events scheduled."
 msgstr "No events scheduled."
 
@@ -266,10 +262,6 @@ msgstr "Pictures"
 #: ../../client/src/home/base/AiPrompt.tsx:50
 msgid "Please set your Groq API Key"
 msgstr "Please set your Groq API Key"
-
-#: ../../client/src/media/files/base/RendererDownload.tsx:9
-msgid "Preview Unavailable"
-msgstr "Preview Unavailable"
 
 #: ../../client/src/settings/routes/ScreenSettings.tsx:37
 msgid "Profile"

@@ -2,10 +2,10 @@ import {Trans} from '@lingui/macro';
 import {View, Text} from 'react-native';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useDateRange, toDateId, Calendar} from 'react-exo/calendar';
-import {useCalendarTheme} from 'world/events/hooks/useCalendarTheme';
+import {useCalendarTheme} from 'world/hooks/useCalendarTheme';
 import {useLocale} from 'settings/hooks/useLocale';
-import {Event} from 'world/events/base/Event';
 import {Page} from 'app/base/Page';
+import {CalendarEvent} from 'world/base/CalendarEvent';
 
 const today = toDateId(new Date());
 
@@ -30,7 +30,7 @@ export default function ScreenCalendar() {
         </View>
         <View style={styles.panel}>
           {hasEvent
-            ? <Event/>
+            ? <CalendarEvent/>
             : <View style={styles.empty}>
                 <Text style={styles.emptyText}>
                   <Trans>No events scheduled.</Trans>

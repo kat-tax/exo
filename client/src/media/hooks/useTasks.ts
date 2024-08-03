@@ -1,5 +1,5 @@
 import {useSelector, useDispatch} from 'react-redux';
-import files from 'media/files/store';
+import files from 'media/store';
 import type {State} from 'app/store';
 
 export function useTasks(list?: string) {

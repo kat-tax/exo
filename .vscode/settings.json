@@ -13,6 +13,8 @@
     "tvos": "macos",
     "vocs": "vue",
     "rive": "animation",
+    "media": "examples",
+    "world": "public",
   },
   "material-icon-theme.files.associations": {
     "app/layout.tsx": "renovate",

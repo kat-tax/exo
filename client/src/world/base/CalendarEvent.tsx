@@ -2,7 +2,7 @@ import {Icon} from 'react-exo/icon';
 import {useLocale} from 'settings/hooks/useLocale';
 import {Alert} from 'design';
 
-export function Event() {
+export function CalendarEvent() {
   const [locale] = useLocale();
   const demoStart = new Date('2024-07-28T12:00:00');
   const demoEnd = new Date('2024-07-28T14:00:00');

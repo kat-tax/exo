@@ -10,10 +10,10 @@ export const Screen = {
   Settings: lazy(() => import('../../settings/routes/ScreenSettings')),
   Teaser: lazy(() => import('./ScreenTeaser')),
   // Media
-  Browse: lazy(() => import('../../media/files/routes/ScreenBrowse')),
+  Browse: lazy(() => import('../../media/routes/ScreenBrowse')),
   // World
-  Map: lazy(() => import('../../world/map/routes/ScreenMap')),
-  Calendar: lazy(() => import('../../world/events/routes/ScreenCalendar')),
+  Map: lazy(() => import('../../world/routes/ScreenMap')),
+  Calendar: lazy(() => import('../../world/routes/ScreenCalendar')),
   // Dev
   Design: lazy(() => import('../../dev/routes/ScreenDesign')),
   Library: lazy(() => import('../../dev/routes/ScreenLibrary')),

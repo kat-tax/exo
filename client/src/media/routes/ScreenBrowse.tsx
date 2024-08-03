@@ -1,11 +1,11 @@
 import {View} from 'react-native';
 import {useLocation} from 'react-exo/navigation';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {useInitDirectories} from 'media/files/hooks/useInitDirectories';
-import {useDirectory} from 'media/files/hooks/useDirectory';
-import {DirectoryEntry} from 'media/files/base/DirectoryEntry';
-import {WatermarkEmpty} from 'media/files/base/WatermarkEmpty';
-import {resolve} from 'media/files/utils/path';
+import {useInitDirectories} from 'media/hooks/useInitDirectories';
+import {useDirectory} from 'media/hooks/useDirectory';
+import {DirectoryEntry} from 'media/base/DirectoryEntry';
+import {WatermarkEmpty} from 'media/base/WatermarkEmpty';
+import {resolve} from 'media/utils/path';
 import {Page} from 'app/base/Page';
 
 export default function ScreenBrowse() {
@@ -15,7 +15,7 @@ export default function ScreenBrowse() {
   const dir = useDirectory(parts.join('/'), {showHidden: true});
   const path = parts.join('/');
   const base = parts.slice(0, -1).join('/') || '/';
-  const [name] = parts[parts.length - 1];
+  const name = parts[parts.length - 1];
 
   useInitDirectories();
 

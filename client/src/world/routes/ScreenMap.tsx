@@ -5,9 +5,9 @@ import {useDevices} from 'app/data';
 import {useAppContext} from 'app/hooks/useAppContext';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useScheme} from 'settings/hooks/useScheme';
-import {MarkerDevice} from 'world/map/base/MarkerDevice';
-import {MarkerSchool} from 'world/map/base/MarkerSchool';
-import schools from 'world/map/utils/schools';
+import {MarkerDevice} from 'world/base/MarkerDevice';
+import {MarkerSchool} from 'world/base/MarkerSchool';
+import schools from 'world/utils/schools';
 
 const MAPTILER_URL = 'https://api.maptiler.com/maps/';
 const MAPTILER_KEY = 'UbdBChbHpiVOSIdTJWvV';

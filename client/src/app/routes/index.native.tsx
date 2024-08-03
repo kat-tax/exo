@@ -8,10 +8,10 @@ export const Screen = {
   Settings: require('../../settings/routes/ScreenSettings').default,
   Teaser: require('./ScreenTeaser').default,
   // Media
-  Browse: require('../../media/files/routes/ScreenBrowse').default,
+  Browse: require('../../media/routes/ScreenBrowse').default,
   // World
-  Map: require('../../world/map/routes/ScreenMap').default,
-  Calendar: require('../../world/events/routes/ScreenCalendar').default,
+  Map: require('../../world/routes/ScreenMap').default,
+  Calendar: require('../../world/routes/ScreenCalendar').default,
   // Dev
   Design: require('../../dev/routes/ScreenDesign').default,
   Library: require('../../dev/routes/ScreenLibrary').default,

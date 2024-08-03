@@ -1,17 +1,19 @@
 import {View} from 'react-native';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {useFileDataURL} from 'media/files/hooks/useFileDataURL';
+import {useFileUrl} from 'media/hooks/useFileUrl';
 
 interface FilePDF {
   path: string,
   name: string,
+  extension: string,
+  maximized: boolean,
 }
 
 export function FilePDF(props: FilePDF) {
   const {styles} = useStyles(stylesheet);
-  const urlPdf = useFileDataURL(props.path, 'application/pdf');
+  const urlPdf = useFileUrl(props.path, 'application/pdf');
 
-  return (
+  return urlPdf ? (
     <View style={styles.root}>
       <embed
         title={props.name}
@@ -22,7 +24,7 @@ export function FilePDF(props: FilePDF) {
         width="100%"
       />
     </View>
-  );
+  ) : null;
 }
 
 const stylesheet = createStyleSheet(() => ({

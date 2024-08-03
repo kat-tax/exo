@@ -1,7 +1,7 @@
 import {View} from 'react-native';
 import {Link} from 'react-exo/navigation';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {DirectoryEntryRow} from 'media/files/base/DirectoryEntryRow';
+import {DirectoryEntryRow} from 'media/base/DirectoryEntryRow';
 
 import type {HfsDirectoryEntry} from 'react-exo/fs';
 
@@ -15,7 +15,9 @@ export function DirectoryEntry(props: DirectoryEntry) {
   const {entry} = props;
   const path = entry.isFile
     ? `#${entry.name}`
-    : `${entry.name}`;
+    : props.path
+      ? `${props.path}/${entry.name}`
+      : entry.name;
   return (
     <View style={styles.root}>
       <Link to={path}>

@@ -5,7 +5,7 @@ import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useDeviceSession} from 'app/hooks/useDeviceSession';
 import {useProfile} from 'app/data';
 import {Menu} from 'app/base/Menu';
-import {File} from 'media/files/base/File';
+import {File} from 'media/base/File';
 
 import type {useAppContext} from 'app/hooks/useAppContext';
 

@@ -2,7 +2,7 @@ import {Trans} from '@lingui/macro';
 import {View, ScrollView, Text} from 'react-native';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useFileSystem} from 'app/hooks/useFileSystem';
-import {useLists} from 'media/files/hooks/useLists';
+import {useLists} from 'media/hooks/useLists';
 import {MenuItem} from 'app/base/MenuItem';
 import {MenuHeader} from 'app/base/MenuHeader';
 import {MenuSection} from 'app/base/MenuSection';
