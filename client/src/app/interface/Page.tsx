@@ -66,6 +66,7 @@ const stylesheet = createStyleSheet((theme, rt) => ({
     margin: 0,
     borderWidth: 0,
     borderRadius: 0,
+    borderTopWidth: rt.hairlineWidth,
   },
   content: {
     flex: 1,

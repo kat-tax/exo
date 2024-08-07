@@ -23,9 +23,11 @@ export default function MainLayout() {
   const [pinMaximized, setPinMaximized] = useState(true);
   const context: ReturnType<typeof useAppContext> = {device, profile};
   const tabs = screen.width < theme.breakpoints.xs;
+  const vert = screen.width < theme.breakpoints.sm;
   const vstyles = {
     root: [styles.root, tabs && styles.rootTabs],
     menu: [styles.menu, tabs && styles.menuTabs],
+    content: [styles.content, vert && styles.contentVert],
   };
 
   useEffect(() => {
@@ -46,12 +48,15 @@ export default function MainLayout() {
       <View style={vstyles.menu}>
         {tabs ? <Tabs/> : <Menu {...{profile}}/>}
       </View>
-      <Outlet {...{context}}/>
-      <File
-        file={pinnedFile}
-        maximized={pinMaximized}
-        close={() => setPinnedFile('')}
-      />
+      <View style={vstyles.content}>
+        <Outlet {...{context}}/>
+        <File
+          file={pinnedFile}
+          vertical={vert}
+          maximized={pinMaximized}
+          close={() => setPinnedFile('')}
+        />
+      </View>
     </View>
   </>;
 }
@@ -71,5 +76,12 @@ const stylesheet = createStyleSheet(theme => ({
   menuTabs: {
     width: '100%',
     height: APP_MENU_TAB_HEIGHT,
+  },
+  content: {
+    flex: 1,
+    flexDirection: 'row',
+  },
+  contentVert: {
+    flexDirection: 'column-reverse',
   },
 }));

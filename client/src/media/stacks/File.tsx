@@ -1,7 +1,7 @@
 import {useMemo} from 'react';
 import {useNavigate} from 'react-exo/navigation';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {View, Pressable} from 'react-native';
+import {useWindowDimensions, View, Pressable} from 'react-native';
 import {Icon} from 'react-exo/icon';
 import {resolve} from 'media/utils/path';
 
@@ -13,13 +13,15 @@ import {FilePDF} from './FilePDF';
 
 interface FileProps {
   file: string,
+  vertical: boolean,
   maximized: boolean,
   close: () => void,
 }
 
 export function File(props: FileProps) {
-  const {file, maximized, close} = props;
+  const {file, vertical, maximized, close} = props;
   const {styles, theme} = useStyles(stylesheet);
+  const screen = useWindowDimensions();
   const navigate = useNavigate();
   const parts = resolve(file);
   const path = parts.join('/');
@@ -116,23 +118,45 @@ export function File(props: FileProps) {
     }
   }, [extension, name, path, maximized]);
 
+  const scale = useMemo(() => {
+    let _scale = 1;
+    if (screen.width <= theme.breakpoints.xs)
+      _scale = 0.35;
+    else if (screen.width <= theme.breakpoints.sm)
+      _scale = 0.50;
+    else if (screen.width <= theme.breakpoints.md)
+      _scale = 0.75;
+    else if (screen.width <= theme.breakpoints.lg)
+      _scale = 1;
+    else if (screen.width <= theme.breakpoints.xl)
+      _scale = 1.25;
+    else if (screen.width <= theme.breakpoints.xxl)
+      _scale = 1.5;
+    else if (screen.width <= theme.breakpoints.xxxl)
+      _scale = 2;
+    else if (screen.width <= theme.breakpoints.xxxxl)
+      _scale = 4;
+    return _scale;
+  }, [screen, theme]);
+
   const resolution = useMemo(() => {
     switch (extension) {
       case 'gb':
       case 'gbc':
       case 'gba':
-        return [160 * 2, 144 * 2];
+        return [160 * 2, 144 * 2].map(x => x * scale);
       case 'pdf':
-        return [414, 252];
+        return [414, 252].map(x => x * scale);
       default:
-        return [320, 240];
+        return [320, 240].map(x => x * scale);
     }
-  }, [extension]);
+  }, [extension, scale]);
 
   return renderer ? (
     <Pressable
       style={[
         styles.root,
+        vertical && styles.vertical,
         maximized ? styles.maximized : styles.minimized,
         !maximized && {width: resolution[0], height: resolution[1]},
       ]}
@@ -169,17 +193,25 @@ export function File(props: FileProps) {
 
 const stylesheet = createStyleSheet((theme, rt) => ({
   root: {
-    flex: 2,
+    flex: 4,
+    transition: 'all 0.5s ease-in-out',
+  },
+  vertical: {
+    flex: 20,
+    paddingHorizontal: {
+      initial: 0,
+      xs: theme.display.space2,
+    }
   },
   maximized: {
     maxWidth: '100%',
     maxHeight: '100%',
-    paddingTop: theme.display.space2,
-    paddingRight: theme.display.space2,
   },
   minimized: {
     overflow: 'hidden',
     position: 'absolute',
+    paddingTop: 0,
+    paddingHorizontal: 0,
     bottom: theme.display.space5,
     right: theme.display.space5,
     borderRadius: theme.display.radius2,
