@@ -21,9 +21,9 @@ export default defineConfig(env => mergeConfig(
       target: [
         'esnext',
         'safari15',
-        'chrome89',
-        'firefox89',
-        'edge89',
+        'chrome128',
+        'firefox128',
+        'edge128',
       ],
       lib: {
         formats: ['es'],

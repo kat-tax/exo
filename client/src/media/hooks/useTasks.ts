@@ -1,6 +1,6 @@
 import {useSelector, useDispatch} from 'react-redux';
 import files from 'media/store';
-import type {State} from 'app/store';
+import type {State} from 'app/data/store';
 
 export function useTasks(list?: string) {
   if (!list) throw new Error('List is required');

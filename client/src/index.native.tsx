@@ -5,6 +5,6 @@ import 'react-native-url-polyfill/auto';
 
 import {AppRegistry} from 'react-native';
 import AppRoot from 'app';
-import config from 'config';
+import cfg from 'config';
 
-AppRegistry.registerComponent(config.APP_NAME, () => AppRoot);
+AppRegistry.registerComponent(cfg.APP_NAME, () => AppRoot);

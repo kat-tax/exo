@@ -2,7 +2,7 @@ import {StatusBar, Appearance} from 'react-native';
 import {ToastRoot} from 'react-exo/toast';
 import {useEffect} from 'react';
 import {useInitialTheme, UnistylesRuntime} from 'react-native-unistyles';
-import {useScheme} from 'settings/hooks/useScheme';
+import {useScheme} from 'app/hooks/useScheme';
 import {hideBootsplash} from 'app/utils/bootsplash';
 
 export function Layout(props: React.PropsWithChildren) {

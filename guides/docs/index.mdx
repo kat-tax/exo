@@ -3,7 +3,7 @@ layout: landing
 ---
 
 import {HomePage, Sponsors} from 'vocs/components'
-import config from 'config';
+import cfg from 'config';
 
 <HomePage.Root>
   <HomePage.Logo/>
@@ -11,14 +11,14 @@ import config from 'config';
     Developer Documentation
   </HomePage.Tagline>
   <HomePage.InstallPackage
-    name={config.LIB_NAME}
+    name={cfg.LIB_NAME}
     type="install"
   />
   <HomePage.Buttons>
     <HomePage.Button href="/start" variant="accent">
       Get started
     </HomePage.Button>
-    <HomePage.Button href={config.LINK_GITHUB}>
+    <HomePage.Button href={cfg.LINK_GITHUB}>
       GitHub
     </HomePage.Button>
   </HomePage.Buttons>

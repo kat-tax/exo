@@ -2,9 +2,9 @@ import {useEffect, useMemo} from 'react';
 import {useSelector} from 'react-redux';
 import {useEvolu, cast} from '@evolu/react-native';
 import {useDevice, useDevices} from 'app/data';
+import {useConnectivity} from 'app/hooks/useConnectivity';
 import {useGeolocation} from 'app/hooks/useGeolocation';
-import {useOnline} from 'app/hooks/useOnline';
-import app from 'app/store/app';
+import app from 'app/store';
 
 import type {DB} from 'app/data';
 
@@ -16,7 +16,7 @@ export function useDeviceSession(): Partial<ReturnType<typeof useDevice>> {
   const device = useDevice(uuid);
   const devices = useDevices();
   const geoloc = useGeolocation();
-  const online = cast(useOnline());
+  const online = cast(useConnectivity());
   const coords = geoloc ?? device?.coords;
   const id = device?.id;
 

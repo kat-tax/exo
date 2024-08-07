@@ -23,8 +23,8 @@
     "routes/index.tsx": "routing",
     "routes/index.native.tsx": "routing",
     "store.ts": "redux-reducer",
-    "store/app.ts": "redux-reducer",
-    "store/index.tsx": "redux-action",
+    "data/store.ts": "redux-store",
+    "data/schema.ts": "database",
   },
   "typescript.tsserver.watchOptions": {
     "watchDirectory": "useFsEvents",

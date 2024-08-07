@@ -1,6 +1,9 @@
 import type {HfsImpl, HfsDirectoryEntry} from '@humanfs/types';
 export type {HfsImpl, HfsDirectoryEntry};
 
+// TODO:
+// watcher: https://github.com/whatwg/fs/blob/main/proposals/FileSystemObserver.md
+
 export interface FSBase {
   init(): Promise<HfsImpl>,
 

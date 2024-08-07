@@ -8,10 +8,10 @@ import 'design/styles';
 
 import {AppRegistry} from 'react-native';
 import AppRoot from 'app';
-import config from 'config';
+import cfg from 'config';
 
-AppRegistry.registerComponent(config.APP_NAME, () => AppRoot);
-AppRegistry.runApplication(config.APP_NAME, {
+AppRegistry.registerComponent(cfg.APP_NAME, () => AppRoot);
+AppRegistry.runApplication(cfg.APP_NAME, {
   rootTag: document.getElementById('root'),
   mode: 'concurrent',
 });

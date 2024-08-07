@@ -1,11 +1,14 @@
-import config from 'config';
-import * as _ from '@evolu/react-native';
-import * as S from 'app/data/schema';
+import {EvoluProvider, createEvolu, useQuery, cast, jsonArrayFrom} from '@evolu/react-native';
+import {Provider as ReduxProvider} from 'react-exo/redux';
+import {Spinner} from 'app/stack/Spinner';
+import store from './store';
+import cfg from 'config';
+import * as S from './schema';
 export * from './schema';
 
-export const evolu = _.createEvolu(S.DB, {
-  name: `${config.APP_NAME}::0002`,
-  syncUrl: __DEV__ ? 'http://localhost:6306' : config.SYNC_HOST,
+export const evolu = createEvolu(S.DB, {
+  name: 'database',
+  syncUrl: __DEV__ ? 'http://localhost:6306' : cfg.SYNC_HOST,
   minimumLogLevel: !__DEV__ ? 'trace' : 'warning',
   indexes: S.indexes,
   initialData: (init) => {
@@ -19,79 +22,81 @@ export const evolu = _.createEvolu(S.DB, {
 
 export function Database(props: React.PropsWithChildren) {
   return (
-    <_.EvoluProvider value={evolu}>
-      {props.children}
-    </_.EvoluProvider>
+    <ReduxProvider store={store} loading={<Spinner/>}>
+      <EvoluProvider value={evolu}>
+        {props.children}
+      </EvoluProvider>
+    </ReduxProvider>
   )
 }
 
-export const useDevices = () => _.useQuery(devices).rows;
+export const useDevices = () => useQuery(devices).rows;
 export const devices = evolu.createQuery(db => db
   .selectFrom('device')
   .select(['id', 'uuid', 'name', 'coords', 'online'])
-  .where('isDeleted', 'is not', _.cast(true))
+  .where('isDeleted', 'is not', cast(true))
   .orderBy('createdAt')
 );
 
-export const useDevice = (uuid: S.String50) => _.useQuery(device(uuid)).row;
+export const useDevice = (uuid: S.String50) => useQuery(device(uuid)).row;
 export const device = (uuid: S.String50) => evolu.createQuery(db => db
   .selectFrom('device')
   .select(['id', 'uuid', 'name', 'coords', 'online'])
-  .where('isDeleted', 'is not', _.cast(true))
+  .where('isDeleted', 'is not', cast(true))
   .where('uuid', '=', uuid)
   .limit(1)
 );
 
-export const useProfile = () => _.useQuery(profile).row;
+export const useProfile = () => useQuery(profile).row;
 export const profile = evolu.createQuery(db => db
   .selectFrom('profile')
   .select(['id', 'name', 'groqKey', 'groqModel'])
-  .where('isDeleted', 'is not', _.cast(true))
+  .where('isDeleted', 'is not', cast(true))
   .orderBy('createdAt')
   .limit(1)
 );
 
-export const useLabels = () => _.useQuery(labels).rows;
+export const useLabels = () => useQuery(labels).rows;
 export const labels = evolu.createQuery(db => db
   .selectFrom('label')
   .select(['id', 'name', 'data'])
-  .where('isDeleted', 'is not', _.cast(true))
+  .where('isDeleted', 'is not', cast(true))
   .where('name', 'is not', null)
-  .$narrowType<{name: _.NotNull}>()
+  .$narrowType<{name: S.NotNull}>()
   .orderBy('createdAt')
 );
 
-export const usePrompts = () => _.useQuery(prompts).rows;
+export const usePrompts = () => useQuery(prompts).rows;
 export const prompts = evolu.createQuery(db => db
   .selectFrom('aiPrompt')
   .select(['id'])
-  .where('isDeleted', 'is not', _.cast(true))
+  .where('isDeleted', 'is not', cast(true))
   .orderBy('createdAt')
 );
 
-export const usePrompt = (id: S.IdAiPrompt) => _.useQuery(prompt(id)).row;
+export const usePrompt = (id: S.IdAiPrompt) => useQuery(prompt(id)).row;
 export const prompt = (id: S.IdAiPrompt) => evolu.createQuery(db => db
   .selectFrom('aiPrompt')
   .select(['id', 'model', 'prompt', 'response', 'isMultiline', 'createdAt'])
-  .where('isDeleted', 'is not', _.cast(true))
+  .where('isDeleted', 'is not', cast(true))
   .where('id', '=', id)
   .limit(1)
 );
 
-export const useNotes = () => _.useQuery(notes).rows;
+export const useNotes = () => useQuery(notes).rows;
 export const notes = evolu.createQuery(db => db
   .selectFrom('todo')
   .select(['id', 'title', 'isCompleted', 'labelId'])
-  .where('isDeleted', 'is not', _.cast(true))
+  .where('isDeleted', 'is not', cast(true))
   .where('title', 'is not', null)
-  .$narrowType<{title: _.NotNull}>()
+  .$narrowType<{title: S.NotNull}>()
   .orderBy('createdAt')
   // https://kysely.dev/docs/recipes/relations
   .select((eb) => [
-    _.jsonArrayFrom(eb
+    jsonArrayFrom(eb
       .selectFrom('label')
       .select(['label.id', 'label.name'])
-      .where('isDeleted', 'is not', _.cast(true))
+      .where('isDeleted', 'is not', cast(true))
       .orderBy('createdAt'),
     ).as('categories')
   ]), {

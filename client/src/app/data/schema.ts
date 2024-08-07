@@ -1,8 +1,10 @@
 import * as _ from '@evolu/common';
 import * as S from '@effect/schema/Schema';
-export * from '@effect/schema/Schema';
 
-// Primitives
+export * from '@effect/schema/Schema';
+export type {NotNull} from '@evolu/react-native';
+
+// Data
 
 export type String50 = typeof String50.Type;
 export const String50 = _.String.pipe(
@@ -10,8 +12,6 @@ export const String50 = _.String.pipe(
   S.maxLength(50),
   S.brand('String50'),
 );
-
-// Data
 
 export type Coords = typeof Coords.Type;
 export const Coords = S.Tuple(S.Number, S.Number);
