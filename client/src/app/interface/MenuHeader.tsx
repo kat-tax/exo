@@ -4,11 +4,11 @@ import {View, Text, Pressable} from 'react-native';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useLingui} from '@lingui/react';
 import {useOwner} from '@evolu/react-native';
-import {Identicon} from 'app/stack/Identicon';
+import {Identicon} from 'app/stacks/Identicon';
 
-import type {NavMenuProps} from './NavMenu';
+import type {MenuProps} from './Menu';
 
-export function NavMenuHeader(props: NavMenuProps) {
+export function MenuHeader(props: MenuProps) {
   const {styles, theme} = useStyles(stylesheet);
   const {i18n} = useLingui();
   const owner = useOwner();

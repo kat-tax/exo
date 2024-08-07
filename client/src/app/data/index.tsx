@@ -1,6 +1,6 @@
 import {EvoluProvider, createEvolu, useQuery, cast, jsonArrayFrom} from '@evolu/react-native';
 import {Provider as ReduxProvider} from 'react-exo/redux';
-import {Spinner} from 'app/stack/Spinner';
+import {Spinner} from 'app/stacks/Spinner';
 import store from './store';
 import cfg from 'config';
 import * as S from './schema';

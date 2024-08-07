@@ -2,7 +2,7 @@ import {Trans} from '@lingui/macro';
 import {View} from 'react-native';
 import {Icon} from 'react-exo/icon';
 import {Page} from 'app/interface/Page';
-import {Frame} from 'dev/interface/Frame';
+import {Frame} from 'dev/stacks/Frame';
 import * as Design from 'design';
 
 export default function ScreenDesign() {

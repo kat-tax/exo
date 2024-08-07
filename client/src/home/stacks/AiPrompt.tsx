@@ -6,8 +6,8 @@ import {useRef, useState, useMemo, memo} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {Text, View, TextInput, Pressable} from 'react-native';
 import {useAppContext} from 'app/hooks/useAppContext';
-import {Markdown} from 'app/stack/Markdown';
-import {Spinner} from 'app/stack/Spinner';
+import {Markdown} from 'app/stacks/Markdown';
+import {Spinner} from 'app/stacks/Spinner';
 import {formatDate} from 'home/utils/time';
 import {useAI} from 'home/hooks/useAI';
 

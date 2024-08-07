@@ -6,7 +6,7 @@ import {useCalendarTheme} from 'world/hooks/useCalendarTheme';
 import {useLocale} from 'app/hooks/useLocale';
 import {Page} from 'app/interface/Page';
 
-import {CalendarEvent} from '../interface/CalendarEvent';
+import {CalendarEvent} from '../stacks/CalendarEvent';
 
 const today = toDateId(new Date());
 

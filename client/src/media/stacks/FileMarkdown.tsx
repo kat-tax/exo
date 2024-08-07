@@ -1,7 +1,7 @@
 import {View} from 'react-native';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useFileText} from 'media/hooks/useFileText';
-import {Markdown} from 'app/stack/Markdown';
+import {Markdown} from 'app/stacks/Markdown';
 
 interface FileMarkdown {
   path: string,

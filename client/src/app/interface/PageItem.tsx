@@ -1,12 +1,12 @@
 import {View, Text} from 'react-native';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 
-interface PageSectionItemProps extends React.PropsWithChildren {
+interface PageItemProps extends React.PropsWithChildren {
   label: string,
   description: string,
 }
 
-export function PageSectionItem(props: PageSectionItemProps) {
+export function PageItem(props: PageItemProps) {
   const {styles} = useStyles(stylesheet);
   return (
     <View style={styles.root}>

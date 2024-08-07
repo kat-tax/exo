@@ -2,34 +2,34 @@ import {View} from 'react-native';
 import {Trans} from '@lingui/macro';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 
-import {NavTabsItem} from './NavTabsItem';
+import {TabsItem} from './TabsItem';
 
-export function NavTabs() {
+export function Tabs() {
   const {styles} = useStyles(stylesheet);
 
   return (
     <View style={styles.root}>
-      <NavTabsItem
+      <TabsItem
         label={<Trans>Dashboard</Trans>}
         icon="ph:squares-four"
         path="/"
       />
-      <NavTabsItem
+      <TabsItem
         label={<Trans>Inbox</Trans>}
         icon="ph:tray"
         path="/inbox"
       />
-      <NavTabsItem
+      <TabsItem
         label={<Trans>Files</Trans>}
         icon="ph:folder"
         path="/browse"
       />
-      <NavTabsItem
+      <TabsItem
         label={<Trans>World</Trans>}
         icon="ph:globe"
         path="/world"
       />
-      <NavTabsItem
+      <TabsItem
         label={<Trans>Settings</Trans>}
         icon="ph:gear"
         path="/settings"

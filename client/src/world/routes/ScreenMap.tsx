@@ -6,8 +6,8 @@ import {useScheme} from 'app/hooks/useScheme';
 import {Page} from 'app/interface/Page';
 import schools from 'world/utils/schools';
 
-import {MarkerDevice} from '../interface/MarkerDevice';
-import {MarkerSchool} from '../interface/MarkerSchool';
+import {MarkerDevice} from '../stacks/MarkerDevice';
+import {MarkerSchool} from '../stacks/MarkerSchool';
 
 const MAPTILER_URL = 'https://api.maptiler.com/maps/';
 const MAPTILER_KEY = 'UbdBChbHpiVOSIdTJWvV';

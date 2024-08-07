@@ -7,9 +7,9 @@ import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useSettings} from 'app/hooks/useSettings';
 import {useLocale} from 'app/hooks/useLocale';
 import {useScheme} from 'app/hooks/useScheme';
-import {Identicon} from 'app/stack/Identicon';
+import {Identicon} from 'app/stacks/Identicon';
 import {PageSection} from 'app/interface/PageSection';
-import {PageSectionItem} from 'app/interface/PageSectionItem';
+import {PageItem} from 'app/interface/PageItem';
 import {Page} from 'app/interface/Page';
 import {locales} from 'config/locales';
 import {Button} from 'design';
@@ -35,7 +35,7 @@ export default function ScreenSettings() {
       }>
       <View style={styles.root}>
         <PageSection title={t(i18n)`Profile`}>
-          <PageSectionItem
+          <PageItem
             label={t(i18n)`User Name`}
             description={t(i18n)`Your name to display in the app.`}>
             <TextInput
@@ -46,8 +46,8 @@ export default function ScreenSettings() {
               placeholder={t(i18n)`Enter your name`}
               placeholderTextColor={theme.colors.mutedForeground}
             />
-          </PageSectionItem>
-          <PageSectionItem
+          </PageItem>
+          <PageItem
             label={t(i18n)`Owner Key`}
             description={t(i18n)`A mnemonic phrase for authentication.`}>
             <TextInput
@@ -67,10 +67,10 @@ export default function ScreenSettings() {
                 settings.changeOwner(e.nativeEvent.text);
               }}
             />
-          </PageSectionItem>
+          </PageItem>
         </PageSection>
         <PageSection title={t(i18n)`Display`}>
-          <PageSectionItem
+          <PageItem
             label={t(i18n)`Language`}
             description={t(i18n)`Select the language for the app.`}>
             <Picker
@@ -89,8 +89,8 @@ export default function ScreenSettings() {
                 />
               ))}
             </Picker>
-          </PageSectionItem>
-          <PageSectionItem
+          </PageItem>
+          <PageItem
             label={t(i18n)`Theme`}
             description={t(i18n)`Select the theme for the app.`}>
             <Picker
@@ -103,8 +103,8 @@ export default function ScreenSettings() {
               <Picker.Item label={t`Light`} value="light" color={theme.colors.foreground}/>
               <Picker.Item label={t`Dark`} value="dark" color={theme.colors.foreground}/>
             </Picker>
-          </PageSectionItem>
-          <PageSectionItem
+          </PageItem>
+          <PageItem
             label={t(i18n)`Temperature`}
             description={t(i18n)`Select the temperature unit for the app.`}>
             <Picker
@@ -116,8 +116,8 @@ export default function ScreenSettings() {
               <Picker.Item label={t(i18n)`Celsius`} value="c" color={theme.colors.foreground}/>
               <Picker.Item label={t(i18n)`Fahrenheit`} value="f" color={theme.colors.foreground}/>
             </Picker>
-          </PageSectionItem>
-          <PageSectionItem
+          </PageItem>
+          <PageItem
             label={t(i18n)`Distance`}
             description={t(i18n)`Select the distance unit for the app.`}>
             <Picker
@@ -129,10 +129,10 @@ export default function ScreenSettings() {
               <Picker.Item label={t(i18n)`Kilometers`} value="km" color={theme.colors.foreground}/>
               <Picker.Item label={t(i18n)`Miles`} value="mi" color={theme.colors.foreground}/>
             </Picker>
-          </PageSectionItem>
+          </PageItem>
         </PageSection>
         <PageSection title={t(i18n)`AI`}>
-          <PageSectionItem
+          <PageItem
             label={t(i18n)`Groq API Key`}
             description={t(i18n)`Provide a key to use AI features.`}>
             <TextInput
@@ -143,8 +143,8 @@ export default function ScreenSettings() {
               placeholderTextColor={theme.colors.mutedForeground}
               onBlur={e => settings.updateGroqKey(e.nativeEvent.text)}
             />
-          </PageSectionItem>
-          <PageSectionItem
+          </PageItem>
+          <PageItem
             label={t(i18n)`Groq Model ID`}
             description={t(i18n)`Select the AI model to use.`}>
             <Picker
@@ -158,10 +158,10 @@ export default function ScreenSettings() {
               <Picker.Item label="mixtral-8x7b" value="mixtral-8x7b-32768" color={theme.colors.foreground}/>
               <Picker.Item label="gemma-7b" value="gemma-7b-it" color={theme.colors.foreground}/>
             </Picker>
-          </PageSectionItem>
+          </PageItem>
         </PageSection>
         <PageSection title={t(i18n)`Data`}>
-          <PageSectionItem
+          <PageItem
             label={t(i18n)`Prompts`}
             description={t(i18n)`Delete all prompt data.`}>
             <Button
@@ -170,8 +170,8 @@ export default function ScreenSettings() {
               state="Default"
               onPress={settings.resetPrompts}
             />
-          </PageSectionItem>
-          <PageSectionItem
+          </PageItem>
+          <PageItem
             label={t(i18n)`All Data`}
             description={t(i18n)`Delete the local database.`}>
             <Button
@@ -180,7 +180,7 @@ export default function ScreenSettings() {
               state="Default"
               onPress={settings.resetOwner}
             />
-          </PageSectionItem>
+          </PageItem>
         </PageSection>
       </View>
     </Page>

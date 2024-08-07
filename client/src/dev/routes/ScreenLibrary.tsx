@@ -5,8 +5,8 @@ import {Switch} from 'react-exo/switch';
 import {Slider} from 'react-exo/slider';
 import {Checkbox} from 'react-exo/checkbox';
 import {Progress} from 'react-exo/progress';
-import {Frame} from 'dev/interface/Frame';
 import {Page} from 'app/interface/Page';
+import {Frame} from 'dev/stacks/Frame';
 
 export default function ScreenHome() {
   const {theme} = useStyles();

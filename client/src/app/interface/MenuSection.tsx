@@ -5,7 +5,7 @@ import {Icon} from 'react-exo/icon';
 import {isTouch} from 'app/utils/platform';
 import {useScheme} from 'app/hooks/useScheme';
 
-interface NavMenuSectionProps extends React.PropsWithChildren {
+interface MenuSectionProps extends React.PropsWithChildren {
   label: JSX.Element,
   closed?: boolean,
   disabled?: boolean,
@@ -16,7 +16,7 @@ interface NavMenuSectionProps extends React.PropsWithChildren {
   },
 }
 
-export function NavMenuSection(props: NavMenuSectionProps) {
+export function MenuSection(props: MenuSectionProps) {
   const [scheme] = useScheme();
   const {styles, theme} = useStyles(stylesheet);
   const [open, setOpen] = useState(!props.closed);

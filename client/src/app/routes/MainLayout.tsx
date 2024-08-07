@@ -4,9 +4,9 @@ import {useWindowDimensions, View, StatusBar} from 'react-native';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useDeviceSession} from 'app/hooks/useDeviceSession';
 import {useProfile} from 'app/data';
-import {File} from 'media/interface/File';
-import {NavMenu} from 'app/interface/NavMenu';
-import {NavTabs} from 'app/interface/NavTabs';
+import {Menu} from 'app/interface/Menu';
+import {Tabs} from 'app/interface/Tabs';
+import {File} from 'media/stacks/File';
 
 import type {useAppContext} from 'app/hooks/useAppContext';
 
@@ -44,7 +44,7 @@ export default function MainLayout() {
     <StatusBar networkActivityIndicatorVisible={!device?.online}/>
     <View style={vstyles.root}>
       <View style={vstyles.menu}>
-        {tabs ? <NavTabs/> : <NavMenu {...{profile}}/>}
+        {tabs ? <Tabs/> : <Menu {...{profile}}/>}
       </View>
       <Outlet {...{context}}/>
       <File

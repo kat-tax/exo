@@ -3,8 +3,8 @@ import {useLocation} from 'react-exo/navigation';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useInitDirectories} from 'media/hooks/useInitDirectories';
 import {useDirectory} from 'media/hooks/useDirectory';
-import {DirectoryEntry} from 'media/interface/DirectoryEntry';
-import {WatermarkEmpty} from 'media/interface/WatermarkEmpty';
+import {DirectoryEntry} from 'media/stacks/DirectoryEntry';
+import {WatermarkEmpty} from 'media/stacks/WatermarkEmpty';
 import {resolve} from 'media/utils/path';
 import {Page} from 'app/interface/Page';
 

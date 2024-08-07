@@ -1,5 +1,5 @@
 import {Router as _, Routes, Route} from 'react-exo/navigation';
-import {Suspense as $} from 'app/stack/Suspense';
+import {Suspense as $} from 'app/stacks/Suspense';
 import {history} from 'app/data/store';
 
 import {Layout, Screen} from './loader';

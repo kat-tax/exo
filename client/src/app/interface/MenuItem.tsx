@@ -4,7 +4,7 @@ import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useLocation, Link} from 'react-exo/navigation';
 import {isTouch} from 'app/utils/platform';
 
-interface NavMenuItemProps extends React.PropsWithChildren {
+interface MenuItemProps extends React.PropsWithChildren {
   label: JSX.Element,
   path: string,
   icon?: string,
@@ -12,7 +12,7 @@ interface NavMenuItemProps extends React.PropsWithChildren {
   mode?: 'default' | 'subitem' | 'action',
 }
 
-export function NavMenuItem(props: NavMenuItemProps) {
+export function MenuItem(props: MenuItemProps) {
   const {styles, theme} = useStyles(stylesheet);
   const {pathname} = useLocation();
 

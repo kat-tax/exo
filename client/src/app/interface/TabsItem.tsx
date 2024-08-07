@@ -4,13 +4,13 @@ import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useLocation, Link} from 'react-exo/navigation';
 import {isTouch} from 'app/utils/platform';
 
-interface NavTabsItemProps extends React.PropsWithChildren {
+interface TabsItemProps extends React.PropsWithChildren {
   label: JSX.Element,
   path: string,
   icon: string,
 }
 
-export function NavTabsItem(props: NavTabsItemProps) {
+export function TabsItem(props: TabsItemProps) {
   const {pathname} = useLocation();
   const {styles, theme} = useStyles(stylesheet);
   const isActive = props.path === decodeURIComponent(pathname);

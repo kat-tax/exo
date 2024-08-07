@@ -1,21 +1,21 @@
 import {Trans} from '@lingui/macro';
 import {View, ScrollView, Text} from 'react-native';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {StorageIndicator} from 'media/interface/StorageIndicator';
+import {StorageIndicator} from 'media/stacks/StorageIndicator';
 import {useFileSystem} from 'media/hooks/useFileSystem';
 import {useLists} from 'media/hooks/useLists';
 
-import {NavMenuItem} from './NavMenuItem';
-import {NavMenuHeader} from './NavMenuHeader';
-import {NavMenuSection} from './NavMenuSection';
+import {MenuItem} from './MenuItem';
+import {MenuHeader} from './MenuHeader';
+import {MenuSection} from './MenuSection';
 
 import type {useProfile} from 'app/data';
 
-export interface NavMenuProps {
+export interface MenuProps {
   profile?: ReturnType<typeof useProfile>,
 }
 
-export function NavMenu(props: NavMenuProps) {
+export function Menu(props: MenuProps) {
   const lists = useLists();
   const {importFile} = useFileSystem();
   const {styles, theme} = useStyles(stylesheet);
@@ -24,80 +24,80 @@ export function NavMenu(props: NavMenuProps) {
     <View style={styles.bg}>
       <ScrollView contentContainerStyle={{flexGrow: 1}}>
         <View style={styles.root}>
-          <NavMenuHeader {...props}/>
-          <NavMenuItem
+          <MenuHeader {...props}/>
+          <MenuItem
             label={<Trans>Dashboard</Trans>}
             icon="ph:squares-four"
             path="/"
           />
-          <NavMenuItem
+          <MenuItem
             label={<Trans>Inbox</Trans>}
             icon="ph:tray"
             path="/inbox"
           />
-          <NavMenuSection
+          <MenuSection
             label={<Trans>Media</Trans>}
             action={{
               label: 'Import Files',
               icon: 'ph:upload',
               onPress: importFile,
             }}>
-            <NavMenuItem
+            <MenuItem
               label={<Trans>Files</Trans>}
               icon="ph:folder"
               path="/browse"
             />
-            <NavMenuItem
+            <MenuItem
               label={<Trans>Docs</Trans>}
               icon="ph:file-text"
               path="/browse/documents"
             />
-            <NavMenuItem
+            <MenuItem
               label={<Trans>Music</Trans>}
               icon="ph:music-notes"
               path="/browse/music"
             />
-            <NavMenuItem
+            <MenuItem
               label={<Trans>Pictures</Trans>}
               icon="ph:image"
               path="/browse/pictures"
             />
-            <NavMenuItem
+            <MenuItem
               label={<Trans>Movies</Trans>}
               icon="ph:video"
               path="/browse/videos"
             />
-            <NavMenuItem
+            <MenuItem
               label={<Trans>Games</Trans>}
               icon="ph:game-controller"
               path="/browse/games"
             />
-            <NavMenuItem
+            <MenuItem
               label={<Trans>Books</Trans>}
               icon="ph:book-open-text"
               path="/browse/books"
             />
-          </NavMenuSection>
-          <NavMenuSection label={<Trans>World</Trans>}>
-            <NavMenuItem
+          </MenuSection>
+          <MenuSection label={<Trans>World</Trans>}>
+            <MenuItem
               label={<Trans>Map</Trans>}
               icon="ph:map-trifold"
               path="/map"
             />
-            <NavMenuItem
+            <MenuItem
               label={<Trans>News</Trans>}
               icon="ph:rss"
               path="/news"
             />
-            <NavMenuItem
+            <MenuItem
               label={<Trans>Calendar</Trans>}
               icon="ph:calendar-dots"
               path="/calendar"
             />
-          </NavMenuSection>
-          <NavMenuSection label={<Trans>Favorites</Trans>}>
+          </MenuSection>
+          <MenuSection label={<Trans>Favorites</Trans>}>
             {lists.map(({id}) =>
-              <NavMenuItem
+              <MenuItem
                 key={id}
                 label={<Text>{id}</Text>}
                 color={theme.palette.purple400}
@@ -106,25 +106,25 @@ export function NavMenu(props: NavMenuProps) {
                 mode="subitem"
               />
             )}
-          </NavMenuSection>
+          </MenuSection>
           {__DEV__ &&
-            <NavMenuSection label={<Trans>Dev Mode</Trans>} closed>
-              <NavMenuItem
+            <MenuSection label={<Trans>Dev Mode</Trans>} closed>
+              <MenuItem
                 label={<Trans>Design</Trans>}
                 icon="ph:palette"
                 path="/design"
               />
-              <NavMenuItem
+              <MenuItem
                 label={<Trans>Library</Trans>}
                 icon="ph:package"
                 path="/library"
               />
-            </NavMenuSection>
+            </MenuSection>
           }
           <View style={styles.spacer}/>
           <View style={styles.footer}>
             <StorageIndicator actions={
-              <NavMenuItem
+              <MenuItem
                 label={<Trans>Storage</Trans>}
                 icon="ph:hard-drives"
                 path="/storage"
