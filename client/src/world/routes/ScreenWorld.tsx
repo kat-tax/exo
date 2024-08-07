@@ -39,5 +39,6 @@ export default function ScreenWorld() {
 const stylesheet = createStyleSheet(theme => ({
   root: {
     gap: theme.display.space5,
+    paddingBottom: theme.display.space5,
   },
 }));

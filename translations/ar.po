@@ -54,7 +54,7 @@ msgstr "تلقائي"
 msgid "Books"
 msgstr "كتب"
 
-#: ../../client/src/app/interface/NavMenu.tsx:93
+#: ../../client/src/world/routes/ScreenWorld.tsx:30
 msgid "Calendar"
 msgstr ""
 
@@ -222,7 +222,7 @@ msgstr "إدارة إعداداتك"
 msgid "Manage your storage"
 msgstr ""
 
-#: ../../client/src/app/interface/NavMenu.tsx:83
+#: ../../client/src/world/routes/ScreenWorld.tsx:18
 msgid "Map"
 msgstr ""
 
@@ -242,7 +242,7 @@ msgstr ""
 msgid "Music"
 msgstr "الموسيقى"
 
-#: ../../client/src/app/interface/NavMenu.tsx:88
+#: ../../client/src/world/routes/ScreenWorld.tsx:24
 msgid "News"
 msgstr ""
 

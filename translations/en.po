@@ -54,7 +54,7 @@ msgstr "Auto"
 msgid "Books"
 msgstr "Books"
 
-#: ../../client/src/app/interface/NavMenu.tsx:93
+#: ../../client/src/world/routes/ScreenWorld.tsx:30
 msgid "Calendar"
 msgstr "Calendar"
 
@@ -222,7 +222,7 @@ msgstr "Manage your settings"
 msgid "Manage your storage"
 msgstr "Manage your storage"
 
-#: ../../client/src/app/interface/NavMenu.tsx:83
+#: ../../client/src/world/routes/ScreenWorld.tsx:18
 msgid "Map"
 msgstr "Map"
 
@@ -242,7 +242,7 @@ msgstr "Movies"
 msgid "Music"
 msgstr "Music"
 
-#: ../../client/src/app/interface/NavMenu.tsx:88
+#: ../../client/src/world/routes/ScreenWorld.tsx:24
 msgid "News"
 msgstr "News"
 

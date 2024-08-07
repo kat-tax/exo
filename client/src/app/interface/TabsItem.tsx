@@ -2,7 +2,6 @@ import {Icon} from 'react-exo/icon';
 import {View, Text} from 'react-native';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useLocation, Link} from 'react-exo/navigation';
-import {isTouch} from 'app/utils/platform';
 
 interface TabsItemProps extends React.PropsWithChildren {
   label: JSX.Element,
@@ -17,18 +16,15 @@ export function TabsItem(props: TabsItemProps) {
 
   return (
     <Link to={props.path}>
-      <View style={[
-        styles.item,
-        isActive && styles.itemActive,
-      ]}>
+      <View style={styles.item}>
         {props.icon &&
           <Icon
+            color={isActive ? theme.colors.foreground : theme.colors.mutedForeground}
             name={props.icon}
-            color={theme.colors.foreground}
             size={20}
           />
         }
-        <Text style={styles.label}>
+        <Text style={[styles.label, isActive && styles.labelActive]}>
           {props.label}
         </Text>
       </View>
@@ -38,32 +34,26 @@ export function TabsItem(props: TabsItemProps) {
 
 const stylesheet = createStyleSheet(theme => ({
   item: {
-    width: 44,
-    height: 44,
-    flexDirection: 'row',
-    alignItems: 'center',
+    width: 60,
+    flexDirection: 'column',
     justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: theme.display.space1,
     borderRadius: theme.display.radius1,
-    padding: theme.display.space2,
   },
   itemAction: {
     paddingHorizontal: theme.display.space1,
     paddingVertical: theme.display.space1,
   },
-  itemActive: {
-    backgroundColor: theme.colors.card,
-  },
   label: {
     userSelect: 'none',
     marginHorizontal: theme.display.space1,
-    color: theme.colors.secondaryForeground,
+    color: theme.colors.mutedForeground,
     lineHeight: 24,
-    fontSize: 11,
-    ...isTouch() && {
-      marginLeft: theme.display.space2,
-      lineHeight: 32,
-      fontSize: 12,
-    },
+    fontSize: 9,
+  },
+  labelActive: {
+    color: theme.colors.foreground,
   },
 }));
 
