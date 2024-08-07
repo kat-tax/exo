@@ -1,4 +1,6 @@
+import {t} from '@lingui/macro';
 import {View} from 'react-native';
+import {useLingui} from '@lingui/react';
 import {useLocation} from 'react-exo/navigation';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useInitDirectories} from 'media/hooks/useInitDirectories';
@@ -11,9 +13,10 @@ import {Page} from 'app/interface/Page';
 export default function ScreenBrowse() {
   const {pathname} = useLocation();
   const {styles} = useStyles(stylesheet);
+  const {i18n} = useLingui();
   const parts = resolve(pathname);
   const path = parts.join('/');
-  const name = parts[parts.length - 1];
+  const name = parts[parts.length - 1] || t(i18n)`Files`;
   const base = parts.slice(0, -1).join('/') || '/';
   const entries = useDirectory(path, {showHidden: true});
 

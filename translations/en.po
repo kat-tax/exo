@@ -98,6 +98,10 @@ msgstr "Design"
 msgid "Dev Mode"
 msgstr "Dev Mode"
 
+#: ../../client/src/media/routes/ScreenBrowse.tsx:19
+msgid "Device"
+msgstr "Device"
+
 #: ../../client/src/media/base/WatermarkEmpty.tsx:15
 msgid "Directory is empty."
 msgstr "Directory is empty."
@@ -146,7 +150,7 @@ msgstr "Fahrenheit"
 msgid "Favorites"
 msgstr "Favorites"
 
-#: ../../client/src/app/interface/NavMenu.tsx:46
+#: ../../client/src/media/routes/ScreenBrowse.tsx:19
 msgid "Files"
 msgstr "Files"
 

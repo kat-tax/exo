@@ -1,8 +1,8 @@
-import {useMemo} from 'react';
+import {Icon} from 'react-exo/icon';
 import {useNavigate} from 'react-exo/navigation';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useWindowDimensions, View, Pressable} from 'react-native';
-import {Icon} from 'react-exo/icon';
+import {useMemo, useState} from 'react';
 import {resolve} from 'media/utils/path';
 
 import {FileDownload} from './FileDownload';
@@ -20,6 +20,8 @@ interface FileProps {
 
 export function File(props: FileProps) {
   const {file, vertical, maximized, close} = props;
+  const [pointer, setPointer] = useState(false);
+  const [pinned, setPinned] = useState(false);
   const {styles, theme} = useStyles(stylesheet);
   const screen = useWindowDimensions();
   const navigate = useNavigate();
@@ -120,11 +122,11 @@ export function File(props: FileProps) {
 
   const scale = useMemo(() => {
     let _scale = 1;
-    if (screen.width <= theme.breakpoints.xs)
+    if (!pinned && screen.width <= theme.breakpoints.xs)
       _scale = 0.35;
-    else if (screen.width <= theme.breakpoints.sm)
+    else if (!pinned && screen.width <= theme.breakpoints.sm)
       _scale = 0.50;
-    else if (screen.width <= theme.breakpoints.md)
+    else if (!pinned && screen.width <= theme.breakpoints.md)
       _scale = 0.75;
     else if (screen.width <= theme.breakpoints.lg)
       _scale = 1;
@@ -137,7 +139,7 @@ export function File(props: FileProps) {
     else if (screen.width <= theme.breakpoints.xxxxl)
       _scale = 4;
     return _scale;
-  }, [screen, theme]);
+  }, [screen, theme, pinned]);
 
   const resolution = useMemo(() => {
     switch (extension) {
@@ -160,32 +162,58 @@ export function File(props: FileProps) {
         maximized ? styles.maximized : styles.minimized,
         !maximized && {width: resolution[0], height: resolution[1]},
       ]}
+      onPointerEnter={() => setPointer(true)}
+      onPointerLeave={() => setPointer(false)}
       onPress={() => navigate(fileUrl)}>
       {root => <>
         <View style={[
           styles.contents,
           !maximized && styles.contentsMinimized,
-          root.hovered && {opacity: 1},
+          !maximized && pinned && styles.contentsPinned,
+          root.hovered && styles.contentsHovered,
         ]}>
           {renderer}
         </View>
-        {!maximized &&
-          <Pressable style={styles.close} onPress={close}>
+        {!maximized && pointer && <>
+          <Pressable
+            style={styles.close}
+            onPress={close}>
             {close => (
               <Icon
                 name="ph:x"
                 size={20}
                 color={
                   root.hovered
-                  ? theme.colors.accent
-                  : close.hovered
-                    ? theme.colors.foreground
-                    : theme.colors.mutedForeground
+                    ? theme.colors.accent
+                    : pinned
+                      ? theme.colors.accent
+                      : close.hovered
+                        ? theme.colors.foreground
+                        : theme.colors.mutedForeground
                 }
               />
             )}
           </Pressable>
-        }
+          <Pressable
+            style={styles.pin}
+            onPress={() => setPinned(!pinned)}>
+            {pin => (
+              <Icon
+                name={pinned ? 'ph:push-pin-simple' : 'ph:push-pin-simple-slash'}
+                size={20}
+                color={
+                  root.hovered
+                    ? theme.colors.accent
+                    : pinned
+                      ? theme.colors.accent
+                      : pin.hovered
+                        ? theme.colors.foreground
+                        : theme.colors.mutedForeground
+                }
+              />
+            )}
+          </Pressable>
+        </>}
       </>}
     </Pressable>
   ) : null;
@@ -194,7 +222,7 @@ export function File(props: FileProps) {
 const stylesheet = createStyleSheet((theme, rt) => ({
   root: {
     flex: 4,
-    transition: 'all 0.5s ease-in-out',
+    transition: 'all 0.3s ease-in-out',
   },
   vertical: {
     flex: 20,
@@ -227,9 +255,23 @@ const stylesheet = createStyleSheet((theme, rt) => ({
     pointerEvents: 'none',
     opacity: 0.2,
   },
+  contentsHovered: {
+    opacity: 1,
+  },
+  contentsPinned: {
+    opacity: 1,
+    pointerEvents: 'auto',
+  },
+  pin: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    padding: theme.display.space2,
+  },
   close: {
     position: 'absolute',
-    top: theme.display.space2,
-    right: theme.display.space2,
+    bottom: 0,
+    right: 0,
+    padding: theme.display.space2,
   },
 }));
