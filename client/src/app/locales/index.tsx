@@ -10,7 +10,7 @@ import {load, i18n, isRTL} from './loader';
 load('en');
 i18n.activate('en');
 
-export function Locales(props: React.PropsWithChildren) {
+export function I18n(props: React.PropsWithChildren) {
   const {styles} = useStyles(stylesheet);
   const [locale] = useLocale();
   

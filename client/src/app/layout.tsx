@@ -1,4 +1,5 @@
 import {StatusBar, Appearance} from 'react-native';
+import {GestureProvider} from 'react-exo/gesture';
 import {ToastRoot} from 'react-exo/toast';
 import {useEffect} from 'react';
 import {useInitialTheme, UnistylesRuntime} from 'react-native-unistyles';
@@ -20,9 +21,11 @@ export function Layout(props: React.PropsWithChildren) {
     }
   }, [scheme]);
 
-  return <>
-    <StatusBar barStyle={`${theme}-content`}/>
-    {props.children}
-    <ToastRoot theme={theme} position="bottom-center" offset={12}/>
-  </>
+  return (
+    <GestureProvider style={{flex: 1}}>
+      <StatusBar barStyle={`${theme}-content`}/>
+      {props.children}
+      <ToastRoot theme={theme} position="bottom-center" offset={12}/>
+    </GestureProvider>
+  );
 }

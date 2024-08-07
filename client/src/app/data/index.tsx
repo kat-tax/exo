@@ -20,7 +20,7 @@ export const evolu = createEvolu(S.DB, {
   },
 });
 
-export function Database(props: React.PropsWithChildren) {
+export function Data(props: React.PropsWithChildren) {
   return (
     <ReduxProvider store={store} loading={<Spinner/>}>
       <EvoluProvider value={evolu}>
