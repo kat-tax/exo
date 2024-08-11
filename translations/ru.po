@@ -13,112 +13,112 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: ../../client/src/dev/router/ScreenLibrary.tsx:16
+#: ../../client/src/dev/routes/ScreenDesign.tsx:12
+#: ../../client/src/dev/routes/ScreenLibrary.tsx:16
 msgid "{0} components"
 msgstr "{0} компонентов"
 
-#: ../../client/src/app/router/ScreenSettings.tsx:52
+#: ../../client/src/app/routes/ScreenSettings.tsx:52
 msgid "A mnemonic phrase for authentication."
 msgstr "Мнемоническая фраза для аутентификации."
 
-#: ../../client/src/app/router/ScreenSettings.tsx:134
+#: ../../client/src/app/routes/ScreenSettings.tsx:134
 msgid "AI"
 msgstr "ИИ"
 
-#: ../../client/src/app/router/ScreenSettings.tsx:175
+#: ../../client/src/app/routes/ScreenSettings.tsx:175
 msgid "All Data"
 msgstr "Все данные"
 
-#: ../../client/src/settings/hooks/useSettings.ts:57
+#: ../../client/src/app/hooks/useSettings.ts:57
 msgid "Are you sure you want to change the owner key? This will reset the local database. This action cannot be undone."
 msgstr "Вы уверены, что хотите изменить ключ владельца? Это приведет к сбросу локальной базы данных. Это действие нельзя отменить."
 
-#: ../../client/src/settings/hooks/useSettings.ts:51
+#: ../../client/src/app/hooks/useSettings.ts:51
 msgid "Are you sure you want to reset your local database? If data is not backed up on another device, it will be lost. This action cannot be undone."
 msgstr "Вы уверены, что хотите сбросить вашу локальную базу данных? Если данные не сохранены на другом устройстве, они будут потеряны. Это действие нельзя отменить."
 
-#: ../../client/src/settings/hooks/useSettings.ts:42
+#: ../../client/src/app/hooks/useSettings.ts:42
 msgid "Are you sure you want to reset your prompt history?"
 msgstr "Вы уверены, что хотите сбросить историю ваших запросов?"
 
-#: ../../client/src/home/interface/AiPrompt.tsx:50
+#: ../../client/src/home/stacks/AiPrompt.tsx:50
 msgid "Ask anything..."
 msgstr "Спросите что угодно..."
 
-#: ../../client/src/app/router/ScreenSettings.tsx:82
-#: ../../client/src/app/router/ScreenSettings.tsx:102
+#: ../../client/src/app/routes/ScreenSettings.tsx:82
+#: ../../client/src/app/routes/ScreenSettings.tsx:102
 msgid "Auto"
 msgstr "Авто"
 
-#: ../../client/src/app/interface/NavMenu.tsx:76
+#: ../../client/src/app/interface/Menu.tsx:75
 msgid "Books"
 msgstr "Книги"
 
+#: ../../client/src/app/interface/Menu.tsx:92
 #: ../../client/src/world/routes/ScreenWorld.tsx:30
 msgid "Calendar"
 msgstr ""
 
-#: ../../client/src/app/router/ScreenSettings.tsx:116
+#: ../../client/src/app/routes/ScreenSettings.tsx:116
 msgid "Celsius"
 msgstr "Цельсий"
 
-#: ../../client/src/app/router/ScreenSettings.tsx:104
+#: ../../client/src/app/routes/ScreenSettings.tsx:104
 msgid "Dark"
 msgstr "Темная"
 
-#: ../../client/src/app/interface/NavMenu.tsx:29
+#: ../../client/src/app/interface/Menu.tsx:28
+#: ../../client/src/app/interface/Tabs.tsx:13
 msgid "Dashboard"
 msgstr "Дашборд"
 
-#: ../../client/src/app/router/ScreenSettings.tsx:163
+#: ../../client/src/app/routes/ScreenSettings.tsx:163
 msgid "Data"
 msgstr "Данные"
 
-#: ../../client/src/app/router/ScreenSettings.tsx:166
+#: ../../client/src/app/routes/ScreenSettings.tsx:166
 msgid "Delete all prompt data."
 msgstr "Удалить все данные запросов."
 
-#: ../../client/src/app/router/ScreenSettings.tsx:178
+#: ../../client/src/app/routes/ScreenSettings.tsx:178
 msgid "Delete Database"
 msgstr "Удалить базу данных"
 
-#: ../../client/src/app/router/ScreenSettings.tsx:168
+#: ../../client/src/app/routes/ScreenSettings.tsx:168
 msgid "Delete Prompts"
 msgstr "Удалить запросы"
 
-#: ../../client/src/app/router/ScreenSettings.tsx:176
+#: ../../client/src/app/routes/ScreenSettings.tsx:176
 msgid "Delete the local database."
 msgstr "Удалить локальную базу данных."
 
-#: ../../client/src/app/interface/NavMenu.tsx:113
+#: ../../client/src/app/interface/Menu.tsx:112
+#: ../../client/src/dev/routes/ScreenDesign.tsx:11
 msgid "Design"
 msgstr "Дизайн"
 
-#: ../../client/src/app/interface/NavMenu.tsx:111
+#: ../../client/src/app/interface/Menu.tsx:110
 msgid "Dev Mode"
 msgstr ""
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:19
-msgid "Device"
-msgstr ""
-
-#: ../../client/src/media/base/WatermarkEmpty.tsx:15
+#: ../../client/src/media/stacks/WatermarkEmpty.tsx:15
 msgid "Directory is empty."
 msgstr ""
 
-#: ../../client/src/app/router/ScreenSettings.tsx:72
+#: ../../client/src/app/routes/ScreenSettings.tsx:72
 msgid "Display"
 msgstr "Отображение"
 
-#: ../../client/src/app/router/ScreenSettings.tsx:121
+#: ../../client/src/app/routes/ScreenSettings.tsx:121
 msgid "Distance"
 msgstr "Расстояние"
 
-#: ../../client/src/app/interface/NavMenu.tsx:51
+#: ../../client/src/app/interface/Menu.tsx:50
 msgid "Docs"
 msgstr "Документы"
 
-#: ../../client/src/media/base/FileDownload.tsx:17
+#: ../../client/src/media/stacks/FileDownload.tsx:17
 msgid "Download"
 msgstr ""
 
@@ -130,31 +130,29 @@ msgstr "Хорошего дня"
 msgid "Enjoy the night"
 msgstr "Приятной ночи"
 
-#: ../../client/src/app/router/ScreenSettings.tsx:141
+#: ../../client/src/app/routes/ScreenSettings.tsx:141
 msgid "Enter api key"
 msgstr "Введите API ключ"
 
-#: ../../client/src/app/router/ScreenSettings.tsx:58
+#: ../../client/src/app/routes/ScreenSettings.tsx:58
 msgid "Enter your mnemonic phrase"
 msgstr "Введите вашу мнемоническую фразу"
 
-#: ../../client/src/app/router/ScreenSettings.tsx:46
+#: ../../client/src/app/routes/ScreenSettings.tsx:46
 msgid "Enter your name"
 msgstr "Введите ваше имя"
 
-#: ../../client/src/app/router/ScreenSettings.tsx:117
+#: ../../client/src/app/routes/ScreenSettings.tsx:117
 msgid "Fahrenheit"
 msgstr "Фаренгейт"
 
-#: ../../client/src/app/interface/NavMenu.tsx:98
-msgid "Favorites"
-msgstr "Избранное"
-
+#: ../../client/src/app/interface/Menu.tsx:45
+#: ../../client/src/app/interface/Tabs.tsx:23
 #: ../../client/src/media/routes/ScreenBrowse.tsx:19
 msgid "Files"
 msgstr "Файлы"
 
-#: ../../client/src/app/interface/NavMenu.tsx:71
+#: ../../client/src/app/interface/Menu.tsx:70
 msgid "Games"
 msgstr "Игры"
 
@@ -174,7 +172,7 @@ msgstr "Добрый вечер"
 msgid "Good morning"
 msgstr "Доброе утро"
 
-#: ../../client/src/app/router/ScreenSettings.tsx:136
+#: ../../client/src/app/routes/ScreenSettings.tsx:136
 msgid "Groq API Key"
 msgstr "API ключ Groq"
 
@@ -182,35 +180,37 @@ msgstr "API ключ Groq"
 msgid "Groq Failure"
 msgstr "Ошибка Groq"
 
-#: ../../client/src/app/router/ScreenSettings.tsx:148
+#: ../../client/src/app/routes/ScreenSettings.tsx:148
 msgid "Groq Model ID"
 msgstr "ID модели Groq"
 
-#: ../../client/src/app/interface/NavMenuHeader.tsx:27
+#: ../../client/src/app/interface/MenuHeader.tsx:27
 msgid "Human"
 msgstr "Человек"
 
-#: ../../client/src/media/base/WatermarkEmpty.tsx:16
+#: ../../client/src/media/stacks/WatermarkEmpty.tsx:16
 msgid "Import"
 msgstr ""
 
-#: ../../client/src/app/interface/NavMenu.tsx:34
+#: ../../client/src/app/interface/Menu.tsx:33
+#: ../../client/src/app/interface/Tabs.tsx:18
 msgid "Inbox"
 msgstr "Входящие"
 
-#: ../../client/src/app/router/ScreenSettings.tsx:129
+#: ../../client/src/app/routes/ScreenSettings.tsx:129
 msgid "Kilometers"
 msgstr "Километры"
 
-#: ../../client/src/app/router/ScreenSettings.tsx:74
+#: ../../client/src/app/routes/ScreenSettings.tsx:74
 msgid "Language"
 msgstr "Язык"
 
-#: ../../client/src/app/interface/NavMenu.tsx:118
+#: ../../client/src/app/interface/Menu.tsx:117
+#: ../../client/src/dev/routes/ScreenLibrary.tsx:15
 msgid "Library"
 msgstr "Библиотека"
 
-#: ../../client/src/app/router/ScreenSettings.tsx:103
+#: ../../client/src/app/routes/ScreenSettings.tsx:103
 msgid "Light"
 msgstr "Светлая"
 
@@ -218,111 +218,115 @@ msgstr "Светлая"
 msgid "Loading..."
 msgstr "Загрузка..."
 
-#: ../../client/src/app/router/ScreenSettings.tsx:28
+#: ../../client/src/app/routes/ScreenSettings.tsx:28
 msgid "Manage your settings"
 msgstr "Управление настройками"
 
-#: ../../client/src/app/router/ScreenStorage.tsx:15
+#: ../../client/src/app/routes/ScreenStorage.tsx:15
 msgid "Manage your storage"
 msgstr ""
 
+#: ../../client/src/app/interface/Menu.tsx:82
 #: ../../client/src/world/routes/ScreenWorld.tsx:18
 msgid "Map"
 msgstr ""
 
-#: ../../client/src/app/interface/NavMenu.tsx:39
+#: ../../client/src/app/interface/Menu.tsx:38
 msgid "Media"
 msgstr "Медиа"
 
-#: ../../client/src/app/router/ScreenSettings.tsx:130
+#: ../../client/src/app/routes/ScreenSettings.tsx:130
 msgid "Miles"
 msgstr "Мили"
 
-#: ../../client/src/app/interface/NavMenu.tsx:66
+#: ../../client/src/app/interface/Menu.tsx:65
 msgid "Movies"
 msgstr ""
 
-#: ../../client/src/app/interface/NavMenu.tsx:56
+#: ../../client/src/app/interface/Menu.tsx:55
 msgid "Music"
 msgstr "Музыка"
 
+#: ../../client/src/app/interface/Menu.tsx:87
 #: ../../client/src/world/routes/ScreenWorld.tsx:24
 msgid "News"
 msgstr ""
 
-#: ../../client/src/world/router/ScreenCalendar.tsx:37
+#: ../../client/src/world/routes/ScreenCalendar.tsx:37
 msgid "No events scheduled."
 msgstr "Нет запланированных событий."
 
-#: ../../client/src/app/router/ScreenStorage.tsx:17
+#: ../../client/src/app/routes/ScreenStorage.tsx:17
 msgid "Overview"
 msgstr ""
 
-#: ../../client/src/app/router/ScreenSettings.tsx:51
+#: ../../client/src/app/routes/ScreenSettings.tsx:51
 msgid "Owner Key"
 msgstr "Ключ владельца"
 
-#: ../../client/src/app/interface/NavMenu.tsx:61
+#: ../../client/src/app/interface/Menu.tsx:60
 msgid "Pictures"
 msgstr ""
 
-#: ../../client/src/home/interface/AiPrompt.tsx:50
+#: ../../client/src/home/stacks/AiPrompt.tsx:50
 msgid "Please set your Groq API Key"
 msgstr "Пожалуйста, установите ваш API ключ Groq"
 
-#: ../../client/src/app/router/ScreenSettings.tsx:37
+#: ../../client/src/app/routes/ScreenSettings.tsx:37
 msgid "Profile"
 msgstr "Профиль"
 
-#: ../../client/src/settings/hooks/useSettings.ts:44
+#: ../../client/src/app/hooks/useSettings.ts:44
 msgid "Prompt History Reset"
 msgstr "Сброс истории запросов"
 
-#: ../../client/src/app/router/ScreenSettings.tsx:165
+#: ../../client/src/app/routes/ScreenSettings.tsx:165
 msgid "Prompts"
 msgstr "Запросы"
 
-#: ../../client/src/app/router/ScreenSettings.tsx:137
+#: ../../client/src/app/routes/ScreenSettings.tsx:137
 msgid "Provide a key to use AI features."
 msgstr "Предоставьте ключ для использования функций ИИ."
 
-#: ../../client/src/app/router/ScreenSettings.tsx:149
+#: ../../client/src/app/routes/ScreenSettings.tsx:149
 msgid "Select the AI model to use."
 msgstr "Выберите модель ИИ для использования."
 
-#: ../../client/src/app/router/ScreenSettings.tsx:122
+#: ../../client/src/app/routes/ScreenSettings.tsx:122
 msgid "Select the distance unit for the app."
 msgstr "Выберите единицу измерения расстояния для приложения."
 
-#: ../../client/src/app/router/ScreenSettings.tsx:75
+#: ../../client/src/app/routes/ScreenSettings.tsx:75
 msgid "Select the language for the app."
 msgstr "Выберите язык для приложения."
 
-#: ../../client/src/app/router/ScreenSettings.tsx:109
+#: ../../client/src/app/routes/ScreenSettings.tsx:109
 msgid "Select the temperature unit for the app."
 msgstr "Выберите единицу измерения температуры для приложения."
 
-#: ../../client/src/app/router/ScreenSettings.tsx:95
+#: ../../client/src/app/routes/ScreenSettings.tsx:95
 msgid "Select the theme for the app."
 msgstr "Выберите тему для приложения."
 
-#: ../../client/src/app/router/ScreenSettings.tsx:27
+#: ../../client/src/app/interface/Tabs.tsx:33
+#: ../../client/src/app/routes/ScreenSettings.tsx:27
 msgid "Settings"
 msgstr "Настройки"
 
-#: ../../client/src/app/interface/NavMenu.tsx:128
+#: ../../client/src/app/interface/Menu.tsx:127
+#: ../../client/src/app/routes/ScreenStorage.tsx:14
 msgid "Storage"
 msgstr ""
 
-#: ../../client/src/app/router/ScreenSettings.tsx:108
+#: ../../client/src/app/routes/ScreenSettings.tsx:108
 msgid "Temperature"
 msgstr "Температура"
 
-#: ../../client/src/app/router/ScreenSettings.tsx:94
+#: ../../client/src/app/routes/ScreenSettings.tsx:94
 msgid "Theme"
 msgstr "Тема"
 
-#: ../../client/src/app/router/ScreenSettings.tsx:39
+#: ../../client/src/app/routes/ScreenSettings.tsx:39
 msgid "User Name"
 msgstr "Имя пользователя"
 
@@ -338,19 +342,20 @@ msgstr ""
 msgid "View your latest news and rss feeds"
 msgstr ""
 
-#: ../../client/src/home/router/ScreenHome.tsx:22
+#: ../../client/src/home/routes/ScreenHome.tsx:22
 msgid "Welcome, {0}"
 msgstr "Добро пожаловать, {0}"
 
-#: ../../client/src/home/router/ScreenHome.tsx:23
+#: ../../client/src/home/routes/ScreenHome.tsx:23
 msgid "Welcome, Human"
 msgstr "Добро пожаловать, Человек"
 
-#: ../../client/src/app/router/ScreenTeaser.tsx:14
+#: ../../client/src/app/routes/ScreenTeaser.tsx:14
 msgid "Work in progress..."
 msgstr "В работе..."
 
-#: ../../client/src/app/interface/NavMenu.tsx:81
+#: ../../client/src/app/interface/Menu.tsx:80
+#: ../../client/src/app/interface/Tabs.tsx:28
 msgid "World"
 msgstr "Мир"
 
@@ -362,10 +367,10 @@ msgstr "Вы не в сети"
 msgid "You are online"
 msgstr "Вы в сети"
 
-#: ../../client/src/app/router/ScreenSettings.tsx:40
+#: ../../client/src/app/routes/ScreenSettings.tsx:40
 msgid "Your name to display in the app."
 msgstr "Ваше имя для отображения в приложении."
 
-#: ../../client/src/settings/hooks/useSettings.ts:45
+#: ../../client/src/app/hooks/useSettings.ts:45
 msgid "Your prompt history has been reset."
 msgstr "История ваших запросов была сброшена."

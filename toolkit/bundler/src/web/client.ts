@@ -26,7 +26,7 @@ export default defineConfig(env => mergeConfig(
           format: 'es',
           chunkFileNames: '[name]-[hash].js',
         }
-      }
+      },
     },
     preview: {
       open: false,

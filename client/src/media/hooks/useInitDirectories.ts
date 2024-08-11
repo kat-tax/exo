@@ -1,16 +1,6 @@
 import {fs} from 'react-exo/fs';
 import {useEffect} from 'react';
-
-export const INIT_DIRECTORIES = [
-  'documents',
-  'music',
-  'pictures',
-  'videos',
-  'games',
-  'books',
-  'downloads',
-  'uploads',
-];
+import {INIT_DIRECTORIES} from 'media/utils/path';
 
 export function useInitDirectories() {
   useEffect(() => {

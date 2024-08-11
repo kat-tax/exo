@@ -72,7 +72,16 @@ export default defineConfig({
   }),
   twoslash: {
     compilerOptions: {
+      skipLibCheck: true,
       moduleResolution: 100,
+    }
+  },
+  markdown: {
+    code: {
+      themes: {
+        light: 'github-light',
+        dark: 'one-dark-pro',
+      }
     }
   },
   ogImageUrl: 'https://vocs.dev/api/og?logo=%logo&title=%title&description=%description',

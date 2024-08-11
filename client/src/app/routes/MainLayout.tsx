@@ -1,12 +1,12 @@
-import {useState, useEffect} from 'react';
-import {useLocation, Outlet} from 'react-exo/navigation';
-import {useWindowDimensions, View, StatusBar} from 'react-native';
+import {Outlet} from 'react-exo/navigation';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
+import {useWindowDimensions, View, StatusBar} from 'react-native';
+import {useCurrentResource} from 'app/hooks/useCurrentResource';
 import {useDeviceSession} from 'app/hooks/useDeviceSession';
 import {useProfile} from 'app/data';
 import {Menu} from 'app/interface/Menu';
 import {Tabs} from 'app/interface/Tabs';
-import {File} from 'media/stacks/File';
+import {CurrentFile} from 'media/stacks/CurrentFile';
 
 import type {useAppContext} from 'app/hooks/useAppContext';
 
@@ -14,48 +14,41 @@ export const APP_MENU_WIDTH = 146;
 export const APP_MENU_TAB_HEIGHT = 64;
 
 export default function MainLayout() {
+  const {styles, theme} = useStyles(stylesheet);
+  const resource = useCurrentResource();
   const screen = useWindowDimensions();
   const device = useDeviceSession();
   const profile = useProfile();
-  const {styles, theme} = useStyles(stylesheet);
-  const {pathname, hash} = useLocation();
-  const [pinnedFile, setPinnedFile] = useState(`${pathname}/${hash?.slice(1)}`);
-  const [pinMaximized, setPinMaximized] = useState(true);
-  const context: ReturnType<typeof useAppContext> = {device, profile};
-  const tabs = screen.width < theme.breakpoints.xs;
-  const vert = screen.width < theme.breakpoints.sm;
+
+  const isVertical = screen.width < theme.breakpoints.sm;
+  const hasTabs = screen.width < theme.breakpoints.xs;
   const vstyles = {
-    root: [styles.root, tabs && styles.rootTabs],
-    menu: [styles.menu, tabs && styles.menuTabs],
-    content: [styles.content, vert && styles.contentVert],
+    root: [styles.root, hasTabs && styles.rootTabs],
+    menu: [styles.menu, hasTabs && styles.menuTabs],
+    content: [styles.content, isVertical && styles.contentVert],
   };
 
-  useEffect(() => {
-    if (hash) {
-      const path = `${pathname}/${hash?.slice(1)}`;
-      if (path !== pinnedFile) {
-        setPinnedFile(path);
-      }
-      setPinMaximized(true);
-    } else {
-      setPinMaximized(false);
-    }
-  }, [hash, pathname, pinnedFile]);
+  const context: ReturnType<typeof useAppContext> = {
+    profile,
+    device,
+  };
 
   return <>
     <StatusBar networkActivityIndicatorVisible={!device?.online}/>
     <View style={vstyles.root}>
       <View style={vstyles.menu}>
-        {tabs ? <Tabs/> : <Menu {...{profile}}/>}
+        {hasTabs ? <Tabs/> : <Menu {...{profile}}/>}
       </View>
       <View style={vstyles.content}>
         <Outlet {...{context}}/>
-        <File
-          file={pinnedFile}
-          vertical={vert}
-          maximized={pinMaximized}
-          close={() => setPinnedFile('')}
-        />
+        {Boolean(resource.path) &&
+          <CurrentFile
+            path={resource.path}
+            vertical={isVertical}
+            maximized={resource.maximized}
+            close={() => resource.setPath('')}
+          />
+        }
       </View>
     </View>
   </>;

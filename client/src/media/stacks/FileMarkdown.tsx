@@ -6,6 +6,7 @@ import {Markdown} from 'app/stacks/Markdown';
 interface FileMarkdown {
   path: string,
   name: string,
+  extension: string,
   maximized: boolean,
 }
 

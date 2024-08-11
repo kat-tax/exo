@@ -1,8 +1,8 @@
+import {useEffect} from 'react';
+import {useInitialTheme, UnistylesRuntime} from 'react-native-unistyles';
 import {StatusBar, Appearance} from 'react-native';
 import {GestureProvider} from 'react-exo/gesture';
 import {ToastRoot} from 'react-exo/toast';
-import {useEffect} from 'react';
-import {useInitialTheme, UnistylesRuntime} from 'react-native-unistyles';
 import {useScheme} from 'app/hooks/useScheme';
 import {hideBootsplash} from 'app/utils/bootsplash';
 
@@ -23,9 +23,15 @@ export function Layout(props: React.PropsWithChildren) {
 
   return (
     <GestureProvider style={{flex: 1}}>
-      <StatusBar barStyle={`${theme}-content`}/>
+      <StatusBar
+        barStyle={`${theme}-content`}
+      />
       {props.children}
-      <ToastRoot theme={theme} position="bottom-center" offset={12}/>
+      <ToastRoot
+        theme={theme}
+        offset={12}
+        position="bottom-center"
+      />
     </GestureProvider>
   );
 }

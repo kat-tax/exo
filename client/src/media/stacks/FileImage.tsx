@@ -5,6 +5,7 @@ import {useFileUrl} from 'media/hooks/useFileUrl';
 interface FileImage {
   path: string,
   name: string,
+  extension: string,
   maximized: boolean,
 }
 

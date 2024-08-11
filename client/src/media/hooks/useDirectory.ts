@@ -1,6 +1,6 @@
 import {fs} from 'react-exo/fs';
 import {useState, useEffect} from 'react';
-import {INIT_DIRECTORIES} from './useInitDirectories';
+import {isInitDirectory} from 'media/utils/path';
 import type {HfsDirectoryEntry} from 'react-exo/fs';
 
 interface DirectoryOptions {
@@ -18,7 +18,7 @@ export function useDirectory(path: string, options?: DirectoryOptions) {
       for await (const entry of hfs.list?.(dirPath) ?? []) {
         if (entry.name.endsWith('.crswap')) continue;
         if (entry.name.startsWith('.') && !options?.showHidden) continue;
-        if (dirPath === '.' && INIT_DIRECTORIES.includes(entry.name)) continue;
+        if (dirPath === '.' && isInitDirectory(entry.name)) continue;
         entries.push(entry);
       }
       setEntries(entries.sort((a, b) => {

@@ -1,9 +1,8 @@
 import {Trans} from '@lingui/macro';
-import {View, ScrollView, Text} from 'react-native';
+import {View, ScrollView} from 'react-native';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {StorageIndicator} from 'media/stacks/StorageIndicator';
 import {useFileSystem} from 'media/hooks/useFileSystem';
-import {useLists} from 'media/hooks/useLists';
 
 import {MenuItem} from './MenuItem';
 import {MenuHeader} from './MenuHeader';
@@ -16,9 +15,9 @@ export interface MenuProps {
 }
 
 export function Menu(props: MenuProps) {
-  const lists = useLists();
+  // const lists = useLists();
   const {importFile} = useFileSystem();
-  const {styles, theme} = useStyles(stylesheet);
+  const {styles} = useStyles(stylesheet);
 
   return (
     <View style={styles.bg}>
@@ -95,7 +94,7 @@ export function Menu(props: MenuProps) {
               path="/calendar"
             />
           </MenuSection>
-          <MenuSection label={<Trans>Favorites</Trans>}>
+          {/* <MenuSection label={<Trans>Favorites</Trans>}>
             {lists.map(({id}) =>
               <MenuItem
                 key={id}
@@ -106,7 +105,7 @@ export function Menu(props: MenuProps) {
                 mode="subitem"
               />
             )}
-          </MenuSection>
+          </MenuSection> */}
           {__DEV__ &&
             <MenuSection label={<Trans>Dev Mode</Trans>} closed>
               <MenuItem

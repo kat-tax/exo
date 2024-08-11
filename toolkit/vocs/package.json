@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "start": "tsx utils/setup && vocs dev -p 6106",
-    "build": "tsx utils/setup && vocs build -c -o ../../output/docs",
+    "build": "vocs build -c -o ../../output/docs",
     "preview": "tsx utils/setup && vocs preview"
   },
   "dependencies": {
@@ -34,7 +34,7 @@
     "fs-extra": "latest",
     "tsx": "latest",
     "typescript": "^5.5.4",
-    "vocs": "1.0.0-alpha.55",
+    "vocs": "1.0.0-alpha.50",
     "yaml": "latest"
   }
 }
