@@ -2,8 +2,12 @@ import {sourceLocale} from 'config/locales';
 import type {DeviceBase} from './Device.interface';
 
 export class DeviceService implements DeviceBase {
-  share(url: string, title: string) {
-    navigator.share({url, title}).catch(() => {});
+  async share({url, title, files}: {url?: string, title?: string, files?: File[]}) {
+    if (navigator.canShare({url, title, files})) {
+      await navigator.share({url, title, files});
+      return true;
+    }
+    return false;
   }
 
   async isOnline() {

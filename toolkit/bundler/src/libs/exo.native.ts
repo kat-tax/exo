@@ -20,6 +20,7 @@ export default defineConfig(env => mergeConfig(
           lottie: 'src/assets/lottie/Lottie.export',
           rive: 'src/assets/rive/Rive.export',
           game: 'src/assets/game/Game.export',
+          book: 'src/assets/book/Book.export',
           markdown: 'src/assets/markdown/Markdown.export',
           /* Layout */
           gesture: 'src/layout/gesture/Gesture.export',
@@ -80,6 +81,7 @@ export default defineConfig(env => mergeConfig(
           'react-native-get-random-values',
           'react-native-linear-gradient',
           'react-native-mmkv',
+          'react-native-readium',
           'react-native-reanimated',
           'react-native-screens',
           'react-native-skottie',

@@ -26,15 +26,10 @@ export default function ScreenBrowse() {
     <Page title={name} message={base ?? '/'} fullWidth>
       <View style={styles.root}>
         {entries?.length === 0 &&
-          <WatermarkEmpty
-            {...{path}}
-          />
+          <WatermarkEmpty {...{path}}/>
         }
         {entries?.map(entry => (
-          <DirectoryEntry
-            key={entry.name}
-            {...{entry, path}}
-          />
+          <DirectoryEntry key={entry.name} {...{entry, path}}/>
         ))}
       </View>
     </Page>

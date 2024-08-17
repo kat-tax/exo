@@ -1,12 +1,17 @@
-import {Icon} from 'react-exo/icon';
 import {useNavigate} from 'react-exo/navigation';
+import {useMemo, useState, useEffect, useRef} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {useWindowDimensions, View, Pressable} from 'react-native';
-import {useMemo, useState} from 'react';
-import {resolve} from 'media/utils/path';
-import {File} from 'media/stacks/File';
+import {useWindowDimensions, View} from 'react-native';
+import {CurrentFileBar} from 'media/stacks/CurrentFileBar';
+import {getFileInfo} from 'media/utils/file';
+import Player from 'media/file';
+
+import type {FileRef} from 'media/file';
 
 interface CurrentFileProps {
+  url: string,
+  ext: string,
+  name: string,
   path: string,
   vertical: boolean,
   maximized: boolean,
@@ -14,24 +19,27 @@ interface CurrentFileProps {
 }
 
 export function CurrentFile(props: CurrentFileProps) {
-  const {vertical, maximized, close} = props;
-  const [pointer, setPointer] = useState(false);
-  const [pinned, setPinned] = useState(false);
-  const {styles, theme} = useStyles(stylesheet);
   const navigate = useNavigate();
   const screen = useWindowDimensions();
-  const parts = resolve(props.path);
-  const [name, extension] = parts.slice(-1)[0].split('.') ?? [];
-  const fileUrl = `/browse/${parts.slice(0, -1).join('/')}#${name}.${extension}`;
+  const player = useRef<FileRef>(null);
+  const {styles, theme} = useStyles(stylesheet);
+  const {url, ext, name, path, vertical, maximized, close} = props;
+  const isFullWidth = screen.width <= theme.breakpoints.xs;
 
+  // Derive file metadata
+  const fileData = getFileInfo(ext);
+  
+  // Local state
+  const [title, setTitle] = useState(name);
+  const [cover, setCover] = useState('');
+
+  // Picture-in-picture scale
   const scale = useMemo(() => {
     let _scale = 1;
-    if (!pinned && screen.width <= theme.breakpoints.xs)
-      _scale = 0.35;
-    else if (!pinned && screen.width <= theme.breakpoints.sm)
-      _scale = 0.50;
-    else if (!pinned && screen.width <= theme.breakpoints.md)
-      _scale = 0.75;
+    if (screen.width <= theme.breakpoints.sm)
+      _scale = 0.85;
+    else if (screen.width <= theme.breakpoints.md)
+      _scale = 0.95;
     else if (screen.width <= theme.breakpoints.lg)
       _scale = 1;
     else if (screen.width <= theme.breakpoints.xl)
@@ -42,91 +50,86 @@ export function CurrentFile(props: CurrentFileProps) {
       _scale = 2;
     else if (screen.width <= theme.breakpoints.xxxxl)
       _scale = 4;
+    if (ext === 'pdf' && _scale > 1)
+      _scale = 1;
     return _scale;
-  }, [screen, theme, pinned]);
+  }, [screen, theme, ext]);
 
+  // Picture-in-picture resolution
   const resolution = useMemo(() => {
-    switch (extension) {
+    const offset = 41;
+    let res: number[];
+    switch (ext) {
       case 'gb':
       case 'gbc':
       case 'gba':
-        return [160 * 2, 144 * 2].map(x => x * scale);
+        res = [160 * 2, (144 * 2)].map(x => x * scale);
+        res[1] += offset;
+        break;
       case 'pdf':
-        return [414, 252].map(x => x * scale);
+        res = [414, 252].map(x => x * scale);
+        res[1] += offset;
+        break;
+      case 'riv':
+        res = [320, 222].map(x => x * scale);
+        break;
       default:
-        return [320, 240].map(x => x * scale);
+        res = [320, 240].map(x => x * scale);
     }
-  }, [extension, scale]);
+    return res;
+  }, [ext, scale]);
+
+  // Conditional styles
+  const vstyles = useMemo(() => ({
+    root: [
+      styles.root,
+      vertical && styles.vertical,
+      maximized ? styles.maximized : styles.minimized,
+      !maximized && {width: resolution[0], height: resolution[1]},
+      isFullWidth && styles.fullwidth,
+    ],
+  }), [styles, resolution, vertical, maximized, isFullWidth]);
+
+  // Change title when file name changes
+  useEffect(() => {
+    setTitle(name);
+    setCover('');
+  }, [name]);
 
   return (
-    <Pressable
-      style={[
-        styles.root,
-        vertical && styles.vertical,
-        maximized ? styles.maximized : styles.minimized,
-        !maximized && {width: resolution[0], height: resolution[1]},
-      ]}
-      onPointerEnter={() => setPointer(true)}
-      onPointerLeave={() => setPointer(false)}
-      onPress={() => navigate(fileUrl)}>
-      {root => <>
-        <View style={[
-          styles.contents,
-          !maximized && styles.contentsMinimized,
-          !maximized && pinned && styles.contentsPinned,
-          root.hovered && styles.contentsHovered,
-        ]}>
-          <File {...props}/>
-        </View>
-        {!maximized && pointer && <>
-          <Pressable
-            style={styles.close}
-            onPress={close}>
-            {close => (
-              <Icon
-                name="ph:x"
-                size={20}
-                color={
-                  root.hovered
-                    ? theme.colors.accent
-                    : pinned
-                      ? theme.colors.accent
-                      : close.hovered
-                        ? theme.colors.foreground
-                        : theme.colors.mutedForeground
-                }
-              />
-            )}
-          </Pressable>
-          <Pressable
-            style={styles.pin}
-            onPress={() => setPinned(!pinned)}>
-            {pin => (
-              <Icon
-                name={pinned ? 'ph:push-pin-simple' : 'ph:push-pin-simple-slash'}
-                size={20}
-                color={
-                  root.hovered
-                    ? theme.colors.accent
-                    : pinned
-                      ? theme.colors.accent
-                      : pin.hovered
-                        ? theme.colors.foreground
-                        : theme.colors.mutedForeground
-                }
-              />
-            )}
-          </Pressable>
-        </>}
-      </>}
-    </Pressable>
+    <View style={vstyles.root}>
+      <View style={styles.contents}>
+        <Player
+          ref={player}
+          fileData={fileData}
+          setBarIcon={setCover}
+          setBarTitle={setTitle}
+          {...props}
+        />
+      </View>
+      <CurrentFileBar {...{
+        player,
+        fileData,
+        maximized,
+        metadata: {
+          url,
+          ext,
+          name,
+          title,
+          cover,
+          path,
+          playing: true,
+        },
+        close,
+        open: () => navigate(url),
+      }}/>
+    </View>
   );
 }
 
 const stylesheet = createStyleSheet((theme, rt) => ({
   root: {
-    flex: 4,
-    transition: 'all 0.3s ease-in-out',
+    flex: 5,
   },
   vertical: {
     flex: 20,
@@ -151,31 +154,27 @@ const stylesheet = createStyleSheet((theme, rt) => ({
     borderColor: theme.colors.border,
     boxShadow: 'rgba(0, 0, 0, 0.2) 0px 2px 2px 1px',
   },
+  fullwidth: {
+    width: '100%',
+    left: 0,
+    right: 0,
+    bottom: 0,
+    borderRadius: 0,
+    borderLeftWidth: 0,
+    borderRightWidth: 0,
+    borderBottomWidth: 0,
+    boxShadow: 'none',
+  },
   contents: {
     flex: 1,
+    position: 'relative',
     transition: 'opacity 0.2s',
   },
-  contentsMinimized: {
-    pointerEvents: 'none',
-    opacity: 0.2,
-  },
-  contentsHovered: {
-    opacity: 1,
-  },
-  contentsPinned: {
-    opacity: 1,
-    pointerEvents: 'auto',
-  },
-  pin: {
+  overlay: {
     position: 'absolute',
-    bottom: 0,
+    top: 0,
     left: 0,
-    padding: theme.display.space2,
-  },
-  close: {
-    position: 'absolute',
-    bottom: 0,
     right: 0,
-    padding: theme.display.space2,
+    bottom: 0,
   },
 }));

@@ -1,9 +1,11 @@
 import type {ViewStyle} from 'react-native';
-import type {Alignment, Fit, RiveRef} from 'rive-react-native';
+import type {Alignment, RiveRef} from 'rive-react-native';
 
-export type RiveComponent = (props: RiveProps) => JSX.Element;
+export type RiveComponent = (props: RiveProps) => React.ReactNode;
 
 export interface RiveProps {
+  /** Reference to the Rive runtime */
+  ref: React.Ref<RiveRef>,
   /** Source of the animation. */
   url: string,
   /** Width of the animation. */
@@ -13,7 +15,7 @@ export interface RiveProps {
   /** Style of the animation. */
   style?: ViewStyle,
   /** Resize mode of the animation. */
-  resizeMode?: Fit,
+  resizeMode?: 'cover' | 'contain' | 'fill' | 'fitWidth' | 'fitHeight' | 'none' | 'scaleDown',
   /** If true, the animation will start playing as soon as it is ready. */
   autoplay?: boolean,
   /** If true, the animation will loop. */
@@ -28,8 +30,6 @@ export interface RiveProps {
   stateMachineName?: string | undefined,
   /** The identifier used for testing */
   testID?: string,
-  /** Ref for the web canvas element. */
-  refWeb?: React.LegacyRef<HTMLCanvasElement>,
-  /** Ref for the native rive view. */
-  refNative?: React.LegacyRef<RiveRef>,
 }
+
+export type {RiveRef};

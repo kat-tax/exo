@@ -1,16 +1,14 @@
-import {fs} from 'react-exo/fs';
 import {useState, useEffect} from 'react';
+import {getFileBlob} from 'media/utils/file';
 
-export function useFileUrl(path: string, type = 'application/octet-stream') {
+export function useFileUrl(path: string, mimetype = 'application/octet-stream') {
   const [dataURL, setDataURL] = useState<string>();
 
   useEffect(() => {
     let url: string | undefined;
     (async () => {
-      const hfs = await fs.init();
-      const bytes = await hfs.bytes?.(path);
-      if (!bytes) return;
-      const blob = new Blob([bytes], {type});
+      const blob = await getFileBlob(path, mimetype);
+      if (!blob) return;
       url = URL.createObjectURL(blob);
       setDataURL(url);
     })();
@@ -19,7 +17,7 @@ export function useFileUrl(path: string, type = 'application/octet-stream') {
         URL.revokeObjectURL(url);
       }
     }
-  }, [path, type]);
+  }, [path, mimetype]);
 
   return dataURL;
 }

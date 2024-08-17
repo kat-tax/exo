@@ -1,8 +1,10 @@
 import {hfs} from '@humanfs/web';
-import Hasher from './lib/WebHasher';
+import Hasher from './lib/hash/WebHasher';
+import {isText, isBinary} from './lib/data';
+import {getFileBuffer} from './lib/path/web';
 
 import type {HfsImpl} from '@humanfs/web';
-import type {FSBase, OpenDirectoryOptions} from './Fs.interface';
+import type {FSBase, FileSystemIn, OpenDirectoryOptions} from './Fs.interface';
 
 export class FSService implements FSBase {
   async init(): Promise<HfsImpl> {
@@ -44,14 +46,26 @@ export class FSService implements FSBase {
   }
 
   async hashFile(
-    pathOrFileHandle: string | FileSystemFileHandle,
+    input: FileSystemIn,
     progress?: (bytes: number, total: number) => void,
     jobId?: number,
   ) {
-    return Hasher.start(pathOrFileHandle, progress, jobId);
+    const sha256 = await Hasher.start(input, progress, jobId);
+    const cidPrefix = '1220'; // CID prefix for sha256
+    return `${cidPrefix}${sha256}`;
   }
 
   async cancelHash(jobId: number) {
     return Hasher.cancel(jobId);
+  }
+
+  async isTextFile(name: string, file: FileSystemIn) {
+    const buffer = await getFileBuffer(file);
+    return isText(name, buffer);
+  }
+
+  async isBinaryFile(name: string, file: FileSystemIn) {
+    const buffer = await getFileBuffer(file);
+    return isBinary(name, buffer);
   }
 }

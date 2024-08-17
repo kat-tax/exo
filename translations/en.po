@@ -64,6 +64,10 @@ msgstr "Calendar"
 msgid "Celsius"
 msgstr "Celsius"
 
+#: ../../client/src/media/hooks/useFileControls.ts:141
+msgid "Close"
+msgstr "Close"
+
 #: ../../client/src/app/routes/ScreenSettings.tsx:104
 msgid "Dark"
 msgstr "Dark"
@@ -118,7 +122,7 @@ msgstr "Distance"
 msgid "Docs"
 msgstr "Docs"
 
-#: ../../client/src/media/stacks/FileDownload.tsx:17
+#: ../../client/src/media/file/FileBinary.tsx:18
 msgid "Download"
 msgstr "Download"
 
@@ -231,6 +235,10 @@ msgstr "Manage your storage"
 msgid "Map"
 msgstr "Map"
 
+#: ../../client/src/media/hooks/useFileControls.ts:134
+msgid "Maximize"
+msgstr "Maximize"
+
 #: ../../client/src/app/interface/Menu.tsx:38
 msgid "Media"
 msgstr "Media"
@@ -252,6 +260,10 @@ msgstr "Music"
 msgid "News"
 msgstr "News"
 
+#: ../../client/src/media/hooks/useFileControls.ts:79
+msgid "Next"
+msgstr "Next"
+
 #: ../../client/src/world/routes/ScreenCalendar.tsx:37
 msgid "No events scheduled."
 msgstr "No events scheduled."
@@ -264,13 +276,29 @@ msgstr "Overview"
 msgid "Owner Key"
 msgstr "Owner Key"
 
+#: ../../client/src/media/hooks/useFileControls.ts:36
+msgid "Pause"
+msgstr "Pause"
+
 #: ../../client/src/app/interface/Menu.tsx:60
 msgid "Pictures"
 msgstr "Pictures"
 
+#: ../../client/src/media/hooks/useFileControls.ts:97
+msgid "Pin"
+msgstr "Pin"
+
+#: ../../client/src/media/hooks/useFileControls.ts:36
+msgid "Play"
+msgstr "Play"
+
 #: ../../client/src/home/stacks/AiPrompt.tsx:50
 msgid "Please set your Groq API Key"
 msgstr "Please set your Groq API Key"
+
+#: ../../client/src/media/hooks/useFileControls.ts:68
+msgid "Previous"
+msgstr "Previous"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:37
 msgid "Profile"
@@ -287,6 +315,10 @@ msgstr "Prompts"
 #: ../../client/src/app/routes/ScreenSettings.tsx:137
 msgid "Provide a key to use AI features."
 msgstr "Provide a key to use AI features."
+
+#: ../../client/src/media/hooks/useFileControls.ts:56
+msgid "Reset"
+msgstr "Reset"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:149
 msgid "Select the AI model to use."
@@ -312,6 +344,10 @@ msgstr "Select the theme for the app."
 #: ../../client/src/app/routes/ScreenSettings.tsx:27
 msgid "Settings"
 msgstr "Settings"
+
+#: ../../client/src/media/hooks/useFileControls.ts:114
+msgid "Share"
+msgstr "Share"
 
 #: ../../client/src/app/interface/Menu.tsx:127
 #: ../../client/src/app/routes/ScreenStorage.tsx:14

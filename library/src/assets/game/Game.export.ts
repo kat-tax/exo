@@ -1,2 +1,2 @@
 export {Game} from './Game';
-export type {GameComponent, GameProps} from './Game.interface';
+export type {GameProps} from './Game.interface';

@@ -1,15 +1,14 @@
-import {fs} from 'react-exo/fs';
 import {useState, useEffect} from 'react';
+import {getFileText} from 'media/utils/file';
 
 export function useFileText(path: string) {
   const [text, setText] = useState<string>();
 
   useEffect(() => {
     (async () => {
-      const hfs = await fs.init();
-      const bytes = await hfs.bytes?.(path);
-      if (!bytes) return;
-      setText(new TextDecoder('utf-8').decode(bytes));
+      const text = await getFileText(path);
+      if (!text) return;
+      setText(text);
     })();
   }, [path]);
 

@@ -1,0 +1,412 @@
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2024-08-13 14:24-0500\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: ko\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Plural-Forms: \n"
+
+#: ../../client/src/dev/routes/ScreenDesign.tsx:12
+#: ../../client/src/dev/routes/ScreenLibrary.tsx:16
+msgid "{0} components"
+msgstr ""
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:52
+msgid "A mnemonic phrase for authentication."
+msgstr ""
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:134
+msgid "AI"
+msgstr ""
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:175
+msgid "All Data"
+msgstr ""
+
+#: ../../client/src/app/hooks/useSettings.ts:57
+msgid "Are you sure you want to change the owner key? This will reset the local database. This action cannot be undone."
+msgstr ""
+
+#: ../../client/src/app/hooks/useSettings.ts:51
+msgid "Are you sure you want to reset your local database? If data is not backed up on another device, it will be lost. This action cannot be undone."
+msgstr ""
+
+#: ../../client/src/app/hooks/useSettings.ts:42
+msgid "Are you sure you want to reset your prompt history?"
+msgstr ""
+
+#: ../../client/src/home/stacks/AiPrompt.tsx:50
+msgid "Ask anything..."
+msgstr ""
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:82
+#: ../../client/src/app/routes/ScreenSettings.tsx:102
+msgid "Auto"
+msgstr ""
+
+#: ../../client/src/app/interface/Menu.tsx:75
+msgid "Books"
+msgstr ""
+
+#: ../../client/src/app/interface/Menu.tsx:92
+#: ../../client/src/world/routes/ScreenWorld.tsx:30
+msgid "Calendar"
+msgstr ""
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:116
+msgid "Celsius"
+msgstr ""
+
+#: ../../client/src/media/hooks/useFileControls.ts:141
+msgid "Close"
+msgstr ""
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:104
+msgid "Dark"
+msgstr ""
+
+#: ../../client/src/app/interface/Menu.tsx:28
+#: ../../client/src/app/interface/Tabs.tsx:13
+msgid "Dashboard"
+msgstr ""
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:163
+msgid "Data"
+msgstr ""
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:166
+msgid "Delete all prompt data."
+msgstr ""
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:178
+msgid "Delete Database"
+msgstr ""
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:168
+msgid "Delete Prompts"
+msgstr ""
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:176
+msgid "Delete the local database."
+msgstr ""
+
+#: ../../client/src/app/interface/Menu.tsx:112
+#: ../../client/src/dev/routes/ScreenDesign.tsx:11
+msgid "Design"
+msgstr ""
+
+#: ../../client/src/app/interface/Menu.tsx:110
+msgid "Dev Mode"
+msgstr ""
+
+#: ../../client/src/media/stacks/WatermarkEmpty.tsx:15
+msgid "Directory is empty."
+msgstr ""
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:72
+msgid "Display"
+msgstr ""
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:121
+msgid "Distance"
+msgstr ""
+
+#: ../../client/src/app/interface/Menu.tsx:50
+msgid "Docs"
+msgstr ""
+
+#: ../../client/src/media/file/FileBinary.tsx:18
+msgid "Download"
+msgstr ""
+
+#: ../../client/src/home/utils/time.ts:15
+msgid "Enjoy the day"
+msgstr ""
+
+#: ../../client/src/home/utils/time.ts:13
+msgid "Enjoy the night"
+msgstr ""
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:141
+msgid "Enter api key"
+msgstr ""
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:58
+msgid "Enter your mnemonic phrase"
+msgstr ""
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:46
+msgid "Enter your name"
+msgstr ""
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:117
+msgid "Fahrenheit"
+msgstr ""
+
+#: ../../client/src/app/interface/Menu.tsx:45
+#: ../../client/src/app/interface/Tabs.tsx:23
+#: ../../client/src/media/routes/ScreenBrowse.tsx:19
+msgid "Files"
+msgstr ""
+
+#: ../../client/src/app/interface/Menu.tsx:70
+msgid "Games"
+msgstr ""
+
+#: ../../client/src/app/hooks/useGeolocation.ts:14
+msgid "Geolocation Error"
+msgstr ""
+
+#: ../../client/src/home/utils/time.ts:9
+msgid "Good afternoon"
+msgstr ""
+
+#: ../../client/src/home/utils/time.ts:11
+msgid "Good evening"
+msgstr ""
+
+#: ../../client/src/home/utils/time.ts:7
+msgid "Good morning"
+msgstr ""
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:136
+msgid "Groq API Key"
+msgstr ""
+
+#: ../../client/src/home/hooks/useAI.tsx:43
+msgid "Groq Failure"
+msgstr ""
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:148
+msgid "Groq Model ID"
+msgstr ""
+
+#: ../../client/src/app/interface/MenuHeader.tsx:27
+msgid "Human"
+msgstr ""
+
+#: ../../client/src/media/stacks/WatermarkEmpty.tsx:16
+msgid "Import"
+msgstr ""
+
+#: ../../client/src/app/interface/Menu.tsx:33
+#: ../../client/src/app/interface/Tabs.tsx:18
+msgid "Inbox"
+msgstr ""
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:129
+msgid "Kilometers"
+msgstr ""
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:74
+msgid "Language"
+msgstr ""
+
+#: ../../client/src/app/interface/Menu.tsx:117
+#: ../../client/src/dev/routes/ScreenLibrary.tsx:15
+msgid "Library"
+msgstr ""
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:103
+msgid "Light"
+msgstr ""
+
+#: ../../client/src/home/hooks/useWeather.ts:12
+msgid "Loading..."
+msgstr ""
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:28
+msgid "Manage your settings"
+msgstr ""
+
+#: ../../client/src/app/routes/ScreenStorage.tsx:15
+msgid "Manage your storage"
+msgstr ""
+
+#: ../../client/src/app/interface/Menu.tsx:82
+#: ../../client/src/world/routes/ScreenWorld.tsx:18
+msgid "Map"
+msgstr ""
+
+#: ../../client/src/media/hooks/useFileControls.ts:134
+msgid "Maximize"
+msgstr ""
+
+#: ../../client/src/app/interface/Menu.tsx:38
+msgid "Media"
+msgstr ""
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:130
+msgid "Miles"
+msgstr ""
+
+#: ../../client/src/app/interface/Menu.tsx:65
+msgid "Movies"
+msgstr ""
+
+#: ../../client/src/app/interface/Menu.tsx:55
+msgid "Music"
+msgstr ""
+
+#: ../../client/src/app/interface/Menu.tsx:87
+#: ../../client/src/world/routes/ScreenWorld.tsx:24
+msgid "News"
+msgstr ""
+
+#: ../../client/src/media/hooks/useFileControls.ts:79
+msgid "Next"
+msgstr ""
+
+#: ../../client/src/world/routes/ScreenCalendar.tsx:37
+msgid "No events scheduled."
+msgstr ""
+
+#: ../../client/src/app/routes/ScreenStorage.tsx:17
+msgid "Overview"
+msgstr ""
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:51
+msgid "Owner Key"
+msgstr ""
+
+#: ../../client/src/media/hooks/useFileControls.ts:36
+msgid "Pause"
+msgstr ""
+
+#: ../../client/src/app/interface/Menu.tsx:60
+msgid "Pictures"
+msgstr ""
+
+#: ../../client/src/media/hooks/useFileControls.ts:97
+msgid "Pin"
+msgstr ""
+
+#: ../../client/src/media/hooks/useFileControls.ts:36
+msgid "Play"
+msgstr ""
+
+#: ../../client/src/home/stacks/AiPrompt.tsx:50
+msgid "Please set your Groq API Key"
+msgstr ""
+
+#: ../../client/src/media/hooks/useFileControls.ts:68
+msgid "Previous"
+msgstr ""
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:37
+msgid "Profile"
+msgstr ""
+
+#: ../../client/src/app/hooks/useSettings.ts:44
+msgid "Prompt History Reset"
+msgstr ""
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:165
+msgid "Prompts"
+msgstr ""
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:137
+msgid "Provide a key to use AI features."
+msgstr ""
+
+#: ../../client/src/media/hooks/useFileControls.ts:56
+msgid "Reset"
+msgstr ""
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:149
+msgid "Select the AI model to use."
+msgstr ""
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:122
+msgid "Select the distance unit for the app."
+msgstr ""
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:75
+msgid "Select the language for the app."
+msgstr ""
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:109
+msgid "Select the temperature unit for the app."
+msgstr ""
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:95
+msgid "Select the theme for the app."
+msgstr ""
+
+#: ../../client/src/app/interface/Tabs.tsx:33
+#: ../../client/src/app/routes/ScreenSettings.tsx:27
+msgid "Settings"
+msgstr ""
+
+#: ../../client/src/media/hooks/useFileControls.ts:114
+msgid "Share"
+msgstr ""
+
+#: ../../client/src/app/interface/Menu.tsx:127
+#: ../../client/src/app/routes/ScreenStorage.tsx:14
+msgid "Storage"
+msgstr ""
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:108
+msgid "Temperature"
+msgstr ""
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:94
+msgid "Theme"
+msgstr ""
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:39
+msgid "User Name"
+msgstr ""
+
+#: ../../client/src/world/routes/ScreenWorld.tsx:19
+msgid "View your device locations and geo-related info"
+msgstr ""
+
+#: ../../client/src/world/routes/ScreenWorld.tsx:31
+msgid "View your events and time-related info"
+msgstr ""
+
+#: ../../client/src/world/routes/ScreenWorld.tsx:25
+msgid "View your latest news and rss feeds"
+msgstr ""
+
+#: ../../client/src/home/routes/ScreenHome.tsx:22
+msgid "Welcome, {0}"
+msgstr ""
+
+#: ../../client/src/home/routes/ScreenHome.tsx:23
+msgid "Welcome, Human"
+msgstr ""
+
+#: ../../client/src/app/routes/ScreenTeaser.tsx:14
+msgid "Work in progress..."
+msgstr ""
+
+#: ../../client/src/app/interface/Menu.tsx:80
+#: ../../client/src/app/interface/Tabs.tsx:28
+msgid "World"
+msgstr ""
+
+#: ../../client/src/app/hooks/useConnectivity.ts:16
+msgid "You are offline"
+msgstr ""
+
+#: ../../client/src/app/hooks/useConnectivity.ts:14
+msgid "You are online"
+msgstr ""
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:40
+msgid "Your name to display in the app."
+msgstr ""
+
+#: ../../client/src/app/hooks/useSettings.ts:45
+msgid "Your prompt history has been reset."
+msgstr ""

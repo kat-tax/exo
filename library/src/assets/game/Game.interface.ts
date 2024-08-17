@@ -1,7 +1,5 @@
 import type {StyleProp, ViewStyle} from 'react-native';
 
-export type GameComponent = (props: GameProps) => JSX.Element;
-
 export interface GameProps {
   /** Platform to emulate */
   platform: typeof GamePlatforms[keyof typeof GamePlatforms],

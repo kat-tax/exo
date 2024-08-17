@@ -34,7 +34,39 @@ export default (tokens: GameProps) => `
       EJS_backgroundColor = "${tokens.background ?? '#000'}";
       EJS_backgroundBlur = "${tokens.blur?.toString() ?? 'false'}";
       EJS_color = "${tokens.accent ?? '#00FF80'}";
+      EJS_Buttons = {
+        contextMenuButton: false,
+        playPause: false,
+        restart: false,
+        mute: false,
+        settings: false,
+        fullscreen: false,
+        saveState: false,
+        loadState: false,
+        screenRecord: false,
+        gamepad: false,
+        cheat: false,
+        volume: false,
+        saveSavFiles: false,
+        loadSavFiles: false,
+        quickSave: false,
+        quickLoad: false,
+        screenshot: false,
+        cacheManager: false
+      };
       EJS_pathtodata = "https://cdn.emulatorjs.org/stable/data/";
+      EJS_ready = function() {
+        onmessage = function(event) {
+          console.log(event);
+          const {type, data} = JSON.parse(event);
+          switch (type) {
+            case 'emu:pause':
+              return EJS_emulator.pause();
+            case 'emu:play':
+              return EJS_emulator.play();
+          }
+        };
+      };
     </script>
     <script src="https://cdn.emulatorjs.org/stable/data/loader.js"></script>
   </body>

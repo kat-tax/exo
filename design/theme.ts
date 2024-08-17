@@ -355,6 +355,7 @@ export const palette = {
 export const themes = {
   light: {
     colors: {
+      neutral: palette.white,
       background: palette.white,
       foreground: palette.zinc950,
       card: palette.white,
@@ -387,6 +388,7 @@ export const themes = {
   },
   dark: {
     colors: {
+      neutral: palette.black,
       background: palette.zinc950,
       foreground: palette.zinc50,
       card: palette.zinc900,

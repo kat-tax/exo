@@ -18,12 +18,11 @@ export function DirectoryEntry(props: DirectoryEntry) {
     : props.path
       ? `${props.path}/${entry.name}`
       : entry.name;
+
   return (
     <View style={styles.root}>
       <Link to={link}>
-        <DirectoryEntryRow
-          name={entry.name}
-        />
+        <DirectoryEntryRow name={entry.name}/>
       </Link>
     </View>
   );

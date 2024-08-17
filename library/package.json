@@ -98,6 +98,11 @@
       "import": "./gen/web/game.js",
       "require": "./gen/native/game.js"
     },
+    "./book": {
+      "types": "./gen/types/book.d.ts",
+      "import": "./gen/web/book.js",
+      "require": "./gen/native/book.js"
+    },
     "./markdown": {
       "types": "./gen/types/markdown.d.ts",
       "import": "./gen/web/markdown.js",
@@ -205,6 +210,7 @@
     "react-content-loader": "^7.0.2",
     "react-hook-form": "^7.52.1",
     "react-native-markdown-display": "^7.0.2",
+    "react-native-readium": "^2.0.0-rc.2",
     "react-redux": "^9.1.2",
     "react-router": "^6.25.1",
     "redux": "^5.0.1",

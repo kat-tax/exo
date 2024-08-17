@@ -14,8 +14,9 @@ export interface FSBase {
   }>,
 
   openFile(): Promise<FileSystemFileHandle | null>,
-
-  openDirectory(options?: OpenDirectoryOptions): Promise<FileSystemDirectoryHandle | null>,
+  openDirectory(
+    options?: OpenDirectoryOptions,
+  ): Promise<FileSystemDirectoryHandle | null>,
 
   /** Web only, on native returns the same file handle */
   importFile: (
@@ -30,15 +31,20 @@ export interface FSBase {
     progress?: (bytes: number, total: number) => void,
   ) => Promise<FileSystemDirectoryHandle>,
 
+  cancelHash: (id: number) => void,
   hashFile: (
-    pathOrFileHandle: string | FileSystemFileHandle,
+    file: FileSystemIn,
     progress?: (bytes: number, total: number) => void,
     chunkSize?: number,
     jobId?: number,
   ) => Promise<string>,
 
-  cancelHash: (id: number) => void,
+  isTextFile: (name: string, input: FileSystemIn) => Promise<boolean | null>,
+  isBinaryFile: (name: string, input: FileSystemIn) => Promise<boolean | null>,
 }
+
+export type FileSystemIn = string | File | FileSystemSyncAccessHandle;
+export type FileSystemOut = File | FileSystemSyncAccessHandle;
 
 export type OpenDirectoryOptions = {
   id?: string,

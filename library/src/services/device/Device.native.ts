@@ -5,10 +5,12 @@ import {sourceLocale} from 'config/locales';
 import type {DeviceBase} from './Device.interface';
 
 export class DeviceService implements DeviceBase {
-  share(url: string, title: string) {
-    Share.share({url, title, message: url}, {
+  async share({url, title}: {url?: string, title?: string}) {
+    if (!url) return false;
+    const result = await Share.share({url, title, message: url}, {
       dialogTitle: title,
     });
+    return result.action === Share.sharedAction;
   }
 
   async isOnline() {

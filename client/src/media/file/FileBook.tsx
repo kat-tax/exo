@@ -1,0 +1,62 @@
+import {View} from 'react-native';
+import {Book} from 'react-exo/book';
+import {forwardRef, useEffect, useState} from 'react';
+import {useStyles, createStyleSheet} from 'react-native-unistyles';
+import {useScheme} from 'app/hooks/useScheme';
+import {useFileUrl} from 'media/hooks/useFileUrl';
+
+import type {FileProps} from 'media/file';
+import type {BookRef} from 'react-exo/book';
+
+interface FileBook extends FileProps {
+  name: string,
+  extension: string,
+}
+
+export type {BookRef};
+
+export default forwardRef((props: FileBook, ref: React.Ref<BookRef>) => {
+  const EPUB_URL = 'https://alice.dita.digital/manifest.json'; // Sample for web
+  const [chapter, setChapter] = useState('');
+  const [title, setTitle] = useState('');
+  const {styles} = useStyles(stylesheet);
+  const [scheme] = useScheme();
+  const epub = useFileUrl(props.path, 'application/epub+zip');
+
+  // Pull title from manifest (fallback to file name)
+  useEffect(() => {
+    fetch(EPUB_URL)
+      .then((res) => res.json())
+      .then((data) => setTitle(data.metadata.title || props.name))
+      .catch(() => setTitle(props.name));
+  }, [props.name]);
+
+  // Update the title bar when the book title or chapter changes
+  useEffect(() => {
+    props.setBarTitle(`${title} - ${chapter}`);
+    props.setBarIcon('https://alice.dita.digital/images/cover.jpg');
+  }, [title, chapter, props.setBarTitle, props.setBarIcon]);
+
+  return epub ? (
+    <View style={styles.root}>
+      <Book
+        ref={ref}
+        url={EPUB_URL}
+        style={styles.book}
+        theme={scheme === 'light' ? 'default' : 'night'}
+        onLocationChange={(e) => e.title && setChapter(e.title)}
+        onTableOfContents={console.log}
+      />
+    </View>
+  ) : null;
+});
+
+const stylesheet = createStyleSheet((theme) => ({
+  root: {
+    flex: 1,
+    backgroundColor: theme.colors.neutral,
+  },
+  book: {
+    margin: theme.display.space5,
+  },
+}));

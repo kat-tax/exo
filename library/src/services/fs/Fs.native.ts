@@ -1,7 +1,8 @@
-import {hfs} from './lib/NativeHfs';
+import {hfs} from './lib/plugins/NativeHfs';
 import {FileSystem} from 'react-native-file-access';
+import {isText, isBinary} from './lib/data';
 
-import type {FSBase} from './Fs.interface';
+import type {FSBase, FileSystemIn} from './Fs.interface';
 
 export class FSService implements FSBase {
   async init() {
@@ -32,18 +33,32 @@ export class FSService implements FSBase {
   }
 
   async hashFile(
-    pathOrFileHandle: string | FileSystemFileHandle,
+    input: FileSystemIn,
     _progress?: (bytes: number, total: number) => void,
     _chunkSize?: number,
     _jobId?: number,
   ) {
-    if (typeof pathOrFileHandle !== 'string')
+    if (typeof input !== 'string')
       throw new Error('[hashFile] file input not supported on native');
-    return FileSystem.hash(pathOrFileHandle, 'SHA-256');
+    const cidPrefix = '1220'; // CID prefix for sha256
+    const sha256 = await FileSystem.hash(input, 'SHA-256');
+    return `${cidPrefix}${sha256}`;
   }
 
   async cancelHash(jobId: number) {
     // TODO: fork react-native-file-access
     console.log('[cancelHash] not implemented on native', jobId);
+  }
+
+  async isTextFile(name: string, input: FileSystemIn) {
+    if (typeof input !== 'string')
+      throw new Error('[isTextFile] file input not supported on native');
+    return isText(name);
+  }
+
+  async isBinaryFile(name: string, input: FileSystemIn) {
+    if (typeof input !== 'string')
+      throw new Error('[isBinaryFile] file input not supported on native');
+    return isBinary(name);
   }
 }

@@ -43,6 +43,7 @@ const preview: Preview = {
               'Lottie',
               'Rive',
               'Game',
+              'Book',
               'Markdown',
             ],
             'Widgets', [
