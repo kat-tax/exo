@@ -2,9 +2,11 @@ import {View, Text} from 'react-native';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {ListRowIcon} from 'media/stacks/ListRowIcon';
 import {isTouch} from 'app/utils/platform';
+import {bytesize} from 'app/utils/formatting';
 
 interface ListRow {
   name: string,
+  size?: number,
 }
 
 export function ListRow(props: ListRow) {
@@ -13,9 +15,14 @@ export function ListRow(props: ListRow) {
   return (
     <View style={styles.root}>
       <ListRowIcon {...{name, ext}}/>
-      <Text style={styles.title}>
+      <Text style={styles.text}>
         {props.name}
       </Text>
+      {props.size &&
+        <Text style={[styles.text, styles.size]}>
+          {bytesize(props.size)}
+        </Text>
+      }
     </View>
   );
 }
@@ -25,8 +32,9 @@ const stylesheet = createStyleSheet((theme) => ({
     flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
+    gap: theme.display.space2,
   },
-  title: {
+  text: {
     fontFamily: theme.font.family,
     fontSize: theme.font.size,
     fontWeight: theme.font.weight,
@@ -38,5 +46,8 @@ const stylesheet = createStyleSheet((theme) => ({
       lineHeight: theme.font.contentHeight,
       letterSpacing: theme.font.contentSpacing,
     },
+  },
+  size: {
+    color: theme.colors.mutedForeground,
   },
 }));

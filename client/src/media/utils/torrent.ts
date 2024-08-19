@@ -54,7 +54,7 @@ export function files(file: Uint8Array): TorrentFileData {
       p.toString(),
     );
     return {
-      path: parts.join('/'),
+      path: parts.slice(1).join('/'),
       name: parts[parts.length - 1],
       length: file.length,
       offset: files.slice(0, i).reduce(sumLength, 0),

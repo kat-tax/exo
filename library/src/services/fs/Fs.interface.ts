@@ -1,4 +1,5 @@
 import type {HfsImpl, HfsDirectoryEntry} from '@humanfs/types';
+
 export type {HfsImpl, HfsDirectoryEntry};
 
 // TODO:

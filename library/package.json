@@ -23,6 +23,11 @@
       "import": "./gen/web/redux.js",
       "require": "./gen/native/redux.js"
     },
+    "./torrent": {
+      "types": "./gen/types/torrent.d.ts",
+      "import": "./gen/web/torrent.js",
+      "require": "./gen/native/torrent.js"
+    },
     "./device": {
       "types": "./gen/types/device.d.ts",
       "import": "./gen/web/device.js",
@@ -217,7 +222,8 @@
     "redux-first-history": "^5.2.0",
     "redux-persist": "^6.0.0",
     "thumbhash": "^0.1.1",
-    "vite-plugin-node-polyfills": "^0.22.0"
+    "vite-plugin-node-polyfills": "^0.22.0",
+    "webtorrent": "^2.5.0"
   },
   "devDependencies": {
     "@babel/types": "^7.24.9",
@@ -237,6 +243,7 @@
     "@types/react": "18.2.79",
     "@types/react-dom": "18.2.25",
     "@types/react-native-video": "^5.0.20",
+    "@types/webtorrent": "^0.109.8",
     "bundler": "workspace:*",
     "config": "workspace:*",
     "react": "18.2.0",

@@ -1,5 +1,4 @@
-import {View} from 'react-native';
-import {Link} from 'react-exo/navigation';
+import {View, Pressable} from 'react-native';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {ListRow} from './ListRow';
 
@@ -7,6 +6,7 @@ import type {TorrentFileData} from 'media/utils/torrent';
 
 interface EntryTorrent {
   entry: TorrentFileData['files'][number],
+  download: (path: string, offset: number, length: number) => void,
 }
 
 export function EntryTorrent(props: EntryTorrent) {
@@ -15,9 +15,9 @@ export function EntryTorrent(props: EntryTorrent) {
 
   return (
     <View style={styles.root}>
-      <Link to={entry.path}>
-        <ListRow name={entry.name}/>
-      </Link>
+      <Pressable onPress={() => props.download(entry.path, entry.offset, entry.length)}>
+        <ListRow name={entry.name} size={entry.length}/>
+      </Pressable>
     </View>
   );
 }

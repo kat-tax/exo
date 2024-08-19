@@ -11,6 +11,7 @@ import type {CurrentFileBarProps} from 'media/stacks/CurrentFileBar';
 export const SEQUENCE = [FileType.Audio, FileType.Video, FileType.Game, FileType.Lottie, FileType.Rive];
 export const DOCUMENT = [FileType.Book, FileType.Pdf];
 export const SHAREABLE = [FileType.Image];
+export const ZOOMABLE = [FileType.Image];
 
 export interface CurrentFileActions {
   title?: string,
@@ -30,6 +31,29 @@ export function useFileControls(props: CurrentFileBarProps): CurrentFileActions[
 
   const actions: CurrentFileActions[] = useMemo(() =>
     [
+      // Zoom controls
+      {
+        name: 'zoom-in',
+        label: t(i18n)`Zoom in`,
+        icon: 'ph:plus',
+        media: ZOOMABLE,
+        action: () => {
+          if (player?.current && 'increase' in player.current) {
+            player.current.increase();
+          }
+        },
+      },
+      {
+        name: 'zoom-out',
+        label: t(i18n)`Zoom out`,
+        icon: 'ph:minus',
+        media: ZOOMABLE,
+        action: () => {
+          if (player?.current && 'decrease' in player.current) {
+            player.current.decrease();
+          }
+        },
+      },
       // Sequence controls (play/pause)
       {
         name: 'play',

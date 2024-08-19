@@ -91,6 +91,7 @@
     "trystero": "^0.20.0",
     "uint8array-extras": "^1.4.0",
     "vite-plugin-node-polyfills": "^0.22.0",
+    "webtorrent": "^2.5.0",
     "zeego": "^1.10.0"
   },
   "devDependencies": {
@@ -112,6 +113,7 @@
     "@types/react-dom": "18.2.25",
     "@types/react-native-video": "^5.0.20",
     "@types/react-test-renderer": "18.3.0",
+    "@types/webtorrent": "^0.109.8",
     "babel-plugin-macros": "^3.1.0",
     "babel-plugin-tsconfig-paths-module-resolver": "^1.0.4",
     "bundler": "workspace:*",

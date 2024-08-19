@@ -1,5 +1,5 @@
 import {fs} from 'react-exo/fs';
-import {fetchIPFS} from 'media/utils/ipfs'
+import {fetchIPFS} from 'media/utils/ipfs';
 import type {GameProps} from 'react-exo/game';
 
 export enum FileType {

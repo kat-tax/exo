@@ -28,6 +28,7 @@ export default defineConfig(env => mergeConfig(
           navigation: 'src/layout/navigation/Navigation.export',
           skeleton: 'src/layout/skeleton/Skeleton.export',
           /* Services */
+          torrent: 'src/services/torrent/Torrent.export',
           device: 'src/services/device/Device.export',
           form: 'src/services/form/Form.export',
           fs: 'src/services/fs/Fs.export',

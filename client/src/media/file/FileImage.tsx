@@ -1,5 +1,5 @@
 import {Image} from 'react-exo/image';
-import {forwardRef} from 'react';
+import {useState, useImperativeHandle, forwardRef} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useDataUrl} from 'media/hooks/useDataUrl';
 
@@ -10,9 +10,28 @@ interface FileImage extends FileProps {
   extension: string,
 }
 
-export default forwardRef((props: FileImage, _ref) => {
+export interface ImageRef {
+  increase: () => void,
+  decrease: () => void,
+  reset: () => void,
+}
+
+export default forwardRef((props: FileImage, ref: React.Ref<ImageRef>) => {
+  const [scale, setScale] = useState(1);
   const {styles} = useStyles(stylesheet);
   const image = useDataUrl(props.path);
+
+  useImperativeHandle(ref, () => ({
+    increase: () => {
+      setScale(scale + 0.1);
+    },
+    decrease: () => {
+      setScale(scale - 0.1);
+    },
+    reset: () => {
+      setScale(1);
+    },
+  }));
 
   return image ? (
     <Image
@@ -21,6 +40,7 @@ export default forwardRef((props: FileImage, _ref) => {
       style={[
         styles.root,
         props.maximized && styles.maximized,
+        {transform: [{scale}]},
       ]}
     />
   ) : null;

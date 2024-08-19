@@ -1,9 +1,7 @@
 import {useMemo} from 'react';
 import {info, files} from 'media/utils/torrent';
-import {useDataArrayBuffer} from 'media/hooks/useDataArrayBuffer';
 
-export function useTorrent(path: string) {
-  const torrent = useDataArrayBuffer(path);
+export function useTorrent(torrent?: ArrayBuffer) {
   return useMemo(() => {
     if (!torrent) return null;
     const array = new Uint8Array(torrent);

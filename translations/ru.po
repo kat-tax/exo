@@ -64,7 +64,7 @@ msgstr ""
 msgid "Celsius"
 msgstr "Цельсий"
 
-#: ../../client/src/media/hooks/useFileControls.ts:144
+#: ../../client/src/media/hooks/useFileControls.ts:168
 msgid "Close"
 msgstr ""
 
@@ -150,6 +150,8 @@ msgstr "Введите ваше имя"
 msgid "Fahrenheit"
 msgstr "Фаренгейт"
 
+#: ../../client/src/app/interface/Menu.tsx:45
+#: ../../client/src/app/interface/Tabs.tsx:23
 #: ../../client/src/media/routes/ScreenBrowse.tsx:20
 msgid "Files"
 msgstr "Файлы"
@@ -233,7 +235,7 @@ msgstr ""
 msgid "Map"
 msgstr ""
 
-#: ../../client/src/media/hooks/useFileControls.ts:137
+#: ../../client/src/media/hooks/useFileControls.ts:161
 msgid "Maximize"
 msgstr ""
 
@@ -258,7 +260,7 @@ msgstr "Музыка"
 msgid "News"
 msgstr ""
 
-#: ../../client/src/media/hooks/useFileControls.ts:79
+#: ../../client/src/media/hooks/useFileControls.ts:103
 msgid "Next"
 msgstr ""
 
@@ -274,7 +276,7 @@ msgstr ""
 msgid "Owner Key"
 msgstr "Ключ владельца"
 
-#: ../../client/src/media/hooks/useFileControls.ts:36
+#: ../../client/src/media/hooks/useFileControls.ts:60
 msgid "Pause"
 msgstr ""
 
@@ -282,11 +284,11 @@ msgstr ""
 msgid "Pictures"
 msgstr ""
 
-#: ../../client/src/media/hooks/useFileControls.ts:97
+#: ../../client/src/media/hooks/useFileControls.ts:121
 msgid "Pin"
 msgstr ""
 
-#: ../../client/src/media/hooks/useFileControls.ts:36
+#: ../../client/src/media/hooks/useFileControls.ts:60
 msgid "Play"
 msgstr ""
 
@@ -294,7 +296,7 @@ msgstr ""
 msgid "Please set your Groq API Key"
 msgstr "Пожалуйста, установите ваш API ключ Groq"
 
-#: ../../client/src/media/hooks/useFileControls.ts:68
+#: ../../client/src/media/hooks/useFileControls.ts:92
 msgid "Previous"
 msgstr ""
 
@@ -314,7 +316,7 @@ msgstr "Запросы"
 msgid "Provide a key to use AI features."
 msgstr "Предоставьте ключ для использования функций ИИ."
 
-#: ../../client/src/media/hooks/useFileControls.ts:56
+#: ../../client/src/media/hooks/useFileControls.ts:80
 msgid "Reset"
 msgstr ""
 
@@ -343,7 +345,7 @@ msgstr "Выберите тему для приложения."
 msgid "Settings"
 msgstr "Настройки"
 
-#: ../../client/src/media/hooks/useFileControls.ts:115
+#: ../../client/src/media/hooks/useFileControls.ts:139
 msgid "Share"
 msgstr ""
 
@@ -408,3 +410,11 @@ msgstr "Ваше имя для отображения в приложении."
 #: ../../client/src/app/hooks/useSettings.ts:45
 msgid "Your prompt history has been reset."
 msgstr "История ваших запросов была сброшена."
+
+#: ../../client/src/media/hooks/useFileControls.ts:37
+msgid "Zoom in"
+msgstr ""
+
+#: ../../client/src/media/hooks/useFileControls.ts:48
+msgid "Zoom out"
+msgstr ""
