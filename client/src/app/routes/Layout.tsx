@@ -29,16 +29,18 @@ export default function Layout() {
     content: [styles.content, isVertical && styles.contentVert],
   };
 
-  const context: ReturnType<typeof useAppContext> = {
-    profile,
-    device,
-  };
 
   const parts = resolve(resource.path);
   const [name, ext] = parts.slice(-1)[0].split('.') ?? [];
   const base = parts.slice(0, -1).join('/');
   const path = parts.join('/');
   const url = `/browse/${base}#${name}.${ext}`;
+  const hasPath = Boolean(path);
+  const context: ReturnType<typeof useAppContext> = {
+    hasPreview: hasPath && resource.maximized,
+    profile,
+    device,
+  };
 
   return <>
     <StatusBar networkActivityIndicatorVisible={!device?.online}/>
@@ -48,7 +50,7 @@ export default function Layout() {
       </View>
       <View style={vstyles.content}>
         <Outlet {...{context}}/>
-        {Boolean(path) &&
+        {hasPath &&
           <CurrentFile
             url={url}
             ext={ext}

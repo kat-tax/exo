@@ -5,8 +5,10 @@ export interface PageProps extends React.PropsWithChildren {
   title?: string | React.ReactNode,
   message?: string | React.ReactNode,
   widget?: React.ReactNode,
+  hasPreview?: boolean,
   fullWidth?: boolean,
   noMargin?: boolean,
+  sxs?: boolean,
 }
 
 export function Page(props: PageProps) {
@@ -20,6 +22,7 @@ export function Page(props: PageProps) {
     root: [
       styles.root,
       hasNoFrame && styles.noframe,
+      props.hasPreview && styles.withPreview,
     ],
     content: [
       styles.content,
@@ -61,6 +64,9 @@ const stylesheet = createStyleSheet((theme, rt) => ({
     borderRadius: theme.display.radius2,
     borderColor: theme.colors.border,
     backgroundColor: theme.colors.card,
+  },
+  withPreview: {
+    marginRight: 0,
   },
   noframe: {
     margin: 0,

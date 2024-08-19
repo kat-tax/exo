@@ -3,8 +3,9 @@ import {View} from 'react-native';
 import {useLingui} from '@lingui/react';
 import {useLocation} from 'react-exo/navigation';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {useInitDirectories} from 'media/hooks/useInitDirectories';
+import {useAppContext} from 'app/hooks/useAppContext';
 import {useDirectory} from 'media/hooks/useDirectory';
+import {useInitDirectories} from 'media/hooks/useInitDirectories';
 import {EntryDirectory} from 'media/stacks/EntryDirectory';
 import {WatermarkEmpty} from 'media/stacks/WatermarkEmpty';
 import {resolve} from 'media/utils/path';
@@ -19,11 +20,16 @@ export default function ScreenBrowse() {
   const name = parts[parts.length - 1] || t(i18n)`Files`;
   const base = parts.slice(0, -1).join('/') || '/';
   const entries = useDirectory(path, {showHidden: true});
+  const {hasPreview} = useAppContext();
 
   useInitDirectories();
 
   return (
-    <Page title={name} message={base ?? '/'} fullWidth>
+    <Page
+      title={name}
+      message={base ?? '/'}
+      fullWidth={true}
+      hasPreview={hasPreview}>
       <View style={styles.root}>
         {entries?.length === 0 &&
           <WatermarkEmpty {...{path}}/>

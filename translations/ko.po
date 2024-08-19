@@ -150,7 +150,7 @@ msgstr ""
 msgid "Fahrenheit"
 msgstr ""
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:19
+#: ../../client/src/media/routes/ScreenBrowse.tsx:20
 msgid "Files"
 msgstr ""
 

@@ -5,7 +5,8 @@ import type {useProfile} from 'app/data';
 
 export function useAppContext() {
   return useOutletContext<{
-    device: ReturnType<typeof useDeviceSession>;
-    profile: ReturnType<typeof useProfile>;
+    device: ReturnType<typeof useDeviceSession>,
+    profile: ReturnType<typeof useProfile>,
+    hasPreview: boolean,
   }>() || {};
 }
