@@ -1,16 +1,18 @@
-import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {View, Text} from 'react-native';
+import {useStyles, createStyleSheet} from 'react-native-unistyles';
+import {ListRowIcon} from 'media/stacks/ListRowIcon';
 import {isTouch} from 'app/utils/platform';
 
-interface DirectoryEntryRow {
+interface ListRow {
   name: string,
 }
 
-// https://github.com/kat-tax/vslite/tree/master/src/icons
-export function DirectoryEntryRow(props: DirectoryEntryRow) {
+export function ListRow(props: ListRow) {
   const {styles} = useStyles(stylesheet);
+  const [name, ext] = props.name.split('.');
   return (
     <View style={styles.root}>
+      <ListRowIcon {...{name, ext}}/>
       <Text style={styles.title}>
         {props.name}
       </Text>

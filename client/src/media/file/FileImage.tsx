@@ -1,7 +1,7 @@
 import {Image} from 'react-exo/image';
 import {forwardRef} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {useFileUrl} from 'media/hooks/useFileUrl';
+import {useDataUrl} from 'media/hooks/useDataUrl';
 
 import type {FileProps} from 'media/file';
 
@@ -12,7 +12,7 @@ interface FileImage extends FileProps {
 
 export default forwardRef((props: FileImage, _ref) => {
   const {styles} = useStyles(stylesheet);
-  const image = useFileUrl(props.path);
+  const image = useDataUrl(props.path);
 
   return image ? (
     <Image

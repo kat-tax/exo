@@ -52,6 +52,9 @@ export const loader: {[key in FileType]: JSX.Element} = {
   get [FileType.Map]() {
     return require('../FileMap').default
   },
+  get [FileType.Torrent]() {
+    return require('../FileTorrent').default
+  },
 }
 
 export default loader

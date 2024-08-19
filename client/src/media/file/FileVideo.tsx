@@ -1,7 +1,7 @@
 import {Video} from 'react-exo/video';
 import {forwardRef} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {useFileUrl} from 'media/hooks/useFileUrl';
+import {useDataUrl} from 'media/hooks/useDataUrl';
 
 import type {FileProps} from 'media/file';
 import type {VideoRef} from 'react-exo/video';
@@ -16,7 +16,7 @@ export type {VideoRef};
 
 export default forwardRef((props: FileVideo) => {
   const {styles} = useStyles(stylesheet);
-  const video = useFileUrl(props.path);
+  const video = useDataUrl(props.path);
 
   return video ? (
     <Video

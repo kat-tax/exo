@@ -1,7 +1,7 @@
 import {View} from 'react-native';
 import {forwardRef} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {useFileText} from 'media/hooks/useFileText';
+import {useDataUrl} from 'media/hooks/useDataUrl';
 import {Markdown} from 'app/stacks/Markdown';
 
 import type {FileProps} from 'media/file';
@@ -13,7 +13,7 @@ interface FileMarkdown extends FileProps {
 
 export default forwardRef((props: FileMarkdown) => {
   const {styles} = useStyles(stylesheet);
-  const markdown = useFileText(props.path);
+  const markdown = useDataUrl(props.path);
 
   return markdown ? (
     <View style={styles.root}>

@@ -1,16 +1,16 @@
 import {View} from 'react-native';
 import {Link} from 'react-exo/navigation';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {DirectoryEntryRow} from './DirectoryEntryRow';
+import {ListRow} from './ListRow';
 
 import type {HfsDirectoryEntry} from 'react-exo/fs';
 
-interface DirectoryEntry {
+interface EntryDirectory {
   entry: HfsDirectoryEntry,
   path?: string,
 }
 
-export function DirectoryEntry(props: DirectoryEntry) {
+export function EntryDirectory(props: EntryDirectory) {
   const {styles} = useStyles(stylesheet);
   const {entry} = props;
   const link = entry.isFile
@@ -22,7 +22,7 @@ export function DirectoryEntry(props: DirectoryEntry) {
   return (
     <View style={styles.root}>
       <Link to={link}>
-        <DirectoryEntryRow name={entry.name}/>
+        <ListRow name={entry.name}/>
       </Link>
     </View>
   );

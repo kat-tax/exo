@@ -3,7 +3,6 @@ import {CurrentFile} from 'media/stacks/CurrentFile';
 
 export default function ScreenView() {
   const {cid, ext} = useParams<{cid: string, ext: string}>();
-  console.log(cid, ext);
   return (
     <CurrentFile
       name={' '}

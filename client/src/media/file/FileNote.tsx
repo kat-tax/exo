@@ -1,7 +1,7 @@
 import {Book} from 'react-exo/book';
 import {forwardRef} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {useFileUrl} from 'media/hooks/useFileUrl';
+import {useDataUrl} from 'media/hooks/useDataUrl';
 
 import type {FileProps} from 'media/file';
 
@@ -12,7 +12,7 @@ interface FileNote extends FileProps {
 
 export default forwardRef((props: FileNote) => {
   const {styles} = useStyles(stylesheet);
-  const note = useFileUrl(props.path);
+  const note = useDataUrl(props.path);
 
   return note ? (
     <Book

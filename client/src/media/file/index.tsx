@@ -65,6 +65,8 @@ export default memo(forwardRef((props: FileProps, ref) => {
         return <$><Renderer.Pdf {...meta} {...ctx}/></$>
       case FileType.Map:
         return <$><Renderer.Map {...meta} {...ctx}/></$>
+      case FileType.Torrent:
+        return <$><Renderer.Torrent {...meta} {...ctx}/></$>
       default: file satisfies never;
     }
   }, [ref, file, ctx, props.path, maximized, setBarIcon, setBarTitle]);

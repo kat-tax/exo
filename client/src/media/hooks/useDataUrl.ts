@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react';
 import {getFileBlob} from 'media/utils/file';
 
-export function useFileUrl(path: string, mimetype = 'application/octet-stream') {
+export function useDataUrl(path: string, mimetype = 'application/octet-stream') {
   const [dataURL, setDataURL] = useState<string>();
 
   useEffect(() => {

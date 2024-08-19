@@ -3,7 +3,7 @@ import {Book} from 'react-exo/book';
 import {forwardRef, useEffect, useState} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useScheme} from 'app/hooks/useScheme';
-import {useFileUrl} from 'media/hooks/useFileUrl';
+import {useDataUrl} from 'media/hooks/useDataUrl';
 
 import type {FileProps} from 'media/file';
 import type {BookRef} from 'react-exo/book';
@@ -21,7 +21,7 @@ export default forwardRef((props: FileBook, ref: React.Ref<BookRef>) => {
   const [title, setTitle] = useState('');
   const {styles} = useStyles(stylesheet);
   const [scheme] = useScheme();
-  const epub = useFileUrl(props.path, 'application/epub+zip');
+  const epub = useDataUrl(props.path, 'application/epub+zip');
 
   // Pull title from manifest (fallback to file name)
   useEffect(() => {

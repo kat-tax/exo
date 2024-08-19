@@ -5,7 +5,7 @@ import {useLocation} from 'react-exo/navigation';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useInitDirectories} from 'media/hooks/useInitDirectories';
 import {useDirectory} from 'media/hooks/useDirectory';
-import {DirectoryEntry} from 'media/stacks/DirectoryEntry';
+import {EntryDirectory} from 'media/stacks/EntryDirectory';
 import {WatermarkEmpty} from 'media/stacks/WatermarkEmpty';
 import {resolve} from 'media/utils/path';
 import {Page} from 'app/interface/Page';
@@ -29,7 +29,7 @@ export default function ScreenBrowse() {
           <WatermarkEmpty {...{path}}/>
         }
         {entries?.map(entry => (
-          <DirectoryEntry key={entry.name} {...{entry, path}}/>
+          <EntryDirectory key={entry.name} {...{entry, path}}/>
         ))}
       </View>
     </Page>

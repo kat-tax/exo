@@ -100,6 +100,7 @@ export function useFileControls(props: CurrentFileBarProps): CurrentFileActions[
           : pinned
             ? 'ph:push-pin'
             : 'ph:push-pin-slash',
+        filter: () => !metadata.path.startsWith('ipfs://'),
         action: async () => {
           setPinning(true);
           const name = `${metadata.name}.${metadata.ext}`;
@@ -113,7 +114,9 @@ export function useFileControls(props: CurrentFileBarProps): CurrentFileActions[
         name: 'share',
         label: t(i18n)`Share`,
         icon: 'ph:share-network',
-        filter: () => !!pinned || SHAREABLE.includes(fileData[0]),
+        filter: () => !!pinned
+          || SHAREABLE.includes(fileData[0])
+          || metadata.path.startsWith('ipfs://'),
         action: async () => {
           const url = pinned;
           const title = `${metadata.name}.${metadata.ext}`;

@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react';
 import {fetchIPFS} from 'media/utils/ipfs';
 
-export function useRemoteType(cid?: string) {
+export function useIpfsType(cid?: string) {
   const [data, setData] = useState<string>('');
   
   useEffect(() => {

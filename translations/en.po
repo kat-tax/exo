@@ -64,7 +64,7 @@ msgstr "Calendar"
 msgid "Celsius"
 msgstr "Celsius"
 
-#: ../../client/src/media/hooks/useFileControls.ts:141
+#: ../../client/src/media/hooks/useFileControls.ts:144
 msgid "Close"
 msgstr "Close"
 
@@ -122,7 +122,7 @@ msgstr "Distance"
 msgid "Docs"
 msgstr "Docs"
 
-#: ../../client/src/media/file/FileBinary.tsx:18
+#: ../../client/src/media/file/FileBinary.tsx:21
 msgid "Download"
 msgstr "Download"
 
@@ -150,8 +150,6 @@ msgstr "Enter your name"
 msgid "Fahrenheit"
 msgstr "Fahrenheit"
 
-#: ../../client/src/app/interface/Menu.tsx:45
-#: ../../client/src/app/interface/Tabs.tsx:23
 #: ../../client/src/media/routes/ScreenBrowse.tsx:19
 msgid "Files"
 msgstr "Files"
@@ -235,7 +233,7 @@ msgstr "Manage your storage"
 msgid "Map"
 msgstr "Map"
 
-#: ../../client/src/media/hooks/useFileControls.ts:134
+#: ../../client/src/media/hooks/useFileControls.ts:137
 msgid "Maximize"
 msgstr "Maximize"
 
@@ -345,7 +343,7 @@ msgstr "Select the theme for the app."
 msgid "Settings"
 msgstr "Settings"
 
-#: ../../client/src/media/hooks/useFileControls.ts:114
+#: ../../client/src/media/hooks/useFileControls.ts:115
 msgid "Share"
 msgstr "Share"
 

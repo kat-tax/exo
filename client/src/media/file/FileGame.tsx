@@ -1,7 +1,7 @@
 import {Game} from 'react-exo/game';
 import {forwardRef} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {useFileUrl} from 'media/hooks/useFileUrl';
+import {useDataUrl} from 'media/hooks/useDataUrl';
 
 import type {FileProps} from 'media/file';
 import type {GameProps} from 'react-exo/game';
@@ -14,7 +14,7 @@ interface FileGame extends FileProps {
 
 export default forwardRef((props: FileGame, ref: React.Ref<Game>) => {
   const {styles, theme} = useStyles(stylesheet);
-  const rom = useFileUrl(props.path);
+  const rom = useDataUrl(props.path);
 
   return rom ? (
     <Game

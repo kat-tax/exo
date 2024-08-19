@@ -3,6 +3,7 @@ import {fetchIPFS} from 'media/utils/ipfs'
 import type {GameProps} from 'react-exo/game';
 
 export enum FileType {
+  Torrent = 'Torrent',
   Binary = 'Binary',
   Text = 'Text',
   Note = 'Note',
@@ -37,6 +38,9 @@ export type FileData = {
 
 export function getFileInfo(ext: string): FileData {
   switch (ext) {
+    // Torrents
+    case 'torrent':
+      return [FileType.Torrent, {}];
     // Models
     case 'glb':
     case 'gltf':
@@ -150,26 +154,6 @@ export function getFileInfo(ext: string): FileData {
   }
 }
 
-export async function getFileBlob(path: string, mimetype: string) {
-  // IPFS
-  if (path.startsWith('ipfs://')) {
-    const response = await fetchIPFS(path);
-    return await response.blob();
-  }
-
-  // HTTP
-  if (path.startsWith('http://') || path.startsWith('https://')) {
-    const response = await fetch(path);
-    return await response.blob();
-  }
-
-  // OPFS
-  const hfs = await fs.init();
-  const bytes = await hfs.bytes?.(path);
-  if (!bytes) return;
-  return new Blob([bytes], {type: mimetype});
-}
-
 export async function getFileText(path: string) {
   // IPFS
   if (path.startsWith('ipfs://')) {
@@ -188,4 +172,44 @@ export async function getFileText(path: string) {
   const bytes = await hfs.bytes?.(path);
   if (!bytes) return;
   return new TextDecoder('utf-8').decode(bytes);
+}
+
+export async function getFileBlob(path: string, type: string) {
+  // IPFS
+  if (path.startsWith('ipfs://')) {
+    const response = await fetchIPFS(path);
+    return await response.blob();
+  }
+
+  // HTTP
+  if (path.startsWith('http://') || path.startsWith('https://')) {
+    const response = await fetch(path);
+    return await response.blob();
+  }
+
+  // OPFS
+  const hfs = await fs.init();
+  const bytes = await hfs.bytes?.(path);
+  if (!bytes) return;
+  return new Blob([bytes], {type});
+}
+
+export async function getFileArrayBuffer(path: string) {
+  // IPFS
+  if (path.startsWith('ipfs://')) {
+    const response = await fetchIPFS(path);
+    return await response.arrayBuffer();
+  }
+
+  // HTTP
+  if (path.startsWith('http://') || path.startsWith('https://')) {
+    const response = await fetch(path);
+    return await response.arrayBuffer();
+  }
+
+  // OPFS
+  const hfs = await fs.init();
+  const bytes = await hfs.bytes?.(path);
+  if (!bytes) return;
+  return bytes;
 }

@@ -4,6 +4,7 @@ import {Text, Pressable} from 'react-native';
 import {Motion} from 'react-exo/motion';
 import {Image} from 'react-exo/image';
 import {Icon} from 'react-exo/icon';
+import {FileType} from 'media/utils/file';
 import {useFileControls} from 'media/hooks/useFileControls';
 
 import type {FileRef} from 'media/file';
@@ -42,6 +43,10 @@ export function CurrentFileBar(props: CurrentFileBarProps) {
         ? theme.colors.foreground
         : theme.colors.mutedForeground,
   }), [theme, styles]);
+
+  if (props.fileData[0] === FileType.Torrent) {
+    return null;
+  }
 
   return (
     <Motion.View

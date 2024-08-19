@@ -3,7 +3,7 @@ import {View} from 'react-native';
 import {forwardRef} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useScheme} from 'app/hooks/useScheme';
-import {useFileUrl} from 'media/hooks/useFileUrl';
+import {useDataUrl} from 'media/hooks/useDataUrl';
 
 import type {FileProps} from 'media/file';
 
@@ -18,7 +18,7 @@ const MAPTILER_KEY = 'UbdBChbHpiVOSIdTJWvV';
 export default forwardRef((props: FileMap) => {
   const {styles} = useStyles(stylesheet);
   const [scheme] = useScheme();
-  const map = useFileUrl(props.path);
+  const map = useDataUrl(props.path);
   const mapId = scheme === 'light'
     ? 'dataviz-light'
     : 'dataviz-dark';

@@ -1,7 +1,7 @@
 import {Lottie} from 'react-exo/lottie';
 import {forwardRef} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {useFileUrl} from 'media/hooks/useFileUrl';
+import {useDataUrl} from 'media/hooks/useDataUrl';
 
 import type {FileProps} from 'media/file';
 
@@ -12,7 +12,7 @@ interface FileLottie extends FileProps {
 
 export default forwardRef((props: FileLottie) => {
   const {styles} = useStyles(stylesheet);
-  const lottie = useFileUrl(props.path);
+  const lottie = useDataUrl(props.path);
 
   return lottie ? (
     <Lottie
