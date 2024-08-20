@@ -80,6 +80,17 @@ export function getFileInfo(ext: string): FileData {
     case 'svg':
     case 'raw':
       return [FileType.Image, {}];
+    // Audio
+    case 'mp3':
+    case 'wav':
+    case 'aac':
+    case 'flac':
+    case 'm4a':
+    case 'opus':
+    case 'amr':
+    case 'wma':
+    case 'aiff':
+      return [FileType.Audio, {}];
     // Documents
     case 'pdf':
       return [FileType.Pdf, {}];

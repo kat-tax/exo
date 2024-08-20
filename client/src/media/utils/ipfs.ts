@@ -14,9 +14,8 @@ const pinata = new PinataSDK({
 export async function pin(path: string, name: string) {
   const buffer = await web.getFileBuffer(path);
   const file = new File([buffer], name);
-  const ext = name.split('.').pop();
   const {IpfsHash} = await pinata.upload.file(file);
-  return `${location.origin}/${IpfsHash}/${ext}`;
+  return `${location.origin}/${IpfsHash}/${name}`;
 }
 
 export const fetchIPFS = await createVerifiedFetch({

@@ -14,12 +14,15 @@ interface FileVideo extends FileProps {
 
 export type {VideoRef};
 
-export default forwardRef((props: FileVideo) => {
+export default forwardRef((props: FileVideo, ref: React.Ref<VideoRef>) => {
   const {styles} = useStyles(stylesheet);
   const video = useDataUrl(props.path);
 
   return video ? (
     <Video
+      ref={ref}
+      title={props.name}
+      thumbnails={''}
       source={{uri: video}}
       style={[
         styles.root,

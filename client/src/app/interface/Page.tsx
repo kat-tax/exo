@@ -8,6 +8,7 @@ export interface PageProps extends React.PropsWithChildren {
   hasPreview?: boolean,
   fullWidth?: boolean,
   noMargin?: boolean,
+  noFrame?: boolean,
   sxs?: boolean,
 }
 
@@ -17,7 +18,7 @@ export function Page(props: PageProps) {
   const hasTitle = Boolean(props.title);
   const hasMessage = Boolean(props.message);
   const hasHeader = hasTitle || hasMessage;
-  const hasNoFrame = screen.width < theme.breakpoints.xs;
+  const hasNoFrame = props.noFrame || screen.width < theme.breakpoints.xs;
   const vstyles = {
     root: [
       styles.root,
@@ -77,7 +78,7 @@ const stylesheet = createStyleSheet((theme, rt) => ({
   content: {
     flex: 1,
     alignSelf: 'center',
-    gap: theme.display.space5,
+    gap: theme.display.space1,
     width: {
       initial: '100%',
       md: 640, // 480p

@@ -4,8 +4,10 @@ import {Text, Pressable} from 'react-native';
 import {Motion} from 'react-exo/motion';
 import {Image} from 'react-exo/image';
 import {Icon} from 'react-exo/icon';
+import {isTouch} from 'app/utils/platform';
 import {FileType} from 'media/utils/file';
 import {useFileControls} from 'media/hooks/useFileControls';
+import {ListRowIcon} from 'media/stacks/ListRowIcon';
 
 import type {FileRef} from 'media/file';
 import type {FileData} from 'media/utils/file';
@@ -33,18 +35,22 @@ export interface CurrentFileBarProps {
 export function CurrentFileBar(props: CurrentFileBarProps) {
   const {styles, theme} = useStyles(stylesheet);
   const controls = useFileControls(props);
+  const sizeState = isTouch() ? 1 : 0;
+  const imageSize = sizeState === 1 ? 28 : 24;
+  const iconSize = sizeState === 1 ? 20 : 16;
   const vstyles = useMemo(() => ({
     root: [
       styles.root,
       false && styles.floating,
     ],
     icon: (state: PressableStateCallbackType) =>
-      state.hovered
+      isTouch() || state.hovered
         ? theme.colors.foreground
         : theme.colors.mutedForeground,
   }), [theme, styles]);
 
-  if (props.fileData[0] === FileType.Torrent) {
+  if (props.maximized
+    && props.fileData[0] === FileType.Torrent) {
     return null;
   }
 
@@ -56,14 +62,20 @@ export function CurrentFileBar(props: CurrentFileBarProps) {
       exit={{opacity: 0}}>
       {controls.map(({name, icon, title, action}) => title
         ? <Pressable key={name} style={styles.title} onPress={action}>
-            {!!props.metadata.cover &&
-              <Image
-                url={props.metadata.cover}
-                style={styles.cover}
-                resizeMode="contain"
-                height={20}
-                width={20}
-              />
+            {props.metadata.cover
+              ? <Image
+                  url={props.metadata.cover}
+                  resizeMode="contain"
+                  height={imageSize}
+                  width={imageSize}
+                />
+              : <ListRowIcon
+                  name={name ?? ''}
+                  extension={props.metadata.ext}
+                  path={props.metadata.path}
+                  size={sizeState}
+                  isFile={true}
+                />
             }
             <Text style={styles.titleText} numberOfLines={2}>
               {title}
@@ -74,7 +86,7 @@ export function CurrentFileBar(props: CurrentFileBarProps) {
               icon && <Icon
                 name={icon}
                 color={vstyles.icon(state)}
-                size={16}
+                size={iconSize}
               />
             )}
           </Pressable>
@@ -89,7 +101,7 @@ const stylesheet = createStyleSheet((theme, rt) => ({
     alignItems: 'center',
     paddingHorizontal: theme.display.space1,
     backgroundColor: theme.colors.neutral,
-    borderTopWidth: rt.hairlineWidth,
+    borderTopWidth: 0,//rt.hairlineWidth,
     borderTopColor: theme.colors.border,
   },
   floating: {
@@ -101,11 +113,9 @@ const stylesheet = createStyleSheet((theme, rt) => ({
   icon: {
     padding: theme.display.space3,
   },
-  cover: {
-    marginRight: theme.display.space1,
-  },
   title: {
     flex: 1,
+    gap: theme.display.space2,
     flexDirection: 'row',
     alignItems: 'center',
     alignContent: 'center',
@@ -113,11 +123,9 @@ const stylesheet = createStyleSheet((theme, rt) => ({
     paddingHorizontal: theme.display.space1,
   },
   titleText: {
-    fontSize: {
-      initial: 10,
-      lg: 11,
-      xl: 12,
-    },
+    fontSize: isTouch()
+      ? theme.font.contentSize
+      : theme.font.size,
     fontFamily: theme.font.family,
     fontWeight: theme.font.weight,
     lineHeight: theme.font.height,

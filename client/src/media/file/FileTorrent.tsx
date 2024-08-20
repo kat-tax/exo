@@ -1,4 +1,4 @@
-//import WebTorrent from 'webtorrent';
+import Torrent from 'react-exo/torrent';
 import {View} from 'react-native';
 import {forwardRef} from 'react';
 import {useCallback} from 'react';
@@ -29,26 +29,28 @@ export default forwardRef((props: FileTorrent, _ref) => {
     return !path[0]?.startsWith('.____');
   });
 
-  const download = useCallback((
-    path: string,
-    offset: number,
-    length: number,
-  ) => {
+  const download = useCallback(async (file: EntryTorrent['entry']) => {
     if (!buffer) return;
-    console.log('[download]', path, offset, length);
-    /*const client = new WebTorrent();
-    const file = new File([buffer], props.name);
-    client.add(file, (torrent) => {
-      // Got torrent metadata!
-      console.log('[torrent]', torrent.infoHash, path);
-      for (const file of torrent.files) {
-        console.log(file.path);
-      }
-    });*/
-  }, [buffer]);
+    const client = new Torrent();
+    client.add(new File([buffer], props.name), async (torrent) => {
+      const target = torrent.files.find((e) =>
+        e.path.split('/').slice(1).join('/') === file.path);
+      const folder = await navigator.storage.getDirectory();
+      const handle = await folder.getFileHandle(file.name, {create: true});
+      const stream = await handle.createWritable();
+      // @ts-ignore
+      const source = target?.stream();
+      console.log(source);
+      source?.pipeTo(stream);
+    });
+  }, [buffer, props.name]);
 
   return (
-    <Page title={torrent?.info.name} message={msg} fullWidth>
+    <Page
+      title={torrent?.info.name}
+      message={msg}
+      noFrame={!props.maximized}
+      fullWidth>
       <View style={styles.root}>
         {entries?.map(entry => (
           <EntryTorrent key={entry.path} {...{entry, download}}/>
@@ -60,6 +62,6 @@ export default forwardRef((props: FileTorrent, _ref) => {
 
 const stylesheet = createStyleSheet((theme) => ({
   root: {
-    padding: theme.display.space2,
+    paddingBottom: theme.display.space5,
   },
 }));

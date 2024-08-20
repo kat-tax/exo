@@ -8,7 +8,7 @@ interface WatermarkProps extends React.PropsWithChildren {
   label: string,
   icon: string,
   dnd?: boolean,
-  onAction: () => void,
+  onAction?: () => void,
 }
 
 export function Watermark(props: WatermarkProps) {

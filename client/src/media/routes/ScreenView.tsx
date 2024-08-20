@@ -2,16 +2,17 @@ import {useParams} from 'react-exo/navigation';
 import {CurrentFile} from 'media/stacks/CurrentFile';
 
 export default function ScreenView() {
-  const {cid, ext} = useParams<{cid: string, ext: string}>();
+  const {cid, filename} = useParams<{cid: string, filename: string}>();
+  const name = filename || '';
+  const path = `ipfs://${cid}`;
+  const url = `/${cid}/${name}`;
+  const ext = name.split('.').pop() || '';
   return (
     <CurrentFile
-      name={' '}
-      ext={ext || ''}
-      url={`https://ipfs.io/ipfs/${cid}`}
-      path={`ipfs://${cid}`}
-      vertical
-      maximized
+      {...{name, ext, url, path}}
       close={() => null}
+      maximized
+      vertical
     />
   );
 }

@@ -69,7 +69,7 @@
     "react-native-get-random-values": "^1.11.0",
     "react-native-ios-context-menu": "2.5.1",
     "react-native-linear-gradient": "^2.8.3",
-    "react-native-macos": "^0.73.34",
+    "react-native-macos": "^0.74.3",
     "react-native-mmkv": "^2.12.2",
     "react-native-navigation": "7.40.1",
     "react-native-readium": "^2.0.0-rc.2",

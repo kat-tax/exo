@@ -1,5 +1,5 @@
 export function bytesize(bytes: number) {
-  const a = ['B', 'kB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
+  const a = ['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
   const s = 1000;
   let b = bytes;
   let u = 0;

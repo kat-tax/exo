@@ -35,7 +35,9 @@ export default defineConfig(env => mergeConfig(
       lingui(),
       react({
         babel: {
-          plugins: ['macros'],
+          plugins: [
+            'macros',
+          ],
         },
       }),
       million.vite({
@@ -47,7 +49,7 @@ export default defineConfig(env => mergeConfig(
         transformIndexHtml(html) {
           let out = html;
           for (const [key, value] of Object.entries(cfg)) {
-            out = out.replace(new RegExp(`__${key}__`, 'g'), value);
+            out = out.replace(new RegExp(`__${key}__`, 'g'), value as string);
           }
           return out;
         },

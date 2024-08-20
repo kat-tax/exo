@@ -49,7 +49,9 @@ export default function Layout() {
         {hasTabs ? <Tabs/> : <Menu {...{profile}}/>}
       </View>
       <View style={vstyles.content}>
-        <Outlet {...{context}}/>
+        <View style={styles.outlet}>
+          <Outlet {...{context}}/>
+        </View>
         {hasPath &&
           <CurrentFile
             url={url}
@@ -75,6 +77,9 @@ const stylesheet = createStyleSheet(theme => ({
   rootTabs: {
     flexDirection: 'column-reverse',
   },
+  outlet: {
+    flex: 1,
+  },
   menu: {
     width: APP_MENU_WIDTH,
   },
@@ -87,6 +92,7 @@ const stylesheet = createStyleSheet(theme => ({
     flexDirection: 'row',
   },
   contentVert: {
+    flex: 3,
     flexDirection: 'column-reverse',
   },
 }));

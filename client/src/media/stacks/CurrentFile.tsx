@@ -28,7 +28,7 @@ export function CurrentFile(props: CurrentFileProps) {
 
   // Derive file metadata
   const fileData = getFileInfo(ext);
-  
+
   // Local state
   const [title, setTitle] = useState(name);
   const [cover, setCover] = useState('');
@@ -129,10 +129,10 @@ export function CurrentFile(props: CurrentFileProps) {
 
 const stylesheet = createStyleSheet((theme, rt) => ({
   root: {
-    flex: 5,
+    flex: 1,
   },
   vertical: {
-    flex: 20,
+    flex: 2,
     paddingHorizontal: {
       initial: 0,
       xs: theme.display.space2,

@@ -1,5 +1,22 @@
-import type {ReactVideoProps as VideoProps} from 'react-native-video';
+import type {ReactVideoProps as VideoBaseProps} from 'react-native-video';
 
-export type VideoComponent = (props: VideoProps) => JSX.Element;
+export type VideoComponent = React.ForwardRefExoticComponent<
+  Omit<VideoProps, "ref"> & React.RefAttributes<VideoRef>
+>
 
-export type {VideoProps};
+export interface VideoProps extends VideoBaseProps {
+  ref?: React.Ref<VideoRef>,
+  title?: string,
+  thumbnails?: string,
+}
+
+export interface VideoRef {
+  play: () => Promise<void>,
+  pause: () => Promise<void>,
+  seek: (time: number, tolerance?: number) => void,
+  setVolume: (volume: number) => void,
+  getCurrentTime: () => Promise<number>,
+  presentFullscreen: () => void,
+  dismissFullscreen: () => void,
+  restoreUIForPictureInPicture?: (restore: boolean) => void,
+}

@@ -35,6 +35,7 @@ export default (tokens: GameProps) => `
       EJS_backgroundBlur = "${tokens.blur?.toString() ?? 'false'}";
       EJS_color = "${tokens.accent ?? '#00FF80'}";
       EJS_Buttons = {
+        exitEmulation: false,
         contextMenuButton: false,
         playPause: false,
         restart: false,

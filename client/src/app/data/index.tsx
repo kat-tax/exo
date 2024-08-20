@@ -7,7 +7,7 @@ import * as S from './schema';
 export * from './schema';
 
 export const evolu = createEvolu(S.DB, {
-  name: 'database',
+  name: 'db',
   syncUrl: __DEV__ ? 'http://localhost:6306' : cfg.SYNC_HOST,
   minimumLogLevel: !__DEV__ ? 'trace' : 'warning',
   indexes: S.indexes,

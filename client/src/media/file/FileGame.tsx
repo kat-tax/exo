@@ -12,7 +12,9 @@ interface FileGame extends FileProps {
   platform: GameProps['platform'],
 }
 
-export default forwardRef((props: FileGame, ref: React.Ref<Game>) => {
+export interface GameRef extends Game {}
+
+export default forwardRef((props: FileGame, ref: React.Ref<GameRef>) => {
   const {styles, theme} = useStyles(stylesheet);
   const rom = useDataUrl(props.path);
 

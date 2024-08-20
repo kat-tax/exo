@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 2024-07-23 13:59-0500\n"
+"POT-Creation-Date: 2024-08-20 03:41-0500\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -16,7 +16,7 @@ msgstr ""
 #: ../../client/src/dev/routes/ScreenDesign.tsx:12
 #: ../../client/src/dev/routes/ScreenLibrary.tsx:16
 msgid "{0} components"
-msgstr "{0} コンポーネント"
+msgstr "{0}のコンポーネント"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:52
 msgid "A mnemonic phrase for authentication."
@@ -58,15 +58,15 @@ msgstr "本"
 #: ../../client/src/app/interface/Menu.tsx:92
 #: ../../client/src/world/routes/ScreenWorld.tsx:30
 msgid "Calendar"
-msgstr ""
+msgstr "カレンダー"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:116
 msgid "Celsius"
 msgstr "摂氏"
 
-#: ../../client/src/media/hooks/useFileControls.ts:168
+#: ../../client/src/media/hooks/useFileControls.ts:179
 msgid "Close"
-msgstr ""
+msgstr "閉じる"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:104
 msgid "Dark"
@@ -104,11 +104,11 @@ msgstr "デザイン"
 
 #: ../../client/src/app/interface/Menu.tsx:110
 msgid "Dev Mode"
-msgstr ""
+msgstr "開発者モード"
 
 #: ../../client/src/media/stacks/WatermarkEmpty.tsx:15
 msgid "Directory is empty."
-msgstr ""
+msgstr "ディレクトリが空です。"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:72
 msgid "Display"
@@ -122,9 +122,10 @@ msgstr "距離"
 msgid "Docs"
 msgstr "ドキュメント"
 
-#: ../../client/src/media/file/FileBinary.tsx:21
+#: ../../client/src/media/file/FileBinary.tsx:18
+#: ../../client/src/media/hooks/useFileControls.ts:38
 msgid "Download"
-msgstr ""
+msgstr "ダウンロード"
 
 #: ../../client/src/home/utils/time.ts:15
 msgid "Enjoy the day"
@@ -194,7 +195,7 @@ msgstr "人間"
 
 #: ../../client/src/media/stacks/WatermarkEmpty.tsx:16
 msgid "Import"
-msgstr ""
+msgstr "インポート"
 
 #: ../../client/src/app/interface/Menu.tsx:33
 #: ../../client/src/app/interface/Tabs.tsx:18
@@ -228,16 +229,16 @@ msgstr "設定を管理"
 
 #: ../../client/src/app/routes/ScreenStorage.tsx:15
 msgid "Manage your storage"
-msgstr ""
+msgstr "ストレージを管理"
 
 #: ../../client/src/app/interface/Menu.tsx:82
 #: ../../client/src/world/routes/ScreenWorld.tsx:18
 msgid "Map"
-msgstr ""
+msgstr "地図"
 
-#: ../../client/src/media/hooks/useFileControls.ts:161
+#: ../../client/src/media/hooks/useFileControls.ts:172
 msgid "Maximize"
-msgstr ""
+msgstr "最大化"
 
 #: ../../client/src/app/interface/Menu.tsx:38
 msgid "Media"
@@ -249,7 +250,7 @@ msgstr "マイル"
 
 #: ../../client/src/app/interface/Menu.tsx:65
 msgid "Movies"
-msgstr ""
+msgstr "映画"
 
 #: ../../client/src/app/interface/Menu.tsx:55
 msgid "Music"
@@ -258,11 +259,11 @@ msgstr "音楽"
 #: ../../client/src/app/interface/Menu.tsx:87
 #: ../../client/src/world/routes/ScreenWorld.tsx:24
 msgid "News"
-msgstr ""
+msgstr "ニュース"
 
-#: ../../client/src/media/hooks/useFileControls.ts:103
+#: ../../client/src/media/hooks/useFileControls.ts:114
 msgid "Next"
-msgstr ""
+msgstr "次へ"
 
 #: ../../client/src/world/routes/ScreenCalendar.tsx:37
 msgid "No events scheduled."
@@ -270,35 +271,35 @@ msgstr "予定されているイベントはありません。"
 
 #: ../../client/src/app/routes/ScreenStorage.tsx:17
 msgid "Overview"
-msgstr ""
+msgstr "概要"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:51
 msgid "Owner Key"
 msgstr "オーナーキー"
 
-#: ../../client/src/media/hooks/useFileControls.ts:60
+#: ../../client/src/media/hooks/useFileControls.ts:71
 msgid "Pause"
-msgstr ""
+msgstr "一時停止"
 
 #: ../../client/src/app/interface/Menu.tsx:60
 msgid "Pictures"
-msgstr ""
+msgstr "写真"
 
-#: ../../client/src/media/hooks/useFileControls.ts:121
+#: ../../client/src/media/hooks/useFileControls.ts:132
 msgid "Pin"
-msgstr ""
+msgstr "ピン留め"
 
-#: ../../client/src/media/hooks/useFileControls.ts:60
+#: ../../client/src/media/hooks/useFileControls.ts:71
 msgid "Play"
-msgstr ""
+msgstr "再生"
 
 #: ../../client/src/home/stacks/AiPrompt.tsx:50
 msgid "Please set your Groq API Key"
 msgstr "Groq APIキーを設定してください"
 
-#: ../../client/src/media/hooks/useFileControls.ts:92
+#: ../../client/src/media/hooks/useFileControls.ts:103
 msgid "Previous"
-msgstr ""
+msgstr "前へ"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:37
 msgid "Profile"
@@ -316,9 +317,9 @@ msgstr "プロンプト"
 msgid "Provide a key to use AI features."
 msgstr "AI機能を使用するためのキーを提供してください。"
 
-#: ../../client/src/media/hooks/useFileControls.ts:80
+#: ../../client/src/media/hooks/useFileControls.ts:91
 msgid "Reset"
-msgstr ""
+msgstr "リセット"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:149
 msgid "Select the AI model to use."
@@ -345,14 +346,14 @@ msgstr "アプリのテーマを選択してください。"
 msgid "Settings"
 msgstr "設定"
 
-#: ../../client/src/media/hooks/useFileControls.ts:139
+#: ../../client/src/media/hooks/useFileControls.ts:150
 msgid "Share"
-msgstr ""
+msgstr "共有"
 
 #: ../../client/src/app/interface/Menu.tsx:127
 #: ../../client/src/app/routes/ScreenStorage.tsx:14
 msgid "Storage"
-msgstr ""
+msgstr "ストレージ"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:108
 msgid "Temperature"
@@ -368,15 +369,15 @@ msgstr "ユーザー名"
 
 #: ../../client/src/world/routes/ScreenWorld.tsx:19
 msgid "View your device locations and geo-related info"
-msgstr ""
+msgstr "デバイスの位置情報と地理関連情報を表示"
 
 #: ../../client/src/world/routes/ScreenWorld.tsx:31
 msgid "View your events and time-related info"
-msgstr ""
+msgstr "イベントと時間関連情報を表示"
 
 #: ../../client/src/world/routes/ScreenWorld.tsx:25
 msgid "View your latest news and rss feeds"
-msgstr ""
+msgstr "最新のニュースとRSSフィードを表示"
 
 #: ../../client/src/home/routes/ScreenHome.tsx:22
 msgid "Welcome, {0}"
@@ -393,7 +394,7 @@ msgstr "作業中..."
 #: ../../client/src/app/interface/Menu.tsx:80
 #: ../../client/src/app/interface/Tabs.tsx:28
 msgid "World"
-msgstr "ワールド"
+msgstr "世界"
 
 #: ../../client/src/app/hooks/useConnectivity.ts:16
 msgid "You are offline"
@@ -411,10 +412,10 @@ msgstr "アプリに表示する名前。"
 msgid "Your prompt history has been reset."
 msgstr "プロンプト履歴がリセットされました。"
 
-#: ../../client/src/media/hooks/useFileControls.ts:37
-msgid "Zoom in"
-msgstr ""
-
 #: ../../client/src/media/hooks/useFileControls.ts:48
+msgid "Zoom in"
+msgstr "拡大"
+
+#: ../../client/src/media/hooks/useFileControls.ts:59
 msgid "Zoom out"
-msgstr ""
+msgstr "縮小"

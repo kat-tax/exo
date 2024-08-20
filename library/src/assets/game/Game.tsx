@@ -6,7 +6,7 @@ import type {GameProps} from './Game.interface';
 
 /** A component that runs an emulator for a rom */
 export class Game extends Component<GameProps> {
-  iframe = createRef<HTMLIFrameElement>();
+  #iframe = createRef<HTMLIFrameElement>();
 
   play() {
     this.cmd('emu:play');
@@ -17,7 +17,7 @@ export class Game extends Component<GameProps> {
   }
 
   cmd(type: string, data?: unknown) {
-    this.iframe.current?.contentWindow?.postMessage(JSON.stringify({
+    this.#iframe.current?.contentWindow?.postMessage(JSON.stringify({
       type,
       data,
     }), 'null');

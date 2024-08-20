@@ -1,6 +1,4 @@
-import {View} from 'react-native';
 import {Link} from 'react-exo/navigation';
-import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {ListRow} from './ListRow';
 
 import type {HfsDirectoryEntry} from 'react-exo/fs';
@@ -11,25 +9,20 @@ interface EntryDirectory {
 }
 
 export function EntryDirectory(props: EntryDirectory) {
-  const {styles} = useStyles(stylesheet);
   const {entry} = props;
   const link = entry.isFile
-    ? `#${entry.name}`
+    ? `#${encodeURIComponent(entry.name).replace(/%20/g, '+')}`
     : props.path
       ? `${props.path}/${entry.name}`
       : entry.name;
 
   return (
-    <View style={styles.root}>
-      <Link to={link}>
-        <ListRow name={entry.name}/>
-      </Link>
-    </View>
+    <Link to={link}>
+      <ListRow
+        path={link}
+        name={entry.name}
+        isFile={entry.isFile}
+      />
+    </Link>
   );
 }
-
-const stylesheet = createStyleSheet((theme) => ({
-  root: {
-    padding: theme.display.space2,
-  },
-}));

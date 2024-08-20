@@ -9,6 +9,7 @@ import type {ImageRef} from 'media/file/FileImage';
 import type {VideoRef} from 'media/file/FileVideo';
 import type {RiveRef} from 'media/file/FileRive';
 import type {BookRef} from 'media/file/FileBook';
+import type {GameRef} from 'media/file/FileGame';
 
 export interface FileProps {
   path: string,
@@ -19,7 +20,7 @@ export interface FileProps {
   setBarTitle: (title: string) => void,
 }
 
-export type FileRef = ImageRef | VideoRef | RiveRef | BookRef;
+export type FileRef = ImageRef | VideoRef | RiveRef | BookRef | GameRef;
 
 export default memo(forwardRef((props: FileProps, ref) => {
   const {maximized, fileData, setBarTitle, setBarIcon} = props;

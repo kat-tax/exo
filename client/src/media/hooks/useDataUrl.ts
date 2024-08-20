@@ -10,6 +10,7 @@ export function useDataUrl(path: string, mimetype = 'application/octet-stream') 
       const blob = await getFileBlob(path, mimetype);
       if (!blob) return;
       url = URL.createObjectURL(blob);
+      console.log('url', url);
       setDataURL(url);
     })();
     return () => {

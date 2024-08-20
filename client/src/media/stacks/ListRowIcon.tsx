@@ -1,23 +1,50 @@
 import {View} from 'react-native';
+import {Icon} from 'react-exo/icon';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
+import {useScheme} from 'app/hooks/useScheme';
+import {getIcon} from 'media/file/icons';
 
 interface ListRowIcon {
+  path: string,
   name: string,
-  ext: string,
+  extension: string,
+  size?: 0 | 1,
+  isFile?: boolean,
 }
 
-// https://github.com/kat-tax/vslite/tree/master/src/icons
-export function ListRowIcon(_props: ListRowIcon) {
-  const {styles} = useStyles(stylesheet);
+export function ListRowIcon(props: ListRowIcon) {
+  const {styles, theme} = useStyles(stylesheet);
+  const [scheme] = useScheme();
+  const size = props.size === 0 ? 14 : 16;
   return (
-    <View style={styles.root}>
+    <View style={[styles.root, {width: size}]}>
+      {props.isFile ? (
+        <span
+          className={getIcon(
+            props.name,
+            props.extension,
+            '',
+            scheme as 'light' | 'dark',
+          )}
+          style={{
+            fontSize: size,
+            color: theme.colors.foreground,
+          }}
+        />
+      ) : (
+        <Icon
+          name="ph:folder-simple-fill"
+          color={theme.colors.foreground}
+          size={size * 1.15}
+        />
+      )}
     </View>
   );
 }
 
 const stylesheet = createStyleSheet(() => ({
   root: {
-    width: 16,
-    height: 16,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 }));

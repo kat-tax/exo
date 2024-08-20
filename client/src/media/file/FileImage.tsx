@@ -1,6 +1,9 @@
+import {View} from 'react-native';
 import {Image} from 'react-exo/image';
-import {useState, useImperativeHandle, forwardRef} from 'react';
+import {memo, useState, useImperativeHandle, forwardRef} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
+//import {useImageResolution, ResumableZoom, getAspectRatioSize} from 'react-native-zoom-toolkit';
+
 import {useDataUrl} from 'media/hooks/useDataUrl';
 
 import type {FileProps} from 'media/file';
@@ -16,10 +19,22 @@ export interface ImageRef {
   reset: () => void,
 }
 
-export default forwardRef((props: FileImage, ref: React.Ref<ImageRef>) => {
+export default memo(forwardRef((props: FileImage, ref: React.Ref<ImageRef>) => {
   const [scale, setScale] = useState(1);
   const {styles} = useStyles(stylesheet);
   const image = useDataUrl(props.path);
+
+  // Gets the resolution of your image
+  // const {isFetching, resolution} = useImageResolution({uri: image || ''});
+  // if (isFetching || resolution === undefined) {
+  //   return null;
+  // }
+
+  // // An utility function to get the size without compromising the aspect ratio
+  // const imageSize = getAspectRatioSize({
+  //   aspectRatio: resolution.width / resolution.height,
+  //   width: 300,
+  // });
 
   useImperativeHandle(ref, () => ({
     increase: () => {
@@ -34,21 +49,25 @@ export default forwardRef((props: FileImage, ref: React.Ref<ImageRef>) => {
   }));
 
   return image ? (
-    <Image
-      url={image}
-      resizeMode={props.maximized ? 'contain' : 'cover'}
-      style={[
-        styles.root,
-        props.maximized && styles.maximized,
-        {transform: [{scale}]},
-      ]}
-    />
+    <View style={[
+      styles.root,
+      props.maximized && styles.maximized,
+    ]}>
+      {/* <ResumableZoom maxScale={resolution}> */}
+        <Image
+          url={image}
+          // style={imageSize}
+          resizeMode={props.maximized ? 'contain' : 'cover'}
+        />
+      {/* </ResumableZoom> */}
+    </View>
   ) : null;
-});
+}));
 
 const stylesheet = createStyleSheet((theme) => ({
   root: {
     flex: 1,
+    overflow: 'hidden',
   },
   maximized: {
     margin: theme.display.space3,

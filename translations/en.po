@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 2024-07-23 13:59-0500\n"
+"POT-Creation-Date: 2024-08-20 03:41-0500\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -64,7 +64,7 @@ msgstr "Calendar"
 msgid "Celsius"
 msgstr "Celsius"
 
-#: ../../client/src/media/hooks/useFileControls.ts:168
+#: ../../client/src/media/hooks/useFileControls.ts:179
 msgid "Close"
 msgstr "Close"
 
@@ -122,7 +122,8 @@ msgstr "Distance"
 msgid "Docs"
 msgstr "Docs"
 
-#: ../../client/src/media/file/FileBinary.tsx:21
+#: ../../client/src/media/file/FileBinary.tsx:18
+#: ../../client/src/media/hooks/useFileControls.ts:38
 msgid "Download"
 msgstr "Download"
 
@@ -235,7 +236,7 @@ msgstr "Manage your storage"
 msgid "Map"
 msgstr "Map"
 
-#: ../../client/src/media/hooks/useFileControls.ts:161
+#: ../../client/src/media/hooks/useFileControls.ts:172
 msgid "Maximize"
 msgstr "Maximize"
 
@@ -260,7 +261,7 @@ msgstr "Music"
 msgid "News"
 msgstr "News"
 
-#: ../../client/src/media/hooks/useFileControls.ts:103
+#: ../../client/src/media/hooks/useFileControls.ts:114
 msgid "Next"
 msgstr "Next"
 
@@ -276,7 +277,7 @@ msgstr "Overview"
 msgid "Owner Key"
 msgstr "Owner Key"
 
-#: ../../client/src/media/hooks/useFileControls.ts:60
+#: ../../client/src/media/hooks/useFileControls.ts:71
 msgid "Pause"
 msgstr "Pause"
 
@@ -284,11 +285,11 @@ msgstr "Pause"
 msgid "Pictures"
 msgstr "Pictures"
 
-#: ../../client/src/media/hooks/useFileControls.ts:121
+#: ../../client/src/media/hooks/useFileControls.ts:132
 msgid "Pin"
 msgstr "Pin"
 
-#: ../../client/src/media/hooks/useFileControls.ts:60
+#: ../../client/src/media/hooks/useFileControls.ts:71
 msgid "Play"
 msgstr "Play"
 
@@ -296,7 +297,7 @@ msgstr "Play"
 msgid "Please set your Groq API Key"
 msgstr "Please set your Groq API Key"
 
-#: ../../client/src/media/hooks/useFileControls.ts:92
+#: ../../client/src/media/hooks/useFileControls.ts:103
 msgid "Previous"
 msgstr "Previous"
 
@@ -316,7 +317,7 @@ msgstr "Prompts"
 msgid "Provide a key to use AI features."
 msgstr "Provide a key to use AI features."
 
-#: ../../client/src/media/hooks/useFileControls.ts:80
+#: ../../client/src/media/hooks/useFileControls.ts:91
 msgid "Reset"
 msgstr "Reset"
 
@@ -345,7 +346,7 @@ msgstr "Select the theme for the app."
 msgid "Settings"
 msgstr "Settings"
 
-#: ../../client/src/media/hooks/useFileControls.ts:139
+#: ../../client/src/media/hooks/useFileControls.ts:150
 msgid "Share"
 msgstr "Share"
 
@@ -411,10 +412,10 @@ msgstr "Your name to display in the app."
 msgid "Your prompt history has been reset."
 msgstr "Your prompt history has been reset."
 
-#: ../../client/src/media/hooks/useFileControls.ts:37
+#: ../../client/src/media/hooks/useFileControls.ts:48
 msgid "Zoom in"
 msgstr "Zoom in"
 
-#: ../../client/src/media/hooks/useFileControls.ts:48
+#: ../../client/src/media/hooks/useFileControls.ts:59
 msgid "Zoom out"
 msgstr "Zoom out"

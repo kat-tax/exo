@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 2024-08-13 14:24-0500\n"
+"POT-Creation-Date: 2024-08-20 03:41-0500\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -16,405 +16,406 @@ msgstr ""
 #: ../../client/src/dev/routes/ScreenDesign.tsx:12
 #: ../../client/src/dev/routes/ScreenLibrary.tsx:16
 msgid "{0} components"
-msgstr ""
+msgstr "{0} 구성 요소"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:52
 msgid "A mnemonic phrase for authentication."
-msgstr ""
+msgstr "인증을 위한 니모닉 구문입니다."
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:134
 msgid "AI"
-msgstr ""
+msgstr "AI"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:175
 msgid "All Data"
-msgstr ""
+msgstr "모든 데이터"
 
 #: ../../client/src/app/hooks/useSettings.ts:57
 msgid "Are you sure you want to change the owner key? This will reset the local database. This action cannot be undone."
-msgstr ""
+msgstr "소유자 키를 변경하시겠습니까? 이렇게 하면 로컬 데이터베이스가 초기화됩니다. 이 작업은 취소할 수 없습니다."
 
 #: ../../client/src/app/hooks/useSettings.ts:51
 msgid "Are you sure you want to reset your local database? If data is not backed up on another device, it will be lost. This action cannot be undone."
-msgstr ""
+msgstr "로컬 데이터베이스를 초기화하시겠습니까? 다른 장치에 데이터가 백업되어 있지 않으면 데이터가 손실됩니다. 이 작업은 취소할 수 없습니다."
 
 #: ../../client/src/app/hooks/useSettings.ts:42
 msgid "Are you sure you want to reset your prompt history?"
-msgstr ""
+msgstr "프롬프트 기록을 초기화하시겠습니까?"
 
 #: ../../client/src/home/stacks/AiPrompt.tsx:50
 msgid "Ask anything..."
-msgstr ""
+msgstr "무엇이든 물어보세요..."
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:82
 #: ../../client/src/app/routes/ScreenSettings.tsx:102
 msgid "Auto"
-msgstr ""
+msgstr "자동"
 
 #: ../../client/src/app/interface/Menu.tsx:75
 msgid "Books"
-msgstr ""
+msgstr "책"
 
 #: ../../client/src/app/interface/Menu.tsx:92
 #: ../../client/src/world/routes/ScreenWorld.tsx:30
 msgid "Calendar"
-msgstr ""
+msgstr "달력"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:116
 msgid "Celsius"
-msgstr ""
+msgstr "섭씨"
 
-#: ../../client/src/media/hooks/useFileControls.ts:168
+#: ../../client/src/media/hooks/useFileControls.ts:179
 msgid "Close"
-msgstr ""
+msgstr "닫기"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:104
 msgid "Dark"
-msgstr ""
+msgstr "어두운 테마"
 
 #: ../../client/src/app/interface/Menu.tsx:28
 #: ../../client/src/app/interface/Tabs.tsx:13
 msgid "Dashboard"
-msgstr ""
+msgstr "대시보드"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:163
 msgid "Data"
-msgstr ""
+msgstr "데이터"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:166
 msgid "Delete all prompt data."
-msgstr ""
+msgstr "모든 프롬프트 데이터 삭제"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:178
 msgid "Delete Database"
-msgstr ""
+msgstr "데이터베이스 삭제"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:168
 msgid "Delete Prompts"
-msgstr ""
+msgstr "프롬프트 삭제"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:176
 msgid "Delete the local database."
-msgstr ""
+msgstr "로컬 데이터베이스 삭제"
 
 #: ../../client/src/app/interface/Menu.tsx:112
 #: ../../client/src/dev/routes/ScreenDesign.tsx:11
 msgid "Design"
-msgstr ""
+msgstr "디자인"
 
 #: ../../client/src/app/interface/Menu.tsx:110
 msgid "Dev Mode"
-msgstr ""
+msgstr "개발자 모드"
 
 #: ../../client/src/media/stacks/WatermarkEmpty.tsx:15
 msgid "Directory is empty."
-msgstr ""
+msgstr "디렉토리가 비어 있습니다."
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:72
 msgid "Display"
-msgstr ""
+msgstr "디스플레이"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:121
 msgid "Distance"
-msgstr ""
+msgstr "거리"
 
 #: ../../client/src/app/interface/Menu.tsx:50
 msgid "Docs"
-msgstr ""
+msgstr "문서"
 
-#: ../../client/src/media/file/FileBinary.tsx:21
+#: ../../client/src/media/file/FileBinary.tsx:18
+#: ../../client/src/media/hooks/useFileControls.ts:38
 msgid "Download"
-msgstr ""
+msgstr "다운로드"
 
 #: ../../client/src/home/utils/time.ts:15
 msgid "Enjoy the day"
-msgstr ""
+msgstr "좋은 하루 되세요"
 
 #: ../../client/src/home/utils/time.ts:13
 msgid "Enjoy the night"
-msgstr ""
+msgstr "좋은 밤 되세요"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:141
 msgid "Enter api key"
-msgstr ""
+msgstr "API 키 입력"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:58
 msgid "Enter your mnemonic phrase"
-msgstr ""
+msgstr "니모닉 구문 입력"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:46
 msgid "Enter your name"
-msgstr ""
+msgstr "이름 입력"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:117
 msgid "Fahrenheit"
-msgstr ""
+msgstr "화씨"
 
 #: ../../client/src/app/interface/Menu.tsx:45
 #: ../../client/src/app/interface/Tabs.tsx:23
 #: ../../client/src/media/routes/ScreenBrowse.tsx:20
 msgid "Files"
-msgstr ""
+msgstr "파일"
 
 #: ../../client/src/app/interface/Menu.tsx:70
 msgid "Games"
-msgstr ""
+msgstr "게임"
 
 #: ../../client/src/app/hooks/useGeolocation.ts:14
 msgid "Geolocation Error"
-msgstr ""
+msgstr "위치 정보 오류"
 
 #: ../../client/src/home/utils/time.ts:9
 msgid "Good afternoon"
-msgstr ""
+msgstr "안녕하세요"
 
 #: ../../client/src/home/utils/time.ts:11
 msgid "Good evening"
-msgstr ""
+msgstr "안녕하세요"
 
 #: ../../client/src/home/utils/time.ts:7
 msgid "Good morning"
-msgstr ""
+msgstr "안녕하세요"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:136
 msgid "Groq API Key"
-msgstr ""
+msgstr "Groq API 키"
 
 #: ../../client/src/home/hooks/useAI.tsx:43
 msgid "Groq Failure"
-msgstr ""
+msgstr "Groq 실패"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:148
 msgid "Groq Model ID"
-msgstr ""
+msgstr "Groq 모델 ID"
 
 #: ../../client/src/app/interface/MenuHeader.tsx:27
 msgid "Human"
-msgstr ""
+msgstr "사람"
 
 #: ../../client/src/media/stacks/WatermarkEmpty.tsx:16
 msgid "Import"
-msgstr ""
+msgstr "가져오기"
 
 #: ../../client/src/app/interface/Menu.tsx:33
 #: ../../client/src/app/interface/Tabs.tsx:18
 msgid "Inbox"
-msgstr ""
+msgstr "받은 편지함"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:129
 msgid "Kilometers"
-msgstr ""
+msgstr "킬로미터"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:74
 msgid "Language"
-msgstr ""
+msgstr "언어"
 
 #: ../../client/src/app/interface/Menu.tsx:117
 #: ../../client/src/dev/routes/ScreenLibrary.tsx:15
 msgid "Library"
-msgstr ""
+msgstr "라이브러리"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:103
 msgid "Light"
-msgstr ""
+msgstr "밝은 테마"
 
 #: ../../client/src/home/hooks/useWeather.ts:12
 msgid "Loading..."
-msgstr ""
+msgstr "로딩 중..."
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:28
 msgid "Manage your settings"
-msgstr ""
+msgstr "설정 관리"
 
 #: ../../client/src/app/routes/ScreenStorage.tsx:15
 msgid "Manage your storage"
-msgstr ""
+msgstr "저장소 관리"
 
 #: ../../client/src/app/interface/Menu.tsx:82
 #: ../../client/src/world/routes/ScreenWorld.tsx:18
 msgid "Map"
-msgstr ""
+msgstr "지도"
 
-#: ../../client/src/media/hooks/useFileControls.ts:161
+#: ../../client/src/media/hooks/useFileControls.ts:172
 msgid "Maximize"
-msgstr ""
+msgstr "최대화"
 
 #: ../../client/src/app/interface/Menu.tsx:38
 msgid "Media"
-msgstr ""
+msgstr "미디어"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:130
 msgid "Miles"
-msgstr ""
+msgstr "마일"
 
 #: ../../client/src/app/interface/Menu.tsx:65
 msgid "Movies"
-msgstr ""
+msgstr "영화"
 
 #: ../../client/src/app/interface/Menu.tsx:55
 msgid "Music"
-msgstr ""
+msgstr "음악"
 
 #: ../../client/src/app/interface/Menu.tsx:87
 #: ../../client/src/world/routes/ScreenWorld.tsx:24
 msgid "News"
-msgstr ""
+msgstr "뉴스"
 
-#: ../../client/src/media/hooks/useFileControls.ts:103
+#: ../../client/src/media/hooks/useFileControls.ts:114
 msgid "Next"
-msgstr ""
+msgstr "다음"
 
 #: ../../client/src/world/routes/ScreenCalendar.tsx:37
 msgid "No events scheduled."
-msgstr ""
+msgstr "예정된 이벤트가 없습니다."
 
 #: ../../client/src/app/routes/ScreenStorage.tsx:17
 msgid "Overview"
-msgstr ""
+msgstr "개요"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:51
 msgid "Owner Key"
-msgstr ""
+msgstr "소유자 키"
 
-#: ../../client/src/media/hooks/useFileControls.ts:60
+#: ../../client/src/media/hooks/useFileControls.ts:71
 msgid "Pause"
-msgstr ""
+msgstr "일시 정지"
 
 #: ../../client/src/app/interface/Menu.tsx:60
 msgid "Pictures"
-msgstr ""
+msgstr "사진"
 
-#: ../../client/src/media/hooks/useFileControls.ts:121
+#: ../../client/src/media/hooks/useFileControls.ts:132
 msgid "Pin"
-msgstr ""
+msgstr "고정"
 
-#: ../../client/src/media/hooks/useFileControls.ts:60
+#: ../../client/src/media/hooks/useFileControls.ts:71
 msgid "Play"
-msgstr ""
+msgstr "재생"
 
 #: ../../client/src/home/stacks/AiPrompt.tsx:50
 msgid "Please set your Groq API Key"
-msgstr ""
+msgstr "Groq API 키를 설정해 주세요"
 
-#: ../../client/src/media/hooks/useFileControls.ts:92
+#: ../../client/src/media/hooks/useFileControls.ts:103
 msgid "Previous"
-msgstr ""
+msgstr "이전"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:37
 msgid "Profile"
-msgstr ""
+msgstr "프로필"
 
 #: ../../client/src/app/hooks/useSettings.ts:44
 msgid "Prompt History Reset"
-msgstr ""
+msgstr "프롬프트 기록 초기화"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:165
 msgid "Prompts"
-msgstr ""
+msgstr "프롬프트"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:137
 msgid "Provide a key to use AI features."
-msgstr ""
+msgstr "AI 기능을 사용하려면 키를 제공하세요."
 
-#: ../../client/src/media/hooks/useFileControls.ts:80
+#: ../../client/src/media/hooks/useFileControls.ts:91
 msgid "Reset"
-msgstr ""
+msgstr "초기화"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:149
 msgid "Select the AI model to use."
-msgstr ""
+msgstr "사용할 AI 모델을 선택하세요."
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:122
 msgid "Select the distance unit for the app."
-msgstr ""
+msgstr "앱에서 사용할 거리 단위를 선택하세요."
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:75
 msgid "Select the language for the app."
-msgstr ""
+msgstr "앱에서 사용할 언어를 선택하세요."
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:109
 msgid "Select the temperature unit for the app."
-msgstr ""
+msgstr "앱에서 사용할 온도 단위를 선택하세요."
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:95
 msgid "Select the theme for the app."
-msgstr ""
+msgstr "앱에서 사용할 테마를 선택하세요."
 
 #: ../../client/src/app/interface/Tabs.tsx:33
 #: ../../client/src/app/routes/ScreenSettings.tsx:27
 msgid "Settings"
-msgstr ""
+msgstr "설정"
 
-#: ../../client/src/media/hooks/useFileControls.ts:139
+#: ../../client/src/media/hooks/useFileControls.ts:150
 msgid "Share"
-msgstr ""
+msgstr "공유"
 
 #: ../../client/src/app/interface/Menu.tsx:127
 #: ../../client/src/app/routes/ScreenStorage.tsx:14
 msgid "Storage"
-msgstr ""
+msgstr "저장소"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:108
 msgid "Temperature"
-msgstr ""
+msgstr "온도"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:94
 msgid "Theme"
-msgstr ""
+msgstr "테마"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:39
 msgid "User Name"
-msgstr ""
+msgstr "사용자 이름"
 
 #: ../../client/src/world/routes/ScreenWorld.tsx:19
 msgid "View your device locations and geo-related info"
-msgstr ""
+msgstr "기기 위치 및 지리 관련 정보 보기"
 
 #: ../../client/src/world/routes/ScreenWorld.tsx:31
 msgid "View your events and time-related info"
-msgstr ""
+msgstr "이벤트 및 시간 관련 정보 보기"
 
 #: ../../client/src/world/routes/ScreenWorld.tsx:25
 msgid "View your latest news and rss feeds"
-msgstr ""
+msgstr "최신 뉴스 및 RSS 피드 보기"
 
 #: ../../client/src/home/routes/ScreenHome.tsx:22
 msgid "Welcome, {0}"
-msgstr ""
+msgstr "환영합니다, {0}"
 
 #: ../../client/src/home/routes/ScreenHome.tsx:23
 msgid "Welcome, Human"
-msgstr ""
+msgstr "환영합니다, 인간"
 
 #: ../../client/src/app/routes/ScreenTeaser.tsx:14
 msgid "Work in progress..."
-msgstr ""
+msgstr "작업 진행 중..."
 
 #: ../../client/src/app/interface/Menu.tsx:80
 #: ../../client/src/app/interface/Tabs.tsx:28
 msgid "World"
-msgstr ""
+msgstr "세계"
 
 #: ../../client/src/app/hooks/useConnectivity.ts:16
 msgid "You are offline"
-msgstr ""
+msgstr "오프라인 상태입니다"
 
 #: ../../client/src/app/hooks/useConnectivity.ts:14
 msgid "You are online"
-msgstr ""
+msgstr "온라인 상태입니다"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:40
 msgid "Your name to display in the app."
-msgstr ""
+msgstr "앱에 표시될 사용자 이름입니다."
 
 #: ../../client/src/app/hooks/useSettings.ts:45
 msgid "Your prompt history has been reset."
-msgstr ""
-
-#: ../../client/src/media/hooks/useFileControls.ts:37
-msgid "Zoom in"
-msgstr ""
+msgstr "프롬프트 기록이 초기화되었습니다."
 
 #: ../../client/src/media/hooks/useFileControls.ts:48
+msgid "Zoom in"
+msgstr "확대"
+
+#: ../../client/src/media/hooks/useFileControls.ts:59
 msgid "Zoom out"
-msgstr ""
+msgstr "축소"

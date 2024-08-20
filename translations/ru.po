@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 2024-07-23 13:59-0500\n"
+"POT-Creation-Date: 2024-08-20 03:41-0500\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -58,15 +58,15 @@ msgstr "Книги"
 #: ../../client/src/app/interface/Menu.tsx:92
 #: ../../client/src/world/routes/ScreenWorld.tsx:30
 msgid "Calendar"
-msgstr ""
+msgstr "Календарь"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:116
 msgid "Celsius"
 msgstr "Цельсий"
 
-#: ../../client/src/media/hooks/useFileControls.ts:168
+#: ../../client/src/media/hooks/useFileControls.ts:179
 msgid "Close"
-msgstr ""
+msgstr "Закрыть"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:104
 msgid "Dark"
@@ -104,11 +104,11 @@ msgstr "Дизайн"
 
 #: ../../client/src/app/interface/Menu.tsx:110
 msgid "Dev Mode"
-msgstr ""
+msgstr "Режим разработки"
 
 #: ../../client/src/media/stacks/WatermarkEmpty.tsx:15
 msgid "Directory is empty."
-msgstr ""
+msgstr "Директория пуста."
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:72
 msgid "Display"
@@ -122,9 +122,10 @@ msgstr "Расстояние"
 msgid "Docs"
 msgstr "Документы"
 
-#: ../../client/src/media/file/FileBinary.tsx:21
+#: ../../client/src/media/file/FileBinary.tsx:18
+#: ../../client/src/media/hooks/useFileControls.ts:38
 msgid "Download"
-msgstr ""
+msgstr "Скачать"
 
 #: ../../client/src/home/utils/time.ts:15
 msgid "Enjoy the day"
@@ -194,7 +195,7 @@ msgstr "Человек"
 
 #: ../../client/src/media/stacks/WatermarkEmpty.tsx:16
 msgid "Import"
-msgstr ""
+msgstr "Импорт"
 
 #: ../../client/src/app/interface/Menu.tsx:33
 #: ../../client/src/app/interface/Tabs.tsx:18
@@ -228,16 +229,16 @@ msgstr "Управление настройками"
 
 #: ../../client/src/app/routes/ScreenStorage.tsx:15
 msgid "Manage your storage"
-msgstr ""
+msgstr "Управление хранилищем"
 
 #: ../../client/src/app/interface/Menu.tsx:82
 #: ../../client/src/world/routes/ScreenWorld.tsx:18
 msgid "Map"
-msgstr ""
+msgstr "Карта"
 
-#: ../../client/src/media/hooks/useFileControls.ts:161
+#: ../../client/src/media/hooks/useFileControls.ts:172
 msgid "Maximize"
-msgstr ""
+msgstr "Развернуть"
 
 #: ../../client/src/app/interface/Menu.tsx:38
 msgid "Media"
@@ -249,7 +250,7 @@ msgstr "Мили"
 
 #: ../../client/src/app/interface/Menu.tsx:65
 msgid "Movies"
-msgstr ""
+msgstr "Фильмы"
 
 #: ../../client/src/app/interface/Menu.tsx:55
 msgid "Music"
@@ -258,11 +259,11 @@ msgstr "Музыка"
 #: ../../client/src/app/interface/Menu.tsx:87
 #: ../../client/src/world/routes/ScreenWorld.tsx:24
 msgid "News"
-msgstr ""
+msgstr "Новости"
 
-#: ../../client/src/media/hooks/useFileControls.ts:103
+#: ../../client/src/media/hooks/useFileControls.ts:114
 msgid "Next"
-msgstr ""
+msgstr "Следующий"
 
 #: ../../client/src/world/routes/ScreenCalendar.tsx:37
 msgid "No events scheduled."
@@ -270,35 +271,35 @@ msgstr "Нет запланированных событий."
 
 #: ../../client/src/app/routes/ScreenStorage.tsx:17
 msgid "Overview"
-msgstr ""
+msgstr "Обзор"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:51
 msgid "Owner Key"
 msgstr "Ключ владельца"
 
-#: ../../client/src/media/hooks/useFileControls.ts:60
+#: ../../client/src/media/hooks/useFileControls.ts:71
 msgid "Pause"
-msgstr ""
+msgstr "Пауза"
 
 #: ../../client/src/app/interface/Menu.tsx:60
 msgid "Pictures"
-msgstr ""
+msgstr "Изображения"
 
-#: ../../client/src/media/hooks/useFileControls.ts:121
+#: ../../client/src/media/hooks/useFileControls.ts:132
 msgid "Pin"
-msgstr ""
+msgstr "Закрепить"
 
-#: ../../client/src/media/hooks/useFileControls.ts:60
+#: ../../client/src/media/hooks/useFileControls.ts:71
 msgid "Play"
-msgstr ""
+msgstr "Воспроизвести"
 
 #: ../../client/src/home/stacks/AiPrompt.tsx:50
 msgid "Please set your Groq API Key"
 msgstr "Пожалуйста, установите ваш API ключ Groq"
 
-#: ../../client/src/media/hooks/useFileControls.ts:92
+#: ../../client/src/media/hooks/useFileControls.ts:103
 msgid "Previous"
-msgstr ""
+msgstr "Предыдущий"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:37
 msgid "Profile"
@@ -316,9 +317,9 @@ msgstr "Запросы"
 msgid "Provide a key to use AI features."
 msgstr "Предоставьте ключ для использования функций ИИ."
 
-#: ../../client/src/media/hooks/useFileControls.ts:80
+#: ../../client/src/media/hooks/useFileControls.ts:91
 msgid "Reset"
-msgstr ""
+msgstr "Сброс"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:149
 msgid "Select the AI model to use."
@@ -345,14 +346,14 @@ msgstr "Выберите тему для приложения."
 msgid "Settings"
 msgstr "Настройки"
 
-#: ../../client/src/media/hooks/useFileControls.ts:139
+#: ../../client/src/media/hooks/useFileControls.ts:150
 msgid "Share"
-msgstr ""
+msgstr "Поделиться"
 
 #: ../../client/src/app/interface/Menu.tsx:127
 #: ../../client/src/app/routes/ScreenStorage.tsx:14
 msgid "Storage"
-msgstr ""
+msgstr "Хранилище"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:108
 msgid "Temperature"
@@ -368,15 +369,15 @@ msgstr "Имя пользователя"
 
 #: ../../client/src/world/routes/ScreenWorld.tsx:19
 msgid "View your device locations and geo-related info"
-msgstr ""
+msgstr "Просмотр местоположений устройства и геоинформации"
 
 #: ../../client/src/world/routes/ScreenWorld.tsx:31
 msgid "View your events and time-related info"
-msgstr ""
+msgstr "Просмотр ваших событий и информации, связанной со временем"
 
 #: ../../client/src/world/routes/ScreenWorld.tsx:25
 msgid "View your latest news and rss feeds"
-msgstr ""
+msgstr "Просмотр последних новостей и RSS-каналов"
 
 #: ../../client/src/home/routes/ScreenHome.tsx:22
 msgid "Welcome, {0}"
@@ -388,7 +389,7 @@ msgstr "Добро пожаловать, Человек"
 
 #: ../../client/src/app/routes/ScreenTeaser.tsx:14
 msgid "Work in progress..."
-msgstr "В работе..."
+msgstr "В процессе разработки..."
 
 #: ../../client/src/app/interface/Menu.tsx:80
 #: ../../client/src/app/interface/Tabs.tsx:28
@@ -409,12 +410,12 @@ msgstr "Ваше имя для отображения в приложении."
 
 #: ../../client/src/app/hooks/useSettings.ts:45
 msgid "Your prompt history has been reset."
-msgstr "История ваших запросов была сброшена."
-
-#: ../../client/src/media/hooks/useFileControls.ts:37
-msgid "Zoom in"
-msgstr ""
+msgstr "Ваша история запросов была сброшена."
 
 #: ../../client/src/media/hooks/useFileControls.ts:48
+msgid "Zoom in"
+msgstr "Увеличить"
+
+#: ../../client/src/media/hooks/useFileControls.ts:59
 msgid "Zoom out"
-msgstr ""
+msgstr "Уменьшить"

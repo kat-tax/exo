@@ -10,7 +10,8 @@ import type {CurrentFileBarProps} from 'media/stacks/CurrentFileBar';
 
 export const SEQUENCE = [FileType.Audio, FileType.Video, FileType.Game, FileType.Lottie, FileType.Rive];
 export const DOCUMENT = [FileType.Book, FileType.Pdf];
-export const SHAREABLE = [FileType.Image];
+export const SHAREABLE = [FileType.Image, FileType.Video, FileType.Audio, FileType.Pdf];
+export const IMPORTABLE = [FileType.Torrent, FileType.Binary];
 export const ZOOMABLE = [FileType.Image];
 
 export interface CurrentFileActions {
@@ -31,6 +32,16 @@ export function useFileControls(props: CurrentFileBarProps): CurrentFileActions[
 
   const actions: CurrentFileActions[] = useMemo(() =>
     [
+      // Remote controls
+      {
+        name: 'download',
+        label: t(i18n)`Download`,
+        icon: 'ph:download',
+        media: IMPORTABLE,
+        action: () => {
+          console.log('Download', metadata.path);
+        },
+      },
       // Zoom controls
       {
         name: 'zoom-in',

@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 2024-08-13 14:24-0500\n"
+"POT-Creation-Date: 2024-08-20 03:41-0500\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -16,405 +16,406 @@ msgstr ""
 #: ../../client/src/dev/routes/ScreenDesign.tsx:12
 #: ../../client/src/dev/routes/ScreenLibrary.tsx:16
 msgid "{0} components"
-msgstr ""
+msgstr "{0} componentes"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:52
 msgid "A mnemonic phrase for authentication."
-msgstr ""
+msgstr "Una frase mnemotécnica para autenticación."
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:134
 msgid "AI"
-msgstr ""
+msgstr "IA"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:175
 msgid "All Data"
-msgstr ""
+msgstr "Todos los datos"
 
 #: ../../client/src/app/hooks/useSettings.ts:57
 msgid "Are you sure you want to change the owner key? This will reset the local database. This action cannot be undone."
-msgstr ""
+msgstr "¿Estás seguro de que quieres cambiar la clave del propietario? Esto reiniciará la base de datos local. Esta acción no se puede deshacer."
 
 #: ../../client/src/app/hooks/useSettings.ts:51
 msgid "Are you sure you want to reset your local database? If data is not backed up on another device, it will be lost. This action cannot be undone."
-msgstr ""
+msgstr "¿Estás seguro de que quieres reiniciar tu base de datos local? Si los datos no están respaldados en otro dispositivo, se perderán. Esta acción no se puede deshacer."
 
 #: ../../client/src/app/hooks/useSettings.ts:42
 msgid "Are you sure you want to reset your prompt history?"
-msgstr ""
+msgstr "¿Estás seguro de que quieres reiniciar tu historial de indicaciones?"
 
 #: ../../client/src/home/stacks/AiPrompt.tsx:50
 msgid "Ask anything..."
-msgstr ""
+msgstr "Pregunta lo que quieras..."
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:82
 #: ../../client/src/app/routes/ScreenSettings.tsx:102
 msgid "Auto"
-msgstr ""
+msgstr "Automático"
 
 #: ../../client/src/app/interface/Menu.tsx:75
 msgid "Books"
-msgstr ""
+msgstr "Libros"
 
 #: ../../client/src/app/interface/Menu.tsx:92
 #: ../../client/src/world/routes/ScreenWorld.tsx:30
 msgid "Calendar"
-msgstr ""
+msgstr "Calendario"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:116
 msgid "Celsius"
-msgstr ""
+msgstr "Celsius"
 
-#: ../../client/src/media/hooks/useFileControls.ts:168
+#: ../../client/src/media/hooks/useFileControls.ts:179
 msgid "Close"
-msgstr ""
+msgstr "Cerrar"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:104
 msgid "Dark"
-msgstr ""
+msgstr "Oscuro"
 
 #: ../../client/src/app/interface/Menu.tsx:28
 #: ../../client/src/app/interface/Tabs.tsx:13
 msgid "Dashboard"
-msgstr ""
+msgstr "Panel de control"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:163
 msgid "Data"
-msgstr ""
+msgstr "Datos"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:166
 msgid "Delete all prompt data."
-msgstr ""
+msgstr "Eliminar todos los datos de indicaciones."
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:178
 msgid "Delete Database"
-msgstr ""
+msgstr "Eliminar base de datos"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:168
 msgid "Delete Prompts"
-msgstr ""
+msgstr "Eliminar indicaciones"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:176
 msgid "Delete the local database."
-msgstr ""
+msgstr "Eliminar la base de datos local."
 
 #: ../../client/src/app/interface/Menu.tsx:112
 #: ../../client/src/dev/routes/ScreenDesign.tsx:11
 msgid "Design"
-msgstr ""
+msgstr "Diseño"
 
 #: ../../client/src/app/interface/Menu.tsx:110
 msgid "Dev Mode"
-msgstr ""
+msgstr "Modo desarrollador"
 
 #: ../../client/src/media/stacks/WatermarkEmpty.tsx:15
 msgid "Directory is empty."
-msgstr ""
+msgstr "El directorio está vacío."
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:72
 msgid "Display"
-msgstr ""
+msgstr "Pantalla"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:121
 msgid "Distance"
-msgstr ""
+msgstr "Distancia"
 
 #: ../../client/src/app/interface/Menu.tsx:50
 msgid "Docs"
-msgstr ""
+msgstr "Documentos"
 
-#: ../../client/src/media/file/FileBinary.tsx:21
+#: ../../client/src/media/file/FileBinary.tsx:18
+#: ../../client/src/media/hooks/useFileControls.ts:38
 msgid "Download"
-msgstr ""
+msgstr "Descargar"
 
 #: ../../client/src/home/utils/time.ts:15
 msgid "Enjoy the day"
-msgstr ""
+msgstr "Disfruta el día"
 
 #: ../../client/src/home/utils/time.ts:13
 msgid "Enjoy the night"
-msgstr ""
+msgstr "Disfruta la noche"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:141
 msgid "Enter api key"
-msgstr ""
+msgstr "Ingresa la clave API"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:58
 msgid "Enter your mnemonic phrase"
-msgstr ""
+msgstr "Ingresa tu frase mnemotécnica"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:46
 msgid "Enter your name"
-msgstr ""
+msgstr "Ingresa tu nombre"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:117
 msgid "Fahrenheit"
-msgstr ""
+msgstr "Fahrenheit"
 
 #: ../../client/src/app/interface/Menu.tsx:45
 #: ../../client/src/app/interface/Tabs.tsx:23
 #: ../../client/src/media/routes/ScreenBrowse.tsx:20
 msgid "Files"
-msgstr ""
+msgstr "Archivos"
 
 #: ../../client/src/app/interface/Menu.tsx:70
 msgid "Games"
-msgstr ""
+msgstr "Juegos"
 
 #: ../../client/src/app/hooks/useGeolocation.ts:14
 msgid "Geolocation Error"
-msgstr ""
+msgstr "Error de geolocalización"
 
 #: ../../client/src/home/utils/time.ts:9
 msgid "Good afternoon"
-msgstr ""
+msgstr "Buenas tardes"
 
 #: ../../client/src/home/utils/time.ts:11
 msgid "Good evening"
-msgstr ""
+msgstr "Buenas noches"
 
 #: ../../client/src/home/utils/time.ts:7
 msgid "Good morning"
-msgstr ""
+msgstr "Buenos días"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:136
 msgid "Groq API Key"
-msgstr ""
+msgstr "Clave API de Groq"
 
 #: ../../client/src/home/hooks/useAI.tsx:43
 msgid "Groq Failure"
-msgstr ""
+msgstr "Fallo de Groq"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:148
 msgid "Groq Model ID"
-msgstr ""
+msgstr "ID del modelo de Groq"
 
 #: ../../client/src/app/interface/MenuHeader.tsx:27
 msgid "Human"
-msgstr ""
+msgstr "Humano"
 
 #: ../../client/src/media/stacks/WatermarkEmpty.tsx:16
 msgid "Import"
-msgstr ""
+msgstr "Importar"
 
 #: ../../client/src/app/interface/Menu.tsx:33
 #: ../../client/src/app/interface/Tabs.tsx:18
 msgid "Inbox"
-msgstr ""
+msgstr "Bandeja de entrada"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:129
 msgid "Kilometers"
-msgstr ""
+msgstr "Kilómetros"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:74
 msgid "Language"
-msgstr ""
+msgstr "Idioma"
 
 #: ../../client/src/app/interface/Menu.tsx:117
 #: ../../client/src/dev/routes/ScreenLibrary.tsx:15
 msgid "Library"
-msgstr ""
+msgstr "Biblioteca"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:103
 msgid "Light"
-msgstr ""
+msgstr "Claro"
 
 #: ../../client/src/home/hooks/useWeather.ts:12
 msgid "Loading..."
-msgstr ""
+msgstr "Cargando..."
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:28
 msgid "Manage your settings"
-msgstr ""
+msgstr "Administra tus configuraciones"
 
 #: ../../client/src/app/routes/ScreenStorage.tsx:15
 msgid "Manage your storage"
-msgstr ""
+msgstr "Administra tu almacenamiento"
 
 #: ../../client/src/app/interface/Menu.tsx:82
 #: ../../client/src/world/routes/ScreenWorld.tsx:18
 msgid "Map"
-msgstr ""
+msgstr "Mapa"
 
-#: ../../client/src/media/hooks/useFileControls.ts:161
+#: ../../client/src/media/hooks/useFileControls.ts:172
 msgid "Maximize"
-msgstr ""
+msgstr "Maximizar"
 
 #: ../../client/src/app/interface/Menu.tsx:38
 msgid "Media"
-msgstr ""
+msgstr "Medios"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:130
 msgid "Miles"
-msgstr ""
+msgstr "Millas"
 
 #: ../../client/src/app/interface/Menu.tsx:65
 msgid "Movies"
-msgstr ""
+msgstr "Películas"
 
 #: ../../client/src/app/interface/Menu.tsx:55
 msgid "Music"
-msgstr ""
+msgstr "Música"
 
 #: ../../client/src/app/interface/Menu.tsx:87
 #: ../../client/src/world/routes/ScreenWorld.tsx:24
 msgid "News"
-msgstr ""
+msgstr "Noticias"
 
-#: ../../client/src/media/hooks/useFileControls.ts:103
+#: ../../client/src/media/hooks/useFileControls.ts:114
 msgid "Next"
-msgstr ""
+msgstr "Siguiente"
 
 #: ../../client/src/world/routes/ScreenCalendar.tsx:37
 msgid "No events scheduled."
-msgstr ""
+msgstr "No hay eventos programados."
 
 #: ../../client/src/app/routes/ScreenStorage.tsx:17
 msgid "Overview"
-msgstr ""
+msgstr "Resumen"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:51
 msgid "Owner Key"
-msgstr ""
+msgstr "Clave del propietario"
 
-#: ../../client/src/media/hooks/useFileControls.ts:60
+#: ../../client/src/media/hooks/useFileControls.ts:71
 msgid "Pause"
-msgstr ""
+msgstr "Pausar"
 
 #: ../../client/src/app/interface/Menu.tsx:60
 msgid "Pictures"
-msgstr ""
+msgstr "Imágenes"
 
-#: ../../client/src/media/hooks/useFileControls.ts:121
+#: ../../client/src/media/hooks/useFileControls.ts:132
 msgid "Pin"
-msgstr ""
+msgstr "Fijar"
 
-#: ../../client/src/media/hooks/useFileControls.ts:60
+#: ../../client/src/media/hooks/useFileControls.ts:71
 msgid "Play"
-msgstr ""
+msgstr "Reproducir"
 
 #: ../../client/src/home/stacks/AiPrompt.tsx:50
 msgid "Please set your Groq API Key"
-msgstr ""
+msgstr "Por favor, configura tu clave API de Groq"
 
-#: ../../client/src/media/hooks/useFileControls.ts:92
+#: ../../client/src/media/hooks/useFileControls.ts:103
 msgid "Previous"
-msgstr ""
+msgstr "Anterior"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:37
 msgid "Profile"
-msgstr ""
+msgstr "Perfil"
 
 #: ../../client/src/app/hooks/useSettings.ts:44
 msgid "Prompt History Reset"
-msgstr ""
+msgstr "Reinicio del historial de indicaciones"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:165
 msgid "Prompts"
-msgstr ""
+msgstr "Indicaciones"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:137
 msgid "Provide a key to use AI features."
-msgstr ""
+msgstr "Proporciona una clave para usar las funciones de IA."
 
-#: ../../client/src/media/hooks/useFileControls.ts:80
+#: ../../client/src/media/hooks/useFileControls.ts:91
 msgid "Reset"
-msgstr ""
+msgstr "Reiniciar"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:149
 msgid "Select the AI model to use."
-msgstr ""
+msgstr "Selecciona el modelo de IA a utilizar."
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:122
 msgid "Select the distance unit for the app."
-msgstr ""
+msgstr "Selecciona la unidad de distancia para la aplicación."
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:75
 msgid "Select the language for the app."
-msgstr ""
+msgstr "Selecciona el idioma para la aplicación."
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:109
 msgid "Select the temperature unit for the app."
-msgstr ""
+msgstr "Selecciona la unidad de temperatura para la aplicación."
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:95
 msgid "Select the theme for the app."
-msgstr ""
+msgstr "Selecciona el tema para la aplicación."
 
 #: ../../client/src/app/interface/Tabs.tsx:33
 #: ../../client/src/app/routes/ScreenSettings.tsx:27
 msgid "Settings"
-msgstr ""
+msgstr "Configuración"
 
-#: ../../client/src/media/hooks/useFileControls.ts:139
+#: ../../client/src/media/hooks/useFileControls.ts:150
 msgid "Share"
-msgstr ""
+msgstr "Compartir"
 
 #: ../../client/src/app/interface/Menu.tsx:127
 #: ../../client/src/app/routes/ScreenStorage.tsx:14
 msgid "Storage"
-msgstr ""
+msgstr "Almacenamiento"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:108
 msgid "Temperature"
-msgstr ""
+msgstr "Temperatura"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:94
 msgid "Theme"
-msgstr ""
+msgstr "Tema"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:39
 msgid "User Name"
-msgstr ""
+msgstr "Nombre de usuario"
 
 #: ../../client/src/world/routes/ScreenWorld.tsx:19
 msgid "View your device locations and geo-related info"
-msgstr ""
+msgstr "Ver las ubicaciones de tu dispositivo e información geográfica relacionada"
 
 #: ../../client/src/world/routes/ScreenWorld.tsx:31
 msgid "View your events and time-related info"
-msgstr ""
+msgstr "Ver tus eventos e información relacionada con el tiempo"
 
 #: ../../client/src/world/routes/ScreenWorld.tsx:25
 msgid "View your latest news and rss feeds"
-msgstr ""
+msgstr "Ver tus últimas noticias y feeds RSS"
 
 #: ../../client/src/home/routes/ScreenHome.tsx:22
 msgid "Welcome, {0}"
-msgstr ""
+msgstr "Bienvenido, {0}"
 
 #: ../../client/src/home/routes/ScreenHome.tsx:23
 msgid "Welcome, Human"
-msgstr ""
+msgstr "Bienvenido, Humano"
 
 #: ../../client/src/app/routes/ScreenTeaser.tsx:14
 msgid "Work in progress..."
-msgstr ""
+msgstr "Trabajo en progreso..."
 
 #: ../../client/src/app/interface/Menu.tsx:80
 #: ../../client/src/app/interface/Tabs.tsx:28
 msgid "World"
-msgstr ""
+msgstr "Mundo"
 
 #: ../../client/src/app/hooks/useConnectivity.ts:16
 msgid "You are offline"
-msgstr ""
+msgstr "Estás desconectado"
 
 #: ../../client/src/app/hooks/useConnectivity.ts:14
 msgid "You are online"
-msgstr ""
+msgstr "Estás conectado"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:40
 msgid "Your name to display in the app."
-msgstr ""
+msgstr "Tu nombre para mostrar en la aplicación."
 
 #: ../../client/src/app/hooks/useSettings.ts:45
 msgid "Your prompt history has been reset."
-msgstr ""
-
-#: ../../client/src/media/hooks/useFileControls.ts:37
-msgid "Zoom in"
-msgstr ""
+msgstr "Tu historial de indicaciones ha sido reiniciado."
 
 #: ../../client/src/media/hooks/useFileControls.ts:48
+msgid "Zoom in"
+msgstr "Acercar"
+
+#: ../../client/src/media/hooks/useFileControls.ts:59
 msgid "Zoom out"
-msgstr ""
+msgstr "Alejar"
