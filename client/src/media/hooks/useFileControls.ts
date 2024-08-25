@@ -6,7 +6,7 @@ import {web} from 'react-exo/fs';
 import {pin} from 'media/utils/ipfs';
 import {FileType} from 'media/file/types';
 
-import type {CurrentFileBarProps} from 'media/stacks/CurrentFileBar';
+import type {MediaControlsProps} from 'media/stacks/MediaControls';
 
 export const IMPORTABLE = [FileType.Torrent, FileType.Binary];
 export const SHAREABLE = [FileType.Image, FileType.Video, FileType.Audio, FileType.Pdf];
@@ -24,7 +24,7 @@ export interface FileControl {
   action?: () => void,
 }
 
-export function useFileControls(props: CurrentFileBarProps): FileControl[] {
+export function useFileControls(props: MediaControlsProps): FileControl[] {
   const {file, renderer, metadata, close, open} = props;
   const [pinning, setPinning] = useState(false);
   const [pinned, setPinned] = useState<string>();
