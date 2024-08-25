@@ -5,7 +5,7 @@ export interface PageProps extends React.PropsWithChildren {
   title?: string | React.ReactNode,
   message?: string | React.ReactNode,
   widget?: React.ReactNode,
-  hasPreview?: boolean,
+  hasPanel?: boolean,
   fullWidth?: boolean,
   noMargin?: boolean,
   noFrame?: boolean,
@@ -23,7 +23,7 @@ export function Page(props: PageProps) {
     root: [
       styles.root,
       hasNoFrame && styles.noframe,
-      props.hasPreview && styles.withPreview,
+      props.hasPanel && styles.withPanel,
     ],
     content: [
       styles.content,
@@ -33,32 +33,37 @@ export function Page(props: PageProps) {
   };
 
   return (
-    <ScrollView style={vstyles.root} contentContainerStyle={{flex: 1}}>
-      <View style={vstyles.content}>
-        {hasHeader &&
-          <View style={styles.header}>
-            <View style={styles.greeting}>
-              {hasTitle &&
-                <Text style={styles.title}>
-                  {props.title}
-                </Text>
-              }
-              {hasMessage &&
-                <Text style={styles.message}>
-                  {props.message}
-                </Text>
-              }
+    <View style={styles.base}>
+      <ScrollView style={vstyles.root} contentContainerStyle={{flex: 1}}>
+        <View style={vstyles.content}>
+          {hasHeader &&
+            <View style={styles.header}>
+              <View style={styles.greeting}>
+                {hasTitle &&
+                  <Text style={styles.title}>
+                    {props.title}
+                  </Text>
+                }
+                {hasMessage &&
+                  <Text style={styles.message}>
+                    {props.message}
+                  </Text>
+                }
+              </View>
+              {props.widget}
             </View>
-            {props.widget}
-          </View>
-        }
-        {props.children}
-      </View>
-    </ScrollView>
+          }
+          {props.children}
+        </View>
+      </ScrollView>
+    </View>
   );
 }
 
 const stylesheet = createStyleSheet((theme, rt) => ({
+  base: {
+    flex: 1,
+  },
   root: {
     margin: theme.display.space2,
     borderWidth: rt.hairlineWidth,
@@ -66,7 +71,7 @@ const stylesheet = createStyleSheet((theme, rt) => ({
     borderColor: theme.colors.border,
     backgroundColor: theme.colors.card,
   },
-  withPreview: {
+  withPanel: {
     marginRight: 0,
   },
   noframe: {

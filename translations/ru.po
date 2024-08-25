@@ -153,7 +153,7 @@ msgstr "Фаренгейт"
 
 #: ../../client/src/app/interface/Menu.tsx:45
 #: ../../client/src/app/interface/Tabs.tsx:23
-#: ../../client/src/media/routes/ScreenBrowse.tsx:20
+#: ../../client/src/media/routes/ScreenBrowse.tsx:22
 msgid "Files"
 msgstr "Файлы"
 
@@ -277,7 +277,7 @@ msgstr "Обзор"
 msgid "Owner Key"
 msgstr "Ключ владельца"
 
-#: ../../client/src/media/hooks/useFileControls.ts:71
+#: ../../client/src/media/hooks/useFileControls.ts:72
 msgid "Pause"
 msgstr "Пауза"
 
@@ -289,7 +289,7 @@ msgstr "Изображения"
 msgid "Pin"
 msgstr "Закрепить"
 
-#: ../../client/src/media/hooks/useFileControls.ts:71
+#: ../../client/src/media/hooks/useFileControls.ts:73
 msgid "Play"
 msgstr "Воспроизвести"
 

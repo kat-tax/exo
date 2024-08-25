@@ -37,9 +37,11 @@ export default function Layout() {
   const url = `/browse/${base}#${name}.${ext}`;
   const hasPath = Boolean(path);
   const context: ReturnType<typeof useAppContext> = {
-    hasPreview: hasPath && resource.maximized,
     profile,
     device,
+    layout: {
+      hasPreviewPanel: hasPath && resource.maximized,
+    },
   };
 
   return <>

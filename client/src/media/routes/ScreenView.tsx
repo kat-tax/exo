@@ -5,7 +5,7 @@ export default function ScreenView() {
   const {cid, filename} = useParams<{cid: string, filename: string}>();
   const name = filename || '';
   const path = `ipfs://${cid}`;
-  const url = `/${cid}/${name}`;
+  const url = `/ipfs/${cid}/${name}`;
   const ext = name.split('.').pop() || '';
   return (
     <CurrentFile

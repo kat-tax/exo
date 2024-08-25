@@ -1,8 +1,8 @@
 import {Trans} from '@lingui/macro';
 import {View, ScrollView} from 'react-native';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {StorageIndicator} from 'media/stacks/StorageIndicator';
-import {useFileSystem} from 'media/hooks/useFileSystem';
+import {StorageWidget} from 'media/stacks/StorageWidget';
+import {useImporter} from 'media/hooks/useImporter';
 
 import {MenuItem} from './MenuItem';
 import {MenuHeader} from './MenuHeader';
@@ -15,8 +15,7 @@ export interface MenuProps {
 }
 
 export function Menu(props: MenuProps) {
-  // const lists = useLists();
-  const {importFile} = useFileSystem();
+  const {importFolder} = useImporter();
   const {styles} = useStyles(stylesheet);
 
   return (
@@ -39,7 +38,7 @@ export function Menu(props: MenuProps) {
             action={{
               label: 'Import Files',
               icon: 'ph:upload',
-              onPress: importFile,
+              onPress: importFolder,
             }}>
             <MenuItem
               label={<Trans>Files</Trans>}
@@ -122,7 +121,7 @@ export function Menu(props: MenuProps) {
           }
           <View style={styles.spacer}/>
           <View style={styles.footer}>
-            <StorageIndicator actions={
+            <StorageWidget actions={
               <MenuItem
                 label={<Trans>Storage</Trans>}
                 icon="ph:hard-drives"

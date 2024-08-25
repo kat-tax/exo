@@ -1,9 +1,10 @@
 import Map from 'react-map-gl/maplibre';
+
 import {View} from 'react-native';
 import {forwardRef} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useScheme} from 'app/hooks/useScheme';
-import {useDataUrl} from 'media/hooks/useDataUrl';
+import {useFileData} from 'media/hooks/useFileData';
 
 import type {FileProps} from 'media/file';
 
@@ -18,7 +19,7 @@ const MAPTILER_KEY = 'UbdBChbHpiVOSIdTJWvV';
 export default forwardRef((props: FileMap) => {
   const {styles} = useStyles(stylesheet);
   const [scheme] = useScheme();
-  const map = useDataUrl(props.path);
+  const map = useFileData(props.path, 'dataUrl');
   const mapId = scheme === 'light'
     ? 'dataviz-light'
     : 'dataviz-dark';

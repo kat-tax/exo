@@ -1,43 +1,76 @@
-import {fs} from 'react-exo/fs';
-import {fetchIPFS} from 'media/utils/ipfs';
-import type {GameProps} from 'react-exo/game';
+import {fs, isTextFile} from 'react-exo/fs';
+import {fetchIpfs} from 'media/utils/ipfs';
+import {FileType} from 'media/file/types';
+import {toText} from 'app/utils/formatting';
 
-export enum FileType {
-  Torrent = 'Torrent',
-  Binary = 'Binary',
-  Text = 'Text',
-  Note = 'Note',
-  Document = 'Document',
-  Spreadsheet = 'Spreadsheet',
-  Presentation = 'Presentation',
-  Markdown = 'Markdown',
-  Audio = 'Audio',
-  Video = 'Video',
-  Image = 'Image',
-  Model = 'Model',
-  Lottie = 'Lottie',
-  Rive = 'Rive',
-  Game = 'Game',
-  Book = 'Book',
-  Pdf = 'Pdf',
-  Map = 'Map',
+import type {
+  FileData,
+  FileFormat,
+  FileProtocol,
+  FileTransfer,
+  FileRenderInfo,
+} from 'media/file/types';
+
+export async function getData<T extends FileFormat>(
+  path: string,
+  format: T,
+  type?: string,
+): Promise<FileData<T> | undefined> {
+  const $ = await getTransfer(path);
+
+  // Remote (fetch)
+  if ($ instanceof Response) {
+    switch (format) {
+      case 'arrayBuffer':
+        return await $.arrayBuffer() as FileData<T>;
+      case 'dataUrl':
+      case 'blob':
+        return await $.blob() as FileData<T>;
+      case 'text':
+        return await $.text() as FileData<T>;
+      case 'json':
+        return await $.json() as FileData<T>;
+      default:
+        return format satisfies never;
+    }
+  }
+
+  // Local (humanfs)
+  switch (format) {
+    case 'arrayBuffer':
+      return $?.buffer as FileData<T>;
+    case 'dataUrl':
+    case 'blob':
+      return $ ? new Blob([$], {type}) as FileData<T> : undefined;
+    case 'text':
+      return $ ? toText($) as FileData<T> : undefined;
+    case 'json':
+      return $ ? JSON.parse(toText($)) as FileData<T> : undefined;
+    default:
+      return format satisfies never;
+  }
 }
 
-export type FileOptions = {
-  [FileType.Book]: {
-    continuous: boolean,
-  },
-  [FileType.Game]: {
-    platform: GameProps['platform'],
-  },
-} & Record<FileType, Record<string, unknown>>;
+export async function getTransfer(
+  path: string,
+): Promise<FileTransfer | undefined> {
+  const {protocol} = new URL(path) as {protocol: FileProtocol};
+  switch (protocol) {
+    case 'fs':
+      return (await fs.init()).bytes?.(path);
+    case 'ipfs':
+      return fetchIpfs(path);
+    case 'http':
+    case 'https':
+      return fetch(path);
+    default: protocol satisfies never;
+  }
+}
 
-export type FileData = {
-  [K in FileType]: [K, FileOptions[K extends keyof FileOptions ? K : never]];
-}[FileType];
-
-export function getFileInfo(ext: string): FileData {
-  switch (ext) {
+export function getRenderInfo(
+  extension: string,
+): FileRenderInfo {
+  switch (extension) {
     // Torrents
     case 'torrent':
       return [FileType.Torrent, {}];
@@ -160,67 +193,12 @@ export function getFileInfo(ext: string): FileData {
     case 't64':
     case 'prg':
       return [FileType.Game, {platform: 'vice_x64'}];
-    default:
-      return [FileType.Binary, {}];
+    default: {
+      // TODO: pass data to isTextFile to auto-detect utf-8 files
+      // const isText = await isTextFile(ext, null);
+      const isText = false;
+      console.log(isTextFile);
+      return [isText ? FileType.Text : FileType.Binary, {}];
+    }
   }
-}
-
-export async function getFileText(path: string) {
-  // IPFS
-  if (path.startsWith('ipfs://')) {
-    const response = await fetchIPFS(path);
-    return await response.text();
-  }
-
-  // HTTP
-  if (path.startsWith('http://') || path.startsWith('https://')) {
-    const response = await fetch(path);
-    return await response.text();
-  }
-
-  // OPFS
-  const hfs = await fs.init();
-  const bytes = await hfs.bytes?.(path);
-  if (!bytes) return;
-  return new TextDecoder('utf-8').decode(bytes);
-}
-
-export async function getFileBlob(path: string, type: string) {
-  // IPFS
-  if (path.startsWith('ipfs://')) {
-    const response = await fetchIPFS(path);
-    return await response.blob();
-  }
-
-  // HTTP
-  if (path.startsWith('http://') || path.startsWith('https://')) {
-    const response = await fetch(path);
-    return await response.blob();
-  }
-
-  // OPFS
-  const hfs = await fs.init();
-  const bytes = await hfs.bytes?.(path);
-  if (!bytes) return;
-  return new Blob([bytes], {type});
-}
-
-export async function getFileArrayBuffer(path: string) {
-  // IPFS
-  if (path.startsWith('ipfs://')) {
-    const response = await fetchIPFS(path);
-    return await response.arrayBuffer();
-  }
-
-  // HTTP
-  if (path.startsWith('http://') || path.startsWith('https://')) {
-    const response = await fetch(path);
-    return await response.arrayBuffer();
-  }
-
-  // OPFS
-  const hfs = await fs.init();
-  const bytes = await hfs.bytes?.(path);
-  if (!bytes) return;
-  return bytes;
 }

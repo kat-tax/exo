@@ -1,7 +1,7 @@
 import {View} from 'react-native';
 import {forwardRef} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {useDataUrl} from 'media/hooks/useDataUrl';
+import {useFileData} from 'media/hooks/useFileData';
 
 import type {FileProps} from 'media/file';
 
@@ -12,7 +12,7 @@ interface FilePdf extends FileProps {
 
 export default forwardRef((props: FilePdf) => {
   const {styles} = useStyles(stylesheet);
-  const pdf = useDataUrl(props.path, 'application/pdf');
+  const pdf = useFileData(props.path, 'dataUrl');
 
   // TODO: Implement PDF in library
   // Native: https://github.com/douglasjunior/react-native-pdf-renderer

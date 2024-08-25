@@ -12,6 +12,8 @@ export async function hash(file: Uint8Array): Promise<string> {
   return uint8ArrayToHex(new Uint8Array(hash));
 }
 
+export type TorrentFileEntry = TorrentFileData['files'][number];
+
 export interface TorrentFileData {
   length: number;
   files: Array<{

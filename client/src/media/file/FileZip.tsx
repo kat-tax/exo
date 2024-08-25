@@ -7,12 +7,12 @@ import Directory from 'media/dir';
 
 import type {FileProps} from 'media/file';
 
-interface FileTorrent extends FileProps {
+interface FileZip extends FileProps {
   name: string,
   extension: string,
 }
 
-export default forwardRef((props: FileTorrent, _ref) => {
+export default forwardRef((props: FileZip, _ref) => {
   const {torrent, download} = useFileTorrent(props.path);
   const {styles} = useStyles(stylesheet);
 

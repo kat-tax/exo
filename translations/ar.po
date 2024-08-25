@@ -153,7 +153,7 @@ msgstr "فهرنهايت"
 
 #: ../../client/src/app/interface/Menu.tsx:45
 #: ../../client/src/app/interface/Tabs.tsx:23
-#: ../../client/src/media/routes/ScreenBrowse.tsx:20
+#: ../../client/src/media/routes/ScreenBrowse.tsx:22
 msgid "Files"
 msgstr "الملفات"
 
@@ -277,7 +277,7 @@ msgstr "نظرة عامة"
 msgid "Owner Key"
 msgstr "مفتاح المالك"
 
-#: ../../client/src/media/hooks/useFileControls.ts:71
+#: ../../client/src/media/hooks/useFileControls.ts:72
 msgid "Pause"
 msgstr "إيقاف مؤقت"
 
@@ -289,7 +289,7 @@ msgstr "الصور"
 msgid "Pin"
 msgstr "تثبيت"
 
-#: ../../client/src/media/hooks/useFileControls.ts:71
+#: ../../client/src/media/hooks/useFileControls.ts:73
 msgid "Play"
 msgstr "تشغيل"
 

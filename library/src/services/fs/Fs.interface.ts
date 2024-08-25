@@ -1,12 +1,11 @@
-import type {HfsImpl, HfsDirectoryEntry} from '@humanfs/types';
+import type {HfsImpl} from '@humanfs/types';
+import type {IpfsHfs} from './lib/plugins/IpfsHfs';
 
-export type {HfsImpl, HfsDirectoryEntry};
-
-// TODO:
-// watcher: https://github.com/whatwg/fs/blob/main/proposals/FileSystemObserver.md
+export * from '@humanfs/types';
+export type HfsType = 'fs' | 'ipfs';
 
 export interface FSBase {
-  init(): Promise<HfsImpl>,
+  init(type?: HfsType): Promise<HfsImpl | IpfsHfs>,
 
   getDiskSpace(): Promise<{
     used: number,
@@ -52,3 +51,8 @@ export type OpenDirectoryOptions = {
   mode?: 'read' | 'readwrite',
   startIn?: 'desktop' | 'documents' | 'downloads' | 'music' | 'pictures' | 'videos',
 }
+
+
+
+// TODO:
+// watcher: https://github.com/whatwg/fs/blob/main/proposals/FileSystemObserver.md

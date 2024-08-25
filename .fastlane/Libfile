@@ -52,3 +52,12 @@ private_lane :android do
   build_android_app(task: "clean bundleRelease", project_dir: path_android)
   upload_to_play_store(track: "alpha")
 end
+
+platform :ios do
+  lane :beta do
+    setup_ci if ENV['CI']
+    match(type: 'appstore')
+    build_app
+    upload_to_testflight(skip_waiting_for_build_processing: true)
+  end
+end

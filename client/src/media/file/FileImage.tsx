@@ -1,10 +1,11 @@
-import {View} from 'react-native';
 import {Image} from 'react-exo/image';
-import {memo, useState, useImperativeHandle, forwardRef} from 'react';
+
+import {View} from 'react-native';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
+import {memo, useState, useImperativeHandle, forwardRef} from 'react';
 //import {useImageResolution, ResumableZoom, getAspectRatioSize} from 'react-native-zoom-toolkit';
 
-import {useDataUrl} from 'media/hooks/useDataUrl';
+import {useFileData} from 'media/hooks/useFileData';
 
 import type {FileProps} from 'media/file';
 
@@ -22,7 +23,7 @@ export interface ImageRef {
 export default memo(forwardRef((props: FileImage, ref: React.Ref<ImageRef>) => {
   const [scale, setScale] = useState(1);
   const {styles} = useStyles(stylesheet);
-  const image = useDataUrl(props.path);
+  const image = useFileData(props.path, 'dataUrl');
 
   // Gets the resolution of your image
   // const {isFetching, resolution} = useImageResolution({uri: image || ''});

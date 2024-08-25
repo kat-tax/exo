@@ -6,3 +6,7 @@ export function bytesize(bytes: number) {
   while (b >= s || -b >= s) {b /= s; u++}
   return `${u ? b.toFixed(1) : b} ${a[u]}`;
 }
+
+export function toText(input?: AllowSharedBufferSource) {
+  return new TextDecoder('utf-8').decode(input);
+}

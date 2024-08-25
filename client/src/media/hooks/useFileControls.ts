@@ -2,19 +2,19 @@ import {t} from '@lingui/macro';
 import {useLingui} from '@lingui/react';
 import {useMemo, useState, useEffect} from 'react';
 import {share} from 'react-exo/device';
-import {pin} from 'media/utils/ipfs';
-import {FileType} from 'media/utils/file';
 import {web} from 'react-exo/fs';
+import {pin} from 'media/utils/ipfs';
+import {FileType} from 'media/file/types';
 
 import type {CurrentFileBarProps} from 'media/stacks/CurrentFileBar';
 
-export const SEQUENCE = [FileType.Audio, FileType.Video, FileType.Game, FileType.Lottie, FileType.Rive];
-export const DOCUMENT = [FileType.Book, FileType.Pdf];
-export const SHAREABLE = [FileType.Image, FileType.Video, FileType.Audio, FileType.Pdf];
 export const IMPORTABLE = [FileType.Torrent, FileType.Binary];
+export const SHAREABLE = [FileType.Image, FileType.Video, FileType.Audio, FileType.Pdf];
 export const ZOOMABLE = [FileType.Image];
+export const PLAYABLE = [FileType.Audio, FileType.Video, FileType.Game, FileType.Lottie, FileType.Rive];
+export const DOCUMENT = [FileType.Book, FileType.Pdf];
 
-export interface CurrentFileActions {
+export interface FileControl {
   title?: string,
   label?: React.ReactNode,
   name?: string,
@@ -24,19 +24,26 @@ export interface CurrentFileActions {
   action?: () => void,
 }
 
-export function useFileControls(props: CurrentFileBarProps): CurrentFileActions[] {
-  const {i18n} = useLingui();
-  const {player, fileData, metadata, close, open} = props;
-  const [pinned, setPinned] = useState<string>();
+export function useFileControls(props: CurrentFileBarProps): FileControl[] {
+  const {file, renderer, metadata, close, open} = props;
   const [pinning, setPinning] = useState(false);
+  const [pinned, setPinned] = useState<string>();
+  const {i18n} = useLingui();
 
-  const actions: CurrentFileActions[] = useMemo(() =>
+  useEffect(() => {
+    if (metadata.path) {
+      setPinned(undefined);
+      setPinning(false);
+    }
+  }, [metadata]);
+
+  return useMemo(() =>
     [
       // Remote controls
       {
         name: 'download',
-        label: t(i18n)`Download`,
         icon: 'ph:download',
+        label: t(i18n)`Download`,
         media: IMPORTABLE,
         action: () => {
           console.log('Download', metadata.path);
@@ -45,78 +52,78 @@ export function useFileControls(props: CurrentFileBarProps): CurrentFileActions[
       // Zoom controls
       {
         name: 'zoom-in',
-        label: t(i18n)`Zoom in`,
         icon: 'ph:plus',
+        label: t(i18n)`Zoom in`,
         media: ZOOMABLE,
         action: () => {
-          if (player?.current && 'increase' in player.current) {
-            player.current.increase();
+          if (file?.current && 'increase' in file.current) {
+            file.current.increase();
           }
         },
       },
       {
         name: 'zoom-out',
-        label: t(i18n)`Zoom out`,
         icon: 'ph:minus',
+        label: t(i18n)`Zoom out`,
         media: ZOOMABLE,
         action: () => {
-          if (player?.current && 'decrease' in player.current) {
-            player.current.decrease();
+          if (file?.current && 'decrease' in file.current) {
+            file.current.decrease();
           }
         },
       },
       // Sequence controls (play/pause)
       {
         name: 'play',
-        label: metadata.playing ? t(i18n)`Pause` : t(i18n)`Play`,
-        icon: metadata.playing ? 'ph:pause' : 'ph:play',
-        media: SEQUENCE,
+        label: metadata.playing
+          ? t(i18n)`Pause`
+          : t(i18n)`Play`,
+        icon: metadata.playing
+          ? 'ph:pause'
+          : 'ph:play',
+        media: PLAYABLE,
         action: () => {
-          if (!player?.current) return;
-          if ('pause' in player.current) {
+          if (!file?.current) return;
+          if ('play' in file.current) {
             if (metadata.playing) {
-              player.current.pause();
+              file.current.pause();
             } else {
-              if ('resume' in player.current) {
-                player.current.resume();
-              } else {
-                player.current.play();
-              }
+              file.current.play();
             }
           }
         },
       },
       {
         name: 'reset',
-        label: t(i18n)`Reset`,
         icon: 'ph:arrow-counter-clockwise',
-        media: SEQUENCE,
+        label: t(i18n)`Reset`,
+        media: PLAYABLE,
         action: () => {
-          if (player?.current && 'reset' in player.current) {
-            player.current.reset();
+          if (file?.current && 'reset' in file.current) {
+            file.current.reset();
           }
         },
       },
       // Book controls
       {
         name: 'prev',
-        label: t(i18n)`Previous`,
         icon: 'ph:arrow-left',
+        label: t(i18n)`Previous`,
         media: DOCUMENT,
         action: () => {
-          if (player?.current && 'prevPage' in player.current) {
-            player.current.prevPage();
+          if (file?.current && 'prevPage' in file.current) {
+            file.current.prevPage();
           }
         },
       },
       {
         name: 'next',
-        label: t(i18n)`Next`,
         icon: 'ph:arrow-right',
+        label: t(i18n)`Next`,
         media: DOCUMENT,
         action: () => {
-          if (player?.current && 'nextPage' in player.current) {
-            player.current.nextPage();
+          if (file?.current && 'nextPage' in file.current) {
+            file.current.nextPage();
           }
         },
       },
@@ -129,12 +136,12 @@ export function useFileControls(props: CurrentFileBarProps): CurrentFileActions[
       // Window controls
       {
         name: 'pin',
-        label: t(i18n)`Pin`,
         icon: pinning
           ? 'ph:circle-notch'
           : pinned
             ? 'ph:push-pin'
             : 'ph:push-pin-slash',
+        label: t(i18n)`Pin`,
         filter: () => !metadata.path.startsWith('ipfs://'),
         action: async () => {
           setPinning(true);
@@ -147,16 +154,16 @@ export function useFileControls(props: CurrentFileBarProps): CurrentFileActions[
       },
       {
         name: 'share',
-        label: t(i18n)`Share`,
         icon: 'ph:share-network',
+        label: t(i18n)`Share`,
         filter: () => !!pinned
-          || SHAREABLE.includes(fileData[0])
+          || SHAREABLE.includes(renderer[0])
           || metadata.path.startsWith('ipfs://'),
         action: async () => {
           const url = pinned;
           const title = `${metadata.name}.${metadata.ext}`;
           const files: File[] = [];
-          if (SHAREABLE.includes(fileData[0])) {
+          if (SHAREABLE.includes(renderer[0])) {
             const buffer = await web.getFileBuffer(metadata.path);
             files.push(new File([buffer], title, {type: 'image/png'}));
           }
@@ -169,28 +176,19 @@ export function useFileControls(props: CurrentFileBarProps): CurrentFileActions[
       },
       {
         name: 'maximize',
-        label: t(i18n)`Maximize`,
         icon: 'ph:arrow-square-out',
+        label: t(i18n)`Maximize`,
         filter: () => false,
         action: open,
       },
       {
         name: 'close',
-        label: t(i18n)`Close`,
         icon: 'ph:x',
+        label: t(i18n)`Close`,
         action: close,
       },
     ]
-    .filter((e) => (!e.media || e.media?.includes(fileData[0])))
+    .filter((e) => (!e.media || e.media?.includes(renderer[0])))
     .filter((e) => !e.filter || e.filter())
-  , [player, fileData, metadata, i18n, open, close, pinning, pinned]);
-
-  useEffect(() => {
-    if (metadata.path) {
-      setPinned(undefined);
-      setPinning(false);
-    }
-  }, [metadata]);
-
-  return actions;
+  , [file, renderer, metadata, i18n, open, close, pinning, pinned]);
 }

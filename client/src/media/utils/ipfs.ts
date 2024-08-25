@@ -15,10 +15,10 @@ export async function pin(path: string, name: string) {
   const buffer = await web.getFileBuffer(path);
   const file = new File([buffer], name);
   const {IpfsHash} = await pinata.upload.file(file);
-  return `${location.origin}/${IpfsHash}/${name}`;
+  return `${location.origin}/ipfs/${IpfsHash}/${name}`;
 }
 
-export const fetchIPFS = await createVerifiedFetch({
+export const fetchIpfs = await createVerifiedFetch({
   gateways: ['https://dweb.link', 'https://trustless-gateway.link'],
   routers: ['http://delegated-ipfs.dev']
 }, {

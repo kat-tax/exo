@@ -1,7 +1,8 @@
 import {Rive} from 'react-exo/rive';
+
 import {forwardRef} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {useDataUrl} from 'media/hooks/useDataUrl';
+import {useFileData} from 'media/hooks/useFileData';
 
 import type {FileProps} from 'media/file';
 import type {RiveRef} from 'react-exo/rive';
@@ -15,7 +16,7 @@ export type {RiveRef};
 
 export default forwardRef((props: FileRive, ref: React.Ref<RiveRef>) => {
   const {styles} = useStyles(stylesheet);
-  const rive = useDataUrl(props.path);
+  const rive = useFileData(props.path, 'dataUrl');
 
   return rive ? (
     <Rive

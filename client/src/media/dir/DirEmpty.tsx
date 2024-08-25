@@ -1,15 +1,13 @@
 import {t} from '@lingui/macro';
 import {useLingui} from '@lingui/react';
-import {useFileSystem} from 'media/hooks/useFileSystem';
-import {Watermark} from './Watermark';
+import {useImporter} from 'media/hooks/useImporter';
+import {Watermark} from 'media/stacks/Watermark';
 
-interface WatermarkEmptyProps {
-  path?: string;
-}
+import type {DirBaseProps} from 'media/dir';
 
-export function WatermarkEmpty({path = '.'}: WatermarkEmptyProps) {
+export function DirEmpty({path = '.'}: DirBaseProps) {
+  const {importFolder} = useImporter();
   const {i18n} = useLingui();
-  const {importDirectory} = useFileSystem();
   return (
     <Watermark
       title={t(i18n)`Directory is empty.`}
@@ -17,7 +15,7 @@ export function WatermarkEmpty({path = '.'}: WatermarkEmptyProps) {
       icon="ph:upload"
       dnd={true}
       onAction={async () => {
-        await importDirectory(path);
+        await importFolder(path);
       }}
     />
   );

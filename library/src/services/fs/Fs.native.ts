@@ -1,12 +1,13 @@
-import {hfs} from './lib/plugins/NativeHfs';
+import hfs from './lib/plugins/NativeHfs';
+import ipfs from './lib/plugins/IpfsHfs';
 import {FileSystem} from 'react-native-file-access';
 import {isText, isBinary} from './lib/data';
 
-import type {FSBase, FileSystemIn} from './Fs.interface';
+import type {FSBase, FileSystemIn, HfsType} from './Fs.interface';
 
 export class FSService implements FSBase {
-  async init() {
-    return hfs;
+  async init(type?: HfsType) {
+    return type === 'ipfs' ? ipfs : hfs;
   }
 
   async getDiskSpace() {

@@ -1,14 +1,14 @@
 import {Link} from 'react-exo/navigation';
-import {ListRow} from './ListRow';
+import {ListRow} from 'media/stacks/ListRow';
 
 import type {HfsDirectoryEntry} from 'react-exo/fs';
 
-interface EntryDirectory {
+export interface EntryHfs {
   entry: HfsDirectoryEntry,
   path?: string,
 }
 
-export function EntryDirectory(props: EntryDirectory) {
+export function EntryHfs(props: EntryHfs) {
   const {entry} = props;
   const link = entry.isFile
     ? `#${encodeURIComponent(entry.name).replace(/%20/g, '+')}`

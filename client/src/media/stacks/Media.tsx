@@ -1,14 +1,15 @@
+import {View} from 'react-native';
 import {useNavigate} from 'react-exo/navigation';
 import {useMemo, useState, useEffect, useRef} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {useWindowDimensions, View} from 'react-native';
-import {CurrentFileBar} from 'media/stacks/CurrentFileBar';
-import {getFileInfo} from 'media/utils/file';
-import Player from 'media/file';
+import {useFileWindow} from 'media/hooks/useFileWindow';
+import {MediaControls} from 'media/stacks/MediaControls';
+import {getRenderInfo} from 'media/file/utils';
+import File from 'media/file';
 
-import type {FileRef} from 'media/file';
+import type {FileRef} from 'media/file/types';
 
-interface CurrentFileProps {
+interface MediaProps {
   url: string,
   ext: string,
   name: string,
@@ -18,66 +19,18 @@ interface CurrentFileProps {
   close: () => void,
 }
 
-export function CurrentFile(props: CurrentFileProps) {
-  const navigate = useNavigate();
-  const screen = useWindowDimensions();
-  const player = useRef<FileRef>(null);
+export function Media(props: MediaProps) {
+  const nav = useNavigate();
+  const file = useRef<FileRef>(null);
+  const window = useFileWindow(props.ext);
   const {styles, theme} = useStyles(stylesheet);
   const {url, ext, name, path, vertical, maximized, close} = props;
-  const isFullWidth = screen.width <= theme.breakpoints.xs;
+  const isFullWidth = window.viewportWidth <= theme.breakpoints.xs;
 
-  // Derive file metadata
-  const fileData = getFileInfo(ext);
-
-  // Local state
+  // File info
   const [title, setTitle] = useState(name);
   const [cover, setCover] = useState('');
-
-  // Picture-in-picture scale
-  const scale = useMemo(() => {
-    let _scale = 1;
-    if (screen.width <= theme.breakpoints.sm)
-      _scale = 0.85;
-    else if (screen.width <= theme.breakpoints.md)
-      _scale = 0.95;
-    else if (screen.width <= theme.breakpoints.lg)
-      _scale = 1;
-    else if (screen.width <= theme.breakpoints.xl)
-      _scale = 1.25;
-    else if (screen.width <= theme.breakpoints.xxl)
-      _scale = 1.5;
-    else if (screen.width <= theme.breakpoints.xxxl)
-      _scale = 2;
-    else if (screen.width <= theme.breakpoints.xxxxl)
-      _scale = 4;
-    if (ext === 'pdf' && _scale > 1)
-      _scale = 1;
-    return _scale;
-  }, [screen, theme, ext]);
-
-  // Picture-in-picture resolution
-  const resolution = useMemo(() => {
-    const offset = 41;
-    let res: number[];
-    switch (ext) {
-      case 'gb':
-      case 'gbc':
-      case 'gba':
-        res = [160 * 2, (144 * 2)].map(x => x * scale);
-        res[1] += offset;
-        break;
-      case 'pdf':
-        res = [414, 252].map(x => x * scale);
-        res[1] += offset;
-        break;
-      case 'riv':
-        res = [320, 222].map(x => x * scale);
-        break;
-      default:
-        res = [320, 240].map(x => x * scale);
-    }
-    return res;
-  }, [ext, scale]);
+  const renderer = useMemo(() => getRenderInfo(ext), [ext]);
 
   // Conditional styles
   const vstyles = useMemo(() => ({
@@ -85,10 +38,10 @@ export function CurrentFile(props: CurrentFileProps) {
       styles.root,
       vertical && styles.vertical,
       maximized ? styles.maximized : styles.minimized,
-      !maximized && {width: resolution[0], height: resolution[1]},
+      !maximized && {width: window.resolution[0], height: window.resolution[1]},
       isFullWidth && styles.fullwidth,
     ],
-  }), [styles, resolution, vertical, maximized, isFullWidth]);
+  }), [styles, window, vertical, maximized, isFullWidth]);
 
   // Change title when file name changes
   useEffect(() => {
@@ -99,17 +52,17 @@ export function CurrentFile(props: CurrentFileProps) {
   return (
     <View style={vstyles.root}>
       <View style={styles.contents}>
-        <Player
-          ref={player}
-          fileData={fileData}
+        <File
+          ref={file}
+          renderer={renderer}
           setBarIcon={setCover}
           setBarTitle={setTitle}
           {...props}
         />
       </View>
-      <CurrentFileBar {...{
-        player,
-        fileData,
+      <MediaControls {...{
+        file,
+        renderer,
         maximized,
         metadata: {
           url,
@@ -121,7 +74,7 @@ export function CurrentFile(props: CurrentFileProps) {
           playing: true,
         },
         close,
-        open: () => navigate(url),
+        open: () => nav(url),
       }}/>
     </View>
   );

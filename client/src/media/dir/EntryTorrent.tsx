@@ -1,11 +1,11 @@
 import {Pressable} from 'react-native';
-import {ListRow} from './ListRow';
+import {ListRow} from 'media/stacks/ListRow';
 
-import type {TorrentFileData} from 'media/utils/torrent';
+import type {TorrentFileEntry} from 'media/utils/torrent';
 
 export interface EntryTorrent {
-  entry: TorrentFileData['files'][number],
-  download: (entry: TorrentFileData['files'][number]) => void,
+  entry: TorrentFileEntry,
+  download: (entry: TorrentFileEntry) => void,
 }
 
 export function EntryTorrent(props: EntryTorrent) {

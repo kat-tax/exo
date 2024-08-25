@@ -1,5 +1,5 @@
 import {lazy} from 'react';
-import {FileType} from 'media/utils/file';
+import {FileType} from 'media/file/types';
 
 export const loader: {[key in FileType]: ReturnType<typeof lazy>} = {
   [FileType.Binary]: lazy(

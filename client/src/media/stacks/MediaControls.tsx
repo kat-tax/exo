@@ -5,17 +5,16 @@ import {Motion} from 'react-exo/motion';
 import {Image} from 'react-exo/image';
 import {Icon} from 'react-exo/icon';
 import {isTouch} from 'app/utils/platform';
-import {FileType} from 'media/utils/file';
-import {useFileControls} from 'media/hooks/useFileControls';
+import {FileType} from 'media/file/types';
 import {ListRowIcon} from 'media/stacks/ListRowIcon';
+import {useFileControls} from 'media/hooks/useFileControls';
 
-import type {FileRef} from 'media/file';
-import type {FileData} from 'media/utils/file';
+import type {FileRef, FileRenderInfo} from 'media/file/types';
 import type {PressableStateCallbackType} from 'react-native';
 
-export interface CurrentFileBarProps {
-  player: React.RefObject<FileRef>,
-  fileData: FileData,
+export interface MediaControlsProps {
+  file: React.RefObject<FileRef>,
+  renderer: FileRenderInfo,
   maximized: boolean,
   metadata: {
     ext: string,
@@ -32,7 +31,7 @@ export interface CurrentFileBarProps {
   open: () => void,
 }
 
-export function CurrentFileBar(props: CurrentFileBarProps) {
+export function MediaControls(props: MediaControlsProps) {
   const {styles, theme} = useStyles(stylesheet);
   const controls = useFileControls(props);
   const sizeState = isTouch() ? 1 : 0;
@@ -49,8 +48,8 @@ export function CurrentFileBar(props: CurrentFileBarProps) {
         : theme.colors.mutedForeground,
   }), [theme, styles]);
 
-  if (props.maximized
-    && props.fileData[0] === FileType.Torrent) {
+  // Display nothing for torrent files
+  if (props.maximized && props.renderer[0] === FileType.Torrent) {
     return null;
   }
 
@@ -95,7 +94,7 @@ export function CurrentFileBar(props: CurrentFileBarProps) {
   );
 }
 
-const stylesheet = createStyleSheet((theme, rt) => ({
+const stylesheet = createStyleSheet((theme) => ({
   root: {
     flexDirection: 'row',
     alignItems: 'center',

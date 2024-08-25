@@ -2,7 +2,7 @@ import {fs} from 'react-exo/fs';
 import {useEffect} from 'react';
 import {INIT_DIRECTORIES} from 'media/utils/path';
 
-export function useInitDirectories() {
+export function useInitializer() {
   useEffect(() => {
     (async () => {
       const hfs = await fs.init();

@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "start": "tsx utils/setup && vocs dev -p 6106",
-    "build": "vocs build -c -o ../../output/docs",
+    "build": "tsx utils/setup && vocs build -c -o ../../output/docs",
     "preview": "tsx utils/setup && vocs preview"
   },
   "dependencies": {

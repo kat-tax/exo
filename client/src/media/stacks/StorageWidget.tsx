@@ -5,11 +5,11 @@ import {View, Text} from 'react-native';
 import {Progress} from 'react-exo/progress';
 import {bytesize} from 'app/utils/formatting';
 
-interface StorageIndicatorProps {
+interface StorageWidgetProps {
   actions?: React.ReactNode,
 }
 
-export function StorageIndicator(props: StorageIndicatorProps) {
+export function StorageWidget(props: StorageWidgetProps) {
   const {styles, theme} = useStyles(stylesheet);
   const [storage, setStorage] = useState<{msg: string, val: number}>();
 

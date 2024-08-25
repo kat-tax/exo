@@ -1,14 +1,16 @@
 import {hfs} from '@humanfs/web';
+import ipfs from './lib/plugins/IpfsHfs';
 import Hasher from './lib/hash/WebHasher';
-import {isText, isBinary} from './lib/data';
 import {getFileBuffer} from './lib/path/web';
+import {isText, isBinary} from './lib/data';
 
 import type {HfsImpl} from '@humanfs/web';
-import type {FSBase, FileSystemIn, OpenDirectoryOptions} from './Fs.interface';
+import type {IpfsHfs} from './lib/plugins/IpfsHfs';
+import type {FSBase, FileSystemIn, HfsType, OpenDirectoryOptions} from './Fs.interface';
 
 export class FSService implements FSBase {
-  async init(): Promise<HfsImpl> {
-    return hfs;
+  async init(type?: HfsType): Promise<HfsImpl | IpfsHfs> {
+    return type === 'ipfs' ? ipfs : hfs;
   }
 
   async getDiskSpace() {

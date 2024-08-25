@@ -1,29 +1,14 @@
 import './video.css';
 
-import {useImperativeHandle, forwardRef, useRef, useMemo} from 'react';
+import {useImperativeHandle, forwardRef, useRef} from 'react';
 import {MediaPlayer, MediaProvider, Poster, Track, isHLSProvider} from '@vidstack/react';
 import {DefaultVideoLayout, defaultLayoutIcons} from '@vidstack/react/player/layouts/default';
 
 import type {VideoComponent, VideoProps, VideoRef} from './Video.interface';
-import type {ScreenOrientationLockType} from 'vidstack';
-import type {
-  MediaPlayerInstance,
-  MediaProviderAdapter,
-  MediaProviderChangeEvent,
-} from '@vidstack/react';
+import type {MediaPlayerInstance, MediaProviderAdapter, MediaProviderChangeEvent} from '@vidstack/react';
 
 export const Video: VideoComponent = forwardRef((props: VideoProps, ref: React.Ref<VideoRef>) => {
   const player = useRef<MediaPlayerInstance>(null);
-  const fullscreenOrientationLock: ScreenOrientationLockType | undefined = useMemo(() => {
-    switch (props.fullscreenOrientation) {
-      case 'all':
-        return 'any';
-      case 'landscape':
-        return 'landscape';
-      case 'portrait':
-        return 'portrait';
-    }
-  }, [props.fullscreenOrientation]);
 
   // Expose player methods
   useImperativeHandle(ref, () => ({
@@ -73,7 +58,7 @@ export const Video: VideoComponent = forwardRef((props: VideoProps, ref: React.R
       controls={props.controls}
       playbackRate={props.rate}
       currentTime={props.currentPlaybackTime}
-      fullscreenOrientation={fullscreenOrientationLock}
+      fullscreenOrientation={props.fullscreenOrientation === 'all' ? 'any' : props.fullscreenOrientation}
       onProviderChange={onProviderChange}
       onCanPlay={props.onReadyForDisplay}>
       <MediaProvider>

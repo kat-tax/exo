@@ -1,7 +1,8 @@
 import {Book} from 'react-exo/book';
+
 import {forwardRef} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {useDataUrl} from 'media/hooks/useDataUrl';
+import {useFileData} from 'media/hooks/useFileData';
 
 import type {FileProps} from 'media/file';
 
@@ -12,7 +13,7 @@ interface FileSpreadsheet extends FileProps {
 
 export default forwardRef((props: FileSpreadsheet) => {
   const {styles} = useStyles(stylesheet);
-  const sheet = useDataUrl(props.path);
+  const sheet = useFileData(props.path, 'dataUrl');
 
   return sheet ? (
     <Book

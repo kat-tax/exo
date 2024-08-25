@@ -24,9 +24,6 @@
       "import": "./styles.ts",
       "require": "./gen/native/styles.js"
     },
-    "./types": {
-      "types": "./env.d.ts"
-    },
     "./gen.theme": {
       "import": "./gen/web/theme.js",
       "require": "./gen/native/theme.js"

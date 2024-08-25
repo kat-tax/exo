@@ -153,7 +153,7 @@ msgstr "Fahrenheit"
 
 #: ../../client/src/app/interface/Menu.tsx:45
 #: ../../client/src/app/interface/Tabs.tsx:23
-#: ../../client/src/media/routes/ScreenBrowse.tsx:20
+#: ../../client/src/media/routes/ScreenBrowse.tsx:22
 msgid "Files"
 msgstr "Archivos"
 
@@ -277,7 +277,7 @@ msgstr "Resumen"
 msgid "Owner Key"
 msgstr "Clave del propietario"
 
-#: ../../client/src/media/hooks/useFileControls.ts:71
+#: ../../client/src/media/hooks/useFileControls.ts:72
 msgid "Pause"
 msgstr "Pausar"
 
@@ -289,7 +289,7 @@ msgstr "Imágenes"
 msgid "Pin"
 msgstr "Fijar"
 
-#: ../../client/src/media/hooks/useFileControls.ts:71
+#: ../../client/src/media/hooks/useFileControls.ts:73
 msgid "Play"
 msgstr "Reproducir"
 

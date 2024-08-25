@@ -1,7 +1,8 @@
 import {Video} from 'react-exo/video';
+
 import {forwardRef} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {useDataUrl} from 'media/hooks/useDataUrl';
+import {useFileData} from 'media/hooks/useFileData';
 
 import type {FileProps} from 'media/file';
 import type {VideoRef} from 'react-exo/video';
@@ -14,7 +15,7 @@ interface FileAudio extends FileProps {
 
 export default forwardRef((props: FileAudio, _ref) => {
   const {styles} = useStyles(stylesheet);
-  const audio = useDataUrl(props.path);
+  const audio = useFileData(props.path, 'dataUrl');
 
   return audio ? (
     <Video

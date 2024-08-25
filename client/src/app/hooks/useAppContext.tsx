@@ -7,6 +7,8 @@ export function useAppContext() {
   return useOutletContext<{
     device: ReturnType<typeof useDeviceSession>,
     profile: ReturnType<typeof useProfile>,
-    hasPreview: boolean,
+    layout: {
+      hasPreviewPanel: boolean,
+    },
   }>() || {};
 }
