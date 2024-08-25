@@ -38,7 +38,7 @@ export default defineConfig(env => mergeConfig(
       ],
     },
     plugins: [
-      topLevelAwait.default({
+      topLevelAwait({
         promiseExportName: '__tla',
         promiseImportName: (i: number) => `__tla_${i}`
       })
