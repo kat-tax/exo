@@ -51,11 +51,11 @@ msgstr "何でも聞いてください..."
 msgid "Auto"
 msgstr "自動"
 
-#: ../../client/src/app/interface/Menu.tsx:75
+#: ../../client/src/app/interface/Menu.tsx:74
 msgid "Books"
 msgstr "本"
 
-#: ../../client/src/app/interface/Menu.tsx:92
+#: ../../client/src/app/interface/Menu.tsx:91
 #: ../../client/src/world/routes/ScreenWorld.tsx:30
 msgid "Calendar"
 msgstr "カレンダー"
@@ -64,7 +64,7 @@ msgstr "カレンダー"
 msgid "Celsius"
 msgstr "摂氏"
 
-#: ../../client/src/media/hooks/useFileControls.ts:179
+#: ../../client/src/media/hooks/useFileControls.ts:187
 msgid "Close"
 msgstr "閉じる"
 
@@ -72,7 +72,7 @@ msgstr "閉じる"
 msgid "Dark"
 msgstr "ダーク"
 
-#: ../../client/src/app/interface/Menu.tsx:28
+#: ../../client/src/app/interface/Menu.tsx:27
 #: ../../client/src/app/interface/Tabs.tsx:13
 msgid "Dashboard"
 msgstr "ダッシュボード"
@@ -97,16 +97,16 @@ msgstr "プロンプトを削除"
 msgid "Delete the local database."
 msgstr "ローカルデータベースを削除します。"
 
-#: ../../client/src/app/interface/Menu.tsx:112
+#: ../../client/src/app/interface/Menu.tsx:111
 #: ../../client/src/dev/routes/ScreenDesign.tsx:11
 msgid "Design"
 msgstr "デザイン"
 
-#: ../../client/src/app/interface/Menu.tsx:110
+#: ../../client/src/app/interface/Menu.tsx:109
 msgid "Dev Mode"
 msgstr "開発者モード"
 
-#: ../../client/src/media/stacks/WatermarkEmpty.tsx:15
+#: ../../client/src/media/dir/DirEmpty.tsx:13
 msgid "Directory is empty."
 msgstr "ディレクトリが空です。"
 
@@ -118,12 +118,12 @@ msgstr "表示"
 msgid "Distance"
 msgstr "距離"
 
-#: ../../client/src/app/interface/Menu.tsx:50
+#: ../../client/src/app/interface/Menu.tsx:49
 msgid "Docs"
 msgstr "ドキュメント"
 
 #: ../../client/src/media/file/FileBinary.tsx:18
-#: ../../client/src/media/hooks/useFileControls.ts:38
+#: ../../client/src/media/hooks/useFileControls.ts:46
 msgid "Download"
 msgstr "ダウンロード"
 
@@ -151,13 +151,13 @@ msgstr "名前を入力してください"
 msgid "Fahrenheit"
 msgstr "華氏"
 
-#: ../../client/src/app/interface/Menu.tsx:45
+#: ../../client/src/app/interface/Menu.tsx:44
 #: ../../client/src/app/interface/Tabs.tsx:23
-#: ../../client/src/media/routes/ScreenBrowse.tsx:22
+#: ../../client/src/media/routes/ScreenBrowse.tsx:16
 msgid "Files"
 msgstr "ファイル"
 
-#: ../../client/src/app/interface/Menu.tsx:70
+#: ../../client/src/app/interface/Menu.tsx:69
 msgid "Games"
 msgstr "ゲーム"
 
@@ -193,11 +193,11 @@ msgstr "GroqモデルID"
 msgid "Human"
 msgstr "人間"
 
-#: ../../client/src/media/stacks/WatermarkEmpty.tsx:16
+#: ../../client/src/media/dir/DirEmpty.tsx:14
 msgid "Import"
 msgstr "インポート"
 
-#: ../../client/src/app/interface/Menu.tsx:33
+#: ../../client/src/app/interface/Menu.tsx:32
 #: ../../client/src/app/interface/Tabs.tsx:18
 msgid "Inbox"
 msgstr "受信トレイ"
@@ -210,7 +210,7 @@ msgstr "キロメートル"
 msgid "Language"
 msgstr "言語"
 
-#: ../../client/src/app/interface/Menu.tsx:117
+#: ../../client/src/app/interface/Menu.tsx:116
 #: ../../client/src/dev/routes/ScreenLibrary.tsx:15
 msgid "Library"
 msgstr "ライブラリ"
@@ -231,16 +231,16 @@ msgstr "設定を管理"
 msgid "Manage your storage"
 msgstr "ストレージを管理"
 
-#: ../../client/src/app/interface/Menu.tsx:82
+#: ../../client/src/app/interface/Menu.tsx:81
 #: ../../client/src/world/routes/ScreenWorld.tsx:18
 msgid "Map"
 msgstr "地図"
 
-#: ../../client/src/media/hooks/useFileControls.ts:172
+#: ../../client/src/media/hooks/useFileControls.ts:180
 msgid "Maximize"
 msgstr "最大化"
 
-#: ../../client/src/app/interface/Menu.tsx:38
+#: ../../client/src/app/interface/Menu.tsx:37
 msgid "Media"
 msgstr "メディア"
 
@@ -248,20 +248,20 @@ msgstr "メディア"
 msgid "Miles"
 msgstr "マイル"
 
-#: ../../client/src/app/interface/Menu.tsx:65
+#: ../../client/src/app/interface/Menu.tsx:64
 msgid "Movies"
 msgstr "映画"
 
-#: ../../client/src/app/interface/Menu.tsx:55
+#: ../../client/src/app/interface/Menu.tsx:54
 msgid "Music"
 msgstr "音楽"
 
-#: ../../client/src/app/interface/Menu.tsx:87
+#: ../../client/src/app/interface/Menu.tsx:86
 #: ../../client/src/world/routes/ScreenWorld.tsx:24
 msgid "News"
 msgstr "ニュース"
 
-#: ../../client/src/media/hooks/useFileControls.ts:114
+#: ../../client/src/media/hooks/useFileControls.ts:122
 msgid "Next"
 msgstr "次へ"
 
@@ -277,19 +277,19 @@ msgstr "概要"
 msgid "Owner Key"
 msgstr "オーナーキー"
 
-#: ../../client/src/media/hooks/useFileControls.ts:72
+#: ../../client/src/media/hooks/useFileControls.ts:79
 msgid "Pause"
 msgstr "一時停止"
 
-#: ../../client/src/app/interface/Menu.tsx:60
+#: ../../client/src/app/interface/Menu.tsx:59
 msgid "Pictures"
 msgstr "写真"
 
-#: ../../client/src/media/hooks/useFileControls.ts:132
+#: ../../client/src/media/hooks/useFileControls.ts:144
 msgid "Pin"
 msgstr "ピン留め"
 
-#: ../../client/src/media/hooks/useFileControls.ts:73
+#: ../../client/src/media/hooks/useFileControls.ts:80
 msgid "Play"
 msgstr "再生"
 
@@ -297,7 +297,7 @@ msgstr "再生"
 msgid "Please set your Groq API Key"
 msgstr "Groq APIキーを設定してください"
 
-#: ../../client/src/media/hooks/useFileControls.ts:103
+#: ../../client/src/media/hooks/useFileControls.ts:111
 msgid "Previous"
 msgstr "前へ"
 
@@ -317,7 +317,7 @@ msgstr "プロンプト"
 msgid "Provide a key to use AI features."
 msgstr "AI機能を使用するためのキーを提供してください。"
 
-#: ../../client/src/media/hooks/useFileControls.ts:91
+#: ../../client/src/media/hooks/useFileControls.ts:99
 msgid "Reset"
 msgstr "リセット"
 
@@ -346,11 +346,11 @@ msgstr "アプリのテーマを選択してください。"
 msgid "Settings"
 msgstr "設定"
 
-#: ../../client/src/media/hooks/useFileControls.ts:150
+#: ../../client/src/media/hooks/useFileControls.ts:158
 msgid "Share"
 msgstr "共有"
 
-#: ../../client/src/app/interface/Menu.tsx:127
+#: ../../client/src/app/interface/Menu.tsx:126
 #: ../../client/src/app/routes/ScreenStorage.tsx:14
 msgid "Storage"
 msgstr "ストレージ"
@@ -391,7 +391,7 @@ msgstr "ようこそ、人間さん"
 msgid "Work in progress..."
 msgstr "作業中..."
 
-#: ../../client/src/app/interface/Menu.tsx:80
+#: ../../client/src/app/interface/Menu.tsx:79
 #: ../../client/src/app/interface/Tabs.tsx:28
 msgid "World"
 msgstr "世界"
@@ -412,10 +412,10 @@ msgstr "アプリに表示する名前。"
 msgid "Your prompt history has been reset."
 msgstr "プロンプト履歴がリセットされました。"
 
-#: ../../client/src/media/hooks/useFileControls.ts:48
+#: ../../client/src/media/hooks/useFileControls.ts:56
 msgid "Zoom in"
 msgstr "拡大"
 
-#: ../../client/src/media/hooks/useFileControls.ts:59
+#: ../../client/src/media/hooks/useFileControls.ts:67
 msgid "Zoom out"
 msgstr "縮小"

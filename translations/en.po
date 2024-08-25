@@ -51,11 +51,11 @@ msgstr "Ask anything..."
 msgid "Auto"
 msgstr "Auto"
 
-#: ../../client/src/app/interface/Menu.tsx:75
+#: ../../client/src/app/interface/Menu.tsx:74
 msgid "Books"
 msgstr "Books"
 
-#: ../../client/src/app/interface/Menu.tsx:92
+#: ../../client/src/app/interface/Menu.tsx:91
 #: ../../client/src/world/routes/ScreenWorld.tsx:30
 msgid "Calendar"
 msgstr "Calendar"
@@ -64,7 +64,7 @@ msgstr "Calendar"
 msgid "Celsius"
 msgstr "Celsius"
 
-#: ../../client/src/media/hooks/useFileControls.ts:179
+#: ../../client/src/media/hooks/useFileControls.ts:187
 msgid "Close"
 msgstr "Close"
 
@@ -72,7 +72,7 @@ msgstr "Close"
 msgid "Dark"
 msgstr "Dark"
 
-#: ../../client/src/app/interface/Menu.tsx:28
+#: ../../client/src/app/interface/Menu.tsx:27
 #: ../../client/src/app/interface/Tabs.tsx:13
 msgid "Dashboard"
 msgstr "Dashboard"
@@ -97,16 +97,16 @@ msgstr "Delete Prompts"
 msgid "Delete the local database."
 msgstr "Delete the local database."
 
-#: ../../client/src/app/interface/Menu.tsx:112
+#: ../../client/src/app/interface/Menu.tsx:111
 #: ../../client/src/dev/routes/ScreenDesign.tsx:11
 msgid "Design"
 msgstr "Design"
 
-#: ../../client/src/app/interface/Menu.tsx:110
+#: ../../client/src/app/interface/Menu.tsx:109
 msgid "Dev Mode"
 msgstr "Dev Mode"
 
-#: ../../client/src/media/stacks/WatermarkEmpty.tsx:15
+#: ../../client/src/media/dir/DirEmpty.tsx:13
 msgid "Directory is empty."
 msgstr "Directory is empty."
 
@@ -118,12 +118,12 @@ msgstr "Display"
 msgid "Distance"
 msgstr "Distance"
 
-#: ../../client/src/app/interface/Menu.tsx:50
+#: ../../client/src/app/interface/Menu.tsx:49
 msgid "Docs"
 msgstr "Docs"
 
 #: ../../client/src/media/file/FileBinary.tsx:18
-#: ../../client/src/media/hooks/useFileControls.ts:38
+#: ../../client/src/media/hooks/useFileControls.ts:46
 msgid "Download"
 msgstr "Download"
 
@@ -151,13 +151,13 @@ msgstr "Enter your name"
 msgid "Fahrenheit"
 msgstr "Fahrenheit"
 
-#: ../../client/src/app/interface/Menu.tsx:45
+#: ../../client/src/app/interface/Menu.tsx:44
 #: ../../client/src/app/interface/Tabs.tsx:23
-#: ../../client/src/media/routes/ScreenBrowse.tsx:22
+#: ../../client/src/media/routes/ScreenBrowse.tsx:16
 msgid "Files"
 msgstr "Files"
 
-#: ../../client/src/app/interface/Menu.tsx:70
+#: ../../client/src/app/interface/Menu.tsx:69
 msgid "Games"
 msgstr "Games"
 
@@ -193,11 +193,11 @@ msgstr "Groq Model ID"
 msgid "Human"
 msgstr "Human"
 
-#: ../../client/src/media/stacks/WatermarkEmpty.tsx:16
+#: ../../client/src/media/dir/DirEmpty.tsx:14
 msgid "Import"
 msgstr "Import"
 
-#: ../../client/src/app/interface/Menu.tsx:33
+#: ../../client/src/app/interface/Menu.tsx:32
 #: ../../client/src/app/interface/Tabs.tsx:18
 msgid "Inbox"
 msgstr "Inbox"
@@ -210,7 +210,7 @@ msgstr "Kilometers"
 msgid "Language"
 msgstr "Language"
 
-#: ../../client/src/app/interface/Menu.tsx:117
+#: ../../client/src/app/interface/Menu.tsx:116
 #: ../../client/src/dev/routes/ScreenLibrary.tsx:15
 msgid "Library"
 msgstr "Library"
@@ -231,16 +231,16 @@ msgstr "Manage your settings"
 msgid "Manage your storage"
 msgstr "Manage your storage"
 
-#: ../../client/src/app/interface/Menu.tsx:82
+#: ../../client/src/app/interface/Menu.tsx:81
 #: ../../client/src/world/routes/ScreenWorld.tsx:18
 msgid "Map"
 msgstr "Map"
 
-#: ../../client/src/media/hooks/useFileControls.ts:172
+#: ../../client/src/media/hooks/useFileControls.ts:180
 msgid "Maximize"
 msgstr "Maximize"
 
-#: ../../client/src/app/interface/Menu.tsx:38
+#: ../../client/src/app/interface/Menu.tsx:37
 msgid "Media"
 msgstr "Media"
 
@@ -248,20 +248,20 @@ msgstr "Media"
 msgid "Miles"
 msgstr "Miles"
 
-#: ../../client/src/app/interface/Menu.tsx:65
+#: ../../client/src/app/interface/Menu.tsx:64
 msgid "Movies"
 msgstr "Movies"
 
-#: ../../client/src/app/interface/Menu.tsx:55
+#: ../../client/src/app/interface/Menu.tsx:54
 msgid "Music"
 msgstr "Music"
 
-#: ../../client/src/app/interface/Menu.tsx:87
+#: ../../client/src/app/interface/Menu.tsx:86
 #: ../../client/src/world/routes/ScreenWorld.tsx:24
 msgid "News"
 msgstr "News"
 
-#: ../../client/src/media/hooks/useFileControls.ts:114
+#: ../../client/src/media/hooks/useFileControls.ts:122
 msgid "Next"
 msgstr "Next"
 
@@ -277,19 +277,19 @@ msgstr "Overview"
 msgid "Owner Key"
 msgstr "Owner Key"
 
-#: ../../client/src/media/hooks/useFileControls.ts:72
+#: ../../client/src/media/hooks/useFileControls.ts:79
 msgid "Pause"
 msgstr "Pause"
 
-#: ../../client/src/app/interface/Menu.tsx:60
+#: ../../client/src/app/interface/Menu.tsx:59
 msgid "Pictures"
 msgstr "Pictures"
 
-#: ../../client/src/media/hooks/useFileControls.ts:132
+#: ../../client/src/media/hooks/useFileControls.ts:144
 msgid "Pin"
 msgstr "Pin"
 
-#: ../../client/src/media/hooks/useFileControls.ts:73
+#: ../../client/src/media/hooks/useFileControls.ts:80
 msgid "Play"
 msgstr "Play"
 
@@ -297,7 +297,7 @@ msgstr "Play"
 msgid "Please set your Groq API Key"
 msgstr "Please set your Groq API Key"
 
-#: ../../client/src/media/hooks/useFileControls.ts:103
+#: ../../client/src/media/hooks/useFileControls.ts:111
 msgid "Previous"
 msgstr "Previous"
 
@@ -317,7 +317,7 @@ msgstr "Prompts"
 msgid "Provide a key to use AI features."
 msgstr "Provide a key to use AI features."
 
-#: ../../client/src/media/hooks/useFileControls.ts:91
+#: ../../client/src/media/hooks/useFileControls.ts:99
 msgid "Reset"
 msgstr "Reset"
 
@@ -346,11 +346,11 @@ msgstr "Select the theme for the app."
 msgid "Settings"
 msgstr "Settings"
 
-#: ../../client/src/media/hooks/useFileControls.ts:150
+#: ../../client/src/media/hooks/useFileControls.ts:158
 msgid "Share"
 msgstr "Share"
 
-#: ../../client/src/app/interface/Menu.tsx:127
+#: ../../client/src/app/interface/Menu.tsx:126
 #: ../../client/src/app/routes/ScreenStorage.tsx:14
 msgid "Storage"
 msgstr "Storage"
@@ -391,7 +391,7 @@ msgstr "Welcome, Human"
 msgid "Work in progress..."
 msgstr "Work in progress..."
 
-#: ../../client/src/app/interface/Menu.tsx:80
+#: ../../client/src/app/interface/Menu.tsx:79
 #: ../../client/src/app/interface/Tabs.tsx:28
 msgid "World"
 msgstr "World"
@@ -412,10 +412,10 @@ msgstr "Your name to display in the app."
 msgid "Your prompt history has been reset."
 msgstr "Your prompt history has been reset."
 
-#: ../../client/src/media/hooks/useFileControls.ts:48
+#: ../../client/src/media/hooks/useFileControls.ts:56
 msgid "Zoom in"
 msgstr "Zoom in"
 
-#: ../../client/src/media/hooks/useFileControls.ts:59
+#: ../../client/src/media/hooks/useFileControls.ts:67
 msgid "Zoom out"
 msgstr "Zoom out"

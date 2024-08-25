@@ -7,7 +7,7 @@ import {useProfile} from 'app/data';
 import {Menu} from 'app/interface/Menu';
 import {Tabs} from 'app/interface/Tabs';
 import {resolve} from 'media/utils/path';
-import {CurrentFile} from 'media/stacks/CurrentFile';
+import {Media} from 'media/stacks/Media';
 
 import type {useAppContext} from 'app/hooks/useAppContext';
 
@@ -28,7 +28,6 @@ export default function Layout() {
     menu: [styles.menu, hasTabs && styles.menuTabs],
     content: [styles.content, isVertical && styles.contentVert],
   };
-
 
   const parts = resolve(resource.path);
   const [name, ext] = parts.slice(-1)[0].split('.') ?? [];
@@ -55,7 +54,7 @@ export default function Layout() {
           <Outlet {...{context}}/>
         </View>
         {hasPath &&
-          <CurrentFile
+          <Media
             url={url}
             ext={ext}
             name={name}

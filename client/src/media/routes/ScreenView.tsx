@@ -1,5 +1,5 @@
 import {useParams} from 'react-exo/navigation';
-import {CurrentFile} from 'media/stacks/CurrentFile';
+import {Media} from 'media/stacks/Media';
 
 export default function ScreenView() {
   const {cid, filename} = useParams<{cid: string, filename: string}>();
@@ -8,7 +8,7 @@ export default function ScreenView() {
   const url = `/ipfs/${cid}/${name}`;
   const ext = name.split('.').pop() || '';
   return (
-    <CurrentFile
+    <Media
       {...{name, ext, url, path}}
       close={() => null}
       maximized
