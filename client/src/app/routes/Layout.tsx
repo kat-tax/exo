@@ -6,8 +6,8 @@ import {useDeviceSession} from 'app/hooks/useDeviceSession';
 import {useProfile} from 'app/data';
 import {Menu} from 'app/interface/Menu';
 import {Tabs} from 'app/interface/Tabs';
-import {resolve} from 'media/utils/path';
 import {Media} from 'media/stacks/Media';
+import {resolve} from 'media/utils/path';
 
 import type {useAppContext} from 'app/hooks/useAppContext';
 
@@ -34,12 +34,12 @@ export default function Layout() {
   const base = parts.slice(0, -1).join('/');
   const path = parts.join('/');
   const url = `/browse/${base}#${name}.${ext}`;
-  const hasPath = Boolean(path);
+  const hasPreview = Boolean(path);
   const context: ReturnType<typeof useAppContext> = {
     profile,
     device,
     layout: {
-      hasPreviewPanel: hasPath && resource.maximized,
+      hasPreviewPanel: hasPreview && resource.maximized,
     },
   };
 
@@ -53,7 +53,7 @@ export default function Layout() {
         <View style={styles.outlet}>
           <Outlet {...{context}}/>
         </View>
-        {hasPath &&
+        {hasPreview &&
           <Media
             url={url}
             ext={ext}

@@ -18,15 +18,15 @@ msgstr ""
 msgid "{0} components"
 msgstr "{0} componentes"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:52
+#: ../../client/src/app/routes/ScreenSettings.tsx:53
 msgid "A mnemonic phrase for authentication."
 msgstr "Una frase mnemotécnica para autenticación."
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:134
+#: ../../client/src/app/routes/ScreenSettings.tsx:135
 msgid "AI"
 msgstr "IA"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:175
+#: ../../client/src/app/routes/ScreenSettings.tsx:176
 msgid "All Data"
 msgstr "Todos los datos"
 
@@ -42,12 +42,12 @@ msgstr "¿Estás seguro de que quieres reiniciar tu base de datos local? Si los 
 msgid "Are you sure you want to reset your prompt history?"
 msgstr "¿Estás seguro de que quieres reiniciar tu historial de indicaciones?"
 
-#: ../../client/src/home/stacks/AiPrompt.tsx:50
+#: ../../client/src/home/stacks/Assistant.tsx:50
 msgid "Ask anything..."
 msgstr "Pregunta lo que quieras..."
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:82
-#: ../../client/src/app/routes/ScreenSettings.tsx:102
+#: ../../client/src/app/routes/ScreenSettings.tsx:83
+#: ../../client/src/app/routes/ScreenSettings.tsx:103
 msgid "Auto"
 msgstr "Automático"
 
@@ -56,11 +56,10 @@ msgid "Books"
 msgstr "Libros"
 
 #: ../../client/src/app/interface/Menu.tsx:91
-#: ../../client/src/world/routes/ScreenWorld.tsx:30
 msgid "Calendar"
 msgstr "Calendario"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:116
+#: ../../client/src/app/routes/ScreenSettings.tsx:117
 msgid "Celsius"
 msgstr "Celsius"
 
@@ -68,37 +67,35 @@ msgstr "Celsius"
 msgid "Close"
 msgstr "Cerrar"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:104
+#: ../../client/src/app/routes/ScreenSettings.tsx:105
 msgid "Dark"
 msgstr "Oscuro"
 
 #: ../../client/src/app/interface/Menu.tsx:27
-#: ../../client/src/app/interface/Tabs.tsx:13
 msgid "Dashboard"
 msgstr "Panel de control"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:163
+#: ../../client/src/app/routes/ScreenSettings.tsx:164
 msgid "Data"
 msgstr "Datos"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:166
+#: ../../client/src/app/routes/ScreenSettings.tsx:167
 msgid "Delete all prompt data."
 msgstr "Eliminar todos los datos de indicaciones."
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:178
+#: ../../client/src/app/routes/ScreenSettings.tsx:179
 msgid "Delete Database"
 msgstr "Eliminar base de datos"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:168
+#: ../../client/src/app/routes/ScreenSettings.tsx:169
 msgid "Delete Prompts"
 msgstr "Eliminar indicaciones"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:176
+#: ../../client/src/app/routes/ScreenSettings.tsx:177
 msgid "Delete the local database."
 msgstr "Eliminar la base de datos local."
 
 #: ../../client/src/app/interface/Menu.tsx:111
-#: ../../client/src/dev/routes/ScreenDesign.tsx:11
 msgid "Design"
 msgstr "Diseño"
 
@@ -110,11 +107,11 @@ msgstr "Modo desarrollador"
 msgid "Directory is empty."
 msgstr "El directorio está vacío."
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:72
+#: ../../client/src/app/routes/ScreenSettings.tsx:73
 msgid "Display"
 msgstr "Pantalla"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:121
+#: ../../client/src/app/routes/ScreenSettings.tsx:122
 msgid "Distance"
 msgstr "Distancia"
 
@@ -135,25 +132,23 @@ msgstr "Disfruta el día"
 msgid "Enjoy the night"
 msgstr "Disfruta la noche"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:141
+#: ../../client/src/app/routes/ScreenSettings.tsx:142
 msgid "Enter api key"
 msgstr "Ingresa la clave API"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:58
+#: ../../client/src/app/routes/ScreenSettings.tsx:59
 msgid "Enter your mnemonic phrase"
 msgstr "Ingresa tu frase mnemotécnica"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:46
+#: ../../client/src/app/routes/ScreenSettings.tsx:47
 msgid "Enter your name"
 msgstr "Ingresa tu nombre"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:117
+#: ../../client/src/app/routes/ScreenSettings.tsx:118
 msgid "Fahrenheit"
 msgstr "Fahrenheit"
 
 #: ../../client/src/app/interface/Menu.tsx:44
-#: ../../client/src/app/interface/Tabs.tsx:23
-#: ../../client/src/media/routes/ScreenBrowse.tsx:16
 msgid "Files"
 msgstr "Archivos"
 
@@ -177,7 +172,7 @@ msgstr "Buenas noches"
 msgid "Good morning"
 msgstr "Buenos días"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:136
+#: ../../client/src/app/routes/ScreenSettings.tsx:137
 msgid "Groq API Key"
 msgstr "Clave API de Groq"
 
@@ -185,11 +180,11 @@ msgstr "Clave API de Groq"
 msgid "Groq Failure"
 msgstr "Fallo de Groq"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:148
+#: ../../client/src/app/routes/ScreenSettings.tsx:149
 msgid "Groq Model ID"
 msgstr "ID del modelo de Groq"
 
-#: ../../client/src/app/interface/MenuHeader.tsx:27
+#: ../../client/src/app/interface/MenuHeader.tsx:28
 msgid "Human"
 msgstr "Humano"
 
@@ -198,24 +193,22 @@ msgid "Import"
 msgstr "Importar"
 
 #: ../../client/src/app/interface/Menu.tsx:32
-#: ../../client/src/app/interface/Tabs.tsx:18
 msgid "Inbox"
 msgstr "Bandeja de entrada"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:129
+#: ../../client/src/app/routes/ScreenSettings.tsx:130
 msgid "Kilometers"
 msgstr "Kilómetros"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:74
+#: ../../client/src/app/routes/ScreenSettings.tsx:75
 msgid "Language"
 msgstr "Idioma"
 
 #: ../../client/src/app/interface/Menu.tsx:116
-#: ../../client/src/dev/routes/ScreenLibrary.tsx:15
 msgid "Library"
 msgstr "Biblioteca"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:103
+#: ../../client/src/app/routes/ScreenSettings.tsx:104
 msgid "Light"
 msgstr "Claro"
 
@@ -232,7 +225,6 @@ msgid "Manage your storage"
 msgstr "Administra tu almacenamiento"
 
 #: ../../client/src/app/interface/Menu.tsx:81
-#: ../../client/src/world/routes/ScreenWorld.tsx:18
 msgid "Map"
 msgstr "Mapa"
 
@@ -244,7 +236,7 @@ msgstr "Maximizar"
 msgid "Media"
 msgstr "Medios"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:130
+#: ../../client/src/app/routes/ScreenSettings.tsx:131
 msgid "Miles"
 msgstr "Millas"
 
@@ -257,7 +249,6 @@ msgid "Music"
 msgstr "Música"
 
 #: ../../client/src/app/interface/Menu.tsx:86
-#: ../../client/src/world/routes/ScreenWorld.tsx:24
 msgid "News"
 msgstr "Noticias"
 
@@ -273,7 +264,7 @@ msgstr "No hay eventos programados."
 msgid "Overview"
 msgstr "Resumen"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:51
+#: ../../client/src/app/routes/ScreenSettings.tsx:52
 msgid "Owner Key"
 msgstr "Clave del propietario"
 
@@ -293,7 +284,7 @@ msgstr "Fijar"
 msgid "Play"
 msgstr "Reproducir"
 
-#: ../../client/src/home/stacks/AiPrompt.tsx:50
+#: ../../client/src/home/stacks/Assistant.tsx:50
 msgid "Please set your Groq API Key"
 msgstr "Por favor, configura tu clave API de Groq"
 
@@ -301,7 +292,7 @@ msgstr "Por favor, configura tu clave API de Groq"
 msgid "Previous"
 msgstr "Anterior"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:37
+#: ../../client/src/app/routes/ScreenSettings.tsx:38
 msgid "Profile"
 msgstr "Perfil"
 
@@ -309,11 +300,11 @@ msgstr "Perfil"
 msgid "Prompt History Reset"
 msgstr "Reinicio del historial de indicaciones"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:165
+#: ../../client/src/app/routes/ScreenSettings.tsx:166
 msgid "Prompts"
 msgstr "Indicaciones"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:137
+#: ../../client/src/app/routes/ScreenSettings.tsx:138
 msgid "Provide a key to use AI features."
 msgstr "Proporciona una clave para usar las funciones de IA."
 
@@ -321,27 +312,26 @@ msgstr "Proporciona una clave para usar las funciones de IA."
 msgid "Reset"
 msgstr "Reiniciar"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:149
+#: ../../client/src/app/routes/ScreenSettings.tsx:150
 msgid "Select the AI model to use."
 msgstr "Selecciona el modelo de IA a utilizar."
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:122
+#: ../../client/src/app/routes/ScreenSettings.tsx:123
 msgid "Select the distance unit for the app."
 msgstr "Selecciona la unidad de distancia para la aplicación."
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:75
+#: ../../client/src/app/routes/ScreenSettings.tsx:76
 msgid "Select the language for the app."
 msgstr "Selecciona el idioma para la aplicación."
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:109
+#: ../../client/src/app/routes/ScreenSettings.tsx:110
 msgid "Select the temperature unit for the app."
 msgstr "Selecciona la unidad de temperatura para la aplicación."
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:95
+#: ../../client/src/app/routes/ScreenSettings.tsx:96
 msgid "Select the theme for the app."
 msgstr "Selecciona el tema para la aplicación."
 
-#: ../../client/src/app/interface/Tabs.tsx:33
 #: ../../client/src/app/routes/ScreenSettings.tsx:27
 msgid "Settings"
 msgstr "Configuración"
@@ -351,19 +341,18 @@ msgid "Share"
 msgstr "Compartir"
 
 #: ../../client/src/app/interface/Menu.tsx:126
-#: ../../client/src/app/routes/ScreenStorage.tsx:14
 msgid "Storage"
 msgstr "Almacenamiento"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:108
+#: ../../client/src/app/routes/ScreenSettings.tsx:109
 msgid "Temperature"
 msgstr "Temperatura"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:94
+#: ../../client/src/app/routes/ScreenSettings.tsx:95
 msgid "Theme"
 msgstr "Tema"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:39
+#: ../../client/src/app/routes/ScreenSettings.tsx:40
 msgid "User Name"
 msgstr "Nombre de usuario"
 
@@ -392,7 +381,6 @@ msgid "Work in progress..."
 msgstr "Trabajo en progreso..."
 
 #: ../../client/src/app/interface/Menu.tsx:79
-#: ../../client/src/app/interface/Tabs.tsx:28
 msgid "World"
 msgstr "Mundo"
 
@@ -404,7 +392,7 @@ msgstr "Estás desconectado"
 msgid "You are online"
 msgstr "Estás conectado"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:40
+#: ../../client/src/app/routes/ScreenSettings.tsx:41
 msgid "Your name to display in the app."
 msgstr "Tu nombre para mostrar en la aplicación."
 

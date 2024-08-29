@@ -13,7 +13,7 @@ import {useAI} from 'home/hooks/useAI';
 
 const DEFAULT_MODEL = 'llama3-8b-8192';
 
-export const AiPrompt = memo(() => {
+export const Assistant = memo(() => {
   const [multiline, setMultiline] = useState(false);
   const {styles, theme} = useStyles(stylesheet);
   const {profile} = useAppContext();

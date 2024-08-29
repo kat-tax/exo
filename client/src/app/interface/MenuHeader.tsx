@@ -1,5 +1,6 @@
 import {t} from '@lingui/macro';
 import {Icon} from 'react-exo/icon';
+import {Link} from 'react-exo/navigation';
 import {View, Text, Pressable} from 'react-native';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useLingui} from '@lingui/react';
@@ -14,29 +15,30 @@ export function MenuHeader(props: MenuProps) {
   const owner = useOwner();
 
   return (
-    <View style={styles.root}>
-      <View style={styles.header}>
-        <Identicon
-          id={owner?.id}
-          link="/settings"
-          width={20}
-          height={20}
-        />
-        <View style={styles.info}>
-          <Text selectable style={styles.name}>
-            {props?.profile?.name ?? t(i18n)`Human`}
-          </Text>
-        </View>
-        <View style={styles.fill}/>
-        <Pressable onPress={() => {}}>
-          <Icon
-            name="ph:magnifying-glass"
-            color={theme.colors.mutedForeground}
-            size={16}
+    <Link to="/settings">
+      <View style={styles.root}>
+        <View style={styles.header}>
+          <Identicon
+            id={owner?.id}
+            width={20}
+            height={20}
           />
-        </Pressable>
+          <View style={styles.info}>
+            <Text selectable style={styles.name}>
+              {props?.profile?.name ?? t(i18n)`Human`}
+            </Text>
+          </View>
+          <View style={styles.fill}/>
+          <Pressable onPress={(e) => {e.preventDefault()}}>
+            <Icon
+              name="ph:magnifying-glass"
+              color={theme.colors.mutedForeground}
+              size={16}
+            />
+          </Pressable>
+        </View>
       </View>
-    </View>
+    </Link>
   );
 }
 

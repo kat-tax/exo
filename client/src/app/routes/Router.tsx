@@ -12,8 +12,8 @@ export function Router() {
           {/* General */}
           <Route index element={<$><Screen.Home/></$>}/>
           <Route path="inbox" element={<$><Screen.Teaser/></$>}/>
-          <Route path="settings" element={<$><Screen.Settings/></$>}/>
           <Route path="storage" element={<$><Screen.Storage/></$>}/>
+          <Route path="settings" element={<Screen.Settings/>}/>
           {/* Media */}
           <Route path="browse/*" element={<$><Screen.Browse/></$>}/>
           <Route path="ipfs/*" element={<$><Screen.Browse/></$>}/>

@@ -31,6 +31,7 @@ export default function ScreenSettings() {
           id={settings.owner?.id}
           width={48}
           height={48}
+          linkable
         />
       }>
       <View style={styles.root}>

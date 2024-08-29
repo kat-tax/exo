@@ -1,5 +1,4 @@
 import {defineConfig, mergeConfig} from 'vite';
-import topLevelAwait from 'vite-plugin-top-level-await';
 import baseConfig from './vite.base.js';
 
 export default defineConfig(env => mergeConfig(
@@ -37,11 +36,5 @@ export default defineConfig(env => mergeConfig(
         '.json',
       ],
     },
-    plugins: [
-      topLevelAwait({
-        promiseExportName: '__tla',
-        promiseImportName: (i: number) => `__tla_${i}`
-      })
-    ]
   }),
 ));

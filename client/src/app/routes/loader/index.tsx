@@ -1,4 +1,5 @@
 import {lazy} from 'react';
+import Settings from '../ScreenSettings';
 
 export const Layout = {
   App: lazy(
@@ -7,9 +8,7 @@ export const Layout = {
 }
 
 export const Screen = {
-  Settings: lazy(
-    () => import('../ScreenSettings')
-  ),
+  Settings,
   Storage: lazy(
     () => import('../ScreenStorage')
   ),
