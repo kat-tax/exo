@@ -1,5 +1,5 @@
-import textExtensions from './text';
 import binaryExtensions from './binary';
+import textExtensions from './text';
 import {basename} from '../path/common';
 
 export interface EncodingOpts {

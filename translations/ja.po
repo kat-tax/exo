@@ -56,6 +56,7 @@ msgid "Books"
 msgstr "本"
 
 #: ../../client/src/app/interface/Menu.tsx:91
+#: ../../client/src/world/routes/ScreenWorld.tsx:30
 msgid "Calendar"
 msgstr "カレンダー"
 
@@ -72,6 +73,7 @@ msgid "Dark"
 msgstr "ダーク"
 
 #: ../../client/src/app/interface/Menu.tsx:27
+#: ../../client/src/app/interface/Tabs.tsx:13
 msgid "Dashboard"
 msgstr "ダッシュボード"
 
@@ -96,6 +98,7 @@ msgid "Delete the local database."
 msgstr "ローカルデータベースを削除します。"
 
 #: ../../client/src/app/interface/Menu.tsx:111
+#: ../../client/src/dev/routes/ScreenDesign.tsx:11
 msgid "Design"
 msgstr "デザイン"
 
@@ -149,6 +152,8 @@ msgid "Fahrenheit"
 msgstr "華氏"
 
 #: ../../client/src/app/interface/Menu.tsx:44
+#: ../../client/src/app/interface/Tabs.tsx:23
+#: ../../client/src/media/routes/ScreenBrowse.tsx:16
 msgid "Files"
 msgstr "ファイル"
 
@@ -193,6 +198,7 @@ msgid "Import"
 msgstr "インポート"
 
 #: ../../client/src/app/interface/Menu.tsx:32
+#: ../../client/src/app/interface/Tabs.tsx:18
 msgid "Inbox"
 msgstr "受信トレイ"
 
@@ -205,6 +211,7 @@ msgid "Language"
 msgstr "言語"
 
 #: ../../client/src/app/interface/Menu.tsx:116
+#: ../../client/src/dev/routes/ScreenLibrary.tsx:15
 msgid "Library"
 msgstr "ライブラリ"
 
@@ -225,6 +232,7 @@ msgid "Manage your storage"
 msgstr "ストレージを管理"
 
 #: ../../client/src/app/interface/Menu.tsx:81
+#: ../../client/src/world/routes/ScreenWorld.tsx:18
 msgid "Map"
 msgstr "地図"
 
@@ -249,6 +257,7 @@ msgid "Music"
 msgstr "音楽"
 
 #: ../../client/src/app/interface/Menu.tsx:86
+#: ../../client/src/world/routes/ScreenWorld.tsx:24
 msgid "News"
 msgstr "ニュース"
 
@@ -332,6 +341,7 @@ msgstr "アプリの温度単位を選択してください。"
 msgid "Select the theme for the app."
 msgstr "アプリのテーマを選択してください。"
 
+#: ../../client/src/app/interface/Tabs.tsx:33
 #: ../../client/src/app/routes/ScreenSettings.tsx:27
 msgid "Settings"
 msgstr "設定"
@@ -341,6 +351,7 @@ msgid "Share"
 msgstr "共有"
 
 #: ../../client/src/app/interface/Menu.tsx:126
+#: ../../client/src/app/routes/ScreenStorage.tsx:14
 msgid "Storage"
 msgstr "ストレージ"
 
@@ -381,6 +392,7 @@ msgid "Work in progress..."
 msgstr "作業中..."
 
 #: ../../client/src/app/interface/Menu.tsx:79
+#: ../../client/src/app/interface/Tabs.tsx:28
 msgid "World"
 msgstr "世界"
 

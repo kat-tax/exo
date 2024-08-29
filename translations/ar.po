@@ -56,6 +56,7 @@ msgid "Books"
 msgstr "الكتب"
 
 #: ../../client/src/app/interface/Menu.tsx:91
+#: ../../client/src/world/routes/ScreenWorld.tsx:30
 msgid "Calendar"
 msgstr "التقويم"
 
@@ -72,6 +73,7 @@ msgid "Dark"
 msgstr "داكن"
 
 #: ../../client/src/app/interface/Menu.tsx:27
+#: ../../client/src/app/interface/Tabs.tsx:13
 msgid "Dashboard"
 msgstr "لوحة التحكم"
 
@@ -96,6 +98,7 @@ msgid "Delete the local database."
 msgstr "حذف قاعدة البيانات المحلية."
 
 #: ../../client/src/app/interface/Menu.tsx:111
+#: ../../client/src/dev/routes/ScreenDesign.tsx:11
 msgid "Design"
 msgstr "التصميم"
 
@@ -149,6 +152,8 @@ msgid "Fahrenheit"
 msgstr "فهرنهايت"
 
 #: ../../client/src/app/interface/Menu.tsx:44
+#: ../../client/src/app/interface/Tabs.tsx:23
+#: ../../client/src/media/routes/ScreenBrowse.tsx:16
 msgid "Files"
 msgstr "الملفات"
 
@@ -193,6 +198,7 @@ msgid "Import"
 msgstr "استيراد"
 
 #: ../../client/src/app/interface/Menu.tsx:32
+#: ../../client/src/app/interface/Tabs.tsx:18
 msgid "Inbox"
 msgstr "صندوق الوارد"
 
@@ -205,6 +211,7 @@ msgid "Language"
 msgstr "اللغة"
 
 #: ../../client/src/app/interface/Menu.tsx:116
+#: ../../client/src/dev/routes/ScreenLibrary.tsx:15
 msgid "Library"
 msgstr "المكتبة"
 
@@ -225,6 +232,7 @@ msgid "Manage your storage"
 msgstr "إدارة التخزين الخاص بك"
 
 #: ../../client/src/app/interface/Menu.tsx:81
+#: ../../client/src/world/routes/ScreenWorld.tsx:18
 msgid "Map"
 msgstr "الخريطة"
 
@@ -249,6 +257,7 @@ msgid "Music"
 msgstr "الموسيقى"
 
 #: ../../client/src/app/interface/Menu.tsx:86
+#: ../../client/src/world/routes/ScreenWorld.tsx:24
 msgid "News"
 msgstr "الأخبار"
 
@@ -332,6 +341,7 @@ msgstr "اختر وحدة درجة الحرارة للتطبيق."
 msgid "Select the theme for the app."
 msgstr "اختر سمة التطبيق."
 
+#: ../../client/src/app/interface/Tabs.tsx:33
 #: ../../client/src/app/routes/ScreenSettings.tsx:27
 msgid "Settings"
 msgstr "الإعدادات"
@@ -341,6 +351,7 @@ msgid "Share"
 msgstr "مشاركة"
 
 #: ../../client/src/app/interface/Menu.tsx:126
+#: ../../client/src/app/routes/ScreenStorage.tsx:14
 msgid "Storage"
 msgstr "التخزين"
 
@@ -381,6 +392,7 @@ msgid "Work in progress..."
 msgstr "العمل قيد التنفيذ..."
 
 #: ../../client/src/app/interface/Menu.tsx:79
+#: ../../client/src/app/interface/Tabs.tsx:28
 msgid "World"
 msgstr "العالم"
 

@@ -1,4 +1,4 @@
-/** List of definitive text file extensions */
+/** List of known text file extensions */
 
 export default [
   'Dockerfile',

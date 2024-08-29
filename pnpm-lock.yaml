@@ -145,9 +145,6 @@ importers:
       react-native-gesture-handler:
         specifier: ^2.17.1
         version: 2.18.1(react-native@0.74.5(@babel/core@7.24.9)(@babel/preset-env@7.24.8(@babel/core@7.24.9))(@types/react@18.2.79)(bufferutil@4.0.8)(react@18.2.0)(utf-8-validate@6.0.4))(react@18.2.0)
-      react-native-get-random-values:
-        specifier: ^1.11.0
-        version: 1.11.0(react-native@0.74.5(@babel/core@7.24.9)(@babel/preset-env@7.24.8(@babel/core@7.24.9))(@types/react@18.2.79)(bufferutil@4.0.8)(react@18.2.0)(utf-8-validate@6.0.4))
       react-native-ios-context-menu:
         specifier: 2.5.1
         version: 2.5.1(expo@51.0.20(@babel/core@7.24.9)(@babel/preset-env@7.24.8(@babel/core@7.24.9))(bufferutil@4.0.8)(utf-8-validate@6.0.4))(react-native-ios-utilities@4.4.5(expo@51.0.20(@babel/core@7.24.9)(@babel/preset-env@7.24.8(@babel/core@7.24.9))(bufferutil@4.0.8)(utf-8-validate@6.0.4))(react-native@0.74.5(@babel/core@7.24.9)(@babel/preset-env@7.24.8(@babel/core@7.24.9))(@types/react@18.2.79)(bufferutil@4.0.8)(react@18.2.0)(utf-8-validate@6.0.4))(react@18.2.0))(react-native@0.74.5(@babel/core@7.24.9)(@babel/preset-env@7.24.8(@babel/core@7.24.9))(@types/react@18.2.79)(bufferutil@4.0.8)(react@18.2.0)(utf-8-validate@6.0.4))(react@18.2.0)
@@ -163,6 +160,9 @@ importers:
       react-native-navigation:
         specifier: 7.40.1
         version: 7.40.1(react-native@0.74.5(@babel/core@7.24.9)(@babel/preset-env@7.24.8(@babel/core@7.24.9))(@types/react@18.2.79)(bufferutil@4.0.8)(react@18.2.0)(utf-8-validate@6.0.4))(react@18.2.0)
+      react-native-random-values-jsi-helper:
+        specifier: ^2.0.1
+        version: 2.0.1(react-native@0.74.5(@babel/core@7.24.9)(@babel/preset-env@7.24.8(@babel/core@7.24.9))(@types/react@18.2.79)(bufferutil@4.0.8)(react@18.2.0)(utf-8-validate@6.0.4))(react@18.2.0)
       react-native-readium:
         specifier: ^2.0.0-rc.2
         version: 2.0.0-rc.2(patch_hash=d57bf4gamt4dahy7pd6qdlnltq)(@babel/core@7.24.9)(browserslist@4.23.2)(react-native@0.74.5(@babel/core@7.24.9)(@babel/preset-env@7.24.8(@babel/core@7.24.9))(@types/react@18.2.79)(bufferutil@4.0.8)(react@18.2.0)(utf-8-validate@6.0.4))(react@18.2.0)
@@ -559,9 +559,6 @@ importers:
       react-native-gesture-handler:
         specifier: ^2.18.1
         version: 2.18.1(react-native@0.74.5(@babel/core@7.24.9)(@babel/preset-env@7.24.8(@babel/core@7.24.9))(@types/react@18.2.79)(bufferutil@4.0.8)(react@18.2.0))(react@18.2.0)
-      react-native-get-random-values:
-        specifier: ^1.11.0
-        version: 1.11.0(react-native@0.74.5(@babel/core@7.24.9)(@babel/preset-env@7.24.8(@babel/core@7.24.9))(@types/react@18.2.79)(bufferutil@4.0.8)(react@18.2.0))
       react-native-linear-gradient:
         specifier: ^2.8.3
         version: 2.8.3(react-native@0.74.5(@babel/core@7.24.9)(@babel/preset-env@7.24.8(@babel/core@7.24.9))(@types/react@18.2.79)(bufferutil@4.0.8)(react@18.2.0))(react@18.2.0)
@@ -661,9 +658,6 @@ importers:
       vite-plugin-node-polyfills:
         specifier: ^0.22.0
         version: 0.22.0(rollup@4.13.0)(vite@5.3.5(@types/node@20.12.3)(lightningcss@1.25.1)(sass@1.77.8)(terser@5.26.0))
-      vite-plugin-top-level-await:
-        specifier: ^1.4.4
-        version: 1.4.4(rollup@4.13.0)(vite@5.3.5(@types/node@20.12.3)(lightningcss@1.25.1)(sass@1.77.8)(terser@5.26.0))
       vite-tsconfig-paths:
         specifier: ^4.3.2
         version: 4.3.2(typescript@5.5.4)(vite@5.3.5(@types/node@20.12.3)(lightningcss@1.25.1)(sass@1.77.8)(terser@5.26.0))
@@ -4985,15 +4979,6 @@ packages:
       rollup:
         optional: true
 
-  '@rollup/plugin-virtual@3.0.2':
-    resolution: {integrity: sha512-10monEYsBp3scM4/ND4LNH5Rxvh3e/cVeL3jWTgZ2SrQ+BmUoQcopVQvnaMcOnykb1VkxUFuDAN+0FnpTFRy2A==}
-    engines: {node: '>=14.0.0'}
-    peerDependencies:
-      rollup: ^1.20.0||^2.0.0||^3.0.0||^4.0.0
-    peerDependenciesMeta:
-      rollup:
-        optional: true
-
   '@rollup/pluginutils@5.1.0':
     resolution: {integrity: sha512-XTIWOPPcpvyKI6L1NHo0lFlCyznUEyPmPY1mc3KpPVDYulHSTvyeLNVW00QTLIAFNhR3kYnJTQHeGqU4M3n09g==}
     engines: {node: '>=14.0.0'}
@@ -5526,75 +5511,6 @@ packages:
     engines: {node: '>=14'}
     peerDependencies:
       '@svgr/core': '*'
-
-  '@swc/core-darwin-arm64@1.3.56':
-    resolution: {integrity: sha512-DZcu7BzDaLEdWHabz9DRTP0yEBLqkrWmskFcD5BX0lGAvoIvE4duMnAqi5F2B3X7630QioHRCYFoRw2WkeE3Cw==}
-    engines: {node: '>=10'}
-    cpu: [arm64]
-    os: [darwin]
-
-  '@swc/core-darwin-x64@1.3.56':
-    resolution: {integrity: sha512-VH5saqYFasdRXJy6RAT+MXm0+IjkMZvOkohJwUei+oA65cKJofQwrJ1jZro8yOJFYvUSI3jgNRGsdBkmo/4hMw==}
-    engines: {node: '>=10'}
-    cpu: [x64]
-    os: [darwin]
-
-  '@swc/core-linux-arm-gnueabihf@1.3.56':
-    resolution: {integrity: sha512-LWwPo6NnJkH01+ukqvkoNIOpMdw+Zundm4vBeicwyVrkP+mC3kwVfi03TUFpQUz3kRKdw/QEnxGTj+MouCPbtw==}
-    engines: {node: '>=10'}
-    cpu: [arm]
-    os: [linux]
-
-  '@swc/core-linux-arm64-gnu@1.3.56':
-    resolution: {integrity: sha512-GzsUy/4egJ4cMlxbM+Ub7AMi5CKAc+pxBxrh8MUPQbyStW8jGgnQsJouTnGy0LHawtdEnsCOl6PcO6OgvktXuQ==}
-    engines: {node: '>=10'}
-    cpu: [arm64]
-    os: [linux]
-
-  '@swc/core-linux-arm64-musl@1.3.56':
-    resolution: {integrity: sha512-9gxL09BIiAv8zY0DjfnFf19bo8+P4T9tdhzPwcm+1yPJcY5yr1+YFWLNFzz01agtOj6VlZ2/wUJTaOfdjjtc+A==}
-    engines: {node: '>=10'}
-    cpu: [arm64]
-    os: [linux]
-
-  '@swc/core-linux-x64-gnu@1.3.56':
-    resolution: {integrity: sha512-n0ORNknl50vMRkll3BDO1E4WOqY6iISlPV1ZQCRLWQ6YQ2q8/WAryBxc2OAybcGHBUFkxyACpJukeU1QZ/9tNw==}
-    engines: {node: '>=10'}
-    cpu: [x64]
-    os: [linux]
-
-  '@swc/core-linux-x64-musl@1.3.56':
-    resolution: {integrity: sha512-r+D34WLAOAlJtfw1gaVWpHRwCncU9nzW9i7w9kSw4HpWYnHJOz54jLGSEmNsrhdTCz1VK2ar+V2ktFUsrlGlDA==}
-    engines: {node: '>=10'}
-    cpu: [x64]
-    os: [linux]
-
-  '@swc/core-win32-arm64-msvc@1.3.56':
-    resolution: {integrity: sha512-29Yt75Is6X24z3x8h/xZC1HnDPkPpyLH9mDQiM6Cuc0I9mVr1XSriPEUB2N/awf5IE4SA8c+3IVq1DtKWbkJIw==}
-    engines: {node: '>=10'}
-    cpu: [arm64]
-    os: [win32]
-
-  '@swc/core-win32-ia32-msvc@1.3.56':
-    resolution: {integrity: sha512-mplp0zbYDrcHtfvkniXlXdB04e2qIjz2Gq/XHKr4Rnc6xVORJjjXF91IemXKpavx2oZYJws+LNJL7UFQ8jyCdQ==}
-    engines: {node: '>=10'}
-    cpu: [ia32]
-    os: [win32]
-
-  '@swc/core-win32-x64-msvc@1.3.56':
-    resolution: {integrity: sha512-zp8MBnrw/bjdLenO/ifYzHrImSjKunqL0C2IF4LXYNRfcbYFh2NwobsVQMZ20IT0474lKRdlP8Oxdt+bHuXrzA==}
-    engines: {node: '>=10'}
-    cpu: [x64]
-    os: [win32]
-
-  '@swc/core@1.3.56':
-    resolution: {integrity: sha512-yz/EeXT+PMZucUNrYceRUaTfuNS4IIu5EDZSOlvCEvm4jAmZi7CYH1B/kvzEzoAOzr7zkQiDPNJftcQXLkjbjA==}
-    engines: {node: '>=10'}
-    peerDependencies:
-      '@swc/helpers': ^0.5.0
-    peerDependenciesMeta:
-      '@swc/helpers':
-        optional: true
 
   '@tauri-apps/api@2.0.0-rc.2':
     resolution: {integrity: sha512-qIJJ1gKkzpPmEmIGTpja6XhuCD8A+vEh/wKaO7TzbxKiws5w3E+Kg4sBtwrH85hjMyqT0SgAUVaUk9XS7FBg3g==}
@@ -7960,9 +7876,6 @@ packages:
   extsprintf@1.3.0:
     resolution: {integrity: sha512-11Ndz7Nv+mvAC1j0ktTa7fAb0vLyGGX+rMHNBYQviQDGU0Hw7lhctJANqbPhu9nV9/izT/IntTgZ7Im/9LJs9g==}
     engines: {'0': node >=0.6.0}
-
-  fast-base64-decode@1.0.0:
-    resolution: {integrity: sha512-qwaScUgUGBYeDNRnbc/KyllVU88Jk1pRHPStuF/lO7B0/RTRLj7U0lkdTAutlBblY08rwZDff6tNU9cjv6j//Q==}
 
   fast-check@3.21.0:
     resolution: {integrity: sha512-QpmbiqRFRZ+SIlBJh6xi5d/PgXciUc/xWKc4Vi2RWEHHIRx6oM3f0fWNna++zP9VB5HUBTObUK9gTKQP3vVcrQ==}
@@ -11067,11 +10980,6 @@ packages:
       react: '*'
       react-native: '*'
 
-  react-native-get-random-values@1.11.0:
-    resolution: {integrity: sha512-4BTbDbRmS7iPdhYLRcz3PGFIpFJBwNZg9g42iwa2P6FOv9vZj/xJc678RZXnLNZzd0qd7Q3CCF6Yd+CU2eoXKQ==}
-    peerDependencies:
-      react-native: '>=0.56'
-
   react-native-ios-context-menu@2.5.1:
     resolution: {integrity: sha512-Qt+0qeW/2x2Dc6aNUwsUR6BV0EozT5n2VNYIDKjdEQMF0xrN/o37p2+Oz6xhvWcA+15gAXqCbGq6omjPHLowRw==}
     peerDependencies:
@@ -11133,6 +11041,12 @@ packages:
     peerDependenciesMeta:
       remx:
         optional: true
+
+  react-native-random-values-jsi-helper@2.0.1:
+    resolution: {integrity: sha512-eBmKD8nUrKUDeucYRI0ChfOtRRAmZVTxIgqz0gqY4Wf2F/B6/LoAzLQ23Xt+pF6JP8KiU/vAMHKOJMsk6Nb9dw==}
+    peerDependencies:
+      react: '*'
+      react-native: '*'
 
   react-native-readium@2.0.0-rc.2:
     resolution: {integrity: sha512-rYcJ6+K1LofyifGKO45l6InZNQg58hWcx9FE++8rsWeSkVDUSRMwGJahbd2eR69yVerHBOTM1cbuG4ftawJRdw==}
@@ -12931,11 +12845,6 @@ packages:
     resolution: {integrity: sha512-F+G3LjiGbG8QpbH9bZ//GSBr9i1InSTkaulfUHFa9jkLqVGORFBoqc2A/Yu5Mmh1kNAbiAeKeK+6aaQUf3x0JA==}
     peerDependencies:
       vite: ^2.0.0 || ^3.0.0 || ^4.0.0 || ^5.0.0
-
-  vite-plugin-top-level-await@1.4.4:
-    resolution: {integrity: sha512-QyxQbvcMkgt+kDb12m2P8Ed35Sp6nXP+l8ptGrnHV9zgYDUpraO0CPdlqLSeBqvY2DToR52nutDG7mIHuysdiw==}
-    peerDependencies:
-      vite: '>=2.8'
 
   vite-tsconfig-paths@4.3.2:
     resolution: {integrity: sha512-0Vd/a6po6Q+86rPlntHye7F31zA2URZMbH8M3saAZ/xR9QoGN/L21bxEGfXdWmFdNkqPpRdxFT7nmNe12e9/uA==}
@@ -19349,7 +19258,7 @@ snapshots:
       chalk: 4.1.2
       execa: 5.1.1
       metro: 0.80.5(bufferutil@4.0.8)
-      metro-config: 0.80.5(bufferutil@4.0.8)
+      metro-config: 0.80.5(bufferutil@4.0.8)(utf-8-validate@6.0.4)
       metro-core: 0.80.5
       node-fetch: 2.7.0
       querystring: 0.2.1
@@ -19848,10 +19757,6 @@ snapshots:
       '@rollup/pluginutils': 5.1.0(rollup@4.13.0)
       estree-walker: 2.0.2
       magic-string: 0.30.10
-    optionalDependencies:
-      rollup: 4.13.0
-
-  '@rollup/plugin-virtual@3.0.2(rollup@4.13.0)':
     optionalDependencies:
       rollup: 4.13.0
 
@@ -20532,49 +20437,6 @@ snapshots:
       svgo: 3.3.2
     transitivePeerDependencies:
       - typescript
-
-  '@swc/core-darwin-arm64@1.3.56':
-    optional: true
-
-  '@swc/core-darwin-x64@1.3.56':
-    optional: true
-
-  '@swc/core-linux-arm-gnueabihf@1.3.56':
-    optional: true
-
-  '@swc/core-linux-arm64-gnu@1.3.56':
-    optional: true
-
-  '@swc/core-linux-arm64-musl@1.3.56':
-    optional: true
-
-  '@swc/core-linux-x64-gnu@1.3.56':
-    optional: true
-
-  '@swc/core-linux-x64-musl@1.3.56':
-    optional: true
-
-  '@swc/core-win32-arm64-msvc@1.3.56':
-    optional: true
-
-  '@swc/core-win32-ia32-msvc@1.3.56':
-    optional: true
-
-  '@swc/core-win32-x64-msvc@1.3.56':
-    optional: true
-
-  '@swc/core@1.3.56':
-    optionalDependencies:
-      '@swc/core-darwin-arm64': 1.3.56
-      '@swc/core-darwin-x64': 1.3.56
-      '@swc/core-linux-arm-gnueabihf': 1.3.56
-      '@swc/core-linux-arm64-gnu': 1.3.56
-      '@swc/core-linux-arm64-musl': 1.3.56
-      '@swc/core-linux-x64-gnu': 1.3.56
-      '@swc/core-linux-x64-musl': 1.3.56
-      '@swc/core-win32-arm64-msvc': 1.3.56
-      '@swc/core-win32-ia32-msvc': 1.3.56
-      '@swc/core-win32-x64-msvc': 1.3.56
 
   '@tauri-apps/api@2.0.0-rc.2': {}
 
@@ -23558,8 +23420,6 @@ snapshots:
 
   extsprintf@1.3.0: {}
 
-  fast-base64-decode@1.0.0: {}
-
   fast-check@3.21.0:
     dependencies:
       pure-rand: 6.1.0
@@ -25964,7 +25824,7 @@ snapshots:
       metro-babel-transformer: 0.80.5
       metro-cache: 0.80.5
       metro-cache-key: 0.80.5
-      metro-config: 0.80.5(bufferutil@4.0.8)
+      metro-config: 0.80.5(bufferutil@4.0.8)(utf-8-validate@6.0.4)
       metro-core: 0.80.5
       metro-file-map: 0.80.5
       metro-resolver: 0.80.5
@@ -27571,16 +27431,6 @@ snapshots:
       react: 18.2.0
       react-native: 0.74.5(@babel/core@7.24.9)(@babel/preset-env@7.24.8(@babel/core@7.24.9))(@types/react@18.2.79)(bufferutil@4.0.8)(react@18.2.0)
 
-  react-native-get-random-values@1.11.0(react-native@0.74.5(@babel/core@7.24.9)(@babel/preset-env@7.24.8(@babel/core@7.24.9))(@types/react@18.2.79)(bufferutil@4.0.8)(react@18.2.0)(utf-8-validate@6.0.4)):
-    dependencies:
-      fast-base64-decode: 1.0.0
-      react-native: 0.74.5(@babel/core@7.24.9)(@babel/preset-env@7.24.8(@babel/core@7.24.9))(@types/react@18.2.79)(bufferutil@4.0.8)(react@18.2.0)(utf-8-validate@6.0.4)
-
-  react-native-get-random-values@1.11.0(react-native@0.74.5(@babel/core@7.24.9)(@babel/preset-env@7.24.8(@babel/core@7.24.9))(@types/react@18.2.79)(bufferutil@4.0.8)(react@18.2.0)):
-    dependencies:
-      fast-base64-decode: 1.0.0
-      react-native: 0.74.5(@babel/core@7.24.9)(@babel/preset-env@7.24.8(@babel/core@7.24.9))(@types/react@18.2.79)(bufferutil@4.0.8)(react@18.2.0)
-
   react-native-ios-context-menu@2.5.1(expo@51.0.20(@babel/core@7.24.9)(@babel/preset-env@7.24.8(@babel/core@7.24.9))(bufferutil@4.0.8)(utf-8-validate@6.0.4))(react-native-ios-utilities@4.4.5(expo@51.0.20(@babel/core@7.24.9)(@babel/preset-env@7.24.8(@babel/core@7.24.9))(bufferutil@4.0.8)(utf-8-validate@6.0.4))(react-native@0.74.5(@babel/core@7.24.9)(@babel/preset-env@7.24.8(@babel/core@7.24.9))(@types/react@18.2.79)(bufferutil@4.0.8)(react@18.2.0)(utf-8-validate@6.0.4))(react@18.2.0))(react-native@0.74.5(@babel/core@7.24.9)(@babel/preset-env@7.24.8(@babel/core@7.24.9))(@types/react@18.2.79)(bufferutil@4.0.8)(react@18.2.0)(utf-8-validate@6.0.4))(react@18.2.0):
     dependencies:
       '@dominicstop/ts-event-emitter': 1.1.0
@@ -27848,6 +27698,11 @@ snapshots:
       react-lifecycles-compat: 2.0.0
       react-native: 0.74.5(@babel/core@7.24.9)(@babel/preset-env@7.24.8(@babel/core@7.24.9))(@types/react@18.2.79)(bufferutil@4.0.8)(react@18.2.0)
       tslib: 1.9.3
+
+  react-native-random-values-jsi-helper@2.0.1(react-native@0.74.5(@babel/core@7.24.9)(@babel/preset-env@7.24.8(@babel/core@7.24.9))(@types/react@18.2.79)(bufferutil@4.0.8)(react@18.2.0)(utf-8-validate@6.0.4))(react@18.2.0):
+    dependencies:
+      react: 18.2.0
+      react-native: 0.74.5(@babel/core@7.24.9)(@babel/preset-env@7.24.8(@babel/core@7.24.9))(@types/react@18.2.79)(bufferutil@4.0.8)(react@18.2.0)(utf-8-validate@6.0.4)
 
   react-native-readium@2.0.0-rc.2(patch_hash=d57bf4gamt4dahy7pd6qdlnltq)(@babel/core@7.24.9)(browserslist@4.23.2)(react-native@0.74.3(@babel/core@7.24.9)(@babel/preset-env@7.24.8(@babel/core@7.24.9))(@types/react@18.2.79)(bufferutil@4.0.8)(react@18.2.0))(react@18.2.0):
     dependencies:
@@ -30588,16 +30443,6 @@ snapshots:
       node-stdlib-browser: 1.2.0
       vite: 5.3.5(@types/node@20.12.3)(lightningcss@1.25.1)(sass@1.77.8)(terser@5.26.0)
     transitivePeerDependencies:
-      - rollup
-
-  vite-plugin-top-level-await@1.4.4(rollup@4.13.0)(vite@5.3.5(@types/node@20.12.3)(lightningcss@1.25.1)(sass@1.77.8)(terser@5.26.0)):
-    dependencies:
-      '@rollup/plugin-virtual': 3.0.2(rollup@4.13.0)
-      '@swc/core': 1.3.56
-      uuid: 10.0.0
-      vite: 5.3.5(@types/node@20.12.3)(lightningcss@1.25.1)(sass@1.77.8)(terser@5.26.0)
-    transitivePeerDependencies:
-      - '@swc/helpers'
       - rollup
 
   vite-tsconfig-paths@4.3.2(typescript@5.5.4)(vite@5.3.5(@types/node@20.12.3)(lightningcss@1.25.1)(sass@1.77.8)(terser@5.26.0)):

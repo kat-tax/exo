@@ -56,6 +56,7 @@ msgid "Books"
 msgstr "Books"
 
 #: ../../client/src/app/interface/Menu.tsx:91
+#: ../../client/src/world/routes/ScreenWorld.tsx:30
 msgid "Calendar"
 msgstr "Calendar"
 
@@ -72,6 +73,7 @@ msgid "Dark"
 msgstr "Dark"
 
 #: ../../client/src/app/interface/Menu.tsx:27
+#: ../../client/src/app/interface/Tabs.tsx:13
 msgid "Dashboard"
 msgstr "Dashboard"
 
@@ -96,6 +98,7 @@ msgid "Delete the local database."
 msgstr "Delete the local database."
 
 #: ../../client/src/app/interface/Menu.tsx:111
+#: ../../client/src/dev/routes/ScreenDesign.tsx:11
 msgid "Design"
 msgstr "Design"
 
@@ -149,6 +152,8 @@ msgid "Fahrenheit"
 msgstr "Fahrenheit"
 
 #: ../../client/src/app/interface/Menu.tsx:44
+#: ../../client/src/app/interface/Tabs.tsx:23
+#: ../../client/src/media/routes/ScreenBrowse.tsx:16
 msgid "Files"
 msgstr "Files"
 
@@ -193,6 +198,7 @@ msgid "Import"
 msgstr "Import"
 
 #: ../../client/src/app/interface/Menu.tsx:32
+#: ../../client/src/app/interface/Tabs.tsx:18
 msgid "Inbox"
 msgstr "Inbox"
 
@@ -205,6 +211,7 @@ msgid "Language"
 msgstr "Language"
 
 #: ../../client/src/app/interface/Menu.tsx:116
+#: ../../client/src/dev/routes/ScreenLibrary.tsx:15
 msgid "Library"
 msgstr "Library"
 
@@ -225,6 +232,7 @@ msgid "Manage your storage"
 msgstr "Manage your storage"
 
 #: ../../client/src/app/interface/Menu.tsx:81
+#: ../../client/src/world/routes/ScreenWorld.tsx:18
 msgid "Map"
 msgstr "Map"
 
@@ -249,6 +257,7 @@ msgid "Music"
 msgstr "Music"
 
 #: ../../client/src/app/interface/Menu.tsx:86
+#: ../../client/src/world/routes/ScreenWorld.tsx:24
 msgid "News"
 msgstr "News"
 
@@ -332,6 +341,7 @@ msgstr "Select the temperature unit for the app."
 msgid "Select the theme for the app."
 msgstr "Select the theme for the app."
 
+#: ../../client/src/app/interface/Tabs.tsx:33
 #: ../../client/src/app/routes/ScreenSettings.tsx:27
 msgid "Settings"
 msgstr "Settings"
@@ -341,6 +351,7 @@ msgid "Share"
 msgstr "Share"
 
 #: ../../client/src/app/interface/Menu.tsx:126
+#: ../../client/src/app/routes/ScreenStorage.tsx:14
 msgid "Storage"
 msgstr "Storage"
 
@@ -381,6 +392,7 @@ msgid "Work in progress..."
 msgstr "Work in progress..."
 
 #: ../../client/src/app/interface/Menu.tsx:79
+#: ../../client/src/app/interface/Tabs.tsx:28
 msgid "World"
 msgstr "World"
 

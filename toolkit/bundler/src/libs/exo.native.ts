@@ -79,7 +79,6 @@ export default defineConfig(env => mergeConfig(
           '@react-native-community/slider',
           '@react-native-picker/picker',
           'react-native-gesture-handler',
-          'react-native-get-random-values',
           'react-native-linear-gradient',
           'react-native-mmkv',
           'react-native-readium',

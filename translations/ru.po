@@ -56,6 +56,7 @@ msgid "Books"
 msgstr "Книги"
 
 #: ../../client/src/app/interface/Menu.tsx:91
+#: ../../client/src/world/routes/ScreenWorld.tsx:30
 msgid "Calendar"
 msgstr "Календарь"
 
@@ -72,6 +73,7 @@ msgid "Dark"
 msgstr "Темная"
 
 #: ../../client/src/app/interface/Menu.tsx:27
+#: ../../client/src/app/interface/Tabs.tsx:13
 msgid "Dashboard"
 msgstr "Дашборд"
 
@@ -96,6 +98,7 @@ msgid "Delete the local database."
 msgstr "Удалить локальную базу данных."
 
 #: ../../client/src/app/interface/Menu.tsx:111
+#: ../../client/src/dev/routes/ScreenDesign.tsx:11
 msgid "Design"
 msgstr "Дизайн"
 
@@ -149,6 +152,8 @@ msgid "Fahrenheit"
 msgstr "Фаренгейт"
 
 #: ../../client/src/app/interface/Menu.tsx:44
+#: ../../client/src/app/interface/Tabs.tsx:23
+#: ../../client/src/media/routes/ScreenBrowse.tsx:16
 msgid "Files"
 msgstr "Файлы"
 
@@ -193,6 +198,7 @@ msgid "Import"
 msgstr "Импорт"
 
 #: ../../client/src/app/interface/Menu.tsx:32
+#: ../../client/src/app/interface/Tabs.tsx:18
 msgid "Inbox"
 msgstr "Входящие"
 
@@ -205,6 +211,7 @@ msgid "Language"
 msgstr "Язык"
 
 #: ../../client/src/app/interface/Menu.tsx:116
+#: ../../client/src/dev/routes/ScreenLibrary.tsx:15
 msgid "Library"
 msgstr "Библиотека"
 
@@ -225,6 +232,7 @@ msgid "Manage your storage"
 msgstr "Управление хранилищем"
 
 #: ../../client/src/app/interface/Menu.tsx:81
+#: ../../client/src/world/routes/ScreenWorld.tsx:18
 msgid "Map"
 msgstr "Карта"
 
@@ -249,6 +257,7 @@ msgid "Music"
 msgstr "Музыка"
 
 #: ../../client/src/app/interface/Menu.tsx:86
+#: ../../client/src/world/routes/ScreenWorld.tsx:24
 msgid "News"
 msgstr "Новости"
 
@@ -332,6 +341,7 @@ msgstr "Выберите единицу измерения температур�
 msgid "Select the theme for the app."
 msgstr "Выберите тему для приложения."
 
+#: ../../client/src/app/interface/Tabs.tsx:33
 #: ../../client/src/app/routes/ScreenSettings.tsx:27
 msgid "Settings"
 msgstr "Настройки"
@@ -341,6 +351,7 @@ msgid "Share"
 msgstr "Поделиться"
 
 #: ../../client/src/app/interface/Menu.tsx:126
+#: ../../client/src/app/routes/ScreenStorage.tsx:14
 msgid "Storage"
 msgstr "Хранилище"
 
@@ -381,6 +392,7 @@ msgid "Work in progress..."
 msgstr "В процессе разработки..."
 
 #: ../../client/src/app/interface/Menu.tsx:79
+#: ../../client/src/app/interface/Tabs.tsx:28
 msgid "World"
 msgstr "Мир"
 

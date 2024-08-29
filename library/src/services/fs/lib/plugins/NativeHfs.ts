@@ -1,3 +1,8 @@
+// TODO: replace with...
+// https://github.com/RonRadtke/react-native-blob-util
+// https://github.com/mrousavy/react-native-blob-jsi-helper
+// https://github.com/craftzdog/react-native-quick-base64
+
 import {Hfs} from '@humanfs/core';
 import {Retrier} from '@humanwhocodes/retry';
 import {FileSystem, Util} from 'react-native-file-access';
