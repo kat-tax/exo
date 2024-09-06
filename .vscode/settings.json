@@ -1,24 +1,34 @@
 {
   "material-icon-theme.activeIconPack": "react_redux",
   "material-icon-theme.folders.associations": {
+    // General
     "output": "dist",
-    "dev": "shared",
-    "bundler": "container",
     "client": "mobile",
     "guides": "content",
+    // App
+    "interface": "layout",
+    "loader": "include",
+    "dev": "shared",
+    "world": "global",
+    "media": "examples",
+    "dir": "context",
+    "file": "docs",
+    // Platforms
     "native": "target",
     "targets": "target",
     "android-tv": "android",
     "visionos": "macos",
     "tvos": "macos",
+    // Tools
     "vocs": "vue",
-    "rive": "animation",
-    "media": "examples",
-    "world": "public",
-    "file": "docs",
-    "dir": "context",
-    "loader": "include",
-    "interface": "layout",
+    "bundler": "container",
+    // Library
+    "assets/map": "global",
+    "assets/model": "unity",
+    "assets/rive": "animation",
+    "assets/game": "console",
+    "assets/book": "content",
+    "assets/note": "custom",
   },
   "material-icon-theme.files.associations": {
     "app/layout.tsx": "renovate",

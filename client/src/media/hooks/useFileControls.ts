@@ -12,7 +12,7 @@ export const IMPORTABLE = [FileType.Torrent, FileType.Binary];
 export const SHAREABLE = [FileType.Image, FileType.Video, FileType.Audio, FileType.Pdf];
 export const ZOOMABLE = [FileType.Image];
 export const PLAYABLE = [FileType.Audio, FileType.Video, FileType.Game, FileType.Lottie, FileType.Rive];
-export const DOCUMENT = [FileType.Book, FileType.Pdf];
+export const PAGEABLE = [FileType.Book, FileType.Pdf];
 
 export interface FileControl {
   title?: string,
@@ -109,7 +109,7 @@ export function useFileControls(props: MediaControlsProps): FileControl[] {
         name: 'prev',
         icon: 'ph:arrow-left',
         label: t(i18n)`Previous`,
-        media: DOCUMENT,
+        media: PAGEABLE,
         action: () => {
           if (file?.current && 'prevPage' in file.current) {
             file.current.prevPage();
@@ -120,7 +120,7 @@ export function useFileControls(props: MediaControlsProps): FileControl[] {
         name: 'next',
         icon: 'ph:arrow-right',
         label: t(i18n)`Next`,
-        media: DOCUMENT,
+        media: PAGEABLE,
         action: () => {
           if (file?.current && 'nextPage' in file.current) {
             file.current.nextPage();

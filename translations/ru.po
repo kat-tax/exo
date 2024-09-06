@@ -122,7 +122,6 @@ msgstr "Расстояние"
 msgid "Docs"
 msgstr "Документы"
 
-#: ../../client/src/media/file/FileBinary.tsx:18
 #: ../../client/src/media/hooks/useFileControls.ts:46
 msgid "Download"
 msgstr "Скачать"
@@ -161,7 +160,7 @@ msgstr "Файлы"
 msgid "Games"
 msgstr "Игры"
 
-#: ../../client/src/app/hooks/useGeolocation.ts:14
+#: ../../client/src/app/hooks/useGeolocation.ts:18
 msgid "Geolocation Error"
 msgstr "Ошибка геолокации"
 

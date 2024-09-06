@@ -9,9 +9,16 @@ export function useGeolocation() {
   const [coords, setCoords] = useState<[number, number]>();
 
   useEffect(() => {
-    const watchId = Geolocation.watchPosition(
-      ({coords}) => setCoords([coords.latitude, coords.longitude]),
-      ({message}) => toast({message, preset: 'error', title: t(i18n)`Geolocation Error`}),
+    const id = Geolocation.watchPosition(
+      ({coords}) => setCoords([
+        coords.latitude,
+        coords.longitude,
+      ]),
+      ({message}) => toast({
+        title: t(i18n)`Geolocation Error`,
+        preset: 'error',
+        message,
+      }),
       {
         distanceFilter: 2,
         enableHighAccuracy: true,
@@ -19,7 +26,7 @@ export function useGeolocation() {
         interval: 10000,
       },
     );
-    return () => Geolocation.clearWatch(watchId);
+    return () => Geolocation.clearWatch(id);
   }, [i18n]);
 
   return coords;

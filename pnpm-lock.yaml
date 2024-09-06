@@ -19258,7 +19258,7 @@ snapshots:
       chalk: 4.1.2
       execa: 5.1.1
       metro: 0.80.5(bufferutil@4.0.8)
-      metro-config: 0.80.5(bufferutil@4.0.8)(utf-8-validate@6.0.4)
+      metro-config: 0.80.5(bufferutil@4.0.8)
       metro-core: 0.80.5
       node-fetch: 2.7.0
       querystring: 0.2.1

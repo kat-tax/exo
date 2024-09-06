@@ -122,7 +122,6 @@ msgstr "المسافة"
 msgid "Docs"
 msgstr "المستندات"
 
-#: ../../client/src/media/file/FileBinary.tsx:18
 #: ../../client/src/media/hooks/useFileControls.ts:46
 msgid "Download"
 msgstr "تنزيل"
@@ -161,7 +160,7 @@ msgstr "الملفات"
 msgid "Games"
 msgstr "الألعاب"
 
-#: ../../client/src/app/hooks/useGeolocation.ts:14
+#: ../../client/src/app/hooks/useGeolocation.ts:18
 msgid "Geolocation Error"
 msgstr "خطأ في تحديد الموقع الجغرافي"
 
