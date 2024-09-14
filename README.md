@@ -44,7 +44,7 @@
 
 > Note: This project is work in progress. Focus is on web, then all native platforms.
 
-- Join the [ΚΛΤΤΛΧ](https://discord.com/invite/TzhDRyj) channel on Discord
+- Join the [ΚΛΤΤΛΧ](https://discord.kat.tax) channel on Discord
 - Follow [@TheUltDev](https://x.com/theultdev) on X
 
 <br/>
