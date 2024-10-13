@@ -135,7 +135,8 @@ export function getRenderInfo(
     // Documents
     case 'pdf':
       return [FileType.Pdf, {}];
-    // Markdown
+    case 'typ':
+      return [FileType.Typst, {}];
     case 'md':
     case 'mdx':
     case 'markdown':

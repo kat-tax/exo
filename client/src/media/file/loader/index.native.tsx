@@ -22,6 +22,9 @@ export const loader: {[key in FileType]: JSX.Element} = {
   get [FileType.Markdown]() {
     return require('../FileMarkdown').default
   },
+  get [FileType.Typst]() {
+    return require('../FileTypst').default
+  },
   get [FileType.Audio]() {
     return require('../FileAudio').default
   },

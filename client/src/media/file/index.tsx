@@ -42,6 +42,8 @@ export default memo(forwardRef((props: FileProps, ref) => {
       return <$><File.Presentation {...meta} {...ctx}/></$>
     case FileType.Markdown:
       return <$><File.Markdown {...meta} {...ctx}/></$>
+    case FileType.Typst:
+      return <$><File.Typst {...meta} {...ctx}/></$>
     case FileType.Audio:
       return <$><File.Audio {...meta} {...ctx}/></$>
     case FileType.Video:

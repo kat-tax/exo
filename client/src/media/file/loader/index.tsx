@@ -23,6 +23,9 @@ export const loader: {[key in FileType]: ReturnType<typeof lazy>} = {
   [FileType.Markdown]: lazy(
     () => import('../FileMarkdown')
   ),
+  [FileType.Typst]: lazy(
+    () => import('../FileTypst')
+  ),
   [FileType.Audio]: lazy(
     () => import('../FileAudio')
   ),

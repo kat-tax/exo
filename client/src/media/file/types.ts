@@ -14,6 +14,7 @@ export enum FileType {
   Spreadsheet = 'Spreadsheet',
   Presentation = 'Presentation',
   Markdown = 'Markdown',
+  Typst = 'Typst',
   Audio = 'Audio',
   Video = 'Video',
   Image = 'Image',
