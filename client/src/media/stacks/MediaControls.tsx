@@ -5,9 +5,8 @@ import {Motion} from 'react-exo/motion';
 import {Image} from 'react-exo/image';
 import {Icon} from 'react-exo/icon';
 import {isTouch} from 'app/utils/platform';
-import {FileType} from 'media/file/types';
 import {ListRowIcon} from 'media/stacks/ListRowIcon';
-import {useFileControls} from 'media/hooks/useFileControls';
+import {useMediaControls} from 'media/hooks/useMediaControls';
 
 import type {FileRef, FileRenderInfo} from 'media/file/types';
 import type {PressableStateCallbackType} from 'react-native';
@@ -23,6 +22,8 @@ export interface MediaControlsProps {
     name: string,
     title: string,
     cover?: string,
+    muted?: boolean,
+    volume?: number,
     playing?: boolean,
     duration?: number,
     current?: number,
@@ -33,10 +34,10 @@ export interface MediaControlsProps {
 
 export function MediaControls(props: MediaControlsProps) {
   const {styles, theme} = useStyles(stylesheet);
-  const controls = useFileControls(props);
-  const sizeState = isTouch() ? 1 : 0;
-  const imageSize = sizeState === 1 ? 28 : 24;
-  const iconSize = sizeState === 1 ? 20 : 16;
+  const controls = useMediaControls(props);
+  const sizeGroup = isTouch() ? 1 : 0;
+  const imageSize = sizeGroup === 1 ? 28 : 24;
+  const iconSize = sizeGroup === 1 ? 20 : 16;
   const vstyles = useMemo(() => ({
     root: [
       styles.root,
@@ -47,11 +48,6 @@ export function MediaControls(props: MediaControlsProps) {
         ? theme.colors.foreground
         : theme.colors.mutedForeground,
   }), [theme, styles]);
-
-  // Display nothing for torrent files
-  if (props.maximized && props.renderer[0] === FileType.Torrent) {
-    return null;
-  }
 
   return (
     <Motion.View
@@ -72,7 +68,7 @@ export function MediaControls(props: MediaControlsProps) {
                   name={name ?? ''}
                   extension={props.metadata.ext}
                   path={props.metadata.path}
-                  size={sizeState}
+                  size={sizeGroup}
                   isFile={true}
                 />
             }

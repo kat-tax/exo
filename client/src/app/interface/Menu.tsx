@@ -15,7 +15,7 @@ export interface MenuProps {
 }
 
 export function Menu(props: MenuProps) {
-  const {importFolder} = useImporter();
+  const {importFile} = useImporter();
   const {styles} = useStyles(stylesheet);
 
   return (
@@ -38,7 +38,7 @@ export function Menu(props: MenuProps) {
             action={{
               label: 'Import Files',
               icon: 'ph:upload',
-              onPress: importFolder,
+              onPress: importFile,
             }}>
             <MenuItem
               label={<Trans>Files</Trans>}
@@ -91,6 +91,13 @@ export function Menu(props: MenuProps) {
               label={<Trans>Calendar</Trans>}
               icon="ph:calendar-dots"
               path="/calendar"
+            />
+          </MenuSection>
+          <MenuSection label={<Trans>Social</Trans>}>
+            <MenuItem
+              label={<Trans>Live</Trans>}
+              icon="ph:video"
+              path="/live"
             />
           </MenuSection>
           {/* <MenuSection label={<Trans>Favorites</Trans>}>

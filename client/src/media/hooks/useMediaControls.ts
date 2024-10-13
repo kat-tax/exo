@@ -8,13 +8,17 @@ import {FileType} from 'media/file/types';
 
 import type {MediaControlsProps} from 'media/stacks/MediaControls';
 
-export const IMPORTABLE = [FileType.Torrent, FileType.Binary];
+export const IMPORTABLE = [FileType.Torrent, FileType.Binary, FileType.Zip];
+export const EXTRACTABLE = [FileType.Zip];
 export const SHAREABLE = [FileType.Image, FileType.Video, FileType.Audio, FileType.Pdf];
-export const ZOOMABLE = [FileType.Image];
-export const PLAYABLE = [FileType.Audio, FileType.Video, FileType.Game, FileType.Lottie, FileType.Rive];
 export const PAGEABLE = [FileType.Book, FileType.Pdf];
+export const ZOOMABLE = [FileType.Image];
+export const SKIPABLE = [FileType.Video];
+export const AUDIBLE = [FileType.Audio, FileType.Video];
+export const PLAYABLE = [FileType.Audio, FileType.Video, FileType.Game, FileType.Lottie, FileType.Rive];
+export const REPLAYABLE = [FileType.Audio, FileType.Lottie, FileType.Rive];
 
-export interface FileControl {
+export interface MediaControl {
   title?: string,
   label?: React.ReactNode,
   name?: string,
@@ -24,7 +28,7 @@ export interface FileControl {
   action?: () => void,
 }
 
-export function useFileControls(props: MediaControlsProps): FileControl[] {
+export function useMediaControls(props: MediaControlsProps): MediaControl[] {
   const {file, renderer, metadata, close, open} = props;
   const [pinning, setPinning] = useState(false);
   const [pinned, setPinned] = useState<string>();
@@ -47,6 +51,16 @@ export function useFileControls(props: MediaControlsProps): FileControl[] {
         media: IMPORTABLE,
         action: () => {
           console.log('Download', metadata.path);
+        },
+      },
+      // Archive controls
+      {
+        name: 'extract',
+        icon: 'ph:box-arrow-up',
+        label: t(i18n)`Extract`,
+        media: EXTRACTABLE,
+        action: () => {
+          console.log('Extract', metadata.path);
         },
       },
       // Zoom controls
@@ -72,7 +86,7 @@ export function useFileControls(props: MediaControlsProps): FileControl[] {
           }
         },
       },
-      // Sequence controls (play/pause)
+      // Media controls
       {
         name: 'play',
         label: metadata.playing
@@ -94,10 +108,44 @@ export function useFileControls(props: MediaControlsProps): FileControl[] {
         },
       },
       {
-        name: 'reset',
+        name: 'skip-backward',
+        icon: 'ph:skip-back',
+        label: t(i18n)`Skip backward`,
+        media: SKIPABLE,
+        action: () => {
+          console.log('Skip backward', metadata.path);
+        },
+      },
+      {
+        name: 'skip-forward',
+        icon: 'ph:skip-forward',
+        label: t(i18n)`Skip forward`,
+        media: SKIPABLE,
+        action: () => {
+          console.log('Skip forward', metadata.path);
+        },
+      },
+      {
+        name: 'volume',
+        icon: metadata.muted
+          ? 'ph:speaker-x'
+          : metadata.volume
+            ? metadata.volume >= 80
+              ? 'ph:speaker-high'
+              : 'ph:speaker-low'
+            : 'ph:speaker-none',
+        label: t(i18n)`Volume`,
+        media: AUDIBLE,
+        action: () => {
+          console.log('Volume', metadata.path);
+        },
+      },
+      // Specific media controls (replay)
+      {
+        name: 'replay',
         icon: 'ph:arrow-counter-clockwise',
-        label: t(i18n)`Reset`,
-        media: PLAYABLE,
+        label: t(i18n)`Replay`,
+        media: REPLAYABLE,
         action: () => {
           if (file?.current && 'reset' in file.current) {
             file.current.reset();
@@ -135,6 +183,12 @@ export function useFileControls(props: MediaControlsProps): FileControl[] {
       },
       // Window controls
       {
+        name: 'options',
+        icon: 'ph:gear',
+        label: t(i18n)`Options`,
+        action: () => {},
+      },
+      {
         name: 'pin',
         icon: pinning
           ? 'ph:circle-notch'
@@ -142,7 +196,7 @@ export function useFileControls(props: MediaControlsProps): FileControl[] {
             ? 'ph:push-pin'
             : 'ph:push-pin-slash',
         label: t(i18n)`Pin`,
-        filter: () => !metadata.path.startsWith('ipfs://'),
+        filter: () => false,
         action: async () => {
           setPinning(true);
           const name = `${metadata.name}.${metadata.ext}`;
@@ -156,9 +210,6 @@ export function useFileControls(props: MediaControlsProps): FileControl[] {
         name: 'share',
         icon: 'ph:share-network',
         label: t(i18n)`Share`,
-        filter: () => !!pinned
-          || SHAREABLE.includes(renderer[0])
-          || metadata.path.startsWith('ipfs://'),
         action: async () => {
           const url = pinned;
           const title = `${metadata.name}.${metadata.ext}`;

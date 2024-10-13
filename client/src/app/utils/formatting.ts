@@ -10,3 +10,7 @@ export function bytesize(bytes: number) {
 export function toText(input?: AllowSharedBufferSource) {
   return new TextDecoder('utf-8').decode(input);
 }
+
+export function toJSON(input?: AllowSharedBufferSource) {
+  return JSON.parse(toText(input));
+}

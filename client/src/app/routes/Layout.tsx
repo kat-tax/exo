@@ -1,8 +1,10 @@
 import {Outlet} from 'react-exo/navigation';
+import {useState} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useWindowDimensions, View, StatusBar} from 'react-native';
 import {useCurrentResource} from 'app/hooks/useCurrentResource';
 import {useDeviceSession} from 'app/hooks/useDeviceSession';
+import {useHotkeys} from 'app/hooks/useHotkeys';
 import {useProfile} from 'app/data';
 import {Menu} from 'app/interface/Menu';
 import {Tabs} from 'app/interface/Tabs';
@@ -15,6 +17,8 @@ export const APP_MENU_WIDTH = 146;
 export const APP_MENU_TAB_HEIGHT = 64;
 
 export default function Layout() {
+  const [previewOpen, setPreviewOpen] = useState(true);
+  const [menuOpen, setMenuOpen] = useState(true);
   const {styles, theme} = useStyles(stylesheet);
   const resource = useCurrentResource();
   const screen = useWindowDimensions();
@@ -34,7 +38,7 @@ export default function Layout() {
   const base = parts.slice(0, -1).join('/');
   const path = parts.join('/');
   const url = `/browse/${base}#${name}.${ext}`;
-  const hasPreview = Boolean(path);
+  const hasPreview = Boolean(path) && previewOpen;
   const context: ReturnType<typeof useAppContext> = {
     profile,
     device,
@@ -43,22 +47,30 @@ export default function Layout() {
     },
   };
 
+  useHotkeys({
+    toggleMenu: () => {
+      setMenuOpen(!menuOpen);
+    },
+    togglePreview: () => {
+      setPreviewOpen(!previewOpen);
+    },
+  });
+
   return <>
     <StatusBar networkActivityIndicatorVisible={!device?.online}/>
     <View style={vstyles.root}>
-      <View style={vstyles.menu}>
-        {hasTabs ? <Tabs/> : <Menu {...{profile}}/>}
-      </View>
+      {menuOpen &&
+        <View style={vstyles.menu}>
+          {hasTabs ? <Tabs/> : <Menu {...{profile}}/>}
+        </View>
+      }
       <View style={vstyles.content}>
         <View style={styles.outlet}>
           <Outlet {...{context}}/>
         </View>
         {hasPreview &&
           <Media
-            url={url}
-            ext={ext}
-            name={name}
-            path={path}
+            {...{url, ext, name, path}}
             vertical={isVertical}
             maximized={resource.maximized}
             close={resource.close}

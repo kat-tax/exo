@@ -59,4 +59,8 @@ const stylesheet = createStyleSheet(theme => ({
     letterSpacing: theme.font.contentSpacing,
     color: theme.colors.mutedForeground,
   },
+  rect: {
+    flex: 1,
+    backgroundColor: 'yellow',
+  },
 }));

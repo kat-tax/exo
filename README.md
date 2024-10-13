@@ -1,29 +1,35 @@
 <!-- Header  -->
+
 <h1 align="center">
   EXO
 </h1>
-<h4 align="center">
+<br>
+<h3 align="center">
   The Ultimate React Native Skeleton
-</h6>
+</h3>
 <p align="center">
   <a href="https://exo.ult.dev" _target="blank">
     Documentation
   </a> |
-    <a href="https://exo.fig.run" _target="blank">
+  <a href="https://exo.fig.run" _target="blank">
     Storybook
   </a> |
-  <a href="https://fov.tv" _target="blank">
-    Web Demo
+  <a href="https://figma-to-react-native.com" _target="blank">
+    Figma
   </a>
 </p>
-
+<div align="center">
+  <img src="https://ult.dev/images/platforms.svg" alt="EXO" width="180px" />
+</div>
 <br/>
+
+<!-- Guide -->
 
 ### Design
 
 > Note: You can also clone this repo and skip designing.
 
-1. Go to the [figma to react native](https://www.figma.com/community/plugin/821138713091291738) figma plugin page
+1. Go to the [figma to react native](https://www.figma.com/community/plugin/821138713091291738) plugin page
 2. Press `Open in...` and select `Playground File`
 3. Run the plugin and go to the `Export` tab
 4. Press the `Download Components` button
@@ -42,10 +48,10 @@
 
 ### Discuss
 
-> Note: This project is work in progress. Focus is on web, then all native platforms.
+> Note: This project is work in progress.
 
-- Join the [ΚΛΤΤΛΧ](https://discord.kat.tax) channel on Discord
-- Follow [@TheUltDev](https://x.com/theultdev) on X
+- Join the [ΚΛΤΤΛΧ](https://discord.com/invite/TzhDRyj) discord
+- Follow me [@TheUltDev](https://the.ult.dev)
 
 <br/>
 

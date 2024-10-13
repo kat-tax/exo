@@ -56,6 +56,9 @@ export const loader: {[key in FileType]: ReturnType<typeof lazy>} = {
   [FileType.Torrent]: lazy(
     () => import('../FileTorrent')
   ),
+  [FileType.Zip]: lazy(
+    () => import('../FileZip')
+  ),
 }
 
 export default loader

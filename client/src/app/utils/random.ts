@@ -7,11 +7,13 @@ export function float() {
     return Math.random();
   }
 }
+
 export function number(min: number, max: number) {
   const a = Math.ceil(min);
   const b = Math.floor(max);
   return Math.floor(float() * (b - a)) + a;
 }
+
 export function uuid() {
   try {
     return crypto.randomUUID();

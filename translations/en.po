@@ -64,7 +64,7 @@ msgstr "Calendar"
 msgid "Celsius"
 msgstr "Celsius"
 
-#: ../../client/src/media/hooks/useFileControls.ts:187
+#: ../../client/src/media/hooks/useMediaControls.ts:238
 msgid "Close"
 msgstr "Close"
 
@@ -97,12 +97,12 @@ msgstr "Delete Prompts"
 msgid "Delete the local database."
 msgstr "Delete the local database."
 
-#: ../../client/src/app/interface/Menu.tsx:111
+#: ../../client/src/app/interface/Menu.tsx:118
 #: ../../client/src/dev/routes/ScreenDesign.tsx:11
 msgid "Design"
 msgstr "Design"
 
-#: ../../client/src/app/interface/Menu.tsx:109
+#: ../../client/src/app/interface/Menu.tsx:116
 msgid "Dev Mode"
 msgstr "Dev Mode"
 
@@ -122,7 +122,7 @@ msgstr "Distance"
 msgid "Docs"
 msgstr "Docs"
 
-#: ../../client/src/media/hooks/useFileControls.ts:46
+#: ../../client/src/media/hooks/useMediaControls.ts:50
 msgid "Download"
 msgstr "Download"
 
@@ -145,6 +145,10 @@ msgstr "Enter your mnemonic phrase"
 #: ../../client/src/app/routes/ScreenSettings.tsx:47
 msgid "Enter your name"
 msgstr "Enter your name"
+
+#: ../../client/src/media/hooks/useMediaControls.ts:60
+msgid "Extract"
+msgstr "Extract"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:118
 msgid "Fahrenheit"
@@ -209,7 +213,7 @@ msgstr "Kilometers"
 msgid "Language"
 msgstr "Language"
 
-#: ../../client/src/app/interface/Menu.tsx:116
+#: ../../client/src/app/interface/Menu.tsx:123
 #: ../../client/src/dev/routes/ScreenLibrary.tsx:15
 msgid "Library"
 msgstr "Library"
@@ -217,6 +221,10 @@ msgstr "Library"
 #: ../../client/src/app/routes/ScreenSettings.tsx:104
 msgid "Light"
 msgstr "Light"
+
+#: ../../client/src/app/interface/Menu.tsx:98
+msgid "Live"
+msgstr "Live"
 
 #: ../../client/src/home/hooks/useWeather.ts:12
 msgid "Loading..."
@@ -235,7 +243,7 @@ msgstr "Manage your storage"
 msgid "Map"
 msgstr "Map"
 
-#: ../../client/src/media/hooks/useFileControls.ts:180
+#: ../../client/src/media/hooks/useMediaControls.ts:231
 msgid "Maximize"
 msgstr "Maximize"
 
@@ -260,13 +268,17 @@ msgstr "Music"
 msgid "News"
 msgstr "News"
 
-#: ../../client/src/media/hooks/useFileControls.ts:122
+#: ../../client/src/media/hooks/useMediaControls.ts:170
 msgid "Next"
 msgstr "Next"
 
 #: ../../client/src/world/routes/ScreenCalendar.tsx:37
 msgid "No events scheduled."
 msgstr "No events scheduled."
+
+#: ../../client/src/media/hooks/useMediaControls.ts:188
+msgid "Options"
+msgstr "Options"
 
 #: ../../client/src/app/routes/ScreenStorage.tsx:17
 msgid "Overview"
@@ -276,7 +288,7 @@ msgstr "Overview"
 msgid "Owner Key"
 msgstr "Owner Key"
 
-#: ../../client/src/media/hooks/useFileControls.ts:79
+#: ../../client/src/media/hooks/useMediaControls.ts:93
 msgid "Pause"
 msgstr "Pause"
 
@@ -284,11 +296,11 @@ msgstr "Pause"
 msgid "Pictures"
 msgstr "Pictures"
 
-#: ../../client/src/media/hooks/useFileControls.ts:144
+#: ../../client/src/media/hooks/useMediaControls.ts:198
 msgid "Pin"
 msgstr "Pin"
 
-#: ../../client/src/media/hooks/useFileControls.ts:80
+#: ../../client/src/media/hooks/useMediaControls.ts:94
 msgid "Play"
 msgstr "Play"
 
@@ -296,7 +308,7 @@ msgstr "Play"
 msgid "Please set your Groq API Key"
 msgstr "Please set your Groq API Key"
 
-#: ../../client/src/media/hooks/useFileControls.ts:111
+#: ../../client/src/media/hooks/useMediaControls.ts:159
 msgid "Previous"
 msgstr "Previous"
 
@@ -316,7 +328,11 @@ msgstr "Prompts"
 msgid "Provide a key to use AI features."
 msgstr "Provide a key to use AI features."
 
-#: ../../client/src/media/hooks/useFileControls.ts:99
+#: ../../client/src/media/hooks/useMediaControls.ts:147
+msgid "Replay"
+msgstr "Replay"
+
+#: ../../client/src/media/hooks/useMediaControls.ts:99
 msgid "Reset"
 msgstr "Reset"
 
@@ -345,11 +361,23 @@ msgstr "Select the theme for the app."
 msgid "Settings"
 msgstr "Settings"
 
-#: ../../client/src/media/hooks/useFileControls.ts:158
+#: ../../client/src/media/hooks/useMediaControls.ts:212
 msgid "Share"
 msgstr "Share"
 
-#: ../../client/src/app/interface/Menu.tsx:126
+#: ../../client/src/media/hooks/useMediaControls.ts:113
+msgid "Skip backward"
+msgstr "Skip backward"
+
+#: ../../client/src/media/hooks/useMediaControls.ts:122
+msgid "Skip forward"
+msgstr "Skip forward"
+
+#: ../../client/src/app/interface/Menu.tsx:96
+msgid "Social"
+msgstr "Social"
+
+#: ../../client/src/app/interface/Menu.tsx:133
 #: ../../client/src/app/routes/ScreenStorage.tsx:14
 msgid "Storage"
 msgstr "Storage"
@@ -377,6 +405,10 @@ msgstr "View your events and time-related info"
 #: ../../client/src/world/routes/ScreenWorld.tsx:25
 msgid "View your latest news and rss feeds"
 msgstr "View your latest news and rss feeds"
+
+#: ../../client/src/media/hooks/useMediaControls.ts:137
+msgid "Volume"
+msgstr "Volume"
 
 #: ../../client/src/home/routes/ScreenHome.tsx:22
 msgid "Welcome, {0}"
@@ -411,10 +443,10 @@ msgstr "Your name to display in the app."
 msgid "Your prompt history has been reset."
 msgstr "Your prompt history has been reset."
 
-#: ../../client/src/media/hooks/useFileControls.ts:56
+#: ../../client/src/media/hooks/useMediaControls.ts:70
 msgid "Zoom in"
 msgstr "Zoom in"
 
-#: ../../client/src/media/hooks/useFileControls.ts:67
+#: ../../client/src/media/hooks/useMediaControls.ts:81
 msgid "Zoom out"
 msgstr "Zoom out"

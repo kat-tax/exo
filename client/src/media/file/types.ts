@@ -6,10 +6,10 @@ import type {BookRef} from 'media/file/FileBook';
 import type {GameRef} from 'media/file/FileGame';
 
 export enum FileType {
-  Torrent = 'Torrent',
   Binary = 'Binary',
   Text = 'Text',
   Note = 'Note',
+  Torrent = 'Torrent',
   Document = 'Document',
   Spreadsheet = 'Spreadsheet',
   Presentation = 'Presentation',
@@ -24,6 +24,7 @@ export enum FileType {
   Book = 'Book',
   Pdf = 'Pdf',
   Map = 'Map',
+  Zip = 'Zip',
 }
 
 export type FileOptions = {

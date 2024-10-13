@@ -16,7 +16,8 @@ export async function getData<T extends FileFormat>(
   format: T,
   type?: string,
 ): Promise<FileData<T> | undefined> {
-  const $ = await getTransfer(path);
+  const protocol = getProtocol(path);
+  const $ = await getTransfer(path, protocol);
 
   // Remote (fetch)
   if ($ instanceof Response) {
@@ -24,6 +25,9 @@ export async function getData<T extends FileFormat>(
       case 'arrayBuffer':
         return await $.arrayBuffer() as FileData<T>;
       case 'dataUrl':
+        if (protocol === 'http' || protocol === 'https')
+          return path as FileData<T>;
+        return URL.createObjectURL(await $.blob()) as FileData<T>;
       case 'blob':
         return await $.blob() as FileData<T>;
       case 'text':
@@ -40,6 +44,7 @@ export async function getData<T extends FileFormat>(
     case 'arrayBuffer':
       return $?.buffer as FileData<T>;
     case 'dataUrl':
+      return $ ? URL.createObjectURL(new Blob([$], {type})) as FileData<T> : undefined;
     case 'blob':
       return $ ? new Blob([$], {type}) as FileData<T> : undefined;
     case 'text':
@@ -53,8 +58,8 @@ export async function getData<T extends FileFormat>(
 
 export async function getTransfer(
   path: string,
+  protocol: FileProtocol,
 ): Promise<FileTransfer | undefined> {
-  const {protocol} = new URL(path) as {protocol: FileProtocol};
   switch (protocol) {
     case 'fs':
       return (await fs.init()).bytes?.(path);
@@ -71,6 +76,9 @@ export function getRenderInfo(
   extension: string,
 ): FileRenderInfo {
   switch (extension) {
+    // Archives
+    case 'zip':
+      return [FileType.Zip, {}];
     // Torrents
     case 'torrent':
       return [FileType.Torrent, {}];
@@ -201,4 +209,10 @@ export function getRenderInfo(
       return [isText ? FileType.Text : FileType.Binary, {}];
     }
   }
+}
+
+export function getProtocol(path: string): FileProtocol {
+  let protocol: FileProtocol = 'fs';
+  try {protocol = new URL(path).protocol.slice(0, -1) as FileProtocol} catch (e) {}
+  return protocol;
 }

@@ -1,11 +1,11 @@
 import {defineConfig, mergeConfig} from 'vite';
-import webConfig from '../vite.web.js';
+import nativeConfig from '../vite.native.js';
 
 import react from '@vitejs/plugin-react';
 import {lingui} from '@lingui/vite-plugin';
 
 export default defineConfig(env => mergeConfig(
-  webConfig(env),
+  nativeConfig(env),
   defineConfig({
     build: {
       outDir: './gen/native',

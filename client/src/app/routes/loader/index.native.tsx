@@ -38,4 +38,10 @@ export const Screen = {
   get Library() {
     return require('../../../dev/routes/ScreenLibrary').default;
   },
+  get Live() {
+    return require('../../../live/routes/ScreenRooms').default;
+  },
+  get Room() {
+    return require('../../../live/routes/ScreenRoom').default;
+  },
 }

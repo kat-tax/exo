@@ -2,9 +2,10 @@ import {View} from 'react-native';
 import {useNavigate} from 'react-exo/navigation';
 import {useMemo, useState, useEffect, useRef} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {useFileWindow} from 'media/hooks/useFileWindow';
+import {useFileRect} from 'media/hooks/useFileRect';
 import {MediaControls} from 'media/stacks/MediaControls';
 import {getRenderInfo} from 'media/file/utils';
+
 import File from 'media/file';
 
 import type {FileRef} from 'media/file/types';
@@ -22,10 +23,9 @@ interface MediaProps {
 export function Media(props: MediaProps) {
   const nav = useNavigate();
   const file = useRef<FileRef>(null);
-  const window = useFileWindow(props.ext);
+  const rect = useFileRect(props.ext);
   const {styles, theme} = useStyles(stylesheet);
   const {url, ext, name, path, vertical, maximized, close} = props;
-  const isFullWidth = window.viewportWidth <= theme.breakpoints.xs;
 
   // File info
   const [title, setTitle] = useState(name);
@@ -38,10 +38,10 @@ export function Media(props: MediaProps) {
       styles.root,
       vertical && styles.vertical,
       maximized ? styles.maximized : styles.minimized,
-      !maximized && {width: window.resolution[0], height: window.resolution[1]},
-      isFullWidth && styles.fullwidth,
+      !maximized && {width: rect.resolution[0], height: rect.resolution[1]},
+      rect.viewportWidth <= theme.breakpoints.xs && styles.fullwidth,
     ],
-  }), [styles, window, vertical, maximized, isFullWidth]);
+  }), [styles, rect, vertical, maximized, theme.breakpoints.xs]);
 
   // Change title when file name changes
   useEffect(() => {

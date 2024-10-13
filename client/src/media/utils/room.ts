@@ -1,5 +1,6 @@
-import {joinRoom as joinRoomIpfs} from 'trystero/ipfs';
+import {joinRoom as joinRoomIpfs} from 'trystero/torrent';
 import cfg from 'config';
+
 import type {Room} from 'trystero';
 
 export type FileMetadata = {name: string, type: string};

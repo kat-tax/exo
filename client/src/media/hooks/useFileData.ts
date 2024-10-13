@@ -22,7 +22,10 @@ export function useFileData<Format extends FileFormat>(
   // Revoke the URL if used
   useEffect(() => {
     return () => {
-      if (format === 'dataUrl' && typeof data === 'string') {
+      if (format === 'dataUrl'
+        && typeof data === 'string'
+        && data.startsWith('blob:')
+      ) {
        URL.revokeObjectURL(data);
       }
     }

@@ -2,13 +2,13 @@ import {useMemo} from 'react';
 import {useStyles} from 'react-native-unistyles';
 import {useWindowDimensions} from 'react-native';
 
-export type FileWindow = {
+export type FileRect = {
   scale: number,
   resolution: number[],
   viewportWidth: number,
 };
 
-export function useFileWindow(extension: string): FileWindow {
+export function useFileRect(extension: string): FileRect {
   const {width} = useWindowDimensions();
   const {theme} = useStyles();
 

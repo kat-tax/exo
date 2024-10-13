@@ -64,6 +64,8 @@ export default memo(forwardRef((props: FileProps, ref) => {
       return <$><File.Map {...meta} {...ctx}/></$>
     case FileType.Torrent:
       return <$><File.Torrent {...meta} {...ctx}/></$>
+    case FileType.Zip:
+      return <$><File.Zip {...meta} {...ctx}/></$>
     default: file satisfies never;
   }
 }));

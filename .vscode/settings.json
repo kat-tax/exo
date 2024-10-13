@@ -1,4 +1,14 @@
 {
+  // Language
+  "deno.enable": false,
+  "typescript.tsserver.watchOptions": {
+    "watchDirectory": "useFsEvents",
+    "fallbackPolling": "dynamicPriorityPolling",
+    "watchFile": "useFsEventsOnParentDirectory",
+    "excludeDirectories": ["**/node_modules/**/*"],
+    "synchronousWatchDirectory": true,
+  },
+  // Icons
   "material-icon-theme.activeIconPack": "react_redux",
   "material-icon-theme.folders.associations": {
     // General
@@ -40,11 +50,4 @@
     "data/store.ts": "redux-store",
     "data/schema.ts": "database",
   },
-  "typescript.tsserver.watchOptions": {
-    "watchDirectory": "useFsEvents",
-    "fallbackPolling": "dynamicPriorityPolling",
-    "watchFile": "useFsEventsOnParentDirectory",
-    "excludeDirectories": ["**/node_modules/**/*"],
-    "synchronousWatchDirectory": true,
-  }
 }
