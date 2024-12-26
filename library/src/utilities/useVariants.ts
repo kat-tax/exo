@@ -1,4 +1,4 @@
-import {useMemo} from 'react';
+import {useRef, useMemo, useCallback} from 'react';
 import {titleCase} from '_lib/string';
 
 import type {PressableStateCallbackType} from 'react-native';
@@ -18,70 +18,70 @@ export function useVariants<S>(
 ): {
   vstyles: VStyleSheet<S>,
 } {
-  const isVState = (v: string): boolean => v.toLowerCase() === 'state';
+  const statesRef = useRef(states);
+  statesRef.current = states;
 
-  const buildStyles = (slug: VStyleKey<S>, styles: S) => {
+  const isVState = useCallback((v: string): boolean => v.toLowerCase() === 'state', []);
+
+  const buildStyles = useCallback((slug: VStyleKey<S>, styles: S) => {
     const vstyles: [VStyleCond, VStyleMod<S>][] = [[null, styles[slug]]];
     const vnames = Object.entries(variants).sort((a, b) => a[0].localeCompare(b[0]));
-    // Sort and and loop through all vars
-    vnames.forEach(([v1, primary]) => {
+    // Sort and loop through all vars
+    for (const [v1, primary] of vnames) {
       // Single variant for this component
       if (vnames.length === 1) {
         // Loop through all values for the variant
-        primary.forEach(v1v => {
+        for (const v1v of primary) {
           // Build id for this variant combination
           const vkey = `${slug}${titleCase(v1)}${v1v}` as VStyleKey<S>;
           // Look up the id in the stylesheet
           const vstyle = styles[vkey];
           // No specific style for this combo, skip
-          if (!vstyle) return;
+          if (!vstyle) continue;
           // Create a condition for when to apply this variant combo style
           const vcond = (e?: PressableStateCallbackType): boolean => (
             // Test whether the current variant is the same as the value
             // or if the current variant is state and the pressable state matches the value
-            // @ts-ignore TODO
-            (states[v1] === v1v || (isVState(v1) ? e?.[v1v.toLowerCase()] : false))
+            (statesRef.current[v1] === v1v || (isVState(v1) ? e?.[v1v.toLowerCase() as keyof PressableStateCallbackType] ?? false : false))
           );
           // Add the variant combo style to styles
           vstyles.push([vcond, vstyle]);
-        });
+        }
       // Multiple variants, create compound styles
       } else {
         // Prevent state from being used as primary variant (it's a secondary)
-        if (isVState(v1)) return;
+        if (isVState(v1)) continue;
         // Loop through all values for the variant
-        primary.forEach(v1v => {
+        for (const v1v of primary) {
           // For this value, loop all values of the other variants
-          vnames.forEach(([v2, secondary]) => {
-            if (v1 === v2) return;
+          for (const [v2, secondary] of vnames) {
+            if (v1 === v2) continue;
             // Loop through all the values in the other variant
-            secondary.forEach(v2v => {
+            for (const v2v of secondary) {
               // Build id for this variant combination
               const vkey = `${slug}${titleCase(v1)}${v1v}${titleCase(v2)}${v2v}` as VStyleKey<S>;
               // Look up the id in the stylesheet
               const vstyle = styles[vkey];
               // No specific style for this combo, skip
-              if (!vstyle) return;
+              if (!vstyle) continue;
               // Create a condition for when to apply this variant combo style
               const vcond = (e?: PressableStateCallbackType): boolean => (
                 // Test whether the current variant is the same as the value
                 // or if the current variant is state and the pressable state matches the value
-                // @ts-ignore TODO
-                (states[v1] === v1v || (isVState(v1) ? e?.[v1v.toLowerCase()] : false)) &&
-                // @ts-ignore TODO
-                (states[v2] === v2v || (isVState(v2) ? e?.[v2v.toLowerCase()] : false))
+                (statesRef.current[v1] === v1v || (isVState(v1) ? e?.[v1v.toLowerCase() as keyof PressableStateCallbackType] ?? false : false)) &&
+                (statesRef.current[v2] === v2v || (isVState(v2) ? e?.[v2v.toLowerCase() as keyof PressableStateCallbackType] ?? false : false))
               );
               // Add the variant combo style to styles
               vstyles.push([vcond, vstyle]);
-            });
-          });
-        });
+            }
+          }
+        }
       }
-    });
+    }
     return vstyles;
-  }
+  }, [variants, isVState]);
 
-  const proxyStyles = (o: S): VStyleSheet<S> => {
+  const proxyStyles = useCallback((o: S): VStyleSheet<S> => {
     // Cache the styles for each variant combo as they are accessed
     const cache = new Map<string, ReturnType<typeof buildStyles>>();
     // Create empty object to proxy the styles, inherit types from stylesheet
@@ -103,9 +103,9 @@ export function useVariants<S>(
       };
     }
     return proxy;
-  };
+  }, [buildStyles]);
 
   return {
-    vstyles: useMemo(() => proxyStyles(styles), [styles]),
+    vstyles: useMemo(() => proxyStyles(styles), [styles, proxyStyles]),
   };
 }

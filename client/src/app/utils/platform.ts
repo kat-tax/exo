@@ -29,6 +29,11 @@ export function isTV() {
   return Platform.isTV;
 }
 
+export function isXR() {
+  // @ts-expect-error
+  return Platform.isVision;
+}
+
 export function isTauri() {
   return Tauri.isTauri;
 }
