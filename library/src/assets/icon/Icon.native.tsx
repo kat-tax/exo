@@ -14,7 +14,7 @@ export const Icon: IconComponent = (props: IconProps) => {
 
   if (!$props?.hasPlugin)
     throw new Error('Iconify: the Babel plugin is not installed.\n\nFollow the documentation: https://exo.ult.dev/primitives/assets/icon');
-  if (!$props.iconData)
+  if (!$props?.iconData)
     return null;
 
   const res = iconToSVG($props.iconData, {height: $props.size});
@@ -28,7 +28,7 @@ export const Icon: IconComponent = (props: IconProps) => {
       xml={svg.body}
       height={svg.attributes.height}
       width={svg.attributes.width}
-      color={$props.color}
+      color={$props?.color}
       {...$props}
     />
   );
