@@ -182,7 +182,6 @@
     "./radio.css": "./gen/web/radio.css",
     "./slider.css": "./gen/web/slider.css",
     "./switch.css": "./gen/web/switch.css",
-    "./video.css": "./gen/web/Video.css",
     "./babel-plugin-iconify-extract": {
       "types": "./gen/types/babel-plugin-iconify-extract.d.ts",
       "require": "./gen/native/babel-plugin-iconify-extract.cjs"
@@ -213,7 +212,7 @@
     "react-native-screens": ">=3",
     "react-native-skottie": ">=2.1.1",
     "react-native-svg": ">=15",
-    "react-native-video": ">=5"
+    "react-native-video": ">=6"
   },
   "dependencies": {
     "@helia/unixfs": "^3.0.7",
@@ -232,7 +231,6 @@
     "@radix-ui/react-switch": "^1.1.0",
     "@reduxjs/toolkit": "^2.2.7",
     "@rive-app/react-canvas": "^4.13.7",
-    "@vidstack/react": "^1.12.12",
     "burnt": "^0.12.2",
     "helia": "^4.2.5",
     "history": "^5.3.0",
@@ -248,7 +246,6 @@
     "redux-first-history": "^5.2.0",
     "redux-persist": "^6.0.0",
     "thumbhash": "^0.1.1",
-    "vidstack": "^1.12.12",
     "vite-plugin-node-polyfills": "^0.22.0",
     "webtorrent": "^2.5.0"
   },
@@ -269,7 +266,6 @@
     "@types/jest": "^29.5.12",
     "@types/react": "18.2.79",
     "@types/react-dom": "18.2.25",
-    "@types/react-native-video": "^5.0.20",
     "@types/webtorrent": "^0.109.8",
     "bundler": "workspace:*",
     "config": "workspace:*",
@@ -286,7 +282,7 @@
     "react-native-skottie": "^2.1.4",
     "react-native-svg": "^15.5.0",
     "react-native-url-polyfill": "^2.0.0",
-    "react-native-video": "6.4.5",
+    "react-native-video": "^6.8.2",
     "react-native-web": "^0.19.12",
     "react-native-web-linear-gradient": "^1.1.2",
     "react-native-windows": "0.74.18",

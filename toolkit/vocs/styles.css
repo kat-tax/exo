@@ -3,3 +3,7 @@
 
 .dark .show-light {display: none}
 .dark .show-dark {display: block}
+
+video {
+  position: relative !important;
+}

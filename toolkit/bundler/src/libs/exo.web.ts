@@ -86,14 +86,13 @@ export default defineConfig(env => mergeConfig(
           '@linguijs/react',
           '@linguijs/macro',
           /* Vendor */
-          '@vidstack/react',
           '@shopify/flash-list',
         ],
       },
     },
     optimizeDeps: {
       exclude: [
-        '@vidstack/react',
+        '@shopify/flash-list',
       ],
     },
     plugins: [
