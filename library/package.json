@@ -18,60 +18,20 @@
       "import": "./gen/web/index.js",
       "require": "./gen/native/index.js"
     },
-    "./redux": {
-      "types": "./gen/types/redux.d.ts",
-      "import": "./gen/web/redux.js",
-      "require": "./gen/native/redux.js"
+    "./book": {
+      "types": "./gen/types/book.d.ts",
+      "import": "./gen/web/book.js",
+      "require": "./gen/native/book.js"
     },
-    "./torrent": {
-      "types": "./gen/types/torrent.d.ts",
-      "import": "./gen/web/torrent.js",
-      "require": "./gen/native/torrent.js"
+    "./document": {
+      "types": "./gen/types/document.d.ts",
+      "import": "./gen/web/document.js",
+      "require": "./gen/native/document.js"
     },
-    "./device": {
-      "types": "./gen/types/device.d.ts",
-      "import": "./gen/web/device.js",
-      "require": "./gen/native/device.js"
-    },
-    "./navigation": {
-      "types": "./gen/types/navigation.d.ts",
-      "import": "./gen/web/navigation.js",
-      "require": "./gen/native/navigation.js"
-    },
-    "./fs": {
-      "types": "./gen/types/fs.d.ts",
-      "import": "./gen/web/fs.js",
-      "require": "./gen/native/fs.js"
-    },
-    "./kv": {
-      "types": "./gen/types/kv.d.ts",
-      "import": "./gen/web/kv.js",
-      "require": "./gen/native/kv.js"
-    },
-    "./form": {
-      "types": "./gen/types/form.d.ts",
-      "import": "./gen/web/form.js",
-      "require": "./gen/native/form.js"
-    },
-    "./toast": {
-      "types": "./gen/types/toast.d.ts",
-      "import": "./gen/web/toast.js",
-      "require": "./gen/native/toast.js"
-    },
-    "./gesture": {
-      "types": "./gen/types/gesture.d.ts",
-      "import": "./gen/web/gesture.js",
-      "require": "./gen/native/gesture.js"
-    },
-    "./skeleton": {
-      "types": "./gen/types/skeleton.d.ts",
-      "import": "./gen/web/skeleton.js",
-      "require": "./gen/native/skeleton.js"
-    },
-    "./motion": {
-      "types": "./gen/types/motion.d.ts",
-      "import": "./gen/web/motion.js",
-      "require": "./gen/native/motion.js"
+    "./game": {
+      "types": "./gen/types/game.d.ts",
+      "import": "./gen/web/game.js",
+      "require": "./gen/native/game.js"
     },
     "./icon": {
       "types": "./gen/types/icon.d.ts",
@@ -83,55 +43,110 @@
       "import": "./gen/web/image.js",
       "require": "./gen/native/image.js"
     },
-    "./video": {
-      "types": "./gen/types/video.d.ts",
-      "import": "./gen/web/video.js",
-      "require": "./gen/native/video.js"
-    },
     "./lottie": {
       "types": "./gen/types/lottie.d.ts",
       "import": "./gen/web/lottie.js",
       "require": "./gen/native/lottie.js"
     },
-    "./rive": {
-      "types": "./gen/types/rive.d.ts",
-      "import": "./gen/web/rive.js",
-      "require": "./gen/native/rive.js"
-    },
-    "./game": {
-      "types": "./gen/types/game.d.ts",
-      "import": "./gen/web/game.js",
-      "require": "./gen/native/game.js"
-    },
-    "./book": {
-      "types": "./gen/types/book.d.ts",
-      "import": "./gen/web/book.js",
-      "require": "./gen/native/book.js"
+    "./map": {
+      "types": "./gen/types/map.d.ts",
+      "import": "./gen/web/map.js",
+      "require": "./gen/native/map.js"
     },
     "./markdown": {
       "types": "./gen/types/markdown.d.ts",
       "import": "./gen/web/markdown.js",
       "require": "./gen/native/markdown.js"
     },
+    "./model": {
+      "types": "./gen/types/model.d.ts",
+      "import": "./gen/web/model.js",
+      "require": "./gen/native/model.js"
+    },
+    "./note": {
+      "types": "./gen/types/note.d.ts",
+      "import": "./gen/web/note.js",
+      "require": "./gen/native/note.js"
+    },
+    "./pdf": {
+      "types": "./gen/types/pdf.d.ts",
+      "import": "./gen/web/pdf.js",
+      "require": "./gen/native/pdf.js"
+    },
+    "./rive": {
+      "types": "./gen/types/rive.d.ts",
+      "import": "./gen/web/rive.js",
+      "require": "./gen/native/rive.js"
+    },
+    "./video": {
+      "types": "./gen/types/video.d.ts",
+      "import": "./gen/web/video.js",
+      "require": "./gen/native/video.js"
+    },
+    "./device": {
+      "types": "./gen/types/device.d.ts",
+      "import": "./gen/web/device.js",
+      "require": "./gen/native/device.js"
+    },
+    "./form": {
+      "types": "./gen/types/form.d.ts",
+      "import": "./gen/web/form.js",
+      "require": "./gen/native/form.js"
+    },
+    "./fs": {
+      "types": "./gen/types/fs.d.ts",
+      "import": "./gen/web/fs.js",
+      "require": "./gen/native/fs.js"
+    },
+    "./kv": {
+      "types": "./gen/types/kv.d.ts",
+      "import": "./gen/web/kv.js",
+      "require": "./gen/native/kv.js"
+    },
+    "./redux": {
+      "types": "./gen/types/redux.d.ts",
+      "import": "./gen/web/redux.js",
+      "require": "./gen/native/redux.js"
+    },
+    "./toast": {
+      "types": "./gen/types/toast.d.ts",
+      "import": "./gen/web/toast.js",
+      "require": "./gen/native/toast.js"
+    },
+    "./torrent": {
+      "types": "./gen/types/torrent.d.ts",
+      "import": "./gen/web/torrent.js",
+      "require": "./gen/native/torrent.js"
+    },
+    "./gesture": {
+      "types": "./gen/types/gesture.d.ts",
+      "import": "./gen/web/gesture.js",
+      "require": "./gen/native/gesture.js"
+    },
+    "./motion": {
+      "types": "./gen/types/motion.d.ts",
+      "import": "./gen/web/motion.js",
+      "require": "./gen/native/motion.js"
+    },
+    "./navigation": {
+      "types": "./gen/types/navigation.d.ts",
+      "import": "./gen/web/navigation.js",
+      "require": "./gen/native/navigation.js"
+    },
+    "./skeleton": {
+      "types": "./gen/types/skeleton.d.ts",
+      "import": "./gen/web/skeleton.js",
+      "require": "./gen/native/skeleton.js"
+    },
+    "./calendar": {
+      "types": "./gen/types/calendar.d.ts",
+      "import": "./gen/web/calendar.js",
+      "require": "./gen/native/calendar.js"
+    },
     "./checkbox": {
       "types": "./gen/types/checkbox.d.ts",
       "import": "./gen/web/checkbox.js",
       "require": "./gen/native/checkbox.js"
-    },
-    "./switch": {
-      "types": "./gen/types/switch.d.ts",
-      "import": "./gen/web/switch.js",
-      "require": "./gen/native/switch.js"
-    },
-    "./radio": {
-      "types": "./gen/types/radio.d.ts",
-      "import": "./gen/web/radio.js",
-      "require": "./gen/native/radio.js"
-    },
-    "./slider": {
-      "types": "./gen/types/slider.d.ts",
-      "import": "./gen/web/slider.js",
-      "require": "./gen/native/slider.js"
     },
     "./picker": {
       "types": "./gen/types/picker.d.ts",
@@ -143,10 +158,20 @@
       "import": "./gen/web/progress.js",
       "require": "./gen/native/progress.js"
     },
-    "./calendar": {
-      "types": "./gen/types/calendar.d.ts",
-      "import": "./gen/web/calendar.js",
-      "require": "./gen/native/calendar.js"
+    "./radio": {
+      "types": "./gen/types/radio.d.ts",
+      "import": "./gen/web/radio.js",
+      "require": "./gen/native/radio.js"
+    },
+    "./slider": {
+      "types": "./gen/types/slider.d.ts",
+      "import": "./gen/web/slider.js",
+      "require": "./gen/native/slider.js"
+    },
+    "./switch": {
+      "types": "./gen/types/switch.d.ts",
+      "import": "./gen/web/switch.js",
+      "require": "./gen/native/switch.js"
     },
     "./utils": {
       "types": "./gen/types/utils.d.ts",

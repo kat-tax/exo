@@ -31,14 +31,19 @@ export default defineConfig(env => mergeConfig(
           /* Entry */
           index: 'src/index.ts',
           /* Assets */
+          book: 'src/assets/book/Book.export',
+          document: 'src/assets/document/Document.export',
+          game: 'src/assets/game/Game.export',
           icon: 'src/assets/icon/Icon.export',
           image: 'src/assets/image/Image.export',
-          video: 'src/assets/video/Video.export',
           lottie: 'src/assets/lottie/Lottie.export',
-          rive: 'src/assets/rive/Rive.export',
-          game: 'src/assets/game/Game.export',
-          book: 'src/assets/book/Book.export',
+          map: 'src/assets/map/Map.export',
           markdown: 'src/assets/markdown/Markdown.export',
+          model: 'src/assets/model/Model.export',
+          note: 'src/assets/note/Note.export',
+          pdf: 'src/assets/pdf/Pdf.export',
+          rive: 'src/assets/rive/Rive.export',
+          video: 'src/assets/video/Video.export',
           /* Layout */
           gesture: 'src/layout/gesture/Gesture.export',
           motion: 'src/layout/motion/Motion.export',
