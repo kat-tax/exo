@@ -232,7 +232,7 @@
     "@radix-ui/react-switch": "^1.1.0",
     "@reduxjs/toolkit": "^2.2.7",
     "@rive-app/react-canvas": "^4.13.7",
-    "@vidstack/react": "^1.12.9",
+    "@vidstack/react": "^1.12.12",
     "burnt": "^0.12.2",
     "helia": "^4.2.5",
     "history": "^5.3.0",
@@ -248,7 +248,7 @@
     "redux-first-history": "^5.2.0",
     "redux-persist": "^6.0.0",
     "thumbhash": "^0.1.1",
-    "vidstack": "^1.12.9",
+    "vidstack": "^1.12.12",
     "vite-plugin-node-polyfills": "^0.22.0",
     "webtorrent": "^2.5.0"
   },
