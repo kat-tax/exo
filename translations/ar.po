@@ -122,6 +122,8 @@ msgstr "المسافة"
 msgid "Docs"
 msgstr "المستندات"
 
+#: ../../client/src/media/file/FileBinary.tsx:18
+#: ../../client/src/media/file/FileZip.tsx:18
 #: ../../client/src/media/hooks/useMediaControls.ts:50
 msgid "Download"
 msgstr "تنزيل"
@@ -331,10 +333,6 @@ msgstr "قدم مفتاحًا لاستخدام ميزات الذكاء الاص�
 #: ../../client/src/media/hooks/useMediaControls.ts:147
 msgid "Replay"
 msgstr ""
-
-#: ../../client/src/media/hooks/useMediaControls.ts:99
-msgid "Reset"
-msgstr "إعادة تعيين"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:150
 msgid "Select the AI model to use."

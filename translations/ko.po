@@ -122,6 +122,8 @@ msgstr "거리"
 msgid "Docs"
 msgstr "문서"
 
+#: ../../client/src/media/file/FileBinary.tsx:18
+#: ../../client/src/media/file/FileZip.tsx:18
 #: ../../client/src/media/hooks/useMediaControls.ts:50
 msgid "Download"
 msgstr "다운로드"
@@ -331,10 +333,6 @@ msgstr "AI 기능을 사용하려면 키를 제공하세요."
 #: ../../client/src/media/hooks/useMediaControls.ts:147
 msgid "Replay"
 msgstr ""
-
-#: ../../client/src/media/hooks/useMediaControls.ts:99
-msgid "Reset"
-msgstr "초기화"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:150
 msgid "Select the AI model to use."
