@@ -1,4 +1,4 @@
-import {fs} from 'react-exo/fs';
+import {FS} from 'react-exo/fs';
 import {useState, useEffect} from 'react';
 import {isInitDirectory} from 'media/utils/path';
 import {resolve} from 'media/utils/path';
@@ -19,7 +19,7 @@ export function useDirHfs(uri: string, options?: DirectoryOptions) {
 
   useEffect(() => {
     (async () => {
-      const hfs = await fs.init(provider);
+      const hfs = await FS.init(provider);
       const entries: HfsDirectoryEntry[] = [];
       const dirPath = path || '.';
       for await (const entry of hfs.list?.(dirPath) ?? []) {

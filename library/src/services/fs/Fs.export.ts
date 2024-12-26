@@ -3,14 +3,14 @@ import {FSService} from './Fs';
 export type * from './Fs.interface';
 export * as web from './lib/path/web';
 
-export const fs = new FSService();
-export const getDiskSpace = fs.getDiskSpace;
+export const FS = new FSService();
+export const getDiskSpace = FS.getDiskSpace;
 
-export const openFile = fs.openFile;
-export const importFile = fs.importFile;
+export const openFile = FS.openFile;
+export const importFile = FS.importFile;
 
-export const hashFile = fs.hashFile;
-export const cancelHash = fs.cancelHash;
+export const hashFile = FS.hashFile;
+export const cancelHash = FS.cancelHash;
 
-export const isTextFile = fs.isTextFile;
-export const isBinaryFile = fs.isBinaryFile;
+export const isTextFile = FS.isTextFile;
+export const isBinaryFile = FS.isBinaryFile;
