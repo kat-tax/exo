@@ -83,7 +83,7 @@
     "react-native-svg": "^15.4.0",
     "react-native-svg-app-icon": "^0.6.1",
     "react-native-svg-transformer": "^1.5.0",
-    "react-native-unistyles": "^2.9.1",
+    "react-native-unistyles": "^2.20.0",
     "react-native-url-polyfill": "^2.0.0",
     "react-native-video": "6.4.3",
     "react-native-web": "^0.19.12",
