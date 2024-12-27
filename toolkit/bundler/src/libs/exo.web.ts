@@ -90,11 +90,6 @@ export default defineConfig(env => mergeConfig(
         ],
       },
     },
-    optimizeDeps: {
-      exclude: [
-        '@shopify/flash-list',
-      ],
-    },
     plugins: [
       dynImportVar as unknown as PluginOption,
       patchMarkdown,

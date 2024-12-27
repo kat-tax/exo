@@ -1,4 +1,4 @@
-import {fs, isTextFile} from 'react-exo/fs';
+import {FS, isTextFile} from 'react-exo/fs';
 import {fetchIpfs} from 'media/utils/ipfs';
 import {FileType} from 'media/file/types';
 import {toText} from 'app/utils/formatting';
@@ -62,7 +62,7 @@ export async function getTransfer(
 ): Promise<FileTransfer | undefined> {
   switch (protocol) {
     case 'fs':
-      return (await fs.init()).bytes?.(path);
+      return (await FS.init()).bytes?.(path);
     case 'ipfs':
       return fetchIpfs(path);
     case 'http':
