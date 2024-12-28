@@ -1,4 +1,4 @@
-import {View} from 'react-native';
+import {View, ScrollView} from 'react-native';
 import {useNavigate} from 'react-exo/navigation';
 import {useMemo, useState, useEffect, useRef} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
@@ -51,7 +51,7 @@ export function Media(props: MediaProps) {
 
   return (
     <View style={vstyles.root}>
-      <View style={styles.contents}>
+      <ScrollView contentContainerStyle={styles.contents}>
         <File
           ref={file}
           renderer={renderer}
@@ -59,7 +59,7 @@ export function Media(props: MediaProps) {
           setBarTitle={setTitle}
           {...props}
         />
-      </View>
+      </ScrollView>
       <MediaControls {...{
         file,
         renderer,
