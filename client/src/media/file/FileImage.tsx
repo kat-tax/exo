@@ -1,6 +1,4 @@
-import {Image} from 'react-exo/image';
-
-import {View} from 'react-native';
+import {View, ImageBackground} from 'react-native';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {memo, useState, useImperativeHandle, forwardRef} from 'react';
 //import {useImageResolution, ResumableZoom, getAspectRatioSize} from 'react-native-zoom-toolkit';
@@ -55,9 +53,9 @@ export default memo(forwardRef((props: FileImage, ref: React.Ref<ImageRef>) => {
       props.maximized && styles.maximized,
     ]}>
       {/* <ResumableZoom maxScale={resolution}> */}
-        <Image
-          url={image}
-          // style={imageSize}
+        <ImageBackground
+          style={styles.image}
+          source={{uri: image}}
           resizeMode={props.maximized ? 'contain' : 'cover'}
         />
       {/* </ResumableZoom> */}
@@ -72,5 +70,9 @@ const stylesheet = createStyleSheet((theme) => ({
   },
   maximized: {
     margin: theme.display.space3,
+  },
+  image: {
+    flex: 1,
+    overflow: 'hidden',
   },
 }));
