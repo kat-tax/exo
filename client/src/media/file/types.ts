@@ -8,6 +8,7 @@ import type {GameRef} from 'media/file/FileGame';
 export enum FileType {
   Binary = 'Binary',
   Text = 'Text',
+  Code = 'Code',
   Note = 'Note',
   Torrent = 'Torrent',
   Document = 'Document',

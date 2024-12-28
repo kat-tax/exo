@@ -144,6 +144,11 @@ export function getRenderInfo(
     // Books
     case 'epub':
       return [FileType.Book, {continuous: true}];
+    // Code
+    case 'ts':
+      return [FileType.Code, {lang: 'typescript', theme: 'nord'}];
+    case 'js':
+      return [FileType.Code, {lang: 'javascript', theme: 'nord'}];
     // Roms
     case 'n64':
     case 'v64':

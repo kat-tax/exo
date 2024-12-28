@@ -6,18 +6,18 @@ import {useFileData} from 'media/hooks/useFileData';
 
 import type {FileProps} from 'media/file';
 
-interface FileText extends FileProps {
+interface FileCode extends FileProps {
   name: string,
   extension: string,
 }
 
-export default forwardRef((props: FileText, _ref: React.Ref<View>) => {
+export default forwardRef((props: FileCode, _ref: React.Ref<View>) => {
   const {styles} = useStyles(stylesheet);
   const source = useFileData(props.path, 'text');
 
   return source ? (
     <View style={styles.root}>
-      <Code lang="text" theme="nord">
+      <Code lang="typescript" theme="nord">
         {source}
       </Code>
     </View>

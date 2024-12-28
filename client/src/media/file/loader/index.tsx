@@ -8,6 +8,9 @@ export const loader: {[key in FileType]: ReturnType<typeof lazy>} = {
   [FileType.Text]: lazy(
     () => import('../FileText')
   ),
+  [FileType.Code]: lazy(
+    () => import('../FileCode')
+  ),
   [FileType.Note]: lazy(
     () => import('../FileNote')
   ),

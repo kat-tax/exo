@@ -1,7 +1,8 @@
 import {memo} from 'react';
-import {useStyles} from 'react-native-unistyles';
 import {Platform} from 'react-native';
+import {useStyles} from 'react-native-unistyles';
 import {Markdown as MarkdownBase} from 'react-exo/markdown';
+import {Code} from 'react-exo/code';
 
 export const Markdown = memo(({text}: {text: string}) => {
   const {theme} = useStyles();
@@ -11,6 +12,16 @@ export const Markdown = memo(({text}: {text: string}) => {
   return (
     <MarkdownBase
       mergeStyle={false}
+      rules={{
+        code_block: (node, parents, children, styles) => {
+          console.log(node, parents, children, styles);
+          return (
+            <Code lang="typescript" theme="nord">
+              {node.content}
+            </Code>
+          );
+        },
+      }}
       style={{
         body: {
           gap: theme.display.space2,

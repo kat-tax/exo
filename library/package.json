@@ -23,6 +23,11 @@
       "import": "./gen/web/book.js",
       "require": "./gen/native/book.js"
     },
+    "./code": {
+      "types": "./gen/types/code.d.ts",
+      "import": "./gen/web/code.js",
+      "require": "./gen/native/code.js"
+    },
     "./document": {
       "types": "./gen/types/document.d.ts",
       "import": "./gen/web/document.js",
@@ -206,6 +211,7 @@
     "react-dom": ">=18",
     "react-native": ">=74",
     "react-native-file-access": ">=3",
+    "react-native-shiki-engine": ">=0.1",
     "react-native-gesture-handler": ">=2",
     "react-native-linear-gradient": ">=2",
     "react-native-mmkv": ">=2",
@@ -231,6 +237,8 @@
     "@radix-ui/react-switch": "^1.1.0",
     "@reduxjs/toolkit": "^2.2.7",
     "@rive-app/react-canvas": "^4.13.7",
+    "@shikijs/core": "^1.24.4",
+    "@shikijs/engine-oniguruma": "^1.24.4",
     "burnt": "^0.12.2",
     "css-to-react-native": "^3.2.0",
     "helia": "^4.2.5",
@@ -245,6 +253,7 @@
     "redux": "^5.0.1",
     "redux-first-history": "^5.2.0",
     "redux-persist": "^6.0.0",
+    "shiki": "^1.24.4",
     "thumbhash": "^0.1.1",
     "markdown-it": "^13.0.1",
     "vite-plugin-node-polyfills": "^0.22.0",
@@ -281,6 +290,7 @@
     "react-native-mmkv": "^2.12.2",
     "react-native-navigation": "7.40.1",
     "react-native-responsive-image-view": "^2.2.0",
+    "react-native-shiki-engine": "^0.1.7",
     "react-native-screens": "^3.34.0",
     "react-native-skottie": "^2.1.4",
     "react-native-svg": "^15.5.0",

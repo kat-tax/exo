@@ -32,6 +32,7 @@ export default defineConfig(env => mergeConfig(
           index: 'src/index.ts',
           /* Assets */
           book: 'src/assets/book/Book.export',
+          code: 'src/assets/code/Code.export',
           document: 'src/assets/document/Document.export',
           game: 'src/assets/game/Game.export',
           icon: 'src/assets/icon/Icon.export',

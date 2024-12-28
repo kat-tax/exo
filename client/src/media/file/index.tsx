@@ -32,6 +32,8 @@ export default memo(forwardRef((props: FileProps, ref) => {
       return <$><File.Binary {...meta} {...ctx}/></$>
     case FileType.Text:
       return <$><File.Text {...meta} {...ctx}/></$>
+    case FileType.Code:
+      return <$><File.Code {...meta} {...ctx}/></$>
     case FileType.Note:
       return <$><File.Note {...meta} {...ctx}/></$>
     case FileType.Document:

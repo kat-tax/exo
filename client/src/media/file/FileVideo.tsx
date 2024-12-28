@@ -21,24 +21,18 @@ export default forwardRef((props: FileVideo, ref: React.Ref<VideoRef>) => {
 
   console.log(props.path, video);
 
-  return (
-    <video title={props.name} style={styles.root} src={video} autoPlay muted>
-      <track kind="captions" />
-    </video>
-  );
-
-  // return video ? (
-  //   <Video
-  //     ref={ref}
-  //     title={props.name}
-  //     thumbnails={''}
-  //     source={{uri: video}}
-  //     style={[
-  //       styles.root,
-  //       props.maximized && styles.maximized,
-  //     ]}
-  //   />
-  // ) : null;
+  return video ? (
+    <Video
+      ref={ref}
+      title={props.name}
+      thumbnails={''}
+      source={{uri: video}}
+      style={[
+        styles.root,
+        props.maximized && styles.maximized,
+      ]}
+    />
+  ) : null;
 });
 
 const stylesheet = createStyleSheet((theme) => ({
