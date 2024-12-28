@@ -10,7 +10,6 @@ export const Markdown = memo(({text}: {text: string}) => {
 
   return (
     <MarkdownBase
-      debugPrintTree
       mergeStyle={false}
       style={{
         body: {
