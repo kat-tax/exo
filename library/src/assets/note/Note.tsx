@@ -1,1 +1,1 @@
-export {default as Note} from 'react-native-markdown-display';
+export {View as Note} from 'react-native';

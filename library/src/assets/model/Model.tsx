@@ -1,1 +1,1 @@
-export {default as Model} from 'react-native-markdown-display';
+export {View as Model} from 'react-native';

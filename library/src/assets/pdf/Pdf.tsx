@@ -1,1 +1,1 @@
-export {default as Pdf} from 'react-native-markdown-display';
+export {View as Pdf} from 'react-native';

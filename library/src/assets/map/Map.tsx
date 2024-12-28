@@ -1,1 +1,1 @@
-export {default as Map} from 'react-native-markdown-display';
+export {View as Map} from 'react-native';

@@ -13,6 +13,7 @@ export const Markdown = memo(({text}: {text: string}) => {
       contentInsetAdjustmentBehavior="automatic"
       style={{height: '100%'}}>
       <MarkdownBase
+        debugPrintTree
         mergeStyle={false}
         style={{
           body: {
