@@ -5,7 +5,7 @@ import {Watermark} from 'media/stacks/Watermark';
 
 import type {FileProps} from 'media/file';
 
-interface FileBinary extends FileProps {
+export interface FileBinary extends FileProps {
   name: string,
   extension: string,
 }

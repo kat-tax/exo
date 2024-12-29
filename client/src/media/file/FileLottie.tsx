@@ -6,7 +6,7 @@ import {useFileData} from 'media/hooks/useFileData';
 
 import type {FileProps} from 'media/file';
 
-interface FileLottie extends FileProps {
+export interface FileLottie extends FileProps {
   name: string,
   extension: string,
 }

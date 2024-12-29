@@ -8,7 +8,7 @@ import {useFileData} from 'media/hooks/useFileData';
 
 import type {FileProps} from 'media/file';
 
-interface FileMap extends FileProps {
+export interface FileMap extends FileProps {
   name: string,
   extension: string,
 }

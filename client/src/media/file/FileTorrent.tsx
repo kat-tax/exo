@@ -7,7 +7,7 @@ import Directory from 'media/dir';
 
 import type {FileProps} from 'media/file';
 
-interface FileTorrent extends FileProps {
+export interface FileTorrent extends FileProps {
   name: string,
   extension: string,
 }

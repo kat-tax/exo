@@ -7,7 +7,7 @@ import {useFileData} from 'media/hooks/useFileData';
 import type {FileProps} from 'media/file';
 import type {VideoRef} from 'react-exo/video';
 
-interface FileVideo extends FileProps {
+export interface FileVideo extends FileProps {
   ref: React.RefObject<VideoRef>,
   name: string,
   extension: string,

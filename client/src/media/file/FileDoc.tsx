@@ -7,7 +7,7 @@ import {useFileData} from 'media/hooks/useFileData';
 import type {FileProps} from 'media/file';
 import type {BookRef} from 'react-exo/book';
 
-interface FileDoc extends FileProps {
+export interface FileDoc extends FileProps {
   name: string,
   extension: string,
 }

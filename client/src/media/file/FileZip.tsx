@@ -5,7 +5,7 @@ import {Watermark} from 'media/stacks/Watermark';
 
 import type {FileProps} from 'media/file';
 
-interface FileZip extends FileProps {
+export interface FileZip extends FileProps {
   name: string,
   extension: string,
 }

@@ -6,7 +6,7 @@ import {useFileData} from 'media/hooks/useFileData';
 
 import type {FileProps} from 'media/file';
 
-interface FileSpreadsheet extends FileProps {
+export interface FileSpreadsheet extends FileProps {
   name: string,
   extension: string,
 }

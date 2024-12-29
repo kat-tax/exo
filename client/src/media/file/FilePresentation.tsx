@@ -6,7 +6,7 @@ import {useFileData} from 'media/hooks/useFileData';
 
 import type {FileProps} from 'media/file';
 
-interface FilePresentation extends FileProps {
+export interface FilePresentation extends FileProps {
   name: string,
   extension: string,
 }

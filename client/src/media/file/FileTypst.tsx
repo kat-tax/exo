@@ -8,7 +8,7 @@ import {Markdown} from 'app/stacks/Markdown';
 
 import type {FileProps} from 'media/file';
 
-interface FileTypst extends FileProps {
+export interface FileTypst extends FileProps {
   name: string,
   extension: string,
 }

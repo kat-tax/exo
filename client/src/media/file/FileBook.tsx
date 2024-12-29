@@ -9,7 +9,7 @@ import {useFileData} from 'media/hooks/useFileData';
 import type {FileProps} from 'media/file';
 import type {BookRef} from 'react-exo/book';
 
-interface FileBook extends FileProps {
+export interface FileBook extends FileProps {
   name: string,
   extension: string,
 }

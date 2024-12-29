@@ -7,7 +7,7 @@ import {useFileData} from 'media/hooks/useFileData';
 import type {FileProps} from 'media/file';
 import type {RiveRef} from 'react-exo/rive';
 
-interface FileRive extends FileProps {
+export interface FileRive extends FileProps {
   name: string,
   extension: string,
 }

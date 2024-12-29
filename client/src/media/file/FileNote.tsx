@@ -6,7 +6,7 @@ import {useFileData} from 'media/hooks/useFileData';
 
 import type {FileProps} from 'media/file';
 
-interface FileNote extends FileProps {
+export interface FileNote extends FileProps {
   name: string,
   extension: string,
 }
