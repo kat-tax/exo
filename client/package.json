@@ -89,6 +89,7 @@
     "react-native-web": "^0.19.12",
     "react-native-web-linear-gradient": "^1.1.2",
     "react-native-windows": "0.74.13",
+    "react-native-zoom-toolkit": "^4.0.0",
     "react-redux": "^9.1.2",
     "recyclerlistview": "4.2.1",
     "rive-react-native": "^7.3.0",

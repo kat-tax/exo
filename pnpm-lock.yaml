@@ -199,6 +199,9 @@ importers:
       react-native-windows:
         specifier: 0.74.13
         version: 0.74.13(@babel/core@7.24.9)(@babel/preset-env@7.24.8(@babel/core@7.24.9))(@types/react@18.2.79)(bufferutil@4.0.8)(react-native@0.74.5(@babel/core@7.24.9)(@babel/preset-env@7.24.8(@babel/core@7.24.9))(@types/react@18.2.79)(bufferutil@4.0.8)(react@18.2.0)(utf-8-validate@6.0.4))(react@18.2.0)(utf-8-validate@6.0.4)
+      react-native-zoom-toolkit:
+        specifier: ^4.0.0
+        version: 4.0.0(react-native-gesture-handler@2.18.1(react-native@0.74.5(@babel/core@7.24.9)(@babel/preset-env@7.24.8(@babel/core@7.24.9))(@types/react@18.2.79)(bufferutil@4.0.8)(react@18.2.0)(utf-8-validate@6.0.4))(react@18.2.0))(react-native-reanimated@3.15.0(@babel/core@7.24.9)(react-native@0.74.5(@babel/core@7.24.9)(@babel/preset-env@7.24.8(@babel/core@7.24.9))(@types/react@18.2.79)(bufferutil@4.0.8)(react@18.2.0)(utf-8-validate@6.0.4))(react@18.2.0))(react-native@0.74.5(@babel/core@7.24.9)(@babel/preset-env@7.24.8(@babel/core@7.24.9))(@types/react@18.2.79)(bufferutil@4.0.8)(react@18.2.0)(utf-8-validate@6.0.4))(react@18.2.0)
       react-redux:
         specifier: ^9.1.2
         version: 9.1.2(@types/react@18.2.79)(react@18.2.0)(redux@5.0.1)
@@ -11944,6 +11947,15 @@ packages:
       react: ^18.2.0
       react-native: ^0.75.2
 
+  react-native-zoom-toolkit@4.0.0:
+    resolution: {integrity: sha512-xn1p4CCiAqae8ZV8AjxfQa9fxct/GYq3iLSq6SkvamiBSxXX/ZcP8EvwPX5ROOhgcoe6R9Pt+7TGMIdK1H1YjA==}
+    engines: {node: '>= 18.0.0'}
+    peerDependencies:
+      react: '*'
+      react-native: '*'
+      react-native-gesture-handler: '>= 2.19.0'
+      react-native-reanimated: '>= 2.x.x'
+
   react-native@0.74.3:
     resolution: {integrity: sha512-UFutCC6WEw6HkxlcpQ2BemKqi0JkwrgDchYB5Svi8Sp4Xwt4HA6LGEjNQgZ+3KM44bjyFRpofQym0uh0jACGng==}
     engines: {node: '>=18'}
@@ -22363,10 +22375,10 @@ snapshots:
     dependencies:
       '@babel/core': 7.24.9
       '@mdx-js/react': 3.0.0(@types/react@18.3.3)(react@18.3.1)
-      '@storybook/blocks': 8.2.6(react-dom@18.2.0(react@18.3.1))(react@18.3.1)(storybook@8.2.6(@babel/preset-env@7.24.8(@babel/core@7.24.9))(bufferutil@4.0.8))
+      '@storybook/blocks': 8.2.6(react-dom@18.2.0(react@18.2.0))(react@18.3.1)(storybook@8.2.6(@babel/preset-env@7.24.8(@babel/core@7.24.9))(bufferutil@4.0.8))
       '@storybook/csf-plugin': 8.2.6(storybook@8.2.6(@babel/preset-env@7.24.8(@babel/core@7.24.9))(bufferutil@4.0.8))
       '@storybook/global': 5.0.0
-      '@storybook/react-dom-shim': 8.2.6(react-dom@18.2.0(react@18.3.1))(react@18.3.1)(storybook@8.2.6(@babel/preset-env@7.24.8(@babel/core@7.24.9))(bufferutil@4.0.8))
+      '@storybook/react-dom-shim': 8.2.6(react-dom@18.2.0(react@18.2.0))(react@18.3.1)(storybook@8.2.6(@babel/preset-env@7.24.8(@babel/core@7.24.9))(bufferutil@4.0.8))
       '@types/react': 18.3.3
       fs-extra: 11.2.0
       react: 18.3.1
@@ -22463,6 +22475,27 @@ snapshots:
       util-deprecate: 1.0.2
     optionalDependencies:
       react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+
+  '@storybook/blocks@8.2.6(react-dom@18.2.0(react@18.2.0))(react@18.3.1)(storybook@8.2.6(@babel/preset-env@7.24.8(@babel/core@7.24.9))(bufferutil@4.0.8))':
+    dependencies:
+      '@storybook/csf': 0.1.11
+      '@storybook/global': 5.0.0
+      '@storybook/icons': 1.2.9(react-dom@18.2.0(react@18.2.0))(react@18.3.1)
+      '@types/lodash': 4.14.202
+      color-convert: 2.0.1
+      dequal: 2.0.3
+      lodash: 4.17.21
+      markdown-to-jsx: 7.4.7(react@18.3.1)
+      memoizerific: 1.11.3
+      polished: 4.2.2
+      react-colorful: 5.6.1(react-dom@18.2.0(react@18.2.0))(react@18.3.1)
+      storybook: 8.2.6(@babel/preset-env@7.24.8(@babel/core@7.24.9))(bufferutil@4.0.8)
+      telejson: 7.2.0
+      ts-dedent: 2.2.0
+      util-deprecate: 1.0.2
+    optionalDependencies:
+      react: 18.3.1
       react-dom: 18.2.0(react@18.2.0)
 
   '@storybook/blocks@8.2.6(react-dom@18.2.0(react@18.3.1))(react@18.3.1)(storybook@8.2.6(@babel/preset-env@7.24.8(@babel/core@7.24.9))(bufferutil@4.0.8))':
@@ -22566,6 +22599,11 @@ snapshots:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
 
+  '@storybook/icons@1.2.9(react-dom@18.2.0(react@18.2.0))(react@18.3.1)':
+    dependencies:
+      react: 18.3.1
+      react-dom: 18.2.0(react@18.2.0)
+
   '@storybook/icons@1.2.9(react-dom@18.2.0(react@18.3.1))(react@18.3.1)':
     dependencies:
       react: 18.3.1
@@ -22600,10 +22638,10 @@ snapshots:
       react-dom: 18.2.0(react@18.2.0)
       storybook: 8.2.6(@babel/preset-env@7.24.8(@babel/core@7.24.9))(bufferutil@4.0.8)
 
-  '@storybook/react-dom-shim@8.2.6(react-dom@18.2.0(react@18.3.1))(react@18.3.1)(storybook@8.2.6(@babel/preset-env@7.24.8(@babel/core@7.24.9))(bufferutil@4.0.8))':
+  '@storybook/react-dom-shim@8.2.6(react-dom@18.2.0(react@18.2.0))(react@18.3.1)(storybook@8.2.6(@babel/preset-env@7.24.8(@babel/core@7.24.9))(bufferutil@4.0.8))':
     dependencies:
       react: 18.3.1
-      react-dom: 18.2.0(react@18.3.1)
+      react-dom: 18.2.0(react@18.2.0)
       storybook: 8.2.6(@babel/preset-env@7.24.8(@babel/core@7.24.9))(bufferutil@4.0.8)
 
   '@storybook/react-dom-shim@8.2.9(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.2.6(@babel/preset-env@7.24.8(@babel/core@7.24.9))(bufferutil@4.0.8))':
@@ -30148,6 +30186,11 @@ snapshots:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
 
+  react-colorful@5.6.1(react-dom@18.2.0(react@18.2.0))(react@18.3.1):
+    dependencies:
+      react: 18.3.1
+      react-dom: 18.2.0(react@18.2.0)
+
   react-colorful@5.6.1(react-dom@18.2.0(react@18.3.1))(react@18.3.1):
     dependencies:
       react: 18.3.1
@@ -31212,6 +31255,13 @@ snapshots:
       - supports-color
       - typescript
       - utf-8-validate
+
+  react-native-zoom-toolkit@4.0.0(react-native-gesture-handler@2.18.1(react-native@0.74.5(@babel/core@7.24.9)(@babel/preset-env@7.24.8(@babel/core@7.24.9))(@types/react@18.2.79)(bufferutil@4.0.8)(react@18.2.0)(utf-8-validate@6.0.4))(react@18.2.0))(react-native-reanimated@3.15.0(@babel/core@7.24.9)(react-native@0.74.5(@babel/core@7.24.9)(@babel/preset-env@7.24.8(@babel/core@7.24.9))(@types/react@18.2.79)(bufferutil@4.0.8)(react@18.2.0)(utf-8-validate@6.0.4))(react@18.2.0))(react-native@0.74.5(@babel/core@7.24.9)(@babel/preset-env@7.24.8(@babel/core@7.24.9))(@types/react@18.2.79)(bufferutil@4.0.8)(react@18.2.0)(utf-8-validate@6.0.4))(react@18.2.0):
+    dependencies:
+      react: 18.2.0
+      react-native: 0.74.5(@babel/core@7.24.9)(@babel/preset-env@7.24.8(@babel/core@7.24.9))(@types/react@18.2.79)(bufferutil@4.0.8)(react@18.2.0)(utf-8-validate@6.0.4)
+      react-native-gesture-handler: 2.18.1(react-native@0.74.5(@babel/core@7.24.9)(@babel/preset-env@7.24.8(@babel/core@7.24.9))(@types/react@18.2.79)(bufferutil@4.0.8)(react@18.2.0)(utf-8-validate@6.0.4))(react@18.2.0)
+      react-native-reanimated: 3.15.0(@babel/core@7.24.9)(react-native@0.74.5(@babel/core@7.24.9)(@babel/preset-env@7.24.8(@babel/core@7.24.9))(@types/react@18.2.79)(bufferutil@4.0.8)(react@18.2.0)(utf-8-validate@6.0.4))(react@18.2.0)
 
   react-native@0.74.3(@babel/core@7.24.9)(@babel/preset-env@7.24.8(@babel/core@7.24.9))(@types/react@18.2.79)(bufferutil@4.0.8)(react@18.2.0):
     dependencies:

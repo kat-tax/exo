@@ -1,7 +1,7 @@
-import {View, ImageBackground} from 'react-native';
+import {memo, useImperativeHandle, forwardRef} from 'react';
+import {useWindowDimensions, View, ImageBackground} from 'react-native';
+//import {useImageResolution, ResumableZoom, fitContainer} from 'react-native-zoom-toolkit';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {memo, useState, useImperativeHandle, forwardRef} from 'react';
-//import {useImageResolution, ResumableZoom, getAspectRatioSize} from 'react-native-zoom-toolkit';
 
 import {useFileData} from 'media/hooks/useFileData';
 
@@ -19,31 +19,26 @@ export interface ImageRef {
 }
 
 export default memo(forwardRef((props: FileImage, ref: React.Ref<ImageRef>) => {
-  const [scale, setScale] = useState(1);
-  const {styles} = useStyles(stylesheet);
   const image = useFileData(props.path, 'dataUrl');
-
-  // Gets the resolution of your image
+  const {styles} = useStyles(stylesheet);
+  // const {width, height} = useWindowDimensions();
   // const {isFetching, resolution} = useImageResolution({uri: image || ''});
-  // if (isFetching || resolution === undefined) {
-  //   return null;
-  // }
+  // if (isFetching || resolution === undefined) return null;
 
-  // // An utility function to get the size without compromising the aspect ratio
-  // const imageSize = getAspectRatioSize({
-  //   aspectRatio: resolution.width / resolution.height,
-  //   width: 300,
+  // const size = fitContainer(resolution.width / resolution.height, {
+  //   width,
+  //   height,
   // });
 
   useImperativeHandle(ref, () => ({
     increase: () => {
-      setScale(scale + 0.1);
+      // setScale(scale + 0.1);
     },
     decrease: () => {
-      setScale(scale - 0.1);
+      // setScale(scale - 0.1);
     },
     reset: () => {
-      setScale(1);
+      // setScale(1);
     },
   }));
 
@@ -55,6 +50,7 @@ export default memo(forwardRef((props: FileImage, ref: React.Ref<ImageRef>) => {
       {/* <ResumableZoom maxScale={resolution}> */}
         <ImageBackground
           style={styles.image}
+          // style={{...size}}
           source={{uri: image}}
           resizeMode={props.maximized ? 'contain' : 'cover'}
         />

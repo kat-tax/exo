@@ -18,8 +18,8 @@ export type {BookRef};
 
 export default forwardRef((props: FileBook, ref: React.Ref<BookRef>) => {
   const EPUB_URL = 'https://alice.dita.digital/manifest.json'; // Sample for web
-  const [chapter, setChapter] = useState('');
   const [title, setTitle] = useState('');
+  const [chapter, setChapter] = useState('');
   const {styles} = useStyles(stylesheet);
   const [scheme] = useScheme();
   const epub = useFileData(props.path, 'dataUrl', 'application/epub+zip');
