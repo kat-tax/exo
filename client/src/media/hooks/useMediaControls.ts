@@ -198,11 +198,7 @@ export function useMediaControls(props: MediaControlsProps): MediaControl[] {
         name: 'fullscreen',
         icon: 'ph:arrows-out',
         label: t(i18n)`Fullscreen`,
-        action: () => {
-          if (file?.current && 'reset' in file.current) {
-            file.current.reset();
-          }
-        },
+        action: () => {},
       },
       {
         name: 'options',
