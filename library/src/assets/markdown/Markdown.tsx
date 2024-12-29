@@ -14,7 +14,7 @@ import type {RenderRules} from './lib/types';
 
 export interface MarkdownProps {
   children: string;
-  rules?: RenderRules;
+  rules?: Partial<RenderRules>;
   style?: StyleSheet.NamedStyles<unknown>;
   renderer?: AstRenderer;
   markdownit?: MarkdownIt;
