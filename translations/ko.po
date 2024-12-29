@@ -64,7 +64,7 @@ msgstr "달력"
 msgid "Celsius"
 msgstr "섭씨"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:238
+#: ../../client/src/media/hooks/useMediaPlaylist.ts:238
 msgid "Close"
 msgstr "닫기"
 
@@ -122,9 +122,7 @@ msgstr "거리"
 msgid "Docs"
 msgstr "문서"
 
-#: ../../client/src/media/file/FileBinary.tsx:18
-#: ../../client/src/media/file/FileZip.tsx:18
-#: ../../client/src/media/hooks/useMediaControls.ts:50
+#: ../../client/src/media/hooks/useMediaPlaylist.ts:50
 msgid "Download"
 msgstr "다운로드"
 
@@ -148,7 +146,7 @@ msgstr "니모닉 구문 입력"
 msgid "Enter your name"
 msgstr "이름 입력"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:60
+#: ../../client/src/media/hooks/useMediaPlaylist.ts:60
 msgid "Extract"
 msgstr ""
 
@@ -245,7 +243,7 @@ msgstr "저장소 관리"
 msgid "Map"
 msgstr "지도"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:231
+#: ../../client/src/media/hooks/useMediaPlaylist.ts:231
 msgid "Maximize"
 msgstr "최대화"
 
@@ -270,7 +268,7 @@ msgstr "음악"
 msgid "News"
 msgstr "뉴스"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:170
+#: ../../client/src/media/hooks/useMediaPlaylist.ts:170
 msgid "Next"
 msgstr "다음"
 
@@ -278,7 +276,7 @@ msgstr "다음"
 msgid "No events scheduled."
 msgstr "예정된 이벤트가 없습니다."
 
-#: ../../client/src/media/hooks/useMediaControls.ts:188
+#: ../../client/src/media/hooks/useMediaPlaylist.ts:188
 msgid "Options"
 msgstr ""
 
@@ -290,7 +288,7 @@ msgstr "개요"
 msgid "Owner Key"
 msgstr "소유자 키"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:93
+#: ../../client/src/media/hooks/useMediaPlaylist.ts:93
 msgid "Pause"
 msgstr "일시 정지"
 
@@ -298,11 +296,11 @@ msgstr "일시 정지"
 msgid "Pictures"
 msgstr "사진"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:198
+#: ../../client/src/media/hooks/useMediaPlaylist.ts:198
 msgid "Pin"
 msgstr "고정"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:94
+#: ../../client/src/media/hooks/useMediaPlaylist.ts:94
 msgid "Play"
 msgstr "재생"
 
@@ -310,7 +308,7 @@ msgstr "재생"
 msgid "Please set your Groq API Key"
 msgstr "Groq API 키를 설정해 주세요"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:159
+#: ../../client/src/media/hooks/useMediaPlaylist.ts:159
 msgid "Previous"
 msgstr "이전"
 
@@ -330,7 +328,7 @@ msgstr "프롬프트"
 msgid "Provide a key to use AI features."
 msgstr "AI 기능을 사용하려면 키를 제공하세요."
 
-#: ../../client/src/media/hooks/useMediaControls.ts:147
+#: ../../client/src/media/hooks/useMediaPlaylist.ts:147
 msgid "Replay"
 msgstr ""
 
@@ -359,15 +357,15 @@ msgstr "앱에서 사용할 테마를 선택하세요."
 msgid "Settings"
 msgstr "설정"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:212
+#: ../../client/src/media/hooks/useMediaPlaylist.ts:212
 msgid "Share"
 msgstr "공유"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:113
+#: ../../client/src/media/hooks/useMediaPlaylist.ts:113
 msgid "Skip backward"
 msgstr ""
 
-#: ../../client/src/media/hooks/useMediaControls.ts:122
+#: ../../client/src/media/hooks/useMediaPlaylist.ts:122
 msgid "Skip forward"
 msgstr ""
 
@@ -404,7 +402,7 @@ msgstr "이벤트 및 시간 관련 정보 보기"
 msgid "View your latest news and rss feeds"
 msgstr "최신 뉴스 및 RSS 피드 보기"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:137
+#: ../../client/src/media/hooks/useMediaPlaylist.ts:137
 msgid "Volume"
 msgstr ""
 
@@ -441,10 +439,10 @@ msgstr "앱에 표시될 사용자 이름입니다."
 msgid "Your prompt history has been reset."
 msgstr "프롬프트 기록이 초기화되었습니다."
 
-#: ../../client/src/media/hooks/useMediaControls.ts:70
+#: ../../client/src/media/hooks/useMediaPlaylist.ts:70
 msgid "Zoom in"
 msgstr "확대"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:81
+#: ../../client/src/media/hooks/useMediaPlaylist.ts:81
 msgid "Zoom out"
 msgstr "축소"

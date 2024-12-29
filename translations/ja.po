@@ -64,7 +64,7 @@ msgstr "カレンダー"
 msgid "Celsius"
 msgstr "摂氏"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:238
+#: ../../client/src/media/hooks/useMediaPlaylist.ts:238
 msgid "Close"
 msgstr "閉じる"
 
@@ -122,9 +122,7 @@ msgstr "距離"
 msgid "Docs"
 msgstr "ドキュメント"
 
-#: ../../client/src/media/file/FileBinary.tsx:18
-#: ../../client/src/media/file/FileZip.tsx:18
-#: ../../client/src/media/hooks/useMediaControls.ts:50
+#: ../../client/src/media/hooks/useMediaPlaylist.ts:50
 msgid "Download"
 msgstr "ダウンロード"
 
@@ -148,7 +146,7 @@ msgstr "ニーモニックフレーズを入力してください"
 msgid "Enter your name"
 msgstr "名前を入力してください"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:60
+#: ../../client/src/media/hooks/useMediaPlaylist.ts:60
 msgid "Extract"
 msgstr ""
 
@@ -245,7 +243,7 @@ msgstr "ストレージを管理"
 msgid "Map"
 msgstr "地図"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:231
+#: ../../client/src/media/hooks/useMediaPlaylist.ts:231
 msgid "Maximize"
 msgstr "最大化"
 
@@ -270,7 +268,7 @@ msgstr "音楽"
 msgid "News"
 msgstr "ニュース"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:170
+#: ../../client/src/media/hooks/useMediaPlaylist.ts:170
 msgid "Next"
 msgstr "次へ"
 
@@ -278,7 +276,7 @@ msgstr "次へ"
 msgid "No events scheduled."
 msgstr "予定されているイベントはありません。"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:188
+#: ../../client/src/media/hooks/useMediaPlaylist.ts:188
 msgid "Options"
 msgstr ""
 
@@ -290,7 +288,7 @@ msgstr "概要"
 msgid "Owner Key"
 msgstr "オーナーキー"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:93
+#: ../../client/src/media/hooks/useMediaPlaylist.ts:93
 msgid "Pause"
 msgstr "一時停止"
 
@@ -298,11 +296,11 @@ msgstr "一時停止"
 msgid "Pictures"
 msgstr "写真"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:198
+#: ../../client/src/media/hooks/useMediaPlaylist.ts:198
 msgid "Pin"
 msgstr "ピン留め"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:94
+#: ../../client/src/media/hooks/useMediaPlaylist.ts:94
 msgid "Play"
 msgstr "再生"
 
@@ -310,7 +308,7 @@ msgstr "再生"
 msgid "Please set your Groq API Key"
 msgstr "Groq APIキーを設定してください"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:159
+#: ../../client/src/media/hooks/useMediaPlaylist.ts:159
 msgid "Previous"
 msgstr "前へ"
 
@@ -330,7 +328,7 @@ msgstr "プロンプト"
 msgid "Provide a key to use AI features."
 msgstr "AI機能を使用するためのキーを提供してください。"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:147
+#: ../../client/src/media/hooks/useMediaPlaylist.ts:147
 msgid "Replay"
 msgstr ""
 
@@ -359,15 +357,15 @@ msgstr "アプリのテーマを選択してください。"
 msgid "Settings"
 msgstr "設定"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:212
+#: ../../client/src/media/hooks/useMediaPlaylist.ts:212
 msgid "Share"
 msgstr "共有"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:113
+#: ../../client/src/media/hooks/useMediaPlaylist.ts:113
 msgid "Skip backward"
 msgstr ""
 
-#: ../../client/src/media/hooks/useMediaControls.ts:122
+#: ../../client/src/media/hooks/useMediaPlaylist.ts:122
 msgid "Skip forward"
 msgstr ""
 
@@ -404,7 +402,7 @@ msgstr "イベントと時間関連情報を表示"
 msgid "View your latest news and rss feeds"
 msgstr "最新のニュースとRSSフィードを表示"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:137
+#: ../../client/src/media/hooks/useMediaPlaylist.ts:137
 msgid "Volume"
 msgstr ""
 
@@ -441,10 +439,10 @@ msgstr "アプリに表示する名前。"
 msgid "Your prompt history has been reset."
 msgstr "プロンプト履歴がリセットされました。"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:70
+#: ../../client/src/media/hooks/useMediaPlaylist.ts:70
 msgid "Zoom in"
 msgstr "拡大"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:81
+#: ../../client/src/media/hooks/useMediaPlaylist.ts:81
 msgid "Zoom out"
 msgstr "縮小"

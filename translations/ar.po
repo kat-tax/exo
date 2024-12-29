@@ -64,7 +64,7 @@ msgstr "التقويم"
 msgid "Celsius"
 msgstr "سيلزيوس"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:238
+#: ../../client/src/media/hooks/useMediaPlaylist.ts:238
 msgid "Close"
 msgstr "إغلاق"
 
@@ -122,9 +122,7 @@ msgstr "المسافة"
 msgid "Docs"
 msgstr "المستندات"
 
-#: ../../client/src/media/file/FileBinary.tsx:18
-#: ../../client/src/media/file/FileZip.tsx:18
-#: ../../client/src/media/hooks/useMediaControls.ts:50
+#: ../../client/src/media/hooks/useMediaPlaylist.ts:50
 msgid "Download"
 msgstr "تنزيل"
 
@@ -148,7 +146,7 @@ msgstr "أدخل عبارتك التذكيرية"
 msgid "Enter your name"
 msgstr "أدخل اسمك"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:60
+#: ../../client/src/media/hooks/useMediaPlaylist.ts:60
 msgid "Extract"
 msgstr ""
 
@@ -245,7 +243,7 @@ msgstr "إدارة التخزين الخاص بك"
 msgid "Map"
 msgstr "الخريطة"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:231
+#: ../../client/src/media/hooks/useMediaPlaylist.ts:231
 msgid "Maximize"
 msgstr "تكبير"
 
@@ -270,7 +268,7 @@ msgstr "الموسيقى"
 msgid "News"
 msgstr "الأخبار"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:170
+#: ../../client/src/media/hooks/useMediaPlaylist.ts:170
 msgid "Next"
 msgstr "التالي"
 
@@ -278,7 +276,7 @@ msgstr "التالي"
 msgid "No events scheduled."
 msgstr "لا توجد أحداث مجدولة."
 
-#: ../../client/src/media/hooks/useMediaControls.ts:188
+#: ../../client/src/media/hooks/useMediaPlaylist.ts:188
 msgid "Options"
 msgstr ""
 
@@ -290,7 +288,7 @@ msgstr "نظرة عامة"
 msgid "Owner Key"
 msgstr "مفتاح المالك"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:93
+#: ../../client/src/media/hooks/useMediaPlaylist.ts:93
 msgid "Pause"
 msgstr "إيقاف مؤقت"
 
@@ -298,11 +296,11 @@ msgstr "إيقاف مؤقت"
 msgid "Pictures"
 msgstr "الصور"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:198
+#: ../../client/src/media/hooks/useMediaPlaylist.ts:198
 msgid "Pin"
 msgstr "تثبيت"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:94
+#: ../../client/src/media/hooks/useMediaPlaylist.ts:94
 msgid "Play"
 msgstr "تشغيل"
 
@@ -310,7 +308,7 @@ msgstr "تشغيل"
 msgid "Please set your Groq API Key"
 msgstr "يرجى تعيين مفتاح API الخاص بـ Groq"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:159
+#: ../../client/src/media/hooks/useMediaPlaylist.ts:159
 msgid "Previous"
 msgstr "السابق"
 
@@ -330,7 +328,7 @@ msgstr "الأوامر"
 msgid "Provide a key to use AI features."
 msgstr "قدم مفتاحًا لاستخدام ميزات الذكاء الاصطناعي."
 
-#: ../../client/src/media/hooks/useMediaControls.ts:147
+#: ../../client/src/media/hooks/useMediaPlaylist.ts:147
 msgid "Replay"
 msgstr ""
 
@@ -359,15 +357,15 @@ msgstr "اختر سمة التطبيق."
 msgid "Settings"
 msgstr "الإعدادات"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:212
+#: ../../client/src/media/hooks/useMediaPlaylist.ts:212
 msgid "Share"
 msgstr "مشاركة"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:113
+#: ../../client/src/media/hooks/useMediaPlaylist.ts:113
 msgid "Skip backward"
 msgstr ""
 
-#: ../../client/src/media/hooks/useMediaControls.ts:122
+#: ../../client/src/media/hooks/useMediaPlaylist.ts:122
 msgid "Skip forward"
 msgstr ""
 
@@ -404,7 +402,7 @@ msgstr "عرض أحداثك والمعلومات المتعلقة بالوقت"
 msgid "View your latest news and rss feeds"
 msgstr "عرض أحدث الأخبار وتغذيات RSS الخاصة بك"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:137
+#: ../../client/src/media/hooks/useMediaPlaylist.ts:137
 msgid "Volume"
 msgstr ""
 
@@ -441,10 +439,10 @@ msgstr "اسمك الذي سيتم عرضه في التطبيق."
 msgid "Your prompt history has been reset."
 msgstr "تم إعادة تعيين سجل الأوامر الخاص بك."
 
-#: ../../client/src/media/hooks/useMediaControls.ts:70
+#: ../../client/src/media/hooks/useMediaPlaylist.ts:70
 msgid "Zoom in"
 msgstr "تكبير"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:81
+#: ../../client/src/media/hooks/useMediaPlaylist.ts:81
 msgid "Zoom out"
 msgstr "تصغير"

@@ -24,6 +24,7 @@ export default forwardRef((props: FileMarkdown) => {
 
 const stylesheet = createStyleSheet((theme) => ({
   root: {
-    margin: theme.display.space3,
+    padding: theme.display.space3,
+    backgroundColor: theme.colors.neutral,
   },
 }));

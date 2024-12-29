@@ -11,6 +11,7 @@ import type {BookRef} from 'react-exo/book';
 
 export interface FileBook extends FileProps {
   name: string,
+  maximized: boolean,
   extension: string,
 }
 
@@ -43,7 +44,7 @@ export default forwardRef((props: FileBook, ref: React.Ref<BookRef>) => {
       <Book
         ref={ref}
         url={EPUB_URL}
-        style={styles.book}
+        style={props.maximized ? styles.maximized : undefined}
         theme={scheme === 'light' ? 'default' : 'night'}
         onLocationChange={(e) => e.title && setChapter(e.title)}
         onTableOfContents={console.log}
@@ -55,9 +56,10 @@ export default forwardRef((props: FileBook, ref: React.Ref<BookRef>) => {
 const stylesheet = createStyleSheet((theme) => ({
   root: {
     flex: 1,
+    padding: theme.display.space3,
     backgroundColor: theme.colors.neutral,
   },
-  book: {
-    margin: theme.display.space5,
+  maximized: {
+    margin: 0,
   },
 }));

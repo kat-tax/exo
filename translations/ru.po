@@ -64,7 +64,7 @@ msgstr "Календарь"
 msgid "Celsius"
 msgstr "Цельсий"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:238
+#: ../../client/src/media/hooks/useMediaPlaylist.ts:238
 msgid "Close"
 msgstr "Закрыть"
 
@@ -122,9 +122,7 @@ msgstr "Расстояние"
 msgid "Docs"
 msgstr "Документы"
 
-#: ../../client/src/media/file/FileBinary.tsx:18
-#: ../../client/src/media/file/FileZip.tsx:18
-#: ../../client/src/media/hooks/useMediaControls.ts:50
+#: ../../client/src/media/hooks/useMediaPlaylist.ts:50
 msgid "Download"
 msgstr "Скачать"
 
@@ -148,7 +146,7 @@ msgstr "Введите вашу мнемоническую фразу"
 msgid "Enter your name"
 msgstr "Введите ваше имя"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:60
+#: ../../client/src/media/hooks/useMediaPlaylist.ts:60
 msgid "Extract"
 msgstr ""
 
@@ -245,7 +243,7 @@ msgstr "Управление хранилищем"
 msgid "Map"
 msgstr "Карта"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:231
+#: ../../client/src/media/hooks/useMediaPlaylist.ts:231
 msgid "Maximize"
 msgstr "Развернуть"
 
@@ -270,7 +268,7 @@ msgstr "Музыка"
 msgid "News"
 msgstr "Новости"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:170
+#: ../../client/src/media/hooks/useMediaPlaylist.ts:170
 msgid "Next"
 msgstr "Следующий"
 
@@ -278,7 +276,7 @@ msgstr "Следующий"
 msgid "No events scheduled."
 msgstr "Нет запланированных событий."
 
-#: ../../client/src/media/hooks/useMediaControls.ts:188
+#: ../../client/src/media/hooks/useMediaPlaylist.ts:188
 msgid "Options"
 msgstr ""
 
@@ -290,7 +288,7 @@ msgstr "Обзор"
 msgid "Owner Key"
 msgstr "Ключ владельца"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:93
+#: ../../client/src/media/hooks/useMediaPlaylist.ts:93
 msgid "Pause"
 msgstr "Пауза"
 
@@ -298,11 +296,11 @@ msgstr "Пауза"
 msgid "Pictures"
 msgstr "Изображения"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:198
+#: ../../client/src/media/hooks/useMediaPlaylist.ts:198
 msgid "Pin"
 msgstr "Закрепить"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:94
+#: ../../client/src/media/hooks/useMediaPlaylist.ts:94
 msgid "Play"
 msgstr "Воспроизвести"
 
@@ -310,7 +308,7 @@ msgstr "Воспроизвести"
 msgid "Please set your Groq API Key"
 msgstr "Пожалуйста, установите ваш API ключ Groq"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:159
+#: ../../client/src/media/hooks/useMediaPlaylist.ts:159
 msgid "Previous"
 msgstr "Предыдущий"
 
@@ -330,7 +328,7 @@ msgstr "Запросы"
 msgid "Provide a key to use AI features."
 msgstr "Предоставьте ключ для использования функций ИИ."
 
-#: ../../client/src/media/hooks/useMediaControls.ts:147
+#: ../../client/src/media/hooks/useMediaPlaylist.ts:147
 msgid "Replay"
 msgstr ""
 
@@ -359,15 +357,15 @@ msgstr "Выберите тему для приложения."
 msgid "Settings"
 msgstr "Настройки"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:212
+#: ../../client/src/media/hooks/useMediaPlaylist.ts:212
 msgid "Share"
 msgstr "Поделиться"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:113
+#: ../../client/src/media/hooks/useMediaPlaylist.ts:113
 msgid "Skip backward"
 msgstr ""
 
-#: ../../client/src/media/hooks/useMediaControls.ts:122
+#: ../../client/src/media/hooks/useMediaPlaylist.ts:122
 msgid "Skip forward"
 msgstr ""
 
@@ -404,7 +402,7 @@ msgstr "Просмотр ваших событий и информации, св
 msgid "View your latest news and rss feeds"
 msgstr "Просмотр последних новостей и RSS-каналов"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:137
+#: ../../client/src/media/hooks/useMediaPlaylist.ts:137
 msgid "Volume"
 msgstr ""
 
@@ -441,10 +439,10 @@ msgstr "Ваше имя для отображения в приложении."
 msgid "Your prompt history has been reset."
 msgstr "Ваша история запросов была сброшена."
 
-#: ../../client/src/media/hooks/useMediaControls.ts:70
+#: ../../client/src/media/hooks/useMediaPlaylist.ts:70
 msgid "Zoom in"
 msgstr "Увеличить"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:81
+#: ../../client/src/media/hooks/useMediaPlaylist.ts:81
 msgid "Zoom out"
 msgstr "Уменьшить"

@@ -7,6 +7,23 @@ export function bytesize(bytes: number) {
   return `${u ? b.toFixed(1) : b} ${a[u]}`;
 }
 
+export function hashToFiles(hash: string) {
+  return decodeURIComponent(hash.slice(1)
+    ?.replace(/\+/g, ' ')
+    ?.replace(/%20/g, ' ')
+    ?.replace(/%2C/g, ',')
+  )?.split(',')
+    ?.map(e => e.trim())
+    ?.filter(e => e);
+}
+
+export function filesToHash(files: string[]) {
+  return `#${encodeURIComponent(files.join(','))
+    .replace(/%20/g, '+')
+    .replace(/%2C/g, ',')
+  }`;
+}
+
 export function toText(input?: AllowSharedBufferSource) {
   return new TextDecoder('utf-8').decode(input);
 }

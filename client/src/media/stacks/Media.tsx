@@ -3,6 +3,8 @@ import {useNavigate} from 'react-exo/navigation';
 import {useMemo, useState, useEffect, useRef} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useFileRect} from 'media/hooks/useFileRect';
+import {useMediaPlaylist} from 'media/hooks/useMediaPlaylist';
+import {MediaPlaylist} from 'media/stacks/MediaPlaylist';
 import {MediaControls} from 'media/stacks/MediaControls';
 import {getRenderInfo} from 'media/file/utils';
 
@@ -24,15 +26,23 @@ export function Media(props: MediaProps) {
   const nav = useNavigate();
   const file = useRef<FileRef>(null);
   const rect = useFileRect(props.ext);
+  const playlist = useMediaPlaylist(props.path);
   const {styles, theme} = useStyles(stylesheet);
   const {url, ext, name, path, vertical, maximized, close} = props;
+  
+  // File selection
+  const playlistActive = playlist?.queue?.length > 1;
+  const playlistTarget = playlistActive ? playlist?.queue?.[playlist?.focus] : null;
+  const targetPath = playlistTarget?.path ?? path;
+  const targetName = playlistTarget?.name ?? name;
+  const targetExt = playlistTarget?.ext ?? ext;
 
-  // File info
-  const [title, setTitle] = useState(name);
+  // File information
+  const [title, setTitle] = useState(targetName);
   const [cover, setCover] = useState('');
-  const renderer = useMemo(() => getRenderInfo(ext), [ext]);
+  const renderer = useMemo(() => getRenderInfo(targetExt), [targetExt]);
 
-  // Conditional styles
+  // File visualization
   const vstyles = useMemo(() => ({
     root: [
       styles.root,
@@ -45,19 +55,26 @@ export function Media(props: MediaProps) {
 
   // Change title when file name changes
   useEffect(() => {
-    setTitle(name);
+    setTitle(targetName);
     setCover('');
-  }, [name]);
+  }, [targetName]);
 
   return (
     <View style={vstyles.root}>
+      {maximized && playlist.queue.length > 1 &&
+        <MediaPlaylist {...playlist}/>
+      }
       <ScrollView contentContainerStyle={styles.contents}>
         <File
           ref={file}
+          path={targetPath}
+          name={targetName}
+          extension={targetExt}
           renderer={renderer}
+          maximized={maximized}
           setBarIcon={setCover}
           setBarTitle={setTitle}
-          {...props}
+          close={close}
         />
       </ScrollView>
       <MediaControls {...{
@@ -66,11 +83,11 @@ export function Media(props: MediaProps) {
         maximized,
         metadata: {
           url,
-          ext,
-          name,
           title,
           cover,
-          path,
+          path: targetPath,
+          name: targetName,
+          ext: targetExt,
           playing: true,
         },
         close,
@@ -121,7 +138,6 @@ const stylesheet = createStyleSheet((theme, rt) => ({
   contents: {
     flex: 1,
     position: 'relative',
-    transition: 'opacity 0.2s',
   },
   overlay: {
     position: 'absolute',

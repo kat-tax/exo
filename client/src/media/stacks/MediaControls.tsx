@@ -39,19 +39,15 @@ export function MediaControls(props: MediaControlsProps) {
   const imageSize = sizeGroup === 1 ? 28 : 24;
   const iconSize = sizeGroup === 1 ? 20 : 16;
   const vstyles = useMemo(() => ({
-    root: [
-      styles.root,
-      false && styles.floating,
-    ],
     icon: (state: PressableStateCallbackType) =>
       isTouch() || state.hovered
         ? theme.colors.foreground
         : theme.colors.mutedForeground,
-  }), [theme, styles]);
+  }), [theme]);
 
   return (
     <Motion.View
-      style={vstyles.root}
+      style={styles.root}
       initial={{opacity: 0}}
       animate={{opacity: 1}}
       exit={{opacity: 0}}>
@@ -98,12 +94,6 @@ const stylesheet = createStyleSheet((theme) => ({
     backgroundColor: theme.colors.neutral,
     borderTopWidth: 0,//rt.hairlineWidth,
     borderTopColor: theme.colors.border,
-  },
-  floating: {
-    position: 'absolute',
-    left: 0,
-    right: 0,
-    bottom: 0,
   },
   icon: {
     padding: theme.display.space3,

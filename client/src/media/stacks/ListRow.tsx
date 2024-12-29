@@ -3,8 +3,8 @@ import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useLocation} from 'react-exo/navigation';
 import {View, Text} from 'react-native';
 import {ListRowIcon} from 'media/stacks/ListRowIcon';
+import {bytesize, hashToFiles} from 'app/utils/formatting';
 import {isTouch} from 'app/utils/platform';
-import {bytesize} from 'app/utils/formatting';
 
 interface ListRow {
   path: string,
@@ -19,15 +19,12 @@ export function ListRow(props: ListRow) {
   const [name, extension] = props.name.split('.');
   const {path, isFile} = props;
 
-  const size = isTouch() ? 1 : 0;
-  const isSelected = useMemo(() => {
-    const selection = decodeURIComponent(hash.slice(1))?.split(',');
-    return selection?.includes(props.name);
-  }, [hash, props.name]);
+  const iconSize = isTouch() ? 1 : 0;
+  const isSelected = useMemo(() => hashToFiles(hash)?.includes(props.name), [hash, props.name]);
   
   return (
     <View style={[styles.root, isSelected && styles.selected]}>
-      <ListRowIcon {...{name, extension, path, size, isFile}}/>
+      <ListRowIcon {...{name, size: iconSize, extension, path, isFile}}/>
       <Text numberOfLines={1} ellipsizeMode="middle" style={styles.text}>
         {props.name}
       </Text>

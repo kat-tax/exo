@@ -3,12 +3,13 @@ import File from 'media/file/loader';
 import {forwardRef, memo} from 'react';
 import {Suspense as $} from 'app/stacks/Suspense';
 import {FileType} from 'media/file/types';
-import {resolve} from 'media/utils/path';
 
 import type {FileRenderInfo} from 'media/file/types';
 
 export interface FileProps {
   path: string,
+  name: string,
+  extension: string,
   maximized: boolean,
   renderer?: FileRenderInfo,
   close: () => void,
@@ -17,16 +18,11 @@ export interface FileProps {
 }
 
 export default memo(forwardRef((props: FileProps, ref) => {
-  const {maximized, renderer, setBarTitle, setBarIcon} = props;
+  const {path, name, extension, maximized, renderer, setBarTitle, setBarIcon} = props;
   const [file, ctx] = renderer || [];
   if (!file) return null;
-
-  const parts = resolve(props.path || '');
-  const path = parts.join('/');
-  const name = parts.pop() || '';
-  const extension = name?.split('.').pop() || '';
+  console.log(file, name, path);
   const meta = {ref, name, extension, path, maximized, setBarIcon, setBarTitle};
-
   switch (file) {
     case FileType.Binary:
       return <$><File.Binary {...meta} {...ctx}/></$>
