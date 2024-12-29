@@ -4,14 +4,14 @@ import {Motion} from 'react-exo/motion';
 import {isTouch} from 'app/utils/platform';
 import {ListRowIcon} from 'media/stacks/ListRowIcon';
 
-import type {MediaPlaylist as MediaPlaylistType} from 'media/hooks/useMediaPlaylist';
+import type {MediaSelection as MediaSelectionType} from 'media/hooks/useMediaSelection';
 
 const IS_TOUCH = isTouch();
 const TAB_SIZE = IS_TOUCH ? 46 : 32;
 const ICON_SIZE = IS_TOUCH ? 1 : 0;
 const TEXT_LINES = IS_TOUCH ? 2 : 1;
 
-export function MediaPlaylist(props: MediaPlaylistType) {
+export function MediaSelection(props: MediaSelectionType) {
   const {queue, focus} = props;
   const {styles} = useStyles(stylesheet);
   return (
@@ -34,6 +34,7 @@ export function MediaPlaylist(props: MediaPlaylistType) {
             isFile
           />
           <Text
+            selectable={false}
             numberOfLines={TEXT_LINES}
             style={[styles.text, index === focus && styles.textFocused]}>
             {title}
@@ -46,12 +47,9 @@ export function MediaPlaylist(props: MediaPlaylistType) {
 
 const stylesheet = createStyleSheet((theme) => ({
   root: {
-    gap: theme.display.space2,
     flexDirection: 'row',
-    marginTop: theme.display.space2,
-    paddingHorizontal: theme.display.space2,
-    paddingBottom: theme.display.space2,
-    backgroundColor: theme.colors.neutral,
+    gap: theme.display.space2,
+    padding: theme.display.space2,
   },
   preview: {
     minWidth: 100,

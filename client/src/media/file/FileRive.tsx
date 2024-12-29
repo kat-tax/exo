@@ -35,7 +35,6 @@ export default forwardRef((props: FileRive, ref: React.Ref<RiveRef>) => {
 const stylesheet = createStyleSheet((theme) => ({
   root: {
     flex: 1,
-    backgroundColor: theme.colors.neutral,
   },
   maximized: {
     margin: theme.display.space3,

@@ -8,15 +8,17 @@ import {FileType} from 'media/file/types';
 
 import type {MediaControlsProps} from 'media/stacks/MediaControls';
 
+export const SHAREABLE = [FileType.Image, FileType.Video, FileType.Audio, FileType.Pdf];
 export const IMPORTABLE = [FileType.Torrent, FileType.Binary, FileType.Zip];
 export const EXTRACTABLE = [FileType.Zip];
-export const SHAREABLE = [FileType.Image, FileType.Video, FileType.Audio, FileType.Pdf];
+export const CONFIGURABLE = [FileType.Video, FileType.Audio];
+export const REPLAYABLE = [FileType.Audio, FileType.Lottie, FileType.Rive];
+export const EDITABLE = [FileType.Code, FileType.Markdown];
+export const PLAYABLE = [FileType.Audio, FileType.Video, FileType.Game, FileType.Lottie, FileType.Rive];
 export const PAGEABLE = [FileType.Book, FileType.Pdf];
 export const ZOOMABLE = [FileType.Image];
 export const SKIPABLE = [FileType.Video];
 export const AUDIBLE = [FileType.Audio, FileType.Video];
-export const PLAYABLE = [FileType.Audio, FileType.Video, FileType.Game, FileType.Lottie, FileType.Rive];
-export const REPLAYABLE = [FileType.Audio, FileType.Lottie, FileType.Rive];
 
 export interface MediaControl {
   title?: string,
@@ -43,6 +45,16 @@ export function useMediaControls(props: MediaControlsProps): MediaControl[] {
 
   return useMemo(() =>
     [
+      // Edit controls
+      {
+        name: 'edit',
+        icon: 'ph:pencil-simple',
+        label: t(i18n)`Edit`,
+        media: EDITABLE,
+        action: () => {
+          console.log('Edit', metadata.path);
+        },
+      },
       // Remote controls
       {
         name: 'download',
@@ -183,9 +195,20 @@ export function useMediaControls(props: MediaControlsProps): MediaControl[] {
       },
       // Window controls
       {
+        name: 'fullscreen',
+        icon: 'ph:arrows-out',
+        label: t(i18n)`Fullscreen`,
+        action: () => {
+          if (file?.current && 'reset' in file.current) {
+            file.current.reset();
+          }
+        },
+      },
+      {
         name: 'options',
-        icon: 'ph:gear',
+        icon: 'ph:gear-six',
         label: t(i18n)`Options`,
+        media: CONFIGURABLE,
         action: () => {},
       },
       {

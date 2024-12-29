@@ -40,9 +40,9 @@ export function MediaControls(props: MediaControlsProps) {
   const iconSize = sizeGroup === 1 ? 20 : 16;
   const vstyles = useMemo(() => ({
     icon: (state: PressableStateCallbackType) =>
-      isTouch() || state.hovered
-        ? theme.colors.foreground
-        : theme.colors.mutedForeground,
+      state.hovered
+        ? theme.colors.primary
+        : theme.colors.foreground,
   }), [theme]);
 
   return (
@@ -86,13 +86,13 @@ export function MediaControls(props: MediaControlsProps) {
   );
 }
 
-const stylesheet = createStyleSheet((theme) => ({
+const stylesheet = createStyleSheet((theme, rt) => ({
   root: {
     flexDirection: 'row',
     alignItems: 'center',
     paddingHorizontal: theme.display.space1,
     backgroundColor: theme.colors.neutral,
-    borderTopWidth: 0,//rt.hairlineWidth,
+    borderTopWidth: rt.hairlineWidth,
     borderTopColor: theme.colors.border,
   },
   icon: {

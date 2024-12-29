@@ -3,8 +3,8 @@ import {useNavigate} from 'react-exo/navigation';
 import {useMemo, useState, useEffect, useRef} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useFileRect} from 'media/hooks/useFileRect';
-import {useMediaPlaylist} from 'media/hooks/useMediaPlaylist';
-import {MediaPlaylist} from 'media/stacks/MediaPlaylist';
+import {useMediaSelection} from 'media/hooks/useMediaSelection';
+import {MediaSelection} from 'media/stacks/MediaSelection';
 import {MediaControls} from 'media/stacks/MediaControls';
 import {getRenderInfo} from 'media/file/utils';
 
@@ -26,16 +26,16 @@ export function Media(props: MediaProps) {
   const nav = useNavigate();
   const file = useRef<FileRef>(null);
   const rect = useFileRect(props.ext);
-  const playlist = useMediaPlaylist(props.path);
+  const selection = useMediaSelection(props.path);
   const {styles, theme} = useStyles(stylesheet);
   const {url, ext, name, path, vertical, maximized, close} = props;
   
   // File selection
-  const playlistActive = playlist?.queue?.length > 1;
-  const playlistTarget = playlistActive ? playlist?.queue?.[playlist?.focus] : null;
-  const targetPath = playlistTarget?.path ?? path;
-  const targetName = playlistTarget?.name ?? name;
-  const targetExt = playlistTarget?.ext ?? ext;
+  const selectionActive = selection?.queue?.length > 1;
+  const selectionTarget = selectionActive ? selection?.queue?.[selection?.focus] : null;
+  const targetPath = selectionTarget?.path ?? path;
+  const targetName = selectionTarget?.name ?? name;
+  const targetExt = selectionTarget?.ext ?? ext;
 
   // File information
   const [title, setTitle] = useState(targetName);
@@ -61,9 +61,9 @@ export function Media(props: MediaProps) {
 
   return (
     <View style={vstyles.root}>
-      {maximized && playlist.queue.length > 1 &&
-        <View style={styles.playlist}>
-          <MediaPlaylist {...playlist}/>
+      {selection.queue.length > 1 &&
+        <View style={styles.selection}>
+          <MediaSelection {...selection}/>
         </View>
       }
       <ScrollView contentContainerStyle={styles.contents}>
@@ -102,6 +102,7 @@ export function Media(props: MediaProps) {
 const stylesheet = createStyleSheet((theme, rt) => ({
   root: {
     flex: 2,
+    backgroundColor: theme.colors.neutral,
   },
   vertical: {
     flex: 2,
@@ -137,7 +138,7 @@ const stylesheet = createStyleSheet((theme, rt) => ({
     borderBottomWidth: 0,
     boxShadow: 'none',
   },
-  playlist: {
+  selection: {
     flexGrow: 0,
   },
   contents: {

@@ -64,7 +64,7 @@ msgstr "カレンダー"
 msgid "Celsius"
 msgstr "摂氏"
 
-#: ../../client/src/media/hooks/useMediaPlaylist.ts:238
+#: ../../client/src/media/hooks/useMediaControls.ts:261
 msgid "Close"
 msgstr "閉じる"
 
@@ -122,9 +122,13 @@ msgstr "距離"
 msgid "Docs"
 msgstr "ドキュメント"
 
-#: ../../client/src/media/hooks/useMediaPlaylist.ts:50
+#: ../../client/src/media/hooks/useMediaControls.ts:62
 msgid "Download"
 msgstr "ダウンロード"
+
+#: ../../client/src/media/hooks/useMediaControls.ts:52
+msgid "Edit"
+msgstr ""
 
 #: ../../client/src/home/utils/time.ts:15
 msgid "Enjoy the day"
@@ -146,7 +150,7 @@ msgstr "ニーモニックフレーズを入力してください"
 msgid "Enter your name"
 msgstr "名前を入力してください"
 
-#: ../../client/src/media/hooks/useMediaPlaylist.ts:60
+#: ../../client/src/media/hooks/useMediaControls.ts:72
 msgid "Extract"
 msgstr ""
 
@@ -159,6 +163,10 @@ msgstr "華氏"
 #: ../../client/src/media/routes/ScreenBrowse.tsx:16
 msgid "Files"
 msgstr "ファイル"
+
+#: ../../client/src/media/hooks/useMediaControls.ts:200
+msgid "Fullscreen"
+msgstr ""
 
 #: ../../client/src/app/interface/Menu.tsx:69
 msgid "Games"
@@ -243,7 +251,7 @@ msgstr "ストレージを管理"
 msgid "Map"
 msgstr "地図"
 
-#: ../../client/src/media/hooks/useMediaPlaylist.ts:231
+#: ../../client/src/media/hooks/useMediaControls.ts:254
 msgid "Maximize"
 msgstr "最大化"
 
@@ -268,7 +276,7 @@ msgstr "音楽"
 msgid "News"
 msgstr "ニュース"
 
-#: ../../client/src/media/hooks/useMediaPlaylist.ts:170
+#: ../../client/src/media/hooks/useMediaControls.ts:182
 msgid "Next"
 msgstr "次へ"
 
@@ -276,7 +284,7 @@ msgstr "次へ"
 msgid "No events scheduled."
 msgstr "予定されているイベントはありません。"
 
-#: ../../client/src/media/hooks/useMediaPlaylist.ts:188
+#: ../../client/src/media/hooks/useMediaControls.ts:210
 msgid "Options"
 msgstr ""
 
@@ -288,7 +296,7 @@ msgstr "概要"
 msgid "Owner Key"
 msgstr "オーナーキー"
 
-#: ../../client/src/media/hooks/useMediaPlaylist.ts:93
+#: ../../client/src/media/hooks/useMediaControls.ts:105
 msgid "Pause"
 msgstr "一時停止"
 
@@ -296,11 +304,11 @@ msgstr "一時停止"
 msgid "Pictures"
 msgstr "写真"
 
-#: ../../client/src/media/hooks/useMediaPlaylist.ts:198
+#: ../../client/src/media/hooks/useMediaControls.ts:221
 msgid "Pin"
 msgstr "ピン留め"
 
-#: ../../client/src/media/hooks/useMediaPlaylist.ts:94
+#: ../../client/src/media/hooks/useMediaControls.ts:106
 msgid "Play"
 msgstr "再生"
 
@@ -308,7 +316,7 @@ msgstr "再生"
 msgid "Please set your Groq API Key"
 msgstr "Groq APIキーを設定してください"
 
-#: ../../client/src/media/hooks/useMediaPlaylist.ts:159
+#: ../../client/src/media/hooks/useMediaControls.ts:171
 msgid "Previous"
 msgstr "前へ"
 
@@ -328,8 +336,12 @@ msgstr "プロンプト"
 msgid "Provide a key to use AI features."
 msgstr "AI機能を使用するためのキーを提供してください。"
 
-#: ../../client/src/media/hooks/useMediaPlaylist.ts:147
+#: ../../client/src/media/hooks/useMediaControls.ts:159
 msgid "Replay"
+msgstr ""
+
+#: ../../client/src/media/hooks/useMediaControls.ts:52
+msgid "Search"
 msgstr ""
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:150
@@ -357,15 +369,15 @@ msgstr "アプリのテーマを選択してください。"
 msgid "Settings"
 msgstr "設定"
 
-#: ../../client/src/media/hooks/useMediaPlaylist.ts:212
+#: ../../client/src/media/hooks/useMediaControls.ts:235
 msgid "Share"
 msgstr "共有"
 
-#: ../../client/src/media/hooks/useMediaPlaylist.ts:113
+#: ../../client/src/media/hooks/useMediaControls.ts:125
 msgid "Skip backward"
 msgstr ""
 
-#: ../../client/src/media/hooks/useMediaPlaylist.ts:122
+#: ../../client/src/media/hooks/useMediaControls.ts:134
 msgid "Skip forward"
 msgstr ""
 
@@ -402,7 +414,7 @@ msgstr "イベントと時間関連情報を表示"
 msgid "View your latest news and rss feeds"
 msgstr "最新のニュースとRSSフィードを表示"
 
-#: ../../client/src/media/hooks/useMediaPlaylist.ts:137
+#: ../../client/src/media/hooks/useMediaControls.ts:149
 msgid "Volume"
 msgstr ""
 
@@ -439,10 +451,14 @@ msgstr "アプリに表示する名前。"
 msgid "Your prompt history has been reset."
 msgstr "プロンプト履歴がリセットされました。"
 
-#: ../../client/src/media/hooks/useMediaPlaylist.ts:70
+#: ../../client/src/media/hooks/useMediaControls.ts:82
 msgid "Zoom in"
 msgstr "拡大"
 
-#: ../../client/src/media/hooks/useMediaPlaylist.ts:81
+#: ../../client/src/media/hooks/useMediaControls.ts:93
 msgid "Zoom out"
 msgstr "縮小"
+
+#: ../../client/src/media/hooks/useMediaControls.ts:103
+msgid "Zoom reset"
+msgstr ""

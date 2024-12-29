@@ -1,7 +1,6 @@
 import {Video} from 'react-exo/video';
 
 import {forwardRef} from 'react';
-import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useFileData} from 'media/hooks/useFileData';
 
 import type {FileProps} from 'media/file';
@@ -16,7 +15,6 @@ export interface FileVideo extends FileProps {
 export type {VideoRef};
 
 export default forwardRef((props: FileVideo, ref: React.Ref<VideoRef>) => {
-  const {styles} = useStyles(stylesheet);
   const video = useFileData(props.path, 'dataUrl');
 
   return video ? (
@@ -25,19 +23,6 @@ export default forwardRef((props: FileVideo, ref: React.Ref<VideoRef>) => {
       title={props.name}
       thumbnails={''}
       source={{uri: video}}
-      style={[
-        styles.root,
-        props.maximized && styles.maximized,
-      ]}
     />
   ) : null;
 });
-
-const stylesheet = createStyleSheet((theme) => ({
-  root: {
-    flex: 1,
-  },
-  maximized: {
-    margin: theme.display.space3,
-  },
-}));

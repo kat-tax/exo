@@ -57,7 +57,6 @@ const stylesheet = createStyleSheet((theme) => ({
   root: {
     flex: 1,
     padding: theme.display.space3,
-    backgroundColor: theme.colors.neutral,
   },
   maximized: {
     margin: 0,

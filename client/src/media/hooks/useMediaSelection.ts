@@ -2,7 +2,7 @@ import {useState, useEffect} from 'react';
 import {useLocation} from 'react-exo/navigation';
 import {hashToFiles} from 'app/utils/formatting';
 
-export interface MediaPlaylist {
+export interface MediaSelection {
   focus: number,
   queue: Array<{
     name: string,
@@ -13,12 +13,12 @@ export interface MediaPlaylist {
   }>,
 }
 
-export function useMediaPlaylist(path: string): MediaPlaylist {
+export function useMediaSelection(path: string): MediaSelection {
   const {hash} = useLocation();
   const [focus, setFocus] = useState(0);
-  const [queue, setQueue] = useState<MediaPlaylist['queue']>([]);
+  const [queue, setQueue] = useState<MediaSelection['queue']>([]);
 
-  // Update playlist when hash or path changes
+  // Update selection when hash or path changes
   useEffect(() => {
     if (!hash) return;
     const files = hashToFiles(hash);

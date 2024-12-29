@@ -63,7 +63,6 @@ const stylesheet = createStyleSheet((theme) => ({
   root: {
     flex: 1,
     overflow: 'hidden',
-    backgroundColor: theme.colors.neutral,
   },
   maximized: {
     margin: theme.display.space3,

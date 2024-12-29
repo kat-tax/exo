@@ -1,4 +1,4 @@
-import {Pdf} from 'react-exo/pdf';
+// import {Pdf} from 'react-exo/pdf';
 
 import {View} from 'react-native';
 import {forwardRef} from 'react';
@@ -18,7 +18,7 @@ export default forwardRef((props: FilePdf) => {
 
   return pdf ? (
     <View style={styles.root}>
-      <Pdf url={pdf} />
+      {/* <Pdf url={pdf} /> */}
     </View>
   ) : null;
 });
