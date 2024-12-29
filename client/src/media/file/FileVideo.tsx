@@ -19,8 +19,6 @@ export default forwardRef((props: FileVideo, ref: React.Ref<VideoRef>) => {
   const {styles} = useStyles(stylesheet);
   const video = useFileData(props.path, 'dataUrl');
 
-  console.log(props.path, video);
-
   return video ? (
     <Video
       ref={ref}

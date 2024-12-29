@@ -571,6 +571,9 @@ importers:
       react-native-navigation:
         specifier: 7.40.1
         version: 7.40.1(react-native@0.74.5(@babel/core@7.24.9)(@babel/preset-env@7.24.8(@babel/core@7.24.9))(@types/react@18.2.79)(bufferutil@4.0.8)(react@18.2.0))(react@18.2.0)
+      react-native-pdf-renderer:
+        specifier: ^1.6.0
+        version: 1.6.0(react-native@0.74.5(@babel/core@7.24.9)(@babel/preset-env@7.24.8(@babel/core@7.24.9))(@types/react@18.2.79)(bufferutil@4.0.8)(react@18.2.0))
       react-native-responsive-image-view:
         specifier: ^2.2.0
         version: 2.2.0(react-native@0.74.5(@babel/core@7.24.9)(@babel/preset-env@7.24.8(@babel/core@7.24.9))(@types/react@18.2.79)(bufferutil@4.0.8)(react@18.2.0))(react@18.2.0)
@@ -11744,6 +11747,11 @@ packages:
     peerDependenciesMeta:
       remx:
         optional: true
+
+  react-native-pdf-renderer@1.6.0:
+    resolution: {integrity: sha512-UWYcP3XE60MSyN9FlTKWRZfht8w2EyXEMVv9aD8wCEXPc67nxzxiSmbUog2jIgh8GApiKNCK1eCgZZiFme2AiQ==}
+    peerDependencies:
+      react-native: '>=0.60'
 
   react-native-random-values-jsi-helper@2.0.1:
     resolution: {integrity: sha512-eBmKD8nUrKUDeucYRI0ChfOtRRAmZVTxIgqz0gqY4Wf2F/B6/LoAzLQ23Xt+pF6JP8KiU/vAMHKOJMsk6Nb9dw==}
@@ -30613,6 +30621,10 @@ snapshots:
       react-lifecycles-compat: 2.0.0
       react-native: 0.74.5(@babel/core@7.24.9)(@babel/preset-env@7.24.8(@babel/core@7.24.9))(@types/react@18.2.79)(bufferutil@4.0.8)(react@18.2.0)
       tslib: 1.9.3
+
+  react-native-pdf-renderer@1.6.0(react-native@0.74.5(@babel/core@7.24.9)(@babel/preset-env@7.24.8(@babel/core@7.24.9))(@types/react@18.2.79)(bufferutil@4.0.8)(react@18.2.0)):
+    dependencies:
+      react-native: 0.74.5(@babel/core@7.24.9)(@babel/preset-env@7.24.8(@babel/core@7.24.9))(@types/react@18.2.79)(bufferutil@4.0.8)(react@18.2.0)
 
   react-native-random-values-jsi-helper@2.0.1(react-native@0.74.5(@babel/core@7.24.9)(@babel/preset-env@7.24.8(@babel/core@7.24.9))(@types/react@18.2.79)(bufferutil@4.0.8)(react@18.2.0)(utf-8-validate@6.0.4))(react@18.2.0):
     dependencies:

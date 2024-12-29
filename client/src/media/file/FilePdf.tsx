@@ -1,3 +1,4 @@
+import {Pdf} from 'react-exo/pdf';
 import {View} from 'react-native';
 import {forwardRef} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
@@ -14,19 +15,9 @@ export default forwardRef((props: FilePdf) => {
   const {styles} = useStyles(stylesheet);
   const pdf = useFileData(props.path, 'dataUrl');
 
-  // TODO: Implement PDF in library
-  // Native: https://github.com/douglasjunior/react-native-pdf-renderer
-  // React: https://github.com/wojtekmaj/react-pdf
   return pdf ? (
     <View style={styles.root}>
-      <embed
-        title={props.name}
-        src={`${pdf}#view=FitH&navpanes=0`}
-        style={{height: '100%', width: '100%'}}
-        type="application/pdf"
-        height="100%"
-        width="100%"
-      />
+      <Pdf url={pdf} />
     </View>
   ) : null;
 });
