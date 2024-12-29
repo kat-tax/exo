@@ -1,5 +1,7 @@
-import {View, Text} from 'react-native';
+import {useMemo} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
+import {useLocation} from 'react-exo/navigation';
+import {View, Text} from 'react-native';
 import {ListRowIcon} from 'media/stacks/ListRowIcon';
 import {isTouch} from 'app/utils/platform';
 import {bytesize} from 'app/utils/formatting';
@@ -13,11 +15,18 @@ interface ListRow {
 
 export function ListRow(props: ListRow) {
   const {styles} = useStyles(stylesheet);
+  const {hash} = useLocation();
   const [name, extension] = props.name.split('.');
   const {path, isFile} = props;
+
   const size = isTouch() ? 1 : 0;
+  const isSelected = useMemo(() => {
+    const selection = decodeURIComponent(hash.slice(1))?.split(',');
+    return selection?.includes(props.name);
+  }, [hash, props.name]);
+  
   return (
-    <View style={styles.root}>
+    <View style={[styles.root, isSelected && styles.selected]}>
       <ListRowIcon {...{name, extension, path, size, isFile}}/>
       <Text numberOfLines={1} ellipsizeMode="middle" style={styles.text}>
         {props.name}
@@ -36,7 +45,9 @@ const stylesheet = createStyleSheet((theme) => ({
     flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
+    paddingHorizontal: theme.display.space2,
     paddingVertical: theme.display.space1,
+    borderRadius: theme.display.radius1,
     gap: theme.display.space2,
   },
   text: {
@@ -54,5 +65,8 @@ const stylesheet = createStyleSheet((theme) => ({
   },
   size: {
     color: theme.colors.mutedForeground,
+  },
+  selected: {
+    backgroundColor: theme.colors.muted,
   },
 }));

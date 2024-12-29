@@ -82,7 +82,7 @@ export function Media(props: MediaProps) {
 
 const stylesheet = createStyleSheet((theme, rt) => ({
   root: {
-    flex: 1,
+    flex: 2,
   },
   vertical: {
     flex: 2,

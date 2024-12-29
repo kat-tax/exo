@@ -190,6 +190,7 @@ export default function ScreenSettings() {
 
 const stylesheet = createStyleSheet(theme => ({
   root: {
+    marginTop: theme.display.space5,
     paddingBottom: theme.display.space9,
     ...Platform.select({
       ios: {

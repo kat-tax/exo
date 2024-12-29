@@ -27,7 +27,7 @@ export default function ScreenMap() {
     : 'dataviz-dark';
 
   return (
-    <Page fullWidth noMargin>
+    <Page fullWidth margin="none">
       <Map
         {...viewState}
         style={{width: '100%', height: '100%'}}

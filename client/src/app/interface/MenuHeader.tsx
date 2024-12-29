@@ -15,30 +15,29 @@ export function MenuHeader(props: MenuProps) {
   const owner = useOwner();
 
   return (
-    <Link to="/settings">
-      <View style={styles.root}>
-        <View style={styles.header}>
-          <Identicon
-            id={owner?.id}
-            width={20}
-            height={20}
-          />
-          <View style={styles.info}>
-            <Text selectable style={styles.name}>
-              {props?.profile?.name ?? t(i18n)`Human`}
-            </Text>
-          </View>
-          <View style={styles.fill}/>
-          <Pressable onPress={(e) => {e.preventDefault()}}>
-            <Icon
-              name="ph:magnifying-glass"
-              color={theme.colors.mutedForeground}
-              size={16}
-            />
-          </Pressable>
+    <View style={styles.root}>
+      <View style={styles.header}>
+        <Identicon
+          id={owner?.id}
+          width={20}
+          height={20}
+          linkable
+        />
+        <View style={styles.info}>
+          <Text selectable style={styles.name}>
+            {props?.profile?.name ?? t(i18n)`Human`}
+          </Text>
         </View>
+        <View style={styles.fill}/>
+        <Pressable onPress={(e) => {e.preventDefault()}}>
+          <Icon
+            name="ph:magnifying-glass"
+            color={theme.colors.mutedForeground}
+            size={16}
+          />
+        </Pressable>
       </View>
-    </Link>
+    </View>
   );
 }
 

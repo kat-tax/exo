@@ -21,6 +21,7 @@ export default function ScreenBrowse() {
   return (
     <Page
       fullWidth
+      margin="small"
       title={name}
       message={base ?? '/'}
       hasPanel={layout.hasPreviewPanel}>

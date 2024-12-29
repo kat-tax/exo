@@ -129,12 +129,20 @@ export function Menu(props: MenuProps) {
           <View style={styles.spacer}/>
           <View style={styles.footer}>
             <StorageWidget actions={
-              <MenuItem
-                label={<Trans>Storage</Trans>}
-                icon="ph:hard-drives"
-                path="/storage"
-                mode="action"
-              />
+              <View style={styles.actions}>
+                <MenuItem
+                  label={<Trans>Storage</Trans>}
+                  icon="ph:hard-drives"
+                  path="/storage"
+                  mode="action"
+                />
+                <MenuItem
+                  label={<Trans>Settings</Trans>}
+                  icon="ph:gear"
+                  path="/settings"
+                  mode="action"
+                />
+              </View>
             }/>
           </View>
         </View>
@@ -162,5 +170,8 @@ const stylesheet = createStyleSheet((theme, rt) => ({
   },
   spacer: {
     flex: 1,
+  },
+  actions: {
+    flexDirection: 'row',
   },
 }));

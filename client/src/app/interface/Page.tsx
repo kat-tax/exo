@@ -7,14 +7,15 @@ export interface PageProps extends React.PropsWithChildren {
   widget?: React.ReactNode,
   hasPanel?: boolean,
   fullWidth?: boolean,
-  noMargin?: boolean,
   noFrame?: boolean,
+  margin?: 'none' | 'small' | 'large',
   sxs?: boolean,
 }
 
 export function Page(props: PageProps) {
   const {styles, theme} = useStyles(stylesheet);
   const screen = useWindowDimensions();
+  const margin = props.margin ?? 'large';
   const hasTitle = Boolean(props.title);
   const hasMessage = Boolean(props.message);
   const hasHeader = hasTitle || hasMessage;
@@ -28,7 +29,12 @@ export function Page(props: PageProps) {
     content: [
       styles.content,
       props.fullWidth && styles.contentFull,
-      !props.noMargin && styles.contentSpacing,
+      margin === 'large' && styles.contentSpacing,
+      margin === 'small' && styles.contentSpacingSmall,
+    ],
+    header: [
+      styles.header,
+      props.fullWidth && styles.headerAlign,
     ],
   };
 
@@ -37,7 +43,7 @@ export function Page(props: PageProps) {
       <ScrollView style={vstyles.root} contentContainerStyle={{flex: 1}}>
         <View style={vstyles.content}>
           {hasHeader &&
-            <View style={styles.header}>
+            <View style={vstyles.header}>
               <View style={styles.greeting}>
                 {hasTitle &&
                   <Text style={styles.title}>
@@ -100,6 +106,9 @@ const stylesheet = createStyleSheet((theme, rt) => ({
   contentSpacing: {
     padding: theme.display.space5,
   },
+  contentSpacingSmall: {
+    padding: theme.display.space2,
+  },
   greeting: {
     gap: theme.display.space2,
   },
@@ -107,7 +116,11 @@ const stylesheet = createStyleSheet((theme, rt) => ({
     flexDirection: 'row',
     alignItems: 'flex-start',
     justifyContent: 'space-between',
+    marginTop: theme.display.space2,
     marginBottom: theme.display.space3,
+  },
+  headerAlign: {
+    marginLeft: theme.display.space2,
   },
   title: {
     fontFamily: theme.font.family,

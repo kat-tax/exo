@@ -10,8 +10,8 @@ interface StorageWidgetProps {
 }
 
 export function StorageWidget(props: StorageWidgetProps) {
-  const {styles, theme} = useStyles(stylesheet);
   const [storage, setStorage] = useState<{msg: string, val: number}>();
+  const {styles, theme} = useStyles(stylesheet);
 
   useEffect(() => {
     getDiskSpace().then(e => setStorage({

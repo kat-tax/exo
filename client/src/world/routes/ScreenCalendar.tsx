@@ -18,7 +18,7 @@ export default function ScreenCalendar() {
   const hasEvent = false;
 
   return (
-    <Page fullWidth noMargin>
+    <Page fullWidth margin="none">
       <View style={styles.root}>
         <View style={styles.calendar}>
           <Calendar.List

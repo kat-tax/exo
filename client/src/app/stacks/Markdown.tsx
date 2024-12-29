@@ -25,6 +25,7 @@ export const Markdown = memo(({text}: {text: string}) => {
       style={{
         body: {
           gap: theme.display.space2,
+          width: '100%',
           fontFamily: theme.font.family,
           letterSpacing: theme.font.spacing,
           lineHeight: theme.typography.lineHeight5,
