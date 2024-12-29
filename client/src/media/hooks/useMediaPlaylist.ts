@@ -6,6 +6,7 @@ export interface MediaPlaylist {
   focus: number,
   queue: Array<{
     name: string,
+    title: string,
     ext: string,
     path: string,
     action: () => void,
@@ -25,6 +26,7 @@ export function useMediaPlaylist(path: string): MediaPlaylist {
     setFocus(files?.length - 1);
     setQueue(files?.map((name, index) => ({
       name,
+      title: name.split('.').slice(0, -1).join('.'),
       ext: name.split('.').pop() ?? '',
       path: name,
       action: () => setFocus(index),

@@ -62,7 +62,9 @@ export function Media(props: MediaProps) {
   return (
     <View style={vstyles.root}>
       {maximized && playlist.queue.length > 1 &&
-        <MediaPlaylist {...playlist}/>
+        <View style={styles.playlist}>
+          <MediaPlaylist {...playlist}/>
+        </View>
       }
       <ScrollView contentContainerStyle={styles.contents}>
         <File
@@ -134,6 +136,9 @@ const stylesheet = createStyleSheet((theme, rt) => ({
     borderRightWidth: 0,
     borderBottomWidth: 0,
     boxShadow: 'none',
+  },
+  playlist: {
+    flexGrow: 0,
   },
   contents: {
     flex: 1,

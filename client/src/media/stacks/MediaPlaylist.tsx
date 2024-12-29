@@ -6,18 +6,22 @@ import {ListRowIcon} from 'media/stacks/ListRowIcon';
 
 import type {MediaPlaylist as MediaPlaylistType} from 'media/hooks/useMediaPlaylist';
 
+const IS_TOUCH = isTouch();
+const TAB_SIZE = IS_TOUCH ? 46 : 32;
+const ICON_SIZE = IS_TOUCH ? 1 : 0;
+const TEXT_LINES = IS_TOUCH ? 2 : 1;
+
 export function MediaPlaylist(props: MediaPlaylistType) {
   const {queue, focus} = props;
   const {styles} = useStyles(stylesheet);
-  const sizeGroup = isTouch() ? 1 : 0;
-
   return (
-    <Motion.View
-      style={styles.root}
+    <Motion.ScrollView
+      horizontal
+      contentContainerStyle={styles.root}
       initial={{opacity: 0}}
       animate={{opacity: 1}}
       exit={{opacity: 0}}>
-      {queue.map(({name, ext, path, action}, index) => 
+      {queue.map(({name, title, ext, path, action}, index) => 
         <Pressable
           key={name}
           onPress={action}
@@ -25,18 +29,18 @@ export function MediaPlaylist(props: MediaPlaylistType) {
           <ListRowIcon
             name={name ?? ''}
             extension={ext}
-            size={sizeGroup}
+            size={ICON_SIZE}
             path={path}
             isFile
           />
           <Text
-            numberOfLines={2}
+            numberOfLines={TEXT_LINES}
             style={[styles.text, index === focus && styles.textFocused]}>
-            {name}
+            {title}
           </Text>
         </Pressable>
       )}
-    </Motion.View>
+    </Motion.ScrollView>
   );
 }
 
@@ -44,19 +48,14 @@ const stylesheet = createStyleSheet((theme) => ({
   root: {
     gap: theme.display.space2,
     flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
     marginTop: theme.display.space2,
     paddingHorizontal: theme.display.space2,
     paddingBottom: theme.display.space2,
     backgroundColor: theme.colors.neutral,
   },
-  icon: {
-    padding: theme.display.space3,
-  },
   preview: {
-    flex: 1,
-    height: isTouch() ? 48 : 38,
+    minWidth: 100,
+    height: TAB_SIZE,
     gap: theme.display.space2,
     flexDirection: 'row',
     alignItems: 'center',
@@ -78,11 +77,6 @@ const stylesheet = createStyleSheet((theme) => ({
     lineHeight: theme.font.height,
     letterSpacing: theme.font.spacing,
     color: theme.colors.mutedForeground,
-    ...isTouch() && {
-      fontSize: theme.font.contentSize,
-      lineHeight: theme.font.contentHeight,
-      letterSpacing: theme.font.contentSpacing,
-    },
   },
   textFocused: {
     color: theme.colors.foreground,
