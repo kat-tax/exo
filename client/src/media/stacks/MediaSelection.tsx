@@ -1,3 +1,4 @@
+import {useRef, useEffect} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {Text, Pressable} from 'react-native';
 import {Icon} from 'react-exo/icon';
@@ -5,6 +6,7 @@ import {Motion} from 'react-exo/motion';
 import {isTouch} from 'app/utils/platform';
 import {ListRowIcon} from 'media/stacks/ListRowIcon';
 
+import type {ScrollView} from 'react-native';
 import type {MediaSelection as MediaSelectionType} from 'media/hooks/useMediaSelection';
 
 const IS_TOUCH = isTouch();
@@ -15,9 +17,23 @@ const TEXT_LINES = IS_TOUCH ? 2 : 1;
 export function MediaSelection(props: MediaSelectionType) {
   const {queue, focus} = props;
   const {styles, theme} = useStyles(stylesheet);
+  const scrollRef = useRef<ScrollView>(null);
+
+  // Scroll to focus
+  useEffect(() => {
+    if (focus >= queue.length - 1) {
+      setTimeout(() => {
+        scrollRef.current?.scrollToEnd({animated: true});
+      }, 100);
+    } else {
+      scrollRef.current?.scrollTo({x: focus * 100, animated: true});
+    }
+  }, [focus, queue]);
+
   return (
     <Motion.ScrollView
       horizontal
+      ref={scrollRef}
       contentContainerStyle={styles.root}
       initial={{opacity: 0}}
       animate={{opacity: 1}}

@@ -17,14 +17,18 @@ export interface EntryHfs {
 export function EntryHfs(props: EntryHfs) {
   const {entry, path, flags} = props;
   const {hash} = useLocation();
+
+  // Update selection when hash changes
+  const selection = useMemo(() => hashToFiles(hash), [hash]);
+
+  // Update link when selection changes
   const link = useMemo(() => {
     // Files are stored in the hash
     if (entry.isFile) {
-      const current = hashToFiles(hash);
       return filesToHash(flags?.multiSelect
-        ? current.includes(entry.name)
-          ? current.filter(e => e !== entry.name)
-          : [...current, entry.name]
+        ? selection.includes(entry.name)
+          ? selection.filter(e => e !== entry.name)
+          : [...selection, entry.name]
         : [entry.name]);
     }
     // Otherwise, we use the path (if not root)
@@ -33,7 +37,7 @@ export function EntryHfs(props: EntryHfs) {
     }
     // Otherwise, we use the entry name
     return entry.name;
-  }, [entry, hash, path, flags]);
+  }, [entry, path, flags, selection]);
 
   const navigate = useNavigate();
 
@@ -43,6 +47,8 @@ export function EntryHfs(props: EntryHfs) {
         path={link}
         name={entry.name}
         isFile={entry.isFile}
+        isFocused={false}
+        isSelected={selection.includes(entry.name)}
       />
     </Pressable>
   );
