@@ -127,7 +127,6 @@ msgid "Docs"
 msgstr "ドキュメント"
 
 #: ../../client/src/media/file/FileBinary.tsx:18
-#: ../../client/src/media/file/FileZip.tsx:18
 #: ../../client/src/media/hooks/useMediaControls.ts:62
 msgid "Download"
 msgstr "ダウンロード"
@@ -164,6 +163,8 @@ msgstr ""
 msgid "Fahrenheit"
 msgstr "華氏"
 
+#: ../../client/src/app/interface/Menu.tsx:44
+#: ../../client/src/app/interface/Tabs.tsx:23
 #: ../../client/src/media/routes/ScreenBrowse.tsx:16
 msgid "Files"
 msgstr "ファイル"

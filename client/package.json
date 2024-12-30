@@ -78,7 +78,7 @@
     "react-native-mmkv": "^2.12.2",
     "react-native-navigation": "7.40.1",
     "react-native-qrcode-skia": "^0.3.1",
-    "react-native-readium": "^2.0.0-rc.2",
+    "react-native-readium": "^2.0.2",
     "react-native-reanimated": "^3.14.0",
     "react-native-screens": "^3.32.0",
     "react-native-skottie": "^2.1.4",
