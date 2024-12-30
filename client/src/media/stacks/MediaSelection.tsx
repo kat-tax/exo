@@ -1,5 +1,6 @@
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {Text, Pressable} from 'react-native';
+import {Icon} from 'react-exo/icon';
 import {Motion} from 'react-exo/motion';
 import {isTouch} from 'app/utils/platform';
 import {ListRowIcon} from 'media/stacks/ListRowIcon';
@@ -13,7 +14,7 @@ const TEXT_LINES = IS_TOUCH ? 2 : 1;
 
 export function MediaSelection(props: MediaSelectionType) {
   const {queue, focus} = props;
-  const {styles} = useStyles(stylesheet);
+  const {styles, theme} = useStyles(stylesheet);
   return (
     <Motion.ScrollView
       horizontal
@@ -39,6 +40,13 @@ export function MediaSelection(props: MediaSelectionType) {
             style={[styles.text, index === focus && styles.textFocused]}>
             {title}
           </Text>
+          <Pressable onPress={() => props.remove(index)}>
+            <Icon
+              name="ph:x"
+              size={14}
+              color={theme.colors.mutedForeground}
+            />
+          </Pressable>
         </Pressable>
       )}
     </Motion.ScrollView>
@@ -52,7 +60,6 @@ const stylesheet = createStyleSheet((theme) => ({
     padding: theme.display.space2,
   },
   preview: {
-    minWidth: 100,
     height: TAB_SIZE,
     gap: theme.display.space2,
     flexDirection: 'row',
@@ -60,7 +67,7 @@ const stylesheet = createStyleSheet((theme) => ({
     alignContent: 'center',
     justifyContent: 'center',
     paddingVertical: theme.display.space1,
-    paddingHorizontal: theme.display.space5,
+    paddingHorizontal: theme.display.space2,
     borderRadius: theme.display.radius1,
     borderColor: theme.colors.border,
     borderWidth: 1,
