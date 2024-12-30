@@ -17,23 +17,31 @@ export default forwardRef((props: FileTorrent, _ref) => {
   const {styles} = useStyles(stylesheet);
 
   return (
-    <Page
-      title={torrent?.name}
-      message={torrent?.desc}
-      noFrame={!props.maximized}
-      fullWidth>
-      <View style={styles.root}>
-        <Directory
-          path={props.path}
-          {...{torrent, download}}
-        />
-      </View>
-    </Page>
+    <View style={styles.root}>
+      <Page
+        title={torrent?.name}
+        message={torrent?.desc}
+        margin="small"
+        noBackground
+        noFrame
+        fullWidth>
+        <View style={styles.inner}>
+          <Directory
+            path={props.path}
+            {...{torrent, download}}
+          />
+        </View>
+      </Page>
+    </View>
   )
 });
 
 const stylesheet = createStyleSheet((theme) => ({
   root: {
+    flex: 1,
+    marginHorizontal: theme.display.space2,
+  },
+  inner: {
     paddingBottom: theme.display.space5,
   },
 }));

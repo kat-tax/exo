@@ -1,6 +1,6 @@
 import {memo} from 'react';
 import {DirHfs} from 'media/dir/DirHfs';
-import {DirEmpty} from 'media/dir/DirEmpty';
+//import {DirEmpty} from 'media/dir/DirEmpty';
 import {useDirHfs} from 'media/hooks/useDirHfs';
 
 import type {DirTorrentProps} from 'media/dir/DirTorrent';
@@ -20,9 +20,9 @@ export default memo((props: DirProps) => {
 
   console.log({path, entries, provider});
 
-  if (entries.length === 0) {
-    return <DirEmpty {...{path}}/>
-  }
+  // if (entries.length === 0) {
+  //   return <DirEmpty {...{path}}/>
+  // }
 
   switch (provider) {
     case 'fs':

@@ -7,6 +7,7 @@ export interface PageProps extends React.PropsWithChildren {
   widget?: React.ReactNode,
   hasPanel?: boolean,
   fullWidth?: boolean,
+  noBackground?: boolean,
   noFrame?: boolean,
   margin?: 'none' | 'small' | 'large',
   sxs?: boolean,
@@ -23,8 +24,9 @@ export function Page(props: PageProps) {
   const vstyles = {
     root: [
       styles.root,
-      hasNoFrame && styles.noframe,
+      hasNoFrame && styles.noFrame,
       props.hasPanel && styles.withPanel,
+      props.noBackground && styles.noBackground,
     ],
     content: [
       styles.content,
@@ -80,11 +82,16 @@ const stylesheet = createStyleSheet((theme, rt) => ({
   withPanel: {
     marginRight: 0,
   },
-  noframe: {
+  noFrame: {
     margin: 0,
     borderWidth: 0,
     borderRadius: 0,
     borderTopWidth: rt.hairlineWidth,
+  },
+  noBackground: {
+    backgroundColor: 'transparent',
+    borderTopWidth: 0,
+    borderWidth: 0,
   },
   content: {
     flex: 1,
