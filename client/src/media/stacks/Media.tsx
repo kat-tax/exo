@@ -31,11 +31,11 @@ export function Media(props: MediaProps) {
   const {url, ext, name, path, vertical, maximized, close} = props;
   
   // File selection
-  const selectionActive = selection?.queue?.length > 1;
-  const selectionTarget = selectionActive ? selection?.queue?.[selection?.focus] : null;
-  const targetPath = selectionTarget?.path ?? path;
-  const targetName = selectionTarget?.name ?? name;
-  const targetExt = selectionTarget?.ext ?? ext;
+  const selectActive = selection?.queue?.length > 1;
+  const selectTarget = selectActive ? selection?.queue?.[selection?.focus] : null;
+  const targetPath = selectTarget?.path ?? path;
+  const targetName = selectTarget?.name ?? name;
+  const targetExt = selectTarget?.ext ?? ext;
 
   // File information
   const [title, setTitle] = useState(targetName);

@@ -3,9 +3,7 @@ import {useLingui} from '@lingui/react';
 import {useImporter} from 'media/hooks/useImporter';
 import {Watermark} from 'media/stacks/Watermark';
 
-import type {DirBaseProps} from 'media/dir';
-
-export function DirEmpty({path = '.'}: DirBaseProps) {
+export function DirEmpty({path = '.'}: {path: string}) {
   const {importFolder} = useImporter();
   const {i18n} = useLingui();
   return (

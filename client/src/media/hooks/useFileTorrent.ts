@@ -1,5 +1,5 @@
 
-import Torrent from 'react-exo/torrent';
+import ExoTorrent from 'react-exo/torrent';
 
 import {useCallback, useMemo} from 'react';
 import {useFileData} from 'media/hooks/useFileData';
@@ -8,10 +8,19 @@ import {bytesize} from 'app/utils/formatting';
 
 import type {TorrentInfo, TorrentFileData} from 'media/utils/torrent';
 
+export interface Torrent {
+  file: File,
+  info: TorrentInfo,
+  data: TorrentFileData,
+  list: TorrentFileData['files'],
+  name: string,
+  desc?: string,
+}
+
 export function useFileTorrent(path: string) {
   const buffer = useFileData(path, 'arrayBuffer');
 
-  const torrent = useMemo(() => {
+  const torrent: Torrent | null = useMemo(() => {
     if (!buffer) return null;
     const _name = path.split('/').pop();
     const _view = new Uint8Array(buffer);
@@ -22,18 +31,17 @@ export function useFileTorrent(path: string) {
       file: _file,
       info: _info,
       data: _data,
+      list: getList(_data),
       name: getName(_info, _data),
       desc: getDesc(_info),
-      list: getList(_data),
-    };
+    } satisfies Torrent;
   }, [buffer, path]);
 
   const download = useCallback((file: TorrentFileData['files'][number]) => {
     if (!torrent) return;
-    const client = new Torrent();
-    client.add(torrent.file, async (torrent) => {
-      const target = torrent.files.find((e) =>
-        e.path.split('/').slice(1).join('/') === file.path);
+    const client = new ExoTorrent();
+    client.add(torrent.file, async ({files}) => {
+      const target = files.find(e => e.path.split('/').slice(1).join('/') === file.path);
       const folder = await navigator.storage.getDirectory();
       const handle = await folder.getFileHandle(file.name, {create: true});
       const stream = await handle.createWritable();

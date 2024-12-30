@@ -110,7 +110,7 @@ msgstr "개발자 모드"
 msgid "Device Space"
 msgstr ""
 
-#: ../../client/src/media/dir/DirEmpty.tsx:13
+#: ../../client/src/media/dir/DirEmpty.tsx:11
 msgid "Directory is empty."
 msgstr "디렉토리가 비어 있습니다."
 
@@ -164,8 +164,6 @@ msgstr ""
 msgid "Fahrenheit"
 msgstr "화씨"
 
-#: ../../client/src/app/interface/Menu.tsx:44
-#: ../../client/src/app/interface/Tabs.tsx:23
 #: ../../client/src/media/routes/ScreenBrowse.tsx:16
 msgid "Files"
 msgstr "파일"
@@ -210,7 +208,7 @@ msgstr "Groq 모델 ID"
 msgid "Human"
 msgstr "사람"
 
-#: ../../client/src/media/dir/DirEmpty.tsx:14
+#: ../../client/src/media/dir/DirEmpty.tsx:12
 msgid "Import"
 msgstr "가져오기"
 

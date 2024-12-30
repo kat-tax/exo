@@ -110,7 +110,7 @@ msgstr "Dev Mode"
 msgid "Device Space"
 msgstr "Device Space"
 
-#: ../../client/src/media/dir/DirEmpty.tsx:13
+#: ../../client/src/media/dir/DirEmpty.tsx:11
 msgid "Directory is empty."
 msgstr "Directory is empty."
 
@@ -164,8 +164,6 @@ msgstr "Extract"
 msgid "Fahrenheit"
 msgstr "Fahrenheit"
 
-#: ../../client/src/app/interface/Menu.tsx:44
-#: ../../client/src/app/interface/Tabs.tsx:23
 #: ../../client/src/media/routes/ScreenBrowse.tsx:16
 msgid "Files"
 msgstr "Files"
@@ -210,7 +208,7 @@ msgstr "Groq Model ID"
 msgid "Human"
 msgstr "Human"
 
-#: ../../client/src/media/dir/DirEmpty.tsx:14
+#: ../../client/src/media/dir/DirEmpty.tsx:12
 msgid "Import"
 msgstr "Import"
 

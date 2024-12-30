@@ -24,7 +24,7 @@ export function useMediaSelection(path: string): MediaSelection {
   useEffect(() => {
     if (!hash) return;
     const files = hashToFiles(hash);
-    console.log('>> selection update', path, hash, files);
+    console.log('>> selection', path, hash, files);
     setQueue((prev) => {
       // Update focus if new file is added
       if (files.length > prev.length) {

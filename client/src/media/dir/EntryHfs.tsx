@@ -15,8 +15,8 @@ export interface EntryHfs {
 }
 
 export function EntryHfs(props: EntryHfs) {
-  const {entry, path, flags} = props;
   const {hash} = useLocation();
+  const {entry, flags, path} = props;
 
   // Update selection when hash changes
   const selection = useMemo(() => hashToFiles(hash), [hash]);

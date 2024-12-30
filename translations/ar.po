@@ -110,7 +110,7 @@ msgstr "وضع المطور"
 msgid "Device Space"
 msgstr ""
 
-#: ../../client/src/media/dir/DirEmpty.tsx:13
+#: ../../client/src/media/dir/DirEmpty.tsx:11
 msgid "Directory is empty."
 msgstr "الدليل فارغ."
 
@@ -164,8 +164,6 @@ msgstr ""
 msgid "Fahrenheit"
 msgstr "فهرنهايت"
 
-#: ../../client/src/app/interface/Menu.tsx:44
-#: ../../client/src/app/interface/Tabs.tsx:23
 #: ../../client/src/media/routes/ScreenBrowse.tsx:16
 msgid "Files"
 msgstr "الملفات"
@@ -210,7 +208,7 @@ msgstr "معرف نموذج Groq"
 msgid "Human"
 msgstr "الإنسان"
 
-#: ../../client/src/media/dir/DirEmpty.tsx:14
+#: ../../client/src/media/dir/DirEmpty.tsx:12
 msgid "Import"
 msgstr "استيراد"
 

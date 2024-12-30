@@ -21,15 +21,12 @@ export default memo(forwardRef((props: FileProps, ref) => {
   const {path, name, extension, maximized, renderer, setBarTitle, setBarIcon} = props;
   const [file, ctx] = renderer || [];
   if (!file) return null;
-  console.log(file, name, path);
   const meta = {ref, name, extension, path, maximized, setBarIcon, setBarTitle};
   switch (file) {
     case FileType.Binary:
       return <$><File.Binary {...meta} {...ctx}/></$>
     case FileType.Text:
       return <$><File.Text {...meta} {...ctx}/></$>
-    case FileType.Code:
-      return <$><File.Code {...meta} {...ctx}/></$>
     case FileType.Note:
       return <$><File.Note {...meta} {...ctx}/></$>
     case FileType.Document:

@@ -2,8 +2,8 @@ import {View} from 'react-native';
 import {forwardRef} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useFileTorrent} from 'media/hooks/useFileTorrent';
+import {DirTorrent} from 'media/dir/DirTorrent';
 import {Page} from 'app/interface/Page';
-import Directory from 'media/dir';
 
 import type {FileProps} from 'media/file';
 
@@ -26,10 +26,12 @@ export default forwardRef((props: FileTorrent, _ref) => {
         noFrame
         fullWidth>
         <View style={styles.inner}>
-          <Directory
-            path={props.path}
-            {...{torrent, download}}
-          />
+          {torrent && (
+            <DirTorrent
+              torrent={torrent}
+              download={download}
+            />
+          )}
         </View>
       </Page>
     </View>

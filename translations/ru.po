@@ -110,7 +110,7 @@ msgstr "Режим разработки"
 msgid "Device Space"
 msgstr ""
 
-#: ../../client/src/media/dir/DirEmpty.tsx:13
+#: ../../client/src/media/dir/DirEmpty.tsx:11
 msgid "Directory is empty."
 msgstr "Директория пуста."
 
@@ -164,8 +164,6 @@ msgstr ""
 msgid "Fahrenheit"
 msgstr "Фаренгейт"
 
-#: ../../client/src/app/interface/Menu.tsx:44
-#: ../../client/src/app/interface/Tabs.tsx:23
 #: ../../client/src/media/routes/ScreenBrowse.tsx:16
 msgid "Files"
 msgstr "Файлы"
@@ -210,7 +208,7 @@ msgstr "ID модели Groq"
 msgid "Human"
 msgstr "Человек"
 
-#: ../../client/src/media/dir/DirEmpty.tsx:14
+#: ../../client/src/media/dir/DirEmpty.tsx:12
 msgid "Import"
 msgstr "Импорт"
 
