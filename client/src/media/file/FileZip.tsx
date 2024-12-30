@@ -1,7 +1,9 @@
-import {t} from '@lingui/macro';
+import {View} from 'react-native';
 import {forwardRef} from 'react';
-import {useLingui} from '@lingui/react';
-import {Watermark} from 'media/stacks/Watermark';
+import {useStyles, createStyleSheet} from 'react-native-unistyles';
+import {useFileZip} from 'media/hooks/useFileZip';
+import {DirZip} from 'media/dir/DirZip';
+import {Page} from 'app/interface/Page';
 
 import type {FileProps} from 'media/file';
 
@@ -10,13 +12,33 @@ export interface FileZip extends FileProps {
   extension: string,
 }
 
-export default forwardRef((props: FileZip) => {
-  const {i18n} = useLingui();
+export default forwardRef((props: FileZip, _ref) => {
+  const {zip, extract} = useFileZip(props.path);
+  const {styles} = useStyles(stylesheet);
+
   return (
-    <Watermark
-      title={props.name}
-      label={t(i18n)`Download`}
-      icon="ph:download"
-    />
-  );
+    <View style={styles.root}>
+      <Page
+        title={`${props.name}.${props.extension}`}
+        message={''}
+        margin="small"
+        noBackground
+        noFrame
+        fullWidth>
+        <View style={styles.inner}>
+          {zip && <DirZip {...{zip, extract}}/>}
+        </View>
+      </Page>
+    </View>
+  )
 });
+
+const stylesheet = createStyleSheet((theme) => ({
+  root: {
+    flex: 1,
+    marginHorizontal: theme.display.space2,
+  },
+  inner: {
+    paddingBottom: theme.display.space5,
+  },
+}));
