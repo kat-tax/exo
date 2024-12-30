@@ -41,6 +41,13 @@ export function useMediaSelection(path: string): MediaSelection {
     });
   }, [path, hash]);
 
+  // Update focus if out of bounds
+  useEffect(() => {
+    if (focus >= queue.length && queue.length > 0) {
+      setFocus(queue.length - 1);
+    }
+  }, [queue, focus]);
+
   const remove = useCallback((index: number) => {
     const files = queue.filter((_, i) => i !== index);
     navigate(`${filesToHash(files.map(({name}) => name))}`);

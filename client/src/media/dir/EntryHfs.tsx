@@ -1,5 +1,6 @@
 import {useMemo} from 'react';
-import {useLocation, Link} from 'react-exo/navigation';
+import {Pressable} from 'react-native';
+import {useLocation, useNavigate} from 'react-exo/navigation';
 import {filesToHash, hashToFiles} from 'app/utils/formatting';
 import {ListRow} from 'media/stacks/ListRow';
 
@@ -8,35 +9,41 @@ import type {HfsDirectoryEntry} from 'react-exo/fs';
 export interface EntryHfs {
   entry: HfsDirectoryEntry,
   path?: string,
+  flags?: {
+    multiSelect?: boolean,
+  },
 }
 
 export function EntryHfs(props: EntryHfs) {
-  const {entry} = props;
+  const {entry, path, flags} = props;
   const {hash} = useLocation();
-
   const link = useMemo(() => {
     // Files are stored in the hash
     if (entry.isFile) {
-      // Add the entry to the end of the hash
-      return filesToHash(hashToFiles(hash)
-        .filter(e => e !== entry.name)
-        .concat(entry.name));
+      const current = hashToFiles(hash);
+      return filesToHash(flags?.multiSelect
+        ? current.includes(entry.name)
+          ? current.filter(e => e !== entry.name)
+          : [...current, entry.name]
+        : [entry.name]);
     }
     // Otherwise, we use the path (if not root)
-    if (props.path) {
-      return `${props.path}/${entry.name}`;
+    if (path) {
+      return `${path}/${entry.name}`;
     }
     // Otherwise, we use the entry name
     return entry.name;
-  }, [entry, hash, props.path]);
+  }, [entry, hash, path, flags]);
+
+  const navigate = useNavigate();
 
   return (
-    <Link to={link}>
+    <Pressable onPress={() => navigate(link)}>
       <ListRow
         path={link}
         name={entry.name}
         isFile={entry.isFile}
       />
-    </Link>
+    </Pressable>
   );
 }
