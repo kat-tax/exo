@@ -44,11 +44,11 @@ export function useMediaSelection(path: string): MediaSelection {
   const remove = useCallback((index: number) => {
     const files = queue.filter((_, i) => i !== index);
     navigate(`${filesToHash(files.map(({name}) => name))}`);
-    // Update focus if removed index the last one
-    if (index === queue.length - 1) {
+    // Update focus if out of bounds
+    if (focus >= files.length) {
       setFocus(files.length - 1);
     }
-  }, [queue, navigate]);
+  }, [queue, focus, navigate]);
 
   return {focus, queue, remove};
 }

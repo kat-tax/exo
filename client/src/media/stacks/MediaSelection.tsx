@@ -43,7 +43,7 @@ export function MediaSelection(props: MediaSelectionType) {
           <Pressable onPress={() => props.remove(index)}>
             <Icon
               name="ph:x"
-              size={14}
+              size={IS_TOUCH ? 16 : 14}
               color={theme.colors.mutedForeground}
             />
           </Pressable>
@@ -61,13 +61,13 @@ const stylesheet = createStyleSheet((theme) => ({
   },
   preview: {
     height: TAB_SIZE,
-    gap: theme.display.space2,
+    gap: IS_TOUCH ? theme.display.space3 : theme.display.space2,
     flexDirection: 'row',
     alignItems: 'center',
     alignContent: 'center',
     justifyContent: 'center',
     paddingVertical: theme.display.space1,
-    paddingHorizontal: theme.display.space2,
+    paddingHorizontal: IS_TOUCH ? theme.display.space3 : theme.display.space2,
     borderRadius: theme.display.radius1,
     borderColor: theme.colors.border,
     borderWidth: 1,
