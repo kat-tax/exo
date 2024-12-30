@@ -1,7 +1,7 @@
 import {Book} from 'react-exo/book';
 
-import {View} from 'react-native';
-import {forwardRef, useEffect, useState} from 'react';
+import {View, Platform} from 'react-native';
+import {useEffect, useState, useCallback, forwardRef} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useScheme} from 'app/hooks/useScheme';
 import {useFileData} from 'media/hooks/useFileData';
@@ -25,6 +25,14 @@ export default forwardRef((props: FileBook, ref: React.Ref<BookRef>) => {
   const [scheme] = useScheme();
   const epub = useFileData(props.path, 'dataUrl', 'application/epub+zip');
 
+  // Workaround: send resize event to force render
+  const forceRender = useCallback(() => {
+    if (Platform.OS === 'web') {
+      console.log('[force render]');
+      window.dispatchEvent(new Event('resize'));
+    }
+  }, []);
+
   // Pull title from manifest (fallback to file name)
   useEffect(() => {
     fetch(EPUB_URL)
@@ -39,6 +47,9 @@ export default forwardRef((props: FileBook, ref: React.Ref<BookRef>) => {
     props.setBarIcon('https://alice.dita.digital/images/cover.jpg');
   }, [title, chapter, props.setBarTitle, props.setBarIcon]);
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: force render when min/maximized
+  useEffect(forceRender, [props.maximized]);
+
   return epub ? (
     <View style={styles.root}>
       <Book
@@ -46,8 +57,10 @@ export default forwardRef((props: FileBook, ref: React.Ref<BookRef>) => {
         url={EPUB_URL}
         style={props.maximized ? styles.maximized : undefined}
         theme={scheme === 'light' ? 'default' : 'night'}
-        onLocationChange={(e) => e.title && setChapter(e.title)}
         onTableOfContents={console.log}
+        onLocationChange={(e) => {
+          e.title && setChapter(e.title);
+        }}
       />
     </View>
   ) : null;
