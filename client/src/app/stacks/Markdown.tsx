@@ -1,6 +1,6 @@
 import {memo} from 'react';
-import {Platform} from 'react-native';
 import {useStyles} from 'react-native-unistyles';
+import {Platform, StyleSheet} from 'react-native';
 import {Markdown as MarkdownBase} from 'react-exo/markdown';
 import {useScheme} from 'app/hooks/useScheme';
 import {Code} from 'react-exo/code';
@@ -31,8 +31,9 @@ export const Markdown = memo(({text}: {text: string}) => {
           gap: theme.display.space2,
           width: '100%',
           fontFamily: theme.font.family,
-          letterSpacing: theme.font.spacing,
+          fontSize: theme.typography.size1,
           lineHeight: theme.typography.lineHeight5,
+          letterSpacing: theme.font.spacing,
           color: theme.colors.foreground,
         },
         // Headings
@@ -89,12 +90,12 @@ export const Markdown = memo(({text}: {text: string}) => {
         },
         // Blockquotes
         blockquote: {
-          backgroundColor: theme.colors.background,
-          borderColor: theme.colors.border,
-          borderLeftWidth: 4,
           marginLeft: theme.display.space2,
           paddingHorizontal: theme.display.space2,
+          backgroundColor: theme.colors.background,
+          borderColor: theme.colors.border,
           borderRadius: theme.display.radius3,
+          borderLeftWidth: 4,
         },
         // Lists
         bullet_list: {},
@@ -123,12 +124,12 @@ export const Markdown = memo(({text}: {text: string}) => {
         },
         // Code
         code_inline: {
-          borderWidth: 1,
-          borderColor: theme.colors.border,
           fontSize: theme.font.size,
           padding: theme.display.space1,
-          borderRadius: theme.display.radius3,
           backgroundColor: theme.colors.card,
+          borderColor: theme.colors.border,
+          borderRadius: theme.display.radius3,
+          borderWidth: StyleSheet.hairlineWidth,
           color: theme.colors.info,
           ...Platform.select({
             ios: {
@@ -140,11 +141,11 @@ export const Markdown = memo(({text}: {text: string}) => {
           }),
         },
         code_block: {
-          borderWidth: 1,
-          borderColor: theme.colors.border,
-          borderRadius: theme.display.radius3,
           padding: theme.display.space3,
           backgroundColor: theme.colors.card,
+          borderColor: theme.colors.border,
+          borderRadius: theme.display.radius3,
+          borderWidth: StyleSheet.hairlineWidth,
           color: theme.colors.cardForeground,
           ...Platform.select({
             ios: {
@@ -156,11 +157,11 @@ export const Markdown = memo(({text}: {text: string}) => {
           }),
         },
         fence: {
-          borderWidth: 1,
-          borderColor: theme.colors.border,
-          borderRadius: theme.display.radius3,
           padding: theme.display.space3,
           backgroundColor: theme.colors.card,
+          borderColor: theme.colors.border,
+          borderRadius: theme.display.radius3,
+          borderWidth: StyleSheet.hairlineWidth,
           color: theme.colors.cardForeground,
           ...Platform.select({
             ios: {
@@ -173,9 +174,9 @@ export const Markdown = memo(({text}: {text: string}) => {
         },
         // Tables
         table: {
-          borderWidth: 1,
           borderColor: theme.colors.border,
           borderRadius: theme.display.radius3,
+          borderWidth: StyleSheet.hairlineWidth,
         },
         thead: {},
         tbody: {},
@@ -184,9 +185,9 @@ export const Markdown = memo(({text}: {text: string}) => {
           padding: theme.display.space2,
         },
         tr: {
-          borderBottomWidth: 1,
-          borderColor: theme.colors.border,
           flexDirection: 'row',
+          borderColor: theme.colors.border,
+          borderBottomWidth: StyleSheet.hairlineWidth,
         },
         td: {
           flex: 1,
@@ -199,7 +200,7 @@ export const Markdown = memo(({text}: {text: string}) => {
         blocklink: {
           flex: 1,
           borderColor: theme.colors.border,
-          borderBottomWidth: 1,
+          borderBottomWidth: StyleSheet.hairlineWidth,
         },
         // Images
         image: {
@@ -212,8 +213,8 @@ export const Markdown = memo(({text}: {text: string}) => {
           width: '100%',
           flexWrap: 'wrap',
           flexDirection: 'row',
-          alignItems: 'flex-start',
           justifyContent: 'flex-start',
+          alignItems: 'flex-start',
           marginVertical: theme.display.space3,
           fontSize: theme.font.contentSize,
           fontWeight: theme.font.contentWeight,
