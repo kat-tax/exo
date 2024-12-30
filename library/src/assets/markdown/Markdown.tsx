@@ -62,7 +62,7 @@ export const Markdown = memo((props: MarkdownProps) => {
 
 function getRenderer(
   renderer: AstRenderer | null,
-  rules: RenderRules | null,
+  rules: Partial<RenderRules> | null,
   style: StyleSheet.NamedStyles<unknown> | null,
   mergeStyle: boolean,
   onLinkPress: ((url: string) => boolean) | undefined,

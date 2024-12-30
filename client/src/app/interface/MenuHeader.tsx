@@ -1,6 +1,5 @@
 import {t} from '@lingui/macro';
 import {Icon} from 'react-exo/icon';
-import {Link} from 'react-exo/navigation';
 import {View, Text, Pressable} from 'react-native';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useLingui} from '@lingui/react';
@@ -24,7 +23,7 @@ export function MenuHeader(props: MenuProps) {
           linkable
         />
         <View style={styles.info}>
-          <Text selectable style={styles.name}>
+          <Text style={styles.name} selectable={false}>
             {props?.profile?.name ?? t(i18n)`Human`}
           </Text>
         </View>

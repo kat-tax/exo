@@ -144,11 +144,15 @@ export function getRenderInfo(
     // Books
     case 'epub':
       return [FileType.Book, {continuous: true}];
-    // Code
+    // Texts
+    case 'txt':
+      return [FileType.Text, {language: 'text'}];
     case 'ts':
-      return [FileType.Code, {lang: 'typescript', theme: 'nord'}];
+      return [FileType.Text, {language: 'typescript'}];
+    case 'tsx':
+      return [FileType.Text, {language: 'tsx'}];
     case 'js':
-      return [FileType.Code, {lang: 'javascript', theme: 'nord'}];
+      return [FileType.Text, {language: 'javascript'}];
     // Roms
     case 'n64':
     case 'v64':
@@ -212,7 +216,9 @@ export function getRenderInfo(
       // const isText = await isTextFile(ext, null);
       const isText = false;
       console.log(isTextFile);
-      return [isText ? FileType.Text : FileType.Binary, {}];
+      return isText
+        ? [FileType.Text, {language: 'text'}]
+        : [FileType.Binary, {}];
     }
   }
 }

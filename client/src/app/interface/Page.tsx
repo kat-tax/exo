@@ -46,12 +46,12 @@ export function Page(props: PageProps) {
             <View style={vstyles.header}>
               <View style={styles.greeting}>
                 {hasTitle &&
-                  <Text style={styles.title}>
+                  <Text style={styles.title} selectable={false}>
                     {props.title}
                   </Text>
                 }
                 {hasMessage &&
-                  <Text style={styles.message}>
+                  <Text style={styles.message} selectable={false}>
                     {props.message}
                   </Text>
                 }

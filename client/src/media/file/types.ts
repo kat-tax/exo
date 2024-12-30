@@ -8,7 +8,6 @@ import type {GameRef} from 'media/file/FileGame';
 export enum FileType {
   Binary = 'Binary',
   Text = 'Text',
-  Code = 'Code',
   Note = 'Note',
   Torrent = 'Torrent',
   Document = 'Document',
@@ -30,6 +29,7 @@ export enum FileType {
 }
 
 export type FileOptions = {
+  [FileType.Text]: {language: string},
   [FileType.Book]: {continuous: boolean},
   [FileType.Game]: {platform: FileGame['platform']},
 } & Record<FileType, Record<string, unknown>>

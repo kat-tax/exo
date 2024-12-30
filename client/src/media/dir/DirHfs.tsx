@@ -15,13 +15,11 @@ export function DirHfs({path, entries}: DirHfsProps) {
     const down = (e: KeyboardEvent) => {
       if (e.key === 'Command' || e.key === 'Meta') {
         setMultiSelect(true);
-        console.log('down', e.key);
       }
     };
     const up = (e: KeyboardEvent) => {
       if (e.key === 'Command' || e.key === 'Meta') {
         setMultiSelect(false);
-        console.log('up', e.key);
       }
     };
     window.addEventListener('keydown', down);

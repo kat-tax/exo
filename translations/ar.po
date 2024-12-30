@@ -64,7 +64,7 @@ msgstr "التقويم"
 msgid "Celsius"
 msgstr "سيلزيوس"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:261
+#: ../../client/src/media/hooks/useMediaControls.ts:257
 msgid "Close"
 msgstr "إغلاق"
 
@@ -106,6 +106,10 @@ msgstr "التصميم"
 msgid "Dev Mode"
 msgstr "وضع المطور"
 
+#: ../../client/src/app/routes/ScreenStorage.tsx:31
+msgid "Device Space"
+msgstr ""
+
 #: ../../client/src/media/dir/DirEmpty.tsx:13
 msgid "Directory is empty."
 msgstr "الدليل فارغ."
@@ -122,6 +126,8 @@ msgstr "المسافة"
 msgid "Docs"
 msgstr "المستندات"
 
+#: ../../client/src/media/file/FileBinary.tsx:18
+#: ../../client/src/media/file/FileZip.tsx:18
 #: ../../client/src/media/hooks/useMediaControls.ts:62
 msgid "Download"
 msgstr "تنزيل"
@@ -200,7 +206,7 @@ msgstr "فشل Groq"
 msgid "Groq Model ID"
 msgstr "معرف نموذج Groq"
 
-#: ../../client/src/app/interface/MenuHeader.tsx:28
+#: ../../client/src/app/interface/MenuHeader.tsx:27
 msgid "Human"
 msgstr "الإنسان"
 
@@ -242,7 +248,7 @@ msgstr "جارٍ التحميل..."
 msgid "Manage your settings"
 msgstr "إدارة إعداداتك"
 
-#: ../../client/src/app/routes/ScreenStorage.tsx:15
+#: ../../client/src/app/routes/ScreenStorage.tsx:27
 msgid "Manage your storage"
 msgstr "إدارة التخزين الخاص بك"
 
@@ -251,7 +257,7 @@ msgstr "إدارة التخزين الخاص بك"
 msgid "Map"
 msgstr "الخريطة"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:254
+#: ../../client/src/media/hooks/useMediaControls.ts:250
 msgid "Maximize"
 msgstr "تكبير"
 
@@ -284,11 +290,11 @@ msgstr "التالي"
 msgid "No events scheduled."
 msgstr "لا توجد أحداث مجدولة."
 
-#: ../../client/src/media/hooks/useMediaControls.ts:210
+#: ../../client/src/media/hooks/useMediaControls.ts:206
 msgid "Options"
 msgstr ""
 
-#: ../../client/src/app/routes/ScreenStorage.tsx:17
+#: ../../client/src/app/routes/ScreenStorage.tsx:29
 msgid "Overview"
 msgstr "نظرة عامة"
 
@@ -304,7 +310,7 @@ msgstr "إيقاف مؤقت"
 msgid "Pictures"
 msgstr "الصور"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:221
+#: ../../client/src/media/hooks/useMediaControls.ts:217
 msgid "Pin"
 msgstr "تثبيت"
 
@@ -340,10 +346,6 @@ msgstr "قدم مفتاحًا لاستخدام ميزات الذكاء الاص�
 msgid "Replay"
 msgstr ""
 
-#: ../../client/src/media/hooks/useMediaControls.ts:52
-msgid "Search"
-msgstr ""
-
 #: ../../client/src/app/routes/ScreenSettings.tsx:150
 msgid "Select the AI model to use."
 msgstr "اختر نموذج الذكاء الاصطناعي للاستخدام."
@@ -364,12 +366,13 @@ msgstr "اختر وحدة درجة الحرارة للتطبيق."
 msgid "Select the theme for the app."
 msgstr "اختر سمة التطبيق."
 
+#: ../../client/src/app/interface/Menu.tsx:140
 #: ../../client/src/app/interface/Tabs.tsx:33
 #: ../../client/src/app/routes/ScreenSettings.tsx:27
 msgid "Settings"
 msgstr "الإعدادات"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:235
+#: ../../client/src/media/hooks/useMediaControls.ts:231
 msgid "Share"
 msgstr "مشاركة"
 
@@ -385,10 +388,14 @@ msgstr ""
 msgid "Social"
 msgstr ""
 
-#: ../../client/src/app/interface/Menu.tsx:133
-#: ../../client/src/app/routes/ScreenStorage.tsx:14
+#: ../../client/src/app/interface/Menu.tsx:134
+#: ../../client/src/app/routes/ScreenStorage.tsx:26
 msgid "Storage"
 msgstr "التخزين"
+
+#: ../../client/src/app/routes/ScreenStorage.tsx:32
+msgid "Storage used and available on this device."
+msgstr ""
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:109
 msgid "Temperature"
@@ -458,7 +465,3 @@ msgstr "تكبير"
 #: ../../client/src/media/hooks/useMediaControls.ts:93
 msgid "Zoom out"
 msgstr "تصغير"
-
-#: ../../client/src/media/hooks/useMediaControls.ts:103
-msgid "Zoom reset"
-msgstr ""

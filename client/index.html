@@ -8,8 +8,11 @@
       content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
     />
     <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://rsms.me/" />
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
     <title>__APP_NAME__</title>
     <style>
       :root {
@@ -55,7 +58,22 @@
         }
       }
 
-      /* Epub Reader Workaround */
+      /* Shiki */
+      pre {
+        margin: 0;
+        outline: none;
+        background: transparent !important;
+      }
+
+      pre code {
+        font-family: "Fira Code", serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-size: 14px;
+        font-style: normal;
+      }
+
+      /* Readium */
       #D2Reader-Container iframe {
         height: 100%;
       }

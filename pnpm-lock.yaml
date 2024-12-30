@@ -11207,9 +11207,6 @@ packages:
   periscopic@3.1.0:
     resolution: {integrity: sha512-vKiQ8RRtkl9P+r/+oefh25C3fhybptkHKCZSPlcXiJux2tJF55GnEj3BVn4A5gKfq9NWWXXrxkHBwVPUfH0opw==}
 
-  picocolors@1.0.0:
-    resolution: {integrity: sha512-1fygroTLlHu66zi26VoTDv8yRgm0Fccecssto+MhsZ0D/DGW2sm8E8AjW7NU5VVTRt5GxbeZ5qBuJr+HyLYkjQ==}
-
   picocolors@1.0.1:
     resolution: {integrity: sha512-anP1Z8qwhkbmu7MFP5iTt+wQKXgwzf7zTyGlcdzabySa9vd0Xt392U0rVmz9poOaBj0uHJKyyo9/upk0HrEQew==}
 
@@ -14514,7 +14511,7 @@ snapshots:
       '@babel/helper-validator-identifier': 7.24.7
       chalk: 2.4.2
       js-tokens: 4.0.0
-      picocolors: 1.0.0
+      picocolors: 1.0.1
 
   '@babel/parser@7.23.9':
     dependencies:
@@ -22385,10 +22382,10 @@ snapshots:
     dependencies:
       '@babel/core': 7.24.9
       '@mdx-js/react': 3.0.0(@types/react@18.3.3)(react@18.3.1)
-      '@storybook/blocks': 8.2.6(react-dom@18.2.0(react@18.2.0))(react@18.3.1)(storybook@8.2.6(@babel/preset-env@7.24.8(@babel/core@7.24.9))(bufferutil@4.0.8))
+      '@storybook/blocks': 8.2.6(react-dom@18.2.0(react@18.3.1))(react@18.3.1)(storybook@8.2.6(@babel/preset-env@7.24.8(@babel/core@7.24.9))(bufferutil@4.0.8))
       '@storybook/csf-plugin': 8.2.6(storybook@8.2.6(@babel/preset-env@7.24.8(@babel/core@7.24.9))(bufferutil@4.0.8))
       '@storybook/global': 5.0.0
-      '@storybook/react-dom-shim': 8.2.6(react-dom@18.2.0(react@18.2.0))(react@18.3.1)(storybook@8.2.6(@babel/preset-env@7.24.8(@babel/core@7.24.9))(bufferutil@4.0.8))
+      '@storybook/react-dom-shim': 8.2.6(react-dom@18.2.0(react@18.3.1))(react@18.3.1)(storybook@8.2.6(@babel/preset-env@7.24.8(@babel/core@7.24.9))(bufferutil@4.0.8))
       '@types/react': 18.3.3
       fs-extra: 11.2.0
       react: 18.3.1
@@ -22485,27 +22482,6 @@ snapshots:
       util-deprecate: 1.0.2
     optionalDependencies:
       react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
-
-  '@storybook/blocks@8.2.6(react-dom@18.2.0(react@18.2.0))(react@18.3.1)(storybook@8.2.6(@babel/preset-env@7.24.8(@babel/core@7.24.9))(bufferutil@4.0.8))':
-    dependencies:
-      '@storybook/csf': 0.1.11
-      '@storybook/global': 5.0.0
-      '@storybook/icons': 1.2.9(react-dom@18.2.0(react@18.2.0))(react@18.3.1)
-      '@types/lodash': 4.14.202
-      color-convert: 2.0.1
-      dequal: 2.0.3
-      lodash: 4.17.21
-      markdown-to-jsx: 7.4.7(react@18.3.1)
-      memoizerific: 1.11.3
-      polished: 4.2.2
-      react-colorful: 5.6.1(react-dom@18.2.0(react@18.2.0))(react@18.3.1)
-      storybook: 8.2.6(@babel/preset-env@7.24.8(@babel/core@7.24.9))(bufferutil@4.0.8)
-      telejson: 7.2.0
-      ts-dedent: 2.2.0
-      util-deprecate: 1.0.2
-    optionalDependencies:
-      react: 18.3.1
       react-dom: 18.2.0(react@18.2.0)
 
   '@storybook/blocks@8.2.6(react-dom@18.2.0(react@18.3.1))(react@18.3.1)(storybook@8.2.6(@babel/preset-env@7.24.8(@babel/core@7.24.9))(bufferutil@4.0.8))':
@@ -22609,11 +22585,6 @@ snapshots:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
 
-  '@storybook/icons@1.2.9(react-dom@18.2.0(react@18.2.0))(react@18.3.1)':
-    dependencies:
-      react: 18.3.1
-      react-dom: 18.2.0(react@18.2.0)
-
   '@storybook/icons@1.2.9(react-dom@18.2.0(react@18.3.1))(react@18.3.1)':
     dependencies:
       react: 18.3.1
@@ -22648,10 +22619,10 @@ snapshots:
       react-dom: 18.2.0(react@18.2.0)
       storybook: 8.2.6(@babel/preset-env@7.24.8(@babel/core@7.24.9))(bufferutil@4.0.8)
 
-  '@storybook/react-dom-shim@8.2.6(react-dom@18.2.0(react@18.2.0))(react@18.3.1)(storybook@8.2.6(@babel/preset-env@7.24.8(@babel/core@7.24.9))(bufferutil@4.0.8))':
+  '@storybook/react-dom-shim@8.2.6(react-dom@18.2.0(react@18.3.1))(react@18.3.1)(storybook@8.2.6(@babel/preset-env@7.24.8(@babel/core@7.24.9))(bufferutil@4.0.8))':
     dependencies:
       react: 18.3.1
-      react-dom: 18.2.0(react@18.2.0)
+      react-dom: 18.2.0(react@18.3.1)
       storybook: 8.2.6(@babel/preset-env@7.24.8(@babel/core@7.24.9))(bufferutil@4.0.8)
 
   '@storybook/react-dom-shim@8.2.9(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.2.6(@babel/preset-env@7.24.8(@babel/core@7.24.9))(bufferutil@4.0.8))':
@@ -29774,8 +29745,6 @@ snapshots:
       estree-walker: 3.0.3
       is-reference: 3.0.2
 
-  picocolors@1.0.0: {}
-
   picocolors@1.0.1: {}
 
   picomatch@2.3.1: {}
@@ -30194,11 +30163,6 @@ snapshots:
   react-colorful@5.6.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
     dependencies:
       react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
-
-  react-colorful@5.6.1(react-dom@18.2.0(react@18.2.0))(react@18.3.1):
-    dependencies:
-      react: 18.3.1
       react-dom: 18.2.0(react@18.2.0)
 
   react-colorful@5.6.1(react-dom@18.2.0(react@18.3.1))(react@18.3.1):

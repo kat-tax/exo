@@ -28,7 +28,6 @@ export default forwardRef((props: FileBook, ref: React.Ref<BookRef>) => {
   // Workaround: send resize event to force render
   const forceRender = useCallback(() => {
     if (Platform.OS === 'web') {
-      console.log('[force render]');
       window.dispatchEvent(new Event('resize'));
     }
   }, []);

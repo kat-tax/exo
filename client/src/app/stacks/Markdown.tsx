@@ -2,10 +2,12 @@ import {memo} from 'react';
 import {Platform} from 'react-native';
 import {useStyles} from 'react-native-unistyles';
 import {Markdown as MarkdownBase} from 'react-exo/markdown';
+import {useScheme} from 'app/hooks/useScheme';
 import {Code} from 'react-exo/code';
 
 export const Markdown = memo(({text}: {text: string}) => {
   const {theme} = useStyles();
+  const [scheme] = useScheme();
 
   if (!text) return null;
 
@@ -14,9 +16,11 @@ export const Markdown = memo(({text}: {text: string}) => {
       mergeStyle={false}
       rules={{
         code_block: (node, parents, children, styles) => {
-          console.log(node, parents, children, styles);
+          console.log('>> code_block', node, parents, children, styles);
           return (
-            <Code lang="typescript" theme="nord">
+            <Code
+              lang="typescript"
+              theme={scheme === 'dark' ? 'dark-plus' : 'light-plus'}>
               {node.content}
             </Code>
           );

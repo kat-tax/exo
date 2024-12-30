@@ -30,11 +30,18 @@ export function ListRow(props: ListRow) {
   return (
     <View style={vstyles.root}>
       <ListRowIcon {...{name, size: iconSize, extension, path, isFile}}/>
-      <Text numberOfLines={1} ellipsizeMode="middle" style={styles.text}>
+      <Text
+        style={styles.text}
+        selectable={false}
+        ellipsizeMode="middle"
+        numberOfLines={1}>
         {props.name}
       </Text>
       {props.size &&
-        <Text numberOfLines={1} style={[styles.text, styles.size]}>
+        <Text
+          style={[styles.text, styles.size]}
+          selectable={false}
+          numberOfLines={1}>
           {bytesize(props.size)}
         </Text>
       }

@@ -68,7 +68,10 @@ export function MediaControls(props: MediaControlsProps) {
                   isFile={true}
                 />
             }
-            <Text style={styles.titleText} numberOfLines={2}>
+            <Text
+              style={styles.titleText}
+              selectable={false}
+              numberOfLines={2}>
               {title}
             </Text>
           </Pressable>

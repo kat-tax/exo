@@ -64,7 +64,7 @@ msgstr "Calendario"
 msgid "Celsius"
 msgstr "Celsius"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:261
+#: ../../client/src/media/hooks/useMediaControls.ts:257
 msgid "Close"
 msgstr "Cerrar"
 
@@ -106,6 +106,10 @@ msgstr "Diseño"
 msgid "Dev Mode"
 msgstr "Modo desarrollador"
 
+#: ../../client/src/app/routes/ScreenStorage.tsx:31
+msgid "Device Space"
+msgstr ""
+
 #: ../../client/src/media/dir/DirEmpty.tsx:13
 msgid "Directory is empty."
 msgstr "El directorio está vacío."
@@ -122,6 +126,8 @@ msgstr "Distancia"
 msgid "Docs"
 msgstr "Documentos"
 
+#: ../../client/src/media/file/FileBinary.tsx:18
+#: ../../client/src/media/file/FileZip.tsx:18
 #: ../../client/src/media/hooks/useMediaControls.ts:62
 msgid "Download"
 msgstr "Descargar"
@@ -200,7 +206,7 @@ msgstr "Fallo de Groq"
 msgid "Groq Model ID"
 msgstr "ID del modelo de Groq"
 
-#: ../../client/src/app/interface/MenuHeader.tsx:28
+#: ../../client/src/app/interface/MenuHeader.tsx:27
 msgid "Human"
 msgstr "Humano"
 
@@ -242,7 +248,7 @@ msgstr "Cargando..."
 msgid "Manage your settings"
 msgstr "Administra tus configuraciones"
 
-#: ../../client/src/app/routes/ScreenStorage.tsx:15
+#: ../../client/src/app/routes/ScreenStorage.tsx:27
 msgid "Manage your storage"
 msgstr "Administra tu almacenamiento"
 
@@ -251,7 +257,7 @@ msgstr "Administra tu almacenamiento"
 msgid "Map"
 msgstr "Mapa"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:254
+#: ../../client/src/media/hooks/useMediaControls.ts:250
 msgid "Maximize"
 msgstr "Maximizar"
 
@@ -284,11 +290,11 @@ msgstr "Siguiente"
 msgid "No events scheduled."
 msgstr "No hay eventos programados."
 
-#: ../../client/src/media/hooks/useMediaControls.ts:210
+#: ../../client/src/media/hooks/useMediaControls.ts:206
 msgid "Options"
 msgstr ""
 
-#: ../../client/src/app/routes/ScreenStorage.tsx:17
+#: ../../client/src/app/routes/ScreenStorage.tsx:29
 msgid "Overview"
 msgstr "Resumen"
 
@@ -304,7 +310,7 @@ msgstr "Pausar"
 msgid "Pictures"
 msgstr "Imágenes"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:221
+#: ../../client/src/media/hooks/useMediaControls.ts:217
 msgid "Pin"
 msgstr "Fijar"
 
@@ -340,10 +346,6 @@ msgstr "Proporciona una clave para usar las funciones de IA."
 msgid "Replay"
 msgstr ""
 
-#: ../../client/src/media/hooks/useMediaControls.ts:52
-msgid "Search"
-msgstr ""
-
 #: ../../client/src/app/routes/ScreenSettings.tsx:150
 msgid "Select the AI model to use."
 msgstr "Selecciona el modelo de IA a utilizar."
@@ -364,12 +366,13 @@ msgstr "Selecciona la unidad de temperatura para la aplicación."
 msgid "Select the theme for the app."
 msgstr "Selecciona el tema para la aplicación."
 
+#: ../../client/src/app/interface/Menu.tsx:140
 #: ../../client/src/app/interface/Tabs.tsx:33
 #: ../../client/src/app/routes/ScreenSettings.tsx:27
 msgid "Settings"
 msgstr "Configuración"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:235
+#: ../../client/src/media/hooks/useMediaControls.ts:231
 msgid "Share"
 msgstr "Compartir"
 
@@ -385,10 +388,14 @@ msgstr ""
 msgid "Social"
 msgstr ""
 
-#: ../../client/src/app/interface/Menu.tsx:133
-#: ../../client/src/app/routes/ScreenStorage.tsx:14
+#: ../../client/src/app/interface/Menu.tsx:134
+#: ../../client/src/app/routes/ScreenStorage.tsx:26
 msgid "Storage"
 msgstr "Almacenamiento"
+
+#: ../../client/src/app/routes/ScreenStorage.tsx:32
+msgid "Storage used and available on this device."
+msgstr ""
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:109
 msgid "Temperature"
@@ -458,7 +465,3 @@ msgstr "Acercar"
 #: ../../client/src/media/hooks/useMediaControls.ts:93
 msgid "Zoom out"
 msgstr "Alejar"
-
-#: ../../client/src/media/hooks/useMediaControls.ts:103
-msgid "Zoom reset"
-msgstr ""

@@ -64,7 +64,7 @@ msgstr "カレンダー"
 msgid "Celsius"
 msgstr "摂氏"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:261
+#: ../../client/src/media/hooks/useMediaControls.ts:257
 msgid "Close"
 msgstr "閉じる"
 
@@ -106,6 +106,10 @@ msgstr "デザイン"
 msgid "Dev Mode"
 msgstr "開発者モード"
 
+#: ../../client/src/app/routes/ScreenStorage.tsx:31
+msgid "Device Space"
+msgstr ""
+
 #: ../../client/src/media/dir/DirEmpty.tsx:13
 msgid "Directory is empty."
 msgstr "ディレクトリが空です。"
@@ -122,6 +126,8 @@ msgstr "距離"
 msgid "Docs"
 msgstr "ドキュメント"
 
+#: ../../client/src/media/file/FileBinary.tsx:18
+#: ../../client/src/media/file/FileZip.tsx:18
 #: ../../client/src/media/hooks/useMediaControls.ts:62
 msgid "Download"
 msgstr "ダウンロード"
@@ -200,7 +206,7 @@ msgstr "Groq失敗"
 msgid "Groq Model ID"
 msgstr "GroqモデルID"
 
-#: ../../client/src/app/interface/MenuHeader.tsx:28
+#: ../../client/src/app/interface/MenuHeader.tsx:27
 msgid "Human"
 msgstr "人間"
 
@@ -242,7 +248,7 @@ msgstr "読み込み中..."
 msgid "Manage your settings"
 msgstr "設定を管理"
 
-#: ../../client/src/app/routes/ScreenStorage.tsx:15
+#: ../../client/src/app/routes/ScreenStorage.tsx:27
 msgid "Manage your storage"
 msgstr "ストレージを管理"
 
@@ -251,7 +257,7 @@ msgstr "ストレージを管理"
 msgid "Map"
 msgstr "地図"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:254
+#: ../../client/src/media/hooks/useMediaControls.ts:250
 msgid "Maximize"
 msgstr "最大化"
 
@@ -284,11 +290,11 @@ msgstr "次へ"
 msgid "No events scheduled."
 msgstr "予定されているイベントはありません。"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:210
+#: ../../client/src/media/hooks/useMediaControls.ts:206
 msgid "Options"
 msgstr ""
 
-#: ../../client/src/app/routes/ScreenStorage.tsx:17
+#: ../../client/src/app/routes/ScreenStorage.tsx:29
 msgid "Overview"
 msgstr "概要"
 
@@ -304,7 +310,7 @@ msgstr "一時停止"
 msgid "Pictures"
 msgstr "写真"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:221
+#: ../../client/src/media/hooks/useMediaControls.ts:217
 msgid "Pin"
 msgstr "ピン留め"
 
@@ -340,10 +346,6 @@ msgstr "AI機能を使用するためのキーを提供してください。"
 msgid "Replay"
 msgstr ""
 
-#: ../../client/src/media/hooks/useMediaControls.ts:52
-msgid "Search"
-msgstr ""
-
 #: ../../client/src/app/routes/ScreenSettings.tsx:150
 msgid "Select the AI model to use."
 msgstr "使用するAIモデルを選択してください。"
@@ -364,12 +366,13 @@ msgstr "アプリの温度単位を選択してください。"
 msgid "Select the theme for the app."
 msgstr "アプリのテーマを選択してください。"
 
+#: ../../client/src/app/interface/Menu.tsx:140
 #: ../../client/src/app/interface/Tabs.tsx:33
 #: ../../client/src/app/routes/ScreenSettings.tsx:27
 msgid "Settings"
 msgstr "設定"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:235
+#: ../../client/src/media/hooks/useMediaControls.ts:231
 msgid "Share"
 msgstr "共有"
 
@@ -385,10 +388,14 @@ msgstr ""
 msgid "Social"
 msgstr ""
 
-#: ../../client/src/app/interface/Menu.tsx:133
-#: ../../client/src/app/routes/ScreenStorage.tsx:14
+#: ../../client/src/app/interface/Menu.tsx:134
+#: ../../client/src/app/routes/ScreenStorage.tsx:26
 msgid "Storage"
 msgstr "ストレージ"
+
+#: ../../client/src/app/routes/ScreenStorage.tsx:32
+msgid "Storage used and available on this device."
+msgstr ""
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:109
 msgid "Temperature"
@@ -458,7 +465,3 @@ msgstr "拡大"
 #: ../../client/src/media/hooks/useMediaControls.ts:93
 msgid "Zoom out"
 msgstr "縮小"
-
-#: ../../client/src/media/hooks/useMediaControls.ts:103
-msgid "Zoom reset"
-msgstr ""

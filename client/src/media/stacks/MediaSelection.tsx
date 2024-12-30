@@ -51,9 +51,9 @@ export function MediaSelection(props: MediaSelectionType) {
             isFile
           />
           <Text
+            style={[styles.text, index === focus && styles.textFocused]}
             selectable={false}
-            numberOfLines={TEXT_LINES}
-            style={[styles.text, index === focus && styles.textFocused]}>
+            numberOfLines={TEXT_LINES}>
             {title}
           </Text>
           <Pressable onPress={() => props.remove(index)}>

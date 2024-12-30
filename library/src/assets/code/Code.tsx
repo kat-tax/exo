@@ -1,38 +1,35 @@
-import {createHighlighterCore} from '@shikijs/core';
-import {createOnigurumaEngine} from '@shikijs/engine-oniguruma';
-import {useEffect, useRef, useMemo} from 'react';
-import {View, Text} from 'react-native';
+import {createHighlighter} from 'shiki';
+import {createOnigurumaEngine} from 'shiki/engine-oniguruma.mjs';
+import {useEffect, useState, useRef} from 'react';
+
+// TODO: Native Shiki Engine
+// Engine: https://github.com/skiniks/react-native-shiki-engine?tab=readme-ov-file#example-implementation
+// Display: https://github.com/skiniks/react-native-shiki-engine/blob/main/example/src/components/TokenDisplay.tsx
 
 import type {CodeProps} from './Code.interface';
 
-const highlighterInit = createHighlighterCore({
-  themes: ['nord'],
-  langs: ['typescript'],
+const highlighterInit = createHighlighter({
   engine: createOnigurumaEngine(import('shiki/wasm')),
+  themes: ['dark-plus', 'light-plus'],
+  langs: ['typescript', 'tsx'],
 });
 
 export function Code(props: CodeProps) {
   const {lang, theme, children} = props;
-  const highlighter = useRef<Awaited<typeof highlighterInit>>();
+  const [code, setCode] = useState('');
+  const shiki = useRef<Awaited<typeof highlighterInit>>();
 
   useEffect(() => {
-    const initHighlighter = async () => {
-      highlighter.current = await highlighterInit;
-      console.log(highlighter.current);
-    };
-    initHighlighter();
-  }, []);
-
-  const code = useMemo(() => {
-    if (!highlighter.current) return '';
-    const html = highlighter.current.codeToHtml(children, {lang, theme});
-    console.log(html);
-    return html;
+    (async () => {
+      shiki.current = await highlighterInit;
+      setCode(shiki.current.codeToHtml(children, {lang, theme}));
+    })();
   }, [children, lang, theme]);
 
   return (
-    <View>
-      <Text>{code}</Text>
-    </View>
+    <div
+      // biome-ignore lint/security/noDangerouslySetInnerHtml: temporary
+      dangerouslySetInnerHTML={{__html: code}}
+    />
   );
 }

@@ -31,7 +31,10 @@ export function StorageWidget(props: StorageWidgetProps) {
         />
       </View>
       <View style={styles.info}>
-        <Text style={styles.text}>
+        <Text
+          style={styles.text}
+          selectable={false}
+          numberOfLines={1}>
           {storage?.msg ?? '0GB / 0GB'}
         </Text>
         {props.actions}
