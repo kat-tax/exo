@@ -1,10 +1,12 @@
+import {t} from '@lingui/macro';
 import {Book} from 'react-exo/book';
 
-import {View, Platform} from 'react-native';
+import {useLingui} from '@lingui/react';
 import {useEffect, useState, useCallback, forwardRef} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {useScheme} from 'app/hooks/useScheme';
 import {useFileData} from 'media/hooks/useFileData';
+import {useScheme} from 'app/hooks/useScheme';
+import {View, Platform} from 'react-native';
 
 import type {FileProps} from 'media/file';
 import type {BookRef} from 'react-exo/book';
@@ -23,6 +25,7 @@ export default forwardRef((props: FileBook, ref: React.Ref<BookRef>) => {
   const [chapter, setChapter] = useState('');
   const {styles} = useStyles(stylesheet);
   const [scheme] = useScheme();
+  const {i18n} = useLingui();
   const epub = useFileData(props.path, 'dataUrl', 'application/epub+zip');
 
   // Workaround: send resize event to force render
@@ -36,15 +39,19 @@ export default forwardRef((props: FileBook, ref: React.Ref<BookRef>) => {
   useEffect(() => {
     fetch(EPUB_URL)
       .then((res) => res.json())
-      .then((data) => setTitle(data.metadata.title || props.name))
+      .then((data) => {
+        setTitle(data.metadata.title || props.name);
+        setChapter(t(i18n)`Loading...`);
+      })
       .catch(() => setTitle(props.name));
-  }, [props.name]);
+  }, [props.name, i18n]);
 
   // Update the title bar when the book title or chapter changes
   useEffect(() => {
-    props.setBarTitle(`${title} - ${chapter}`);
+    props.setBarTitle(title);
+    props.setBarInfo(chapter);
     props.setBarIcon('https://alice.dita.digital/images/cover.jpg');
-  }, [title, chapter, props.setBarTitle, props.setBarIcon]);
+  }, [title, chapter, props.setBarTitle, props.setBarIcon, props.setBarInfo]);
 
   // biome-ignore lint/correctness/useExhaustiveDependencies: force render when min/maximized
   useEffect(forceRender, [props.maximized]);

@@ -31,16 +31,20 @@ export function Media(props: MediaProps) {
   const {url, ext, name, path, vertical, maximized, close} = props;
   
   // File selection
-  const selectActive = selection?.queue?.length > 1;
-  const selectTarget = selectActive ? selection?.queue?.[selection?.focus] : null;
+  const selectMultiple = selection?.queue?.length > 1;
+  const selectActive = selection?.queue?.length > 0;
+  const selectTarget = selectMultiple ? selection?.queue?.[selection?.focus] : null;
   const targetPath = selectTarget?.path ?? path;
   const targetName = selectTarget?.name ?? name;
   const targetExt = selectTarget?.ext ?? ext;
+  const showSelection = maximized || selectActive;
 
   // File information
-  const [title, setTitle] = useState(targetName);
-  const [cover, setCover] = useState('');
   const renderer = useMemo(() => getRenderInfo(targetExt), [targetExt]);
+  const [cover, setCover] = useState('');
+  const [title, setTitle] = useState(targetName);
+  const [info, setInfo] = useState('');
+  const isFullWidth = rect.viewportWidth <= theme.breakpoints.xs;
 
   // File visualization
   const vstyles = useMemo(() => ({
@@ -48,25 +52,30 @@ export function Media(props: MediaProps) {
       styles.root,
       vertical && styles.vertical,
       maximized ? styles.maximized : styles.minimized,
-      !maximized && {width: rect.resolution[0], height: rect.resolution[1]},
-      rect.viewportWidth <= theme.breakpoints.xs && styles.fullwidth,
+      !maximized && {width: rect.resolution[0]},
+      isFullWidth && styles.fullwidth,
     ],
-  }), [styles, rect, vertical, maximized, theme.breakpoints.xs]);
+    frame: [
+      !maximized && {width: rect.resolution[0], height: rect.resolution[1]},
+      isFullWidth && styles.fullwidth,
+    ],
+  }), [styles, rect, vertical, maximized, isFullWidth]);
 
   // Change title when file name changes
   useEffect(() => {
     setTitle(targetName);
     setCover('');
+    setInfo('~/');
   }, [targetName]);
 
   return (
     <View style={vstyles.root}>
-      {selection.queue.length > 1 &&
+      {showSelection &&
         <View style={styles.selection}>
-          <MediaSelection {...selection}/>
+          <MediaSelection {...{maximized, ...selection}} />
         </View>
       }
-      <ScrollView contentContainerStyle={styles.contents}>
+      <ScrollView style={vstyles.frame} contentContainerStyle={styles.contents}>
         <File
           ref={file}
           path={targetPath}
@@ -74,8 +83,9 @@ export function Media(props: MediaProps) {
           extension={targetExt}
           renderer={renderer}
           maximized={maximized}
-          setBarIcon={setCover}
           setBarTitle={setTitle}
+          setBarInfo={setInfo}
+          setBarIcon={setCover}
           close={close}
         />
       </ScrollView>
@@ -85,6 +95,7 @@ export function Media(props: MediaProps) {
         maximized,
         metadata: {
           url,
+          info,
           title,
           cover,
           path: targetPath,
@@ -105,11 +116,7 @@ const stylesheet = createStyleSheet((theme, rt) => ({
     backgroundColor: theme.colors.neutral,
   },
   vertical: {
-    flex: 2,
-    paddingHorizontal: {
-      initial: 0,
-      xs: theme.display.space2,
-    }
+    flex: 3,
   },
   maximized: {
     maxWidth: '100%',

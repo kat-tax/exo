@@ -14,7 +14,7 @@ const TAB_SIZE = IS_TOUCH ? 46 : 32;
 const ICON_SIZE = IS_TOUCH ? 1 : 0;
 const TEXT_LINES = IS_TOUCH ? 2 : 1;
 
-export function MediaSelection(props: MediaSelectionType) {
+export function MediaSelection(props: {maximized: boolean} & MediaSelectionType) {
   const {queue, focus} = props;
   const {styles, theme} = useStyles(stylesheet);
   const scrollRef = useRef<ScrollView>(null);
@@ -34,7 +34,8 @@ export function MediaSelection(props: MediaSelectionType) {
     <Motion.ScrollView
       horizontal
       ref={scrollRef}
-      contentContainerStyle={styles.root}
+      showsHorizontalScrollIndicator={false}
+      contentContainerStyle={[styles.root, !props.maximized && styles.floating]}
       initial={{opacity: 0}}
       animate={{opacity: 1}}
       exit={{opacity: 0}}>
@@ -74,6 +75,12 @@ const stylesheet = createStyleSheet((theme) => ({
     flexDirection: 'row',
     gap: theme.display.space2,
     padding: theme.display.space2,
+  },
+  floating: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
   },
   preview: {
     height: TAB_SIZE,

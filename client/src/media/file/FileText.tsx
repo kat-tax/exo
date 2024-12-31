@@ -32,7 +32,7 @@ export default forwardRef((props: FileText, _ref: React.Ref<View>) => {
 
 const stylesheet = createStyleSheet((theme) => ({
   root: {
-    margin: theme.display.space3,
-    paddingBottom: theme.display.space3,
+    padding: theme.display.space3,
+    paddingTop: theme.display.space2,
   },
 }));

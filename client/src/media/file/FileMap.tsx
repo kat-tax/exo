@@ -81,13 +81,8 @@ const stylesheet = createStyleSheet((theme, rt) => ({
     flex: 1,
   },
   maximized: {
-    marginTop: theme.display.space2,
-    marginLeft: theme.display.space2,
-    borderTopLeftRadius: theme.display.radius1,
-    borderWidth: rt.hairlineWidth,
-    borderBottomWidth: 0,
+    borderTopWidth: rt.hairlineWidth,
     borderColor: theme.colors.border,
     overflow: 'hidden',
   },
 }));
-

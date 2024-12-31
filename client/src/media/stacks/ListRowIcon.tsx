@@ -8,14 +8,18 @@ interface ListRowIcon {
   path: string,
   name: string,
   extension: string,
-  size?: 0 | 1,
+  size?: 0 | 1 | 2,
   isFile?: boolean,
 }
 
 export function ListRowIcon(props: ListRowIcon) {
   const {styles, theme} = useStyles(stylesheet);
   const [scheme] = useScheme();
-  const size = props.size === 0 ? 14 : 16;
+  const size = props.size === 0
+    ? 14
+    : props.size === 2
+      ? 24
+      : 16;
   return (
     <View style={[styles.root, {width: size}]}>
       {props.isFile ? (

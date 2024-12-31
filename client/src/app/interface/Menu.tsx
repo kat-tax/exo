@@ -155,11 +155,20 @@ const stylesheet = createStyleSheet((theme, rt) => ({
   bg: {
     flex: 1,
     backgroundColor: theme.colors.background,
+    borderColor: theme.colors.border,
+    borderRightWidth: {
+      initial: rt.hairlineWidth,
+      sm: 0,
+    },
   },
   root: {
     flex: 1,
     flexDirection: 'column',
     paddingStart: theme.display.space2,
+    paddingRight: {
+      initial: theme.display.space2,
+      sm: 0,
+    },
     borderStartWidth: rt.hairlineWidth,
     borderColor: theme.colors.border,
   },

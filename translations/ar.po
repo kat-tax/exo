@@ -13,6 +13,10 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
+#: ../../client/src/media/file/FileBook.tsx:44
+msgid "{0} - {1}"
+msgstr ""
+
 #: ../../client/src/dev/routes/ScreenDesign.tsx:12
 #: ../../client/src/dev/routes/ScreenLibrary.tsx:16
 msgid "{0} components"
@@ -56,7 +60,6 @@ msgid "Books"
 msgstr "الكتب"
 
 #: ../../client/src/app/interface/Menu.tsx:91
-#: ../../client/src/world/routes/ScreenWorld.tsx:30
 msgid "Calendar"
 msgstr "التقويم"
 
@@ -64,7 +67,7 @@ msgstr "التقويم"
 msgid "Celsius"
 msgstr "سيلزيوس"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:257
+#: ../../client/src/media/hooks/useMediaControls.ts:262
 msgid "Close"
 msgstr "إغلاق"
 
@@ -73,7 +76,6 @@ msgid "Dark"
 msgstr "داكن"
 
 #: ../../client/src/app/interface/Menu.tsx:27
-#: ../../client/src/app/interface/Tabs.tsx:13
 msgid "Dashboard"
 msgstr "لوحة التحكم"
 
@@ -98,7 +100,6 @@ msgid "Delete the local database."
 msgstr "حذف قاعدة البيانات المحلية."
 
 #: ../../client/src/app/interface/Menu.tsx:118
-#: ../../client/src/dev/routes/ScreenDesign.tsx:11
 msgid "Design"
 msgstr "التصميم"
 
@@ -126,12 +127,11 @@ msgstr "المسافة"
 msgid "Docs"
 msgstr "المستندات"
 
-#: ../../client/src/media/file/FileBinary.tsx:18
-#: ../../client/src/media/hooks/useMediaControls.ts:62
+#: ../../client/src/media/hooks/useMediaControls.ts:63
 msgid "Download"
 msgstr "تنزيل"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:52
+#: ../../client/src/media/hooks/useMediaControls.ts:53
 msgid "Edit"
 msgstr ""
 
@@ -155,7 +155,7 @@ msgstr "أدخل عبارتك التذكيرية"
 msgid "Enter your name"
 msgstr "أدخل اسمك"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:72
+#: ../../client/src/media/hooks/useMediaControls.ts:73
 msgid "Extract"
 msgstr ""
 
@@ -164,12 +164,10 @@ msgid "Fahrenheit"
 msgstr "فهرنهايت"
 
 #: ../../client/src/app/interface/Menu.tsx:44
-#: ../../client/src/app/interface/Tabs.tsx:23
-#: ../../client/src/media/routes/ScreenBrowse.tsx:16
 msgid "Files"
 msgstr "الملفات"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:200
+#: ../../client/src/media/hooks/useMediaControls.ts:256
 msgid "Fullscreen"
 msgstr ""
 
@@ -214,7 +212,6 @@ msgid "Import"
 msgstr "استيراد"
 
 #: ../../client/src/app/interface/Menu.tsx:32
-#: ../../client/src/app/interface/Tabs.tsx:18
 msgid "Inbox"
 msgstr "صندوق الوارد"
 
@@ -227,7 +224,6 @@ msgid "Language"
 msgstr "اللغة"
 
 #: ../../client/src/app/interface/Menu.tsx:123
-#: ../../client/src/dev/routes/ScreenLibrary.tsx:15
 msgid "Library"
 msgstr "المكتبة"
 
@@ -239,7 +235,7 @@ msgstr "فاتح"
 msgid "Live"
 msgstr ""
 
-#: ../../client/src/home/hooks/useWeather.ts:12
+#: ../../client/src/media/file/FileBook.tsx:44
 msgid "Loading..."
 msgstr "جارٍ التحميل..."
 
@@ -252,11 +248,10 @@ msgid "Manage your storage"
 msgstr "إدارة التخزين الخاص بك"
 
 #: ../../client/src/app/interface/Menu.tsx:81
-#: ../../client/src/world/routes/ScreenWorld.tsx:18
 msgid "Map"
 msgstr "الخريطة"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:250
+#: ../../client/src/media/hooks/useMediaControls.ts:251
 msgid "Maximize"
 msgstr "تكبير"
 
@@ -277,11 +272,10 @@ msgid "Music"
 msgstr "الموسيقى"
 
 #: ../../client/src/app/interface/Menu.tsx:86
-#: ../../client/src/world/routes/ScreenWorld.tsx:24
 msgid "News"
 msgstr "الأخبار"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:182
+#: ../../client/src/media/hooks/useMediaControls.ts:178
 msgid "Next"
 msgstr "التالي"
 
@@ -289,7 +283,7 @@ msgstr "التالي"
 msgid "No events scheduled."
 msgstr "لا توجد أحداث مجدولة."
 
-#: ../../client/src/media/hooks/useMediaControls.ts:206
+#: ../../client/src/media/hooks/useMediaControls.ts:211
 msgid "Options"
 msgstr ""
 
@@ -301,7 +295,7 @@ msgstr "نظرة عامة"
 msgid "Owner Key"
 msgstr "مفتاح المالك"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:105
+#: ../../client/src/media/hooks/useMediaControls.ts:116
 msgid "Pause"
 msgstr "إيقاف مؤقت"
 
@@ -309,11 +303,11 @@ msgstr "إيقاف مؤقت"
 msgid "Pictures"
 msgstr "الصور"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:217
+#: ../../client/src/media/hooks/useMediaControls.ts:222
 msgid "Pin"
 msgstr "تثبيت"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:106
+#: ../../client/src/media/hooks/useMediaControls.ts:117
 msgid "Play"
 msgstr "تشغيل"
 
@@ -321,7 +315,7 @@ msgstr "تشغيل"
 msgid "Please set your Groq API Key"
 msgstr "يرجى تعيين مفتاح API الخاص بـ Groq"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:171
+#: ../../client/src/media/hooks/useMediaControls.ts:167
 msgid "Previous"
 msgstr "السابق"
 
@@ -341,8 +335,12 @@ msgstr "الأوامر"
 msgid "Provide a key to use AI features."
 msgstr "قدم مفتاحًا لاستخدام ميزات الذكاء الاصطناعي."
 
-#: ../../client/src/media/hooks/useMediaControls.ts:159
+#: ../../client/src/media/hooks/useMediaControls.ts:155
 msgid "Replay"
+msgstr ""
+
+#: ../../client/src/media/hooks/useMediaControls.ts:83
+msgid "Search"
 msgstr ""
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:150
@@ -366,20 +364,18 @@ msgid "Select the theme for the app."
 msgstr "اختر سمة التطبيق."
 
 #: ../../client/src/app/interface/Menu.tsx:140
-#: ../../client/src/app/interface/Tabs.tsx:33
-#: ../../client/src/app/routes/ScreenSettings.tsx:27
 msgid "Settings"
 msgstr "الإعدادات"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:231
+#: ../../client/src/media/hooks/useMediaControls.ts:236
 msgid "Share"
 msgstr "مشاركة"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:125
+#: ../../client/src/media/hooks/useMediaControls.ts:136
 msgid "Skip backward"
 msgstr ""
 
-#: ../../client/src/media/hooks/useMediaControls.ts:134
+#: ../../client/src/media/hooks/useMediaControls.ts:145
 msgid "Skip forward"
 msgstr ""
 
@@ -388,7 +384,6 @@ msgid "Social"
 msgstr ""
 
 #: ../../client/src/app/interface/Menu.tsx:134
-#: ../../client/src/app/routes/ScreenStorage.tsx:26
 msgid "Storage"
 msgstr "التخزين"
 
@@ -420,7 +415,7 @@ msgstr "عرض أحداثك والمعلومات المتعلقة بالوقت"
 msgid "View your latest news and rss feeds"
 msgstr "عرض أحدث الأخبار وتغذيات RSS الخاصة بك"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:149
+#: ../../client/src/media/hooks/useMediaControls.ts:202
 msgid "Volume"
 msgstr ""
 
@@ -437,7 +432,6 @@ msgid "Work in progress..."
 msgstr "العمل قيد التنفيذ..."
 
 #: ../../client/src/app/interface/Menu.tsx:79
-#: ../../client/src/app/interface/Tabs.tsx:28
 msgid "World"
 msgstr "العالم"
 
@@ -457,10 +451,10 @@ msgstr "اسمك الذي سيتم عرضه في التطبيق."
 msgid "Your prompt history has been reset."
 msgstr "تم إعادة تعيين سجل الأوامر الخاص بك."
 
-#: ../../client/src/media/hooks/useMediaControls.ts:82
+#: ../../client/src/media/hooks/useMediaControls.ts:93
 msgid "Zoom in"
 msgstr "تكبير"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:93
+#: ../../client/src/media/hooks/useMediaControls.ts:104
 msgid "Zoom out"
 msgstr "تصغير"

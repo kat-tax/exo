@@ -1,5 +1,6 @@
 import {Video} from 'react-exo/video';
 
+import {View} from 'react-native';
 import {forwardRef} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useFileData} from 'media/hooks/useFileData';
@@ -15,16 +16,18 @@ export interface FileAudio extends FileProps {
 
 export default forwardRef((props: FileAudio, _ref) => {
   const {styles} = useStyles(stylesheet);
-  const audio = useFileData(props.path, 'dataUrl');
+  const video = useFileData(props.path, 'dataUrl');
+  const vstyles = {
+    root: [
+      styles.root,
+      props.maximized && styles.maximized,
+    ],
+  };
 
-  return audio ? (
-    <Video
-      source={{uri: audio}}
-      style={[
-        styles.root,
-        props.maximized && styles.maximized,
-      ]}
-    />
+  return video ? (
+    <View style={vstyles.root}>
+      <Video source={{uri: video}}/>
+    </View>
   ) : null;
 });
 

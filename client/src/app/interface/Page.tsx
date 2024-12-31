@@ -20,7 +20,7 @@ export function Page(props: PageProps) {
   const hasTitle = Boolean(props.title);
   const hasMessage = Boolean(props.message);
   const hasHeader = hasTitle || hasMessage;
-  const hasNoFrame = props.noFrame || screen.width < theme.breakpoints.xs;
+  const hasNoFrame = props.noFrame || screen.width < theme.breakpoints.sm;
   const vstyles = {
     root: [
       styles.root,

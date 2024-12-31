@@ -14,14 +14,15 @@ export interface FileProps {
   renderer?: FileRenderInfo,
   close: () => void,
   setBarIcon: (icon: string) => void,
+  setBarInfo: (info: string) => void,
   setBarTitle: (title: string) => void,
 }
 
 export default memo(forwardRef((props: FileProps, ref) => {
-  const {path, name, extension, maximized, renderer, setBarTitle, setBarIcon} = props;
+  const {path, name, extension, maximized, renderer, setBarTitle, setBarIcon, setBarInfo} = props;
   const [file, ctx] = renderer || [];
   if (!file) return null;
-  const meta = {ref, name, extension, path, maximized, setBarIcon, setBarTitle};
+  const meta = {ref, name, extension, path, maximized, setBarIcon, setBarTitle, setBarInfo};
   switch (file) {
     case FileType.Binary:
       return <$><File.Binary {...meta} {...ctx}/></$>

@@ -43,10 +43,7 @@ export default memo(forwardRef((props: FileImage, ref: React.Ref<ImageRef>) => {
   }));
 
   return image ? (
-    <View style={[
-      styles.root,
-      props.maximized && styles.maximized,
-    ]}>
+    <View style={styles.root}>
       {/* <ResumableZoom maxScale={resolution}> */}
         <ImageBackground
           style={styles.image}
@@ -59,13 +56,10 @@ export default memo(forwardRef((props: FileImage, ref: React.Ref<ImageRef>) => {
   ) : null;
 }));
 
-const stylesheet = createStyleSheet((theme) => ({
+const stylesheet = createStyleSheet(() => ({
   root: {
     flex: 1,
     overflow: 'hidden',
-  },
-  maximized: {
-    margin: theme.display.space3,
   },
   image: {
     flex: 1,

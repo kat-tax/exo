@@ -1,6 +1,6 @@
 import {useMemo} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {Text, Pressable} from 'react-native';
+import {View, Text, Pressable} from 'react-native';
 import {Motion} from 'react-exo/motion';
 import {Image} from 'react-exo/image';
 import {Icon} from 'react-exo/icon';
@@ -21,6 +21,7 @@ export interface MediaControlsProps {
     path: string,
     name: string,
     title: string,
+    info?: string,
     cover?: string,
     muted?: boolean,
     volume?: number,
@@ -36,7 +37,7 @@ export function MediaControls(props: MediaControlsProps) {
   const {styles, theme} = useStyles(stylesheet);
   const controls = useMediaControls(props);
   const sizeGroup = isTouch() ? 1 : 0;
-  const imageSize = sizeGroup === 1 ? 28 : 24;
+  const imageSize = sizeGroup === 1 ? 36 : 32;
   const iconSize = sizeGroup === 1 ? 20 : 16;
   const vstyles = useMemo(() => ({
     icon: (state: PressableStateCallbackType) =>
@@ -52,30 +53,34 @@ export function MediaControls(props: MediaControlsProps) {
       animate={{opacity: 1}}
       exit={{opacity: 0}}>
       {controls.map(({name, icon, title, action}) => title
-        ? <Pressable key={name} style={styles.title} onPress={action}>
+        ? <Pressable key={name} style={styles.content} onPress={action}>
             {props.metadata.cover
               ? <Image
                   url={props.metadata.cover}
                   resizeMode="contain"
                   height={imageSize}
                   width={imageSize}
-                />
-              : <ListRowIcon
-                  name={name ?? ''}
-                  extension={props.metadata.ext}
-                  path={props.metadata.path}
-                  size={sizeGroup}
-                  isFile={true}
-                />
+              />
+            : <ListRowIcon
+                name={name ?? ''}
+                extension={props.metadata.ext}
+                path={props.metadata.path}
+                isFile={true}
+                size={2}
+              />
             }
-            <Text
-              style={styles.titleText}
-              selectable={false}
-              numberOfLines={2}>
-              {title}
+            <Text style={styles.metadata} numberOfLines={2} selectable={false}>
+              <View>
+                <Text style={styles.title} numberOfLines={2}>
+                  {title}
+                </Text>
+                <Text style={styles.info} numberOfLines={1}>
+                  {props.metadata.info}
+                </Text>
+              </View>
             </Text>
           </Pressable>
-        : <Pressable key={name} style={styles.icon} onPress={action}>
+        : <Pressable key={name} style={styles.action} onPress={action}>
             {state => (
               icon && <Icon
                 name={icon}
@@ -98,22 +103,36 @@ const stylesheet = createStyleSheet((theme, rt) => ({
     borderTopWidth: rt.hairlineWidth,
     borderTopColor: theme.colors.border,
   },
-  icon: {
-    padding: theme.display.space3,
+  action: {
+    margin: theme.display.space1,
+    paddingHorizontal: theme.display.space3,
+    paddingVertical: isTouch()
+      ? theme.display.space4
+      : theme.display.space3,
   },
-  title: {
+  content: {
     flex: 1,
     gap: theme.display.space2,
     flexDirection: 'row',
     alignItems: 'center',
     alignContent: 'center',
     justifyContent: 'center',
+    marginVertical: theme.display.space1,
     paddingHorizontal: theme.display.space1,
   },
-  titleText: {
-    fontSize: isTouch()
-      ? theme.font.contentSize
-      : theme.font.size,
+  metadata: {
+    marginTop: -3,
+  },
+  title: {
+    fontSize: 11,
+    fontFamily: theme.font.family,
+    fontWeight: theme.font.weight,
+    lineHeight: theme.font.height,
+    letterSpacing: theme.font.spacing,
+    color: theme.colors.foreground,
+  },
+  info: {
+    fontSize: 11,
     fontFamily: theme.font.family,
     fontWeight: theme.font.weight,
     lineHeight: theme.font.height,

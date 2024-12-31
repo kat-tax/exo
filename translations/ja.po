@@ -13,6 +13,10 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
+#: ../../client/src/media/file/FileBook.tsx:44
+msgid "{0} - {1}"
+msgstr ""
+
 #: ../../client/src/dev/routes/ScreenDesign.tsx:12
 #: ../../client/src/dev/routes/ScreenLibrary.tsx:16
 msgid "{0} components"
@@ -56,7 +60,6 @@ msgid "Books"
 msgstr "本"
 
 #: ../../client/src/app/interface/Menu.tsx:91
-#: ../../client/src/world/routes/ScreenWorld.tsx:30
 msgid "Calendar"
 msgstr "カレンダー"
 
@@ -64,7 +67,7 @@ msgstr "カレンダー"
 msgid "Celsius"
 msgstr "摂氏"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:257
+#: ../../client/src/media/hooks/useMediaControls.ts:262
 msgid "Close"
 msgstr "閉じる"
 
@@ -73,7 +76,6 @@ msgid "Dark"
 msgstr "ダーク"
 
 #: ../../client/src/app/interface/Menu.tsx:27
-#: ../../client/src/app/interface/Tabs.tsx:13
 msgid "Dashboard"
 msgstr "ダッシュボード"
 
@@ -98,7 +100,6 @@ msgid "Delete the local database."
 msgstr "ローカルデータベースを削除します。"
 
 #: ../../client/src/app/interface/Menu.tsx:118
-#: ../../client/src/dev/routes/ScreenDesign.tsx:11
 msgid "Design"
 msgstr "デザイン"
 
@@ -126,12 +127,11 @@ msgstr "距離"
 msgid "Docs"
 msgstr "ドキュメント"
 
-#: ../../client/src/media/file/FileBinary.tsx:18
-#: ../../client/src/media/hooks/useMediaControls.ts:62
+#: ../../client/src/media/hooks/useMediaControls.ts:63
 msgid "Download"
 msgstr "ダウンロード"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:52
+#: ../../client/src/media/hooks/useMediaControls.ts:53
 msgid "Edit"
 msgstr ""
 
@@ -155,7 +155,7 @@ msgstr "ニーモニックフレーズを入力してください"
 msgid "Enter your name"
 msgstr "名前を入力してください"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:72
+#: ../../client/src/media/hooks/useMediaControls.ts:73
 msgid "Extract"
 msgstr ""
 
@@ -164,12 +164,10 @@ msgid "Fahrenheit"
 msgstr "華氏"
 
 #: ../../client/src/app/interface/Menu.tsx:44
-#: ../../client/src/app/interface/Tabs.tsx:23
-#: ../../client/src/media/routes/ScreenBrowse.tsx:16
 msgid "Files"
 msgstr "ファイル"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:200
+#: ../../client/src/media/hooks/useMediaControls.ts:256
 msgid "Fullscreen"
 msgstr ""
 
@@ -214,7 +212,6 @@ msgid "Import"
 msgstr "インポート"
 
 #: ../../client/src/app/interface/Menu.tsx:32
-#: ../../client/src/app/interface/Tabs.tsx:18
 msgid "Inbox"
 msgstr "受信トレイ"
 
@@ -227,7 +224,6 @@ msgid "Language"
 msgstr "言語"
 
 #: ../../client/src/app/interface/Menu.tsx:123
-#: ../../client/src/dev/routes/ScreenLibrary.tsx:15
 msgid "Library"
 msgstr "ライブラリ"
 
@@ -239,7 +235,7 @@ msgstr "ライト"
 msgid "Live"
 msgstr ""
 
-#: ../../client/src/home/hooks/useWeather.ts:12
+#: ../../client/src/media/file/FileBook.tsx:44
 msgid "Loading..."
 msgstr "読み込み中..."
 
@@ -252,11 +248,10 @@ msgid "Manage your storage"
 msgstr "ストレージを管理"
 
 #: ../../client/src/app/interface/Menu.tsx:81
-#: ../../client/src/world/routes/ScreenWorld.tsx:18
 msgid "Map"
 msgstr "地図"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:250
+#: ../../client/src/media/hooks/useMediaControls.ts:251
 msgid "Maximize"
 msgstr "最大化"
 
@@ -277,11 +272,10 @@ msgid "Music"
 msgstr "音楽"
 
 #: ../../client/src/app/interface/Menu.tsx:86
-#: ../../client/src/world/routes/ScreenWorld.tsx:24
 msgid "News"
 msgstr "ニュース"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:182
+#: ../../client/src/media/hooks/useMediaControls.ts:178
 msgid "Next"
 msgstr "次へ"
 
@@ -289,7 +283,7 @@ msgstr "次へ"
 msgid "No events scheduled."
 msgstr "予定されているイベントはありません。"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:206
+#: ../../client/src/media/hooks/useMediaControls.ts:211
 msgid "Options"
 msgstr ""
 
@@ -301,7 +295,7 @@ msgstr "概要"
 msgid "Owner Key"
 msgstr "オーナーキー"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:105
+#: ../../client/src/media/hooks/useMediaControls.ts:116
 msgid "Pause"
 msgstr "一時停止"
 
@@ -309,11 +303,11 @@ msgstr "一時停止"
 msgid "Pictures"
 msgstr "写真"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:217
+#: ../../client/src/media/hooks/useMediaControls.ts:222
 msgid "Pin"
 msgstr "ピン留め"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:106
+#: ../../client/src/media/hooks/useMediaControls.ts:117
 msgid "Play"
 msgstr "再生"
 
@@ -321,7 +315,7 @@ msgstr "再生"
 msgid "Please set your Groq API Key"
 msgstr "Groq APIキーを設定してください"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:171
+#: ../../client/src/media/hooks/useMediaControls.ts:167
 msgid "Previous"
 msgstr "前へ"
 
@@ -341,8 +335,12 @@ msgstr "プロンプト"
 msgid "Provide a key to use AI features."
 msgstr "AI機能を使用するためのキーを提供してください。"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:159
+#: ../../client/src/media/hooks/useMediaControls.ts:155
 msgid "Replay"
+msgstr ""
+
+#: ../../client/src/media/hooks/useMediaControls.ts:83
+msgid "Search"
 msgstr ""
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:150
@@ -366,20 +364,18 @@ msgid "Select the theme for the app."
 msgstr "アプリのテーマを選択してください。"
 
 #: ../../client/src/app/interface/Menu.tsx:140
-#: ../../client/src/app/interface/Tabs.tsx:33
-#: ../../client/src/app/routes/ScreenSettings.tsx:27
 msgid "Settings"
 msgstr "設定"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:231
+#: ../../client/src/media/hooks/useMediaControls.ts:236
 msgid "Share"
 msgstr "共有"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:125
+#: ../../client/src/media/hooks/useMediaControls.ts:136
 msgid "Skip backward"
 msgstr ""
 
-#: ../../client/src/media/hooks/useMediaControls.ts:134
+#: ../../client/src/media/hooks/useMediaControls.ts:145
 msgid "Skip forward"
 msgstr ""
 
@@ -388,7 +384,6 @@ msgid "Social"
 msgstr ""
 
 #: ../../client/src/app/interface/Menu.tsx:134
-#: ../../client/src/app/routes/ScreenStorage.tsx:26
 msgid "Storage"
 msgstr "ストレージ"
 
@@ -420,7 +415,7 @@ msgstr "イベントと時間関連情報を表示"
 msgid "View your latest news and rss feeds"
 msgstr "最新のニュースとRSSフィードを表示"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:149
+#: ../../client/src/media/hooks/useMediaControls.ts:202
 msgid "Volume"
 msgstr ""
 
@@ -437,7 +432,6 @@ msgid "Work in progress..."
 msgstr "作業中..."
 
 #: ../../client/src/app/interface/Menu.tsx:79
-#: ../../client/src/app/interface/Tabs.tsx:28
 msgid "World"
 msgstr "世界"
 
@@ -457,10 +451,10 @@ msgstr "アプリに表示する名前。"
 msgid "Your prompt history has been reset."
 msgstr "プロンプト履歴がリセットされました。"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:82
+#: ../../client/src/media/hooks/useMediaControls.ts:93
 msgid "Zoom in"
 msgstr "拡大"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:93
+#: ../../client/src/media/hooks/useMediaControls.ts:104
 msgid "Zoom out"
 msgstr "縮小"

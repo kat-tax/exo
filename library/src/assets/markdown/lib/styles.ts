@@ -154,11 +154,6 @@ export default {
   // Links
   link: {
     textDecorationLine: 'underline',
-    // TODO: Remove, we no longer need to use a Pressable wrapper (Text supports onPress now)
-    // Hackaround for artificial spacing. The link is rendered inside a `Text` as
-    // a `Pressable` with another `Text` inside. See also:
-    // https://stackoverflow.com/questions/66590167/vertically-align-pressable-inside-a-text-component/66590787
-    marginBottom: -4,
   },
   blocklink: {
     flex: 1,

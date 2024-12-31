@@ -9,15 +9,16 @@ import {FileType} from 'media/file/types';
 import type {MediaControlsProps} from 'media/stacks/MediaControls';
 
 export const SHAREABLE = [FileType.Image, FileType.Video, FileType.Audio, FileType.Pdf];
-export const IMPORTABLE = [FileType.Torrent, FileType.Binary, FileType.Zip];
 export const EXTRACTABLE = [FileType.Zip];
-export const CONFIGURABLE = [FileType.Video, FileType.Audio];
-export const REPLAYABLE = [FileType.Audio, FileType.Lottie, FileType.Rive];
+export const DOWNLOADABLE = [FileType.Torrent];
+export const CONFIGURABLE = [FileType.Video, FileType.Audio, FileType.Image, FileType.Pdf, FileType.Book];
+export const SEARCHABLE = [FileType.Map];
+export const LOOPABLE = [FileType.Lottie, FileType.Rive];
 export const EDITABLE = [FileType.Text, FileType.Markdown];
 export const PLAYABLE = [FileType.Audio, FileType.Video, FileType.Game, FileType.Lottie, FileType.Rive];
 export const PAGEABLE = [FileType.Book, FileType.Pdf];
 export const ZOOMABLE = [FileType.Image];
-export const SKIPABLE = [FileType.Video];
+export const SKIPABLE = [FileType.Audio, FileType.Video];
 export const AUDIBLE = [FileType.Audio, FileType.Video];
 
 export interface MediaControl {
@@ -60,7 +61,7 @@ export function useMediaControls(props: MediaControlsProps): MediaControl[] {
         name: 'download',
         icon: 'ph:download',
         label: t(i18n)`Download`,
-        media: IMPORTABLE,
+        media: DOWNLOADABLE,
         action: () => {
           console.log('Download', metadata.path);
         },
@@ -68,11 +69,21 @@ export function useMediaControls(props: MediaControlsProps): MediaControl[] {
       // Archive controls
       {
         name: 'extract',
-        icon: 'ph:box-arrow-up',
+        icon: 'ph:box-arrow-down',
         label: t(i18n)`Extract`,
         media: EXTRACTABLE,
         action: () => {
           console.log('Extract', metadata.path);
+        },
+      },
+      // Search controls
+      {
+        name: 'search',
+        icon: 'ph:magnifying-glass',
+        label: t(i18n)`Search`,
+        media: SEARCHABLE,
+        action: () => {
+          console.log('Search', metadata.path);
         },
       },
       // Zoom controls
@@ -137,27 +148,12 @@ export function useMediaControls(props: MediaControlsProps): MediaControl[] {
           console.log('Skip forward', metadata.path);
         },
       },
-      {
-        name: 'volume',
-        icon: metadata.muted
-          ? 'ph:speaker-x'
-          : metadata.volume
-            ? metadata.volume >= 80
-              ? 'ph:speaker-high'
-              : 'ph:speaker-low'
-            : 'ph:speaker-none',
-        label: t(i18n)`Volume`,
-        media: AUDIBLE,
-        action: () => {
-          console.log('Volume', metadata.path);
-        },
-      },
       // Specific media controls (replay)
       {
         name: 'replay',
         icon: 'ph:arrow-counter-clockwise',
         label: t(i18n)`Replay`,
-        media: REPLAYABLE,
+        media: LOOPABLE,
         action: () => {
           if (file?.current && 'reset' in file.current) {
             file.current.reset();
@@ -195,10 +191,19 @@ export function useMediaControls(props: MediaControlsProps): MediaControl[] {
       },
       // Window controls
       {
-        name: 'fullscreen',
-        icon: 'ph:arrows-out',
-        label: t(i18n)`Fullscreen`,
-        action: () => {},
+        name: 'volume',
+        icon: metadata.muted
+          ? 'ph:speaker-x'
+          : metadata.volume
+            ? metadata.volume >= 80
+              ? 'ph:speaker-high'
+              : 'ph:speaker-low'
+            : 'ph:speaker-none',
+        label: t(i18n)`Volume`,
+        media: AUDIBLE,
+        action: () => {
+          console.log('Volume', metadata.path);
+        },
       },
       {
         name: 'options',
@@ -229,6 +234,7 @@ export function useMediaControls(props: MediaControlsProps): MediaControl[] {
         name: 'share',
         icon: 'ph:share-network',
         label: t(i18n)`Share`,
+        filter: () => false,
         action: async () => {
           const url = pinned;
           const title = `${metadata.name}.${metadata.ext}`;
@@ -245,16 +251,16 @@ export function useMediaControls(props: MediaControlsProps): MediaControl[] {
         },
       },
       {
-        name: 'maximize',
-        icon: 'ph:arrow-square-out',
-        label: t(i18n)`Maximize`,
-        filter: () => false,
-        action: open,
+        name: 'fullscreen',
+        icon: 'ph:arrows-out',
+        label: t(i18n)`Fullscreen`,
+        action: () => {},
       },
       {
         name: 'close',
         icon: 'ph:x',
         label: t(i18n)`Close`,
+        filter: () => false,
         action: close,
       },
     ]
