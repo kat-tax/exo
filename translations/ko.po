@@ -131,7 +131,6 @@ msgid "Docs"
 msgstr "문서"
 
 #: ../../client/src/media/file/FileBinary.tsx:34
-#: ../../client/src/media/hooks/useMediaControls.ts:63
 msgid "Download"
 msgstr "다운로드"
 
@@ -410,6 +409,10 @@ msgstr "테마"
 
 #: ../../client/src/media/file/FileBinary.tsx:28
 msgid "Unknown"
+msgstr ""
+
+#: ../../client/src/media/file/FileBinary.tsx:28
+msgid "Unsupported File"
 msgstr ""
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:40

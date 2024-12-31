@@ -132,9 +132,8 @@ const stylesheet = createStyleSheet((theme, rt) => ({
     color: theme.colors.foreground,
   },
   info: {
-    fontSize: 11,
+    fontSize: theme.font.size,
     fontFamily: 'Fira Code, monospace',
-    //fontFamily: theme.font.family,
     fontWeight: theme.font.weight,
     lineHeight: theme.font.height,
     letterSpacing: theme.font.spacing,

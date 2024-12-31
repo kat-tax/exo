@@ -2,6 +2,7 @@ import {View} from 'react-native';
 import {useEffect, forwardRef} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useFileData} from 'media/hooks/useFileData';
+import {bytesize} from 'app/utils/formatting';
 import {Markdown} from 'app/stacks/Markdown';
 
 import type {FileProps} from 'media/file';
@@ -18,7 +19,7 @@ export default forwardRef((props: FileMarkdown) => {
   // Update file player bar info
   useEffect(() => {
     if (!markdown) return;
-    props.setBarInfo(`${markdown.split('\n').length ?? 0} lines`);
+    props.setBarInfo(`${markdown.split('\n').length ?? 0} lines, ${bytesize(markdown.length)}`);
   }, [markdown, props.setBarInfo]);
 
   return markdown ? (

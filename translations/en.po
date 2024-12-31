@@ -131,7 +131,6 @@ msgid "Docs"
 msgstr "Docs"
 
 #: ../../client/src/media/file/FileBinary.tsx:34
-#: ../../client/src/media/hooks/useMediaControls.ts:63
 msgid "Download"
 msgstr "Download"
 
@@ -411,6 +410,10 @@ msgstr "Theme"
 #: ../../client/src/media/file/FileBinary.tsx:28
 msgid "Unknown"
 msgstr "Unknown"
+
+#: ../../client/src/media/file/FileBinary.tsx:28
+msgid "Unsupported File"
+msgstr "Unsupported File"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:40
 msgid "User Name"

@@ -25,7 +25,7 @@ export default forwardRef((props: FileBinary) => {
   // Update file player bar info
   useEffect(() => {
     if (!binary) return;
-    props.setBarInfo(t(i18n)`Unknown`);
+    props.setBarInfo(t(i18n)`Unsupported File`);
   }, [binary, i18n, props.setBarInfo]);
 
   return (
