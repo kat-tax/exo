@@ -17,7 +17,7 @@
     "react-dom": "18.3.1",
     "react-exo": "workspace:*",
     "react-exo-ui": "workspace:*",
-    "react-native": "^0.74.3",
+    "react-native": "^0.76.5",
     "react-native-readium": "^2.0.2",
     "react-native-svg": "^15.4.0",
     "react-native-web": "^0.19.13",

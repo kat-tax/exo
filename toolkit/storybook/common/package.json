@@ -17,7 +17,7 @@
     "babel-plugin-macros": "^3.1.0",
     "config": "workspace:*",
     "react-exo": "workspace:*",
-    "react-native": "^0.74.3",
+    "react-native": "^0.76.5",
     "typescript": "^5.5.4"
   }
 }
