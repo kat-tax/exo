@@ -22,7 +22,10 @@ export function Code(props: CodeProps) {
   useEffect(() => {
     (async () => {
       shiki.current = await highlighterInit;
-      setCode(shiki.current.codeToHtml(children, {lang, theme}));
+      setCode(shiki.current.codeToHtml(children, {
+        lang: lang ?? 'text',
+        theme: theme ?? 'light-plus',
+      }));
     })();
   }, [children, lang, theme]);
 

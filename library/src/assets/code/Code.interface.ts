@@ -1,5 +1,5 @@
 export interface CodeProps {
-  lang: string,
-  theme: string,
+  lang?: string,
+  theme?: string,
   children: string,
 };

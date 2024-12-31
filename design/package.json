@@ -41,10 +41,10 @@
     "react-dom": "18.3.1",
     "react-exo": "workspace:*",
     "react-native": "^0.76.5",
-    "react-native-svg": "^15.4.0",
+    "react-native-svg": "^15.10.1",
     "react-native-unistyles": "^2.20.0",
     "react-native-web": "^0.19.13",
-    "react-redux": "^9.1.2",
+    "react-redux": "^9.2.0",
     "vite-plugin-node-polyfills": "^0.22.0"
   },
   "devDependencies": {
