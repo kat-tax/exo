@@ -5,15 +5,15 @@
   "private": true,
   "dependencies": {
     "@iconify/react": "^5.0.1",
-    "@storybook/addon-essentials": "^8.2.6",
-    "@storybook/blocks": "^8.2.6",
+    "@storybook/addon-essentials": "^8.4.7",
+    "@storybook/blocks": "^8.4.7",
     "design": "workspace:react-exo-ui@*",
     "react-exo-ui": "workspace:*",
     "react-native-unistyles": "^2.20.0"
   },
   "devDependencies": {
-    "@storybook/types": "^8.2.6",
-    "@types/react": "^18.3.3",
+    "@storybook/types": "^8.4.7",
+    "@types/react": "^18.3.18",
     "babel-plugin-macros": "^3.1.0",
     "config": "workspace:*",
     "react-exo": "workspace:*",
