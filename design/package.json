@@ -37,8 +37,8 @@
     "@lingui/core": "^4.11.2",
     "@lingui/macro": "^4.11.2",
     "@lingui/react": "^4.11.2",
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-exo": "workspace:*",
     "react-native": "^0.76.5",
     "react-native-svg": "^15.10.1",
@@ -50,8 +50,8 @@
   "devDependencies": {
     "@storybook/blocks": "^8.4.7",
     "@storybook/react": "^8.4.7",
-    "@types/react": "18.3.18",
-    "@types/react-dom": "18.3.5",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
     "bundler": "workspace:*",
     "config": "workspace:*",
     "typescript": "^5.7.2"

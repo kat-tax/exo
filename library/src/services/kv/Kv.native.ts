@@ -14,7 +14,7 @@ export class KVService implements KVBase {
             return db.getString(k) ?? i;
           case validator.isNumber(i):
             return db.getNumber(k) ?? i;
-          case validator.isUint8Array(i):
+          case validator.isArrayBuffer(i):
             return db.getBuffer(k) ?? i;
           default:
             return undefined;

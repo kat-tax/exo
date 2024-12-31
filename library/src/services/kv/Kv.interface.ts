@@ -3,7 +3,7 @@ import type {Storage} from 'redux-persist';
 /**
  * A service to manage persistent KV databases.
  * 
- * Supports `string`, `number`, `boolean`, and `Uint8Array` values, indexed by `string` keys.
+ * Supports `string`, `number`, `boolean`, and `ArrayBuffer` values, indexed by `string` keys.
  */
 export interface KVBase {
   /**
@@ -73,16 +73,16 @@ export const validator = {
   /** Checks if the value is a number */
   isNumber: (v?: unknown): v is number =>
     typeof v === 'number' || v === undefined,
-  /** Checks if the value is a Uint8Array */
-  isUint8Array: (v?: unknown): v is Uint8Array =>
-    v instanceof Uint8Array || v === undefined,
+  /** Checks if the value is an ArrayBuffer */
+  isArrayBuffer: (v?: unknown): v is ArrayBuffer =>
+    v instanceof ArrayBuffer || v === undefined,
 }
 
 type ItemAllowedType<T extends Primitive = string, I = T> = T extends I ? Constructor<I> | ItemInstance<T> : undefined;
 type ItemReturnType<T extends Primitive = string, I = T> = T extends I ? Widen<ItemInstance<T>> : undefined;
 type ItemInstance<T> = T extends Constructor<infer U> ? U : T;
 type Constructor<T = Primitive> = new (...args: unknown[]) => T;
-type Primitive = string | number | boolean | Uint8Array;
+type Primitive = string | number | boolean | ArrayBuffer;
 type Widen<T> = 
  T extends boolean ? boolean :
  T extends string ? string : 
