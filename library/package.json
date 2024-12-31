@@ -261,6 +261,7 @@
     "webtorrent": "^2.5.11"
   },
   "devDependencies": {
+    "@babel/types": "^7.26.3",
     "@candlefinance/faster-image": "^1.7.2",
     "@humanfs/types": "^0.15.0",
     "@humanwhocodes/retry": "^0.3.1",
@@ -273,6 +274,7 @@
     "@react-native-picker/picker": "^2.10.2",
     "@shopify/flash-list": "^1.7.2",
     "@storybook/react": "^8.4.7",
+    "@types/babel__core": "^7.20.5",
     "@types/react": "18.3.18",
     "@types/react-dom": "^18.3.5",
     "@types/webtorrent": "^0.110.0",

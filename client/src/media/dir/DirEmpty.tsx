@@ -3,7 +3,7 @@ import {useLingui} from '@lingui/react';
 import {useImporter} from 'media/hooks/useImporter';
 import {Watermark} from 'media/stacks/Watermark';
 
-export function DirEmpty({path = '.'}: {path: string}) {
+export function DirEmpty() {
   const {importFolder} = useImporter();
   const {i18n} = useLingui();
   return (
@@ -13,7 +13,7 @@ export function DirEmpty({path = '.'}: {path: string}) {
       icon="ph:upload"
       dnd={true}
       onAction={async () => {
-        await importFolder(path);
+        await importFolder();
       }}
     />
   );

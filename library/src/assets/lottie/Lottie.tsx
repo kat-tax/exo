@@ -17,7 +17,6 @@ export const Lottie: LottieComponent = (props: LottieProps) => {
           speed={props.speed}
           loop={props.loop}
           autoplay={props.autoplay}
-          autoResizeCanvas={false}
           style={{
             width: props.width,
             height: props.height,
