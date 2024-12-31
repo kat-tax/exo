@@ -9,6 +9,7 @@ const _IS_TOUCH = isTouch();
 interface ListRow {
   path: string,
   name: string,
+  index: number,
   size?: number,
   isFile?: boolean,
   isFocused?: boolean,

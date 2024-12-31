@@ -8,10 +8,10 @@ export interface DirTorrentProps {
 }
 
 export function DirTorrent({torrent, download}: DirTorrentProps) {
-  return torrent.list.map(entry =>
+  return torrent.list.map((entry, index) =>
     <EntryTorrent
       key={entry.path}
-      {...{entry, download}}
+      {...{entry, index, download}}
     />
   );
 }

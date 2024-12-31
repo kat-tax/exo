@@ -5,6 +5,7 @@ import type {TorrentFileEntry} from 'media/utils/torrent';
 
 export interface EntryTorrent {
   entry: TorrentFileEntry,
+  index: number,
   download: (entry: TorrentFileEntry) => void,
 }
 
@@ -17,6 +18,7 @@ export function EntryTorrent(props: EntryTorrent) {
         path={entry.path}
         name={entry.name}
         size={entry.length}
+        index={props.index}
         isFile={true}
       />
     </Pressable>

@@ -7,10 +7,10 @@ export interface DirZipProps {
 }
 
 export function DirZip({zip, extract}: DirZipProps) {
-  return zip.list.map(entry =>
+  return zip.list.map((entry, index) =>
     <EntryZip
       key={entry.dir ? `.${entry.name}` : entry.name}
-      {...{entry, zip, extract}}
+      {...{entry, index, zip, extract}}
     />
   );
 }

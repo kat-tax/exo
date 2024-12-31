@@ -8,6 +8,7 @@ import type {HfsDirectoryEntry} from 'react-exo/fs';
 
 export interface EntryHfs {
   entry: HfsDirectoryEntry,
+  index: number,
   path?: string,
   flags?: {
     multiSelect?: boolean,
@@ -46,6 +47,7 @@ export function EntryHfs(props: EntryHfs) {
       <ListRow
         path={link}
         name={entry.name}
+        index={props.index}
         isFile={entry.isFile}
         isFocused={false}
         isSelected={selection.includes(entry.name)}

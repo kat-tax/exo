@@ -29,11 +29,11 @@ export function DirHfs(props: DirHfsProps) {
     };
   }, []);
 
-  return entries.map(entry =>
+  return entries.map((entry, index) =>
     <EntryHfs
       key={entry.isDirectory ? `.${entry.name}` : entry.name}
       flags={{multiSelect}}
-      {...{entry, path}}
+      {...{entry, index, path}}
     />
   );
 }
