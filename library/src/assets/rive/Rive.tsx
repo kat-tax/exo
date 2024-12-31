@@ -6,7 +6,7 @@ import type {RiveComponent, RiveProps, RiveRef} from './Rive.interface';
 import type {Fit} from '@rive-app/react-canvas';
 
 /** A component that renders Rive animations */
-export const Rive: RiveComponent = forwardRef((props: RiveProps, ref: React.Ref<RiveRef>) => {
+export const Rive: RiveComponent = forwardRef((props: Omit<RiveProps, 'ref'>, ref: React.Ref<RiveRef>) => {
   const {rive, RiveComponent} = useRive({
     src: props.url,
     autoplay: props.autoplay,
@@ -31,6 +31,9 @@ export const Rive: RiveComponent = forwardRef((props: RiveProps, ref: React.Ref<
     },
     setTextRunValue: (textRunName: string, value: string) => {
       rive?.setTextRunValue(textRunName, value);
+    },
+    setTextRunValueAtPath: (textRunName: string, path: string, value: string) => {
+      rive?.setTextRunValueAtPath(textRunName, path, value);
     },
     fireStateAtPath: (inputName: string, path: string) => {
       rive?.fireStateAtPath(inputName, path);

@@ -3,7 +3,9 @@ import type * as t from '@babel/types';
 import type * as i from '@iconify/react/dist/iconify.js';
 
 import {stringToIcon, getIconData} from '@iconify/utils';
-import {readdirSync, readFileSync, writeFileSync, mkdirSync, existsSync} from 'node:fs';
+
+// biome-ignore lint/style/useNodejsImportProtocol: using node:fs breaks (FIXME)
+import {readdirSync, readFileSync, writeFileSync, mkdirSync, existsSync} from 'fs';
 
 export const loadedIcons = new Map<string, boolean>();
 export const iconJsonCache = new Map<string, i.IconifyJSON>();

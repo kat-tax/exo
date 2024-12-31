@@ -1,4 +1,3 @@
-import React from 'react';
 import ResponsiveImageView from 'react-native-responsive-image-view';
 import {Pressable, View, Text, Image, Platform, StyleSheet} from 'react-native';
 import {textStyles} from '../modules/styles';

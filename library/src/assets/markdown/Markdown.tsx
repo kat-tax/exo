@@ -1,4 +1,3 @@
-import React from 'react';
 import MarkdownIt from 'markdown-it';
 import {useMemo, memo} from 'react';
 import {StyleSheet, Text} from 'react-native';

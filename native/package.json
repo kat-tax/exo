@@ -35,7 +35,7 @@
     "@rnx-kit/metro-config": "^2.0.1",
     "@types/react": "^18.3.18",
     "react-native-test-app": "^4.0.7",
-    "typescript": "5.0.4"
+    "typescript": "5.7.2"
   },
   "engines": {
     "node": ">=18"

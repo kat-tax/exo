@@ -33,7 +33,7 @@
     "config": "workspace:*",
     "fs-extra": "latest",
     "tsx": "latest",
-    "typescript": "^5.5.4",
+    "typescript": "^5.7.2",
     "vocs": "1.0.0-alpha.50",
     "yaml": "latest"
   }

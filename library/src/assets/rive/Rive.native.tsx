@@ -4,7 +4,7 @@ import RiveBase from 'rive-react-native';
 import type {RiveComponent, RiveProps, RiveRef} from './Rive.interface';
 import type {Fit} from 'rive-react-native';
 
-export const Rive: RiveComponent = forwardRef((props: RiveProps, ref: React.Ref<RiveRef>) => {
+export const Rive: RiveComponent = forwardRef((props: Omit<RiveProps, 'ref'>, ref: React.Ref<RiveRef>) => {
   return (
     <RiveBase
       ref={ref}
