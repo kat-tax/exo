@@ -2,7 +2,7 @@ import type {StyleProp, ViewStyle} from 'react-native';
 
 export interface GameProps {
   /** Platform to emulate */
-  platform: typeof GamePlatforms[keyof typeof GamePlatforms],
+  platform: keyof typeof PLATFORMS,
   /** Url to the rom file */
   url: string,
   /** Name of the game */
@@ -37,29 +37,29 @@ export interface GameProps {
   style?: StyleProp<ViewStyle>,
 }
 
-export const GamePlatforms = {
-  'Atari 2600': 'atari2600',
-  'Atari 7800': 'atari7800',
-  'Atari Jaguar': 'jaguar',
-  'Atari Lynx': 'lynx',
-  'Bandai WonderSwan (Color)': 'ws',
-  'ColecoVision': 'coleco',
-  'Commodore 64': 'vice_x64',
-  'NEC PC-FX': 'pcfx',
-  'NEC TurboGrafx-16/SuperGrafx/PC Engine': 'pce',
-  'Nintendo 64': 'n64',
-  'Nintendo DS': 'nds',
-  'Nintendo Entertainment System': 'nes',
-  'Nintendo Game Boy Advance': 'gba',
-  'Nintendo Game Boy': 'gb',
-  'PlayStation': 'psx',
-  'Sega 32X': 'sega32x',
-  'Sega CD': 'segaCD',
-  'Sega Game Gear': 'segaGG',
-  'Sega Master System': 'segaMS',
-  'Sega Mega Drive': 'segaMD',
-  'Sega Saturn': 'segaSaturn',
-  'SNK NeoGeo Pocket (Color)': 'ngp',
-  'Super Nintendo Entertainment System': 'snes',
-  'Virtual Boy': 'vb',
+export const PLATFORMS = {
+  'atari2600': 'Atari 2600',
+  'atari7800': 'Atari 7800',
+  'jaguar': 'Atari Jaguar',
+  'lynx': 'Atari Lynx',
+  'ws': 'Bandai WonderSwan (Color)',
+  'coleco': 'ColecoVision',
+  'vice_x64': 'Commodore 64',
+  'pcfx': 'NEC PC-FX',
+  'pce': 'NEC TurboGrafx-16/SuperGrafx/PC Engine',
+  'n64': 'Nintendo 64',
+  'nds': 'Nintendo DS',
+  'nes': 'Nintendo Entertainment System',
+  'gba': 'Nintendo Game Boy Advance',
+  'gb': 'Nintendo Game Boy',
+  'psx': 'PlayStation',
+  'sega32x': 'Sega 32X',
+  'segaCD': 'Sega CD',
+  'segaGG': 'Sega Game Gear',
+  'segaMS': 'Sega Master System',
+  'segaMD': 'Sega Mega Drive',
+  'segaSaturn': 'Sega Saturn',
+  'ngp': 'SNK NeoGeo Pocket (Color)',
+  'snes': 'Super Nintendo Entertainment System',
+  'vb': 'Virtual Boy',
 } as const;

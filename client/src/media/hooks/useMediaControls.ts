@@ -10,7 +10,7 @@ import type {MediaControlsProps} from 'media/stacks/MediaControls';
 
 export const SHAREABLE = [FileType.Image, FileType.Video, FileType.Audio, FileType.Pdf];
 export const EXTRACTABLE = [FileType.Zip];
-export const DOWNLOADABLE = [FileType.Torrent];
+export const DOWNLOADABLE = [FileType.Torrent, FileType.Binary];
 export const CONFIGURABLE = [FileType.Video, FileType.Audio, FileType.Image, FileType.Pdf, FileType.Book];
 export const SEARCHABLE = [FileType.Map];
 export const LOOPABLE = [FileType.Lottie, FileType.Rive];

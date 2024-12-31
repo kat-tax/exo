@@ -16,6 +16,8 @@ export const Video: VideoComponent = forwardRef(({title, thumbnails, ...props}: 
       video.current?.seek(time, tolerance),
     setVolume: (volume: number) =>
       video.current?.setVolume(volume),
+    getDuration: () =>
+      Promise.resolve(video.current?.nativeHtmlVideoRef?.current?.duration || 0),
     getCurrentTime: () =>
       Promise.resolve(video.current?.getCurrentPosition() || 0),
     presentFullscreen: () =>

@@ -41,7 +41,7 @@ export default forwardRef((props: FileBook, ref: React.Ref<BookRef>) => {
       .then((res) => res.json())
       .then((data) => {
         setTitle(data.metadata.title || props.name);
-        setChapter(t(i18n)`Loading...`);
+        setChapter(t(i18n)`by ${data.metadata.author}`);
       })
       .catch(() => setTitle(props.name));
   }, [props.name, i18n]);

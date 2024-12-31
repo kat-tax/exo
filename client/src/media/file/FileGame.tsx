@@ -1,6 +1,6 @@
-import {Game} from 'react-exo/game';
+import {Game, PLATFORMS} from 'react-exo/game';
 
-import {forwardRef} from 'react';
+import {useEffect, forwardRef} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useFileData} from 'media/hooks/useFileData';
 
@@ -18,6 +18,12 @@ export interface GameRef extends Game {}
 export default forwardRef((props: FileGame, ref: React.Ref<GameRef>) => {
   const {styles, theme} = useStyles(stylesheet);
   const rom = useFileData(props.path, 'dataUrl');
+
+  // Update file player bar info
+  useEffect(() => {
+    if (!rom) return;
+    props.setBarInfo(PLATFORMS[props.platform]);
+  }, [rom, props.platform, props.setBarInfo]);
 
   return rom ? (
     <Game

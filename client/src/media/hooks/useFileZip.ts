@@ -5,6 +5,15 @@ import {useFileData} from 'media/hooks/useFileData';
 import type {FS} from '@zip.js/zip.js';
 
 export interface Zip {
+  date: {
+    created?: Date,
+    modified?: Date,
+    accessed?: Date,
+  },
+  size: {
+    compressed: number,
+    uncompressed: number,
+  },
   list: Array<{
     id: number,
     name: string,
@@ -26,7 +35,17 @@ export function useFileZip(path: string) {
       const _view = new Uint8Array(buffer);
       const _zip = await _fs.importUint8Array(_view);
       filesystem.current = _fs;
+      console.log(_zip?.[0]?.data);
       setZip({
+        date: {
+          created: _zip?.[0]?.data?.creationDate,
+          modified: _zip?.[0]?.data?.lastModDate,
+          accessed: _zip?.[0]?.data?.lastAccessDate,
+        },
+        size: {
+          compressed: _zip?.reduce((acc, entry) => acc + (entry.data?.compressedSize ?? 0), 0) ?? 0,
+          uncompressed: _zip?.reduce((acc, entry) => acc + (entry.data?.uncompressedSize ?? 0), 0) ?? 0,
+        },
         list: _zip.map(entry => {
           return {
             id: entry.id,

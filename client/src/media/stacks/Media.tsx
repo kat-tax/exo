@@ -43,8 +43,7 @@ export function Media(props: MediaProps) {
   const renderer = useMemo(() => getRenderInfo(targetExt), [targetExt]);
   const [cover, setCover] = useState('');
   const [title, setTitle] = useState(targetName);
-  const [info, setInfo] = useState('');
-  const isFullWidth = rect.viewportWidth <= theme.breakpoints.xs;
+  const [info, setInfo] = useState('‎');
 
   // File visualization
   const vstyles = useMemo(() => ({
@@ -53,19 +52,19 @@ export function Media(props: MediaProps) {
       vertical && styles.vertical,
       maximized ? styles.maximized : styles.minimized,
       !maximized && {width: rect.resolution[0]},
-      isFullWidth && styles.fullwidth,
+      rect.viewportWidth <= theme.breakpoints.xs && styles.fullwidth,
     ],
     frame: [
       !maximized && {width: rect.resolution[0], height: rect.resolution[1]},
-      isFullWidth && styles.fullwidth,
+      rect.viewportWidth <= theme.breakpoints.xs && styles.fullwidth,
     ],
-  }), [styles, rect, vertical, maximized, isFullWidth]);
+  }), [styles, rect, vertical, maximized, theme.breakpoints]);
 
   // Change title when file name changes
   useEffect(() => {
     setTitle(targetName);
     setCover('');
-    setInfo('~/');
+    setInfo('‎');
   }, [targetName]);
 
   return (

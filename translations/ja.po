@@ -13,10 +13,6 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: ../../client/src/media/file/FileBook.tsx:44
-msgid "{0} - {1}"
-msgstr ""
-
 #: ../../client/src/dev/routes/ScreenDesign.tsx:12
 #: ../../client/src/dev/routes/ScreenLibrary.tsx:16
 msgid "{0} components"
@@ -59,7 +55,12 @@ msgstr "自動"
 msgid "Books"
 msgstr "本"
 
+#: ../../client/src/media/file/FileBook.tsx:44
+msgid "by {0}"
+msgstr ""
+
 #: ../../client/src/app/interface/Menu.tsx:91
+#: ../../client/src/world/routes/ScreenWorld.tsx:30
 msgid "Calendar"
 msgstr "カレンダー"
 
@@ -76,6 +77,7 @@ msgid "Dark"
 msgstr "ダーク"
 
 #: ../../client/src/app/interface/Menu.tsx:27
+#: ../../client/src/app/interface/Tabs.tsx:13
 msgid "Dashboard"
 msgstr "ダッシュボード"
 
@@ -100,6 +102,7 @@ msgid "Delete the local database."
 msgstr "ローカルデータベースを削除します。"
 
 #: ../../client/src/app/interface/Menu.tsx:118
+#: ../../client/src/dev/routes/ScreenDesign.tsx:11
 msgid "Design"
 msgstr "デザイン"
 
@@ -127,6 +130,7 @@ msgstr "距離"
 msgid "Docs"
 msgstr "ドキュメント"
 
+#: ../../client/src/media/file/FileBinary.tsx:34
 #: ../../client/src/media/hooks/useMediaControls.ts:63
 msgid "Download"
 msgstr "ダウンロード"
@@ -164,6 +168,8 @@ msgid "Fahrenheit"
 msgstr "華氏"
 
 #: ../../client/src/app/interface/Menu.tsx:44
+#: ../../client/src/app/interface/Tabs.tsx:23
+#: ../../client/src/media/routes/ScreenBrowse.tsx:16
 msgid "Files"
 msgstr "ファイル"
 
@@ -212,6 +218,7 @@ msgid "Import"
 msgstr "インポート"
 
 #: ../../client/src/app/interface/Menu.tsx:32
+#: ../../client/src/app/interface/Tabs.tsx:18
 msgid "Inbox"
 msgstr "受信トレイ"
 
@@ -224,6 +231,7 @@ msgid "Language"
 msgstr "言語"
 
 #: ../../client/src/app/interface/Menu.tsx:123
+#: ../../client/src/dev/routes/ScreenLibrary.tsx:15
 msgid "Library"
 msgstr "ライブラリ"
 
@@ -235,7 +243,7 @@ msgstr "ライト"
 msgid "Live"
 msgstr ""
 
-#: ../../client/src/media/file/FileBook.tsx:44
+#: ../../client/src/home/hooks/useWeather.ts:12
 msgid "Loading..."
 msgstr "読み込み中..."
 
@@ -248,12 +256,9 @@ msgid "Manage your storage"
 msgstr "ストレージを管理"
 
 #: ../../client/src/app/interface/Menu.tsx:81
+#: ../../client/src/world/routes/ScreenWorld.tsx:18
 msgid "Map"
 msgstr "地図"
-
-#: ../../client/src/media/hooks/useMediaControls.ts:251
-msgid "Maximize"
-msgstr "最大化"
 
 #: ../../client/src/app/interface/Menu.tsx:37
 msgid "Media"
@@ -272,6 +277,7 @@ msgid "Music"
 msgstr "音楽"
 
 #: ../../client/src/app/interface/Menu.tsx:86
+#: ../../client/src/world/routes/ScreenWorld.tsx:24
 msgid "News"
 msgstr "ニュース"
 
@@ -364,6 +370,8 @@ msgid "Select the theme for the app."
 msgstr "アプリのテーマを選択してください。"
 
 #: ../../client/src/app/interface/Menu.tsx:140
+#: ../../client/src/app/interface/Tabs.tsx:33
+#: ../../client/src/app/routes/ScreenSettings.tsx:27
 msgid "Settings"
 msgstr "設定"
 
@@ -384,6 +392,7 @@ msgid "Social"
 msgstr ""
 
 #: ../../client/src/app/interface/Menu.tsx:134
+#: ../../client/src/app/routes/ScreenStorage.tsx:26
 msgid "Storage"
 msgstr "ストレージ"
 
@@ -398,6 +407,10 @@ msgstr "温度"
 #: ../../client/src/app/routes/ScreenSettings.tsx:95
 msgid "Theme"
 msgstr "テーマ"
+
+#: ../../client/src/media/file/FileBinary.tsx:28
+msgid "Unknown"
+msgstr ""
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:40
 msgid "User Name"
@@ -432,6 +445,7 @@ msgid "Work in progress..."
 msgstr "作業中..."
 
 #: ../../client/src/app/interface/Menu.tsx:79
+#: ../../client/src/app/interface/Tabs.tsx:28
 msgid "World"
 msgstr "世界"
 

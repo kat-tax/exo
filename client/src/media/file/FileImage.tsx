@@ -1,4 +1,4 @@
-import {memo, useImperativeHandle, forwardRef} from 'react';
+import {memo, useImperativeHandle, forwardRef, useEffect} from 'react';
 import {useWindowDimensions, View, ImageBackground} from 'react-native';
 //import {useImageResolution, ResumableZoom, fitContainer} from 'react-native-zoom-toolkit';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
@@ -41,6 +41,12 @@ export default memo(forwardRef((props: FileImage, ref: React.Ref<ImageRef>) => {
       // setScale(1);
     },
   }));
+
+  // Update file player bar info
+  useEffect(() => {
+    if (!image) return;
+    props.setBarInfo(`${1920} x ${1080}`);
+  }, [image, props.setBarInfo]);
 
   return image ? (
     <View style={styles.root}>

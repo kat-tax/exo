@@ -112,7 +112,7 @@ const stylesheet = createStyleSheet((theme, rt) => ({
   },
   content: {
     flex: 1,
-    gap: theme.display.space2,
+    gap: 10,
     flexDirection: 'row',
     alignItems: 'center',
     alignContent: 'center',
@@ -121,10 +121,10 @@ const stylesheet = createStyleSheet((theme, rt) => ({
     paddingHorizontal: theme.display.space1,
   },
   metadata: {
-    marginTop: -3,
+    marginTop: -2,
   },
   title: {
-    fontSize: 11,
+    fontSize: theme.font.size,
     fontFamily: theme.font.family,
     fontWeight: theme.font.weight,
     lineHeight: theme.font.height,
@@ -133,7 +133,8 @@ const stylesheet = createStyleSheet((theme, rt) => ({
   },
   info: {
     fontSize: 11,
-    fontFamily: theme.font.family,
+    fontFamily: 'Fira Code, monospace',
+    //fontFamily: theme.font.family,
     fontWeight: theme.font.weight,
     lineHeight: theme.font.height,
     letterSpacing: theme.font.spacing,

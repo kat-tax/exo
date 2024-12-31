@@ -15,6 +15,7 @@ export interface VideoRef {
   pause: () => Promise<void>,
   seek: (time: number, tolerance?: number) => void,
   setVolume: (volume: number) => void,
+  getDuration: () => Promise<number>,
   getCurrentTime: () => Promise<number>,
   presentFullscreen: () => void,
   dismissFullscreen: () => void,

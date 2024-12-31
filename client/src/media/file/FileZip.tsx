@@ -1,7 +1,8 @@
 import {View} from 'react-native';
-import {forwardRef} from 'react';
+import {forwardRef, useEffect} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useFileZip} from 'media/hooks/useFileZip';
+import {bytesize} from 'app/utils/formatting';
 import {DirZip} from 'media/dir/DirZip';
 import {Page} from 'app/interface/Page';
 
@@ -16,11 +17,24 @@ export default forwardRef((props: FileZip, _ref) => {
   const {zip, extract} = useFileZip(props.path);
   const {styles} = useStyles(stylesheet);
 
+  // Update file player bar info
+  useEffect(() => {
+    if (!zip) return;
+    const msg = `${zip?.list?.length ?? 0} files, ${bytesize(zip?.size?.compressed ?? 0)}`;
+    props.setBarInfo(msg);
+  }, [zip, props.setBarInfo]);
+
   return (
     <View style={styles.root}>
       <Page
-        title={`${props.name}.${props.extension}`}
-        message={''}
+        title={props.name}
+        message={`${zip?.date?.modified?.toLocaleDateString('en-US', {
+          year: 'numeric',
+          month: 'short',
+          day: 'numeric',
+          hour: 'numeric',
+          minute: 'numeric',
+        })}`}
         margin="small"
         noBackground
         noFrame

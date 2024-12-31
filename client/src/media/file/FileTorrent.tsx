@@ -1,8 +1,9 @@
 import {View} from 'react-native';
-import {forwardRef} from 'react';
+import {useEffect, forwardRef} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useFileTorrent} from 'media/hooks/useFileTorrent';
 import {DirTorrent} from 'media/dir/DirTorrent';
+import {bytesize} from 'app/utils/formatting';
 import {Page} from 'app/interface/Page';
 
 import type {FileProps} from 'media/file';
@@ -16,10 +17,17 @@ export default forwardRef((props: FileTorrent, _ref) => {
   const {torrent, download} = useFileTorrent(props.path);
   const {styles} = useStyles(stylesheet);
 
+  // Update file player bar info
+  useEffect(() => {
+    if (!torrent) return;
+    const size = bytesize(torrent.list.reduce((acc, file) => acc + file.length, 0));
+    props.setBarInfo(`${torrent.list.length} files, ${size}`);
+  }, [torrent, props.setBarInfo]);
+
   return (
     <View style={styles.root}>
       <Page
-        title={torrent?.name}
+        title={torrent?.info.name}
         message={torrent?.desc}
         margin="small"
         noBackground

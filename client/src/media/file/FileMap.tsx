@@ -26,21 +26,27 @@ export default forwardRef((props: FileMap) => {
   const source = useFileData(props.path, 'text');
   const url = useFileData(props.path, 'dataUrl');
   const [markers, setMarkers] = useState<GeoJSON.Feature<GeoJSON.Point>[]>([]);
+
   // Set bounds when source data is loaded
   useEffect(() => {
     if (!source) return;
+    let features = 0;
     const geojson = JSON.parse(source) as GeoJSON.FeatureCollection;
     const bounds = getBounds(geojson, 0.01);
     setBounds(bounds);
     // Extract points from features
     const points: GeoJSON.Feature<GeoJSON.Point>[] = [];
-    for (const feature of geojson.features) {
-      if (feature.geometry.type === 'Point') {
-        points.push(feature as GeoJSON.Feature<GeoJSON.Point>);
+    if (geojson.features) {
+      for (const feature of geojson.features) {
+        features++;
+        if (feature.geometry.type === 'Point') {
+          points.push(feature as GeoJSON.Feature<GeoJSON.Point>);
+        }
       }
     }
+    props.setBarInfo(`${features} features`);
     setMarkers(points);
-  }, [source]);
+  }, [source, props.setBarInfo]);
 
   return source ? (
     <View style={[styles.root, props.maximized && styles.maximized]}>
