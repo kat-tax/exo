@@ -175,7 +175,7 @@ msgstr "추출"
 msgid "Fahrenheit"
 msgstr "화씨"
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:40
+#: ../../client/src/media/routes/ScreenBrowse.tsx:39
 msgid "Files"
 msgstr "파일"
 

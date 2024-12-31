@@ -175,7 +175,7 @@ msgstr "Extract"
 msgid "Fahrenheit"
 msgstr "Fahrenheit"
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:40
+#: ../../client/src/media/routes/ScreenBrowse.tsx:39
 msgid "Files"
 msgstr "Files"
 

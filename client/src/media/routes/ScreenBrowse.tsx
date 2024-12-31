@@ -8,36 +8,36 @@ import {resolve} from 'media/utils/path';
 import {DirHfs} from 'media/dir/DirHfs';
 import {Page} from 'app/interface/Page';
 
-
 export default function ScreenBrowse() {
   const {pathname} = useLocation();
   const {layout} = useAppContext();
   const {t} = useLingui();
 
-  const [name, path] = useMemo(() => {
+  const [name, path, base] = useMemo(() => {
     const parts = resolve(pathname);
     const name = parts[parts.length - 1] as InitDirectory;
-    const path = parts.slice(1, -1).join('/') || '/';
+    const base = parts.slice(1, -1).join('/') || '/';
+    const path = parts.join('/');
     switch (name) {
       case InitDirectory.Documents:
-        return [t`Documents`, path];
+        return [t`Documents`, path, base];
       case InitDirectory.Music:
-        return [t`Music`, path];
+        return [t`Music`, path, base];
       case InitDirectory.Pictures:
-        return [t`Pictures`, path];
+        return [t`Pictures`, path, base];
       case InitDirectory.Videos:
-        return [t`Videos`, path];
+        return [t`Videos`, path, base];
       case InitDirectory.Games:
-        return [t`Games`, path];
+        return [t`Games`, path, base];
       case InitDirectory.Books:
-        return [t`Books`, path];
+        return [t`Books`, path, base];
       case InitDirectory.Downloads:
-        return [t`Downloads`, path];
+        return [t`Downloads`, path, base];
       case InitDirectory.Uploads:
-        return [t`Uploads`, path];
+        return [t`Uploads`, path, base];
       default: name satisfies never;
+        return [name || t`Files`, path, base];
     }
-    return [name ?? t`Files`, path];
   }, [pathname, t]);
 
   useInitializer();
@@ -47,7 +47,7 @@ export default function ScreenBrowse() {
       fullWidth
       margin="small"
       title={name}
-      message={path}
+      message={base}
       hasPanel={layout.hasPreviewPanel}>
       <DirHfs {...{path}}/>
     </Page>

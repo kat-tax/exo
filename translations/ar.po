@@ -175,7 +175,7 @@ msgstr "استخراج"
 msgid "Fahrenheit"
 msgstr "فهرنهايت"
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:40
+#: ../../client/src/media/routes/ScreenBrowse.tsx:39
 msgid "Files"
 msgstr "الملفات"
 
