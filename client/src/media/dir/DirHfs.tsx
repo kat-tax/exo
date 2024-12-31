@@ -31,7 +31,7 @@ export function DirHfs(props: DirHfsProps) {
 
   return entries.map(entry =>
     <EntryHfs
-      key={entry.name}
+      key={entry.isDirectory ? `.${entry.name}` : entry.name}
       flags={{multiSelect}}
       {...{entry, path}}
     />
