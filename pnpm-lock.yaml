@@ -34,21 +34,24 @@ importers:
       '@candlefinance/faster-image':
         specifier: ^1.6.2
         version: 1.6.2(react-native@0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8)(utf-8-validate@6.0.4))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1)(utf-8-validate@6.0.4))(react@18.3.1)
+      '@effect/platform':
+        specifier: 0.69.9
+        version: 0.69.9(effect@3.10.4)
       '@effect/schema':
-        specifier: ^0.68.27
-        version: 0.68.27(effect@3.5.7)
+        specifier: 0.75.5
+        version: 0.75.5(effect@3.10.4)
       '@evolu/common':
-        specifier: ^5.3.0
-        version: 5.4.2(@effect/platform@0.59.3(@effect/schema@0.68.27(effect@3.5.7))(effect@3.5.7))(@effect/schema@0.68.27(effect@3.5.7))(effect@3.5.7)
+        specifier: ^5.4.8
+        version: 5.4.8(@effect/platform@0.69.9(effect@3.10.4))(@effect/schema@0.75.5(effect@3.10.4))(effect@3.10.4)
       '@evolu/common-web':
-        specifier: ^8.1.1
-        version: 8.2.0(@evolu/common@5.4.2(@effect/platform@0.59.3(@effect/schema@0.68.27(effect@3.5.7))(effect@3.5.7))(@effect/schema@0.68.27(effect@3.5.7))(effect@3.5.7))(@sqlite.org/sqlite-wasm@3.46.0-build2)
+        specifier: ^8.2.4
+        version: 8.2.4(@evolu/common@5.4.8(@effect/platform@0.69.9(effect@3.10.4))(@effect/schema@0.75.5(effect@3.10.4))(effect@3.10.4))(@sqlite.org/sqlite-wasm@3.46.0-build2)
       '@evolu/react':
-        specifier: ^8.1.0
-        version: 8.2.0(@evolu/common-react@8.0.5(@evolu/common@5.4.2(@effect/platform@0.59.3(@effect/schema@0.68.27(effect@3.5.7))(effect@3.5.7))(@effect/schema@0.68.27(effect@3.5.7))(effect@3.5.7))(react@18.3.1))(@evolu/common-web@8.2.0(@evolu/common@5.4.2(@effect/platform@0.59.3(@effect/schema@0.68.27(effect@3.5.7))(effect@3.5.7))(@effect/schema@0.68.27(effect@3.5.7))(effect@3.5.7))(@sqlite.org/sqlite-wasm@3.46.0-build2))(@evolu/common@5.4.2(@effect/platform@0.59.3(@effect/schema@0.68.27(effect@3.5.7))(effect@3.5.7))(@effect/schema@0.68.27(effect@3.5.7))(effect@3.5.7))(react-dom@18.3.1(react@18.3.1))
+        specifier: ^8.2.2
+        version: 8.2.2(@evolu/common-react@8.0.5(@evolu/common@5.4.8(@effect/platform@0.69.9(effect@3.10.4))(@effect/schema@0.75.5(effect@3.10.4))(effect@3.10.4))(react@18.3.1))(@evolu/common-web@8.2.4(@evolu/common@5.4.8(@effect/platform@0.69.9(effect@3.10.4))(@effect/schema@0.75.5(effect@3.10.4))(effect@3.10.4))(@sqlite.org/sqlite-wasm@3.46.0-build2))(@evolu/common@5.4.8(@effect/platform@0.69.9(effect@3.10.4))(@effect/schema@0.75.5(effect@3.10.4))(effect@3.10.4))(react-dom@18.3.1(react@18.3.1))
       '@evolu/react-native':
-        specifier: ^11.0.0
-        version: 11.1.0(@evolu/common-react@8.0.5(@evolu/common@5.4.2(@effect/platform@0.59.3(@effect/schema@0.68.27(effect@3.5.7))(effect@3.5.7))(@effect/schema@0.68.27(effect@3.5.7))(effect@3.5.7))(react@18.3.1))(expo-sqlite@14.0.4(expo@51.0.20(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(bufferutil@4.0.8)(utf-8-validate@6.0.4)))(expo@51.0.20(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(bufferutil@4.0.8)(utf-8-validate@6.0.4))(react-native@0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8)(utf-8-validate@6.0.4))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1)(utf-8-validate@6.0.4))
+        specifier: ^11.1.2
+        version: 11.1.2(@evolu/common-react@8.0.5(@evolu/common@5.4.8(@effect/platform@0.69.9(effect@3.10.4))(@effect/schema@0.75.5(effect@3.10.4))(effect@3.10.4))(react@18.3.1))(expo-sqlite@14.0.4(expo@51.0.20(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(bufferutil@4.0.8)(utf-8-validate@6.0.4)))(expo@51.0.20(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(bufferutil@4.0.8)(utf-8-validate@6.0.4))(react-native@0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8)(utf-8-validate@6.0.4))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1)(utf-8-validate@6.0.4))
       '@helia/verified-fetch':
         specifier: ^1.5.0
         version: 1.5.0
@@ -107,8 +110,8 @@ importers:
         specifier: workspace:react-exo-ui@*
         version: link:../design
       effect:
-        specifier: ^3.5.7
-        version: 3.5.7
+        specifier: 3.10.4
+        version: 3.10.4
       file-type:
         specifier: ^19.6.0
         version: 19.6.0
@@ -672,11 +675,11 @@ importers:
   server:
     dependencies:
       '@evolu/server':
-        specifier: 7.1.0
-        version: 7.1.0(@evolu/common@5.4.2(@effect/platform@0.59.3(@effect/schema@0.71.0(effect@3.5.7))(effect@3.5.7))(@effect/schema@0.71.0(effect@3.5.7))(effect@3.5.7))(bufferutil@4.0.8)(express@4.19.2)(utf-8-validate@6.0.4)
+        specifier: 7.2.8
+        version: 7.2.8(@evolu/common@5.4.8(@effect/platform@0.69.9(effect@3.10.4))(@effect/schema@0.75.5(effect@3.10.4))(effect@3.10.4))(bufferutil@4.0.8)(express@4.19.2)(utf-8-validate@6.0.4)
       effect:
-        specifier: 3.5.7
-        version: 3.5.7
+        specifier: 3.10.4
+        version: 3.10.4
 
   toolkit/bundler:
     devDependencies:
@@ -2217,21 +2220,15 @@ packages:
   '@dominicstop/ts-event-emitter@1.1.0':
     resolution: {integrity: sha512-CcxmJIvUb1vsFheuGGVSQf4KdPZC44XolpUT34+vlal+LyQoBUOn31pjFET5M9ctOxEpt8xa0M3/2M7uUiAoJw==}
 
-  '@effect/platform@0.59.3':
-    resolution: {integrity: sha512-DHR4Hl+hhTCzjs1ykRIyzwaala4JMtPVnReLea29hn+M3fKzloic7UpyCkTO7aJdFjthUtAKcW2mr2lDtuqlDA==}
+  '@effect/platform@0.69.9':
+    resolution: {integrity: sha512-gdp5rLxKLBBI895ycBRkuwCQHnYf8g6+Sdg5tFhuH+axIdgP4J8dGzIvYBGAkRMw/4k2BYeSKKf8ZONYnNWcWg==}
     peerDependencies:
-      '@effect/schema': ^0.68.27
-      effect: ^3.5.7
+      effect: ^3.10.4
 
-  '@effect/schema@0.68.27':
-    resolution: {integrity: sha512-/rmIb+4QaQTecdTfeYSZtNikIV+BeIbYDl/hpgBTaS96en7pKNW5hcygFQhdocjKguIL7Y/be+oUrVafWV60ew==}
+  '@effect/schema@0.75.5':
+    resolution: {integrity: sha512-TQInulTVCuF+9EIbJpyLP6dvxbQJMphrnRqgexm/Ze39rSjfhJuufF7XvU3SxTgg3HnL7B/kpORTJbHhlE6thw==}
     peerDependencies:
-      effect: ^3.5.7
-
-  '@effect/schema@0.71.0':
-    resolution: {integrity: sha512-rw2AP16bXaejUHAdUm6n86KSzhvZCZA/OYpCoZV+Q1gXNe65lQ2aRYaiSpMUxqK49j6FkcY3MvwehJ8jP7suTA==}
-    peerDependencies:
-      effect: ^3.6.4
+      effect: ^3.9.2
 
   '@egjs/hammerjs@2.0.17':
     resolution: {integrity: sha512-XQsZgjm2EcVUiZQf11UBJQfmZeEmOW8DpI1gsFeln6w0ae0ii4dMQEQ0kjl6DspdWX1aGY1/loyXnP0JS06e/A==}
@@ -2811,44 +2808,44 @@ packages:
       '@evolu/common': ^5.1.2
       react: ^18.2.0
 
-  '@evolu/common-web@8.2.0':
-    resolution: {integrity: sha512-/kzAwh/ipmSm94z2hZ3hpmYbGRpoqB3I+k9n9rAcLv3//COQKI3KH0w82euElUxOwsFBtWybpXMUPhvtZ9nXpg==}
-    engines: {node: '>=18.16'}
+  '@evolu/common-web@8.2.4':
+    resolution: {integrity: sha512-cJysrRU7stGRa+zjtSICcngiRX1t1wM8Bvmoav31vEXifMsAK92N8ADQfxqUzebguajnYzcCrwa5vm0afELIOA==}
+    engines: {node: '>=20.0.0'}
     peerDependencies:
-      '@evolu/common': ^5.4.0
-      '@sqlite.org/sqlite-wasm': ^3.46.0-build1
+      '@evolu/common': ^5.4.8
+      '@sqlite.org/sqlite-wasm': ^3.47.0-build1
 
-  '@evolu/common@5.4.2':
-    resolution: {integrity: sha512-A82KFs2AL3PcvCsdtOwUUNSwtdoCql/HbM9wzq07ZuksSr5rSE0fldwfcaLsoZ30nSXUbKjGW7Eek8ipv7hJ/A==}
-    engines: {node: '>=18.16'}
+  '@evolu/common@5.4.8':
+    resolution: {integrity: sha512-ut0fTMdjGAjdJBmlPxCmcjcCCPmaaM72WHEyJatOaCjyWq7Zn6R1JSaDdePIt9+mkXlfytNBtq4MsBlVQ1qFaA==}
+    engines: {node: '>=20.0.0'}
     peerDependencies:
-      '@effect/platform': ^0.62.0
-      '@effect/schema': ^0.71.0
-      effect: ^3.1.2
+      '@effect/platform': 0.69.9
+      '@effect/schema': 0.75.5
+      effect: 3.10.4
 
-  '@evolu/react-native@11.1.0':
-    resolution: {integrity: sha512-0xSRmuJh8WkCBP+9Tx+Hq+1Jr59A3bgoW1LwjVQOuwFDviUkpop9uezurhFOJfUdDGjUCbLo12bI+UQatjdIDA==}
-    engines: {node: '>=18.16'}
+  '@evolu/react-native@11.1.2':
+    resolution: {integrity: sha512-Bfa3FgQQgoqV9w02R36aU9kaPMt7iroa3Exa3V9pyPxU8WqdfkcotO/Fl6LE4KATKepe5W/X+SWkRvmPTqzxeA==}
+    engines: {node: '>=20.0.0'}
     peerDependencies:
-      '@evolu/common-react': ^8.1.0
+      '@evolu/common-react': ^8.1.2
       expo: ^51.0.0
       expo-sqlite: ^14.0.3
       react-native: ^0.74.1
 
-  '@evolu/react@8.2.0':
-    resolution: {integrity: sha512-7N5HIqtqpeA4qKQFZFGdB/2UFAv+az7MUVgHoQhmoIdoMM/HsiGVdZzu5SFS5LkMKEoKwZiScRt00r7H2LI1KA==}
-    engines: {node: '>=18.16'}
+  '@evolu/react@8.2.2':
+    resolution: {integrity: sha512-8MbSgS0WG5yJTpmkcRHDjquU6hWqcx9H8JLBqK98nr5bSQr46z85UHF26f0jBRvmqKxESCoVdtrz+Gd5vAgsIQ==}
+    engines: {node: '>=20.0.0'}
     peerDependencies:
-      '@evolu/common': ^5.4.0
-      '@evolu/common-react': ^8.1.0
-      '@evolu/common-web': ^8.2.0
+      '@evolu/common': ^5.4.8
+      '@evolu/common-react': ^8.1.2
+      '@evolu/common-web': ^8.2.4
       react-dom: ^18.2.0
 
-  '@evolu/server@7.1.0':
-    resolution: {integrity: sha512-AuPY923TBzutOvnCU1W4B0992AvzjHlND0F2ZowHpeUwevSfc5ucqU/7bStOwpINkvui/mxT664cIJdwXPf0PA==}
-    engines: {node: '>=16.15'}
+  '@evolu/server@7.2.8':
+    resolution: {integrity: sha512-9t/hrotMKU4WUXXm/dRQjmCRaus8LikElzK7KYR59hswezEPEGalN9ZyNN5y36fNMgjEFBABopLiSK7LWtnp2w==}
+    engines: {node: '>=20.0.0'}
     peerDependencies:
-      '@evolu/common': ^5.3.0
+      '@evolu/common': ^5.4.8
       express: ^4.19.2
 
   '@expo/bunyan@4.0.0':
@@ -3957,6 +3954,10 @@ packages:
 
   '@noble/ciphers@0.6.0':
     resolution: {integrity: sha512-mIbq/R9QXk5/cTfESb1OKtyFnk7oc1Om/8onA1158K9/OZUQFDEVy55jVTato+xmp3XX6F6Qh0zz0Nc1AxAlRQ==}
+
+  '@noble/ciphers@1.1.3':
+    resolution: {integrity: sha512-Ygv6WnWJHLLiW4fnNDC1z+i13bud+enXOFRBlpxI+NJliPWx5wdR+oWlTjLuBPTqjUjtHXtjkU6w3kuuH6upZA==}
+    engines: {node: ^14.21.3 || >=16}
 
   '@noble/curves@1.5.0':
     resolution: {integrity: sha512-J5EKamIHnKPyClwVrzmaf5wSdQXgdHcPZIZLu3bwnbeCx8/7NPK5q2ZBWF+5FvYGByjiQQsJYX6jfgB2wDPn3A==}
@@ -8023,8 +8024,8 @@ packages:
   ee-first@1.1.1:
     resolution: {integrity: sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==}
 
-  effect@3.5.7:
-    resolution: {integrity: sha512-PzEncc0R3ZZhqNTR+fXrSX+anF/4Ai6ftKie1ZrUUWY7WPE7d4KjB6wjpeWoGMOC7xWFPGSkBBUudyJN1mx3+g==}
+  effect@3.10.4:
+    resolution: {integrity: sha512-D7Mryq8jylT0fIGrgXEn2TublO/BhduRwzlqV5z1l/QFY6grs7UOyyomlAOFMK9ArSYiLgrOSMQ/Cr/cIOeU2Q==}
 
   electron-to-chromium@1.4.827:
     resolution: {integrity: sha512-VY+J0e4SFcNfQy19MEoMdaIcZLmDCprqvBtkii1WTCTQHpRvf5N8+3kTYCgL/PcntvwQvmMJWTuDPsq+IlhWKQ==}
@@ -10616,8 +10617,8 @@ packages:
   multiformats@13.3.1:
     resolution: {integrity: sha512-QxowxTNwJ3r5RMctoGA5p13w5RbRT2QDkoM+yFlqfLiioBp78nhDjnRLvmSBI9+KAqN4VdgOVWM9c0CHd86m3g==}
 
-  multipasta@0.2.2:
-    resolution: {integrity: sha512-KKGdmXIJUmt9BV45LsbUdMnju8eCNSyF9KpbyqK2E3wQXjpPQOg52/Hc+nsmBacmEkNxLVT5h1y3ZgEXB4prXg==}
+  multipasta@0.2.5:
+    resolution: {integrity: sha512-c8eMDb1WwZcE02WVjHoOmUVk7fnKU/RmUcosHACglrWAuPQsEJv+E8430sXj6jNc1jHw0zrS16aCjQh4BcEb4A==}
 
   murmurhash-js@1.0.0:
     resolution: {integrity: sha512-TvmkNhkv8yct0SVBSy+o8wYzXjE4Zz3PCesbfs8HiCXXdcTuocApFv11UWlNFWKYsP2okqrhb7JNlSm9InBhIw==}
@@ -10648,11 +10649,6 @@ packages:
   nanoid@3.3.8:
     resolution: {integrity: sha512-WNLf5Sd8oZxOm+TzppcYk8gVOgP+l58xNy58D0nbUnOxOWRWvlcCV4kUF7ltmI6PsrLl/BgKEyS4mqsGChFN0w==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
-    hasBin: true
-
-  nanoid@5.0.7:
-    resolution: {integrity: sha512-oLxFY2gd2IqnjcYyOXD8XGCftpGtZP2AbHbOkthDkvRywH5ayNtPVy9YlOPcHckXzbLTCHpkb7FB+yuxKV13pQ==}
-    engines: {node: ^18 || >=20}
     hasBin: true
 
   nanoid@5.0.9:
@@ -15649,28 +15645,15 @@ snapshots:
 
   '@dominicstop/ts-event-emitter@1.1.0': {}
 
-  '@effect/platform@0.59.3(@effect/schema@0.68.27(effect@3.5.7))(effect@3.5.7)':
+  '@effect/platform@0.69.9(effect@3.10.4)':
     dependencies:
-      '@effect/schema': 0.68.27(effect@3.5.7)
-      effect: 3.5.7
+      effect: 3.10.4
       find-my-way-ts: 0.1.5
-      multipasta: 0.2.2
+      multipasta: 0.2.5
 
-  '@effect/platform@0.59.3(@effect/schema@0.71.0(effect@3.5.7))(effect@3.5.7)':
+  '@effect/schema@0.75.5(effect@3.10.4)':
     dependencies:
-      '@effect/schema': 0.71.0(effect@3.5.7)
-      effect: 3.5.7
-      find-my-way-ts: 0.1.5
-      multipasta: 0.2.2
-
-  '@effect/schema@0.68.27(effect@3.5.7)':
-    dependencies:
-      effect: 3.5.7
-      fast-check: 3.21.0
-
-  '@effect/schema@0.71.0(effect@3.5.7)':
-    dependencies:
-      effect: 3.5.7
+      effect: 3.10.4
       fast-check: 3.21.0
 
   '@egjs/hammerjs@2.0.17':
@@ -15971,43 +15954,31 @@ snapshots:
       '@ethersproject/bytes': 5.7.0
       '@ethersproject/logger': 5.7.0
 
-  '@evolu/common-react@8.0.5(@evolu/common@5.4.2(@effect/platform@0.59.3(@effect/schema@0.68.27(effect@3.5.7))(effect@3.5.7))(@effect/schema@0.68.27(effect@3.5.7))(effect@3.5.7))(react@18.3.1)':
+  '@evolu/common-react@8.0.5(@evolu/common@5.4.8(@effect/platform@0.69.9(effect@3.10.4))(@effect/schema@0.75.5(effect@3.10.4))(effect@3.10.4))(react@18.3.1)':
     dependencies:
-      '@evolu/common': 5.4.2(@effect/platform@0.59.3(@effect/schema@0.68.27(effect@3.5.7))(effect@3.5.7))(@effect/schema@0.68.27(effect@3.5.7))(effect@3.5.7)
+      '@evolu/common': 5.4.8(@effect/platform@0.69.9(effect@3.10.4))(@effect/schema@0.75.5(effect@3.10.4))(effect@3.10.4)
       react: 18.3.1
 
-  '@evolu/common-web@8.2.0(@evolu/common@5.4.2(@effect/platform@0.59.3(@effect/schema@0.68.27(effect@3.5.7))(effect@3.5.7))(@effect/schema@0.68.27(effect@3.5.7))(effect@3.5.7))(@sqlite.org/sqlite-wasm@3.46.0-build2)':
+  '@evolu/common-web@8.2.4(@evolu/common@5.4.8(@effect/platform@0.69.9(effect@3.10.4))(@effect/schema@0.75.5(effect@3.10.4))(effect@3.10.4))(@sqlite.org/sqlite-wasm@3.46.0-build2)':
     dependencies:
-      '@evolu/common': 5.4.2(@effect/platform@0.59.3(@effect/schema@0.68.27(effect@3.5.7))(effect@3.5.7))(@effect/schema@0.68.27(effect@3.5.7))(effect@3.5.7)
+      '@evolu/common': 5.4.8(@effect/platform@0.69.9(effect@3.10.4))(@effect/schema@0.75.5(effect@3.10.4))(effect@3.10.4)
       '@sqlite.org/sqlite-wasm': 3.46.0-build2
 
-  '@evolu/common@5.4.2(@effect/platform@0.59.3(@effect/schema@0.68.27(effect@3.5.7))(effect@3.5.7))(@effect/schema@0.68.27(effect@3.5.7))(effect@3.5.7)':
+  '@evolu/common@5.4.8(@effect/platform@0.69.9(effect@3.10.4))(@effect/schema@0.75.5(effect@3.10.4))(effect@3.10.4)':
     dependencies:
-      '@effect/platform': 0.59.3(@effect/schema@0.68.27(effect@3.5.7))(effect@3.5.7)
-      '@effect/schema': 0.68.27(effect@3.5.7)
-      '@noble/ciphers': 0.6.0
-      '@noble/hashes': 1.4.0
+      '@effect/platform': 0.69.9(effect@3.10.4)
+      '@effect/schema': 0.75.5(effect@3.10.4)
+      '@noble/ciphers': 1.1.3
+      '@noble/hashes': 1.6.1
       '@protobuf-ts/runtime': 2.9.4
       '@scure/bip39': 1.3.0
-      effect: 3.5.7
+      effect: 3.10.4
       kysely: 0.27.4
-      nanoid: 5.0.7
+      nanoid: 5.0.9
 
-  '@evolu/common@5.4.2(@effect/platform@0.59.3(@effect/schema@0.71.0(effect@3.5.7))(effect@3.5.7))(@effect/schema@0.71.0(effect@3.5.7))(effect@3.5.7)':
+  '@evolu/react-native@11.1.2(@evolu/common-react@8.0.5(@evolu/common@5.4.8(@effect/platform@0.69.9(effect@3.10.4))(@effect/schema@0.75.5(effect@3.10.4))(effect@3.10.4))(react@18.3.1))(expo-sqlite@14.0.4(expo@51.0.20(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(bufferutil@4.0.8)(utf-8-validate@6.0.4)))(expo@51.0.20(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(bufferutil@4.0.8)(utf-8-validate@6.0.4))(react-native@0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8)(utf-8-validate@6.0.4))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1)(utf-8-validate@6.0.4))':
     dependencies:
-      '@effect/platform': 0.59.3(@effect/schema@0.71.0(effect@3.5.7))(effect@3.5.7)
-      '@effect/schema': 0.71.0(effect@3.5.7)
-      '@noble/ciphers': 0.6.0
-      '@noble/hashes': 1.4.0
-      '@protobuf-ts/runtime': 2.9.4
-      '@scure/bip39': 1.3.0
-      effect: 3.5.7
-      kysely: 0.27.4
-      nanoid: 5.0.7
-
-  '@evolu/react-native@11.1.0(@evolu/common-react@8.0.5(@evolu/common@5.4.2(@effect/platform@0.59.3(@effect/schema@0.68.27(effect@3.5.7))(effect@3.5.7))(@effect/schema@0.68.27(effect@3.5.7))(effect@3.5.7))(react@18.3.1))(expo-sqlite@14.0.4(expo@51.0.20(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(bufferutil@4.0.8)(utf-8-validate@6.0.4)))(expo@51.0.20(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(bufferutil@4.0.8)(utf-8-validate@6.0.4))(react-native@0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8)(utf-8-validate@6.0.4))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1)(utf-8-validate@6.0.4))':
-    dependencies:
-      '@evolu/common-react': 8.0.5(@evolu/common@5.4.2(@effect/platform@0.59.3(@effect/schema@0.68.27(effect@3.5.7))(effect@3.5.7))(@effect/schema@0.68.27(effect@3.5.7))(effect@3.5.7))(react@18.3.1)
+      '@evolu/common-react': 8.0.5(@evolu/common@5.4.8(@effect/platform@0.69.9(effect@3.10.4))(@effect/schema@0.75.5(effect@3.10.4))(effect@3.10.4))(react@18.3.1)
       expo: 51.0.20(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(bufferutil@4.0.8)(utf-8-validate@6.0.4)
       expo-sqlite: 14.0.4(expo@51.0.20(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(bufferutil@4.0.8)(utf-8-validate@6.0.4))
       expo-updates: 0.25.19(expo@51.0.20(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(bufferutil@4.0.8)(utf-8-validate@6.0.4))
@@ -16016,20 +15987,20 @@ snapshots:
       - encoding
       - supports-color
 
-  '@evolu/react@8.2.0(@evolu/common-react@8.0.5(@evolu/common@5.4.2(@effect/platform@0.59.3(@effect/schema@0.68.27(effect@3.5.7))(effect@3.5.7))(@effect/schema@0.68.27(effect@3.5.7))(effect@3.5.7))(react@18.3.1))(@evolu/common-web@8.2.0(@evolu/common@5.4.2(@effect/platform@0.59.3(@effect/schema@0.68.27(effect@3.5.7))(effect@3.5.7))(@effect/schema@0.68.27(effect@3.5.7))(effect@3.5.7))(@sqlite.org/sqlite-wasm@3.46.0-build2))(@evolu/common@5.4.2(@effect/platform@0.59.3(@effect/schema@0.68.27(effect@3.5.7))(effect@3.5.7))(@effect/schema@0.68.27(effect@3.5.7))(effect@3.5.7))(react-dom@18.3.1(react@18.3.1))':
+  '@evolu/react@8.2.2(@evolu/common-react@8.0.5(@evolu/common@5.4.8(@effect/platform@0.69.9(effect@3.10.4))(@effect/schema@0.75.5(effect@3.10.4))(effect@3.10.4))(react@18.3.1))(@evolu/common-web@8.2.4(@evolu/common@5.4.8(@effect/platform@0.69.9(effect@3.10.4))(@effect/schema@0.75.5(effect@3.10.4))(effect@3.10.4))(@sqlite.org/sqlite-wasm@3.46.0-build2))(@evolu/common@5.4.8(@effect/platform@0.69.9(effect@3.10.4))(@effect/schema@0.75.5(effect@3.10.4))(effect@3.10.4))(react-dom@18.3.1(react@18.3.1))':
     dependencies:
-      '@evolu/common': 5.4.2(@effect/platform@0.59.3(@effect/schema@0.68.27(effect@3.5.7))(effect@3.5.7))(@effect/schema@0.68.27(effect@3.5.7))(effect@3.5.7)
-      '@evolu/common-react': 8.0.5(@evolu/common@5.4.2(@effect/platform@0.59.3(@effect/schema@0.68.27(effect@3.5.7))(effect@3.5.7))(@effect/schema@0.68.27(effect@3.5.7))(effect@3.5.7))(react@18.3.1)
-      '@evolu/common-web': 8.2.0(@evolu/common@5.4.2(@effect/platform@0.59.3(@effect/schema@0.68.27(effect@3.5.7))(effect@3.5.7))(@effect/schema@0.68.27(effect@3.5.7))(effect@3.5.7))(@sqlite.org/sqlite-wasm@3.46.0-build2)
+      '@evolu/common': 5.4.8(@effect/platform@0.69.9(effect@3.10.4))(@effect/schema@0.75.5(effect@3.10.4))(effect@3.10.4)
+      '@evolu/common-react': 8.0.5(@evolu/common@5.4.8(@effect/platform@0.69.9(effect@3.10.4))(@effect/schema@0.75.5(effect@3.10.4))(effect@3.10.4))(react@18.3.1)
+      '@evolu/common-web': 8.2.4(@evolu/common@5.4.8(@effect/platform@0.69.9(effect@3.10.4))(@effect/schema@0.75.5(effect@3.10.4))(effect@3.10.4))(@sqlite.org/sqlite-wasm@3.46.0-build2)
       react-dom: 18.3.1(react@18.3.1)
 
-  '@evolu/server@7.1.0(@evolu/common@5.4.2(@effect/platform@0.59.3(@effect/schema@0.71.0(effect@3.5.7))(effect@3.5.7))(@effect/schema@0.71.0(effect@3.5.7))(effect@3.5.7))(bufferutil@4.0.8)(express@4.19.2)(utf-8-validate@6.0.4)':
+  '@evolu/server@7.2.8(@evolu/common@5.4.8(@effect/platform@0.69.9(effect@3.10.4))(@effect/schema@0.75.5(effect@3.10.4))(effect@3.10.4))(bufferutil@4.0.8)(express@4.19.2)(utf-8-validate@6.0.4)':
     dependencies:
-      '@evolu/common': 5.4.2(@effect/platform@0.59.3(@effect/schema@0.71.0(effect@3.5.7))(effect@3.5.7))(@effect/schema@0.71.0(effect@3.5.7))(effect@3.5.7)
+      '@evolu/common': 5.4.8(@effect/platform@0.69.9(effect@3.10.4))(@effect/schema@0.75.5(effect@3.10.4))(effect@3.10.4)
       better-sqlite3: 11.1.2
       body-parser: 1.20.2
       cors: 2.8.5
-      effect: 3.5.7
+      effect: 3.10.4
       express: 4.19.2
       kysely: 0.27.4
       ws: 8.18.0(bufferutil@4.0.8)(utf-8-validate@6.0.4)
@@ -16206,7 +16177,7 @@ snapshots:
     dependencies:
       '@expo/spawn-async': 1.7.2
       chalk: 4.1.2
-      debug: 4.3.6
+      debug: 4.4.0
       find-up: 5.0.0
       minimatch: 3.1.2
       p-limit: 3.1.0
@@ -18537,6 +18508,8 @@ snapshots:
   '@noble/ciphers@0.4.1': {}
 
   '@noble/ciphers@0.6.0': {}
+
+  '@noble/ciphers@1.1.3': {}
 
   '@noble/curves@1.5.0':
     dependencies:
@@ -23801,7 +23774,9 @@ snapshots:
 
   ee-first@1.1.1: {}
 
-  effect@3.5.7: {}
+  effect@3.10.4:
+    dependencies:
+      fast-check: 3.21.0
 
   electron-to-chromium@1.4.827: {}
 
@@ -27606,7 +27581,7 @@ snapshots:
 
   multiformats@13.3.1: {}
 
-  multipasta@0.2.2: {}
+  multipasta@0.2.5: {}
 
   murmurhash-js@1.0.0: {}
 
@@ -27632,8 +27607,6 @@ snapshots:
   nanoid@3.3.7: {}
 
   nanoid@3.3.8: {}
-
-  nanoid@5.0.7: {}
 
   nanoid@5.0.9: {}
 

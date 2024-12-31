@@ -8,8 +8,8 @@
     "reset": "rm -rf db.sqlite"
   },
   "dependencies": {
-    "@evolu/server": "7.1.0",
-    "effect": "3.5.7"
+    "@evolu/server": "7.2.8",
+    "effect": "3.10.4"
   },
   "engines": {
     "node": ">=18"
