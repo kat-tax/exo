@@ -131,6 +131,7 @@ msgid "Docs"
 msgstr "المستندات"
 
 #: ../../client/src/media/file/FileBinary.tsx:34
+#: ../../client/src/media/hooks/useMediaControls.ts:63
 msgid "Download"
 msgstr "تنزيل"
 
@@ -406,10 +407,6 @@ msgstr "درجة الحرارة"
 #: ../../client/src/app/routes/ScreenSettings.tsx:95
 msgid "Theme"
 msgstr "السمة"
-
-#: ../../client/src/media/file/FileBinary.tsx:28
-msgid "Unknown"
-msgstr ""
 
 #: ../../client/src/media/file/FileBinary.tsx:28
 msgid "Unsupported File"

@@ -39,7 +39,7 @@
   "packageManager": "pnpm@8.14.0",
   "pnpm": {
     "patchedDependencies": {
-      "react-native-readium@2.0.0-rc.2": "patches/react-native-readium@2.0.0-rc.2.patch"
+      "react-native-readium": "patches/react-native-readium.patch"
     }
   }
 }

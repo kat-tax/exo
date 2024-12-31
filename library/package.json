@@ -248,7 +248,7 @@
     "multiformats": "^13.2.2",
     "react-content-loader": "^7.0.2",
     "react-hook-form": "^7.52.2",
-    "react-native-readium": "^2.0.0-rc.2",
+    "react-native-readium": "^2.0.2",
     "react-redux": "^9.1.2",
     "react-router": "^6.26.1",
     "redux": "^5.0.1",
