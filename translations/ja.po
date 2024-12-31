@@ -13,8 +13,6 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#. placeholder {0}: 5
-#. placeholder {0}: 11
 #: ../../client/src/dev/routes/ScreenLibrary.tsx:20
 #: ../../client/src/dev/routes/ScreenDesign.tsx:14
 msgid "{0} components"
@@ -53,11 +51,10 @@ msgstr "何でも聞いてください..."
 msgid "Auto"
 msgstr "自動"
 
-#: ../../client/src/app/interface/Menu.tsx:75
+#: ../../client/src/media/routes/ScreenBrowse.tsx:33
 msgid "Books"
 msgstr "本"
 
-#. placeholder {0}: data.metadata.author
 #: ../../client/src/media/file/FileBook.tsx:45
 msgid "by {0}"
 msgstr "著者：{0}"
@@ -133,9 +130,17 @@ msgstr "距離"
 msgid "Docs"
 msgstr "ドキュメント"
 
+#: ../../client/src/media/routes/ScreenBrowse.tsx:23
+msgid "Documents"
+msgstr "ドキュメント"
+
 #: ../../client/src/media/hooks/useMediaControls.ts:62
 #: ../../client/src/media/file/FileBinary.tsx:33
 msgid "Download"
+msgstr "ダウンロード"
+
+#: ../../client/src/media/routes/ScreenBrowse.tsx:35
+msgid "Downloads"
 msgstr "ダウンロード"
 
 #: ../../client/src/media/hooks/useMediaControls.ts:52
@@ -170,9 +175,7 @@ msgstr "抽出"
 msgid "Fahrenheit"
 msgstr "華氏"
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:15
-#: ../../client/src/app/interface/Tabs.tsx:24
-#: ../../client/src/app/interface/Menu.tsx:45
+#: ../../client/src/media/routes/ScreenBrowse.tsx:40
 msgid "Files"
 msgstr "ファイル"
 
@@ -180,7 +183,7 @@ msgstr "ファイル"
 msgid "Fullscreen"
 msgstr "全画面"
 
-#: ../../client/src/app/interface/Menu.tsx:70
+#: ../../client/src/media/routes/ScreenBrowse.tsx:31
 msgid "Games"
 msgstr "ゲーム"
 
@@ -279,7 +282,7 @@ msgstr "マイル"
 msgid "Movies"
 msgstr "映画"
 
-#: ../../client/src/app/interface/Menu.tsx:55
+#: ../../client/src/media/routes/ScreenBrowse.tsx:25
 msgid "Music"
 msgstr "音楽"
 
@@ -312,7 +315,7 @@ msgstr "オーナーキー"
 msgid "Pause"
 msgstr "一時停止"
 
-#: ../../client/src/app/interface/Menu.tsx:60
+#: ../../client/src/media/routes/ScreenBrowse.tsx:27
 msgid "Pictures"
 msgstr "写真"
 
@@ -419,9 +422,17 @@ msgstr "テーマ"
 msgid "Unsupported File"
 msgstr "サポートされていないファイル"
 
+#: ../../client/src/media/routes/ScreenBrowse.tsx:37
+msgid "Uploads"
+msgstr "アップロード"
+
 #: ../../client/src/app/routes/ScreenSettings.tsx:41
 msgid "User Name"
 msgstr "ユーザー名"
+
+#: ../../client/src/media/routes/ScreenBrowse.tsx:29
+msgid "Videos"
+msgstr "動画"
 
 #: ../../client/src/world/routes/ScreenWorld.tsx:18
 msgid "View your device locations and geo-related info"
@@ -439,7 +450,6 @@ msgstr "最新ニュースとRSSフィードを表示"
 msgid "Volume"
 msgstr "音量"
 
-#. placeholder {0}: profile.name
 #: ../../client/src/home/routes/ScreenHome.tsx:39
 msgid "Welcome, {0}"
 msgstr "ようこそ、{0}さん"
