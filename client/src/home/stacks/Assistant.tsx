@@ -1,11 +1,12 @@
-import {t} from '@lingui/macro';
-import {Icon} from 'react-exo/icon';
-import {Link} from 'react-exo/navigation';
-import {useLingui} from '@lingui/react';
+import {useLingui} from '@lingui/react/macro';
 import {useRef, useState, useMemo, memo} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {Text, View, TextInput, Pressable} from 'react-native';
 import {useAppContext} from 'app/hooks/useAppContext';
+
+import {Text, View, TextInput, Pressable} from 'react-native';
+import {Link} from 'react-exo/navigation';
+import {Icon} from 'react-exo/icon';
+
 import {Markdown} from 'app/stacks/Markdown';
 import {Spinner} from 'app/stacks/Spinner';
 import {formatDate} from 'home/utils/time';
@@ -17,10 +18,12 @@ export const Assistant = memo(() => {
   const [multiline, setMultiline] = useState(false);
   const {styles, theme} = useStyles(stylesheet);
   const {profile} = useAppContext();
-  const {i18n} = useLingui();
+  const {t} = useLingui();
+
   const input = useRef<TextInput>(null);
-  const apiKey = useMemo(() => profile?.groqKey || '', [profile]);
   const model = useMemo(() => profile?.groqModel || DEFAULT_MODEL, [profile]);
+  const apiKey = useMemo(() => profile?.groqKey || '', [profile]);
+
   const ai = useAI(input, model, apiKey);
 
   return (
@@ -47,7 +50,7 @@ export const Assistant = memo(() => {
             <TextInput
               ref={input}
               style={styles.input}
-              placeholder={apiKey ? t(i18n)`Ask anything...` : t(i18n)`Please set your Groq API Key`}
+              placeholder={apiKey ? t`Ask anything...` : t`Please set your Groq API Key`}
               placeholderTextColor={theme.colors.mutedForeground}
               onSubmitEditing={(e) => e.nativeEvent.text && ai.promptText(e.nativeEvent.text, multiline)}
               onKeyPress={(e) => ai.navigate(e, multiline ? () => setMultiline(false) : undefined)}

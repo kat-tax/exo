@@ -1,19 +1,23 @@
 import {useStyles} from 'react-native-unistyles';
-import {Trans} from '@lingui/macro';
+import {useLingui} from '@lingui/react/macro';
+
 import {Icon} from 'react-exo/icon';
 import {Switch} from 'react-exo/switch';
 import {Slider} from 'react-exo/slider';
 import {Checkbox} from 'react-exo/checkbox';
 import {Progress} from 'react-exo/progress';
+
 import {Page} from 'app/interface/Page';
 import {Frame} from 'dev/stacks/Frame';
 
 export default function ScreenHome() {
   const {theme} = useStyles();
+  const {t} = useLingui();
+
   return (
     <Page
-      title={<Trans>Library</Trans>}
-      message={<Trans>{`${5} components`}</Trans>}>
+      title={t`Library`}
+      message={t`${5} components`}>
       <Frame title="Icon">
         <Icon
           name="ph:cat"

@@ -36,7 +36,7 @@ export default defineConfig(env => mergeConfig(
       react({
         babel: {
           plugins: [
-            'macros',
+            '@lingui/babel-plugin-lingui-macro',
           ],
         },
       }),

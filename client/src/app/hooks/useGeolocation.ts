@@ -1,11 +1,11 @@
-import {t} from '@lingui/macro';
-import {toast} from 'react-exo/toast';
-import {useLingui} from '@lingui/react';
-import {useEffect, useState} from 'react';
 import Geolocation from '@react-native-community/geolocation';
 
+import {useEffect, useState} from 'react';
+import {useLingui} from '@lingui/react/macro';
+import {toast} from 'react-exo/toast';
+
 export function useGeolocation() {
-  const {i18n} = useLingui();
+  const {t} = useLingui();
   const [coords, setCoords] = useState<[number, number]>();
 
   useEffect(() => {
@@ -15,7 +15,7 @@ export function useGeolocation() {
         coords.longitude,
       ]),
       ({message}) => toast({
-        title: t(i18n)`Geolocation Error`,
+        title: t`Geolocation Error`,
         preset: 'error',
         message,
       }),
@@ -27,7 +27,7 @@ export function useGeolocation() {
       },
     );
     return () => Geolocation.clearWatch(id);
-  }, [i18n]);
+  }, [t]);
 
   return coords;
 }

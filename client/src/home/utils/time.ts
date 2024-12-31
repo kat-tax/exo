@@ -1,20 +1,4 @@
-import {msg} from '@lingui/macro';
 import type {Locales} from 'config/locales';
-
-export function getDayGreeting() {
-  switch (getTimeOfDay()) {
-    case 'morning':
-      return msg`Good morning`;
-    case 'afternoon':
-      return msg`Good afternoon`;
-    case 'evening':
-      return msg`Good evening`;
-    case 'night':
-      return msg`Enjoy the night`;
-    default:
-      return msg`Enjoy the day`;
-  }
-}
 
 export function getTimeOfDay() {
   const hour = new Date().getHours();

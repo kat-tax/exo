@@ -1,5 +1,5 @@
-import {Trans} from '@lingui/macro';
 import {View, Text} from 'react-native';
+import {useLingui} from '@lingui/react/macro';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useDateRange, toDateId, Calendar} from 'react-exo/calendar';
 import {useCalendarTheme} from 'world/hooks/useCalendarTheme';
@@ -11,11 +11,13 @@ import {CalendarEvent} from '../stacks/CalendarEvent';
 const today = toDateId(new Date());
 
 export default function ScreenCalendar() {
-  const {styles} = useStyles(stylesheet);
   const calendarTheme = useCalendarTheme();
+  const dateRange = useDateRange();
+  const {styles} = useStyles(stylesheet);
   const [locale] = useLocale();
-  const range = useDateRange();
-  const hasEvent = false;
+  const {t} = useLingui();
+
+  const showDebugEvent = false;
 
   return (
     <Page fullWidth margin="none">
@@ -25,16 +27,16 @@ export default function ScreenCalendar() {
             theme={calendarTheme}
             calendarFormatLocale={locale}
             calendarInitialMonthId={today}
-            calendarActiveDateRanges={range.calendarActiveDateRanges}
-            onCalendarDayPress={range.onCalendarDayPress}
+            calendarActiveDateRanges={dateRange.calendarActiveDateRanges}
+            onCalendarDayPress={dateRange.onCalendarDayPress}
           />
         </View>
         <View style={styles.panel}>
-          {hasEvent
+          {showDebugEvent
             ? <CalendarEvent/>
             : <View style={styles.empty}>
                 <Text style={styles.emptyText}>
-                  <Trans>No events scheduled.</Trans>
+                  {t`No events scheduled.`}
                 </Text>
               </View>
           }

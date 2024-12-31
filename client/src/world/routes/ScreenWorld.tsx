@@ -1,5 +1,4 @@
-import {t} from '@lingui/macro';
-import {useLingui} from '@lingui/react';
+import {useLingui} from '@lingui/react/macro';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {Link} from 'react-exo/navigation';
 import {View} from 'react-native';
@@ -7,7 +6,7 @@ import {Page} from 'app/interface/Page';
 import {Panel} from 'design';
 
 export default function ScreenWorld() {
-  const {i18n} = useLingui();
+  const {t} = useLingui();
   const {styles} = useStyles(stylesheet);
 
   return (
@@ -15,20 +14,20 @@ export default function ScreenWorld() {
       <View style={styles.root}>
         <Link to="/map">
           <Panel
-            header={t(i18n)`Map`}
-            message={t(i18n)`View your device locations and geo-related info`}
+            header={t`Map`}
+            message={t`View your device locations and geo-related info`}
           />
         </Link>
         <Link to="/news">
           <Panel
-            header={t(i18n)`News`}
-            message={t(i18n)`View your latest news and rss feeds`}
+            header={t`News`}
+            message={t`View your latest news and rss feeds`}
           />
         </Link>
         <Link to="/calendar">
           <Panel
-            header={t(i18n)`Calendar`}
-            message={t(i18n)`View your events and time-related info`}
+            header={t`Calendar`}
+            message={t`View your events and time-related info`}
           />
         </Link>
       </View>

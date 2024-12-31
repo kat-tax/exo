@@ -1,7 +1,6 @@
-import {t} from '@lingui/macro';
 import {Book} from 'react-exo/book';
 
-import {useLingui} from '@lingui/react';
+import {useLingui} from '@lingui/react/macro';
 import {useEffect, useState, useCallback, forwardRef} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useFileData} from 'media/hooks/useFileData';
@@ -11,6 +10,8 @@ import {View, Platform} from 'react-native';
 import type {FileProps} from 'media/file';
 import type {BookRef} from 'react-exo/book';
 
+const EPUB_URL = 'https://alice.dita.digital/manifest.json'; // TODO
+
 export interface FileBook extends FileProps {
   name: string,
   maximized: boolean,
@@ -19,13 +20,13 @@ export interface FileBook extends FileProps {
 
 export type {BookRef};
 
-export default forwardRef((props: FileBook, ref: React.Ref<BookRef>) => {
-  const EPUB_URL = 'https://alice.dita.digital/manifest.json'; // Sample for web
+export default forwardRef((props: FileBook, ref: React.Ref<BookRef>) => {  
   const [title, setTitle] = useState('');
   const [chapter, setChapter] = useState('');
   const {styles} = useStyles(stylesheet);
   const [scheme] = useScheme();
-  const {i18n} = useLingui();
+  const {t} = useLingui();
+
   const epub = useFileData(props.path, 'dataUrl', 'application/epub+zip');
 
   // Workaround: send resize event to force render
@@ -41,10 +42,10 @@ export default forwardRef((props: FileBook, ref: React.Ref<BookRef>) => {
       .then((res) => res.json())
       .then((data) => {
         setTitle(data.metadata.title || props.name);
-        setChapter(t(i18n)`by ${data.metadata.author}`);
+        setChapter(t`by ${data.metadata.author}`);
       })
       .catch(() => setTitle(props.name));
-  }, [props.name, i18n]);
+  }, [props.name, t]);
 
   // Update the title bar when the book title or chapter changes
   useEffect(() => {

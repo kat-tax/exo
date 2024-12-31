@@ -1,5 +1,4 @@
-import {Trans, t} from '@lingui/macro';
-import {useLingui} from '@lingui/react';
+import {useLingui} from '@lingui/react/macro';
 import {useState, useEffect} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {getDiskSpace} from 'react-exo/fs';
@@ -12,7 +11,7 @@ import {bytesize} from 'app/utils/formatting';
 export default function ScreenStorage() {
   const [storage, setStorage] = useState<{msg: string, val: number}>();
   const {styles} = useStyles(stylesheet);
-  const {i18n} = useLingui();
+  const {t} = useLingui();
 
   useEffect(() => {
     getDiskSpace().then(e => setStorage({
@@ -23,13 +22,13 @@ export default function ScreenStorage() {
 
   return (
     <Page
-      title={<Trans>Storage</Trans>}
-      message={<Trans>Manage your storage</Trans>}>
+      title={t`Storage`}
+      message={t`Manage your storage`}>
       <View style={styles.root}>
-        <PageSection title={t(i18n)`Overview`}>
+        <PageSection title={t`Overview`}>
           <PageItem
-            label={t(i18n)`Device Space`}
-            description={t(i18n)`Storage used and available on this device.`}>
+            label={t`Device Space`}
+            description={t`Storage used and available on this device.`}>
             <Text style={styles.text}>
               {storage?.msg ?? '0GB / 0GB'}
             </Text>

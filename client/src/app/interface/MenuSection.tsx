@@ -6,7 +6,7 @@ import {isTouch} from 'app/utils/platform';
 import {useScheme} from 'app/hooks/useScheme';
 
 interface MenuSectionProps extends React.PropsWithChildren {
-  label: JSX.Element,
+  label: string,
   closed?: boolean,
   disabled?: boolean,
   action?: {

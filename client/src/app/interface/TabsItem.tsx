@@ -4,9 +4,9 @@ import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useLocation, Link} from 'react-exo/navigation';
 
 interface TabsItemProps extends React.PropsWithChildren {
-  label: JSX.Element,
   path: string,
   icon: string,
+  label: string,
 }
 
 export function TabsItem(props: TabsItemProps) {

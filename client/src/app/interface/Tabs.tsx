@@ -1,36 +1,37 @@
 import {View} from 'react-native';
-import {Trans} from '@lingui/macro';
+import {useLingui} from '@lingui/react/macro';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 
 import {TabsItem} from './TabsItem';
 
 export function Tabs() {
   const {styles} = useStyles(stylesheet);
+  const {t} = useLingui();
 
   return (
     <View style={styles.root}>
       <TabsItem
-        label={<Trans>Dashboard</Trans>}
+        label={t`Dashboard`}
         icon="ph:squares-four"
         path="/"
       />
       <TabsItem
-        label={<Trans>Inbox</Trans>}
+        label={t`Inbox`}
         icon="ph:tray"
         path="/inbox"
       />
       <TabsItem
-        label={<Trans>Files</Trans>}
+        label={t`Files`}
         icon="ph:folder"
         path="/browse"
       />
       <TabsItem
-        label={<Trans>World</Trans>}
+        label={t`World`}
         icon="ph:globe"
         path="/world"
       />
       <TabsItem
-        label={<Trans>Settings</Trans>}
+        label={t`Settings`}
         icon="ph:gear"
         path="/settings"
       />

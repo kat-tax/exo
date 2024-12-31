@@ -1,8 +1,7 @@
-import {t} from '@lingui/macro';
 import {toast} from 'react-exo/toast';
 import {generateText} from 'ai';
 import {createOpenAI} from '@ai-sdk/openai';
-import {useLingui} from '@lingui/react';
+import {useLingui} from '@lingui/react/macro';
 import {useEvolu, cast} from '@evolu/react-native';
 import {useState, useMemo, useCallback} from 'react';
 import {usePrompt, usePrompts} from 'app/data';
@@ -16,11 +15,13 @@ export function useAI(
   model: string,
   apiKey: string,
 ) {
-  const {i18n} = useLingui();
+  const {t} = useLingui();
   const {create} = useEvolu();
-  const [index, setIndex] = useState<number | null>(null);
-  const [dirty, setDirty] = useState(false);
+
   const [loading, setLoading] = useState(false);
+  const [dirty, setDirty] = useState(false);
+  const [index, setIndex] = useState<number | null>(null);
+
   const prompts = usePrompts();
   const prompt = usePrompt(prompts[Math.abs((prompts.length - (index ?? 1)) % prompts.length)]?.id);
   const groq = useMemo(() => createOpenAI({baseURL, apiKey}), [apiKey]);
@@ -40,13 +41,13 @@ export function useAI(
       } catch (e) {
         toast({
           preset: 'error',
-          title: t(i18n)`Groq Failure`,
+          title: t`Groq Failure`,
           message: (e as Error).message,
         });
       }
     }
     setLoading(false);
-  }, [model, groq, create, i18n]);
+  }, [model, groq, create, t]);
 
   const navigate = useCallback((
     e: NativeSyntheticEvent<TextInputKeyPressEventData>,
@@ -82,10 +83,10 @@ export function useAI(
   }, [index, prompts, input]);
 
   return {
-    loading,
-    promptText,
     dirty,
+    loading,
     navigate,
+    promptText,
     response: prompt,
     archive: prompt && index !== null,
   };

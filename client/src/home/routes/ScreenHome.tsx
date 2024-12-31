@@ -1,26 +1,43 @@
-import {Trans} from '@lingui/react';
-import {Trans as T} from '@lingui/macro';
-import {Text, View} from 'react-native';
+import {useMemo} from 'react';
+import {useLingui} from '@lingui/react/macro';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useAppContext} from 'app/hooks/useAppContext';
 import {useWeather} from 'home/hooks/useWeather';
 import {useClock} from 'home/hooks/useClock';
-import {getDayGreeting} from 'home/utils/time';
-import {Assistant} from 'home/stacks/Assistant';
+
+import {Text, View} from 'react-native';
 import {Page} from 'app/interface/Page';
+import {Assistant} from 'home/stacks/Assistant';
+import {getTimeOfDay} from 'home/utils/time';
 
 export default function ScreenHome() {
   const {device, profile} = useAppContext();
   const {styles} = useStyles(stylesheet);
   const weather = useWeather(device?.coords);
   const clock = useClock();
+  const {t} = useLingui();
+
+  const greeting = useMemo(() => {
+    switch (getTimeOfDay()) {
+      case 'morning':
+        return t`Good morning`;
+      case 'afternoon':
+        return t`Good afternoon`;
+      case 'evening':
+        return t`Good evening`;
+      case 'night':
+        return t`Enjoy the night`;
+      default:
+        return t`Enjoy the day`;
+    }
+  }, [t]);
 
   return (
     <Page
-      title={<Trans id={getDayGreeting().id}/>}
+      title={greeting}
       message={profile?.name
-        ? <T>{`Welcome, ${profile.name}`}</T>
-        : <T>{'Welcome, Human'}</T>
+        ? t`Welcome, ${profile.name}`
+        : t`Welcome, Human`
       }
       widget={
         <View style={styles.widget}>

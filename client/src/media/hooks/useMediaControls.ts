@@ -1,5 +1,4 @@
-import {t} from '@lingui/macro';
-import {useLingui} from '@lingui/react';
+import {useLingui} from '@lingui/react/macro';
 import {useMemo, useState, useEffect} from 'react';
 import {share} from 'react-exo/device';
 import {web} from 'react-exo/fs';
@@ -35,7 +34,7 @@ export function useMediaControls(props: MediaControlsProps): MediaControl[] {
   const {file, renderer, metadata, close, open} = props;
   const [pinning, setPinning] = useState(false);
   const [pinned, setPinned] = useState<string>();
-  const {i18n} = useLingui();
+  const {t} = useLingui();
 
   useEffect(() => {
     if (metadata.path) {
@@ -50,7 +49,7 @@ export function useMediaControls(props: MediaControlsProps): MediaControl[] {
       {
         name: 'edit',
         icon: 'ph:pencil-simple',
-        label: t(i18n)`Edit`,
+        label: t`Edit`,
         media: EDITABLE,
         action: () => {
           console.log('Edit', metadata.path);
@@ -60,7 +59,7 @@ export function useMediaControls(props: MediaControlsProps): MediaControl[] {
       {
         name: 'download',
         icon: 'ph:download',
-        label: t(i18n)`Download`,
+        label: t`Download`,
         media: DOWNLOADABLE,
         action: () => {
           console.log('Download', metadata.path);
@@ -70,7 +69,7 @@ export function useMediaControls(props: MediaControlsProps): MediaControl[] {
       {
         name: 'extract',
         icon: 'ph:box-arrow-down',
-        label: t(i18n)`Extract`,
+        label: t`Extract`,
         media: EXTRACTABLE,
         action: () => {
           console.log('Extract', metadata.path);
@@ -80,7 +79,7 @@ export function useMediaControls(props: MediaControlsProps): MediaControl[] {
       {
         name: 'search',
         icon: 'ph:magnifying-glass',
-        label: t(i18n)`Search`,
+        label: t`Search`,
         media: SEARCHABLE,
         action: () => {
           console.log('Search', metadata.path);
@@ -90,7 +89,7 @@ export function useMediaControls(props: MediaControlsProps): MediaControl[] {
       {
         name: 'zoom-in',
         icon: 'ph:plus',
-        label: t(i18n)`Zoom in`,
+        label: t`Zoom in`,
         media: ZOOMABLE,
         action: () => {
           if (file?.current && 'increase' in file.current) {
@@ -101,7 +100,7 @@ export function useMediaControls(props: MediaControlsProps): MediaControl[] {
       {
         name: 'zoom-out',
         icon: 'ph:minus',
-        label: t(i18n)`Zoom out`,
+        label: t`Zoom out`,
         media: ZOOMABLE,
         action: () => {
           if (file?.current && 'decrease' in file.current) {
@@ -113,8 +112,8 @@ export function useMediaControls(props: MediaControlsProps): MediaControl[] {
       {
         name: 'play',
         label: metadata.playing
-          ? t(i18n)`Pause`
-          : t(i18n)`Play`,
+          ? t`Pause`
+          : t`Play`,
         icon: metadata.playing
           ? 'ph:pause'
           : 'ph:play',
@@ -133,7 +132,7 @@ export function useMediaControls(props: MediaControlsProps): MediaControl[] {
       {
         name: 'skip-backward',
         icon: 'ph:skip-back',
-        label: t(i18n)`Skip backward`,
+        label: t`Skip backward`,
         media: SKIPABLE,
         action: () => {
           console.log('Skip backward', metadata.path);
@@ -142,7 +141,7 @@ export function useMediaControls(props: MediaControlsProps): MediaControl[] {
       {
         name: 'skip-forward',
         icon: 'ph:skip-forward',
-        label: t(i18n)`Skip forward`,
+        label: t`Skip forward`,
         media: SKIPABLE,
         action: () => {
           console.log('Skip forward', metadata.path);
@@ -152,7 +151,7 @@ export function useMediaControls(props: MediaControlsProps): MediaControl[] {
       {
         name: 'replay',
         icon: 'ph:arrow-counter-clockwise',
-        label: t(i18n)`Replay`,
+        label: t`Replay`,
         media: LOOPABLE,
         action: () => {
           if (file?.current && 'reset' in file.current) {
@@ -164,7 +163,7 @@ export function useMediaControls(props: MediaControlsProps): MediaControl[] {
       {
         name: 'prev',
         icon: 'ph:arrow-left',
-        label: t(i18n)`Previous`,
+        label: t`Previous`,
         media: PAGEABLE,
         action: () => {
           if (file?.current && 'prevPage' in file.current) {
@@ -175,7 +174,7 @@ export function useMediaControls(props: MediaControlsProps): MediaControl[] {
       {
         name: 'next',
         icon: 'ph:arrow-right',
-        label: t(i18n)`Next`,
+        label: t`Next`,
         media: PAGEABLE,
         action: () => {
           if (file?.current && 'nextPage' in file.current) {
@@ -199,7 +198,7 @@ export function useMediaControls(props: MediaControlsProps): MediaControl[] {
               ? 'ph:speaker-high'
               : 'ph:speaker-low'
             : 'ph:speaker-none',
-        label: t(i18n)`Volume`,
+        label: t`Volume`,
         media: AUDIBLE,
         action: () => {
           console.log('Volume', metadata.path);
@@ -208,7 +207,7 @@ export function useMediaControls(props: MediaControlsProps): MediaControl[] {
       {
         name: 'options',
         icon: 'ph:gear-six',
-        label: t(i18n)`Options`,
+        label: t`Options`,
         media: CONFIGURABLE,
         action: () => {},
       },
@@ -219,7 +218,7 @@ export function useMediaControls(props: MediaControlsProps): MediaControl[] {
           : pinned
             ? 'ph:push-pin'
             : 'ph:push-pin-slash',
-        label: t(i18n)`Pin`,
+        label: t`Pin`,
         filter: () => false,
         action: async () => {
           setPinning(true);
@@ -233,7 +232,7 @@ export function useMediaControls(props: MediaControlsProps): MediaControl[] {
       {
         name: 'share',
         icon: 'ph:share-network',
-        label: t(i18n)`Share`,
+        label: t`Share`,
         filter: () => false,
         action: async () => {
           const url = pinned;
@@ -253,18 +252,18 @@ export function useMediaControls(props: MediaControlsProps): MediaControl[] {
       {
         name: 'fullscreen',
         icon: 'ph:arrows-out',
-        label: t(i18n)`Fullscreen`,
+        label: t`Fullscreen`,
         action: () => {},
       },
       {
         name: 'close',
         icon: 'ph:x',
-        label: t(i18n)`Close`,
+        label: t`Close`,
         filter: () => false,
         action: close,
       },
     ]
     .filter((e) => (!e.media || e.media?.includes(renderer[0])))
     .filter((e) => !e.filter || e.filter())
-  , [file, renderer, metadata, i18n, open, close, pinning, pinned]);
+  , [file, renderer, metadata, pinning, pinned, open, close, t]);
 }

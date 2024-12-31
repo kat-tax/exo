@@ -1,4 +1,4 @@
-import {Trans} from '@lingui/macro';
+import {useLingui} from '@lingui/react/macro';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {View, Text} from 'react-native';
 import {Lottie} from 'react-exo/lottie';
@@ -6,12 +6,13 @@ import {Page} from 'app/interface/Page';
 
 export default function ScreenTeaser() {
   const {styles} = useStyles(stylesheet);
+  const {t} = useLingui();
 
   return (
     <Page>
       <View style={styles.root}>
         <Text style={styles.text}>
-          <Trans>Work in progress...</Trans>
+          {t`Work in progress...`}
         </Text>
         <Lottie
           loop

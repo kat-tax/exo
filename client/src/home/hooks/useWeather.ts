@@ -1,5 +1,4 @@
-import {t} from '@lingui/macro';
-import {useLingui} from '@lingui/react';
+import {useLingui} from '@lingui/react/macro';
 import {useEffect, useState, useMemo} from 'react';
 import {getCurrentWeather} from 'home/utils/weather';
 
@@ -7,9 +6,9 @@ import type {Coords} from 'app/data';
 import type {Weather} from 'home/utils/weather';
 
 export function useWeather(coords?: Coords | null) {
-  const {i18n} = useLingui();
+  const {t} = useLingui();
   const [data, setData] = useState<Weather | null>(null);
-  const [text, setText] = useState(t(i18n)`Loading...`);
+  const [text, setText] = useState(t`Loading...`);
 
   // Update when location changes
   useEffect(() => {

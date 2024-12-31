@@ -1,6 +1,5 @@
-import {t} from '@lingui/macro';
-import {useLingui} from '@lingui/react';
 import {useEffect, forwardRef} from 'react';
+import {useLingui} from '@lingui/react/macro';
 import {useFileData} from 'media/hooks/useFileData';
 import {Watermark} from 'media/stacks/Watermark';
 
@@ -12,7 +11,7 @@ export interface FileBinary extends FileProps {
 }
 
 export default forwardRef((props: FileBinary) => {
-  const {i18n} = useLingui();
+  const {t} = useLingui();
   const binary = useFileData(props.path, 'dataUrl');
 
   const saveFile = async (uri: string) => {
@@ -25,13 +24,13 @@ export default forwardRef((props: FileBinary) => {
   // Update file player bar info
   useEffect(() => {
     if (!binary) return;
-    props.setBarInfo(t(i18n)`Unsupported File`);
-  }, [binary, i18n, props.setBarInfo]);
+    props.setBarInfo(t`Unsupported File`);
+  }, [binary, props.setBarInfo, t]);
 
   return (
     <Watermark
       title={props.name}
-      label={t(i18n)`Download`}
+      label={t`Download`}
       icon="ph:download"
       onAction={() => binary && saveFile(binary)}
     />

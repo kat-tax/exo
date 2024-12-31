@@ -1,4 +1,4 @@
-import {Trans} from '@lingui/macro';
+import {useLingui} from '@lingui/react/macro';
 import {View} from 'react-native';
 import {Icon} from 'react-exo/icon';
 import {Page} from 'app/interface/Page';
@@ -6,10 +6,12 @@ import {Frame} from 'dev/stacks/Frame';
 import * as Design from 'design';
 
 export default function ScreenDesign() {
+  const {t} = useLingui();
+
   return (
     <Page
-      title={<Trans>Design</Trans>}
-      message={<Trans>{`${11} components`}</Trans>}>
+      title={t`Design`}
+      message={t`${11} components`}>
       <Frame title="Button">
         <Design.Button
           mode="Primary"
@@ -33,9 +35,10 @@ export default function ScreenDesign() {
         />
       </Frame>
       <Frame title="Badge">
-        <Design.Badge label="Default"
+        <Design.Badge
           mode="Default"
           state="Default"
+          label="Default"
           showLabel={true}
         />
         <Design.Badge

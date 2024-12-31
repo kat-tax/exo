@@ -1,8 +1,8 @@
-import {Trans} from '@lingui/macro';
 import {View, ScrollView} from 'react-native';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {StorageWidget} from 'media/stacks/StorageWidget';
+import {useLingui} from '@lingui/react/macro';
 import {useImporter} from 'media/hooks/useImporter';
+import {StorageWidget} from 'media/stacks/StorageWidget';
 
 import {MenuItem} from './MenuItem';
 import {MenuHeader} from './MenuHeader';
@@ -17,6 +17,7 @@ export interface MenuProps {
 export function Menu(props: MenuProps) {
   const {importFile} = useImporter();
   const {styles} = useStyles(stylesheet);
+  const {t} = useLingui();
 
   return (
     <View style={styles.bg}>
@@ -24,78 +25,78 @@ export function Menu(props: MenuProps) {
         <View style={styles.root}>
           <MenuHeader {...props}/>
           <MenuItem
-            label={<Trans>Dashboard</Trans>}
+            label={t`Dashboard`}
             icon="ph:squares-four"
             path="/"
           />
           <MenuItem
-            label={<Trans>Inbox</Trans>}
+            label={t`Inbox`}
             icon="ph:tray"
             path="/inbox"
           />
           <MenuSection
-            label={<Trans>Media</Trans>}
+            label={t`Media`}
             action={{
-              label: 'Import Files',
+              label: t`Import Files`,
               icon: 'ph:upload',
               onPress: importFile,
             }}>
             <MenuItem
-              label={<Trans>Files</Trans>}
+              label={t`Files`}
               icon="ph:folder"
               path="/browse"
             />
             <MenuItem
-              label={<Trans>Docs</Trans>}
+              label={t`Docs`}
               icon="ph:file-text"
               path="/browse/documents"
             />
             <MenuItem
-              label={<Trans>Music</Trans>}
+              label={t`Music`}
               icon="ph:music-notes"
               path="/browse/music"
             />
             <MenuItem
-              label={<Trans>Pictures</Trans>}
+              label={t`Pictures`}
               icon="ph:image"
               path="/browse/pictures"
             />
             <MenuItem
-              label={<Trans>Movies</Trans>}
+              label={t`Movies`}
               icon="ph:video"
               path="/browse/videos"
             />
             <MenuItem
-              label={<Trans>Games</Trans>}
+              label={t`Games`}
               icon="ph:game-controller"
               path="/browse/games"
             />
             <MenuItem
-              label={<Trans>Books</Trans>}
+              label={t`Books`}
               icon="ph:book-open-text"
               path="/browse/books"
             />
           </MenuSection>
-          <MenuSection label={<Trans>World</Trans>}>
+          <MenuSection label={t`World`}>
             <MenuItem
-              label={<Trans>Map</Trans>}
+              label={t`Map`}
               icon="ph:map-trifold"
               path="/map"
             />
             <MenuItem
-              label={<Trans>News</Trans>}
+              label={t`News`}
               icon="ph:rss"
               path="/news"
             />
             <MenuItem
-              label={<Trans>Calendar</Trans>}
+              label={t`Calendar`}
               icon="ph:calendar-dots"
               path="/calendar"
             />
           </MenuSection>
-          <MenuSection label={<Trans>Social</Trans>}>
+          <MenuSection label={t`Social`}>
             <MenuItem
-              label={<Trans>Live</Trans>}
+              label={t`Live`}
               icon="ph:video"
               path="/live"
             />
@@ -113,14 +114,14 @@ export function Menu(props: MenuProps) {
             )}
           </MenuSection> */}
           {__DEV__ &&
-            <MenuSection label={<Trans>Dev Mode</Trans>} closed>
+            <MenuSection label={t`Dev Mode`} closed>
               <MenuItem
-                label={<Trans>Design</Trans>}
+                label={t`Design`}
                 icon="ph:palette"
                 path="/design"
               />
               <MenuItem
-                label={<Trans>Library</Trans>}
+                label={t`Library`}
                 icon="ph:package"
                 path="/library"
               />
@@ -131,13 +132,13 @@ export function Menu(props: MenuProps) {
             <StorageWidget actions={
               <View style={styles.actions}>
                 <MenuItem
-                  label={<Trans>Storage</Trans>}
+                  label={t`Storage`}
                   icon="ph:hard-drives"
                   path="/storage"
                   mode="action"
                 />
                 <MenuItem
-                  label={<Trans>Settings</Trans>}
+                  label={t`Settings`}
                   icon="ph:gear"
                   path="/settings"
                   mode="action"

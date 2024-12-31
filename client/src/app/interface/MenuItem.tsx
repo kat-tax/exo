@@ -5,8 +5,8 @@ import {useLocation, Link} from 'react-exo/navigation';
 import {isTouch} from 'app/utils/platform';
 
 interface MenuItemProps extends React.PropsWithChildren {
-  label: JSX.Element,
   path: string,
+  label: string,
   icon?: string,
   color?: string,
   mode?: 'default' | 'subitem' | 'action',
