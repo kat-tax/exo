@@ -227,7 +227,7 @@ msgstr "파일 가져오기"
 #: ../../client/src/app/interface/Tabs.tsx:19
 #: ../../client/src/app/interface/Menu.tsx:33
 msgid "Inbox"
-msgstr "받은편지함"
+msgstr "알림"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:131
 msgid "Kilometers"
