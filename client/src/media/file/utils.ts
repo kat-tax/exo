@@ -132,6 +132,9 @@ export function getRenderInfo(
     case 'wma':
     case 'aiff':
       return [FileType.Audio, {}];
+    // Maps
+    case 'geojson':
+      return [FileType.Map, {}];
     // Documents
     case 'pdf':
       return [FileType.Pdf, {}];
