@@ -1,4 +1,11 @@
-import ext from './icon-manifest.json';
+let _manifest: Promise<typeof import('./icon-manifest.json')> | null = null;
+
+async function getManifest() {
+  if (!_manifest) {
+    _manifest = import('./icon-manifest.json');
+  }
+  return (await _manifest);
+}
 
 export function importFont(name: string) {
   switch (name) {
@@ -15,7 +22,8 @@ export function importFont(name: string) {
   }
 }
 
-export function injectStyles() {
+export async function injectStyles() {
+  const ext = await getManifest();
   const rules: string = ext.fonts.map((font) => {
     return `
       @font-face {
@@ -29,14 +37,14 @@ export function injectStyles() {
   }).join('\n');
 
   const classes: string = Object.keys(ext.iconDefinitions).map((key: string) => {
-    const icon = ext.iconDefinitions[key];
+    const icon = ext.iconDefinitions[key as keyof typeof ext.iconDefinitions];
     return `
       .icon.icon${key}::before {
         font-family: ${icon.fontId || 'inherit'};
-        font-weight: ${icon.fontWeight || 'inherit'};
-        font-size: ${icon.fontSize || 'inherit'};
+        font-weight: ${'fontWeight' in icon ? icon.fontWeight : 'inherit'};
+        font-size: ${'fontSize' in icon ? icon.fontSize : 'inherit'};
         content: "${icon.fontCharacter}";
-        color: ${icon.fontColor || 'inherit'};
+        color: ${'fontColor' in icon ? icon.fontColor : 'inherit'};
       }
     `;
   }).join('\n');
@@ -46,49 +54,47 @@ export function injectStyles() {
   document.head.appendChild(style);
 }
 
-export function getIconClass(
+export async function getIconClass(
   fileName: string,
   fileExtension: string,
   language: string,
   theme: 'light' | 'dark',
 ) {
-
+  const ext = await getManifest();
   // Default icons
   const defaultFileIcon = ext.file;
 
   // File icons (based on name)
-  if (fileName && ext.fileNames[fileName]) {
-    if (theme === 'light' && ext.light.fileNames[fileName])
-      return ext.light.fileNames[fileName];
-    if (ext.fileNames[fileName])
-      return ext.fileNames[fileName];
+  if (fileName && ext.fileNames[fileName as keyof typeof ext.fileNames]) {
+    if (theme === 'light' && ext.light.fileNames[fileName as keyof typeof ext.light.fileNames])
+      return ext.light.fileNames[fileName as keyof typeof ext.light.fileNames];
+    if (ext.fileNames[fileName as keyof typeof ext.fileNames])
+      return ext.fileNames[fileName as keyof typeof ext.fileNames];
   }
 
   // File icons (based on language)
-  if (ext.languageIds[language]) {
-    if (theme === 'light' && ext.light.languageIds[language])
-      return ext.light.languageIds[language];
-    if (ext.languageIds[language])
-      return ext.languageIds[language];
+  if (ext.languageIds[language as keyof typeof ext.languageIds]) {
+    if (ext.languageIds[language as keyof typeof ext.languageIds])
+      return ext.languageIds[language as keyof typeof ext.languageIds];
   }
 
   // File icons (based on extension)
-  if (fileExtension && ext.fileExtensions[fileExtension]) {
-    if (theme === 'light' && ext.light.fileExtensions[fileExtension])
-      return ext.light.fileExtensions[fileExtension];
-    if (ext.fileExtensions[fileExtension])
-      return ext.fileExtensions[fileExtension];
+  if (fileExtension && ext.fileExtensions[fileExtension as keyof typeof ext.fileExtensions]) {
+    if (theme === 'light' && ext.light.fileExtensions[fileExtension as keyof typeof ext.light.fileExtensions])
+      return ext.light.fileExtensions[fileExtension as keyof typeof ext.light.fileExtensions];
+    if (ext.fileExtensions[fileExtension as keyof typeof ext.fileExtensions])
+      return ext.fileExtensions[fileExtension as keyof typeof ext.fileExtensions];
   }
 
   return defaultFileIcon;
 }
 
-export function getIcon(
+export async function getIcon(
   fileName: string,
   fileExtension: string,
   language: string,
   theme: 'light' | 'dark',
 ) {
-  const icon = getIconClass(fileName, fileExtension, language, theme);
+  const icon = await getIconClass(fileName, fileExtension, language, theme);
   return `icon icon${icon}`;
 }

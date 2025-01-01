@@ -1,5 +1,7 @@
-import {View} from 'react-native';
 import {Icon} from 'react-exo/icon';
+import {View} from 'react-native';
+
+import {useEffect, useState} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useScheme} from 'app/hooks/useScheme';
 import {getIcon} from 'media/file/icons';
@@ -8,30 +10,33 @@ interface ListRowIcon {
   path: string,
   name: string,
   extension: string,
-  size?: 0 | 1 | 2,
   isFile?: boolean,
+  size?: 0 | 1 | 2,
 }
 
 export function ListRowIcon(props: ListRowIcon) {
+  const [icon, setIcon] = useState<string | null>(null);
   const {styles, theme} = useStyles(stylesheet);
   const [scheme] = useScheme();
-  const size = props.size === 0
+
+  const iconScheme = scheme === 'light' ? 'light' : 'dark';
+  const iconSize = props.size === 0
     ? 14
     : props.size === 2
       ? 24
       : 16;
+
+  useEffect(() => {
+    getIcon(props.name, props.extension, '', iconScheme).then(setIcon);
+  }, [props.name, props.extension, iconScheme]);
+
   return (
-    <View style={[styles.root, {width: size}]}>
+    <View style={[styles.root, {width: iconSize}]}>
       {props.isFile ? (
         <span
-          className={getIcon(
-            props.name,
-            props.extension,
-            '',
-            scheme as 'light' | 'dark',
-          )}
+          className={icon ?? ''}
           style={{
-            fontSize: size,
+            fontSize: iconSize,
             color: theme.colors.foreground,
           }}
         />
@@ -39,7 +44,7 @@ export function ListRowIcon(props: ListRowIcon) {
         <Icon
           name="ph:folder-simple-fill"
           color={theme.colors.foreground}
-          size={size * 1.15}
+          size={iconSize * 1.15}
         />
       )}
     </View>
