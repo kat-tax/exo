@@ -10,7 +10,7 @@
     "synchronousWatchDirectory": true,
   },
   // Icons
-  "material-icon-theme.saturation": 0.4,
+  "material-icon-theme.saturation": 0.6,
   "material-icon-theme.activeIconPack": "react_redux",
   "material-icon-theme.folders.associations": {
     // General
