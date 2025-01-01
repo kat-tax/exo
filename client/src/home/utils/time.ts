@@ -1,5 +1,14 @@
 import type {Locales} from 'config/locales';
 
+export function getCurrentTime(
+  language?: Locales,
+  timeStyle: 'short' | 'medium' | 'long' = 'medium',
+) {
+  return new Date().toLocaleTimeString(language, {
+    timeStyle,
+  });
+}
+
 export function getTimeOfDay() {
   const hour = new Date().getHours();
   if (hour >= 4 && hour <= 11)
@@ -11,17 +20,6 @@ export function getTimeOfDay() {
   if (hour >= 21 || hour <= 3)
     return 'night';
   return 'unknown';
-}
-
-export function getCurrentTime(
-  language?: Locales,
-  timeStyle: 'short' | 'medium' | 'long' = 'medium',
-) {
-  return new Date().toLocaleTimeString(language, {timeStyle});
-}
-
-export function getCurrentDate() {
-  return new Date().toLocaleDateString();
 }
 
 export function formatDate(date: Date) {
