@@ -116,13 +116,12 @@ export const Assistant = memo(() => {
 
 const stylesheet = createStyleSheet(theme => ({
   prompt: {
-    flex: 1,
     alignItems: 'center',
     gap: theme.display.space5,
   },
   response: {
     alignItems: 'center',
-    marginTop: theme.display.space7,
+    marginTop: theme.display.space4,
     gap: theme.display.space5,
   },
   input: {

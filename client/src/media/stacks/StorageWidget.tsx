@@ -14,11 +14,19 @@ export function StorageWidget(props: StorageWidgetProps) {
   const {styles, theme} = useStyles(stylesheet);
 
   useEffect(() => {
-    getDiskSpace().then(e => setStorage({
-      msg: `${bytesize(e.used)} / ${bytesize(e.total)}`,
-      val: (e.used / e.total) * 100,
-    }));
-  });
+    const updateStorage = () => {
+      getDiskSpace().then(e => {
+        setStorage(prev => {
+          const val = (e.used / e.total) * 100;
+          if (prev?.val === val) return prev;
+          return {val, msg: `${bytesize(e.used)} / ${bytesize(e.total)}`};
+        });
+      });
+    };
+    updateStorage();
+    const i = setInterval(updateStorage, 1000);
+    return () => clearInterval(i);
+  }, []);
 
   return (
     <View style={styles.root}>
