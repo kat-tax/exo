@@ -62,7 +62,7 @@ export function Menu(props: MenuProps) {
               path="/browse/pictures"
             />
             <MenuItem
-              label={t`Movies`}
+              label={t`Videos`}
               icon="ph:video"
               path="/browse/videos"
             />
