@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react';
 import {RectGroup} from 'app/interface/RectGroup';
-import {Stream} from 'live/stacks/Stream';
+import {Stream} from 'streams/stacks/Stream';
 
 export function Active() {
   const [streams, setStreams] = useState<string[]>([]);

@@ -1,9 +1,9 @@
 import {View} from 'react-native';
 import {useState, useEffect} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {StreamListItem} from 'live/stacks/StreamListItem';
+import {StreamListItem} from 'streams/stacks/StreamListItem';
 
-import type {StreamProps} from 'live/stacks/Stream';
+import type {StreamProps} from 'streams/stacks/Stream';
 
 export function StreamList() {
   const [streams, setStreams] = useState<StreamProps[]>([]);

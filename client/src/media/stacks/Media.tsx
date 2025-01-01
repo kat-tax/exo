@@ -6,7 +6,7 @@ import {useFileRect} from 'media/hooks/useFileRect';
 import {useMediaSelection} from 'media/hooks/useMediaSelection';
 import {MediaSelection} from 'media/stacks/MediaSelection';
 import {MediaControls} from 'media/stacks/MediaControls';
-import {getRenderInfo} from 'media/file/utils';
+import {getRenderer} from 'media/file/utils';
 
 import File from 'media/file';
 
@@ -40,7 +40,7 @@ export function Media(props: MediaProps) {
   const showSelection = maximized || selectActive;
 
   // File information
-  const renderer = useMemo(() => getRenderInfo(targetExt), [targetExt]);
+  const renderer = useMemo(() => getRenderer(targetExt), [targetExt]);
   const [cover, setCover] = useState('');
   const [title, setTitle] = useState(targetName);
   const [info, setInfo] = useState('‎');

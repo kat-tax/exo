@@ -72,7 +72,7 @@ export async function getTransfer(
   }
 }
 
-export function getRenderInfo(
+export function getRenderer(
   extension: string,
 ): FileRenderInfo {
   switch (extension) {

@@ -1,5 +1,5 @@
 import {useParams, Route} from 'react-exo/navigation';
-import {Stream} from 'live/stacks/Stream';
+import {Stream} from 'streams/stacks/Stream';
 
 export default function ScreenRoom() {
   const {name} = useParams<{name: string}>();

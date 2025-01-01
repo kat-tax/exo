@@ -14,9 +14,9 @@ export function Router() {
           <Route path="inbox" element={<$><Screen.Teaser/></$>}/>
           <Route path="storage" element={<$><Screen.Storage/></$>}/>
           <Route path="settings" element={<Screen.Settings/>}/>
-          {/* Live */}
-          <Route path="live" element={<$><Screen.Rooms/></$>}/>
-          <Route path="live/:name" element={<$><Screen.Room/></$>}/>
+          {/* Streams */}
+          <Route path="streams" element={<$><Screen.Rooms/></$>}/>
+          <Route path="streams/:name" element={<$><Screen.Room/></$>}/>
           {/* Media */}
           <Route path="browse/*" element={<$><Screen.Browse/></$>}/>
           <Route path="ipfs/*" element={<$><Screen.Browse/></$>}/>

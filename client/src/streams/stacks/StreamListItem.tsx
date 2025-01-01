@@ -4,7 +4,7 @@ import {View, Text} from 'react-native';
 import {Link} from 'react-exo/navigation';
 import {isTouch} from 'app/utils/platform';
 
-import type {StreamProps} from 'live/stacks/Stream';
+import type {StreamProps} from 'streams/stacks/Stream';
 
 export function StreamListItem(props: StreamProps) {
   const ref = useRef(null);
