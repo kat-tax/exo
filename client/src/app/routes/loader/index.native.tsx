@@ -39,9 +39,9 @@ export const Screen = {
     return require('../../../dev/routes/ScreenLibrary').default;
   },
   get Live() {
-    return require('../../../live/routes/ScreenRooms').default;
+    return require('../../../social/routes/ScreenRooms').default;
   },
   get Room() {
-    return require('../../../live/routes/ScreenRoom').default;
+    return require('../../../social/routes/ScreenRoom').default;
   },
 }

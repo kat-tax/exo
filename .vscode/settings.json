@@ -20,6 +20,7 @@
     "interface": "layout",
     "loader": "include",
     "dev": "shared",
+    "social": "connection",
     "world": "global",
     "media": "examples",
     "dir": "context",

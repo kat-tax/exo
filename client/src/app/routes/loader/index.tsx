@@ -40,9 +40,9 @@ export const Screen = {
     () => import('../../../dev/routes/ScreenLibrary')
   ),
   Rooms: lazy(
-    () => import('../../../live/routes/ScreenRooms')
+    () => import('../../../social/routes/ScreenRooms')
   ),
   Room: lazy(
-    () => import('../../../live/routes/ScreenRoom')
+    () => import('../../../social/routes/ScreenRoom')
   ),
 }
