@@ -17,7 +17,7 @@ export interface FileAudio extends FileProps {
   extension: string,
 }
 
-export default forwardRef((props: FileAudio, ref: React.Ref<VideoRef>) => {
+export default forwardRef((props: Omit<FileAudio, 'ref'>, ref: React.Ref<VideoRef>) => {
   const {styles} = useStyles(stylesheet);
   const audio = useFileData(props.path, 'dataUrl');
 
