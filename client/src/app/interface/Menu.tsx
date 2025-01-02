@@ -101,12 +101,11 @@ export function Menu(props: MenuProps) {
               path="/live"
             />
           </MenuSection>
-          {/* <MenuSection label={<Trans>Favorites</Trans>}>
+          {/* <MenuSection label={t`Favorites`}>
             {lists.map(({id}) =>
               <MenuItem
                 key={id}
-                label={<Text>{id}</Text>}
-                color={theme.palette.purple400}
+                label={id}
                 icon="ph:rocket"
                 path={`/note/${id}`}
                 mode="subitem"

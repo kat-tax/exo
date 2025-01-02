@@ -33,7 +33,7 @@ export function getRectLayout(opts: RectLayoutOptions): RectLayout {
     throw new Error('Number of shapes to place must be a positive integer');
 
   let best: RectLayout = {area: 0, cols: 0, rows: 0, width: 0, height: 0};
-  const colsStart = opts.count; //Math.ceil(Math.sqrt(opts.count * (opts.width / opts.height) / aspectRatio));
+  const colsStart = opts.count;
   const colDelta = -1;
   
   for (let cols = colsStart; cols > 0; cols += colDelta) {
