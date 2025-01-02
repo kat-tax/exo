@@ -14,7 +14,6 @@ msgstr ""
 "Plural-Forms: \n"
 
 #: ../../client/src/dev/routes/ScreenLibrary.tsx:20
-#: ../../client/src/dev/routes/ScreenDesign.tsx:14
 msgid "{0} components"
 msgstr "{0} components"
 
@@ -245,7 +244,6 @@ msgid "Language"
 msgstr "Language"
 
 #: ../../client/src/dev/routes/ScreenLibrary.tsx:19
-#: ../../client/src/app/interface/Menu.tsx:124
 msgid "Library"
 msgstr "Library"
 
