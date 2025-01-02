@@ -10,22 +10,20 @@ import {bytesize} from 'app/utils/formatting';
 import type {FileProps} from 'media/file';
 
 export interface FileText extends FileProps {
-  name: string,
-  extension: string,
   language: string,
 }
 
 export default forwardRef((props: FileText, _ref: React.Ref<View>) => {
-  const [scheme] = useScheme();
-  const {styles} = useStyles(stylesheet);
   const source = useFileData(props.path, 'text');
+  const {styles} = useStyles(stylesheet);
+  const [scheme] = useScheme();
 
   // Update file player bar info
   useEffect(() => {
     if (!source) return;
     const size = bytesize(source.length);
-    props.setBarInfo(`${source.split('\n').length} lines, ${size}`);
-  }, [source, props.setBarInfo]);
+    props.actions.setInfo(`${source.split('\n').length} lines, ${size}`);
+  }, [source, props.actions]);
 
   return source ? (
     <View style={styles.root}>

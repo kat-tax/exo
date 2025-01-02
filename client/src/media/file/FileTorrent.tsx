@@ -8,10 +8,7 @@ import {Page} from 'app/interface/Page';
 
 import type {FileProps} from 'media/file';
 
-export interface FileTorrent extends FileProps {
-  name: string,
-  extension: string,
-}
+export interface FileTorrent extends FileProps {}
 
 export default forwardRef((props: FileTorrent, _ref) => {
   const {torrent, download} = useFileTorrent(props.path);
@@ -21,8 +18,8 @@ export default forwardRef((props: FileTorrent, _ref) => {
   useEffect(() => {
     if (!torrent) return;
     const size = bytesize(torrent.list.reduce((acc, file) => acc + file.length, 0));
-    props.setBarInfo(`${torrent.list.length} files, ${size}`);
-  }, [torrent, props.setBarInfo]);
+    props.actions.setInfo(`${torrent.list.length} files, ${size}`);
+  }, [torrent, props.actions]);
 
   return (
     <View style={styles.root}>

@@ -12,6 +12,7 @@ export const EXTRACTABLE = [FileType.Zip];
 export const DOWNLOADABLE = [FileType.Torrent, FileType.Binary];
 export const CONFIGURABLE = [FileType.Video, FileType.Audio, FileType.Image, FileType.Pdf, FileType.Book];
 export const SEARCHABLE = [FileType.Map];
+export const SEEKABLE = [FileType.Audio, FileType.Video];
 export const LOOPABLE = [FileType.Lottie, FileType.Rive];
 export const EDITABLE = [FileType.Text, FileType.Markdown];
 export const PLAYABLE = [FileType.Audio, FileType.Video, FileType.Game, FileType.Lottie, FileType.Rive];
@@ -19,6 +20,11 @@ export const PAGEABLE = [FileType.Book, FileType.Pdf];
 export const ZOOMABLE = [FileType.Image];
 export const SKIPABLE = [FileType.Audio, FileType.Video];
 export const AUDIBLE = [FileType.Audio, FileType.Video];
+
+export interface MediaControls {
+  controls: Array<MediaControl>,
+  seekable: boolean,
+}
 
 export interface MediaControl {
   title?: string,
@@ -30,7 +36,7 @@ export interface MediaControl {
   action?: () => void,
 }
 
-export function useMediaControls(props: MediaControlsProps): MediaControl[] {
+export function useMediaControls(props: MediaControlsProps): MediaControls {
   const {file, renderer, metadata, close, open} = props;
   const [pinning, setPinning] = useState(false);
   const [pinned, setPinned] = useState<string>();
@@ -43,7 +49,7 @@ export function useMediaControls(props: MediaControlsProps): MediaControl[] {
     }
   }, [metadata]);
 
-  return useMemo(() =>
+  const controls = useMemo(() =>
     [
       // Edit controls
       {
@@ -266,4 +272,9 @@ export function useMediaControls(props: MediaControlsProps): MediaControl[] {
     .filter((e) => (!e.media || e.media?.includes(renderer[0])))
     .filter((e) => !e.filter || e.filter())
   , [file, renderer, metadata, pinning, pinned, open, close, t]);
+
+  return {
+    controls,
+    seekable: SEEKABLE.includes(renderer[0]),
+  };
 }

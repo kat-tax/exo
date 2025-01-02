@@ -12,17 +12,25 @@ export interface FileProps {
   extension: string,
   maximized: boolean,
   renderer?: FileRenderInfo,
-  close: () => void,
-  setBarIcon: (icon: string) => void,
-  setBarInfo: (info: string) => void,
-  setBarTitle: (title: string) => void,
+  actions: {
+    close: () => void,
+    setInfo: (info: string) => void,
+    setCover: (icon: string) => void,
+    setTitle: (title: string) => void,
+    setMuted: (muted: boolean) => void,
+    setVolume: (volume: number) => void,
+    setPlaying: (playing: boolean) => void,
+    setCurrent: (current: number) => void,
+    setDuration: (duration: number) => void,
+  }
 }
 
 export default memo(forwardRef((props: FileProps, ref) => {
-  const {path, name, extension, maximized, renderer, setBarTitle, setBarIcon, setBarInfo} = props;
+  const {path, name, extension, maximized, renderer, actions} = props;
   const [file, ctx] = renderer || [];
   if (!file) return null;
-  const meta = {ref, name, extension, path, maximized, setBarIcon, setBarTitle, setBarInfo};
+  const base: FileProps = {name, extension, path, maximized, ...{actions}};
+  const meta = {...base, ref};
   switch (file) {
     case FileType.Binary:
       return <$><File.Binary {...meta} {...ctx}/></$>

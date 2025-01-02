@@ -7,10 +7,7 @@ import {useFileData} from 'media/hooks/useFileData';
 
 import type {FileProps} from 'media/file';
 
-export interface FileImage extends FileProps {
-  name: string,
-  extension: string,
-}
+export interface FileImage extends FileProps {}
 
 export interface ImageRef {
   increase: () => void,
@@ -19,8 +16,9 @@ export interface ImageRef {
 }
 
 export default memo(forwardRef((props: FileImage, ref: React.Ref<ImageRef>) => {
-  const image = useFileData(props.path, 'dataUrl');
+  const source = useFileData(props.path, 'dataUrl');
   const {styles} = useStyles(stylesheet);
+
   // const {width, height} = useWindowDimensions();
   // const {isFetching, resolution} = useImageResolution({uri: image || ''});
   // if (isFetching || resolution === undefined) return null;
@@ -44,17 +42,17 @@ export default memo(forwardRef((props: FileImage, ref: React.Ref<ImageRef>) => {
 
   // Update file player bar info
   useEffect(() => {
-    if (!image) return;
-    props.setBarInfo(`${1920} x ${1080}`);
-  }, [image, props.setBarInfo]);
+    if (!source) return;
+    props.actions.setInfo(`${1920} x ${1080}`);
+  }, [source, props.actions]);
 
-  return image ? (
+  return source ? (
     <View style={styles.root}>
       {/* <ResumableZoom maxScale={resolution}> */}
         <ImageBackground
           style={styles.image}
           // style={{...size}}
-          source={{uri: image}}
+          source={{uri: source}}
           resizeMode={props.maximized ? 'contain' : 'cover'}
         />
       {/* </ResumableZoom> */}

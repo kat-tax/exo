@@ -13,36 +13,39 @@ export type {VideoRef as AudioRef};
 
 export interface FileAudio extends FileProps {
   ref: React.RefObject<VideoRef>,
-  name: string,
-  extension: string,
 }
 
 export default forwardRef((props: Omit<FileAudio, 'ref'>, ref: React.Ref<VideoRef>) => {
+  const source = useFileData(props.path, 'dataUrl');
   const {styles} = useStyles(stylesheet);
-  const audio = useFileData(props.path, 'dataUrl');
+  const {actions} = props;
 
   const update = useCallback(async () => {
     // @ts-ignore
     const current = await ref?.current?.getCurrentTime();
     // @ts-ignore
     const duration = await ref?.current?.getDuration();
-    props.setBarInfo(toTimeRange(current, duration));
-  }, [ref, props.setBarInfo]);
+    actions.setInfo(toTimeRange(current, duration));
+    actions.setCurrent(current);
+    actions.setDuration(duration);
+  }, [ref, actions]);
 
   // Update file player bar info
   useEffect(() => {
-    if (!audio) {
-      props.setBarInfo('00:00');
+    if (!source) {
+      actions.setInfo('00:00:00 / 00:00:00');
+      actions.setCurrent(0);
+      actions.setDuration(0);
       return;
     }
     update();
     const interval = setInterval(update, 1000);
     return () => clearInterval(interval);
-  }, [audio, update, props.setBarInfo]);
+  }, [source, update, actions]);
 
-  return audio ? (
+  return source ? (
     <View style={styles.root}>
-      <Video ref={ref} source={{uri: audio}}/>
+      <Video ref={ref} source={{uri: source}}/>
     </View>
   ) : null;
 });

@@ -8,27 +8,25 @@ import type {FileProps} from 'media/file';
 import type {GameProps} from 'react-exo/game';
 
 export interface FileGame extends FileProps {
-  name: string,
-  extension: string,
   platform: GameProps['platform'],
 }
 
 export interface GameRef extends Game {}
 
 export default forwardRef((props: FileGame, ref: React.Ref<GameRef>) => {
+  const source = useFileData(props.path, 'dataUrl');
   const {styles, theme} = useStyles(stylesheet);
-  const rom = useFileData(props.path, 'dataUrl');
 
   // Update file player bar info
   useEffect(() => {
-    if (!rom) return;
-    props.setBarInfo(PLATFORMS[props.platform]);
-  }, [rom, props.platform, props.setBarInfo]);
+    if (!source) return;
+    props.actions.setInfo(PLATFORMS[props.platform]);
+  }, [source, props.platform, props.actions]);
 
-  return rom ? (
+  return source ? (
     <Game
       ref={ref}
-      url={rom}
+      url={source}
       name={props.name}
       platform={props.platform}
       accent={theme.colors.accent}

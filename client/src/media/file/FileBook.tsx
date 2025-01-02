@@ -12,22 +12,17 @@ import type {BookRef} from 'react-exo/book';
 
 const EPUB_URL = 'https://alice.dita.digital/manifest.json'; // TODO
 
-export interface FileBook extends FileProps {
-  name: string,
-  maximized: boolean,
-  extension: string,
-}
+export interface FileBook extends FileProps {}
 
 export type {BookRef};
 
 export default forwardRef((props: FileBook, ref: React.Ref<BookRef>) => {  
-  const [title, setTitle] = useState('');
-  const [chapter, setChapter] = useState('');
+  const source = useFileData(props.path, 'dataUrl', 'application/epub+zip');
   const {styles} = useStyles(stylesheet);
   const [scheme] = useScheme();
+  const [chapter, setChapter] = useState('');
+  const [title, setTitle] = useState('');
   const {t} = useLingui();
-
-  const epub = useFileData(props.path, 'dataUrl', 'application/epub+zip');
 
   // Workaround: send resize event to force render
   const forceRender = useCallback(() => {
@@ -49,15 +44,15 @@ export default forwardRef((props: FileBook, ref: React.Ref<BookRef>) => {
 
   // Update the title bar when the book title or chapter changes
   useEffect(() => {
-    props.setBarTitle(title);
-    props.setBarInfo(chapter);
-    props.setBarIcon('https://alice.dita.digital/images/cover.jpg');
-  }, [title, chapter, props.setBarTitle, props.setBarIcon, props.setBarInfo]);
+    props.actions.setInfo(chapter);
+    props.actions.setTitle(title);
+    props.actions.setCover('https://alice.dita.digital/images/cover.jpg');
+  }, [title, chapter, props.actions]);
 
   // biome-ignore lint/correctness/useExhaustiveDependencies: force render when min/maximized
   useEffect(forceRender, [props.maximized]);
 
-  return epub ? (
+  return source ? (
     <View style={styles.root}>
       <Book
         ref={ref}

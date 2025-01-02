@@ -41,9 +41,14 @@ export function Media(props: MediaProps) {
 
   // File information
   const renderer = useMemo(() => getRenderer(targetExt), [targetExt]);
-  const [cover, setCover] = useState('');
   const [title, setTitle] = useState(targetName);
+  const [cover, setCover] = useState('');
   const [info, setInfo] = useState('‎');
+  const [muted, setMuted] = useState(false);
+  const [volume, setVolume] = useState(100);
+  const [playing, setPlaying] = useState(false);
+  const [current, setCurrent] = useState(0);
+  const [duration, setDuration] = useState(0);
 
   // File visualization
   const vstyles = useMemo(() => ({
@@ -60,12 +65,29 @@ export function Media(props: MediaProps) {
     ],
   }), [styles, pip, vertical, maximized, theme.breakpoints]);
 
-  // Change title when file name changes
+  // Reset information when file changes
   useEffect(() => {
     setTitle(targetName);
     setCover('');
     setInfo('‎');
+    setMuted(false);
+    setVolume(100);
+    setPlaying(false);
+    setCurrent(0);
+    setDuration(0);
   }, [targetName]);
+
+  const actions = useMemo(() => ({
+    close,
+    setInfo,
+    setCover,
+    setTitle,
+    setMuted,
+    setVolume,
+    setPlaying,
+    setCurrent,
+    setDuration,
+  }), [close]);
 
   return (
     <View style={vstyles.root}>
@@ -82,10 +104,7 @@ export function Media(props: MediaProps) {
           extension={targetExt}
           renderer={renderer}
           maximized={maximized}
-          setBarTitle={setTitle}
-          setBarInfo={setInfo}
-          setBarIcon={setCover}
-          close={close}
+          actions={actions}
         />
       </ScrollView>
       <MediaControls {...{
@@ -100,7 +119,11 @@ export function Media(props: MediaProps) {
           path: targetPath,
           name: targetName,
           ext: targetExt,
-          playing: true,
+          muted,
+          volume,
+          playing,
+          current,
+          duration,
         },
         close,
         open: () => nav(url),

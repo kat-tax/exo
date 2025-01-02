@@ -6,21 +6,18 @@ import {useFileData} from 'media/hooks/useFileData';
 
 import type {FileProps} from 'media/file';
 
-export interface FileModel extends FileProps {
-  name: string,
-  extension: string,
-}
+export interface FileModel extends FileProps {}
 
 export default forwardRef((props: FileModel) => {
+  const source = useFileData(props.path, 'dataUrl');
   const {styles} = useStyles(stylesheet);
-  const model = useFileData(props.path, 'dataUrl');
 
   // TODO: Implement model viewer (glb)
   // Native: https://github.com/rastapasta/react-native-gl-model-view
   // Web: https://github.com/google/model-viewer
-  return model ? (
+  return source ? (
     <Book
-      url={model}
+      url={source}
       style={styles.root}
     />
   ) : null;

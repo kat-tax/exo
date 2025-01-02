@@ -7,24 +7,21 @@ import {Markdown} from 'app/stacks/Markdown';
 
 import type {FileProps} from 'media/file';
 
-export interface FileMarkdown extends FileProps {
-  name: string,
-  extension: string,
-}
+export interface FileMarkdown extends FileProps {}
 
 export default forwardRef((props: FileMarkdown) => {
+  const source = useFileData(props.path, 'text');
   const {styles} = useStyles(stylesheet);
-  const markdown = useFileData(props.path, 'text');
 
   // Update file player bar info
   useEffect(() => {
-    if (!markdown) return;
-    props.setBarInfo(`${markdown.split('\n').length ?? 0} lines, ${bytesize(markdown.length)}`);
-  }, [markdown, props.setBarInfo]);
+    if (!source) return;
+    props.actions.setInfo(`${source.split('\n').length ?? 0} lines, ${bytesize(source.length)}`);
+  }, [source, props.actions]);
 
-  return markdown ? (
+  return source ? (
     <View style={styles.root}>
-      <Markdown text={markdown}/>
+      <Markdown text={source}/>
     </View>
   ) : null;
 });

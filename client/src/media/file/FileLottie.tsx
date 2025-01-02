@@ -6,18 +6,15 @@ import {useFileData} from 'media/hooks/useFileData';
 
 import type {FileProps} from 'media/file';
 
-export interface FileLottie extends FileProps {
-  name: string,
-  extension: string,
-}
+export interface FileLottie extends FileProps {}
 
 export default forwardRef((props: FileLottie) => {
+  const source = useFileData(props.path, 'dataUrl');
   const {styles} = useStyles(stylesheet);
-  const lottie = useFileData(props.path, 'dataUrl');
 
-  return lottie ? (
+  return source ? (
     <Lottie
-      url={lottie}
+      url={source}
       loop={true}
       resizeMode={props.maximized ? 'contain' : 'cover'}
       style={[

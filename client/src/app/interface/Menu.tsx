@@ -94,13 +94,13 @@ export function Menu(props: MenuProps) {
               path="/calendar"
             />
           </MenuSection>
-          <MenuSection label={t`Social`}>
+          {/* <MenuSection label={t`Social`}>
             <MenuItem
               label={t`Live`}
               icon="ph:video"
               path="/live"
             />
-          </MenuSection>
+          </MenuSection> */}
           {/* <MenuSection label={t`Favorites`}>
             {lists.map(({id}) =>
               <MenuItem

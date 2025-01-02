@@ -14,9 +14,6 @@ export function Router() {
           <Route path="inbox" element={<$><Screen.Teaser/></$>}/>
           <Route path="storage" element={<$><Screen.Storage/></$>}/>
           <Route path="settings" element={<Screen.Settings/>}/>
-          {/* Streams */}
-          <Route path="streams" element={<$><Screen.Rooms/></$>}/>
-          <Route path="streams/:name" element={<$><Screen.Room/></$>}/>
           {/* Media */}
           <Route path="browse/*" element={<$><Screen.Browse/></$>}/>
           <Route path="ipfs/*" element={<$><Screen.Browse/></$>}/>
@@ -26,6 +23,9 @@ export function Router() {
           <Route path="news" element={<$><Screen.Teaser/></$>}/>
           <Route path="map" element={<$><Screen.Map/></$>}/>
           <Route path="calendar" element={<$><Screen.Calendar/></$>}/>
+          {/* Social */}
+          <Route path="live" element={<$><Screen.Rooms/></$>}/>
+          <Route path="live/:name" element={<$><Screen.Room/></$>}/>
           {/* Dev */}
           <Route path="design" element={<$><Screen.Design/></$>}/>
           <Route path="library" element={<$><Screen.Library/></$>}/>

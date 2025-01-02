@@ -5,14 +5,11 @@ import {Watermark} from 'media/stacks/Watermark';
 
 import type {FileProps} from 'media/file';
 
-export interface FileBinary extends FileProps {
-  name: string,
-  extension: string,
-}
+export interface FileBinary extends FileProps {}
 
 export default forwardRef((props: FileBinary) => {
+  const source = useFileData(props.path, 'dataUrl');
   const {t} = useLingui();
-  const binary = useFileData(props.path, 'dataUrl');
 
   const saveFile = async (uri: string) => {
     const link = document.createElement('a');
@@ -23,16 +20,16 @@ export default forwardRef((props: FileBinary) => {
 
   // Update file player bar info
   useEffect(() => {
-    if (!binary) return;
-    props.setBarInfo(t`Unsupported File`);
-  }, [binary, props.setBarInfo, t]);
+    if (!source) return;
+    props.actions.setInfo(t`Unsupported File`);
+  }, [source, props.actions, t]);
 
   return (
     <Watermark
       title={props.name}
       label={t`Download`}
       icon="ph:download"
-      onAction={() => binary && saveFile(binary)}
+      onAction={() => source && saveFile(source)}
     />
   );
 });

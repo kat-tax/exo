@@ -9,10 +9,10 @@ import {ListRowIcon} from 'media/stacks/ListRowIcon';
 import type {ScrollView} from 'react-native';
 import type {MediaSelection as MediaSelectionType} from 'media/hooks/useMediaSelection';
 
-const IS_TOUCH = isTouch();
-const TAB_SIZE = IS_TOUCH ? 46 : 32;
-const ICON_SIZE = IS_TOUCH ? 1 : 0;
-const TEXT_LINES = IS_TOUCH ? 2 : 1;
+const TOUCH = isTouch();
+const TAB_SIZE = TOUCH ? 46 : 32;
+const ICON_SIZE = TOUCH ? 1 : 0;
+const TEXT_LINES = TOUCH ? 2 : 1;
 
 export function MediaSelection(props: {maximized: boolean} & MediaSelectionType) {
   const {queue, focus} = props;
@@ -60,7 +60,7 @@ export function MediaSelection(props: {maximized: boolean} & MediaSelectionType)
           <Pressable onPress={() => props.remove(index)}>
             <Icon
               name="ph:x"
-              size={IS_TOUCH ? 16 : 14}
+              size={TOUCH ? 16 : 14}
               color={theme.colors.mutedForeground}
             />
           </Pressable>
@@ -84,13 +84,13 @@ const stylesheet = createStyleSheet((theme) => ({
   },
   preview: {
     height: TAB_SIZE,
-    gap: IS_TOUCH ? theme.display.space3 : theme.display.space2,
+    gap: TOUCH ? theme.display.space3 : theme.display.space2,
     flexDirection: 'row',
     alignItems: 'center',
     alignContent: 'center',
     justifyContent: 'center',
     paddingVertical: theme.display.space1,
-    paddingHorizontal: IS_TOUCH ? theme.display.space3 : theme.display.space2,
+    paddingHorizontal: TOUCH ? theme.display.space3 : theme.display.space2,
     borderRadius: theme.display.radius1,
     borderColor: theme.colors.border,
     borderWidth: 1,

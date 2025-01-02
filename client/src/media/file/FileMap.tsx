@@ -11,21 +11,18 @@ import {MarkerGeoJson} from 'world/stacks/MarkerGeoJson';
 import type {FileProps} from 'media/file';
 import type {LngLatBounds} from 'maplibre-gl';
 
-export interface FileMap extends FileProps {
-  name: string,
-  extension: string,
-}
+export interface FileMap extends FileProps {}
 
 const MAPTILER_URL = 'https://api.maptiler.com/maps/';
 const MAPTILER_KEY = 'UbdBChbHpiVOSIdTJWvV';
 
 export default forwardRef((props: FileMap) => {
-  const [bounds, setBounds] = useState<LngLatBounds | null>(null);
+  const url = useFileData(props.path, 'dataUrl');
+  const source = useFileData(props.path, 'text');
   const {styles, theme} = useStyles(stylesheet);
   const [scheme] = useScheme();
-  const source = useFileData(props.path, 'text');
-  const url = useFileData(props.path, 'dataUrl');
   const [markers, setMarkers] = useState<GeoJSON.Feature<GeoJSON.Point>[]>([]);
+  const [bounds, setBounds] = useState<LngLatBounds | null>(null);
 
   // Set bounds when source data is loaded
   useEffect(() => {
@@ -44,9 +41,9 @@ export default forwardRef((props: FileMap) => {
         }
       }
     }
-    props.setBarInfo(`${features} features`);
+    props.actions.setInfo(`${features} features`);
     setMarkers(points);
-  }, [source, props.setBarInfo]);
+  }, [source, props.actions]);
 
   return source ? (
     <View style={[styles.root, props.maximized && styles.maximized]}>

@@ -8,10 +8,7 @@ import {Page} from 'app/interface/Page';
 
 import type {FileProps} from 'media/file';
 
-export interface FileZip extends FileProps {
-  name: string,
-  extension: string,
-}
+export interface FileZip extends FileProps {}
 
 export default forwardRef((props: FileZip, _ref) => {
   const {zip, extract} = useFileZip(props.path);
@@ -21,8 +18,8 @@ export default forwardRef((props: FileZip, _ref) => {
   useEffect(() => {
     if (!zip) return;
     const msg = `${zip?.list?.length ?? 0} files, ${bytesize(zip?.size?.compressed ?? 0)}`;
-    props.setBarInfo(msg);
-  }, [zip, props.setBarInfo]);
+    props.actions.setInfo(msg);
+  }, [zip, props.actions]);
 
   return (
     <View style={styles.root}>

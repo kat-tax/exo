@@ -1,6 +1,7 @@
 import {useMemo} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {View, Text, Pressable} from 'react-native';
+import {Slider} from 'react-exo/slider';
 import {Motion} from 'react-exo/motion';
 import {Image} from 'react-exo/image';
 import {Icon} from 'react-exo/icon';
@@ -11,32 +12,37 @@ import {useMediaControls} from 'media/hooks/useMediaControls';
 import type {FileRef, FileRenderInfo} from 'media/file/types';
 import type {PressableStateCallbackType} from 'react-native';
 
+const TOUCH = isTouch();
+
 export interface MediaControlsProps {
   file: React.RefObject<FileRef>,
   renderer: FileRenderInfo,
   maximized: boolean,
   metadata: {
+    // General
     ext: string,
     url: string,
     path: string,
     name: string,
+    // Display
     title: string,
-    info?: string,
     cover?: string,
+    info?: string,
+    // Audio/Video
     muted?: boolean,
     volume?: number,
     playing?: boolean,
-    duration?: number,
     current?: number,
+    duration?: number,
   },
   close: () => void,
   open: () => void,
 }
 
 export function MediaControls(props: MediaControlsProps) {
+  const {controls, seekable} = useMediaControls(props);
   const {styles, theme} = useStyles(stylesheet);
-  const controls = useMediaControls(props);
-  const sizeGroup = isTouch() ? 1 : 0;
+  const sizeGroup = TOUCH ? 1 : 0;
   const imageSize = sizeGroup === 1 ? 36 : 32;
   const iconSize = sizeGroup === 1 ? 20 : 16;
   const vstyles = useMemo(() => ({
@@ -52,6 +58,20 @@ export function MediaControls(props: MediaControlsProps) {
       initial={{opacity: 0}}
       animate={{opacity: 1}}
       exit={{opacity: 0}}>
+      {seekable &&
+        <View style={styles.track}>
+          <Slider
+            step={1}
+            lowerLimit={0}
+            value={props.metadata.current}
+            upperLimit={props.metadata.duration}
+            thumbColor={theme.colors.primary}
+            rangeColor={theme.colors.primary}
+            trackColor={theme.colors.secondary}
+            onChange={(value) => console.log(value)}
+          />
+        </View>
+      }
       {controls.map(({name, icon, title, action}) => title
         ? <Pressable key={name} style={styles.content} onPress={action}>
             {props.metadata.cover
@@ -96,6 +116,7 @@ export function MediaControls(props: MediaControlsProps) {
 
 const stylesheet = createStyleSheet((theme, rt) => ({
   root: {
+    position: 'relative',
     flexDirection: 'row',
     alignItems: 'center',
     paddingHorizontal: theme.display.space1,
@@ -103,10 +124,18 @@ const stylesheet = createStyleSheet((theme, rt) => ({
     borderTopWidth: rt.hairlineWidth,
     borderTopColor: theme.colors.border,
   },
+  track: {
+    flex: 1,
+    position: 'absolute',
+    top: -20,
+    left: -13,
+    right: -10,
+    zIndex: 9999,
+  },
   action: {
     margin: theme.display.space1,
     paddingHorizontal: theme.display.space3,
-    paddingVertical: isTouch()
+    paddingVertical: TOUCH
       ? theme.display.space4
       : theme.display.space3,
   },

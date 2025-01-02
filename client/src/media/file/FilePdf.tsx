@@ -7,16 +7,13 @@ import {useFileData} from 'media/hooks/useFileData';
 
 import type {FileProps} from 'media/file';
 
-export interface FilePdf extends FileProps {
-  name: string,
-  extension: string,
-}
+export interface FilePdf extends FileProps {}
 
 export default forwardRef((props: FilePdf) => {
+  const source = useFileData(props.path, 'dataUrl');
   const {styles} = useStyles(stylesheet);
-  const pdf = useFileData(props.path, 'dataUrl');
 
-  return pdf ? (
+  return source ? (
     <View style={styles.root}>
       {/* <Pdf url={pdf} /> */}
     </View>

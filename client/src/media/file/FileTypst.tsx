@@ -1,5 +1,3 @@
-// TODO: https://github.com/Myriad-Dreamin/typst.ts
-
 import {View} from 'react-native';
 import {forwardRef} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
@@ -8,18 +6,15 @@ import {Markdown} from 'app/stacks/Markdown';
 
 import type {FileProps} from 'media/file';
 
-export interface FileTypst extends FileProps {
-  name: string,
-  extension: string,
-}
+export interface FileTypst extends FileProps {}
 
 export default forwardRef((props: FileTypst) => {
+  const source = useFileData(props.path, 'text');
   const {styles} = useStyles(stylesheet);
-  const text = useFileData(props.path, 'text');
 
-  return text ? (
+  return source ? (
     <View style={styles.root}>
-      <Markdown text={text}/>
+      <Markdown text={source}/>
     </View>
   ) : null;
 });

@@ -17,11 +17,11 @@ export interface SliderProps {
    * value during dragging.
    */
   value?: number,
-  /** The lower limit value of the slider. The user won't be able to slide below this limit. */
+  /** The lower limit value of the slider. The user won't be able to slide below this limit. Default value is 0. */
   lowerLimit?: number,
-  /** The upper limit value of the slider. The user won't be able to slide above this limit. */
+  /** The upper limit value of the slider. The user won't be able to slide above this limit. Default value is 100. */
   upperLimit?: number,
-  /** Step value of the slider. The value should be between 0 and (maximumValue - minimumValue). Default value is 0. */
+  /** Step value of the slider. The value should be between 0 and (maximumValue - minimumValue). Default value is 1. */
   step?: number,
   /** If true the user won't be able to move the slider. Default = false. */
   disabled?: boolean,

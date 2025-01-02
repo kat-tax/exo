@@ -6,18 +6,15 @@ import {useFileData} from 'media/hooks/useFileData';
 
 import type {FileProps} from 'media/file';
 
-export interface FilePresentation extends FileProps {
-  name: string,
-  extension: string,
-}
+export interface FilePresentation extends FileProps {}
 
 export default forwardRef((props: FilePresentation) => {
+  const source = useFileData(props.path, 'dataUrl');
   const {styles} = useStyles(stylesheet);
-  const slide = useFileData(props.path, 'dataUrl');
 
-  return slide ? (
+  return source ? (
     <Book
-      url={slide}
+      url={source}
       style={styles.root}
     />
   ) : null;

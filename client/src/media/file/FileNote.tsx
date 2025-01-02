@@ -6,18 +6,15 @@ import {useFileData} from 'media/hooks/useFileData';
 
 import type {FileProps} from 'media/file';
 
-export interface FileNote extends FileProps {
-  name: string,
-  extension: string,
-}
+export interface FileNote extends FileProps {}
 
 export default forwardRef((props: FileNote) => {
+  const source = useFileData(props.path, 'dataUrl');
   const {styles} = useStyles(stylesheet);
-  const note = useFileData(props.path, 'dataUrl');
 
-  return note ? (
+  return source ? (
     <Book
-      url={note}
+      url={source}
       style={styles.root}
     />
   ) : null;

@@ -7,19 +7,16 @@ import {useFileData} from 'media/hooks/useFileData';
 import type {FileProps} from 'media/file';
 import type {BookRef} from 'react-exo/book';
 
-export interface FileDoc extends FileProps {
-  name: string,
-  extension: string,
-}
+export interface FileDoc extends FileProps {}
 
 export default forwardRef((props: FileDoc, ref: React.Ref<BookRef>) => {
+  const source = useFileData(props.path, 'dataUrl');
   const {styles} = useStyles(stylesheet);
-  const document = useFileData(props.path, 'dataUrl');
 
-  return document ? (
+  return source ? (
     <Book
       ref={ref}
-      url={document}
+      url={source}
       style={styles.root}
     />
   ) : null;

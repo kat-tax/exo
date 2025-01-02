@@ -1,7 +1,7 @@
 import {View,ScrollView} from 'react-native';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {StreamList} from 'streams/stacks/StreamList';
-import {Active} from 'streams/stacks/Active';
+import {StreamList} from 'social/stacks/StreamList';
+import {Active} from 'social/stacks/Active';
 
 export default function ScreenRooms() {
   const {styles} = useStyles(stylesheet);

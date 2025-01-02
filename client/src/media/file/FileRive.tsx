@@ -7,21 +7,18 @@ import {useFileData} from 'media/hooks/useFileData';
 import type {FileProps} from 'media/file';
 import type {RiveRef} from 'react-exo/rive';
 
-export interface FileRive extends FileProps {
-  name: string,
-  extension: string,
-}
+export interface FileRive extends FileProps {}
 
 export type {RiveRef};
 
 export default forwardRef((props: FileRive, ref: React.Ref<RiveRef>) => {
+  const source = useFileData(props.path, 'dataUrl');
   const {styles} = useStyles(stylesheet);
-  const rive = useFileData(props.path, 'dataUrl');
 
-  return rive ? (
+  return source ? (
     <Rive
       ref={ref}
-      url={rive}
+      url={source}
       resizeMode="contain"
       autoplay
       style={[

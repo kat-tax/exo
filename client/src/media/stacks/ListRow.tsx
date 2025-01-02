@@ -4,7 +4,7 @@ import {ListRowIcon} from 'media/stacks/ListRowIcon';
 import {bytesize} from 'app/utils/formatting';
 import {isTouch} from 'app/utils/platform';
 
-const _IS_TOUCH = isTouch();
+const TOUCH = isTouch();
 
 interface ListRow {
   path: string,
@@ -20,7 +20,7 @@ export function ListRow(props: ListRow) {
   const {styles} = useStyles(stylesheet);
   const [name, extension] = props.name.split('.');
   const {path, isFile, isFocused, isSelected} = props;
-  const iconSize = _IS_TOUCH ? 1 : 0;
+  const iconSize = TOUCH ? 1 : 0;
   const vstyles = {
     root: [
       styles.root,
@@ -72,7 +72,7 @@ const stylesheet = createStyleSheet((theme) => ({
     lineHeight: theme.font.height,
     letterSpacing: theme.font.spacing,
     color: theme.colors.foreground,
-    ..._IS_TOUCH && {
+    ...TOUCH && {
       fontSize: theme.font.contentSize,
       letterSpacing: theme.font.contentSpacing,
       lineHeight: 32,
