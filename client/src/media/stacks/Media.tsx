@@ -2,7 +2,7 @@ import {View, ScrollView} from 'react-native';
 import {useNavigate} from 'react-exo/navigation';
 import {useMemo, useState, useEffect, useRef} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {useFileRect} from 'media/hooks/useFileRect';
+import {useFilePiP} from 'media/hooks/useFilePiP';
 import {useMediaSelection} from 'media/hooks/useMediaSelection';
 import {MediaSelection} from 'media/stacks/MediaSelection';
 import {MediaControls} from 'media/stacks/MediaControls';
@@ -24,8 +24,8 @@ interface MediaProps {
 
 export function Media(props: MediaProps) {
   const nav = useNavigate();
+  const pip = useFilePiP(props.ext);
   const file = useRef<FileRef>(null);
-  const rect = useFileRect(props.ext);
   const selection = useMediaSelection(props.path);
   const {styles, theme} = useStyles(stylesheet);
   const {url, ext, name, path, vertical, maximized, close} = props;
@@ -51,14 +51,14 @@ export function Media(props: MediaProps) {
       styles.root,
       vertical && styles.vertical,
       maximized ? styles.maximized : styles.minimized,
-      !maximized && {width: rect.resolution[0]},
-      rect.viewportWidth <= theme.breakpoints.xs && styles.fullwidth,
+      !maximized && {width: pip.resolution[0]},
+      pip.viewportWidth <= theme.breakpoints.xs && styles.fullwidth,
     ],
     frame: [
-      !maximized && {width: rect.resolution[0], height: rect.resolution[1]},
-      rect.viewportWidth <= theme.breakpoints.xs && styles.fullwidth,
+      !maximized && {width: pip.resolution[0], height: pip.resolution[1]},
+      pip.viewportWidth <= theme.breakpoints.xs && styles.fullwidth,
     ],
-  }), [styles, rect, vertical, maximized, theme.breakpoints]);
+  }), [styles, pip, vertical, maximized, theme.breakpoints]);
 
   // Change title when file name changes
   useEffect(() => {
