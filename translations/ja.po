@@ -136,6 +136,7 @@ msgid "Documents"
 msgstr "ドキュメント"
 
 #: ../../client/src/media/hooks/useMediaControls.ts:68
+#: ../../client/src/media/file/FileBinary.tsx:30
 msgid "Download"
 msgstr "ダウンロード"
 

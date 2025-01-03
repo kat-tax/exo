@@ -2,10 +2,6 @@ import {createHighlighter} from 'shiki';
 import {createOnigurumaEngine} from 'shiki/engine-oniguruma.mjs';
 import {useEffect, useState, useRef} from 'react';
 
-// TODO: Native Shiki Engine
-// Engine: https://github.com/skiniks/react-native-shiki-engine?tab=readme-ov-file#example-implementation
-// Display: https://github.com/skiniks/react-native-shiki-engine/blob/main/example/src/components/TokenDisplay.tsx
-
 import type {CodeProps} from './Code.interface';
 
 const highlighterInit = createHighlighter({

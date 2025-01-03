@@ -61,6 +61,8 @@ export default forwardRef((props: FileBook, ref: React.Ref<BookRef>) => {
         theme={scheme === 'light' ? 'default' : 'night'}
         onTableOfContents={console.log}
         onLocationChange={(e) => {
+          props.actions.setCurrent((e.locations?.totalProgression || 0) * 100);
+          props.actions.setDuration(100);
           e.title && setChapter(e.title);
         }}
       />

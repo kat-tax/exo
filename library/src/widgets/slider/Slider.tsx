@@ -30,7 +30,7 @@ export const Slider: SliderComponent = (props: SliderProps) => {
           touchAction: 'none',
           ...fillDisplayRow,
         }}>
-        <SliderTrack color={props.trackColor}>
+        <SliderTrack color={props.trackColor} height={props.trackHeight}>
           <SliderRange color={props.rangeColor}/>
         </SliderTrack>
         <SliderThumb color={props.thumbColor}/>
@@ -39,10 +39,10 @@ export const Slider: SliderComponent = (props: SliderProps) => {
   );
 }
 
-function SliderTrack(props: {color?: string, children: React.ReactNode}) {
+function SliderTrack(props: {color?: string, height?: number, children: React.ReactNode}) {
   return (
     <S.Track className="exo-slider-track" style={{
-      height: 2,
+      height: props.height ?? 2,
       flexGrow: 1,
       position: 'relative',
       backgroundColor: colorWithOpacity(props.color || '#d2d6d8', 0.4)

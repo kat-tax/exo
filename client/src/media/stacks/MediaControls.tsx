@@ -6,6 +6,7 @@ import {Motion} from 'react-exo/motion';
 import {Image} from 'react-exo/image';
 import {Icon} from 'react-exo/icon';
 import {isTouch} from 'app/utils/platform';
+import {FileType} from 'media/file/types';
 import {ListRowIcon} from 'media/stacks/ListRowIcon';
 import {useMediaControls} from 'media/hooks/useMediaControls';
 
@@ -42,6 +43,8 @@ export interface MediaControlsProps {
 export function MediaControls(props: MediaControlsProps) {
   const {controls, seekable} = useMediaControls(props);
   const {styles, theme} = useStyles(stylesheet);
+  const [fileType] = props.renderer;
+  const isBook = fileType === FileType.Book;
   const sizeGroup = TOUCH ? 1 : 0;
   const imageSize = sizeGroup === 1 ? 36 : 32;
   const iconSize = sizeGroup === 1 ? 20 : 16;
@@ -50,7 +53,13 @@ export function MediaControls(props: MediaControlsProps) {
       state.hovered || TOUCH
         ? theme.colors.foreground
         : theme.colors.mutedForeground,
-  }), [theme]);
+    track: [
+      styles.track,
+      isBook && styles.disabled,
+    ],
+  }), [theme, styles, isBook]);
+
+  console.log('metadata', props.metadata);
 
   return (
     <Motion.View
@@ -64,15 +73,17 @@ export function MediaControls(props: MediaControlsProps) {
           <Slider
             step={1}
             lowerLimit={0}
+            disabled={isBook}
             value={props.metadata.current}
             upperLimit={props.metadata.duration}
-            thumbColor={theme.colors.primary}
-            rangeColor={theme.colors.primary}
+            thumbColor={isBook ? 'transparent' : theme.colors.primary}
+            rangeColor={isBook ? theme.colors.mutedForeground : theme.colors.primary}
             trackColor={theme.colors.secondary}
+            trackHeight={isBook ? 1 : 2}
             onChange={e => {
               if (!props.file.current) return;
-              if (!('seek' in props.file.current)) return;
-              props.file.current.seek(e);
+              if ('seek' in props.file.current)
+                props.file.current.seek(e);
             }}
           />
         </View>
@@ -132,10 +143,13 @@ const stylesheet = createStyleSheet((theme, rt) => ({
   track: {
     flex: 1,
     position: 'absolute',
-    top: -20,
+    top: -20.5,
     left: -13,
     right: -10,
     zIndex: 99,
+  },
+  disabled: {
+    pointerEvents: 'none',
   },
   action: {
     zIndex: 100,

@@ -1,4 +1,5 @@
 import type {FileGame} from 'media/file/FileGame';
+import type {FileText} from 'media/file/FileText';
 import type {ImageRef} from 'media/file/FileImage';
 import type {VideoRef} from 'media/file/FileVideo';
 import type {RiveRef} from 'media/file/FileRive';
@@ -29,8 +30,8 @@ export enum FileType {
 }
 
 export type FileOptions = {
-  [FileType.Text]: {language: string},
   [FileType.Book]: {continuous: boolean},
+  [FileType.Text]: {language: FileText['language'] | 'ansi' | 'text'},
   [FileType.Game]: {platform: FileGame['platform']},
 } & Record<FileType, Record<string, unknown>>
 

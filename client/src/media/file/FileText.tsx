@@ -8,9 +8,10 @@ import {useScheme} from 'app/hooks/useScheme';
 import {bytesize} from 'app/utils/formatting';
 
 import type {FileProps} from 'media/file';
+import type {CodeLanguages} from 'react-exo/code';
 
 export interface FileText extends FileProps {
-  language: string,
+  language: CodeLanguages,
 }
 
 export default forwardRef((props: FileText, _ref: React.Ref<View>) => {

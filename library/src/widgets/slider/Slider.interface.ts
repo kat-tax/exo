@@ -17,10 +17,12 @@ export interface SliderProps {
   step?: number,
   /** If true the user won't be able to move the slider. Default = false. */
   disabled?: boolean,
-  /** The color used for the track from minimum value to current value */
-  rangeColor?: string,
+  /** The track height */
+  trackHeight?: number,
   /** The background track color */
   trackColor?: string,
+  /** The color used for the track from minimum value to current value */
+  rangeColor?: string,
   /** The thumb accent color */
   thumbColor?: string,
   /** Used to style and layout the slider. */
