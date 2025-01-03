@@ -14,6 +14,7 @@ export interface VideoRef {
   play: () => Promise<void>,
   pause: () => Promise<void>,
   seek: (time: number, tolerance?: number) => void,
+  mute: (state: boolean) => void,
   setVolume: (volume: number) => void,
   getDuration: () => Promise<number>,
   getCurrentTime: () => Promise<number>,

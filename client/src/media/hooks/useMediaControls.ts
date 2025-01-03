@@ -37,7 +37,7 @@ export interface MediaControl {
 }
 
 export function useMediaControls(props: MediaControlsProps): MediaControls {
-  const {file, renderer, metadata, close, open} = props;
+  const {file, renderer, metadata, actions} = props;
   const [pinning, setPinning] = useState(false);
   const [pinned, setPinned] = useState<string>();
   const {t} = useLingui();
@@ -141,7 +141,9 @@ export function useMediaControls(props: MediaControlsProps): MediaControls {
         label: t`Skip backward`,
         media: SKIPABLE,
         action: () => {
-          console.log('Skip backward', metadata.path);
+          if (file?.current && 'seek' in file.current) {
+            file.current.seek((metadata.current ?? 0) - 10);
+          }
         },
       },
       {
@@ -150,7 +152,9 @@ export function useMediaControls(props: MediaControlsProps): MediaControls {
         label: t`Skip forward`,
         media: SKIPABLE,
         action: () => {
-          console.log('Skip forward', metadata.path);
+          if (file?.current && 'seek' in file.current) {
+            file.current.seek((metadata.current ?? 0) + 10);
+          }
         },
       },
       // Specific media controls (replay)
@@ -207,7 +211,10 @@ export function useMediaControls(props: MediaControlsProps): MediaControls {
         label: t`Volume`,
         media: AUDIBLE,
         action: () => {
-          console.log('Volume', metadata.path);
+          if (file?.current && 'mute' in file.current) {
+            file.current.mute(!metadata.muted);
+            actions.setMuted(!metadata.muted);
+          }
         },
       },
       {
@@ -259,19 +266,23 @@ export function useMediaControls(props: MediaControlsProps): MediaControls {
         name: 'fullscreen',
         icon: 'ph:arrows-out',
         label: t`Fullscreen`,
-        action: () => {},
+        action: () => {
+          if (file?.current && 'presentFullscreen' in file.current) {
+            file.current.presentFullscreen();
+          }
+        },
       },
       {
         name: 'close',
         icon: 'ph:x',
         label: t`Close`,
         filter: () => false,
-        action: close,
+        action: actions.close,
       },
     ]
     .filter((e) => (!e.media || e.media?.includes(renderer[0])))
     .filter((e) => !e.filter || e.filter())
-  , [file, renderer, metadata, pinning, pinned, open, close, t]);
+  , [file, renderer, metadata, pinning, pinned, actions, t]);
 
   return {
     controls,

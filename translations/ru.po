@@ -69,7 +69,7 @@ msgstr "Календарь"
 msgid "Celsius"
 msgstr "Цельсий"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:267
+#: ../../client/src/media/hooks/useMediaControls.ts:278
 msgid "Close"
 msgstr "Закрыть"
 
@@ -136,7 +136,6 @@ msgid "Documents"
 msgstr "Документы"
 
 #: ../../client/src/media/hooks/useMediaControls.ts:68
-#: ../../client/src/media/file/FileBinary.tsx:30
 msgid "Download"
 msgstr "Скачать"
 
@@ -182,7 +181,7 @@ msgstr "Фаренгейт"
 msgid "Files"
 msgstr "Файлы"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:261
+#: ../../client/src/media/hooks/useMediaControls.ts:268
 msgid "Fullscreen"
 msgstr "Полный экран"
 
@@ -288,7 +287,7 @@ msgstr "Музыка"
 msgid "News"
 msgstr "Новости"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:183
+#: ../../client/src/media/hooks/useMediaControls.ts:187
 msgid "Next"
 msgstr "Следующий"
 
@@ -296,7 +295,7 @@ msgstr "Следующий"
 msgid "No events scheduled."
 msgstr "Нет запланированных событий."
 
-#: ../../client/src/media/hooks/useMediaControls.ts:216
+#: ../../client/src/media/hooks/useMediaControls.ts:223
 msgid "Options"
 msgstr "Опции"
 
@@ -317,7 +316,7 @@ msgstr "Пауза"
 msgid "Pictures"
 msgstr "Изображения"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:227
+#: ../../client/src/media/hooks/useMediaControls.ts:234
 msgid "Pin"
 msgstr "Закрепить"
 
@@ -329,7 +328,7 @@ msgstr "Воспроизвести"
 msgid "Please set your Groq API Key"
 msgstr "Пожалуйста, установите ваш ключ Groq API"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:172
+#: ../../client/src/media/hooks/useMediaControls.ts:176
 msgid "Previous"
 msgstr "Предыдущий"
 
@@ -349,7 +348,7 @@ msgstr "Запросы"
 msgid "Provide a key to use AI features."
 msgstr "Предоставьте ключ для использования функций ИИ."
 
-#: ../../client/src/media/hooks/useMediaControls.ts:160
+#: ../../client/src/media/hooks/useMediaControls.ts:164
 msgid "Replay"
 msgstr "Повторить"
 
@@ -383,7 +382,7 @@ msgstr "Выберите тему приложения."
 msgid "Settings"
 msgstr "Настройки"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:241
+#: ../../client/src/media/hooks/useMediaControls.ts:248
 msgid "Share"
 msgstr "Поделиться"
 
@@ -391,7 +390,7 @@ msgstr "Поделиться"
 msgid "Skip backward"
 msgstr "Перемотать назад"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:150
+#: ../../client/src/media/hooks/useMediaControls.ts:152
 msgid "Skip forward"
 msgstr "Перемотать вперед"
 
@@ -441,7 +440,7 @@ msgstr "Просмотр событий и информации о времен�
 msgid "View your latest news and rss feeds"
 msgstr "Просмотр последних новостей и RSS-каналов"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:207
+#: ../../client/src/media/hooks/useMediaControls.ts:211
 msgid "Volume"
 msgstr "Громкость"
 

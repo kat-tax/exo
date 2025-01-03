@@ -1,11 +1,12 @@
 import VideoBase from 'react-native-video';
-import {useImperativeHandle, forwardRef, useRef} from 'react';
+import {useState, useRef, useImperativeHandle, forwardRef} from 'react';
 
 import type {VideoRef as VideoBaseRef} from 'react-native-video';
 import type {VideoComponent, VideoProps, VideoRef} from './Video.interface';
 
 export const Video: VideoComponent = forwardRef(({title, thumbnails, ...props}: VideoProps, ref: React.Ref<VideoRef>) => {
   const video = useRef<VideoBaseRef>(null);
+  const [muted, setMuted] = useState(false);
 
   useImperativeHandle(ref, () => ({
     play: () =>
@@ -14,6 +15,8 @@ export const Video: VideoComponent = forwardRef(({title, thumbnails, ...props}: 
       Promise.resolve(video.current?.pause()),
     seek: (time: number, tolerance?: number) =>
       video.current?.seek(time, tolerance),
+    mute: (state: boolean) =>
+      setMuted(state),
     setVolume: (volume: number) =>
       video.current?.setVolume(volume),
     getDuration: () =>
@@ -49,12 +52,13 @@ export const Video: VideoComponent = forwardRef(({title, thumbnails, ...props}: 
       onLoadStart={props.onLoadStart}
       onProgress={props.onProgress}
       onReadyForDisplay={props.onReadyForDisplay}
+      onPlaybackStateChanged={props.onPlaybackStateChanged}
       // Video
       filter={props.filter}
       filterEnabled={props.filterEnabled}
       viewType={props.viewType}
       // Audio
-      muted={props.muted}
+      muted={muted}
       volume={props.volume}
       audioOutput={props.audioOutput}
       mixWithOthers={props.mixWithOthers}

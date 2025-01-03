@@ -9,6 +9,7 @@ import {isTouch} from 'app/utils/platform';
 import {ListRowIcon} from 'media/stacks/ListRowIcon';
 import {useMediaControls} from 'media/hooks/useMediaControls';
 
+import type {FileProps} from 'media/file';
 import type {FileRef, FileRenderInfo} from 'media/file/types';
 import type {PressableStateCallbackType} from 'react-native';
 
@@ -18,6 +19,7 @@ export interface MediaControlsProps {
   file: React.RefObject<FileRef>,
   renderer: FileRenderInfo,
   maximized: boolean,
+  actions: FileProps['actions'],
   metadata: {
     // General
     ext: string,
@@ -26,8 +28,8 @@ export interface MediaControlsProps {
     name: string,
     // Display
     title: string,
-    cover?: string,
     info?: string,
+    cover?: string,
     // Audio/Video
     muted?: boolean,
     volume?: number,
@@ -35,8 +37,6 @@ export interface MediaControlsProps {
     current?: number,
     duration?: number,
   },
-  close: () => void,
-  open: () => void,
 }
 
 export function MediaControls(props: MediaControlsProps) {
@@ -48,8 +48,8 @@ export function MediaControls(props: MediaControlsProps) {
   const vstyles = useMemo(() => ({
     icon: (state: PressableStateCallbackType) =>
       state.hovered
-        ? theme.colors.primary
-        : theme.colors.foreground,
+        ? theme.colors.foreground
+        : theme.colors.mutedForeground,
   }), [theme]);
 
   return (
@@ -57,7 +57,8 @@ export function MediaControls(props: MediaControlsProps) {
       style={styles.root}
       initial={{opacity: 0}}
       animate={{opacity: 1}}
-      exit={{opacity: 0}}>
+      exit={{opacity: 0}}
+      testID="exo-media-controls">
       {seekable &&
         <View style={styles.track}>
           <Slider
@@ -68,7 +69,11 @@ export function MediaControls(props: MediaControlsProps) {
             thumbColor={theme.colors.primary}
             rangeColor={theme.colors.primary}
             trackColor={theme.colors.secondary}
-            onChange={(value) => console.log(value)}
+            onChange={e => {
+              if (!props.file.current) return;
+              if (!('seek' in props.file.current)) return;
+              props.file.current.seek(e);
+            }}
           />
         </View>
       }
@@ -130,9 +135,10 @@ const stylesheet = createStyleSheet((theme, rt) => ({
     top: -20,
     left: -13,
     right: -10,
-    zIndex: 9999,
+    zIndex: 99,
   },
   action: {
+    zIndex: 100,
     margin: theme.display.space1,
     paddingHorizontal: theme.display.space3,
     paddingVertical: TOUCH

@@ -25,15 +25,17 @@ export default forwardRef((props: Omit<FileVideo, 'ref'>, ref: React.Ref<VideoRe
       <Video
         ref={ref}
         source={{uri: source}}
-        controls={false}
         resizeMode="contain"
         onProgress={e => {
           actions.setCurrent(e.currentTime);
           actions.setDuration(e.playableDuration);
           actions.setInfo(toTimeRange(e.currentTime, e.playableDuration));
         }}
+        onVolumeChange={e => {
+          actions.setVolume(e.volume);
+        }}
         onPlaybackStateChanged={(e) => {
-          console.log('>> video', e);
+          actions.setPlaying(e.isPlaying);
         }}
       />
     </View>

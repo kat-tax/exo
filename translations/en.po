@@ -69,7 +69,7 @@ msgstr "Calendar"
 msgid "Celsius"
 msgstr "Celsius"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:267
+#: ../../client/src/media/hooks/useMediaControls.ts:278
 msgid "Close"
 msgstr "Close"
 
@@ -136,7 +136,6 @@ msgid "Documents"
 msgstr "Documents"
 
 #: ../../client/src/media/hooks/useMediaControls.ts:68
-#: ../../client/src/media/file/FileBinary.tsx:30
 msgid "Download"
 msgstr "Download"
 
@@ -182,7 +181,7 @@ msgstr "Fahrenheit"
 msgid "Files"
 msgstr "Files"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:261
+#: ../../client/src/media/hooks/useMediaControls.ts:268
 msgid "Fullscreen"
 msgstr "Fullscreen"
 
@@ -288,7 +287,7 @@ msgstr "Music"
 msgid "News"
 msgstr "News"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:183
+#: ../../client/src/media/hooks/useMediaControls.ts:187
 msgid "Next"
 msgstr "Next"
 
@@ -296,7 +295,7 @@ msgstr "Next"
 msgid "No events scheduled."
 msgstr "No events scheduled."
 
-#: ../../client/src/media/hooks/useMediaControls.ts:216
+#: ../../client/src/media/hooks/useMediaControls.ts:223
 msgid "Options"
 msgstr "Options"
 
@@ -317,7 +316,7 @@ msgstr "Pause"
 msgid "Pictures"
 msgstr "Pictures"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:227
+#: ../../client/src/media/hooks/useMediaControls.ts:234
 msgid "Pin"
 msgstr "Pin"
 
@@ -329,7 +328,7 @@ msgstr "Play"
 msgid "Please set your Groq API Key"
 msgstr "Please set your Groq API Key"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:172
+#: ../../client/src/media/hooks/useMediaControls.ts:176
 msgid "Previous"
 msgstr "Previous"
 
@@ -349,7 +348,7 @@ msgstr "Prompts"
 msgid "Provide a key to use AI features."
 msgstr "Provide a key to use AI features."
 
-#: ../../client/src/media/hooks/useMediaControls.ts:160
+#: ../../client/src/media/hooks/useMediaControls.ts:164
 msgid "Replay"
 msgstr "Replay"
 
@@ -383,7 +382,7 @@ msgstr "Select the theme for the app."
 msgid "Settings"
 msgstr "Settings"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:241
+#: ../../client/src/media/hooks/useMediaControls.ts:248
 msgid "Share"
 msgstr "Share"
 
@@ -391,7 +390,7 @@ msgstr "Share"
 msgid "Skip backward"
 msgstr "Skip backward"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:150
+#: ../../client/src/media/hooks/useMediaControls.ts:152
 msgid "Skip forward"
 msgstr "Skip forward"
 
@@ -441,7 +440,7 @@ msgstr "View your events and time-related info"
 msgid "View your latest news and rss feeds"
 msgstr "View your latest news and rss feeds"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:207
+#: ../../client/src/media/hooks/useMediaControls.ts:211
 msgid "Volume"
 msgstr "Volume"
 

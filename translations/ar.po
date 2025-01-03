@@ -69,7 +69,7 @@ msgstr "التقويم"
 msgid "Celsius"
 msgstr "سيلزيوس"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:267
+#: ../../client/src/media/hooks/useMediaControls.ts:278
 msgid "Close"
 msgstr "إغلاق"
 
@@ -136,7 +136,6 @@ msgid "Documents"
 msgstr "المستندات"
 
 #: ../../client/src/media/hooks/useMediaControls.ts:68
-#: ../../client/src/media/file/FileBinary.tsx:30
 msgid "Download"
 msgstr "تحميل"
 
@@ -182,7 +181,7 @@ msgstr "فهرنهايت"
 msgid "Files"
 msgstr "الملفات"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:261
+#: ../../client/src/media/hooks/useMediaControls.ts:268
 msgid "Fullscreen"
 msgstr "ملء الشاشة"
 
@@ -288,7 +287,7 @@ msgstr "الموسيقى"
 msgid "News"
 msgstr "الأخبار"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:183
+#: ../../client/src/media/hooks/useMediaControls.ts:187
 msgid "Next"
 msgstr "التالي"
 
@@ -296,7 +295,7 @@ msgstr "التالي"
 msgid "No events scheduled."
 msgstr "لا توجد أحداث مجدولة."
 
-#: ../../client/src/media/hooks/useMediaControls.ts:216
+#: ../../client/src/media/hooks/useMediaControls.ts:223
 msgid "Options"
 msgstr "الخيارات"
 
@@ -317,7 +316,7 @@ msgstr "إيقاف مؤقت"
 msgid "Pictures"
 msgstr "الصور"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:227
+#: ../../client/src/media/hooks/useMediaControls.ts:234
 msgid "Pin"
 msgstr "تثبيت"
 
@@ -329,7 +328,7 @@ msgstr "تشغيل"
 msgid "Please set your Groq API Key"
 msgstr "يرجى تعيين مفتاح Groq API الخاص بك"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:172
+#: ../../client/src/media/hooks/useMediaControls.ts:176
 msgid "Previous"
 msgstr "السابق"
 
@@ -349,7 +348,7 @@ msgstr "المطالبات"
 msgid "Provide a key to use AI features."
 msgstr "قدم مفتاحًا لاستخدام ميزات الذكاء الاصطناعي."
 
-#: ../../client/src/media/hooks/useMediaControls.ts:160
+#: ../../client/src/media/hooks/useMediaControls.ts:164
 msgid "Replay"
 msgstr "إعادة التشغيل"
 
@@ -383,7 +382,7 @@ msgstr "اختر سمة التطبيق."
 msgid "Settings"
 msgstr "الإعدادات"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:241
+#: ../../client/src/media/hooks/useMediaControls.ts:248
 msgid "Share"
 msgstr "مشاركة"
 
@@ -391,7 +390,7 @@ msgstr "مشاركة"
 msgid "Skip backward"
 msgstr "تخطي للخلف"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:150
+#: ../../client/src/media/hooks/useMediaControls.ts:152
 msgid "Skip forward"
 msgstr "تخطي للأمام"
 
@@ -441,7 +440,7 @@ msgstr "عرض أحداثك والمعلومات المتعلقة بالوقت"
 msgid "View your latest news and rss feeds"
 msgstr "عرض آخر الأخبار وتغذيات RSS الخاصة بك"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:207
+#: ../../client/src/media/hooks/useMediaControls.ts:211
 msgid "Volume"
 msgstr "مستوى الصوت"
 

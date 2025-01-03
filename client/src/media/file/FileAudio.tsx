@@ -9,7 +9,7 @@ import {toTimeRange} from 'app/utils/formatting';
 import type {FileProps} from 'media/file';
 import type {VideoRef} from 'react-exo/video';
 
-export type {VideoRef as AudioRef};
+export type {VideoRef};
 
 export interface FileAudio extends FileProps {
   ref: React.RefObject<VideoRef>,
@@ -25,15 +25,17 @@ export default forwardRef((props: Omit<FileAudio, 'ref'>, ref: React.Ref<VideoRe
       <Video
         ref={ref}
         source={{uri: source}}
-        controls={false}
         resizeMode="contain"
         onProgress={e => {
           actions.setCurrent(e.currentTime);
           actions.setDuration(e.playableDuration);
           actions.setInfo(toTimeRange(e.currentTime, e.playableDuration));
         }}
+        onVolumeChange={e => {
+          actions.setVolume(e.volume);
+        }}
         onPlaybackStateChanged={(e) => {
-          console.log('>> video', e);
+          actions.setPlaying(e.isPlaying);
         }}
       />
     </View>

@@ -65,6 +65,20 @@ export function Media(props: MediaProps) {
     ],
   }), [styles, pip, vertical, maximized, theme.breakpoints]);
 
+  // File actions
+  const actions = useMemo(() => ({
+    open: () => nav(url),
+    close,
+    setInfo,
+    setCover,
+    setTitle,
+    setMuted,
+    setVolume,
+    setPlaying,
+    setCurrent,
+    setDuration,
+  }), [close, nav, url]);
+
   // Reset information when file changes
   useEffect(() => {
     setTitle(targetName);
@@ -76,18 +90,6 @@ export function Media(props: MediaProps) {
     setCurrent(0);
     setDuration(0);
   }, [targetName]);
-
-  const actions = useMemo(() => ({
-    close,
-    setInfo,
-    setCover,
-    setTitle,
-    setMuted,
-    setVolume,
-    setPlaying,
-    setCurrent,
-    setDuration,
-  }), [close]);
 
   return (
     <View style={vstyles.root}>
@@ -111,6 +113,7 @@ export function Media(props: MediaProps) {
         file,
         renderer,
         maximized,
+        actions,
         metadata: {
           url,
           info,
@@ -125,8 +128,6 @@ export function Media(props: MediaProps) {
           current,
           duration,
         },
-        close,
-        open: () => nav(url),
       }}/>
     </View>
   );
