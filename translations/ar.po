@@ -34,6 +34,10 @@ msgstr "كل البيانات"
 msgid "Are you sure you want to change the owner key? This will reset the local database. This action cannot be undone."
 msgstr "هل أنت متأكد من أنك تريد تغيير مفتاح المالك؟ سيؤدي هذا إلى إعادة تعيين قاعدة البيانات المحلية. لا يمكن التراجع عن هذا الإجراء."
 
+#: ../../client/src/app/hooks/useSettings.ts:63
+msgid "Are you sure you want to reset your filesystem? This will delete all files."
+msgstr ""
+
 #: ../../client/src/app/hooks/useSettings.ts:50
 msgid "Are you sure you want to reset your local database? If data is not backed up on another device, it will be lost. This action cannot be undone."
 msgstr "هل أنت متأكد من أنك تريد إعادة تعيين قاعدة البيانات المحلية؟ إذا لم يتم نسخ البيانات احتياطيًا على جهاز آخر، فستفقد. لا يمكن التراجع عن هذا الإجراء."
@@ -86,6 +90,14 @@ msgstr "لوحة التحكم"
 msgid "Data"
 msgstr "البيانات"
 
+#: ../../client/src/app/routes/ScreenSettings.tsx:177
+msgid "Database"
+msgstr ""
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:188
+msgid "Delete all files."
+msgstr ""
+
 #: ../../client/src/app/routes/ScreenSettings.tsx:168
 msgid "Delete all prompt data."
 msgstr "حذف كل بيانات المطالبات."
@@ -93,6 +105,10 @@ msgstr "حذف كل بيانات المطالبات."
 #: ../../client/src/app/routes/ScreenSettings.tsx:180
 msgid "Delete Database"
 msgstr "حذف قاعدة البيانات"
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:190
+msgid "Delete Filesystem"
+msgstr ""
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:170
 msgid "Delete Prompts"
@@ -181,6 +197,10 @@ msgstr "فهرنهايت"
 #: ../../client/src/app/interface/Menu.tsx:45
 msgid "Files"
 msgstr "الملفات"
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:187
+msgid "Filesystem"
+msgstr ""
 
 #: ../../client/src/media/hooks/useMediaControls.ts:268
 msgid "Fullscreen"
@@ -378,8 +398,6 @@ msgid "Select the theme for the app."
 msgstr "اختر سمة التطبيق."
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:28
-#: ../../client/src/app/interface/Tabs.tsx:34
-#: ../../client/src/app/interface/Menu.tsx:140
 msgid "Settings"
 msgstr "الإعدادات"
 

@@ -174,13 +174,23 @@ export default function ScreenSettings() {
             />
           </PageItem>
           <PageItem
-            label={t`All Data`}
+            label={t`Database`}
             description={t`Delete the local database.`}>
             <Button
               label={t`Delete Database`}
               mode="Destructive"
               state="Default"
               onPress={settings.resetOwner}
+            />
+          </PageItem>
+          <PageItem
+            label={t`Filesystem`}
+            description={t`Delete all files.`}>
+            <Button
+              label={t`Delete Filesystem`}
+              mode="Destructive"
+              state="Default"
+              onPress={settings.resetFS}
             />
           </PageItem>
         </PageSection>

@@ -34,6 +34,10 @@ msgstr "모든 데이터"
 msgid "Are you sure you want to change the owner key? This will reset the local database. This action cannot be undone."
 msgstr "소유자 키를 변경하시겠습니까? 로컬 데이터베이스가 초기화됩니다. 이 작업은 취소할 수 없습니다."
 
+#: ../../client/src/app/hooks/useSettings.ts:63
+msgid "Are you sure you want to reset your filesystem? This will delete all files."
+msgstr ""
+
 #: ../../client/src/app/hooks/useSettings.ts:50
 msgid "Are you sure you want to reset your local database? If data is not backed up on another device, it will be lost. This action cannot be undone."
 msgstr "로컬 데이터베이스를 초기화하시겠습니까? 다른 기기에 백업되지 않은 데이터는 손실됩니다. 이 작업은 취소할 수 없습니다."
@@ -86,6 +90,14 @@ msgstr "대시보드"
 msgid "Data"
 msgstr "데이터"
 
+#: ../../client/src/app/routes/ScreenSettings.tsx:177
+msgid "Database"
+msgstr ""
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:188
+msgid "Delete all files."
+msgstr ""
+
 #: ../../client/src/app/routes/ScreenSettings.tsx:168
 msgid "Delete all prompt data."
 msgstr "모든 프롬프트 데이터 삭제"
@@ -93,6 +105,10 @@ msgstr "모든 프롬프트 데이터 삭제"
 #: ../../client/src/app/routes/ScreenSettings.tsx:180
 msgid "Delete Database"
 msgstr "데이터베이스 삭제"
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:190
+msgid "Delete Filesystem"
+msgstr ""
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:170
 msgid "Delete Prompts"
@@ -181,6 +197,10 @@ msgstr "화씨"
 #: ../../client/src/app/interface/Menu.tsx:45
 msgid "Files"
 msgstr "파일"
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:187
+msgid "Filesystem"
+msgstr ""
 
 #: ../../client/src/media/hooks/useMediaControls.ts:268
 msgid "Fullscreen"
@@ -378,8 +398,6 @@ msgid "Select the theme for the app."
 msgstr "앱 테마를 선택하세요."
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:28
-#: ../../client/src/app/interface/Tabs.tsx:34
-#: ../../client/src/app/interface/Menu.tsx:140
 msgid "Settings"
 msgstr "설정"
 

@@ -34,6 +34,10 @@ msgstr "Todos los datos"
 msgid "Are you sure you want to change the owner key? This will reset the local database. This action cannot be undone."
 msgstr "¿Estás seguro de que quieres cambiar la clave de propietario? Esto reiniciará la base de datos local. Esta acción no se puede deshacer."
 
+#: ../../client/src/app/hooks/useSettings.ts:63
+msgid "Are you sure you want to reset your filesystem? This will delete all files."
+msgstr ""
+
 #: ../../client/src/app/hooks/useSettings.ts:50
 msgid "Are you sure you want to reset your local database? If data is not backed up on another device, it will be lost. This action cannot be undone."
 msgstr "¿Estás seguro de que quieres reiniciar tu base de datos local? Si los datos no están respaldados en otro dispositivo, se perderán. Esta acción no se puede deshacer."
@@ -86,6 +90,14 @@ msgstr "Panel"
 msgid "Data"
 msgstr "Datos"
 
+#: ../../client/src/app/routes/ScreenSettings.tsx:177
+msgid "Database"
+msgstr ""
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:188
+msgid "Delete all files."
+msgstr ""
+
 #: ../../client/src/app/routes/ScreenSettings.tsx:168
 msgid "Delete all prompt data."
 msgstr "Eliminar todos los datos de prompts."
@@ -93,6 +105,10 @@ msgstr "Eliminar todos los datos de prompts."
 #: ../../client/src/app/routes/ScreenSettings.tsx:180
 msgid "Delete Database"
 msgstr "Eliminar Base de Datos"
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:190
+msgid "Delete Filesystem"
+msgstr ""
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:170
 msgid "Delete Prompts"
@@ -181,6 +197,10 @@ msgstr "Fahrenheit"
 #: ../../client/src/app/interface/Menu.tsx:45
 msgid "Files"
 msgstr "Archivos"
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:187
+msgid "Filesystem"
+msgstr ""
 
 #: ../../client/src/media/hooks/useMediaControls.ts:268
 msgid "Fullscreen"
@@ -378,8 +398,6 @@ msgid "Select the theme for the app."
 msgstr "Selecciona el tema para la aplicación."
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:28
-#: ../../client/src/app/interface/Tabs.tsx:34
-#: ../../client/src/app/interface/Menu.tsx:140
 msgid "Settings"
 msgstr "Ajustes"
 

@@ -59,6 +59,17 @@ export function useSettings() {
       .catch(error => alert(error));
   };
 
+  const resetFS = async () => {
+    if (!window.confirm(t`Are you sure you want to reset your filesystem? This will delete all files.`)) return;
+    const root = await navigator.storage.getDirectory();
+    // @ts-ignore
+    for await (const handle of root.values()) {
+      try {
+        await root.removeEntry(handle.name, {recursive: true});
+      } catch (e) {}
+    }
+  };
+
   return {
     owner,
     profile,
@@ -68,5 +79,6 @@ export function useSettings() {
     resetPrompts,
     resetOwner,
     changeOwner,
+    resetFS,
   };
 }

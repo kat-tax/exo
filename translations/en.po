@@ -34,6 +34,10 @@ msgstr "All Data"
 msgid "Are you sure you want to change the owner key? This will reset the local database. This action cannot be undone."
 msgstr "Are you sure you want to change the owner key? This will reset the local database. This action cannot be undone."
 
+#: ../../client/src/app/hooks/useSettings.ts:63
+msgid "Are you sure you want to reset your filesystem? This will delete all files."
+msgstr "Are you sure you want to reset your filesystem? This will delete all files."
+
 #: ../../client/src/app/hooks/useSettings.ts:50
 msgid "Are you sure you want to reset your local database? If data is not backed up on another device, it will be lost. This action cannot be undone."
 msgstr "Are you sure you want to reset your local database? If data is not backed up on another device, it will be lost. This action cannot be undone."
@@ -86,6 +90,14 @@ msgstr "Dashboard"
 msgid "Data"
 msgstr "Data"
 
+#: ../../client/src/app/routes/ScreenSettings.tsx:177
+msgid "Database"
+msgstr "Database"
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:188
+msgid "Delete all files."
+msgstr "Delete all files."
+
 #: ../../client/src/app/routes/ScreenSettings.tsx:168
 msgid "Delete all prompt data."
 msgstr "Delete all prompt data."
@@ -93,6 +105,10 @@ msgstr "Delete all prompt data."
 #: ../../client/src/app/routes/ScreenSettings.tsx:180
 msgid "Delete Database"
 msgstr "Delete Database"
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:190
+msgid "Delete Filesystem"
+msgstr "Delete Filesystem"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:170
 msgid "Delete Prompts"
@@ -181,6 +197,10 @@ msgstr "Fahrenheit"
 #: ../../client/src/app/interface/Menu.tsx:45
 msgid "Files"
 msgstr "Files"
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:187
+msgid "Filesystem"
+msgstr "Filesystem"
 
 #: ../../client/src/media/hooks/useMediaControls.ts:268
 msgid "Fullscreen"
@@ -378,8 +398,6 @@ msgid "Select the theme for the app."
 msgstr "Select the theme for the app."
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:28
-#: ../../client/src/app/interface/Tabs.tsx:34
-#: ../../client/src/app/interface/Menu.tsx:140
 msgid "Settings"
 msgstr "Settings"
 

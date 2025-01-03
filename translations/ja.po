@@ -34,6 +34,10 @@ msgstr "すべてのデータ"
 msgid "Are you sure you want to change the owner key? This will reset the local database. This action cannot be undone."
 msgstr "オーナーキーを変更してもよろしいですか？ローカルデータベースがリセットされます。この操作は取り消せません。"
 
+#: ../../client/src/app/hooks/useSettings.ts:63
+msgid "Are you sure you want to reset your filesystem? This will delete all files."
+msgstr ""
+
 #: ../../client/src/app/hooks/useSettings.ts:50
 msgid "Are you sure you want to reset your local database? If data is not backed up on another device, it will be lost. This action cannot be undone."
 msgstr "ローカルデータベースをリセットしてもよろしいですか？他のデバイスにバックアップされていないデータは失われます。この操作は取り消せません。"
@@ -86,6 +90,14 @@ msgstr "ダッシュボード"
 msgid "Data"
 msgstr "データ"
 
+#: ../../client/src/app/routes/ScreenSettings.tsx:177
+msgid "Database"
+msgstr ""
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:188
+msgid "Delete all files."
+msgstr ""
+
 #: ../../client/src/app/routes/ScreenSettings.tsx:168
 msgid "Delete all prompt data."
 msgstr "すべてのプロンプトデータを削除します。"
@@ -93,6 +105,10 @@ msgstr "すべてのプロンプトデータを削除します。"
 #: ../../client/src/app/routes/ScreenSettings.tsx:180
 msgid "Delete Database"
 msgstr "データベースを削除"
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:190
+msgid "Delete Filesystem"
+msgstr ""
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:170
 msgid "Delete Prompts"
@@ -181,6 +197,10 @@ msgstr "華氏"
 #: ../../client/src/app/interface/Menu.tsx:45
 msgid "Files"
 msgstr "ファイル"
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:187
+msgid "Filesystem"
+msgstr ""
 
 #: ../../client/src/media/hooks/useMediaControls.ts:268
 msgid "Fullscreen"
@@ -378,8 +398,6 @@ msgid "Select the theme for the app."
 msgstr "アプリのテーマを選択してください。"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:28
-#: ../../client/src/app/interface/Tabs.tsx:34
-#: ../../client/src/app/interface/Menu.tsx:140
 msgid "Settings"
 msgstr "設定"
 
