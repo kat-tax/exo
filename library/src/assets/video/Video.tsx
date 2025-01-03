@@ -1,5 +1,5 @@
 import VideoBase from 'react-native-video';
-import {useState, useRef, useImperativeHandle, forwardRef} from 'react';
+import {useState, useRef, useEffect, useImperativeHandle, forwardRef} from 'react';
 
 import type {VideoRef as VideoBaseRef} from 'react-native-video';
 import type {VideoComponent, VideoProps, VideoRef} from './Video.interface';
@@ -30,6 +30,24 @@ export const Video: VideoComponent = forwardRef(({title, thumbnails, ...props}: 
     restoreUIForPictureInPicture: (restore: boolean) =>
       video.current?.restoreUserInterfaceForPictureInPictureStopCompleted(restore),
   }));
+
+  // Attach play/pause handler when clicking web video
+  // TODO: keyboard events
+  useEffect(() => {
+    if (!video.current?.nativeHtmlVideoRef) return;
+    const toggle = () => {
+      if (!video.current?.nativeHtmlVideoRef) return;
+      if (video.current.nativeHtmlVideoRef.current?.paused) {
+        video.current.resume();
+      } else {
+        video.current.pause();
+      }
+    };
+    video.current.nativeHtmlVideoRef.current?.addEventListener('pointerup', toggle);
+    return () => {
+      video.current?.nativeHtmlVideoRef?.current?.removeEventListener('pointerup', toggle);
+    };
+  }, []);
 
   return (
     <VideoBase
