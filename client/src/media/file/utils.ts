@@ -250,6 +250,12 @@ export function getRenderer(
       return [FileType.Text, {language: 'shell'}];
     case 'sh-session':
       return [FileType.Text, {language: 'shellsession'}];
+    case 'rs':
+    case 'rs.in':
+      return [FileType.Text, {language: 'rust'}];
+    case 'rd':
+    case 'rsx':
+      return [FileType.Text, {language: 'r'}];
     case 'c':
     case 'cats':
     case 'idc':
@@ -292,8 +298,6 @@ export function getRenderer(
     case 'ccp':
     case 'cpy':
       return [FileType.Text, {language: 'cobol'}];
-    case 'css':
-      return [FileType.Text, {language: 'css'}];
     case 'csv':
       return [FileType.Text, {language: 'csv'}];
     case 'clj':
@@ -306,6 +310,8 @@ export function getRenderer(
     case 'cljx':
     case 'hic':
       return [FileType.Text, {language: 'clojure'}];
+    case 'vue':
+      return [FileType.Text, {language: 'vue'}];
     case 'jsx':
       return [FileType.Text, {language: 'jsx'}];
     case 'tsx':
@@ -585,6 +591,18 @@ export function getRenderer(
     case 'xhtml':
     case 'htm.hl':
       return [FileType.Text, {language: 'html'}];
+    case 'css':
+      return [FileType.Text, {language: 'css'}];
+    case 'less':
+      return [FileType.Text, {language: 'less'}];
+    case 'scss':
+      return [FileType.Text, {language: 'scss'}];
+    case 'sass':
+      return [FileType.Text, {language: 'sass'}];
+    case 'stylus':
+      return [FileType.Text, {language: 'stylus'}];
+    case 'styl':
+      return [FileType.Text, {language: 'styl'}];
     case 'mustache':
     case 'jinja':
       return [FileType.Text, {language: 'jinja'}];
@@ -599,6 +617,11 @@ export function getRenderer(
     case 'hbs':
     case 'hb':
       return [FileType.Text, {language: 'handlebars'}];
+    case 'rkt':
+    case 'rktd':
+    case 'rktl':
+    case 'scrbl':
+      return [FileType.Text, {language: 'racket'}];
     case 'hs':
     case 'hsc':
       return [FileType.Text, {language: 'haskell'}];
@@ -607,6 +630,9 @@ export function getRenderer(
       return [FileType.Text, {language: 'haxe'}];
     case 'hy':
       return [FileType.Text, {language: 'hy'}];
+    case 'nginx':
+    case 'nginxconf':
+      return [FileType.Text, {language: 'nginx'}];
     case 'http':
       return [FileType.Text, {language: 'http'}];
     case 'php':
@@ -624,6 +650,21 @@ export function getRenderer(
     case 'prefs':
     case 'properties':
       return [FileType.Text, {language: 'ini'}];
+    case 'rst':
+    case 'rest':
+    case 'rest.txt':
+    case 'rst.txt':
+      return [FileType.Text, {language: 'rst'}];
+    case 'yml':
+    case 'yaml':
+    case 'reek':
+    case 'rviz':
+    case 'syntax':
+    case 'sublime-syntax':
+    case 'yaml-tmlanguage':
+      return [FileType.Text, {language: 'yaml'}];
+    case 'toml':
+      return [FileType.Text, {language: 'toml'}];
     case 'json':
       return [FileType.Text, {language: 'json'}];
     case 'json5':
@@ -634,19 +675,6 @@ export function getRenderer(
       return [FileType.Text, {language: 'jsonl'}];
     case 'jsonnet':
       return [FileType.Text, {language: 'jsonnet'}];
-    case 'yml':
-    case 'yaml':
-    case 'reek':
-    case 'rviz':
-    case 'syntax':
-    case 'sublime-syntax':
-    case 'yaml-tmlanguage':
-      return [FileType.Text, {language: 'yaml'}];
-    case 'rst':
-    case 'rest':
-    case 'rest.txt':
-    case 'rst.txt':
-      return [FileType.Text, {language: 'rst'}];
     case 'sql':
     case 'cql':
     case 'ddl':
