@@ -47,7 +47,7 @@ export function MediaControls(props: MediaControlsProps) {
   const iconSize = sizeGroup === 1 ? 20 : 16;
   const vstyles = useMemo(() => ({
     icon: (state: PressableStateCallbackType) =>
-      state.hovered
+      state.hovered || TOUCH
         ? theme.colors.foreground
         : theme.colors.mutedForeground,
   }), [theme]);
