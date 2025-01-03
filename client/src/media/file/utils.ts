@@ -334,19 +334,6 @@ export function getRenderer(
     case 'sjs':
     case 'ssjs':
     case 'bones':
-    case 'sublime-build':
-    case 'sublime-commands':
-    case 'sublime-completions':
-    case 'sublime-keymap':
-    case 'sublime-macro':
-    case 'sublime-menu':
-    case 'sublime-mousemap':
-    case 'sublime-project':
-    case 'sublime-settings':
-    case 'sublime-theme':
-    case 'sublime-workspace':
-    case 'sublime_metrics':
-    case 'sublime_session':
     case 'xsjs':
     case 'xsjslib':
       return [FileType.Text, {language: 'javascript'}];
@@ -660,7 +647,6 @@ export function getRenderer(
     case 'reek':
     case 'rviz':
     case 'syntax':
-    case 'sublime-syntax':
     case 'yaml-tmlanguage':
       return [FileType.Text, {language: 'yaml'}];
     case 'toml':
