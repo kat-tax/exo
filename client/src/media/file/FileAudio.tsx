@@ -1,7 +1,7 @@
 import {Video} from 'react-exo/video';
 
 import {View} from 'react-native';
-import {useEffect, useCallback, forwardRef} from 'react';
+import {forwardRef} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useFileData} from 'media/hooks/useFileData';
 import {toTimeRange} from 'app/utils/formatting';
@@ -20,32 +20,22 @@ export default forwardRef((props: Omit<FileAudio, 'ref'>, ref: React.Ref<VideoRe
   const {styles} = useStyles(stylesheet);
   const {actions} = props;
 
-  const update = useCallback(async () => {
-    // @ts-ignore
-    const current = await ref?.current?.getCurrentTime();
-    // @ts-ignore
-    const duration = await ref?.current?.getDuration();
-    actions.setInfo(toTimeRange(current, duration));
-    actions.setCurrent(current);
-    actions.setDuration(duration);
-  }, [ref, actions]);
-
-  // Update file player bar info
-  useEffect(() => {
-    if (!source) {
-      actions.setInfo('00:00:00 / 00:00:00');
-      actions.setCurrent(0);
-      actions.setDuration(0);
-      return;
-    }
-    update();
-    const interval = setInterval(update, 1000);
-    return () => clearInterval(interval);
-  }, [source, update, actions]);
-
   return source ? (
     <View style={styles.root}>
-      <Video ref={ref} source={{uri: source}}/>
+      <Video
+        ref={ref}
+        source={{uri: source}}
+        controls={false}
+        resizeMode="contain"
+        onProgress={e => {
+          actions.setCurrent(e.currentTime);
+          actions.setDuration(e.playableDuration);
+          actions.setInfo(toTimeRange(e.currentTime, e.playableDuration));
+        }}
+        onPlaybackStateChanged={(e) => {
+          console.log('>> video', e);
+        }}
+      />
     </View>
   ) : null;
 });

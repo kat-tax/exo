@@ -14,6 +14,7 @@ msgstr ""
 "Plural-Forms: \n"
 
 #: ../../client/src/dev/routes/ScreenLibrary.tsx:20
+#: ../../client/src/dev/routes/ScreenDesign.tsx:14
 msgid "{0} components"
 msgstr "{0}개 컴포넌트"
 
@@ -50,6 +51,7 @@ msgstr "무엇이든 물어보세요..."
 msgid "Auto"
 msgstr "자동"
 
+#: ../../client/src/media/routes/ScreenBrowse.tsx:33
 #: ../../client/src/app/interface/Menu.tsx:75
 msgid "Books"
 msgstr "도서"
@@ -58,6 +60,7 @@ msgstr "도서"
 msgid "by {0}"
 msgstr "{0} 저"
 
+#: ../../client/src/world/routes/ScreenWorld.tsx:29
 #: ../../client/src/app/interface/Menu.tsx:92
 msgid "Calendar"
 msgstr "달력"
@@ -74,6 +77,7 @@ msgstr "닫기"
 msgid "Dark"
 msgstr "다크"
 
+#: ../../client/src/app/interface/Tabs.tsx:14
 #: ../../client/src/app/interface/Menu.tsx:28
 msgid "Dashboard"
 msgstr "대시보드"
@@ -98,6 +102,7 @@ msgstr "프롬프트 삭제"
 msgid "Delete the local database."
 msgstr "로컬 데이터베이스 삭제"
 
+#: ../../client/src/dev/routes/ScreenDesign.tsx:13
 #: ../../client/src/app/interface/Menu.tsx:118
 msgid "Design"
 msgstr "디자인"
@@ -130,6 +135,7 @@ msgstr "문서"
 msgid "Documents"
 msgstr "문서"
 
+#: ../../client/src/media/hooks/useMediaControls.ts:68
 #: ../../client/src/media/file/FileBinary.tsx:30
 msgid "Download"
 msgstr "다운로드"
@@ -170,6 +176,8 @@ msgstr "추출"
 msgid "Fahrenheit"
 msgstr "화씨"
 
+#: ../../client/src/media/routes/ScreenBrowse.tsx:39
+#: ../../client/src/app/interface/Tabs.tsx:24
 #: ../../client/src/app/interface/Menu.tsx:45
 msgid "Files"
 msgstr "파일"
@@ -178,6 +186,7 @@ msgstr "파일"
 msgid "Fullscreen"
 msgstr "전체화면"
 
+#: ../../client/src/media/routes/ScreenBrowse.tsx:31
 #: ../../client/src/app/interface/Menu.tsx:70
 msgid "Games"
 msgstr "게임"
@@ -222,6 +231,7 @@ msgstr "가져오기"
 msgid "Import Files"
 msgstr "파일 가져오기"
 
+#: ../../client/src/app/interface/Tabs.tsx:19
 #: ../../client/src/app/interface/Menu.tsx:33
 msgid "Inbox"
 msgstr "알림"
@@ -234,6 +244,7 @@ msgstr "킬로미터"
 msgid "Language"
 msgstr "언어"
 
+#: ../../client/src/dev/routes/ScreenLibrary.tsx:19
 #: ../../client/src/app/interface/Menu.tsx:123
 msgid "Library"
 msgstr "라이브러리"
@@ -241,10 +252,6 @@ msgstr "라이브러리"
 #: ../../client/src/app/routes/ScreenSettings.tsx:105
 msgid "Light"
 msgstr "라이트"
-
-#: ../../client/src/app/interface/Menu.tsx:99
-msgid "Live"
-msgstr "라이브"
 
 #: ../../client/src/home/hooks/useWeather.ts:11
 msgid "Loading..."
@@ -258,6 +265,7 @@ msgstr "설정 관리"
 msgid "Manage your storage"
 msgstr "저장소 관리"
 
+#: ../../client/src/world/routes/ScreenWorld.tsx:17
 #: ../../client/src/app/interface/Menu.tsx:82
 msgid "Map"
 msgstr "지도"
@@ -270,10 +278,12 @@ msgstr "미디어"
 msgid "Miles"
 msgstr "마일"
 
+#: ../../client/src/media/routes/ScreenBrowse.tsx:25
 #: ../../client/src/app/interface/Menu.tsx:55
 msgid "Music"
 msgstr "음악"
 
+#: ../../client/src/world/routes/ScreenWorld.tsx:23
 #: ../../client/src/app/interface/Menu.tsx:87
 msgid "News"
 msgstr "뉴스"
@@ -302,6 +312,7 @@ msgstr "소유자 키"
 msgid "Pause"
 msgstr "일시정지"
 
+#: ../../client/src/media/routes/ScreenBrowse.tsx:27
 #: ../../client/src/app/interface/Menu.tsx:60
 msgid "Pictures"
 msgstr "사진"
@@ -366,6 +377,8 @@ msgstr "앱에서 사용할 온도 단위를 선택하세요."
 msgid "Select the theme for the app."
 msgstr "앱 테마를 선택하세요."
 
+#: ../../client/src/app/routes/ScreenSettings.tsx:28
+#: ../../client/src/app/interface/Tabs.tsx:34
 #: ../../client/src/app/interface/Menu.tsx:140
 msgid "Settings"
 msgstr "설정"
@@ -382,10 +395,7 @@ msgstr "뒤로 건너뛰기"
 msgid "Skip forward"
 msgstr "앞으로 건너뛰기"
 
-#: ../../client/src/app/interface/Menu.tsx:97
-msgid "Social"
-msgstr "소셜"
-
+#: ../../client/src/app/routes/ScreenStorage.tsx:25
 #: ../../client/src/app/interface/Menu.tsx:134
 msgid "Storage"
 msgstr "저장소"
@@ -414,6 +424,7 @@ msgstr "업로드"
 msgid "User Name"
 msgstr "사용자 이름"
 
+#: ../../client/src/media/routes/ScreenBrowse.tsx:29
 #: ../../client/src/app/interface/Menu.tsx:65
 msgid "Videos"
 msgstr "동영상"
@@ -446,6 +457,7 @@ msgstr "환영합니다"
 msgid "Work in progress..."
 msgstr "작업 중..."
 
+#: ../../client/src/app/interface/Tabs.tsx:29
 #: ../../client/src/app/interface/Menu.tsx:80
 msgid "World"
 msgstr "세계"

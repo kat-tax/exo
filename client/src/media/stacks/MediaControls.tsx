@@ -91,7 +91,7 @@ export function MediaControls(props: MediaControlsProps) {
             }
             <Text style={styles.metadata} numberOfLines={2} selectable={false}>
               <View>
-                <Text style={styles.title} numberOfLines={2}>
+                <Text style={styles.title} numberOfLines={TOUCH ? 2 : 1}>
                   {title}
                 </Text>
                 <Text style={styles.info} numberOfLines={1}>

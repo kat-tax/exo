@@ -19,7 +19,7 @@ export const Slider: SliderComponent = (props: SliderProps) => {
         step={props.step ?? 1}
         min={props.lowerLimit ?? 0}
         max={props.upperLimit ?? 100}
-        defaultValue={[props.value ?? 0]}
+        value={[props.value ?? 0]}
         onValueChange={e => props?.onChange?.(e[0] ?? 0)}
         style={{
           height: 20,
