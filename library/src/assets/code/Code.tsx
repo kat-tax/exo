@@ -18,6 +18,7 @@ export function Code(props: CodeProps) {
   useEffect(() => {
     (async () => {
       shiki.current = await highlighterInit;
+      lang && await shiki.current.loadLanguage(lang);
       setCode(shiki.current.codeToHtml(children, {
         lang: lang ?? 'text',
         theme: theme ?? 'light-plus',
