@@ -13,4 +13,3 @@ export const hashFile = FS.hashFile;
 export const cancelHash = FS.cancelHash;
 
 export const isTextFile = FS.isTextFile;
-export const isBinaryFile = FS.isBinaryFile;

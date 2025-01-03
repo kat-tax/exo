@@ -19,7 +19,7 @@ export interface EncodingOpts {
  */
 export function isText(
   filename?: string | null,
-  buffer?: Buffer | null,
+  buffer?: ArrayBuffer | null,
 ): boolean | null {
   // Test extensions
   if (filename) {
@@ -55,7 +55,7 @@ export function isText(
  * @param buffer The buffer for the file if available
  * @returns Will be `null` if neither `filename` nor `buffer` were provided. Otherwise will be a boolean value with the detection result.
  */
-export function isBinary(filename?: string | null, buffer?: Buffer | null) {
+export function isBinary(filename?: string | null, buffer?: ArrayBuffer | null) {
   const text = isText(filename, buffer);
   if (text == null) return null;
   return !text;
@@ -68,11 +68,14 @@ export function isBinary(filename?: string | null, buffer?: Buffer | null) {
  * @returns Will be `null` if `buffer` was not provided. Otherwise will be either `'utf8'` or `'binary'`
  */
 export function getEncoding(
-  buffer: Buffer | null,
+  buffer: ArrayBuffer | null,
   opts?: EncodingOpts,
 ): 'utf8' | 'binary' | null {
   // Check
   if (!buffer) return null
+
+  // Convert to Uint8Array for byte access
+  const bytes = new Uint8Array(buffer);
 
   // Prepare
   const textEncoding = 'utf8';
@@ -86,14 +89,14 @@ export function getEncoding(
     let encoding = getEncoding(buffer, {chunkLength, chunkBegin});
     if (encoding === textEncoding) {
       // Middle
-      chunkBegin = Math.max(0, Math.floor(buffer.length / 2) - chunkLength);
+      chunkBegin = Math.max(0, Math.floor(bytes.length / 2) - chunkLength);
       encoding = getEncoding(buffer, {
         chunkLength,
         chunkBegin,
       });
       if (encoding === textEncoding) {
         // End
-        chunkBegin = Math.max(0, buffer.length - chunkLength);
+        chunkBegin = Math.max(0, bytes.length - chunkLength);
         encoding = getEncoding(buffer, {
           chunkLength,
           chunkBegin,
@@ -106,21 +109,21 @@ export function getEncoding(
   }
 
   // Extract
-  chunkBegin = getChunkBegin(buffer, chunkBegin);
+  chunkBegin = getChunkBegin(bytes, chunkBegin);
   if (chunkBegin === -1) {
     return binaryEncoding;
   }
 
   const chunkEnd = getChunkEnd(
-    buffer,
-    Math.min(buffer.length, chunkBegin + chunkLength)
+    bytes,
+    Math.min(bytes.length, chunkBegin + chunkLength)
   );
 
-  if (chunkEnd > buffer.length) {
+  if (chunkEnd > bytes.length) {
     return binaryEncoding;
   }
 
-  const contentChunkUTF8 = buffer.toString(textEncoding, chunkBegin, chunkEnd);
+  const contentChunkUTF8 = new TextDecoder('utf-8').decode(bytes.slice(chunkBegin, chunkEnd));
 
   // Detect encoding
   for (let i = 0; i < contentChunkUTF8.length; ++i) {
@@ -141,20 +144,20 @@ export function getEncoding(
 // The functions below are created to handle multibyte utf8 characters.
 // To understand how the encoding works, check this article: https://en.wikipedia.org/wiki/UTF-8#Encoding
 
-function getChunkBegin(buf: Buffer, chunkBegin: number) {
+function getChunkBegin(bytes: Uint8Array, chunkBegin: number) {
   // If it's the beginning, just return.
   if (chunkBegin === 0) {
     return 0;
   }
 
-  if (!isLaterByteOfUtf8(buf[chunkBegin])) {
+  if (!isLaterByteOfUtf8(bytes[chunkBegin])) {
     return chunkBegin;
   }
 
   let begin = chunkBegin - 3;
 
   if (begin >= 0) {
-    if (isFirstByteOf4ByteChar(buf[begin])) {
+    if (isFirstByteOf4ByteChar(bytes[begin])) {
       return begin;
     }
   }
@@ -163,8 +166,8 @@ function getChunkBegin(buf: Buffer, chunkBegin: number) {
 
   if (begin >= 0) {
     if (
-      isFirstByteOf4ByteChar(buf[begin]) ||
-      isFirstByteOf3ByteChar(buf[begin])
+      isFirstByteOf4ByteChar(bytes[begin]) ||
+      isFirstByteOf3ByteChar(bytes[begin])
     ) {
       return begin;
     }
@@ -175,9 +178,9 @@ function getChunkBegin(buf: Buffer, chunkBegin: number) {
   if (begin >= 0) {
     // Is it a 4-byte, 3-byte utf8 character?
     if (
-      isFirstByteOf4ByteChar(buf[begin]) ||
-      isFirstByteOf3ByteChar(buf[begin]) ||
-      isFirstByteOf2ByteChar(buf[begin])
+      isFirstByteOf4ByteChar(bytes[begin]) ||
+      isFirstByteOf3ByteChar(bytes[begin]) ||
+      isFirstByteOf2ByteChar(bytes[begin])
     ) {
       return begin;
     }
@@ -186,16 +189,16 @@ function getChunkBegin(buf: Buffer, chunkBegin: number) {
   return -1;
 }
 
-function getChunkEnd(buf: Buffer, chunkEnd: number) {
+function getChunkEnd(bytes: Uint8Array, chunkEnd: number) {
   // If it's the end, just return.
-  if (chunkEnd === buf.length) {
+  if (chunkEnd === bytes.length) {
     return chunkEnd;
   }
 
   let index = chunkEnd - 3;
 
   if (index >= 0) {
-    if (isFirstByteOf4ByteChar(buf[index])) {
+    if (isFirstByteOf4ByteChar(bytes[index])) {
       return chunkEnd + 1;
     }
   }
@@ -203,11 +206,11 @@ function getChunkEnd(buf: Buffer, chunkEnd: number) {
   index = chunkEnd - 2;
 
   if (index >= 0) {
-    if (isFirstByteOf4ByteChar(buf[index])) {
+    if (isFirstByteOf4ByteChar(bytes[index])) {
       return chunkEnd + 2;
     }
 
-    if (isFirstByteOf3ByteChar(buf[index])) {
+    if (isFirstByteOf3ByteChar(bytes[index])) {
       return chunkEnd + 1;
     }
   }
@@ -215,15 +218,15 @@ function getChunkEnd(buf: Buffer, chunkEnd: number) {
   index = chunkEnd - 1;
 
   if (index >= 0) {
-    if (isFirstByteOf4ByteChar(buf[index])) {
+    if (isFirstByteOf4ByteChar(bytes[index])) {
       return chunkEnd + 3;
     }
 
-    if (isFirstByteOf3ByteChar(buf[index])) {
+    if (isFirstByteOf3ByteChar(bytes[index])) {
       return chunkEnd + 2;
     }
 
-    if (isFirstByteOf2ByteChar(buf[index])) {
+    if (isFirstByteOf2ByteChar(bytes[index])) {
       return chunkEnd + 1;
     }
   }

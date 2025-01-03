@@ -1,8 +1,7 @@
 import {hfs} from '@humanfs/web';
 //import ipfs from './lib/plugins/IpfsHfs';
 import Hasher from './lib/hash/WebHasher';
-import {getFileBuffer} from './lib/path/web';
-import {isText, isBinary} from './lib/data';
+import {isText} from './lib/data';
 
 import type {HfsImpl} from '@humanfs/web';
 import type {IpfsHfs} from './lib/plugins/IpfsHfs';
@@ -61,13 +60,7 @@ export class FSService implements FSBase {
     return Hasher.cancel(jobId);
   }
 
-  async isTextFile(name: string, file: FileSystemIn) {
-    const buffer = await getFileBuffer(file);
+  async isTextFile(name: string, buffer?: ArrayBuffer) {
     return isText(name, buffer);
-  }
-
-  async isBinaryFile(name: string, file: FileSystemIn) {
-    const buffer = await getFileBuffer(file);
-    return isBinary(name, buffer);
   }
 }

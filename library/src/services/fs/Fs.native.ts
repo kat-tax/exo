@@ -51,15 +51,7 @@ export class FSService implements FSBase {
     console.log('[cancelHash] not implemented on native', jobId);
   }
 
-  async isTextFile(name: string, input: FileSystemIn) {
-    if (typeof input !== 'string')
-      throw new Error('[isTextFile] file input not supported on native');
-    return isText(name);
-  }
-
-  async isBinaryFile(name: string, input: FileSystemIn) {
-    if (typeof input !== 'string')
-      throw new Error('[isBinaryFile] file input not supported on native');
-    return isBinary(name);
+  async isTextFile(name: string, buffer?: ArrayBuffer) {
+    return isText(name, buffer);
   }
 }

@@ -39,8 +39,10 @@ export interface FSBase {
     jobId?: number,
   ) => Promise<string>,
 
-  isTextFile: (name: string, input: FileSystemIn) => Promise<boolean | null>,
-  isBinaryFile: (name: string, input: FileSystemIn) => Promise<boolean | null>,
+  isTextFile: (
+    name: string,
+    buffer?: ArrayBuffer,
+  ) => Promise<boolean | null>,
 }
 
 export type FileSystemIn = string | File | FileSystemSyncAccessHandle;

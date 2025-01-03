@@ -79,8 +79,9 @@ export function getProtocol(path: string): FileProtocol {
 }
 
 export async function getRenderer(
-  extension: string,
+  path: string,
 ): Promise<FileRenderInfo> {
+  const extension = path.split('.').pop();
   switch (extension) {
     // Archives
     case 'zip':
@@ -142,6 +143,15 @@ export async function getRenderer(
     case 'geojson':
       return [FileType.Map, {}];
     // Documents
+    case 'docx':
+    case 'doc':
+      return [FileType.Document, {}];
+    case 'xlsx':
+    case 'xls':
+      return [FileType.Spreadsheet, {}];
+    case 'pptx':
+    case 'ppt':
+      return [FileType.Presentation, {}];
     case 'pdf':
       return [FileType.Pdf, {}];
     case 'typ':
@@ -755,8 +765,8 @@ export async function getRenderer(
     case 'zcml':
       return [FileType.Text, {language: 'xml'}];
     default: {
-      const isText = await isTextFile(extension, null);
-      return isText
+      const buffer = await getData(path, 'arrayBuffer');
+      return await isTextFile(extension ?? '', buffer)
         ? [FileType.Text, {language: 'text'}]
         : [FileType.Binary, {}];
     }
