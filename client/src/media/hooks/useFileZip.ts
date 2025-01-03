@@ -35,7 +35,6 @@ export function useFileZip(path: string) {
       const _view = new Uint8Array(buffer);
       const _zip = await _fs.importUint8Array(_view);
       filesystem.current = _fs;
-      console.log(_zip?.[0]?.data);
       setZip({
         date: {
           created: _zip?.[0]?.data?.creationDate,
@@ -66,7 +65,9 @@ export function useFileZip(path: string) {
     const stream = await handle.createWritable();
     const source = filesystem.current?.getById(file.id);
     // @ts-ignore
-    source?.exportWritable(stream);
+    // FIXME: this exports the entire zip
+    // source?.fs?.exportWritable(stream);
+    console.log('>> extract', source, stream);
   }, [zip]);
 
   return {zip, extract};
