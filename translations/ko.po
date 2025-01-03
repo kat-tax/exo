@@ -135,8 +135,7 @@ msgstr "문서"
 msgid "Documents"
 msgstr "문서"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:68
-#: ../../client/src/media/file/FileBinary.tsx:30
+#: ../../client/src/media/hooks/useMediaControls.ts:67
 msgid "Download"
 msgstr "다운로드"
 
@@ -144,7 +143,7 @@ msgstr "다운로드"
 msgid "Downloads"
 msgstr "다운로드"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:58
+#: ../../client/src/media/hooks/useMediaControls.ts:57
 msgid "Edit"
 msgstr "편집"
 
@@ -168,7 +167,7 @@ msgstr "니모닉 구문을 입력하세요"
 msgid "Enter your name"
 msgstr "이름을 입력하세요"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:78
+#: ../../client/src/media/hooks/useMediaControls.ts:77
 msgid "Extract"
 msgstr "추출"
 
@@ -288,7 +287,7 @@ msgstr "음악"
 msgid "News"
 msgstr "뉴스"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:187
+#: ../../client/src/media/hooks/useMediaControls.ts:186
 msgid "Next"
 msgstr "다음"
 
@@ -308,7 +307,7 @@ msgstr "개요"
 msgid "Owner Key"
 msgstr "소유자 키"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:121
+#: ../../client/src/media/hooks/useMediaControls.ts:120
 msgid "Pause"
 msgstr "일시정지"
 
@@ -321,7 +320,7 @@ msgstr "사진"
 msgid "Pin"
 msgstr "고정"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:122
+#: ../../client/src/media/hooks/useMediaControls.ts:121
 msgid "Play"
 msgstr "재생"
 
@@ -329,7 +328,7 @@ msgstr "재생"
 msgid "Please set your Groq API Key"
 msgstr "Groq API 키를 설정해주세요"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:176
+#: ../../client/src/media/hooks/useMediaControls.ts:175
 msgid "Previous"
 msgstr "이전"
 
@@ -349,11 +348,11 @@ msgstr "프롬프트"
 msgid "Provide a key to use AI features."
 msgstr "AI 기능을 사용하려면 키를 입력하세요."
 
-#: ../../client/src/media/hooks/useMediaControls.ts:164
+#: ../../client/src/media/hooks/useMediaControls.ts:163
 msgid "Replay"
 msgstr "다시 재생"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:88
+#: ../../client/src/media/hooks/useMediaControls.ts:87
 msgid "Search"
 msgstr "검색"
 
@@ -387,11 +386,11 @@ msgstr "설정"
 msgid "Share"
 msgstr "공유"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:141
+#: ../../client/src/media/hooks/useMediaControls.ts:140
 msgid "Skip backward"
 msgstr "뒤로 건너뛰기"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:152
+#: ../../client/src/media/hooks/useMediaControls.ts:151
 msgid "Skip forward"
 msgstr "앞으로 건너뛰기"
 
@@ -478,10 +477,10 @@ msgstr "앱에 표시될 이름입니다."
 msgid "Your prompt history has been reset."
 msgstr "프롬프트 기록이 초기화되었습니다."
 
-#: ../../client/src/media/hooks/useMediaControls.ts:98
+#: ../../client/src/media/hooks/useMediaControls.ts:97
 msgid "Zoom in"
 msgstr "확대"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:109
+#: ../../client/src/media/hooks/useMediaControls.ts:108
 msgid "Zoom out"
 msgstr "축소"

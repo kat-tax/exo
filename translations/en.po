@@ -135,8 +135,7 @@ msgstr "Docs"
 msgid "Documents"
 msgstr "Documents"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:68
-#: ../../client/src/media/file/FileBinary.tsx:30
+#: ../../client/src/media/hooks/useMediaControls.ts:67
 msgid "Download"
 msgstr "Download"
 
@@ -144,7 +143,7 @@ msgstr "Download"
 msgid "Downloads"
 msgstr "Downloads"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:58
+#: ../../client/src/media/hooks/useMediaControls.ts:57
 msgid "Edit"
 msgstr "Edit"
 
@@ -168,7 +167,7 @@ msgstr "Enter your mnemonic phrase"
 msgid "Enter your name"
 msgstr "Enter your name"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:78
+#: ../../client/src/media/hooks/useMediaControls.ts:77
 msgid "Extract"
 msgstr "Extract"
 
@@ -288,7 +287,7 @@ msgstr "Music"
 msgid "News"
 msgstr "News"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:187
+#: ../../client/src/media/hooks/useMediaControls.ts:186
 msgid "Next"
 msgstr "Next"
 
@@ -308,7 +307,7 @@ msgstr "Overview"
 msgid "Owner Key"
 msgstr "Owner Key"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:121
+#: ../../client/src/media/hooks/useMediaControls.ts:120
 msgid "Pause"
 msgstr "Pause"
 
@@ -321,7 +320,7 @@ msgstr "Pictures"
 msgid "Pin"
 msgstr "Pin"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:122
+#: ../../client/src/media/hooks/useMediaControls.ts:121
 msgid "Play"
 msgstr "Play"
 
@@ -329,7 +328,7 @@ msgstr "Play"
 msgid "Please set your Groq API Key"
 msgstr "Please set your Groq API Key"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:176
+#: ../../client/src/media/hooks/useMediaControls.ts:175
 msgid "Previous"
 msgstr "Previous"
 
@@ -349,11 +348,11 @@ msgstr "Prompts"
 msgid "Provide a key to use AI features."
 msgstr "Provide a key to use AI features."
 
-#: ../../client/src/media/hooks/useMediaControls.ts:164
+#: ../../client/src/media/hooks/useMediaControls.ts:163
 msgid "Replay"
 msgstr "Replay"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:88
+#: ../../client/src/media/hooks/useMediaControls.ts:87
 msgid "Search"
 msgstr "Search"
 
@@ -387,11 +386,11 @@ msgstr "Settings"
 msgid "Share"
 msgstr "Share"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:141
+#: ../../client/src/media/hooks/useMediaControls.ts:140
 msgid "Skip backward"
 msgstr "Skip backward"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:152
+#: ../../client/src/media/hooks/useMediaControls.ts:151
 msgid "Skip forward"
 msgstr "Skip forward"
 
@@ -478,10 +477,10 @@ msgstr "Your name to display in the app."
 msgid "Your prompt history has been reset."
 msgstr "Your prompt history has been reset."
 
-#: ../../client/src/media/hooks/useMediaControls.ts:98
+#: ../../client/src/media/hooks/useMediaControls.ts:97
 msgid "Zoom in"
 msgstr "Zoom in"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:109
+#: ../../client/src/media/hooks/useMediaControls.ts:108
 msgid "Zoom out"
 msgstr "Zoom out"

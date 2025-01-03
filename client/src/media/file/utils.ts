@@ -78,9 +78,9 @@ export function getProtocol(path: string): FileProtocol {
   return protocol;
 }
 
-export function getRenderer(
+export async function getRenderer(
   extension: string,
-): FileRenderInfo {
+): Promise<FileRenderInfo> {
   switch (extension) {
     // Archives
     case 'zip':
@@ -755,10 +755,7 @@ export function getRenderer(
     case 'zcml':
       return [FileType.Text, {language: 'xml'}];
     default: {
-      // TODO: pass data to isTextFile to auto-detect utf-8 files
-      // const isText = await isTextFile(ext, null);
-      const isText = false;
-      console.log(isTextFile);
+      const isText = await isTextFile(extension, null);
       return isText
         ? [FileType.Text, {language: 'text'}]
         : [FileType.Binary, {}];

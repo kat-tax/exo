@@ -135,8 +135,7 @@ msgstr "المستندات"
 msgid "Documents"
 msgstr "المستندات"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:68
-#: ../../client/src/media/file/FileBinary.tsx:30
+#: ../../client/src/media/hooks/useMediaControls.ts:67
 msgid "Download"
 msgstr "تحميل"
 
@@ -144,7 +143,7 @@ msgstr "تحميل"
 msgid "Downloads"
 msgstr "التنزيلات"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:58
+#: ../../client/src/media/hooks/useMediaControls.ts:57
 msgid "Edit"
 msgstr "تعديل"
 
@@ -168,7 +167,7 @@ msgstr "أدخل عبارتك التذكيرية"
 msgid "Enter your name"
 msgstr "أدخل اسمك"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:78
+#: ../../client/src/media/hooks/useMediaControls.ts:77
 msgid "Extract"
 msgstr "استخراج"
 
@@ -288,7 +287,7 @@ msgstr "الموسيقى"
 msgid "News"
 msgstr "الأخبار"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:187
+#: ../../client/src/media/hooks/useMediaControls.ts:186
 msgid "Next"
 msgstr "التالي"
 
@@ -308,7 +307,7 @@ msgstr "نظرة عامة"
 msgid "Owner Key"
 msgstr "مفتاح المالك"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:121
+#: ../../client/src/media/hooks/useMediaControls.ts:120
 msgid "Pause"
 msgstr "إيقاف مؤقت"
 
@@ -321,7 +320,7 @@ msgstr "الصور"
 msgid "Pin"
 msgstr "تثبيت"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:122
+#: ../../client/src/media/hooks/useMediaControls.ts:121
 msgid "Play"
 msgstr "تشغيل"
 
@@ -329,7 +328,7 @@ msgstr "تشغيل"
 msgid "Please set your Groq API Key"
 msgstr "يرجى تعيين مفتاح Groq API الخاص بك"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:176
+#: ../../client/src/media/hooks/useMediaControls.ts:175
 msgid "Previous"
 msgstr "السابق"
 
@@ -349,11 +348,11 @@ msgstr "المطالبات"
 msgid "Provide a key to use AI features."
 msgstr "قدم مفتاحًا لاستخدام ميزات الذكاء الاصطناعي."
 
-#: ../../client/src/media/hooks/useMediaControls.ts:164
+#: ../../client/src/media/hooks/useMediaControls.ts:163
 msgid "Replay"
 msgstr "إعادة التشغيل"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:88
+#: ../../client/src/media/hooks/useMediaControls.ts:87
 msgid "Search"
 msgstr "بحث"
 
@@ -387,11 +386,11 @@ msgstr "الإعدادات"
 msgid "Share"
 msgstr "مشاركة"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:141
+#: ../../client/src/media/hooks/useMediaControls.ts:140
 msgid "Skip backward"
 msgstr "تخطي للخلف"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:152
+#: ../../client/src/media/hooks/useMediaControls.ts:151
 msgid "Skip forward"
 msgstr "تخطي للأمام"
 
@@ -478,10 +477,10 @@ msgstr "اسمك للعرض في التطبيق."
 msgid "Your prompt history has been reset."
 msgstr "تم إعادة تعيين سجل المطالبات الخاص بك."
 
-#: ../../client/src/media/hooks/useMediaControls.ts:98
+#: ../../client/src/media/hooks/useMediaControls.ts:97
 msgid "Zoom in"
 msgstr "تكبير"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:109
+#: ../../client/src/media/hooks/useMediaControls.ts:108
 msgid "Zoom out"
 msgstr "تصغير"

@@ -18,7 +18,7 @@ const TOUCH = isTouch();
 
 export interface MediaControlsProps {
   file: React.RefObject<FileRef>,
-  renderer: FileRenderInfo,
+  renderer?: FileRenderInfo,
   maximized: boolean,
   actions: FileProps['actions'],
   metadata: {
@@ -43,7 +43,7 @@ export interface MediaControlsProps {
 export function MediaControls(props: MediaControlsProps) {
   const {controls, seekable} = useMediaControls(props);
   const {styles, theme} = useStyles(stylesheet);
-  const [fileType] = props.renderer;
+  const [fileType] = props.renderer ?? [];
   const isBook = fileType === FileType.Book;
   const sizeGroup = TOUCH ? 1 : 0;
   const imageSize = sizeGroup === 1 ? 36 : 32;
@@ -58,8 +58,6 @@ export function MediaControls(props: MediaControlsProps) {
       isBook && styles.disabled,
     ],
   }), [theme, styles, isBook]);
-
-  console.log('metadata', props.metadata);
 
   return (
     <Motion.View

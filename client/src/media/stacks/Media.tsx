@@ -7,10 +7,9 @@ import {useMediaSelection} from 'media/hooks/useMediaSelection';
 import {MediaSelection} from 'media/stacks/MediaSelection';
 import {MediaControls} from 'media/stacks/MediaControls';
 import {getRenderer} from 'media/file/utils';
-
 import File from 'media/file';
 
-import type {FileRef} from 'media/file/types';
+import type {FileRef, FileRenderInfo} from 'media/file/types';
 
 interface MediaProps {
   url: string,
@@ -40,10 +39,10 @@ export function Media(props: MediaProps) {
   const showSelection = maximized || selectActive;
 
   // File information
-  const renderer = useMemo(() => getRenderer(targetExt), [targetExt]);
+  const [renderer, setRenderer] = useState<FileRenderInfo>();
   const [title, setTitle] = useState(targetName);
-  const [cover, setCover] = useState('');
   const [info, setInfo] = useState('‎');
+  const [cover, setCover] = useState('');
   const [muted, setMuted] = useState(false);
   const [volume, setVolume] = useState(100);
   const [playing, setPlaying] = useState(false);
@@ -90,6 +89,13 @@ export function Media(props: MediaProps) {
     setCurrent(0);
     setDuration(0);
   }, [targetName]);
+
+  // Update renderer when file extension changes
+  useEffect(() => {
+    (async () => {
+      setRenderer(await getRenderer(targetExt));
+    })();
+  }, [targetExt]);
 
   return (
     <View style={vstyles.root}>

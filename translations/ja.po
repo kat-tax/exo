@@ -135,8 +135,7 @@ msgstr "ドキュメント"
 msgid "Documents"
 msgstr "ドキュメント"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:68
-#: ../../client/src/media/file/FileBinary.tsx:30
+#: ../../client/src/media/hooks/useMediaControls.ts:67
 msgid "Download"
 msgstr "ダウンロード"
 
@@ -144,7 +143,7 @@ msgstr "ダウンロード"
 msgid "Downloads"
 msgstr "ダウンロード"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:58
+#: ../../client/src/media/hooks/useMediaControls.ts:57
 msgid "Edit"
 msgstr "編集"
 
@@ -168,7 +167,7 @@ msgstr "ニーモニックフレーズを入力"
 msgid "Enter your name"
 msgstr "名前を入力"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:78
+#: ../../client/src/media/hooks/useMediaControls.ts:77
 msgid "Extract"
 msgstr "抽出"
 
@@ -288,7 +287,7 @@ msgstr "音楽"
 msgid "News"
 msgstr "ニュース"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:187
+#: ../../client/src/media/hooks/useMediaControls.ts:186
 msgid "Next"
 msgstr "次へ"
 
@@ -308,7 +307,7 @@ msgstr "概要"
 msgid "Owner Key"
 msgstr "オーナーキー"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:121
+#: ../../client/src/media/hooks/useMediaControls.ts:120
 msgid "Pause"
 msgstr "一時停止"
 
@@ -321,7 +320,7 @@ msgstr "写真"
 msgid "Pin"
 msgstr "ピン留め"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:122
+#: ../../client/src/media/hooks/useMediaControls.ts:121
 msgid "Play"
 msgstr "再生"
 
@@ -329,7 +328,7 @@ msgstr "再生"
 msgid "Please set your Groq API Key"
 msgstr "Groq APIキーを設定してください"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:176
+#: ../../client/src/media/hooks/useMediaControls.ts:175
 msgid "Previous"
 msgstr "前へ"
 
@@ -349,11 +348,11 @@ msgstr "プロンプト"
 msgid "Provide a key to use AI features."
 msgstr "AI機能を使用するにはキーを提供してください。"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:164
+#: ../../client/src/media/hooks/useMediaControls.ts:163
 msgid "Replay"
 msgstr "リプレイ"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:88
+#: ../../client/src/media/hooks/useMediaControls.ts:87
 msgid "Search"
 msgstr "検索"
 
@@ -387,11 +386,11 @@ msgstr "設定"
 msgid "Share"
 msgstr "共有"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:141
+#: ../../client/src/media/hooks/useMediaControls.ts:140
 msgid "Skip backward"
 msgstr "巻き戻し"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:152
+#: ../../client/src/media/hooks/useMediaControls.ts:151
 msgid "Skip forward"
 msgstr "早送り"
 
@@ -478,10 +477,10 @@ msgstr "アプリに表示する名前。"
 msgid "Your prompt history has been reset."
 msgstr "プロンプト履歴がリセットされました。"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:98
+#: ../../client/src/media/hooks/useMediaControls.ts:97
 msgid "Zoom in"
 msgstr "拡大"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:109
+#: ../../client/src/media/hooks/useMediaControls.ts:108
 msgid "Zoom out"
 msgstr "縮小"

@@ -135,8 +135,7 @@ msgstr "Документы"
 msgid "Documents"
 msgstr "Документы"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:68
-#: ../../client/src/media/file/FileBinary.tsx:30
+#: ../../client/src/media/hooks/useMediaControls.ts:67
 msgid "Download"
 msgstr "Скачать"
 
@@ -144,7 +143,7 @@ msgstr "Скачать"
 msgid "Downloads"
 msgstr "Загрузки"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:58
+#: ../../client/src/media/hooks/useMediaControls.ts:57
 msgid "Edit"
 msgstr "Редактировать"
 
@@ -168,7 +167,7 @@ msgstr "Введите вашу мнемоническую фразу"
 msgid "Enter your name"
 msgstr "Введите ваше имя"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:78
+#: ../../client/src/media/hooks/useMediaControls.ts:77
 msgid "Extract"
 msgstr "Извлечь"
 
@@ -288,7 +287,7 @@ msgstr "Музыка"
 msgid "News"
 msgstr "Новости"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:187
+#: ../../client/src/media/hooks/useMediaControls.ts:186
 msgid "Next"
 msgstr "Следующий"
 
@@ -308,7 +307,7 @@ msgstr "Обзор"
 msgid "Owner Key"
 msgstr "Ключ владельца"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:121
+#: ../../client/src/media/hooks/useMediaControls.ts:120
 msgid "Pause"
 msgstr "Пауза"
 
@@ -321,7 +320,7 @@ msgstr "Изображения"
 msgid "Pin"
 msgstr "Закрепить"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:122
+#: ../../client/src/media/hooks/useMediaControls.ts:121
 msgid "Play"
 msgstr "Воспроизвести"
 
@@ -329,7 +328,7 @@ msgstr "Воспроизвести"
 msgid "Please set your Groq API Key"
 msgstr "Пожалуйста, установите ваш ключ Groq API"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:176
+#: ../../client/src/media/hooks/useMediaControls.ts:175
 msgid "Previous"
 msgstr "Предыдущий"
 
@@ -349,11 +348,11 @@ msgstr "Запросы"
 msgid "Provide a key to use AI features."
 msgstr "Предоставьте ключ для использования функций ИИ."
 
-#: ../../client/src/media/hooks/useMediaControls.ts:164
+#: ../../client/src/media/hooks/useMediaControls.ts:163
 msgid "Replay"
 msgstr "Повторить"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:88
+#: ../../client/src/media/hooks/useMediaControls.ts:87
 msgid "Search"
 msgstr "Поиск"
 
@@ -387,11 +386,11 @@ msgstr "Настройки"
 msgid "Share"
 msgstr "Поделиться"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:141
+#: ../../client/src/media/hooks/useMediaControls.ts:140
 msgid "Skip backward"
 msgstr "Перемотать назад"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:152
+#: ../../client/src/media/hooks/useMediaControls.ts:151
 msgid "Skip forward"
 msgstr "Перемотать вперед"
 
@@ -478,10 +477,10 @@ msgstr "Ваше имя для отображения в приложении."
 msgid "Your prompt history has been reset."
 msgstr "Ваша история запросов была сброшена."
 
-#: ../../client/src/media/hooks/useMediaControls.ts:98
+#: ../../client/src/media/hooks/useMediaControls.ts:97
 msgid "Zoom in"
 msgstr "Приблизить"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:109
+#: ../../client/src/media/hooks/useMediaControls.ts:108
 msgid "Zoom out"
 msgstr "Отдалить"
