@@ -1,3 +1,4 @@
+import {useState} from 'react';
 import {useStyles} from 'react-native-unistyles';
 import {useLingui} from '@lingui/react/macro';
 
@@ -13,6 +14,8 @@ import {Frame} from 'dev/stacks/Frame';
 export default function ScreenHome() {
   const {theme} = useStyles();
   const {t} = useLingui();
+
+  const [slider, setSlider] = useState(0);
 
   return (
     <Page
@@ -42,11 +45,14 @@ export default function ScreenHome() {
       </Frame>
       <Frame title="Slider">
         <Slider
-          value={50}
+          step={1}
+          value={slider}
+          lowerLimit={0}
+          upperLimit={100}
           thumbColor={theme.colors.primary}
           rangeColor={theme.colors.primary}
           trackColor={theme.colors.secondary}
-          onChange={(value) => console.log(value)}
+          onChange={value => setSlider(value)}
         />
       </Frame>
       <Frame title="Progress">

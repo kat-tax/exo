@@ -1,3 +1,13 @@
+.exo-slider:not(:active) > span:last-child {
+  will-change: left;
+  transition: left 0.5s ease;
+}
+
+.exo-slider:not(:active) .exo-slider-range {
+  will-change: right;
+  transition: right 0.5s ease;
+}
+
 .exo-slider-thumb:hover {
   scale: 1.1;
 }

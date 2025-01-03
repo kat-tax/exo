@@ -19,8 +19,10 @@ export const Slider: SliderComponent = (props: SliderProps) => {
         step={props.step ?? 1}
         min={props.lowerLimit ?? 0}
         max={props.upperLimit ?? 100}
-        value={[props.value ?? 0]}
+        value={props.value ? [props.value] : undefined}
+        defaultValue={props.defaultValue ? [props.defaultValue] : undefined}
         onValueChange={e => props?.onChange?.(e[0] ?? 0)}
+        className="exo-slider"
         style={{
           height: 20,
           cursor: 'pointer',
@@ -39,7 +41,7 @@ export const Slider: SliderComponent = (props: SliderProps) => {
 
 function SliderTrack(props: {color?: string, children: React.ReactNode}) {
   return (
-    <S.Track style={{
+    <S.Track className="exo-slider-track" style={{
       height: 2,
       flexGrow: 1,
       position: 'relative',
@@ -52,7 +54,7 @@ function SliderTrack(props: {color?: string, children: React.ReactNode}) {
 
 function SliderRange(props: {color?: string}) {
   return (
-    <S.Range style={{
+    <S.Range className="exo-slider-range" style={{
       height: '100%',
       position: 'absolute',
       borderRadius: 9999,
