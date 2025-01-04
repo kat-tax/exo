@@ -27,7 +27,7 @@ export const SubTrigger = Z.create((props: ComponentProps<typeof Z['SubTrigger']
 
 export const Item = Z.create((props: ComponentProps<typeof Z['Item']>) => {
   return (
-    <Z.Item className="ContextMenuItem" {...props}/>
+    <Z.Item className={`ContextMenuItem ${props.destructive ? 'ContextMenuItemDestructive' : ''}`} {...props}/>
   )
 }, 'Item');
 

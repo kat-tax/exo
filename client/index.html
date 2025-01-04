@@ -122,6 +122,11 @@
         user-select: none;
         outline: none;
       }
+
+      .ContextMenuItemDestructive {
+        color: #7f1d1d;
+      }
+
       .ContextMenuSubTrigger[data-state="open"] {
         background-color: #09090b;
         color: #fafafa;
@@ -130,7 +135,6 @@
       .ContextMenuCheckboxItem[data-disabled],
       .ContextMenuRadioItem[data-disabled],
       .ContextMenuSubTrigger[data-disabled] {
-        color: #fafafa;
         pointer-events: "none";
       }
       .ContextMenuItem[data-highlighted],
@@ -138,7 +142,6 @@
       .ContextMenuRadioItem[data-highlighted],
       .ContextMenuSubTrigger[data-highlighted] {
         background-color: #18181b;
-        color: #fafafa;
       }
 
       .ContextMenuSeparator {
@@ -153,14 +156,12 @@
       }
 
       .ContextMenuItemSubtitle {
-        font-size: 14px;
-        line-height: 1;
-        text-align: right;
         position: absolute;
         right: 6px;
-        font-variant: all-small-caps;
-        color: #a1a1aa;
+        font-size: 10px;
         font-weight: 300;
+        text-align: right;
+        color: #a1a1aa;
       }
 
       .ContextMenuItemIndicator,

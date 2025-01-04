@@ -5,6 +5,7 @@ import {Icon} from 'react-exo/icon';
 
 interface ListRowMenuProps extends React.PropsWithChildren {
   label: string,
+  onOpenChange?: (open: boolean) => void,
 }
 
 export function ListRowMenu(props: ListRowMenuProps) {
@@ -12,7 +13,7 @@ export function ListRowMenu(props: ListRowMenuProps) {
   const {t} = useLingui();
 
   return (
-    <Menu.Root>
+    <Menu.Root onOpenChange={props.onOpenChange}>
       <Menu.Trigger>
         {props.children}
       </Menu.Trigger>
@@ -25,14 +26,14 @@ export function ListRowMenu(props: ListRowMenuProps) {
             <Icon name="ph:eye" size={14} color={theme.colors.primary}/>
           </Menu.ItemIcon>
           <Menu.ItemTitle>{t`View`}</Menu.ItemTitle>
-          <Menu.ItemSubtitle>ENTER</Menu.ItemSubtitle>
+          <Menu.ItemSubtitle>ENT</Menu.ItemSubtitle>
         </Menu.Item>
         <Menu.Item key="share">
           <Menu.ItemIcon>
             <Icon name="ph:share" size={14} color={theme.colors.primary}/>
           </Menu.ItemIcon>
           <Menu.ItemTitle>{t`Share`}</Menu.ItemTitle>
-          <Menu.ItemSubtitle>⌘+B</Menu.ItemSubtitle>
+          <Menu.ItemSubtitle>⌘+K</Menu.ItemSubtitle>
         </Menu.Item>
         <Menu.Separator />
         <Menu.Item key="copy">
@@ -47,7 +48,7 @@ export function ListRowMenu(props: ListRowMenuProps) {
             <Icon name="ph:arrow-elbow-down-right" size={14} color={theme.colors.primary}/>
           </Menu.ItemIcon>
           <Menu.ItemTitle>{t`Move`}</Menu.ItemTitle>
-          <Menu.ItemSubtitle>⌘+D</Menu.ItemSubtitle>
+          <Menu.ItemSubtitle>⌘+X</Menu.ItemSubtitle>
         </Menu.Item>
         <Menu.Item key="rename">
           <Menu.ItemIcon>
@@ -57,9 +58,9 @@ export function ListRowMenu(props: ListRowMenuProps) {
           <Menu.ItemSubtitle>F2</Menu.ItemSubtitle>
         </Menu.Item>
         <Menu.Separator />
-        <Menu.Item key="delete">
+        <Menu.Item key="delete" destructive>
           <Menu.ItemIcon>
-            <Icon name="ph:trash" size={14} color={theme.colors.primary}/>
+            <Icon name="ph:trash" size={14} color={theme.colors.destructive}/>
           </Menu.ItemIcon>
           <Menu.ItemTitle>{t`Delete`}</Menu.ItemTitle>
           <Menu.ItemSubtitle>⌘+DEL</Menu.ItemSubtitle>

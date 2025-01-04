@@ -5,6 +5,7 @@ import {Icon} from 'react-exo/icon';
 import {Motion} from 'react-exo/motion';
 import {isTouch} from 'app/utils/platform';
 import {ListRowIcon} from 'media/stacks/ListRowIcon';
+import {ListRowMenu} from 'media/stacks/ListRowMenu';
 
 import type {ScrollView} from 'react-native';
 import type {MediaSelection as MediaSelectionType} from 'media/hooks/useMediaSelection';
@@ -40,31 +41,32 @@ export function MediaSelection(props: {maximized: boolean} & MediaSelectionType)
       animate={{opacity: 1}}
       exit={{opacity: 0}}>
       {queue.map(({name, title, ext, path, action}, index) => 
-        <Pressable
-          key={name}
-          onPress={action}
-          style={[styles.preview, index === focus && styles.focus]}>
-          <ListRowIcon
-            name={name ?? ''}
-            extension={ext}
-            size={ICON_SIZE}
-            path={path}
-            isFile
-          />
-          <Text
-            style={[styles.text, index === focus && styles.textFocused]}
-            selectable={false}
-            numberOfLines={TEXT_LINES}>
-            {title}
-          </Text>
-          <Pressable onPress={() => props.remove(index)}>
-            <Icon
-              name="ph:x"
-              size={TOUCH ? 16 : 14}
-              color={theme.colors.mutedForeground}
+        <ListRowMenu label={name} key={name}>
+          <Pressable
+            onPress={action}
+            style={[styles.preview, index === focus && styles.focus]}>
+            <ListRowIcon
+              name={name ?? ''}
+              extension={ext}
+              size={ICON_SIZE}
+              path={path}
+              isFile
             />
+            <Text
+              style={[styles.text, index === focus && styles.textFocused]}
+              selectable={false}
+              numberOfLines={TEXT_LINES}>
+              {title}
+            </Text>
+            <Pressable onPress={() => props.remove(index)}>
+              <Icon
+                name="ph:x"
+                size={TOUCH ? 16 : 14}
+                color={theme.colors.mutedForeground}
+              />
+            </Pressable>
           </Pressable>
-        </Pressable>
+        </ListRowMenu>
       )}
     </Motion.ScrollView>
   );

@@ -73,7 +73,7 @@ msgstr "Celsius"
 msgid "Close"
 msgstr "Close"
 
-#: ../../client/src/media/stacks/ListRowMenu.tsx:42
+#: ../../client/src/media/stacks/ListRowMenu.tsx:43
 msgid "Copy"
 msgstr "Copy"
 
@@ -94,7 +94,7 @@ msgstr "Data"
 msgid "Database"
 msgstr "Database"
 
-#: ../../client/src/media/stacks/ListRowMenu.tsx:64
+#: ../../client/src/media/stacks/ListRowMenu.tsx:65
 msgid "Delete"
 msgstr "Delete"
 
@@ -302,7 +302,7 @@ msgstr "Media"
 msgid "Miles"
 msgstr "Miles"
 
-#: ../../client/src/media/stacks/ListRowMenu.tsx:49
+#: ../../client/src/media/stacks/ListRowMenu.tsx:50
 msgid "Move"
 msgstr "Move"
 
@@ -389,7 +389,7 @@ msgstr "Provide a key to use AI features."
 msgid "Public"
 msgstr "Public"
 
-#: ../../client/src/media/stacks/ListRowMenu.tsx:56
+#: ../../client/src/media/stacks/ListRowMenu.tsx:57
 msgid "Rename"
 msgstr "Rename"
 
@@ -427,7 +427,7 @@ msgstr "Select the theme for the app."
 msgid "Settings"
 msgstr "Settings"
 
-#: ../../client/src/media/stacks/ListRowMenu.tsx:34
+#: ../../client/src/media/stacks/ListRowMenu.tsx:35
 msgid "Share"
 msgstr "Share"
 
@@ -473,7 +473,7 @@ msgstr "User Name"
 msgid "Videos"
 msgstr "Videos"
 
-#: ../../client/src/media/stacks/ListRowMenu.tsx:27
+#: ../../client/src/media/stacks/ListRowMenu.tsx:28
 msgid "View"
 msgstr "View"
 

@@ -1,5 +1,5 @@
-import {useMemo} from 'react';
 import {Pressable} from 'react-native';
+import {useMemo, useCallback} from 'react';
 import {useLocation, useNavigate} from 'react-exo/navigation';
 import {filesToHash, hashToFiles} from 'app/utils/formatting';
 import {ListRow} from 'media/stacks/ListRow';
@@ -41,9 +41,12 @@ export function EntryHfs(props: EntryHfs) {
   }, [entry, path, flags, selection]);
 
   const navigate = useNavigate();
+  const gotoLink = useCallback(() => {
+    navigate(link);
+  }, [link, navigate]);
 
   return (
-    <Pressable onPress={() => navigate(link)}>
+    <Pressable onPress={gotoLink}>
       <ListRow
         path={link}
         name={entry.name}
@@ -51,6 +54,7 @@ export function EntryHfs(props: EntryHfs) {
         isFile={entry.isFile}
         isFocused={false}
         isSelected={selection.includes(entry.name)}
+        handleMenuOpen={gotoLink}
       />
     </Pressable>
   );
