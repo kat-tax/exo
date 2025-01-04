@@ -96,7 +96,6 @@ const stylesheet = createStyleSheet((theme, rt) => ({
   content: {
     flex: 1,
     alignSelf: 'center',
-    gap: theme.display.space1,
     width: {
       initial: '100%',
       md: 640, // 480p

@@ -64,6 +64,7 @@ const stylesheet = createStyleSheet((theme) => ({
     borderWidth: 1,
     borderColor: 'rgba(0,0,0,0)',
     gap: theme.display.space2,
+    marginBottom: 2,
   },
   focused: {
     borderColor: theme.colors.foreground,
