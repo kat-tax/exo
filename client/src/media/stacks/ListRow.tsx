@@ -1,6 +1,7 @@
-import {View, Text} from 'react-native';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
+import {View, Text} from 'react-native';
 import {ListRowIcon} from 'media/stacks/ListRowIcon';
+import {ListRowMenu} from 'media/stacks/ListRowMenu';
 import {bytesize} from 'app/utils/formatting';
 import {isTouch} from 'app/utils/platform';
 
@@ -20,7 +21,6 @@ export function ListRow(props: ListRow) {
   const {styles} = useStyles(stylesheet);
   const [name, extension] = props.name.split('.');
   const {path, isFile, isFocused, isSelected} = props;
-  const iconSize = TOUCH ? 1 : 0;
   const vstyles = {
     root: [
       styles.root,
@@ -29,24 +29,26 @@ export function ListRow(props: ListRow) {
     ],
   };
   return (
-    <View style={vstyles.root}>
-      <ListRowIcon {...{name, size: iconSize, extension, path, isFile}}/>
-      <Text
-        style={styles.text}
-        selectable={false}
-        ellipsizeMode="middle"
-        numberOfLines={1}>
-        {props.name}
-      </Text>
-      {props.size &&
+    <ListRowMenu label={props.name}>
+      <View style={vstyles.root}>
+        <ListRowIcon {...{size: TOUCH ? 1 : 0, name, extension, path, isFile}}/>
         <Text
-          style={[styles.text, styles.size]}
+          style={styles.text}
           selectable={false}
+          ellipsizeMode="middle"
           numberOfLines={1}>
-          {bytesize(props.size)}
+          {props.name}
         </Text>
-      }
-    </View>
+        {props.size &&
+          <Text
+            style={[styles.text, styles.size]}
+            selectable={false}
+            numberOfLines={1}>
+            {bytesize(props.size)}
+          </Text>
+        }
+      </View>
+    </ListRowMenu>
   );
 }
 

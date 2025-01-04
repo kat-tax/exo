@@ -77,6 +77,116 @@
       #D2Reader-Container iframe {
         height: 100%;
       }
+
+      /* Zeego */
+      .ContextMenuContent,
+      .ContextMenuSubContent {
+        width: 200px;
+        background-color: #09090b;
+        border: 1px solid #27272a;
+        border-radius: 6px;
+        overflow: hidden;
+        padding: 5px;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 2px 1px
+      }
+
+      .ContextMenuLabel {
+        margin: -5px;
+        margin-bottom: 5px;
+        padding-inline: 12px;
+        background: #18181b;
+        border-bottom: 1px solid #27272a;
+        color: #71717a;
+        font-size: 11px;
+        line-height: 24px;
+        text-overflow: ellipsis;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+
+      .ContextMenuItem,
+      .ContextMenuCheckboxItem,
+      .ContextMenuRadioItem,
+      .ContextMenuSubTrigger {
+        font-size: 12px;
+        line-height: 1;
+        color: #fafafa;
+        border-radius: 3px;
+        display: flex;
+        align-items: center;
+        height: 25px;
+        padding: 0 5px;
+        position: relative;
+        padding-left: 30px;
+        user-select: none;
+        outline: none;
+      }
+      .ContextMenuSubTrigger[data-state="open"] {
+        background-color: #09090b;
+        color: #fafafa;
+      }
+      .ContextMenuItem[data-disabled],
+      .ContextMenuCheckboxItem[data-disabled],
+      .ContextMenuRadioItem[data-disabled],
+      .ContextMenuSubTrigger[data-disabled] {
+        color: #fafafa;
+        pointer-events: "none";
+      }
+      .ContextMenuItem[data-highlighted],
+      .ContextMenuCheckboxItem[data-highlighted],
+      .ContextMenuRadioItem[data-highlighted],
+      .ContextMenuSubTrigger[data-highlighted] {
+        background-color: #18181b;
+        color: #fafafa;
+      }
+
+      .ContextMenuSeparator {
+        height: 1px;
+        background-color: #27272a;
+        margin: 5px -5px;
+      }
+
+      .ContextMenuItemTitle {
+        font-size: 12px;
+        line-height: 1;
+      }
+
+      .ContextMenuItemSubtitle {
+        font-size: 14px;
+        line-height: 1;
+        text-align: right;
+        position: absolute;
+        right: 6px;
+        font-variant: all-small-caps;
+        color: #a1a1aa;
+        font-weight: 300;
+      }
+
+      .ContextMenuItemIndicator,
+      .ContextMenuItemIcon,
+      .ContextMenuItemImage {
+        position: absolute;
+        left: 0;
+        width: 14px;
+        height: 14px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding-inline: 6px;
+      }
+
+      .RightSlot {
+        margin-left: auto;
+        padding-left: 20px;
+        color: #fafafa;
+      }
+      [data-highlighted] > .RightSlot {
+        color: #fafafa;
+      }
+      [data-disabled] .RightSlot {
+        color: #fafafa;
+      }
     </style>
   </head>
   <body>

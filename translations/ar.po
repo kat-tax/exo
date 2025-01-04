@@ -26,10 +26,6 @@ msgstr "عبارة تذكيرية للمصادقة."
 msgid "AI"
 msgstr "الذكاء الاصطناعي"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:177
-msgid "All Data"
-msgstr "كل البيانات"
-
 #: ../../client/src/app/hooks/useSettings.ts:56
 msgid "Are you sure you want to change the owner key? This will reset the local database. This action cannot be undone."
 msgstr "هل أنت متأكد من أنك تريد تغيير مفتاح المالك؟ سيؤدي هذا إلى إعادة تعيين قاعدة البيانات المحلية. لا يمكن التراجع عن هذا الإجراء."
@@ -77,6 +73,10 @@ msgstr "سيلزيوس"
 msgid "Close"
 msgstr "إغلاق"
 
+#: ../../client/src/media/stacks/ListRowMenu.tsx:42
+msgid "Copy"
+msgstr ""
+
 #: ../../client/src/app/routes/ScreenSettings.tsx:106
 msgid "Dark"
 msgstr "داكن"
@@ -92,6 +92,10 @@ msgstr "البيانات"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:177
 msgid "Database"
+msgstr ""
+
+#: ../../client/src/media/stacks/ListRowMenu.tsx:64
+msgid "Delete"
 msgstr ""
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:188
@@ -298,6 +302,10 @@ msgstr "الوسائط"
 msgid "Miles"
 msgstr "أميال"
 
+#: ../../client/src/media/stacks/ListRowMenu.tsx:49
+msgid "Move"
+msgstr ""
+
 #: ../../client/src/media/routes/ScreenBrowse.tsx:25
 #: ../../client/src/app/interface/Menu.tsx:55
 msgid "Music"
@@ -341,6 +349,10 @@ msgstr "الصور"
 msgid "Pin"
 msgstr "تثبيت"
 
+#: ../../client/src/media/stacks/ListRowMenu.tsx:37
+msgid "Pinned"
+msgstr ""
+
 #: ../../client/src/media/hooks/useMediaControls.ts:121
 msgid "Play"
 msgstr "تشغيل"
@@ -352,6 +364,10 @@ msgstr "يرجى تعيين مفتاح Groq API الخاص بك"
 #: ../../client/src/media/hooks/useMediaControls.ts:175
 msgid "Previous"
 msgstr "السابق"
+
+#: ../../client/src/media/stacks/ListRowMenu.tsx:23
+msgid "Private"
+msgstr ""
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:39
 msgid "Profile"
@@ -368,6 +384,14 @@ msgstr "المطالبات"
 #: ../../client/src/app/routes/ScreenSettings.tsx:139
 msgid "Provide a key to use AI features."
 msgstr "قدم مفتاحًا لاستخدام ميزات الذكاء الاصطناعي."
+
+#: ../../client/src/media/stacks/ListRowMenu.tsx:23
+msgid "Public"
+msgstr ""
+
+#: ../../client/src/media/stacks/ListRowMenu.tsx:56
+msgid "Rename"
+msgstr ""
 
 #: ../../client/src/media/hooks/useMediaControls.ts:163
 msgid "Replay"
@@ -398,10 +422,12 @@ msgid "Select the theme for the app."
 msgstr "اختر سمة التطبيق."
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:28
+#: ../../client/src/app/interface/Tabs.tsx:34
+#: ../../client/src/app/interface/Menu.tsx:140
 msgid "Settings"
 msgstr "الإعدادات"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:248
+#: ../../client/src/media/stacks/ListRowMenu.tsx:34
 msgid "Share"
 msgstr "مشاركة"
 
@@ -446,6 +472,14 @@ msgstr "اسم المستخدم"
 #: ../../client/src/app/interface/Menu.tsx:65
 msgid "Videos"
 msgstr "الفيديوهات"
+
+#: ../../client/src/media/stacks/ListRowMenu.tsx:27
+msgid "View"
+msgstr ""
+
+#: ../../client/src/media/stacks/ListRowMenu.tsx:28
+msgid "View the file"
+msgstr ""
 
 #: ../../client/src/world/routes/ScreenWorld.tsx:18
 msgid "View your device locations and geo-related info"

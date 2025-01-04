@@ -1,7 +1,7 @@
 import hfs from './lib/plugins/NativeHfs';
 // import ipfs from './lib/plugins/IpfsHfs';
 import {FileSystem} from 'react-native-file-access';
-import {isText, isBinary} from './lib/data';
+import {isText} from './lib/data';
 
 import type {FSBase, FileSystemIn, HfsType} from './Fs.interface';
 
