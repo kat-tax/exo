@@ -15,6 +15,7 @@ interface ListRow {
   isFile?: boolean,
   isFocused?: boolean,
   isSelected?: boolean,
+  handleDelete?: () => void,
   handleMenuOpen?: () => void,
 }
 
@@ -30,7 +31,10 @@ export function ListRow(props: ListRow) {
     ],
   };
   return (
-    <ListRowMenu label={props.name} onOpenChange={props.handleMenuOpen}>
+    <ListRowMenu
+      {...{name, path}}
+      onMenu={props.handleMenuOpen}
+      onDelete={props.handleDelete}>
       <View style={vstyles.root}>
         <ListRowIcon {...{size: TOUCH ? 1 : 0, name, extension, path, isFile}}/>
         <Text

@@ -1,6 +1,7 @@
 import {Pressable} from 'react-native';
 import {useMemo, useCallback} from 'react';
 import {useLocation, useNavigate} from 'react-exo/navigation';
+import {useDirHfsEntry} from 'media/hooks/useDirHfsEntry';
 import {filesToHash, hashToFiles} from 'app/utils/formatting';
 import {ListRow} from 'media/stacks/ListRow';
 
@@ -16,8 +17,9 @@ export interface EntryHfs {
 }
 
 export function EntryHfs(props: EntryHfs) {
-  const {hash} = useLocation();
   const {entry, flags, path} = props;
+  const {remove} = useDirHfsEntry(entry);
+  const {hash} = useLocation();
 
   // Update selection when hash changes
   const selection = useMemo(() => hashToFiles(hash), [hash]);
@@ -54,6 +56,7 @@ export function EntryHfs(props: EntryHfs) {
         isFile={entry.isFile}
         isFocused={false}
         isSelected={selection.includes(entry.name)}
+        handleDelete={remove}
         handleMenuOpen={gotoLink}
       />
     </Pressable>

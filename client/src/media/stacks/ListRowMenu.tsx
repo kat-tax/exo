@@ -4,8 +4,10 @@ import {useStyles} from 'react-native-unistyles';
 import {Icon} from 'react-exo/icon';
 
 interface ListRowMenuProps extends React.PropsWithChildren {
-  label: string,
-  onOpenChange?: (open: boolean) => void,
+  name: string,
+  path: string,
+  onMenu?: () => void,
+  onDelete?: () => void,
 }
 
 export function ListRowMenu(props: ListRowMenuProps) {
@@ -13,13 +15,13 @@ export function ListRowMenu(props: ListRowMenuProps) {
   const {t} = useLingui();
 
   return (
-    <Menu.Root onOpenChange={props.onOpenChange}>
+    <Menu.Root onOpenChange={props.onMenu}>
       <Menu.Trigger>
         {props.children}
       </Menu.Trigger>
       <Menu.Content>
         <Menu.Label key="label">
-          {props.label}
+          {props.name}
         </Menu.Label>
         <Menu.Item key="view">
           <Menu.ItemIcon>
@@ -58,7 +60,7 @@ export function ListRowMenu(props: ListRowMenuProps) {
           <Menu.ItemSubtitle>F2</Menu.ItemSubtitle>
         </Menu.Item>
         <Menu.Separator />
-        <Menu.Item key="delete" destructive>
+        <Menu.Item key="delete" onSelect={props.onDelete} destructive>
           <Menu.ItemIcon>
             <Icon name="ph:trash" size={14} color={theme.colors.destructive}/>
           </Menu.ItemIcon>

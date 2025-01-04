@@ -73,7 +73,7 @@ msgstr "摂氏"
 msgid "Close"
 msgstr "閉じる"
 
-#: ../../client/src/media/stacks/ListRowMenu.tsx:43
+#: ../../client/src/media/stacks/ListRowMenu.tsx:45
 msgid "Copy"
 msgstr ""
 
@@ -94,7 +94,7 @@ msgstr "データ"
 msgid "Database"
 msgstr ""
 
-#: ../../client/src/media/stacks/ListRowMenu.tsx:65
+#: ../../client/src/media/stacks/ListRowMenu.tsx:67
 msgid "Delete"
 msgstr ""
 
@@ -302,7 +302,7 @@ msgstr "メディア"
 msgid "Miles"
 msgstr "マイル"
 
-#: ../../client/src/media/stacks/ListRowMenu.tsx:50
+#: ../../client/src/media/stacks/ListRowMenu.tsx:52
 msgid "Move"
 msgstr ""
 
@@ -389,7 +389,7 @@ msgstr "AI機能を使用するにはキーを提供してください。"
 msgid "Public"
 msgstr ""
 
-#: ../../client/src/media/stacks/ListRowMenu.tsx:57
+#: ../../client/src/media/stacks/ListRowMenu.tsx:59
 msgid "Rename"
 msgstr ""
 
@@ -427,7 +427,7 @@ msgstr "アプリのテーマを選択してください。"
 msgid "Settings"
 msgstr "設定"
 
-#: ../../client/src/media/stacks/ListRowMenu.tsx:35
+#: ../../client/src/media/stacks/ListRowMenu.tsx:37
 msgid "Share"
 msgstr "共有"
 
@@ -473,7 +473,7 @@ msgstr "ユーザー名"
 msgid "Videos"
 msgstr "動画"
 
-#: ../../client/src/media/stacks/ListRowMenu.tsx:28
+#: ../../client/src/media/stacks/ListRowMenu.tsx:30
 msgid "View"
 msgstr ""
 

@@ -40,8 +40,8 @@ export function MediaSelection(props: {maximized: boolean} & MediaSelectionType)
       initial={{opacity: 0}}
       animate={{opacity: 1}}
       exit={{opacity: 0}}>
-      {queue.map(({name, title, ext, path, action}, index) => 
-        <ListRowMenu label={name} key={name}>
+      {queue.map(({name, path, title, ext, action}, index) => 
+        <ListRowMenu {...{name, path}} key={name}>
           <Pressable
             onPress={action}
             style={[styles.preview, index === focus && styles.focus]}>

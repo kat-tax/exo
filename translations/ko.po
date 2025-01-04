@@ -73,7 +73,7 @@ msgstr "섭씨"
 msgid "Close"
 msgstr "닫기"
 
-#: ../../client/src/media/stacks/ListRowMenu.tsx:43
+#: ../../client/src/media/stacks/ListRowMenu.tsx:45
 msgid "Copy"
 msgstr ""
 
@@ -94,7 +94,7 @@ msgstr "데이터"
 msgid "Database"
 msgstr ""
 
-#: ../../client/src/media/stacks/ListRowMenu.tsx:65
+#: ../../client/src/media/stacks/ListRowMenu.tsx:67
 msgid "Delete"
 msgstr ""
 
@@ -302,7 +302,7 @@ msgstr "미디어"
 msgid "Miles"
 msgstr "마일"
 
-#: ../../client/src/media/stacks/ListRowMenu.tsx:50
+#: ../../client/src/media/stacks/ListRowMenu.tsx:52
 msgid "Move"
 msgstr ""
 
@@ -389,7 +389,7 @@ msgstr "AI 기능을 사용하려면 키를 입력하세요."
 msgid "Public"
 msgstr ""
 
-#: ../../client/src/media/stacks/ListRowMenu.tsx:57
+#: ../../client/src/media/stacks/ListRowMenu.tsx:59
 msgid "Rename"
 msgstr ""
 
@@ -427,7 +427,7 @@ msgstr "앱 테마를 선택하세요."
 msgid "Settings"
 msgstr "설정"
 
-#: ../../client/src/media/stacks/ListRowMenu.tsx:35
+#: ../../client/src/media/stacks/ListRowMenu.tsx:37
 msgid "Share"
 msgstr "공유"
 
@@ -473,7 +473,7 @@ msgstr "사용자 이름"
 msgid "Videos"
 msgstr "동영상"
 
-#: ../../client/src/media/stacks/ListRowMenu.tsx:28
+#: ../../client/src/media/stacks/ListRowMenu.tsx:30
 msgid "View"
 msgstr ""
 
