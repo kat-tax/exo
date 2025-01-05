@@ -11,7 +11,7 @@ export enum InitDirectory {
   Uploads = 'uploads'
 }
 
-export const INIT_DIRECTORIES = Object.keys(InitDirectory) as (keyof typeof InitDirectory)[];
+export const INIT_DIRECTORIES = Object.values(InitDirectory)
 
 export function resolve(path: string) {
   return path

@@ -10,8 +10,8 @@ export async function observe(path: string, callback: (records: unknown[]) => vo
     await $.observe(dir || root, {recursive: false});
     return $.disconnect as () => void;
   } catch (e) {
-    console.error('>> fs [error]', e);
-    return false;
+   console.error('>> fs [error]', e);
+   return false;
   }
 }
 

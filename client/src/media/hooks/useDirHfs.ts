@@ -48,6 +48,7 @@ export function useDirHfs(path: string, options?: DirectoryOptions) {
     observe(path, refresh).then(disconnect => {
       if (!disconnect) {
         let delta = 0;
+        console.warn('>> fs [polling]', path);
         const i = setInterval(async () => {
           if (await poll(path, delta)) {
             delta = Date.now();
