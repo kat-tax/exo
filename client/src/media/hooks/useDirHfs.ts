@@ -1,12 +1,12 @@
 import {FS} from 'react-exo/fs';
 import {useState, useCallback, useEffect} from 'react';
 import {isInitDirectory} from 'media/utils/path';
-import {observe} from 'media/utils/fs';
+import {observe, poll} from 'media/utils/fs';
 
 import type {HfsDirectoryEntry} from 'react-exo/fs';
 
 const FILESYSTEM = FS.init('fs');
-const POLL_TIMEOUT = 1000; // ms
+const POLL_TIMEOUT_MS = 200;
 
 export interface DirectoryOptions {
   showHidden?: boolean,
@@ -44,14 +44,20 @@ export function useDirHfs(path: string, options?: DirectoryOptions) {
     let _disconnect = () => {};
     observe(refresh).then(disconnect => {
       if (!disconnect) {
-        const interval = setInterval(refresh, POLL_TIMEOUT);
+        let lastChange = 0;
+        const interval = setInterval(async () => {
+          if (await poll(path, lastChange)) {
+            lastChange = Date.now();
+            refresh();
+          }
+        }, POLL_TIMEOUT_MS);
         _disconnect = () => clearInterval(interval);
       } else {
         _disconnect = disconnect;
       }
     });
     return _disconnect;
-  }, [refresh]);
+  }, [path, refresh]);
 
   return {
     path,
