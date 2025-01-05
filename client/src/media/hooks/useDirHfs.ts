@@ -1,20 +1,23 @@
 import {FS} from 'react-exo/fs';
-import {useState, useMemo, useCallback, useEffect} from 'react';
+import {useState, useCallback, useEffect} from 'react';
 import {isInitDirectory} from 'media/utils/path';
+import {observe} from 'media/utils/fs';
 
 import type {HfsDirectoryEntry} from 'react-exo/fs';
+
+const FILESYSTEM = FS.init('fs');
+const POLL_TIMEOUT = 1000; // ms
 
 export interface DirectoryOptions {
   showHidden?: boolean,
 }
 
 export function useDirHfs(path: string, options?: DirectoryOptions) {
-  const hfsImpl = useMemo(() => FS.init('fs'), []);
   const [entries, setEntries] = useState<HfsDirectoryEntry[]>([]);
   const {showHidden} = options || {};
 
   const refresh = useCallback(async () => {
-    const hfs = await hfsImpl;
+    const hfs = await FILESYSTEM;
     if (!hfs) return;
     const entries: HfsDirectoryEntry[] = [];
     const dirPath = path || '.';
@@ -34,14 +37,21 @@ export function useDirHfs(path: string, options?: DirectoryOptions) {
         return -1;
       return a.name.localeCompare(b.name);
     }));
-  }, [path, hfsImpl, showHidden]);
+  }, [path, showHidden]);
 
-  // Poll for changes in the directory
-  // TODO: replace with observer
   useEffect(() => {
+    if (!refresh) return;
     refresh();
-    const interval = setInterval(refresh, 1000);
-    return () => clearInterval(interval);
+    let _disconnect = () => {};
+    observe(refresh).then(disconnect => {
+      if (!disconnect) {
+        const interval = setInterval(refresh, POLL_TIMEOUT);
+        _disconnect = () => clearInterval(interval);
+      } else {
+        _disconnect = disconnect;
+      }
+    });
+    return _disconnect;
   }, [refresh]);
 
   return {
