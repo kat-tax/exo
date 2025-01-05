@@ -225,7 +225,7 @@ export async function getRenderer(
     case 't64':
     case 'prg':
       return [FileType.Game, {platform: 'vice_x64'}];
-    // Texts
+    // Texts (https://gist.github.com/TheUltDev/88fca551dde03548da958d52aeab7e50)
     case 'txt':
       return [FileType.Text, {language: 'text'}];
     case 'abap':
@@ -289,6 +289,7 @@ export async function getRenderer(
     case 'csx':
       return [FileType.Text, {language: 'c#'}];
     case 'h':
+    case 'm':
       return [FileType.Text, {language: 'objective-c'}];
     case 'cs':
     case 'st':
@@ -363,6 +364,8 @@ export async function getRenderer(
     case 'rbxs':
     case 'wlua':
       return [FileType.Text, {language: 'lua'}];
+    case 'luau':
+      return [FileType.Text, {language: 'luau'}];
     case 'lisp':
     case 'lsp':
     case 'asd':
@@ -442,7 +445,12 @@ export async function getRenderer(
     case 'coq':
       return [FileType.Text, {language: 'coq'}];
     case 'v':
+    case 'veo':
       return [FileType.Text, {language: 'verilog'}];
+    case 'sv':
+    case 'svh':
+    case 'vh':
+      return [FileType.Text, {language: 'system-verilog'}];
     case 'd':
       return [FileType.Text, {language: 'makefile'}];
     case 'di':
@@ -569,6 +577,16 @@ export async function getRenderer(
       return [FileType.Text, {language: 'po'}];
     case 'narrat':
       return [FileType.Text, {language: 'narrat'}];
+    case 'lean':
+    case 'hlean':
+      return [FileType.Text, {language: 'lean'}];
+    case 'liquid':
+      return [FileType.Text, {language: 'liquid'}];
+    case 'xm':
+    case 'x':
+    case 'xi':
+    case 'lgt':
+      return [FileType.Text, {language: 'logo'}];
     case 'groovy':
     case 'grt':
     case 'gtpl':
@@ -582,27 +600,6 @@ export async function getRenderer(
     case 'fxh':
     case 'hlsli':
       return [FileType.Text, {language: 'hlsl'}];
-    case 'html':
-    case 'htm':
-    case 'xht':
-    case 'xhtml':
-    case 'htm.hl':
-      return [FileType.Text, {language: 'html'}];
-    case 'css':
-      return [FileType.Text, {language: 'css'}];
-    case 'less':
-      return [FileType.Text, {language: 'less'}];
-    case 'scss':
-      return [FileType.Text, {language: 'scss'}];
-    case 'sass':
-      return [FileType.Text, {language: 'sass'}];
-    case 'stylus':
-      return [FileType.Text, {language: 'stylus'}];
-    case 'styl':
-      return [FileType.Text, {language: 'styl'}];
-    case 'mustache':
-    case 'jinja':
-      return [FileType.Text, {language: 'jinja'}];
     case 'jison':
       return [FileType.Text, {language: 'jison'}];
     case 'jade':
@@ -627,11 +624,30 @@ export async function getRenderer(
       return [FileType.Text, {language: 'haxe'}];
     case 'hy':
       return [FileType.Text, {language: 'hy'}];
-    case 'nginx':
-    case 'nginxconf':
-      return [FileType.Text, {language: 'nginx'}];
+    // Web Languages
     case 'http':
       return [FileType.Text, {language: 'http'}];
+    case 'html':
+    case 'htm':
+    case 'xht':
+    case 'xhtml':
+    case 'htm.hl':
+      return [FileType.Text, {language: 'html'}];
+    case 'css':
+      return [FileType.Text, {language: 'css'}];
+    case 'less':
+      return [FileType.Text, {language: 'less'}];
+    case 'scss':
+      return [FileType.Text, {language: 'scss'}];
+    case 'sass':
+      return [FileType.Text, {language: 'sass'}];
+    case 'stylus':
+      return [FileType.Text, {language: 'stylus'}];
+    case 'styl':
+      return [FileType.Text, {language: 'styl'}];
+    case 'mustache':
+    case 'jinja':
+      return [FileType.Text, {language: 'jinja'}];
     case 'php':
     case 'php3':
     case 'php4':
@@ -642,11 +658,85 @@ export async function getRenderer(
     case 'ctp':
     case 'aw':
       return [FileType.Text, {language: 'php'}];
+    // Other Languages (TODO: sort)
+    case 'mediawiki':
+    case 'wiki':
+      return [FileType.Text, {language: 'mediawiki'}];
+    case 'desktop':
+    case 'desktop.in':
+      return [FileType.Text, {language: 'desktop'}];
+    case 'nim':
+    case 'nimrod':
+      return [FileType.Text, {language: 'nim'}];
+    case 'nix':
+      return [FileType.Text, {language: 'nix'}];
+    case 'nu':
+      return [FileType.Text, {language: 'nu'}];
+    case 'pp':
+      return [FileType.Text, {language: 'puppet'}];
+    case 'pl':
+    case 'yap':
+    case 'prolog':
+      return [FileType.Text, {language: 'prolog'}];
+    case 'proto':
+      return [FileType.Text, {language: 'proto'}];
+    case 'purs':
+      return [FileType.Text, {language: 'purescript'}];
+    case 'qml':
+    case 'qbs':
+      return [FileType.Text, {language: 'qml'}];
+    case 'sas':
+      return [FileType.Text, {language: 'sas'}];
+    case 'sparql':
+    case 'rq':
+      return [FileType.Text, {language: 'sparql'}];
+    case 'sls':
+      return [FileType.Text, {language: 'scheme'}];
+    case 'scala':
+    case 'sbt':
+      return [FileType.Text, {language: 'scala'}];
+    case 'scm':
+    case 'sld':
+    case 'sps':
+    case 'ss':
+      return [FileType.Text, {language: 'scheme'}];
+    case 'swift':
+      return [FileType.Text, {language: 'swift'}];
+    case 'tcl':
+    case 'adp':
+    case 'tm':
+      return [FileType.Text, {language: 'tcl'}];
+    case 'ttl':
+      return [FileType.Text, {language: 'turtle'}];
+    case 'twig':
+      return [FileType.Text, {language: 'twig'}];
+    case 'vala':
+    case 'vapi':
+      return [FileType.Text, {language: 'vala'}];
+    case 'vim':
+      return [FileType.Text, {language: 'viml'}];
+    case 'xs':
+    case 'xslt':
+    case 'xsl':
+      return [FileType.Text, {language: 'xsl'}];
+    case 'fish':
+      return [FileType.Text, {language: 'fish'}];
+    // Diagnostic Languages
+    case 'log':
+      return [FileType.Text, {language: 'log'}];
+    // Config Languages
     case 'ini':
     case 'cfg':
     case 'prefs':
     case 'properties':
       return [FileType.Text, {language: 'ini'}];
+    case 'nginx':
+    case 'nginxconf':
+      return [FileType.Text, {language: 'nginx'}];
+    case 'mak':
+    case 'mk':
+    case 'mkfile':
+      return [FileType.Text, {language: 'makefile'}];
     case 'rst':
     case 'rest':
     case 'rest.txt':
@@ -674,18 +764,20 @@ export async function getRenderer(
     case 'sql':
     case 'cql':
     case 'ddl':
+    case 'inc':
     case 'prc':
     case 'tab':
     case 'udf':
     case 'viw':
-    case 'db2':
+      return [FileType.Text, {language: 'sql'}];
     case 'pls':
     case 'pck':
     case 'pkb':
     case 'pks':
     case 'plb':
+    case 'db2':
     case 'plsql':
-      return [FileType.Text, {language: 'sql'}];
+      return [FileType.Text, {language: 'plsql'}];
     case 'xml':
     case 'ant':
     case 'axml':
@@ -713,6 +805,7 @@ export async function getRenderer(
     case 'kml':
     case 'launch':
     case 'mdpolicy':
+    case 'mm':
     case 'mod':
     case 'nproj':
     case 'nuspec':
