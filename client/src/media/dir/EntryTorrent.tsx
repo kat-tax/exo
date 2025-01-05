@@ -15,10 +15,8 @@ export function EntryTorrent(props: EntryTorrent) {
   return (
     <Pressable onPress={() => props.download(entry)}>
       <ListRow
-        path={entry.path}
         name={entry.name}
         size={entry.length}
-        index={props.index}
         isFile={true}
       />
     </Pressable>

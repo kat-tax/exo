@@ -73,7 +73,7 @@ msgstr "摂氏"
 msgid "Close"
 msgstr "閉じる"
 
-#: ../../client/src/media/stacks/ListRowMenu.tsx:52
+#: ../../client/src/media/dir/EntryHfsMenu.tsx:48
 msgid "Copy"
 msgstr ""
 
@@ -94,7 +94,7 @@ msgstr "データ"
 msgid "Database"
 msgstr ""
 
-#: ../../client/src/media/stacks/ListRowMenu.tsx:77
+#: ../../client/src/media/dir/EntryHfsMenu.tsx:73
 msgid "Delete"
 msgstr ""
 
@@ -301,7 +301,7 @@ msgstr "メディア"
 msgid "Miles"
 msgstr "マイル"
 
-#: ../../client/src/media/stacks/ListRowMenu.tsx:59
+#: ../../client/src/media/dir/EntryHfsMenu.tsx:55
 msgid "Move"
 msgstr ""
 
@@ -388,7 +388,7 @@ msgstr "AI機能を使用するにはキーを提供してください。"
 msgid "Public"
 msgstr ""
 
-#: ../../client/src/media/stacks/ListRowMenu.tsx:66
+#: ../../client/src/media/dir/EntryHfsMenu.tsx:62
 msgid "Rename"
 msgstr ""
 
@@ -426,7 +426,7 @@ msgstr "アプリのテーマを選択してください。"
 msgid "Settings"
 msgstr "設定"
 
-#: ../../client/src/media/stacks/ListRowMenu.tsx:41
+#: ../../client/src/media/dir/EntryHfsMenu.tsx:37
 msgid "Share"
 msgstr "共有"
 
@@ -472,7 +472,7 @@ msgstr "ユーザー名"
 msgid "Videos"
 msgstr "動画"
 
-#: ../../client/src/media/stacks/ListRowMenu.tsx:34
+#: ../../client/src/media/dir/EntryHfsMenu.tsx:30
 msgid "View"
 msgstr ""
 

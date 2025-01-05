@@ -7,7 +7,6 @@ import {useScheme} from 'app/hooks/useScheme';
 import {getIcon} from 'media/file/icons';
 
 interface ListRowIcon {
-  path: string,
   name: string,
   extension: string,
   isFile?: boolean,

@@ -1,5 +1,59 @@
 import * as Z from 'zeego/context-menu';
+import {Icon} from 'react-exo/icon';
+import {useStyles} from 'react-native-unistyles';
+
 import type {ComponentProps} from 'react';
+
+export interface ContextMenuProps extends ComponentProps<typeof Z['Root']> {
+  label: string,
+  items: Array<ContextMenuItem | undefined>,
+}
+
+export interface ContextMenuItem {
+  name: string,
+  label: string,
+  destructive?: boolean,
+  shortcut?: string,
+  icon?: string,
+  action?: () => void,
+}
+
+export function ContextMenu(props: ContextMenuProps) {
+  const {theme} = useStyles();
+  const {label, items, children, ...rest} = props;
+  return (
+    <Root {...rest}>
+      <Trigger>{children}</Trigger>
+      <Content>
+        <Label key="label">{label}</Label>
+        {items.map(item => item && (
+          item.label === '-' ? <Separator key={item.name} /> : (
+          <Item
+            key={item.name}
+            onSelect={item.action}
+            destructive={item.destructive}>
+            {item.icon &&
+              <ItemIcon>
+                <Icon
+                  size={14}
+                  name={item.icon}
+                  color={item.destructive
+                    ? theme.colors.destructive
+                    : theme.colors.primary}
+                />
+              </ItemIcon>
+            }
+            <ItemTitle>{item.label}</ItemTitle>
+            {item.shortcut &&
+              <ItemSubtitle>{item.shortcut}</ItemSubtitle>
+            }
+          </Item>
+          )
+        )).filter(Boolean)}
+      </Content>
+    </Root>
+  )
+}
 
 export const Root = Z.create((props: ComponentProps<typeof Z['Root']>) => {
   return (

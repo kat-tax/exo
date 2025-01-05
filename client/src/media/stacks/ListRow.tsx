@@ -1,20 +1,14 @@
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {View, Text} from 'react-native';
 import {ListRowIcon} from 'media/stacks/ListRowIcon';
-import {ListRowMenu} from 'media/stacks/ListRowMenu';
 import {bytesize} from 'app/utils/formatting';
 import {isTouch} from 'app/utils/platform';
-
-import type {ListRowMenuEvents} from 'media/stacks/ListRowMenu';
 
 const TOUCH = isTouch();
 
 interface ListRow {
-  path: string,
   name: string,
-  index: number,
   size?: number,
-  events?: ListRowMenuEvents,
   isFile?: boolean,
   isFocused?: boolean,
   isSelected?: boolean,
@@ -23,7 +17,7 @@ interface ListRow {
 export function ListRow(props: ListRow) {
   const {styles} = useStyles(stylesheet);
   const [name, extension] = props.name.split('.');
-  const {path, events, isFile, isFocused, isSelected} = props;
+  const {isFile, isFocused, isSelected} = props;
   const vstyles = {
     root: [
       styles.root,
@@ -33,26 +27,24 @@ export function ListRow(props: ListRow) {
   };
 
   return (
-    <ListRowMenu {...{name, path, events}}>
-      <View style={vstyles.root}>
-        <ListRowIcon {...{size: TOUCH ? 1 : 0, name, extension, path, isFile}}/>
+    <View style={vstyles.root}>
+      <ListRowIcon {...{size: TOUCH ? 1 : 0, name, extension, isFile}}/>
+      <Text
+        style={styles.text}
+        selectable={false}
+        ellipsizeMode="middle"
+        numberOfLines={1}>
+        {props.name}
+      </Text>
+      {props.size &&
         <Text
-          style={styles.text}
+          style={[styles.text, styles.size]}
           selectable={false}
-          ellipsizeMode="middle"
           numberOfLines={1}>
-          {props.name}
+          {bytesize(props.size)}
         </Text>
-        {props.size &&
-          <Text
-            style={[styles.text, styles.size]}
-            selectable={false}
-            numberOfLines={1}>
-            {bytesize(props.size)}
-          </Text>
-        }
-      </View>
-    </ListRowMenu>
+      }
+    </View>
   );
 }
 

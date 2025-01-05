@@ -15,10 +15,8 @@ export function EntryZip(props: EntryZip) {
   return (
     <Pressable onPress={() => props.extract(entry)}>
       <ListRow
-        path={entry.name}
         name={entry.name}
         size={entry.size}
-        index={props.index}
         isFile={!entry.dir}
       />
     </Pressable>

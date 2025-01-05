@@ -73,7 +73,7 @@ msgstr "Celsius"
 msgid "Close"
 msgstr "Cerrar"
 
-#: ../../client/src/media/stacks/ListRowMenu.tsx:52
+#: ../../client/src/media/dir/EntryHfsMenu.tsx:48
 msgid "Copy"
 msgstr ""
 
@@ -94,7 +94,7 @@ msgstr "Datos"
 msgid "Database"
 msgstr ""
 
-#: ../../client/src/media/stacks/ListRowMenu.tsx:77
+#: ../../client/src/media/dir/EntryHfsMenu.tsx:73
 msgid "Delete"
 msgstr ""
 
@@ -301,7 +301,7 @@ msgstr "Medios"
 msgid "Miles"
 msgstr "Millas"
 
-#: ../../client/src/media/stacks/ListRowMenu.tsx:59
+#: ../../client/src/media/dir/EntryHfsMenu.tsx:55
 msgid "Move"
 msgstr ""
 
@@ -388,7 +388,7 @@ msgstr "Proporciona una clave para usar las funciones de IA."
 msgid "Public"
 msgstr ""
 
-#: ../../client/src/media/stacks/ListRowMenu.tsx:66
+#: ../../client/src/media/dir/EntryHfsMenu.tsx:62
 msgid "Rename"
 msgstr ""
 
@@ -426,7 +426,7 @@ msgstr "Selecciona el tema para la aplicación."
 msgid "Settings"
 msgstr "Ajustes"
 
-#: ../../client/src/media/stacks/ListRowMenu.tsx:41
+#: ../../client/src/media/dir/EntryHfsMenu.tsx:37
 msgid "Share"
 msgstr "Compartir"
 
@@ -472,7 +472,7 @@ msgstr "Nombre de Usuario"
 msgid "Videos"
 msgstr "Videos"
 
-#: ../../client/src/media/stacks/ListRowMenu.tsx:34
+#: ../../client/src/media/dir/EntryHfsMenu.tsx:30
 msgid "View"
 msgstr ""
 
