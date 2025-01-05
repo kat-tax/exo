@@ -10,11 +10,12 @@ import type {MediaControlsProps} from 'media/stacks/MediaControls';
 export const SHAREABLE = [FileType.Image, FileType.Video, FileType.Audio, FileType.Pdf];
 export const EXTRACTABLE = [FileType.Zip];
 export const DOWNLOADABLE = [FileType.Torrent, FileType.Binary];
-export const CONFIGURABLE = [FileType.Video, FileType.Audio, FileType.Image, FileType.Pdf, FileType.Book];
+export const CONFIGURABLE = [FileType.Video, FileType.Audio, FileType.Image, FileType.Pdf, FileType.Book/*, FileType.Text*/];
 export const SEARCHABLE = [FileType.Map];
 export const SEEKABLE = [FileType.Audio, FileType.Video, FileType.Book];
 export const LOOPABLE = [FileType.Lottie, FileType.Rive];
-export const EDITABLE = [FileType.Text, FileType.Markdown];
+export const COPYABLE = [FileType.Text, FileType.Markdown];
+export const EDITABLE = [/*FileType.Text, FileType.Markdown*/];
 export const PLAYABLE = [FileType.Audio, FileType.Video, FileType.Game, FileType.Lottie, FileType.Rive];
 export const PAGEABLE = [FileType.Book, FileType.Pdf];
 export const ZOOMABLE = [FileType.Image];
@@ -51,6 +52,15 @@ export function useMediaControls(props: MediaControlsProps): MediaControls {
 
   const controls = useMemo(() => renderer ? [
     // Edit controls
+    {
+      name: 'copy',
+      icon: 'ph:copy',
+      label: t`Copy`,
+      media: COPYABLE,
+      action: () => {
+        console.log('Copy', metadata.path);
+      },
+    },
     {
       name: 'edit',
       icon: 'ph:pencil-simple',

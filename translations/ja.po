@@ -69,7 +69,7 @@ msgstr "カレンダー"
 msgid "Celsius"
 msgstr "摂氏"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:278
+#: ../../client/src/media/hooks/useMediaControls.ts:288
 msgid "Close"
 msgstr "閉じる"
 
@@ -155,8 +155,7 @@ msgstr "ドキュメント"
 msgid "Documents"
 msgstr "ドキュメント"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:67
-#: ../../client/src/media/file/FileBinary.tsx:30
+#: ../../client/src/media/hooks/useMediaControls.ts:77
 msgid "Download"
 msgstr "ダウンロード"
 
@@ -164,7 +163,7 @@ msgstr "ダウンロード"
 msgid "Downloads"
 msgstr "ダウンロード"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:57
+#: ../../client/src/media/hooks/useMediaControls.ts:67
 msgid "Edit"
 msgstr "編集"
 
@@ -188,7 +187,7 @@ msgstr "ニーモニックフレーズを入力"
 msgid "Enter your name"
 msgstr "名前を入力"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:77
+#: ../../client/src/media/hooks/useMediaControls.ts:87
 msgid "Extract"
 msgstr "抽出"
 
@@ -206,7 +205,7 @@ msgstr "ファイル"
 msgid "Filesystem"
 msgstr ""
 
-#: ../../client/src/media/hooks/useMediaControls.ts:268
+#: ../../client/src/media/hooks/useMediaControls.ts:278
 msgid "Fullscreen"
 msgstr "全画面"
 
@@ -316,7 +315,7 @@ msgstr "音楽"
 msgid "News"
 msgstr "ニュース"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:186
+#: ../../client/src/media/hooks/useMediaControls.ts:196
 msgid "Next"
 msgstr "次へ"
 
@@ -324,7 +323,7 @@ msgstr "次へ"
 msgid "No events scheduled."
 msgstr "予定されているイベントはありません。"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:223
+#: ../../client/src/media/hooks/useMediaControls.ts:233
 msgid "Options"
 msgstr "オプション"
 
@@ -336,7 +335,7 @@ msgstr "概要"
 msgid "Owner Key"
 msgstr "オーナーキー"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:120
+#: ../../client/src/media/hooks/useMediaControls.ts:130
 msgid "Pause"
 msgstr "一時停止"
 
@@ -345,7 +344,7 @@ msgstr "一時停止"
 msgid "Pictures"
 msgstr "写真"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:234
+#: ../../client/src/media/hooks/useMediaControls.ts:244
 msgid "Pin"
 msgstr "ピン留め"
 
@@ -353,7 +352,7 @@ msgstr "ピン留め"
 msgid "Pinned"
 msgstr ""
 
-#: ../../client/src/media/hooks/useMediaControls.ts:121
+#: ../../client/src/media/hooks/useMediaControls.ts:131
 msgid "Play"
 msgstr "再生"
 
@@ -361,7 +360,7 @@ msgstr "再生"
 msgid "Please set your Groq API Key"
 msgstr "Groq APIキーを設定してください"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:175
+#: ../../client/src/media/hooks/useMediaControls.ts:185
 msgid "Previous"
 msgstr "前へ"
 
@@ -393,11 +392,11 @@ msgstr ""
 msgid "Rename"
 msgstr ""
 
-#: ../../client/src/media/hooks/useMediaControls.ts:163
+#: ../../client/src/media/hooks/useMediaControls.ts:173
 msgid "Replay"
 msgstr "リプレイ"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:87
+#: ../../client/src/media/hooks/useMediaControls.ts:97
 msgid "Search"
 msgstr "検索"
 
@@ -431,11 +430,11 @@ msgstr "設定"
 msgid "Share"
 msgstr "共有"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:140
+#: ../../client/src/media/hooks/useMediaControls.ts:150
 msgid "Skip backward"
 msgstr "巻き戻し"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:151
+#: ../../client/src/media/hooks/useMediaControls.ts:161
 msgid "Skip forward"
 msgstr "早送り"
 
@@ -493,7 +492,7 @@ msgstr "イベントと時間関連情報を表示"
 msgid "View your latest news and rss feeds"
 msgstr "最新ニュースとRSSフィードを表示"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:211
+#: ../../client/src/media/hooks/useMediaControls.ts:221
 msgid "Volume"
 msgstr "音量"
 
@@ -530,10 +529,10 @@ msgstr "アプリに表示する名前。"
 msgid "Your prompt history has been reset."
 msgstr "プロンプト履歴がリセットされました。"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:97
+#: ../../client/src/media/hooks/useMediaControls.ts:107
 msgid "Zoom in"
 msgstr "拡大"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:108
+#: ../../client/src/media/hooks/useMediaControls.ts:118
 msgid "Zoom out"
 msgstr "縮小"

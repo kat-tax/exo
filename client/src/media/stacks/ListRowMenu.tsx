@@ -28,7 +28,7 @@ export function ListRowMenu(props: ListRowMenuProps) {
             <Icon name="ph:eye" size={14} color={theme.colors.primary}/>
           </Menu.ItemIcon>
           <Menu.ItemTitle>{t`View`}</Menu.ItemTitle>
-          <Menu.ItemSubtitle>ENT</Menu.ItemSubtitle>
+          <Menu.ItemSubtitle>ENTER</Menu.ItemSubtitle>
         </Menu.Item>
         <Menu.Item key="share">
           <Menu.ItemIcon>

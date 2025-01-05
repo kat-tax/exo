@@ -47,7 +47,7 @@ export function MediaControls(props: MediaControlsProps) {
   const isBook = fileType === FileType.Book;
   const sizeGroup = TOUCH ? 1 : 0;
   const imageSize = sizeGroup === 1 ? 36 : 32;
-  const iconSize = sizeGroup === 1 ? 20 : 16;
+  const iconSize = sizeGroup === 1 ? 20 : 18;
   const vstyles = useMemo(() => ({
     icon: (state: PressableStateCallbackType) =>
       state.hovered || TOUCH

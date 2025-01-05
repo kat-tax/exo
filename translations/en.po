@@ -69,7 +69,7 @@ msgstr "Calendar"
 msgid "Celsius"
 msgstr "Celsius"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:278
+#: ../../client/src/media/hooks/useMediaControls.ts:288
 msgid "Close"
 msgstr "Close"
 
@@ -155,8 +155,7 @@ msgstr "Docs"
 msgid "Documents"
 msgstr "Documents"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:67
-#: ../../client/src/media/file/FileBinary.tsx:30
+#: ../../client/src/media/hooks/useMediaControls.ts:77
 msgid "Download"
 msgstr "Download"
 
@@ -164,7 +163,7 @@ msgstr "Download"
 msgid "Downloads"
 msgstr "Downloads"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:57
+#: ../../client/src/media/hooks/useMediaControls.ts:67
 msgid "Edit"
 msgstr "Edit"
 
@@ -188,7 +187,7 @@ msgstr "Enter your mnemonic phrase"
 msgid "Enter your name"
 msgstr "Enter your name"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:77
+#: ../../client/src/media/hooks/useMediaControls.ts:87
 msgid "Extract"
 msgstr "Extract"
 
@@ -206,7 +205,7 @@ msgstr "Files"
 msgid "Filesystem"
 msgstr "Filesystem"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:268
+#: ../../client/src/media/hooks/useMediaControls.ts:278
 msgid "Fullscreen"
 msgstr "Fullscreen"
 
@@ -316,7 +315,7 @@ msgstr "Music"
 msgid "News"
 msgstr "News"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:186
+#: ../../client/src/media/hooks/useMediaControls.ts:196
 msgid "Next"
 msgstr "Next"
 
@@ -324,7 +323,7 @@ msgstr "Next"
 msgid "No events scheduled."
 msgstr "No events scheduled."
 
-#: ../../client/src/media/hooks/useMediaControls.ts:223
+#: ../../client/src/media/hooks/useMediaControls.ts:233
 msgid "Options"
 msgstr "Options"
 
@@ -336,7 +335,7 @@ msgstr "Overview"
 msgid "Owner Key"
 msgstr "Owner Key"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:120
+#: ../../client/src/media/hooks/useMediaControls.ts:130
 msgid "Pause"
 msgstr "Pause"
 
@@ -345,7 +344,7 @@ msgstr "Pause"
 msgid "Pictures"
 msgstr "Pictures"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:234
+#: ../../client/src/media/hooks/useMediaControls.ts:244
 msgid "Pin"
 msgstr "Pin"
 
@@ -353,7 +352,7 @@ msgstr "Pin"
 msgid "Pinned"
 msgstr "Pinned"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:121
+#: ../../client/src/media/hooks/useMediaControls.ts:131
 msgid "Play"
 msgstr "Play"
 
@@ -361,7 +360,7 @@ msgstr "Play"
 msgid "Please set your Groq API Key"
 msgstr "Please set your Groq API Key"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:175
+#: ../../client/src/media/hooks/useMediaControls.ts:185
 msgid "Previous"
 msgstr "Previous"
 
@@ -393,11 +392,11 @@ msgstr "Public"
 msgid "Rename"
 msgstr "Rename"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:163
+#: ../../client/src/media/hooks/useMediaControls.ts:173
 msgid "Replay"
 msgstr "Replay"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:87
+#: ../../client/src/media/hooks/useMediaControls.ts:97
 msgid "Search"
 msgstr "Search"
 
@@ -431,11 +430,11 @@ msgstr "Settings"
 msgid "Share"
 msgstr "Share"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:140
+#: ../../client/src/media/hooks/useMediaControls.ts:150
 msgid "Skip backward"
 msgstr "Skip backward"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:151
+#: ../../client/src/media/hooks/useMediaControls.ts:161
 msgid "Skip forward"
 msgstr "Skip forward"
 
@@ -493,7 +492,7 @@ msgstr "View your events and time-related info"
 msgid "View your latest news and rss feeds"
 msgstr "View your latest news and rss feeds"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:211
+#: ../../client/src/media/hooks/useMediaControls.ts:221
 msgid "Volume"
 msgstr "Volume"
 
@@ -530,10 +529,10 @@ msgstr "Your name to display in the app."
 msgid "Your prompt history has been reset."
 msgstr "Your prompt history has been reset."
 
-#: ../../client/src/media/hooks/useMediaControls.ts:97
+#: ../../client/src/media/hooks/useMediaControls.ts:107
 msgid "Zoom in"
 msgstr "Zoom in"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:108
+#: ../../client/src/media/hooks/useMediaControls.ts:118
 msgid "Zoom out"
 msgstr "Zoom out"

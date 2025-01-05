@@ -69,7 +69,7 @@ msgstr "التقويم"
 msgid "Celsius"
 msgstr "سيلزيوس"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:278
+#: ../../client/src/media/hooks/useMediaControls.ts:288
 msgid "Close"
 msgstr "إغلاق"
 
@@ -155,8 +155,7 @@ msgstr "المستندات"
 msgid "Documents"
 msgstr "المستندات"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:67
-#: ../../client/src/media/file/FileBinary.tsx:30
+#: ../../client/src/media/hooks/useMediaControls.ts:77
 msgid "Download"
 msgstr "تحميل"
 
@@ -164,7 +163,7 @@ msgstr "تحميل"
 msgid "Downloads"
 msgstr "التنزيلات"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:57
+#: ../../client/src/media/hooks/useMediaControls.ts:67
 msgid "Edit"
 msgstr "تعديل"
 
@@ -188,7 +187,7 @@ msgstr "أدخل عبارتك التذكيرية"
 msgid "Enter your name"
 msgstr "أدخل اسمك"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:77
+#: ../../client/src/media/hooks/useMediaControls.ts:87
 msgid "Extract"
 msgstr "استخراج"
 
@@ -206,7 +205,7 @@ msgstr "الملفات"
 msgid "Filesystem"
 msgstr ""
 
-#: ../../client/src/media/hooks/useMediaControls.ts:268
+#: ../../client/src/media/hooks/useMediaControls.ts:278
 msgid "Fullscreen"
 msgstr "ملء الشاشة"
 
@@ -316,7 +315,7 @@ msgstr "الموسيقى"
 msgid "News"
 msgstr "الأخبار"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:186
+#: ../../client/src/media/hooks/useMediaControls.ts:196
 msgid "Next"
 msgstr "التالي"
 
@@ -324,7 +323,7 @@ msgstr "التالي"
 msgid "No events scheduled."
 msgstr "لا توجد أحداث مجدولة."
 
-#: ../../client/src/media/hooks/useMediaControls.ts:223
+#: ../../client/src/media/hooks/useMediaControls.ts:233
 msgid "Options"
 msgstr "الخيارات"
 
@@ -336,7 +335,7 @@ msgstr "نظرة عامة"
 msgid "Owner Key"
 msgstr "مفتاح المالك"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:120
+#: ../../client/src/media/hooks/useMediaControls.ts:130
 msgid "Pause"
 msgstr "إيقاف مؤقت"
 
@@ -345,7 +344,7 @@ msgstr "إيقاف مؤقت"
 msgid "Pictures"
 msgstr "الصور"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:234
+#: ../../client/src/media/hooks/useMediaControls.ts:244
 msgid "Pin"
 msgstr "تثبيت"
 
@@ -353,7 +352,7 @@ msgstr "تثبيت"
 msgid "Pinned"
 msgstr ""
 
-#: ../../client/src/media/hooks/useMediaControls.ts:121
+#: ../../client/src/media/hooks/useMediaControls.ts:131
 msgid "Play"
 msgstr "تشغيل"
 
@@ -361,7 +360,7 @@ msgstr "تشغيل"
 msgid "Please set your Groq API Key"
 msgstr "يرجى تعيين مفتاح Groq API الخاص بك"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:175
+#: ../../client/src/media/hooks/useMediaControls.ts:185
 msgid "Previous"
 msgstr "السابق"
 
@@ -393,11 +392,11 @@ msgstr ""
 msgid "Rename"
 msgstr ""
 
-#: ../../client/src/media/hooks/useMediaControls.ts:163
+#: ../../client/src/media/hooks/useMediaControls.ts:173
 msgid "Replay"
 msgstr "إعادة التشغيل"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:87
+#: ../../client/src/media/hooks/useMediaControls.ts:97
 msgid "Search"
 msgstr "بحث"
 
@@ -431,11 +430,11 @@ msgstr "الإعدادات"
 msgid "Share"
 msgstr "مشاركة"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:140
+#: ../../client/src/media/hooks/useMediaControls.ts:150
 msgid "Skip backward"
 msgstr "تخطي للخلف"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:151
+#: ../../client/src/media/hooks/useMediaControls.ts:161
 msgid "Skip forward"
 msgstr "تخطي للأمام"
 
@@ -493,7 +492,7 @@ msgstr "عرض أحداثك والمعلومات المتعلقة بالوقت"
 msgid "View your latest news and rss feeds"
 msgstr "عرض آخر الأخبار وتغذيات RSS الخاصة بك"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:211
+#: ../../client/src/media/hooks/useMediaControls.ts:221
 msgid "Volume"
 msgstr "مستوى الصوت"
 
@@ -530,10 +529,10 @@ msgstr "اسمك للعرض في التطبيق."
 msgid "Your prompt history has been reset."
 msgstr "تم إعادة تعيين سجل المطالبات الخاص بك."
 
-#: ../../client/src/media/hooks/useMediaControls.ts:97
+#: ../../client/src/media/hooks/useMediaControls.ts:107
 msgid "Zoom in"
 msgstr "تكبير"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:108
+#: ../../client/src/media/hooks/useMediaControls.ts:118
 msgid "Zoom out"
 msgstr "تصغير"

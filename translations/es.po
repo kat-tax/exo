@@ -69,7 +69,7 @@ msgstr "Calendario"
 msgid "Celsius"
 msgstr "Celsius"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:278
+#: ../../client/src/media/hooks/useMediaControls.ts:288
 msgid "Close"
 msgstr "Cerrar"
 
@@ -155,8 +155,7 @@ msgstr "Documentos"
 msgid "Documents"
 msgstr "Documentos"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:67
-#: ../../client/src/media/file/FileBinary.tsx:30
+#: ../../client/src/media/hooks/useMediaControls.ts:77
 msgid "Download"
 msgstr "Descargar"
 
@@ -164,7 +163,7 @@ msgstr "Descargar"
 msgid "Downloads"
 msgstr "Descargas"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:57
+#: ../../client/src/media/hooks/useMediaControls.ts:67
 msgid "Edit"
 msgstr "Editar"
 
@@ -188,7 +187,7 @@ msgstr "Ingresa tu frase mnemotécnica"
 msgid "Enter your name"
 msgstr "Ingresa tu nombre"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:77
+#: ../../client/src/media/hooks/useMediaControls.ts:87
 msgid "Extract"
 msgstr "Extraer"
 
@@ -206,7 +205,7 @@ msgstr "Archivos"
 msgid "Filesystem"
 msgstr ""
 
-#: ../../client/src/media/hooks/useMediaControls.ts:268
+#: ../../client/src/media/hooks/useMediaControls.ts:278
 msgid "Fullscreen"
 msgstr "Pantalla completa"
 
@@ -316,7 +315,7 @@ msgstr "Música"
 msgid "News"
 msgstr "Noticias"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:186
+#: ../../client/src/media/hooks/useMediaControls.ts:196
 msgid "Next"
 msgstr "Siguiente"
 
@@ -324,7 +323,7 @@ msgstr "Siguiente"
 msgid "No events scheduled."
 msgstr "No hay eventos programados."
 
-#: ../../client/src/media/hooks/useMediaControls.ts:223
+#: ../../client/src/media/hooks/useMediaControls.ts:233
 msgid "Options"
 msgstr "Opciones"
 
@@ -336,7 +335,7 @@ msgstr "Resumen"
 msgid "Owner Key"
 msgstr "Clave de Propietario"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:120
+#: ../../client/src/media/hooks/useMediaControls.ts:130
 msgid "Pause"
 msgstr "Pausar"
 
@@ -345,7 +344,7 @@ msgstr "Pausar"
 msgid "Pictures"
 msgstr "Imágenes"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:234
+#: ../../client/src/media/hooks/useMediaControls.ts:244
 msgid "Pin"
 msgstr "Fijar"
 
@@ -353,7 +352,7 @@ msgstr "Fijar"
 msgid "Pinned"
 msgstr ""
 
-#: ../../client/src/media/hooks/useMediaControls.ts:121
+#: ../../client/src/media/hooks/useMediaControls.ts:131
 msgid "Play"
 msgstr "Reproducir"
 
@@ -361,7 +360,7 @@ msgstr "Reproducir"
 msgid "Please set your Groq API Key"
 msgstr "Por favor configura tu clave API de Groq"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:175
+#: ../../client/src/media/hooks/useMediaControls.ts:185
 msgid "Previous"
 msgstr "Anterior"
 
@@ -393,11 +392,11 @@ msgstr ""
 msgid "Rename"
 msgstr ""
 
-#: ../../client/src/media/hooks/useMediaControls.ts:163
+#: ../../client/src/media/hooks/useMediaControls.ts:173
 msgid "Replay"
 msgstr "Repetir"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:87
+#: ../../client/src/media/hooks/useMediaControls.ts:97
 msgid "Search"
 msgstr "Buscar"
 
@@ -431,11 +430,11 @@ msgstr "Ajustes"
 msgid "Share"
 msgstr "Compartir"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:140
+#: ../../client/src/media/hooks/useMediaControls.ts:150
 msgid "Skip backward"
 msgstr "Retroceder"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:151
+#: ../../client/src/media/hooks/useMediaControls.ts:161
 msgid "Skip forward"
 msgstr "Avanzar"
 
@@ -493,7 +492,7 @@ msgstr "Ver tus eventos e información relacionada con el tiempo"
 msgid "View your latest news and rss feeds"
 msgstr "Ver tus últimas noticias y feeds RSS"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:211
+#: ../../client/src/media/hooks/useMediaControls.ts:221
 msgid "Volume"
 msgstr "Volumen"
 
@@ -530,10 +529,10 @@ msgstr "Tu nombre para mostrar en la aplicación."
 msgid "Your prompt history has been reset."
 msgstr "Tu historial de prompts ha sido reiniciado."
 
-#: ../../client/src/media/hooks/useMediaControls.ts:97
+#: ../../client/src/media/hooks/useMediaControls.ts:107
 msgid "Zoom in"
 msgstr "Acercar"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:108
+#: ../../client/src/media/hooks/useMediaControls.ts:118
 msgid "Zoom out"
 msgstr "Alejar"
