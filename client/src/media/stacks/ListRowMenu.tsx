@@ -50,7 +50,8 @@ export function ListRowMenu(props: ListRowMenuProps) {
         action: events?.copy,
       },
       {
-        name: '-',
+        name: 'middle',
+        label: '-',
       },
       events?.move && {
         name: 'move',
@@ -66,11 +67,16 @@ export function ListRowMenu(props: ListRowMenuProps) {
         shortcut: 'F2',
         action: events?.rename,
       },
+      {
+        name: 'bottom',
+        label: '-',
+      },
       events?.delete && {
         name: 'delete',
         icon: 'ph:trash',
         label: t`Delete`,
         shortcut: '⌘+DEL',
+        destructive: true,
         action: events?.delete,
       },
     ];
@@ -86,11 +92,20 @@ export function ListRowMenu(props: ListRowMenuProps) {
           {props.name}
         </Menu.Label>
         {items.map(item => item && (
-          item.name === '-' ? <Menu.Separator key={item.name} /> : (
-          <Menu.Item key={item.name} onSelect={item.action}>
+          item.label === '-' ? <Menu.Separator key={item.name} /> : (
+          <Menu.Item
+            key={item.name}
+            onSelect={item.action}
+            destructive={item.destructive}>
             {item.icon &&
               <Menu.ItemIcon>
-                <Icon name={item.icon} size={14} color={theme.colors.primary}/>
+                <Icon
+                  name={item.icon}
+                  size={14}
+                  color={item.destructive
+                    ? theme.colors.destructive
+                    : theme.colors.primary}
+                />
               </Menu.ItemIcon>
             }
             <Menu.ItemTitle>{item.label}</Menu.ItemTitle>

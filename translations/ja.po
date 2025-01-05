@@ -94,7 +94,7 @@ msgstr "データ"
 msgid "Database"
 msgstr ""
 
-#: ../../client/src/media/stacks/ListRowMenu.tsx:72
+#: ../../client/src/media/stacks/ListRowMenu.tsx:77
 msgid "Delete"
 msgstr ""
 
@@ -301,7 +301,7 @@ msgstr "メディア"
 msgid "Miles"
 msgstr "マイル"
 
-#: ../../client/src/media/stacks/ListRowMenu.tsx:58
+#: ../../client/src/media/stacks/ListRowMenu.tsx:59
 msgid "Move"
 msgstr ""
 
@@ -388,7 +388,7 @@ msgstr "AI機能を使用するにはキーを提供してください。"
 msgid "Public"
 msgstr ""
 
-#: ../../client/src/media/stacks/ListRowMenu.tsx:65
+#: ../../client/src/media/stacks/ListRowMenu.tsx:66
 msgid "Rename"
 msgstr ""
 

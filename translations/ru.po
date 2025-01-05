@@ -94,7 +94,7 @@ msgstr "Данные"
 msgid "Database"
 msgstr ""
 
-#: ../../client/src/media/stacks/ListRowMenu.tsx:72
+#: ../../client/src/media/stacks/ListRowMenu.tsx:77
 msgid "Delete"
 msgstr ""
 
@@ -301,7 +301,7 @@ msgstr "Медиа"
 msgid "Miles"
 msgstr "Мили"
 
-#: ../../client/src/media/stacks/ListRowMenu.tsx:58
+#: ../../client/src/media/stacks/ListRowMenu.tsx:59
 msgid "Move"
 msgstr ""
 
@@ -388,7 +388,7 @@ msgstr "Предоставьте ключ для использования фу
 msgid "Public"
 msgstr ""
 
-#: ../../client/src/media/stacks/ListRowMenu.tsx:65
+#: ../../client/src/media/stacks/ListRowMenu.tsx:66
 msgid "Rename"
 msgstr ""
 
