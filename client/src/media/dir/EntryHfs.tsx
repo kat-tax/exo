@@ -7,7 +7,6 @@ import {EntryHfsMenu} from 'media/dir/EntryHfsMenu';
 import {ListRow} from 'media/stacks/ListRow';
 
 import type {HfsDirectoryEntry} from 'react-exo/fs';
-import type {EntryHfsMenuActions} from 'media/dir/EntryHfsMenu';
 
 export interface EntryHfs {
   entry: HfsDirectoryEntry,
@@ -47,8 +46,8 @@ export function EntryHfs(props: EntryHfs) {
     return name;
   }, [name, path, flags, selection, isFile]);
 
-  // Handlers for menu events
-  const events: EntryHfsMenuActions = useMemo(() => ({
+  // Handlers for menu actions
+  const actions = useMemo(() => ({
     menu: () => {},
     view: () => nav(link),
     share: () => {},
@@ -59,8 +58,8 @@ export function EntryHfs(props: EntryHfs) {
   }), [link, file.del, nav]);
 
   return (
-    <EntryHfsMenu {...{name, events}}>
-      <Pressable onPress={events.view}>
+    <EntryHfsMenu {...{name, actions}}>
+      <Pressable onPress={actions.view}>
         <ListRow {...{name, isFile, isSelected}}/>
       </Pressable>
     </EntryHfsMenu>

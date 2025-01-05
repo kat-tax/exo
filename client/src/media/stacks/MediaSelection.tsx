@@ -20,8 +20,8 @@ export function MediaSelection(props: {maximized: boolean} & MediaSelectionType)
   const {styles, theme} = useStyles(stylesheet);
   const scrollRef = useRef<ScrollView>(null);
 
-  // Handlers for menu events
-  const events = useMemo(() => ({
+  // Handlers for menu actions
+  const actions = useMemo(() => ({
     menu: () => {},
     view: () => {},
     share: () => {},
@@ -52,7 +52,7 @@ export function MediaSelection(props: {maximized: boolean} & MediaSelectionType)
       animate={{opacity: 1}}
       exit={{opacity: 0}}>
       {queue.map(({name, title, ext, action}, index) => 
-        <EntryHfsMenu {...{name, events}} key={name}>
+        <EntryHfsMenu {...{name, actions}} key={name}>
           <Pressable
             onPress={action}
             style={[styles.preview, index === focus && styles.focus]}>

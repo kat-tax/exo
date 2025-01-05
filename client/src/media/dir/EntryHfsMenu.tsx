@@ -6,80 +6,82 @@ import type {ContextMenuItem} from 'app/stacks/ContextMenu';
 
 export interface EntryHfsMenuProps extends React.PropsWithChildren {
   name: string,
-  events?: EntryHfsMenuActions,
+  actions?: {
+    menu?: () => void,
+    view?: () => void,
+    share?: () => void,
+    copy?: () => void,
+    move?: () => void,
+    rename?: () => void,
+    delete?: () => void,
+  },
 }
 
-export interface EntryHfsMenuActions {
-  menu?: () => void,
-  view?: () => void,
-  share?: () => void,
-  copy?: () => void,
-  move?: () => void,
-  rename?: () => void,
-  delete?: () => void,
-}
 
 export function EntryHfsMenu(props: EntryHfsMenuProps) {
-  const {name, events} = props;
+  const {name, actions} = props;
   const {t} = useLingui();
 
   const items: Array<ContextMenuItem | undefined> = useMemo(() => [
-    events?.view && {
+    actions?.view && {
       name: 'view',
       icon: 'ph:eye',
       label: t`View`,
       shortcut: 'ENTER',
-      action: events?.view,
+      action: actions?.view,
     },
-    events?.share && {
+    actions?.share && {
       name: 'share',
       icon: 'ph:share',
       label: t`Share`,
       shortcut: '⌘+K',
-      action: events?.share,
+      action: actions?.share,
     },
     {
       name: 'middle',
       label: '-',
     },
-    events?.copy && {
+    actions?.copy && {
       name: 'copy',
       icon: 'ph:copy',
       label: t`Copy`,
       shortcut: '⌘+C',
-      action: events?.copy,
+      action: actions?.copy,
     },
-    events?.move && {
+    actions?.move && {
       name: 'move',
       icon: 'ph:arrow-elbow-down-right',
       label: t`Move`,
       shortcut: '⌘+X',
-      action: events?.move,
+      action: actions?.move,
     },
-    events?.rename && {
+    actions?.rename && {
       name: 'rename',
       icon: 'ph:textbox',
       label: t`Rename`,
       shortcut: 'F2',
-      action: events?.rename,
+      action: actions?.rename,
     },
     {
       name: 'bottom',
       label: '-',
     },
-    events?.delete && {
+    actions?.delete && {
       name: 'delete',
       icon: 'ph:trash',
       label: t`Delete`,
       shortcut: '⌘+DEL',
       destructive: true,
-      action: events?.delete,
+      action: actions?.delete,
     },
-  ], [t, events]);
+  ], [t, actions]);
 
   return (
-    <ContextMenu items={items} label={name} onOpenChange={events?.menu}>
+    <ContextMenu
+      label={name}
+      items={items}
+      onOpenChange={actions?.menu}>
       {props.children}
     </ContextMenu>
-  )
+  );
 }
