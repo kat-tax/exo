@@ -73,7 +73,7 @@ msgstr "摂氏"
 msgid "Close"
 msgstr "閉じる"
 
-#: ../../client/src/media/stacks/ListRowMenu.tsx:48
+#: ../../client/src/media/stacks/ListRowMenu.tsx:52
 msgid "Copy"
 msgstr ""
 

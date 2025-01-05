@@ -45,7 +45,7 @@ export function useDirHfs(path: string, options?: DirectoryOptions) {
   useEffect(() => {
     refresh();
     let _disconnect = () => {};
-    observe(refresh).then(disconnect => {
+    observe(path, refresh).then(disconnect => {
       if (!disconnect) {
         let delta = 0;
         const i = setInterval(async () => {

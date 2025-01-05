@@ -1,4 +1,4 @@
-export async function observe(callback: (records: unknown[]) => void) {
+export async function observe(path: string, callback: (records: unknown[]) => void) {
   try {
     // @ts-expect-error FileSystemObserver is new
     const $ = new FileSystemObserver(async (records, observer) => {
@@ -6,7 +6,8 @@ export async function observe(callback: (records: unknown[]) => void) {
       callback(records);
     });
     const root = await navigator.storage.getDirectory();
-    await $.observe(root, {recursive: true});
+    const dir = !!path && await root.getDirectoryHandle(path);
+    await $.observe(dir || root, {recursive: false});
     return $.disconnect as () => void;
   } catch (e) {
     console.error('>> fs [error]', e);

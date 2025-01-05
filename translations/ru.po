@@ -73,7 +73,7 @@ msgstr "Цельсий"
 msgid "Close"
 msgstr "Закрыть"
 
-#: ../../client/src/media/stacks/ListRowMenu.tsx:48
+#: ../../client/src/media/stacks/ListRowMenu.tsx:52
 msgid "Copy"
 msgstr ""
 

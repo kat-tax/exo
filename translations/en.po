@@ -73,7 +73,7 @@ msgstr "Celsius"
 msgid "Close"
 msgstr "Close"
 
-#: ../../client/src/media/stacks/ListRowMenu.tsx:48
+#: ../../client/src/media/stacks/ListRowMenu.tsx:52
 msgid "Copy"
 msgstr "Copy"
 

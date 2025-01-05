@@ -42,16 +42,16 @@ export function ListRowMenu(props: ListRowMenuProps) {
         shortcut: '⌘+K',
         action: events?.share,
       },
+      {
+        name: 'middle',
+        label: '-',
+      },
       events?.copy && {
         name: 'copy',
         icon: 'ph:copy',
         label: t`Copy`,
         shortcut: '⌘+C',
         action: events?.copy,
-      },
-      {
-        name: 'middle',
-        label: '-',
       },
       events?.move && {
         name: 'move',

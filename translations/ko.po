@@ -73,7 +73,7 @@ msgstr "섭씨"
 msgid "Close"
 msgstr "닫기"
 
-#: ../../client/src/media/stacks/ListRowMenu.tsx:48
+#: ../../client/src/media/stacks/ListRowMenu.tsx:52
 msgid "Copy"
 msgstr ""
 
