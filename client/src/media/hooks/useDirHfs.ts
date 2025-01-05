@@ -40,7 +40,6 @@ export function useDirHfs(path: string, options?: DirectoryOptions) {
   }, [path, showHidden]);
 
   useEffect(() => {
-    if (!refresh) return;
     refresh();
     let _disconnect = () => {};
     observe(refresh).then(disconnect => {
