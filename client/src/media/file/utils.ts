@@ -225,7 +225,9 @@ export async function getRenderer(
     case 't64':
     case 'prg':
       return [FileType.Game, {platform: 'vice_x64'}];
-    // Texts (https://gist.github.com/TheUltDev/88fca551dde03548da958d52aeab7e50)
+    // Texts
+    // TODO: make sure all languagesare used:
+    // https://gist.github.com/TheUltDev/88fca551dde03548da958d52aeab7e50
     case 'txt':
       return [FileType.Text, {language: 'text'}];
     case 'abap':
@@ -625,6 +627,9 @@ export async function getRenderer(
     case 'hy':
       return [FileType.Text, {language: 'hy'}];
     // Web Languages
+    case 'wasm':
+    case 'wat':
+      return [FileType.Text, {language: 'wasm'}];
     case 'http':
       return [FileType.Text, {language: 'http'}];
     case 'html':
