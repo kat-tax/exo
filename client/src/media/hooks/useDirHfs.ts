@@ -6,7 +6,6 @@ import {observe, poll} from 'media/utils/fs';
 import type {HfsDirectoryEntry} from 'react-exo/fs';
 
 const FILESYSTEM = FS.init('fs');
-const POLL_TIMEOUT_MS = 200;
 
 export interface DirectoryOptions {
   showHidden?: boolean,
@@ -35,6 +34,10 @@ export function useDirHfs(path: string, options?: DirectoryOptions) {
         return 1;
       if (b.name.startsWith('.') && !showHidden)
         return -1;
+      if (a.isDirectory && !b.isDirectory)
+        return -1;
+      if (!a.isDirectory && b.isDirectory)
+        return 1;
       return a.name.localeCompare(b.name);
     }));
   }, [path, showHidden]);
@@ -44,14 +47,14 @@ export function useDirHfs(path: string, options?: DirectoryOptions) {
     let _disconnect = () => {};
     observe(refresh).then(disconnect => {
       if (!disconnect) {
-        let lastChange = 0;
-        const interval = setInterval(async () => {
-          if (await poll(path, lastChange)) {
-            lastChange = Date.now();
+        let delta = 0;
+        const i = setInterval(async () => {
+          if (await poll(path, delta)) {
+            delta = Date.now();
             refresh();
           }
-        }, POLL_TIMEOUT_MS);
-        _disconnect = () => clearInterval(interval);
+        }, 200);
+        _disconnect = () => clearInterval(i);
       } else {
         _disconnect = disconnect;
       }

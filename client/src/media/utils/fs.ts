@@ -14,12 +14,12 @@ export async function observe(callback: (records: unknown[]) => void) {
   }
 }
 
-export async function poll(path: string, lastChange: number) {
+export async function poll(path: string, delta: number) {
   try {
     const meta = await metadata(path, false);
     // @ts-expect-error
     const date = new Date(meta?.modificationTime);
-    return date.getTime() > lastChange;
+    return date.getTime() > delta;
   } catch (e) {
     return true;
   }
