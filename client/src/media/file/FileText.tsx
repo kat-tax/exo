@@ -3,7 +3,7 @@ import {Code} from 'react-exo/code';
 import {View} from 'react-native';
 import {forwardRef, useEffect} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {useFileData} from 'media/hooks/useFileData';
+import {useFileData} from 'media/file/hooks/useFileData';
 import {useScheme} from 'app/hooks/useScheme';
 import {bytesize} from 'app/utils/formatting';
 

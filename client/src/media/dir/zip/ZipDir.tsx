@@ -1,15 +1,14 @@
-import {EntryZip} from 'media/dir/EntryZip';
+import {ZipEntry} from './ZipEntry';
+import type {Zip} from './hooks/useZip';
 
-import type {Zip} from 'media/hooks/useFileZip';
-
-export interface DirZipProps {
+export interface ZipDirProps {
   zip: Zip,
   extract: (entry: Zip['list'][number]) => void,
 }
 
-export function DirZip({zip, extract}: DirZipProps) {
+export function ZipDir({zip, extract}: ZipDirProps) {
   return zip.list.map((entry, index) =>
-    <EntryZip
+    <ZipEntry
       key={entry.dir ? `.${entry.name}` : entry.name}
       {...{entry, index, zip, extract}}
     />

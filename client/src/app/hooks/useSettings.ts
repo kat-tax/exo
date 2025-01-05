@@ -9,9 +9,9 @@ import type {DB} from 'app/data';
 
 export function useSettings() {
   const {profile} = useAppContext();
-  const {t} = useLingui();
   const evolu = useEvolu<DB>();
   const owner = useOwner();
+  const {t} = useLingui();
 
   const updateName = (text: string) => {
     if (!profile?.id) return;

@@ -1,8 +1,7 @@
-
 import ExoTorrent from 'react-exo/torrent';
 
 import {useCallback, useMemo} from 'react';
-import {useFileData} from 'media/hooks/useFileData';
+import {useFileData} from 'media/file/hooks/useFileData';
 import {info, files} from 'media/utils/torrent';
 import {bytesize} from 'app/utils/formatting';
 
@@ -17,7 +16,7 @@ export interface Torrent {
   desc?: string,
 }
 
-export function useFileTorrent(path: string) {
+export function useTorrent(path: string) {
   const buffer = useFileData(path, 'arrayBuffer');
 
   const torrent: Torrent | null = useMemo(() => {

@@ -3,7 +3,7 @@ import {useWindowDimensions, View, ImageBackground} from 'react-native';
 //import {useImageResolution, ResumableZoom, fitContainer} from 'react-native-zoom-toolkit';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 
-import {useFileData} from 'media/hooks/useFileData';
+import {useFileData} from 'media/file/hooks/useFileData';
 
 import type {FileProps} from 'media/file';
 

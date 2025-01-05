@@ -1,7 +1,9 @@
 import * as $ from 'react-exo/redux';
 import {KV} from 'react-exo/kv';
 import cfg from 'config';
+
 import app from 'app/store';
+import media from 'media/store';
 
 const reducer = $.persistReducer({
   key: cfg.APP_NAME,
@@ -14,8 +16,9 @@ const reducer = $.persistReducer({
     'router',
   ],
 }, $.combineReducers({
-  router: $.history.context.routerReducer,
   app: app.reducer,
+  media: media.reducer,
+  router: $.history.context.routerReducer,
 }));
 
 const store = $.configureStore({

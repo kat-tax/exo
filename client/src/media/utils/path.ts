@@ -19,6 +19,14 @@ export function resolve(path: string) {
     .split('/');
 }
 
+export function getFileName(path: string) {
+  return path.split('/').pop();
+}
+
+export function getExtension(path: string) {
+  return path.split('.').pop();
+}
+
 export function getStartInDir(path: string): OpenDirectoryOptions['startIn'] {
   return isInitDirectory(path)
     ? (path as OpenDirectoryOptions['startIn'])

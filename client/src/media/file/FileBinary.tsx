@@ -1,6 +1,6 @@
 import {useEffect, forwardRef} from 'react';
 import {useLingui} from '@lingui/react/macro';
-import {useFileData} from 'media/hooks/useFileData';
+import {useFileData} from 'media/file/hooks/useFileData';
 import {Watermark} from 'media/stacks/Watermark';
 
 import type {FileProps} from 'media/file';

@@ -1,9 +1,9 @@
 import {useLingui} from '@lingui/react/macro';
-import {useImporter} from 'media/hooks/useImporter';
+import {useHfsImporter} from 'media/dir/hfs';
 import {Watermark} from 'media/stacks/Watermark';
 
 export function DirEmpty() {
-  const {importFolder} = useImporter();
+  const {importFolder} = useHfsImporter();
   const {t} = useLingui();
   return (
     <Watermark

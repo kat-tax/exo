@@ -4,8 +4,8 @@ import {Text, Pressable} from 'react-native';
 import {Icon} from 'react-exo/icon';
 import {Motion} from 'react-exo/motion';
 import {isTouch} from 'app/utils/platform';
+import {HfsMenu} from 'media/dir/hfs';
 import {ListRowIcon} from 'media/stacks/ListRowIcon';
-import {EntryHfsMenu} from 'media/dir/EntryHfsMenu';
 
 import type {ScrollView} from 'react-native';
 import type {MediaSelection as MediaSelectionType} from 'media/hooks/useMediaSelection';
@@ -52,7 +52,7 @@ export function MediaSelection(props: {maximized: boolean} & MediaSelectionType)
       animate={{opacity: 1}}
       exit={{opacity: 0}}>
       {queue.map(({name, title, ext, action}, index) => 
-        <EntryHfsMenu {...{name, actions}} key={name}>
+        <HfsMenu {...{name, actions}} key={name}>
           <Pressable
             onPress={action}
             style={[styles.preview, index === focus && styles.focus]}>
@@ -76,7 +76,7 @@ export function MediaSelection(props: {maximized: boolean} & MediaSelectionType)
               />
             </Pressable>
           </Pressable>
-        </EntryHfsMenu>
+        </HfsMenu>
       )}
     </Motion.ScrollView>
   );

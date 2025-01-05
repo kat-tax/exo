@@ -3,7 +3,7 @@ import {Map, Source, Layer} from 'react-map-gl/maplibre';
 import {View} from 'react-native';
 import {useEffect, useState, forwardRef} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {useFileData} from 'media/hooks/useFileData';
+import {useFileData} from 'media/file/hooks/useFileData';
 import {useScheme} from 'app/hooks/useScheme';
 import {getBounds} from 'app/utils/mapping';
 import {MarkerGeoJson} from 'world/stacks/MarkerGeoJson';

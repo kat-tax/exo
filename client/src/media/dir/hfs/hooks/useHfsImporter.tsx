@@ -3,7 +3,7 @@ import {useCallback} from 'react';
 import {useLocation} from 'react-exo/navigation';
 import {resolve, getStartInDir} from 'media/utils/path';
 
-export function useImporter() {
+export function useHfsImporter() {
   const {pathname} = useLocation();
 
   /** Import a folder from the device */

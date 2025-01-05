@@ -1,14 +1,15 @@
 import {Pressable} from 'react-native';
 import {useMemo} from 'react';
 import {useLocation, useNavigate} from 'react-exo/navigation';
-import {useDirHfsEntry} from 'media/hooks/useDirHfsEntry';
 import {filesToHash, hashToFiles} from 'app/utils/formatting';
-import {EntryHfsMenu} from 'media/dir/EntryHfsMenu';
 import {ListRow} from 'media/stacks/ListRow';
+
+import {HfsMenu} from './HfsMenu';
+import {useHfsEntry} from './hooks/useHfsEntry';
 
 import type {HfsDirectoryEntry} from 'react-exo/fs';
 
-export interface EntryHfs {
+export interface HfsEntryProps {
   entry: HfsDirectoryEntry,
   index: number,
   path?: string,
@@ -17,11 +18,11 @@ export interface EntryHfs {
   },
 }
 
-export function EntryHfs(props: EntryHfs) {
+export function HfsEntry(props: HfsEntryProps) {
   const {entry, flags, path} = props;
   const {name, isFile} = entry;
   const {hash} = useLocation();
-  const file = useDirHfsEntry(entry);
+  const ctx = useHfsEntry(entry);
   const nav = useNavigate();
 
   // Update selection when hash changes
@@ -54,14 +55,14 @@ export function EntryHfs(props: EntryHfs) {
     copy: () => {},
     move: () => {},
     rename: () => {},
-    delete: file.del,
-  }), [link, file.del, nav]);
+    delete: ctx.del,
+  }), [link, ctx.del, nav]);
 
   return (
-    <EntryHfsMenu {...{name, actions}}>
+    <HfsMenu {...{name, actions}}>
       <Pressable onPress={actions.view}>
         <ListRow {...{name, isFile, isSelected}}/>
       </Pressable>
-    </EntryHfsMenu>
+    </HfsMenu>
   );
 }

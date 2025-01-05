@@ -1,17 +1,17 @@
 import {useMemo} from 'react';
 import {Pressable} from 'react-native';
 import {ListRow} from 'media/stacks/ListRow';
-import {EntryTorrentMenu} from 'media/dir/EntryTorrentMenu';
 
+import {TorrentMenu} from './TorrentMenu';
 import type {TorrentFileEntry} from 'media/utils/torrent';
 
-export interface EntryTorrent {
+export interface TorrentEntryProps {
   entry: TorrentFileEntry,
   index: number,
   download: (entry: TorrentFileEntry) => void,
 }
 
-export function EntryTorrent(props: EntryTorrent) {
+export function TorrentEntry(props: TorrentEntryProps) {
   const {entry} = props;
   const {name, length} = entry;
   const size = length;
@@ -24,10 +24,10 @@ export function EntryTorrent(props: EntryTorrent) {
   }), [props.download, entry]);
 
   return (
-    <EntryTorrentMenu {...{name, actions}}>
+    <TorrentMenu {...{name, actions}}>
       <Pressable onPress={actions.download}>
         <ListRow {...{name, size, isFile}}/>
       </Pressable>
-    </EntryTorrentMenu>
+    </TorrentMenu>
   );
 }

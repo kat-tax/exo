@@ -2,13 +2,13 @@ import {useMemo} from 'react';
 import {useStyles} from 'react-native-unistyles';
 import {useWindowDimensions} from 'react-native';
 
-export type FilePiP = {
+export type MediaPictureInPicture = {
   scale: number,
   resolution: number[],
   viewportWidth: number,
 };
 
-export function useFilePiP(extension: string): FilePiP {
+export function useMediaPictureInPicture(extension: string): MediaPictureInPicture {
   const {width} = useWindowDimensions();
   const {theme} = useStyles();
 

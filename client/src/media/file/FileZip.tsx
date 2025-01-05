@@ -1,9 +1,8 @@
 import {View} from 'react-native';
 import {forwardRef, useEffect} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {useFileZip} from 'media/hooks/useFileZip';
+import {useZip, ZipDir} from 'media/dir/zip';
 import {bytesize} from 'app/utils/formatting';
-import {DirZip} from 'media/dir/DirZip';
 import {Page} from 'app/interface/Page';
 
 import type {FileProps} from 'media/file';
@@ -11,7 +10,7 @@ import type {FileProps} from 'media/file';
 export interface FileZip extends FileProps {}
 
 export default forwardRef((props: FileZip, _ref) => {
-  const {zip, extract} = useFileZip(props.path);
+  const {zip, extract} = useZip(props.path);
   const {styles} = useStyles(stylesheet);
 
   // Update file player bar info
@@ -37,7 +36,7 @@ export default forwardRef((props: FileZip, _ref) => {
         noFrame
         fullWidth>
         <View style={styles.inner}>
-          {zip && <DirZip {...{zip, extract}}/>}
+          {zip && <ZipDir {...{zip, extract}}/>}
         </View>
       </Page>
     </View>

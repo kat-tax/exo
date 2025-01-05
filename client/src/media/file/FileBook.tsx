@@ -3,7 +3,7 @@ import {Book} from 'react-exo/book';
 import {useLingui} from '@lingui/react/macro';
 import {useEffect, useState, useCallback, forwardRef} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {useFileData} from 'media/hooks/useFileData';
+import {useFileData} from 'media/file/hooks/useFileData';
 import {useScheme} from 'app/hooks/useScheme';
 import {View, Platform} from 'react-native';
 

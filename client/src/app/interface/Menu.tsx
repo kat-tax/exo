@@ -1,7 +1,7 @@
 import {View, ScrollView} from 'react-native';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useLingui} from '@lingui/react/macro';
-import {useImporter} from 'media/hooks/useImporter';
+import {useHfsImporter} from 'media/dir/hfs';
 import {StorageWidget} from 'media/stacks/StorageWidget';
 
 import {MenuItem} from './MenuItem';
@@ -15,7 +15,7 @@ export interface MenuProps {
 }
 
 export function Menu(props: MenuProps) {
-  const {importFile} = useImporter();
+  const {importFile} = useHfsImporter();
   const {styles} = useStyles(stylesheet);
   const {t} = useLingui();
 

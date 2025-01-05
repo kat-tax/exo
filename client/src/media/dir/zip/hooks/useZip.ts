@@ -1,6 +1,6 @@
 import {fs} from '@zip.js/zip.js';
 import {useCallback, useEffect, useState, useRef} from 'react';
-import {useFileData} from 'media/hooks/useFileData';
+import {useFileData} from 'media/file/hooks/useFileData';
 
 import type {FS} from '@zip.js/zip.js';
 
@@ -23,7 +23,7 @@ export interface Zip {
   }>,
 }
 
-export function useFileZip(path: string) {
+export function useZip(path: string) {
   const filesystem = useRef<FS | null>(null);
   const buffer = useFileData(path, 'arrayBuffer');
   const [zip, setZip] = useState<Zip | null>(null);

@@ -1,17 +1,17 @@
 import {useMemo} from 'react';
 import {Pressable} from 'react-native';
 import {ListRow} from 'media/stacks/ListRow';
-import {EntryZipMenu} from 'media/dir/EntryZipMenu';
 
-import type {Zip} from 'media/hooks/useFileZip';
+import {ZipMenu} from './ZipMenu';
+import type {Zip} from './hooks/useZip';
 
-export interface EntryZip {
+export interface ZipEntryProps {
   entry: Zip['list'][number],
   index: number,
   extract: (entry: Zip['list'][number]) => void,
 }
 
-export function EntryZip(props: EntryZip) {
+export function ZipEntry(props: ZipEntryProps) {
   const {entry} = props;
   const {name, size, dir} = entry;
   const isFile = !dir;
@@ -23,10 +23,10 @@ export function EntryZip(props: EntryZip) {
   }), [props.extract, entry]);
 
   return (
-    <EntryZipMenu {...{name, actions}}>
+    <ZipMenu {...{name, actions}}>
       <Pressable onPress={actions.extract}>
         <ListRow {...{name, size, isFile}}/>
       </Pressable>
-    </EntryZipMenu>
+    </ZipMenu>
   );
 }

@@ -2,7 +2,7 @@ import {View, ScrollView} from 'react-native';
 import {useNavigate} from 'react-exo/navigation';
 import {useMemo, useState, useEffect, useRef} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {useFilePiP} from 'media/hooks/useFilePiP';
+import {useMediaPictureInPicture} from 'media/hooks/useMediaPictureInPicture';
 import {useMediaSelection} from 'media/hooks/useMediaSelection';
 import {MediaSelection} from 'media/stacks/MediaSelection';
 import {MediaControls} from 'media/stacks/MediaControls';
@@ -23,7 +23,7 @@ interface MediaProps {
 
 export function Media(props: MediaProps) {
   const nav = useNavigate();
-  const pip = useFilePiP(props.ext);
+  const pip = useMediaPictureInPicture(props.ext);
   const file = useRef<FileRef>(null);
   const selection = useMediaSelection(props.path);
   const {styles, theme} = useStyles(stylesheet);

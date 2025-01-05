@@ -11,7 +11,7 @@ export interface DirectoryOptions {
   showHidden?: boolean,
 }
 
-export function useDirHfs(path: string, options?: DirectoryOptions) {
+export function useHfs(path: string, options?: DirectoryOptions) {
   const [entries, setEntries] = useState<HfsDirectoryEntry[]>([]);
   const {showHidden} = options || {};
 

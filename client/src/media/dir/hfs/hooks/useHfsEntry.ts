@@ -3,7 +3,7 @@ import {useCallback} from 'react';
 
 import type {HfsDirectoryEntry} from 'react-exo/fs';
 
-export function useDirHfsEntry(entry: HfsDirectoryEntry) {
+export function useHfsEntry(entry: HfsDirectoryEntry) {
   const {name} = entry;
 
   const del = useCallback(() => {

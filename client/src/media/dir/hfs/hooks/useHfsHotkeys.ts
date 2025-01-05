@@ -1,14 +1,7 @@
 import {useState, useEffect} from 'react';
-import {useDirHfs} from 'media/hooks/useDirHfs';
-import {EntryHfs} from 'media/dir/EntryHfs';
 
-export interface DirHfsProps {
-  path: string,
-}
-
-export function DirHfs(props: DirHfsProps) {
+export function useHfsHotkeys() {
   const [multiSelect, setMultiSelect] = useState(false);
-  const {path, entries} = useDirHfs(props.path, {showHidden: true});
 
   useEffect(() => {
     const down = (e: KeyboardEvent) => {
@@ -29,11 +22,8 @@ export function DirHfs(props: DirHfsProps) {
     };
   }, []);
 
-  return entries.map((entry, index) =>
-    <EntryHfs
-      key={entry.isDirectory ? `.${entry.name}` : entry.name}
-      flags={{multiSelect}}
-      {...{entry, index, path}}
-    />
-  );
+  return {
+    multiSelect,
+  };
 }
+

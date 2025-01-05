@@ -1,10 +1,8 @@
 import {useMemo} from 'react';
 import {useLingui} from '@lingui/react/macro';
-import {ContextMenu} from 'app/stacks/ContextMenu';
+import {ContextMenu, type ContextMenuItem} from 'app/stacks/ContextMenu';
 
-import type {ContextMenuItem} from 'app/stacks/ContextMenu';
-
-export interface EntryZipMenuProps extends React.PropsWithChildren {
+export interface ZipMenuProps extends React.PropsWithChildren {
   name: string,
   actions?: {
     menu?: () => void,
@@ -12,7 +10,7 @@ export interface EntryZipMenuProps extends React.PropsWithChildren {
   },
 }
 
-export function EntryZipMenu(props: EntryZipMenuProps) {
+export function ZipMenu(props: ZipMenuProps) {
   const {name, actions} = props;
   const {t} = useLingui();
 

@@ -10,9 +10,9 @@ export type SchemeData = [
 ]
 
 export function useScheme(storedOnly?: boolean): SchemeData {
-  const dispatch = useDispatch();
   const stored = useSelector(app.selectors.getScheme);
   const value = useColorScheme();
+  const dispatch = useDispatch();
   const setter = (newScheme: ColorSchemeName) =>
     dispatch(app.actions.setScheme(newScheme));
 

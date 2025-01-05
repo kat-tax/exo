@@ -1,10 +1,8 @@
 import {useMemo} from 'react';
 import {useLingui} from '@lingui/react/macro';
-import {ContextMenu} from 'app/stacks/ContextMenu';
+import {ContextMenu, type ContextMenuItem} from 'app/stacks/ContextMenu';
 
-import type {ContextMenuItem} from 'app/stacks/ContextMenu';
-
-export interface EntryHfsMenuProps extends React.PropsWithChildren {
+export interface HfsMenuProps extends React.PropsWithChildren {
   name: string,
   actions?: {
     menu?: () => void,
@@ -17,7 +15,7 @@ export interface EntryHfsMenuProps extends React.PropsWithChildren {
   },
 }
 
-export function EntryHfsMenu(props: EntryHfsMenuProps) {
+export function HfsMenu(props: HfsMenuProps) {
   const {name, actions} = props;
   const {t} = useLingui();
 

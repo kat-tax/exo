@@ -2,10 +2,9 @@ import {useMemo} from 'react';
 import {useLingui} from '@lingui/react/macro';
 import {useLocation} from 'react-exo/navigation';
 import {useAppContext} from 'app/hooks/useAppContext';
-import {useInitializer} from 'media/hooks/useInitializer';
+import {useHfsStartup, HfsDir} from 'media/dir/hfs';
 import {InitDirectory} from 'media/utils/path';
 import {resolve} from 'media/utils/path';
-import {DirHfs} from 'media/dir/DirHfs';
 import {Page} from 'app/interface/Page';
 
 export default function ScreenBrowse() {
@@ -40,7 +39,7 @@ export default function ScreenBrowse() {
     }
   }, [pathname, t]);
 
-  useInitializer();
+  useHfsStartup();
 
   return (
     <Page
@@ -49,7 +48,7 @@ export default function ScreenBrowse() {
       title={name}
       message={base}
       hasPanel={layout.hasPreviewPanel}>
-      <DirHfs {...{path}}/>
+      <HfsDir {...{path}}/>
     </Page>
   );
 }
