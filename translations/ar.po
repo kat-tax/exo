@@ -73,7 +73,7 @@ msgstr "سيلزيوس"
 msgid "Close"
 msgstr "إغلاق"
 
-#: ../../client/src/media/stacks/ListRowMenu.tsx:45
+#: ../../client/src/media/stacks/ListRowMenu.tsx:48
 msgid "Copy"
 msgstr ""
 
@@ -94,7 +94,7 @@ msgstr "البيانات"
 msgid "Database"
 msgstr ""
 
-#: ../../client/src/media/stacks/ListRowMenu.tsx:67
+#: ../../client/src/media/stacks/ListRowMenu.tsx:72
 msgid "Delete"
 msgstr ""
 
@@ -301,7 +301,7 @@ msgstr "الوسائط"
 msgid "Miles"
 msgstr "أميال"
 
-#: ../../client/src/media/stacks/ListRowMenu.tsx:52
+#: ../../client/src/media/stacks/ListRowMenu.tsx:58
 msgid "Move"
 msgstr ""
 
@@ -388,7 +388,7 @@ msgstr "قدم مفتاحًا لاستخدام ميزات الذكاء الاص�
 msgid "Public"
 msgstr ""
 
-#: ../../client/src/media/stacks/ListRowMenu.tsx:59
+#: ../../client/src/media/stacks/ListRowMenu.tsx:65
 msgid "Rename"
 msgstr ""
 
@@ -426,7 +426,7 @@ msgstr "اختر سمة التطبيق."
 msgid "Settings"
 msgstr "الإعدادات"
 
-#: ../../client/src/media/stacks/ListRowMenu.tsx:37
+#: ../../client/src/media/stacks/ListRowMenu.tsx:41
 msgid "Share"
 msgstr "مشاركة"
 
@@ -472,7 +472,7 @@ msgstr "اسم المستخدم"
 msgid "Videos"
 msgstr "الفيديوهات"
 
-#: ../../client/src/media/stacks/ListRowMenu.tsx:30
+#: ../../client/src/media/stacks/ListRowMenu.tsx:34
 msgid "View"
 msgstr ""
 

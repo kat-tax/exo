@@ -6,7 +6,7 @@ import type {HfsDirectoryEntry} from 'react-exo/fs';
 export function useDirHfsEntry(entry: HfsDirectoryEntry) {
   const {name} = entry;
 
-  const remove = useCallback(() => {
+  const del = useCallback(() => {
     (async () => {
       const hfs = await FS.init('fs');
       await hfs.deleteAll?.(name);
@@ -14,7 +14,7 @@ export function useDirHfsEntry(entry: HfsDirectoryEntry) {
   }, [name]);
 
   return {
-    remove,
+    del,
   };
 }
 

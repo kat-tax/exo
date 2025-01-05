@@ -1,4 +1,4 @@
-import {useRef, useEffect} from 'react';
+import {useRef, useEffect, useMemo} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {Text, Pressable} from 'react-native';
 import {Icon} from 'react-exo/icon';
@@ -19,6 +19,17 @@ export function MediaSelection(props: {maximized: boolean} & MediaSelectionType)
   const {queue, focus} = props;
   const {styles, theme} = useStyles(stylesheet);
   const scrollRef = useRef<ScrollView>(null);
+
+  // Handlers for menu events
+  const events = useMemo(() => ({
+    menu: () => {},
+    view: () => {},
+    share: () => {},
+    copy: () => {},
+    move: () => {},
+    rename: () => {},
+    delete: () => {},
+  }), []);
 
   // Scroll to focus
   useEffect(() => {
@@ -41,7 +52,7 @@ export function MediaSelection(props: {maximized: boolean} & MediaSelectionType)
       animate={{opacity: 1}}
       exit={{opacity: 0}}>
       {queue.map(({name, path, title, ext, action}, index) => 
-        <ListRowMenu {...{name, path}} key={name}>
+        <ListRowMenu {...{name, path, events}} key={name}>
           <Pressable
             onPress={action}
             style={[styles.preview, index === focus && styles.focus]}>

@@ -5,6 +5,8 @@ import {ListRowMenu} from 'media/stacks/ListRowMenu';
 import {bytesize} from 'app/utils/formatting';
 import {isTouch} from 'app/utils/platform';
 
+import type {ListRowMenuEvents} from 'media/stacks/ListRowMenu';
+
 const TOUCH = isTouch();
 
 interface ListRow {
@@ -12,17 +14,16 @@ interface ListRow {
   name: string,
   index: number,
   size?: number,
+  events?: ListRowMenuEvents,
   isFile?: boolean,
   isFocused?: boolean,
   isSelected?: boolean,
-  handleDelete?: () => void,
-  handleMenuOpen?: () => void,
 }
 
 export function ListRow(props: ListRow) {
   const {styles} = useStyles(stylesheet);
   const [name, extension] = props.name.split('.');
-  const {path, isFile, isFocused, isSelected} = props;
+  const {path, events, isFile, isFocused, isSelected} = props;
   const vstyles = {
     root: [
       styles.root,
@@ -30,11 +31,9 @@ export function ListRow(props: ListRow) {
       isSelected && styles.selected,
     ],
   };
+
   return (
-    <ListRowMenu
-      {...{name, path}}
-      onMenu={props.handleMenuOpen}
-      onDelete={props.handleDelete}>
+    <ListRowMenu {...{name, path, events}}>
       <View style={vstyles.root}>
         <ListRowIcon {...{size: TOUCH ? 1 : 0, name, extension, path, isFile}}/>
         <Text

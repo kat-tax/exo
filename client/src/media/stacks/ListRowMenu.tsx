@@ -1,21 +1,83 @@
-import * as Menu from 'app/stacks/ContextMenu';
-import {useLingui} from '@lingui/react/macro';
+import {useMemo} from 'react';
 import {useStyles} from 'react-native-unistyles';
+import {useLingui} from '@lingui/react/macro';
 import {Icon} from 'react-exo/icon';
 
-interface ListRowMenuProps extends React.PropsWithChildren {
+import * as Menu from 'app/stacks/ContextMenu';
+
+export interface ListRowMenuProps extends React.PropsWithChildren {
   name: string,
   path: string,
-  onMenu?: () => void,
-  onDelete?: () => void,
+  events?: ListRowMenuEvents,
+}
+
+export interface ListRowMenuEvents {
+  menu?: () => void,
+  view?: () => void,
+  share?: () => void,
+  copy?: () => void,
+  move?: () => void,
+  rename?: () => void,
+  delete?: () => void,
 }
 
 export function ListRowMenu(props: ListRowMenuProps) {
+  const {events} = props;
   const {theme} = useStyles();
   const {t} = useLingui();
 
+  const items = useMemo(() => {
+    return [
+      events?.view && {
+        name: 'view',
+        icon: 'ph:eye',
+        label: t`View`,
+        shortcut: 'ENTER',
+        action: events?.view,
+      },
+      events?.share && {
+        name: 'share',
+        icon: 'ph:share',
+        label: t`Share`,
+        shortcut: '⌘+K',
+        action: events?.share,
+      },
+      events?.copy && {
+        name: 'copy',
+        icon: 'ph:copy',
+        label: t`Copy`,
+        shortcut: '⌘+C',
+        action: events?.copy,
+      },
+      {
+        name: '-',
+      },
+      events?.move && {
+        name: 'move',
+        icon: 'ph:arrow-elbow-down-right',
+        label: t`Move`,
+        shortcut: '⌘+X',
+        action: events?.move,
+      },
+      events?.rename && {
+        name: 'rename',
+        icon: 'ph:textbox',
+        label: t`Rename`,
+        shortcut: 'F2',
+        action: events?.rename,
+      },
+      events?.delete && {
+        name: 'delete',
+        icon: 'ph:trash',
+        label: t`Delete`,
+        shortcut: '⌘+DEL',
+        action: events?.delete,
+      },
+    ];
+  }, [t, events]);
+
   return (
-    <Menu.Root onOpenChange={props.onMenu}>
+    <Menu.Root onOpenChange={events?.menu}>
       <Menu.Trigger>
         {props.children}
       </Menu.Trigger>
@@ -23,50 +85,21 @@ export function ListRowMenu(props: ListRowMenuProps) {
         <Menu.Label key="label">
           {props.name}
         </Menu.Label>
-        <Menu.Item key="view">
-          <Menu.ItemIcon>
-            <Icon name="ph:eye" size={14} color={theme.colors.primary}/>
-          </Menu.ItemIcon>
-          <Menu.ItemTitle>{t`View`}</Menu.ItemTitle>
-          <Menu.ItemSubtitle>ENTER</Menu.ItemSubtitle>
-        </Menu.Item>
-        <Menu.Item key="share">
-          <Menu.ItemIcon>
-            <Icon name="ph:share" size={14} color={theme.colors.primary}/>
-          </Menu.ItemIcon>
-          <Menu.ItemTitle>{t`Share`}</Menu.ItemTitle>
-          <Menu.ItemSubtitle>⌘+K</Menu.ItemSubtitle>
-        </Menu.Item>
-        <Menu.Separator />
-        <Menu.Item key="copy">
-          <Menu.ItemIcon>
-            <Icon name="ph:copy" size={14} color={theme.colors.primary}/>
-          </Menu.ItemIcon>
-          <Menu.ItemTitle>{t`Copy`}</Menu.ItemTitle>
-          <Menu.ItemSubtitle>⌘+C</Menu.ItemSubtitle>
-        </Menu.Item>
-        <Menu.Item key="move">
-          <Menu.ItemIcon>
-            <Icon name="ph:arrow-elbow-down-right" size={14} color={theme.colors.primary}/>
-          </Menu.ItemIcon>
-          <Menu.ItemTitle>{t`Move`}</Menu.ItemTitle>
-          <Menu.ItemSubtitle>⌘+X</Menu.ItemSubtitle>
-        </Menu.Item>
-        <Menu.Item key="rename">
-          <Menu.ItemIcon>
-            <Icon name="ph:textbox" size={14} color={theme.colors.primary}/>
-          </Menu.ItemIcon>
-          <Menu.ItemTitle>{t`Rename`}</Menu.ItemTitle>
-          <Menu.ItemSubtitle>F2</Menu.ItemSubtitle>
-        </Menu.Item>
-        <Menu.Separator />
-        <Menu.Item key="delete" onSelect={props.onDelete} destructive>
-          <Menu.ItemIcon>
-            <Icon name="ph:trash" size={14} color={theme.colors.destructive}/>
-          </Menu.ItemIcon>
-          <Menu.ItemTitle>{t`Delete`}</Menu.ItemTitle>
-          <Menu.ItemSubtitle>⌘+DEL</Menu.ItemSubtitle>
-        </Menu.Item>
+        {items.map(item => item && (
+          item.name === '-' ? <Menu.Separator key={item.name} /> : (
+          <Menu.Item key={item.name} onSelect={item.action}>
+            {item.icon &&
+              <Menu.ItemIcon>
+                <Icon name={item.icon} size={14} color={theme.colors.primary}/>
+              </Menu.ItemIcon>
+            }
+            <Menu.ItemTitle>{item.label}</Menu.ItemTitle>
+            {item.shortcut &&
+              <Menu.ItemSubtitle>{item.shortcut}</Menu.ItemSubtitle>
+            }
+          </Menu.Item>
+          )
+        )).filter(Boolean)}
       </Menu.Content>
     </Menu.Root>
   )
