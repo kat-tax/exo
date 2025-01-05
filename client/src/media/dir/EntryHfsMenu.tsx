@@ -17,7 +17,6 @@ export interface EntryHfsMenuProps extends React.PropsWithChildren {
   },
 }
 
-
 export function EntryHfsMenu(props: EntryHfsMenuProps) {
   const {name, actions} = props;
   const {t} = useLingui();
