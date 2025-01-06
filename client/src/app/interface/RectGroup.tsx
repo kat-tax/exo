@@ -11,10 +11,11 @@ interface RectGroupProps extends React.PropsWithChildren {
 }
 
 export function RectGroup(props: RectGroupProps) {
-  const [layout, setLayout] = useState<RectLayout>();
-  const [rect, setRect] = useState<LayoutRectangle>();
   const {styles} = useStyles(stylesheet);
-  const onLayout = useCallback((e: LayoutChangeEvent) => {
+  const [rect, setRect] = useState<LayoutRectangle>();
+  const [layout, setLayout] = useState<RectLayout>();
+
+  const handleLayout = useCallback((e: LayoutChangeEvent) => {
     setRect(e.nativeEvent.layout);
   }, []);
 
@@ -26,11 +27,10 @@ export function RectGroup(props: RectGroupProps) {
       aspectRatio: props.aspectRatio,
     });
     setLayout(layout);
-    console.log('layout', layout);
   }, [rect, props.children, props.aspectRatio]);
 
   return (
-    <View style={styles.root} onLayout={onLayout}>
+    <View style={styles.root} onLayout={handleLayout}>
       <View style={[styles.inner, {maxWidth: layout ? layout.width * layout.cols : '100%'}]}>
         {Children.map(props.children, (child, index) => (
           <View key={index ?? 0} style={[styles.rect, {width: layout?.width, height: layout?.height}]}>

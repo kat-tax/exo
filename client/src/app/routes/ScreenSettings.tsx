@@ -16,11 +16,11 @@ import {locales} from 'config/locales';
 import {Button} from 'design';
 
 export default function ScreenSettings() {
+  const settings = useSettings();
+  const [showKey, setShowKey] = useState(false);
   const [scheme, setScheme] = useScheme(true);
   const [locale, setLocale] = useLocale(true);
-  const [showKey, setShowKey] = useState(false);
   const {styles, theme} = useStyles(stylesheet);
-  const settings = useSettings();
   const {t} = useLingui();
 
   return (

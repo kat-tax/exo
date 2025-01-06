@@ -18,9 +18,9 @@ export function useAI(
   const {t} = useLingui();
   const {create} = useEvolu();
 
-  const [loading, setLoading] = useState(false);
-  const [dirty, setDirty] = useState(false);
   const [index, setIndex] = useState<number | null>(null);
+  const [dirty, setDirty] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const prompts = usePrompts();
   const prompt = usePrompt(prompts[Math.abs((prompts.length - (index ?? 1)) % prompts.length)]?.id);

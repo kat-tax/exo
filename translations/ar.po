@@ -13,8 +13,7 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: ../../client/src/dev/routes/ScreenLibrary.tsx:23
-#: ../../client/src/dev/routes/ScreenDesign.tsx:14
+#: ../../client/src/dev/routes/ScreenLibrary.tsx:22
 msgid "{0} components"
 msgstr "{0} مكونات"
 
@@ -42,7 +41,7 @@ msgstr "هل أنت متأكد من أنك تريد إعادة تعيين قاع
 msgid "Are you sure you want to reset your prompt history?"
 msgstr "هل أنت متأكد من أنك تريد إعادة تعيين سجل المطالبات الخاص بك؟"
 
-#: ../../client/src/home/stacks/Assistant.tsx:53
+#: ../../client/src/home/stacks/Assistant.tsx:52
 msgid "Ask anything..."
 msgstr "اسأل أي شيء..."
 
@@ -259,7 +258,7 @@ msgstr "كيلومترات"
 msgid "Language"
 msgstr "اللغة"
 
-#: ../../client/src/app/interface/Menu.tsx:123
+#: ../../client/src/dev/routes/ScreenLibrary.tsx:21
 msgid "Library"
 msgstr "المكتبة"
 
@@ -343,7 +342,7 @@ msgstr ""
 msgid "Play"
 msgstr "تشغيل"
 
-#: ../../client/src/home/stacks/Assistant.tsx:53
+#: ../../client/src/home/stacks/Assistant.tsx:52
 msgid "Please set your Groq API Key"
 msgstr "يرجى تعيين مفتاح Groq API الخاص بك"
 
@@ -407,7 +406,7 @@ msgstr "اختر وحدة درجة الحرارة للتطبيق."
 msgid "Select the theme for the app."
 msgstr "اختر سمة التطبيق."
 
-#: ../../client/src/app/interface/Menu.tsx:140
+#: ../../client/src/app/routes/ScreenSettings.tsx:28
 msgid "Settings"
 msgstr "الإعدادات"
 
@@ -423,7 +422,7 @@ msgstr "تخطي للخلف"
 msgid "Skip forward"
 msgstr "تخطي للأمام"
 
-#: ../../client/src/app/interface/Menu.tsx:134
+#: ../../client/src/app/routes/ScreenStorage.tsx:25
 msgid "Storage"
 msgstr "التخزين"
 

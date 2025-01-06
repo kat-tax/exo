@@ -3,10 +3,10 @@ import {useState, useEffect} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {getDiskSpace} from 'react-exo/fs';
 import {View, Text} from 'react-native';
+import {bytesize} from 'app/utils/formatting';
 import {Page} from 'app/interface/Page';
 import {PageItem} from 'app/interface/PageItem';
 import {PageSection} from 'app/interface/PageSection';
-import {bytesize} from 'app/utils/formatting';
 
 export default function ScreenStorage() {
   const [storage, setStorage] = useState<{msg: string, val: number}>();

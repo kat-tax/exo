@@ -17,9 +17,9 @@ interface MenuSectionProps extends React.PropsWithChildren {
 }
 
 export function MenuSection(props: MenuSectionProps) {
-  const [scheme] = useScheme();
   const {styles, theme} = useStyles(stylesheet);
   const [open, setOpen] = useState(!props.closed);
+  const [scheme] = useScheme();
 
   if (props.disabled) return null;
 

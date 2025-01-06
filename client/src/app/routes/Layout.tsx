@@ -17,9 +17,9 @@ export const APP_MENU_WIDTH = 146;
 export const APP_MENU_TAB_HEIGHT = 64;
 
 export default function Layout() {
-  const [previewOpen, setPreviewOpen] = useState(true);
-  const [menuOpen, setMenuOpen] = useState(true);
   const {styles, theme} = useStyles(stylesheet);
+  const [menuOpen, setMenuOpen] = useState(true);
+  const [previewOpen, setPreviewOpen] = useState(true);
   const resource = useCurrentResource();
   const screen = useWindowDimensions();
   const device = useDeviceSession();

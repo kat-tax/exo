@@ -15,16 +15,15 @@ import {useAI} from 'home/hooks/useAI';
 const DEFAULT_MODEL = 'llama3-8b-8192';
 
 export const Assistant = memo(() => {
-  const [multiline, setMultiline] = useState(false);
-  const {styles, theme} = useStyles(stylesheet);
   const {profile} = useAppContext();
+  const {styles, theme} = useStyles(stylesheet);
   const {t} = useLingui();
 
-  const input = useRef<TextInput>(null);
+  const [multiline, setMultiline] = useState(false);
+  const keyRef = useRef<TextInput>(null);
+  const keyVal = useMemo(() => profile?.groqKey || '', [profile]);
   const model = useMemo(() => profile?.groqModel || DEFAULT_MODEL, [profile]);
-  const apiKey = useMemo(() => profile?.groqKey || '', [profile]);
-
-  const ai = useAI(input, model, apiKey);
+  const ai = useAI(keyRef, model, keyVal);
 
   return (
     <>
@@ -48,19 +47,19 @@ export const Assistant = memo(() => {
         {!ai.archive &&
           <View style={styles.wrapper}>
             <TextInput
-              ref={input}
+              ref={keyRef}
               style={styles.input}
-              placeholder={apiKey ? t`Ask anything...` : t`Please set your Groq API Key`}
+              placeholder={keyVal ? t`Ask anything...` : t`Please set your Groq API Key`}
               placeholderTextColor={theme.colors.mutedForeground}
               onSubmitEditing={(e) => e.nativeEvent.text && ai.promptText(e.nativeEvent.text, multiline)}
               onKeyPress={(e) => ai.navigate(e, multiline ? () => setMultiline(false) : undefined)}
               blurOnSubmit={false}
               multiline={multiline}
               numberOfLines={multiline ? 8 : undefined}
-              readOnly={!apiKey}
+              readOnly={!keyVal}
               autoFocus
             />
-            {!apiKey &&
+            {!keyVal &&
               <View style={styles.button}>
                 <Link to="/settings">
                   <View style={{alignItems: 'center', justifyContent: 'center'}}>
@@ -73,7 +72,7 @@ export const Assistant = memo(() => {
                 </Link>
               </View>
             }
-            {Boolean(apiKey) &&
+            {Boolean(keyVal) &&
               <Pressable
                 style={[styles.button, {top: 0}]}
                 onPress={() => setMultiline(!multiline)}>
@@ -89,7 +88,7 @@ export const Assistant = memo(() => {
                 style={[styles.button, {bottom: 0}]}
                 onPress={() => {
                   // @ts-ignore
-                  const text = input.current?.value;
+                  const text = keyRef.current?.value;
                   if (text) ai.promptText(text, true);
                 }}>
                 <Icon

@@ -13,8 +13,7 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: ../../client/src/dev/routes/ScreenLibrary.tsx:23
-#: ../../client/src/dev/routes/ScreenDesign.tsx:14
+#: ../../client/src/dev/routes/ScreenLibrary.tsx:22
 msgid "{0} components"
 msgstr "{0}個のコンポーネント"
 
@@ -42,7 +41,7 @@ msgstr "ローカルデータベースをリセットしてもよろしいです
 msgid "Are you sure you want to reset your prompt history?"
 msgstr "プロンプト履歴をリセットしてもよろしいですか？"
 
-#: ../../client/src/home/stacks/Assistant.tsx:53
+#: ../../client/src/home/stacks/Assistant.tsx:52
 msgid "Ask anything..."
 msgstr "何でも聞いてください..."
 
@@ -259,7 +258,7 @@ msgstr "キロメートル"
 msgid "Language"
 msgstr "言語"
 
-#: ../../client/src/app/interface/Menu.tsx:123
+#: ../../client/src/dev/routes/ScreenLibrary.tsx:21
 msgid "Library"
 msgstr "ライブラリ"
 
@@ -343,7 +342,7 @@ msgstr ""
 msgid "Play"
 msgstr "再生"
 
-#: ../../client/src/home/stacks/Assistant.tsx:53
+#: ../../client/src/home/stacks/Assistant.tsx:52
 msgid "Please set your Groq API Key"
 msgstr "Groq APIキーを設定してください"
 
@@ -407,7 +406,7 @@ msgstr "アプリの温度単位を選択してください。"
 msgid "Select the theme for the app."
 msgstr "アプリのテーマを選択してください。"
 
-#: ../../client/src/app/interface/Menu.tsx:140
+#: ../../client/src/app/routes/ScreenSettings.tsx:28
 msgid "Settings"
 msgstr "設定"
 
@@ -423,7 +422,7 @@ msgstr "巻き戻し"
 msgid "Skip forward"
 msgstr "早送り"
 
-#: ../../client/src/app/interface/Menu.tsx:134
+#: ../../client/src/app/routes/ScreenStorage.tsx:25
 msgid "Storage"
 msgstr "ストレージ"
 

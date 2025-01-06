@@ -12,10 +12,9 @@ import {Page} from 'app/interface/Page';
 import {Frame} from 'dev/stacks/Frame';
 
 export default function ScreenHome() {
+  const [slider, setSlider] = useState(0);
   const {theme} = useStyles();
   const {t} = useLingui();
-
-  const [slider, setSlider] = useState(0);
 
   return (
     <Page

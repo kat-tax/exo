@@ -8,6 +8,7 @@ export interface FrameProps {
 
 export function Frame(props: FrameProps) {
   const {styles} = useStyles(stylesheet);
+
   return (
     <View style={styles.root}>
       <Text style={styles.title}>

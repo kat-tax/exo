@@ -19,10 +19,12 @@ const MAPTILER_KEY = 'UbdBChbHpiVOSIdTJWvV';
 export default forwardRef((props: FileMap) => {
   const url = useFileData(props.path, 'dataUrl');
   const source = useFileData(props.path, 'text');
+
+  const [bounds, setBounds] = useState<LngLatBounds | null>(null);
+  const [markers, setMarkers] = useState<GeoJSON.Feature<GeoJSON.Point>[]>([]);
+
   const {styles, theme} = useStyles(stylesheet);
   const [scheme] = useScheme();
-  const [markers, setMarkers] = useState<GeoJSON.Feature<GeoJSON.Point>[]>([]);
-  const [bounds, setBounds] = useState<LngLatBounds | null>(null);
 
   // Set bounds when source data is loaded
   useEffect(() => {

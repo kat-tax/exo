@@ -8,6 +8,7 @@ interface PageItemProps extends React.PropsWithChildren {
 
 export function PageItem(props: PageItemProps) {
   const {styles} = useStyles(stylesheet);
+
   return (
     <View style={styles.root}>
       <View style={styles.info}>

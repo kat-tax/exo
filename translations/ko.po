@@ -13,8 +13,7 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: ../../client/src/dev/routes/ScreenLibrary.tsx:23
-#: ../../client/src/dev/routes/ScreenDesign.tsx:14
+#: ../../client/src/dev/routes/ScreenLibrary.tsx:22
 msgid "{0} components"
 msgstr "{0}개 컴포넌트"
 
@@ -42,7 +41,7 @@ msgstr "로컬 데이터베이스를 초기화하시겠습니까? 다른 기기�
 msgid "Are you sure you want to reset your prompt history?"
 msgstr "프롬프트 기록을 초기화하시겠습니까?"
 
-#: ../../client/src/home/stacks/Assistant.tsx:53
+#: ../../client/src/home/stacks/Assistant.tsx:52
 msgid "Ask anything..."
 msgstr "무엇이든 물어보세요..."
 
@@ -259,7 +258,7 @@ msgstr "킬로미터"
 msgid "Language"
 msgstr "언어"
 
-#: ../../client/src/app/interface/Menu.tsx:123
+#: ../../client/src/dev/routes/ScreenLibrary.tsx:21
 msgid "Library"
 msgstr "라이브러리"
 
@@ -343,7 +342,7 @@ msgstr ""
 msgid "Play"
 msgstr "재생"
 
-#: ../../client/src/home/stacks/Assistant.tsx:53
+#: ../../client/src/home/stacks/Assistant.tsx:52
 msgid "Please set your Groq API Key"
 msgstr "Groq API 키를 설정해주세요"
 
@@ -407,7 +406,7 @@ msgstr "앱에서 사용할 온도 단위를 선택하세요."
 msgid "Select the theme for the app."
 msgstr "앱 테마를 선택하세요."
 
-#: ../../client/src/app/interface/Menu.tsx:140
+#: ../../client/src/app/routes/ScreenSettings.tsx:28
 msgid "Settings"
 msgstr "설정"
 
@@ -423,7 +422,7 @@ msgstr "뒤로 건너뛰기"
 msgid "Skip forward"
 msgstr "앞으로 건너뛰기"
 
-#: ../../client/src/app/interface/Menu.tsx:134
+#: ../../client/src/app/routes/ScreenStorage.tsx:25
 msgid "Storage"
 msgstr "저장소"
 

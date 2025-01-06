@@ -13,8 +13,7 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: ../../client/src/dev/routes/ScreenLibrary.tsx:23
-#: ../../client/src/dev/routes/ScreenDesign.tsx:14
+#: ../../client/src/dev/routes/ScreenLibrary.tsx:22
 msgid "{0} components"
 msgstr "{0} компонентов"
 
@@ -42,7 +41,7 @@ msgstr "Вы уверены, что хотите сбросить локальн
 msgid "Are you sure you want to reset your prompt history?"
 msgstr "Вы уверены, что хотите сбросить историю запросов?"
 
-#: ../../client/src/home/stacks/Assistant.tsx:53
+#: ../../client/src/home/stacks/Assistant.tsx:52
 msgid "Ask anything..."
 msgstr "Спрашивайте что угодно..."
 
@@ -259,7 +258,7 @@ msgstr "Километры"
 msgid "Language"
 msgstr "Язык"
 
-#: ../../client/src/app/interface/Menu.tsx:123
+#: ../../client/src/dev/routes/ScreenLibrary.tsx:21
 msgid "Library"
 msgstr "Библиотека"
 
@@ -343,7 +342,7 @@ msgstr ""
 msgid "Play"
 msgstr "Воспроизвести"
 
-#: ../../client/src/home/stacks/Assistant.tsx:53
+#: ../../client/src/home/stacks/Assistant.tsx:52
 msgid "Please set your Groq API Key"
 msgstr "Пожалуйста, установите ваш ключ Groq API"
 
@@ -407,7 +406,7 @@ msgstr "Выберите единицу измерения температур�
 msgid "Select the theme for the app."
 msgstr "Выберите тему приложения."
 
-#: ../../client/src/app/interface/Menu.tsx:140
+#: ../../client/src/app/routes/ScreenSettings.tsx:28
 msgid "Settings"
 msgstr "Настройки"
 
@@ -423,7 +422,7 @@ msgstr "Перемотать назад"
 msgid "Skip forward"
 msgstr "Перемотать вперед"
 
-#: ../../client/src/app/interface/Menu.tsx:134
+#: ../../client/src/app/routes/ScreenStorage.tsx:25
 msgid "Storage"
 msgstr "Хранилище"
 

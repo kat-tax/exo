@@ -7,6 +7,7 @@ interface PageSectionProps extends React.PropsWithChildren {
 
 export function PageSection(props: PageSectionProps) {
   const {styles} = useStyles(stylesheet);
+
   return (
     <View style={styles.root}>
       <Text style={styles.header}>

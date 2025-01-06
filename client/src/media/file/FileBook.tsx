@@ -18,10 +18,10 @@ export type {BookRef};
 
 export default forwardRef((props: FileBook, ref: React.Ref<BookRef>) => {  
   const source = useFileData(props.path, 'dataUrl', 'application/epub+zip');
+  const [title, setTitle] = useState('');
+  const [chapter, setChapter] = useState('');
   const {styles} = useStyles(stylesheet);
   const [scheme] = useScheme();
-  const [chapter, setChapter] = useState('');
-  const [title, setTitle] = useState('');
   const {t} = useLingui();
 
   // Workaround: send resize event to force render

@@ -10,7 +10,6 @@ export interface PageProps extends React.PropsWithChildren {
   noBackground?: boolean,
   noFrame?: boolean,
   margin?: 'none' | 'small' | 'large',
-  sxs?: boolean,
 }
 
 export function Page(props: PageProps) {
