@@ -3,7 +3,7 @@ import {Pressable} from 'react-native';
 import {ListRow} from 'media/stacks/ListRow';
 
 import {TorrentMenu} from './TorrentMenu';
-import type {TorrentFileEntry} from 'media/utils/torrent';
+import type {TorrentFileEntry} from '../types';
 
 export interface TorrentEntryProps {
   entry: TorrentFileEntry,

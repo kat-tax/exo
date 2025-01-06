@@ -51,7 +51,7 @@ msgstr "Ask anything..."
 msgid "Auto"
 msgstr "Auto"
 
-#: ../../client/src/app/interface/Menu.tsx:75
+#: ../../client/src/media/routes/ScreenBrowse.tsx:32
 msgid "Books"
 msgstr "Books"
 
@@ -71,7 +71,7 @@ msgstr "Celsius"
 msgid "Close"
 msgstr "Close"
 
-#: ../../client/src/media/dir/hfs/HfsMenu.tsx:44
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:44
 msgid "Copy"
 msgstr "Copy"
 
@@ -91,7 +91,7 @@ msgstr "Data"
 msgid "Database"
 msgstr "Database"
 
-#: ../../client/src/media/dir/hfs/HfsMenu.tsx:69
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:69
 msgid "Delete"
 msgstr "Delete"
 
@@ -131,7 +131,7 @@ msgstr "Dev Mode"
 msgid "Device Space"
 msgstr "Device Space"
 
-#: ../../client/src/media/dir/DirEmpty.tsx:10
+#: ../../client/src/media/dir/hfs/stacks/HfsNoEntries.tsx:10
 msgid "Directory is empty."
 msgstr "Directory is empty."
 
@@ -151,7 +151,7 @@ msgstr "Docs"
 msgid "Documents"
 msgstr "Documents"
 
-#: ../../client/src/media/file/FileBinary.tsx:30
+#: ../../client/src/media/dir/torrent/stacks/TorrentMenu.tsx:21
 msgid "Download"
 msgstr "Download"
 
@@ -183,7 +183,7 @@ msgstr "Enter your mnemonic phrase"
 msgid "Enter your name"
 msgstr "Enter your name"
 
-#: ../../client/src/media/dir/zip/ZipMenu.tsx:21
+#: ../../client/src/media/dir/zip/stacks/ZipMenu.tsx:21
 msgid "Extract"
 msgstr "Extract"
 
@@ -191,7 +191,7 @@ msgstr "Extract"
 msgid "Fahrenheit"
 msgstr "Fahrenheit"
 
-#: ../../client/src/app/interface/Menu.tsx:45
+#: ../../client/src/media/routes/ScreenBrowse.tsx:38
 msgid "Files"
 msgstr "Files"
 
@@ -203,7 +203,7 @@ msgstr "Filesystem"
 msgid "Fullscreen"
 msgstr "Fullscreen"
 
-#: ../../client/src/app/interface/Menu.tsx:70
+#: ../../client/src/media/routes/ScreenBrowse.tsx:30
 msgid "Games"
 msgstr "Games"
 
@@ -239,7 +239,7 @@ msgstr "Groq Model ID"
 msgid "Human"
 msgstr "Human"
 
-#: ../../client/src/media/dir/DirEmpty.tsx:11
+#: ../../client/src/media/dir/hfs/stacks/HfsNoEntries.tsx:11
 msgid "Import"
 msgstr "Import"
 
@@ -291,11 +291,11 @@ msgstr "Media"
 msgid "Miles"
 msgstr "Miles"
 
-#: ../../client/src/media/dir/hfs/HfsMenu.tsx:51
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:51
 msgid "Move"
 msgstr "Move"
 
-#: ../../client/src/app/interface/Menu.tsx:55
+#: ../../client/src/media/routes/ScreenBrowse.tsx:24
 msgid "Music"
 msgstr "Music"
 
@@ -327,7 +327,7 @@ msgstr "Owner Key"
 msgid "Pause"
 msgstr "Pause"
 
-#: ../../client/src/app/interface/Menu.tsx:60
+#: ../../client/src/media/routes/ScreenBrowse.tsx:26
 msgid "Pictures"
 msgstr "Pictures"
 
@@ -375,7 +375,7 @@ msgstr "Provide a key to use AI features."
 msgid "Public"
 msgstr "Public"
 
-#: ../../client/src/media/dir/hfs/HfsMenu.tsx:58
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:58
 msgid "Rename"
 msgstr "Rename"
 
@@ -411,7 +411,7 @@ msgstr "Select the theme for the app."
 msgid "Settings"
 msgstr "Settings"
 
-#: ../../client/src/media/dir/hfs/HfsMenu.tsx:33
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:33
 msgid "Share"
 msgstr "Share"
 
@@ -451,11 +451,11 @@ msgstr "Uploads"
 msgid "User Name"
 msgstr "User Name"
 
-#: ../../client/src/app/interface/Menu.tsx:65
+#: ../../client/src/media/routes/ScreenBrowse.tsx:28
 msgid "Videos"
 msgstr "Videos"
 
-#: ../../client/src/media/dir/hfs/HfsMenu.tsx:26
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:26
 msgid "View"
 msgstr "View"
 

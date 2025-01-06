@@ -1,7 +1,7 @@
 import {FS} from 'react-exo/fs';
 import {useCallback} from 'react';
 import {useLocation} from 'react-exo/navigation';
-import {resolve, getStartInDir} from 'media/utils/path';
+import {resolve, getStartInDir} from '../utils/path';
 
 export function useHfsImporter() {
   const {pathname} = useLocation();

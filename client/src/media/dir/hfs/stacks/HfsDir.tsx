@@ -1,6 +1,6 @@
 import {HfsEntry} from './HfsEntry';
-import {useHfs} from './hooks/useHfs';
-import {useHfsHotkeys} from './hooks/useHfsHotkeys';
+import {useHfs} from '../hooks/useHfs';
+import {useHfsHotkeys} from '../hooks/useHfsHotkeys';
 
 export interface HfsDirProps {
   path: string,

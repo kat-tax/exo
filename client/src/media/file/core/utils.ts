@@ -1,5 +1,5 @@
 import {FS, isTextFile} from 'react-exo/fs';
-import {fetchIpfs} from 'media/utils/ipfs';
+import {fetchIpfs} from 'media/dir/ipfs';
 import {FileType} from 'media/file/types';
 import {toText} from 'app/utils/formatting';
 

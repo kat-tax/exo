@@ -5,7 +5,7 @@ import {filesToHash, hashToFiles} from 'app/utils/formatting';
 import {ListRow} from 'media/stacks/ListRow';
 
 import {HfsMenu} from './HfsMenu';
-import {useHfsEntry} from './hooks/useHfsEntry';
+import {useHfsEntry} from '../hooks/useHfsEntry';
 
 import type {HfsDirectoryEntry} from 'react-exo/fs';
 

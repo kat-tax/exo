@@ -9,7 +9,7 @@ import {useProfile} from 'app/data';
 import {Menu} from 'app/interface/Menu';
 import {Tabs} from 'app/interface/Tabs';
 import {Media} from 'media/stacks/Media';
-import {resolve} from 'media/utils/path';
+import {resolve} from 'media/dir/hfs';
 
 import type {useAppContext} from 'app/hooks/useAppContext';
 

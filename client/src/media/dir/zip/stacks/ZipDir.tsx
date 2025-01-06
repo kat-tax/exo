@@ -1,5 +1,5 @@
 import {ZipEntry} from './ZipEntry';
-import type {Zip} from './hooks/useZip';
+import type {Zip} from '../types';
 
 export interface ZipDirProps {
   zip: Zip,

@@ -51,7 +51,7 @@ msgstr "何でも聞いてください..."
 msgid "Auto"
 msgstr "自動"
 
-#: ../../client/src/app/interface/Menu.tsx:75
+#: ../../client/src/media/routes/ScreenBrowse.tsx:32
 msgid "Books"
 msgstr "本"
 
@@ -71,7 +71,7 @@ msgstr "摂氏"
 msgid "Close"
 msgstr "閉じる"
 
-#: ../../client/src/media/dir/hfs/HfsMenu.tsx:44
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:44
 msgid "Copy"
 msgstr ""
 
@@ -91,7 +91,7 @@ msgstr "データ"
 msgid "Database"
 msgstr ""
 
-#: ../../client/src/media/dir/hfs/HfsMenu.tsx:69
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:69
 msgid "Delete"
 msgstr ""
 
@@ -131,7 +131,7 @@ msgstr "開発モード"
 msgid "Device Space"
 msgstr "デバイス容量"
 
-#: ../../client/src/media/dir/DirEmpty.tsx:10
+#: ../../client/src/media/dir/hfs/stacks/HfsNoEntries.tsx:10
 msgid "Directory is empty."
 msgstr "ディレクトリが空です。"
 
@@ -151,7 +151,7 @@ msgstr "ドキュメント"
 msgid "Documents"
 msgstr "ドキュメント"
 
-#: ../../client/src/media/file/FileBinary.tsx:30
+#: ../../client/src/media/dir/torrent/stacks/TorrentMenu.tsx:21
 msgid "Download"
 msgstr "ダウンロード"
 
@@ -183,7 +183,7 @@ msgstr "ニーモニックフレーズを入力"
 msgid "Enter your name"
 msgstr "名前を入力"
 
-#: ../../client/src/media/dir/zip/ZipMenu.tsx:21
+#: ../../client/src/media/dir/zip/stacks/ZipMenu.tsx:21
 msgid "Extract"
 msgstr "抽出"
 
@@ -191,7 +191,7 @@ msgstr "抽出"
 msgid "Fahrenheit"
 msgstr "華氏"
 
-#: ../../client/src/app/interface/Menu.tsx:45
+#: ../../client/src/media/routes/ScreenBrowse.tsx:38
 msgid "Files"
 msgstr "ファイル"
 
@@ -203,7 +203,7 @@ msgstr ""
 msgid "Fullscreen"
 msgstr "全画面"
 
-#: ../../client/src/app/interface/Menu.tsx:70
+#: ../../client/src/media/routes/ScreenBrowse.tsx:30
 msgid "Games"
 msgstr "ゲーム"
 
@@ -239,7 +239,7 @@ msgstr "GroqモデルID"
 msgid "Human"
 msgstr "ユーザー"
 
-#: ../../client/src/media/dir/DirEmpty.tsx:11
+#: ../../client/src/media/dir/hfs/stacks/HfsNoEntries.tsx:11
 msgid "Import"
 msgstr "インポート"
 
@@ -291,11 +291,11 @@ msgstr "メディア"
 msgid "Miles"
 msgstr "マイル"
 
-#: ../../client/src/media/dir/hfs/HfsMenu.tsx:51
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:51
 msgid "Move"
 msgstr ""
 
-#: ../../client/src/app/interface/Menu.tsx:55
+#: ../../client/src/media/routes/ScreenBrowse.tsx:24
 msgid "Music"
 msgstr "音楽"
 
@@ -327,7 +327,7 @@ msgstr "オーナーキー"
 msgid "Pause"
 msgstr "一時停止"
 
-#: ../../client/src/app/interface/Menu.tsx:60
+#: ../../client/src/media/routes/ScreenBrowse.tsx:26
 msgid "Pictures"
 msgstr "写真"
 
@@ -375,7 +375,7 @@ msgstr "AI機能を使用するにはキーを提供してください。"
 msgid "Public"
 msgstr ""
 
-#: ../../client/src/media/dir/hfs/HfsMenu.tsx:58
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:58
 msgid "Rename"
 msgstr ""
 
@@ -411,7 +411,7 @@ msgstr "アプリのテーマを選択してください。"
 msgid "Settings"
 msgstr "設定"
 
-#: ../../client/src/media/dir/hfs/HfsMenu.tsx:33
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:33
 msgid "Share"
 msgstr "共有"
 
@@ -451,11 +451,11 @@ msgstr "アップロード"
 msgid "User Name"
 msgstr "ユーザー名"
 
-#: ../../client/src/app/interface/Menu.tsx:65
+#: ../../client/src/media/routes/ScreenBrowse.tsx:28
 msgid "Videos"
 msgstr "動画"
 
-#: ../../client/src/media/dir/hfs/HfsMenu.tsx:26
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:26
 msgid "View"
 msgstr ""
 

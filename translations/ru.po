@@ -51,7 +51,7 @@ msgstr "Спрашивайте что угодно..."
 msgid "Auto"
 msgstr "Авто"
 
-#: ../../client/src/app/interface/Menu.tsx:75
+#: ../../client/src/media/routes/ScreenBrowse.tsx:32
 msgid "Books"
 msgstr "Книги"
 
@@ -71,7 +71,7 @@ msgstr "Цельсий"
 msgid "Close"
 msgstr "Закрыть"
 
-#: ../../client/src/media/dir/hfs/HfsMenu.tsx:44
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:44
 msgid "Copy"
 msgstr ""
 
@@ -91,7 +91,7 @@ msgstr "Данные"
 msgid "Database"
 msgstr ""
 
-#: ../../client/src/media/dir/hfs/HfsMenu.tsx:69
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:69
 msgid "Delete"
 msgstr ""
 
@@ -131,7 +131,7 @@ msgstr "Режим dev"
 msgid "Device Space"
 msgstr "Место на устройстве"
 
-#: ../../client/src/media/dir/DirEmpty.tsx:10
+#: ../../client/src/media/dir/hfs/stacks/HfsNoEntries.tsx:10
 msgid "Directory is empty."
 msgstr "Каталог пуст."
 
@@ -151,7 +151,7 @@ msgstr "Документы"
 msgid "Documents"
 msgstr "Документы"
 
-#: ../../client/src/media/file/FileBinary.tsx:30
+#: ../../client/src/media/dir/torrent/stacks/TorrentMenu.tsx:21
 msgid "Download"
 msgstr "Скачать"
 
@@ -183,7 +183,7 @@ msgstr "Введите вашу мнемоническую фразу"
 msgid "Enter your name"
 msgstr "Введите ваше имя"
 
-#: ../../client/src/media/dir/zip/ZipMenu.tsx:21
+#: ../../client/src/media/dir/zip/stacks/ZipMenu.tsx:21
 msgid "Extract"
 msgstr "Извлечь"
 
@@ -191,7 +191,7 @@ msgstr "Извлечь"
 msgid "Fahrenheit"
 msgstr "Фаренгейт"
 
-#: ../../client/src/app/interface/Menu.tsx:45
+#: ../../client/src/media/routes/ScreenBrowse.tsx:38
 msgid "Files"
 msgstr "Файлы"
 
@@ -203,7 +203,7 @@ msgstr ""
 msgid "Fullscreen"
 msgstr "Полный экран"
 
-#: ../../client/src/app/interface/Menu.tsx:70
+#: ../../client/src/media/routes/ScreenBrowse.tsx:30
 msgid "Games"
 msgstr "Игры"
 
@@ -239,7 +239,7 @@ msgstr "ID модели Groq"
 msgid "Human"
 msgstr "Человек"
 
-#: ../../client/src/media/dir/DirEmpty.tsx:11
+#: ../../client/src/media/dir/hfs/stacks/HfsNoEntries.tsx:11
 msgid "Import"
 msgstr "Импорт"
 
@@ -291,11 +291,11 @@ msgstr "Медиа"
 msgid "Miles"
 msgstr "Мили"
 
-#: ../../client/src/media/dir/hfs/HfsMenu.tsx:51
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:51
 msgid "Move"
 msgstr ""
 
-#: ../../client/src/app/interface/Menu.tsx:55
+#: ../../client/src/media/routes/ScreenBrowse.tsx:24
 msgid "Music"
 msgstr "Музыка"
 
@@ -327,7 +327,7 @@ msgstr "Ключ владельца"
 msgid "Pause"
 msgstr "Пауза"
 
-#: ../../client/src/app/interface/Menu.tsx:60
+#: ../../client/src/media/routes/ScreenBrowse.tsx:26
 msgid "Pictures"
 msgstr "Изображения"
 
@@ -375,7 +375,7 @@ msgstr "Предоставьте ключ для использования фу
 msgid "Public"
 msgstr ""
 
-#: ../../client/src/media/dir/hfs/HfsMenu.tsx:58
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:58
 msgid "Rename"
 msgstr ""
 
@@ -411,7 +411,7 @@ msgstr "Выберите тему приложения."
 msgid "Settings"
 msgstr "Настройки"
 
-#: ../../client/src/media/dir/hfs/HfsMenu.tsx:33
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:33
 msgid "Share"
 msgstr "Поделиться"
 
@@ -451,11 +451,11 @@ msgstr "Загрузки"
 msgid "User Name"
 msgstr "Имя пользователя"
 
-#: ../../client/src/app/interface/Menu.tsx:65
+#: ../../client/src/media/routes/ScreenBrowse.tsx:28
 msgid "Videos"
 msgstr "Видео"
 
-#: ../../client/src/media/dir/hfs/HfsMenu.tsx:26
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:26
 msgid "View"
 msgstr ""
 

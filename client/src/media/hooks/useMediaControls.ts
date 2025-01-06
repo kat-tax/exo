@@ -2,7 +2,7 @@ import {useLingui} from '@lingui/react/macro';
 import {useMemo, useState, useEffect} from 'react';
 import {share} from 'react-exo/device';
 import {web} from 'react-exo/fs';
-import {pin} from 'media/utils/ipfs';
+import {pinFile} from 'media/dir/ipfs';
 import {FileType} from 'media/file/types';
 
 import type {MediaControlsProps} from 'media/stacks/MediaControls';
@@ -246,7 +246,7 @@ export function useMediaControls(props: MediaControlsProps): MediaControls {
       action: async () => {
         setPinning(true);
         const name = `${metadata.name}.${metadata.ext}`;
-        const url = await pin(metadata.path, name);
+        const url = await pinFile(metadata.path, name);
         setPinned(url);
         prompt(name, url);
         setPinning(false);

@@ -3,8 +3,8 @@ import {useLingui} from '@lingui/react/macro';
 import {useLocation} from 'react-exo/navigation';
 import {useAppContext} from 'app/hooks/useAppContext';
 import {useHfsStartup, HfsDir} from 'media/dir/hfs';
-import {InitDirectory} from 'media/utils/path';
-import {resolve} from 'media/utils/path';
+import {InitDirectory} from 'media/dir/hfs/utils/path';
+import {resolve} from 'media/dir/hfs/utils/path';
 import {Page} from 'app/interface/Page';
 
 export default function ScreenBrowse() {

@@ -51,7 +51,7 @@ msgstr "اسأل أي شيء..."
 msgid "Auto"
 msgstr "تلقائي"
 
-#: ../../client/src/app/interface/Menu.tsx:75
+#: ../../client/src/media/routes/ScreenBrowse.tsx:32
 msgid "Books"
 msgstr "الكتب"
 
@@ -71,7 +71,7 @@ msgstr "سيلزيوس"
 msgid "Close"
 msgstr "إغلاق"
 
-#: ../../client/src/media/dir/hfs/HfsMenu.tsx:44
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:44
 msgid "Copy"
 msgstr ""
 
@@ -91,7 +91,7 @@ msgstr "البيانات"
 msgid "Database"
 msgstr ""
 
-#: ../../client/src/media/dir/hfs/HfsMenu.tsx:69
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:69
 msgid "Delete"
 msgstr ""
 
@@ -131,7 +131,7 @@ msgstr "وضع المطور"
 msgid "Device Space"
 msgstr "مساحة الجهاز"
 
-#: ../../client/src/media/dir/DirEmpty.tsx:10
+#: ../../client/src/media/dir/hfs/stacks/HfsNoEntries.tsx:10
 msgid "Directory is empty."
 msgstr "المجلد فارغ."
 
@@ -151,7 +151,7 @@ msgstr "المستندات"
 msgid "Documents"
 msgstr "المستندات"
 
-#: ../../client/src/media/file/FileBinary.tsx:30
+#: ../../client/src/media/dir/torrent/stacks/TorrentMenu.tsx:21
 msgid "Download"
 msgstr "تحميل"
 
@@ -183,7 +183,7 @@ msgstr "أدخل عبارتك التذكيرية"
 msgid "Enter your name"
 msgstr "أدخل اسمك"
 
-#: ../../client/src/media/dir/zip/ZipMenu.tsx:21
+#: ../../client/src/media/dir/zip/stacks/ZipMenu.tsx:21
 msgid "Extract"
 msgstr "استخراج"
 
@@ -191,7 +191,7 @@ msgstr "استخراج"
 msgid "Fahrenheit"
 msgstr "فهرنهايت"
 
-#: ../../client/src/app/interface/Menu.tsx:45
+#: ../../client/src/media/routes/ScreenBrowse.tsx:38
 msgid "Files"
 msgstr "الملفات"
 
@@ -203,7 +203,7 @@ msgstr ""
 msgid "Fullscreen"
 msgstr "ملء الشاشة"
 
-#: ../../client/src/app/interface/Menu.tsx:70
+#: ../../client/src/media/routes/ScreenBrowse.tsx:30
 msgid "Games"
 msgstr "الألعاب"
 
@@ -239,7 +239,7 @@ msgstr "معرف نموذج Groq"
 msgid "Human"
 msgstr "إنسان"
 
-#: ../../client/src/media/dir/DirEmpty.tsx:11
+#: ../../client/src/media/dir/hfs/stacks/HfsNoEntries.tsx:11
 msgid "Import"
 msgstr "استيراد"
 
@@ -291,11 +291,11 @@ msgstr "الوسائط"
 msgid "Miles"
 msgstr "أميال"
 
-#: ../../client/src/media/dir/hfs/HfsMenu.tsx:51
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:51
 msgid "Move"
 msgstr ""
 
-#: ../../client/src/app/interface/Menu.tsx:55
+#: ../../client/src/media/routes/ScreenBrowse.tsx:24
 msgid "Music"
 msgstr "الموسيقى"
 
@@ -327,7 +327,7 @@ msgstr "مفتاح المالك"
 msgid "Pause"
 msgstr "إيقاف مؤقت"
 
-#: ../../client/src/app/interface/Menu.tsx:60
+#: ../../client/src/media/routes/ScreenBrowse.tsx:26
 msgid "Pictures"
 msgstr "الصور"
 
@@ -375,7 +375,7 @@ msgstr "قدم مفتاحًا لاستخدام ميزات الذكاء الاص�
 msgid "Public"
 msgstr ""
 
-#: ../../client/src/media/dir/hfs/HfsMenu.tsx:58
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:58
 msgid "Rename"
 msgstr ""
 
@@ -411,7 +411,7 @@ msgstr "اختر سمة التطبيق."
 msgid "Settings"
 msgstr "الإعدادات"
 
-#: ../../client/src/media/dir/hfs/HfsMenu.tsx:33
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:33
 msgid "Share"
 msgstr "مشاركة"
 
@@ -451,11 +451,11 @@ msgstr "المرفوعات"
 msgid "User Name"
 msgstr "اسم المستخدم"
 
-#: ../../client/src/app/interface/Menu.tsx:65
+#: ../../client/src/media/routes/ScreenBrowse.tsx:28
 msgid "Videos"
 msgstr "الفيديوهات"
 
-#: ../../client/src/media/dir/hfs/HfsMenu.tsx:26
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:26
 msgid "View"
 msgstr ""
 

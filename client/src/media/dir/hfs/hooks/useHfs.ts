@@ -1,11 +1,11 @@
 import {FS} from 'react-exo/fs';
 import {useState, useCallback, useEffect} from 'react';
-import {isInitDirectory} from 'media/utils/path';
-import {observe, poll} from 'media/utils/fs';
+import {isInitDirectory} from '../utils/path';
+import {observe, poll} from '../utils/fs';
 
 import type {HfsDirectoryEntry} from 'react-exo/fs';
 
-const FILESYSTEM = FS.init('fs');
+const HFS = FS.init('fs');
 
 export interface DirectoryOptions {
   showHidden?: boolean,
@@ -16,7 +16,7 @@ export function useHfs(path: string, options?: DirectoryOptions) {
   const {showHidden} = options || {};
 
   const refresh = useCallback(async () => {
-    const hfs = await FILESYSTEM;
+    const hfs = await HFS;
     if (!hfs) return;
     const entries: HfsDirectoryEntry[] = [];
     const dirPath = path || '.';

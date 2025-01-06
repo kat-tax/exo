@@ -2,10 +2,10 @@ import ExoTorrent from 'react-exo/torrent';
 
 import {useCallback, useMemo} from 'react';
 import {useFileData} from 'media/file/hooks/useFileData';
-import {info, files} from 'media/utils/torrent';
 import {bytesize} from 'app/utils/formatting';
+import {info, files} from '../utils/info';
 
-import type {TorrentInfo, TorrentFileData} from 'media/utils/torrent';
+import type {TorrentInfo, TorrentFileData} from '../types';
 
 export interface Torrent {
   file: File,

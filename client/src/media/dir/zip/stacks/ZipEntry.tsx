@@ -3,7 +3,7 @@ import {Pressable} from 'react-native';
 import {ListRow} from 'media/stacks/ListRow';
 
 import {ZipMenu} from './ZipMenu';
-import type {Zip} from './hooks/useZip';
+import type {Zip} from '../types';
 
 export interface ZipEntryProps {
   entry: Zip['list'][number],

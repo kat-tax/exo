@@ -1,6 +1,6 @@
 import {TorrentEntry} from './TorrentEntry';
-import type {Torrent} from './hooks/useTorrent';
-import type {TorrentFileEntry} from 'media/utils/torrent';
+import type {Torrent} from '../hooks/useTorrent';
+import type {TorrentFileEntry} from '../types';
 
 export interface TorrentDirProps {
   torrent: Torrent,

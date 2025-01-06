@@ -1,43 +1,10 @@
 import {isUint8Array, uint8ArrayToHex, uint8ArrayToString} from 'uint8array-extras';
-import {decode, encode} from './bencode';
+import {decode} from './bencode';
 
-// export async function hash(file: Uint8Array): Promise<string> {
-//   const torrent: any = decode(file);
-//   return sha1(encode(torrent.info));
-// }
-
-export async function hash(file: Uint8Array): Promise<string> {
-  const torrent: any = decode(file);
-  const hash = await crypto.subtle.digest('SHA-1', encode(torrent.info));
-  return uint8ArrayToHex(new Uint8Array(hash));
-}
-
-export type TorrentFileEntry = TorrentFileData['files'][number];
-
-export interface TorrentFileData {
-  length: number;
-  files: Array<{
-    path: string;
-    /**
-     * filename
-     */
-    name: string;
-    /**
-     * length of the file in bytes
-     */
-    length: number;
-    offset: number;
-  }>;
-  /**
-   * number of bytes in each piece
-   */
-  pieceLength: number;
-  lastPieceLength: number;
-  pieces: string[];
-}
+import type {TorrentInfo, TorrentFileData} from '../types';
 
 /**
- * data about the files the torrent contains
+ * Data about the files the torrent contains
  */
 export function files(file: Uint8Array): TorrentFileData {
   const torrent: any = decode(file);
@@ -86,33 +53,8 @@ function splitPieces(buf: Uint8Array): string[] {
   return pieces;
 }
 
-export interface TorrentInfo {
-  name: string;
-  /**
-   * The announce URL of the trackers
-   */
-  announce: string[];
-  /**
-   * free-form textual comments of the author
-   */
-  comment?: string;
-  /**
-   * if false the client may obtain peer from other means, e.g. PEX peer exchange, dht. Here, "private" may be read as "no external peer source".
-   */
-  private?: boolean;
-  created?: Date;
-  /**
-   * name and version of the program used to create the .torrent (string)
-   */
-  createdBy?: string;
-  /**
-   * weburls to download torrent files
-   */
-  urlList: string[];
-}
-
 /**
- * torrent file info
+ * Torrent file info
  */
 export function info(file: Uint8Array): TorrentInfo {
   const torrent: any = decode(file);
@@ -144,11 +86,11 @@ export function info(file: Uint8Array): TorrentInfo {
     torrent['announce-list'] &&
     torrent['announce-list'].length > 0
   ) {
-    torrent['announce-list'].forEach((urls: any) => {
-      urls.forEach((url: any) => {
+    for (const urls of torrent['announce-list']) {
+      for (const url of urls) {
         result.announce.push(url.toString());
-      });
-    });
+      }
+    }
   } else if (torrent.announce) {
     result.announce.push(torrent.announce.toString());
   }

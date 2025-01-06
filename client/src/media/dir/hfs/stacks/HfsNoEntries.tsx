@@ -2,7 +2,7 @@ import {useLingui} from '@lingui/react/macro';
 import {useHfsImporter} from 'media/dir/hfs';
 import {Watermark} from 'media/stacks/Watermark';
 
-export function DirEmpty() {
+export function HfsNoEntries() {
   const {importFolder} = useHfsImporter();
   const {t} = useLingui();
   return (
