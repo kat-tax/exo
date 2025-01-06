@@ -1,3 +1,6 @@
+// TODO: make sure all code languages are supported:
+// https://gist.github.com/TheUltDev/88fca551dde03548da958d52aeab7e50
+
 import {isTextFile} from 'react-exo/fs';
 import {FileType} from '../types';
 import {getData} from './data';
@@ -150,8 +153,6 @@ export async function getRenderer(path: string): Promise<FileRenderInfo> {
     case 'prg':
       return [FileType.Game, {platform: 'vice_x64'}];
     // Texts
-    // TODO: make sure all languages are used:
-    // https://gist.github.com/TheUltDev/88fca551dde03548da958d52aeab7e50
     case 'txt':
       return [FileType.Text, {language: 'text'}];
     case 'abap':
@@ -550,7 +551,6 @@ export async function getRenderer(path: string): Promise<FileRenderInfo> {
       return [FileType.Text, {language: 'haxe'}];
     case 'hy':
       return [FileType.Text, {language: 'hy'}];
-    // Web Languages
     case 'wasm':
     case 'wat':
       return [FileType.Text, {language: 'wasm'}];
@@ -587,7 +587,6 @@ export async function getRenderer(path: string): Promise<FileRenderInfo> {
     case 'ctp':
     case 'aw':
       return [FileType.Text, {language: 'php'}];
-    // Other Languages (TODO: sort)
     case 'mediawiki':
     case 'wiki':
       return [FileType.Text, {language: 'mediawiki'}];
@@ -650,10 +649,8 @@ export async function getRenderer(path: string): Promise<FileRenderInfo> {
       return [FileType.Text, {language: 'xsl'}];
     case 'fish':
       return [FileType.Text, {language: 'fish'}];
-    // Diagnostic Languages
     case 'log':
       return [FileType.Text, {language: 'log'}];
-    // Config Languages
     case 'ini':
     case 'cfg':
     case 'prefs':
