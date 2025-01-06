@@ -6,7 +6,7 @@ import {useMediaPictureInPicture} from 'media/hooks/useMediaPictureInPicture';
 import {useMediaSelection} from 'media/hooks/useMediaSelection';
 import {MediaSelection} from 'media/stacks/MediaSelection';
 import {MediaControls} from 'media/stacks/MediaControls';
-import {getRenderer} from 'media/file/core/utils';
+import {getRenderer} from 'media/file/utils/render';
 import File from 'media/file';
 
 import type {FileRef, FileRenderInfo} from 'media/file/types';

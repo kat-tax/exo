@@ -11,6 +11,7 @@
   },
   // Icons
   "material-icon-theme.saturation": 0.6,
+  "material-icon-theme.opacity": 0.8,
   "material-icon-theme.activeIconPack": "react_redux",
   "material-icon-theme.folders.associations": {
     // General

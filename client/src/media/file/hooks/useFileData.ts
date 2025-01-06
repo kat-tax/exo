@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react';
-import {getData} from 'media/file/core/utils';
+import {getData} from '../utils/data';
 
 import type {FileData, FileFormat} from 'media/file/types';
 
