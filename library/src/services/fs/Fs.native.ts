@@ -10,6 +10,10 @@ export class FSService implements FSBase {
     return type === 'ipfs' ? hfs : hfs; // TODO: implement ipfs
   }
 
+  async watch(_path: string, _callback: (records: unknown[]) => void) {
+    return () => {};
+  }
+
   async getDiskSpace() {
     const disk = await FileSystem.df();
     const total = disk.internal_total + (disk.external_total || 0);
@@ -36,7 +40,6 @@ export class FSService implements FSBase {
   async hashFile(
     input: FileSystemIn,
     _progress?: (bytes: number, total: number) => void,
-    _chunkSize?: number,
     _jobId?: number,
   ) {
     if (typeof input !== 'string')

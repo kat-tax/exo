@@ -5,11 +5,28 @@ import {isText} from './lib/data';
 
 import type {HfsImpl} from '@humanfs/web';
 import type {IpfsHfs} from './lib/plugins/IpfsHfs';
-import type {FSBase, FileSystemIn, HfsType, OpenDirectoryOptions} from './Fs.interface';
+import type {FSBase, FileSystemIn, HfsType, OpenFileOptions, OpenDirectoryOptions} from './Fs.interface';
 
 export class FSService implements FSBase {
   async init(type?: HfsType): Promise<HfsImpl | IpfsHfs> {
     return type === 'ipfs' ? hfs : hfs; // TODO: implement ipfs
+  }
+
+  async watch(path: string, callback: (records: unknown[]) => void) {
+    try {
+      // @ts-expect-error https://github.com/whatwg/fs/blob/main/proposals/FileSystemObserver.md
+      const $ = new FileSystemObserver(async (records, observer) => {
+        console.log('>> fs', records, observer);
+        callback(records);
+      });
+      const root = await navigator.storage.getDirectory();
+      const dir = !!path && await root.getDirectoryHandle(path);
+      await $.observe(dir || root, {recursive: false});
+      return $.disconnect as () => void;
+    } catch (e) {
+     console.error('>> fs [error]', e);
+     return false;
+    }
   }
 
   async getDiskSpace() {
@@ -19,14 +36,14 @@ export class FSService implements FSBase {
     return {total, used, free: total - used};
   }
 
-  async openFile() {
-    // @ts-ignore
-    const [file]: FileSystemFileHandle[] = await window.showOpenFilePicker();
+  async openFile(options?: OpenFileOptions) {
+    // @ts-expect-error https://developer.mozilla.org/en-US/docs/Web/API/Window/showOpenFilePicker
+    const [file]: FileSystemFileHandle[] = await window.showOpenFilePicker(options);
     return file;
   }
 
   async openDirectory(options?: OpenDirectoryOptions) {
-    // @ts-ignore
+    // @ts-expect-error https://developer.mozilla.org/en-US/docs/Web/API/Window/showDirectoryPicker
     const [folder]: FileSystemDirectoryHandle[] = await window.showDirectoryPicker(options);
     return folder;
   }

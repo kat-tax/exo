@@ -1,30 +1,31 @@
 import {FS} from 'react-exo/fs';
-import {useCallback} from 'react';
 import {useLocation} from 'react-exo/navigation';
+import {useCallback, useMemo} from 'react';
 import {resolve, getStartInDir} from '../utils/path';
 
 export function useHfsImporter() {
   const {pathname} = useLocation();
+  const {parts, startIn} = useMemo(() => {
+    const parts = resolve(pathname);
+    const startIn = getStartInDir(parts[0]);
+    return {startIn, parts};
+  }, [pathname]);
 
   /** Import a folder from the device */
   const importFolder = useCallback(async () => {
-    console.log('>> importFolder', resolve(pathname));
-    const pathParts = resolve(pathname);
-    const perfStart = performance.now();
-    const startIn = getStartInDir(pathParts[0]);
-    const dir = await FS.openDirectory({id: pathParts[0], startIn, mode: 'read'});
-    const copy = await FS.importDirectory(dir, pathParts.join('/'));
-    console.log('[fs] import dir', dir, copy, performance.now() - perfStart);
-  }, [pathname]);
+    const timer = performance.now();
+    const from = await FS.openDirectory({id: parts[0], startIn});
+    const to = await FS.importDirectory(from, parts.join('/'));
+    console.log('>> fs [import dir]', from, to, performance.now() - timer);
+  }, [parts, startIn]);
 
   /** Import a file from the device */
   const importFile = useCallback(async () => {
-    console.log('>> importFile', resolve(pathname));
-    const perfStart = performance.now();
-    const file = await FS.openFile();
-    const copy = await FS.importFile(file);
-    console.log('[fs] import file', file, copy, performance.now() - perfStart);
-  }, [pathname]);
+    const timer = performance.now();
+    const from = await FS.openFile({id: parts[0], startIn, multiple: true});
+    const to = await FS.importFile(from);
+    console.log('>> fs [import file]', from, to, performance.now() - timer);
+  }, [parts, startIn]);
 
   return {importFolder, importFile};
 }
