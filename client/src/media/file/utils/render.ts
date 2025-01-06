@@ -150,7 +150,7 @@ export async function getRenderer(path: string): Promise<FileRenderInfo> {
     case 'prg':
       return [FileType.Game, {platform: 'vice_x64'}];
     // Texts
-    // TODO: make sure all languagesare used:
+    // TODO: make sure all languages are used:
     // https://gist.github.com/TheUltDev/88fca551dde03548da958d52aeab7e50
     case 'txt':
       return [FileType.Text, {language: 'text'}];
