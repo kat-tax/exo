@@ -3,11 +3,10 @@
 // https://github.com/mrousavy/react-native-blob-jsi-helper
 // https://github.com/craftzdog/react-native-quick-base64
 
-import {Hfs} from '@humanfs/core';
+import {Hfs} from '../core';
 import {Retrier} from '@humanwhocodes/retry';
 import {FileSystem, Util} from 'react-native-file-access';
-
-import type {HfsImpl, HfsDirectoryEntry} from '@humanfs/types';
+import type {HfsImpl, HfsDirectoryEntry} from '../core/types';
 
 const RETRY_ERROR_CODES = new Set(['ENFILE', 'EMFILE']);
 type FSError = {code: string};
@@ -256,9 +255,7 @@ export class NativeHfsImpl implements HfsImpl {
  * A class representing a file system utility library.
  */
 export class NativeHfs extends Hfs implements HfsImpl {
-  /**
-   * Creates a new instance.
-   */
+  /** Creates a new instance. */
   constructor({root}: {root: typeof FileSystem}) {
     super({impl: new NativeHfsImpl({root})});
   }

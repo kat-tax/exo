@@ -1,7 +1,7 @@
-import type {HfsImpl} from '@humanfs/types';
+import type {HfsImpl} from './lib/core/types';
 import type {IpfsHfs} from './lib/plugins/IpfsHfs';
 
-export * from '@humanfs/types';
+export * from './lib/core/types';
 export type HfsType = 'fs' | 'ipfs';
 
 export interface FSBase {

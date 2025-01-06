@@ -1,10 +1,10 @@
-import {Hfs} from '@humanfs/core';
+import {Hfs} from '../core';
 import {Retrier} from '@humanwhocodes/retry';
 import {createHelia} from 'helia';
 import {unixfs} from '@helia/unixfs';
 import {CID} from 'multiformats/cid';
 
-import type {HfsImpl, HfsDirectoryEntry} from '@humanfs/types';
+import type {HfsImpl, HfsDirectoryEntry} from '../core/types';
 import type {UnixFS} from '@helia/unixfs';
 
 const RETRY_ERROR_CODES = new Set(['ENFILE', 'EMFILE']);

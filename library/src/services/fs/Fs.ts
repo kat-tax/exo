@@ -1,15 +1,15 @@
-import {hfs} from '@humanfs/web';
-//import ipfs from './lib/plugins/IpfsHfs';
+// import ipfs from './lib/plugins/IpfsHfs';
+import {hfs} from './lib/plugins/WebHfs';
 import Hasher from './lib/hash/WebHasher';
 import {isText} from './lib/data';
 
-import type {HfsImpl} from '@humanfs/web';
-import type {IpfsHfs} from './lib/plugins/IpfsHfs';
+import type {HfsImpl} from './lib/core/types';
 import type {FSBase, FileSystemIn, HfsType, OpenFileOptions, OpenDirectoryOptions} from './Fs.interface';
 
 export class FSService implements FSBase {
-  async init(type?: HfsType): Promise<HfsImpl | IpfsHfs> {
-    return type === 'ipfs' ? hfs : hfs; // TODO: implement ipfs
+  async init(type?: HfsType): Promise<HfsImpl> {
+    // TODO: implement ipfs
+    return type === 'ipfs' ? hfs : hfs;
   }
 
   async watch(path: string, callback: (records: unknown[]) => void) {
