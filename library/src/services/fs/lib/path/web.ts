@@ -1,4 +1,4 @@
-import {Path} from '@humanfs/core';
+import {Path} from '../core';
 import type {FileSystemIn, FileSystemOut} from '../../Fs.interface';
 
 let _root: FileSystemDirectoryHandle | undefined;

@@ -172,6 +172,8 @@ export class NativeHfsImpl implements HfsImpl {
     // TODO: get stats
     yield* contents.map(name => ({
       name,
+      size: 0,
+      lastModified: new Date(),
       isFile: false,
       isSymlink: false,
       isDirectory: false,

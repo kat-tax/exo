@@ -36,12 +36,12 @@ export function ListRow(props: ListRow) {
         numberOfLines={1}>
         {props.name}
       </Text>
-      {props.size &&
+      {Boolean(props.size) &&
         <Text
           style={[styles.text, styles.size]}
           selectable={false}
           numberOfLines={1}>
-          {bytesize(props.size)}
+          {bytesize(props.size ?? 0)}
         </Text>
       }
     </View>
@@ -79,6 +79,7 @@ const stylesheet = createStyleSheet((theme) => ({
   },
   size: {
     color: theme.colors.mutedForeground,
+    fontSize: 11,
   },
   selected: {
     backgroundColor: theme.colors.muted,

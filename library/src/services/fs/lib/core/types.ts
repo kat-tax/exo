@@ -1,6 +1,10 @@
 export interface HfsDirectoryEntry {
   /** The name of the file or directory. */
   name: string;
+  /** The size of the entry in bytes */
+  size: number;
+  /** The last modified date of the entry */
+  lastModified: Date;
   /** True if the entry is a directory, false if not. */
   isDirectory: boolean;
   /** True if the entry is a file, false if not. */

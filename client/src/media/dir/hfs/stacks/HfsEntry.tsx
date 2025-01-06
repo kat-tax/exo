@@ -20,7 +20,7 @@ export interface HfsEntryProps {
 
 export function HfsEntry(props: HfsEntryProps) {
   const {entry, flags, path} = props;
-  const {name, isFile} = entry;
+  const {name, size, isFile} = entry;
   const {hash} = useLocation();
   const ctx = useHfsEntry(entry);
   const nav = useNavigate();
@@ -61,7 +61,7 @@ export function HfsEntry(props: HfsEntryProps) {
   return (
     <HfsMenu {...{name, actions}}>
       <Pressable onPress={actions.view}>
-        <ListRow {...{name, isFile, isSelected}}/>
+        <ListRow {...{name, size, isFile, isSelected}}/>
       </Pressable>
     </HfsMenu>
   );

@@ -177,16 +177,22 @@ export class WebHfsImpl implements HfsImpl {
       return;
     }
 
+    // Hack to read metadata in Chromium
+    const wroot = await getWebkitRoot();
+
     // @ts-ignore -- TS doesn't know about this yet
     for await (const entry of handle.values()) {
-      const isDirectory = entry.kind === "directory";
       const isFile = entry.kind === "file";
-
+      const isDirectory = entry.kind === "directory";
+      const isSymlink = false;
+      const metadata = await readMetadata(wroot, entry.name, isFile);
       yield {
         name: entry.name,
-        isDirectory,
+        size: metadata.size ?? 0,
+        lastModified: metadata.modificationTime ?? new Date(),
         isFile,
-        isSymlink: false,
+        isSymlink,
+        isDirectory,
       };
     }
   }
@@ -525,4 +531,35 @@ async function readFile(
   }
 
   return file.text();
+}
+
+type FileSystemEntryMetadata = {size: number; modificationTime: Date};
+
+async function readMetadata(
+  root: unknown,
+  fileOrDirPath: string,
+  isFile: boolean,
+): Promise<FileSystemEntryMetadata> {
+  const dir: () => Promise<FileSystemEntryMetadata> = () =>
+    new Promise((res, rej) => {
+      // @ts-expect-error
+      root.getDirectory(fileOrDirPath, {}, h => h.getMetadata(res, rej), rej)
+    });
+  
+  const file: () => Promise<FileSystemEntryMetadata> = () =>
+    new Promise((res, rej) => {
+      // @ts-expect-error
+      root.getFile(fileOrDirPath, {}, h => h.getMetadata(res, rej), rej)
+    });
+
+  return isFile ? file() : dir();
+}
+
+async function getWebkitRoot(): Promise<unknown> {
+  return await new Promise((res, rej) => {
+    try {
+      // @ts-expect-error
+      webkitRequestFileSystem(0, 0, x => res(x.root), () => res())
+    } catch (err) {rej(err)}
+  });
 }

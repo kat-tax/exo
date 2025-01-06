@@ -186,6 +186,8 @@ export class IpfsHfsImpl implements HfsImpl {
     for await (const item of this.#root.ls(parsed.src)) {
       yield {
         name: item.name,
+        size: item.type === 'file' ? Number(item.size) : 0,
+        lastModified: new Date(),
         isFile: item.type === 'file',
         isSymlink: item.type === 'identity',
         isDirectory: item.type === 'directory',
