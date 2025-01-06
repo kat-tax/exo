@@ -5,9 +5,7 @@ import {useStyles} from 'react-native-unistyles';
 
 import type {MarkerProps} from 'react-map-gl/maplibre';
 
-interface MarkerGeoJsonProps extends MarkerProps {
-
-}
+interface MarkerGeoJsonProps extends MarkerProps {}
 
 export function MarkerGeoJson(props: MarkerGeoJsonProps) {
   const {theme} = useStyles();

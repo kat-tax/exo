@@ -20,8 +20,8 @@ export const Screen = {
   get Browse() {
     return require('../../../media/routes/ScreenBrowse').default;
   },
-  get View() {
-    return require('../../../media/routes/ScreenView').default;
+  get Ipfs() {
+    return require('../../../media/routes/ScreenIpfs').default;
   },
   get World() {
     return require('../../../world/routes/ScreenWorld').default;

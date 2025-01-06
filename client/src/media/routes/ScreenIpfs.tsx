@@ -1,7 +1,7 @@
 import {useParams} from 'react-exo/navigation';
 import {Media} from 'media/stacks/Media';
 
-export default function ScreenView() {
+export default function ScreenIpfs() {
   const {cid, filename} = useParams<{cid: string, filename: string}>();
   const name = filename || '';
   const path = `ipfs://${cid}`;

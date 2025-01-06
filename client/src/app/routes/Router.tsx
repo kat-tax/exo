@@ -16,8 +16,8 @@ export function Router() {
           <Route path="settings" element={<Screen.Settings/>}/>
           {/* Media */}
           <Route path="browse/*" element={<$><Screen.Browse/></$>}/>
-          <Route path="ipfs/*" element={<$><Screen.Browse/></$>}/>
-          <Route path="ipfs/:cid/:filename" element={<$><Screen.View/></$>}/>
+          <Route path="ipfs/*" element={<$><Screen.Ipfs/></$>}/>
+          <Route path="ipfs/:cid/:filename" element={<$><Screen.Ipfs/></$>}/>
           {/* World */}
           <Route path="world" element={<$><Screen.World/></$>}/>
           <Route path="news" element={<$><Screen.Teaser/></$>}/>

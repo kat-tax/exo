@@ -4,10 +4,8 @@ import {useDevices} from 'app/data';
 import {useAppContext} from 'app/hooks/useAppContext';
 import {useScheme} from 'app/hooks/useScheme';
 import {Page} from 'app/interface/Page';
-import schools from 'world/utils/schools';
 
 import {MarkerDevice} from '../stacks/MarkerDevice';
-import {MarkerSchool} from '../stacks/MarkerSchool';
 
 const MAPTILER_URL = 'https://api.maptiler.com/maps/';
 const MAPTILER_KEY = 'UbdBChbHpiVOSIdTJWvV';
@@ -22,16 +20,12 @@ export default function ScreenMap() {
     zoom: device?.coords ? 14 : 1,
   });
 
-  const mapId = scheme === 'light'
-    ? 'dataviz-light'
-    : 'dataviz-dark';
-
   return (
     <Page fullWidth margin="none">
       <Map
         {...viewState}
         style={{width: '100%', height: '100%'}}
-        mapStyle={`${MAPTILER_URL}${mapId}/style.json?key=${MAPTILER_KEY}`}
+        mapStyle={`${MAPTILER_URL}${`dataviz-${scheme}`}/style.json?key=${MAPTILER_KEY}`}
         onMove={e => setViewState(e.viewState)}>
         {devices.map(d => (
           <MarkerDevice
@@ -42,23 +36,6 @@ export default function ScreenMap() {
             longitude={d.coords?.[1] ?? 0}
           />
         ))}
-        {schools.map(s => {
-          const [id, coords, name, address] = s;
-          const [lat, lng] = coords
-            .split(',')
-            .map(e => e.trim())
-            .map(Number);
-          return (
-            <MarkerSchool
-              id={id}
-              key={id}
-              name={name}
-              latitude={lat}
-              longitude={lng}
-              address={address}
-            />
-          );
-        })}
       </Map>
     </Page>
   );

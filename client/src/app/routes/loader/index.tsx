@@ -21,8 +21,8 @@ export const Screen = {
   Browse: lazy(
     () => import('../../../media/routes/ScreenBrowse')
   ),
-  View: lazy(
-    () => import('../../../media/routes/ScreenView')
+  Ipfs: lazy(
+    () => import('../../../media/routes/ScreenIpfs')
   ),
   World: lazy(
     () => import('../../../world/routes/ScreenWorld')
