@@ -178,7 +178,7 @@ function help(ondemand) {
     const contentWidth = Math.max(...hotkeys.map(h => 
       stripAnsi(`[${h.key}] = ${h.label}`).length
     ));
-    return Math.max(titleWidth, contentWidth) + 4;
+    return Math.max(titleWidth, contentWidth) + 3;
   });
 
   // Convert sections to arrays of lines

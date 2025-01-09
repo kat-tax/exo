@@ -1,6 +1,6 @@
 export default {
-  'Press to launch': [
-    {key: 'd', label: 'Docs Site'},
+  'Press to launch app': [
+    {key: 'd', label: 'Documentation'},
     {key: 's', label: 'Storybook'},
     {key: 'a', label: 'Android'},
     {key: 'w', label: 'Web'},
@@ -13,8 +13,8 @@ export default {
     {key: 'u', label: 'Update'},
     {key: 'p', label: 'Publish'},
   ],
-  'Press to manage': [
-    {key: 'h', label: 'Show Help'},
+  'Press to admin': [
+    {key: 'h', label: 'Hotkeys'},
     {key: 'r', label: 'Reload'},
     {key: 'c', label: 'Clear'},
     {key: 'q', label: 'Quit'},
