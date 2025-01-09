@@ -11,7 +11,7 @@ const UTF_CHAR = {
 };
 
 export default function QRCodes(input) {
-  const entries = Array.isArray(input) ? input : [input];
+  const entries = Array.isArray(input) ? input.filter(Boolean) : [input];
   const qrcodes = entries.map(input => new QR(input.url, {errorCorrection: 'L'}));
   const gridSize = qrcodes[0].gridSize;
   

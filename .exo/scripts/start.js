@@ -40,16 +40,17 @@ const {commands} = concurrently(['pnpm:*:start'], {
 // Detection
 lineOutput.on('data', (line) => {
   if (_exiting) return;
-  if (_finished) return console.log(line);
-  const str = line.toString();
-  // Search for command error
-  if (str.match(/\u001b\[31m|\u001b\[91m/) && !str.includes(' ELIFECYCLE'))
+  const _line = stripAnsi(line);
+  // Exclude translations
+  if (_line.startsWith('[translate]')) return;
+  if (_finished) return console.log(_line);
+  // Search for command error (search for red in raw line, not stripped)
+  if (line.match(/\u001b\[31m|\u001b\[91m/) && !_line.includes(' ELIFECYCLE'))
     console.error(line);
   // Search for lan address
-  if (str.match(/http:\/\/(?:192\.168\.\d+\.\d+|10\.\d+\.\d+\.\d+|172\.(?:1[6-9]|2\d|3[0-1])\.\d+\.\d+)/)) {
-    _lanIP = str.match(/http:\/\/(?:192\.168\.\d+\.\d+|10\.\d+\.\d+\.\d+|172\.(?:1[6-9]|2\d|3[0-1])\.\d+\.\d+)/)[0];
+  if (_line.match(/http:\/\/(?:192\.168\.\d+\.\d+|10\.\d+\.\d+\.\d+|172\.(?:1[6-9]|2\d|3[0-1])\.\d+\.\d+)/)) {
+    _lanIP = _line.match(/http:\/\/(?:192\.168\.\d+\.\d+|10\.\d+\.\d+\.\d+|172\.(?:1[6-9]|2\d|3[0-1])\.\d+\.\d+)/)[0];
   }
-  const _line = stripAnsi(str);
   for (const match of Matches) {
     let server = _servers[match.name];
     if (!server) server = _servers[match.name] = {};
@@ -156,14 +157,14 @@ function help(ondemand) {
     console.log();
     // Show QR codes for web and native
     console.log(QRCodes([
-      {label: `${_.gray(`${_.bold('Web Server')} [v${_servers.Web.version}]`)}`, url: `${_lanIP}:${_servers.Web.port}`},
-      {label: `${_.gray(`${_.bold('Native Server')} [v${_servers.Native.version}]`)}`, url: `${_lanIP}:8081`},
+      _servers.Web.version && {label: `${_.gray(`${_.bold('Web Server')} [v${_servers.Web.version}]`)}`, url: `${_lanIP}:${_servers.Web.port}`},
+      _servers.Native.version && {label: `${_.gray(`${_.bold('Native Server')} [v${_servers.Native.version}]`)}`, url: `${_lanIP}:8081`},
     ]));
     // Show more QR codes if requested
     if (ondemand) {
       console.log(QRCodes([
-        {label: `${_.gray(`${_.bold('Storybook')} [v${_servers.Storybook.version}]`)}`, url: `${_lanIP}:${_servers.Storybook.port}`},
-        {label: `${_.gray(`${_.bold('Documentation')} [v${_servers.Documentation.version}]`)}`, url: `${_lanIP}:${_servers.Documentation.port}`},
+        _servers.Storybook.version && {label: `${_.gray(`${_.bold('Storybook')} [v${_servers.Storybook.version}]`)}`, url: `${_lanIP}:${_servers.Storybook.port}`},
+        _servers.Documentation.version && {label: `${_.gray(`${_.bold('Documentation')} [v${_servers.Documentation.version}]`)}`, url: `${_lanIP}:${_servers.Documentation.port}`},
       ]));
     }
   } else {
