@@ -7,8 +7,7 @@ import {getData} from './data';
 
 import type {FileRenderInfo} from '../types';
 
-export async function getRenderer(path: string): Promise<FileRenderInfo> {
-  const extension = path.split('.').pop();
+export async function getRenderer(extension: string, path?: string): Promise<FileRenderInfo> {
   switch (extension) {
     // Archives
     case 'zip':
@@ -784,6 +783,7 @@ export async function getRenderer(path: string): Promise<FileRenderInfo> {
     case 'zcml':
       return [FileType.Text, {language: 'xml'}];
     default: {
+      if (!path) return [FileType.Binary, {}];
       const buffer = await getData(path, 'arrayBuffer');
       return await isTextFile(extension ?? '', buffer)
         ? [FileType.Text, {language: 'text'}]

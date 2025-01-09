@@ -93,9 +93,9 @@ export function Media(props: MediaProps) {
   // Update renderer when file extension changes
   useEffect(() => {
     (async () => {
-      setRenderer(await getRenderer(targetPath));
+      setRenderer(await getRenderer(targetExt, targetPath));
     })();
-  }, [targetPath]);
+  }, [targetExt, targetPath]);
 
   return (
     <View style={vstyles.root}>
