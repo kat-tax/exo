@@ -1,4 +1,4 @@
-import {fs} from '@zip.js/zip.js';
+import {fs, WritableWriter} from '@zip.js/zip.js';
 import {useCallback, useEffect, useState, useRef} from 'react';
 import {useFileData} from 'media/file/hooks/useFileData';
 
@@ -27,29 +27,28 @@ export function useZip(path: string) {
           compressed: _zip?.reduce((acc, entry) => acc + (entry.data?.compressedSize ?? 0), 0) ?? 0,
           uncompressed: _zip?.reduce((acc, entry) => acc + (entry.data?.uncompressedSize ?? 0), 0) ?? 0,
         },
-        list: _zip.map(entry => {
+        list: _zip.filter(entry => !entry.getFullname().startsWith('__MACOSX')).map(entry => {
           return {
             id: entry.id,
-            name: entry.name,
+            name: entry.data?.rawFilename ? new TextDecoder().decode(entry.data?.rawFilename) : entry.name,
             size: entry.data?.uncompressedSize ?? 0,
             ext: entry.name.split('.').pop() ?? '',
             dir: entry.data?.directory ?? false,
           }
-        }),
+        }).filter(Boolean),
       });
     })();
   }, [buffer]);
 
   const extract = useCallback(async (file: Zip['list'][number]) => {
     if (!zip) return;
-    const folder = await navigator.storage.getDirectory();
-    const handle = await folder.getFileHandle(file.name, {create: true});
-    const stream = await handle.createWritable();
     const source = filesystem.current?.getById(file.id);
+    if (!source) return;
+    const folder = await navigator.storage.getDirectory();
+    const handle = await folder.getFileHandle(file.name.split('/').pop() ?? file.name, {create: true});
+    const writable = await handle.createWritable();
     // @ts-ignore
-    // FIXME: this exports the entire zip
-    // source?.fs?.exportWritable(stream);
-    console.log('>> extract', source, stream);
+    source?.getData({writable});
   }, [zip]);
 
   return {zip, extract};
