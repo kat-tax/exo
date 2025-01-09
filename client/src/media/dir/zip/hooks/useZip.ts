@@ -1,4 +1,4 @@
-import {fs, WritableWriter} from '@zip.js/zip.js';
+import {fs} from '@zip.js/zip.js';
 import {useCallback, useEffect, useState, useRef} from 'react';
 import {useFileData} from 'media/file/hooks/useFileData';
 
