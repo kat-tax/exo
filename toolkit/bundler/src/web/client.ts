@@ -38,6 +38,12 @@ export default defineConfig(env => mergeConfig(
           plugins: [
             '@lingui/babel-plugin-lingui-macro',
           ],
+          overrides: [
+            {
+              test: /\/wasm.js$/,
+              compact: false,
+            },
+          ],
         },
       }),
       million.vite({

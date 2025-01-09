@@ -6,7 +6,6 @@
     "start": "conc -c 'auto' 'pnpm:start:*'",
     "build": "conc -c 'auto' -g 'pnpm:build:*'",
 
-    "web": "open http://localhost:6206",
     "tauri": "tauri dev",
     "android": "react-native run-android --no-packager",
     "ios": "react-native run-ios --no-packager",
@@ -22,8 +21,8 @@
     "_build:visionos": "react-native bundle --entry-file index.js --platform ios --dev true --bundle-output dist/main.visionos.jsbundle --assets-dest dist",
     "_build:windows": "react-native bundle --entry-file index.js --platform windows --dev true --bundle-output dist/main.windows.bundle --assets-dest dist",
 
-    "start:vite": "vite dev --port 6206",
-    "start:metro": "react-native rnx-start --reset-cache",
+    "start:web": "vite dev --port 6206 --host",
+    "start:native": "react-native rnx-start --reset-cache",
 
     "generate:pods": "pod install --project-directory=ios && pod install --project-directory=macos && pod install --project-directory=visionos",
     "generate:icons": "react-native-svg-app-icon generate && tauri icon ../design/assets/img/logo.png",

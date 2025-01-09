@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "tsx utils/setup && vocs dev -p 6106",
+    "start": "tsx utils/setup && vocs dev -p 6106 --host",
     "build": "tsx utils/setup && vocs build -c -o ../../output/docs",
     "preview": "tsx utils/setup && vocs preview"
   },

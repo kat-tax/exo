@@ -323,7 +323,7 @@ msgstr "News"
 msgid "Next"
 msgstr "Next"
 
-#: ../../client/src/world/routes/ScreenCalendar.tsx:39
+#: ../../client/src/world/routes/ScreenCalendar.tsx:41
 msgid "No events scheduled."
 msgstr "No events scheduled."
 

@@ -16,9 +16,24 @@ importers:
       '@lingui/cli':
         specifier: ^5.1.2
         version: 5.1.2
+      '@qrgrid/core':
+        specifier: ^0.2.2
+        version: 0.2.2
+      cli-cursor:
+        specifier: ^3.0.0
+        version: 3.1.0
       concurrently:
         specifier: ^9.1.2
         version: 9.1.2
+      strip-ansi:
+        specifier: ^7.1.0
+        version: 7.1.0
+      yocto-spinner:
+        specifier: ^0.1.2
+        version: 0.1.2
+      yoctocolors:
+        specifier: ^2.1.1
+        version: 2.1.1
 
   client:
     dependencies:
@@ -631,13 +646,13 @@ importers:
         version: 0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))
       '@react-native/metro-config':
         specifier: 0.76.5
-        version: 0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(bufferutil@4.0.8)
+        version: 0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(bufferutil@4.0.8)(utf-8-validate@6.0.4)
       '@react-native/typescript-config':
         specifier: 0.76.5
         version: 0.76.5
       '@rnx-kit/metro-config':
         specifier: ^2.0.1
-        version: 2.0.1(@react-native/metro-config@0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(bufferutil@4.0.8))(react-native@0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1))(react@18.3.1)
+        version: 2.0.1(@react-native/metro-config@0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0)))(react-native@0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1))(react@18.3.1)
       '@types/react':
         specifier: ^18.3.18
         version: 18.3.18
@@ -3769,6 +3784,9 @@ packages:
 
   '@protobufjs/utf8@1.1.0':
     resolution: {integrity: sha512-Vvn3zZrhQZkkBE8LSuW3em98c0FwgO4nxzv6OdSxPKJIEKY2bGbHn+mhGIPerzI4twdxaP8/0+06HBpwf345Lw==}
+
+  '@qrgrid/core@0.2.2':
+    resolution: {integrity: sha512-d1ZaiEX/mP+fag8C+tTJnokPHRsEpOV2JcxufYtFUKGNd/fYcfmvXrdsmmEBTCyJW+4ymweqmKT1gbUnT+g5AQ==}
 
   '@radix-ui/colors@3.0.0':
     resolution: {integrity: sha512-FUOsGBkHrYJwCSEtWRCIfQbZG7q1e6DgxCIOe1SUQzDe/7rXXeA47s8yCn6fuTNQAj1Zq4oTFi9Yjp3wzElcxg==}
@@ -13488,6 +13506,14 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
 
+  yocto-spinner@0.1.2:
+    resolution: {integrity: sha512-VfmLIh/ZSZOJnVRQZc/dvpPP90lWL4G0bmxQMP0+U/2vKBA8GSpcBuWv17y7F+CZItRuO97HN1wdbb4p10uhOg==}
+    engines: {node: '>=18.19'}
+
+  yoctocolors@2.1.1:
+    resolution: {integrity: sha512-GQHQqAopRhwU8Kt1DDM8NjibDXHC8eoh1erhGAJPEyveY9qqVeXvVikNKrDz69sHowPMorbPUrH/mx8c50eiBQ==}
+    engines: {node: '>=18'}
+
   zeego@2.0.4:
     resolution: {integrity: sha512-mkKfUJmgcSGCTqWXW7ccqap8d8z6guQoLF5/mWlH17Jckd0BaFLVZ74y/uWvfBGaC9OawYVt/1MchPnQ8ieSxg==}
     peerDependencies:
@@ -17881,6 +17907,8 @@ snapshots:
 
   '@protobufjs/utf8@1.1.0': {}
 
+  '@qrgrid/core@0.2.2': {}
+
   '@radix-ui/colors@3.0.0': {}
 
   '@radix-ui/number@1.1.0': {}
@@ -19404,7 +19432,7 @@ snapshots:
       execa: 5.1.1
       invariant: 2.2.4
       metro: 0.81.0(bufferutil@4.0.8)
-      metro-config: 0.81.0(bufferutil@4.0.8)
+      metro-config: 0.81.0(bufferutil@4.0.8)(utf-8-validate@6.0.4)
       metro-core: 0.81.0
       node-fetch: 2.7.0
       readline: 1.3.0
@@ -19450,7 +19478,7 @@ snapshots:
       execa: 5.1.1
       invariant: 2.2.4
       metro: 0.81.0(bufferutil@4.0.8)
-      metro-config: 0.81.0(bufferutil@4.0.8)
+      metro-config: 0.81.0(bufferutil@4.0.8)(utf-8-validate@6.0.4)
       metro-core: 0.81.0
       node-fetch: 2.7.0
       readline: 1.3.0
@@ -19496,7 +19524,7 @@ snapshots:
       execa: 5.1.1
       invariant: 2.2.4
       metro: 0.81.0(bufferutil@4.0.8)
-      metro-config: 0.81.0(bufferutil@4.0.8)
+      metro-config: 0.81.0(bufferutil@4.0.8)(utf-8-validate@6.0.4)
       metro-core: 0.81.0
       node-fetch: 2.7.0
       readline: 1.3.0
@@ -19635,19 +19663,6 @@ snapshots:
     transitivePeerDependencies:
       - '@babel/preset-env'
       - supports-color
-
-  '@react-native/metro-config@0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(bufferutil@4.0.8)':
-    dependencies:
-      '@react-native/js-polyfills': 0.76.5
-      '@react-native/metro-babel-transformer': 0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))
-      metro-config: 0.81.0(bufferutil@4.0.8)
-      metro-runtime: 0.81.0
-    transitivePeerDependencies:
-      - '@babel/core'
-      - '@babel/preset-env'
-      - bufferutil
-      - supports-color
-      - utf-8-validate
 
   '@react-native/metro-config@0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(bufferutil@4.0.8)(utf-8-validate@6.0.4)':
     dependencies:
@@ -19812,7 +19827,7 @@ snapshots:
     optionalDependencies:
       '@react-native/metro-config': 0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(bufferutil@4.0.8)(utf-8-validate@6.0.4)
 
-  '@rnx-kit/metro-config@2.0.1(@react-native/metro-config@0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(bufferutil@4.0.8))(react-native@0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1))(react@18.3.1)':
+  '@rnx-kit/metro-config@2.0.1(@react-native/metro-config@0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0)))(react-native@0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@rnx-kit/tools-node': 3.0.0
       '@rnx-kit/tools-react-native': 2.0.0
@@ -19820,7 +19835,7 @@ snapshots:
       react: 18.3.1
       react-native: 0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1)
     optionalDependencies:
-      '@react-native/metro-config': 0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(bufferutil@4.0.8)
+      '@react-native/metro-config': 0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(bufferutil@4.0.8)(utf-8-validate@6.0.4)
 
   '@rnx-kit/metro-plugin-cyclic-dependencies-detector@2.0.0':
     dependencies:
@@ -26051,21 +26066,6 @@ snapshots:
       flow-enums-runtime: 0.0.6
       metro-core: 0.81.0
 
-  metro-config@0.81.0(bufferutil@4.0.8):
-    dependencies:
-      connect: 3.7.0
-      cosmiconfig: 5.2.1
-      flow-enums-runtime: 0.0.6
-      jest-validate: 29.7.0
-      metro: 0.81.0(bufferutil@4.0.8)
-      metro-cache: 0.81.0
-      metro-core: 0.81.0
-      metro-runtime: 0.81.0
-    transitivePeerDependencies:
-      - bufferutil
-      - supports-color
-      - utf-8-validate
-
   metro-config@0.81.0(bufferutil@4.0.8)(utf-8-validate@6.0.4):
     dependencies:
       connect: 3.7.0
@@ -26224,7 +26224,7 @@ snapshots:
       metro-babel-transformer: 0.81.0
       metro-cache: 0.81.0
       metro-cache-key: 0.81.0
-      metro-config: 0.81.0(bufferutil@4.0.8)
+      metro-config: 0.81.0(bufferutil@4.0.8)(utf-8-validate@6.0.4)
       metro-core: 0.81.0
       metro-file-map: 0.81.0
       metro-resolver: 0.81.0
@@ -30921,6 +30921,12 @@ snapshots:
       buffer-crc32: 0.2.13
 
   yocto-queue@0.1.0: {}
+
+  yocto-spinner@0.1.2:
+    dependencies:
+      yoctocolors: 2.1.1
+
+  yoctocolors@2.1.1: {}
 
   zeego@2.0.4(qj5cqjw2it6atsirn4c5clzjru):
     dependencies:

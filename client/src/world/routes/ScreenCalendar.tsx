@@ -17,6 +17,7 @@ export default function ScreenCalendar() {
   const [locale] = useLocale();
   const {t} = useLingui();
 
+  const showPanel = true;
   const showDebugEvent = false;
 
   return (
@@ -31,16 +32,18 @@ export default function ScreenCalendar() {
             onCalendarDayPress={dateRange.onCalendarDayPress}
           />
         </View>
-        <View style={styles.panel}>
-          {showDebugEvent
-            ? <CalendarEvent/>
-            : <View style={styles.empty}>
-                <Text style={styles.emptyText}>
-                  {t`No events scheduled.`}
-                </Text>
-              </View>
-          }
-        </View>
+        {showPanel &&
+          <View style={styles.panel}>
+            {showDebugEvent
+              ? <CalendarEvent/>
+              : <View style={styles.empty}>
+                  <Text style={styles.emptyText}>
+                    {t`No events scheduled.`}
+                  </Text>
+                </View>
+              }
+          </View>
+        }
       </View>
     </Page>
   );

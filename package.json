@@ -1,8 +1,9 @@
 {
   "private": true,
   "license": "MIT",
+  "type": "module",
   "scripts": {
-    "start": "conc -c 'gray' 'pnpm:*:start'",
+    "start": "node ./.exo/scripts/start",
     "build": "conc -c 'gray,auto' -g 'pnpm:*:build'",
     "config:build": "pnpm -F ./toolkit/config build",
     "bundler:build": "pnpm -F ./toolkit/bundler build",
@@ -28,7 +29,12 @@
   },
   "devDependencies": {
     "@lingui/cli": "^5.1.2",
-    "concurrently": "^9.1.2"
+    "@qrgrid/core": "^0.2.2",
+    "concurrently": "^9.1.2",
+    "cli-cursor": "^3.0.0",
+    "strip-ansi": "^7.1.0",
+    "yocto-spinner": "^0.1.2",
+    "yoctocolors": "^2.1.1"
   },
   "engines": {
     "node": ">=18"
