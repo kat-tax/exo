@@ -27,7 +27,7 @@
     "lightningcss": "^1.28.2",
     "million": "^3.1.11",
     "react-native": "^0.76.5",
-    "rollup-plugin-visualizer": "^5.13.1",
+    "sonda": "^0.7.1",
     "typescript": "^5.7.2",
     "vite": "^5.4.11",
     "vite-plugin-dts": "^4.4.0",

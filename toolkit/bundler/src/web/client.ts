@@ -2,9 +2,9 @@ import {defineConfig, mergeConfig} from 'vite';
 import webConfig from '../vite.web.js';
 
 import cfg from 'config';
-import react from '@vitejs/plugin-react';
+import sonda from 'sonda/vite'; 
 import million from 'million/compiler';
-import {visualizer} from 'rollup-plugin-visualizer';
+import react from '@vitejs/plugin-react';
 import {lingui} from '@lingui/vite-plugin';
 
 export default defineConfig(env => mergeConfig(
@@ -12,6 +12,7 @@ export default defineConfig(env => mergeConfig(
   defineConfig({
     build: {
       outDir: '../output/client/web',
+      sourcemap: true,
       emptyOutDir: true,
       chunkSizeWarningLimit: 1000,
       target: [
@@ -35,14 +36,9 @@ export default defineConfig(env => mergeConfig(
       lingui(),
       react({
         babel: {
+          compact: false,
           plugins: [
             '@lingui/babel-plugin-lingui-macro',
-          ],
-          overrides: [
-            {
-              test: /\/wasm.js$/,
-              compact: false,
-            },
           ],
         },
       }),
@@ -60,7 +56,10 @@ export default defineConfig(env => mergeConfig(
           return out;
         },
       },
-      visualizer(),
+      sonda({
+        sources: true,
+        detailed: true,
+      }),
     ],
     optimizeDeps: {
       exclude: [
