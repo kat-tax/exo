@@ -1,7 +1,8 @@
 import {Pressable} from 'react-native';
-import {useMemo} from 'react';
+import {useMemo, useCallback} from 'react';
 import {useLocation, useNavigate} from 'react-exo/navigation';
 import {filesToHash, hashToFiles} from 'app/utils/formatting';
+import {getData} from 'media/file/utils/data';
 import {ListRow} from 'media/stacks/ListRow';
 
 import {HfsMenu} from './HfsMenu';
@@ -47,16 +48,29 @@ export function HfsEntry(props: HfsEntryProps) {
     return name;
   }, [name, path, flags, selection, isFile]);
 
+  // Download file
+  const download = useCallback(async () => {
+    const source = await getData(`${path}/${name}`, 'dataUrl');
+    if (!source) return;
+    // FIXME: web specific (move to fs service)
+    const a = document.createElement('a');
+    a.download = name;
+    a.href = source;
+    a.click();
+    setTimeout(() => URL.revokeObjectURL(source), 100);
+  }, [path, name]);
+
   // Handlers for menu actions
   const actions = useMemo(() => ({
     menu: () => {},
     view: () => nav(link),
     share: () => {},
+    download: isFile ? download : undefined,
     copy: () => {},
     move: () => {},
     rename: () => {},
     delete: ctx.del,
-  }), [link, ctx.del, nav]);
+  }), [link, isFile, ctx.del, nav, download]);
 
   return (
     <HfsMenu {...{name, actions}}>

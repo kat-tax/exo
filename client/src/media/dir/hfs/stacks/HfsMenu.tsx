@@ -8,6 +8,7 @@ export interface HfsMenuProps extends React.PropsWithChildren {
     menu?: () => void,
     view?: () => void,
     share?: () => void,
+    download?: () => void,
     copy?: () => void,
     move?: () => void,
     rename?: () => void,
@@ -33,6 +34,13 @@ export function HfsMenu(props: HfsMenuProps) {
       label: t`Share`,
       shortcut: '⌘+K',
       action: actions?.share,
+    },
+    actions?.download && {
+      name: 'download',
+      icon: 'ph:download',
+      label: t`Download`,
+      shortcut: '⌘+D',
+      action: actions?.download,
     },
     {
       name: 'middle',

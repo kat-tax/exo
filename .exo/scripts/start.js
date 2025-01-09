@@ -43,7 +43,7 @@ lineOutput.on('data', (line) => {
   const _line = stripAnsi(line);
   // Exclude translations
   if (_line.startsWith('[translate]')) return;
-  if (_finished) return console.log(_line);
+  if (_finished) return console.log(line);
   // Search for command error (search for red in raw line, not stripped)
   if (line.match(/\u001b\[31m|\u001b\[91m/) && !_line.includes(' ELIFECYCLE'))
     console.error(line);
