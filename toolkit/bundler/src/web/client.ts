@@ -14,7 +14,7 @@ export default defineConfig(env => mergeConfig(
       outDir: '../output/client/web',
       sourcemap: true,
       emptyOutDir: true,
-      chunkSizeWarningLimit: 1000,
+      chunkSizeWarningLimit: 1500,
       target: [
         'esnext',
         'safari15',
@@ -26,7 +26,11 @@ export default defineConfig(env => mergeConfig(
         output: {
           format: 'es',
           chunkFileNames: '[name]-[hash].js',
-        }
+        },
+        onwarn: (warning, warn) => {
+          if (warning.code === 'EVAL') return;
+          warn(warning);
+        },
       },
     },
     preview: {
@@ -57,8 +61,10 @@ export default defineConfig(env => mergeConfig(
         },
       },
       sonda({
-        sources: true,
-        detailed: true,
+        open: false,
+        sources: false,
+        detailed: false,
+        filename: 'bundle.inspect.html',
       }),
     ],
     optimizeDeps: {
