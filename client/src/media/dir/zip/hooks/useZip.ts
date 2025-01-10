@@ -27,15 +27,19 @@ export function useZip(path: string) {
           compressed: _zip?.reduce((acc, entry) => acc + (entry.data?.compressedSize ?? 0), 0) ?? 0,
           uncompressed: _zip?.reduce((acc, entry) => acc + (entry.data?.uncompressedSize ?? 0), 0) ?? 0,
         },
-        list: _zip.filter(entry => !entry.getFullname().startsWith('__MACOSX')).map(entry => {
-          return {
+        list: _zip
+          .filter(entry =>{
+            const path = entry.getFullname();
+            return !path.startsWith('__MACOSX');
+          })
+          .map(entry => ({
             id: entry.id,
             name: entry.data?.rawFilename ? new TextDecoder().decode(entry.data?.rawFilename) : entry.name,
             size: entry.data?.uncompressedSize ?? 0,
             ext: entry.name.split('.').pop() ?? '',
             dir: entry.data?.directory ?? false,
-          }
-        }).filter(Boolean),
+          }))
+          .filter(Boolean),
       });
     })();
   }, [buffer]);
