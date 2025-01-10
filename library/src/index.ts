@@ -3,7 +3,6 @@ export default {}
 // Assets
 export type * from './assets/book/Book.export';
 export type * from './assets/code/Code.export';
-export type * from './assets/document/Document.export';
 export type * from './assets/game/Game.export';
 export type * from './assets/icon/Icon.export';
 export type * from './assets/image/Image.export';
@@ -11,7 +10,6 @@ export type * from './assets/lottie/Lottie.export';
 export type * from './assets/map/Map.export';
 export type * from './assets/markdown/Markdown.export';
 export type * from './assets/model/Model.export';
-export type * from './assets/note/Note.export';
 export type * from './assets/pdf/Pdf.export';
 export type * from './assets/rive/Rive.export';
 export type * from './assets/video/Video.export';

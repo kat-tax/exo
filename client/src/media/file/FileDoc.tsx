@@ -1,21 +1,19 @@
-import {Book} from 'react-exo/book';
+import {Pdf} from 'react-exo/pdf';
 
 import {forwardRef} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useFileData} from 'media/file/hooks/useFileData';
 
 import type {FileProps} from 'media/file';
-import type {BookRef} from 'react-exo/book';
 
 export interface FileDoc extends FileProps {}
 
-export default forwardRef((props: FileDoc, ref: React.Ref<BookRef>) => {
+export default forwardRef((props: FileDoc) => {
   const source = useFileData(props.path, 'dataUrl');
   const {styles} = useStyles(stylesheet);
 
   return source ? (
-    <Book
-      ref={ref}
+    <Pdf
       url={source}
       style={styles.root}
     />

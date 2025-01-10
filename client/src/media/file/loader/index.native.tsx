@@ -7,9 +7,6 @@ export const loader: {[key in FileType]: JSX.Element} = {
   get [FileType.Text]() {
     return require('../FileText').default
   },
-  get [FileType.Note]() {
-    return require('../FileNote').default
-  },
   get [FileType.Document]() {
     return require('../FileDoc').default
   },

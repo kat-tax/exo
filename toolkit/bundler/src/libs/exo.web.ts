@@ -33,7 +33,6 @@ export default defineConfig(env => mergeConfig(
           /* Assets */
           book: 'src/assets/book/Book.export',
           code: 'src/assets/code/Code.export',
-          document: 'src/assets/document/Document.export',
           game: 'src/assets/game/Game.export',
           icon: 'src/assets/icon/Icon.export',
           image: 'src/assets/image/Image.export',
@@ -41,7 +40,6 @@ export default defineConfig(env => mergeConfig(
           map: 'src/assets/map/Map.export',
           markdown: 'src/assets/markdown/Markdown.export',
           model: 'src/assets/model/Model.export',
-          note: 'src/assets/note/Note.export',
           pdf: 'src/assets/pdf/Pdf.export',
           rive: 'src/assets/rive/Rive.export',
           video: 'src/assets/video/Video.export',

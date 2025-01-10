@@ -28,11 +28,6 @@
       "import": "./gen/web/code.js",
       "require": "./gen/native/code.js"
     },
-    "./document": {
-      "types": "./gen/types/document.d.ts",
-      "import": "./gen/web/document.js",
-      "require": "./gen/native/document.js"
-    },
     "./game": {
       "types": "./gen/types/game.d.ts",
       "import": "./gen/web/game.js",
@@ -67,11 +62,6 @@
       "types": "./gen/types/model.d.ts",
       "import": "./gen/web/model.js",
       "require": "./gen/native/model.js"
-    },
-    "./note": {
-      "types": "./gen/types/note.d.ts",
-      "import": "./gen/web/note.js",
-      "require": "./gen/native/note.js"
     },
     "./pdf": {
       "types": "./gen/types/pdf.d.ts",
