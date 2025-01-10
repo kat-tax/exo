@@ -24,16 +24,11 @@ export default defineConfig(env => mergeConfig(
         },
       }),
     ],
-    resolve: {
-      alias: {
-        'react-native': 'react-native-web',
-      },
-    },
     optimizeDeps: {
       include: [
         'react-native-ultimate-config/index.web.js',
         'react-native-unistyles',
-        'react-native-web',
+        'react-native',
         'design',
       ],
     },

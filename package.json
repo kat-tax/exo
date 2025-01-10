@@ -30,8 +30,8 @@
   "devDependencies": {
     "@lingui/cli": "^5.1.2",
     "@qrgrid/core": "^0.2.2",
-    "concurrently": "^9.1.2",
     "cli-cursor": "^3.0.0",
+    "concurrently": "^9.1.2",
     "strip-ansi": "^7.1.0",
     "yocto-spinner": "^0.1.2",
     "yoctocolors": "^2.1.1"
@@ -42,7 +42,8 @@
   "packageManager": "pnpm@8.14.0",
   "pnpm": {
     "patchedDependencies": {
-      "react-native-readium": "patches/react-native-readium.patch"
+      "react-native-readium": "patches/react-native-readium.patch",
+      "vocs": "patches/vocs.patch"
     }
   }
 }
