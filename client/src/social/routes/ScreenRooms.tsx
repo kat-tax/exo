@@ -1,4 +1,4 @@
-import {View,ScrollView} from 'react-native';
+import {View, ScrollView} from 'react-native';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {StreamList} from 'social/stacks/StreamList';
 import {Active} from 'social/stacks/Active';

@@ -28,7 +28,7 @@ export function StreamListItem(props: StreamProps) {
         /> */}
         <View style={styles.image}>
           <img
-            src={`https://jpeg.live.mmcdn.com/stream?room=${name}&r=${i}`}
+            src={`https://localhost/live/fallback?room=${name}&r=${i}`}
             style={{width: '100%', height: '100%'}}
             loading={'lazy'}
             onLoad={() => {

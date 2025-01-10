@@ -80,7 +80,7 @@ export default defineConfig({
     code: {
       themes: {
         light: 'github-light',
-        dark: 'one-dark-pro',
+        dark: 'github-dark-dimmed',
       }
     }
   },

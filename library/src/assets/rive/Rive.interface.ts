@@ -4,10 +4,10 @@ import type {Alignment, RiveRef} from 'rive-react-native';
 export type RiveComponent = (props: RiveProps) => React.ReactNode;
 
 export interface RiveProps {
-  /** Reference to the Rive runtime */
-  ref: React.Ref<RiveRef>,
   /** Source of the animation. */
   url: string,
+  /** Reference to the Rive runtime */
+  ref?: React.Ref<RiveRef>,
   /** Width of the animation. */
   width?: number,
   /** Height of the animation. */

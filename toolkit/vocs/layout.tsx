@@ -1,17 +1,20 @@
-import {useEffect} from 'react';
-import {UnistylesRuntime} from 'design/gen.styles';
+import {useRef, useEffect} from 'react';
+import type {UnistylesRuntime} from 'react-native-unistyles';
 
 export default function Layout(props: React.PropsWithChildren) {
+  const runtime = useRef<typeof UnistylesRuntime>();
+
+  useEffect(() => {
+    import('design/styles').then(({UnistylesRuntime}) => {
+      runtime.current = UnistylesRuntime;
+      runtime.current.setTheme(getTheme());
+    });
+  }, []);
+
   useEffect(() => {
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
     const pickerButton = document.querySelector('button:has(.vocs_utils_visibleDark)');
-    const updateTheme = () => {
-      requestAnimationFrame(() => {
-        const isDark = document.documentElement.classList.contains('dark');
-        UnistylesRuntime.setTheme(isDark ? 'dark' : 'light');
-      })
-    };
-    updateTheme();
+    const updateTheme = () => runtime.current?.setTheme(getTheme());
     mediaQuery.addEventListener('change', updateTheme);
     pickerButton?.addEventListener('click', updateTheme);
     return () => {
@@ -22,3 +25,8 @@ export default function Layout(props: React.PropsWithChildren) {
 
   return props.children;
 }
+
+const getTheme = () =>
+  document.documentElement.classList.contains('dark')
+    ? 'dark'
+    : 'light';

@@ -33,7 +33,7 @@
     "vite-plugin-dts": "^4.4.0",
     "vite-plugin-node-polyfills": "^0.22.0",
     "vite-tsconfig-paths": "^5.1.4",
-    "vocs": "1.0.0-alpha.50",
+    "vocs": "1.0.0-alpha.62",
     "yaml": "latest"
   }
 }
