@@ -4,13 +4,13 @@ import matter from 'gray-matter';
 // Paths
 
 const GUIDES = '../../guides/docs';
-const PRIMITIVES = '../../library/src';
+//const PRIMITIVES = '../../library/src';
 const COMPONENTS = '../../design/components';
 
 // Groups
 
 const guideGroups = readdirSync(GUIDES).filter(excludeGroups);
-const primitivesGroups = readdirSync(PRIMITIVES).filter(excludeGroups);
+// const primitivesGroups = readdirSync(PRIMITIVES).filter(excludeGroups);
 const componentsGroups = readdirSync(COMPONENTS).filter(excludeGroups);
 const hasComponents = componentsGroups.length > 0;
 
@@ -43,17 +43,17 @@ const sidebar = [
     })).filter(g => g.items.length),
   },
   // Index primitives
-  {
-    text: 'Primitives',
-    collapsed: hasComponents,
-    items: primitivesGroups.map(g => ({
-      text: titleCase(g),
-      items: readdirSync(`${PRIMITIVES}/${g}`).filter(excludeFiles).map(f => ({
-        link: `/primitives/${g}/${f}`,
-        text: getTitle(f, `${PRIMITIVES}/${g}/${f}/${titleCase(f, true)}.docs.mdx`),
-      })),
-    })).filter(g => g.items.length),
-  },
+  // {
+  //   text: 'Primitives',
+  //   collapsed: hasComponents,
+  //   items: primitivesGroups.map(g => ({
+  //     text: titleCase(g),
+  //     items: readdirSync(`${PRIMITIVES}/${g}`).filter(excludeFiles).map(f => ({
+  //       link: `/primitives/${g}/${f}`,
+  //       text: getTitle(f, `${PRIMITIVES}/${g}/${f}/${titleCase(f, true)}.docs.mdx`),
+  //     })),
+  //   })).filter(g => g.items.length),
+  // },
 ].filter(Boolean);
 
 // Output

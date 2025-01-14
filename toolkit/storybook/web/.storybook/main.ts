@@ -12,11 +12,11 @@ const config: StorybookConfig = {
       directory: '../../../../design/components',
       files: '**/*.story.tsx',
     },
-    {
-      titlePrefix: 'Primitives',
-      directory: '../../../../library/src',
-      files: '**/*.story.tsx',
-    },
+    // {
+    //   titlePrefix: 'Primitives',
+    //   directory: '../../../../library/src',
+    //   files: '**/*.story.tsx',
+    // },
   ],
   staticDirs: [
     '../../../../design/assets',

@@ -1,4 +1,3 @@
-import * as Tauri from '@tauri-apps/api/core';
 import {Platform} from 'react-native';
 
 export function isWeb() {
@@ -32,10 +31,6 @@ export function isTV() {
 export function isXR() {
   // @ts-expect-error
   return Platform.isVision;
-}
-
-export function isTauri() {
-  return Tauri.isTauri;
 }
 
 export function isTouch() {

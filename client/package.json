@@ -6,7 +6,6 @@
     "start": "conc -c 'auto' 'pnpm:start:*'",
     "build": "conc -c 'auto' -g 'pnpm:build:*'",
 
-    "tauri": "tauri dev",
     "android": "react-native run-android --no-packager",
     "ios": "react-native run-ios --no-packager",
     "macos": "react-native run-macos --no-packager --scheme FOV",
@@ -14,7 +13,6 @@
     "windows": "react-native run-windows --no-packager",
 
     "build:web": "vite build",
-    "_build:tauri": "CI=true tauri build",
     "_build:android": "react-native bundle --entry-file index.js --platform android --dev true --bundle-output dist/main.android.jsbundle --assets-dest dist/res",
     "_build:ios": "react-native bundle --entry-file index.js --platform ios --dev true --bundle-output dist/main.ios.jsbundle --assets-dest dist",
     "_build:macos": "react-native bundle --entry-file index.js --platform macos --dev true --bundle-output dist/main.macos.jsbundle --assets-dest dist",
@@ -25,7 +23,7 @@
     "start:native": "react-native rnx-start --reset-cache",
 
     "generate:pods": "pod install --project-directory=ios && pod install --project-directory=macos && pod install --project-directory=visionos",
-    "generate:icons": "react-native-svg-app-icon generate && tauri icon ../design/assets/img/logo.png",
+    "generate:icons": "react-native-svg-app-icon generate",
     "generate:splash": "react-native generate-bootsplash ../design/assets/svg/logo.svg",
     "_postinstall": "pnpm generate:*"
   },
@@ -48,11 +46,9 @@
     "@react-native-community/geolocation": "^3.4.0",
     "@react-native-community/netinfo": "^11.4.1",
     "@react-native-community/slider": "^4.5.5",
-    "@react-native-menu/menu": "^1.2.0",
     "@react-native-picker/picker": "^2.10.2",
     "@shopify/flash-list": "1.6.3",
     "@shopify/react-native-skia": "1.8.0",
-    "@tauri-apps/api": "^2.1.1",
     "@zip.js/zip.js": "^2.7.54",
     "ai": "^4.0.22",
     "blo": "^1.2.0",
@@ -64,7 +60,7 @@
     "openmeteo": "^1.1.4",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-exo": "workspace:*",
+    "react-exo": "0.18.5",
     "react-exo-ui": "workspace:*",
     "react-map-gl": "^7.1.8",
     "react-native": "^0.76.5",
@@ -112,7 +108,6 @@
     "@rnx-kit/metro-plugin-duplicates-checker": "^3.0.0",
     "@rnx-kit/metro-plugin-typescript": "^0.5.1",
     "@rnx-kit/metro-resolver-symlinks": "^0.2.1",
-    "@tauri-apps/cli": "^2.1.0",
     "@types/babel__core": "^7.20.5",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",

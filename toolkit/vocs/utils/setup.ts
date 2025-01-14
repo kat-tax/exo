@@ -8,19 +8,19 @@ import type {PropDescriptor} from 'react-docgen/dist/Documentation';
 
 const paths = {
   guides: ['../../guides/docs', './pages'],
-  primitives: ['../../library/src', './pages/primitives'],
+  primitives: [], // ['../../library/src', './pages/primitives'],
   components: ['../../design/components', './pages/components'],
 };
 
-const [primitives, components] = await Promise.all([
-  readdir(paths.primitives[0], {recursive: true}),
+const [components] = await Promise.all([
+  //readdir(paths.primitives[0], {recursive: true}),
   readdir(paths.components[0], {recursive: true}),
 ]);
 
 await ensureDir(paths.guides[1]);
 await Promise.all([
   processGuides(paths.guides[0], paths.guides[1]),
-  processLibrary(primitives, paths.primitives),
+  //processLibrary(primitives, paths.primitives),
   processComponents(components, paths.components),
 ].flat(1));
 
@@ -28,22 +28,22 @@ async function processGuides(input: string, output: string) {
   await copy(input, output);
 }
 
-async function processLibrary(files: string[], paths: string[]) {
-  files.flat(1).filter(f => f.endsWith('.mdx')).map(async path => {
-    // const {name, base} = getPartsFromDocPath(path);
-    // 1. Read the component mdx file
-    // const mdx = await readFile(`${paths[0]}/${base}/${name}.mdx`, 'utf8');
-    // 2. Find summary directive (e.g. :::summary Icon :::)
-    // 3. Find prop table directive (e.g. :::props IconProps :::)
-    // 4. Parse the manifest.json for the data needed
-    // 5. Generate the summary string and props table markdown
-    // 6. Replace the directives and write the new file
-    await copy(
-      `${paths[0]}/${path}`,
-      `${paths[1]}/${path.split('/').slice(0, -1).join('/')}.mdx`
-    );
-  });
-}
+// async function processLibrary(files: string[], paths: string[]) {
+//   files.flat(1).filter(f => f.endsWith('.mdx')).map(async path => {
+//     // const {name, base} = getPartsFromDocPath(path);
+//     // 1. Read the component mdx file
+//     // const mdx = await readFile(`${paths[0]}/${base}/${name}.mdx`, 'utf8');
+//     // 2. Find summary directive (e.g. :::summary Icon :::)
+//     // 3. Find prop table directive (e.g. :::props IconProps :::)
+//     // 4. Parse the manifest.json for the data needed
+//     // 5. Generate the summary string and props table markdown
+//     // 6. Replace the directives and write the new file
+//     await copy(
+//       `${paths[0]}/${path}`,
+//       `${paths[1]}/${path.split('/').slice(0, -1).join('/')}.mdx`
+//     );
+//   });
+// }
 
 async function processComponents(files: string[], paths: string[]) {
   const [input, output] = paths;

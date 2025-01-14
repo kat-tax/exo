@@ -1,7 +1,7 @@
 import {useMemo} from 'react';
 import {useStyles, UnistylesRuntime} from 'react-native-unistyles';
 
-import type {CalendarTheme} from 'react-exo/calendar';
+import type {CalendarTheme} from '@marceloterreiro/flash-calendar';
 
 export function useCalendarTheme(): CalendarTheme {
   const {theme} = useStyles();

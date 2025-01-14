@@ -74,7 +74,7 @@ msgid "Close"
 msgstr "Close"
 
 #: ../../client/src/media/hooks/useMediaControls.ts:58
-#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:44
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:52
 msgid "Copy"
 msgstr "Copy"
 
@@ -95,7 +95,7 @@ msgstr "Data"
 msgid "Database"
 msgstr "Database"
 
-#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:69
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:77
 msgid "Delete"
 msgstr "Delete"
 
@@ -159,6 +159,7 @@ msgstr "Documents"
 #: ../../client/src/media/hooks/useMediaControls.ts:77
 #: ../../client/src/media/file/FileBinary.tsx:30
 #: ../../client/src/media/dir/torrent/stacks/TorrentMenu.tsx:21
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:41
 msgid "Download"
 msgstr "Download"
 
@@ -305,7 +306,7 @@ msgstr "Media"
 msgid "Miles"
 msgstr "Miles"
 
-#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:51
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:59
 msgid "Move"
 msgstr "Move"
 
@@ -380,7 +381,7 @@ msgstr "Prompts"
 msgid "Provide a key to use AI features."
 msgstr "Provide a key to use AI features."
 
-#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:58
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:66
 msgid "Rename"
 msgstr "Rename"
 
@@ -419,7 +420,7 @@ msgid "Settings"
 msgstr "Settings"
 
 #: ../../client/src/media/hooks/useMediaControls.ts:258
-#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:33
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:34
 msgid "Share"
 msgstr "Share"
 
@@ -465,7 +466,7 @@ msgstr "User Name"
 msgid "Videos"
 msgstr "Videos"
 
-#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:26
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:27
 msgid "View"
 msgstr "View"
 

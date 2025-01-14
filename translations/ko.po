@@ -74,7 +74,7 @@ msgid "Close"
 msgstr "닫기"
 
 #: ../../client/src/media/hooks/useMediaControls.ts:58
-#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:44
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:52
 msgid "Copy"
 msgstr ""
 
@@ -95,7 +95,7 @@ msgstr "데이터"
 msgid "Database"
 msgstr ""
 
-#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:69
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:77
 msgid "Delete"
 msgstr ""
 
@@ -159,6 +159,7 @@ msgstr "문서"
 #: ../../client/src/media/hooks/useMediaControls.ts:77
 #: ../../client/src/media/file/FileBinary.tsx:30
 #: ../../client/src/media/dir/torrent/stacks/TorrentMenu.tsx:21
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:41
 msgid "Download"
 msgstr "다운로드"
 
@@ -305,7 +306,7 @@ msgstr "미디어"
 msgid "Miles"
 msgstr "마일"
 
-#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:51
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:59
 msgid "Move"
 msgstr ""
 
@@ -380,7 +381,7 @@ msgstr "프롬프트"
 msgid "Provide a key to use AI features."
 msgstr "AI 기능을 사용하려면 키를 입력하세요."
 
-#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:58
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:66
 msgid "Rename"
 msgstr ""
 
@@ -419,7 +420,7 @@ msgid "Settings"
 msgstr "설정"
 
 #: ../../client/src/media/hooks/useMediaControls.ts:258
-#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:33
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:34
 msgid "Share"
 msgstr "공유"
 
@@ -465,7 +466,7 @@ msgstr "사용자 이름"
 msgid "Videos"
 msgstr "동영상"
 
-#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:26
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:27
 msgid "View"
 msgstr ""
 

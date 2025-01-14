@@ -74,7 +74,7 @@ msgid "Close"
 msgstr "Закрыть"
 
 #: ../../client/src/media/hooks/useMediaControls.ts:58
-#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:44
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:52
 msgid "Copy"
 msgstr ""
 
@@ -95,7 +95,7 @@ msgstr "Данные"
 msgid "Database"
 msgstr ""
 
-#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:69
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:77
 msgid "Delete"
 msgstr ""
 
@@ -159,6 +159,7 @@ msgstr "Документы"
 #: ../../client/src/media/hooks/useMediaControls.ts:77
 #: ../../client/src/media/file/FileBinary.tsx:30
 #: ../../client/src/media/dir/torrent/stacks/TorrentMenu.tsx:21
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:41
 msgid "Download"
 msgstr "Скачать"
 
@@ -305,7 +306,7 @@ msgstr "Медиа"
 msgid "Miles"
 msgstr "Мили"
 
-#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:51
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:59
 msgid "Move"
 msgstr ""
 
@@ -380,7 +381,7 @@ msgstr "Запросы"
 msgid "Provide a key to use AI features."
 msgstr "Предоставьте ключ для использования функций ИИ."
 
-#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:58
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:66
 msgid "Rename"
 msgstr ""
 
@@ -419,7 +420,7 @@ msgid "Settings"
 msgstr "Настройки"
 
 #: ../../client/src/media/hooks/useMediaControls.ts:258
-#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:33
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:34
 msgid "Share"
 msgstr "Поделиться"
 
@@ -465,7 +466,7 @@ msgstr "Имя пользователя"
 msgid "Videos"
 msgstr "Видео"
 
-#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:26
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:27
 msgid "View"
 msgstr ""
 

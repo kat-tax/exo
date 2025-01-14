@@ -2,7 +2,6 @@ packages:
   - 'native/**'
   - 'client/**'
   - 'design/**'
-  - 'library/**'
   - 'locales/**'
   - 'toolkit/**'
   - 'server/**'

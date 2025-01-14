@@ -31,7 +31,7 @@ export enum FileType {
 
 export type FileOptions = {
   [FileType.Book]: {continuous: boolean},
-  [FileType.Text]: {language: FileText['language'] | 'ansi' | 'text'},
+  [FileType.Text]: {language: FileText['language']},
   [FileType.Game]: {platform: FileGame['platform']},
 } & Record<FileType, Record<string, unknown>>
 

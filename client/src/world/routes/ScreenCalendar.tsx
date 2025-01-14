@@ -1,7 +1,7 @@
 import {View, Text} from 'react-native';
 import {useLingui} from '@lingui/react/macro';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {useDateRange, toDateId, Calendar} from 'react-exo/calendar';
+import {useDateRange, toDateId, Calendar} from '@marceloterreiro/flash-calendar';
 import {useCalendarTheme} from 'world/hooks/useCalendarTheme';
 import {useLocale} from 'app/hooks/useLocale';
 import {Page} from 'app/interface/Page';
