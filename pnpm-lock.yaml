@@ -43,6 +43,9 @@ importers:
       '@ai-sdk/openai':
         specifier: ^1.0.11
         version: 1.0.11(zod@3.23.8)
+      '@atlaskit/pragmatic-drag-and-drop':
+        specifier: ^1.4.0
+        version: 1.4.0
       '@callstack/react-native-visionos':
         specifier: ^0.76.2
         version: 0.76.2(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8)(utf-8-validate@6.0.4))(@types/react@18.3.18)(bufferutil@4.0.8)(react-native@0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8)(utf-8-validate@6.0.4))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1)(utf-8-validate@6.0.4))(react@18.3.1)(utf-8-validate@6.0.4)
@@ -137,8 +140,8 @@ importers:
         specifier: ^18.3.1
         version: 18.3.1(react@18.3.1)
       react-exo:
-        specifier: 0.18.5
-        version: 0.18.5(h66yfpsbmeiim3pgday64unu2m)
+        specifier: 0.18.12
+        version: 0.18.12(h66yfpsbmeiim3pgday64unu2m)
       react-exo-ui:
         specifier: workspace:*
         version: link:../design
@@ -254,9 +257,6 @@ importers:
       '@react-native/metro-config':
         specifier: 0.76.5
         version: 0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(bufferutil@4.0.8)(utf-8-validate@6.0.4)
-      '@rnx-kit/babel-plugin-import-path-remapper':
-        specifier: ^2.0.0
-        version: 2.0.0
       '@rnx-kit/babel-preset-metro-react-native':
         specifier: ^2.0.0
         version: 2.0.0(@babel/core@7.26.0)(@babel/plugin-transform-typescript@7.26.3(@babel/core@7.26.0))(@babel/runtime@7.26.0)(@react-native/babel-preset@0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0)))
@@ -333,8 +333,8 @@ importers:
         specifier: ^18.3.1
         version: 18.3.1(react@18.3.1)
       react-exo:
-        specifier: 0.18.5
-        version: 0.18.5(dzbydhqj4fvuqafpei4cm7zowm)
+        specifier: 0.18.12
+        version: 0.18.12(dzbydhqj4fvuqafpei4cm7zowm)
       react-native:
         specifier: ^0.76.5
         version: 0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1)
@@ -498,8 +498,8 @@ importers:
         specifier: workspace:*
         version: link:../../config
       react-exo:
-        specifier: 0.18.5
-        version: 0.18.5(dzbydhqj4fvuqafpei4cm7zowm)
+        specifier: 0.18.12
+        version: 0.18.12(dzbydhqj4fvuqafpei4cm7zowm)
       react-native:
         specifier: ^0.76.5
         version: 0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1)
@@ -531,8 +531,8 @@ importers:
         specifier: ^18.3.1
         version: 18.3.1(react@18.3.1)
       react-exo:
-        specifier: 0.18.5
-        version: 0.18.5(dzbydhqj4fvuqafpei4cm7zowm)
+        specifier: 0.18.12
+        version: 0.18.12(dzbydhqj4fvuqafpei4cm7zowm)
       react-exo-ui:
         specifier: workspace:*
         version: link:../../../design
@@ -634,8 +634,8 @@ importers:
         specifier: ^18.3.1
         version: 18.3.1(react@18.3.1)
       react-exo:
-        specifier: 0.18.5
-        version: 0.18.5(vgq5obztjygbu75ssfrhhimijy)
+        specifier: 0.18.12
+        version: 0.18.12(vgq5obztjygbu75ssfrhhimijy)
       react-exo-ui:
         specifier: workspace:*
         version: link:../../design
@@ -757,6 +757,9 @@ packages:
 
   '@assemblyscript/loader@0.9.4':
     resolution: {integrity: sha512-HazVq9zwTVwGmqdwYzu7WyQ6FQVZ7SwET0KKQuKm55jD0IfUpZgN0OPIiZG3zV1iSrVYcN0bdwLRXI/VNCYsUA==}
+
+  '@atlaskit/pragmatic-drag-and-drop@1.4.0':
+    resolution: {integrity: sha512-qRY3PTJIcxfl/QB8Gwswz+BRvlmgAC5pB+J2hL6dkIxgqAgVwOhAamMUKsrOcFU/axG2Q7RbNs1xfoLKDuhoPg==}
 
   '@azure/abort-controller@1.1.0':
     resolution: {integrity: sha512-TrRLIoSQVzfAJX9H1JeFjzAoDGcoK1IYX1UImfceTZpsyYfWr09Ss1aHW1y5TrrR3iq6RZLBwJ3E24uwPhwahw==}
@@ -4184,10 +4187,6 @@ packages:
     engines: {node: '>=16.17'}
     hasBin: true
 
-  '@rnx-kit/babel-plugin-import-path-remapper@2.0.0':
-    resolution: {integrity: sha512-e9RWZ+bH5R1PfxxkUTwRJcVWMhGT4kEN7YTKnhygSNG4BiCVlc7TUR9iaVXJ4jy3UVOZr6SJWU5f6elzd5SLaA==}
-    engines: {node: '>=16.17'}
-
   '@rnx-kit/babel-preset-metro-react-native@2.0.0':
     resolution: {integrity: sha512-97YLxsZ61Rptso80VVVoZxGmKCqWahoR5fB1U0rxydtZY2/CiXZ794HY7aZt1+wcUpooQJ5KakEPIg5ZnhZbVg==}
     engines: {node: '>=16.17'}
@@ -5625,6 +5624,9 @@ packages:
   binary@0.3.0:
     resolution: {integrity: sha512-D4H1y5KYwpJgK8wk1Cue5LLPgmwHKYSChkbspQg5JtVuR5ulGckxfR62H3AE9UDkdMC8yyXlqYihuz3Aqg2XZg==}
 
+  bind-event-listener@3.0.0:
+    resolution: {integrity: sha512-PJvH288AWQhKs2v9zyfYdPzlPqf5bXbGMmhmUIY9x4dAUGIWgomO771oBQNwJnMQSnUIXhKu6sgzpBRXTlvb8Q==}
+
   bindings@1.5.0:
     resolution: {integrity: sha512-p2q/t/mhvuOj/UeLlV6566GD/guowlr0hHxClI0W9m7MWYkL1F0hLo+0Aexs9HSPCtR1SXQ0TD3MMKrXZajbiQ==}
 
@@ -6101,6 +6103,9 @@ packages:
   combined-stream@1.0.8:
     resolution: {integrity: sha512-FQN4MRfuJeHf7cBbBMJFXhKSDq+2kAArBlmRBvcvFE5BB1HZKXtSFASDhdlz9zOYwxh8lDdnvmMOe/+5cdoEdg==}
     engines: {node: '>= 0.8'}
+
+  comlink@4.4.2:
+    resolution: {integrity: sha512-OxGdvBmJuNKSCMO4NTl1L47VRp6xn2wG4F/2hYzB6tiCb709otOxtEYCSvK80PtjODfXXZu8ds+Nw5kVCjqd2g==}
 
   comma-separated-tokens@2.0.3:
     resolution: {integrity: sha512-Fu4hJdvzeylCfQPp9SGWidpzrMs7tTrlu6Vb8XGaRGck8QSNZJJp538Wrb60Lax4fPwR64ViY468OIUTbRlGZg==}
@@ -9220,6 +9225,9 @@ packages:
   multipasta@0.2.5:
     resolution: {integrity: sha512-c8eMDb1WwZcE02WVjHoOmUVk7fnKU/RmUcosHACglrWAuPQsEJv+E8430sXj6jNc1jHw0zrS16aCjQh4BcEb4A==}
 
+  mupdf@1.1.0:
+    resolution: {integrity: sha512-4mWXw1zC7FFX3/0CJ8M3YhUo/NLIOUTshmF0i6hrV3sMs571iYZU8QQgMB8DXOOWpy+lGiqaMcYnIcPsdAKH3g==}
+
   murmurhash-js@1.0.0:
     resolution: {integrity: sha512-TvmkNhkv8yct0SVBSy+o8wYzXjE4Zz3PCesbfs8HiCXXdcTuocApFv11UWlNFWKYsP2okqrhb7JNlSm9InBhIw==}
 
@@ -10064,6 +10072,9 @@ packages:
   race-signal@1.1.0:
     resolution: {integrity: sha512-VqsW1uzCXfKBd2DhA3K3NhQlqQr04+5WQ7+kHpf1HzT01Q+ePSFWZdQHXKZPuLmm2eXTZM1XLO76cq15ZRAaEA==}
 
+  raf-schd@4.0.3:
+    resolution: {integrity: sha512-tQkJl2GRWh83ui2DiPTJz9wEiMN20syf+5oKfB03yYP7ioZcJwsIK8FjrtLwH1m7C7e+Tt2yYBlrOpdT+dyeIQ==}
+
   ramda@0.27.2:
     resolution: {integrity: sha512-SbiLPU40JuJniHexQSAgad32hfwd+DRUdwF2PlVuI5RZD0/vahUco7R8vD86J/tcEKKF9vZrUVwgtmGCqlCKyA==}
 
@@ -10125,8 +10136,8 @@ packages:
     peerDependencies:
       react: ^18.3.1
 
-  react-exo@0.18.5:
-    resolution: {integrity: sha512-LQ2XpAdDh9qZqf70ZzkPBlBTbY9LvmllPbhfD/lcRmJgwjMKQ3XG07E4uLwMA6/dVOrgGd6tZCVBxEzjiJFsxw==}
+  react-exo@0.18.12:
+    resolution: {integrity: sha512-oijjxm8MRA1662GQIVF5d6Y5o6kFTGkud6VfW/zDmkQsILUELRajNlWOQ8UnEIiWdLJdE7bffbpYf9AX/KW5tQ==}
     peerDependencies:
       '@candlefinance/faster-image': '>=1.7'
       '@react-native-community/checkbox': '>=0.5'
@@ -10135,7 +10146,7 @@ packages:
       '@react-native-picker/picker': '>=2'
       react: '>=18'
       react-dom: '>=18'
-      react-native: '>=76'
+      react-native: '>=0.76'
       react-native-file-access: '>=3'
       react-native-gesture-handler: '>=2'
       react-native-linear-gradient: '>=2'
@@ -10160,12 +10171,6 @@ packages:
     resolution: {integrity: sha512-4uMzEY9nlDlgxr61NL3XbKRy1hEkXmKNXhjbAIOVw5vcFrsdYbH2FEwcNyWvWinl103nXgzYNlns9ca+8kFiWw==}
     peerDependencies:
       react: '>=16.3.0'
-
-  react-hook-form@7.54.2:
-    resolution: {integrity: sha512-eHpAUgUjWbZocoQYUHposymRb4ZP6d0uwUnooL2uOybA9/3tPUvoAKqEWK1WaSiTxxOfTpffNZP7QwlnM3/gEg==}
-    engines: {node: '>=18.0.0'}
-    peerDependencies:
-      react: ^16.8.0 || ^17 || ^18 || ^19
 
   react-intersection-observer@9.14.1:
     resolution: {integrity: sha512-k1xIUn3sCQi3ugNeF64FJb3zwve5mcetvAUR9JazXeOmtap4IP2evN8rs+yf6SQ7F1QydsOGiqTmt+lySKZ9uA==}
@@ -10567,6 +10572,13 @@ packages:
     resolution: {integrity: sha512-KkAgygexHUkQqtvvx/otwxtuFu5cVjfzTCtjXLH9boS19/Nbtg84zS7wIQn39G8IlrhThBpQsMKkq5ZHZIYFXA==}
     peerDependencies:
       react: ^18.3.1
+
+  react-virtuoso@4.12.3:
+    resolution: {integrity: sha512-6X1p/sU7hecmjDZMAwN+r3go9EVjofKhwkUbVlL8lXhBZecPv9XVCkZ/kBPYOr0Mv0Vl5+Ziwgexg9Kh7+NNXQ==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      react: '>=16 || >=17 || >= 18'
+      react-dom: '>=16 || >=17 || >= 18'
 
   react@18.3.1:
     resolution: {integrity: sha512-wS+hAgJShR0KhEvPJArfuPVN1+Hz1t0Y6n5jLrGQbkb4urgPE/0Rve+1kMB1v/oWgHgm4WIcV+i7F2pTVj+2iQ==}
@@ -12535,6 +12547,12 @@ snapshots:
   '@antfu/utils@0.7.10': {}
 
   '@assemblyscript/loader@0.9.4': {}
+
+  '@atlaskit/pragmatic-drag-and-drop@1.4.0':
+    dependencies:
+      '@babel/runtime': 7.26.0
+      bind-event-listener: 3.0.0
+      raf-schd: 4.0.3
 
   '@azure/abort-controller@1.1.0':
     dependencies:
@@ -17901,14 +17919,6 @@ snapshots:
 
   '@rnx-kit/align-deps@3.0.2': {}
 
-  '@rnx-kit/babel-plugin-import-path-remapper@2.0.0':
-    dependencies:
-      '@babel/core': 7.26.0
-      '@babel/helper-plugin-utils': 7.25.9
-      '@rnx-kit/tools-node': 3.0.0
-    transitivePeerDependencies:
-      - supports-color
-
   '@rnx-kit/babel-preset-metro-react-native@2.0.0(@babel/core@7.26.0)(@babel/plugin-transform-typescript@7.26.3(@babel/core@7.26.0))(@babel/runtime@7.26.0)(@react-native/babel-preset@0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0)))':
     dependencies:
       '@babel/core': 7.26.0
@@ -19638,6 +19648,8 @@ snapshots:
       buffers: 0.1.1
       chainsaw: 0.1.0
 
+  bind-event-listener@3.0.0: {}
+
   bindings@1.5.0:
     dependencies:
       file-uri-to-path: 1.0.0
@@ -20252,6 +20264,8 @@ snapshots:
   combined-stream@1.0.8:
     dependencies:
       delayed-stream: 1.0.0
+
+  comlink@4.4.2: {}
 
   comma-separated-tokens@2.0.3: {}
 
@@ -24598,6 +24612,8 @@ snapshots:
 
   multipasta@0.2.5: {}
 
+  mupdf@1.1.0: {}
+
   murmurhash-js@1.0.0: {}
 
   murmurhash3js-revisited@3.0.0: {}
@@ -25496,6 +25512,8 @@ snapshots:
 
   race-signal@1.1.0: {}
 
+  raf-schd@4.0.3: {}
+
   ramda@0.27.2: {}
 
   random-access-file@4.0.7:
@@ -25592,7 +25610,7 @@ snapshots:
       react: 18.3.1
       scheduler: 0.23.2
 
-  react-exo@0.18.5(dzbydhqj4fvuqafpei4cm7zowm):
+  react-exo@0.18.12(dzbydhqj4fvuqafpei4cm7zowm):
     dependencies:
       '@candlefinance/faster-image': 1.7.2(react-native@0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1))(react@18.3.1)
       '@helia/unixfs': 4.0.1
@@ -25613,16 +25631,19 @@ snapshots:
       '@reduxjs/toolkit': 2.5.0(react-redux@9.2.0(@types/react@18.3.18)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
       '@rive-app/react-canvas': 4.17.5(react@18.3.1)
       burnt: 0.12.2(expo@51.0.20(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(bufferutil@4.0.8))(react-dom@18.3.1(react@18.3.1))(react-native@0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1))(react@18.3.1)
+      comlink: 4.4.2
       css-to-react-native: 3.2.0
       helia: 5.1.1(bufferutil@4.0.8)(react-native@0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1))
       history: 5.3.0
       idb-keyval: 6.2.1
+      maplibre-gl: 4.7.1
       markdown-it: 13.0.2
       multiformats: 13.3.1
+      mupdf: 1.1.0
       react: 18.3.1
       react-content-loader: 7.0.2(react@18.3.1)
       react-dom: 18.3.1(react@18.3.1)
-      react-hook-form: 7.54.2(react@18.3.1)
+      react-map-gl: 7.1.8(maplibre-gl@4.7.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react-native: 0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1)
       react-native-file-access: 3.1.1(react-native@0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1))(react@18.3.1)
       react-native-gesture-handler: 2.21.2(react-native@0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1))(react@18.3.1)
@@ -25637,6 +25658,7 @@ snapshots:
       react-native-video: 6.8.2(react-native@0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1))(react@18.3.1)
       react-redux: 9.2.0(@types/react@18.3.18)(react@18.3.1)(redux@5.0.1)
       react-router: 6.28.1(react@18.3.1)
+      react-virtuoso: 4.12.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       redux: 5.0.1
       redux-first-history: 5.2.0(history@5.3.0)(redux@5.0.1)
       redux-persist: 6.0.0(react@18.3.1)(redux@5.0.1)
@@ -25652,6 +25674,7 @@ snapshots:
       - bufferutil
       - encoding
       - expo
+      - mapbox-gl
       - nativewind
       - rollup
       - supports-color
@@ -25659,7 +25682,7 @@ snapshots:
       - vite
       - worker-loader
 
-  react-exo@0.18.5(h66yfpsbmeiim3pgday64unu2m):
+  react-exo@0.18.12(h66yfpsbmeiim3pgday64unu2m):
     dependencies:
       '@candlefinance/faster-image': 1.7.2(react-native@0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8)(utf-8-validate@6.0.4))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1)(utf-8-validate@6.0.4))(react@18.3.1)
       '@helia/unixfs': 4.0.1
@@ -25680,16 +25703,19 @@ snapshots:
       '@reduxjs/toolkit': 2.5.0(react-redux@9.2.0(@types/react@18.3.18)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
       '@rive-app/react-canvas': 4.17.5(react@18.3.1)
       burnt: 0.12.2(expo@51.0.20(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(bufferutil@4.0.8)(utf-8-validate@6.0.4))(react-dom@18.3.1(react@18.3.1))(react-native@0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8)(utf-8-validate@6.0.4))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1)(utf-8-validate@6.0.4))(react@18.3.1)
+      comlink: 4.4.2
       css-to-react-native: 3.2.0
       helia: 5.1.1(bufferutil@4.0.8)(react-native@0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8)(utf-8-validate@6.0.4))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1)(utf-8-validate@6.0.4))(utf-8-validate@6.0.4)
       history: 5.3.0
       idb-keyval: 6.2.1
+      maplibre-gl: 4.7.1
       markdown-it: 13.0.2
       multiformats: 13.3.1
+      mupdf: 1.1.0
       react: 18.3.1
       react-content-loader: 7.0.2(react@18.3.1)
       react-dom: 18.3.1(react@18.3.1)
-      react-hook-form: 7.54.2(react@18.3.1)
+      react-map-gl: 7.1.8(maplibre-gl@4.7.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react-native: 0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8)(utf-8-validate@6.0.4))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1)(utf-8-validate@6.0.4)
       react-native-file-access: 3.1.1(react-native@0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8)(utf-8-validate@6.0.4))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1)(utf-8-validate@6.0.4))(react@18.3.1)
       react-native-gesture-handler: 2.21.2(react-native@0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8)(utf-8-validate@6.0.4))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1)(utf-8-validate@6.0.4))(react@18.3.1)
@@ -25704,6 +25730,7 @@ snapshots:
       react-native-video: 6.8.2(react-native@0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8)(utf-8-validate@6.0.4))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1)(utf-8-validate@6.0.4))(react@18.3.1)
       react-redux: 9.2.0(@types/react@18.3.18)(react@18.3.1)(redux@5.0.1)
       react-router: 6.28.1(react@18.3.1)
+      react-virtuoso: 4.12.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       redux: 5.0.1
       redux-first-history: 5.2.0(history@5.3.0)(redux@5.0.1)
       redux-persist: 6.0.0(react@18.3.1)(redux@5.0.1)
@@ -25719,6 +25746,7 @@ snapshots:
       - bufferutil
       - encoding
       - expo
+      - mapbox-gl
       - nativewind
       - rollup
       - supports-color
@@ -25726,7 +25754,7 @@ snapshots:
       - vite
       - worker-loader
 
-  react-exo@0.18.5(vgq5obztjygbu75ssfrhhimijy):
+  react-exo@0.18.12(vgq5obztjygbu75ssfrhhimijy):
     dependencies:
       '@candlefinance/faster-image': 1.7.2(react-native-web@0.19.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
       '@helia/unixfs': 4.0.1
@@ -25747,16 +25775,19 @@ snapshots:
       '@reduxjs/toolkit': 2.5.0(react-redux@9.2.0(@types/react@18.3.18)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
       '@rive-app/react-canvas': 4.17.5(react@18.3.1)
       burnt: 0.12.2(expo@51.0.20(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(bufferutil@4.0.8))(react-dom@18.3.1(react@18.3.1))(react-native-web@0.19.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
+      comlink: 4.4.2
       css-to-react-native: 3.2.0
       helia: 5.1.1(bufferutil@4.0.8)(react-native-web@0.19.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
       history: 5.3.0
       idb-keyval: 6.2.1
+      maplibre-gl: 4.7.1
       markdown-it: 13.0.2
       multiformats: 13.3.1
+      mupdf: 1.1.0
       react: 18.3.1
       react-content-loader: 7.0.2(react@18.3.1)
       react-dom: 18.3.1(react@18.3.1)
-      react-hook-form: 7.54.2(react@18.3.1)
+      react-map-gl: 7.1.8(maplibre-gl@4.7.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react-native: react-native-web@0.19.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react-native-file-access: 3.1.1(react-native-web@0.19.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
       react-native-gesture-handler: 2.21.2(react-native-web@0.19.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
@@ -25771,6 +25802,7 @@ snapshots:
       react-native-video: 6.8.2(react-native-web@0.19.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
       react-redux: 9.2.0(@types/react@18.3.18)(react@18.3.1)(redux@5.0.1)
       react-router: 6.28.1(react@18.3.1)
+      react-virtuoso: 4.12.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       redux: 5.0.1
       redux-first-history: 5.2.0(history@5.3.0)(redux@5.0.1)
       redux-persist: 6.0.0(react@18.3.1)(redux@5.0.1)
@@ -25786,6 +25818,7 @@ snapshots:
       - bufferutil
       - encoding
       - expo
+      - mapbox-gl
       - nativewind
       - rollup
       - supports-color
@@ -25806,10 +25839,6 @@ snapshots:
       react: 18.3.1
       react-fast-compare: 3.2.2
       react-side-effect: 2.1.2(react@18.3.1)
-
-  react-hook-form@7.54.2(react@18.3.1):
-    dependencies:
-      react: 18.3.1
 
   react-intersection-observer@9.14.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
@@ -26873,6 +26902,11 @@ snapshots:
       react-is: 18.3.1
       react-shallow-renderer: 16.15.0(react@18.3.1)
       scheduler: 0.23.2
+
+  react-virtuoso@4.12.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+    dependencies:
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
 
   react@18.3.1:
     dependencies:

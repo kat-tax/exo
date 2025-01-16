@@ -16,7 +16,7 @@
     "@types/react": "^18.3.18",
     "babel-plugin-macros": "^3.1.0",
     "config": "workspace:*",
-    "react-exo": "0.18.5",
+    "react-exo": "0.18.12",
     "react-native": "^0.76.5",
     "typescript": "^5.7.2"
   }
