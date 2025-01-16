@@ -7,8 +7,10 @@ import {toast} from 'react-exo/toast';
 export function useGeolocation() {
   const {t} = useLingui();
   const [coords, setCoords] = useState<[number, number]>();
+  const [enabled, setEnabled] = useState(false);
 
   useEffect(() => {
+    if (!enabled) return;
     const id = Geolocation.watchPosition(
       ({coords}) => setCoords([
         coords.latitude,
@@ -27,7 +29,12 @@ export function useGeolocation() {
       },
     );
     return () => Geolocation.clearWatch(id);
-  }, [t]);
+  }, [t, enabled]);
 
-  return coords;
+  return {
+    coords,
+    enabled,
+    start: () => setEnabled(true),
+    stop: () => setEnabled(false),
+  };
 }

@@ -17,7 +17,7 @@ export function useDeviceSession(): Partial<ReturnType<typeof useDevice>> {
   const devices = useDevices();
   const geoloc = useGeolocation();
   const online = cast(useConnectivity());
-  const coords = geoloc ?? device?.coords;
+  const coords = geoloc.coords ?? device?.coords;
   const id = device?.id;
 
   useEffect(() => {
