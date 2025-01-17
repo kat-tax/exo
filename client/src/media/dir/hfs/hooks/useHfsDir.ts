@@ -1,28 +1,26 @@
-import {FS} from 'react-exo/fs';
 import {useState, useCallback, useEffect} from 'react';
-import {isInitDirectory} from '../utils/path';
+import {useAppContext} from 'app/hooks/useAppContext';
 import {observe, poll} from '../utils/fs';
+import {isInitDirectory} from '../utils/path';
 
 import type {HfsDirectoryEntry} from 'react-exo/fs';
-
-const HFS = FS.init('fs');
 
 export interface DirectoryOptions {
   showHidden?: boolean,
 }
 
-export function useHfs(path: string, options?: DirectoryOptions) {
+export function useHfsDir(path: string, options?: DirectoryOptions) {
   const [entries, setEntries] = useState<HfsDirectoryEntry[]>([]);
+  const {filesystem} = useAppContext();
   const {showHidden} = options || {};
 
   const refresh = useCallback(async () => {
-    const hfs = await HFS;
-    if (!hfs) return;
+    if (!filesystem) return;
     const entries: HfsDirectoryEntry[] = [];
     const dirPath = path ? `${path}` : '.';
-
+    console.log('>> refresh', dirPath);
     try {
-      for await (const entry of hfs.list?.(dirPath) ?? []) {
+      for await (const entry of filesystem.list?.(dirPath) ?? []) {
         if (entry.name.endsWith('.crswap'))
           continue;
         if (entry.name.startsWith('.') && !showHidden)
@@ -45,7 +43,7 @@ export function useHfs(path: string, options?: DirectoryOptions) {
         return 1;
       return a.name.localeCompare(b.name);
     }));
-  }, [path, showHidden]);
+  }, [path, filesystem, showHidden]);
 
   useEffect(() => {
     refresh();

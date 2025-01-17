@@ -2,6 +2,7 @@ import {Outlet} from 'react-exo/navigation';
 import {useState} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useWindowDimensions, View, StatusBar} from 'react-native';
+import {useDeviceFileSystem} from 'app/hooks/useDeviceFileSystem';
 import {useCurrentResource} from 'app/hooks/useCurrentResource';
 import {useDeviceSession} from 'app/hooks/useDeviceSession';
 import {useHotkeys} from 'app/hooks/useHotkeys';
@@ -11,19 +12,21 @@ import {Tabs} from 'app/interface/Tabs';
 import {Media} from 'media/stacks/Media';
 import {resolve} from 'media/dir/hfs';
 
-import type {useAppContext} from 'app/hooks/useAppContext';
+import type {AppContext} from 'app/hooks/useAppContext';
 
 export const APP_MENU_WIDTH = 146;
 export const APP_MENU_TAB_HEIGHT = 64;
 
 export default function Layout() {
   const {styles, theme} = useStyles(stylesheet);
-  const [menuOpen, setMenuOpen] = useState(true);
   const [previewOpen, setPreviewOpen] = useState(true);
+  const [menuOpen, setMenuOpen] = useState(true);
+
   const resource = useCurrentResource();
+  const profile = useProfile();
   const screen = useWindowDimensions();
   const device = useDeviceSession();
-  const profile = useProfile();
+  const filesystem = useDeviceFileSystem();
 
   const isVertical = screen.width < theme.breakpoints.sm;
   const hasTabs = screen.width < theme.breakpoints.xs;
@@ -39,9 +42,10 @@ export default function Layout() {
   const path = parts.join('/');
   const url = `/browse/${base}#${name}.${ext}`;
   const hasPreview = Boolean(path) && previewOpen;
-  const context: ReturnType<typeof useAppContext> = {
-    profile,
+  const context: AppContext = {
+    filesystem,
     device,
+    profile,
     layout: {
       hasPreviewPanel: hasPreview && resource.maximized,
     },

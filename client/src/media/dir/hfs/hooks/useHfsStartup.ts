@@ -1,16 +1,18 @@
-import {FS} from 'react-exo/fs';
 import {useEffect} from 'react';
+import {useAppContext} from 'app/hooks/useAppContext';
 import {INIT_DIRECTORIES} from '../utils/path';
 
 export function useHfsStartup() {
+  const {filesystem} = useAppContext();
   useEffect(() => {
     (async () => {
-      const hfs = await FS.init();
+      if (!filesystem) return;
+      //await filesystem.createDirectory?.('000/123/abc/456/def/789');
       await Promise.all(INIT_DIRECTORIES.map(async (dir) => {
-        if (!await hfs.isDirectory?.(dir)) {
-          await hfs.createDirectory?.(dir);
+        if (!(await filesystem.isDirectory?.(dir))) {
+          await filesystem.createDirectory?.(`${dir}/subfolder`);
         }
       }));
     })();
-  }, []);
+  }, [filesystem]);
 }

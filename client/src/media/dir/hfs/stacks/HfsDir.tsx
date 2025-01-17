@@ -1,5 +1,5 @@
 import {HfsEntry} from './HfsEntry';
-import {useHfs} from '../hooks/useHfs';
+import {useHfsDir} from '../hooks/useHfsDir';
 import {useHfsHotkeys} from '../hooks/useHfsHotkeys';
 
 export interface HfsDirProps {
@@ -7,7 +7,7 @@ export interface HfsDirProps {
 }
 
 export function HfsDir(props: HfsDirProps) {
-  const {path, entries} = useHfs(props.path, {showHidden: true});
+  const {path, entries} = useHfsDir(props.path, {showHidden: true});
   const {multiSelect} = useHfsHotkeys();
   return entries.map((entry, index) =>
     <HfsEntry

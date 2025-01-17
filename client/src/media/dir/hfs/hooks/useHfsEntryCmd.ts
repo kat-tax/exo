@@ -1,9 +1,7 @@
-import {FS} from 'react-exo/fs';
 import {useCallback} from 'react';
+import {useAppContext} from 'app/hooks/useAppContext';
 
 import type {HfsDirectoryEntry} from 'react-exo/fs';
-
-const HFS = FS.init('fs');
 
 export type HfsEntryCmd = {
   del: () => void,
@@ -12,27 +10,26 @@ export type HfsEntryCmd = {
 };
 
 export function useHfsEntryCmd(entry: HfsDirectoryEntry): HfsEntryCmd {
+  const {filesystem} = useAppContext();
   const {name} = entry;
 
   const del = useCallback(async () => {
-    const hfs = await HFS;
-    await hfs?.deleteAll?.(name);
-  }, [name]);
+    await filesystem?.deleteAll?.(name);
+  }, [name, filesystem]);
 
   const upload = useCallback(async (files: File[]) => {
-    const hfs = await HFS;
-    if (!hfs) return;
+    if (!filesystem) return;
     for (const file of files) {
       const data = await file.arrayBuffer();
-      await hfs?.write?.(`${name}/${file.name}`, new Uint8Array(data));
+      await filesystem?.write?.(`${name}/${file.name}`, new Uint8Array(data));
     }
-  }, [name]);
+  }, [name, filesystem]);
 
   const transfer = useCallback(async (source: HfsDirectoryEntry) => {
-    const hfs = await HFS;
+    if (!filesystem) return;
     console.log('>> transfer', source.name, name);
-    await hfs?.move?.(source.name, `${name}/${source.name}`);
-  }, [name]);
+    await filesystem?.move?.(source.name, `${name}/${source.name}`);
+  }, [name, filesystem]);
 
   return {
     del,
