@@ -19,15 +19,20 @@ export function useHfs(path: string, options?: DirectoryOptions) {
     const hfs = await HFS;
     if (!hfs) return;
     const entries: HfsDirectoryEntry[] = [];
-    const dirPath = path || '.';
-    for await (const entry of hfs.list?.(dirPath) ?? []) {
-      if (entry.name.endsWith('.crswap'))
-        continue;
-      if (entry.name.startsWith('.') && !showHidden)
-        continue;
-      if (dirPath === '.' && isInitDirectory(entry.name))
-        continue;
-      entries.push(entry);
+    const dirPath = path ? `${path}` : '.';
+
+    try {
+      for await (const entry of hfs.list?.(dirPath) ?? []) {
+        if (entry.name.endsWith('.crswap'))
+          continue;
+        if (entry.name.startsWith('.') && !showHidden)
+          continue;
+        if (dirPath === '.' && isInitDirectory(entry.name))
+          continue;
+          entries.push(entry);
+      }
+    } catch (e) {
+      console.error('>> refresh', e);
     }
     setEntries(entries.sort((a, b) => {
       if (a.name.startsWith('.') && !showHidden)
@@ -45,21 +50,25 @@ export function useHfs(path: string, options?: DirectoryOptions) {
   useEffect(() => {
     refresh();
     let _disconnect = () => {};
-    observe(path, refresh).then(disconnect => {
-      if (!disconnect) {
-        let delta = 0;
-        console.warn('>> fs [polling]', path);
-        const i = setInterval(async () => {
-          if (await poll(path, delta)) {
-            delta = Date.now();
-            refresh();
-          }
-        }, 200);
-        _disconnect = () => clearInterval(i);
-      } else {
-        _disconnect = disconnect;
-      }
-    });
+    try {
+      observe(path, refresh).then(disconnect => {
+        if (!disconnect) {
+          let delta = 0;
+          console.warn('>> fs [polling]', path);
+          const i = setInterval(async () => {
+            if (await poll(path, delta)) {
+              delta = Date.now();
+              refresh();
+            }
+          }, 200);
+          _disconnect = () => clearInterval(i);
+        } else {
+          _disconnect = disconnect;
+        }
+      });
+    } catch (e) {
+      console.error('>> fs [observe]', e);
+    }
     return _disconnect;
   }, [path, refresh]);
 

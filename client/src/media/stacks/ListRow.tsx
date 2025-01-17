@@ -10,19 +10,21 @@ interface ListRow {
   name: string,
   size?: number,
   isFile?: boolean,
-  isFocused?: boolean,
   isSelected?: boolean,
+  isFocused?: boolean,
+  isBlurred?: boolean,
 }
 
 export function ListRow(props: ListRow) {
   const {styles} = useStyles(stylesheet);
   const [name, extension] = props.name.split('.');
-  const {isFile, isFocused, isSelected} = props;
+  const {isFile, isSelected, isFocused, isBlurred} = props;
   const vstyles = {
     root: [
       styles.root,
-      isFocused && styles.focused,
       isSelected && styles.selected,
+      isFocused && styles.focused,
+      isBlurred && styles.blurred,
     ],
   };
 
@@ -63,6 +65,9 @@ const stylesheet = createStyleSheet((theme) => ({
   },
   focused: {
     borderColor: theme.colors.foreground,
+  },
+  blurred: {
+    opacity: 0.5,
   },
   text: {
     fontFamily: theme.font.family,

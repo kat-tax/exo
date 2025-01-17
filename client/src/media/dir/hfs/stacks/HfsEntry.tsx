@@ -1,14 +1,15 @@
 import {Pressable} from 'react-native';
-import {useMemo, useCallback} from 'react';
+import {useRef, useMemo, useCallback} from 'react';
 import {useLocation, useNavigate} from 'react-exo/navigation';
 import {filesToHash, hashToFiles} from 'app/utils/formatting';
 import {getData} from 'media/file/utils/data';
 import {ListRow} from 'media/stacks/ListRow';
-
 import {HfsMenu} from './HfsMenu';
-import {useHfsEntry} from '../hooks/useHfsEntry';
+import {useHfsEntryCmd} from '../hooks/useHfsEntryCmd';
+import {useHfsEntryDnd} from '../hooks/useHfsEntryDnd';
 
 import type {HfsDirectoryEntry} from 'react-exo/fs';
+import type {View} from 'react-native';
 
 export interface HfsEntryProps {
   entry: HfsDirectoryEntry,
@@ -23,21 +24,24 @@ export function HfsEntry(props: HfsEntryProps) {
   const {entry, flags, path} = props;
   const {name, size, isFile} = entry;
   const {hash} = useLocation();
-  const ctx = useHfsEntry(entry);
+  const ref = useRef<View>(null);
+  const sel = useMemo(() => hashToFiles(hash), [hash]);
+  const cmd = useHfsEntryCmd(entry);
+  const dnd = useHfsEntryDnd(entry, cmd, ref);
   const nav = useNavigate();
 
-  // Update selection when hash changes
-  const selection = useMemo(() => hashToFiles(hash), [hash]);
-  const isSelected = useMemo(() => selection.includes(name), [selection, name]);
+  const isSelected = useMemo(() => sel.includes(name), [sel, name]);
+  const isFocused = useMemo(() => dnd.isDropping, [dnd.isDropping]);
+  const isBlurred = useMemo(() => dnd.isDragging, [dnd.isDragging]);
 
   // Update link when selection changes
   const link = useMemo(() => {
     // Files are stored in the hash
     if (isFile) {
       return filesToHash(flags?.multiSelect
-        ? selection.includes(name)
-          ? selection.filter(e => e !== name)
-          : [...selection, name]
+        ? sel.includes(name)
+          ? sel.filter(e => e !== name)
+          : [...sel, name]
         : [name]);
     }
     // Otherwise, we use the path (if not root)
@@ -46,7 +50,7 @@ export function HfsEntry(props: HfsEntryProps) {
     }
     // Otherwise, we use the entry name
     return name;
-  }, [name, path, flags, selection, isFile]);
+  }, [name, path, flags, sel, isFile]);
 
   // Download file
   const download = useCallback(async () => {
@@ -69,13 +73,13 @@ export function HfsEntry(props: HfsEntryProps) {
     copy: () => {},
     move: () => {},
     rename: () => {},
-    delete: ctx.del,
-  }), [link, isFile, ctx.del, nav, download]);
+    delete: cmd.del,
+  }), [link, isFile, cmd.del, nav, download]);
 
   return (
     <HfsMenu {...{name, actions}}>
-      <Pressable onPress={actions.view}>
-        <ListRow {...{name, size, isFile, isSelected}}/>
+      <Pressable {...{ref, onPress: actions.view}}>
+        <ListRow {...{name, size, isFile, isSelected, isFocused, isBlurred}}/>
       </Pressable>
     </HfsMenu>
   );

@@ -64,8 +64,7 @@ export function MediaControls(props: MediaControlsProps) {
       style={styles.root}
       initial={{opacity: 0}}
       animate={{opacity: 1}}
-      exit={{opacity: 0}}
-      testID="exo-media-controls">
+      exit={{opacity: 0}}>
       {seekable &&
         <View style={styles.track}>
           <Slider
@@ -80,8 +79,9 @@ export function MediaControls(props: MediaControlsProps) {
             trackHeight={isBook ? 1 : 2}
             onChange={e => {
               if (!props.file.current) return;
-              if ('seek' in props.file.current)
+              if ('seek' in props.file.current) {
                 props.file.current.seek(e);
+              }
             }}
           />
         </View>
