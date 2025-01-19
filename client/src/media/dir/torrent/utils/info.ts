@@ -12,9 +12,11 @@ export function files(file: Uint8Array): TorrentFileData {
     files: [],
     length: 0,
     lastPieceLength: 0,
-    pieceLength: torrent.info['piece length'],
+    pieceLength: torrent?.info?.['piece length'] ?? 0,
     pieces: [],
   };
+
+  if (!torrent?.info) return result;
 
   const files: string[] = torrent.info.files || [torrent.info];
   const name: string = (torrent.info['name.utf-8'] || torrent.info.name).toString();
@@ -58,8 +60,19 @@ function splitPieces(buf: Uint8Array): string[] {
  */
 export function info(file: Uint8Array): TorrentInfo {
   const torrent: any = decode(file);
+
+  if (!torrent?.info) return {
+    name: '',
+    announce: [],
+    comment: '',
+    private: false,
+    created: new Date(),
+    createdBy: '',
+    urlList: [],
+  };
+
   const result: TorrentInfo = {
-    name: (torrent.info['name.utf-8'] || torrent.info.name).toString(),
+    name: (torrent?.info['name.utf-8'] || torrent.info.name).toString(),
     announce: [],
     urlList: [],
   };

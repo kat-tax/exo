@@ -1,11 +1,13 @@
-import {memo, useImperativeHandle, forwardRef, useEffect} from 'react';
-import {useWindowDimensions, View, ImageBackground} from 'react-native';
+import {View, ImageBackground} from 'react-native';
+import {useRef, useImperativeHandle, useEffect, memo, forwardRef} from 'react';
+import {getMatrixTransformStyles, TransformWrapper, TransformComponent} from 'react-zoom-pan-pinch';
 //import {useImageResolution, ResumableZoom, fitContainer} from 'react-native-zoom-toolkit';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 
 import {useFileData} from 'media/file/hooks/useFileData';
 
 import type {FileProps} from 'media/file';
+import type {ReactZoomPanPinchContentRef} from 'react-zoom-pan-pinch';
 
 export interface FileImage extends FileProps {}
 
@@ -17,6 +19,7 @@ export interface ImageRef {
 
 export default memo(forwardRef((props: FileImage, ref: React.Ref<ImageRef>) => {
   const source = useFileData(props.path, 'dataUrl');
+  const controls = useRef<ReactZoomPanPinchContentRef>(null);
   const {styles} = useStyles(stylesheet);
 
   // const {width, height} = useWindowDimensions();
@@ -30,13 +33,13 @@ export default memo(forwardRef((props: FileImage, ref: React.Ref<ImageRef>) => {
 
   useImperativeHandle(ref, () => ({
     increase: () => {
-      // setScale(scale + 0.1);
+      controls.current?.zoomIn();
     },
     decrease: () => {
-      // setScale(scale - 0.1);
+      controls.current?.zoomOut();
     },
     reset: () => {
-      // setScale(1);
+      controls.current?.resetTransform();
     },
   }));
 
@@ -47,16 +50,27 @@ export default memo(forwardRef((props: FileImage, ref: React.Ref<ImageRef>) => {
   }, [source, props.actions]);
 
   return source ? (
-    <View style={styles.root}>
+    <TransformWrapper
+      smooth
+      ref={controls}
+      customTransform={getMatrixTransformStyles}
+      doubleClick={{mode: 'reset'}}
+      wheel={{smoothStep: 0.01}}>
       {/* <ResumableZoom maxScale={resolution}> */}
-        <ImageBackground
-          style={styles.image}
-          // style={{...size}}
-          source={{uri: source}}
-          resizeMode={props.maximized ? 'contain' : 'cover'}
-        />
+      <TransformComponent
+        contentStyle={{height: '100%', width: '100%'}}
+        wrapperStyle={{height: '100%', width: '100%'}}>
+        <View style={styles.root}>
+          <ImageBackground
+            style={styles.image}
+            // style={{...size}}
+            source={{uri: source}}
+            resizeMode={props.maximized ? 'contain' : 'cover'}
+          />
+        </View>
+      </TransformComponent>
       {/* </ResumableZoom> */}
-    </View>
+    </TransformWrapper>
   ) : null;
 }));
 

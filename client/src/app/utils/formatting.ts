@@ -7,23 +7,6 @@ export function bytesize(bytes: number) {
   return `${u ? b.toFixed(1) : b} ${a[u]}`;
 }
 
-export function hashToFiles(hash: string) {
-  return decodeURIComponent(hash.slice(1)
-    ?.replace(/\+/g, ' ')
-    ?.replace(/%20/g, ' ')
-    ?.replace(/%2C/g, ',')
-  )?.split(',')
-    ?.map(e => e.trim())
-    ?.filter(e => e);
-}
-
-export function filesToHash(files: string[]) {
-  return `#${encodeURIComponent(files.join(','))
-    .replace(/%20/g, '+')
-    .replace(/%2C/g, ',')
-  }`;
-}
-
 export function toText(input?: AllowSharedBufferSource) {
   return new TextDecoder('utf-8').decode(input);
 }
@@ -54,4 +37,40 @@ export function toTimeRange(from: number, to: number) {
   const durationTime = showHours ? `${dHours}:${dMinutes}:${dSeconds}` : `${dMinutes}:${dSeconds}`;
 
   return `${currentTime} / ${durationTime}`;
+}
+
+export function toPathInfo(path: string) {
+  // Normalize path to use forward slashes
+  const normalizedPath = path.replace(/\\/g, '/');
+  // Split path into parts
+  const parts = normalizedPath.split('/');
+  // Get filename (last part)
+  const filename = parts.pop() || '';
+  // Find the last dot in the filename
+  const lastdot = filename.lastIndexOf('.');
+  return {
+    // Extension without dot (e.g., 'txt')
+    extension: lastdot !== -1 ? filename.slice(lastdot + 1) : '',
+    // Filename without extension
+    name: lastdot !== -1 ? filename.slice(0, lastdot) : filename,
+    // Array of all path parts
+    parts,
+  };
+}
+
+export function hashToFiles(hash: string) {
+  return decodeURIComponent(hash.slice(1)
+    ?.replace(/\+/g, ' ')
+    ?.replace(/%20/g, ' ')
+    ?.replace(/%2C/g, ',')
+  )?.split(',')
+    ?.map(e => e.trim())
+    ?.filter(e => e);
+}
+
+export function filesToHash(files: string[]) {
+  return `#${encodeURIComponent(files.join(','))
+    .replace(/%20/g, '+')
+    .replace(/%2C/g, ',')
+  }`;
 }

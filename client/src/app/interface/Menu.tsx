@@ -154,7 +154,7 @@ export function Menu(props: MenuProps) {
 const stylesheet = createStyleSheet((theme, rt) => ({
   bg: {
     flex: 1,
-    backgroundColor: theme.colors.background,
+    backgroundColor: theme.colors.neutral,
     borderColor: theme.colors.border,
     borderRightWidth: {
       initial: rt.hairlineWidth,
