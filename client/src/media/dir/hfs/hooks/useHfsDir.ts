@@ -17,8 +17,7 @@ export function useHfsDir(path: string, options?: DirectoryOptions) {
   const refresh = useCallback(async () => {
     if (!filesystem) return;
     const entries: HfsDirectoryEntry[] = [];
-    const dirPath = path ? `${path}` : '.';
-    console.log('>> refresh', dirPath);
+    const dirPath = path || '.';
     try {
       for await (const entry of filesystem.list?.(dirPath) ?? []) {
         if (entry.name.endsWith('.crswap'))
@@ -27,10 +26,10 @@ export function useHfsDir(path: string, options?: DirectoryOptions) {
           continue;
         if (dirPath === '.' && isInitDirectory(entry.name))
           continue;
-          entries.push(entry);
+        entries.push(entry);
       }
     } catch (e) {
-      console.error('>> refresh', e);
+      console.error('>> fs [list]', e);
     }
     setEntries(entries.sort((a, b) => {
       if (a.name.startsWith('.') && !showHidden)

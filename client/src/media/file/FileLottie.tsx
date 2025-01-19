@@ -1,5 +1,6 @@
 import {Lottie} from 'react-exo/lottie';
 
+import {View} from 'react-native';
 import {forwardRef} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useFileData} from 'media/file/hooks/useFileData';
@@ -13,23 +14,22 @@ export default forwardRef((props: FileLottie) => {
   const {styles} = useStyles(stylesheet);
 
   return source ? (
-    <Lottie
-      url={source}
-      loop={true}
-      resizeMode={props.maximized ? 'contain' : 'cover'}
-      style={[
-        styles.root,
-        props.maximized && styles.maximized,
-      ]}
-    />
+    <View style={styles.root}>
+      <Lottie
+        url={source}
+        resizeMode={props.maximized ? 'contain' : 'cover'}
+        width={'100%'}
+        autoplay
+        loop
+      />
+    </View>
   ) : null;
 });
 
-const stylesheet = createStyleSheet((theme) => ({
+const stylesheet = createStyleSheet(() => ({
   root: {
     flex: 1,
-  },
-  maximized: {
-    margin: theme.display.space3,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 }));

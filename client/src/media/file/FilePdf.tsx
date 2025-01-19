@@ -1,4 +1,4 @@
-// import {Pdf} from 'react-exo/pdf';
+import {Pdf} from 'react-exo/pdf';
 
 import {View} from 'react-native';
 import {forwardRef} from 'react';
@@ -12,10 +12,15 @@ export interface FilePdf extends FileProps {}
 export default forwardRef((props: FilePdf) => {
   const source = useFileData(props.path, 'dataUrl');
   const {styles} = useStyles(stylesheet);
-
+  const {actions} = props;
   return source ? (
     <View style={styles.root}>
-      {/* <Pdf url={pdf} /> */}
+      <Pdf
+        src={source}
+        onPageChange={page => {
+          actions.setInfo(`Page ${page || 1}`);
+        }}
+      />
     </View>
   ) : null;
 });

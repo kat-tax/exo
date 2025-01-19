@@ -17,6 +17,7 @@ export default forwardRef((props: FileRive, ref: React.Ref<RiveRef>) => {
     <Rive
       ref={ref}
       url={source}
+      style={{flex: 1}}
       resizeMode="contain"
       autoplay
     />

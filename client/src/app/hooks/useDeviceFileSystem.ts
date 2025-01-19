@@ -5,6 +5,10 @@ import type {HfsImpl} from 'react-exo/fs';
 
 export function useDeviceFileSystem() {
   const [fs, setFS] = useState<HfsImpl | null>(null);
-  useEffect(() => {(async () => setFS(await FS.init('fs')))()}, []);
+  useEffect(() => {(async () => {
+    const fs = await FS.init('fs');
+    setFS(fs);
+  })();
+  }, []);
   return fs;
 }

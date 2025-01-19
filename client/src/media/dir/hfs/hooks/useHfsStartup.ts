@@ -7,10 +7,9 @@ export function useHfsStartup() {
   useEffect(() => {
     (async () => {
       if (!filesystem) return;
-      //await filesystem.createDirectory?.('000/123/abc/456/def/789');
       await Promise.all(INIT_DIRECTORIES.map(async (dir) => {
         if (!(await filesystem.isDirectory?.(dir))) {
-          await filesystem.createDirectory?.(`${dir}/subfolder`);
+          await filesystem.createDirectory?.(dir);
         }
       }));
     })();
