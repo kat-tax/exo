@@ -206,7 +206,6 @@ export function useMediaControls(props: MediaControlsProps): MediaControls {
       name: 'banner',
       title: metadata.title,
       cover: metadata.cover,
-      action: open,
     },
     // Window controls
     {

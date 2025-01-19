@@ -67,12 +67,11 @@ msgstr "Календарь"
 msgid "Celsius"
 msgstr "Цельсий"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:288
+#: ../../client/src/media/hooks/useMediaControls.ts:287
 msgid "Close"
 msgstr "Закрыть"
 
 #: ../../client/src/media/hooks/useMediaControls.ts:58
-#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:52
 msgid "Copy"
 msgstr ""
 
@@ -157,9 +156,6 @@ msgid "Documents"
 msgstr "Документы"
 
 #: ../../client/src/media/hooks/useMediaControls.ts:77
-#: ../../client/src/media/file/FileBinary.tsx:30
-#: ../../client/src/media/dir/torrent/stacks/TorrentMenu.tsx:21
-#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:41
 msgid "Download"
 msgstr "Скачать"
 
@@ -196,7 +192,6 @@ msgid "Enter your name"
 msgstr "Введите ваше имя"
 
 #: ../../client/src/media/hooks/useMediaControls.ts:87
-#: ../../client/src/media/dir/zip/stacks/ZipMenu.tsx:21
 msgid "Extract"
 msgstr "Извлечь"
 
@@ -212,7 +207,7 @@ msgstr "Файлы"
 msgid "Filesystem"
 msgstr ""
 
-#: ../../client/src/media/hooks/useMediaControls.ts:278
+#: ../../client/src/media/hooks/useMediaControls.ts:277
 msgid "Fullscreen"
 msgstr "Полный экран"
 
@@ -324,7 +319,7 @@ msgstr "Следующий"
 msgid "No events scheduled."
 msgstr "Нет запланированных событий."
 
-#: ../../client/src/media/hooks/useMediaControls.ts:233
+#: ../../client/src/media/hooks/useMediaControls.ts:232
 msgid "Options"
 msgstr "Опции"
 
@@ -344,7 +339,7 @@ msgstr "Пауза"
 msgid "Pictures"
 msgstr "Изображения"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:244
+#: ../../client/src/media/hooks/useMediaControls.ts:243
 msgid "Pin"
 msgstr "Закрепить"
 
@@ -412,8 +407,7 @@ msgstr "Выберите тему приложения."
 msgid "Settings"
 msgstr "Настройки"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:258
-#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:34
+#: ../../client/src/media/hooks/useMediaControls.ts:257
 msgid "Share"
 msgstr "Поделиться"
 
@@ -473,7 +467,7 @@ msgstr "Просмотр событий и информации о времен�
 msgid "View your latest news and rss feeds"
 msgstr "Просмотр последних новостей и RSS-каналов"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:221
+#: ../../client/src/media/hooks/useMediaControls.ts:220
 msgid "Volume"
 msgstr "Громкость"
 

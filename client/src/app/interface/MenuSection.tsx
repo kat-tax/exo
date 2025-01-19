@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useState, useRef} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {Pressable, View, Text} from 'react-native';
 import {Icon} from 'react-exo/icon';
@@ -21,6 +21,7 @@ export function MenuSection(props: MenuSectionProps) {
   const {styles, theme} = useStyles(stylesheet);
   const [open, setOpen] = useState(!props.closed);
   const [scheme] = useScheme();
+  const _hovered = useRef(false);
 
   if (props.disabled) return null;
 
@@ -53,10 +54,12 @@ export function MenuSection(props: MenuSectionProps) {
               <Pressable
                 key={action.id}
                 onPress={action.onPress}
+                onHoverIn={() => {_hovered.current = true}}
+                onHoverOut={() => {_hovered.current = false}}
                 accessibilityLabel={action.label}
                 style={(e) => [
                   styles.action,
-                  (e.hovered || root.hovered) && styles.actionVisible,
+                  (e.hovered || root.hovered || _hovered.current) && styles.actionVisible,
                 ]}>
                 {press =>
                   <Icon

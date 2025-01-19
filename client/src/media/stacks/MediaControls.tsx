@@ -1,4 +1,4 @@
-import {useMemo} from 'react';
+import {useCallback, useMemo} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {View, Text, Pressable} from 'react-native';
 import {Slider} from 'react-exo/slider';
@@ -58,6 +58,10 @@ export function MediaControls(props: MediaControlsProps) {
     ],
   }), [theme, styles, isBook]);
 
+  const toc = useCallback(() => {
+    console.log('>> table of contents not implemented');
+  }, []);
+
   return (
     <Motion.View
       style={styles.root}
@@ -86,7 +90,7 @@ export function MediaControls(props: MediaControlsProps) {
         </View>
       }
       {controls.map(({name, icon, title, action}) => title
-        ? <Pressable key={name} style={styles.content} onPress={action}>
+        ? <Pressable key={name} style={styles.content} onPress={toc}>
             {props.metadata.cover
               ? <Image
                   url={props.metadata.cover}

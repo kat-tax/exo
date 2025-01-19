@@ -67,12 +67,11 @@ msgstr "Calendario"
 msgid "Celsius"
 msgstr "Celsius"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:288
+#: ../../client/src/media/hooks/useMediaControls.ts:287
 msgid "Close"
 msgstr "Cerrar"
 
 #: ../../client/src/media/hooks/useMediaControls.ts:58
-#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:52
 msgid "Copy"
 msgstr ""
 
@@ -157,9 +156,6 @@ msgid "Documents"
 msgstr "Documentos"
 
 #: ../../client/src/media/hooks/useMediaControls.ts:77
-#: ../../client/src/media/file/FileBinary.tsx:30
-#: ../../client/src/media/dir/torrent/stacks/TorrentMenu.tsx:21
-#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:41
 msgid "Download"
 msgstr "Descargar"
 
@@ -196,7 +192,6 @@ msgid "Enter your name"
 msgstr "Ingresa tu nombre"
 
 #: ../../client/src/media/hooks/useMediaControls.ts:87
-#: ../../client/src/media/dir/zip/stacks/ZipMenu.tsx:21
 msgid "Extract"
 msgstr "Extraer"
 
@@ -212,7 +207,7 @@ msgstr "Archivos"
 msgid "Filesystem"
 msgstr ""
 
-#: ../../client/src/media/hooks/useMediaControls.ts:278
+#: ../../client/src/media/hooks/useMediaControls.ts:277
 msgid "Fullscreen"
 msgstr "Pantalla completa"
 
@@ -324,7 +319,7 @@ msgstr "Siguiente"
 msgid "No events scheduled."
 msgstr "No hay eventos programados."
 
-#: ../../client/src/media/hooks/useMediaControls.ts:233
+#: ../../client/src/media/hooks/useMediaControls.ts:232
 msgid "Options"
 msgstr "Opciones"
 
@@ -344,7 +339,7 @@ msgstr "Pausar"
 msgid "Pictures"
 msgstr "Imágenes"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:244
+#: ../../client/src/media/hooks/useMediaControls.ts:243
 msgid "Pin"
 msgstr "Fijar"
 
@@ -412,8 +407,7 @@ msgstr "Selecciona el tema para la aplicación."
 msgid "Settings"
 msgstr "Ajustes"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:258
-#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:34
+#: ../../client/src/media/hooks/useMediaControls.ts:257
 msgid "Share"
 msgstr "Compartir"
 
@@ -473,7 +467,7 @@ msgstr "Ver tus eventos e información relacionada con el tiempo"
 msgid "View your latest news and rss feeds"
 msgstr "Ver tus últimas noticias y feeds RSS"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:221
+#: ../../client/src/media/hooks/useMediaControls.ts:220
 msgid "Volume"
 msgstr "Volumen"
 
