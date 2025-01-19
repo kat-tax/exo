@@ -65,7 +65,7 @@ export default function Layout() {
     <View style={vstyles.root}>
       {menuOpen &&
         <View style={vstyles.menu}>
-          {hasTabs ? <Tabs/> : <Menu {...{profile}}/>}
+          {hasTabs ? <Tabs/> : <Menu {...{context}}/>}
         </View>
       }
       <View style={vstyles.content}>

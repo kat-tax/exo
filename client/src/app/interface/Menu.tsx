@@ -8,13 +8,14 @@ import {MenuItem} from './MenuItem';
 import {MenuHeader} from './MenuHeader';
 import {MenuSection} from './MenuSection';
 
-import type {useProfile} from 'app/data';
+import type {AppContext} from 'app/hooks/useAppContext';
 
 export interface MenuProps {
-  profile?: ReturnType<typeof useProfile>,
+  context: AppContext,
 }
 
 export function Menu(props: MenuProps) {
+  const {filesystem} = props.context;
   const {importFile} = useHfsImporter();
   const {styles} = useStyles(stylesheet);
   const {t} = useLingui();
@@ -36,11 +37,25 @@ export function Menu(props: MenuProps) {
           />
           <MenuSection
             label={t`Media`}
-            action={{
-              label: t`Import Files`,
-              icon: 'ph:upload',
-              onPress: importFile,
-            }}>
+            actions={[
+              {
+                id: 'create-folder',
+                icon: 'ph:folder-simple-plus',
+                label: t`Create Folder`,
+                onPress: () => {
+                  const name = prompt(t`Enter folder name`);
+                  if (name) {
+                    filesystem?.createDirectory?.(name);
+                  }
+                },
+              },
+              {
+                id: 'import',
+                icon: 'ph:upload',
+                label: t`Import Files`,
+                onPress: importFile,
+              },
+            ]}>
             <MenuItem
               label={t`Files`}
               icon="ph:folder"

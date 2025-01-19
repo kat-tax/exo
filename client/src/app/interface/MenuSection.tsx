@@ -9,11 +9,12 @@ interface MenuSectionProps extends React.PropsWithChildren {
   label: string,
   closed?: boolean,
   disabled?: boolean,
-  action?: {
+  actions?: Array<{
+    id: string,
     icon: string,
     label: string,
     onPress: () => void,
-  },
+  }>,
 }
 
 export function MenuSection(props: MenuSectionProps) {
@@ -47,27 +48,30 @@ export function MenuSection(props: MenuSectionProps) {
               size={8}
             />
           </View>
-          {props.action &&
-            <Pressable
-              onPress={props.action.onPress}
-              accessibilityLabel={props.action.label}
-              style={(e) => [
-                styles.action,
-                (e.hovered || root.hovered) && styles.actionVisible,
-              ]}>
-              {action =>
-                <Icon
-                  size={16}
-                  name={props.action?.icon || ''}
-                  color={
-                    action.hovered
-                      ? theme.colors.foreground
-                      : theme.colors.mutedForeground
-                  }
-                />
-              }
-            </Pressable>
-          }
+          <View style={styles.actions}>
+            {props.actions?.map(action =>
+              <Pressable
+                key={action.id}
+                onPress={action.onPress}
+                accessibilityLabel={action.label}
+                style={(e) => [
+                  styles.action,
+                  (e.hovered || root.hovered) && styles.actionVisible,
+                ]}>
+                {press =>
+                  <Icon
+                    size={16}
+                    name={action.icon || ''}
+                    color={
+                      press.hovered
+                        ? theme.colors.foreground
+                        : theme.colors.mutedForeground
+                    }
+                  />
+                }
+              </Pressable>
+            )}
+          </View>
         </>}
       </Pressable>
       {open && props.children}
@@ -99,12 +103,17 @@ const stylesheet = createStyleSheet(theme => ({
       fontSize: 12,
     },
   },
+  actions: {
+    gap: theme.display.space2,
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingLeft: theme.display.space2,
+    paddingRight: theme.display.space1,
+  },
   action: {
     opacity: 0,
     height: '100%',
     justifyContent: 'center',
-    paddingLeft: theme.display.space2,
-    paddingRight: theme.display.space1,
     color: theme.colors.mutedForeground,
   },
   actionVisible: {
