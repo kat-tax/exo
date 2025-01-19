@@ -41,5 +41,6 @@ const stylesheet = createStyleSheet((theme) => ({
   root: {
     padding: theme.display.space3,
     paddingTop: theme.display.space2,
+    color: theme.colors.foreground,
   },
 }));

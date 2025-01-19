@@ -95,7 +95,7 @@ export function MediaSelection() {
     };
   }, [goto, dispatch]);
 
-  return (
+  return list.length > 0 ? (
     <Motion.ScrollView
       horizontal
       ref={scrollRef}
@@ -133,7 +133,7 @@ export function MediaSelection() {
         </HfsMenu>
       )}
     </Motion.ScrollView>
-  );
+  ) : null;
 }
 
 const stylesheet = createStyleSheet((theme) => ({

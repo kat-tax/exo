@@ -12,14 +12,14 @@ export default function ScreenTeaser() {
     <Page>
       <View style={styles.root}>
         <Text style={styles.text}>
-          {t`Work in progress...`}
+          {t`Feature in development...`}
         </Text>
         <Lottie
           loop
           autoplay
           width={320}
           height={320}
-          url="https://lottie.host/2d9ae633-1c02-4ce7-9fec-421b24005be5/pj1clD0icO.lottie"
+          url="https://get.ult.dev/samples/cat.lottie"
         />
       </View>
     </Page>

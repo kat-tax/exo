@@ -208,6 +208,10 @@ msgstr "Extract"
 msgid "Fahrenheit"
 msgstr "Fahrenheit"
 
+#: ../../client/src/app/routes/ScreenTeaser.tsx:15
+msgid "Feature in development..."
+msgstr "Feature in development..."
+
 #: ../../client/src/media/routes/ScreenBrowse.tsx:32
 #: ../../client/src/app/interface/Tabs.tsx:24
 #: ../../client/src/app/interface/Menu.tsx:60
@@ -266,6 +270,10 @@ msgstr "Import"
 #: ../../client/src/app/interface/Menu.tsx:55
 msgid "Import Files"
 msgstr "Import Files"
+
+#: ../../client/src/app/routes/ScreenTeaser.tsx:15
+msgid "In development..."
+msgstr "In development..."
 
 #: ../../client/src/app/interface/Tabs.tsx:19
 #: ../../client/src/app/interface/Menu.tsx:34
@@ -389,6 +397,10 @@ msgstr "Prompts"
 msgid "Provide a key to use AI features."
 msgstr "Provide a key to use AI features."
 
+#: ../../client/src/app/routes/ScreenTeaser.tsx:15
+msgid "R&D in progress..."
+msgstr "R&D in progress..."
+
 #: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:66
 msgid "Rename"
 msgstr "Rename"
@@ -493,6 +505,14 @@ msgstr "View your latest news and rss feeds"
 #: ../../client/src/media/hooks/useMediaControls.ts:220
 msgid "Volume"
 msgstr "Volume"
+
+#: ../../client/src/app/routes/ScreenTeaser.tsx:15
+msgid "We're almost there..."
+msgstr "We're almost there..."
+
+#: ../../client/src/app/routes/ScreenTeaser.tsx:15
+msgid "We're on the way..."
+msgstr "We're on the way..."
 
 #: ../../client/src/home/routes/ScreenHome.tsx:39
 msgid "Welcome, {0}"
