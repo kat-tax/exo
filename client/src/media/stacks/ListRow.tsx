@@ -85,6 +85,7 @@ const stylesheet = createStyleSheet((theme) => ({
   size: {
     color: theme.colors.mutedForeground,
     fontSize: 11,
+    flexShrink: 0,
   },
   selected: {
     backgroundColor: theme.colors.muted,

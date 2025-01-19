@@ -17,7 +17,7 @@ export default function ScreenCalendar() {
   const [locale] = useLocale();
   const {t} = useLingui();
 
-  const showPanel = true;
+  const showPanel = false;
   const showDebugEvent = false;
 
   return (

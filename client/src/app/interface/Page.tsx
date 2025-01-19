@@ -1,11 +1,11 @@
-import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useWindowDimensions, View, ScrollView, Text} from 'react-native';
+import {useStyles, createStyleSheet} from 'react-native-unistyles';
+import {useAppContext} from 'app/hooks/useAppContext';
 
 export interface PageProps extends React.PropsWithChildren {
   title?: string | React.ReactNode,
   message?: string | React.ReactNode,
   widget?: React.ReactNode,
-  hasPanel?: boolean,
   fullWidth?: boolean,
   noBackground?: boolean,
   noFrame?: boolean,
@@ -14,6 +14,7 @@ export interface PageProps extends React.PropsWithChildren {
 
 export function Page(props: PageProps) {
   const {styles, theme} = useStyles(stylesheet);
+  const {layout} = useAppContext();
   const screen = useWindowDimensions();
   const margin = props.margin ?? 'large';
   const hasTitle = Boolean(props.title);
@@ -24,7 +25,7 @@ export function Page(props: PageProps) {
     root: [
       styles.root,
       hasNoFrame && styles.noFrame,
-      props.hasPanel && styles.withPanel,
+      layout?.hasPreviewPanel && styles.withPanel,
       props.noBackground && styles.noBackground,
     ],
     content: [
@@ -95,6 +96,7 @@ const stylesheet = createStyleSheet((theme, rt) => ({
   content: {
     flex: 1,
     alignSelf: 'center',
+    maxWidth: '100%',
     width: {
       initial: '100%',
       md: 640, // 480p

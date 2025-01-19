@@ -51,7 +51,7 @@ msgstr "Спрашивайте что угодно..."
 msgid "Auto"
 msgstr "Авто"
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:28
+#: ../../client/src/media/routes/ScreenBrowse.tsx:26
 msgid "Books"
 msgstr "Книги"
 
@@ -151,7 +151,7 @@ msgstr "Расстояние"
 msgid "Docs"
 msgstr "Документы"
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:18
+#: ../../client/src/media/routes/ScreenBrowse.tsx:16
 msgid "Documents"
 msgstr "Документы"
 
@@ -159,7 +159,7 @@ msgstr "Документы"
 msgid "Download"
 msgstr "Скачать"
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:30
+#: ../../client/src/media/routes/ScreenBrowse.tsx:28
 msgid "Downloads"
 msgstr "Загрузки"
 
@@ -199,7 +199,7 @@ msgstr "Извлечь"
 msgid "Fahrenheit"
 msgstr "Фаренгейт"
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:34
+#: ../../client/src/media/routes/ScreenBrowse.tsx:32
 msgid "Files"
 msgstr "Файлы"
 
@@ -211,7 +211,7 @@ msgstr ""
 msgid "Fullscreen"
 msgstr "Полный экран"
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:26
+#: ../../client/src/media/routes/ScreenBrowse.tsx:24
 msgid "Games"
 msgstr "Игры"
 
@@ -303,7 +303,7 @@ msgstr "Мили"
 msgid "Move"
 msgstr ""
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:20
+#: ../../client/src/media/routes/ScreenBrowse.tsx:18
 msgid "Music"
 msgstr "Музыка"
 
@@ -335,7 +335,7 @@ msgstr "Ключ владельца"
 msgid "Pause"
 msgstr "Пауза"
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:22
+#: ../../client/src/media/routes/ScreenBrowse.tsx:20
 msgid "Pictures"
 msgstr "Изображения"
 
@@ -439,7 +439,7 @@ msgstr "Тема"
 msgid "Unsupported File"
 msgstr "Неподдерживаемый файл"
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:32
+#: ../../client/src/media/routes/ScreenBrowse.tsx:30
 msgid "Uploads"
 msgstr "Загрузки"
 
@@ -447,7 +447,7 @@ msgstr "Загрузки"
 msgid "User Name"
 msgstr "Имя пользователя"
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:24
+#: ../../client/src/media/routes/ScreenBrowse.tsx:22
 msgid "Videos"
 msgstr "Видео"
 

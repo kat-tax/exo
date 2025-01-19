@@ -51,7 +51,7 @@ msgstr "اسأل أي شيء..."
 msgid "Auto"
 msgstr "تلقائي"
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:28
+#: ../../client/src/media/routes/ScreenBrowse.tsx:26
 msgid "Books"
 msgstr "الكتب"
 
@@ -151,7 +151,7 @@ msgstr "المسافة"
 msgid "Docs"
 msgstr "المستندات"
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:18
+#: ../../client/src/media/routes/ScreenBrowse.tsx:16
 msgid "Documents"
 msgstr "المستندات"
 
@@ -159,7 +159,7 @@ msgstr "المستندات"
 msgid "Download"
 msgstr "تحميل"
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:30
+#: ../../client/src/media/routes/ScreenBrowse.tsx:28
 msgid "Downloads"
 msgstr "التنزيلات"
 
@@ -199,7 +199,7 @@ msgstr "استخراج"
 msgid "Fahrenheit"
 msgstr "فهرنهايت"
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:34
+#: ../../client/src/media/routes/ScreenBrowse.tsx:32
 msgid "Files"
 msgstr "الملفات"
 
@@ -211,7 +211,7 @@ msgstr "نظام الملفات"
 msgid "Fullscreen"
 msgstr "ملء الشاشة"
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:26
+#: ../../client/src/media/routes/ScreenBrowse.tsx:24
 msgid "Games"
 msgstr "الألعاب"
 
@@ -303,7 +303,7 @@ msgstr "أميال"
 msgid "Move"
 msgstr "نقل"
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:20
+#: ../../client/src/media/routes/ScreenBrowse.tsx:18
 msgid "Music"
 msgstr "الموسيقى"
 
@@ -335,7 +335,7 @@ msgstr "مفتاح المالك"
 msgid "Pause"
 msgstr "إيقاف مؤقت"
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:22
+#: ../../client/src/media/routes/ScreenBrowse.tsx:20
 msgid "Pictures"
 msgstr "الصور"
 
@@ -439,7 +439,7 @@ msgstr "السمة"
 msgid "Unsupported File"
 msgstr "ملف غير مدعوم"
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:32
+#: ../../client/src/media/routes/ScreenBrowse.tsx:30
 msgid "Uploads"
 msgstr "المرفوعات"
 
@@ -447,7 +447,7 @@ msgstr "المرفوعات"
 msgid "User Name"
 msgstr "اسم المستخدم"
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:24
+#: ../../client/src/media/routes/ScreenBrowse.tsx:22
 msgid "Videos"
 msgstr "الفيديوهات"
 

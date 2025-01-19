@@ -1,6 +1,5 @@
 import {useLingui} from '@lingui/react/macro';
 import {useCallback} from 'react';
-import {useAppContext} from 'app/hooks/useAppContext';
 import {useLocationPathInfo} from 'app/hooks/useCurrentPathInfo';
 import {useHfsStartup, HfsDir} from 'media/dir/hfs';
 import {InitDirectory} from 'media/dir/hfs/utils/path';
@@ -8,7 +7,6 @@ import {Page} from 'app/interface/Page';
 
 export default function ScreenBrowse() {
   const {name, base, path} = useLocationPathInfo();
-  const {layout} = useAppContext();
   const {t} = useLingui();
 
   const title = useCallback((name: string) => {
@@ -42,8 +40,7 @@ export default function ScreenBrowse() {
       fullWidth
       margin="small"
       title={title(name)}
-      message={base ? title(base) : '/'}
-      hasPanel={layout.hasPreviewPanel}>
+      message={base ? title(base) : '/'}>
       <HfsDir {...{path}}/>
     </Page>
   );

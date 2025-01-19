@@ -51,7 +51,7 @@ msgstr "Pregunta lo que quieras..."
 msgid "Auto"
 msgstr "Automático"
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:28
+#: ../../client/src/media/routes/ScreenBrowse.tsx:26
 msgid "Books"
 msgstr "Libros"
 
@@ -151,7 +151,7 @@ msgstr "Distancia"
 msgid "Docs"
 msgstr "Documentos"
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:18
+#: ../../client/src/media/routes/ScreenBrowse.tsx:16
 msgid "Documents"
 msgstr "Documentos"
 
@@ -159,7 +159,7 @@ msgstr "Documentos"
 msgid "Download"
 msgstr "Descargar"
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:30
+#: ../../client/src/media/routes/ScreenBrowse.tsx:28
 msgid "Downloads"
 msgstr "Descargas"
 
@@ -199,7 +199,7 @@ msgstr "Extraer"
 msgid "Fahrenheit"
 msgstr "Fahrenheit"
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:34
+#: ../../client/src/media/routes/ScreenBrowse.tsx:32
 msgid "Files"
 msgstr "Archivos"
 
@@ -211,7 +211,7 @@ msgstr ""
 msgid "Fullscreen"
 msgstr "Pantalla completa"
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:26
+#: ../../client/src/media/routes/ScreenBrowse.tsx:24
 msgid "Games"
 msgstr "Juegos"
 
@@ -303,7 +303,7 @@ msgstr "Millas"
 msgid "Move"
 msgstr ""
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:20
+#: ../../client/src/media/routes/ScreenBrowse.tsx:18
 msgid "Music"
 msgstr "Música"
 
@@ -335,7 +335,7 @@ msgstr "Clave de Propietario"
 msgid "Pause"
 msgstr "Pausar"
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:22
+#: ../../client/src/media/routes/ScreenBrowse.tsx:20
 msgid "Pictures"
 msgstr "Imágenes"
 
@@ -439,7 +439,7 @@ msgstr "Tema"
 msgid "Unsupported File"
 msgstr "Archivo no soportado"
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:32
+#: ../../client/src/media/routes/ScreenBrowse.tsx:30
 msgid "Uploads"
 msgstr "Subidas"
 
@@ -447,7 +447,7 @@ msgstr "Subidas"
 msgid "User Name"
 msgstr "Nombre de Usuario"
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:24
+#: ../../client/src/media/routes/ScreenBrowse.tsx:22
 msgid "Videos"
 msgstr "Videos"
 

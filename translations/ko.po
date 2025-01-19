@@ -51,7 +51,7 @@ msgstr "무엇이든 물어보세요..."
 msgid "Auto"
 msgstr "자동"
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:28
+#: ../../client/src/media/routes/ScreenBrowse.tsx:26
 msgid "Books"
 msgstr "도서"
 
@@ -151,7 +151,7 @@ msgstr "거리"
 msgid "Docs"
 msgstr "문서"
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:18
+#: ../../client/src/media/routes/ScreenBrowse.tsx:16
 msgid "Documents"
 msgstr "문서"
 
@@ -159,7 +159,7 @@ msgstr "문서"
 msgid "Download"
 msgstr "다운로드"
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:30
+#: ../../client/src/media/routes/ScreenBrowse.tsx:28
 msgid "Downloads"
 msgstr "다운로드"
 
@@ -199,7 +199,7 @@ msgstr "추출"
 msgid "Fahrenheit"
 msgstr "화씨"
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:34
+#: ../../client/src/media/routes/ScreenBrowse.tsx:32
 msgid "Files"
 msgstr "파일"
 
@@ -211,7 +211,7 @@ msgstr ""
 msgid "Fullscreen"
 msgstr "전체화면"
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:26
+#: ../../client/src/media/routes/ScreenBrowse.tsx:24
 msgid "Games"
 msgstr "게임"
 
@@ -303,7 +303,7 @@ msgstr "마일"
 msgid "Move"
 msgstr ""
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:20
+#: ../../client/src/media/routes/ScreenBrowse.tsx:18
 msgid "Music"
 msgstr "음악"
 
@@ -335,7 +335,7 @@ msgstr "소유자 키"
 msgid "Pause"
 msgstr "일시정지"
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:22
+#: ../../client/src/media/routes/ScreenBrowse.tsx:20
 msgid "Pictures"
 msgstr "사진"
 
@@ -439,7 +439,7 @@ msgstr "테마"
 msgid "Unsupported File"
 msgstr "지원되지 않는 파일"
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:32
+#: ../../client/src/media/routes/ScreenBrowse.tsx:30
 msgid "Uploads"
 msgstr "업로드"
 
@@ -447,7 +447,7 @@ msgstr "업로드"
 msgid "User Name"
 msgstr "사용자 이름"
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:24
+#: ../../client/src/media/routes/ScreenBrowse.tsx:22
 msgid "Videos"
 msgstr "동영상"
 
