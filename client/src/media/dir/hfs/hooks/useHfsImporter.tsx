@@ -1,14 +1,15 @@
 import {FS} from 'react-exo/fs';
-import {useLocation} from 'react-exo/navigation';
 import {useCallback, useMemo} from 'react';
-import {resolve, getStartInDir} from '../utils/path';
+import {useLocation} from 'react-exo/navigation';
+import {toPathInfo} from 'app/utils/formatting';
+import {getStartInDir} from '../utils/path';
 
 export function useHfsImporter() {
   const {pathname} = useLocation();
   const {parts, startIn} = useMemo(() => {
-    const parts = resolve(pathname);
-    const startIn = getStartInDir(parts[0]);
-    return {startIn, parts};
+    const path = toPathInfo(pathname, true);
+    const startIn = getStartInDir(path.parts[0]);
+    return {startIn, parts: path.parts};
   }, [pathname]);
 
   /** Import a folder from the device */

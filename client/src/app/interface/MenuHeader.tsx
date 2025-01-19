@@ -8,6 +8,7 @@ import {Identicon} from 'app/stacks/Identicon';
 import type {MenuProps} from './Menu';
 
 export function MenuHeader(props: MenuProps) {
+  const {profile} = props.context;
   const {styles, theme} = useStyles(stylesheet);
   const owner = useOwner();
   const {t} = useLingui();
@@ -23,7 +24,7 @@ export function MenuHeader(props: MenuProps) {
         />
         <View style={styles.info}>
           <Text style={styles.name} selectable={false}>
-            {props?.profile?.name ?? t`Human`}
+            {profile?.name ?? t`Human`}
           </Text>
         </View>
         <View style={styles.fill}/>

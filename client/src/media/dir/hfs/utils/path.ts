@@ -13,12 +13,6 @@ export enum InitDirectory {
 
 export const INIT_DIRECTORIES = Object.values(InitDirectory)
 
-export function resolve(path: string) {
-  return path
-    .replace(/^\/browse\/?/, '')
-    .split('/');
-}
-
 export function getStartInDir(path: string): OpenDirectoryOptions['startIn'] {
   return isInitDirectory(path)
     ? (path as OpenDirectoryOptions['startIn'])

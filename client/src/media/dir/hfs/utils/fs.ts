@@ -46,3 +46,12 @@ export async function metadata(path: string, isFile: boolean) {
 
   return isFile ? file() : dir();
 }
+
+export async function saveAs(dataUri?: string, name?: string) {
+  if (!dataUri || !name) return;
+  const a = document.createElement('a');
+  a.download = name;
+  a.href = dataUri;
+  a.click();
+  setTimeout(() => URL.revokeObjectURL(dataUri), 100);
+}

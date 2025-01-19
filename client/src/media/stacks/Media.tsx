@@ -1,9 +1,7 @@
 import {View, ScrollView} from 'react-native';
-import {useNavigate} from 'react-exo/navigation';
 import {useMemo, useState, useEffect, useRef} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useMediaPictureInPicture} from 'media/hooks/useMediaPictureInPicture';
-import {useMediaSelection} from 'media/hooks/useMediaSelection';
 import {MediaSelection} from 'media/stacks/MediaSelection';
 import {MediaControls} from 'media/stacks/MediaControls';
 import {getRenderer} from 'media/file/utils/render';
@@ -12,7 +10,6 @@ import File from 'media/file';
 import type {FileRef, FileRenderInfo} from 'media/file/types';
 
 interface MediaProps {
-  url: string,
   ext: string,
   name: string,
   path: string,
@@ -22,25 +19,15 @@ interface MediaProps {
 }
 
 export function Media(props: MediaProps) {
-  const nav = useNavigate();
   const pip = useMediaPictureInPicture(props.ext);
-  const sel = useMediaSelection(props.path);
+
   const file = useRef<FileRef>(null);
   const {styles, theme} = useStyles(stylesheet);
-  const {url, ext, name, path, vertical, maximized, close} = props;
-  
-  // File selection
-  const selectMultiple = sel?.queue?.length > 1;
-  const selectActive = sel?.queue?.length > 0;
-  const selectTarget = selectMultiple ? sel?.queue?.[sel?.focus] : null;
-  const targetPath = selectTarget?.path ?? path;
-  const targetName = selectTarget?.name ?? name;
-  const targetExt = selectTarget?.ext ?? ext;
-  const showSelection = maximized || selectActive;
+  const {ext, name, path, vertical, maximized, close} = props;
 
   // File information
   const [renderer, setRenderer] = useState<FileRenderInfo>();
-  const [title, setTitle] = useState(targetName);
+  const [title, setTitle] = useState(`${name}.${ext}`);
   const [info, setInfo] = useState('‎');
   const [cover, setCover] = useState('');
   const [muted, setMuted] = useState(false);
@@ -66,7 +53,7 @@ export function Media(props: MediaProps) {
 
   // File actions
   const actions = useMemo(() => ({
-    open: () => nav(url),
+    open: () => console.log('open'),
     close,
     setInfo,
     setCover,
@@ -76,11 +63,11 @@ export function Media(props: MediaProps) {
     setPlaying,
     setCurrent,
     setDuration,
-  }), [close, nav, url]);
+  }), [close]);
 
   // Reset information when file changes
   useEffect(() => {
-    setTitle(targetName);
+    setTitle(`${name}.${ext}`);
     setCover('');
     setInfo('‎');
     setMuted(false);
@@ -88,28 +75,24 @@ export function Media(props: MediaProps) {
     setPlaying(false);
     setCurrent(0);
     setDuration(0);
-  }, [targetName]);
+  }, [name, ext]);
 
   // Update renderer when file extension changes
   useEffect(() => {
     (async () => {
-      setRenderer(await getRenderer(targetExt, targetPath));
+      setRenderer(await getRenderer(ext, path));
     })();
-  }, [targetExt, targetPath]);
+  }, [ext, path]);
 
   return (
     <View style={vstyles.root}>
-      {showSelection &&
-        <View style={styles.selection}>
-          <MediaSelection {...{maximized, ...sel}} />
-        </View>
-      }
+      <MediaSelection/>
       <ScrollView style={vstyles.frame} contentContainerStyle={styles.contents}>
         <File
           ref={file}
-          path={targetPath}
-          name={targetName}
-          extension={targetExt}
+          path={path}
+          name={name}
+          extension={ext}
           renderer={renderer}
           maximized={maximized}
           actions={actions}
@@ -121,13 +104,12 @@ export function Media(props: MediaProps) {
         maximized,
         actions,
         metadata: {
-          url,
           info,
           title,
           cover,
-          path: targetPath,
-          name: targetName,
-          ext: targetExt,
+          path,
+          name,
+          ext,
           muted,
           volume,
           playing,

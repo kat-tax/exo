@@ -24,7 +24,6 @@ export interface MediaControlsProps {
   metadata: {
     // General
     ext: string,
-    url: string,
     path: string,
     name: string,
     // Display

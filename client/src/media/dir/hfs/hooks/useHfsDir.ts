@@ -1,21 +1,22 @@
+import {useSelector, useDispatch} from 'react-redux';
 import {useState, useCallback, useEffect} from 'react';
 import {useAppContext} from 'app/hooks/useAppContext';
 import {observe, poll} from '../utils/fs';
 import {isInitDirectory} from '../utils/path';
+import media from 'media/store';
 
 import type {HfsDirectoryEntry} from 'react-exo/fs';
 
-export interface DirectoryOptions {
-  showHidden?: boolean,
-}
-
-export function useHfsDir(path: string, options?: DirectoryOptions) {
+export function useHfsDir(path: string) {
   const [entries, setEntries] = useState<HfsDirectoryEntry[]>([]);
   const {filesystem} = useAppContext();
-  const {showHidden} = options || {};
+  const selection = useSelector(media.selectors.getSelected);
+
+  const dispatch = useDispatch();
 
   const refresh = useCallback(async () => {
     if (!filesystem) return;
+    const showHidden = false;
     const entries: HfsDirectoryEntry[] = [];
     const dirPath = path || '.';
     try {
@@ -42,8 +43,17 @@ export function useHfsDir(path: string, options?: DirectoryOptions) {
         return 1;
       return a.name.localeCompare(b.name);
     }));
-  }, [path, filesystem, showHidden]);
+  }, [path, filesystem]);
 
+  // Update state with current files
+  // (used for range-selection / select all)
+  useEffect(() => {
+    dispatch(media.actions.list(entries
+      .filter(e => !e.isDirectory)
+      .map(e => path ? `${path}/${e.name}` : e.name)));
+  }, [entries, path, dispatch]);
+
+  // Refresh entries on mount
   useEffect(() => {
     refresh();
     let _disconnect = () => {};
@@ -70,8 +80,8 @@ export function useHfsDir(path: string, options?: DirectoryOptions) {
   }, [path, refresh]);
 
   return {
-    path,
     entries,
+    selection,
     refresh,
   };
 }

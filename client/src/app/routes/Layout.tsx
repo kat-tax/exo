@@ -1,16 +1,17 @@
 import {Outlet} from 'react-exo/navigation';
 import {useState} from 'react';
+import {useSelector} from 'react-redux';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useWindowDimensions, View, StatusBar} from 'react-native';
 import {useDeviceFileSystem} from 'app/hooks/useDeviceFileSystem';
-import {useCurrentResource} from 'app/hooks/useCurrentResource';
 import {useDeviceSession} from 'app/hooks/useDeviceSession';
 import {useHotkeys} from 'app/hooks/useHotkeys';
 import {useProfile} from 'app/data';
+import {toPathInfo} from 'app/utils/formatting';
 import {Menu} from 'app/interface/Menu';
 import {Tabs} from 'app/interface/Tabs';
 import {Media} from 'media/stacks/Media';
-import {resolve} from 'media/dir/hfs';
+import media from 'media/store';
 
 import type {AppContext} from 'app/hooks/useAppContext';
 
@@ -22,32 +23,28 @@ export default function Layout() {
   const [previewOpen, setPreviewOpen] = useState(true);
   const [menuOpen, setMenuOpen] = useState(true);
 
-  const resource = useCurrentResource();
+  const focused = useSelector(media.selectors.getFocused);
   const profile = useProfile();
   const screen = useWindowDimensions();
   const device = useDeviceSession();
   const filesystem = useDeviceFileSystem();
 
+  const mediaInfo = toPathInfo(focused, false);
   const isVertical = screen.width < theme.breakpoints.sm;
   const hasTabs = screen.width < theme.breakpoints.xs;
+  const hasPanel = Boolean(focused);
   const vstyles = {
     root: [styles.root, hasTabs && styles.rootTabs],
     menu: [styles.menu, hasTabs && styles.menuTabs],
     content: [styles.content, isVertical && styles.contentVert],
   };
 
-  const parts = resolve(resource.path);
-  const [name, ext] = parts.slice(-1)[0].split('.') ?? [];
-  const base = parts.slice(0, -1).join('/');
-  const path = parts.join('/');
-  const url = `/browse/${base}#${name}.${ext}`;
-  const hasPreview = Boolean(path) && previewOpen;
   const context: AppContext = {
     filesystem,
     device,
     profile,
     layout: {
-      hasPreviewPanel: hasPreview && resource.maximized,
+      hasPreviewPanel: hasPanel,
     },
   };
 
@@ -72,12 +69,12 @@ export default function Layout() {
         <View style={styles.outlet}>
           <Outlet {...{context}}/>
         </View>
-        {hasPreview &&
+        {hasPanel && focused &&
           <Media
-            {...{url, ext, name, path}}
+            {...mediaInfo}
             vertical={isVertical}
-            maximized={resource.maximized}
-            close={resource.close}
+            maximized={true}
+            close={() => {}}
           />
         }
       </View>

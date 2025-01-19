@@ -14,6 +14,7 @@ const reducer = $.persistReducer({
   ),
   blacklist: [
     'router',
+    media.name,
   ],
 }, $.combineReducers({
   app: app.reducer,
@@ -31,6 +32,7 @@ const store = $.configureStore({
 
 $.history.init(store);
 
+export type Store = typeof store;
 export type State = ReturnType<typeof store.getState>
 export const history = $.history.state;
 export default store;

@@ -51,7 +51,7 @@ msgstr "Ask anything..."
 msgid "Auto"
 msgstr "Auto"
 
-#: ../../client/src/app/interface/Menu.tsx:90
+#: ../../client/src/media/routes/ScreenBrowse.tsx:28
 msgid "Books"
 msgstr "Books"
 
@@ -152,7 +152,7 @@ msgstr "Distance"
 msgid "Docs"
 msgstr "Docs"
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:22
+#: ../../client/src/media/routes/ScreenBrowse.tsx:18
 msgid "Documents"
 msgstr "Documents"
 
@@ -163,7 +163,7 @@ msgstr "Documents"
 msgid "Download"
 msgstr "Download"
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:34
+#: ../../client/src/media/routes/ScreenBrowse.tsx:30
 msgid "Downloads"
 msgstr "Downloads"
 
@@ -204,7 +204,7 @@ msgstr "Extract"
 msgid "Fahrenheit"
 msgstr "Fahrenheit"
 
-#: ../../client/src/app/interface/Menu.tsx:60
+#: ../../client/src/media/routes/ScreenBrowse.tsx:34
 msgid "Files"
 msgstr "Files"
 
@@ -216,7 +216,7 @@ msgstr "Filesystem"
 msgid "Fullscreen"
 msgstr "Fullscreen"
 
-#: ../../client/src/app/interface/Menu.tsx:85
+#: ../../client/src/media/routes/ScreenBrowse.tsx:26
 msgid "Games"
 msgstr "Games"
 
@@ -248,7 +248,7 @@ msgstr "Groq Failure"
 msgid "Groq Model ID"
 msgstr "Groq Model ID"
 
-#: ../../client/src/app/interface/MenuHeader.tsx:26
+#: ../../client/src/app/interface/MenuHeader.tsx:27
 msgid "Human"
 msgstr "Human"
 
@@ -308,7 +308,7 @@ msgstr "Miles"
 msgid "Move"
 msgstr "Move"
 
-#: ../../client/src/app/interface/Menu.tsx:70
+#: ../../client/src/media/routes/ScreenBrowse.tsx:20
 msgid "Music"
 msgstr "Music"
 
@@ -340,7 +340,7 @@ msgstr "Owner Key"
 msgid "Pause"
 msgstr "Pause"
 
-#: ../../client/src/app/interface/Menu.tsx:75
+#: ../../client/src/media/routes/ScreenBrowse.tsx:22
 msgid "Pictures"
 msgstr "Pictures"
 
@@ -445,7 +445,7 @@ msgstr "Theme"
 msgid "Unsupported File"
 msgstr "Unsupported File"
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:36
+#: ../../client/src/media/routes/ScreenBrowse.tsx:32
 msgid "Uploads"
 msgstr "Uploads"
 
@@ -453,7 +453,7 @@ msgstr "Uploads"
 msgid "User Name"
 msgstr "User Name"
 
-#: ../../client/src/app/interface/Menu.tsx:80
+#: ../../client/src/media/routes/ScreenBrowse.tsx:24
 msgid "Videos"
 msgstr "Videos"
 

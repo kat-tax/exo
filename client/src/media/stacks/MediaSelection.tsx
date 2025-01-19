@@ -1,24 +1,49 @@
-import {useRef, useEffect, useMemo} from 'react';
+import {useRef, useEffect, useMemo, useCallback} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
+import {useSelector, useDispatch} from 'react-redux';
 import {Text, Pressable} from 'react-native';
 import {Icon} from 'react-exo/icon';
 import {Motion} from 'react-exo/motion';
 import {isTouch} from 'app/utils/platform';
 import {HfsMenu} from 'media/dir/hfs';
 import {ListRowIcon} from 'media/stacks/ListRowIcon';
+import {toPathInfo} from 'app/utils/formatting';
+import media from 'media/store';
 
 import type {ScrollView} from 'react-native';
-import type {MediaSelection as MediaSelectionType} from 'media/hooks/useMediaSelection';
 
 const TOUCH = isTouch();
 const TAB_SIZE = TOUCH ? 46 : 32;
 const ICON_SIZE = TOUCH ? 1 : 0;
 const TEXT_LINES = TOUCH ? 2 : 1;
 
-export function MediaSelection(props: {maximized: boolean} & MediaSelectionType) {
-  const {queue, focus} = props;
+export function MediaSelection() {
   const {styles, theme} = useStyles(stylesheet);
   const scrollRef = useRef<ScrollView>(null);
+  const selection = useSelector(media.selectors.getSelected);
+  const focused = useSelector(media.selectors.getFocused);
+
+  const list = useMemo(() => {
+    return selection.map(selectItem => {
+      const {path, name, ext} = toPathInfo(selectItem, false);
+      return {path, name, ext};
+    });
+  }, [selection]);
+
+  const goto = useCallback((delta: number | 'start' | 'end') => {
+    const path = selection[typeof delta === 'number'
+      ? (selection.indexOf(focused) + delta + selection.length) % selection.length
+      : delta === 'start'
+        ? 0
+        : selection.length - 1];
+    if (path) dispatch(media.actions.focus(path));
+  }, [selection, focused]);
+
+  const dispatch = useDispatch();
+
+  const close = useCallback((index: number) => {
+    dispatch(media.actions.selectRemove(index));
+  }, [dispatch]);
 
   // Handlers for menu actions
   const actions = useMemo(() => ({
@@ -33,29 +58,58 @@ export function MediaSelection(props: {maximized: boolean} & MediaSelectionType)
 
   // Scroll to focus
   useEffect(() => {
-    if (focus >= queue.length - 1) {
-      setTimeout(() => {
-        scrollRef.current?.scrollToEnd({animated: true});
-      }, 100);
-    } else {
-      scrollRef.current?.scrollTo({x: focus * 100, animated: true});
+    const index = list.findIndex(item => item.path === focused);
+    if (index > -1) {
+      scrollRef.current?.scrollTo({x: index * 100, animated: true});
     }
-  }, [focus, queue]);
+  }, [focused, list]);
+
+  // Tab navigation
+  useEffect(() => {
+    const down = (e: KeyboardEvent) => {
+      const {key} = e;
+      switch (key) {
+        case 'ArrowLeft':
+          goto(-1);
+          break;
+        case 'ArrowRight':
+          goto(1);
+          break;
+        case 'Home':
+        case 'ArrowUp':
+          goto('start');
+          break;
+        case 'End':
+        case 'ArrowDown':
+          goto('end');
+          break;
+        // Clear selection
+        case 'Escape':
+          dispatch(media.actions.selectBulk([]));
+          break;
+      }
+    };
+    window.addEventListener('keydown', down);
+    return () => {
+      window.removeEventListener('keydown', down);
+    };
+  }, [goto, dispatch]);
 
   return (
     <Motion.ScrollView
       horizontal
       ref={scrollRef}
       showsHorizontalScrollIndicator={false}
-      contentContainerStyle={[styles.root, !props.maximized && styles.floating]}
+      style={styles.root}
+      contentContainerStyle={styles.inner}
       initial={{opacity: 0}}
       animate={{opacity: 1}}
       exit={{opacity: 0}}>
-      {queue.map(({name, title, ext, action}, index) => 
-        <HfsMenu {...{name, actions}} key={name}>
+      {list.map(({path, name, ext}, index) => 
+        <HfsMenu {...{name, actions}} key={path}>
           <Pressable
-            onPress={action}
-            style={[styles.preview, index === focus && styles.focus]}>
+            onPress={() => dispatch(media.actions.focus(path))}
+            style={[styles.preview, path === focused && styles.focus]}>
             <ListRowIcon
               name={name ?? ''}
               extension={ext}
@@ -63,12 +117,12 @@ export function MediaSelection(props: {maximized: boolean} & MediaSelectionType)
               isFile
             />
             <Text
-              style={[styles.text, index === focus && styles.textFocused]}
+              style={[styles.text, path === focused && styles.textFocused]}
               selectable={false}
               numberOfLines={TEXT_LINES}>
-              {title}
+              {name}
             </Text>
-            <Pressable onPress={() => props.remove(index)}>
+            <Pressable onPress={() => close(index)}>
               <Icon
                 name="ph:x"
                 size={TOUCH ? 16 : 14}
@@ -84,15 +138,13 @@ export function MediaSelection(props: {maximized: boolean} & MediaSelectionType)
 
 const stylesheet = createStyleSheet((theme) => ({
   root: {
+    flexGrow: 0,
+    flexShrink: 0,
+  },
+  inner: {
     flexDirection: 'row',
     gap: theme.display.space2,
     padding: theme.display.space2,
-  },
-  floating: {
-    position: 'absolute',
-    bottom: 0,
-    left: 0,
-    right: 0,
   },
   preview: {
     height: TAB_SIZE,

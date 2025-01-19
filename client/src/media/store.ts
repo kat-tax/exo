@@ -2,9 +2,9 @@ import {createSlice} from 'react-exo/redux';
 import type {PayloadAction} from 'react-exo/redux';
 
 export type Media = {
-  focused: string;
-  selected: string[];
-  dragging: boolean;
+  focused: string,
+  selected: string[],
+  contents: string[],
 }
 
 export default createSlice({
@@ -12,22 +12,67 @@ export default createSlice({
   initialState: <Media> {
     focused: '',
     selected: [],
-    dragging: false,
+    contents: [],
   },
   selectors: {
     getFocused: (media) => media.focused,
     getSelected: (media) => media.selected,
-    getDragging: (media) => media.dragging,
+    getContents: (media) => media.contents,
   },
   reducers: {
-    setFocused(media, action: PayloadAction<string>) {
+    list(media, action: PayloadAction<string[]>) {
+      media.contents = action.payload;
+    },
+    focus(media, action: PayloadAction<string>) {
       media.focused = action.payload;
     },
-    setSelected(media, action: PayloadAction<string[]>) {
-      media.selected = action.payload;
+    selectBulk(media, action: PayloadAction<string[] | 'all'>) {
+      media.selected = action.payload === 'all' ? media.contents : action.payload;
+      if (media.selected.length === 0) {
+        media.focused = '';
+      } else if (!media.focused) {
+        media.focused = media.selected[media.selected.length - 1];
+      }
     },
-    setDragging(media, action: PayloadAction<boolean>) {
-      media.dragging = action.payload;
+    selectRemove(media, action: PayloadAction<number>) {
+      const index = action.payload;
+      const removed = media.selected.splice(index, 1);
+      if (removed.includes(media.focused)) {
+        media.focused = media.selected[index] || media.selected[index - 1] || '';
+      }
+    },
+    selectItem(media, action: PayloadAction<{
+      path: string,
+      isMulti: boolean,
+      isRange: boolean,
+    }>) {
+      const {path, isMulti, isRange} = action.payload;
+      const indexSelected = media.selected.indexOf(path);
+      const indexLast = media.contents.indexOf(media.focused);
+      const indexNew = media.contents.indexOf(path);
+      // Range select (shift+click)
+      if (isRange) {
+        const start = Math.min(indexLast, indexNew);
+        const end = Math.max(indexLast, indexNew);
+        const rng = media.contents.slice(start, end + 1);
+        media.selected = [...new Set([...media.selected, ...rng])];
+      // Multi select (cmd+click)
+      } else if (isMulti) {
+        if (indexSelected !== -1) {
+          media.selected.splice(indexSelected, 1);
+        } else {
+          media.selected.push(path);
+        }
+      // Single select (click)
+      } else {
+        media.selected = [path];
+      }
+      // Focus selected item
+      if (media.selected.includes(path)) {
+        media.focused = path;
+      } else {
+        media.focused = media.selected[indexSelected] || media.selected[indexSelected - 1] || '';
+      }
     },
   },
 });

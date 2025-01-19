@@ -51,7 +51,7 @@ msgstr "무엇이든 물어보세요..."
 msgid "Auto"
 msgstr "자동"
 
-#: ../../client/src/app/interface/Menu.tsx:90
+#: ../../client/src/media/routes/ScreenBrowse.tsx:28
 msgid "Books"
 msgstr "도서"
 
@@ -152,7 +152,7 @@ msgstr "거리"
 msgid "Docs"
 msgstr "문서"
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:22
+#: ../../client/src/media/routes/ScreenBrowse.tsx:18
 msgid "Documents"
 msgstr "문서"
 
@@ -163,7 +163,7 @@ msgstr "문서"
 msgid "Download"
 msgstr "다운로드"
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:34
+#: ../../client/src/media/routes/ScreenBrowse.tsx:30
 msgid "Downloads"
 msgstr "다운로드"
 
@@ -204,7 +204,7 @@ msgstr "추출"
 msgid "Fahrenheit"
 msgstr "화씨"
 
-#: ../../client/src/app/interface/Menu.tsx:60
+#: ../../client/src/media/routes/ScreenBrowse.tsx:34
 msgid "Files"
 msgstr "파일"
 
@@ -216,7 +216,7 @@ msgstr ""
 msgid "Fullscreen"
 msgstr "전체화면"
 
-#: ../../client/src/app/interface/Menu.tsx:85
+#: ../../client/src/media/routes/ScreenBrowse.tsx:26
 msgid "Games"
 msgstr "게임"
 
@@ -248,7 +248,7 @@ msgstr "Groq 오류"
 msgid "Groq Model ID"
 msgstr "Groq 모델 ID"
 
-#: ../../client/src/app/interface/MenuHeader.tsx:26
+#: ../../client/src/app/interface/MenuHeader.tsx:27
 msgid "Human"
 msgstr "사용자"
 
@@ -308,7 +308,7 @@ msgstr "마일"
 msgid "Move"
 msgstr ""
 
-#: ../../client/src/app/interface/Menu.tsx:70
+#: ../../client/src/media/routes/ScreenBrowse.tsx:20
 msgid "Music"
 msgstr "음악"
 
@@ -340,7 +340,7 @@ msgstr "소유자 키"
 msgid "Pause"
 msgstr "일시정지"
 
-#: ../../client/src/app/interface/Menu.tsx:75
+#: ../../client/src/media/routes/ScreenBrowse.tsx:22
 msgid "Pictures"
 msgstr "사진"
 
@@ -445,7 +445,7 @@ msgstr "테마"
 msgid "Unsupported File"
 msgstr "지원되지 않는 파일"
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:36
+#: ../../client/src/media/routes/ScreenBrowse.tsx:32
 msgid "Uploads"
 msgstr "업로드"
 
@@ -453,7 +453,7 @@ msgstr "업로드"
 msgid "User Name"
 msgstr "사용자 이름"
 
-#: ../../client/src/app/interface/Menu.tsx:80
+#: ../../client/src/media/routes/ScreenBrowse.tsx:24
 msgid "Videos"
 msgstr "동영상"
 

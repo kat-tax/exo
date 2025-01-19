@@ -39,38 +39,24 @@ export function toTimeRange(from: number, to: number) {
   return `${currentTime} / ${durationTime}`;
 }
 
-export function toPathInfo(path: string) {
-  // Normalize path to use forward slashes
-  const normalizedPath = path.replace(/\\/g, '/');
+export function toPathInfo(url: string, isDirectory: boolean) {
+  // Normalize path to use forward slashes (remove /browse prefix)
+  const _path = decodeURIComponent(url).replace(/^\/browse\/?/, '').replace(/\\/g, '/');
   // Split path into parts
-  const parts = normalizedPath.split('/');
-  // Get filename (last part)
-  const filename = parts.pop() || '';
+  const parts = _path.split('/').filter(Boolean);
+  // Get the last part (could be filename or folder name)
+  const last = parts.pop() || '';
   // Find the last dot in the filename
-  const lastdot = filename.lastIndexOf('.');
+  const dot = isDirectory ? -1 : last.lastIndexOf('.');
+  // Build the base path (without the last part)
+  const base = parts.join('/');
+  // Build the full path
+  const path = base ? `${base}/${last}` : last;
   return {
-    // Extension without dot (e.g., 'txt')
-    extension: lastdot !== -1 ? filename.slice(lastdot + 1) : '',
-    // Filename without extension
-    name: lastdot !== -1 ? filename.slice(0, lastdot) : filename,
-    // Array of all path parts
+    ext: !isDirectory && dot !== -1 ? last.slice(dot + 1) : '',
+    name: !isDirectory && dot !== -1 ? last.slice(0, dot) : last,
+    base,
+    path,
     parts,
   };
-}
-
-export function hashToFiles(hash: string) {
-  return decodeURIComponent(hash.slice(1)
-    ?.replace(/\+/g, ' ')
-    ?.replace(/%20/g, ' ')
-    ?.replace(/%2C/g, ',')
-  )?.split(',')
-    ?.map(e => e.trim())
-    ?.filter(e => e);
-}
-
-export function filesToHash(files: string[]) {
-  return `#${encodeURIComponent(files.join(','))
-    .replace(/%20/g, '+')
-    .replace(/%2C/g, ',')
-  }`;
 }

@@ -1,43 +1,39 @@
-import {useMemo} from 'react';
 import {useLingui} from '@lingui/react/macro';
-import {useLocation} from 'react-exo/navigation';
+import {useCallback} from 'react';
 import {useAppContext} from 'app/hooks/useAppContext';
+import {useLocationPathInfo} from 'app/hooks/useCurrentPathInfo';
 import {useHfsStartup, HfsDir} from 'media/dir/hfs';
 import {InitDirectory} from 'media/dir/hfs/utils/path';
-import {resolve} from 'media/dir/hfs/utils/path';
 import {Page} from 'app/interface/Page';
 
 export default function ScreenBrowse() {
-  const {pathname} = useLocation();
+  const {name, base, path} = useLocationPathInfo();
   const {layout} = useAppContext();
   const {t} = useLingui();
 
-  const [name, path, base] = useMemo(() => {
-    const parts = resolve(pathname);
-    const name = parts[parts.length - 1] as InitDirectory;
-    const base = parts.slice(1, -1).join('/') || '/';
-    const path = parts.join('/');
-    switch (name) {
+  const title = useCallback((name: string) => {
+    const dir = name as InitDirectory;
+    switch (dir) {
       case InitDirectory.Documents:
-        return [t`Documents`, path, base];
+        return t`Documents`;
       case InitDirectory.Music:
-        return [t`Music`, path, base];
+        return t`Music`;
       case InitDirectory.Pictures:
-        return [t`Pictures`, path, base];
+        return t`Pictures`;
       case InitDirectory.Videos:
-        return [t`Videos`, path, base];
+        return t`Videos`;
       case InitDirectory.Games:
-        return [t`Games`, path, base];
+        return t`Games`;
       case InitDirectory.Books:
-        return [t`Books`, path, base];
+        return t`Books`;
       case InitDirectory.Downloads:
-        return [t`Downloads`, path, base];
+        return t`Downloads`;
       case InitDirectory.Uploads:
-        return [t`Uploads`, path, base];
-      default: name satisfies never;
-        return [name || t`Files`, path, base];
+        return t`Uploads`;
+      default: dir satisfies never;
+        return dir || t`Files`;
     }
-  }, [pathname, t]);
+  }, [t]);
 
   useHfsStartup();
 
@@ -45,8 +41,8 @@ export default function ScreenBrowse() {
     <Page
       fullWidth
       margin="small"
-      title={name}
-      message={base}
+      title={title(name)}
+      message={base ? title(base) : '/'}
       hasPanel={layout.hasPreviewPanel}>
       <HfsDir {...{path}}/>
     </Page>

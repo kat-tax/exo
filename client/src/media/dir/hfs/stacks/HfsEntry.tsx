@@ -1,80 +1,67 @@
-import {Pressable} from 'react-native';
 import {useRef, useMemo, useCallback} from 'react';
-import {useLocation, useNavigate} from 'react-exo/navigation';
-import {filesToHash, hashToFiles} from 'app/utils/formatting';
+import {useNavigate} from 'react-exo/navigation';
+import {useDispatch} from 'react-redux';
+import {Pressable} from 'react-native';
 import {getData} from 'media/file/utils/data';
 import {ListRow} from 'media/stacks/ListRow';
 import {HfsMenu} from './HfsMenu';
+import {saveAs} from '../utils/fs';
 import {useHfsEntryCmd} from '../hooks/useHfsEntryCmd';
 import {useHfsEntryDnd} from '../hooks/useHfsEntryDnd';
+import media from 'media/store';
 
 import type {HfsDirectoryEntry} from 'react-exo/fs';
-import type {View} from 'react-native';
+import type {GestureResponderEvent, View} from 'react-native';
 
 export interface HfsEntryProps {
   entry: HfsDirectoryEntry,
   index: number,
-  path?: string,
-  flags?: {
-    multiSelect?: boolean,
-  },
+  basePath?: string,
+  isSelected?: boolean,
 }
 
 export function HfsEntry(props: HfsEntryProps) {
-  const {entry, flags, path} = props;
+  const {entry, basePath, isSelected} = props;
   const {name, size, isFile} = entry;
-  const {hash} = useLocation();
+
   const ref = useRef<View>(null);
-  const sel = useMemo(() => hashToFiles(hash), [hash]);
   const cmd = useHfsEntryCmd(entry);
   const dnd = useHfsEntryDnd(entry, cmd, ref);
+
+  const put = useDispatch();
   const nav = useNavigate();
 
-  const isSelected = useMemo(() => sel.includes(name), [sel, name]);
   const isFocused = useMemo(() => dnd.isDropping, [dnd.isDropping]);
   const isBlurred = useMemo(() => dnd.isDragging, [dnd.isDragging]);
+  const path = useMemo(() => basePath ? `${basePath}/${name}` : name, [basePath, name]);
 
-  // Update link when selection changes
-  const link = useMemo(() => {
-    // Files are stored in the hash
+  const view = useCallback((e?: GestureResponderEvent) => {
+    // @ts-expect-error RNW property
+    const [isRange, isMulti] = [e?.shiftKey, e?.metaKey || e?.ctrlKey];
     if (isFile) {
-      return filesToHash(flags?.multiSelect
-        ? sel.includes(name)
-          ? sel.filter(e => e !== name)
-          : [...sel, name]
-        : [name]);
+      put(media.actions.selectItem({path, isMulti, isRange}));
+    } else {
+      nav(path);
     }
-    // Otherwise, we use the path (if not root)
-    if (path) {
-      return `${path}/${name}`;
-    }
-    // Otherwise, we use the entry name
-    return name;
-  }, [name, path, flags, sel, isFile]);
+  }, [isFile, path, nav, put]);
 
-  // Download file
   const download = useCallback(async () => {
-    const source = await getData(`${path}/${name}`, 'dataUrl');
-    if (!source) return;
-    // FIXME: web specific (move to fs service)
-    const a = document.createElement('a');
-    a.download = name;
-    a.href = source;
-    a.click();
-    setTimeout(() => URL.revokeObjectURL(source), 100);
-  }, [path, name]);
+    if (isFile) {
+      saveAs(await getData(path, 'dataUrl'), name);
+    }
+  }, [isFile, path, name]);
 
   // Handlers for menu actions
   const actions = useMemo(() => ({
     menu: () => {},
-    view: () => nav(link),
+    view,
     share: () => {},
-    download: isFile ? download : undefined,
+    download,
     copy: () => {},
     move: () => {},
     rename: () => {},
     delete: cmd.del,
-  }), [link, isFile, cmd.del, nav, download]);
+  }), [cmd.del, download, view]);
 
   return (
     <HfsMenu {...{name, actions}}>

@@ -32,7 +32,7 @@ msgstr "هل أنت متأكد من أنك تريد تغيير مفتاح الم
 
 #: ../../client/src/app/hooks/useSettings.ts:63
 msgid "Are you sure you want to reset your filesystem? This will delete all files."
-msgstr ""
+msgstr "هل أنت متأكد من أنك تريد إعادة تعيين نظام الملفات الخاص بك؟ سيؤدي هذا إلى حذف جميع الملفات."
 
 #: ../../client/src/app/hooks/useSettings.ts:50
 msgid "Are you sure you want to reset your local database? If data is not backed up on another device, it will be lost. This action cannot be undone."
@@ -51,7 +51,7 @@ msgstr "اسأل أي شيء..."
 msgid "Auto"
 msgstr "تلقائي"
 
-#: ../../client/src/app/interface/Menu.tsx:90
+#: ../../client/src/media/routes/ScreenBrowse.tsx:28
 msgid "Books"
 msgstr "الكتب"
 
@@ -74,11 +74,11 @@ msgstr "إغلاق"
 #: ../../client/src/media/hooks/useMediaControls.ts:58
 #: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:52
 msgid "Copy"
-msgstr ""
+msgstr "نسخ"
 
 #: ../../client/src/app/interface/Menu.tsx:44
 msgid "Create Folder"
-msgstr ""
+msgstr "إنشاء مجلد"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:106
 msgid "Dark"
@@ -94,15 +94,15 @@ msgstr "البيانات"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:177
 msgid "Database"
-msgstr ""
+msgstr "قاعدة البيانات"
 
 #: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:77
 msgid "Delete"
-msgstr ""
+msgstr "حذف"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:188
 msgid "Delete all files."
-msgstr ""
+msgstr "حذف جميع الملفات."
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:168
 msgid "Delete all prompt data."
@@ -114,7 +114,7 @@ msgstr "حذف قاعدة البيانات"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:190
 msgid "Delete Filesystem"
-msgstr ""
+msgstr "حذف نظام الملفات"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:170
 msgid "Delete Prompts"
@@ -152,7 +152,7 @@ msgstr "المسافة"
 msgid "Docs"
 msgstr "المستندات"
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:22
+#: ../../client/src/media/routes/ScreenBrowse.tsx:18
 msgid "Documents"
 msgstr "المستندات"
 
@@ -163,7 +163,7 @@ msgstr "المستندات"
 msgid "Download"
 msgstr "تحميل"
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:34
+#: ../../client/src/media/routes/ScreenBrowse.tsx:30
 msgid "Downloads"
 msgstr "التنزيلات"
 
@@ -185,7 +185,7 @@ msgstr "أدخل مفتاح API"
 
 #: ../../client/src/app/interface/Menu.tsx:46
 msgid "Enter folder name"
-msgstr ""
+msgstr "أدخل اسم المجلد"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:60
 msgid "Enter your mnemonic phrase"
@@ -204,19 +204,19 @@ msgstr "استخراج"
 msgid "Fahrenheit"
 msgstr "فهرنهايت"
 
-#: ../../client/src/app/interface/Menu.tsx:60
+#: ../../client/src/media/routes/ScreenBrowse.tsx:34
 msgid "Files"
 msgstr "الملفات"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:187
 msgid "Filesystem"
-msgstr ""
+msgstr "نظام الملفات"
 
 #: ../../client/src/media/hooks/useMediaControls.ts:278
 msgid "Fullscreen"
 msgstr "ملء الشاشة"
 
-#: ../../client/src/app/interface/Menu.tsx:85
+#: ../../client/src/media/routes/ScreenBrowse.tsx:26
 msgid "Games"
 msgstr "الألعاب"
 
@@ -248,7 +248,7 @@ msgstr "فشل Groq"
 msgid "Groq Model ID"
 msgstr "معرف نموذج Groq"
 
-#: ../../client/src/app/interface/MenuHeader.tsx:26
+#: ../../client/src/app/interface/MenuHeader.tsx:27
 msgid "Human"
 msgstr "إنسان"
 
@@ -306,9 +306,9 @@ msgstr "أميال"
 
 #: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:59
 msgid "Move"
-msgstr ""
+msgstr "نقل"
 
-#: ../../client/src/app/interface/Menu.tsx:70
+#: ../../client/src/media/routes/ScreenBrowse.tsx:20
 msgid "Music"
 msgstr "الموسيقى"
 
@@ -340,7 +340,7 @@ msgstr "مفتاح المالك"
 msgid "Pause"
 msgstr "إيقاف مؤقت"
 
-#: ../../client/src/app/interface/Menu.tsx:75
+#: ../../client/src/media/routes/ScreenBrowse.tsx:22
 msgid "Pictures"
 msgstr "الصور"
 
@@ -378,7 +378,7 @@ msgstr "قدم مفتاحًا لاستخدام ميزات الذكاء الاص�
 
 #: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:66
 msgid "Rename"
-msgstr ""
+msgstr "إعادة تسمية"
 
 #: ../../client/src/media/hooks/useMediaControls.ts:173
 msgid "Replay"
@@ -445,7 +445,7 @@ msgstr "السمة"
 msgid "Unsupported File"
 msgstr "ملف غير مدعوم"
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:36
+#: ../../client/src/media/routes/ScreenBrowse.tsx:32
 msgid "Uploads"
 msgstr "المرفوعات"
 
@@ -453,13 +453,13 @@ msgstr "المرفوعات"
 msgid "User Name"
 msgstr "اسم المستخدم"
 
-#: ../../client/src/app/interface/Menu.tsx:80
+#: ../../client/src/media/routes/ScreenBrowse.tsx:24
 msgid "Videos"
 msgstr "الفيديوهات"
 
 #: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:27
 msgid "View"
-msgstr ""
+msgstr "عرض"
 
 #: ../../client/src/world/routes/ScreenWorld.tsx:18
 msgid "View your device locations and geo-related info"
