@@ -1,6 +1,6 @@
-import {useMemo} from 'react';
-import {useStyles} from 'react-native-unistyles';
 import {useWindowDimensions} from 'react-native';
+import {useStyles} from 'react-native-unistyles';
+import {useMemo} from 'react';
 
 export type MediaPictureInPicture = {
   scale: number,

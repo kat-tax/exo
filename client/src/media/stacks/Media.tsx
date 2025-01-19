@@ -24,15 +24,15 @@ interface MediaProps {
 export function Media(props: MediaProps) {
   const nav = useNavigate();
   const pip = useMediaPictureInPicture(props.ext);
+  const sel = useMediaSelection(props.path);
   const file = useRef<FileRef>(null);
-  const selection = useMediaSelection(props.path);
   const {styles, theme} = useStyles(stylesheet);
   const {url, ext, name, path, vertical, maximized, close} = props;
   
   // File selection
-  const selectMultiple = selection?.queue?.length > 1;
-  const selectActive = selection?.queue?.length > 0;
-  const selectTarget = selectMultiple ? selection?.queue?.[selection?.focus] : null;
+  const selectMultiple = sel?.queue?.length > 1;
+  const selectActive = sel?.queue?.length > 0;
+  const selectTarget = selectMultiple ? sel?.queue?.[sel?.focus] : null;
   const targetPath = selectTarget?.path ?? path;
   const targetName = selectTarget?.name ?? name;
   const targetExt = selectTarget?.ext ?? ext;
@@ -101,7 +101,7 @@ export function Media(props: MediaProps) {
     <View style={vstyles.root}>
       {showSelection &&
         <View style={styles.selection}>
-          <MediaSelection {...{maximized, ...selection}} />
+          <MediaSelection {...{maximized, ...sel}} />
         </View>
       }
       <ScrollView style={vstyles.frame} contentContainerStyle={styles.contents}>
