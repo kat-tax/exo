@@ -16,7 +16,7 @@ export function useHfsDir(path: string) {
 
   const refresh = useCallback(async () => {
     if (!filesystem) return;
-    const showHidden = false;
+    const showHidden = true;
     const entries: HfsDirectoryEntry[] = [];
     const dirPath = path || '.';
     try {

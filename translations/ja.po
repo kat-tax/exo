@@ -52,6 +52,7 @@ msgid "Auto"
 msgstr "自動"
 
 #: ../../client/src/media/routes/ScreenBrowse.tsx:26
+#: ../../client/src/app/interface/Menu.tsx:90
 msgid "Books"
 msgstr "本"
 
@@ -59,6 +60,7 @@ msgstr "本"
 msgid "by {0}"
 msgstr "著者：{0}"
 
+#: ../../client/src/world/routes/ScreenWorld.tsx:29
 #: ../../client/src/app/interface/Menu.tsx:107
 msgid "Calendar"
 msgstr "カレンダー"
@@ -72,6 +74,7 @@ msgid "Close"
 msgstr "閉じる"
 
 #: ../../client/src/media/hooks/useMediaControls.ts:58
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:52
 msgid "Copy"
 msgstr ""
 
@@ -83,6 +86,7 @@ msgstr ""
 msgid "Dark"
 msgstr "ダーク"
 
+#: ../../client/src/app/interface/Tabs.tsx:14
 #: ../../client/src/app/interface/Menu.tsx:29
 msgid "Dashboard"
 msgstr "ダッシュボード"
@@ -123,6 +127,7 @@ msgstr "プロンプトを削除"
 msgid "Delete the local database."
 msgstr "ローカルデータベースを削除します。"
 
+#: ../../client/src/dev/routes/ScreenDesign.tsx:13
 #: ../../client/src/app/interface/Menu.tsx:133
 msgid "Design"
 msgstr "デザイン"
@@ -156,6 +161,9 @@ msgid "Documents"
 msgstr "ドキュメント"
 
 #: ../../client/src/media/hooks/useMediaControls.ts:77
+#: ../../client/src/media/file/FileBinary.tsx:30
+#: ../../client/src/media/dir/torrent/stacks/TorrentMenu.tsx:21
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:41
 msgid "Download"
 msgstr "ダウンロード"
 
@@ -192,6 +200,7 @@ msgid "Enter your name"
 msgstr "名前を入力"
 
 #: ../../client/src/media/hooks/useMediaControls.ts:87
+#: ../../client/src/media/dir/zip/stacks/ZipMenu.tsx:21
 msgid "Extract"
 msgstr "抽出"
 
@@ -200,6 +209,8 @@ msgid "Fahrenheit"
 msgstr "華氏"
 
 #: ../../client/src/media/routes/ScreenBrowse.tsx:32
+#: ../../client/src/app/interface/Tabs.tsx:24
+#: ../../client/src/app/interface/Menu.tsx:60
 msgid "Files"
 msgstr "ファイル"
 
@@ -212,6 +223,7 @@ msgid "Fullscreen"
 msgstr "全画面"
 
 #: ../../client/src/media/routes/ScreenBrowse.tsx:24
+#: ../../client/src/app/interface/Menu.tsx:85
 msgid "Games"
 msgstr "ゲーム"
 
@@ -255,6 +267,7 @@ msgstr "インポート"
 msgid "Import Files"
 msgstr "ファイルをインポート"
 
+#: ../../client/src/app/interface/Tabs.tsx:19
 #: ../../client/src/app/interface/Menu.tsx:34
 msgid "Inbox"
 msgstr "受信トレイ"
@@ -267,6 +280,7 @@ msgstr "キロメートル"
 msgid "Language"
 msgstr "言語"
 
+#: ../../client/src/dev/routes/ScreenLibrary.tsx:21
 #: ../../client/src/app/interface/Menu.tsx:138
 msgid "Library"
 msgstr "ライブラリ"
@@ -287,6 +301,7 @@ msgstr "設定を管理"
 msgid "Manage your storage"
 msgstr "ストレージを管理"
 
+#: ../../client/src/world/routes/ScreenWorld.tsx:17
 #: ../../client/src/app/interface/Menu.tsx:97
 msgid "Map"
 msgstr "地図"
@@ -304,9 +319,11 @@ msgid "Move"
 msgstr ""
 
 #: ../../client/src/media/routes/ScreenBrowse.tsx:18
+#: ../../client/src/app/interface/Menu.tsx:70
 msgid "Music"
 msgstr "音楽"
 
+#: ../../client/src/world/routes/ScreenWorld.tsx:23
 #: ../../client/src/app/interface/Menu.tsx:102
 msgid "News"
 msgstr "ニュース"
@@ -336,6 +353,7 @@ msgid "Pause"
 msgstr "一時停止"
 
 #: ../../client/src/media/routes/ScreenBrowse.tsx:20
+#: ../../client/src/app/interface/Menu.tsx:75
 msgid "Pictures"
 msgstr "写真"
 
@@ -403,11 +421,14 @@ msgstr "アプリの温度単位を選択してください。"
 msgid "Select the theme for the app."
 msgstr "アプリのテーマを選択してください。"
 
+#: ../../client/src/app/routes/ScreenSettings.tsx:28
+#: ../../client/src/app/interface/Tabs.tsx:34
 #: ../../client/src/app/interface/Menu.tsx:155
 msgid "Settings"
 msgstr "設定"
 
 #: ../../client/src/media/hooks/useMediaControls.ts:257
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:34
 msgid "Share"
 msgstr "共有"
 
@@ -419,6 +440,7 @@ msgstr "巻き戻し"
 msgid "Skip forward"
 msgstr "早送り"
 
+#: ../../client/src/app/routes/ScreenStorage.tsx:25
 #: ../../client/src/app/interface/Menu.tsx:149
 msgid "Storage"
 msgstr "ストレージ"
@@ -448,6 +470,7 @@ msgid "User Name"
 msgstr "ユーザー名"
 
 #: ../../client/src/media/routes/ScreenBrowse.tsx:22
+#: ../../client/src/app/interface/Menu.tsx:80
 msgid "Videos"
 msgstr "動画"
 
@@ -483,6 +506,7 @@ msgstr "ようこそ、ユーザーさん"
 msgid "Work in progress..."
 msgstr "開発中..."
 
+#: ../../client/src/app/interface/Tabs.tsx:29
 #: ../../client/src/app/interface/Menu.tsx:95
 msgid "World"
 msgstr "ワールド"

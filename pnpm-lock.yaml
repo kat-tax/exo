@@ -140,8 +140,8 @@ importers:
         specifier: ^18.3.1
         version: 18.3.1(react@18.3.1)
       react-exo:
-        specifier: 0.18.13
-        version: 0.18.13(h66yfpsbmeiim3pgday64unu2m)
+        specifier: 0.18.14
+        version: 0.18.14(h66yfpsbmeiim3pgday64unu2m)
       react-exo-ui:
         specifier: workspace:*
         version: link:../design
@@ -336,8 +336,8 @@ importers:
         specifier: ^18.3.1
         version: 18.3.1(react@18.3.1)
       react-exo:
-        specifier: 0.18.13
-        version: 0.18.13(dzbydhqj4fvuqafpei4cm7zowm)
+        specifier: 0.18.14
+        version: 0.18.14(dzbydhqj4fvuqafpei4cm7zowm)
       react-native:
         specifier: ^0.76.5
         version: 0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1)
@@ -501,8 +501,8 @@ importers:
         specifier: workspace:*
         version: link:../../config
       react-exo:
-        specifier: 0.18.13
-        version: 0.18.13(dzbydhqj4fvuqafpei4cm7zowm)
+        specifier: 0.18.14
+        version: 0.18.14(dzbydhqj4fvuqafpei4cm7zowm)
       react-native:
         specifier: ^0.76.5
         version: 0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1)
@@ -534,8 +534,8 @@ importers:
         specifier: ^18.3.1
         version: 18.3.1(react@18.3.1)
       react-exo:
-        specifier: 0.18.13
-        version: 0.18.13(dzbydhqj4fvuqafpei4cm7zowm)
+        specifier: 0.18.14
+        version: 0.18.14(dzbydhqj4fvuqafpei4cm7zowm)
       react-exo-ui:
         specifier: workspace:*
         version: link:../../../design
@@ -637,8 +637,8 @@ importers:
         specifier: ^18.3.1
         version: 18.3.1(react@18.3.1)
       react-exo:
-        specifier: 0.18.13
-        version: 0.18.13(vgq5obztjygbu75ssfrhhimijy)
+        specifier: 0.18.14
+        version: 0.18.14(vgq5obztjygbu75ssfrhhimijy)
       react-exo-ui:
         specifier: workspace:*
         version: link:../../design
@@ -10139,8 +10139,8 @@ packages:
     peerDependencies:
       react: ^18.3.1
 
-  react-exo@0.18.13:
-    resolution: {integrity: sha512-85MzZLec1TF96OsI9qxqMtncUtU4xiIsxgNHNqvuQu6KEQt0FYgfkGKYj2U1SB4bI9881LzzBHyLfYDdaHsA7g==}
+  react-exo@0.18.14:
+    resolution: {integrity: sha512-chWNAYSPRlHttPun6KF57fSJIt7k2qtP64nb8WTXxhPsbp0mjs/y0j6e6XzyGIR8ZWxdwo740fU3n8jUf5P4yg==}
     peerDependencies:
       '@candlefinance/faster-image': '>=1.7'
       '@react-native-community/checkbox': '>=0.5'
@@ -25612,7 +25612,7 @@ snapshots:
       react: 18.3.1
       scheduler: 0.23.2
 
-  react-exo@0.18.13(dzbydhqj4fvuqafpei4cm7zowm):
+  react-exo@0.18.14(dzbydhqj4fvuqafpei4cm7zowm):
     dependencies:
       '@candlefinance/faster-image': 1.7.2(react-native@0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1))(react@18.3.1)
       '@helia/unixfs': 4.0.1
@@ -25684,7 +25684,7 @@ snapshots:
       - vite
       - worker-loader
 
-  react-exo@0.18.13(h66yfpsbmeiim3pgday64unu2m):
+  react-exo@0.18.14(h66yfpsbmeiim3pgday64unu2m):
     dependencies:
       '@candlefinance/faster-image': 1.7.2(react-native@0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8)(utf-8-validate@6.0.4))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1)(utf-8-validate@6.0.4))(react@18.3.1)
       '@helia/unixfs': 4.0.1
@@ -25756,7 +25756,7 @@ snapshots:
       - vite
       - worker-loader
 
-  react-exo@0.18.13(vgq5obztjygbu75ssfrhhimijy):
+  react-exo@0.18.14(vgq5obztjygbu75ssfrhhimijy):
     dependencies:
       '@candlefinance/faster-image': 1.7.2(react-native-web@0.19.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
       '@helia/unixfs': 4.0.1

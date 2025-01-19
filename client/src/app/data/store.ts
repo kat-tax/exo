@@ -14,7 +14,6 @@ const reducer = $.persistReducer({
   ),
   blacklist: [
     'router',
-    media.name,
   ],
 }, $.combineReducers({
   app: app.reducer,

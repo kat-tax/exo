@@ -16,7 +16,7 @@
     "react": "^18.3.1",
     "react-docgen": "^7.1.0",
     "react-dom": "^18.3.1",
-    "react-exo": "0.18.13",
+    "react-exo": "0.18.14",
     "react-exo-ui": "workspace:*",
     "react-native": "npm:react-native-web@0.19.13",
     "react-native-svg": "^15.10.1",

@@ -52,6 +52,7 @@ msgid "Auto"
 msgstr "Automático"
 
 #: ../../client/src/media/routes/ScreenBrowse.tsx:26
+#: ../../client/src/app/interface/Menu.tsx:90
 msgid "Books"
 msgstr "Libros"
 
@@ -59,6 +60,7 @@ msgstr "Libros"
 msgid "by {0}"
 msgstr "por {0}"
 
+#: ../../client/src/world/routes/ScreenWorld.tsx:29
 #: ../../client/src/app/interface/Menu.tsx:107
 msgid "Calendar"
 msgstr "Calendario"
@@ -72,6 +74,7 @@ msgid "Close"
 msgstr "Cerrar"
 
 #: ../../client/src/media/hooks/useMediaControls.ts:58
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:52
 msgid "Copy"
 msgstr ""
 
@@ -83,6 +86,7 @@ msgstr ""
 msgid "Dark"
 msgstr "Oscuro"
 
+#: ../../client/src/app/interface/Tabs.tsx:14
 #: ../../client/src/app/interface/Menu.tsx:29
 msgid "Dashboard"
 msgstr "Panel"
@@ -123,6 +127,7 @@ msgstr "Eliminar Prompts"
 msgid "Delete the local database."
 msgstr "Eliminar la base de datos local."
 
+#: ../../client/src/dev/routes/ScreenDesign.tsx:13
 #: ../../client/src/app/interface/Menu.tsx:133
 msgid "Design"
 msgstr "Diseño"
@@ -156,6 +161,9 @@ msgid "Documents"
 msgstr "Documentos"
 
 #: ../../client/src/media/hooks/useMediaControls.ts:77
+#: ../../client/src/media/file/FileBinary.tsx:30
+#: ../../client/src/media/dir/torrent/stacks/TorrentMenu.tsx:21
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:41
 msgid "Download"
 msgstr "Descargar"
 
@@ -192,6 +200,7 @@ msgid "Enter your name"
 msgstr "Ingresa tu nombre"
 
 #: ../../client/src/media/hooks/useMediaControls.ts:87
+#: ../../client/src/media/dir/zip/stacks/ZipMenu.tsx:21
 msgid "Extract"
 msgstr "Extraer"
 
@@ -200,6 +209,8 @@ msgid "Fahrenheit"
 msgstr "Fahrenheit"
 
 #: ../../client/src/media/routes/ScreenBrowse.tsx:32
+#: ../../client/src/app/interface/Tabs.tsx:24
+#: ../../client/src/app/interface/Menu.tsx:60
 msgid "Files"
 msgstr "Archivos"
 
@@ -212,6 +223,7 @@ msgid "Fullscreen"
 msgstr "Pantalla completa"
 
 #: ../../client/src/media/routes/ScreenBrowse.tsx:24
+#: ../../client/src/app/interface/Menu.tsx:85
 msgid "Games"
 msgstr "Juegos"
 
@@ -255,6 +267,7 @@ msgstr "Importar"
 msgid "Import Files"
 msgstr "Importar Archivos"
 
+#: ../../client/src/app/interface/Tabs.tsx:19
 #: ../../client/src/app/interface/Menu.tsx:34
 msgid "Inbox"
 msgstr "Notificaciones"
@@ -267,6 +280,7 @@ msgstr "Kilómetros"
 msgid "Language"
 msgstr "Idioma"
 
+#: ../../client/src/dev/routes/ScreenLibrary.tsx:21
 #: ../../client/src/app/interface/Menu.tsx:138
 msgid "Library"
 msgstr "Biblioteca"
@@ -287,6 +301,7 @@ msgstr "Administra tus ajustes"
 msgid "Manage your storage"
 msgstr "Administra tu almacenamiento"
 
+#: ../../client/src/world/routes/ScreenWorld.tsx:17
 #: ../../client/src/app/interface/Menu.tsx:97
 msgid "Map"
 msgstr "Mapa"
@@ -304,9 +319,11 @@ msgid "Move"
 msgstr ""
 
 #: ../../client/src/media/routes/ScreenBrowse.tsx:18
+#: ../../client/src/app/interface/Menu.tsx:70
 msgid "Music"
 msgstr "Música"
 
+#: ../../client/src/world/routes/ScreenWorld.tsx:23
 #: ../../client/src/app/interface/Menu.tsx:102
 msgid "News"
 msgstr "Noticias"
@@ -336,6 +353,7 @@ msgid "Pause"
 msgstr "Pausar"
 
 #: ../../client/src/media/routes/ScreenBrowse.tsx:20
+#: ../../client/src/app/interface/Menu.tsx:75
 msgid "Pictures"
 msgstr "Imágenes"
 
@@ -403,11 +421,14 @@ msgstr "Selecciona la unidad de temperatura para la aplicación."
 msgid "Select the theme for the app."
 msgstr "Selecciona el tema para la aplicación."
 
+#: ../../client/src/app/routes/ScreenSettings.tsx:28
+#: ../../client/src/app/interface/Tabs.tsx:34
 #: ../../client/src/app/interface/Menu.tsx:155
 msgid "Settings"
 msgstr "Ajustes"
 
 #: ../../client/src/media/hooks/useMediaControls.ts:257
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:34
 msgid "Share"
 msgstr "Compartir"
 
@@ -419,6 +440,7 @@ msgstr "Retroceder"
 msgid "Skip forward"
 msgstr "Avanzar"
 
+#: ../../client/src/app/routes/ScreenStorage.tsx:25
 #: ../../client/src/app/interface/Menu.tsx:149
 msgid "Storage"
 msgstr "Almacenamiento"
@@ -448,6 +470,7 @@ msgid "User Name"
 msgstr "Nombre de Usuario"
 
 #: ../../client/src/media/routes/ScreenBrowse.tsx:22
+#: ../../client/src/app/interface/Menu.tsx:80
 msgid "Videos"
 msgstr "Videos"
 
@@ -483,6 +506,7 @@ msgstr "Bienvenido, Humano"
 msgid "Work in progress..."
 msgstr "Trabajo en progreso..."
 
+#: ../../client/src/app/interface/Tabs.tsx:29
 #: ../../client/src/app/interface/Menu.tsx:95
 msgid "World"
 msgstr "Mundo"

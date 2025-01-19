@@ -120,7 +120,7 @@ export function MediaSelection() {
               style={[styles.text, path === focused && styles.textFocused]}
               selectable={false}
               numberOfLines={TEXT_LINES}>
-              {name}
+              {name || `.${ext}`}
             </Text>
             <Pressable onPress={() => close(index)}>
               <Icon
