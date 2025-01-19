@@ -1,4 +1,4 @@
-import {View, ImageBackground} from 'react-native';
+import {View, ImageBackground, Image} from 'react-native';
 import {useRef, useImperativeHandle, useEffect, memo, forwardRef} from 'react';
 import {getMatrixTransformStyles, TransformWrapper, TransformComponent} from 'react-zoom-pan-pinch';
 //import {useImageResolution, ResumableZoom, fitContainer} from 'react-native-zoom-toolkit';
@@ -46,7 +46,11 @@ export default memo(forwardRef((props: FileImage, ref: React.Ref<ImageRef>) => {
   // Update file player bar info
   useEffect(() => {
     if (!source) return;
-    props.actions.setInfo(`${1920} x ${1080}`);
+    Image.getSize(source, (width, height) => {
+      props.actions.setInfo(`${width} x ${height}`);
+    }, () => {
+      props.actions.setInfo('‎');
+    });
   }, [source, props.actions]);
 
   return source ? (
