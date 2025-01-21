@@ -3,7 +3,6 @@ import {useState} from 'react';
 import {useSelector} from 'react-redux';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useWindowDimensions, View, StatusBar} from 'react-native';
-import {useDeviceFileSystem} from 'app/hooks/useDeviceFileSystem';
 import {useDeviceSession} from 'app/hooks/useDeviceSession';
 import {useHotkeys} from 'app/hooks/useHotkeys';
 import {useProfile} from 'app/data';
@@ -23,11 +22,10 @@ export default function Layout() {
   const [previewOpen, setPreviewOpen] = useState(true);
   const [menuOpen, setMenuOpen] = useState(true);
 
-  const focused = useSelector(media.selectors.getFocused);
-  const profile = useProfile();
   const screen = useWindowDimensions();
   const device = useDeviceSession();
-  const filesystem = useDeviceFileSystem();
+  const profile = useProfile();
+  const focused = useSelector(media.selectors.getFocused);
 
   const mediaInfo = toPathInfo(focused, false);
   const isVertical = screen.width < theme.breakpoints.sm;
@@ -40,7 +38,6 @@ export default function Layout() {
   };
 
   const context: AppContext = {
-    filesystem,
     device,
     profile,
     layout: {

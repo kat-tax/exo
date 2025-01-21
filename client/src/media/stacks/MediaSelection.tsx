@@ -5,7 +5,6 @@ import {Text, Pressable} from 'react-native';
 import {Icon} from 'react-exo/icon';
 import {Motion} from 'react-exo/motion';
 import {isTouch} from 'app/utils/platform';
-import {HfsMenu} from 'media/dir/hfs';
 import {ListRowIcon} from 'media/stacks/ListRowIcon';
 import {toPathInfo} from 'app/utils/formatting';
 import media from 'media/store';
@@ -44,17 +43,6 @@ export function MediaSelection() {
   const close = useCallback((index: number) => {
     dispatch(media.actions.selectRemove(index));
   }, [dispatch]);
-
-  // Handlers for menu actions
-  const actions = useMemo(() => ({
-    menu: () => {},
-    view: () => {},
-    share: () => {},
-    copy: () => {},
-    move: () => {},
-    rename: () => {},
-    delete: () => {},
-  }), []);
 
   // Scroll to focus
   useEffect(() => {
@@ -106,31 +94,30 @@ export function MediaSelection() {
       animate={{opacity: 1}}
       exit={{opacity: 0}}>
       {list.map(({path, name, ext}, index) => 
-        <HfsMenu {...{name, actions}} key={path}>
-          <Pressable
-            onPress={() => dispatch(media.actions.focus(path))}
-            style={[styles.preview, path === focused && styles.focus]}>
-            <ListRowIcon
-              name={name ?? ''}
-              extension={ext}
-              size={ICON_SIZE}
-              isFile
+        <Pressable
+          key={path}
+          onPress={() => dispatch(media.actions.focus(path))}
+          style={[styles.preview, path === focused && styles.focus]}>
+          <ListRowIcon
+            name={name ?? ''}
+            extension={ext}
+            size={ICON_SIZE}
+            isFile
+          />
+          <Text
+            style={[styles.text, path === focused && styles.textFocused]}
+            selectable={false}
+            numberOfLines={TEXT_LINES}>
+            {name || `.${ext}`}
+          </Text>
+          <Pressable onPress={() => close(index)}>
+            <Icon
+              name="ph:x"
+              size={TOUCH ? 16 : 14}
+              color={theme.colors.mutedForeground}
             />
-            <Text
-              style={[styles.text, path === focused && styles.textFocused]}
-              selectable={false}
-              numberOfLines={TEXT_LINES}>
-              {name || `.${ext}`}
-            </Text>
-            <Pressable onPress={() => close(index)}>
-              <Icon
-                name="ph:x"
-                size={TOUCH ? 16 : 14}
-                color={theme.colors.mutedForeground}
-              />
-            </Pressable>
           </Pressable>
-        </HfsMenu>
+        </Pressable>
       )}
     </Motion.ScrollView>
   ) : null;

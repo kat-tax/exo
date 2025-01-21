@@ -8,9 +8,9 @@ import {getIcon} from 'media/file/icons';
 
 interface ListRowIcon {
   name: string,
-  extension: string,
-  isFile?: boolean,
   size?: 0 | 1 | 2,
+  dir?: boolean,
+  ext?: string,
 }
 
 export function ListRowIcon(props: ListRowIcon) {
@@ -26,24 +26,25 @@ export function ListRowIcon(props: ListRowIcon) {
       : 16;
 
   useEffect(() => {
-    getIcon(props.name, props.extension, '', iconScheme).then(setIcon);
-  }, [props.name, props.extension, iconScheme]);
+    getIcon(props.name, props.ext ?? '', '', iconScheme)
+      .then(setIcon);
+  }, [props.name, props.ext, iconScheme]);
 
   return (
     <View style={[styles.root, {width: iconSize}]}>
-      {props.isFile ? (
+      {props.dir ? (
+        <Icon
+          name="ph:folder-simple-fill"
+          color={theme.colors.foreground}
+          size={iconSize * 1.15}
+        />
+      ) : (
         <span
           className={icon ?? ''}
           style={{
             fontSize: iconSize,
             color: theme.colors.foreground,
           }}
-        />
-      ) : (
-        <Icon
-          name="ph:folder-simple-fill"
-          color={theme.colors.foreground}
-          size={iconSize * 1.15}
         />
       )}
     </View>

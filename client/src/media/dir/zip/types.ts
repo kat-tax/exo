@@ -17,4 +17,13 @@ export interface Zip {
   }>,
 }
 
-export type ZipEntry = Zip['list'][number];
+export type ZipCtx = {
+  zip: Zip | null,
+  cmd: ZipCmd,
+};
+
+export type ZipCmd = {
+  extract: (entry: ZipFileEntry) => void,
+};
+
+export type ZipFileEntry = Zip['list'][number];

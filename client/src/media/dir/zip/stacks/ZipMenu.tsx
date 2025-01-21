@@ -1,34 +1,28 @@
 import {useMemo} from 'react';
 import {useLingui} from '@lingui/react/macro';
-import {ContextMenu, type ContextMenuItem} from 'app/stacks/ContextMenu';
+import {ContextMenu} from 'app/stacks/ContextMenu';
+
+import type {ZipFileEntry} from '../types';
+import type {useZipEntry} from '../hooks/useZipEntry';
 
 export interface ZipMenuProps extends React.PropsWithChildren {
-  name: string,
-  actions?: {
-    menu?: () => void,
-    extract?: () => void,
-  },
+  entry: ZipFileEntry,
+  cmd: ReturnType<typeof useZipEntry>['cmd'],
 }
 
 export function ZipMenu(props: ZipMenuProps) {
-  const {name, actions} = props;
+  const {entry, cmd} = props;
   const {t} = useLingui();
-
-  const items: Array<ContextMenuItem | undefined> = useMemo(() => [
-    actions?.extract && {
-      name: 'extract',
-      icon: 'ph:extract',
-      label: t`Extract`,
-      shortcut: '⌘+S',
-      action: actions?.extract,
-    },
-  ], [t, actions]);
-
   return (
-    <ContextMenu
-      label={name}
-      items={items}
-      onOpenChange={actions?.menu}>
+    <ContextMenu label={entry.name} items={useMemo(() => [
+      {
+        name: 'extract',
+        icon: 'ph:extract',
+        label: t`Extract`,
+        shortcut: '⌘+S',
+        action: cmd.extract,
+      },
+    ], [t, cmd])}>
       {props.children}
     </ContextMenu>
   );

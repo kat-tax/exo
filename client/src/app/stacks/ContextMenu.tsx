@@ -6,7 +6,7 @@ import type {ComponentProps} from 'react';
 
 export interface ContextMenuProps extends ComponentProps<typeof Z['Root']> {
   label: string,
-  items: Array<ContextMenuItem | undefined>,
+  items: Array<ContextMenuItem | undefined | false>,
 }
 
 export interface ContextMenuItem {

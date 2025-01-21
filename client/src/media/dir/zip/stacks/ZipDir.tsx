@@ -1,5 +1,5 @@
 import {ZipEntry} from './ZipEntry';
-import type {ZipCtx} from '../hooks/useZip';
+import type {ZipCtx} from '../types';
 
 export function ZipDir({zip, cmd}: ZipCtx) {
   return zip?.list.map((entry, idx) =>

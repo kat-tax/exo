@@ -51,8 +51,7 @@ msgstr "اسأل أي شيء..."
 msgid "Auto"
 msgstr "تلقائي"
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:26
-#: ../../client/src/app/interface/Menu.tsx:90
+#: ../../client/src/app/interface/Menu.tsx:89
 msgid "Books"
 msgstr "الكتب"
 
@@ -60,8 +59,7 @@ msgstr "الكتب"
 msgid "by {0}"
 msgstr "بواسطة {0}"
 
-#: ../../client/src/world/routes/ScreenWorld.tsx:29
-#: ../../client/src/app/interface/Menu.tsx:107
+#: ../../client/src/app/interface/Menu.tsx:106
 msgid "Calendar"
 msgstr "التقويم"
 
@@ -73,12 +71,11 @@ msgstr "سيلزيوس"
 msgid "Close"
 msgstr "إغلاق"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:58
-#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:52
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:46
 msgid "Copy"
 msgstr "نسخ"
 
-#: ../../client/src/app/interface/Menu.tsx:44
+#: ../../client/src/app/interface/Menu.tsx:43
 msgid "Create Folder"
 msgstr "إنشاء مجلد"
 
@@ -86,8 +83,7 @@ msgstr "إنشاء مجلد"
 msgid "Dark"
 msgstr "داكن"
 
-#: ../../client/src/app/interface/Tabs.tsx:14
-#: ../../client/src/app/interface/Menu.tsx:29
+#: ../../client/src/app/interface/Menu.tsx:28
 msgid "Dashboard"
 msgstr "لوحة التحكم"
 
@@ -99,7 +95,7 @@ msgstr "البيانات"
 msgid "Database"
 msgstr "قاعدة البيانات"
 
-#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:77
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:71
 msgid "Delete"
 msgstr "حذف"
 
@@ -127,12 +123,11 @@ msgstr "حذف المطالبات"
 msgid "Delete the local database."
 msgstr "حذف قاعدة البيانات المحلية."
 
-#: ../../client/src/dev/routes/ScreenDesign.tsx:13
-#: ../../client/src/app/interface/Menu.tsx:133
+#: ../../client/src/app/interface/Menu.tsx:132
 msgid "Design"
 msgstr "التصميم"
 
-#: ../../client/src/app/interface/Menu.tsx:131
+#: ../../client/src/app/interface/Menu.tsx:130
 msgid "Dev Mode"
 msgstr "وضع المطور"
 
@@ -152,22 +147,19 @@ msgstr "العرض"
 msgid "Distance"
 msgstr "المسافة"
 
-#: ../../client/src/app/interface/Menu.tsx:65
+#: ../../client/src/app/interface/Menu.tsx:64
 msgid "Docs"
 msgstr "المستندات"
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:16
+#: ../../client/src/media/routes/ScreenBrowse.tsx:18
 msgid "Documents"
 msgstr "المستندات"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:77
-#: ../../client/src/media/file/FileBinary.tsx:30
 #: ../../client/src/media/dir/torrent/stacks/TorrentMenu.tsx:21
-#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:41
 msgid "Download"
 msgstr "تحميل"
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:28
+#: ../../client/src/media/routes/ScreenBrowse.tsx:30
 msgid "Downloads"
 msgstr "التنزيلات"
 
@@ -187,7 +179,7 @@ msgstr "استمتع بالليل"
 msgid "Enter api key"
 msgstr "أدخل مفتاح API"
 
-#: ../../client/src/app/interface/Menu.tsx:46
+#: ../../client/src/app/interface/Menu.tsx:45
 msgid "Enter folder name"
 msgstr "أدخل اسم المجلد"
 
@@ -199,7 +191,6 @@ msgstr "أدخل عبارتك التذكيرية"
 msgid "Enter your name"
 msgstr "أدخل اسمك"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:87
 #: ../../client/src/media/dir/zip/stacks/ZipMenu.tsx:21
 msgid "Extract"
 msgstr "استخراج"
@@ -212,9 +203,7 @@ msgstr "فهرنهايت"
 msgid "Feature in development..."
 msgstr ""
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:32
-#: ../../client/src/app/interface/Tabs.tsx:24
-#: ../../client/src/app/interface/Menu.tsx:60
+#: ../../client/src/app/interface/Menu.tsx:59
 msgid "Files"
 msgstr "الملفات"
 
@@ -226,8 +215,7 @@ msgstr "نظام الملفات"
 msgid "Fullscreen"
 msgstr "ملء الشاشة"
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:24
-#: ../../client/src/app/interface/Menu.tsx:85
+#: ../../client/src/app/interface/Menu.tsx:84
 msgid "Games"
 msgstr "الألعاب"
 
@@ -267,7 +255,7 @@ msgstr "إنسان"
 msgid "Import"
 msgstr "استيراد"
 
-#: ../../client/src/app/interface/Menu.tsx:55
+#: ../../client/src/app/interface/Menu.tsx:54
 msgid "Import Files"
 msgstr "استيراد الملفات"
 
@@ -275,8 +263,7 @@ msgstr "استيراد الملفات"
 msgid "In development..."
 msgstr ""
 
-#: ../../client/src/app/interface/Tabs.tsx:19
-#: ../../client/src/app/interface/Menu.tsx:34
+#: ../../client/src/app/interface/Menu.tsx:33
 msgid "Inbox"
 msgstr "الإشعارات"
 
@@ -288,8 +275,7 @@ msgstr "كيلومترات"
 msgid "Language"
 msgstr "اللغة"
 
-#: ../../client/src/dev/routes/ScreenLibrary.tsx:21
-#: ../../client/src/app/interface/Menu.tsx:138
+#: ../../client/src/app/interface/Menu.tsx:137
 msgid "Library"
 msgstr "المكتبة"
 
@@ -309,12 +295,11 @@ msgstr "إدارة إعداداتك"
 msgid "Manage your storage"
 msgstr "إدارة التخزين الخاص بك"
 
-#: ../../client/src/world/routes/ScreenWorld.tsx:17
-#: ../../client/src/app/interface/Menu.tsx:97
+#: ../../client/src/app/interface/Menu.tsx:96
 msgid "Map"
 msgstr "الخريطة"
 
-#: ../../client/src/app/interface/Menu.tsx:39
+#: ../../client/src/app/interface/Menu.tsx:38
 msgid "Media"
 msgstr "الوسائط"
 
@@ -322,17 +307,15 @@ msgstr "الوسائط"
 msgid "Miles"
 msgstr "أميال"
 
-#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:59
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:53
 msgid "Move"
 msgstr "نقل"
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:18
-#: ../../client/src/app/interface/Menu.tsx:70
+#: ../../client/src/app/interface/Menu.tsx:69
 msgid "Music"
 msgstr "الموسيقى"
 
-#: ../../client/src/world/routes/ScreenWorld.tsx:23
-#: ../../client/src/app/interface/Menu.tsx:102
+#: ../../client/src/app/interface/Menu.tsx:101
 msgid "News"
 msgstr "الأخبار"
 
@@ -360,8 +343,7 @@ msgstr "مفتاح المالك"
 msgid "Pause"
 msgstr "إيقاف مؤقت"
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:20
-#: ../../client/src/app/interface/Menu.tsx:75
+#: ../../client/src/app/interface/Menu.tsx:74
 msgid "Pictures"
 msgstr "الصور"
 
@@ -401,7 +383,7 @@ msgstr "قدم مفتاحًا لاستخدام ميزات الذكاء الاص�
 msgid "R&D in progress..."
 msgstr ""
 
-#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:66
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:60
 msgid "Rename"
 msgstr "إعادة تسمية"
 
@@ -433,14 +415,11 @@ msgstr "اختر وحدة درجة الحرارة للتطبيق."
 msgid "Select the theme for the app."
 msgstr "اختر سمة التطبيق."
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:28
-#: ../../client/src/app/interface/Tabs.tsx:34
-#: ../../client/src/app/interface/Menu.tsx:155
+#: ../../client/src/app/interface/Menu.tsx:154
 msgid "Settings"
 msgstr "الإعدادات"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:257
-#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:34
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:28
 msgid "Share"
 msgstr "مشاركة"
 
@@ -452,8 +431,7 @@ msgstr "تخطي للخلف"
 msgid "Skip forward"
 msgstr "تخطي للأمام"
 
-#: ../../client/src/app/routes/ScreenStorage.tsx:25
-#: ../../client/src/app/interface/Menu.tsx:149
+#: ../../client/src/app/interface/Menu.tsx:148
 msgid "Storage"
 msgstr "التخزين"
 
@@ -473,7 +451,7 @@ msgstr "السمة"
 msgid "Unsupported File"
 msgstr "ملف غير مدعوم"
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:30
+#: ../../client/src/media/routes/ScreenBrowse.tsx:32
 msgid "Uploads"
 msgstr "المرفوعات"
 
@@ -481,12 +459,11 @@ msgstr "المرفوعات"
 msgid "User Name"
 msgstr "اسم المستخدم"
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:22
-#: ../../client/src/app/interface/Menu.tsx:80
+#: ../../client/src/app/interface/Menu.tsx:79
 msgid "Videos"
 msgstr "الفيديوهات"
 
-#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:27
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:21
 msgid "View"
 msgstr "عرض"
 
@@ -526,8 +503,7 @@ msgstr "مرحباً، أيها الإنسان"
 msgid "Work in progress..."
 msgstr "العمل قيد التنفيذ..."
 
-#: ../../client/src/app/interface/Tabs.tsx:29
-#: ../../client/src/app/interface/Menu.tsx:95
+#: ../../client/src/app/interface/Menu.tsx:94
 msgid "World"
 msgstr "العالم"
 

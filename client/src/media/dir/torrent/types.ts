@@ -7,6 +7,15 @@ export interface Torrent {
   desc?: string,
 }
 
+export type TorrentCtx = {
+  torrent: Torrent | null,
+  cmd: TorrentCmd,
+}
+
+export type TorrentCmd = {
+  download: (file: TorrentFileEntry) => Promise<void>,
+}
+
 export interface TorrentInfo {
   /** Filename */
   name: string;

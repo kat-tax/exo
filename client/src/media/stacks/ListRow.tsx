@@ -9,41 +9,44 @@ const TOUCH = isTouch();
 interface ListRow {
   name: string,
   size?: number,
-  isFile?: boolean,
-  isSelected?: boolean,
-  isFocused?: boolean,
-  isBlurred?: boolean,
+  ext?: string,
+  dir?: boolean,
+  opt?: {
+    selected?: boolean,
+    focused?: boolean,
+    blurred?: boolean,
+  }
 }
 
 export function ListRow(props: ListRow) {
   const {styles} = useStyles(stylesheet);
-  const [name, extension] = props.name.split('.');
-  const {isFile, isSelected, isFocused, isBlurred} = props;
+  const {name, size, ext, dir, opt} = props;
+  const {selected, focused, blurred} = opt ?? {};
   const vstyles = {
     root: [
       styles.root,
-      isSelected && styles.selected,
-      isFocused && styles.focused,
-      isBlurred && styles.blurred,
+      selected && styles.selected,
+      focused && styles.focused,
+      blurred && styles.blurred,
     ],
   };
 
   return (
     <View style={vstyles.root}>
-      <ListRowIcon {...{size: TOUCH ? 1 : 0, name, extension, isFile}}/>
+      <ListRowIcon {...{size: TOUCH ? 1 : 0, name, ext, dir}}/>
       <Text
         style={styles.text}
         selectable={false}
         ellipsizeMode="middle"
         numberOfLines={1}>
-        {props.name}
+        {name}
       </Text>
-      {Boolean(props.size) &&
+      {Boolean(size) &&
         <Text
           style={[styles.text, styles.size]}
           selectable={false}
           numberOfLines={1}>
-          {bytesize(props.size ?? 0)}
+          {bytesize(size ?? 0)}
         </Text>
       }
     </View>

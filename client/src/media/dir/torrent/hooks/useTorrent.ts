@@ -1,21 +1,11 @@
 import ExoTorrent from 'react-exo/torrent';
-
 import {useCallback, useMemo} from 'react';
 import {useFileData} from 'media/file/hooks/useFileData';
 import {bytesize} from 'app/utils/formatting';
 import {info, files} from '../utils/info';
 import store from '../utils/chunkstore';
 
-import type {Torrent, TorrentInfo, TorrentFileData, TorrentFileEntry} from '../types';
-
-export type TorrentCtx = {
-  torrent: Torrent | null,
-  cmd: TorrentCmd,
-}
-
-export type TorrentCmd = {
-  download: (file: TorrentFileEntry, path?: string) => Promise<void>,
-}
+import type {Torrent, TorrentCtx, TorrentInfo, TorrentFileData, TorrentFileEntry} from '../types';
 
 export function useTorrent(path: string): TorrentCtx {
   const buffer = useFileData(path, 'arrayBuffer');
@@ -37,7 +27,7 @@ export function useTorrent(path: string): TorrentCtx {
     } satisfies Torrent;
   }, [buffer, path]);
 
-  const download = useCallback(async (file: TorrentFileEntry, path?: string) => {
+  const download = useCallback(async (file: TorrentFileEntry) => {
     if (!torrent) return;
     const client = new ExoTorrent();
     // @ts-expect-error Incorrect vendor types

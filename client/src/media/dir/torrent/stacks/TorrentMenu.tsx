@@ -1,34 +1,28 @@
 import {useMemo} from 'react';
 import {useLingui} from '@lingui/react/macro';
-import {ContextMenu, type ContextMenuItem} from 'app/stacks/ContextMenu';
+import {ContextMenu} from 'app/stacks/ContextMenu';
+
+import type {TorrentFileEntry} from '../types';
+import type {useTorrentEntry} from '../hooks/useTorrentEntry';
 
 export interface TorrentMenuProps extends React.PropsWithChildren {
-  name: string,
-  actions?: {
-    menu?: () => void,
-    download?: () => void,
-  },
+  entry: TorrentFileEntry,
+  cmd: ReturnType<typeof useTorrentEntry>['cmd'],
 }
 
 export function TorrentMenu(props: TorrentMenuProps) {
-  const {name, actions} = props;
+  const {entry, cmd} = props;
   const {t} = useLingui();
-
-  const items: Array<ContextMenuItem | undefined> = useMemo(() => [
-    actions?.download && {
-      name: 'download',
-      icon: 'ph:download',
-      label: t`Download`,
-      shortcut: '⌘+S',
-      action: actions?.download,
-    },
-  ], [t, actions]);
-
   return (
-    <ContextMenu
-      label={name}
-      items={items}
-      onOpenChange={actions?.menu}>
+    <ContextMenu label={entry.name} items={useMemo(() => [
+      {
+        name: 'download',
+        icon: 'ph:download',
+        label: t`Download`,
+        shortcut: '⌘+S',
+        action: cmd.download,
+      },
+    ], [t, cmd])}>
       {props.children}
     </ContextMenu>
   );

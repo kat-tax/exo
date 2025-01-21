@@ -4,23 +4,14 @@ import {useFileData} from 'media/file/hooks/useFileData';
 import {toPathInfo} from 'app/utils/formatting';
 
 import type {FS} from '@zip.js/zip.js';
-import type {Zip, ZipEntry} from '../types';
-
-export type ZipCtx = {
-  zip: Zip | null,
-  cmd: ZipCmd,
-};
-
-export type ZipCmd = {
-  extract: (entry: ZipEntry, path?: string) => void,
-};
+import type {Zip, ZipCtx, ZipFileEntry} from '../types';
 
 export function useZip(path: string): ZipCtx {
   const [zip, setZip] = useState<Zip | null>(null);
   const zipfs = useRef<FS | null>(null);
   const buffer = useFileData(path, 'arrayBuffer');
 
-  const extract = useCallback(async (file: ZipEntry, path?: string) => {
+  const extract = useCallback(async (file: ZipFileEntry) => {
     if (!zip) return;
     const source = zipfs.current?.getById(file.id);
     if (!source) return;

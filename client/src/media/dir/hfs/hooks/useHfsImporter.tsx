@@ -12,6 +12,13 @@ export function useHfsImporter() {
     return {startIn, parts: path.parts};
   }, [pathname]);
 
+  /** Create a new folder */
+  const createFolder = useCallback(async (name: string) => {
+    const fs = await FS.init('fs');
+    const path = parts.join('/');
+    await fs?.createDirectory?.(`${path}/${name}`);
+  }, [parts]);
+
   /** Import a folder from the device */
   const importFolder = useCallback(async () => {
     const timer = performance.now();
@@ -28,5 +35,5 @@ export function useHfsImporter() {
     console.log('>> fs [import file]', from, to, performance.now() - timer);
   }, [parts, startIn]);
 
-  return {importFolder, importFile};
+  return {createFolder, importFolder, importFile};
 }

@@ -15,8 +15,7 @@ export interface MenuProps {
 }
 
 export function Menu(props: MenuProps) {
-  const {filesystem} = props.context;
-  const {importFile} = useHfsImporter();
+  const {importFile, createFolder} = useHfsImporter();
   const {styles} = useStyles(stylesheet);
   const {t} = useLingui();
 
@@ -45,7 +44,7 @@ export function Menu(props: MenuProps) {
                 onPress: () => {
                   const name = prompt(t`Enter folder name`);
                   if (name) {
-                    filesystem?.createDirectory?.(name);
+                    createFolder(name);
                   }
                 },
               },
