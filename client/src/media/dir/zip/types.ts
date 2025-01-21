@@ -16,3 +16,5 @@ export interface Zip {
     dir: boolean,
   }>,
 }
+
+export type ZipEntry = Zip['list'][number];

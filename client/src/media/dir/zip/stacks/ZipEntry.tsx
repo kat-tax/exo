@@ -1,31 +1,37 @@
-import {useMemo} from 'react';
+import {useMemo, useRef} from 'react';
 import {Pressable} from 'react-native';
 import {ListRow} from 'media/stacks/ListRow';
 
+import {useZipDnd} from '../hooks/useZipDnd';
 import {ZipMenu} from './ZipMenu';
-import type {Zip} from '../types';
+
+import type {View} from 'react-native';
+import type {ZipCmd} from '../hooks/useZip';
+import type {ZipEntry as ZipEntryType} from '../types';
 
 export interface ZipEntryProps {
-  entry: Zip['list'][number],
-  index: number,
-  extract: (entry: Zip['list'][number]) => void,
+  entry: ZipEntryType,
+  cmd: ZipCmd,
+  idx: number,
 }
 
 export function ZipEntry(props: ZipEntryProps) {
-  const {entry} = props;
+  const {entry, cmd} = props;
   const {name, size, dir} = entry;
   const isFile = !dir;
+  const ref = useRef<View>(null);
+  const dnd = useZipDnd(entry, cmd, ref);
 
-  // Handlers for menu actions
+  const isBlurred = useMemo(() => dnd.isDragging, [dnd.isDragging]);
   const actions = useMemo(() => ({
     menu: () => {},
-    extract: () => props.extract(entry),
-  }), [props.extract, entry]);
+    extract: () => cmd.extract(entry),
+  }), [entry, cmd]);
 
   return (
     <ZipMenu {...{name, actions}}>
-      <Pressable onPress={actions.extract}>
-        <ListRow {...{name, size, isFile}}/>
+      <Pressable {...{ref, onPress: actions.extract}}>
+        <ListRow {...{name, size, isFile, isBlurred}}/>
       </Pressable>
     </ZipMenu>
   );

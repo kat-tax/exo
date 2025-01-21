@@ -1,14 +1,41 @@
 import {fs} from '@zip.js/zip.js';
 import {useCallback, useEffect, useState, useRef} from 'react';
 import {useFileData} from 'media/file/hooks/useFileData';
+import {toPathInfo} from 'app/utils/formatting';
 
 import type {FS} from '@zip.js/zip.js';
-import type {Zip} from '../types';
+import type {Zip, ZipEntry} from '../types';
 
-export function useZip(path: string) {
+export type ZipCtx = {
+  zip: Zip | null,
+  cmd: ZipCmd,
+};
+
+export type ZipCmd = {
+  extract: (entry: ZipEntry, path?: string) => void,
+};
+
+export function useZip(path: string): ZipCtx {
+  const [zip, setZip] = useState<Zip | null>(null);
   const filesystem = useRef<FS | null>(null);
   const buffer = useFileData(path, 'arrayBuffer');
-  const [zip, setZip] = useState<Zip | null>(null);
+
+  const extract = useCallback(async (file: ZipEntry, path?: string) => {
+    if (!zip) return;
+    const source = filesystem.current?.getById(file.id);
+    if (!source) return;
+    const {name, ext} = toPathInfo(file.name, false);
+    const filename = `${name}.${ext}`;
+    // TODO: move write logic to hfs so recursive mkdir works
+    // const dest = path ? `${path}/${filename}` : filename;
+    const dest = filename;
+    console.log('>> [zip] extract', {dest, name, path, file});
+    const folder = await navigator.storage.getDirectory();
+    const handle = await folder.getFileHandle(dest, {create: true});
+    const writable = await handle.createWritable();
+    // @ts-ignore
+    source?.getData({writable});
+  }, [zip]);
 
   useEffect(() => {
     (async () => {
@@ -44,16 +71,5 @@ export function useZip(path: string) {
     })();
   }, [buffer]);
 
-  const extract = useCallback(async (file: Zip['list'][number]) => {
-    if (!zip) return;
-    const source = filesystem.current?.getById(file.id);
-    if (!source) return;
-    const folder = await navigator.storage.getDirectory();
-    const handle = await folder.getFileHandle(file.name.split('/').pop() ?? file.name, {create: true});
-    const writable = await handle.createWritable();
-    // @ts-ignore
-    source?.getData({writable});
-  }, [zip]);
-
-  return {zip, extract};
+  return {zip, cmd: {extract}};
 }

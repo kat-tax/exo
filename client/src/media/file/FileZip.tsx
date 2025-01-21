@@ -10,13 +10,15 @@ import type {FileProps} from 'media/file';
 export interface FileZip extends FileProps {}
 
 export default forwardRef((props: FileZip, _ref) => {
-  const {zip, extract} = useZip(props.path);
+  const {zip, cmd} = useZip(props.path);
   const {styles} = useStyles(stylesheet);
 
   // Update file player bar info
   useEffect(() => {
     if (!zip) return;
-    const msg = `${zip?.list?.length ?? 0} files, ${bytesize(zip?.size?.compressed ?? 0)}`;
+    const files = zip.list?.length ?? 0;
+    const size = bytesize(zip.size?.compressed ?? 0);
+    const msg = `${files} files, ${size}`;
     props.actions.setInfo(msg);
   }, [zip, props.actions]);
 
@@ -36,7 +38,7 @@ export default forwardRef((props: FileZip, _ref) => {
         noFrame
         fullWidth>
         <View style={styles.inner}>
-          {zip && <ZipDir {...{zip, extract}}/>}
+          {zip && <ZipDir {...{zip, cmd}}/>}
         </View>
       </Page>
     </View>

@@ -4,6 +4,7 @@ import {useCallback, useMemo} from 'react';
 import {useFileData} from 'media/file/hooks/useFileData';
 import {bytesize} from 'app/utils/formatting';
 import {info, files} from '../utils/info';
+import store from '../utils/chunkstore';
 
 import type {TorrentInfo, TorrentFileData} from '../types';
 
@@ -36,15 +37,16 @@ export function useTorrent(path: string) {
     } satisfies Torrent;
   }, [buffer, path]);
 
-  const download = useCallback((file: TorrentFileData['files'][number]) => {
+  const download = useCallback(async (file: TorrentFileData['files'][number]) => {
     if (!torrent) return;
     const client = new ExoTorrent();
-    client.add(torrent.file, async ({files}) => {
+    // @ts-expect-error Incorrect vendor types
+    client.add(torrent.file, {store}, async ({files}) => {
       const target = files.find(e => e.path.split('/').slice(1).join('/') === file.path);
-      const folder = await navigator.storage.getDirectory();
-      const handle = await folder.getFileHandle(file.name, {create: true});
+      const root = await navigator.storage.getDirectory();
+      const handle = await root.getFileHandle(file.name, {create: true});
       const stream = await handle.createWritable();
-      // @ts-ignore
+      // @ts-expect-error TS missing types
       const source = target?.stream();
       source?.pipeTo(stream);
     });

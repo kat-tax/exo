@@ -9,7 +9,7 @@ export type HfsEntryCmd = {
   transfer: (entry: HfsDirectoryEntry) => void,
 };
 
-export function useHfsEntryCmd(entry: HfsDirectoryEntry): HfsEntryCmd {
+export function useHfsEntry(entry: HfsDirectoryEntry): HfsEntryCmd {
   const {filesystem} = useAppContext();
   const {name} = entry;
 

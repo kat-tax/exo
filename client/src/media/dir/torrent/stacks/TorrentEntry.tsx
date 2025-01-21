@@ -7,8 +7,8 @@ import type {TorrentFileEntry} from '../types';
 
 export interface TorrentEntryProps {
   entry: TorrentFileEntry,
-  index: number,
   download: (entry: TorrentFileEntry) => void,
+  idx: number,
 }
 
 export function TorrentEntry(props: TorrentEntryProps) {

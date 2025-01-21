@@ -1,16 +1,11 @@
 import {ZipEntry} from './ZipEntry';
-import type {Zip} from '../types';
+import type {ZipCtx} from '../hooks/useZip';
 
-export interface ZipDirProps {
-  zip: Zip,
-  extract: (entry: Zip['list'][number]) => void,
-}
-
-export function ZipDir({zip, extract}: ZipDirProps) {
-  return zip.list.map((entry, index) =>
+export function ZipDir({zip, cmd}: ZipCtx) {
+  return zip?.list.map((entry, idx) =>
     <ZipEntry
       key={entry.dir ? `.${entry.name}` : entry.name}
-      {...{entry, index, zip, extract}}
+      {...{entry, cmd, idx}}
     />
   );
 }

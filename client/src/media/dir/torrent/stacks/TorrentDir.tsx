@@ -8,10 +8,10 @@ export interface TorrentDirProps {
 }
 
 export function TorrentDir({torrent, download}: TorrentDirProps) {
-  return torrent.list.map((entry: TorrentFileEntry, index: number) =>
+  return torrent.list.map((entry: TorrentFileEntry, idx: number) =>
     <TorrentEntry
       key={entry.path}
-      {...{entry, index, download}}
+      {...{entry, download, idx}}
     />
   );
 }

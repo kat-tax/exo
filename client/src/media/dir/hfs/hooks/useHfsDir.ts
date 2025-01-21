@@ -23,6 +23,8 @@ export function useHfsDir(path: string) {
       for await (const entry of filesystem.list?.(dirPath) ?? []) {
         if (entry.name.endsWith('.crswap'))
           continue;
+        if (entry.name === '.db' || entry.name === '.tmp')
+          continue;
         if (entry.name.startsWith('.') && !showHidden)
           continue;
         if (dirPath === '.' && isInitDirectory(entry.name))

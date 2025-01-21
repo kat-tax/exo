@@ -4,18 +4,18 @@ import {useDispatch} from 'react-redux';
 import {Pressable} from 'react-native';
 import {getData} from 'media/file/utils/data';
 import {ListRow} from 'media/stacks/ListRow';
-import {HfsMenu} from './HfsMenu';
-import {saveAs} from '../utils/fs';
-import {useHfsEntryCmd} from '../hooks/useHfsEntryCmd';
-import {useHfsEntryDnd} from '../hooks/useHfsEntryDnd';
 import media from 'media/store';
+
+import {useHfsEntry} from '../hooks/useHfsEntry';
+import {useHfsEntryDnd} from '../hooks/useHfsEntryDnd';
+import {saveAs} from '../utils/fs';
+import {HfsMenu} from './HfsMenu';
 
 import type {HfsDirectoryEntry} from 'react-exo/fs';
 import type {GestureResponderEvent, View} from 'react-native';
 
 export interface HfsEntryProps {
   entry: HfsDirectoryEntry,
-  index: number,
   basePath?: string,
   isSelected?: boolean,
 }
@@ -25,7 +25,7 @@ export function HfsEntry(props: HfsEntryProps) {
   const {name, size, isFile} = entry;
 
   const ref = useRef<View>(null);
-  const cmd = useHfsEntryCmd(entry);
+  const cmd = useHfsEntry(entry);
   const dnd = useHfsEntryDnd(entry, cmd, ref);
 
   const put = useDispatch();
