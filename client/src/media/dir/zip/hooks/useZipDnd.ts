@@ -1,30 +1,32 @@
 import {useState, useEffect} from 'react';
 import {draggable} from '@atlaskit/pragmatic-drag-and-drop/element/adapter';
-import {setCustomNativeDragPreview} from '@atlaskit/pragmatic-drag-and-drop/element/set-custom-native-drag-preview';
-import {pointerOutsideOfPreview} from '@atlaskit/pragmatic-drag-and-drop/element/pointer-outside-of-preview';
 import {combine} from '@atlaskit/pragmatic-drag-and-drop/combine';
+import {dndImg} from 'app/utils/web';
 
-import type {View} from 'react-native';
 import type {CleanupFn} from '@atlaskit/pragmatic-drag-and-drop/types';
 import type {ZipEntry} from '../types';
 import type {ZipCmd} from './useZip';
 
+const $ = Symbol('zip');
+export type ZipData = {[$]: true; entry: ZipEntry; cmd: ZipCmd};
+export const isZipData = (data: Record<string | symbol, unknown>): data is ZipData => data[$] === true;
+export const getZipData = (entry: ZipEntry, cmd: ZipCmd): ZipData => ({[$]: true, entry, cmd});
+
 export function useZipDnd(
   entry: ZipEntry,
   cmd: ZipCmd,
-  ref: React.RefObject<View>,
+  ref: React.RefObject<unknown>,
 ) {
   const [isDragging, setIsDragging] = useState(false);
   
   useEffect(() => {
     if (!ref.current) return;
-    const element = ref.current as unknown as HTMLElement;
+    const element = ref.current as HTMLElement;
     return combine(...[
       draggable({
         element,
+        onGenerateDragPreview: ({nativeSetDragImage}) => dndImg(nativeSetDragImage),
         getInitialData: () => getZipData(entry, cmd),
-        onGenerateDragPreview: ({nativeSetDragImage}) =>
-          getDragPreview(nativeSetDragImage),
         onDragStart: () => setIsDragging(true),
         onDrop: () => setIsDragging(false),
       }),
@@ -32,42 +34,4 @@ export function useZipDnd(
   }, [entry, cmd, ref.current]);
 
   return {isDragging};
-}
-
-const zipDataKey = Symbol('zip');
-
-export type ZipData = {[zipDataKey]: true; entry: ZipEntry; cmd: ZipCmd};
-
-export function getZipData(entry: ZipEntry, cmd: ZipCmd): ZipData {
-  return {[zipDataKey]: true, entry, cmd};
-}
-
-export function isZipData(data: Record<string | symbol, unknown>): data is ZipData {
-  return data[zipDataKey] === true;
-}
-
-export function getDragPreview(
-  nativeSetDragImage: ((image: Element, x: number, y: number) => void) | null,
-  itemCount = 1,
-) {
-  setCustomNativeDragPreview({
-    nativeSetDragImage,
-    getOffset: pointerOutsideOfPreview({x: '12px', y: '12px'}),
-    render({container}) {
-      const badge = document.createElement('div');
-      badge.style.backgroundColor = '#3b82f6';
-      badge.style.color = '#FFFFFF';
-      badge.style.fontFamily = 'sans-serif';
-      badge.style.fontSize = '10px';
-      badge.style.fontWeight = 'bold';
-      badge.style.width = '16px';
-      badge.style.height = '16px';
-      badge.style.borderRadius = '50%';
-      badge.style.display = 'flex';
-      badge.style.alignItems = 'center';
-      badge.style.justifyContent = 'center';
-      badge.textContent = itemCount.toString();
-      container.appendChild(badge);
-    },
-  });
 }
