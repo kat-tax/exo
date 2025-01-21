@@ -5,7 +5,9 @@ import {setCustomNativeDragPreview} from '@atlaskit/pragmatic-drag-and-drop/elem
 import {pointerOutsideOfPreview} from '@atlaskit/pragmatic-drag-and-drop/element/pointer-outside-of-preview';
 import {containsFiles, getFiles} from '@atlaskit/pragmatic-drag-and-drop/external/file';
 import {combine} from '@atlaskit/pragmatic-drag-and-drop/combine';
+
 import {isZipData} from 'media/dir/zip/hooks/useZipDnd';
+import {isTorrentData} from 'media/dir/torrent/hooks/useTorrentDnd';
 
 import type {View} from 'react-native';
 import type {CleanupFn} from '@atlaskit/pragmatic-drag-and-drop/types';
@@ -19,7 +21,7 @@ export function useHfsEntryDnd(
 ) {
   const [isDragging, setIsDragging] = useState(false);
   const [isDropping, setIsDropping] = useState(false);
-  
+
   useEffect(() => {
     if (!ref.current) return;
     const element = ref.current as unknown as HTMLElement;
@@ -34,17 +36,22 @@ export function useHfsEntryDnd(
       }),
       entry.isDirectory && dropTargetForElements({
         element,
-        canDrop: ({source}) => source.element !== element
-          && (isHfsData(source.data) || isZipData(source.data)),
+        canDrop: ({source}) => source.element !== element && (
+             isHfsData(source.data)
+          || isZipData(source.data)
+          || isTorrentData(source.data)
+        ),
         onDragEnter: () => setIsDropping(true),
         onDragLeave: () => setIsDropping(false),
         onDrop: (e) => {
           setIsDropping(false);
-          if (isHfsData(e.source.data)) {
-            cmd.transfer(e.source.data.entry);
-          } else if (isZipData(e.source.data)) {
-            // TODO: add path in front of entry.name
-            e.source.data.cmd.extract(e.source.data.entry, entry.name);
+          const {data} = e.source;
+          if (isHfsData(data)) {
+            cmd.transfer(data.entry);
+          } else if (isZipData(data)) {
+            data.cmd.extract(data.entry, entry.name);
+          } else if (isTorrentData(data)) {
+            data.cmd.download(data.entry, entry.name);
           }
         },
       }),

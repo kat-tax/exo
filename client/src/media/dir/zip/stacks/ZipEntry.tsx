@@ -18,11 +18,14 @@ export interface ZipEntryProps {
 export function ZipEntry(props: ZipEntryProps) {
   const {entry, cmd} = props;
   const {name, size, dir} = entry;
-  const isFile = !dir;
   const ref = useRef<View>(null);
   const dnd = useZipDnd(entry, cmd, ref);
-
+  
+  // States
+  const isFile = !dir;
   const isBlurred = useMemo(() => dnd.isDragging, [dnd.isDragging]);
+
+  // Handlers
   const actions = useMemo(() => ({
     menu: () => {},
     extract: () => cmd.extract(entry),

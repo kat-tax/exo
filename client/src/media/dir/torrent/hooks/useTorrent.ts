@@ -6,18 +6,18 @@ import {bytesize} from 'app/utils/formatting';
 import {info, files} from '../utils/info';
 import store from '../utils/chunkstore';
 
-import type {TorrentInfo, TorrentFileData} from '../types';
+import type {Torrent, TorrentInfo, TorrentFileData, TorrentFileEntry} from '../types';
 
-export interface Torrent {
-  file: File,
-  info: TorrentInfo,
-  data: TorrentFileData,
-  list: TorrentFileData['files'],
-  name: string,
-  desc?: string,
+export type TorrentCtx = {
+  torrent: Torrent | null,
+  cmd: TorrentCmd,
 }
 
-export function useTorrent(path: string) {
+export type TorrentCmd = {
+  download: (file: TorrentFileEntry, path?: string) => Promise<void>,
+}
+
+export function useTorrent(path: string): TorrentCtx {
   const buffer = useFileData(path, 'arrayBuffer');
 
   const torrent: Torrent | null = useMemo(() => {
@@ -37,14 +37,17 @@ export function useTorrent(path: string) {
     } satisfies Torrent;
   }, [buffer, path]);
 
-  const download = useCallback(async (file: TorrentFileData['files'][number]) => {
+  const download = useCallback(async (file: TorrentFileEntry, path?: string) => {
     if (!torrent) return;
     const client = new ExoTorrent();
     // @ts-expect-error Incorrect vendor types
     client.add(torrent.file, {store}, async ({files}) => {
       const target = files.find(e => e.path.split('/').slice(1).join('/') === file.path);
       const root = await navigator.storage.getDirectory();
-      const handle = await root.getFileHandle(file.name, {create: true});
+      // TODO: move write logic to hfs so recursive mkdir works
+      // const dest = path ? `${path}/${filename}` : filename;
+      const dest = file.name;
+      const handle = await root.getFileHandle(dest, {create: true});
       const stream = await handle.createWritable();
       // @ts-expect-error TS missing types
       const source = target?.stream();
@@ -52,7 +55,7 @@ export function useTorrent(path: string) {
     });
   }, [torrent]);
 
-  return {torrent, download};
+  return {torrent, cmd: {download}};
 }
 
 const getName = (info: TorrentInfo, data: TorrentFileData) =>

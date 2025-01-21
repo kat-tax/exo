@@ -10,7 +10,7 @@ import type {FileProps} from 'media/file';
 export interface FileTorrent extends FileProps {}
 
 export default forwardRef((props: FileTorrent, _ref) => {
-  const {torrent, download} = useTorrent(props.path);
+  const {torrent, cmd} = useTorrent(props.path);
   const {styles} = useStyles(stylesheet);
 
   // Update file player bar info
@@ -30,12 +30,7 @@ export default forwardRef((props: FileTorrent, _ref) => {
         noFrame
         fullWidth>
         <View style={styles.inner}>
-          {torrent && (
-            <TorrentDir
-              torrent={torrent}
-              download={download}
-            />
-          )}
+          {torrent && <TorrentDir {...{torrent, cmd}}/>}
         </View>
       </Page>
     </View>

@@ -51,7 +51,7 @@ export function HfsEntry(props: HfsEntryProps) {
     }
   }, [isFile, path, name]);
 
-  // Handlers for menu actions
+  // Handlers
   const actions = useMemo(() => ({
     menu: () => {},
     view,

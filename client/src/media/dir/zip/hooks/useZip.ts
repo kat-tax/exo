@@ -17,19 +17,18 @@ export type ZipCmd = {
 
 export function useZip(path: string): ZipCtx {
   const [zip, setZip] = useState<Zip | null>(null);
-  const filesystem = useRef<FS | null>(null);
+  const zipfs = useRef<FS | null>(null);
   const buffer = useFileData(path, 'arrayBuffer');
 
   const extract = useCallback(async (file: ZipEntry, path?: string) => {
     if (!zip) return;
-    const source = filesystem.current?.getById(file.id);
+    const source = zipfs.current?.getById(file.id);
     if (!source) return;
     const {name, ext} = toPathInfo(file.name, false);
     const filename = `${name}.${ext}`;
     // TODO: move write logic to hfs so recursive mkdir works
     // const dest = path ? `${path}/${filename}` : filename;
     const dest = filename;
-    console.log('>> [zip] extract', {dest, name, path, file});
     const folder = await navigator.storage.getDirectory();
     const handle = await folder.getFileHandle(dest, {create: true});
     const writable = await handle.createWritable();
@@ -43,7 +42,7 @@ export function useZip(path: string): ZipCtx {
       const _fs = new fs.FS();
       const _view = new Uint8Array(buffer);
       const _zip = await _fs.importUint8Array(_view);
-      filesystem.current = _fs;
+      zipfs.current = _fs;
       setZip({
         date: {
           created: _zip?.[0]?.data?.creationDate,

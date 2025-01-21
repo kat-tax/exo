@@ -1,4 +1,11 @@
-export type TorrentFileEntry = TorrentFileData['files'][number];
+export interface Torrent {
+  file: File,
+  info: TorrentInfo,
+  data: TorrentFileData,
+  list: TorrentFileData['files'],
+  name: string,
+  desc?: string,
+}
 
 export interface TorrentInfo {
   /** Filename */
@@ -38,3 +45,5 @@ export interface TorrentFileData {
   /** Array of piece hashes */
   pieces: string[];
 }
+
+export type TorrentFileEntry = TorrentFileData['files'][number];
