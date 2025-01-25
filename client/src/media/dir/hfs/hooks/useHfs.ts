@@ -8,9 +8,9 @@ import {observe, poll, saveAs} from '../utils/fs';
 import {getData} from 'media/file/utils/data';
 import media from 'media/store';
 
-import type {GestureResponderEvent} from 'react-native';
-import type {HfsImpl, HfsDirectoryEntry} from 'react-exo/fs';
 import type {HfsCtx} from '../types';
+import type {HfsImpl, HfsDirectoryEntry} from 'react-exo/fs';
+import type {GestureResponderEvent} from 'react-native';
 
 export function useHfs(path: string): HfsCtx {
   const [filesystem, setFilesystem] = useState<HfsImpl | null>(null);
@@ -27,8 +27,8 @@ export function useHfs(path: string): HfsCtx {
       for await (const entry of filesystem?.list?.(dirPath) ?? []) {
         if (entry.name.endsWith('.crswap'))
           continue;
-        if (entry.name === '.db' || entry.name === '.tmp')
-          continue;
+        // if (entry.name === '.db' || entry.name === '.tmp')
+        //   continue;
         if (entry.name.startsWith('.') && !showHidden)
           continue;
         if (dirPath === '.' && isInitDirectory(entry.name))

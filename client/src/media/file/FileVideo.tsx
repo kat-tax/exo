@@ -25,6 +25,8 @@ export default forwardRef((props: Omit<FileVideo, 'ref'>, ref: React.Ref<VideoRe
       <Video
         ref={ref}
         source={{uri: source}}
+        paused={props.embedded}
+        controls={props.embedded}
         resizeMode="contain"
         onProgress={e => {
           actions.setCurrent(e.currentTime);

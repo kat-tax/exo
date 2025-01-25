@@ -100,8 +100,8 @@ export function MediaControls(props: MediaControlsProps) {
               />
             : <ListRowIcon
                 name={name ?? ''}
-                extension={props.metadata.ext}
-                isFile={true}
+                ext={props.metadata.ext}
+                dir={false}
                 size={2}
               />
             }

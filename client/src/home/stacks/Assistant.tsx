@@ -115,6 +115,7 @@ export const Assistant = memo(() => {
 
 const stylesheet = createStyleSheet(theme => ({
   prompt: {
+    marginTop: theme.display.space5,
     alignItems: 'center',
     gap: theme.display.space5,
   },

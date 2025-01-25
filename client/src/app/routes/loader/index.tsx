@@ -18,6 +18,9 @@ export const Screen = {
   Home: lazy(
     () => import('../../../home/routes/ScreenHome')
   ),
+  Inbox: lazy(
+    () => import('../../../home/routes/ScreenInbox')
+  ),
   Browse: lazy(
     () => import('../../../media/routes/ScreenBrowse')
   ),

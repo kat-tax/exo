@@ -4,7 +4,8 @@ import {ListRowIcon} from 'media/stacks/ListRowIcon';
 import {bytesize} from 'app/utils/formatting';
 import {isTouch} from 'app/utils/platform';
 
-const TOUCH = isTouch();
+export const TOUCH = isTouch();
+export const HEIGHT = TOUCH ? 40 : 26;
 
 interface ListRow {
   name: string,
@@ -62,9 +63,9 @@ const stylesheet = createStyleSheet((theme) => ({
     paddingVertical: theme.display.space1,
     borderRadius: theme.display.radius1,
     borderWidth: 1,
+    height: HEIGHT,
     borderColor: 'rgba(0,0,0,0)',
     gap: theme.display.space2,
-    marginBottom: 2,
   },
   focused: {
     borderColor: theme.colors.foreground,
@@ -81,8 +82,8 @@ const stylesheet = createStyleSheet((theme) => ({
     color: theme.colors.foreground,
     ...TOUCH && {
       fontSize: theme.font.contentSize,
+      lineHeight: theme.font.contentHeight,
       letterSpacing: theme.font.contentSpacing,
-      lineHeight: 32,
     },
   },
   size: {

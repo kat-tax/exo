@@ -100,9 +100,9 @@ export function MediaSelection() {
           style={[styles.preview, path === focused && styles.focus]}>
           <ListRowIcon
             name={name ?? ''}
-            extension={ext}
             size={ICON_SIZE}
-            isFile
+            ext={ext}
+            dir={false}
           />
           <Text
             style={[styles.text, path === focused && styles.textFocused]}

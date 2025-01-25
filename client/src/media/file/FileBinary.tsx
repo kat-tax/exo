@@ -26,7 +26,7 @@ export default forwardRef((props: FileBinary) => {
 
   return (
     <Watermark
-      title={props.name}
+      title={t`This file can not be previewed.`}
       label={t`Download`}
       icon="ph:download"
       onAction={() => source && saveFile(source)}

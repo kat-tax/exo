@@ -21,7 +21,7 @@ export function Watermark(props: WatermarkProps) {
           {props.title}
         </Text>
         <Button
-          mode="Primary"
+          mode="Secondary"
           state="Default"
           label={props.label}
           onPress={props.onAction}
@@ -42,22 +42,21 @@ const stylesheet = createStyleSheet(theme => ({
   },
   box: {
     gap: theme.display.space5,
-    padding: theme.display.space9,
-    paddingHorizontal: theme.display.space9,
+    padding: theme.display.space8,
     borderStyle: 'dashed',
     borderWidth: 0,
     borderColor: theme.colors.muted,
     borderRadius: theme.display.radius3,
+    maxWidth: 300,
   },
   boxDnd: {
     borderWidth: 1,
-    paddingHorizontal: theme.display.space9 * 2,
   },
   text: {
     textAlign: 'center',
     fontFamily: theme.font.family,
-    fontSize: theme.font.contentSize,
-    fontWeight: theme.font.contentWeight,
+    fontSize: theme.font.size,
+    fontWeight: '100',
     lineHeight: theme.font.contentHeight,
     letterSpacing: theme.font.contentSpacing,
     color: theme.colors.mutedForeground,

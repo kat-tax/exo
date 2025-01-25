@@ -17,6 +17,9 @@ export const Screen = {
   get Home() {
     return require('../../../home/routes/ScreenHome').default;
   },
+  get Inbox() {
+    return require('../../../home/routes/ScreenInbox').default;
+  },
   get Browse() {
     return require('../../../media/routes/ScreenBrowse').default;
   },

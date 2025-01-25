@@ -1,3 +1,4 @@
+import {Image as ExoImage} from 'react-exo/image';
 import {View, ImageBackground, Image} from 'react-native';
 import {useRef, useImperativeHandle, useEffect, memo, forwardRef} from 'react';
 import {getMatrixTransformStyles, TransformWrapper, TransformComponent} from 'react-zoom-pan-pinch';
@@ -45,13 +46,25 @@ export default memo(forwardRef((props: FileImage, ref: React.Ref<ImageRef>) => {
 
   // Update file player bar info
   useEffect(() => {
-    if (!source) return;
+    if (!source || props.embedded) return;
     Image.getSize(source, (width, height) => {
       props.actions.setInfo(`${width} x ${height}`);
     }, () => {
       props.actions.setInfo('‎');
     });
   }, [source, props.actions]);
+
+  if (props.embedded) {
+    return source ? (
+      <View style={styles.root}>
+        <ExoImage
+          url={source}
+          style={styles.image}
+          resizeMode="contain"
+        />
+      </View>
+    ) : null;
+  }
 
   return source ? (
     <TransformWrapper
@@ -65,10 +78,10 @@ export default memo(forwardRef((props: FileImage, ref: React.Ref<ImageRef>) => {
         contentStyle={{height: '100%', width: '100%'}}
         wrapperStyle={{height: '100%', width: '100%'}}>
         <View style={styles.root}>
-          <ImageBackground
+          <ExoImage
+            url={source}
             style={styles.image}
             // style={{...size}}
-            source={{uri: source}}
             resizeMode={props.maximized ? 'contain' : 'cover'}
           />
         </View>

@@ -33,7 +33,7 @@ export default forwardRef((props: FileGame, ref: React.Ref<GameRef>) => {
       background={theme.colors.neutral}
       bios={`/.bios/${props.platform}.bin`}
       style={styles.root}
-      startOnLoaded
+      startOnLoaded={!props.embedded}
     />
   ) : null;
 });
@@ -45,5 +45,6 @@ const stylesheet = createStyleSheet(() => ({
     width: '100%',
     justifyContent: 'center',
     alignItems: 'center',
+    position: 'absolute',
   },
 }));

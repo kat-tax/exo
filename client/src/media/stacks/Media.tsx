@@ -13,6 +13,7 @@ interface MediaProps {
   ext: string,
   name: string,
   path: string,
+  embedded: boolean,
   vertical: boolean,
   maximized: boolean,
   close: () => void,
@@ -23,7 +24,7 @@ export function Media(props: MediaProps) {
 
   const file = useRef<FileRef>(null);
   const {styles, theme} = useStyles(stylesheet);
-  const {ext, name, path, vertical, maximized, close} = props;
+  const {ext, name, path, vertical, maximized, embedded, close} = props;
 
   // File information
   const [renderer, setRenderer] = useState<FileRenderInfo>();
@@ -44,12 +45,18 @@ export function Media(props: MediaProps) {
       maximized ? styles.maximized : styles.minimized,
       !maximized && {width: pip.resolution[0]},
       pip.viewportWidth <= theme.breakpoints.xs && styles.fullwidth,
+      embedded && {
+        width: pip.resolution[0],
+        height: pip.resolution[1],
+        minWidth: pip.resolution[0],
+        minHeight: pip.resolution[1],
+      },
     ],
     frame: [
       !maximized && {width: pip.resolution[0], height: pip.resolution[1]},
       pip.viewportWidth <= theme.breakpoints.xs && styles.fullwidth,
     ],
-  }), [styles, pip, vertical, maximized, theme.breakpoints]);
+  }), [styles, pip, vertical, maximized, embedded, theme.breakpoints]);
 
   // File actions
   const actions = useMemo(() => ({
@@ -86,7 +93,7 @@ export function Media(props: MediaProps) {
 
   return (
     <View style={vstyles.root}>
-      <MediaSelection/>
+      {!embedded && <MediaSelection/>}
       <ScrollView style={vstyles.frame} contentContainerStyle={styles.contents}>
         <File
           ref={file}
@@ -94,29 +101,32 @@ export function Media(props: MediaProps) {
           name={name}
           extension={ext}
           renderer={renderer}
+          embedded={embedded}
           maximized={maximized}
           actions={actions}
         />
       </ScrollView>
-      <MediaControls {...{
-        file,
-        renderer,
-        maximized,
-        actions,
-        metadata: {
-          info,
-          title,
-          cover,
-          path,
-          name,
-          ext,
-          muted,
-          volume,
-          playing,
-          current,
-          duration,
-        },
-      }}/>
+      {!embedded &&
+        <MediaControls {...{
+          file,
+          renderer,
+          maximized,
+          actions,
+          metadata: {
+            info,
+            title,
+            cover,
+            path,
+            name,
+            ext,
+            muted,
+            volume,
+            playing,
+            current,
+            duration,
+          },
+        }}/>
+      }
     </View>
   );
 }

@@ -11,6 +11,7 @@ export interface FileProps {
   name: string,
   extension: string,
   maximized: boolean,
+  embedded: boolean,
   renderer?: FileRenderInfo,
   actions: {
     close: () => void,
@@ -26,10 +27,10 @@ export interface FileProps {
 }
 
 export default memo(forwardRef((props: FileProps, ref) => {
-  const {path, name, extension, maximized, renderer, actions} = props;
+  const {path, name, extension, embedded, maximized, renderer, actions} = props;
   const [file, ctx] = renderer || [];
   if (!file) return null;
-  const base: FileProps = {name, extension, path, maximized, ...{actions}};
+  const base: FileProps = {name, extension, path, embedded, maximized, ...{actions}};
   const meta = {...base, ref};
   switch (file) {
     case FileType.Binary:

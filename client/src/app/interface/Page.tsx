@@ -48,12 +48,20 @@ export function Page(props: PageProps) {
             <View style={vstyles.header}>
               <View style={styles.greeting}>
                 {hasTitle &&
-                  <Text style={styles.title} selectable={false}>
+                  <Text
+                    style={styles.title}
+                    selectable={false}
+                    ellipsizeMode="tail"
+                    numberOfLines={1}>
                     {props.title}
                   </Text>
                 }
                 {hasMessage &&
-                  <Text style={styles.message} selectable={false}>
+                  <Text
+                    style={styles.message}
+                    selectable={false}
+                    ellipsizeMode="tail"
+                    numberOfLines={1}>
                     {props.message}
                   </Text>
                 }
@@ -118,8 +126,10 @@ const stylesheet = createStyleSheet((theme, rt) => ({
   },
   greeting: {
     gap: theme.display.space2,
+    flex: 1,
   },
   header: {
+    overflow: 'hidden',
     flexDirection: 'row',
     alignItems: 'flex-start',
     justifyContent: 'space-between',

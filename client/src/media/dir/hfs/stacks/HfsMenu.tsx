@@ -1,4 +1,3 @@
-import {useMemo} from 'react';
 import {useLingui} from '@lingui/react/macro';
 import {ContextMenu} from 'app/stacks/ContextMenu';
 
@@ -13,8 +12,9 @@ export interface HfsMenuProps extends React.PropsWithChildren {
 export function HfsMenu(props: HfsMenuProps) {
   const {entry, cmd} = props;
   const {t} = useLingui();
+
   return (
-    <ContextMenu label={entry.name} items={useMemo(() => [
+    <ContextMenu label={entry.name} items={[
       {
         name: 'view',
         icon: 'ph:eye',
@@ -73,7 +73,7 @@ export function HfsMenu(props: HfsMenuProps) {
         destructive: true,
         action: cmd.purge,
       },
-    ], [t, cmd])}>
+    ]}>
       {props.children}
     </ContextMenu>
   );

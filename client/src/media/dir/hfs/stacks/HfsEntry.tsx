@@ -1,4 +1,4 @@
-import {Pressable} from 'react-native';
+import {TouchableOpacity} from 'react-native';
 import {ListRow} from 'media/stacks/ListRow';
 import {HfsMenu} from './HfsMenu';
 import {useHfsEntry} from '../hooks/useHfsEntry';
@@ -21,10 +21,10 @@ export function HfsEntry(props: HfsEntryProps) {
   const {ref, ext, cmd, opt} = useHfsEntry(props);
   const dir = !isFile;
   return (
-    <HfsMenu {...{entry, cmd}}>
-      <Pressable {...{ref}} onPress={cmd.select}>
+    <TouchableOpacity onPress={cmd.select} {...{ref, activeOpacity: 0.6}}>
+      <HfsMenu {...{entry, cmd}}>
         <ListRow {...{name, size, ext, dir, opt}}/>
-      </Pressable>
-    </HfsMenu>
+      </HfsMenu>
+    </TouchableOpacity>
   );
 }
