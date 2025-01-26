@@ -13,10 +13,17 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
+#. placeholder {0}: 5
+#. placeholder {0}: 11
 #: ../../client/src/dev/routes/ScreenLibrary.tsx:22
 #: ../../client/src/dev/routes/ScreenDesign.tsx:14
 msgid "{0} components"
 msgstr "{0}개 컴포넌트"
+
+#. placeholder {0}: messages.length
+#: ../../client/src/home/routes/ScreenInbox.tsx:20
+msgid "{0} messages"
+msgstr ""
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:54
 msgid "A mnemonic phrase for authentication."
@@ -51,14 +58,17 @@ msgstr "무엇이든 물어보세요..."
 msgid "Auto"
 msgstr "자동"
 
+#: ../../client/src/media/routes/ScreenBrowse.tsx:28
 #: ../../client/src/app/interface/Menu.tsx:89
 msgid "Books"
 msgstr "도서"
 
+#. placeholder {0}: data.metadata.author
 #: ../../client/src/media/file/FileBook.tsx:40
 msgid "by {0}"
 msgstr "{0} 저"
 
+#: ../../client/src/world/routes/ScreenWorld.tsx:29
 #: ../../client/src/app/interface/Menu.tsx:106
 msgid "Calendar"
 msgstr "달력"
@@ -71,6 +81,7 @@ msgstr "섭씨"
 msgid "Close"
 msgstr "닫기"
 
+#: ../../client/src/media/hooks/useMediaControls.ts:58
 #: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:46
 msgid "Copy"
 msgstr ""
@@ -83,6 +94,7 @@ msgstr ""
 msgid "Dark"
 msgstr "다크"
 
+#: ../../client/src/app/interface/Tabs.tsx:14
 #: ../../client/src/app/interface/Menu.tsx:28
 msgid "Dashboard"
 msgstr "대시보드"
@@ -123,6 +135,7 @@ msgstr "프롬프트 삭제"
 msgid "Delete the local database."
 msgstr "로컬 데이터베이스 삭제"
 
+#: ../../client/src/dev/routes/ScreenDesign.tsx:13
 #: ../../client/src/app/interface/Menu.tsx:132
 msgid "Design"
 msgstr "디자인"
@@ -134,10 +147,6 @@ msgstr "개발자 모드"
 #: ../../client/src/app/routes/ScreenStorage.tsx:30
 msgid "Device Space"
 msgstr "기기 저장공간"
-
-#: ../../client/src/media/dir/hfs/stacks/HfsNoEntries.tsx:10
-msgid "Directory is empty."
-msgstr "디렉토리가 비어있습니다."
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:74
 msgid "Display"
@@ -155,7 +164,10 @@ msgstr "문서"
 msgid "Documents"
 msgstr "문서"
 
+#: ../../client/src/media/hooks/useMediaControls.ts:77
+#: ../../client/src/media/file/FileBinary.tsx:30
 #: ../../client/src/media/dir/torrent/stacks/TorrentMenu.tsx:21
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:35
 msgid "Download"
 msgstr "다운로드"
 
@@ -191,6 +203,7 @@ msgstr "니모닉 구문을 입력하세요"
 msgid "Enter your name"
 msgstr "이름을 입력하세요"
 
+#: ../../client/src/media/hooks/useMediaControls.ts:87
 #: ../../client/src/media/dir/zip/stacks/ZipMenu.tsx:21
 msgid "Extract"
 msgstr "추출"
@@ -203,6 +216,8 @@ msgstr "화씨"
 msgid "Feature in development..."
 msgstr ""
 
+#: ../../client/src/media/routes/ScreenBrowse.tsx:34
+#: ../../client/src/app/interface/Tabs.tsx:24
 #: ../../client/src/app/interface/Menu.tsx:59
 msgid "Files"
 msgstr "파일"
@@ -211,10 +226,15 @@ msgstr "파일"
 msgid "Filesystem"
 msgstr ""
 
+#: ../../client/src/media/dir/hfs/stacks/HfsNoEntries.tsx:12
+msgid "Folder is empty. Drop items or select folder to import."
+msgstr ""
+
 #: ../../client/src/media/hooks/useMediaControls.ts:277
 msgid "Fullscreen"
 msgstr "전체화면"
 
+#: ../../client/src/media/routes/ScreenBrowse.tsx:26
 #: ../../client/src/app/interface/Menu.tsx:84
 msgid "Games"
 msgstr "게임"
@@ -251,7 +271,7 @@ msgstr "Groq 모델 ID"
 msgid "Human"
 msgstr "사용자"
 
-#: ../../client/src/media/dir/hfs/stacks/HfsNoEntries.tsx:11
+#: ../../client/src/media/dir/hfs/stacks/HfsNoEntries.tsx:13
 msgid "Import"
 msgstr "가져오기"
 
@@ -259,10 +279,8 @@ msgstr "가져오기"
 msgid "Import Files"
 msgstr "파일 가져오기"
 
-#: ../../client/src/app/routes/ScreenTeaser.tsx:15
-msgid "In development..."
-msgstr ""
-
+#: ../../client/src/home/routes/ScreenInbox.tsx:19
+#: ../../client/src/app/interface/Tabs.tsx:19
 #: ../../client/src/app/interface/Menu.tsx:33
 msgid "Inbox"
 msgstr "알림"
@@ -275,6 +293,7 @@ msgstr "킬로미터"
 msgid "Language"
 msgstr "언어"
 
+#: ../../client/src/dev/routes/ScreenLibrary.tsx:21
 #: ../../client/src/app/interface/Menu.tsx:137
 msgid "Library"
 msgstr "라이브러리"
@@ -295,6 +314,7 @@ msgstr "설정 관리"
 msgid "Manage your storage"
 msgstr "저장소 관리"
 
+#: ../../client/src/world/routes/ScreenWorld.tsx:17
 #: ../../client/src/app/interface/Menu.tsx:96
 msgid "Map"
 msgstr "지도"
@@ -311,10 +331,12 @@ msgstr "마일"
 msgid "Move"
 msgstr ""
 
+#: ../../client/src/media/routes/ScreenBrowse.tsx:20
 #: ../../client/src/app/interface/Menu.tsx:69
 msgid "Music"
 msgstr "음악"
 
+#: ../../client/src/world/routes/ScreenWorld.tsx:23
 #: ../../client/src/app/interface/Menu.tsx:101
 msgid "News"
 msgstr "뉴스"
@@ -343,6 +365,7 @@ msgstr "소유자 키"
 msgid "Pause"
 msgstr "일시정지"
 
+#: ../../client/src/media/routes/ScreenBrowse.tsx:22
 #: ../../client/src/app/interface/Menu.tsx:74
 msgid "Pictures"
 msgstr "사진"
@@ -379,10 +402,6 @@ msgstr "프롬프트"
 msgid "Provide a key to use AI features."
 msgstr "AI 기능을 사용하려면 키를 입력하세요."
 
-#: ../../client/src/app/routes/ScreenTeaser.tsx:15
-msgid "R&D in progress..."
-msgstr ""
-
 #: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:60
 msgid "Rename"
 msgstr ""
@@ -415,10 +434,13 @@ msgstr "앱에서 사용할 온도 단위를 선택하세요."
 msgid "Select the theme for the app."
 msgstr "앱 테마를 선택하세요."
 
+#: ../../client/src/app/routes/ScreenSettings.tsx:28
+#: ../../client/src/app/interface/Tabs.tsx:34
 #: ../../client/src/app/interface/Menu.tsx:154
 msgid "Settings"
 msgstr "설정"
 
+#: ../../client/src/media/hooks/useMediaControls.ts:257
 #: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:28
 msgid "Share"
 msgstr "공유"
@@ -431,6 +453,7 @@ msgstr "뒤로 건너뛰기"
 msgid "Skip forward"
 msgstr "앞으로 건너뛰기"
 
+#: ../../client/src/app/routes/ScreenStorage.tsx:25
 #: ../../client/src/app/interface/Menu.tsx:148
 msgid "Storage"
 msgstr "저장소"
@@ -447,6 +470,10 @@ msgstr "온도"
 msgid "Theme"
 msgstr "테마"
 
+#: ../../client/src/media/file/FileBinary.tsx:29
+msgid "This file can not be previewed."
+msgstr ""
+
 #: ../../client/src/media/file/FileBinary.tsx:24
 msgid "Unsupported File"
 msgstr "지원되지 않는 파일"
@@ -459,6 +486,7 @@ msgstr "업로드"
 msgid "User Name"
 msgstr "사용자 이름"
 
+#: ../../client/src/media/routes/ScreenBrowse.tsx:24
 #: ../../client/src/app/interface/Menu.tsx:79
 msgid "Videos"
 msgstr "동영상"
@@ -483,14 +511,7 @@ msgstr "최신 뉴스 및 RSS 피드 보기"
 msgid "Volume"
 msgstr "볼륨"
 
-#: ../../client/src/app/routes/ScreenTeaser.tsx:15
-msgid "We're almost there..."
-msgstr ""
-
-#: ../../client/src/app/routes/ScreenTeaser.tsx:15
-msgid "We're on the way..."
-msgstr ""
-
+#. placeholder {0}: profile.name
 #: ../../client/src/home/routes/ScreenHome.tsx:39
 msgid "Welcome, {0}"
 msgstr "환영합니다, {0}님"
@@ -499,10 +520,7 @@ msgstr "환영합니다, {0}님"
 msgid "Welcome, Human"
 msgstr "환영합니다"
 
-#: ../../client/src/app/routes/ScreenTeaser.tsx:15
-msgid "Work in progress..."
-msgstr "작업 중..."
-
+#: ../../client/src/app/interface/Tabs.tsx:29
 #: ../../client/src/app/interface/Menu.tsx:94
 msgid "World"
 msgstr "세계"

@@ -1,5 +1,5 @@
+import {View, Image} from 'react-native';
 import {Image as ExoImage} from 'react-exo/image';
-import {View, ImageBackground, Image} from 'react-native';
 import {useRef, useImperativeHandle, useEffect, memo, forwardRef} from 'react';
 import {getMatrixTransformStyles, TransformWrapper, TransformComponent} from 'react-zoom-pan-pinch';
 //import {useImageResolution, ResumableZoom, fitContainer} from 'react-native-zoom-toolkit';

@@ -55,6 +55,7 @@
     "effect": "3.10.4",
     "file-type": "^19.6.0",
     "maplibre-gl": "4.7.1",
+    "matrix-js-sdk": "^36.0.0",
     "openmeteo": "^1.1.4",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

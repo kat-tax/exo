@@ -1,4 +1,6 @@
-import {useMemo} from 'react';
+import {useMemo, useEffect} from 'react';
+import {RoomEvent} from 'matrix-js-sdk/lib/models/room';
+import * as sdk from 'matrix-js-sdk';
 
 export interface Message {
   local: boolean;
@@ -45,6 +47,11 @@ export function useMessages(): Array<Message> {
       message: 'Someone made the chrome dino game as a GB rom!',
       timestamp: '2:38 PM',
       embed: 'https://get.ult.dev/samples/dino.gb',
+    },
+    {
+      local: false,
+      message: 'Offline dino ftw!',
+      timestamp: '2:38 PM',
       emote: '🦖',
     },
     {
@@ -72,6 +79,68 @@ export function useMessages(): Array<Message> {
       emote: '💜',
     },
   ], []);
+
+  const client = useMemo(() => {
+    const userId = '@theultdev_:matrix.org';
+    const accessToken = 'syt_dGhldWx0ZGV2Xw_jkOZPjNeFfKRKdlJOTVg_4RK4V4';
+    return sdk.createClient({
+      userId,
+      accessToken,
+      baseUrl: 'https://matrix.org',
+    });
+  }, []);
+
+  useEffect(() => {
+    if (!client) return;
+    console.log('>> client', client);
+    client.startClient();
+    client.on(RoomEvent.Name, (room) => {
+      console.log('>> [matrix] [RoomEvent.Name]', room);
+    });
+    client.on(RoomEvent.Tags, (event, room) => {
+      console.log('>> [matrix] [RoomEvent.Tags]', event, room);
+    });
+    client.on(RoomEvent.Receipt, (event, room) => {
+      console.log('>> [matrix] [RoomEvent.Receipt]', event, room);
+    });
+    client.on(RoomEvent.Redaction, (event, room, threadId) => {
+      console.log('>> [matrix] [RoomEvent.Redaction]', event, room, threadId);
+    });
+    client.on(RoomEvent.RedactionCancelled, (event, room) => {
+      console.log('>> [matrix] [RoomEvent.RedactionCancelled]', event, room);
+    });
+    client.on(RoomEvent.AccountData, (event, room) => {
+      console.log('>> [matrix] [RoomEvent.AccountData]', event, room);
+    });
+    client.on(RoomEvent.MyMembership, (room, membership, oldMembership) => {
+      console.log('>> [matrix] [RoomEvent.MyMembership]', room, membership, oldMembership);
+    });
+    client.on(RoomEvent.LocalEchoUpdated, (event, room, oldEventId, oldStatus) => {
+      console.log('>> [matrix] [RoomEvent.LocalEchoUpdated]', event, room, oldEventId, oldStatus);
+    });
+    client.on(RoomEvent.HistoryImportedWithinTimeline, (markerEvent, room) => {
+      console.log('>> [matrix] [RoomEvent.HistoryImportedWithinTimeline]', markerEvent, room);
+    });
+    client.on(RoomEvent.Timeline, (event, room, toStartOfTimeline) => {
+      if (toStartOfTimeline) {
+          return; // don't print paginated results
+      }
+      if (event.getType() !== "m.room.message") {
+          return; // only print messages
+      }
+      console.log(
+          // the room name will update with m.room.name events automatically
+          ">> [matrix] [RoomEvent.Timeline] message: (%s) %s :: %s",
+          room?.name,
+          event.getSender(),
+          event.getContent().body,
+      );
+    });
+    return () => {
+      client.removeAllListeners();
+      client.stopClient();
+    };
+  }, [client]);
 
   return list.map((msg, i) => ({
     ...msg,
