@@ -25,27 +25,27 @@ msgstr "{0}개 컴포넌트"
 msgid "{0} messages"
 msgstr ""
 
+#: ../../client/src/app/routes/ScreenSettings.tsx:223
+msgid "<matrix access token>"
+msgstr ""
+
 #: ../../client/src/app/routes/ScreenSettings.tsx:54
 msgid "A mnemonic phrase for authentication."
 msgstr "인증을 위한 니모닉 구문입니다."
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:136
-msgid "AI"
-msgstr "AI"
-
-#: ../../client/src/app/hooks/useSettings.ts:56
+#: ../../client/src/app/hooks/useSettings.ts:96
 msgid "Are you sure you want to change the owner key? This will reset the local database. This action cannot be undone."
 msgstr "소유자 키를 변경하시겠습니까? 로컬 데이터베이스가 초기화됩니다. 이 작업은 취소할 수 없습니다."
 
-#: ../../client/src/app/hooks/useSettings.ts:63
+#: ../../client/src/app/hooks/useSettings.ts:103
 msgid "Are you sure you want to reset your filesystem? This will delete all files."
 msgstr ""
 
-#: ../../client/src/app/hooks/useSettings.ts:50
+#: ../../client/src/app/hooks/useSettings.ts:90
 msgid "Are you sure you want to reset your local database? If data is not backed up on another device, it will be lost. This action cannot be undone."
 msgstr "로컬 데이터베이스를 초기화하시겠습니까? 다른 기기에 백업되지 않은 데이터는 손실됩니다. 이 작업은 취소할 수 없습니다."
 
-#: ../../client/src/app/hooks/useSettings.ts:41
+#: ../../client/src/app/hooks/useSettings.ts:81
 msgid "Are you sure you want to reset your prompt history?"
 msgstr "프롬프트 기록을 초기화하시겠습니까?"
 
@@ -99,11 +99,11 @@ msgstr "다크"
 msgid "Dashboard"
 msgstr "대시보드"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:165
+#: ../../client/src/app/routes/ScreenSettings.tsx:230
 msgid "Data"
 msgstr "데이터"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:177
+#: ../../client/src/app/routes/ScreenSettings.tsx:242
 msgid "Database"
 msgstr ""
 
@@ -111,27 +111,27 @@ msgstr ""
 msgid "Delete"
 msgstr ""
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:188
-msgid "Delete all files."
+#: ../../client/src/app/routes/ScreenSettings.tsx:253
+msgid "Delete all local files."
 msgstr ""
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:168
-msgid "Delete all prompt data."
-msgstr "모든 프롬프트 데이터 삭제"
+#: ../../client/src/app/routes/ScreenSettings.tsx:233
+msgid "Delete all local prompt data."
+msgstr ""
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:180
+#: ../../client/src/app/routes/ScreenSettings.tsx:245
 msgid "Delete Database"
 msgstr "데이터베이스 삭제"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:190
+#: ../../client/src/app/routes/ScreenSettings.tsx:255
 msgid "Delete Filesystem"
 msgstr ""
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:170
+#: ../../client/src/app/routes/ScreenSettings.tsx:235
 msgid "Delete Prompts"
 msgstr "프롬프트 삭제"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:178
+#: ../../client/src/app/routes/ScreenSettings.tsx:243
 msgid "Delete the local database."
 msgstr "로컬 데이터베이스 삭제"
 
@@ -187,21 +187,13 @@ msgstr "좋은 하루 되세요"
 msgid "Enjoy the night"
 msgstr "좋은 밤 되세요"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:143
-msgid "Enter api key"
-msgstr "API 키 입력"
-
 #: ../../client/src/app/interface/Menu.tsx:45
 msgid "Enter folder name"
 msgstr ""
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:60
-msgid "Enter your mnemonic phrase"
-msgstr "니모닉 구문을 입력하세요"
-
 #: ../../client/src/app/routes/ScreenSettings.tsx:48
-msgid "Enter your name"
-msgstr "이름을 입력하세요"
+msgid "Enter name"
+msgstr ""
 
 #: ../../client/src/media/hooks/useMediaControls.ts:87
 #: ../../client/src/media/dir/zip/stacks/ZipMenu.tsx:21
@@ -222,7 +214,7 @@ msgstr ""
 msgid "Files"
 msgstr "파일"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:187
+#: ../../client/src/app/routes/ScreenSettings.tsx:252
 msgid "Filesystem"
 msgstr ""
 
@@ -263,7 +255,7 @@ msgstr "Groq API 키"
 msgid "Groq Failure"
 msgstr "Groq 오류"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:150
+#: ../../client/src/app/routes/ScreenSettings.tsx:151
 msgid "Groq Model ID"
 msgstr "Groq 모델 ID"
 
@@ -318,6 +310,26 @@ msgstr "저장소 관리"
 #: ../../client/src/app/interface/Menu.tsx:96
 msgid "Map"
 msgstr "지도"
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:178
+msgid "Maptiler API Key"
+msgstr ""
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:166
+msgid "Maptiler URL"
+msgstr ""
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:217
+msgid "Matrix Access Token"
+msgstr ""
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:204
+msgid "Matrix Base URL"
+msgstr ""
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:191
+msgid "Matrix User ID"
+msgstr ""
 
 #: ../../client/src/app/interface/Menu.tsx:38
 msgid "Media"
@@ -390,17 +402,37 @@ msgstr "이전"
 msgid "Profile"
 msgstr "프로필"
 
-#: ../../client/src/app/hooks/useSettings.ts:43
+#: ../../client/src/app/hooks/useSettings.ts:83
 msgid "Prompt History Reset"
 msgstr "프롬프트 기록 초기화"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:167
+#: ../../client/src/app/routes/ScreenSettings.tsx:232
 msgid "Prompts"
 msgstr "프롬프트"
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:205
+msgid "Provide a base url to use social features."
+msgstr ""
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:139
 msgid "Provide a key to use AI features."
 msgstr "AI 기능을 사용하려면 키를 입력하세요."
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:179
+msgid "Provide a key to use map features."
+msgstr ""
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:192
+msgid "Provide a matrix user to use social features."
+msgstr ""
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:218
+msgid "Provide a token to use social features."
+msgstr ""
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:167
+msgid "Provide a url to use map features."
+msgstr ""
 
 #: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:60
 msgid "Rename"
@@ -414,7 +446,7 @@ msgstr "다시 재생"
 msgid "Search"
 msgstr "검색"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:151
+#: ../../client/src/app/routes/ScreenSettings.tsx:152
 msgid "Select the AI model to use."
 msgstr "사용할 AI 모델을 선택하세요."
 
@@ -433,6 +465,10 @@ msgstr "앱에서 사용할 온도 단위를 선택하세요."
 #: ../../client/src/app/routes/ScreenSettings.tsx:97
 msgid "Select the theme for the app."
 msgstr "앱 테마를 선택하세요."
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:136
+msgid "Services"
+msgstr ""
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:28
 #: ../../client/src/app/interface/Tabs.tsx:34
@@ -537,7 +573,7 @@ msgstr "온라인 상태입니다"
 msgid "Your name to display in the app."
 msgstr "앱에 표시될 이름입니다."
 
-#: ../../client/src/app/hooks/useSettings.ts:44
+#: ../../client/src/app/hooks/useSettings.ts:84
 msgid "Your prompt history has been reset."
 msgstr "프롬프트 기록이 초기화되었습니다."
 

@@ -45,7 +45,7 @@ export default function ScreenSettings() {
               maxLength={50}
               defaultValue={settings.profile?.name?.toString()}
               onChangeText={settings.updateName}
-              placeholder={t`Enter your name`}
+              placeholder={t`Enter name`}
               placeholderTextColor={theme.colors.mutedForeground}
             />
           </PageItem>
@@ -57,7 +57,7 @@ export default function ScreenSettings() {
               selectTextOnFocus
               secureTextEntry={!showKey}
               defaultValue={settings.owner?.mnemonic}
-              placeholder={t`Enter your mnemonic phrase`}
+              placeholder={'<owner key>'}
               placeholderTextColor={theme.colors.mutedForeground}
               importantForAutofill="no"
               autoCapitalize="none"
@@ -133,14 +133,15 @@ export default function ScreenSettings() {
             </Picker>
           </PageItem>
         </PageSection>
-        <PageSection title={t`AI`}>
+        <PageSection title={t`Services`}>
           <PageItem
             label={t`Groq API Key`}
             description={t`Provide a key to use AI features.`}>
             <TextInput
               style={styles.input}
+              secureTextEntry
               selectTextOnFocus
-              placeholder={t`Enter api key`}
+              placeholder={'<groq api key>'}
               defaultValue={settings.profile?.groqKey?.toString()}
               placeholderTextColor={theme.colors.mutedForeground}
               onBlur={e => settings.updateGroqKey(e.nativeEvent.text)}
@@ -161,11 +162,73 @@ export default function ScreenSettings() {
               <Picker.Item label="gemma-7b" value="gemma-7b-it" color={theme.colors.foreground}/>
             </Picker>
           </PageItem>
+          <PageItem
+            label={t`Maptiler URL`}
+            description={t`Provide a url to use map features.`}>
+            <TextInput
+              style={styles.input}
+              selectTextOnFocus
+              placeholder={'https://api.maptiler.com'}
+              defaultValue={settings.profile?.maptilerUrl?.toString()}
+              placeholderTextColor={theme.colors.mutedForeground}
+              onBlur={e => settings.updateMaptilerUrl(e.nativeEvent.text)}
+            />
+          </PageItem>
+          <PageItem
+            label={t`Maptiler API Key`}
+            description={t`Provide a key to use map features.`}>
+            <TextInput
+              style={styles.input}
+              secureTextEntry
+              selectTextOnFocus
+              placeholder={'<maptiler api key>'}
+              defaultValue={settings.profile?.maptilerKey?.toString()}
+              placeholderTextColor={theme.colors.mutedForeground}
+              onBlur={e => settings.updateMaptilerKey(e.nativeEvent.text)}
+            />
+          </PageItem>
+          <PageItem
+            label={t`Matrix User ID`}
+            description={t`Provide a matrix user to use social features.`}>
+            <TextInput
+              style={styles.input}
+              selectTextOnFocus
+              placeholder={'@user:matrix.org'}
+              defaultValue={settings.profile?.matrixUserId?.toString()}
+              placeholderTextColor={theme.colors.mutedForeground}
+              onBlur={e => settings.updateMatrixUserId(e.nativeEvent.text)}
+            />
+          </PageItem>
+          <PageItem
+            label={t`Matrix Base URL`}
+            description={t`Provide a base url to use social features.`}>
+            <TextInput
+              style={styles.input}
+              selectTextOnFocus
+              placeholder={'https://matrix.org'}
+              defaultValue={settings.profile?.matrixBaseUrl?.toString()}
+              placeholderTextColor={theme.colors.mutedForeground}
+              onBlur={e => settings.updateMatrixBaseUrl(e.nativeEvent.text)}
+            />
+          </PageItem>
+          <PageItem
+            label={t`Matrix Access Token`}
+            description={t`Provide a token to use social features.`}>
+            <TextInput
+              style={styles.input}
+              secureTextEntry
+              selectTextOnFocus
+              placeholder={t`<matrix access token>`}
+              defaultValue={settings.profile?.matrixAccessToken?.toString()}
+              placeholderTextColor={theme.colors.mutedForeground}
+              onBlur={e => settings.updateMatrixAccessToken(e.nativeEvent.text)}
+            />
+          </PageItem>
         </PageSection>
         <PageSection title={t`Data`}>
           <PageItem
             label={t`Prompts`}
-            description={t`Delete all prompt data.`}>
+            description={t`Delete all local prompt data.`}>
             <Button
               label={t`Delete Prompts`}
               mode="Destructive"
@@ -185,7 +248,7 @@ export default function ScreenSettings() {
           </PageItem>
           <PageItem
             label={t`Filesystem`}
-            description={t`Delete all files.`}>
+            description={t`Delete all local files.`}>
             <Button
               label={t`Delete Filesystem`}
               mode="Destructive"

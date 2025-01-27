@@ -25,27 +25,27 @@ msgstr "{0}個のコンポーネント"
 msgid "{0} messages"
 msgstr ""
 
+#: ../../client/src/app/routes/ScreenSettings.tsx:223
+msgid "<matrix access token>"
+msgstr ""
+
 #: ../../client/src/app/routes/ScreenSettings.tsx:54
 msgid "A mnemonic phrase for authentication."
 msgstr "認証用のニーモニックフレーズ。"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:136
-msgid "AI"
-msgstr "AI"
-
-#: ../../client/src/app/hooks/useSettings.ts:56
+#: ../../client/src/app/hooks/useSettings.ts:96
 msgid "Are you sure you want to change the owner key? This will reset the local database. This action cannot be undone."
 msgstr "オーナーキーを変更してもよろしいですか？ローカルデータベースがリセットされます。この操作は取り消せません。"
 
-#: ../../client/src/app/hooks/useSettings.ts:63
+#: ../../client/src/app/hooks/useSettings.ts:103
 msgid "Are you sure you want to reset your filesystem? This will delete all files."
 msgstr ""
 
-#: ../../client/src/app/hooks/useSettings.ts:50
+#: ../../client/src/app/hooks/useSettings.ts:90
 msgid "Are you sure you want to reset your local database? If data is not backed up on another device, it will be lost. This action cannot be undone."
 msgstr "ローカルデータベースをリセットしてもよろしいですか？他のデバイスにバックアップされていないデータは失われます。この操作は取り消せません。"
 
-#: ../../client/src/app/hooks/useSettings.ts:41
+#: ../../client/src/app/hooks/useSettings.ts:81
 msgid "Are you sure you want to reset your prompt history?"
 msgstr "プロンプト履歴をリセットしてもよろしいですか？"
 
@@ -99,11 +99,11 @@ msgstr "ダーク"
 msgid "Dashboard"
 msgstr "ダッシュボード"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:165
+#: ../../client/src/app/routes/ScreenSettings.tsx:230
 msgid "Data"
 msgstr "データ"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:177
+#: ../../client/src/app/routes/ScreenSettings.tsx:242
 msgid "Database"
 msgstr ""
 
@@ -111,27 +111,27 @@ msgstr ""
 msgid "Delete"
 msgstr ""
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:188
-msgid "Delete all files."
+#: ../../client/src/app/routes/ScreenSettings.tsx:253
+msgid "Delete all local files."
 msgstr ""
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:168
-msgid "Delete all prompt data."
-msgstr "すべてのプロンプトデータを削除します。"
+#: ../../client/src/app/routes/ScreenSettings.tsx:233
+msgid "Delete all local prompt data."
+msgstr ""
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:180
+#: ../../client/src/app/routes/ScreenSettings.tsx:245
 msgid "Delete Database"
 msgstr "データベースを削除"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:190
+#: ../../client/src/app/routes/ScreenSettings.tsx:255
 msgid "Delete Filesystem"
 msgstr ""
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:170
+#: ../../client/src/app/routes/ScreenSettings.tsx:235
 msgid "Delete Prompts"
 msgstr "プロンプトを削除"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:178
+#: ../../client/src/app/routes/ScreenSettings.tsx:243
 msgid "Delete the local database."
 msgstr "ローカルデータベースを削除します。"
 
@@ -187,21 +187,13 @@ msgstr "良い一日を"
 msgid "Enjoy the night"
 msgstr "良い夜を"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:143
-msgid "Enter api key"
-msgstr "APIキーを入力"
-
 #: ../../client/src/app/interface/Menu.tsx:45
 msgid "Enter folder name"
 msgstr ""
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:60
-msgid "Enter your mnemonic phrase"
-msgstr "ニーモニックフレーズを入力"
-
 #: ../../client/src/app/routes/ScreenSettings.tsx:48
-msgid "Enter your name"
-msgstr "名前を入力"
+msgid "Enter name"
+msgstr ""
 
 #: ../../client/src/media/hooks/useMediaControls.ts:87
 #: ../../client/src/media/dir/zip/stacks/ZipMenu.tsx:21
@@ -222,7 +214,7 @@ msgstr ""
 msgid "Files"
 msgstr "ファイル"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:187
+#: ../../client/src/app/routes/ScreenSettings.tsx:252
 msgid "Filesystem"
 msgstr ""
 
@@ -263,7 +255,7 @@ msgstr "Groq APIキー"
 msgid "Groq Failure"
 msgstr "Groqエラー"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:150
+#: ../../client/src/app/routes/ScreenSettings.tsx:151
 msgid "Groq Model ID"
 msgstr "GroqモデルID"
 
@@ -318,6 +310,26 @@ msgstr "ストレージを管理"
 #: ../../client/src/app/interface/Menu.tsx:96
 msgid "Map"
 msgstr "地図"
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:178
+msgid "Maptiler API Key"
+msgstr ""
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:166
+msgid "Maptiler URL"
+msgstr ""
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:217
+msgid "Matrix Access Token"
+msgstr ""
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:204
+msgid "Matrix Base URL"
+msgstr ""
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:191
+msgid "Matrix User ID"
+msgstr ""
 
 #: ../../client/src/app/interface/Menu.tsx:38
 msgid "Media"
@@ -390,17 +402,37 @@ msgstr "前へ"
 msgid "Profile"
 msgstr "プロフィール"
 
-#: ../../client/src/app/hooks/useSettings.ts:43
+#: ../../client/src/app/hooks/useSettings.ts:83
 msgid "Prompt History Reset"
 msgstr "プロンプト履歴のリセット"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:167
+#: ../../client/src/app/routes/ScreenSettings.tsx:232
 msgid "Prompts"
 msgstr "プロンプト"
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:205
+msgid "Provide a base url to use social features."
+msgstr ""
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:139
 msgid "Provide a key to use AI features."
 msgstr "AI機能を使用するにはキーを提供してください。"
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:179
+msgid "Provide a key to use map features."
+msgstr ""
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:192
+msgid "Provide a matrix user to use social features."
+msgstr ""
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:218
+msgid "Provide a token to use social features."
+msgstr ""
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:167
+msgid "Provide a url to use map features."
+msgstr ""
 
 #: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:60
 msgid "Rename"
@@ -414,7 +446,7 @@ msgstr "リプレイ"
 msgid "Search"
 msgstr "検索"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:151
+#: ../../client/src/app/routes/ScreenSettings.tsx:152
 msgid "Select the AI model to use."
 msgstr "使用するAIモデルを選択してください。"
 
@@ -433,6 +465,10 @@ msgstr "アプリの温度単位を選択してください。"
 #: ../../client/src/app/routes/ScreenSettings.tsx:97
 msgid "Select the theme for the app."
 msgstr "アプリのテーマを選択してください。"
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:136
+msgid "Services"
+msgstr ""
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:28
 #: ../../client/src/app/interface/Tabs.tsx:34
@@ -537,7 +573,7 @@ msgstr "オンラインです"
 msgid "Your name to display in the app."
 msgstr "アプリに表示する名前。"
 
-#: ../../client/src/app/hooks/useSettings.ts:44
+#: ../../client/src/app/hooks/useSettings.ts:84
 msgid "Your prompt history has been reset."
 msgstr "プロンプト履歴がリセットされました。"
 

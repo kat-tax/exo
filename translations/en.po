@@ -25,27 +25,27 @@ msgstr "{0} components"
 msgid "{0} messages"
 msgstr "{0} messages"
 
+#: ../../client/src/app/routes/ScreenSettings.tsx:223
+msgid "<matrix access token>"
+msgstr "<matrix access token>"
+
 #: ../../client/src/app/routes/ScreenSettings.tsx:54
 msgid "A mnemonic phrase for authentication."
 msgstr "A mnemonic phrase for authentication."
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:136
-msgid "AI"
-msgstr "AI"
-
-#: ../../client/src/app/hooks/useSettings.ts:56
+#: ../../client/src/app/hooks/useSettings.ts:96
 msgid "Are you sure you want to change the owner key? This will reset the local database. This action cannot be undone."
 msgstr "Are you sure you want to change the owner key? This will reset the local database. This action cannot be undone."
 
-#: ../../client/src/app/hooks/useSettings.ts:63
+#: ../../client/src/app/hooks/useSettings.ts:103
 msgid "Are you sure you want to reset your filesystem? This will delete all files."
 msgstr "Are you sure you want to reset your filesystem? This will delete all files."
 
-#: ../../client/src/app/hooks/useSettings.ts:50
+#: ../../client/src/app/hooks/useSettings.ts:90
 msgid "Are you sure you want to reset your local database? If data is not backed up on another device, it will be lost. This action cannot be undone."
 msgstr "Are you sure you want to reset your local database? If data is not backed up on another device, it will be lost. This action cannot be undone."
 
-#: ../../client/src/app/hooks/useSettings.ts:41
+#: ../../client/src/app/hooks/useSettings.ts:81
 msgid "Are you sure you want to reset your prompt history?"
 msgstr "Are you sure you want to reset your prompt history?"
 
@@ -99,11 +99,11 @@ msgstr "Dark"
 msgid "Dashboard"
 msgstr "Dashboard"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:165
+#: ../../client/src/app/routes/ScreenSettings.tsx:230
 msgid "Data"
 msgstr "Data"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:177
+#: ../../client/src/app/routes/ScreenSettings.tsx:242
 msgid "Database"
 msgstr "Database"
 
@@ -111,27 +111,27 @@ msgstr "Database"
 msgid "Delete"
 msgstr "Delete"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:188
-msgid "Delete all files."
-msgstr "Delete all files."
+#: ../../client/src/app/routes/ScreenSettings.tsx:253
+msgid "Delete all local files."
+msgstr "Delete all local files."
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:168
-msgid "Delete all prompt data."
-msgstr "Delete all prompt data."
+#: ../../client/src/app/routes/ScreenSettings.tsx:233
+msgid "Delete all local prompt data."
+msgstr "Delete all local prompt data."
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:180
+#: ../../client/src/app/routes/ScreenSettings.tsx:245
 msgid "Delete Database"
 msgstr "Delete Database"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:190
+#: ../../client/src/app/routes/ScreenSettings.tsx:255
 msgid "Delete Filesystem"
 msgstr "Delete Filesystem"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:170
+#: ../../client/src/app/routes/ScreenSettings.tsx:235
 msgid "Delete Prompts"
 msgstr "Delete Prompts"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:178
+#: ../../client/src/app/routes/ScreenSettings.tsx:243
 msgid "Delete the local database."
 msgstr "Delete the local database."
 
@@ -187,21 +187,13 @@ msgstr "Enjoy the day"
 msgid "Enjoy the night"
 msgstr "Enjoy the night"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:143
-msgid "Enter api key"
-msgstr "Enter api key"
-
 #: ../../client/src/app/interface/Menu.tsx:45
 msgid "Enter folder name"
 msgstr "Enter folder name"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:60
-msgid "Enter your mnemonic phrase"
-msgstr "Enter your mnemonic phrase"
-
 #: ../../client/src/app/routes/ScreenSettings.tsx:48
-msgid "Enter your name"
-msgstr "Enter your name"
+msgid "Enter name"
+msgstr "Enter name"
 
 #: ../../client/src/media/hooks/useMediaControls.ts:87
 #: ../../client/src/media/dir/zip/stacks/ZipMenu.tsx:21
@@ -222,7 +214,7 @@ msgstr "Feature in development..."
 msgid "Files"
 msgstr "Files"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:187
+#: ../../client/src/app/routes/ScreenSettings.tsx:252
 msgid "Filesystem"
 msgstr "Filesystem"
 
@@ -263,7 +255,7 @@ msgstr "Groq API Key"
 msgid "Groq Failure"
 msgstr "Groq Failure"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:150
+#: ../../client/src/app/routes/ScreenSettings.tsx:151
 msgid "Groq Model ID"
 msgstr "Groq Model ID"
 
@@ -318,6 +310,26 @@ msgstr "Manage your storage"
 #: ../../client/src/app/interface/Menu.tsx:96
 msgid "Map"
 msgstr "Map"
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:178
+msgid "Maptiler API Key"
+msgstr "Maptiler API Key"
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:166
+msgid "Maptiler URL"
+msgstr "Maptiler URL"
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:217
+msgid "Matrix Access Token"
+msgstr "Matrix Access Token"
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:204
+msgid "Matrix Base URL"
+msgstr "Matrix Base URL"
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:191
+msgid "Matrix User ID"
+msgstr "Matrix User ID"
 
 #: ../../client/src/app/interface/Menu.tsx:38
 msgid "Media"
@@ -390,17 +402,37 @@ msgstr "Previous"
 msgid "Profile"
 msgstr "Profile"
 
-#: ../../client/src/app/hooks/useSettings.ts:43
+#: ../../client/src/app/hooks/useSettings.ts:83
 msgid "Prompt History Reset"
 msgstr "Prompt History Reset"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:167
+#: ../../client/src/app/routes/ScreenSettings.tsx:232
 msgid "Prompts"
 msgstr "Prompts"
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:205
+msgid "Provide a base url to use social features."
+msgstr "Provide a base url to use social features."
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:139
 msgid "Provide a key to use AI features."
 msgstr "Provide a key to use AI features."
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:179
+msgid "Provide a key to use map features."
+msgstr "Provide a key to use map features."
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:192
+msgid "Provide a matrix user to use social features."
+msgstr "Provide a matrix user to use social features."
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:218
+msgid "Provide a token to use social features."
+msgstr "Provide a token to use social features."
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:167
+msgid "Provide a url to use map features."
+msgstr "Provide a url to use map features."
 
 #: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:60
 msgid "Rename"
@@ -414,7 +446,7 @@ msgstr "Replay"
 msgid "Search"
 msgstr "Search"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:151
+#: ../../client/src/app/routes/ScreenSettings.tsx:152
 msgid "Select the AI model to use."
 msgstr "Select the AI model to use."
 
@@ -433,6 +465,10 @@ msgstr "Select the temperature unit for the app."
 #: ../../client/src/app/routes/ScreenSettings.tsx:97
 msgid "Select the theme for the app."
 msgstr "Select the theme for the app."
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:136
+msgid "Services"
+msgstr "Services"
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:28
 #: ../../client/src/app/interface/Tabs.tsx:34
@@ -537,7 +573,7 @@ msgstr "You are online"
 msgid "Your name to display in the app."
 msgstr "Your name to display in the app."
 
-#: ../../client/src/app/hooks/useSettings.ts:44
+#: ../../client/src/app/hooks/useSettings.ts:84
 msgid "Your prompt history has been reset."
 msgstr "Your prompt history has been reset."
 

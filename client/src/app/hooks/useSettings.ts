@@ -37,6 +37,46 @@ export function useSettings() {
     });
   };
 
+  const updateMaptilerKey = (text: string) => {
+    if (!profile?.id) return;
+    Either.match(decodeUnknownEither(NonEmptyString1000)(text), {
+      onLeft: Function.constVoid,
+      onRight: (maptilerKey) => evolu.update('profile', {maptilerKey, id: profile.id}),
+    });
+  };
+
+  const updateMaptilerUrl = (text: string) => {
+    if (!profile?.id) return;
+    Either.match(decodeUnknownEither(NonEmptyString1000)(text), {
+      onLeft: Function.constVoid,
+      onRight: (maptilerUrl) => evolu.update('profile', {maptilerUrl, id: profile.id}),
+    });
+  };
+
+  const updateMatrixUserId = (text: string) => {
+    if (!profile?.id) return;
+    Either.match(decodeUnknownEither(NonEmptyString1000)(text), {
+      onLeft: Function.constVoid,
+      onRight: (matrixUserId) => evolu.update('profile', {matrixUserId, id: profile.id}),
+    });
+  };
+
+  const updateMatrixBaseUrl = (text: string) => {
+    if (!profile?.id) return;
+    Either.match(decodeUnknownEither(NonEmptyString1000)(text), {
+      onLeft: Function.constVoid,
+      onRight: (matrixBaseUrl) => evolu.update('profile', {matrixBaseUrl, id: profile.id}),
+    });
+  };
+
+  const updateMatrixAccessToken = (text: string) => {
+    if (!profile?.id) return;
+    Either.match(decodeUnknownEither(NonEmptyString1000)(text), {
+      onLeft: Function.constVoid,
+      onRight: (matrixAccessToken) => evolu.update('profile', {matrixAccessToken, id: profile.id}),
+    });
+  };
+
   const resetPrompts = () => {
     if (!window.confirm(t`Are you sure you want to reset your prompt history?`)) return;
     alert({
@@ -76,6 +116,11 @@ export function useSettings() {
     updateName,
     updateGroqKey,
     updateGroqModel,
+    updateMaptilerKey,
+    updateMaptilerUrl,
+    updateMatrixUserId,
+    updateMatrixBaseUrl,
+    updateMatrixAccessToken,
     resetPrompts,
     resetOwner,
     changeOwner,

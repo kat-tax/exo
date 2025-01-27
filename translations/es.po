@@ -25,27 +25,27 @@ msgstr "{0} componentes"
 msgid "{0} messages"
 msgstr ""
 
+#: ../../client/src/app/routes/ScreenSettings.tsx:223
+msgid "<matrix access token>"
+msgstr ""
+
 #: ../../client/src/app/routes/ScreenSettings.tsx:54
 msgid "A mnemonic phrase for authentication."
 msgstr "Una frase mnemotécnica para autenticación."
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:136
-msgid "AI"
-msgstr "IA"
-
-#: ../../client/src/app/hooks/useSettings.ts:56
+#: ../../client/src/app/hooks/useSettings.ts:96
 msgid "Are you sure you want to change the owner key? This will reset the local database. This action cannot be undone."
 msgstr "¿Estás seguro de que quieres cambiar la clave de propietario? Esto reiniciará la base de datos local. Esta acción no se puede deshacer."
 
-#: ../../client/src/app/hooks/useSettings.ts:63
+#: ../../client/src/app/hooks/useSettings.ts:103
 msgid "Are you sure you want to reset your filesystem? This will delete all files."
 msgstr ""
 
-#: ../../client/src/app/hooks/useSettings.ts:50
+#: ../../client/src/app/hooks/useSettings.ts:90
 msgid "Are you sure you want to reset your local database? If data is not backed up on another device, it will be lost. This action cannot be undone."
 msgstr "¿Estás seguro de que quieres reiniciar tu base de datos local? Si los datos no están respaldados en otro dispositivo, se perderán. Esta acción no se puede deshacer."
 
-#: ../../client/src/app/hooks/useSettings.ts:41
+#: ../../client/src/app/hooks/useSettings.ts:81
 msgid "Are you sure you want to reset your prompt history?"
 msgstr "¿Estás seguro de que quieres reiniciar tu historial de prompts?"
 
@@ -99,11 +99,11 @@ msgstr "Oscuro"
 msgid "Dashboard"
 msgstr "Panel"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:165
+#: ../../client/src/app/routes/ScreenSettings.tsx:230
 msgid "Data"
 msgstr "Datos"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:177
+#: ../../client/src/app/routes/ScreenSettings.tsx:242
 msgid "Database"
 msgstr ""
 
@@ -111,27 +111,27 @@ msgstr ""
 msgid "Delete"
 msgstr ""
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:188
-msgid "Delete all files."
+#: ../../client/src/app/routes/ScreenSettings.tsx:253
+msgid "Delete all local files."
 msgstr ""
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:168
-msgid "Delete all prompt data."
-msgstr "Eliminar todos los datos de prompts."
+#: ../../client/src/app/routes/ScreenSettings.tsx:233
+msgid "Delete all local prompt data."
+msgstr ""
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:180
+#: ../../client/src/app/routes/ScreenSettings.tsx:245
 msgid "Delete Database"
 msgstr "Eliminar Base de Datos"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:190
+#: ../../client/src/app/routes/ScreenSettings.tsx:255
 msgid "Delete Filesystem"
 msgstr ""
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:170
+#: ../../client/src/app/routes/ScreenSettings.tsx:235
 msgid "Delete Prompts"
 msgstr "Eliminar Prompts"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:178
+#: ../../client/src/app/routes/ScreenSettings.tsx:243
 msgid "Delete the local database."
 msgstr "Eliminar la base de datos local."
 
@@ -187,21 +187,13 @@ msgstr "Disfruta el día"
 msgid "Enjoy the night"
 msgstr "Disfruta la noche"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:143
-msgid "Enter api key"
-msgstr "Ingresa la clave API"
-
 #: ../../client/src/app/interface/Menu.tsx:45
 msgid "Enter folder name"
 msgstr ""
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:60
-msgid "Enter your mnemonic phrase"
-msgstr "Ingresa tu frase mnemotécnica"
-
 #: ../../client/src/app/routes/ScreenSettings.tsx:48
-msgid "Enter your name"
-msgstr "Ingresa tu nombre"
+msgid "Enter name"
+msgstr ""
 
 #: ../../client/src/media/hooks/useMediaControls.ts:87
 #: ../../client/src/media/dir/zip/stacks/ZipMenu.tsx:21
@@ -222,7 +214,7 @@ msgstr ""
 msgid "Files"
 msgstr "Archivos"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:187
+#: ../../client/src/app/routes/ScreenSettings.tsx:252
 msgid "Filesystem"
 msgstr ""
 
@@ -263,7 +255,7 @@ msgstr "Clave API de Groq"
 msgid "Groq Failure"
 msgstr "Error de Groq"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:150
+#: ../../client/src/app/routes/ScreenSettings.tsx:151
 msgid "Groq Model ID"
 msgstr "ID del Modelo Groq"
 
@@ -318,6 +310,26 @@ msgstr "Administra tu almacenamiento"
 #: ../../client/src/app/interface/Menu.tsx:96
 msgid "Map"
 msgstr "Mapa"
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:178
+msgid "Maptiler API Key"
+msgstr ""
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:166
+msgid "Maptiler URL"
+msgstr ""
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:217
+msgid "Matrix Access Token"
+msgstr ""
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:204
+msgid "Matrix Base URL"
+msgstr ""
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:191
+msgid "Matrix User ID"
+msgstr ""
 
 #: ../../client/src/app/interface/Menu.tsx:38
 msgid "Media"
@@ -390,17 +402,37 @@ msgstr "Anterior"
 msgid "Profile"
 msgstr "Perfil"
 
-#: ../../client/src/app/hooks/useSettings.ts:43
+#: ../../client/src/app/hooks/useSettings.ts:83
 msgid "Prompt History Reset"
 msgstr "Historial de Prompts Reiniciado"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:167
+#: ../../client/src/app/routes/ScreenSettings.tsx:232
 msgid "Prompts"
 msgstr "Prompts"
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:205
+msgid "Provide a base url to use social features."
+msgstr ""
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:139
 msgid "Provide a key to use AI features."
 msgstr "Proporciona una clave para usar las funciones de IA."
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:179
+msgid "Provide a key to use map features."
+msgstr ""
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:192
+msgid "Provide a matrix user to use social features."
+msgstr ""
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:218
+msgid "Provide a token to use social features."
+msgstr ""
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:167
+msgid "Provide a url to use map features."
+msgstr ""
 
 #: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:60
 msgid "Rename"
@@ -414,7 +446,7 @@ msgstr "Repetir"
 msgid "Search"
 msgstr "Buscar"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:151
+#: ../../client/src/app/routes/ScreenSettings.tsx:152
 msgid "Select the AI model to use."
 msgstr "Selecciona el modelo de IA a usar."
 
@@ -433,6 +465,10 @@ msgstr "Selecciona la unidad de temperatura para la aplicación."
 #: ../../client/src/app/routes/ScreenSettings.tsx:97
 msgid "Select the theme for the app."
 msgstr "Selecciona el tema para la aplicación."
+
+#: ../../client/src/app/routes/ScreenSettings.tsx:136
+msgid "Services"
+msgstr ""
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:28
 #: ../../client/src/app/interface/Tabs.tsx:34
@@ -537,7 +573,7 @@ msgstr "Estás conectado"
 msgid "Your name to display in the app."
 msgstr "Tu nombre para mostrar en la aplicación."
 
-#: ../../client/src/app/hooks/useSettings.ts:44
+#: ../../client/src/app/hooks/useSettings.ts:84
 msgid "Your prompt history has been reset."
 msgstr "Tu historial de prompts ha sido reiniciado."
 

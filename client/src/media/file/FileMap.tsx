@@ -4,6 +4,7 @@ import {View} from 'react-native';
 import {useEffect, useState, forwardRef} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useFileData} from 'media/file/hooks/useFileData';
+import {useAppContext} from 'app/hooks/useAppContext';
 import {useScheme} from 'app/hooks/useScheme';
 import {getBounds} from 'app/utils/mapping';
 import {MarkerGeoJson} from 'world/stacks/MarkerGeoJson';
@@ -13,18 +14,19 @@ import type {LngLatBounds} from 'maplibre-gl';
 
 export interface FileMap extends FileProps {}
 
-const MAPTILER_URL = 'https://api.maptiler.com/maps/';
-const MAPTILER_KEY = 'UbdBChbHpiVOSIdTJWvV';
-
 export default forwardRef((props: FileMap) => {
   const url = useFileData(props.path, 'dataUrl');
   const source = useFileData(props.path, 'text');
+  const {profile} = useAppContext();
 
   const [bounds, setBounds] = useState<LngLatBounds | null>(null);
   const [markers, setMarkers] = useState<GeoJSON.Feature<GeoJSON.Point>[]>([]);
 
   const {styles, theme} = useStyles(stylesheet);
   const [scheme] = useScheme();
+
+  const maptilerUrl = profile?.maptilerUrl ?? 'https://api.maptiler.com';
+  const maptilerKey = profile?.maptilerKey ?? '';
 
   // Set bounds when source data is loaded
   useEffect(() => {
@@ -51,7 +53,7 @@ export default forwardRef((props: FileMap) => {
     <View style={[styles.root, props.maximized && styles.maximized]}>
       <Map
         style={{width: '100%', height: '100%'}}
-        mapStyle={`${MAPTILER_URL}${scheme === 'light' ? 'dataviz-light' : 'dataviz-dark'}/style.json?key=${MAPTILER_KEY}`}
+        mapStyle={`${maptilerUrl}/maps/${`dataviz-${scheme}`}/style.json?key=${maptilerKey}`}
         maxBounds={bounds ?? undefined}>
         <Source
           id="file"

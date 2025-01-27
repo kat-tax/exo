@@ -47,6 +47,11 @@ export const TableProfile = _.table({
   name: S.NullOr(String50),
   groqKey: S.NullOr(_.NonEmptyString1000),
   groqModel: S.NullOr(String50),
+  maptilerUrl: S.NullOr(_.NonEmptyString1000),
+  maptilerKey: S.NullOr(_.NonEmptyString1000),
+  matrixUserId: S.NullOr(_.NonEmptyString1000),
+  matrixBaseUrl: S.NullOr(_.NonEmptyString1000),
+  matrixAccessToken: S.NullOr(_.NonEmptyString1000),
 });
 
 export type TableDevice = typeof TableDevice.Type;

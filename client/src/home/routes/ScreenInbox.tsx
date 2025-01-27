@@ -49,7 +49,7 @@ export default function ScreenInbox() {
               <Message
                 mode={mode}
                 message={item.message}
-                timestamp={!item.hasNext ? item.timestamp : ''}
+                timestamp={!item.hasNext ? new Date(item.timestamp).toLocaleTimeString('en-US', {hour: '2-digit', minute: '2-digit'}) : ''}
                 origin={item.local ? 'Local' : 'Remote'}
                 emote={item.emote || ''}
                 embed={item.embed

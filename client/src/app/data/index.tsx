@@ -1,5 +1,6 @@
 import {EvoluProvider, createEvolu, useQuery, cast, jsonArrayFrom} from '@evolu/react-native';
 import {Provider as ReduxProvider} from 'react-exo/redux';
+import {MatrixProvider} from './lib/matrix-provider';
 import {Spinner} from 'app/stacks/Spinner';
 import store from './store';
 import cfg from 'config';
@@ -16,6 +17,11 @@ export const evolu = createEvolu(S.DB, {
       name: null,
       groqKey: null,
       groqModel: S.decodeSync(S.String50)('llama3-8b-8192'),
+      maptilerKey: null,
+      maptilerUrl: null,
+      matrixUserId: null,
+      matrixBaseUrl: null,
+      matrixAccessToken: null,
     });
   },
 });
@@ -24,7 +30,9 @@ export function Data(props: React.PropsWithChildren) {
   return (
     <ReduxProvider store={store} loading={<Spinner/>}>
       <EvoluProvider value={evolu}>
-        {props.children}
+        <MatrixProvider>
+          {props.children}
+        </MatrixProvider>
       </EvoluProvider>
     </ReduxProvider>
   )
@@ -50,7 +58,7 @@ export const device = (uuid: S.String50) => evolu.createQuery(db => db
 export const useProfile = () => useQuery(profile).row;
 export const profile = evolu.createQuery(db => db
   .selectFrom('profile')
-  .select(['id', 'name', 'groqKey', 'groqModel'])
+  .select(['id', 'name', 'groqKey', 'groqModel', 'maptilerKey', 'maptilerUrl', 'matrixUserId', 'matrixBaseUrl', 'matrixAccessToken'])
   .where('isDeleted', 'is not', cast(true))
   .orderBy('createdAt')
   .limit(1)
