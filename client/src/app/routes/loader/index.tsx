@@ -21,6 +21,9 @@ export const Screen = {
   Inbox: lazy(
     () => import('../../../home/routes/ScreenInbox')
   ),
+  Room: lazy(
+    () => import('../../../home/routes/ScreenRoom')
+  ),
   Browse: lazy(
     () => import('../../../media/routes/ScreenBrowse')
   ),
@@ -41,11 +44,5 @@ export const Screen = {
   ),
   Library: lazy(
     () => import('../../../dev/routes/ScreenLibrary')
-  ),
-  Rooms: lazy(
-    () => import('../../../social/routes/ScreenRooms')
-  ),
-  Room: lazy(
-    () => import('../../../social/routes/ScreenRoom')
   ),
 }

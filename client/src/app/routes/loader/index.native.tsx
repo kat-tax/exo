@@ -20,6 +20,9 @@ export const Screen = {
   get Inbox() {
     return require('../../../home/routes/ScreenInbox').default;
   },
+  get Room() {
+    return require('../../../home/routes/ScreenRoom').default;
+  },
   get Browse() {
     return require('../../../media/routes/ScreenBrowse').default;
   },
@@ -40,11 +43,5 @@ export const Screen = {
   },
   get Library() {
     return require('../../../dev/routes/ScreenLibrary').default;
-  },
-  get Live() {
-    return require('../../../social/routes/ScreenRooms').default;
-  },
-  get Room() {
-    return require('../../../social/routes/ScreenRoom').default;
   },
 }

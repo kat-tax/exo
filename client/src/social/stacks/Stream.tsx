@@ -15,6 +15,7 @@ export function Stream(props: StreamProps) {
     <Media
       {...{name, ext, url, path}}
       close={() => fetch(`https://localhost/live/cancel/${name}`)}
+      embedded={false}
       maximized
       vertical
     />

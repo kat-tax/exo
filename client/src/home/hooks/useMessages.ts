@@ -10,7 +10,7 @@ export interface Message extends MatrixMessage {
   hasNext?: boolean;
 }
 
-export function useMessages(): Message[] {
+export function useMessages(id?: string): Message[] {
   // const messagesDemo = useMemo(() => DEMO, []);
   const [messages, setMessages] = useState<Message[]>([]);
   const {rooms, users} = useMatrix();
@@ -19,7 +19,7 @@ export function useMessages(): Message[] {
     console.log('>> rooms', rooms);
     console.log('>> users', users);
     if (!rooms.length) return;
-    const target = rooms.find(room => room.id === '!lwpprIOUgIZkrvffNC:matrix.org');
+    const target = rooms.find(room => room.id === id);
     if (!target) return;
     const messages = target.messages;
     setMessages(messages.map((event, i) => {

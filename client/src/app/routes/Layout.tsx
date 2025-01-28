@@ -71,6 +71,7 @@ export default function Layout() {
             {...mediaInfo}
             vertical={isVertical}
             maximized={true}
+            embedded={false}
             close={() => {}}
           />
         }

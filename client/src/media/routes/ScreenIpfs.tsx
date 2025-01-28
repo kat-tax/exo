@@ -15,6 +15,7 @@ export default function ScreenIpfs() {
       <Media
         {...{name, ext, url, path}}
         close={() => null}
+        embedded={false}
         maximized
         vertical
       />
