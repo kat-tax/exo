@@ -108,24 +108,19 @@ export function Menu(props: MenuProps) {
               path="/calendar"
             />
           </MenuSection>
-          {/* <MenuSection label={t`Social`}>
-            <MenuItem
-              label={t`Live`}
-              icon="ph:video"
-              path="/live"
-            />
-          </MenuSection> */}
-          {/* <MenuSection label={t`Favorites`}>
-            {lists.map(({id}) =>
-              <MenuItem
-                key={id}
-                label={id}
-                icon="ph:rocket"
-                path={`/note/${id}`}
-                mode="subitem"
-              />
+          <MenuSection label={t`Rooms`}>
+            {[{
+              name: 'Synkat',
+              icon: 'ph:cat',
+              path: '/matrix/!lwpprIOUgIZkrvffNC:matrix.org',
+            }, {
+              name: 'TheUltDev',
+              icon: 'ph:rocket',
+              path: '/matrix/!oQWmCmkFrOESaZryui:matrix.org',
+            }].map(({name, icon, path}) =>
+              <MenuItem key={name} label={name} {...{icon, path}} mode="subitem"/>
             )}
-          </MenuSection> */}
+          </MenuSection>
           {__DEV__ &&
             <MenuSection label={t`Dev Mode`} closed>
               <MenuItem

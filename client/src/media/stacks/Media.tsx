@@ -16,15 +16,15 @@ interface MediaProps {
   embedded: boolean,
   vertical: boolean,
   maximized: boolean,
+  layout?: [number, number],
   close: () => void,
 }
 
 export function Media(props: MediaProps) {
-  const pip = useMediaPictureInPicture(props.ext);
-
-  const file = useRef<FileRef>(null);
+  const {ext, name, path, vertical, maximized, embedded, layout, close} = props;
   const {styles, theme} = useStyles(stylesheet);
-  const {ext, name, path, vertical, maximized, embedded, close} = props;
+  const file = useRef<FileRef>(null);
+  const pip = useMediaPictureInPicture(props.ext, layout);
 
   // File information
   const [renderer, setRenderer] = useState<FileRenderInfo>();

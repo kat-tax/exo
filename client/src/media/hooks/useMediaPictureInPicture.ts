@@ -1,4 +1,3 @@
-import {useWindowDimensions} from 'react-native';
 import {useStyles} from 'react-native-unistyles';
 import {useMemo} from 'react';
 
@@ -8,34 +7,36 @@ export type MediaPictureInPicture = {
   viewportWidth: number,
 };
 
-export function useMediaPictureInPicture(extension: string): MediaPictureInPicture {
-  const {width} = useWindowDimensions();
+export function useMediaPictureInPicture(ext: string, layout?: [number, number]): MediaPictureInPicture {
   const {theme} = useStyles();
+  const width = layout?.[0] ?? 0;
 
   /** Scale of the PIP window */
   const scale = useMemo(() => {
     let _scale = 1;
-    if (width <= theme.breakpoints.sm)
-      _scale = 0.90;
-    else if (width <= theme.breakpoints.md)
+    if (width <= theme.breakpoints.xs)
       _scale = 1;
-    else if (width <= theme.breakpoints.lg)
+    else if (width <= theme.breakpoints.sm)
       _scale = 1.25;
+    else if (width <= theme.breakpoints.md)
+      _scale = 1.5;
+    else if (width <= theme.breakpoints.lg)
+      _scale = 2;
     else if (width <= theme.breakpoints.xl)
-      _scale = 1.50;
+      _scale = 2.25;
     else if (width <= theme.breakpoints.xxl)
-      _scale = 1.75;
-    else if (width <= theme.breakpoints.xxxl)
       _scale = 3;
-    else if (width <= theme.breakpoints.xxxxl)
+    else if (width <= theme.breakpoints.xxxl)
       _scale = 4;
+    else if (width <= theme.breakpoints.xxxxl)
+      _scale = 5;
     return _scale;
   }, [width, theme]);
 
   /** Resolution of the PIP window */
   const resolution = useMemo(() => {
     let res: number[];
-    switch (extension) {
+    switch (ext) {
       case 'gb':
       case 'gbc':
       case 'gba':
@@ -55,7 +56,7 @@ export function useMediaPictureInPicture(extension: string): MediaPictureInPictu
         res = [320, 240].map(x => x * scale);
     }
     return res;
-  }, [extension, scale]);
+  }, [ext, scale]);
 
   return {
     scale,

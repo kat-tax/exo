@@ -12,7 +12,7 @@ export function Router() {
           {/* General */}
           <Route index element={<$><Screen.Home/></$>}/>
           <Route path="inbox" element={<$><Screen.Inbox/></$>}/>
-          <Route path="inbox/:room" element={<$><Screen.Room/></$>}/>
+          <Route path="matrix/:room" element={<$><Screen.Room/></$>}/>
           <Route path="storage" element={<$><Screen.Storage/></$>}/>
           <Route path="settings" element={<Screen.Settings/>}/>
           {/* Media */}

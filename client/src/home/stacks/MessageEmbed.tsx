@@ -8,17 +8,18 @@ import type {MessageProps} from './Message';
 interface MessageEmbedProps {
   path: string;
   name?: string;
-  origin: MessageProps['origin'];
+  origin?: MessageProps['origin'];
+  layout?: [number, number];
 }
 
 export function MessageEmbed(props: MessageEmbedProps) {
-  const {path, origin} = props;
+  const {path, origin, layout} = props;
   const {name, ext} = toPathInfo(props.name ?? path, false);
   const {styles} = useStyles(stylesheet);
   return (
     <View style={[styles.root, origin === 'Remote' ? styles.remote : styles.local]}>
       <Media
-        {...{name, ext, path}}
+        {...{name, ext, path, layout}}
         close={() => null}
         vertical={false}
         embedded
