@@ -1,4 +1,3 @@
-import {useLingui} from '@lingui/react/macro';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {LegendList} from '@legendapp/list';
 
@@ -12,25 +11,21 @@ import {Page} from 'app/interface/Page';
 export default function ScreenInbox() {
   const messages = useMessages();
   const {styles} = useStyles(stylesheet);
-  const {t} = useLingui();
 
   return (
-    <Page
-      title={t`Inbox`}
-      message={t`${messages.length} messages`}
-      widget={
-        <View style={styles.widget}>
-        </View>
-      }>
+    <Page margin="none">
       <LegendList
         data={messages}
         recycleItems
         alignItemsAtEnd
         maintainScrollAtEnd
+        contentContainerStyle={styles.container}
         showsHorizontalScrollIndicator={false}
         maintainScrollAtEndThreshold={0.1}
-        keyExtractor={(_,i) => i.toString()}
+        keyExtractor={item => item.id}
         estimatedItemSize={40}
+        ListHeaderComponent={() => <View style={styles.header} />}
+        ListFooterComponent={() => <View style={styles.footer} />}
         ItemSeparatorComponent={() => <View style={styles.separator} />}
         renderItem={({item}) => {
           const mode = item.embed ? 'Embedded' 
@@ -75,11 +70,20 @@ const stylesheet = createStyleSheet(theme => ({
     justifyembed: 'flex-end',
     alignItems: 'flex-end',
   },
+  container: {
+    paddingHorizontal: theme.display.space5,
+  },
   complete: {
     paddingBottom: theme.display.space2,
   },
   emoted: {
     paddingBottom: theme.display.space5,
+  },
+  header: {
+    height: theme.display.space5,
+  },
+  footer: {
+    height: theme.display.space5,
   },
   separator: {
     height: 1,

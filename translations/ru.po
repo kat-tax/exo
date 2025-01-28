@@ -20,12 +20,7 @@ msgstr ""
 msgid "{0} components"
 msgstr "{0} компонентов"
 
-#. placeholder {0}: messages.length
-#: ../../client/src/home/routes/ScreenInbox.tsx:20
-msgid "{0} messages"
-msgstr ""
-
-#: ../../client/src/app/routes/ScreenSettings.tsx:223
+#: ../../client/src/app/routes/ScreenSettings.tsx:221
 msgid "<matrix access token>"
 msgstr ""
 
@@ -99,11 +94,11 @@ msgstr "Темная"
 msgid "Dashboard"
 msgstr "Дашборд"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:230
+#: ../../client/src/app/routes/ScreenSettings.tsx:228
 msgid "Data"
 msgstr "Данные"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:242
+#: ../../client/src/app/routes/ScreenSettings.tsx:240
 msgid "Database"
 msgstr ""
 
@@ -111,27 +106,27 @@ msgstr ""
 msgid "Delete"
 msgstr ""
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:253
+#: ../../client/src/app/routes/ScreenSettings.tsx:251
 msgid "Delete all local files."
 msgstr ""
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:233
+#: ../../client/src/app/routes/ScreenSettings.tsx:231
 msgid "Delete all local prompt data."
 msgstr ""
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:245
+#: ../../client/src/app/routes/ScreenSettings.tsx:243
 msgid "Delete Database"
 msgstr "Удалить базу данных"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:255
+#: ../../client/src/app/routes/ScreenSettings.tsx:253
 msgid "Delete Filesystem"
 msgstr ""
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:235
+#: ../../client/src/app/routes/ScreenSettings.tsx:233
 msgid "Delete Prompts"
 msgstr "Удалить запросы"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:243
+#: ../../client/src/app/routes/ScreenSettings.tsx:241
 msgid "Delete the local database."
 msgstr "Удалить локальную базу данных."
 
@@ -214,7 +209,7 @@ msgstr ""
 msgid "Files"
 msgstr "Файлы"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:252
+#: ../../client/src/app/routes/ScreenSettings.tsx:250
 msgid "Filesystem"
 msgstr ""
 
@@ -271,7 +266,6 @@ msgstr "Импорт"
 msgid "Import Files"
 msgstr "Импорт файлов"
 
-#: ../../client/src/home/routes/ScreenInbox.tsx:19
 #: ../../client/src/app/interface/Tabs.tsx:19
 #: ../../client/src/app/interface/Menu.tsx:33
 msgid "Inbox"
@@ -319,11 +313,11 @@ msgstr ""
 msgid "Maptiler URL"
 msgstr ""
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:217
+#: ../../client/src/app/routes/ScreenSettings.tsx:215
 msgid "Matrix Access Token"
 msgstr ""
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:204
+#: ../../client/src/app/routes/ScreenSettings.tsx:203
 msgid "Matrix Base URL"
 msgstr ""
 
@@ -406,11 +400,11 @@ msgstr "Профиль"
 msgid "Prompt History Reset"
 msgstr "Сброс истории запросов"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:232
+#: ../../client/src/app/routes/ScreenSettings.tsx:230
 msgid "Prompts"
 msgstr "Запросы"
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:205
+#: ../../client/src/app/routes/ScreenSettings.tsx:204
 msgid "Provide a base url to use social features."
 msgstr ""
 
@@ -426,7 +420,7 @@ msgstr ""
 msgid "Provide a matrix user to use social features."
 msgstr ""
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:218
+#: ../../client/src/app/routes/ScreenSettings.tsx:216
 msgid "Provide a token to use social features."
 msgstr ""
 

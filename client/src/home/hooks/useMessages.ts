@@ -2,6 +2,7 @@ import {useEffect, useState} from 'react';
 import {useMatrix} from 'app/data/lib/matrix-provider';
 
 export interface Message {
+  id: string;
   local: boolean;
   message: string;
   timestamp: number;
@@ -39,6 +40,7 @@ export function useMessages(): Message[] {
         && next.isSelf === e.isSelf
         && Math.abs(next.timestamp - e.timestamp) <= 60000;
       return {
+        id: e.id,
         local: e.isSelf,
         message: e.content.body,
         timestamp: e.timestamp,
