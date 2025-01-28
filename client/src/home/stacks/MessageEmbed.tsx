@@ -7,18 +7,16 @@ import type {MessageProps} from './Message';
 
 interface MessageEmbedProps {
   path: string;
+  name?: string;
   origin: MessageProps['origin'];
 }
 
 export function MessageEmbed(props: MessageEmbedProps) {
   const {path, origin} = props;
+  const {name, ext} = toPathInfo(props.name ?? path, false);
   const {styles} = useStyles(stylesheet);
-  const {name, ext} = toPathInfo(path, false);
   return (
-    <View style={[
-      styles.root,
-      origin === 'Remote' ? styles.rootRemote : styles.rootLocal,
-    ]}>
+    <View style={[styles.root, origin === 'Remote' ? styles.remote : styles.local]}>
       <Media
         {...{name, ext, path}}
         close={() => null}
@@ -39,10 +37,10 @@ const stylesheet = createStyleSheet(theme => ({
     borderRadius: 12,
     overflow: 'hidden',
   },
-  rootRemote: {
+  remote: {
     borderBottomLeftRadius: 0,
   },
-  rootLocal: {
+  local: {
     borderBottomRightRadius: 0,
   },
 }));

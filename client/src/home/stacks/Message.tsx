@@ -97,7 +97,7 @@ const stylesheet = createStyleSheet(theme => ({
     fontFamily: theme.font.family,
     fontSize: theme.font.contentSize,
     fontStyle: 'normal',
-    fontWeight: theme.font.contentWeight,
+    fontWeight: theme.font.weight,
     lineHeight: theme.font.contentHeight,
     letterSpacing: theme.font.contentSpacing,
   },

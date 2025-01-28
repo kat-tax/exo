@@ -27,8 +27,9 @@ import * as matrix from './lib/matrix';
 
 import type {ManifestEntry} from 'workbox-build';
 
+let _token: string | undefined;
+
 export function register() {
-  const debug = true;
   const fallback = 'index.html';
   const manifest = self.__WB_MANIFEST as Array<ManifestEntry>;
   const cacheName = cacheNames.runtime;
@@ -41,39 +42,31 @@ export function register() {
   
   self.addEventListener('message', (event: ExtendableEvent) => {
     if (event?.data?.type === 'matrix::init') {
+      _token = event.data.payload.accessToken;
       matrix.init(event.data.payload);
     }
   });
-  
-  self.addEventListener('install', (event: ExtendableEvent) => {
-    event.waitUntil(caches.open(cacheName).then(c => c.addAll(cacheEntries)))
+
+  self.addEventListener('fetch', (event: FetchEvent) => {
+    if (event.request.method !== 'GET'
+      && event.request.method !== 'HEAD')
+      return;
+
+    const url = new URL(event.request.url);
+    if (!url.pathname.startsWith('/_matrix/media/v3/download')
+      && !url.pathname.startsWith('/_matrix/media/v3/thumbnail'))
+      return;
+
+    url.href = url.href.replace(/\/media\/v3\/(.*)\//, '/client/v1/media/$1/');
+    event.respondWith((async (): Promise<Response> => {
+      return fetch(url, {
+        headers: {
+          Authorization: `Bearer ${_token}`,
+        },
+      });
+    })());
   });
-  
-  self.addEventListener('activate', (event: ExtendableEvent) => {
-    // Clean up outdated runtime cache
-    event.waitUntil(
-      caches.open(cacheName).then((cache) => {
-        // Clean up those who are not listed in manifestURLs
-        cache.keys().then((keys) => {
-          keys.forEach((request) => {
-            debug && console.log(`Checking cache entry to be removed: ${request.url}`)
-            if (!manifestURLs.includes(request.url)) {
-              cache.delete(request).then((deleted) => {
-                if (debug) {
-                  if (deleted) {
-                    console.log(`Precached data removed: ${request.url || request}`);
-                  } else {
-                    console.log(`No precache found: ${request.url || request}`);
-                  }
-                }
-              })
-            }
-          })
-        })
-      })
-    )
-  });
-  
+
   self.addEventListener('push', (event: PushEvent) => {
     console.log('>> push', event);
   });
@@ -86,7 +79,25 @@ export function register() {
   self.addEventListener('periodicsync', (event: PeriodicBackgroundSyncEvent) => {
     console.log('>> periodicsync', event);
   });
+
+  self.addEventListener('install', (event: ExtendableEvent) => {
+    event.waitUntil(caches.open(cacheName).then(c => {
+      c.addAll(cacheEntries);
+    }));
+  });
   
+  self.addEventListener('activate', (event: ExtendableEvent) => {
+    event.waitUntil(caches.open(cacheName).then((cache) => {
+      cache.keys().then((keys) => {
+        keys.forEach((request) => {
+          if (!manifestURLs.includes(request.url)) {
+            cache.delete(request);
+          }
+        });
+      });
+    }));
+  });
+
   registerRoute(
     ({url}) => manifestURLs.includes(url.href),
     new CacheFirst({cacheName}),

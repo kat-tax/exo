@@ -1,3 +1,4 @@
+import {MatrixClient} from 'matrix-js-sdk/lib/client';
 import {MatrixEvent} from 'matrix-js-sdk/lib/models/event';
 import {Room} from 'matrix-js-sdk/lib/models/room';
 
@@ -21,21 +22,42 @@ export interface MatrixRoom {
 
 export interface MatrixMessage {
   id: string;
+  ts: number;
   type: string;
+  self: boolean;
   sender: string;
-  isSelf: boolean;
-  content: any;
-  timestamp: number;
+  embed?: MatrixEmbed;
+  body?: string;
+}
+
+export type MatrixEmbed =
+  | MatrixFile
+  | MatrixImage;
+
+export interface MatrixFile {
+  url: string;
+  name: string;
+  size: number;
+  type?: string;
+}
+
+export interface MatrixImage extends MatrixFile {
+  width: number;
+  height: number;
+  blurhash?: string;
+  animated?: boolean;
 }
 
 export class MatrixStore {
-  private baseUrl: string;
-  private userId: string;
   private rooms: Map<string, MatrixRoom> = new Map();
   private users: Map<string, MatrixUser> = new Map();
   private bc = new BroadcastChannel('matrix');
 
-  constructor(baseUrl: string, userId: string) {
+  constructor(
+    private client: MatrixClient,
+    private baseUrl: string,
+    private userId: string,
+  ) {
     this.baseUrl = baseUrl;
     this.userId = userId;
     this.rooms = new Map();
@@ -84,19 +106,40 @@ export class MatrixStore {
   addMessage(roomId: string, event: MatrixEvent) {
     const room = this.rooms.get(roomId);
     if (!room) return;
+    const id = event.getId()!;
+    const ts = event.getTs();
+    const sender = event.getSender()!;
+    const content = event.getContent();
+    const type = content?.msgtype ?? 'm.text';
+    const self = sender === this.userId;
+  
+    let body: string | undefined;
+    let embed: MatrixEmbed | undefined;
 
-    const _message: MatrixMessage = {
-      id: event.getId()!,
-      type: event.getType(),
-      sender: event.getSender()!,
-      content: event.getContent(),
-      timestamp: event.getTs(),
-      isSelf: event.getSender() === this.userId,
-    };
+    if (type === 'm.image') {
+      embed = {
+        url: this.client.mxcUrlToHttp(content.url) ?? '',
+        name: content.body,
+        type: content.info.mimetype,
+        size: content.info.size,
+        width: content.info.w,
+        height: content.info.h,
+        blurhash: content.info['xyz.amorgan.blurhash'],
+        animated: content.info['org.matrix.msc4230.is_animated'],
+      } satisfies MatrixImage;
+    } else if (type === 'm.file') {
+      embed = {
+        url: this.client.mxcUrlToHttp(content.url) ?? '',
+        name: content.body,
+        size: content.info.size,
+        type: content.info.mimetype,
+      } satisfies MatrixFile;
+    } else {
+      body = content.body ?? undefined;
+    }
 
-    room.messages.push(_message);
+    room.messages.push({id, ts, type, self, sender, embed, body});
     this.sync();
-    console.log('>> Adding message to room', roomId, _message);
   }
 
   updateUser(userId: string, update: Partial<MatrixUser>) {

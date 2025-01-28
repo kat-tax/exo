@@ -22,7 +22,6 @@ export function MatrixProvider({children}: React.PropsWithChildren) {
   const profile = useProfile();
 
   useEffect(() => {
-    console.log('>> profile', profile);
     if (!profile?.matrixUserId || !profile?.matrixAccessToken) return;
     const bc = new BroadcastChannel('matrix');
     bc.onmessage = (event: MessageEvent<ServiceWorkerMessage>) => {

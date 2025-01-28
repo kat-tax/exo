@@ -4,6 +4,7 @@ import {LegendList} from '@legendapp/list';
 import {Message} from 'home/stacks/Message';
 import {MessageEmbed} from 'home/stacks/MessageEmbed';
 import {useMessages} from 'home/hooks/useMessages';
+import {bytesize} from 'app/utils/formatting';
 
 import {View} from 'react-native';
 import {Page} from 'app/interface/Page';
@@ -27,11 +28,13 @@ export default function ScreenInbox() {
         ListHeaderComponent={() => <View style={styles.header} />}
         ListFooterComponent={() => <View style={styles.footer} />}
         ItemSeparatorComponent={() => <View style={styles.separator} />}
-        renderItem={({item}) => {
-          const mode = item.embed ? 'Embedded' 
-            : !item.hasPrev && !item.hasNext ? 'Default'
-            : !item.hasPrev ? 'Start'
-            : !item.hasNext ? 'End'
+        renderItem={({item: {ts, embed, body, hasPrev, hasNext}}) => {
+          const time = new Date(ts)
+            .toLocaleTimeString('en-US', {hour: '2-digit', minute: '2-digit'});
+          const mode = embed ? 'Embedded' 
+            : !hasPrev && !hasNext ? 'Default'
+            : !hasPrev ? 'Start'
+            : !hasNext ? 'End'
             : 'Middle';
           const complete = (mode === 'Default'
             || mode === 'End'
@@ -39,21 +42,21 @@ export default function ScreenInbox() {
           return (
             <View style={[
               complete && styles.complete,
-              item.emote && styles.emoted,
+              //item.emote && styles.emoted,
             ]}>
               <Message
                 mode={mode}
-                message={item.message}
-                timestamp={!item.hasNext ? new Date(item.timestamp).toLocaleTimeString('en-US', {hour: '2-digit', minute: '2-digit'}) : ''}
-                origin={item.local ? 'Local' : 'Remote'}
-                emote={item.emote || ''}
-                embed={item.embed
-                  ? <MessageEmbed
-                      path={item.embed}
-                      origin={item.local ? 'Local' : 'Remote'}
-                    />
-                  : undefined
-                }
+                origin={self ? 'Local' : 'Remote'}
+                message={body ?? `${embed?.name} (${bytesize(embed?.size ?? 0)})` ?? ''}
+                timestamp={!hasNext ? time : ''}
+                emote={''}
+                embed={embed ? (
+                  <MessageEmbed
+                    path={embed.url}
+                    name={embed.name}
+                    origin={self ? 'Local' : 'Remote'}
+                  />
+                ) : undefined}
               />
             </View> 
           );

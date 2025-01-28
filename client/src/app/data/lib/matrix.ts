@@ -1,7 +1,7 @@
 import * as sdk from 'matrix-js-sdk';
 import {MatrixStore} from './matrix-store';
 
-const DEBUG = true;
+const DEBUG = false;
 
 export let client: sdk.MatrixClient;
 export let store: MatrixStore;
@@ -21,7 +21,7 @@ export async function init(options: MatrixOptions) {
   const {baseUrl, userId, deviceId, accessToken} = options;
   client = sdk.createClient({baseUrl, userId, deviceId, accessToken});
   client.startClient({lazyLoadMembers: false});
-  store = new MatrixStore(baseUrl, userId);
+  store = new MatrixStore(client, baseUrl, userId);
   populate(store);
   subscribe(store);
 }
