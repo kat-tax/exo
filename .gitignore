@@ -4,6 +4,7 @@
 toolkit/vocs/pages/
 library/metadata.json
 example/
+dev-dist/
 output/
 dist/
 gen/
