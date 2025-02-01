@@ -26,13 +26,7 @@ export default forwardRef((props: FileZip, _ref) => {
     <View style={styles.root}>
       <Page
         title={props.name}
-        message={`${zip?.date?.modified?.toLocaleDateString('en-US', {
-          year: 'numeric',
-          month: 'short',
-          day: 'numeric',
-          hour: 'numeric',
-          minute: 'numeric',
-        })}`}
+        message={`${zip?.list?.length} files`}
         margin="small"
         noBackground
         noFrame

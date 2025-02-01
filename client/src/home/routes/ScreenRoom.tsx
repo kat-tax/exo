@@ -4,6 +4,7 @@ import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {LegendList} from '@legendapp/list';
 import {Message} from 'home/stacks/Message';
 import {MessageEmbed} from 'home/stacks/MessageEmbed';
+import {MessageAvatar} from 'home/stacks/MessageAvatar';
 import {useMessages} from 'home/hooks/useMessages';
 import {bytesize} from 'app/utils/formatting';
 import {debounce} from 'app/utils/delay';
@@ -37,7 +38,7 @@ export default function ScreenRoom() {
           ListHeaderComponent={() => <View style={styles.header} />}
           ListFooterComponent={() => <View style={styles.footer} />}
           ItemSeparatorComponent={() => <View style={styles.separator} />}
-          renderItem={({item: {ts, self, embed, body, hasPrev, hasNext}}) => {
+          renderItem={({item: {ts, self, sender, embed, body, hasPrev, hasNext}}) => {
             const mode = embed ? 'Embedded' 
               : !hasPrev && !hasNext ? 'Default'
               : !hasPrev ? 'Start'
@@ -47,7 +48,7 @@ export default function ScreenRoom() {
               || mode === 'End'
               || mode === 'Embedded');
             const time = new Date(ts)
-              .toLocaleTimeString('en-US', {hour: '2-digit', minute: '2-digit'});
+              .toLocaleTimeString('en-US', {hour: 'numeric', minute: '2-digit'});
             return (
               <View style={[
                 complete && styles.complete,
@@ -59,6 +60,9 @@ export default function ScreenRoom() {
                   message={body ?? `${embed?.name} (${bytesize(embed?.size ?? 0)})` ?? ''}
                   timestamp={!hasNext ? time : ''}
                   emote=""
+                  avatar={!hasPrev
+                    ? <MessageAvatar sender={sender}/>
+                    : undefined}
                   embed={embed ? (
                     <MessageEmbed
                       path={embed.url}

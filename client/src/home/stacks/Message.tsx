@@ -8,6 +8,7 @@ export interface MessageProps {
   timestamp: string,
   mode: typeof MessageVariants.mode[number],
   origin: typeof MessageVariants.origin[number],
+  avatar?: JSX.Element,
   embed?: JSX.Element,
   /** Used to locate this view in end-to-end tests. */
   testID?: string,
@@ -25,9 +26,11 @@ export function Message(props: MessageProps) {
 
   return (
     <View style={vstyles.root()} testID={props.testID ?? "6323:470"}>
-      <View style={vstyles.embed()} testID="6326:511">
-        {props.embed}
-      </View>
+      {Boolean(props.embed) && (
+        <View style={vstyles.embed()} testID="6326:511">
+          {props.embed}
+        </View>
+      )}
       <View style={vstyles.content()} testID="6343:556">
         <View style={vstyles.text()} testID="6323:477">
           <Text style={vstyles.message()} testID="6323:472">
@@ -44,6 +47,11 @@ export function Message(props: MessageProps) {
             <Text style={vstyles.emote()} testID="6331:520">
               {props.emote}
             </Text>
+          </View>
+        )}
+        {Boolean(props.avatar) && (
+          <View style={vstyles.avatar()} testID="6414:632">
+            {props.avatar}
           </View>
         )}
       </View>
@@ -97,7 +105,7 @@ const stylesheet = createStyleSheet(theme => ({
     fontFamily: theme.font.family,
     fontSize: theme.font.contentSize,
     fontStyle: 'normal',
-    fontWeight: theme.font.weight,
+    fontWeight: theme.font.contentWeight,
     lineHeight: theme.font.contentHeight,
     letterSpacing: theme.font.contentSpacing,
   },
@@ -144,6 +152,7 @@ const stylesheet = createStyleSheet(theme => ({
   content: {
     flexDirection: 'column',
     alignItems: 'flex-start',
+    rowGap: 0,
     columnGap: 10,
   },
   text: {
@@ -245,5 +254,42 @@ const stylesheet = createStyleSheet(theme => ({
   emotesOriginLocalModeEmbedded: {
     right: 'unset' as any,
     left: 8,
+  },
+  avatar: {
+    flexDirection: 'row',
+    width: 32,
+    height: 32,
+    alignItems: 'flex-start',
+    position: 'absolute',
+    left: -16,
+    top: -18,
+    borderBottomLeftRadius: 50,
+    borderBottomRightRadius: 50,
+    borderTopLeftRadius: 50,
+    borderTopRightRadius: 50,
+    borderWidth: 3,
+    borderStyle: 'solid',
+    borderColor: theme.colors.background,
+    backgroundColor: theme.colors.primaryForeground,
+  },
+  avatarOriginLocalModeDefault: {
+    left: 'unset' as any,
+    right: -17,
+  },
+  avatarOriginLocalModeStart: {
+    left: 'unset' as any,
+    right: -17,
+  },
+  avatarOriginLocalModeMiddle: {
+    left: 'unset' as any,
+    right: -17,
+  },
+  avatarOriginLocalModeEnd: {
+    left: 'unset' as any,
+    right: -17,
+  },
+  avatarOriginLocalModeEmbedded: {
+    left: 'unset' as any,
+    right: -17,
   },
 }));
