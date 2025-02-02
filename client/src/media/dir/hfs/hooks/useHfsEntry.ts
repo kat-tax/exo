@@ -1,3 +1,4 @@
+import {useDispatch} from 'react-redux';
 import {useRef, useState, useEffect} from 'react';
 import {dropTargetForExternal} from '@atlaskit/pragmatic-drag-and-drop/external/adapter';
 import {dropTargetForElements, draggable} from '@atlaskit/pragmatic-drag-and-drop/element/adapter';
@@ -5,6 +6,7 @@ import {containsFiles, getFiles} from '@atlaskit/pragmatic-drag-and-drop/externa
 import {combine} from '@atlaskit/pragmatic-drag-and-drop/combine';
 import {dndImg} from 'app/utils/web';
 import {toPathInfo} from 'app/utils/formatting';
+import media from 'media/store';
 
 import {isZipData} from 'media/dir/zip/hooks/useZipEntry';
 import {isTorrentData} from 'media/dir/torrent/hooks/useTorrentEntry';
@@ -19,12 +21,12 @@ export type HfsData = {[$]: true, entry: HfsDirectoryEntry};
 export const isHfsData = (data: Record<string | symbol, unknown>): data is HfsData => data[$] === true;
 export const getHfsData = (entry: HfsDirectoryEntry): HfsData => ({[$]: true, entry});
 
-export function useHfsEntry(props: HfsEntryProps) {
-  const {entry, cmd, opt} = props;
-  const [dragging, setDragging] = useState(false);
+export function useHfsEntry({entry, cmd, opt}: HfsEntryProps) {
   const [dropping, setDropping] = useState(false);
   const ext = toPathInfo(entry.name, entry.isDirectory)?.ext;
   const ref = useRef<View>(null);
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
     if (!ref.current) return;
@@ -34,8 +36,8 @@ export function useHfsEntry(props: HfsEntryProps) {
         element,
         onGenerateDragPreview: ({nativeSetDragImage}) => dndImg(nativeSetDragImage),
         getInitialData: () => getHfsData(entry),
-        onDragStart: () => setDragging(true),
-        onDrop: () => setDragging(false),
+        onDragStart: () => dispatch(media.actions.drag(entry.name)),
+        onDrop: () => dispatch(media.actions.drag(null)),
       }),
       entry.isDirectory && dropTargetForElements({
         element,
@@ -87,7 +89,6 @@ export function useHfsEntry(props: HfsEntryProps) {
     },
     opt: {
       ...opt,
-      dragging,
       dropping,
     },
   };

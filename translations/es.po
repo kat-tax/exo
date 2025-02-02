@@ -72,7 +72,7 @@ msgstr "Calendario"
 msgid "Celsius"
 msgstr "Celsius"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:288
+#: ../../client/src/media/hooks/useMediaControls.ts:286
 msgid "Close"
 msgstr "Cerrar"
 
@@ -217,7 +217,7 @@ msgstr ""
 msgid "Folder is empty. Drop items or select folder to import."
 msgstr ""
 
-#: ../../client/src/media/hooks/useMediaControls.ts:278
+#: ../../client/src/media/hooks/useMediaControls.ts:276
 msgid "Fullscreen"
 msgstr "Pantalla completa"
 
@@ -347,7 +347,7 @@ msgstr "Música"
 msgid "News"
 msgstr "Noticias"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:196
+#: ../../client/src/media/hooks/useMediaControls.ts:195
 msgid "Next"
 msgstr "Siguiente"
 
@@ -355,7 +355,7 @@ msgstr "Siguiente"
 msgid "No events scheduled."
 msgstr "No hay eventos programados."
 
-#: ../../client/src/media/hooks/useMediaControls.ts:233
+#: ../../client/src/media/hooks/useMediaControls.ts:231
 msgid "Options"
 msgstr "Opciones"
 
@@ -376,7 +376,7 @@ msgstr "Pausar"
 msgid "Pictures"
 msgstr "Imágenes"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:244
+#: ../../client/src/media/hooks/useMediaControls.ts:242
 msgid "Pin"
 msgstr "Fijar"
 
@@ -388,7 +388,7 @@ msgstr "Reproducir"
 msgid "Please set your Groq API Key"
 msgstr "Por favor configura tu clave API de Groq"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:185
+#: ../../client/src/media/hooks/useMediaControls.ts:184
 msgid "Previous"
 msgstr "Anterior"
 
@@ -432,7 +432,7 @@ msgstr ""
 msgid "Rename"
 msgstr ""
 
-#: ../../client/src/media/hooks/useMediaControls.ts:173
+#: ../../client/src/media/hooks/useMediaControls.ts:172
 msgid "Replay"
 msgstr "Repetir"
 
@@ -474,7 +474,7 @@ msgstr ""
 msgid "Settings"
 msgstr "Ajustes"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:258
+#: ../../client/src/media/hooks/useMediaControls.ts:256
 #: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:28
 msgid "Share"
 msgstr "Compartir"
@@ -541,7 +541,7 @@ msgstr "Ver tus eventos e información relacionada con el tiempo"
 msgid "View your latest news and rss feeds"
 msgstr "Ver tus últimas noticias y feeds RSS"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:221
+#: ../../client/src/media/hooks/useMediaControls.ts:219
 msgid "Volume"
 msgstr "Volumen"
 

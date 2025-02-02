@@ -74,8 +74,8 @@ importers:
         specifier: ^2.3.1
         version: 2.3.1(bufferutil@4.0.8)(react-native@0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8)(utf-8-validate@6.0.4))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1)(utf-8-validate@6.0.4))(utf-8-validate@6.0.4)
       '@legendapp/list':
-        specifier: 1.0.0-beta.0
-        version: 1.0.0-beta.0(react-native@0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8)(utf-8-validate@6.0.4))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1)(utf-8-validate@6.0.4))(react@18.3.1)
+        specifier: 1.0.0-beta.2
+        version: 1.0.0-beta.2(react-native@0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8)(utf-8-validate@6.0.4))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1)(utf-8-validate@6.0.4))(react@18.3.1)
       '@lingui/core':
         specifier: ^5.1.2
         version: 5.1.2(@lingui/babel-plugin-lingui-macro@5.1.2(babel-plugin-macros@3.1.0)(typescript@5.7.2))(babel-plugin-macros@3.1.0)
@@ -147,7 +147,7 @@ importers:
         version: 18.3.1(react@18.3.1)
       react-exo:
         specifier: 0.18.21
-        version: 0.18.21(clc32e5g6glleljlh72mkobldy)
+        version: 0.18.21(2wltuen4auaroz6jckz2oi4r3y)
       react-exo-ui:
         specifier: workspace:*
         version: link:../design
@@ -355,7 +355,7 @@ importers:
         version: 18.3.1(react@18.3.1)
       react-exo:
         specifier: 0.18.21
-        version: 0.18.21(fnoi4dk4e6ttmm36le6s4semoy)
+        version: 0.18.21(wiefilmhrdz4znve35kyb3ksve)
       react-native:
         specifier: ^0.76.5
         version: 0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1)
@@ -523,7 +523,7 @@ importers:
         version: link:../../config
       react-exo:
         specifier: 0.18.21
-        version: 0.18.21(fnoi4dk4e6ttmm36le6s4semoy)
+        version: 0.18.21(wiefilmhrdz4znve35kyb3ksve)
       react-native:
         specifier: ^0.76.5
         version: 0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1)
@@ -556,7 +556,7 @@ importers:
         version: 18.3.1(react@18.3.1)
       react-exo:
         specifier: 0.18.21
-        version: 0.18.21(fnoi4dk4e6ttmm36le6s4semoy)
+        version: 0.18.21(wiefilmhrdz4znve35kyb3ksve)
       react-exo-ui:
         specifier: workspace:*
         version: link:../../../design
@@ -659,7 +659,7 @@ importers:
         version: 18.3.1(react@18.3.1)
       react-exo:
         specifier: 0.18.21
-        version: 0.18.21(fnoi4dk4e6ttmm36le6s4semoy)
+        version: 0.18.21(wiefilmhrdz4znve35kyb3ksve)
       react-exo-ui:
         specifier: workspace:*
         version: link:../../design
@@ -2805,8 +2805,8 @@ packages:
   '@jridgewell/trace-mapping@0.3.25':
     resolution: {integrity: sha512-vNk6aEwybGtawWmy/PzwnGDOjCkLWSD2wqvjGGAgOAwCGWySYXfYoxt00IJkTF+8Lb57DwOb3Aa0o9CApepiYQ==}
 
-  '@legendapp/list@1.0.0-beta.0':
-    resolution: {integrity: sha512-2EopE08Kgyr40aKznSC7sYTddfy/QpEDwTfCktFHBeIPaTZon9qHQ8SZQ2p9l+W/CIQmGYmVKKLFetl/v7i3Xg==}
+  '@legendapp/list@1.0.0-beta.2':
+    resolution: {integrity: sha512-hWJWI5NJp2wfUjRqKc0Zu5ST0m8gk/K1E/JnzFf1v4oZhkgEC3QE2f7b1NB8tUv6VF1KWl8Dy1YDrPRkDP/URQ==}
     peerDependencies:
       react: '*'
       react-native: '*'
@@ -15815,12 +15815,12 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.1
       '@jridgewell/sourcemap-codec': 1.5.0
 
-  '@legendapp/list@1.0.0-beta.0(react-native@0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8)(utf-8-validate@6.0.4))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1)(utf-8-validate@6.0.4))(react@18.3.1)':
+  '@legendapp/list@1.0.0-beta.2(react-native@0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8)(utf-8-validate@6.0.4))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1)(utf-8-validate@6.0.4))(react@18.3.1)':
     dependencies:
       react: 18.3.1
       react-native: 0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8)(utf-8-validate@6.0.4))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1)(utf-8-validate@6.0.4)
 
-  '@legendapp/list@1.0.0-beta.0(react-native@0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1))(react@18.3.1)':
+  '@legendapp/list@1.0.0-beta.2(react-native@0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1))(react@18.3.1)':
     dependencies:
       react: 18.3.1
       react-native: 0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1)
@@ -26511,14 +26511,14 @@ snapshots:
       react: 18.3.1
       scheduler: 0.23.2
 
-  react-exo@0.18.21(clc32e5g6glleljlh72mkobldy):
+  react-exo@0.18.21(2wltuen4auaroz6jckz2oi4r3y):
     dependencies:
       '@candlefinance/faster-image': 1.7.2(react-native@0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8)(utf-8-validate@6.0.4))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1)(utf-8-validate@6.0.4))(react@18.3.1)
       '@helia/unixfs': 4.0.1
       '@iconify/json': 2.2.290
       '@iconify/react': 5.1.0(react@18.3.1)
       '@iconify/utils': 2.2.1
-      '@legendapp/list': 1.0.0-beta.0(react-native@0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8)(utf-8-validate@6.0.4))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1)(utf-8-validate@6.0.4))(react@18.3.1)
+      '@legendapp/list': 1.0.0-beta.2(react-native@0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8)(utf-8-validate@6.0.4))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1)(utf-8-validate@6.0.4))(react@18.3.1)
       '@legendapp/motion': 2.4.0(nativewind@2.0.11(react@18.3.1)(tailwindcss@3.4.17))(react-native@0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8)(utf-8-validate@6.0.4))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1)(utf-8-validate@6.0.4))(react@18.3.1)
       '@lottiefiles/dotlottie-react': 0.12.0(react@18.3.1)
       '@radix-ui/react-checkbox': 1.1.3(@types/react-dom@18.3.5(@types/react@18.3.18))(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -26584,14 +26584,14 @@ snapshots:
       - vite
       - worker-loader
 
-  react-exo@0.18.21(fnoi4dk4e6ttmm36le6s4semoy):
+  react-exo@0.18.21(wiefilmhrdz4znve35kyb3ksve):
     dependencies:
       '@candlefinance/faster-image': 1.7.2(react-native@0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1))(react@18.3.1)
       '@helia/unixfs': 4.0.1
       '@iconify/json': 2.2.290
       '@iconify/react': 5.1.0(react@18.3.1)
       '@iconify/utils': 2.2.1
-      '@legendapp/list': 1.0.0-beta.0(react-native@0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1))(react@18.3.1)
+      '@legendapp/list': 1.0.0-beta.2(react-native@0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1))(react@18.3.1)
       '@legendapp/motion': 2.4.0(nativewind@2.0.11(react@18.3.1)(tailwindcss@3.4.17))(react-native@0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1))(react@18.3.1)
       '@lottiefiles/dotlottie-react': 0.12.0(react@18.3.1)
       '@radix-ui/react-checkbox': 1.1.3(@types/react-dom@18.3.5(@types/react@18.3.18))(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)

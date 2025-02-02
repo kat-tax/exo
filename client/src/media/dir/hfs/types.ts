@@ -9,7 +9,10 @@ export interface Hfs {
 export interface HfsCtx {
   hfs: Hfs,
   cmd: HfsCmd,
-  sel: string[],
+  ext: {
+    sel: string[],
+    dnd: string[],
+  },
 }
 
 export interface HfsCmd {

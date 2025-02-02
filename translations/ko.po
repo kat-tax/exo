@@ -72,7 +72,7 @@ msgstr "달력"
 msgid "Celsius"
 msgstr "섭씨"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:288
+#: ../../client/src/media/hooks/useMediaControls.ts:286
 msgid "Close"
 msgstr "닫기"
 
@@ -217,7 +217,7 @@ msgstr ""
 msgid "Folder is empty. Drop items or select folder to import."
 msgstr ""
 
-#: ../../client/src/media/hooks/useMediaControls.ts:278
+#: ../../client/src/media/hooks/useMediaControls.ts:276
 msgid "Fullscreen"
 msgstr "전체화면"
 
@@ -347,7 +347,7 @@ msgstr "음악"
 msgid "News"
 msgstr "뉴스"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:196
+#: ../../client/src/media/hooks/useMediaControls.ts:195
 msgid "Next"
 msgstr "다음"
 
@@ -355,7 +355,7 @@ msgstr "다음"
 msgid "No events scheduled."
 msgstr "예정된 일정이 없습니다."
 
-#: ../../client/src/media/hooks/useMediaControls.ts:233
+#: ../../client/src/media/hooks/useMediaControls.ts:231
 msgid "Options"
 msgstr "옵션"
 
@@ -376,7 +376,7 @@ msgstr "일시정지"
 msgid "Pictures"
 msgstr "사진"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:244
+#: ../../client/src/media/hooks/useMediaControls.ts:242
 msgid "Pin"
 msgstr "고정"
 
@@ -388,7 +388,7 @@ msgstr "재생"
 msgid "Please set your Groq API Key"
 msgstr "Groq API 키를 설정해주세요"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:185
+#: ../../client/src/media/hooks/useMediaControls.ts:184
 msgid "Previous"
 msgstr "이전"
 
@@ -432,7 +432,7 @@ msgstr ""
 msgid "Rename"
 msgstr ""
 
-#: ../../client/src/media/hooks/useMediaControls.ts:173
+#: ../../client/src/media/hooks/useMediaControls.ts:172
 msgid "Replay"
 msgstr "다시 재생"
 
@@ -474,7 +474,7 @@ msgstr ""
 msgid "Settings"
 msgstr "설정"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:258
+#: ../../client/src/media/hooks/useMediaControls.ts:256
 #: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:28
 msgid "Share"
 msgstr "공유"
@@ -541,7 +541,7 @@ msgstr "일정 및 시간 관련 정보 보기"
 msgid "View your latest news and rss feeds"
 msgstr "최신 뉴스 및 RSS 피드 보기"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:221
+#: ../../client/src/media/hooks/useMediaControls.ts:219
 msgid "Volume"
 msgstr "볼륨"
 

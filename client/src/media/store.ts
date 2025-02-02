@@ -4,6 +4,7 @@ import type {PayloadAction} from 'react-exo/redux';
 export type Media = {
   focused: string,
   selected: string[],
+  dragging: string[],
   contents: string[],
 }
 
@@ -12,11 +13,13 @@ export default createSlice({
   initialState: <Media> {
     focused: '',
     selected: [],
+    dragging: [],
     contents: [],
   },
   selectors: {
     getFocused: (media) => media.focused,
     getSelected: (media) => media.selected,
+    getDragging: (media) => media.dragging,
     getContents: (media) => media.contents,
   },
   reducers: {
@@ -25,6 +28,17 @@ export default createSlice({
     },
     focus(media, action: PayloadAction<string>) {
       media.focused = action.payload;
+    },
+    drag(media, action: PayloadAction<string | null>) {
+      if (!action.payload) {
+        media.dragging = [];
+      } else if (!media.selected.includes(action.payload)) {
+        media.focused = action.payload;
+        media.selected = [action.payload];
+        media.dragging = [action.payload];
+      } else {
+        media.dragging = media.selected;
+      }
     },
     selectBulk(media, action: PayloadAction<string[] | 'all'>) {
       media.selected = action.payload === 'all' ? media.contents : action.payload;

@@ -1,6 +1,6 @@
 import {View, Image} from 'react-native';
 import {Image as ExoImage} from 'react-exo/image';
-import {useRef, useImperativeHandle, useEffect, memo, forwardRef} from 'react';
+import {useRef, useImperativeHandle, useEffect, useState, memo, forwardRef} from 'react';
 import {getMatrixTransformStyles, TransformWrapper, TransformComponent} from 'react-zoom-pan-pinch';
 //import {useImageResolution, ResumableZoom, fitContainer} from 'react-native-zoom-toolkit';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
@@ -21,6 +21,9 @@ export interface ImageRef {
 export default memo(forwardRef((props: FileImage, ref: React.Ref<ImageRef>) => {
   const source = useFileData(props.path, 'dataUrl');
   const controls = useRef<ReactZoomPanPinchContentRef>(null);
+  const [scale, setScale] = useState(1);
+  const [width, setWidth] = useState(0);
+  const [height, setHeight] = useState(0);
   const {styles} = useStyles(stylesheet);
 
   // const {width, height} = useWindowDimensions();
@@ -44,15 +47,20 @@ export default memo(forwardRef((props: FileImage, ref: React.Ref<ImageRef>) => {
     },
   }));
 
+  // Update image dimensions
+  useEffect(() => {
+    if (!source || props.embedded) return;
+    Image.getSize(source, (w, h) => {
+      setWidth(w);
+      setHeight(h);
+    });
+  }, [source, props.actions]);
+
   // Update file player bar info
   useEffect(() => {
     if (!source || props.embedded) return;
-    Image.getSize(source, (width, height) => {
-      props.actions.setInfo(`${width} x ${height}`);
-    }, () => {
-      props.actions.setInfo('‎');
-    });
-  }, [source, props.actions]);
+    props.actions.setInfo(`${width}x${height} (${Math.round(scale * 100)}%)`);
+  }, [width, height, scale]);
 
   if (props.embedded) {
     return source ? (
@@ -72,7 +80,8 @@ export default memo(forwardRef((props: FileImage, ref: React.Ref<ImageRef>) => {
       ref={controls}
       customTransform={getMatrixTransformStyles}
       doubleClick={{mode: 'reset'}}
-      wheel={{smoothStep: 0.01}}>
+      wheel={{smoothStep: 0.01}}
+      onTransformed={({state}) => setScale(state.scale)}>
       {/* <ResumableZoom maxScale={resolution}> */}
       <TransformComponent
         contentStyle={{height: '100%', width: '100%'}}
@@ -81,8 +90,7 @@ export default memo(forwardRef((props: FileImage, ref: React.Ref<ImageRef>) => {
           <ExoImage
             url={source}
             style={styles.image}
-            // style={{...size}}
-            resizeMode={props.maximized ? 'contain' : 'cover'}
+            resizeMode={props.maximized ? 'center' : 'cover'}
           />
         </View>
       </TransformComponent>

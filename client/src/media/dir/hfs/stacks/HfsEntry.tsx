@@ -12,6 +12,8 @@ export interface HfsEntryProps {
   idx: number,
   opt: {
     selected: boolean,
+    selectedPrev: boolean,
+    selectedNext: boolean,
   },
 }
 
@@ -21,7 +23,10 @@ export function HfsEntry(props: HfsEntryProps) {
   const {ref, ext, cmd, opt} = useHfsEntry(props);
   const dir = !isFile;
   return (
-    <TouchableOpacity onPress={cmd.select} {...{ref, activeOpacity: 0.6}}>
+    <TouchableOpacity
+      ref={ref}
+      onPress={cmd.select}
+      activeOpacity={0.6}>
       <HfsMenu {...{entry, cmd}}>
         <ListRow {...{name, size, ext, dir, opt}}/>
       </HfsMenu>

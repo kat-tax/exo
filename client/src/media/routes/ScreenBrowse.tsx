@@ -8,7 +8,7 @@ import {Page} from 'app/interface/Page';
 
 export default function ScreenBrowse() {
   const {name, base, path} = useLocationPathInfo();
-  const {hfs, cmd, sel} = useHfs(path);
+  const {hfs, cmd, ext} = useHfs(path);
   const {t} = useLingui();
 
   const title = useCallback((name: string) => {
@@ -41,7 +41,7 @@ export default function ScreenBrowse() {
       margin="small"
       title={title(name)}
       message={base ? title(base) : '/'}>
-      <HfsDir {...{hfs, cmd, sel}}/>
+      <HfsDir {...{hfs, cmd, ext}}/>
     </Page>
   );
 }

@@ -14,21 +14,32 @@ interface ListRow {
   dir?: boolean,
   opt?: {
     selected?: boolean,
-    focused?: boolean,
-    blurred?: boolean,
+    selectedPrev?: boolean,
+    selectedNext?: boolean,
+    dragging?: boolean,
+    dropping?: boolean,
   }
 }
 
 export function ListRow(props: ListRow) {
   const {styles} = useStyles(stylesheet);
   const {name, size, ext, dir, opt} = props;
-  const {selected, focused, blurred} = opt ?? {};
+  const {
+    selected,
+    selectedPrev,
+    selectedNext,
+    dragging,
+    dropping,
+  } = opt ?? {};
+
   const vstyles = {
     root: [
       styles.root,
       selected && styles.selected,
-      focused && styles.focused,
-      blurred && styles.blurred,
+      selectedPrev && styles.selectedPrev,
+      selectedNext && styles.selectedNext,
+      dragging && styles.dragging,
+      dropping && styles.dropping,
     ],
   };
 
@@ -37,7 +48,6 @@ export function ListRow(props: ListRow) {
       <ListRowIcon {...{size: TOUCH ? 1 : 0, name, ext, dir}}/>
       <Text
         style={styles.text}
-        selectable={false}
         ellipsizeMode="middle"
         numberOfLines={1}>
         {name}
@@ -45,7 +55,6 @@ export function ListRow(props: ListRow) {
       {Boolean(size) &&
         <Text
           style={[styles.text, styles.size]}
-          selectable={false}
           numberOfLines={1}>
           {bytesize(size ?? 0)}
         </Text>
@@ -67,12 +76,6 @@ const stylesheet = createStyleSheet((theme) => ({
     borderColor: 'rgba(0,0,0,0)',
     gap: theme.display.space2,
   },
-  focused: {
-    borderColor: theme.colors.foreground,
-  },
-  blurred: {
-    opacity: 0.5,
-  },
   text: {
     fontFamily: theme.font.family,
     fontSize: theme.font.size,
@@ -91,7 +94,22 @@ const stylesheet = createStyleSheet((theme) => ({
     fontSize: 11,
     flexShrink: 0,
   },
+  /* States */
   selected: {
     backgroundColor: theme.colors.muted,
+  },
+  selectedPrev: {
+    borderTopLeftRadius: 0,
+    borderTopRightRadius: 0,
+  },
+  selectedNext: {
+    borderBottomLeftRadius: 0,
+    borderBottomRightRadius: 0,
+  },
+  dropping: {
+    borderColor: theme.colors.foreground,
+  },
+  dragging: {
+    opacity: 0.5,
   },
 }));

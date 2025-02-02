@@ -72,7 +72,7 @@ msgstr "カレンダー"
 msgid "Celsius"
 msgstr "摂氏"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:288
+#: ../../client/src/media/hooks/useMediaControls.ts:286
 msgid "Close"
 msgstr "閉じる"
 
@@ -217,7 +217,7 @@ msgstr ""
 msgid "Folder is empty. Drop items or select folder to import."
 msgstr ""
 
-#: ../../client/src/media/hooks/useMediaControls.ts:278
+#: ../../client/src/media/hooks/useMediaControls.ts:276
 msgid "Fullscreen"
 msgstr "全画面"
 
@@ -347,7 +347,7 @@ msgstr "音楽"
 msgid "News"
 msgstr "ニュース"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:196
+#: ../../client/src/media/hooks/useMediaControls.ts:195
 msgid "Next"
 msgstr "次へ"
 
@@ -355,7 +355,7 @@ msgstr "次へ"
 msgid "No events scheduled."
 msgstr "予定されているイベントはありません。"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:233
+#: ../../client/src/media/hooks/useMediaControls.ts:231
 msgid "Options"
 msgstr "オプション"
 
@@ -376,7 +376,7 @@ msgstr "一時停止"
 msgid "Pictures"
 msgstr "写真"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:244
+#: ../../client/src/media/hooks/useMediaControls.ts:242
 msgid "Pin"
 msgstr "ピン留め"
 
@@ -388,7 +388,7 @@ msgstr "再生"
 msgid "Please set your Groq API Key"
 msgstr "Groq APIキーを設定してください"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:185
+#: ../../client/src/media/hooks/useMediaControls.ts:184
 msgid "Previous"
 msgstr "前へ"
 
@@ -432,7 +432,7 @@ msgstr ""
 msgid "Rename"
 msgstr ""
 
-#: ../../client/src/media/hooks/useMediaControls.ts:173
+#: ../../client/src/media/hooks/useMediaControls.ts:172
 msgid "Replay"
 msgstr "リプレイ"
 
@@ -474,7 +474,7 @@ msgstr ""
 msgid "Settings"
 msgstr "設定"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:258
+#: ../../client/src/media/hooks/useMediaControls.ts:256
 #: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:28
 msgid "Share"
 msgstr "共有"
@@ -541,7 +541,7 @@ msgstr "イベントと時間関連情報を表示"
 msgid "View your latest news and rss feeds"
 msgstr "最新ニュースとRSSフィードを表示"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:221
+#: ../../client/src/media/hooks/useMediaControls.ts:219
 msgid "Volume"
 msgstr "音量"
 

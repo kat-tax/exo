@@ -1,5 +1,5 @@
 import {FS} from 'react-exo/fs';
-import {useState, useCallback, useEffect} from 'react';
+import {useState, useCallback, useMemo, useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {useNavigate} from 'react-exo/navigation';
 
@@ -15,6 +15,9 @@ import type {GestureResponderEvent} from 'react-native';
 export function useHfs(path: string): HfsCtx {
   const [filesystem, setFilesystem] = useState<HfsImpl | null>(null);
   const [list, setList] = useState<HfsDirectoryEntry[]>([]);
+  const sel = useSelector(media.selectors.getSelected);
+  const dnd = useSelector(media.selectors.getDragging);
+  const ext = useMemo(() => ({sel, dnd}), [sel, dnd]);
 
   const put = useDispatch();
   const nav = useNavigate();
@@ -25,12 +28,16 @@ export function useHfs(path: string): HfsCtx {
     const dirPath = path || '.';
     try {
       for await (const entry of filesystem?.list?.(dirPath) ?? []) {
+        // Special files
         if (entry.name.endsWith('.crswap'))
           continue;
-        // if (entry.name === '.db' || entry.name === '.tmp')
-        //   continue;
+        // Special directories
+        if (entry.name === '.db' || entry.name === '.tmp')
+          continue;
+        // Hidden files
         if (entry.name.startsWith('.') && !showHidden)
           continue;
+        // Initial directories
         if (dirPath === '.' && isInitDirectory(entry.name))
           continue;
         entries.push(entry);
@@ -140,6 +147,6 @@ export function useHfs(path: string): HfsCtx {
   return {
     hfs: {list, path},
     cmd: {move, purge, select, upload, download},
-    sel: useSelector(media.selectors.getSelected),
+    ext,
   };
 }
