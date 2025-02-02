@@ -72,7 +72,7 @@ msgstr "カレンダー"
 msgid "Celsius"
 msgstr "摂氏"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:287
+#: ../../client/src/media/hooks/useMediaControls.ts:288
 msgid "Close"
 msgstr "閉じる"
 
@@ -131,11 +131,11 @@ msgid "Delete the local database."
 msgstr "ローカルデータベースを削除します。"
 
 #: ../../client/src/dev/routes/ScreenDesign.tsx:13
-#: ../../client/src/app/interface/Menu.tsx:132
+#: ../../client/src/app/interface/Menu.tsx:127
 msgid "Design"
 msgstr "デザイン"
 
-#: ../../client/src/app/interface/Menu.tsx:130
+#: ../../client/src/app/interface/Menu.tsx:125
 msgid "Dev Mode"
 msgstr "開発モード"
 
@@ -217,7 +217,7 @@ msgstr ""
 msgid "Folder is empty. Drop items or select folder to import."
 msgstr ""
 
-#: ../../client/src/media/hooks/useMediaControls.ts:277
+#: ../../client/src/media/hooks/useMediaControls.ts:278
 msgid "Fullscreen"
 msgstr "全画面"
 
@@ -280,7 +280,7 @@ msgid "Language"
 msgstr "言語"
 
 #: ../../client/src/dev/routes/ScreenLibrary.tsx:21
-#: ../../client/src/app/interface/Menu.tsx:137
+#: ../../client/src/app/interface/Menu.tsx:132
 msgid "Library"
 msgstr "ライブラリ"
 
@@ -355,7 +355,7 @@ msgstr "次へ"
 msgid "No events scheduled."
 msgstr "予定されているイベントはありません。"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:232
+#: ../../client/src/media/hooks/useMediaControls.ts:233
 msgid "Options"
 msgstr "オプション"
 
@@ -376,7 +376,7 @@ msgstr "一時停止"
 msgid "Pictures"
 msgstr "写真"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:243
+#: ../../client/src/media/hooks/useMediaControls.ts:244
 msgid "Pin"
 msgstr "ピン留め"
 
@@ -436,6 +436,10 @@ msgstr ""
 msgid "Replay"
 msgstr "リプレイ"
 
+#: ../../client/src/app/interface/Menu.tsx:111
+msgid "Rooms"
+msgstr ""
+
 #: ../../client/src/media/hooks/useMediaControls.ts:97
 msgid "Search"
 msgstr "検索"
@@ -466,11 +470,11 @@ msgstr ""
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:28
 #: ../../client/src/app/interface/Tabs.tsx:34
-#: ../../client/src/app/interface/Menu.tsx:154
+#: ../../client/src/app/interface/Menu.tsx:149
 msgid "Settings"
 msgstr "設定"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:257
+#: ../../client/src/media/hooks/useMediaControls.ts:258
 #: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:28
 msgid "Share"
 msgstr "共有"
@@ -484,7 +488,7 @@ msgid "Skip forward"
 msgstr "早送り"
 
 #: ../../client/src/app/routes/ScreenStorage.tsx:25
-#: ../../client/src/app/interface/Menu.tsx:148
+#: ../../client/src/app/interface/Menu.tsx:143
 msgid "Storage"
 msgstr "ストレージ"
 
@@ -537,7 +541,7 @@ msgstr "イベントと時間関連情報を表示"
 msgid "View your latest news and rss feeds"
 msgstr "最新ニュースとRSSフィードを表示"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:220
+#: ../../client/src/media/hooks/useMediaControls.ts:221
 msgid "Volume"
 msgstr "音量"
 

@@ -72,7 +72,7 @@ msgstr "Календарь"
 msgid "Celsius"
 msgstr "Цельсий"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:287
+#: ../../client/src/media/hooks/useMediaControls.ts:288
 msgid "Close"
 msgstr "Закрыть"
 
@@ -131,11 +131,11 @@ msgid "Delete the local database."
 msgstr "Удалить локальную базу данных."
 
 #: ../../client/src/dev/routes/ScreenDesign.tsx:13
-#: ../../client/src/app/interface/Menu.tsx:132
+#: ../../client/src/app/interface/Menu.tsx:127
 msgid "Design"
 msgstr "Дизайн"
 
-#: ../../client/src/app/interface/Menu.tsx:130
+#: ../../client/src/app/interface/Menu.tsx:125
 msgid "Dev Mode"
 msgstr "Режим dev"
 
@@ -217,7 +217,7 @@ msgstr ""
 msgid "Folder is empty. Drop items or select folder to import."
 msgstr ""
 
-#: ../../client/src/media/hooks/useMediaControls.ts:277
+#: ../../client/src/media/hooks/useMediaControls.ts:278
 msgid "Fullscreen"
 msgstr "Полный экран"
 
@@ -280,7 +280,7 @@ msgid "Language"
 msgstr "Язык"
 
 #: ../../client/src/dev/routes/ScreenLibrary.tsx:21
-#: ../../client/src/app/interface/Menu.tsx:137
+#: ../../client/src/app/interface/Menu.tsx:132
 msgid "Library"
 msgstr "Библиотека"
 
@@ -355,7 +355,7 @@ msgstr "Следующий"
 msgid "No events scheduled."
 msgstr "Нет запланированных событий."
 
-#: ../../client/src/media/hooks/useMediaControls.ts:232
+#: ../../client/src/media/hooks/useMediaControls.ts:233
 msgid "Options"
 msgstr "Опции"
 
@@ -376,7 +376,7 @@ msgstr "Пауза"
 msgid "Pictures"
 msgstr "Изображения"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:243
+#: ../../client/src/media/hooks/useMediaControls.ts:244
 msgid "Pin"
 msgstr "Закрепить"
 
@@ -436,6 +436,10 @@ msgstr ""
 msgid "Replay"
 msgstr "Повторить"
 
+#: ../../client/src/app/interface/Menu.tsx:111
+msgid "Rooms"
+msgstr ""
+
 #: ../../client/src/media/hooks/useMediaControls.ts:97
 msgid "Search"
 msgstr "Поиск"
@@ -466,11 +470,11 @@ msgstr ""
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:28
 #: ../../client/src/app/interface/Tabs.tsx:34
-#: ../../client/src/app/interface/Menu.tsx:154
+#: ../../client/src/app/interface/Menu.tsx:149
 msgid "Settings"
 msgstr "Настройки"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:257
+#: ../../client/src/media/hooks/useMediaControls.ts:258
 #: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:28
 msgid "Share"
 msgstr "Поделиться"
@@ -484,7 +488,7 @@ msgid "Skip forward"
 msgstr "Перемотать вперед"
 
 #: ../../client/src/app/routes/ScreenStorage.tsx:25
-#: ../../client/src/app/interface/Menu.tsx:148
+#: ../../client/src/app/interface/Menu.tsx:143
 msgid "Storage"
 msgstr "Хранилище"
 
@@ -537,7 +541,7 @@ msgstr "Просмотр событий и информации о времен�
 msgid "View your latest news and rss feeds"
 msgstr "Просмотр последних новостей и RSS-каналов"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:220
+#: ../../client/src/media/hooks/useMediaControls.ts:221
 msgid "Volume"
 msgstr "Громкость"
 

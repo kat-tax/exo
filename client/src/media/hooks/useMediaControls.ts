@@ -166,7 +166,6 @@ export function useMediaControls(props: MediaControlsProps): MediaControls {
         }
       },
     },
-    // Specific media controls (replay)
     {
       name: 'replay',
       icon: 'ph:arrow-counter-clockwise',
@@ -178,7 +177,7 @@ export function useMediaControls(props: MediaControlsProps): MediaControls {
         }
       },
     },
-    // Book controls
+    // Page controls
     {
       name: 'prev',
       icon: 'ph:arrow-left',

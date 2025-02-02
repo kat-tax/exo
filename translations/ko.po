@@ -72,7 +72,7 @@ msgstr "달력"
 msgid "Celsius"
 msgstr "섭씨"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:287
+#: ../../client/src/media/hooks/useMediaControls.ts:288
 msgid "Close"
 msgstr "닫기"
 
@@ -131,11 +131,11 @@ msgid "Delete the local database."
 msgstr "로컬 데이터베이스 삭제"
 
 #: ../../client/src/dev/routes/ScreenDesign.tsx:13
-#: ../../client/src/app/interface/Menu.tsx:132
+#: ../../client/src/app/interface/Menu.tsx:127
 msgid "Design"
 msgstr "디자인"
 
-#: ../../client/src/app/interface/Menu.tsx:130
+#: ../../client/src/app/interface/Menu.tsx:125
 msgid "Dev Mode"
 msgstr "개발자 모드"
 
@@ -217,7 +217,7 @@ msgstr ""
 msgid "Folder is empty. Drop items or select folder to import."
 msgstr ""
 
-#: ../../client/src/media/hooks/useMediaControls.ts:277
+#: ../../client/src/media/hooks/useMediaControls.ts:278
 msgid "Fullscreen"
 msgstr "전체화면"
 
@@ -280,7 +280,7 @@ msgid "Language"
 msgstr "언어"
 
 #: ../../client/src/dev/routes/ScreenLibrary.tsx:21
-#: ../../client/src/app/interface/Menu.tsx:137
+#: ../../client/src/app/interface/Menu.tsx:132
 msgid "Library"
 msgstr "라이브러리"
 
@@ -355,7 +355,7 @@ msgstr "다음"
 msgid "No events scheduled."
 msgstr "예정된 일정이 없습니다."
 
-#: ../../client/src/media/hooks/useMediaControls.ts:232
+#: ../../client/src/media/hooks/useMediaControls.ts:233
 msgid "Options"
 msgstr "옵션"
 
@@ -376,7 +376,7 @@ msgstr "일시정지"
 msgid "Pictures"
 msgstr "사진"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:243
+#: ../../client/src/media/hooks/useMediaControls.ts:244
 msgid "Pin"
 msgstr "고정"
 
@@ -436,6 +436,10 @@ msgstr ""
 msgid "Replay"
 msgstr "다시 재생"
 
+#: ../../client/src/app/interface/Menu.tsx:111
+msgid "Rooms"
+msgstr ""
+
 #: ../../client/src/media/hooks/useMediaControls.ts:97
 msgid "Search"
 msgstr "검색"
@@ -466,11 +470,11 @@ msgstr ""
 
 #: ../../client/src/app/routes/ScreenSettings.tsx:28
 #: ../../client/src/app/interface/Tabs.tsx:34
-#: ../../client/src/app/interface/Menu.tsx:154
+#: ../../client/src/app/interface/Menu.tsx:149
 msgid "Settings"
 msgstr "설정"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:257
+#: ../../client/src/media/hooks/useMediaControls.ts:258
 #: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:28
 msgid "Share"
 msgstr "공유"
@@ -484,7 +488,7 @@ msgid "Skip forward"
 msgstr "앞으로 건너뛰기"
 
 #: ../../client/src/app/routes/ScreenStorage.tsx:25
-#: ../../client/src/app/interface/Menu.tsx:148
+#: ../../client/src/app/interface/Menu.tsx:143
 msgid "Storage"
 msgstr "저장소"
 
@@ -537,7 +541,7 @@ msgstr "일정 및 시간 관련 정보 보기"
 msgid "View your latest news and rss feeds"
 msgstr "최신 뉴스 및 RSS 피드 보기"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:220
+#: ../../client/src/media/hooks/useMediaControls.ts:221
 msgid "Volume"
 msgstr "볼륨"
 

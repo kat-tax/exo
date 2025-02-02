@@ -4,7 +4,7 @@ import {forwardRef, memo} from 'react';
 import {Suspense as $} from 'app/stacks/Suspense';
 import {FileType} from 'media/file/types';
 
-import type {FileRenderInfo} from 'media/file/types';
+import type {FileRef, FileRenderInfo} from 'media/file/types';
 
 export interface FileProps {
   path: string,
@@ -26,7 +26,7 @@ export interface FileProps {
   }
 }
 
-export default memo(forwardRef((props: FileProps, ref) => {
+export default memo(forwardRef((props: FileProps, ref: React.Ref<FileRef>) => {
   const {path, name, extension, embedded, maximized, renderer, actions} = props;
   const [file, ctx] = renderer || [];
   if (!file) return null;

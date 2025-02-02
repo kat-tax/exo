@@ -3,8 +3,9 @@ import type {FileText} from 'media/file/FileText';
 
 import type {ImageRef} from 'media/file/FileImage';
 import type {VideoRef} from 'media/file/FileVideo';
-import type {RiveRef} from 'media/file/FileRive';
+import type {PdfRef} from 'media/file/FilePdf';
 import type {BookRef} from 'media/file/FileBook';
+import type {RiveRef} from 'media/file/FileRive';
 import type {GameRef} from 'media/file/FileGame';
 
 export enum FileType {
@@ -38,8 +39,9 @@ export type FileOptions = {
 export type FileRef =
   | ImageRef
   | VideoRef
-  | RiveRef
+  | PdfRef
   | BookRef
+  | RiveRef
   | GameRef
 
 export type FileProtocol =

@@ -6,19 +6,25 @@ import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useFileData} from 'media/file/hooks/useFileData';
 
 import type {FileProps} from 'media/file';
+import type {PdfRef} from 'react-exo/pdf';
 
-export interface FilePdf extends FileProps {}
+export type {PdfRef};
 
-export default forwardRef((props: FilePdf) => {
+export interface FilePdf extends FileProps {
+  ref: React.RefObject<PdfRef>,
+}
+
+export default forwardRef((props: Omit<FilePdf, 'ref'>, ref: React.Ref<PdfRef>) => {
   const source = useFileData(props.path, 'dataUrl');
   const {styles} = useStyles(stylesheet);
   const {actions} = props;
   return source ? (
     <View style={styles.root}>
       <Pdf
+        ref={ref}
         src={source}
-        onPageChange={page => {
-          actions.setInfo(`Page ${page || 1}`);
+        onPageChange={(page, totalPages) => {
+          actions.setInfo(`Page ${page || 1}/${totalPages}`);
         }}
       />
     </View>
