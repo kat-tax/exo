@@ -52,26 +52,17 @@ export function MediaSelection() {
     }
   }, [focused, list]);
 
-  // Tab navigation
+  // Hotkeys
   useEffect(() => {
     const down = (e: KeyboardEvent) => {
       const {key} = e;
       switch (key) {
         case 'ArrowLeft':
-          goto(-1);
+          goto(e.shiftKey ? 'start' : -1);
           break;
         case 'ArrowRight':
-          goto(1);
+          goto(e.shiftKey ? 'end' : 1);
           break;
-        case 'Home':
-        case 'ArrowUp':
-          goto('start');
-          break;
-        case 'End':
-        case 'ArrowDown':
-          goto('end');
-          break;
-        // Clear selection
         case 'Escape':
           put(media.actions.selectBulk([]));
           break;

@@ -11,9 +11,12 @@ export interface HfsEntryProps {
   cmd: HfsCmd,
   idx: number,
   opt: {
-    selected: boolean,
-    selectedPrev: boolean,
-    selectedNext: boolean,
+    selected: {
+      self: boolean,
+      prev: boolean,
+      next: boolean,
+      count: number,
+    },
   },
 }
 

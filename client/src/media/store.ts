@@ -3,24 +3,33 @@ import type {PayloadAction} from 'react-exo/redux';
 
 export type Media = {
   focused: string,
+  contents: string[],
   selected: string[],
   dragging: string[],
-  contents: string[],
+  renaming: string[],
+  copying: string[],
+  moving: string[],
 }
 
 export default createSlice({
   name: 'media',
   initialState: <Media> {
     focused: '',
+    contents: [],
     selected: [],
     dragging: [],
-    contents: [],
+    renaming: [],
+    copying: [],
+    moving: [],
   },
   selectors: {
     getFocused: (media) => media.focused,
+    getContents: (media) => media.contents,
     getSelected: (media) => media.selected,
     getDragging: (media) => media.dragging,
-    getContents: (media) => media.contents,
+    getRenaming: (media) => media.renaming,
+    getCopying: (media) => media.copying,
+    getMoving: (media) => media.moving,
   },
   reducers: {
     list(media, action: PayloadAction<string[]>) {

@@ -57,12 +57,36 @@ export function useHfs(path: string): HfsCtx {
     }));
   }, [path, filesystem]);
 
+  const share = useCallback(async (entry: HfsDirectoryEntry) => {
+    console.log('>> fs [share]', entry);
+  }, []);
+
   const open = useCallback(async (entry: HfsDirectoryEntry) => {
     nav(path ? `${path}/${entry.name}` : entry.name);
   }, [path, nav]);
 
-  const move = useCallback(async (from: HfsDirectoryEntry, to: HfsDirectoryEntry) => {
-    await filesystem?.move?.(from.name, to.name);
+  const move = useCallback(async (from: HfsDirectoryEntry, to?: HfsDirectoryEntry) => {
+    if (to) {
+      await filesystem?.move?.(from.name, to.name);
+    } else {
+      console.log('>> fs [move]', from);
+    }
+  }, [filesystem]);
+
+  const copy = useCallback(async (from: HfsDirectoryEntry, to?: HfsDirectoryEntry) => {
+    if (to) {
+      await filesystem?.copy?.(from.name, to.name);
+    } else {
+      console.log('>> fs [copy]', from);
+    }
+  }, [filesystem]);
+
+  const rename = useCallback(async (entry: HfsDirectoryEntry, to?: string) => {
+    if (to) {
+      await filesystem?.move?.(entry.name, to);
+    } else {
+      console.log('>> fs [rename]', entry);
+    }
   }, [filesystem]);
 
   const purge = useCallback(async (entry: HfsDirectoryEntry) => {
@@ -91,9 +115,16 @@ export function useHfs(path: string): HfsCtx {
 
   const download = useCallback(async (entry: HfsDirectoryEntry) => {
     if (entry.isFile) {
-      saveAs(await getData(path, 'dataUrl'), entry.name);
+      const uri = path ? `${path}/${entry.name}` : entry.name;
+      saveAs(await getData(uri, 'dataUrl'), entry.name);
     }
   }, [path]);
+
+  const compress = useCallback(async (entry: HfsDirectoryEntry) => {
+    if (entry.isDirectory) {
+      console.log('>> fs [compress]', entry);
+    }
+  }, [filesystem]);
 
   // Mount filesystem
   useEffect(() => {
@@ -144,8 +175,22 @@ export function useHfs(path: string): HfsCtx {
   }, [filesystem]);
 
   return {
-    hfs: {list, path},
-    cmd: {open, move, purge, select, upload, download},
     ext,
+    hfs: {
+      list,
+      path,
+    },
+    cmd: {
+      share,
+      open,
+      move,
+      copy,
+      rename,
+      purge,
+      select,
+      upload,
+      download,
+      compress,
+    },
   };
 }

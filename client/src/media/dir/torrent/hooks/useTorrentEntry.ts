@@ -1,11 +1,17 @@
 import {useRef, useState, useEffect} from 'react';
 import {toPathInfo} from 'app/utils/formatting';
+import {bind} from 'media/utils/bind';
 import * as dnd from 'app/utils/dragdrop';
 
 import type {View} from 'react-native';
 import type {CleanupFn} from 'app/utils/dragdrop';
 import type {TorrentFileEntry, TorrentCmd} from '../types';
 import type {TorrentEntryProps} from '../stacks/TorrentEntry';
+
+const $ = Symbol('torrent');
+export type TorrentData = {[$]: true; entry: TorrentFileEntry; cmd: TorrentCmd};
+export const isTorrentData = (data: Record<string | symbol, unknown>): data is TorrentData => data[$] === true;
+export const getTorrentData = (entry: TorrentFileEntry, cmd: TorrentCmd): TorrentData => ({[$]: true, entry, cmd});
 
 export function useTorrentEntry(props: TorrentEntryProps) {
   const {entry, cmd, opt} = props;
@@ -20,7 +26,7 @@ export function useTorrentEntry(props: TorrentEntryProps) {
       dnd.draggable({
         element,
         getInitialData: () => getTorrentData(entry, cmd),
-        onGenerateDragPreview: ({nativeSetDragImage}) => dnd.dragPreview(nativeSetDragImage),
+        onGenerateDragPreview: dnd.dragPreview(1),
         onDragStart: () => setDragging(true),
         onDrop: () => setDragging(false),
       }),
@@ -30,21 +36,7 @@ export function useTorrentEntry(props: TorrentEntryProps) {
   return {
     ref,
     ext,
-    cmd: Object.fromEntries(Object.entries(cmd).map(
-      ([key, fn]) => [key, fn.bind(null, entry)],
-    )) as {
-      [K in keyof typeof cmd]: Parameters<typeof cmd[K]> extends [TorrentFileEntry, ...infer Rest]
-        ? (...args: Rest) => ReturnType<typeof cmd[K]>
-        : typeof cmd[K]
-    },
-    opt: {
-      ...opt,
-      dragging,
-    },
+    cmd: bind(cmd, entry),
+    opt: {...opt, dragging},
   };
 }
-
-const $ = Symbol('torrent');
-export type TorrentData = {[$]: true; entry: TorrentFileEntry; cmd: TorrentCmd};
-export const isTorrentData = (data: Record<string | symbol, unknown>): data is TorrentData => data[$] === true;
-export const getTorrentData = (entry: TorrentFileEntry, cmd: TorrentCmd): TorrentData => ({[$]: true, entry, cmd});

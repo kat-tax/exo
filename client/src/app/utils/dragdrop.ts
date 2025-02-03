@@ -7,15 +7,17 @@ export {combine} from '@atlaskit/pragmatic-drag-and-drop/combine';
 
 export type {CleanupFn} from '@atlaskit/pragmatic-drag-and-drop/types';
 
+import type {ElementDragType} from '@atlaskit/pragmatic-drag-and-drop/dist/types/internal-types';
+import type {BaseEventPayload} from '@atlaskit/pragmatic-drag-and-drop/dist/types/internal-types';
+
 import {setCustomNativeDragPreview} from '@atlaskit/pragmatic-drag-and-drop/element/set-custom-native-drag-preview';
 import {pointerOutsideOfPreview} from '@atlaskit/pragmatic-drag-and-drop/element/pointer-outside-of-preview';
 
-export function dragPreview(
-  nativeSetDragImage: ((image: Element, x: number, y: number) => void) | null,
-  itemCount = 1,
-) {
+export const dragPreview = (count: number) => (e: BaseEventPayload<ElementDragType> & {
+  nativeSetDragImage: DataTransfer['setDragImage'] | null;
+}) => {
   setCustomNativeDragPreview({
-    nativeSetDragImage,
+    nativeSetDragImage: e.nativeSetDragImage,
     getOffset: pointerOutsideOfPreview({x: '12px', y: '12px'}),
     render({container}) {
       const badge = document.createElement('div');
@@ -30,7 +32,7 @@ export function dragPreview(
       badge.style.display = 'flex';
       badge.style.alignItems = 'center';
       badge.style.justifyContent = 'center';
-      badge.textContent = itemCount.toString();
+      badge.textContent = count.toString();
       container.appendChild(badge);
     },
   });

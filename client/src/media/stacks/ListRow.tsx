@@ -13,11 +13,14 @@ interface ListRow {
   ext?: string,
   dir?: boolean,
   opt?: {
-    selected?: boolean,
-    selectedPrev?: boolean,
-    selectedNext?: boolean,
     dragging?: boolean,
     dropping?: boolean,
+    selected?: {
+      self?: boolean,
+      prev?: boolean,
+      next?: boolean,
+      count?: number,
+    },
   }
 }
 
@@ -26,8 +29,6 @@ export function ListRow(props: ListRow) {
   const {name, size, ext, dir, opt} = props;
   const {
     selected,
-    selectedPrev,
-    selectedNext,
     dragging,
     dropping,
   } = opt ?? {};
@@ -35,9 +36,9 @@ export function ListRow(props: ListRow) {
   const vstyles = {
     root: [
       styles.root,
-      selected && styles.selected,
-      selectedPrev && styles.selectedPrev,
-      selectedNext && styles.selectedNext,
+      selected?.self && styles.selected,
+      selected?.prev && styles.selectedPrev,
+      selected?.next && styles.selectedNext,
       dragging && styles.dragging,
       dropping && styles.dropping,
     ],
@@ -95,6 +96,12 @@ const stylesheet = createStyleSheet((theme) => ({
     flexShrink: 0,
   },
   /* States */
+  dropping: {
+    borderColor: theme.colors.foreground,
+  },
+  dragging: {
+    opacity: 0.5,
+  },
   selected: {
     backgroundColor: theme.colors.muted,
   },
@@ -105,11 +112,5 @@ const stylesheet = createStyleSheet((theme) => ({
   selectedNext: {
     borderBottomLeftRadius: 0,
     borderBottomRightRadius: 0,
-  },
-  dropping: {
-    borderColor: theme.colors.foreground,
-  },
-  dragging: {
-    opacity: 0.5,
   },
 }));

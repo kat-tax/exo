@@ -11,25 +11,33 @@ export interface HfsMenuProps extends React.PropsWithChildren {
 
 export function HfsMenu(props: HfsMenuProps) {
   const {entry, cmd} = props;
+  const dir = entry.isDirectory;
   const {t} = useLingui();
 
   return (
     <ContextMenu label={entry.name} items={[
-      {
-        name: 'view',
-        icon: 'ph:eye',
-        label: t`View`,
-        shortcut: 'ENTER',
-        action: cmd.select,
+      dir && {
+        name: 'open',
+        icon: 'ph:folder-open',
+        label: t`Open`,
+        shortcut: '⇧+Click',
+        action: cmd.open,
       },
-      {
+      !dir && {
         name: 'share',
         icon: 'ph:share',
         label: t`Share`,
         shortcut: '⌘+K',
-        action: () => {}, //cmd.share,
+        action: cmd.share,
       },
-      {
+      dir && {
+        name: 'compress',
+        icon: 'ph:box-arrow-down',
+        label: t`Compress`,
+        shortcut: '⌘+L',
+        action: cmd.compress,
+      },
+      !dir && {
         name: 'download',
         icon: 'ph:download',
         label: t`Download`,
@@ -45,21 +53,21 @@ export function HfsMenu(props: HfsMenuProps) {
         icon: 'ph:copy',
         label: t`Copy`,
         shortcut: '⌘+C',
-        action: () => {}, //cmd.copy,
+        action: cmd.copy,
       },
       {
         name: 'move',
         icon: 'ph:arrow-elbow-down-right',
         label: t`Move`,
         shortcut: '⌘+X',
-        action: () => {}, //cmd.move,
+        action: cmd.move,
       },
       {
         name: 'rename',
         icon: 'ph:textbox',
         label: t`Rename`,
         shortcut: 'F2',
-        action: () => {}, //cmd.rename,
+        action: cmd.rename,
       },
       {
         name: 'bottom',
@@ -69,7 +77,7 @@ export function HfsMenu(props: HfsMenuProps) {
         name: 'delete',
         icon: 'ph:trash',
         label: t`Delete`,
-        shortcut: '⌘+DEL',
+        shortcut: '⌘+Del',
         destructive: true,
         action: cmd.purge,
       },

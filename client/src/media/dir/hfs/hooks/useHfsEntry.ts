@@ -1,7 +1,8 @@
-import {useDispatch} from 'react-redux';
 import {useRef, useState, useEffect} from 'react';
+import {useDispatch} from 'react-redux';
 import {toPathInfo} from 'app/utils/formatting';
 import * as dnd from 'app/utils/dragdrop';
+import {bind} from 'media/utils/bind';
 import media from 'media/store';
 
 import {isZipData} from 'media/dir/zip/hooks/useZipEntry';
@@ -9,8 +10,13 @@ import {isTorrentData} from 'media/dir/torrent/hooks/useTorrentEntry';
 
 import type {View} from 'react-native';
 import type {CleanupFn} from 'app/utils/dragdrop';
-import type {HfsDirectoryEntry} from 'react-exo/fs';
 import type {HfsEntryProps} from '../stacks/HfsEntry';
+import type {HfsDirectoryEntry} from 'react-exo/fs';
+
+const $ = Symbol('hfs');
+export type HfsData = {[$]: true, entry: HfsDirectoryEntry};
+export const isHfsData = (data: Record<string | symbol, unknown>): data is HfsData => data[$] === true;
+export const getHfsData = (entry: HfsDirectoryEntry): HfsData => ({[$]: true, entry});
 
 export function useHfsEntry({entry, cmd, opt}: HfsEntryProps) {
   const [dropping, setDropping] = useState(false);
@@ -25,7 +31,7 @@ export function useHfsEntry({entry, cmd, opt}: HfsEntryProps) {
       dnd.draggable({
         element,
         getInitialData: () => getHfsData(entry),
-        onGenerateDragPreview: ({nativeSetDragImage}) => dnd.dragPreview(nativeSetDragImage),
+        onGenerateDragPreview: dnd.dragPreview(opt.selected.count),
         onDragStart: () => put(media.actions.drag(entry.name)),
         onDrop: () => put(media.actions.drag(null)),
       }),
@@ -70,21 +76,7 @@ export function useHfsEntry({entry, cmd, opt}: HfsEntryProps) {
   return {
     ref,
     ext,
-    cmd: Object.fromEntries(Object.entries(cmd).map(
-      ([key, fn]) => [key, fn.bind(null, entry)],
-    )) as {
-      [K in keyof typeof cmd]: Parameters<typeof cmd[K]> extends [HfsDirectoryEntry, ...infer Rest]
-        ? (...args: Rest) => ReturnType<typeof cmd[K]>
-        : typeof cmd[K]
-    },
-    opt: {
-      ...opt,
-      dropping,
-    },
+    cmd: bind(cmd, entry),
+    opt: {...opt, dropping},
   };
 }
-
-const $ = Symbol('hfs');
-export type HfsData = {[$]: true, entry: HfsDirectoryEntry};
-export const isHfsData = (data: Record<string | symbol, unknown>): data is HfsData => data[$] === true;
-export const getHfsData = (entry: HfsDirectoryEntry): HfsData => ({[$]: true, entry});

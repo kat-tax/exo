@@ -1,12 +1,22 @@
+import {View} from 'react-native';
 import {useLingui} from '@lingui/react/macro';
+import {useState, useEffect} from 'react';
 import {useHfsImporter} from 'media/dir/hfs';
 import {Watermark} from 'media/stacks/Watermark';
-import {View} from 'react-native';
 
 export function HfsNoEntries() {
+  const [visible, setVisible] = useState(false);
   const {importFolder} = useHfsImporter();
   const {t} = useLingui();
-  return (
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setVisible(true);
+    }, 1000);
+    return () => clearTimeout(timeout);
+  }, []);
+
+  return visible ? (
     <View style={{marginTop: 30}}>
       <Watermark
         title={t`Folder is empty. Drop items or select folder to import.`}
@@ -18,5 +28,5 @@ export function HfsNoEntries() {
         }}
       />
     </View>
-  );
+  ) : null;
 }

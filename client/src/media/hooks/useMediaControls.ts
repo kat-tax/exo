@@ -83,7 +83,7 @@ export function useMediaControls(props: MediaControlsProps): MediaControls {
     // Archive controls
     {
       name: 'extract',
-      icon: 'ph:box-arrow-down',
+      icon: 'ph:box-arrow-up',
       label: t`Extract`,
       media: EXTRACTABLE,
       action: () => {
