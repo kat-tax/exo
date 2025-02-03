@@ -106,7 +106,7 @@ export function Media(props: MediaProps) {
 
   return (
     <View style={vstyles.root}>
-      {!embedded && <MediaSelection/>}
+      {!embedded && <MediaSelection {...{filesystem}}/>}
       <ScrollView style={vstyles.frame} contentContainerStyle={styles.contents}>
         <File
           ref={file}

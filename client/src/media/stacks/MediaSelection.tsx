@@ -1,23 +1,21 @@
 import {useRef, useMemo, useCallback, useEffect} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useSelector, useDispatch} from 'react-redux';
-import {Text, Pressable} from 'react-native';
-import {Icon} from 'react-exo/icon';
 import {Motion} from 'react-exo/motion';
-import {isTouch} from 'app/utils/platform';
-import {ListRowIcon} from 'media/stacks/ListRowIcon';
 import {toPathInfo} from 'app/utils/formatting';
 import media from 'media/store';
 
+import {MediaSelectionItem} from './MediaSelectionItem';
+
 import type {ScrollView} from 'react-native';
+import type {HfsImpl} from 'react-exo/fs';
 
-const TOUCH = isTouch();
-const TAB_SIZE = TOUCH ? 46 : 32;
-const ICON_SIZE = TOUCH ? 1 : 0;
-const TEXT_LINES = TOUCH ? 2 : 1;
+interface MediaSelectionProps {
+  filesystem: HfsImpl | null,
+}
 
-export function MediaSelection() {
-  const {styles, theme} = useStyles(stylesheet);
+export function MediaSelection({filesystem}: MediaSelectionProps) {
+  const {styles} = useStyles(stylesheet);
   const scrollRef = useRef<ScrollView>(null);
   const selection = useSelector(media.selectors.getSelected);
   const focused = useSelector(media.selectors.getFocused);
@@ -38,10 +36,6 @@ export function MediaSelection() {
         : selection.length - 1];
     if (path) put(media.actions.focus(path));
   }, [selection, focused]);
-
-  const close = useCallback((index: number) => {
-    put(media.actions.selectRemove(index));
-  }, [put]);
 
   // Scroll to focus
   useEffect(() => {
@@ -83,35 +77,21 @@ export function MediaSelection() {
       initial={{opacity: 0}}
       animate={{opacity: 1}}
       exit={{opacity: 0}}>
-      {list.map(({path, name, ext}, index) => 
-        <Pressable
+      {list.map(({path, name, ext}, index) => (
+        <MediaSelectionItem
           key={path}
-          onPress={() => put(media.actions.focus(path))}
-          style={[styles.preview, path === focused && styles.focus]}>
-          <ListRowIcon
-            name={name ?? ''}
-            size={ICON_SIZE}
-            ext={ext}
-            dir={false}
-          />
-          <Text
-            style={[styles.text, path === focused && styles.textFocused]}
-            selectable={false}
-            numberOfLines={TEXT_LINES}>
-            {name || `.${ext}`}
-          </Text>
-          <Pressable onPress={() => close(index)}>
-            <Icon
-              name="ph:x"
-              size={TOUCH ? 16 : 14}
-              color={theme.colors.mutedForeground}
-            />
-          </Pressable>
-        </Pressable>
-      )}
+          filesystem={filesystem}
+          focused={focused === path}
+          index={index}
+          path={path}
+          name={name}
+          ext={ext}
+        />
+      ))}
     </Motion.ScrollView>
   ) : null;
 }
+
 
 const stylesheet = createStyleSheet((theme) => ({
   root: {
@@ -122,32 +102,5 @@ const stylesheet = createStyleSheet((theme) => ({
     flexDirection: 'row',
     gap: theme.display.space2,
     padding: theme.display.space2,
-  },
-  preview: {
-    height: TAB_SIZE,
-    gap: TOUCH ? theme.display.space3 : theme.display.space2,
-    flexDirection: 'row',
-    alignItems: 'center',
-    alignContent: 'center',
-    justifyContent: 'center',
-    paddingVertical: theme.display.space1,
-    paddingHorizontal: TOUCH ? theme.display.space3 : theme.display.space2,
-    borderRadius: theme.display.radius1,
-    borderColor: theme.colors.border,
-    borderWidth: 1,
-  },
-  focus: {
-    borderColor: theme.colors.primary,
-  },
-  text: {
-    fontFamily: theme.font.family,
-    fontSize: theme.font.size,
-    fontWeight: theme.font.weight,
-    lineHeight: theme.font.height,
-    letterSpacing: theme.font.spacing,
-    color: theme.colors.mutedForeground,
-  },
-  textFocused: {
-    color: theme.colors.foreground,
   },
 }));
