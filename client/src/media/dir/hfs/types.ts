@@ -15,6 +15,15 @@ export interface HfsCtx {
   },
 }
 
+export interface HfsOpt {
+  selected: {
+    self: boolean,
+    prev: boolean,
+    next: boolean,
+    count: number,
+  },
+}
+
 export interface HfsCmd {
   share: (entry: HfsDirectoryEntry) => Promise<void>,
   open: (entry: HfsDirectoryEntry) => Promise<void>,

@@ -4,20 +4,13 @@ import {HfsMenu} from './HfsMenu';
 import {useHfsEntry} from '../hooks/useHfsEntry';
 
 import type {HfsDirectoryEntry} from 'react-exo/fs';
-import type {HfsCmd} from '../types';
+import type {HfsCmd, HfsOpt} from '../types';
 
 export interface HfsEntryProps {
   entry: HfsDirectoryEntry,
   cmd: HfsCmd,
+  opt: HfsOpt,
   idx: number,
-  opt: {
-    selected: {
-      self: boolean,
-      prev: boolean,
-      next: boolean,
-      count: number,
-    },
-  },
 }
 
 export function HfsEntry(props: HfsEntryProps) {

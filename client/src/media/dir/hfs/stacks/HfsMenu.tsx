@@ -20,7 +20,7 @@ export function HfsMenu(props: HfsMenuProps) {
         name: 'open',
         icon: 'ph:folder-open',
         label: t`Open`,
-        shortcut: '⇧+Click',
+        shortcut: '⇧+ENTER',
         action: cmd.open,
       },
       !dir && {
@@ -77,7 +77,7 @@ export function HfsMenu(props: HfsMenuProps) {
         name: 'delete',
         icon: 'ph:trash',
         label: t`Delete`,
-        shortcut: '⌘+Del',
+        shortcut: '⌘+DEL',
         destructive: true,
         action: cmd.purge,
       },

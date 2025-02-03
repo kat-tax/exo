@@ -57,10 +57,6 @@ export function useHfs(path: string): HfsCtx {
     }));
   }, [path, filesystem]);
 
-  const share = useCallback(async (entry: HfsDirectoryEntry) => {
-    console.log('>> fs [share]', entry);
-  }, []);
-
   const open = useCallback(async (entry: HfsDirectoryEntry) => {
     nav(path ? `${path}/${entry.name}` : entry.name);
   }, [path, nav]);
@@ -81,9 +77,9 @@ export function useHfs(path: string): HfsCtx {
     }
   }, [filesystem]);
 
-  const rename = useCallback(async (entry: HfsDirectoryEntry, to?: string) => {
-    if (to) {
-      await filesystem?.move?.(entry.name, to);
+  const rename = useCallback(async (entry: HfsDirectoryEntry, name?: string) => {
+    if (name) {
+      await filesystem?.move?.(entry.name, name);
     } else {
       console.log('>> fs [rename]', entry);
     }
@@ -93,14 +89,19 @@ export function useHfs(path: string): HfsCtx {
     await filesystem?.deleteAll?.(entry.name);
   }, [filesystem]);
 
-  const select = useCallback((entry: HfsDirectoryEntry, e?: GestureResponderEvent) => {
-    const [isRange, isMulti] = [e?.shiftKey, e?.metaKey || e?.ctrlKey];
+  const select = useCallback((entry: HfsDirectoryEntry, event?: GestureResponderEvent) => {
+    const [isShift, isCtrl] = [event?.shiftKey, event?.metaKey || event?.ctrlKey];
+    const fullPath = path ? `${path}/${entry.name}` : entry.name;
+    const isSelected = sel?.includes(fullPath);
+    if (isShift && entry.isDirectory && (isSelected || sel?.length === 0)) {
+      return open(entry);
+    }
     put(media.actions.selectItem({
-      path: path ? `${path}/${entry.name}` : entry.name,
-      isRange: isRange ?? false,
-      isMulti: isMulti ?? false,
+      path: fullPath,
+      isRange: isShift ?? false,
+      isMulti: isCtrl ?? false,
     }));
-  }, [path, put]);
+  }, [path, sel, open, put]);
 
   const upload = useCallback(async (entry: HfsDirectoryEntry, files: File[]) => {
     if (!filesystem) return;
@@ -121,10 +122,12 @@ export function useHfs(path: string): HfsCtx {
   }, [path]);
 
   const compress = useCallback(async (entry: HfsDirectoryEntry) => {
-    if (entry.isDirectory) {
-      console.log('>> fs [compress]', entry);
-    }
-  }, [filesystem]);
+    console.log('>> fs [compress]', entry);
+  }, []);
+
+  const share = useCallback(async (entry: HfsDirectoryEntry) => {
+    console.log('>> fs [share]', entry);
+  }, []);
 
   // Mount filesystem
   useEffect(() => {
@@ -181,7 +184,6 @@ export function useHfs(path: string): HfsCtx {
       path,
     },
     cmd: {
-      share,
       open,
       move,
       copy,
@@ -191,6 +193,7 @@ export function useHfs(path: string): HfsCtx {
       upload,
       download,
       compress,
+      share,
     },
   };
 }

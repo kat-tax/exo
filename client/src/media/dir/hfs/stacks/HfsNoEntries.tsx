@@ -12,7 +12,7 @@ export function HfsNoEntries() {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setVisible(true);
-    }, 1000);
+    }, 200);
     return () => clearTimeout(timeout);
   }, []);
 
