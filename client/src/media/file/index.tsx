@@ -33,6 +33,8 @@ export default memo(forwardRef((props: FileProps, ref: React.Ref<FileRef>) => {
   const base: FileProps = {name, extension, path, embedded, maximized, ...{actions}};
   const meta = {...base, ref};
   switch (file) {
+    case FileType.Directory:
+      return <$><File.Directory {...meta} {...ctx}/></$>
     case FileType.Binary:
       return <$><File.Binary {...meta} {...ctx}/></$>
     case FileType.Text:

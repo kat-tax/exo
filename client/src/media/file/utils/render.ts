@@ -7,8 +7,14 @@ import {getData} from './data';
 
 import type {FileRenderInfo} from '../types';
 
-export async function getRenderer(extension: string, path?: string): Promise<FileRenderInfo> {
-  switch (extension) {
+export async function getRenderer(
+  ext: string,
+  path?: string,
+  isDir?: boolean,
+): Promise<FileRenderInfo> {
+  if (isDir)
+    return [FileType.Directory, {}];
+  switch (ext) {
     // Archives
     case 'zip':
       return [FileType.Zip, {}];
@@ -785,7 +791,7 @@ export async function getRenderer(extension: string, path?: string): Promise<Fil
     default: {
       if (!path) return [FileType.Binary, {}];
       const buffer = await getData(path, 'arrayBuffer');
-      return await isTextFile(extension ?? '', buffer)
+      return await isTextFile(ext ?? '', buffer)
         ? [FileType.Text, {language: 'text'}]
         : [FileType.Binary, {}];
     }

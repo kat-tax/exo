@@ -2,6 +2,9 @@ import {lazy} from 'react';
 import {FileType} from 'media/file/types';
 
 export const loader: {[key in FileType]: ReturnType<typeof lazy>} = {
+  [FileType.Directory]: lazy(
+    () => import('../FileDirectory')
+  ),
   [FileType.Binary]: lazy(
     () => import('../FileBinary')
   ),

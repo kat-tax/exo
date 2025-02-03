@@ -1,6 +1,9 @@
 import {FileType} from 'media/file/types';
 
 export const loader: {[key in FileType]: JSX.Element} = {
+  get [FileType.Directory]() {
+    return require('../FileDirectory').default
+  },
   get [FileType.Binary]() {
     return require('../FileBinary').default
   },

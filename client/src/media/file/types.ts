@@ -9,6 +9,7 @@ import type {RiveRef} from 'media/file/FileRive';
 import type {GameRef} from 'media/file/FileGame';
 
 export enum FileType {
+  Directory = 'Directory',
   Binary = 'Binary',
   Text = 'Text',
   Torrent = 'Torrent',
