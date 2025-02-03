@@ -1,4 +1,4 @@
-import {useRef, useEffect, useMemo, useCallback} from 'react';
+import {useRef, useMemo, useCallback, useEffect} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useSelector, useDispatch} from 'react-redux';
 import {Text, Pressable} from 'react-native';
@@ -38,7 +38,6 @@ export function MediaSelection() {
         : selection.length - 1];
     if (path) put(media.actions.focus(path));
   }, [selection, focused]);
-
 
   const close = useCallback((index: number) => {
     put(media.actions.selectRemove(index));

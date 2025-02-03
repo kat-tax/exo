@@ -1,3 +1,4 @@
+import {FS} from 'react-exo/fs';
 import {View, ScrollView} from 'react-native';
 import {useMemo, useState, useEffect, useRef} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
@@ -8,6 +9,7 @@ import {getRenderer} from 'media/file/utils/render';
 import File from 'media/file';
 
 import type {FileRef, FileRenderInfo} from 'media/file/types';
+import type {HfsImpl} from 'react-exo/fs';
 
 interface MediaProps {
   ext: string,
@@ -22,6 +24,7 @@ interface MediaProps {
 
 export function Media(props: MediaProps) {
   const {ext, name, path, vertical, maximized, embedded, layout, close} = props;
+  const [filesystem, setFilesystem] = useState<HfsImpl | null>(null);
   const {styles, theme} = useStyles(stylesheet);
   const file = useRef<FileRef>(null);
   const pip = useMediaPictureInPicture(props.ext, layout);
@@ -87,9 +90,19 @@ export function Media(props: MediaProps) {
   // Update renderer when file extension changes
   useEffect(() => {
     (async () => {
-      setRenderer(await getRenderer(ext, path));
+      const isDir = !path.includes('://')
+        ? await filesystem?.isDirectory?.(path)!
+        : false;
+      setRenderer(await getRenderer(ext, path, isDir));
     })();
-  }, [ext, path]);
+  }, [ext, path, filesystem]);
+
+  // Mount filesystem
+  useEffect(() => {
+    (async () => {
+      setFilesystem(await FS.init('fs'));
+    })();
+  }, []);
 
   return (
     <View style={vstyles.root}>
