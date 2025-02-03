@@ -8,10 +8,8 @@ import type {ZipFileEntry, ZipCmd} from '../types';
 export interface ZipEntryProps {
   entry: ZipFileEntry,
   cmd: ZipCmd,
+  opt: {dragging?: boolean},
   idx: number,
-  opt: {
-    selected: boolean,
-  },
 }
 
 export function ZipEntry(props: ZipEntryProps) {

@@ -8,10 +8,8 @@ import type {TorrentFileEntry, TorrentCmd} from '../types';
 export interface TorrentEntryProps {
   entry: TorrentFileEntry,
   cmd: TorrentCmd,
+  opt: {dragging?: boolean},
   idx: number,
-  opt: {
-    selected: boolean,
-  },
 }
 
 export function TorrentEntry(props: TorrentEntryProps) {

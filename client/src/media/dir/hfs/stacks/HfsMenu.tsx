@@ -7,15 +7,16 @@ import type {useHfsEntry} from '../hooks/useHfsEntry';
 export interface HfsMenuProps extends React.PropsWithChildren {
   entry: HfsDirectoryEntry,
   cmd: ReturnType<typeof useHfsEntry>['cmd'],
+  onOpenChange?: (open: boolean) => void,
 }
 
 export function HfsMenu(props: HfsMenuProps) {
-  const {entry, cmd} = props;
+  const {entry, cmd, onOpenChange} = props;
   const dir = entry.isDirectory;
   const {t} = useLingui();
 
   return (
-    <ContextMenu label={entry.name} items={[
+    <ContextMenu label={entry.name} {...{onOpenChange}} items={[
       dir && {
         name: 'open',
         icon: 'ph:folder-open',
