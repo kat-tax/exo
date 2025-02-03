@@ -1,45 +1,35 @@
 import {useDispatch} from 'react-redux';
 import {useRef, useState, useEffect} from 'react';
-import {dropTargetForExternal} from '@atlaskit/pragmatic-drag-and-drop/external/adapter';
-import {dropTargetForElements, draggable} from '@atlaskit/pragmatic-drag-and-drop/element/adapter';
-import {containsFiles, getFiles} from '@atlaskit/pragmatic-drag-and-drop/external/file';
-import {combine} from '@atlaskit/pragmatic-drag-and-drop/combine';
-import {dndImg} from 'app/utils/web';
 import {toPathInfo} from 'app/utils/formatting';
+import * as dnd from 'app/utils/dragdrop';
 import media from 'media/store';
 
 import {isZipData} from 'media/dir/zip/hooks/useZipEntry';
 import {isTorrentData} from 'media/dir/torrent/hooks/useTorrentEntry';
 
 import type {View} from 'react-native';
-import type {CleanupFn} from '@atlaskit/pragmatic-drag-and-drop/types';
+import type {CleanupFn} from 'app/utils/dragdrop';
 import type {HfsDirectoryEntry} from 'react-exo/fs';
 import type {HfsEntryProps} from '../stacks/HfsEntry';
-
-const $ = Symbol('hfs');
-export type HfsData = {[$]: true, entry: HfsDirectoryEntry};
-export const isHfsData = (data: Record<string | symbol, unknown>): data is HfsData => data[$] === true;
-export const getHfsData = (entry: HfsDirectoryEntry): HfsData => ({[$]: true, entry});
 
 export function useHfsEntry({entry, cmd, opt}: HfsEntryProps) {
   const [dropping, setDropping] = useState(false);
   const ext = toPathInfo(entry.name, entry.isDirectory)?.ext;
   const ref = useRef<View>(null);
-
-  const dispatch = useDispatch();
+  const put = useDispatch();
 
   useEffect(() => {
     if (!ref.current) return;
     const element = ref.current as unknown as HTMLElement;
-    return combine(...[
-      draggable({
+    return dnd.combine(...[
+      dnd.draggable({
         element,
-        onGenerateDragPreview: ({nativeSetDragImage}) => dndImg(nativeSetDragImage),
         getInitialData: () => getHfsData(entry),
-        onDragStart: () => dispatch(media.actions.drag(entry.name)),
-        onDrop: () => dispatch(media.actions.drag(null)),
+        onGenerateDragPreview: ({nativeSetDragImage}) => dnd.dragPreview(nativeSetDragImage),
+        onDragStart: () => put(media.actions.drag(entry.name)),
+        onDrop: () => put(media.actions.drag(null)),
       }),
-      entry.isDirectory && dropTargetForElements({
+      entry.isDirectory && dnd.dropTargetForElements({
         element,
         canDrop: ({source}) => source.element !== element && (
              isHfsData(source.data)
@@ -60,15 +50,15 @@ export function useHfsEntry({entry, cmd, opt}: HfsEntryProps) {
           }
         },
       }),
-      entry.isDirectory && dropTargetForExternal({
+      entry.isDirectory && dnd.dropTargetForExternal({
         element,
-        canDrop: containsFiles,
+        canDrop: dnd.containsFiles,
         getDropEffect: () => 'copy',
         onDragEnter: () => setDropping(true),
         onDragLeave: () => setDropping(false),
         onDrop: (e) => {
           setDropping(false);
-          const files = getFiles(e);
+          const files = dnd.getFiles(e);
           if (files.length) {
             cmd.upload(entry, files);
           }
@@ -94,3 +84,7 @@ export function useHfsEntry({entry, cmd, opt}: HfsEntryProps) {
   };
 }
 
+const $ = Symbol('hfs');
+export type HfsData = {[$]: true, entry: HfsDirectoryEntry};
+export const isHfsData = (data: Record<string | symbol, unknown>): data is HfsData => data[$] === true;
+export const getHfsData = (entry: HfsDirectoryEntry): HfsData => ({[$]: true, entry});

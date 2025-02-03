@@ -21,6 +21,7 @@ export function MediaSelection() {
   const scrollRef = useRef<ScrollView>(null);
   const selection = useSelector(media.selectors.getSelected);
   const focused = useSelector(media.selectors.getFocused);
+  const put = useDispatch();
 
   const list = useMemo(() => {
     return selection.map(selectItem => {
@@ -35,14 +36,13 @@ export function MediaSelection() {
       : delta === 'start'
         ? 0
         : selection.length - 1];
-    if (path) dispatch(media.actions.focus(path));
+    if (path) put(media.actions.focus(path));
   }, [selection, focused]);
 
-  const dispatch = useDispatch();
 
   const close = useCallback((index: number) => {
-    dispatch(media.actions.selectRemove(index));
-  }, [dispatch]);
+    put(media.actions.selectRemove(index));
+  }, [put]);
 
   // Scroll to focus
   useEffect(() => {
@@ -73,7 +73,7 @@ export function MediaSelection() {
           break;
         // Clear selection
         case 'Escape':
-          dispatch(media.actions.selectBulk([]));
+          put(media.actions.selectBulk([]));
           break;
       }
     };
@@ -81,22 +81,22 @@ export function MediaSelection() {
     return () => {
       window.removeEventListener('keydown', down);
     };
-  }, [goto, dispatch]);
+  }, [goto, put]);
 
   return list.length > 0 ? (
     <Motion.ScrollView
       horizontal
       ref={scrollRef}
-      showsHorizontalScrollIndicator={false}
       style={styles.root}
       contentContainerStyle={styles.inner}
+      showsHorizontalScrollIndicator={false}
       initial={{opacity: 0}}
       animate={{opacity: 1}}
       exit={{opacity: 0}}>
       {list.map(({path, name, ext}, index) => 
         <Pressable
           key={path}
-          onPress={() => dispatch(media.actions.focus(path))}
+          onPress={() => put(media.actions.focus(path))}
           style={[styles.preview, path === focused && styles.focus]}>
           <ListRowIcon
             name={name ?? ''}

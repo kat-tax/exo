@@ -1,7 +1,16 @@
+export {dropTargetForExternal} from '@atlaskit/pragmatic-drag-and-drop/external/adapter';
+export {dropTargetForElements, draggable} from '@atlaskit/pragmatic-drag-and-drop/element/adapter';
+export {setCustomNativeDragPreview} from '@atlaskit/pragmatic-drag-and-drop/element/set-custom-native-drag-preview';
+export {pointerOutsideOfPreview} from '@atlaskit/pragmatic-drag-and-drop/element/pointer-outside-of-preview';
+export {containsFiles, getFiles} from '@atlaskit/pragmatic-drag-and-drop/external/file';
+export {combine} from '@atlaskit/pragmatic-drag-and-drop/combine';
+
+export type {CleanupFn} from '@atlaskit/pragmatic-drag-and-drop/types';
+
 import {setCustomNativeDragPreview} from '@atlaskit/pragmatic-drag-and-drop/element/set-custom-native-drag-preview';
 import {pointerOutsideOfPreview} from '@atlaskit/pragmatic-drag-and-drop/element/pointer-outside-of-preview';
 
-export function dndImg(
+export function dragPreview(
   nativeSetDragImage: ((image: Element, x: number, y: number) => void) | null,
   itemCount = 1,
 ) {

@@ -1,5 +1,5 @@
-import {useEffect} from 'react';
 import {useDispatch} from 'react-redux';
+import {useEffect} from 'react';
 import media from 'media/store';
 
 export interface Hotkeys {
@@ -8,7 +8,7 @@ export interface Hotkeys {
 }
 
 export function useHotkeys(hotkeys: Hotkeys) {
-  const dispatch = useDispatch();
+  const put = useDispatch();
   useEffect(() => {
     const down = (e: KeyboardEvent) => {
       const {key} = e;
@@ -25,11 +25,11 @@ export function useHotkeys(hotkeys: Hotkeys) {
         case 'a':
           if (!(e.metaKey || e.ctrlKey)) return;
           e.preventDefault();
-          dispatch(media.actions.selectBulk('all'));
+          put(media.actions.selectBulk('all'));
           break;
         // Clear selection
         case 'Escape':
-          dispatch(media.actions.selectBulk([]));
+          put(media.actions.selectBulk([]));
           break;
       }
     };
@@ -37,5 +37,5 @@ export function useHotkeys(hotkeys: Hotkeys) {
     return () => {
       window.removeEventListener('keydown', down);
     };
-  }, [hotkeys, dispatch]);
+  }, [hotkeys, put]);
 }

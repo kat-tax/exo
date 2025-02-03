@@ -1,18 +1,11 @@
 import {useRef, useState, useEffect} from 'react';
-import {draggable} from '@atlaskit/pragmatic-drag-and-drop/element/adapter';
-import {combine} from '@atlaskit/pragmatic-drag-and-drop/combine';
-import {dndImg} from 'app/utils/web';
 import {toPathInfo} from 'app/utils/formatting';
+import * as dnd from 'app/utils/dragdrop';
 
 import type {View} from 'react-native';
-import type {CleanupFn} from '@atlaskit/pragmatic-drag-and-drop/types';
+import type {CleanupFn} from 'app/utils/dragdrop';
 import type {TorrentFileEntry, TorrentCmd} from '../types';
 import type {TorrentEntryProps} from '../stacks/TorrentEntry';
-
-const $ = Symbol('torrent');
-export type TorrentData = {[$]: true; entry: TorrentFileEntry; cmd: TorrentCmd};
-export const isTorrentData = (data: Record<string | symbol, unknown>): data is TorrentData => data[$] === true;
-export const getTorrentData = (entry: TorrentFileEntry, cmd: TorrentCmd): TorrentData => ({[$]: true, entry, cmd});
 
 export function useTorrentEntry(props: TorrentEntryProps) {
   const {entry, cmd, opt} = props;
@@ -23,11 +16,11 @@ export function useTorrentEntry(props: TorrentEntryProps) {
   useEffect(() => {
     if (!ref.current) return;
     const element = ref.current as unknown as HTMLElement;
-    return combine(...[
-      draggable({
+    return dnd.combine(...[
+      dnd.draggable({
         element,
-        onGenerateDragPreview: ({nativeSetDragImage}) => dndImg(nativeSetDragImage),
         getInitialData: () => getTorrentData(entry, cmd),
+        onGenerateDragPreview: ({nativeSetDragImage}) => dnd.dragPreview(nativeSetDragImage),
         onDragStart: () => setDragging(true),
         onDrop: () => setDragging(false),
       }),
@@ -50,3 +43,8 @@ export function useTorrentEntry(props: TorrentEntryProps) {
     },
   };
 }
+
+const $ = Symbol('torrent');
+export type TorrentData = {[$]: true; entry: TorrentFileEntry; cmd: TorrentCmd};
+export const isTorrentData = (data: Record<string | symbol, unknown>): data is TorrentData => data[$] === true;
+export const getTorrentData = (entry: TorrentFileEntry, cmd: TorrentCmd): TorrentData => ({[$]: true, entry, cmd});

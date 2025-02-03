@@ -1,18 +1,11 @@
 import {useRef, useState, useEffect} from 'react';
-import {draggable} from '@atlaskit/pragmatic-drag-and-drop/element/adapter';
-import {combine} from '@atlaskit/pragmatic-drag-and-drop/combine';
-import {dndImg} from 'app/utils/web';
 import {toPathInfo} from 'app/utils/formatting';
+import * as dnd from 'app/utils/dragdrop';
 
 import type {View} from 'react-native';
-import type {CleanupFn} from '@atlaskit/pragmatic-drag-and-drop/types';
+import type {CleanupFn} from 'app/utils/dragdrop';
 import type {ZipFileEntry, ZipCmd} from '../types';
 import type {ZipEntryProps} from '../stacks/ZipEntry';
-
-const $ = Symbol('zip');
-export type ZipData = {[$]: true; entry: ZipFileEntry; cmd: ZipCmd};
-export const isZipData = (data: Record<string | symbol, unknown>): data is ZipData => data[$] === true;
-export const getZipData = (entry: ZipFileEntry, cmd: ZipCmd): ZipData => ({[$]: true, entry, cmd});
 
 export function useZipEntry(props: ZipEntryProps) {
   const {entry, cmd, opt} = props;
@@ -23,11 +16,11 @@ export function useZipEntry(props: ZipEntryProps) {
   useEffect(() => {
     if (!ref.current) return;
     const element = ref.current as unknown as HTMLElement;
-    return combine(...[
-      draggable({
+    return dnd.combine(...[
+      dnd.draggable({
         element,
-        onGenerateDragPreview: ({nativeSetDragImage}) => dndImg(nativeSetDragImage),
         getInitialData: () => getZipData(entry, cmd),
+        onGenerateDragPreview: ({nativeSetDragImage}) => dnd.dragPreview(nativeSetDragImage),
         onDragStart: () => setDragging(true),
         onDrop: () => setDragging(false),
       }),
@@ -50,3 +43,8 @@ export function useZipEntry(props: ZipEntryProps) {
     },
   };
 }
+
+const $ = Symbol('zip');
+export type ZipData = {[$]: true; entry: ZipFileEntry; cmd: ZipCmd};
+export const isZipData = (data: Record<string | symbol, unknown>): data is ZipData => data[$] === true;
+export const getZipData = (entry: ZipFileEntry, cmd: ZipCmd): ZipData => ({[$]: true, entry, cmd});

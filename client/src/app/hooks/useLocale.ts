@@ -13,12 +13,9 @@ export type LocaleData = [
 export function useLocale(storedOnly?: boolean): LocaleData {
   const stored = useSelector(app.selectors.getLocale);
   const value = useRef(getLocale() as Locales);
-
-  const dispatch = useDispatch();
-  const setter = (newLocale: Locales) =>
-    dispatch(app.actions.setLocale(newLocale));
-
+  const put = useDispatch();
+  const set = (locale: Locales) => put(app.actions.setLocale(locale));
   return (stored || storedOnly)
-    ? [stored || (storedOnly ? undefined : 'en'), setter]
-    : [value?.current || 'en', setter];
+    ? [stored || (storedOnly ? undefined : 'en'), set]
+    : [value?.current || 'en', set];
 }

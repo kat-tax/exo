@@ -34,29 +34,39 @@ declare module '*.gif' {
 import 'react-native';
 declare module 'react-native' {
   interface PressableStateCallbackType {
-    hovered?: boolean,
-    focused?: boolean,
+    hovered?: boolean;
+    focused?: boolean;
+  }
+  interface TextInputKeyPressEventData {
+    key: string;
+    metaKey: boolean;
+    ctrlKey: boolean;
+  }
+  interface GestureResponderEvent {
+    shiftKey: boolean;
+    metaKey: boolean;
+    ctrlKey: boolean;
   }
   interface ViewStyle {
-    transitionProperty?: string,
-    transitionDuration?: string,
+    transitionProperty?: string;
+    transitionDuration?: string;
   }
   interface TextProps {
-    accessibilityComponentType?: never,
-    accessibilityTraits?: never,
-    href?: string,
+    accessibilityComponentType?: never;
+    accessibilityTraits?: never;
+    href?: string;
     hrefAttrs?: {
-      rel: 'noreferrer',
-      target?: '_blank',
-    },
+      rel: 'noreferrer';
+      target?: '_blank';
+    };
   }
   interface ViewProps {
-    onClick?: (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void,
-    accessibilityRole?: string,
-    href?: string,
+    onClick?: (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void;
+    accessibilityRole?: string;
+    href?: string;
     hrefAttrs?: {
-      rel: 'noreferrer',
-      target?: '_blank',
-    },
+      rel: 'noreferrer';
+      target?: '_blank';
+    };
   }
 }

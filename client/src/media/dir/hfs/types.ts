@@ -16,6 +16,7 @@ export interface HfsCtx {
 }
 
 export interface HfsCmd {
+  open: (entry: HfsDirectoryEntry) => Promise<void>,
   move: (from: HfsDirectoryEntry, to: HfsDirectoryEntry) => Promise<void>,
   purge: (entry: HfsDirectoryEntry) => Promise<void>,
   select: (entry: HfsDirectoryEntry, event?: GestureResponderEvent) => void,

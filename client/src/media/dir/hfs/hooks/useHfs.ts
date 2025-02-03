@@ -8,9 +8,9 @@ import {observe, poll, saveAs} from '../utils/fs';
 import {getData} from 'media/file/utils/data';
 import media from 'media/store';
 
-import type {HfsCtx} from '../types';
-import type {HfsImpl, HfsDirectoryEntry} from 'react-exo/fs';
 import type {GestureResponderEvent} from 'react-native';
+import type {HfsImpl, HfsDirectoryEntry} from 'react-exo/fs';
+import type {HfsCtx} from '../types';
 
 export function useHfs(path: string): HfsCtx {
   const [filesystem, setFilesystem] = useState<HfsImpl | null>(null);
@@ -18,7 +18,6 @@ export function useHfs(path: string): HfsCtx {
   const sel = useSelector(media.selectors.getSelected);
   const dnd = useSelector(media.selectors.getDragging);
   const ext = useMemo(() => ({sel, dnd}), [sel, dnd]);
-
   const put = useDispatch();
   const nav = useNavigate();
 
@@ -58,6 +57,10 @@ export function useHfs(path: string): HfsCtx {
     }));
   }, [path, filesystem]);
 
+  const open = useCallback(async (entry: HfsDirectoryEntry) => {
+    nav(path ? `${path}/${entry.name}` : entry.name);
+  }, [path, nav]);
+
   const move = useCallback(async (from: HfsDirectoryEntry, to: HfsDirectoryEntry) => {
     await filesystem?.move?.(from.name, to.name);
   }, [filesystem]);
@@ -67,15 +70,13 @@ export function useHfs(path: string): HfsCtx {
   }, [filesystem]);
 
   const select = useCallback((entry: HfsDirectoryEntry, e?: GestureResponderEvent) => {
-    // @ts-expect-error RNW property
     const [isRange, isMulti] = [e?.shiftKey, e?.metaKey || e?.ctrlKey];
-    const fullPath = path ? `${path}/${entry.name}` : entry.name;
-    if (entry.isFile) {
-      put(media.actions.selectItem({path: fullPath, isMulti, isRange}));
-    } else {
-      nav(fullPath);
-    }
-  }, [path, nav, put]);
+    put(media.actions.selectItem({
+      path: path ? `${path}/${entry.name}` : entry.name,
+      isRange: isRange ?? false,
+      isMulti: isMulti ?? false,
+    }));
+  }, [path, put]);
 
   const upload = useCallback(async (entry: HfsDirectoryEntry, files: File[]) => {
     if (!filesystem) return;
@@ -101,9 +102,7 @@ export function useHfs(path: string): HfsCtx {
 
   // Update state with current files (for range-select)
   useEffect(() => {
-    put(media.actions.list(list
-      .filter(e => !e.isDirectory)
-      .map(e => path ? `${path}/${e.name}` : e.name)));
+    put(media.actions.list(list.map(e => path ? `${path}/${e.name}` : e.name)));
   }, [list, path, put]);
 
   // Refresh entries on mount
@@ -146,7 +145,7 @@ export function useHfs(path: string): HfsCtx {
 
   return {
     hfs: {list, path},
-    cmd: {move, purge, select, upload, download},
+    cmd: {open, move, purge, select, upload, download},
     ext,
   };
 }
