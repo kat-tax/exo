@@ -14,25 +14,21 @@ interface ListRowIcon {
 }
 
 export function ListRowIcon(props: ListRowIcon) {
+  const {name, size = 1, ext = '', dir = false} = props;
   const [icon, setIcon] = useState<string | null>(null);
   const {styles, theme} = useStyles(stylesheet);
   const [scheme] = useScheme();
 
+  const iconSize = size === 0 ? 14 : size === 2 ? 24 : 16;
   const iconScheme = scheme === 'light' ? 'light' : 'dark';
-  const iconSize = props.size === 0
-    ? 14
-    : props.size === 2
-      ? 24
-      : 16;
 
   useEffect(() => {
-    getIcon(props.name, props.ext ?? '', '', iconScheme)
-      .then(setIcon);
-  }, [props.name, props.ext, iconScheme]);
+    getIcon(name, ext, '', iconScheme).then(setIcon);
+  }, [name, ext, iconScheme]);
 
   return (
     <View style={[styles.root, {width: iconSize}]}>
-      {props.dir ? (
+      {dir ? (
         <Icon
           name="ph:folder-simple-fill"
           color={theme.colors.foreground}

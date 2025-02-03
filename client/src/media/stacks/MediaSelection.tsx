@@ -19,15 +19,12 @@ export function MediaSelection({filesystem}: MediaSelectionProps) {
   const scrollRef = useRef<ScrollView>(null);
   const selection = useSelector(media.selectors.getSelected);
   const focused = useSelector(media.selectors.getFocused);
+  const list = useMemo(() => selection.map(selectItem => {
+    const {path, name, ext} = toPathInfo(selectItem, false);
+    return {path, name, ext};
+  }), [selection]);
+
   const put = useDispatch();
-
-  const list = useMemo(() => {
-    return selection.map(selectItem => {
-      const {path, name, ext} = toPathInfo(selectItem, false);
-      return {path, name, ext};
-    });
-  }, [selection]);
-
   const goto = useCallback((delta: number | 'start' | 'end') => {
     const path = selection[typeof delta === 'number'
       ? (selection.indexOf(focused) + delta + selection.length) % selection.length
