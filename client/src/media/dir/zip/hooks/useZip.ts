@@ -31,19 +31,16 @@ export function useZip(path: string): ZipCtx {
     if (!source) return;
     const {name, ext} = toPathInfo(file.name, false);
     const {name: zdir} = toPathInfo(path, false); // TODO: only for extract all
-
     const root = url ? `${url}/` : '';
     const head = target?.name ? `${target.name}/` : '';
     const tail = false && zdir ? `${zdir}/` : ''; // TODO: this is for extract all
     const dest = `${root}${head}${tail}${name}.${ext}`;
-    console.log('>> zip [extract]', file.name, '->', dest);
-
     const handle = await web.getFileHandle(dest, {create: true});
     const writable = await handle?.createWritable();
     if (!writable) return;
     // @ts-expect-error TS missing types
     source?.getData({writable});
-  
+    console.log('>> zip [extract]', file.name, '->', dest);
     // Open file on gesture event
     if (event) {
       const [isShift, isCtrl] = [
