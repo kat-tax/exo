@@ -23,7 +23,7 @@ export function HfsEntry(props: HfsEntryProps) {
       dragRef={ref}
       onPress={cmd.select}
       onDoublePress={dir ? cmd.open : undefined}>
-      <HfsMenu {...{entry, cmd, onOpenChange: open => open && cmd.select()}}>
+      <HfsMenu {...{entry, cmd, on: open => open && cmd.select()}}>
         <ListRow {...{name, size, ext, dir, opt}}/>
       </HfsMenu>
     </PointerEvent>

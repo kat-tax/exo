@@ -1,4 +1,4 @@
-import {Pressable} from 'react-native';
+import {PointerEvent} from 'app/stacks/PointerEvent';
 import {ListRow} from 'media/stacks/ListRow';
 import {ZipMenu} from './ZipMenu';
 import {useZipEntry} from '../hooks/useZipEntry';
@@ -17,10 +17,13 @@ export function ZipEntry(props: ZipEntryProps) {
   const {name, size, dir} = entry;
   const {ref, ext, cmd, opt} = useZipEntry(props);
   return (
-    <ZipMenu {...{entry, cmd}}>
-      <Pressable {...{ref}} onPress={cmd.extract}>
+    <PointerEvent
+      dragRef={ref}
+      onPress={cmd.extract}
+      onDoublePress={dir ? cmd.extract : undefined}>
+      <ZipMenu {...{entry, cmd}}>
         <ListRow {...{name, size, ext, dir, opt}}/>
-      </Pressable>
-    </ZipMenu>
+      </ZipMenu>
+    </PointerEvent>
   );
 }

@@ -1,4 +1,4 @@
-import {Pressable} from 'react-native';
+import {PointerEvent} from 'app/stacks/PointerEvent';
 import {ListRow} from 'media/stacks/ListRow';
 import {TorrentMenu} from './TorrentMenu';
 import {useTorrentEntry} from '../hooks/useTorrentEntry';
@@ -19,10 +19,13 @@ export function TorrentEntry(props: TorrentEntryProps) {
   const size = length;
   const dir = false;
   return (
-    <TorrentMenu {...{entry, cmd}}>
-      <Pressable {...{ref}} onPress={cmd.download}>
+    <PointerEvent
+      dragRef={ref}
+      onPress={cmd.download}
+      onDoublePress={dir ? cmd.download : undefined}>
+      <TorrentMenu {...{entry, cmd}}>
         <ListRow {...{name, size, ext, dir, opt}}/>
-      </Pressable>
-    </TorrentMenu>
+      </TorrentMenu>
+    </PointerEvent>
   );
 }

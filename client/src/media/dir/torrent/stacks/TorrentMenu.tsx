@@ -8,13 +8,14 @@ import type {useTorrentEntry} from '../hooks/useTorrentEntry';
 export interface TorrentMenuProps extends React.PropsWithChildren {
   entry: TorrentFileEntry,
   cmd: ReturnType<typeof useTorrentEntry>['cmd'],
+  on?: (open: boolean) => void,
 }
 
 export function TorrentMenu(props: TorrentMenuProps) {
-  const {entry, cmd} = props;
+  const {entry, cmd, on} = props;
   const {t} = useLingui();
   return (
-    <ContextMenu label={entry.name} items={useMemo(() => [
+    <ContextMenu label={entry.name} onOpenChange={on} items={useMemo(() => [
       {
         name: 'download',
         icon: 'ph:download',

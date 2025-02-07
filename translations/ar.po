@@ -72,7 +72,11 @@ msgstr "سيلزيوس"
 msgid "Close"
 msgstr "إغلاق"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:58
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:37
+msgid "Compress"
+msgstr ""
+
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:55
 msgid "Copy"
 msgstr "نسخ"
 
@@ -97,7 +101,7 @@ msgstr "البيانات"
 msgid "Database"
 msgstr "قاعدة البيانات"
 
-#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:71
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:80
 msgid "Delete"
 msgstr "حذف"
 
@@ -154,7 +158,7 @@ msgstr "المستندات"
 msgid "Documents"
 msgstr "المستندات"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:77
+#: ../../client/src/media/dir/torrent/stacks/TorrentMenu.tsx:22
 msgid "Download"
 msgstr "تحميل"
 
@@ -182,7 +186,7 @@ msgstr "أدخل اسم المجلد"
 msgid "Enter name"
 msgstr ""
 
-#: ../../client/src/media/hooks/useMediaControls.ts:87
+#: ../../client/src/media/dir/zip/stacks/ZipMenu.tsx:22
 msgid "Extract"
 msgstr "استخراج"
 
@@ -321,7 +325,7 @@ msgstr "الوسائط"
 msgid "Miles"
 msgstr "أميال"
 
-#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:53
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:62
 msgid "Move"
 msgstr "نقل"
 
@@ -341,6 +345,10 @@ msgstr "التالي"
 #: ../../client/src/world/routes/ScreenCalendar.tsx:41
 msgid "No events scheduled."
 msgstr "لا توجد أحداث مجدولة."
+
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:23
+msgid "Open"
+msgstr ""
 
 #: ../../client/src/media/hooks/useMediaControls.ts:231
 msgid "Options"
@@ -414,7 +422,7 @@ msgstr ""
 msgid "Provide a url to use map features."
 msgstr ""
 
-#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:60
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:69
 msgid "Rename"
 msgstr "إعادة تسمية"
 
@@ -460,7 +468,7 @@ msgstr ""
 msgid "Settings"
 msgstr "الإعدادات"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:256
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:30
 msgid "Share"
 msgstr "مشاركة"
 

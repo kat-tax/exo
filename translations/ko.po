@@ -72,7 +72,11 @@ msgstr "섭씨"
 msgid "Close"
 msgstr "닫기"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:58
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:37
+msgid "Compress"
+msgstr ""
+
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:55
 msgid "Copy"
 msgstr ""
 
@@ -97,7 +101,7 @@ msgstr "데이터"
 msgid "Database"
 msgstr ""
 
-#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:71
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:80
 msgid "Delete"
 msgstr ""
 
@@ -154,7 +158,7 @@ msgstr "문서"
 msgid "Documents"
 msgstr "문서"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:77
+#: ../../client/src/media/dir/torrent/stacks/TorrentMenu.tsx:22
 msgid "Download"
 msgstr "다운로드"
 
@@ -182,7 +186,7 @@ msgstr ""
 msgid "Enter name"
 msgstr ""
 
-#: ../../client/src/media/hooks/useMediaControls.ts:87
+#: ../../client/src/media/dir/zip/stacks/ZipMenu.tsx:22
 msgid "Extract"
 msgstr "추출"
 
@@ -321,7 +325,7 @@ msgstr "미디어"
 msgid "Miles"
 msgstr "마일"
 
-#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:53
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:62
 msgid "Move"
 msgstr ""
 
@@ -341,6 +345,10 @@ msgstr "다음"
 #: ../../client/src/world/routes/ScreenCalendar.tsx:41
 msgid "No events scheduled."
 msgstr "예정된 일정이 없습니다."
+
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:23
+msgid "Open"
+msgstr ""
 
 #: ../../client/src/media/hooks/useMediaControls.ts:231
 msgid "Options"
@@ -414,7 +422,7 @@ msgstr ""
 msgid "Provide a url to use map features."
 msgstr ""
 
-#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:60
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:69
 msgid "Rename"
 msgstr ""
 
@@ -460,7 +468,7 @@ msgstr ""
 msgid "Settings"
 msgstr "설정"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:256
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:30
 msgid "Share"
 msgstr "공유"
 

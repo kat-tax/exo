@@ -72,7 +72,11 @@ msgstr "Celsius"
 msgid "Close"
 msgstr "Cerrar"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:58
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:37
+msgid "Compress"
+msgstr ""
+
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:55
 msgid "Copy"
 msgstr ""
 
@@ -97,7 +101,7 @@ msgstr "Datos"
 msgid "Database"
 msgstr ""
 
-#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:71
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:80
 msgid "Delete"
 msgstr ""
 
@@ -154,7 +158,7 @@ msgstr "Documentos"
 msgid "Documents"
 msgstr "Documentos"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:77
+#: ../../client/src/media/dir/torrent/stacks/TorrentMenu.tsx:22
 msgid "Download"
 msgstr "Descargar"
 
@@ -182,7 +186,7 @@ msgstr ""
 msgid "Enter name"
 msgstr ""
 
-#: ../../client/src/media/hooks/useMediaControls.ts:87
+#: ../../client/src/media/dir/zip/stacks/ZipMenu.tsx:22
 msgid "Extract"
 msgstr "Extraer"
 
@@ -321,7 +325,7 @@ msgstr "Medios"
 msgid "Miles"
 msgstr "Millas"
 
-#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:53
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:62
 msgid "Move"
 msgstr ""
 
@@ -341,6 +345,10 @@ msgstr "Siguiente"
 #: ../../client/src/world/routes/ScreenCalendar.tsx:41
 msgid "No events scheduled."
 msgstr "No hay eventos programados."
+
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:23
+msgid "Open"
+msgstr ""
 
 #: ../../client/src/media/hooks/useMediaControls.ts:231
 msgid "Options"
@@ -414,7 +422,7 @@ msgstr ""
 msgid "Provide a url to use map features."
 msgstr ""
 
-#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:60
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:69
 msgid "Rename"
 msgstr ""
 
@@ -460,7 +468,7 @@ msgstr ""
 msgid "Settings"
 msgstr "Ajustes"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:256
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:30
 msgid "Share"
 msgstr "Compartir"
 
