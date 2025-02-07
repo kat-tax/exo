@@ -2,12 +2,16 @@ import {FS} from 'react-exo/fs';
 import {observe, poll} from 'media/dir/hfs/utils/fs';
 import {useContext, useEffect, useState, createContext} from 'react';
 
-import type {HfsImpl} from 'react-exo/fs';
+import type {HfsImpl, HfsType} from 'react-exo/fs';
 
 const HfsContext = createContext<HfsContextType | null>(null);
 const $ = new Map<string, {callbacks: Set<WatchFn>, disconnect: () => void}>();
 
 export type WatchFn = () => void;
+
+export interface HfsProviderProps {
+  type?: HfsType;
+}
 
 export interface HfsContextType {
   fs: HfsImpl | null;
@@ -26,7 +30,7 @@ export function useHfsWatch(path: string, fn: WatchFn) {
   useEffect(() => ctx.watch(path, fn), [path, fn, ctx]);
 }
 
-export function HfsProvider({children}: React.PropsWithChildren) {
+export function HfsProvider({type, children}: React.PropsWithChildren<HfsProviderProps>) {
   const [fs, setFs] = useState<HfsImpl | null>(null);
 
   const register = async (path: string) => {
@@ -68,7 +72,7 @@ export function HfsProvider({children}: React.PropsWithChildren) {
   };
 
   useEffect(() => {(async () =>
-    setFs(await FS.init('fs')))();
+    setFs(await FS.init(type)))();
   }, []);
 
   return (

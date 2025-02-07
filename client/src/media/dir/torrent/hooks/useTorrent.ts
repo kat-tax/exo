@@ -4,7 +4,7 @@ import {useDispatch} from 'react-redux';
 import {useFileData} from 'media/file/hooks/useFileData';
 import {useLocationPathInfo} from 'app/hooks/useCurrentPathInfo';
 import {bytesize} from 'app/utils/formatting';
-import {info, files} from '../utils/info';
+import * as tor from '../utils/info';
 import store from '../utils/chunkstore';
 import media from 'media/store';
 
@@ -19,18 +19,18 @@ export function useTorrent(path: string): TorrentCtx {
 
   const torrent: Torrent | null = useMemo(() => {
     if (!buffer) return null;
-    const _name = path.split('/').pop();
-    const _view = new Uint8Array(buffer);
-    const _file = new File([_view], _name ?? '');
-    const _info = info(_view);
-    const _data = files(_view);
+    const name = path.split('/').pop();
+    const view = new Uint8Array(buffer);
+    const file = new File([view], name ?? '');
+    const info = tor.info(view);
+    const data = tor.files(view);
     return {
-      file: _file,
-      info: _info,
-      data: _data,
-      list: getList(_data),
-      name: getName(_info, _data),
-      desc: getDesc(_info),
+      file,
+      info,
+      data,
+      list: getList(data),
+      name: getName(info, data),
+      desc: getDesc(info),
     } satisfies Torrent;
   }, [buffer, path]);
 
@@ -43,15 +43,13 @@ export function useTorrent(path: string): TorrentCtx {
     const client = new ExoTorrent();
     // @ts-expect-error Incorrect vendor types
     client.add(torrent.file, {store}, async ({files}) => {
-      const tor = files.find(e => e.path.split('/').slice(1).join('/') === file.path);
+      const item = files.find(e => e.path.split('/').slice(1).join('/') === file.path);
       const root = await navigator.storage.getDirectory();
-      // TODO: move write logic to hfs so recursive mkdir works
-      // const dest = path ? `${path}/${filename}` : filename;
-      const dest = file.name;
+      const dest = file.name; // const dest = path ? `${path}/${filename}` : filename;
       const handle = await root.getFileHandle(dest, {create: true});
       const stream = await handle.createWritable();
       // @ts-expect-error TS missing types
-      const source = tor?.stream();
+      const source = item?.stream();
       source?.pipeTo(stream);
     });
     // Open file on gesture event
