@@ -1,6 +1,7 @@
 import {EvoluProvider, createEvolu, useQuery, cast, jsonArrayFrom} from '@evolu/react-native';
 import {Provider as ReduxProvider} from 'react-exo/redux';
 import {MatrixProvider} from './lib/matrix-provider';
+import {HfsProvider} from './lib/hfs-provider';
 import {Spinner} from 'app/stacks/Spinner';
 import store from './store';
 import cfg from 'config';
@@ -31,7 +32,9 @@ export function Data(props: React.PropsWithChildren) {
     <ReduxProvider store={store} loading={<Spinner/>}>
       <EvoluProvider value={evolu}>
         <MatrixProvider>
-          {props.children}
+          <HfsProvider>
+            {props.children}
+          </HfsProvider>
         </MatrixProvider>
       </EvoluProvider>
     </ReduxProvider>

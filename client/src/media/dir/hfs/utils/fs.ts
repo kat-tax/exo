@@ -2,7 +2,7 @@ export async function observe(path: string, callback: (records: unknown[]) => vo
   try {
     // @ts-expect-error FileSystemObserver is new
     const $ = new FileSystemObserver(async (records, observer) => {
-      console.log('>> fs', records, observer);
+      console.log('>> fs [observer event]', records, observer);
       callback(records);
     });
     const root = await navigator.storage.getDirectory();
