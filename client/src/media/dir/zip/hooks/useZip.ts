@@ -1,17 +1,23 @@
 import {fs} from '@zip.js/zip.js';
+import {useDispatch} from 'react-redux';
 import {useCallback, useEffect, useState, useRef} from 'react';
+import {useLocationPathInfo} from 'app/hooks/useCurrentPathInfo';
 import {useFileData} from 'media/file/hooks/useFileData';
 import {toPathInfo} from 'app/utils/formatting';
+import media from 'media/store';
 
 import type {FS} from '@zip.js/zip.js';
 import type {Zip, ZipCtx, ZipFileEntry} from '../types';
+import type {GestureResponderEvent} from 'react-native';
 
 export function useZip(path: string): ZipCtx {
   const [zip, setZip] = useState<Zip | null>(null);
-  const zipfs = useRef<FS | null>(null);
+  const {path: url} = useLocationPathInfo();
   const buffer = useFileData(path, 'arrayBuffer');
+  const zipfs = useRef<FS | null>(null);
+  const put = useDispatch();
 
-  const extract = useCallback(async (file: ZipFileEntry) => {
+  const extract = useCallback(async (file: ZipFileEntry, evt?: GestureResponderEvent) => {
     if (!zip) return;
     const source = zipfs.current?.getById(file.id);
     if (!source) return;
@@ -25,7 +31,16 @@ export function useZip(path: string): ZipCtx {
     const writable = await handle.createWritable();
     // @ts-ignore
     source?.getData({writable});
-  }, [zip]);
+    // Open file on gesture event
+    if (evt) {
+      const [isShift, isCtrl] = [evt?.shiftKey, evt?.metaKey || evt?.ctrlKey];
+      put(media.actions.selectItem({
+        path: url ? `${url}/${filename}` : filename,
+        isRange: isShift ?? false,
+        isMulti: isCtrl ?? false,
+      }));
+    }
+  }, [zip, url]);
 
   useEffect(() => {
     (async () => {

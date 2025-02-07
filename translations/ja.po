@@ -13,8 +13,6 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#. placeholder {0}: 5
-#. placeholder {0}: 11
 #: ../../client/src/dev/routes/ScreenLibrary.tsx:22
 #: ../../client/src/dev/routes/ScreenDesign.tsx:14
 msgid "{0} components"
@@ -54,11 +52,9 @@ msgid "Auto"
 msgstr "自動"
 
 #: ../../client/src/media/routes/ScreenBrowse.tsx:28
-#: ../../client/src/app/interface/Menu.tsx:89
 msgid "Books"
 msgstr "本"
 
-#. placeholder {0}: data.metadata.author
 #: ../../client/src/media/file/FileBook.tsx:40
 msgid "by {0}"
 msgstr "著者：{0}"
@@ -77,7 +73,6 @@ msgid "Close"
 msgstr "閉じる"
 
 #: ../../client/src/media/hooks/useMediaControls.ts:58
-#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:46
 msgid "Copy"
 msgstr ""
 
@@ -160,9 +155,6 @@ msgid "Documents"
 msgstr "ドキュメント"
 
 #: ../../client/src/media/hooks/useMediaControls.ts:77
-#: ../../client/src/media/file/FileBinary.tsx:30
-#: ../../client/src/media/dir/torrent/stacks/TorrentMenu.tsx:21
-#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:35
 msgid "Download"
 msgstr "ダウンロード"
 
@@ -191,7 +183,6 @@ msgid "Enter name"
 msgstr ""
 
 #: ../../client/src/media/hooks/useMediaControls.ts:87
-#: ../../client/src/media/dir/zip/stacks/ZipMenu.tsx:21
 msgid "Extract"
 msgstr "抽出"
 
@@ -204,8 +195,6 @@ msgid "Feature in development..."
 msgstr ""
 
 #: ../../client/src/media/routes/ScreenBrowse.tsx:34
-#: ../../client/src/app/interface/Tabs.tsx:24
-#: ../../client/src/app/interface/Menu.tsx:59
 msgid "Files"
 msgstr "ファイル"
 
@@ -213,7 +202,7 @@ msgstr "ファイル"
 msgid "Filesystem"
 msgstr ""
 
-#: ../../client/src/media/dir/hfs/stacks/HfsNoEntries.tsx:12
+#: ../../client/src/media/dir/hfs/stacks/HfsNoEntries.tsx:22
 msgid "Folder is empty. Drop items or select folder to import."
 msgstr ""
 
@@ -222,7 +211,6 @@ msgid "Fullscreen"
 msgstr "全画面"
 
 #: ../../client/src/media/routes/ScreenBrowse.tsx:26
-#: ../../client/src/app/interface/Menu.tsx:84
 msgid "Games"
 msgstr "ゲーム"
 
@@ -258,7 +246,7 @@ msgstr "GroqモデルID"
 msgid "Human"
 msgstr "ユーザー"
 
-#: ../../client/src/media/dir/hfs/stacks/HfsNoEntries.tsx:13
+#: ../../client/src/media/dir/hfs/stacks/HfsNoEntries.tsx:23
 msgid "Import"
 msgstr "インポート"
 
@@ -338,7 +326,6 @@ msgid "Move"
 msgstr ""
 
 #: ../../client/src/media/routes/ScreenBrowse.tsx:20
-#: ../../client/src/app/interface/Menu.tsx:69
 msgid "Music"
 msgstr "音楽"
 
@@ -372,7 +359,6 @@ msgid "Pause"
 msgstr "一時停止"
 
 #: ../../client/src/media/routes/ScreenBrowse.tsx:22
-#: ../../client/src/app/interface/Menu.tsx:74
 msgid "Pictures"
 msgstr "写真"
 
@@ -475,7 +461,6 @@ msgid "Settings"
 msgstr "設定"
 
 #: ../../client/src/media/hooks/useMediaControls.ts:256
-#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:28
 msgid "Share"
 msgstr "共有"
 
@@ -521,7 +506,6 @@ msgid "User Name"
 msgstr "ユーザー名"
 
 #: ../../client/src/media/routes/ScreenBrowse.tsx:24
-#: ../../client/src/app/interface/Menu.tsx:79
 msgid "Videos"
 msgstr "動画"
 
@@ -545,7 +529,6 @@ msgstr "最新ニュースとRSSフィードを表示"
 msgid "Volume"
 msgstr "音量"
 
-#. placeholder {0}: profile.name
 #: ../../client/src/home/routes/ScreenHome.tsx:39
 msgid "Welcome, {0}"
 msgstr "ようこそ、{0}さん"

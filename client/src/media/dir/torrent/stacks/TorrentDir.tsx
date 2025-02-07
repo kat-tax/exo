@@ -5,7 +5,7 @@ export function TorrentDir({torrent, cmd}: TorrentCtx) {
   return torrent?.list.map((entry, idx) =>
     <TorrentEntry
       key={entry.path}
-      opt={{selected: false}}
+      opt={{}}
       {...{entry, cmd, idx}}
     />
   );

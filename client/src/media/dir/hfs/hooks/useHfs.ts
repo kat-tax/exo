@@ -41,20 +41,22 @@ export function useHfs(path: string): HfsCtx {
           continue;
         entries.push(entry);
       }
+      setList(entries.sort((a, b) => {
+        if (a.name.startsWith('.') && !showHidden)
+          return 1;
+        if (b.name.startsWith('.') && !showHidden)
+          return -1;
+        if (a.isDirectory && !b.isDirectory)
+          return -1;
+        if (!a.isDirectory && b.isDirectory)
+          return 1;
+        return a.name.localeCompare(b.name);
+      }));
+      return true;
     } catch (e) {
-      console.error('>> fs [list]', e);
+      console.warn('>> fs [refresh error]', path, e);
+      return false;
     }
-    setList(entries.sort((a, b) => {
-      if (a.name.startsWith('.') && !showHidden)
-        return 1;
-      if (b.name.startsWith('.') && !showHidden)
-        return -1;
-      if (a.isDirectory && !b.isDirectory)
-        return -1;
-      if (!a.isDirectory && b.isDirectory)
-        return 1;
-      return a.name.localeCompare(b.name);
-    }));
   }, [path, filesystem]);
 
   const open = useCallback(async (entry: HfsDirectoryEntry) => {
@@ -142,16 +144,20 @@ export function useHfs(path: string): HfsCtx {
   // Refresh entries on mount
   useEffect(() => {
     refresh();
+    let _ok = true;
     let _disconnect = () => {};
     try {
       observe(path, refresh).then(disconnect => {
         if (!disconnect) {
-          let delta = 0;
           console.warn('>> fs [polling]', path);
+          let _delta = 0;
           const i = setInterval(async () => {
-            if (await poll(path, delta)) {
-              delta = Date.now();
-              refresh();
+            if (await poll(path, _delta)) {
+              _delta = Date.now();
+              _ok = await refresh();
+              if (!_ok) {
+                clearInterval(i);
+              }
             }
           }, 200);
           _disconnect = () => clearInterval(i);

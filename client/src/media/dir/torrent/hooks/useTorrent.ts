@@ -1,14 +1,20 @@
 import ExoTorrent from 'react-exo/torrent';
 import {useCallback, useMemo} from 'react';
+import {useDispatch} from 'react-redux';
 import {useFileData} from 'media/file/hooks/useFileData';
+import {useLocationPathInfo} from 'app/hooks/useCurrentPathInfo';
 import {bytesize} from 'app/utils/formatting';
 import {info, files} from '../utils/info';
 import store from '../utils/chunkstore';
+import media from 'media/store';
 
 import type {Torrent, TorrentCtx, TorrentInfo, TorrentFileData, TorrentFileEntry} from '../types';
+import type {GestureResponderEvent} from 'react-native';
 
 export function useTorrent(path: string): TorrentCtx {
   const buffer = useFileData(path, 'arrayBuffer');
+  const {path: url} = useLocationPathInfo();
+  const put = useDispatch();
 
   const torrent: Torrent | null = useMemo(() => {
     if (!buffer) return null;
@@ -27,7 +33,7 @@ export function useTorrent(path: string): TorrentCtx {
     } satisfies Torrent;
   }, [buffer, path]);
 
-  const download = useCallback(async (file: TorrentFileEntry) => {
+  const download = useCallback(async (file: TorrentFileEntry, evt?: GestureResponderEvent) => {
     if (!torrent) return;
     const client = new ExoTorrent();
     // @ts-expect-error Incorrect vendor types
@@ -43,7 +49,16 @@ export function useTorrent(path: string): TorrentCtx {
       const source = target?.stream();
       source?.pipeTo(stream);
     });
-  }, [torrent]);
+    // Open file on gesture event
+    if (evt) {
+      const [isShift, isCtrl] = [evt?.shiftKey, evt?.metaKey || evt?.ctrlKey];
+      put(media.actions.selectItem({
+        path: url ? `${url}/${file.name}` : file.name,
+        isRange: isShift ?? false,
+        isMulti: isCtrl ?? false,
+      }));
+    }
+  }, [torrent, url]);
 
   return {torrent, cmd: {download}};
 }

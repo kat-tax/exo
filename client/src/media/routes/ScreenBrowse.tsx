@@ -39,8 +39,9 @@ export default function ScreenBrowse() {
     <Page
       fullWidth
       margin="small"
-      title={title(name)}
-      message={base ? title(base) : '/'}>
+      // title={title(name)}
+      // message={base ? title(base) : '/'}
+    >
       <HfsDir {...{hfs, cmd, ext}}/>
     </Page>
   );

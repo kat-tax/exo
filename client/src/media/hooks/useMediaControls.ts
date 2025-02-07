@@ -272,7 +272,7 @@ export function useMediaControls(props: MediaControlsProps): MediaControls {
     },
     {
       name: 'fullscreen',
-      icon: 'ph:arrows-out',
+      icon: 'ph:frame-corners',
       label: t`Fullscreen`,
       action: () => {
         if (file?.current && 'presentFullscreen' in file.current) {

@@ -17,7 +17,7 @@ export function HfsNoEntries() {
   }, []);
 
   return visible ? (
-    <View style={{marginTop: 30}}>
+    <View style={{marginTop: 30, marginHorizontal: 4}}>
       <Watermark
         title={t`Folder is empty. Drop items or select folder to import.`}
         label={t`Import`}

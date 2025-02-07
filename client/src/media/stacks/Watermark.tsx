@@ -47,7 +47,7 @@ const stylesheet = createStyleSheet(theme => ({
     borderWidth: 0,
     borderColor: theme.colors.muted,
     borderRadius: theme.display.radius3,
-    maxWidth: 300,
+    maxWidth: 420,
   },
   boxDnd: {
     borderWidth: 1,

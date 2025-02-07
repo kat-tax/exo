@@ -6,6 +6,7 @@ export interface PageProps extends React.PropsWithChildren {
   title?: string | React.ReactNode,
   message?: string | React.ReactNode,
   widget?: React.ReactNode,
+  center?: boolean,
   fullWidth?: boolean,
   noBackground?: boolean,
   noFrame?: boolean,
@@ -30,6 +31,7 @@ export function Page(props: PageProps) {
     ],
     content: [
       styles.content,
+      props.center && styles.contentCenter,
       props.fullWidth && styles.contentFull,
       margin === 'large' && styles.contentSpacing,
       margin === 'small' && styles.contentSpacingSmall,
@@ -114,6 +116,9 @@ const stylesheet = createStyleSheet((theme, rt) => ({
       xxxxl: 2560, // 2K
       xxxxxl: 3840, // 4K
     },
+  },
+  contentCenter: {
+    justifyContent: 'center',
   },
   contentFull: {
     width: '100%',
