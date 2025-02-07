@@ -2,10 +2,10 @@ export function debounce<T extends (...args: any[]) => any>(
   fn: T,
   wait: number,
   options: { immediate?: boolean } = {}
-): (...args: Parameters<T>) => void {
+): (...args: Parameters<T>) => ReturnType<T> {
   let timeout: NodeJS.Timeout | undefined;
   let result: ReturnType<T>;
-  return function (this: any, ...args: Parameters<T>): void {
+  return function (this: any, ...args: Parameters<T>): ReturnType<T> {
     const later = () => {
       timeout = undefined;
       if (!options.immediate) {
@@ -20,5 +20,6 @@ export function debounce<T extends (...args: any[]) => any>(
     if (callNow) {
       result = fn.apply(this, args);
     }
+    return result;
   };
 }
