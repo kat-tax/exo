@@ -26,7 +26,7 @@ export interface HfsOpt {
 
 export interface HfsCmd {
   share: (entry: HfsDirectoryEntry) => Promise<void>,
-  open: (entry: HfsDirectoryEntry) => Promise<void>,
+  open: (entry: HfsDirectoryEntry, clearSel?: boolean) => Promise<void>,
   copy: (entry: HfsDirectoryEntry) => Promise<void>,
   rename: (entry: HfsDirectoryEntry) => Promise<void>,
   select: (entry: HfsDirectoryEntry, event?: GestureResponderEvent) => void,

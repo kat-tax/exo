@@ -67,9 +67,10 @@ export function useHfs(path: string): HfsCtx {
     }
   }, [hfs, path]);
 
-  const open = useCallback(async (entry: HfsDirectoryEntry) => {
+  const open = useCallback(async (entry: HfsDirectoryEntry, clearSel?: boolean) => {
     nav(path ? `${path}/${entry.name}` : entry.name);
-  }, [path, nav]);
+    if (clearSel) put(media.actions.selectBulk([]));
+  }, [path, nav, put, sel]);
 
   const move = useCallback(async (from: HfsDirectoryEntry, to?: HfsDirectoryEntry) => {
     if (to) {
