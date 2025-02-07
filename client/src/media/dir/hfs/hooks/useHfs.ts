@@ -30,8 +30,8 @@ export function useHfs(path: string): HfsCtx {
     try {
       // Check if path is valid
       if (!dirPath) return;
-      // // Check if directory exists
-      // if (!(await hfs?.isDirectory?.(dirPath))) return;
+      // Check if directory exists
+      if (!(await hfs?.isDirectory?.(dirPath))) return;
       // Get directory entries
       const list = hfs?.list?.(dirPath);
       for await (const entry of list ?? []) {
