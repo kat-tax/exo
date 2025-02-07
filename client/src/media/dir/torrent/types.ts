@@ -1,3 +1,6 @@
+import type {GestureResponderEvent} from 'react-native';
+import type {HfsDirectoryEntry} from 'react-exo/fs';
+
 export interface Torrent {
   file: File,
   info: TorrentInfo,
@@ -13,7 +16,11 @@ export type TorrentCtx = {
 }
 
 export type TorrentCmd = {
-  download: (file: TorrentFileEntry) => Promise<void>,
+  download: (
+    file: TorrentFileEntry,
+    event?: GestureResponderEvent,
+    target?: HfsDirectoryEntry,
+  ) => Promise<void>,
 }
 
 export interface TorrentInfo {

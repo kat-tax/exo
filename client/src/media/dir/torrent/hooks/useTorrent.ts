@@ -10,6 +10,7 @@ import media from 'media/store';
 
 import type {Torrent, TorrentCtx, TorrentInfo, TorrentFileData, TorrentFileEntry} from '../types';
 import type {GestureResponderEvent} from 'react-native';
+import type {HfsDirectoryEntry} from 'react-exo/fs';
 
 export function useTorrent(path: string): TorrentCtx {
   const buffer = useFileData(path, 'arrayBuffer');
@@ -33,12 +34,16 @@ export function useTorrent(path: string): TorrentCtx {
     } satisfies Torrent;
   }, [buffer, path]);
 
-  const download = useCallback(async (file: TorrentFileEntry, evt?: GestureResponderEvent) => {
+  const download = useCallback(async (
+    file: TorrentFileEntry,
+    event?: GestureResponderEvent,
+    target?: HfsDirectoryEntry,
+  ) => {
     if (!torrent) return;
     const client = new ExoTorrent();
     // @ts-expect-error Incorrect vendor types
     client.add(torrent.file, {store}, async ({files}) => {
-      const target = files.find(e => e.path.split('/').slice(1).join('/') === file.path);
+      const tor = files.find(e => e.path.split('/').slice(1).join('/') === file.path);
       const root = await navigator.storage.getDirectory();
       // TODO: move write logic to hfs so recursive mkdir works
       // const dest = path ? `${path}/${filename}` : filename;
@@ -46,12 +51,15 @@ export function useTorrent(path: string): TorrentCtx {
       const handle = await root.getFileHandle(dest, {create: true});
       const stream = await handle.createWritable();
       // @ts-expect-error TS missing types
-      const source = target?.stream();
+      const source = tor?.stream();
       source?.pipeTo(stream);
     });
     // Open file on gesture event
-    if (evt) {
-      const [isShift, isCtrl] = [evt?.shiftKey, evt?.metaKey || evt?.ctrlKey];
+    if (event) {
+      const [isShift, isCtrl] = [
+        event?.shiftKey,
+        event?.metaKey || event?.ctrlKey,
+      ];
       put(media.actions.selectItem({
         path: url ? `${url}/${file.name}` : file.name,
         isRange: isShift ?? false,

@@ -50,9 +50,9 @@ export function useHfsEntry({entry, cmd, opt}: HfsEntryProps) {
           if (isHfsData(data)) {
             cmd.move(data.entry, entry);
           } else if (isZipData(data)) {
-            data.cmd.extract(data.entry);
+            data.cmd.extract(data.entry, undefined, entry);
           } else if (isTorrentData(data)) {
-            data.cmd.download(data.entry);
+            data.cmd.download(data.entry, undefined, entry);
           }
         },
       }),

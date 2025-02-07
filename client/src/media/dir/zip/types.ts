@@ -1,3 +1,6 @@
+import type {GestureResponderEvent} from 'react-native';
+import type {HfsDirectoryEntry} from 'react-exo/fs';
+
 export interface Zip {
   date: {
     created?: Date,
@@ -23,7 +26,11 @@ export type ZipCtx = {
 };
 
 export type ZipCmd = {
-  extract: (entry: ZipFileEntry) => void,
+  extract: (
+    entry: ZipFileEntry,
+    event?: GestureResponderEvent,
+    target?: HfsDirectoryEntry,
+  ) => Promise<void>,
 };
 
 export type ZipFileEntry = Zip['list'][number];

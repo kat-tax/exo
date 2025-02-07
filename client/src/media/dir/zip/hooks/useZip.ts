@@ -3,44 +3,60 @@ import {useDispatch} from 'react-redux';
 import {useCallback, useEffect, useState, useRef} from 'react';
 import {useLocationPathInfo} from 'app/hooks/useCurrentPathInfo';
 import {useFileData} from 'media/file/hooks/useFileData';
+import {useHfsCtx} from 'app/data/lib/hfs-provider';
 import {toPathInfo} from 'app/utils/formatting';
 import media from 'media/store';
 
 import type {FS} from '@zip.js/zip.js';
 import type {Zip, ZipCtx, ZipFileEntry} from '../types';
 import type {GestureResponderEvent} from 'react-native';
+import type {HfsDirectoryEntry} from 'react-exo/fs';
 
 export function useZip(path: string): ZipCtx {
   const [zip, setZip] = useState<Zip | null>(null);
   const {path: url} = useLocationPathInfo();
   const buffer = useFileData(path, 'arrayBuffer');
   const zipfs = useRef<FS | null>(null);
+  const hfs = useHfsCtx();
   const put = useDispatch();
 
-  const extract = useCallback(async (file: ZipFileEntry, evt?: GestureResponderEvent) => {
+  const extract = useCallback(async (
+    file: ZipFileEntry,
+    event?: GestureResponderEvent,
+    target?: HfsDirectoryEntry,
+  ) => {
     if (!zip) return;
     const source = zipfs.current?.getById(file.id);
     if (!source) return;
     const {name, ext} = toPathInfo(file.name, false);
-    const filename = `${name}.${ext}`;
-    // TODO: move write logic to hfs so recursive mkdir works
-    // const dest = path ? `${path}/${filename}` : filename;
-    const dest = filename;
+    const {name: zdir} = toPathInfo(path, false);
+
+    const root = url ? `${url}/` : '';
+    const head = target?.name ? `${target.name}/` : '';
+    const tail = false && zdir ? `${zdir}/` : ''; // TODO: this is for extract all
+    const dest = `${root}${head}${tail}${name}.${ext}`;
+    console.log('>> zip [extract]', file.name, '->', dest);
+
     const folder = await navigator.storage.getDirectory();
     const handle = await folder.getFileHandle(dest, {create: true});
     const writable = await handle.createWritable();
-    // @ts-ignore
+
+    // @ts-expect-error
     source?.getData({writable});
+  
     // Open file on gesture event
-    if (evt) {
-      const [isShift, isCtrl] = [evt?.shiftKey, evt?.metaKey || evt?.ctrlKey];
+    if (event) {
+      const [isShift, isCtrl] = [
+        event?.shiftKey,
+        event?.metaKey || event?.ctrlKey,
+      ];
       put(media.actions.selectItem({
-        path: url ? `${url}/${filename}` : filename,
+        path: dest,
         isRange: isShift ?? false,
         isMulti: isCtrl ?? false,
       }));
     }
-  }, [zip, url]);
+  }, [zip, url, hfs, path]);
 
   useEffect(() => {
     (async () => {
