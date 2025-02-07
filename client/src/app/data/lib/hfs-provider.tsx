@@ -1,10 +1,11 @@
 import {FS} from 'react-exo/fs';
 import {observe, poll} from 'media/dir/hfs/utils/fs';
-import {useContext, useEffect, useRef, useState, createContext} from 'react';
+import {useContext, useEffect, useState, createContext} from 'react';
 
 import type {HfsImpl} from 'react-exo/fs';
 
 const HfsContext = createContext<HfsContextType | null>(null);
+const $ = new Map<string, {callbacks: Set<WatchFn>, disconnect: () => void}>();
 
 export type WatchFn = () => void;
 
@@ -27,53 +28,41 @@ export function useHfsWatch(path: string, fn: WatchFn) {
 
 export function HfsProvider({children}: React.PropsWithChildren) {
   const [fs, setFs] = useState<HfsImpl | null>(null);
-  const refWatchPath = useRef<Map<string, Set<WatchFn>>>(new Map());
-  const refDisconnect = useRef<Map<string, () => void>>(new Map());
 
   const register = async (path: string) => {
-    try {
-      console.log('>> fs [observer created]', path);
-      const disconnect = await observe(path, () => {
-        refWatchPath.current.get(path)?.forEach(c => c());
-      });
-      if (!disconnect) {
-        console.warn('>> fs [polling]', path);
-        let delta = 0;
-        const interval = setInterval(async () => {
-          if (await poll(path, delta)) {
-            delta = Date.now();
-            refWatchPath.current.get(path)?.forEach(c => c());
-          }
-        }, 200);
-        return () => clearInterval(interval);
-      }
-      return disconnect;
-    } catch (e) {
-      console.error('>> fs [observe]', path, e);
-      return () => {};
+    const disconnect = await observe(path, () => {
+      $.get(path)?.callbacks.forEach(c => c());
+    });
+    if (!disconnect) {
+      let delta = 0;
+      const interval = setInterval(async () => {
+        if (await poll(path, delta)) {
+          delta = Date.now();
+          $.get(path)?.callbacks.forEach(c => c());
+        }
+      }, 200);
+      console.warn('>> fs [polling]', path);
+      return () => clearInterval(interval);
     }
+    console.log('>> fs [observing]', path);
+    return disconnect;
   };
 
   const watch = (path: string, fn: WatchFn) => {
-    const watchers = refWatchPath.current;
-    if (!watchers.has(path)) {
-      watchers.set(path, new Set());
+    if (!$.has(path)) {
+      $.set(path, {callbacks: new Set(), disconnect: () => {}});
       register(path).then(disconnect => {
-        refDisconnect.current.set(path, disconnect);
+        $.get(path)!.disconnect = disconnect;
       });
     }
-    watchers.get(path)?.add(fn);
+    $.get(path)!.callbacks.add(fn);
     return () => {
-      const fns = watchers.get(path);
-      fns?.delete(fn);
-      if (fns?.size === 0) {
-        watchers.delete(path);
-        try {
-          refDisconnect.current.get(path)?.();
-          refDisconnect.current.delete(path);
-        } catch (e) {
-          console.error('>> fs [disconnect]', path, e);
-        }
+      const {callbacks} = $.get(path)!;
+      if (!callbacks) return;
+      callbacks.delete(fn);
+      if (callbacks.size === 0) {
+        $.get(path)?.disconnect();
+        $.delete(path);
       }
     };
   };
