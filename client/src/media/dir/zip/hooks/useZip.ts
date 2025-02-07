@@ -1,4 +1,5 @@
 import {fs} from '@zip.js/zip.js';
+import {web} from 'react-exo/fs';
 import {useDispatch} from 'react-redux';
 import {useCallback, useEffect, useState, useRef} from 'react';
 import {useLocationPathInfo} from 'app/hooks/useCurrentPathInfo';
@@ -29,7 +30,7 @@ export function useZip(path: string): ZipCtx {
     const source = zipfs.current?.getById(file.id);
     if (!source) return;
     const {name, ext} = toPathInfo(file.name, false);
-    const {name: zdir} = toPathInfo(path, false);
+    const {name: zdir} = toPathInfo(path, false); // TODO: only for extract all
 
     const root = url ? `${url}/` : '';
     const head = target?.name ? `${target.name}/` : '';
@@ -37,11 +38,10 @@ export function useZip(path: string): ZipCtx {
     const dest = `${root}${head}${tail}${name}.${ext}`;
     console.log('>> zip [extract]', file.name, '->', dest);
 
-    const folder = await navigator.storage.getDirectory();
-    const handle = await folder.getFileHandle(dest, {create: true});
-    const writable = await handle.createWritable();
-
-    // @ts-expect-error
+    const handle = await web.getFileHandle(dest, {create: true});
+    const writable = await handle?.createWritable();
+    if (!writable) return;
+    // @ts-expect-error TS missing types
     source?.getData({writable});
   
     // Open file on gesture event

@@ -146,8 +146,8 @@ importers:
         specifier: ^18.3.1
         version: 18.3.1(react@18.3.1)
       react-exo:
-        specifier: 0.18.21
-        version: 0.18.21(2wltuen4auaroz6jckz2oi4r3y)
+        specifier: 0.18.22
+        version: 0.18.22(2wltuen4auaroz6jckz2oi4r3y)
       react-exo-ui:
         specifier: workspace:*
         version: link:../design
@@ -354,8 +354,8 @@ importers:
         specifier: ^18.3.1
         version: 18.3.1(react@18.3.1)
       react-exo:
-        specifier: 0.18.21
-        version: 0.18.21(wiefilmhrdz4znve35kyb3ksve)
+        specifier: 0.18.22
+        version: 0.18.22(wiefilmhrdz4znve35kyb3ksve)
       react-native:
         specifier: ^0.76.5
         version: 0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1)
@@ -522,8 +522,8 @@ importers:
         specifier: workspace:*
         version: link:../../config
       react-exo:
-        specifier: 0.18.21
-        version: 0.18.21(wiefilmhrdz4znve35kyb3ksve)
+        specifier: 0.18.22
+        version: 0.18.22(wiefilmhrdz4znve35kyb3ksve)
       react-native:
         specifier: ^0.76.5
         version: 0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1)
@@ -555,8 +555,8 @@ importers:
         specifier: ^18.3.1
         version: 18.3.1(react@18.3.1)
       react-exo:
-        specifier: 0.18.21
-        version: 0.18.21(wiefilmhrdz4znve35kyb3ksve)
+        specifier: 0.18.22
+        version: 0.18.22(wiefilmhrdz4znve35kyb3ksve)
       react-exo-ui:
         specifier: workspace:*
         version: link:../../../design
@@ -658,8 +658,8 @@ importers:
         specifier: ^18.3.1
         version: 18.3.1(react@18.3.1)
       react-exo:
-        specifier: 0.18.21
-        version: 0.18.21(wiefilmhrdz4znve35kyb3ksve)
+        specifier: 0.18.22
+        version: 0.18.22(wiefilmhrdz4znve35kyb3ksve)
       react-exo-ui:
         specifier: workspace:*
         version: link:../../design
@@ -10522,8 +10522,8 @@ packages:
     peerDependencies:
       react: ^18.3.1
 
-  react-exo@0.18.21:
-    resolution: {integrity: sha512-vqTQbdRO3QyFPcIL511jS/MtEsQSEfuhtysVfUtSTRux1s8+PT2qsmsSdH9jYyo3UdoQQ6WZYk7hMH+lJD5l1w==}
+  react-exo@0.18.22:
+    resolution: {integrity: sha512-eIBhODL54bjInrbO9SfpseuHkmuFMaaI1FMyHFAx7uMW3Fvq2PqsUY6stbI5XIFTZQ2fyybIB3uoELuklguSvQ==}
     peerDependencies:
       '@candlefinance/faster-image': '>=1.7'
       '@legendapp/list': '>=1'
@@ -26511,7 +26511,7 @@ snapshots:
       react: 18.3.1
       scheduler: 0.23.2
 
-  react-exo@0.18.21(2wltuen4auaroz6jckz2oi4r3y):
+  react-exo@0.18.22(2wltuen4auaroz6jckz2oi4r3y):
     dependencies:
       '@candlefinance/faster-image': 1.7.2(react-native@0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8)(utf-8-validate@6.0.4))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1)(utf-8-validate@6.0.4))(react@18.3.1)
       '@helia/unixfs': 4.0.1
@@ -26584,7 +26584,7 @@ snapshots:
       - vite
       - worker-loader
 
-  react-exo@0.18.21(wiefilmhrdz4znve35kyb3ksve):
+  react-exo@0.18.22(wiefilmhrdz4znve35kyb3ksve):
     dependencies:
       '@candlefinance/faster-image': 1.7.2(react-native@0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1))(react@18.3.1)
       '@helia/unixfs': 4.0.1

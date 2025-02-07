@@ -52,6 +52,7 @@ msgid "Auto"
 msgstr "Auto"
 
 #: ../../client/src/media/routes/ScreenBrowse.tsx:28
+#: ../../client/src/app/interface/Menu.tsx:89
 msgid "Books"
 msgstr "Books"
 
@@ -76,6 +77,7 @@ msgstr "Close"
 msgid "Compress"
 msgstr "Compress"
 
+#: ../../client/src/media/hooks/useMediaControls.ts:58
 #: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:55
 msgid "Copy"
 msgstr "Copy"
@@ -158,7 +160,10 @@ msgstr "Docs"
 msgid "Documents"
 msgstr "Documents"
 
+#: ../../client/src/media/hooks/useMediaControls.ts:77
+#: ../../client/src/media/file/FileBinary.tsx:30
 #: ../../client/src/media/dir/torrent/stacks/TorrentMenu.tsx:22
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:44
 msgid "Download"
 msgstr "Download"
 
@@ -186,6 +191,7 @@ msgstr "Enter folder name"
 msgid "Enter name"
 msgstr "Enter name"
 
+#: ../../client/src/media/hooks/useMediaControls.ts:87
 #: ../../client/src/media/dir/zip/stacks/ZipMenu.tsx:22
 msgid "Extract"
 msgstr "Extract"
@@ -199,6 +205,8 @@ msgid "Feature in development..."
 msgstr "Feature in development..."
 
 #: ../../client/src/media/routes/ScreenBrowse.tsx:34
+#: ../../client/src/app/interface/Tabs.tsx:24
+#: ../../client/src/app/interface/Menu.tsx:59
 msgid "Files"
 msgstr "Files"
 
@@ -215,6 +223,7 @@ msgid "Fullscreen"
 msgstr "Fullscreen"
 
 #: ../../client/src/media/routes/ScreenBrowse.tsx:26
+#: ../../client/src/app/interface/Menu.tsx:84
 msgid "Games"
 msgstr "Games"
 
@@ -330,6 +339,7 @@ msgid "Move"
 msgstr "Move"
 
 #: ../../client/src/media/routes/ScreenBrowse.tsx:20
+#: ../../client/src/app/interface/Menu.tsx:69
 msgid "Music"
 msgstr "Music"
 
@@ -367,6 +377,7 @@ msgid "Pause"
 msgstr "Pause"
 
 #: ../../client/src/media/routes/ScreenBrowse.tsx:22
+#: ../../client/src/app/interface/Menu.tsx:74
 msgid "Pictures"
 msgstr "Pictures"
 
@@ -468,6 +479,7 @@ msgstr "Services"
 msgid "Settings"
 msgstr "Settings"
 
+#: ../../client/src/media/hooks/useMediaControls.ts:256
 #: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:30
 msgid "Share"
 msgstr "Share"
@@ -514,12 +526,9 @@ msgid "User Name"
 msgstr "User Name"
 
 #: ../../client/src/media/routes/ScreenBrowse.tsx:24
+#: ../../client/src/app/interface/Menu.tsx:79
 msgid "Videos"
 msgstr "Videos"
-
-#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:21
-msgid "View"
-msgstr "View"
 
 #: ../../client/src/world/routes/ScreenWorld.tsx:18
 msgid "View your device locations and geo-related info"

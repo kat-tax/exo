@@ -59,7 +59,7 @@
     "openmeteo": "^1.1.4",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-exo": "0.18.21",
+    "react-exo": "0.18.22",
     "react-exo-ui": "workspace:*",
     "react-map-gl": "^7.1.8",
     "react-native": "^0.76.5",

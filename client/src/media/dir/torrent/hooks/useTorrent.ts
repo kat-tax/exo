@@ -1,8 +1,9 @@
 import ExoTorrent from 'react-exo/torrent';
-import {useCallback, useMemo} from 'react';
+import {web} from 'react-exo/fs';
 import {useDispatch} from 'react-redux';
-import {useFileData} from 'media/file/hooks/useFileData';
+import {useCallback, useMemo} from 'react';
 import {useLocationPathInfo} from 'app/hooks/useCurrentPathInfo';
+import {useFileData} from 'media/file/hooks/useFileData';
 import {bytesize} from 'app/utils/formatting';
 import * as tor from '../utils/info';
 import store from '../utils/chunkstore';
@@ -44,13 +45,16 @@ export function useTorrent(path: string): TorrentCtx {
     // @ts-expect-error Incorrect vendor types
     client.add(torrent.file, {store}, async ({files}) => {
       const item = files.find(e => e.path.split('/').slice(1).join('/') === file.path);
-      const root = await navigator.storage.getDirectory();
-      const dest = file.name; // const dest = path ? `${path}/${filename}` : filename;
-      const handle = await root.getFileHandle(dest, {create: true});
-      const stream = await handle.createWritable();
+      const root = url ? `${url}/` : '';
+      const head = target?.name ? `${target.name}/` : '';
+      const dest = `${root}${head}${file.path}`;
+      const handle = await web.getFileHandle(dest, {create: true});
+      const writable = await handle?.createWritable();
+      if (!writable) return;
       // @ts-expect-error TS missing types
       const source = item?.stream();
-      source?.pipeTo(stream);
+      source?.pipeTo(writable);
+      console.log('>> torrent [download]', file.path, '->', dest);
     });
     // Open file on gesture event
     if (event) {

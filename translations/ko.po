@@ -52,6 +52,7 @@ msgid "Auto"
 msgstr "자동"
 
 #: ../../client/src/media/routes/ScreenBrowse.tsx:28
+#: ../../client/src/app/interface/Menu.tsx:89
 msgid "Books"
 msgstr "도서"
 
@@ -76,6 +77,7 @@ msgstr "닫기"
 msgid "Compress"
 msgstr ""
 
+#: ../../client/src/media/hooks/useMediaControls.ts:58
 #: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:55
 msgid "Copy"
 msgstr ""
@@ -158,7 +160,10 @@ msgstr "문서"
 msgid "Documents"
 msgstr "문서"
 
+#: ../../client/src/media/hooks/useMediaControls.ts:77
+#: ../../client/src/media/file/FileBinary.tsx:30
 #: ../../client/src/media/dir/torrent/stacks/TorrentMenu.tsx:22
+#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:44
 msgid "Download"
 msgstr "다운로드"
 
@@ -186,6 +191,7 @@ msgstr ""
 msgid "Enter name"
 msgstr ""
 
+#: ../../client/src/media/hooks/useMediaControls.ts:87
 #: ../../client/src/media/dir/zip/stacks/ZipMenu.tsx:22
 msgid "Extract"
 msgstr "추출"
@@ -199,6 +205,8 @@ msgid "Feature in development..."
 msgstr ""
 
 #: ../../client/src/media/routes/ScreenBrowse.tsx:34
+#: ../../client/src/app/interface/Tabs.tsx:24
+#: ../../client/src/app/interface/Menu.tsx:59
 msgid "Files"
 msgstr "파일"
 
@@ -215,6 +223,7 @@ msgid "Fullscreen"
 msgstr "전체화면"
 
 #: ../../client/src/media/routes/ScreenBrowse.tsx:26
+#: ../../client/src/app/interface/Menu.tsx:84
 msgid "Games"
 msgstr "게임"
 
@@ -330,6 +339,7 @@ msgid "Move"
 msgstr ""
 
 #: ../../client/src/media/routes/ScreenBrowse.tsx:20
+#: ../../client/src/app/interface/Menu.tsx:69
 msgid "Music"
 msgstr "음악"
 
@@ -367,6 +377,7 @@ msgid "Pause"
 msgstr "일시정지"
 
 #: ../../client/src/media/routes/ScreenBrowse.tsx:22
+#: ../../client/src/app/interface/Menu.tsx:74
 msgid "Pictures"
 msgstr "사진"
 
@@ -468,6 +479,7 @@ msgstr ""
 msgid "Settings"
 msgstr "설정"
 
+#: ../../client/src/media/hooks/useMediaControls.ts:256
 #: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:30
 msgid "Share"
 msgstr "공유"
@@ -514,12 +526,9 @@ msgid "User Name"
 msgstr "사용자 이름"
 
 #: ../../client/src/media/routes/ScreenBrowse.tsx:24
+#: ../../client/src/app/interface/Menu.tsx:79
 msgid "Videos"
 msgstr "동영상"
-
-#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:21
-msgid "View"
-msgstr ""
 
 #: ../../client/src/world/routes/ScreenWorld.tsx:18
 msgid "View your device locations and geo-related info"
