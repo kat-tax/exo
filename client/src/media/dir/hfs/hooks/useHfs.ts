@@ -65,7 +65,7 @@ export function useHfs(path: string): HfsCtx {
       console.warn('>> fs [refresh error]', path, e);
       return false;
     }
-  }, [path, hfs]);
+  }, [hfs, path]);
 
   const open = useCallback(async (entry: HfsDirectoryEntry) => {
     nav(path ? `${path}/${entry.name}` : entry.name);
@@ -73,11 +73,15 @@ export function useHfs(path: string): HfsCtx {
 
   const move = useCallback(async (from: HfsDirectoryEntry, to?: HfsDirectoryEntry) => {
     if (to) {
-      await hfs?.move?.(from.name, to.name);
+      const base = path ? `${path}/` : '';
+      const src = `${base}${from.name}`;
+      const dest = `${base}${to.name ?? ''}/${from.name}`;
+      console.log('>> fs [move]', src, '->', dest);
+      await hfs?.moveAll?.(src, dest);
     } else {
       console.log('>> fs [move]', from);
     }
-  }, [hfs]);
+  }, [hfs, path]);
 
   const copy = useCallback(async (from: HfsDirectoryEntry, to?: HfsDirectoryEntry) => {
     if (to) {
@@ -96,8 +100,10 @@ export function useHfs(path: string): HfsCtx {
   }, [hfs]);
 
   const purge = useCallback(async (entry: HfsDirectoryEntry) => {
-    await hfs?.deleteAll?.(entry.name);
-  }, [hfs]);
+    const base = path ? `${path}/` : '';
+    const uri = `${base}${entry.name}`;
+    await hfs?.deleteAll?.(uri);
+  }, [hfs, path]);
 
   const select = useCallback((entry: HfsDirectoryEntry, event?: GestureResponderEvent) => {
     const [isShift, isCtrl] = [event?.shiftKey, event?.metaKey || event?.ctrlKey];
