@@ -42,8 +42,6 @@ export default createSlice({
       if (!action.payload) {
         media.dragging = [];
       } else if (!media.selected.includes(action.payload)) {
-        media.focused = action.payload;
-        media.selected = [action.payload];
         media.dragging = [action.payload];
       } else {
         media.dragging = media.selected;
@@ -53,8 +51,8 @@ export default createSlice({
       media.selected = action.payload === 'all' ? media.contents : action.payload;
       if (media.selected.length === 0) {
         media.focused = '';
-      } else if (!media.focused) {
-        media.focused = media.selected[media.selected.length - 1];
+      } else {
+        media.focused = media.selected[0];
       }
     },
     selectRemove(media, action: PayloadAction<number>) {
