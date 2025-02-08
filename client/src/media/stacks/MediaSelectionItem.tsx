@@ -15,16 +15,16 @@ const ICON_SIZE = TOUCH ? 1 : 0;
 const TEXT_LINES = TOUCH ? 2 : 1;
 
 interface MediaSelectionItemProps {
-  filesystem: HfsImpl | null,
   focused: boolean,
   index: number,
   path: string,
   name: string,
   ext: string,
+  hfs: HfsImpl | null,
 }
 
 export function MediaSelectionItem(props: MediaSelectionItemProps) {
-  const {filesystem, focused, index, path, name, ext} = props;
+  const {focused, index, path, name, ext, hfs} = props;
   const {styles, theme} = useStyles(stylesheet);
   const [dir, setDir] = useState(false);
 
@@ -36,10 +36,10 @@ export function MediaSelectionItem(props: MediaSelectionItemProps) {
   useEffect(() => {
     (async () => {
       setDir(!path.includes('://')
-        ? await filesystem?.isDirectory?.(path)!
+        ? await hfs?.isDirectory?.(path)!
         : false);
     })();
-  }, [filesystem, path]);
+  }, [hfs, path]);
 
   return (
     <Pressable
@@ -58,7 +58,7 @@ export function MediaSelectionItem(props: MediaSelectionItemProps) {
         numberOfLines={TEXT_LINES}>
         {name || `.${ext}`}
       </Text>
-      <Pressable onPress={() => close(index)}>
+      <Pressable style={styles.close} onPress={() => close(index)}>
         <Icon
           name="ph:x"
           size={TOUCH ? 16 : 14}
@@ -96,5 +96,11 @@ const stylesheet = createStyleSheet((theme) => ({
   },
   textFocused: {
     color: theme.colors.foreground,
+  },
+  close: {
+    width: 14,
+    height: 14,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 }));

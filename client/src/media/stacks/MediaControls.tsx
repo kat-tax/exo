@@ -43,6 +43,7 @@ export function MediaControls(props: MediaControlsProps) {
   const {controls, seekable} = useMediaControls(props);
   const {styles, theme} = useStyles(stylesheet);
   const [fileType] = props.renderer ?? [];
+  const isDir = fileType === FileType.Directory;
   const isBook = fileType === FileType.Book;
   const sizeGroup = TOUCH ? 1 : 0;
   const imageSize = sizeGroup === 1 ? 36 : 32;
@@ -101,7 +102,7 @@ export function MediaControls(props: MediaControlsProps) {
             : <ListRowIcon
                 name={name ?? ''}
                 ext={props.metadata.ext}
-                dir={false}
+                dir={isDir}
                 size={2}
               />
             }

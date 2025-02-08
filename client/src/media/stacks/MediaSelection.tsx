@@ -11,10 +11,10 @@ import type {ScrollView} from 'react-native';
 import type {HfsImpl} from 'react-exo/fs';
 
 interface MediaSelectionProps {
-  filesystem: HfsImpl | null,
+  hfs: HfsImpl | null,
 }
 
-export function MediaSelection({filesystem}: MediaSelectionProps) {
+export function MediaSelection({hfs}: MediaSelectionProps) {
   const {styles} = useStyles(stylesheet);
   const scrollRef = useRef<ScrollView>(null);
   const selection = useSelector(media.selectors.getSelected);
@@ -77,7 +77,7 @@ export function MediaSelection({filesystem}: MediaSelectionProps) {
       {list.map(({path, name, ext}, index) => (
         <MediaSelectionItem
           key={path}
-          filesystem={filesystem}
+          hfs={hfs}
           focused={focused === path}
           index={index}
           path={path}

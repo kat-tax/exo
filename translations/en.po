@@ -78,7 +78,6 @@ msgid "Compress"
 msgstr "Compress"
 
 #: ../../client/src/media/hooks/useMediaControls.ts:58
-#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:55
 msgid "Copy"
 msgstr "Copy"
 
@@ -161,9 +160,6 @@ msgid "Documents"
 msgstr "Documents"
 
 #: ../../client/src/media/hooks/useMediaControls.ts:77
-#: ../../client/src/media/file/FileBinary.tsx:30
-#: ../../client/src/media/dir/torrent/stacks/TorrentMenu.tsx:22
-#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:44
 msgid "Download"
 msgstr "Download"
 
@@ -192,7 +188,6 @@ msgid "Enter name"
 msgstr "Enter name"
 
 #: ../../client/src/media/hooks/useMediaControls.ts:87
-#: ../../client/src/media/dir/zip/stacks/ZipMenu.tsx:22
 msgid "Extract"
 msgstr "Extract"
 
@@ -480,7 +475,6 @@ msgid "Settings"
 msgstr "Settings"
 
 #: ../../client/src/media/hooks/useMediaControls.ts:256
-#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:30
 msgid "Share"
 msgstr "Share"
 

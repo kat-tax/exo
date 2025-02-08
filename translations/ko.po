@@ -78,7 +78,6 @@ msgid "Compress"
 msgstr ""
 
 #: ../../client/src/media/hooks/useMediaControls.ts:58
-#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:55
 msgid "Copy"
 msgstr ""
 
@@ -161,9 +160,6 @@ msgid "Documents"
 msgstr "문서"
 
 #: ../../client/src/media/hooks/useMediaControls.ts:77
-#: ../../client/src/media/file/FileBinary.tsx:30
-#: ../../client/src/media/dir/torrent/stacks/TorrentMenu.tsx:22
-#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:44
 msgid "Download"
 msgstr "다운로드"
 
@@ -192,7 +188,6 @@ msgid "Enter name"
 msgstr ""
 
 #: ../../client/src/media/hooks/useMediaControls.ts:87
-#: ../../client/src/media/dir/zip/stacks/ZipMenu.tsx:22
 msgid "Extract"
 msgstr "추출"
 
@@ -480,7 +475,6 @@ msgid "Settings"
 msgstr "설정"
 
 #: ../../client/src/media/hooks/useMediaControls.ts:256
-#: ../../client/src/media/dir/hfs/stacks/HfsMenu.tsx:30
 msgid "Share"
 msgstr "공유"
 

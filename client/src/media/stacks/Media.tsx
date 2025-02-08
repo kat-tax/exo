@@ -1,15 +1,15 @@
-import {FS} from 'react-exo/fs';
 import {View, ScrollView} from 'react-native';
 import {useMemo, useState, useEffect, useRef} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {useMediaPictureInPicture} from 'media/hooks/useMediaPictureInPicture';
-import {MediaSelection} from 'media/stacks/MediaSelection';
+import {useHfsCtx} from 'app/data/lib/hfs-provider';
 import {MediaControls} from 'media/stacks/MediaControls';
+import {MediaSelection} from 'media/stacks/MediaSelection';
+import {useMediaPictureInPicture} from 'media/hooks/useMediaPictureInPicture';
 import {getRenderer} from 'media/file/utils/render';
+import {FileType} from 'media/file/types';
 import File from 'media/file';
 
 import type {FileRef, FileRenderInfo} from 'media/file/types';
-import type {HfsImpl} from 'react-exo/fs';
 
 interface MediaProps {
   ext: string,
@@ -24,10 +24,10 @@ interface MediaProps {
 
 export function Media(props: MediaProps) {
   const {ext, name, path, vertical, maximized, embedded, layout, close} = props;
-  const [filesystem, setFilesystem] = useState<HfsImpl | null>(null);
   const {styles, theme} = useStyles(stylesheet);
-  const file = useRef<FileRef>(null);
   const pip = useMediaPictureInPicture(props.ext, layout);
+  const hfs = useHfsCtx();
+  const file = useRef<FileRef>(null);
 
   // File information
   const [renderer, setRenderer] = useState<FileRenderInfo>();
@@ -77,7 +77,7 @@ export function Media(props: MediaProps) {
 
   // Reset information when file changes
   useEffect(() => {
-    setTitle(`${name}.${ext}`);
+    setTitle(renderer?.[0] === FileType.Directory ? name : `${name}.${ext}`);
     setCover('');
     setInfo('‎');
     setMuted(false);
@@ -85,28 +85,21 @@ export function Media(props: MediaProps) {
     setPlaying(false);
     setCurrent(0);
     setDuration(0);
-  }, [name, ext]);
+  }, [name, ext, renderer]);
 
   // Update renderer when file extension changes
   useEffect(() => {
     (async () => {
       const isDir = !path.includes('://')
-        ? await filesystem?.isDirectory?.(path)!
+        ? await hfs?.isDirectory?.(path)!
         : false;
       setRenderer(await getRenderer(ext, path, isDir));
     })();
-  }, [ext, path, filesystem]);
-
-  // Mount filesystem
-  useEffect(() => {
-    (async () => {
-      setFilesystem(await FS.init('fs'));
-    })();
-  }, []);
+  }, [ext, path, hfs]);
 
   return (
     <View style={vstyles.root}>
-      {!embedded && <MediaSelection {...{filesystem}}/>}
+      {!embedded && <MediaSelection {...{hfs}}/>}
       <ScrollView style={vstyles.frame} contentContainerStyle={styles.contents}>
         <File
           ref={file}

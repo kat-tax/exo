@@ -1,6 +1,7 @@
 import {Outlet} from 'react-exo/navigation';
 import {useState} from 'react';
 import {useSelector} from 'react-redux';
+import {useLocation} from 'react-exo/navigation';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useWindowDimensions, View, StatusBar} from 'react-native';
 import {useDeviceSession} from 'app/hooks/useDeviceSession';
@@ -10,6 +11,7 @@ import {toPathInfo} from 'app/utils/formatting';
 import {Menu} from 'app/interface/Menu';
 import {Tabs} from 'app/interface/Tabs';
 import {Media} from 'media/stacks/Media';
+import {Timeline} from 'media/stacks/Timeline';
 import media from 'media/store';
 
 import type {AppContext} from 'app/hooks/useAppContext';
@@ -19,8 +21,10 @@ export const APP_MENU_TAB_HEIGHT = 64;
 
 export default function Layout() {
   const {styles, theme} = useStyles(stylesheet);
-  const [previewOpen, setPreviewOpen] = useState(true);
+  const {pathname} = useLocation();
+
   const [menuOpen, setMenuOpen] = useState(true);
+  const [previewOpen, setPreviewOpen] = useState(true);
 
   const screen = useWindowDimensions();
   const device = useDeviceSession();
@@ -30,7 +34,7 @@ export default function Layout() {
   const mediaInfo = toPathInfo(focused, false);
   const isVertical = screen.width < theme.breakpoints.sm;
   const hasTabs = screen.width < theme.breakpoints.xs;
-  const hasPanel = Boolean(focused);
+  const hasPanel = pathname.includes('/browse') || Boolean(focused);
   const vstyles = {
     root: [styles.root, hasTabs && styles.rootTabs],
     menu: [styles.menu, hasTabs && styles.menuTabs],
@@ -66,15 +70,17 @@ export default function Layout() {
         <View style={styles.outlet}>
           <Outlet {...{context}}/>
         </View>
-        {hasPanel && focused &&
-          <Media
-            {...mediaInfo}
-            vertical={isVertical}
-            maximized={true}
-            embedded={false}
-            close={() => {}}
-          />
-        }
+        {hasPanel ?
+          Boolean(focused) ?
+            <Media
+              {...mediaInfo}
+              vertical={isVertical}
+              maximized={true}
+              embedded={false}
+              close={() => {}}
+            />
+          : <Timeline path={focused}/>
+        : null}
       </View>
     </View>
   </>;

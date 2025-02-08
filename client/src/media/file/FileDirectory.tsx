@@ -22,6 +22,8 @@ export default forwardRef((props: FileDirectory, _ref) => {
   return (
     <View style={styles.root}>
       <Page
+        title={props.embedded ? props.name : undefined}
+        message={props.embedded ? `${hfs?.list?.length} files` : undefined}
         margin="small"
         noBackground
         noFrame

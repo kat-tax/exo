@@ -25,8 +25,8 @@ export default forwardRef((props: FileZip, _ref) => {
   return (
     <View style={styles.root}>
       <Page
-        title={props.name}
-        message={`${zip?.list?.length} files`}
+        title={props.embedded ? props.name : undefined}
+        message={props.embedded ? `${zip?.list?.length} files` : undefined}
         margin="small"
         noBackground
         noFrame

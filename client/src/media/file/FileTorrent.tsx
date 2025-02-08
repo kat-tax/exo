@@ -18,13 +18,14 @@ export default forwardRef((props: FileTorrent, _ref) => {
     if (!torrent) return;
     const size = bytesize(torrent.list.reduce((acc, file) => acc + file.length, 0));
     props.actions.setInfo(`${torrent.list.length} files, ${size}`);
+    props.actions.setTitle(torrent.info.name);
   }, [torrent, props.actions]);
 
   return (
     <View style={styles.root}>
       <Page
-        title={torrent?.info.name}
-        message={torrent?.desc}
+        title={props.embedded ? props.name : undefined}
+        message={props.embedded ? `${torrent?.info.name}` : undefined}
         margin="small"
         noBackground
         noFrame
