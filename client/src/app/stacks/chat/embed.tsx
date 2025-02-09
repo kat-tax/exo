@@ -1,6 +1,6 @@
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {View} from 'react-native';
-import {Media} from 'media/stacks/Media';
+import {Media} from 'media/stacks/media';
 import {toPathInfo} from 'app/utils/formatting';
 
 import type {BubbleProps} from './bubble';

@@ -6,7 +6,7 @@ import * as dnd from 'app/utils/dragdrop';
 import type {View} from 'react-native';
 import type {CleanupFn} from 'app/utils/dragdrop';
 import type {TorrentFileEntry, TorrentCmd} from '../types';
-import type {TorrentEntryProps} from '../stacks/TorrentEntry';
+import type {TorrentEntryProps} from '../stacks/torrent-entry';
 
 const $ = Symbol('torrent');
 export type TorrentData = {[$]: true; entry: TorrentFileEntry; cmd: TorrentCmd};

@@ -8,9 +8,9 @@ import {useDeviceSession} from 'app/hooks/useDeviceSession';
 import {useHotkeys} from 'app/hooks/useHotkeys';
 import {useProfile} from 'app/data';
 import {toPathInfo} from 'app/utils/formatting';
-import {Timeline} from 'media/stacks/Timeline';
-import {Media} from 'media/stacks/Media';
-import {Menu} from 'app/routes/menu/Menu';
+import {MediaAdd} from 'media/stacks/add';
+import {Media} from 'media/stacks/media';
+import {Menu} from 'app/routes/menu';
 import media from 'media/store';
 
 import type {AppContext} from 'app/hooks/useAppContext';
@@ -75,7 +75,7 @@ export default function Layout() {
               embedded={false}
               close={() => {}}
             />
-          : <Timeline path={focused}/>
+          : <MediaAdd path={focused}/>
         : null}
       </View>
     </View>

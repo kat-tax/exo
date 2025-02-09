@@ -1,48 +1,48 @@
 import {lazy} from 'react';
-import Settings from '../ScreenSettings';
+import Settings from '../screen-settings';
 
 export const Layout = {
   App: lazy(
-    () => import('../Layout')
+    () => import('../layout')
   ),
 }
 
 export const Screen = {
   Settings,
   Storage: lazy(
-    () => import('../ScreenStorage')
-  ),
-  Teaser: lazy(
-    () => import('../ScreenTeaser')
-  ),
-  Home: lazy(
-    () => import('../../../home/routes/ScreenHome')
-  ),
-  Inbox: lazy(
-    () => import('../../../home/routes/ScreenInbox')
+    () => import('../screen-storage')
   ),
   Room: lazy(
-    () => import('../../../home/routes/ScreenRoom')
+    () => import('../screen-room')
+  ),
+  Teaser: lazy(
+    () => import('../screen-teaser')
+  ),
+  Home: lazy(
+    () => import('../../../home/routes/screen-home')
+  ),
+  Inbox: lazy(
+    () => import('../../../home/routes/screen-inbox')
   ),
   Browse: lazy(
-    () => import('../../../media/routes/ScreenBrowse')
+    () => import('../../../media/routes/screen-browse')
   ),
   Ipfs: lazy(
-    () => import('../../../media/routes/ScreenIpfs')
+    () => import('../../../media/routes/screen-ipfs')
   ),
   World: lazy(
-    () => import('../../../world/routes/ScreenWorld')
+    () => import('../../../world/routes/screen-world')
   ),
   Map: lazy(
-    () => import('../../../world/routes/ScreenMap')
+    () => import('../../../world/routes/screen-map')
   ),
   Calendar: lazy(
-    () => import('../../../world/routes/ScreenCalendar')
+    () => import('../../../world/routes/screen-calendar')
   ),
   Design: lazy(
-    () => import('../../../dev/routes/ScreenDesign')
+    () => import('../../../dev/routes/screen-design')
   ),
   Library: lazy(
-    () => import('../../../dev/routes/ScreenLibrary')
+    () => import('../../../dev/routes/screen-library')
   ),
 }

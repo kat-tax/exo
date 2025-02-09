@@ -3,64 +3,64 @@ import {FileType} from 'media/file/types';
 
 export const loader: {[key in FileType]: ReturnType<typeof lazy>} = {
   [FileType.Directory]: lazy(
-    () => import('../FileDirectory')
+    () => import('../file-directory')
   ),
   [FileType.Binary]: lazy(
-    () => import('../FileBinary')
+    () => import('../file-binary')
   ),
   [FileType.Text]: lazy(
-    () => import('../FileText')
+    () => import('../file-text')
   ),
   [FileType.Document]: lazy(
-    () => import('../FileDoc')
+    () => import('../file-doc')
   ),
   [FileType.Presentation]: lazy(
-    () => import('../FilePresentation')
+    () => import('../file-presentation')
   ),
   [FileType.Spreadsheet]: lazy(
-    () => import('../FileSpreadsheet')
+    () => import('../file-spreadsheet')
   ),
   [FileType.Markdown]: lazy(
-    () => import('../FileMarkdown')
+    () => import('../file-markdown')
   ),
   [FileType.Typst]: lazy(
-    () => import('../FileTypst')
+    () => import('../file-typst')
   ),
   [FileType.Audio]: lazy(
-    () => import('../FileAudio')
+    () => import('../file-audio')
   ),
   [FileType.Video]: lazy(
-    () => import('../FileVideo')
+    () => import('../file-video')
   ),
   [FileType.Image]: lazy(
-    () => import('../FileImage')
+    () => import('../file-image')
   ),
   [FileType.Model]: lazy(
-    () => import('../FileModel')
+    () => import('../file-model')
   ),
   [FileType.Lottie]: lazy(
-    () => import('../FileLottie')
+    () => import('../file-lottie')
   ),
   [FileType.Rive]: lazy(
-    () => import('../FileRive')
+    () => import('../file-rive')
   ),
   [FileType.Game]: lazy(
-    () => import('../FileGame')
+    () => import('../file-game')
   ),
   [FileType.Book]: lazy(
-    () => import('../FileBook')
+    () => import('../file-book')
   ),
   [FileType.Pdf]: lazy(
-    () => import('../FilePdf')
+    () => import('../file-pdf')
   ),
   [FileType.Map]: lazy(
-    () => import('../FileMap')
+    () => import('../file-map')
   ),
   [FileType.Torrent]: lazy(
-    () => import('../FileTorrent')
+    () => import('../file-torrent')
   ),
   [FileType.Zip]: lazy(
-    () => import('../FileZip')
+    () => import('../file-zip')
   ),
 }
 

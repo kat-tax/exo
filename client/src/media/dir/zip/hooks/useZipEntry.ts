@@ -6,7 +6,7 @@ import * as dnd from 'app/utils/dragdrop';
 import type {View} from 'react-native';
 import type {CleanupFn} from 'app/utils/dragdrop';
 import type {ZipFileEntry, ZipCmd} from '../types';
-import type {ZipEntryProps} from '../stacks/ZipEntry';
+import type {ZipEntryProps} from '../stacks/zip-entry';
 
 const $ = Symbol('zip');
 export type ZipData = {[$]: true; entry: ZipFileEntry; cmd: ZipCmd};

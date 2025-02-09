@@ -2,64 +2,64 @@ import {FileType} from 'media/file/types';
 
 export const loader: {[key in FileType]: JSX.Element} = {
   get [FileType.Directory]() {
-    return require('../FileDirectory').default
+    return require('../file-directory').default
   },
   get [FileType.Binary]() {
-    return require('../FileBinary').default
+    return require('../file-binary').default
   },
   get [FileType.Text]() {
-    return require('../FileText').default
+    return require('../file-text').default
   },
   get [FileType.Document]() {
-    return require('../FileDoc').default
+    return require('../file-doc').default
   },
   get [FileType.Spreadsheet]() {
-    return require('../FileSpreadsheet').default
+    return require('../file-spreadsheet').default
   },
   get [FileType.Presentation]() {
-    return require('../FilePresentation').default
+    return require('../file-presentation').default
   },
   get [FileType.Markdown]() {
-    return require('../FileMarkdown').default
+    return require('../file-markdown').default
   },
   get [FileType.Typst]() {
-    return require('../FileTypst').default
+    return require('../file-typst').default
   },
   get [FileType.Audio]() {
-    return require('../FileAudio').default
+    return require('../file-audio').default
   },
   get [FileType.Video]() {
-    return require('../FileVideo').default
+    return require('../file-video').default
   },
   get [FileType.Image]() {
-    return require('../FileImage').default
+    return require('../file-image').default
   },
   get [FileType.Model]() {
-    return require('../FileModel').default
+    return require('../file-model').default
   },
   get [FileType.Lottie]() {
-    return require('../FileLottie').default
+    return require('../file-lottie').default
   },
   get [FileType.Rive]() {
-    return require('../FileRive').default
+    return require('../file-rive').default
   },
   get [FileType.Game]() {
-    return require('../FileGame').default
+    return require('../file-game').default
   },
   get [FileType.Book]() {
-    return require('../FileBook').default
+    return require('../file-book').default
   },
-  get [FileType.Pdf]() {
-    return require('../FilePdf').default
+  get [FileType.Pdf]() {  
+    return require('../file-pdf').default
   },
   get [FileType.Map]() {
-    return require('../FileMap').default
+    return require('../file-map').default
   },
   get [FileType.Torrent]() {
-    return require('../FileTorrent').default
+    return require('../file-torrent').default
   },
   get [FileType.Zip]() {
-    return require('../FileZip').default
+    return require('../file-zip').default
   },
 }
 

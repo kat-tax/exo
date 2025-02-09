@@ -10,7 +10,7 @@ import {isTorrentData} from 'media/dir/torrent/hooks/useTorrentEntry';
 
 import type {View} from 'react-native';
 import type {CleanupFn} from 'app/utils/dragdrop';
-import type {HfsEntryProps} from '../stacks/HfsEntry';
+import type {HfsEntryProps} from '../stacks/hfs-entry';
 import type {HfsDirectoryEntry} from 'react-exo/fs';
 
 const $ = Symbol('hfs');

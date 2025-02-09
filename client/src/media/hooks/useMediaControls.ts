@@ -5,7 +5,7 @@ import {web} from 'react-exo/fs';
 import {pinFile} from 'media/dir/ipfs';
 import {FileType} from 'media/file/types';
 
-import type {MediaControlsProps} from 'media/stacks/MediaControls';
+import type {MediaControlsProps} from 'media/stacks/controls';
 
 export const SHAREABLE = [FileType.Image, FileType.Video, FileType.Audio, FileType.Pdf];
 export const EXTRACTABLE = [FileType.Zip];
