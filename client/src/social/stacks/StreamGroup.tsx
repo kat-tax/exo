@@ -1,8 +1,8 @@
 import {useState, useEffect} from 'react';
 import {RectGroup} from 'app/stacks/rectgroup';
-import {Stream} from 'social/stacks/Stream';
+import {StreamMedia} from 'social/stacks/StreamMedia';
 
-export function Active() {
+export function StreamGroup() {
   const [streams, setStreams] = useState<string[]>([]);
 
   useEffect(() => {
@@ -20,7 +20,7 @@ export function Active() {
   return streams.length ? (
     <RectGroup aspectRatio={16/9}>
       {streams.map(name => (
-        <Stream key={name} name={name}/>
+        <StreamMedia key={name} name={name}/>
       ))}
     </RectGroup>
   ) : null;

@@ -1,11 +1,11 @@
 import {Media} from 'media/stacks/Media';
 
-export interface StreamProps {
+export interface StreamMediaProps {
   name: string;
   tokens?: number;
 }
 
-export function Stream(props: StreamProps) {
+export function StreamMedia(props: StreamMediaProps) {
   const {name} = props;
   const path = `https://localhost/live/stream/${name}`;
   const url = `/live/${name}`;

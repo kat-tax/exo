@@ -3,10 +3,10 @@ import {useState, useEffect} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {StreamListItem} from 'social/stacks/StreamListItem';
 
-import type {StreamProps} from 'social/stacks/Stream';
+import type {StreamMediaProps} from 'social/stacks/StreamMedia';
 
 export function StreamList() {
-  const [streams, setStreams] = useState<StreamProps[]>([]);
+  const [streams, setStreams] = useState<StreamMediaProps[]>([]);
   const {styles} = useStyles(stylesheet);
 
   useEffect(() => {

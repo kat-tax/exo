@@ -4,9 +4,9 @@ import {View, Text} from 'react-native';
 import {Link} from 'react-exo/navigation';
 import {isTouch} from 'app/utils/platform';
 
-import type {StreamProps} from 'social/stacks/Stream';
+import type {StreamMediaProps} from 'social/stacks/StreamMedia';
 
-export function StreamListItem(props: StreamProps) {
+export function StreamListItem(props: StreamMediaProps) {
   const ref = useRef(null);
   const {styles} = useStyles(stylesheet);
   const [i, setI] = useState(0);

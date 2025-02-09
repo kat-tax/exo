@@ -1,7 +1,7 @@
 import {View, ScrollView} from 'react-native';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {StreamList} from 'social/stacks/StreamList';
-import {Active} from 'social/stacks/Active';
+import {StreamGroup} from 'social/stacks/StreamGroup';
 
 export default function ScreenRooms() {
   const {styles} = useStyles(stylesheet);
@@ -11,7 +11,7 @@ export default function ScreenRooms() {
         <StreamList/>
       </ScrollView>
       <View style={styles.active}>
-        <Active/>
+        <StreamGroup/>
       </View>
     </View>
   );
