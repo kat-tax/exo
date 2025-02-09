@@ -1,11 +1,11 @@
 import {View} from 'react-native';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 
-interface MediaAddProps {
+interface HistoryProps {
   path: string,
 }
 
-export function MediaAdd(props: MediaAddProps) {
+export function History(props: HistoryProps) {
   const {styles} = useStyles(stylesheet);
 
   return (

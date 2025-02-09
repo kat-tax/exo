@@ -5,9 +5,9 @@ import {Slider} from 'react-exo/slider';
 import {Motion} from 'react-exo/motion';
 import {Image} from 'react-exo/image';
 import {Icon} from 'react-exo/icon';
-import {isTouch} from 'app/utils/platform';
+import {Thumb} from 'media/stacks/thumb';
 import {FileType} from 'media/file/types';
-import {MediaIcon} from 'media/stacks/thumbnail';
+import {isTouch} from 'app/utils/platform';
 import {useMediaControls} from 'media/hooks/use-media-controls';
 
 import type {FileProps} from 'media/file';
@@ -99,7 +99,7 @@ export function MediaControls(props: MediaControlsProps) {
                   height={imageSize}
                   width={imageSize}
               />
-            : <MediaIcon
+            : <Thumb
                 name={name ?? ''}
                 ext={props.metadata.ext}
                 dir={isDir}

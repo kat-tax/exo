@@ -2,7 +2,7 @@ import {View, ScrollView} from 'react-native';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useLingui} from '@lingui/react/macro';
 import {useHfsAdd} from 'media/dir/hfs';
-import {StorageWidget} from 'media/stacks/storage-widget';
+import {StorageWidget} from 'media/stacks/widgets/storage';
 
 import {MenuHeader} from './menu-header';
 import {MenuSection} from './menu-section';

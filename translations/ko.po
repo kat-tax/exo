@@ -151,7 +151,7 @@ msgstr "거리"
 msgid "Docs"
 msgstr "문서"
 
-#: ../../client/src/media/stacks/bar.tsx:67
+#: ../../client/src/media/stacks/list/bar.tsx:67
 msgid "Documents"
 msgstr "문서"
 
@@ -159,7 +159,7 @@ msgstr "문서"
 msgid "Download"
 msgstr "다운로드"
 
-#: ../../client/src/media/stacks/bar.tsx:79
+#: ../../client/src/media/stacks/list/bar.tsx:79
 msgid "Downloads"
 msgstr "다운로드"
 
@@ -498,7 +498,7 @@ msgstr ""
 msgid "Unsupported File"
 msgstr "지원되지 않는 파일"
 
-#: ../../client/src/media/stacks/bar.tsx:81
+#: ../../client/src/media/stacks/list/bar.tsx:81
 msgid "Uploads"
 msgstr "업로드"
 

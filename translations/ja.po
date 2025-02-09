@@ -151,7 +151,7 @@ msgstr "距離"
 msgid "Docs"
 msgstr "ドキュメント"
 
-#: ../../client/src/media/stacks/bar.tsx:67
+#: ../../client/src/media/stacks/list/bar.tsx:67
 msgid "Documents"
 msgstr "ドキュメント"
 
@@ -159,7 +159,7 @@ msgstr "ドキュメント"
 msgid "Download"
 msgstr "ダウンロード"
 
-#: ../../client/src/media/stacks/bar.tsx:79
+#: ../../client/src/media/stacks/list/bar.tsx:79
 msgid "Downloads"
 msgstr "ダウンロード"
 
@@ -498,7 +498,7 @@ msgstr ""
 msgid "Unsupported File"
 msgstr "サポートされていないファイル"
 
-#: ../../client/src/media/stacks/bar.tsx:81
+#: ../../client/src/media/stacks/list/bar.tsx:81
 msgid "Uploads"
 msgstr "アップロード"
 

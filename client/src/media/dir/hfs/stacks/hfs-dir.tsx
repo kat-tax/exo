@@ -3,8 +3,8 @@ import {LegendList} from '@legendapp/list';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {HfsNoEntries} from 'media/dir/hfs/stacks/hfs-no-entries';
 import {HfsEntry} from 'media/dir/hfs/stacks/hfs-entry';
-import {ListBar} from 'media/stacks/bar';
-import {HEIGHT} from 'media/stacks/list-row';
+import {ListBar} from 'media/stacks/list/bar';
+import {HEIGHT} from 'media/stacks/list/row';
 import type {HfsCtx} from '../types';
 
 export function HfsDir({hfs, cmd, ext, bar}: HfsCtx) {

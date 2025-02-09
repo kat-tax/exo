@@ -8,7 +8,7 @@ import {useDeviceSession} from 'app/hooks/use-device-session';
 import {useHotkeys} from 'app/hooks/use-hotkeys';
 import {useProfile} from 'app/data';
 import {toPathInfo} from 'app/utils/formatting';
-import {MediaAdd} from 'media/stacks/add';
+import {History} from 'media/stacks/history';
 import {Media} from 'media/stacks/media';
 import {Menu} from 'app/routes/menu';
 import media from 'media/store';
@@ -75,7 +75,7 @@ export default function Layout() {
               embedded={false}
               close={() => {}}
             />
-          : <MediaAdd path={focused}/>
+          : <History path={focused}/>
         : null}
       </View>
     </View>

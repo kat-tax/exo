@@ -5,16 +5,16 @@ import {Motion} from 'react-exo/motion';
 import {toPathInfo} from 'app/utils/formatting';
 import media from 'media/store';
 
-import {MediaSelectionItem} from './selection-item';
+import {SelectItem} from './item';
 
 import type {ScrollView} from 'react-native';
 import type {HfsImpl} from 'react-exo/fs';
 
-interface MediaSelectionProps {
+interface SelectTabsProps {
   hfs: HfsImpl | null,
 }
 
-export function MediaSelection({hfs}: MediaSelectionProps) {
+export function SelectTabs({hfs}: SelectTabsProps) {
   const {styles} = useStyles(stylesheet);
   const scrollRef = useRef<ScrollView>(null);
   const selection = useSelector(media.selectors.getSelected);
@@ -75,7 +75,7 @@ export function MediaSelection({hfs}: MediaSelectionProps) {
       animate={{opacity: 1}}
       exit={{opacity: 0}}>
       {list.map(({path, name, ext}, index) => (
-        <MediaSelectionItem
+        <SelectItem
           key={path}
           hfs={hfs}
           focused={focused === path}

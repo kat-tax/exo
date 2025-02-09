@@ -151,7 +151,7 @@ msgstr "المسافة"
 msgid "Docs"
 msgstr "المستندات"
 
-#: ../../client/src/media/stacks/bar.tsx:67
+#: ../../client/src/media/stacks/list/bar.tsx:67
 msgid "Documents"
 msgstr "المستندات"
 
@@ -159,7 +159,7 @@ msgstr "المستندات"
 msgid "Download"
 msgstr "تحميل"
 
-#: ../../client/src/media/stacks/bar.tsx:79
+#: ../../client/src/media/stacks/list/bar.tsx:79
 msgid "Downloads"
 msgstr "التنزيلات"
 
@@ -498,7 +498,7 @@ msgstr ""
 msgid "Unsupported File"
 msgstr "ملف غير مدعوم"
 
-#: ../../client/src/media/stacks/bar.tsx:81
+#: ../../client/src/media/stacks/list/bar.tsx:81
 msgid "Uploads"
 msgstr "المرفوعات"
 

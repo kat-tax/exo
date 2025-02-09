@@ -6,14 +6,14 @@ import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useScheme} from 'app/hooks/use-scheme';
 import {getIcon} from 'media/file/icons';
 
-interface MediaIcon {
+interface Thumb {
   name: string,
   size?: 0 | 1 | 2,
   dir?: boolean,
   ext?: string,
 }
 
-export function MediaIcon(props: MediaIcon) {
+export function Thumb(props: Thumb) {
   const {name, size = 1, ext = '', dir = false} = props;
   const [icon, setIcon] = useState<string | null>(null);
   const {styles, theme} = useStyles(stylesheet);

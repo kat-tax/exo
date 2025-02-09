@@ -1,5 +1,5 @@
 import {Touch} from 'app/stacks/touch';
-import {ListRow} from 'media/stacks/list-row';
+import {ListRow} from 'media/stacks/list/row';
 
 import {TorrentMenu} from './torrent-menu';
 import {useTorrentEntry} from '../hooks/use-torrent-entry';

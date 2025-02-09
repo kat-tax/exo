@@ -7,7 +7,7 @@ export type MediaPictureInPicture = {
   viewportWidth: number,
 };
 
-export function useMediaPictureInPicture(ext: string, layout?: [number, number]): MediaPictureInPicture {
+export function useMediaPictInPict(ext: string, layout?: [number, number]): MediaPictureInPicture {
   const {theme} = useStyles();
   const width = layout?.[0] ?? 0;
 

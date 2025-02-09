@@ -2,9 +2,9 @@ import {View, ScrollView} from 'react-native';
 import {useMemo, useState, useEffect, useRef} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useHfsCtx} from 'app/data/lib/hfs-provider';
+import {SelectTabs} from 'media/stacks/select/tabs';
 import {MediaControls} from 'media/stacks/controls';
-import {MediaSelection} from 'media/stacks/selection';
-import {useMediaPictureInPicture} from 'media/hooks/use-media-pip';
+import {useMediaPictInPict} from 'media/hooks/use-media-pip';
 import {getRenderer} from 'media/file/utils/render';
 import {FileType} from 'media/file/types';
 import File from 'media/file';
@@ -25,7 +25,7 @@ interface MediaProps {
 export function Media(props: MediaProps) {
   const {ext, name, path, vertical, maximized, embedded, layout, close} = props;
   const {styles, theme} = useStyles(stylesheet);
-  const pip = useMediaPictureInPicture(props.ext, layout);
+  const pip = useMediaPictInPict(props.ext, layout);
   const hfs = useHfsCtx();
   const file = useRef<FileRef>(null);
 
@@ -99,7 +99,7 @@ export function Media(props: MediaProps) {
 
   return (
     <View style={vstyles.root}>
-      {!embedded && <MediaSelection {...{hfs}}/>}
+      {!embedded && <SelectTabs {...{hfs}}/>}
       <ScrollView style={vstyles.frame} contentContainerStyle={styles.contents}>
         <File
           ref={file}

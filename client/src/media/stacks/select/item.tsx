@@ -3,8 +3,8 @@ import {useCallback, useEffect, useState} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {Text, Pressable} from 'react-native';
 import {Icon} from 'react-exo/icon';
+import {Thumb} from 'media/stacks/thumb';
 import {isTouch} from 'app/utils/platform';
-import {MediaIcon} from 'media/stacks/thumbnail';
 import media from 'media/store';
 
 import type {HfsImpl} from 'react-exo/fs';
@@ -14,7 +14,7 @@ const TAB_SIZE = TOUCH ? 46 : 32;
 const ICON_SIZE = TOUCH ? 1 : 0;
 const TEXT_LINES = TOUCH ? 2 : 1;
 
-interface MediaSelectionItemProps {
+interface SelectItemProps {
   focused: boolean,
   index: number,
   path: string,
@@ -23,7 +23,7 @@ interface MediaSelectionItemProps {
   hfs: HfsImpl | null,
 }
 
-export function MediaSelectionItem(props: MediaSelectionItemProps) {
+export function SelectItem(props: SelectItemProps) {
   const {focused, index, path, name, ext, hfs} = props;
   const {styles, theme} = useStyles(stylesheet);
   const [dir, setDir] = useState(!ext);
@@ -46,7 +46,7 @@ export function MediaSelectionItem(props: MediaSelectionItemProps) {
       key={path}
       onPress={() => put(media.actions.focus(path))}
       style={[styles.root, focused && styles.focus]}>
-      <MediaIcon
+      <Thumb
         name={name ?? ''}
         size={ICON_SIZE}
         dir={dir}

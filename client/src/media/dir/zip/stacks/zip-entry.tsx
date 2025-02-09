@@ -1,5 +1,5 @@
 import {Touch} from 'app/stacks/touch';
-import {ListRow} from 'media/stacks/list-row';
+import {ListRow} from 'media/stacks/list/row';
 import {ZipMenu} from './zip-menu';
 import {useZipEntry} from '../hooks/use-zip-entry';
 
