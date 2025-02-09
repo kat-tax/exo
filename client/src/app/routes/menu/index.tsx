@@ -4,10 +4,10 @@ import {useLingui} from '@lingui/react/macro';
 import {useHfsAdd} from 'media/dir/hfs';
 import {StorageWidget} from 'media/stacks/widgets/storage';
 
+import {MenuGroup} from './menu-group';
 import {MenuHeader} from './menu-header';
-import {MenuSection} from './menu-section';
-import {MenuItemTab} from './menu-item-tab';
 import {MenuItem} from './menu-item';
+import {MenuTab} from './menu-tab';
 
 import type {AppContext} from 'app/hooks/use-app-context';
 
@@ -24,27 +24,27 @@ export function Menu(props: MenuProps) {
   if (props.hasTabs) {
     return (
       <View style={styles.tabs}>
-        <MenuItemTab
+        <MenuTab
           label={t`Dashboard`}
           icon="ph:squares-four"
           path="/"
         />
-        <MenuItemTab
+        <MenuTab
           label={t`Inbox`}
           icon="ph:tray"
           path="/inbox"
         />
-        <MenuItemTab
+        <MenuTab
           label={t`Files`}
           icon="ph:folder"
           path="/browse"
         />
-        <MenuItemTab
+        <MenuTab
           label={t`World`}
           icon="ph:globe"
           path="/world"
         />
-        <MenuItemTab
+        <MenuTab
           label={t`Settings`}
           icon="ph:gear"
           path="/settings"
@@ -68,7 +68,7 @@ export function Menu(props: MenuProps) {
             icon="ph:tray"
             path="/inbox"
           />
-          <MenuSection
+          <MenuGroup
             label={t`Media`}
             actions={[
               {
@@ -124,8 +124,8 @@ export function Menu(props: MenuProps) {
               icon="ph:book-open-text"
               path="/browse/books"
             />
-          </MenuSection>
-          <MenuSection label={t`World`}>
+          </MenuGroup>
+          <MenuGroup label={t`World`}>
             <MenuItem
               label={t`Map`}
               icon="ph:map-trifold"
@@ -141,8 +141,8 @@ export function Menu(props: MenuProps) {
               icon="ph:calendar-dots"
               path="/calendar"
             />
-          </MenuSection>
-          <MenuSection label={t`Rooms`}>
+          </MenuGroup>
+          <MenuGroup label={t`Rooms`}>
             {[{
               name: 'Synkat',
               icon: 'ph:cat',
@@ -154,9 +154,9 @@ export function Menu(props: MenuProps) {
             }].map(({name, icon, path}) =>
               <MenuItem key={name} label={name} {...{icon, path}} mode="subitem"/>
             )}
-          </MenuSection>
+          </MenuGroup>
           {__DEV__ &&
-            <MenuSection label={t`Dev Mode`} closed>
+            <MenuGroup label={t`Dev Mode`} closed>
               <MenuItem
                 label={t`Design`}
                 icon="ph:palette"
@@ -167,7 +167,7 @@ export function Menu(props: MenuProps) {
                 icon="ph:package"
                 path="/library"
               />
-            </MenuSection>
+            </MenuGroup>
           }
           <View style={styles.spacer}/>
           <View style={styles.footer}>

@@ -216,7 +216,7 @@ msgstr "ملء الشاشة"
 msgid "Games"
 msgstr "الألعاب"
 
-#: ../../client/src/app/hooks/use-geolocation.ts:20
+#: ../../client/src/app/hooks/use-geolocation.ts:19
 msgid "Geolocation Error"
 msgstr "خطأ في تحديد الموقع"
 

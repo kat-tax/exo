@@ -216,7 +216,7 @@ msgstr "全画面"
 msgid "Games"
 msgstr "ゲーム"
 
-#: ../../client/src/app/hooks/use-geolocation.ts:20
+#: ../../client/src/app/hooks/use-geolocation.ts:19
 msgid "Geolocation Error"
 msgstr "位置情報エラー"
 

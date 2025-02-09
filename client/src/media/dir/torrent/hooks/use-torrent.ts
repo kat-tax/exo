@@ -2,7 +2,7 @@ import ExoTorrent from 'react-exo/torrent';
 import {web} from 'react-exo/fs';
 import {useDispatch} from 'react-redux';
 import {useCallback, useMemo} from 'react';
-import {useLocationPathInfo} from 'app/hooks/use-current-pathinfo';
+import {useCurrentPath} from 'app/hooks/use-current-path';
 import {useFile} from 'media/file/hooks/use-file';
 import {bytesize} from 'app/utils/formatting';
 import * as tor from '../utils/info';
@@ -15,7 +15,7 @@ import type {HfsDirectoryEntry} from 'react-exo/fs';
 
 export function useTorrent(path: string): TorrentCtx {
   const buffer = useFile(path, 'arrayBuffer');
-  const {path: url} = useLocationPathInfo();
+  const {path: url} = useCurrentPath();
   const put = useDispatch();
 
   const torrent: Torrent | null = useMemo(() => {

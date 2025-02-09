@@ -5,14 +5,14 @@ import {HfsProvider} from './lib/hfs-provider';
 import {Spinner} from 'app/stacks/load';
 import store from './store';
 import cfg from 'config';
-import * as S from './schema';
 export * from './schema';
+import * as S from './schema';
 
 export const evolu = createEvolu(S.DB, {
   name: 'db',
   syncUrl: __DEV__ ? 'http://localhost:6306' : cfg.SYNC_HOST,
-  minimumLogLevel: !__DEV__ ? 'trace' : 'warning',
   indexes: S.indexes,
+  minimumLogLevel: !__DEV__ ? 'trace' : 'warning',
   initialData: (init) => {
     init.create('profile', {
       name: null,

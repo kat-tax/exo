@@ -5,7 +5,7 @@ import {Icon} from 'react-exo/icon';
 import {isTouch} from 'app/utils/platform';
 import {useScheme} from 'app/hooks/use-scheme';
 
-interface MenuSectionProps extends React.PropsWithChildren {
+interface MenuGroupProps extends React.PropsWithChildren {
   label: string,
   closed?: boolean,
   disabled?: boolean,
@@ -17,7 +17,7 @@ interface MenuSectionProps extends React.PropsWithChildren {
   }>,
 }
 
-export function MenuSection(props: MenuSectionProps) {
+export function MenuGroup(props: MenuGroupProps) {
   const {styles, theme} = useStyles(stylesheet);
   const [open, setOpen] = useState(!props.closed);
   const [scheme] = useScheme();

@@ -3,7 +3,7 @@ import {useParams} from 'react-exo/navigation';
 import {useState, useCallback} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {Bubble, Embed, Avatar} from 'app/stacks/chat';
-import {useChatRoom} from 'app/hooks/use-chat-room';
+import {useRoom} from 'app/hooks/use-room';
 import {bytesize} from 'app/utils/formatting';
 import {debounce} from 'app/utils/delay';
 
@@ -14,7 +14,7 @@ export default function ScreenRoom() {
   const [layout, setLayout] = useState<[number, number]>();
   const {room} = useParams<{room: string}>();
   const {styles} = useStyles(stylesheet);
-  const messages = useChatRoom(room);
+  const messages = useRoom(room);
   const resize = useCallback(debounce((w: number, h: number) =>
     setLayout([w, h]), 100), []);
   return (

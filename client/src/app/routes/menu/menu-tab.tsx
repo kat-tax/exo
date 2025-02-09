@@ -3,13 +3,13 @@ import {View, Text} from 'react-native';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useLocation, Link} from 'react-exo/navigation';
 
-interface MenuItemTabProps extends React.PropsWithChildren {
+interface MenuTabProps extends React.PropsWithChildren {
   path: string,
   icon: string,
   label: string,
 }
 
-export function MenuItemTab(props: MenuItemTabProps) {
+export function MenuTab(props: MenuTabProps) {
   const {pathname} = useLocation();
   const {styles, theme} = useStyles(stylesheet);
   const isActive = props.path === decodeURIComponent(pathname);

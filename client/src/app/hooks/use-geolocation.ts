@@ -1,5 +1,4 @@
 import Geolocation from '@react-native-community/geolocation';
-
 import {useEffect, useState} from 'react';
 import {useLingui} from '@lingui/react/macro';
 import {toast} from 'react-exo/toast';

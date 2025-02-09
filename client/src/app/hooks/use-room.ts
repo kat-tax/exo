@@ -10,7 +10,7 @@ export interface Message extends MatrixMessage {
   hasNext?: boolean;
 }
 
-export function useChatRoom(id?: string): Message[] {
+export function useRoom(id?: string): Message[] {
   // const messagesDemo = useMemo(() => DEMO, []);
   const [messages, setMessages] = useState<Message[]>([]);
   const {rooms, users} = useMatrix();

@@ -2,7 +2,7 @@ import {useMemo} from 'react';
 import {useLocation} from 'react-exo/navigation';
 import {toPathInfo} from 'app/utils/formatting';
 
-export function useLocationPathInfo() {
+export function useCurrentPath() {
   const {pathname} = useLocation();
   return useMemo(() => toPathInfo(pathname, true), [pathname]);
 }
