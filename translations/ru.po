@@ -51,8 +51,7 @@ msgstr "Спрашивайте что угодно..."
 msgid "Auto"
 msgstr "Авто"
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:28
-#: ../../client/src/app/interface/Menu.tsx:89
+#: ../../client/src/media/stacks/ListBar.tsx:62
 msgid "Books"
 msgstr "Книги"
 
@@ -60,7 +59,6 @@ msgstr "Книги"
 msgid "by {0}"
 msgstr "автор {0}"
 
-#: ../../client/src/world/routes/ScreenWorld.tsx:29
 #: ../../client/src/app/interface/Menu.tsx:106
 msgid "Calendar"
 msgstr "Календарь"
@@ -89,7 +87,6 @@ msgstr ""
 msgid "Dark"
 msgstr "Темная"
 
-#: ../../client/src/app/interface/Tabs.tsx:14
 #: ../../client/src/app/interface/Menu.tsx:28
 msgid "Dashboard"
 msgstr "Дашборд"
@@ -130,7 +127,6 @@ msgstr "Удалить запросы"
 msgid "Delete the local database."
 msgstr "Удалить локальную базу данных."
 
-#: ../../client/src/dev/routes/ScreenDesign.tsx:13
 #: ../../client/src/app/interface/Menu.tsx:127
 msgid "Design"
 msgstr "Дизайн"
@@ -155,7 +151,7 @@ msgstr "Расстояние"
 msgid "Docs"
 msgstr "Документы"
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:18
+#: ../../client/src/media/stacks/ListBar.tsx:52
 msgid "Documents"
 msgstr "Документы"
 
@@ -163,7 +159,7 @@ msgstr "Документы"
 msgid "Download"
 msgstr "Скачать"
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:30
+#: ../../client/src/media/stacks/ListBar.tsx:64
 msgid "Downloads"
 msgstr "Загрузки"
 
@@ -199,9 +195,7 @@ msgstr "Фаренгейт"
 msgid "Feature in development..."
 msgstr ""
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:34
-#: ../../client/src/app/interface/Tabs.tsx:24
-#: ../../client/src/app/interface/Menu.tsx:59
+#: ../../client/src/media/stacks/ListBar.tsx:68
 msgid "Files"
 msgstr "Файлы"
 
@@ -217,8 +211,7 @@ msgstr ""
 msgid "Fullscreen"
 msgstr "Полный экран"
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:26
-#: ../../client/src/app/interface/Menu.tsx:84
+#: ../../client/src/media/stacks/ListBar.tsx:60
 msgid "Games"
 msgstr "Игры"
 
@@ -262,7 +255,6 @@ msgstr "Импорт"
 msgid "Import Files"
 msgstr "Импорт файлов"
 
-#: ../../client/src/app/interface/Tabs.tsx:19
 #: ../../client/src/app/interface/Menu.tsx:33
 msgid "Inbox"
 msgstr "Уведомления"
@@ -275,7 +267,6 @@ msgstr "Километры"
 msgid "Language"
 msgstr "Язык"
 
-#: ../../client/src/dev/routes/ScreenLibrary.tsx:21
 #: ../../client/src/app/interface/Menu.tsx:132
 msgid "Library"
 msgstr "Библиотека"
@@ -296,7 +287,6 @@ msgstr "Управление настройками"
 msgid "Manage your storage"
 msgstr "Управление хранилищем"
 
-#: ../../client/src/world/routes/ScreenWorld.tsx:17
 #: ../../client/src/app/interface/Menu.tsx:96
 msgid "Map"
 msgstr "Карта"
@@ -333,12 +323,10 @@ msgstr "Мили"
 msgid "Move"
 msgstr ""
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:20
-#: ../../client/src/app/interface/Menu.tsx:69
+#: ../../client/src/media/stacks/ListBar.tsx:54
 msgid "Music"
 msgstr "Музыка"
 
-#: ../../client/src/world/routes/ScreenWorld.tsx:23
 #: ../../client/src/app/interface/Menu.tsx:101
 msgid "News"
 msgstr "Новости"
@@ -371,8 +359,7 @@ msgstr "Ключ владельца"
 msgid "Pause"
 msgstr "Пауза"
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:22
-#: ../../client/src/app/interface/Menu.tsx:74
+#: ../../client/src/media/stacks/ListBar.tsx:56
 msgid "Pictures"
 msgstr "Изображения"
 
@@ -468,8 +455,6 @@ msgstr "Выберите тему приложения."
 msgid "Services"
 msgstr ""
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:28
-#: ../../client/src/app/interface/Tabs.tsx:34
 #: ../../client/src/app/interface/Menu.tsx:149
 msgid "Settings"
 msgstr "Настройки"
@@ -486,7 +471,6 @@ msgstr "Перемотать назад"
 msgid "Skip forward"
 msgstr "Перемотать вперед"
 
-#: ../../client/src/app/routes/ScreenStorage.tsx:25
 #: ../../client/src/app/interface/Menu.tsx:143
 msgid "Storage"
 msgstr "Хранилище"
@@ -511,7 +495,7 @@ msgstr ""
 msgid "Unsupported File"
 msgstr "Неподдерживаемый файл"
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:32
+#: ../../client/src/media/stacks/ListBar.tsx:66
 msgid "Uploads"
 msgstr "Загрузки"
 
@@ -519,8 +503,7 @@ msgstr "Загрузки"
 msgid "User Name"
 msgstr "Имя пользователя"
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:24
-#: ../../client/src/app/interface/Menu.tsx:79
+#: ../../client/src/media/stacks/ListBar.tsx:58
 msgid "Videos"
 msgstr "Видео"
 
@@ -548,7 +531,6 @@ msgstr "Добро пожаловать, {0}"
 msgid "Welcome, Human"
 msgstr "Добро пожаловать, Человек"
 
-#: ../../client/src/app/interface/Tabs.tsx:29
 #: ../../client/src/app/interface/Menu.tsx:94
 msgid "World"
 msgstr "Мир"

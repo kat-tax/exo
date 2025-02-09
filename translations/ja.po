@@ -51,8 +51,7 @@ msgstr "何でも聞いてください..."
 msgid "Auto"
 msgstr "自動"
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:28
-#: ../../client/src/app/interface/Menu.tsx:89
+#: ../../client/src/media/stacks/ListBar.tsx:62
 msgid "Books"
 msgstr "本"
 
@@ -60,7 +59,6 @@ msgstr "本"
 msgid "by {0}"
 msgstr "著者：{0}"
 
-#: ../../client/src/world/routes/ScreenWorld.tsx:29
 #: ../../client/src/app/interface/Menu.tsx:106
 msgid "Calendar"
 msgstr "カレンダー"
@@ -89,7 +87,6 @@ msgstr ""
 msgid "Dark"
 msgstr "ダーク"
 
-#: ../../client/src/app/interface/Tabs.tsx:14
 #: ../../client/src/app/interface/Menu.tsx:28
 msgid "Dashboard"
 msgstr "ダッシュボード"
@@ -130,7 +127,6 @@ msgstr "プロンプトを削除"
 msgid "Delete the local database."
 msgstr "ローカルデータベースを削除します。"
 
-#: ../../client/src/dev/routes/ScreenDesign.tsx:13
 #: ../../client/src/app/interface/Menu.tsx:127
 msgid "Design"
 msgstr "デザイン"
@@ -155,7 +151,7 @@ msgstr "距離"
 msgid "Docs"
 msgstr "ドキュメント"
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:18
+#: ../../client/src/media/stacks/ListBar.tsx:52
 msgid "Documents"
 msgstr "ドキュメント"
 
@@ -163,7 +159,7 @@ msgstr "ドキュメント"
 msgid "Download"
 msgstr "ダウンロード"
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:30
+#: ../../client/src/media/stacks/ListBar.tsx:64
 msgid "Downloads"
 msgstr "ダウンロード"
 
@@ -199,9 +195,7 @@ msgstr "華氏"
 msgid "Feature in development..."
 msgstr ""
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:34
-#: ../../client/src/app/interface/Tabs.tsx:24
-#: ../../client/src/app/interface/Menu.tsx:59
+#: ../../client/src/media/stacks/ListBar.tsx:68
 msgid "Files"
 msgstr "ファイル"
 
@@ -217,8 +211,7 @@ msgstr ""
 msgid "Fullscreen"
 msgstr "全画面"
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:26
-#: ../../client/src/app/interface/Menu.tsx:84
+#: ../../client/src/media/stacks/ListBar.tsx:60
 msgid "Games"
 msgstr "ゲーム"
 
@@ -262,7 +255,6 @@ msgstr "インポート"
 msgid "Import Files"
 msgstr "ファイルをインポート"
 
-#: ../../client/src/app/interface/Tabs.tsx:19
 #: ../../client/src/app/interface/Menu.tsx:33
 msgid "Inbox"
 msgstr "受信トレイ"
@@ -275,7 +267,6 @@ msgstr "キロメートル"
 msgid "Language"
 msgstr "言語"
 
-#: ../../client/src/dev/routes/ScreenLibrary.tsx:21
 #: ../../client/src/app/interface/Menu.tsx:132
 msgid "Library"
 msgstr "ライブラリ"
@@ -296,7 +287,6 @@ msgstr "設定を管理"
 msgid "Manage your storage"
 msgstr "ストレージを管理"
 
-#: ../../client/src/world/routes/ScreenWorld.tsx:17
 #: ../../client/src/app/interface/Menu.tsx:96
 msgid "Map"
 msgstr "地図"
@@ -333,12 +323,10 @@ msgstr "マイル"
 msgid "Move"
 msgstr ""
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:20
-#: ../../client/src/app/interface/Menu.tsx:69
+#: ../../client/src/media/stacks/ListBar.tsx:54
 msgid "Music"
 msgstr "音楽"
 
-#: ../../client/src/world/routes/ScreenWorld.tsx:23
 #: ../../client/src/app/interface/Menu.tsx:101
 msgid "News"
 msgstr "ニュース"
@@ -371,8 +359,7 @@ msgstr "オーナーキー"
 msgid "Pause"
 msgstr "一時停止"
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:22
-#: ../../client/src/app/interface/Menu.tsx:74
+#: ../../client/src/media/stacks/ListBar.tsx:56
 msgid "Pictures"
 msgstr "写真"
 
@@ -468,8 +455,6 @@ msgstr "アプリのテーマを選択してください。"
 msgid "Services"
 msgstr ""
 
-#: ../../client/src/app/routes/ScreenSettings.tsx:28
-#: ../../client/src/app/interface/Tabs.tsx:34
 #: ../../client/src/app/interface/Menu.tsx:149
 msgid "Settings"
 msgstr "設定"
@@ -486,7 +471,6 @@ msgstr "巻き戻し"
 msgid "Skip forward"
 msgstr "早送り"
 
-#: ../../client/src/app/routes/ScreenStorage.tsx:25
 #: ../../client/src/app/interface/Menu.tsx:143
 msgid "Storage"
 msgstr "ストレージ"
@@ -511,7 +495,7 @@ msgstr ""
 msgid "Unsupported File"
 msgstr "サポートされていないファイル"
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:32
+#: ../../client/src/media/stacks/ListBar.tsx:66
 msgid "Uploads"
 msgstr "アップロード"
 
@@ -519,8 +503,7 @@ msgstr "アップロード"
 msgid "User Name"
 msgstr "ユーザー名"
 
-#: ../../client/src/media/routes/ScreenBrowse.tsx:24
-#: ../../client/src/app/interface/Menu.tsx:79
+#: ../../client/src/media/stacks/ListBar.tsx:58
 msgid "Videos"
 msgstr "動画"
 
@@ -548,7 +531,6 @@ msgstr "ようこそ、{0}さん"
 msgid "Welcome, Human"
 msgstr "ようこそ、ユーザーさん"
 
-#: ../../client/src/app/interface/Tabs.tsx:29
 #: ../../client/src/app/interface/Menu.tsx:94
 msgid "World"
 msgstr "ワールド"

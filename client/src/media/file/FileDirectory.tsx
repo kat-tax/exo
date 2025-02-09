@@ -12,6 +12,7 @@ export interface FileDirectory extends FileProps {}
 export default forwardRef((props: FileDirectory, _ref) => {
   const {hfs, cmd, ext} = useHfs(props.path);
   const {styles} = useStyles(stylesheet);
+  const bar = {hidden: true, transparent: true};
 
   // Update file player bar info
   useEffect(() => {
@@ -20,28 +21,22 @@ export default forwardRef((props: FileDirectory, _ref) => {
   }, [hfs, props.actions]);
 
   return (
-    <View style={styles.root}>
-      <Page
-        title={props.embedded ? props.name : undefined}
-        message={props.embedded ? `${hfs?.list?.length} files` : undefined}
-        margin="small"
-        noBackground
-        noFrame
-        fullWidth>
-        <View style={styles.inner}>
-          {hfs && <HfsDir {...{hfs, cmd, ext}}/>}
-        </View>
-      </Page>
-    </View>
+    <Page
+      title={props.embedded ? props.name : undefined}
+      message={props.embedded ? `${hfs?.list?.length} files` : undefined}
+      margin="none"
+      noBackground
+      fullWidth
+      noFrame>
+      <View style={styles.root}>
+        {hfs && <HfsDir {...{hfs, cmd, ext, bar}}/>}
+      </View>
+    </Page>
   )
 });
 
 const stylesheet = createStyleSheet((theme) => ({
   root: {
-    flex: 1,
-    marginHorizontal: theme.display.space2,
-  },
-  inner: {
     paddingBottom: theme.display.space5,
   },
 }));

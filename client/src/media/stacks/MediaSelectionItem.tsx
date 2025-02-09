@@ -26,7 +26,7 @@ interface MediaSelectionItemProps {
 export function MediaSelectionItem(props: MediaSelectionItemProps) {
   const {focused, index, path, name, ext, hfs} = props;
   const {styles, theme} = useStyles(stylesheet);
-  const [dir, setDir] = useState(false);
+  const [dir, setDir] = useState(!ext);
 
   const put = useDispatch();
   const close = useCallback((index: number) => {

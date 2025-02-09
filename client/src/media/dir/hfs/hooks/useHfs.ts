@@ -12,7 +12,7 @@ import type {GestureResponderEvent} from 'react-native';
 import type {HfsDirectoryEntry} from 'react-exo/fs';
 import type {HfsCtx} from '../types';
 
-export function useHfs(path: string): HfsCtx {
+export function useHfs(path: string): Omit<HfsCtx, 'bar'> {
   const [list, setList] = useState<HfsDirectoryEntry[]>([]);
 
   const hfs = useHfsCtx();

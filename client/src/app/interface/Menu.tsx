@@ -115,7 +115,7 @@ export function Menu(props: MenuProps) {
               path: '/matrix/!lwpprIOUgIZkrvffNC:matrix.org',
             }, {
               name: 'TheUltDev',
-              icon: 'ph:rocket',
+              icon: 'ph:smiley-meh',
               path: '/matrix/!oQWmCmkFrOESaZryui:matrix.org',
             }].map(({name, icon, path}) =>
               <MenuItem key={name} label={name} {...{icon, path}} mode="subitem"/>

@@ -1,7 +1,5 @@
-import {Navigate} from 'react-exo/navigation';
+import ScreenTeaser from 'app/routes/ScreenTeaser';
 
 export default function ScreenInbox() {
-  return (
-    <Navigate to="/matrix/!lwpprIOUgIZkrvffNC:matrix.org"/>
-  );
+  return <ScreenTeaser/>;
 }

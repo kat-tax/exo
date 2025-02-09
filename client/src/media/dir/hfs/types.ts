@@ -13,6 +13,10 @@ export interface HfsCtx {
     sel: string[],
     dnd: string[],
   },
+  bar: {
+    hidden: boolean,
+    transparent: boolean,
+  },
 }
 
 export interface HfsOpt {

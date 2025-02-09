@@ -42,8 +42,7 @@ export function MenuHeader(props: MenuProps) {
 
 const stylesheet = createStyleSheet(theme => ({
   root: {
-    marginTop: theme.display.space3,
-    marginBottom: theme.display.space4,
+    marginVertical: theme.display.space4,
   },
   header: {
     flexDirection: 'row',
