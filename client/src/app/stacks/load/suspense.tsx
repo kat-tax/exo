@@ -1,5 +1,5 @@
 import {Suspense as SuspenseBase} from 'react';
-import {Spinner} from './Spinner';
+import {Spinner} from './spinner';
 
 import type {SuspenseProps as SuspenseBaseProps} from 'react';
 

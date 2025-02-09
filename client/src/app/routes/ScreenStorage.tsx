@@ -4,9 +4,7 @@ import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {getDiskSpace} from 'react-exo/fs';
 import {View, Text} from 'react-native';
 import {bytesize} from 'app/utils/formatting';
-import {Page} from 'app/interface/Page';
-import {PageItem} from 'app/interface/PageItem';
-import {PageSection} from 'app/interface/PageSection';
+import {Panel, PanelItem, PanelSection} from 'app/stacks/panel';
 
 export default function ScreenStorage() {
   const [storage, setStorage] = useState<{msg: string, val: number}>();
@@ -21,21 +19,21 @@ export default function ScreenStorage() {
   });
 
   return (
-    <Page
+    <Panel
       title={t`Storage`}
       message={t`Manage your storage`}>
       <View style={styles.root}>
-        <PageSection title={t`Overview`}>
-          <PageItem
+        <PanelSection title={t`Overview`}>
+          <PanelItem
             label={t`Device Space`}
             description={t`Storage used and available on this device.`}>
             <Text style={styles.text}>
               {storage?.msg ?? '0GB / 0GB'}
             </Text>
-          </PageItem>
-        </PageSection>
+          </PanelItem>
+        </PanelSection>
       </View>
-    </Page>
+    </Panel>
   );
 }
 

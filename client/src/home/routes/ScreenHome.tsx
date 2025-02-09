@@ -1,12 +1,11 @@
+import {Text, View} from 'react-native';
 import {useMemo} from 'react';
 import {useLingui} from '@lingui/react/macro';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useAppContext} from 'app/hooks/useAppContext';
 import {useWeather} from 'home/hooks/useWeather';
 import {useClock} from 'home/hooks/useClock';
-
-import {Text, View} from 'react-native';
-import {Page} from 'app/interface/Page';
+import {Panel} from 'app/stacks/panel';
 import {Assistant} from 'home/stacks/Assistant';
 import {getTimeOfDay} from 'home/utils/time';
 
@@ -33,7 +32,7 @@ export default function ScreenHome() {
   }, [t]);
 
   return (
-    <Page
+    <Panel
       title={greeting}
       message={profile?.name
         ? t`Welcome, ${profile.name}`
@@ -50,7 +49,7 @@ export default function ScreenHome() {
         </View>
       }>
       <Assistant/>
-    </Page>
+    </Panel>
   );
 }
 

@@ -2,7 +2,7 @@ import {View} from 'react-native';
 import {forwardRef} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useFileData} from 'media/file/hooks/useFileData';
-import {Markdown} from 'app/stacks/Markdown';
+import {Markdown} from 'app/stacks/markdown';
 
 import type {FileProps} from 'media/file';
 

@@ -45,7 +45,7 @@
     "assets/note": "custom",
   },
   "material-icon-theme.files.associations": {
-    "app/layout.tsx": "renovate",
+    "app/theme.tsx": "renovate",
     "app/provider.tsx": "dll",
     "app/index.tsx": "tree",
     "routes/index.tsx": "routing",

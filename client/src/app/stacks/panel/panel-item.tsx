@@ -1,12 +1,12 @@
 import {View, Text} from 'react-native';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 
-interface PageItemProps extends React.PropsWithChildren {
+interface PanelItemProps extends React.PropsWithChildren {
   label: string,
   description: string,
 }
 
-export function PageItem(props: PageItemProps) {
+export function PanelItem(props: PanelItemProps) {
   const {styles} = useStyles(stylesheet);
 
   return (

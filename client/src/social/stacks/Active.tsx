@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react';
-import {RectGroup} from 'app/interface/RectGroup';
+import {RectGroup} from 'app/stacks/rectgroup';
 import {Stream} from 'social/stacks/Stream';
 
 export function Active() {

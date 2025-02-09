@@ -4,8 +4,8 @@ import {useCallback} from 'react';
 import {useNavigate} from 'react-exo/navigation';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {InitDirectory} from 'media/dir/hfs/utils/path';
-import {TextButton} from 'app/interface/base/TextButton';
-import {IconButton} from 'app/interface/base/IconButton';
+import {ButtonText} from 'app/stacks/button/text';
+import {ButtonIcon} from 'app/stacks/button/icon';
 import {Icon} from 'react-exo/icon';
 
 export interface ListBarProps {
@@ -85,7 +85,7 @@ export function ListBarItem({name, path, last}: {
   }, [t]);
 
   return (
-    <TextButton
+    <ButtonText
       label={title(name)}
       onPress={() => {
         nav(path ?? name ?? '/browse');
@@ -110,7 +110,7 @@ export function ListBarItemSeparator() {
 
 export function ListBarAction({icon, onPress}: {icon: string, onPress: () => void}) {
   return (
-    <IconButton
+    <ButtonIcon
       icon={icon}
       state="Default"
       onPress={onPress}

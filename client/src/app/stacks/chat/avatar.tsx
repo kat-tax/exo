@@ -1,11 +1,11 @@
 import {Image} from 'react-exo/image';
 import {useMatrix} from 'app/data/lib/matrix-provider';
 
-interface MessageAvatarProps {
+interface AvatarProps {
   sender: string;
 }
 
-export function MessageAvatar({sender}: MessageAvatarProps) {
+export function Avatar({sender}: AvatarProps) {
   const {users} = useMatrix();
   const user = users.find(user => user.id === sender);
   return user?.avatar ? (

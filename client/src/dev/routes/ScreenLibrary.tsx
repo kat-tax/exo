@@ -8,7 +8,7 @@ import {Slider} from 'react-exo/slider';
 import {Checkbox} from 'react-exo/checkbox';
 import {Progress} from 'react-exo/progress';
 
-import {Page} from 'app/interface/Page';
+import {Panel} from 'app/stacks/panel';
 import {Frame} from 'dev/stacks/Frame';
 
 export default function ScreenHome() {
@@ -17,7 +17,7 @@ export default function ScreenHome() {
   const {t} = useLingui();
 
   return (
-    <Page
+    <Panel
       title={t`Library`}
       message={t`${5} components`}>
       <Frame title="Icon">
@@ -61,6 +61,6 @@ export default function ScreenHome() {
           progressColor={theme.colors.primary}
         />
       </Frame>
-    </Page>
+    </Panel>
   );
 }

@@ -1,4 +1,4 @@
-import {PointerEvent} from 'app/stacks/PointerEvent';
+import {Touch} from 'app/stacks/touch';
 import {ListRow} from 'media/stacks/ListRow';
 import {HfsMenu} from './HfsMenu';
 import {useHfsEntry} from '../hooks/useHfsEntry';
@@ -19,13 +19,13 @@ export function HfsEntry(props: HfsEntryProps) {
   const {ref, ext, cmd, opt} = useHfsEntry(props);
   const dir = !isFile;
   return (
-    <PointerEvent
+    <Touch
       dragRef={ref}
       onPress={cmd.select}
       onDoublePress={dir ? () => cmd.open(true) : undefined}>
       <HfsMenu {...{entry, cmd, on: open => open && cmd.select()}}>
         <ListRow {...{name, size, ext, dir, opt}}/>
       </HfsMenu>
-    </PointerEvent>
+    </Touch>
   );
 }

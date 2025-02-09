@@ -1,4 +1,4 @@
-import {PointerEvent} from 'app/stacks/PointerEvent';
+import {Touch} from 'app/stacks/touch';
 import {ListRow} from 'media/stacks/ListRow';
 import {ZipMenu} from './ZipMenu';
 import {useZipEntry} from '../hooks/useZipEntry';
@@ -17,13 +17,13 @@ export function ZipEntry(props: ZipEntryProps) {
   const {name, size, dir} = entry;
   const {ref, ext, cmd, opt} = useZipEntry(props);
   return (
-    <PointerEvent
+    <Touch
       dragRef={ref}
       onPress={cmd.extract}
       onDoublePress={dir ? cmd.extract : undefined}>
       <ZipMenu {...{entry, cmd}}>
         <ListRow {...{name, size, ext, dir, opt}}/>
       </ZipMenu>
-    </PointerEvent>
+    </Touch>
   );
 }

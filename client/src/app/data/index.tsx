@@ -2,7 +2,7 @@ import {EvoluProvider, createEvolu, useQuery, cast, jsonArrayFrom} from '@evolu/
 import {Provider as ReduxProvider} from 'react-exo/redux';
 import {MatrixProvider} from './lib/matrix-provider';
 import {HfsProvider} from './lib/hfs-provider';
-import {Spinner} from 'app/stacks/Spinner';
+import {Spinner} from 'app/stacks/load';
 import store from './store';
 import cfg from 'config';
 import * as S from './schema';

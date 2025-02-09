@@ -4,14 +4,16 @@ import {useLingui} from '@lingui/react/macro';
 import {useHfsImporter} from 'media/dir/hfs';
 import {StorageWidget} from 'media/stacks/StorageWidget';
 
+import {MenuBar} from './MenuBar';
 import {MenuItem} from './MenuItem';
-import {MenuHeader} from './MenuHeader';
+import {MenuItemTab} from './MenuItemTab';
 import {MenuSection} from './MenuSection';
 
 import type {AppContext} from 'app/hooks/useAppContext';
 
 export interface MenuProps {
   context: AppContext,
+  hasTabs?: boolean,
 }
 
 export function Menu(props: MenuProps) {
@@ -19,11 +21,43 @@ export function Menu(props: MenuProps) {
   const {styles} = useStyles(stylesheet);
   const {t} = useLingui();
 
+  if (props.hasTabs) {
+    return (
+      <View style={styles.tabs}>
+        <MenuItemTab
+          label={t`Dashboard`}
+          icon="ph:squares-four"
+          path="/"
+        />
+        <MenuItemTab
+          label={t`Inbox`}
+          icon="ph:tray"
+          path="/inbox"
+        />
+        <MenuItemTab
+          label={t`Files`}
+          icon="ph:folder"
+          path="/browse"
+        />
+        <MenuItemTab
+          label={t`World`}
+          icon="ph:globe"
+          path="/world"
+        />
+        <MenuItemTab
+          label={t`Settings`}
+          icon="ph:gear"
+          path="/settings"
+        />
+      </View>
+    );
+  }
+
   return (
     <View style={styles.bg}>
       <ScrollView contentContainerStyle={{flexGrow: 1}}>
         <View style={styles.root}>
-          <MenuHeader {...props}/>
+          <MenuBar {...props}/>
           <MenuItem
             label={t`Dashboard`}
             icon="ph:squares-four"
@@ -180,6 +214,15 @@ const stylesheet = createStyleSheet((theme, rt) => ({
     },
     borderStartWidth: rt.hairlineWidth,
     borderColor: theme.colors.border,
+  },
+  tabs: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    borderColor: theme.colors.border,
+    borderTopWidth: rt.hairlineWidth,
+    backgroundColor: theme.colors.background,
   },
   footer: {
     gap: theme.display.space2,

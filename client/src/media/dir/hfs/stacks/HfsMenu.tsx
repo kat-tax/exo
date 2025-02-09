@@ -1,5 +1,5 @@
 import {useLingui} from '@lingui/react/macro';
-import {ContextMenu} from 'app/stacks/ContextMenu';
+import {MenuContext} from 'app/stacks/float';
 
 import type {HfsDirectoryEntry} from 'react-exo/fs';
 import type {useHfsEntry} from '../hooks/useHfsEntry';
@@ -16,7 +16,7 @@ export function HfsMenu(props: HfsMenuProps) {
   const {t} = useLingui();
 
   return (
-    <ContextMenu label={entry.name} onOpenChange={on} items={[
+    <MenuContext label={entry.name} onOpenChange={on} items={[
       dir && {
         name: 'open',
         icon: 'ph:folder-open',
@@ -84,6 +84,6 @@ export function HfsMenu(props: HfsMenuProps) {
       },
     ]}>
       {props.children}
-    </ContextMenu>
+    </MenuContext>
   );
 }

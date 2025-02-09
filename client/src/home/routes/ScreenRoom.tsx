@@ -1,16 +1,14 @@
+import {LegendList} from '@legendapp/list';
 import {useParams} from 'react-exo/navigation';
 import {useState, useCallback} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {LegendList} from '@legendapp/list';
-import {Message} from 'home/stacks/Message';
-import {MessageEmbed} from 'home/stacks/MessageEmbed';
-import {MessageAvatar} from 'home/stacks/MessageAvatar';
+import {Bubble, Embed, Avatar} from 'app/stacks/chat';
 import {useMessages} from 'home/hooks/useMessages';
 import {bytesize} from 'app/utils/formatting';
 import {debounce} from 'app/utils/delay';
 
 import {View} from 'react-native';
-import {Page} from 'app/interface/Page';
+import {Panel} from 'app/stacks/panel';
 
 export default function ScreenRoom() {
   const [layout, setLayout] = useState<[number, number]>();
@@ -20,7 +18,7 @@ export default function ScreenRoom() {
   const resize = useCallback(debounce((w: number, h: number) =>
     setLayout([w, h]), 100), []);
   return (
-    <Page margin="none">
+    <Panel margin="none">
       <View style={{flex: 1}}>
         <LegendList
           key={layout?.[0].toString()}
@@ -54,17 +52,17 @@ export default function ScreenRoom() {
                 complete && styles.complete,
                 //item.emote && styles.emoted,
               ]}>
-                <Message
+                <Bubble
                   mode={mode}
                   origin={self ? 'Local' : 'Remote'}
                   message={body ?? `${embed?.name} (${bytesize(embed?.size ?? 0)})` ?? ''}
                   timestamp={!hasNext ? time : ''}
                   emote=""
                   avatar={!hasPrev
-                    ? <MessageAvatar sender={sender}/>
+                    ? <Avatar sender={sender}/>
                     : undefined}
                   embed={embed ? (
-                    <MessageEmbed
+                    <Embed
                       path={embed.url}
                       name={embed.name}
                       origin={self ? 'Local' : 'Remote'}
@@ -77,7 +75,7 @@ export default function ScreenRoom() {
           }}
         />
       </View>
-    </Page>
+    </Panel>
   );
 }
 

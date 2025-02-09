@@ -2,7 +2,7 @@ import {useWindowDimensions, View, ScrollView, Text} from 'react-native';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useAppContext} from 'app/hooks/useAppContext';
 
-export interface PageProps extends React.PropsWithChildren {
+export interface PanelProps extends React.PropsWithChildren {
   title?: string | React.ReactNode,
   message?: string | React.ReactNode,
   widget?: React.ReactNode,
@@ -13,7 +13,7 @@ export interface PageProps extends React.PropsWithChildren {
   margin?: 'none' | 'small' | 'large',
 }
 
-export function Page(props: PageProps) {
+export function Panel(props: PanelProps) {
   const {styles, theme} = useStyles(stylesheet);
   const {layout} = useAppContext();
   const screen = useWindowDimensions();

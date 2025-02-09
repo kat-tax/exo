@@ -3,7 +3,7 @@ import {useEffect, forwardRef} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useTorrent, TorrentDir} from 'media/dir/torrent';
 import {bytesize} from 'app/utils/formatting';
-import {Page} from 'app/interface/Page';
+import {Panel} from 'app/stacks/panel';
 
 import type {FileProps} from 'media/file';
 
@@ -23,7 +23,7 @@ export default forwardRef((props: FileTorrent, _ref) => {
 
   return (
     <View style={styles.root}>
-      <Page
+      <Panel
         title={props.embedded ? props.name : undefined}
         message={props.embedded ? `${torrent?.info.name}` : undefined}
         margin="small"
@@ -33,7 +33,7 @@ export default forwardRef((props: FileTorrent, _ref) => {
         <View style={styles.inner}>
           {torrent && <TorrentDir {...{torrent, cmd}}/>}
         </View>
-      </Page>
+      </Panel>
     </View>
   )
 });

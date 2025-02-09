@@ -1,4 +1,4 @@
-import {PointerEvent} from 'app/stacks/PointerEvent';
+import {Touch} from 'app/stacks/touch';
 import {ListRow} from 'media/stacks/ListRow';
 import {TorrentMenu} from './TorrentMenu';
 import {useTorrentEntry} from '../hooks/useTorrentEntry';
@@ -19,13 +19,13 @@ export function TorrentEntry(props: TorrentEntryProps) {
   const size = length;
   const dir = false;
   return (
-    <PointerEvent
+    <Touch
       dragRef={ref}
       onPress={cmd.download}
       onDoublePress={dir ? cmd.download : undefined}>
       <TorrentMenu {...{entry, cmd}}>
         <ListRow {...{name, size, ext, dir, opt}}/>
       </TorrentMenu>
-    </PointerEvent>
+    </Touch>
   );
 }

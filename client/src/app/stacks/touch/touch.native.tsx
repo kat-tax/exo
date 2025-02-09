@@ -1,7 +1,7 @@
 import {TouchableOpacity} from 'react-native';
-import type {PointerEventProps} from './PointerEvent.types';
+import type {TouchProps} from './touch.types';
 
-export function PointerEvent(props: PointerEventProps) {
+export function Touch(props: TouchProps) {
   return (
     <TouchableOpacity
       ref={props.dragRef}

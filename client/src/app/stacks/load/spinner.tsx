@@ -1,5 +1,6 @@
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {View, ActivityIndicator} from 'react-native';
+
 import type {ViewProps, ActivityIndicatorProps} from 'react-native';
 
 export interface SpinnerProps extends ActivityIndicatorProps {

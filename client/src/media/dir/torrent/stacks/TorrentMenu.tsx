@@ -1,6 +1,6 @@
 import {useMemo} from 'react';
 import {useLingui} from '@lingui/react/macro';
-import {ContextMenu} from 'app/stacks/ContextMenu';
+import {MenuContext} from 'app/stacks/float';
 
 import type {TorrentFileEntry} from '../types';
 import type {useTorrentEntry} from '../hooks/useTorrentEntry';
@@ -15,7 +15,7 @@ export function TorrentMenu(props: TorrentMenuProps) {
   const {entry, cmd, on} = props;
   const {t} = useLingui();
   return (
-    <ContextMenu label={entry.name} onOpenChange={on} items={useMemo(() => [
+    <MenuContext label={entry.name} onOpenChange={on} items={useMemo(() => [
       {
         name: 'download',
         icon: 'ph:download',
@@ -25,6 +25,6 @@ export function TorrentMenu(props: TorrentMenuProps) {
       },
     ], [t, cmd])}>
       {props.children}
-    </ContextMenu>
+    </MenuContext>
   );
 }

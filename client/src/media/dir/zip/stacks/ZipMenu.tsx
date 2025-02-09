@@ -1,6 +1,6 @@
 import {useMemo} from 'react';
 import {useLingui} from '@lingui/react/macro';
-import {ContextMenu} from 'app/stacks/ContextMenu';
+import {MenuContext} from 'app/stacks/float';
 
 import type {ZipFileEntry} from '../types';
 import type {useZipEntry} from '../hooks/useZipEntry';
@@ -15,7 +15,7 @@ export function ZipMenu(props: ZipMenuProps) {
   const {entry, cmd, on} = props;
   const {t} = useLingui();
   return (
-    <ContextMenu label={entry.name} onOpenChange={on} items={useMemo(() => [
+    <MenuContext label={entry.name} onOpenChange={on} items={useMemo(() => [
       {
         name: 'extract',
         icon: 'ph:extract',
@@ -25,6 +25,6 @@ export function ZipMenu(props: ZipMenuProps) {
       },
     ], [t, cmd])}>
       {props.children}
-    </ContextMenu>
+    </MenuContext>
   );
 }

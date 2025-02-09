@@ -3,7 +3,7 @@ import {forwardRef, useEffect} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useHfs} from 'media/dir/hfs/hooks/useHfs';
 import {HfsDir} from 'media/dir/hfs';
-import {Page} from 'app/interface/Page';
+import {Panel} from 'app/stacks/panel';
 
 import type {FileProps} from 'media/file';
 
@@ -21,7 +21,7 @@ export default forwardRef((props: FileDirectory, _ref) => {
   }, [hfs, props.actions]);
 
   return (
-    <Page
+    <Panel
       title={props.embedded ? props.name : undefined}
       message={props.embedded ? `${hfs?.list?.length} files` : undefined}
       margin="none"
@@ -31,7 +31,7 @@ export default forwardRef((props: FileDirectory, _ref) => {
       <View style={styles.root}>
         {hfs && <HfsDir {...{hfs, cmd, ext, bar}}/>}
       </View>
-    </Page>
+    </Panel>
   )
 });
 

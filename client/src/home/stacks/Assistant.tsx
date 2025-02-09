@@ -7,8 +7,8 @@ import {Text, View, TextInput, Pressable} from 'react-native';
 import {Link} from 'react-exo/navigation';
 import {Icon} from 'react-exo/icon';
 
-import {Markdown} from 'app/stacks/Markdown';
-import {Spinner} from 'app/stacks/Spinner';
+import {Spinner} from 'app/stacks/load';
+import {Markdown} from 'app/stacks/markdown';
 import {formatDate} from 'home/utils/time';
 import {useAI} from 'home/hooks/useAI';
 

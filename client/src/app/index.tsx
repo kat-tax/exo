@@ -1,15 +1,15 @@
 import {Data} from 'app/data';
 import {I18n} from 'app/locales';
-import {Layout} from 'app/layout';
+import {Theme} from 'app/theme';
 import {Router} from 'app/routes';
 
 export default () => {
   return (
     <Data>
       <I18n>
-        <Layout>
+        <Theme>
           <Router/>
-        </Layout>
+        </Theme>
       </I18n>
     </Data>
   )

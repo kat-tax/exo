@@ -8,10 +8,9 @@ import {useDeviceSession} from 'app/hooks/useDeviceSession';
 import {useHotkeys} from 'app/hooks/useHotkeys';
 import {useProfile} from 'app/data';
 import {toPathInfo} from 'app/utils/formatting';
-import {Menu} from 'app/interface/Menu';
-import {Tabs} from 'app/interface/Tabs';
-import {Media} from 'media/stacks/Media';
 import {Timeline} from 'media/stacks/Timeline';
+import {Media} from 'media/stacks/Media';
+import {Menu} from 'app/routes/menu/Menu';
 import media from 'media/store';
 
 import type {AppContext} from 'app/hooks/useAppContext';
@@ -20,21 +19,18 @@ export const APP_MENU_WIDTH = 146;
 export const APP_MENU_TAB_HEIGHT = 64;
 
 export default function Layout() {
+  const [previewOpen, setPreviewOpen] = useState(true);
+  const [menuOpen, setMenuOpen] = useState(true);
   const {styles, theme} = useStyles(stylesheet);
   const {pathname} = useLocation();
-
-  const [menuOpen, setMenuOpen] = useState(true);
-  const [previewOpen, setPreviewOpen] = useState(true);
-
-  const screen = useWindowDimensions();
-  const device = useDeviceSession();
   const profile = useProfile();
+  const device = useDeviceSession();
+  const screen = useWindowDimensions();
   const focused = useSelector(media.selectors.getFocused);
-
-  const mediaInfo = toPathInfo(focused, false);
-  const isVertical = screen.width < theme.breakpoints.sm;
-  const hasTabs = screen.width < theme.breakpoints.xs;
+  const pathinfo = toPathInfo(focused, false);
   const hasPanel = pathname.includes('/browse') || Boolean(focused);
+  const hasTabs = screen.width < theme.breakpoints.xs;
+  const isVertical = screen.width < theme.breakpoints.sm;
   const vstyles = {
     root: [styles.root, hasTabs && styles.rootTabs],
     menu: [styles.menu, hasTabs && styles.menuTabs],
@@ -63,7 +59,7 @@ export default function Layout() {
     <View style={vstyles.root}>
       {menuOpen &&
         <View style={vstyles.menu}>
-          {hasTabs ? <Tabs/> : <Menu {...{context}}/>}
+          <Menu {...{context, hasTabs}}/>
         </View>
       }
       <View style={vstyles.content}>
@@ -73,7 +69,7 @@ export default function Layout() {
         {hasPanel ?
           Boolean(focused) ?
             <Media
-              {...mediaInfo}
+              {...pathinfo}
               vertical={isVertical}
               maximized={true}
               embedded={false}

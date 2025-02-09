@@ -1,7 +1,7 @@
 import {useLocationPathInfo} from 'app/hooks/useCurrentPathInfo';
 import {useHfs} from 'media/dir/hfs/hooks/useHfs';
 import {HfsDir} from 'media/dir/hfs';
-import {Page} from 'app/interface/Page';
+import {Panel} from 'app/stacks/panel';
 
 export default function ScreenBrowse() {
   const {path} = useLocationPathInfo();
@@ -9,8 +9,8 @@ export default function ScreenBrowse() {
   const bar = {hidden: false};
 
   return (
-    <Page fullWidth margin="none">
+    <Panel fullWidth margin="none">
       <HfsDir {...{hfs, cmd, ext, bar}}/>
-    </Page>
+    </Panel>
   );
 }

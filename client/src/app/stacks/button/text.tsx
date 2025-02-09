@@ -1,15 +1,15 @@
-import {useVariants} from 'react-exo/utils';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
+import {useVariants} from 'react-exo/utils';
 import {Text, Pressable} from 'react-native';
 
 import type {PressableProps} from 'react-native';
 
-export interface TextButtonProps extends PressableProps {
+export interface ButtonTextProps extends PressableProps {
   label: string,
-  state: typeof TextButtonVariants.state[number],
+  state: typeof ButtonTextVariants.state[number],
 }
 
-export const TextButtonVariants = {
+export const ButtonTextVariants = {
   state: [
     'Default',
     'Hovered',
@@ -19,9 +19,9 @@ export const TextButtonVariants = {
   ],
 } as const;
 
-export function TextButton({state, ...props}: TextButtonProps) {
+export function ButtonText({state, ...props}: ButtonTextProps) {
   const {styles} = useStyles(stylesheet);
-  const {vstyles} = useVariants(TextButtonVariants, {state}, styles);
+  const {vstyles} = useVariants(ButtonTextVariants, {state}, styles);
   return (
     <Pressable style={vstyles.root} {...props}>
       {e => <>

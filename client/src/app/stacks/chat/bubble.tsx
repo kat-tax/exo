@@ -1,28 +1,37 @@
-import {useVariants} from 'react-exo/utils';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
+import {useVariants} from 'react-exo/utils';
 import {View, Text} from 'react-native';
 
-export interface MessageProps {
+export interface BubbleProps {
   emote: string,
   message: string,
   timestamp: string,
-  mode: typeof MessageVariants.mode[number],
-  origin: typeof MessageVariants.origin[number],
+  mode: typeof BubbleVariants.mode[number],
+  origin: typeof BubbleVariants.origin[number],
   avatar?: JSX.Element,
   embed?: JSX.Element,
   /** Used to locate this view in end-to-end tests. */
   testID?: string,
 }
 
-export const MessageVariants = {
-  mode: ['Default', 'Embedded', 'Middle', 'Start', 'End'],
-  origin: ['Remote', 'Local'],
+export const BubbleVariants = {
+  mode: [
+    'Default',
+    'Embedded',
+    'Middle',
+    'Start',
+    'End',
+  ],
+  origin: [
+    'Remote',
+    'Local',
+  ],
 } as const;
 
-export function Message(props: MessageProps) {
+export function Bubble(props: BubbleProps) {
   const {origin, mode} = props;
   const {styles} = useStyles(stylesheet);
-  const {vstyles} = useVariants(MessageVariants, {origin, mode}, styles);
+  const {vstyles} = useVariants(BubbleVariants, {origin, mode}, styles);
 
   return (
     <View style={vstyles.root()} testID={props.testID ?? "6323:470"}>

@@ -1,11 +1,11 @@
 import {View, Text} from 'react-native';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 
-interface PageSectionProps extends React.PropsWithChildren {
+interface PanelSectionProps extends React.PropsWithChildren {
   title: string,
 }
 
-export function PageSection(props: PageSectionProps) {
+export function PanelSection(props: PanelSectionProps) {
   const {styles} = useStyles(stylesheet);
 
   return (

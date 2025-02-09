@@ -3,7 +3,7 @@ import {forwardRef, useEffect} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useZip, ZipDir} from 'media/dir/zip';
 import {bytesize} from 'app/utils/formatting';
-import {Page} from 'app/interface/Page';
+import {Panel} from 'app/stacks/panel';
 
 import type {FileProps} from 'media/file';
 
@@ -24,7 +24,7 @@ export default forwardRef((props: FileZip, _ref) => {
 
   return (
     <View style={styles.root}>
-      <Page
+      <Panel
         title={props.embedded ? props.name : undefined}
         message={props.embedded ? `${zip?.list?.length} files` : undefined}
         margin="small"
@@ -34,7 +34,7 @@ export default forwardRef((props: FileZip, _ref) => {
         <View style={styles.inner}>
           {zip && <ZipDir {...{zip, cmd}}/>}
         </View>
-      </Page>
+      </Panel>
     </View>
   )
 });

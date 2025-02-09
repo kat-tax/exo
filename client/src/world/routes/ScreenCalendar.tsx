@@ -4,7 +4,7 @@ import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useDateRange, toDateId, Calendar} from '@marceloterreiro/flash-calendar';
 import {useCalendarTheme} from 'world/hooks/useCalendarTheme';
 import {useLocale} from 'app/hooks/useLocale';
-import {Page} from 'app/interface/Page';
+import {Panel} from 'app/stacks/panel';
 
 import {CalendarEvent} from '../stacks/CalendarEvent';
 
@@ -21,7 +21,7 @@ export default function ScreenCalendar() {
   const showDebugEvent = false;
 
   return (
-    <Page fullWidth margin="none">
+    <Panel fullWidth margin="none">
       <View style={styles.root}>
         <View style={styles.calendar}>
           <Calendar.List
@@ -45,7 +45,7 @@ export default function ScreenCalendar() {
           </View>
         }
       </View>
-    </Page>
+    </Panel>
   );
 }
 

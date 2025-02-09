@@ -1,7 +1,7 @@
 import {useLingui} from '@lingui/react/macro';
 import {View} from 'react-native';
 import {Icon} from 'react-exo/icon';
-import {Page} from 'app/interface/Page';
+import {Panel} from 'app/stacks/panel';
 import {Frame} from 'dev/stacks/Frame';
 import * as Design from 'design';
 
@@ -9,7 +9,7 @@ export default function ScreenDesign() {
   const {t} = useLingui();
 
   return (
-    <Page
+    <Panel
       title={t`Design`}
       message={t`${11} components`}>
       <Frame title="Button">
@@ -173,6 +173,6 @@ export default function ScreenDesign() {
           icon={<Icon name="ph:warning"/>}
         />
       </Frame>
-    </Page>
+    </Panel>
   );
 }

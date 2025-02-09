@@ -1,19 +1,15 @@
 import {useState} from 'react';
 import {useLingui} from '@lingui/react/macro';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
+import {View, TextInput, Platform} from 'react-native';
+import {Picker} from 'react-exo/picker';
+import {Button} from 'design';
+import {Identicon} from 'app/stacks/identicon';
+import {Panel, PanelItem, PanelSection} from 'app/stacks/panel';
 import {useSettings} from 'app/hooks/useSettings';
 import {useLocale} from 'app/hooks/useLocale';
 import {useScheme} from 'app/hooks/useScheme';
-
-import {View, TextInput, Platform} from 'react-native';
-import {Picker} from 'react-exo/picker';
-
-import {Page} from 'app/interface/Page';
-import {PageItem} from 'app/interface/PageItem';
-import {PageSection} from 'app/interface/PageSection';
-import {Identicon} from 'app/stacks/Identicon';
 import {locales} from 'config/locales';
-import {Button} from 'design';
 
 export default function ScreenSettings() {
   const settings = useSettings();
@@ -24,7 +20,7 @@ export default function ScreenSettings() {
   const {t} = useLingui();
 
   return (
-    <Page
+    <Panel
       title={t`Settings`}
       message={t`Manage your settings`}
       widget={
@@ -36,8 +32,8 @@ export default function ScreenSettings() {
         />
       }>
       <View style={styles.root}>
-        <PageSection title={t`Profile`}>
-          <PageItem
+        <PanelSection title={t`Profile`}>
+          <PanelItem
             label={t`User Name`}
             description={t`Your name to display in the app.`}>
             <TextInput
@@ -48,8 +44,8 @@ export default function ScreenSettings() {
               placeholder={t`Enter name`}
               placeholderTextColor={theme.colors.mutedForeground}
             />
-          </PageItem>
-          <PageItem
+          </PanelItem>
+          <PanelItem
             label={t`Owner Key`}
             description={t`A mnemonic phrase for authentication.`}>
             <TextInput
@@ -69,10 +65,10 @@ export default function ScreenSettings() {
                 settings.changeOwner(e.nativeEvent.text);
               }}
             />
-          </PageItem>
-        </PageSection>
-        <PageSection title={t`Display`}>
-          <PageItem
+          </PanelItem>
+        </PanelSection>
+        <PanelSection title={t`Display`}>
+          <PanelItem
             label={t`Language`}
             description={t`Select the language for the app.`}>
             <Picker
@@ -91,8 +87,8 @@ export default function ScreenSettings() {
                 />
               ))}
             </Picker>
-          </PageItem>
-          <PageItem
+          </PanelItem>
+          <PanelItem
             label={t`Theme`}
             description={t`Select the theme for the app.`}>
             <Picker
@@ -105,8 +101,8 @@ export default function ScreenSettings() {
               <Picker.Item label={t`Light`} value="light" color={theme.colors.foreground}/>
               <Picker.Item label={t`Dark`} value="dark" color={theme.colors.foreground}/>
             </Picker>
-          </PageItem>
-          <PageItem
+          </PanelItem>
+          <PanelItem
             label={t`Temperature`}
             description={t`Select the temperature unit for the app.`}>
             <Picker
@@ -118,8 +114,8 @@ export default function ScreenSettings() {
               <Picker.Item label={t`Celsius`} value="c" color={theme.colors.foreground}/>
               <Picker.Item label={t`Fahrenheit`} value="f" color={theme.colors.foreground}/>
             </Picker>
-          </PageItem>
-          <PageItem
+          </PanelItem>
+          <PanelItem
             label={t`Distance`}
             description={t`Select the distance unit for the app.`}>
             <Picker
@@ -131,10 +127,10 @@ export default function ScreenSettings() {
               <Picker.Item label={t`Kilometers`} value="km" color={theme.colors.foreground}/>
               <Picker.Item label={t`Miles`} value="mi" color={theme.colors.foreground}/>
             </Picker>
-          </PageItem>
-        </PageSection>
-        <PageSection title={t`Services`}>
-          <PageItem
+          </PanelItem>
+        </PanelSection>
+        <PanelSection title={t`Services`}>
+          <PanelItem
             label={t`Groq API Key`}
             description={t`Provide a key to use AI features.`}>
             <TextInput
@@ -146,8 +142,8 @@ export default function ScreenSettings() {
               placeholderTextColor={theme.colors.mutedForeground}
               onBlur={e => settings.updateGroqKey(e.nativeEvent.text)}
             />
-          </PageItem>
-          <PageItem
+          </PanelItem>
+          <PanelItem
             label={t`Groq Model ID`}
             description={t`Select the AI model to use.`}>
             <Picker
@@ -161,8 +157,8 @@ export default function ScreenSettings() {
               <Picker.Item label="mixtral-8x7b" value="mixtral-8x7b-32768" color={theme.colors.foreground}/>
               <Picker.Item label="gemma-7b" value="gemma-7b-it" color={theme.colors.foreground}/>
             </Picker>
-          </PageItem>
-          <PageItem
+          </PanelItem>
+          <PanelItem
             label={t`Maptiler URL`}
             description={t`Provide a url to use map features.`}>
             <TextInput
@@ -173,8 +169,8 @@ export default function ScreenSettings() {
               placeholderTextColor={theme.colors.mutedForeground}
               onBlur={e => settings.updateMaptilerUrl(e.nativeEvent.text)}
             />
-          </PageItem>
-          <PageItem
+          </PanelItem>
+          <PanelItem
             label={t`Maptiler API Key`}
             description={t`Provide a key to use map features.`}>
             <TextInput
@@ -186,8 +182,8 @@ export default function ScreenSettings() {
               placeholderTextColor={theme.colors.mutedForeground}
               onBlur={e => settings.updateMaptilerKey(e.nativeEvent.text)}
             />
-          </PageItem>
-          <PageItem
+          </PanelItem>
+          <PanelItem
             label={t`Matrix User ID`}
             description={t`Provide a matrix user to use social features.`}>
             <TextInput
@@ -198,8 +194,8 @@ export default function ScreenSettings() {
               placeholderTextColor={theme.colors.mutedForeground}
               onBlur={e => settings.updateMatrixUserId(e.nativeEvent.text)}
             />
-          </PageItem>
-          <PageItem
+          </PanelItem>
+          <PanelItem
             label={t`Matrix Base URL`}
             description={t`Provide a base url to use social features.`}>
             <TextInput
@@ -210,8 +206,8 @@ export default function ScreenSettings() {
               placeholderTextColor={theme.colors.mutedForeground}
               onBlur={e => settings.updateMatrixBaseUrl(e.nativeEvent.text)}
             />
-          </PageItem>
-          <PageItem
+          </PanelItem>
+          <PanelItem
             label={t`Matrix Access Token`}
             description={t`Provide a token to use social features.`}>
             <TextInput
@@ -223,10 +219,10 @@ export default function ScreenSettings() {
               placeholderTextColor={theme.colors.mutedForeground}
               onBlur={e => settings.updateMatrixAccessToken(e.nativeEvent.text)}
             />
-          </PageItem>
-        </PageSection>
-        <PageSection title={t`Data`}>
-          <PageItem
+          </PanelItem>
+        </PanelSection>
+        <PanelSection title={t`Data`}>
+          <PanelItem
             label={t`Prompts`}
             description={t`Delete all local prompt data.`}>
             <Button
@@ -235,8 +231,8 @@ export default function ScreenSettings() {
               state="Default"
               onPress={settings.resetPrompts}
             />
-          </PageItem>
-          <PageItem
+          </PanelItem>
+          <PanelItem
             label={t`Database`}
             description={t`Delete the local database.`}>
             <Button
@@ -245,8 +241,8 @@ export default function ScreenSettings() {
               state="Default"
               onPress={settings.resetOwner}
             />
-          </PageItem>
-          <PageItem
+          </PanelItem>
+          <PanelItem
             label={t`Filesystem`}
             description={t`Delete all local files.`}>
             <Button
@@ -255,10 +251,10 @@ export default function ScreenSettings() {
               state="Default"
               onPress={settings.resetFS}
             />
-          </PageItem>
-        </PageSection>
+          </PanelItem>
+        </PanelSection>
       </View>
-    </Page>
+    </Panel>
   );
 }
 

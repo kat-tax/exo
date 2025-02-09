@@ -6,7 +6,7 @@ import {ToastRoot} from 'react-exo/toast';
 import {useScheme} from 'app/hooks/useScheme';
 import {hideBootsplash} from 'app/utils/bootsplash';
 
-export function Layout(props: React.PropsWithChildren) {
+export function Theme(props: React.PropsWithChildren) {
   const [scheme] = useScheme();
   const theme = scheme === 'dark' ? 'dark' : 'light';
 

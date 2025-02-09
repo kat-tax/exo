@@ -3,7 +3,7 @@ import {useState} from 'react';
 import {useDevices} from 'app/data';
 import {useAppContext} from 'app/hooks/useAppContext';
 import {useScheme} from 'app/hooks/useScheme';
-import {Page} from 'app/interface/Page';
+import {Panel} from 'app/stacks/panel';
 
 import {MarkerDevice} from '../stacks/MarkerDevice';
 
@@ -20,7 +20,7 @@ export default function ScreenMap() {
   const maptilerUrl = profile?.maptilerUrl ?? 'https://api.maptiler.com';
   const maptilerKey = profile?.maptilerKey ?? '';
   return (
-    <Page fullWidth margin="none">
+    <Panel fullWidth margin="none">
       <Map
         {...viewState}
         style={{width: '100%', height: '100%'}}
@@ -36,6 +36,6 @@ export default function ScreenMap() {
           />
         ))}
       </Map>
-    </Page>
+    </Panel>
   );
 }

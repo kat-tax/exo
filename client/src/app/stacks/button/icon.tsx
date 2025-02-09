@@ -5,12 +5,12 @@ import {Icon} from 'react-exo/icon';
 
 import type {PressableProps} from 'react-native';
 
-export interface IconButtonProps extends PressableProps {
+export interface ButtonIconProps extends PressableProps {
   icon: string,
-  state: typeof IconButtonVariants.state[number],
+  state: typeof ButtonIconVariants.state[number],
 }
 
-export const IconButtonVariants = {
+export const ButtonIconVariants = {
   state: [
     'Default',
     'Hovered',
@@ -20,9 +20,9 @@ export const IconButtonVariants = {
   ],
 } as const;
 
-export function IconButton({state, ...props}: IconButtonProps) {
+export function ButtonIcon({state, ...props}: ButtonIconProps) {
   const {styles, theme} = useStyles(stylesheet);
-  const {vstyles} = useVariants(IconButtonVariants, {state}, styles);
+  const {vstyles} = useVariants(ButtonIconVariants, {state}, styles);
   return (
     <Pressable style={vstyles.root} {...props}>
       {e => <>

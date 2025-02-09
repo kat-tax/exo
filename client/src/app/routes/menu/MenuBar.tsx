@@ -3,11 +3,11 @@ import {View, Text, Pressable} from 'react-native';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useLingui} from '@lingui/react/macro';
 import {useOwner} from '@evolu/react-native';
-import {Identicon} from 'app/stacks/Identicon';
+import {Identicon} from 'app/stacks/identicon';
 
 import type {MenuProps} from './Menu';
 
-export function MenuHeader(props: MenuProps) {
+export function MenuBar(props: MenuProps) {
   const {profile} = props.context;
   const {styles, theme} = useStyles(stylesheet);
   const owner = useOwner();

@@ -3,16 +3,16 @@ import {View} from 'react-native';
 import {Media} from 'media/stacks/Media';
 import {toPathInfo} from 'app/utils/formatting';
 
-import type {MessageProps} from './Message';
+import type {BubbleProps} from './bubble';
 
-interface MessageEmbedProps {
+interface EmbedProps {
   path: string;
   name?: string;
-  origin?: MessageProps['origin'];
+  origin?: BubbleProps['origin'];
   layout?: [number, number];
 }
 
-export function MessageEmbed(props: MessageEmbedProps) {
+export function Embed(props: EmbedProps) {
   const {path, origin, layout} = props;
   const {name, ext} = toPathInfo(props.name ?? path, false);
   const {styles} = useStyles(stylesheet);

@@ -1,6 +1,6 @@
 import {useParams} from 'react-exo/navigation';
 import {Media} from 'media/stacks/Media';
-import {Page} from 'app/interface/Page';
+import {Panel} from 'app/stacks/panel';
 
 export default function ScreenIpfs() {
   const {cid, filename} = useParams<{cid: string, filename: string}>();
@@ -9,7 +9,7 @@ export default function ScreenIpfs() {
   const url = `/ipfs/${cid}/${name}`;
   const ext = name.split('.').pop() || '';
   return (
-    <Page
+    <Panel
       fullWidth
       margin="none">
       <Media
@@ -19,6 +19,6 @@ export default function ScreenIpfs() {
         maximized
         vertical
       />
-    </Page>
+    </Panel>
   );
 }

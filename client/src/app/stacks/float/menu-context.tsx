@@ -4,12 +4,12 @@ import {useStyles} from 'react-native-unistyles';
 
 import type {ComponentProps} from 'react';
 
-export interface ContextMenuProps extends ComponentProps<typeof Z['Root']> {
+export interface MenuContextProps extends ComponentProps<typeof Z['Root']> {
   label: string,
-  items: Array<ContextMenuItem | undefined | false>,
+  items: Array<MenuContextItem | undefined | false>,
 }
 
-export interface ContextMenuItem {
+export interface MenuContextItem {
   name: string,
   label: string,
   destructive?: boolean,
@@ -18,7 +18,7 @@ export interface ContextMenuItem {
   action?: () => void,
 }
 
-export function ContextMenu(props: ContextMenuProps) {
+export function MenuContext(props: MenuContextProps) {
   const {theme} = useStyles();
   const {label, items, children, ...rest} = props;
   return (

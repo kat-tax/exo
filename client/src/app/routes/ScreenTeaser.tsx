@@ -2,14 +2,14 @@ import {useLingui} from '@lingui/react/macro';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {View, Text} from 'react-native';
 import {Lottie} from 'react-exo/lottie';
-import {Page} from 'app/interface/Page';
+import {Panel} from 'app/stacks/panel';
 
 export default function ScreenTeaser() {
   const {styles} = useStyles(stylesheet);
   const {t} = useLingui();
 
   return (
-    <Page>
+    <Panel>
       <View style={styles.root}>
         <Text style={styles.text}>
           {t`Feature in development...`}
@@ -22,7 +22,7 @@ export default function ScreenTeaser() {
           url="https://get.ult.dev/samples/cat.lottie"
         />
       </View>
-    </Page>
+    </Panel>
   );
 }
 
