@@ -1,12 +1,12 @@
-import type {FileGame} from 'media/file/FileGame';
-import type {FileText} from 'media/file/FileText';
+import type {FileGame} from 'media/file/file-game';
+import type {FileText} from 'media/file/file-text';
 
-import type {ImageRef} from 'media/file/FileImage';
-import type {VideoRef} from 'media/file/FileVideo';
-import type {PdfRef} from 'media/file/FilePdf';
-import type {BookRef} from 'media/file/FileBook';
-import type {RiveRef} from 'media/file/FileRive';
-import type {GameRef} from 'media/file/FileGame';
+import type {ImageRef} from 'media/file/file-image';
+import type {VideoRef} from 'media/file/file-video';
+import type {PdfRef} from 'media/file/file-pdf';
+import type {BookRef} from 'media/file/file-book';
+import type {RiveRef} from 'media/file/file-rive';
+import type {GameRef} from 'media/file/file-game';
 
 export enum FileType {
   Directory = 'Directory',

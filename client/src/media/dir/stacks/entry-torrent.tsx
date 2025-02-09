@@ -1,22 +1,21 @@
 import {Touch} from 'app/stacks/touch';
 import {ListRow} from 'media/stacks/list/row';
+import {MenuTorrent} from 'media/dir/stacks/menu-torrent';
+import {useEntryTorrent} from 'media/dir/hooks/use-entry-torrent';
 
-import {TorrentMenu} from './torrent-menu';
-import {useTorrentEntry} from '../hooks/use-torrent-entry';
+import type {TorrentFileEntry, TorrentCmd} from 'media/dir/types/torrent';
 
-import type {TorrentFileEntry, TorrentCmd} from '../types';
-
-export interface TorrentEntryProps {
+export interface EntryTorrentProps {
   entry: TorrentFileEntry,
   cmd: TorrentCmd,
   opt: {dragging?: boolean},
   idx: number,
 }
 
-export function TorrentEntry(props: TorrentEntryProps) {
+export function EntryTorrent(props: EntryTorrentProps) {
   const {entry} = props;
   const {name, length} = entry;
-  const {ref, ext, cmd, opt} = useTorrentEntry(props);
+  const {ref, ext, cmd, opt} = useEntryTorrent(props);
   const size = length;
   const dir = false;
   return (
@@ -24,9 +23,9 @@ export function TorrentEntry(props: TorrentEntryProps) {
       dragRef={ref}
       onPress={cmd.download}
       onDoublePress={dir ? cmd.download : undefined}>
-      <TorrentMenu {...{entry, cmd}}>
+      <MenuTorrent {...{entry, cmd}}>
         <ListRow {...{name, size, ext, dir, opt}}/>
-      </TorrentMenu>
+      </MenuTorrent>
     </Touch>
   );
 }

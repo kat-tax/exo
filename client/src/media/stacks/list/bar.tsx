@@ -3,7 +3,7 @@ import {useLingui} from '@lingui/react/macro';
 import {useCallback} from 'react';
 import {useNavigate} from 'react-exo/navigation';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {InitDirectory} from 'media/dir/hfs/utils/path';
+import {InitDirectory} from 'media/dir/utils/hfs/path';
 import {ButtonText} from 'app/stacks/button/text';
 import {ButtonIcon} from 'app/stacks/button/icon';
 import {Icon} from 'react-exo/icon';

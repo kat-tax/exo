@@ -1,7 +1,7 @@
 import {isUint8Array, uint8ArrayToHex, uint8ArrayToString} from 'uint8array-extras';
 import {decode} from './bencode';
 
-import type {TorrentInfo, TorrentFileData} from '../types';
+import type {TorrentInfo, TorrentFileData} from 'media/dir/types/torrent';
 
 /**
  * Data about the files the torrent contains

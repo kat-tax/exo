@@ -50,7 +50,7 @@ msgstr "Pregunta lo que quieras..."
 msgid "Auto"
 msgstr "Automático"
 
-#: ../../client/src/app/routes/menu/index.tsx:123
+#: ../../client/src/media/stacks/list/bar.tsx:77
 msgid "Books"
 msgstr "Libros"
 
@@ -70,11 +70,11 @@ msgstr "Celsius"
 msgid "Close"
 msgstr "Cerrar"
 
-#: ../../client/src/media/dir/hfs/stacks/hfs-menu.tsx:37
+#: ../../client/src/media/dir/stacks/menu-hfs.tsx:37
 msgid "Compress"
 msgstr ""
 
-#: ../../client/src/media/hooks/use-media-controls.ts:58
+#: ../../client/src/media/dir/stacks/menu-hfs.tsx:55
 msgid "Copy"
 msgstr ""
 
@@ -99,7 +99,7 @@ msgstr "Datos"
 msgid "Database"
 msgstr ""
 
-#: ../../client/src/media/dir/hfs/stacks/hfs-menu.tsx:80
+#: ../../client/src/media/dir/stacks/menu-hfs.tsx:80
 msgid "Delete"
 msgstr ""
 
@@ -155,7 +155,7 @@ msgstr "Documentos"
 msgid "Documents"
 msgstr "Documentos"
 
-#: ../../client/src/media/file/file-binary.tsx:30
+#: ../../client/src/media/dir/stacks/menu-torrent.tsx:22
 msgid "Download"
 msgstr "Descargar"
 
@@ -183,7 +183,7 @@ msgstr ""
 msgid "Enter name"
 msgstr ""
 
-#: ../../client/src/media/hooks/use-media-controls.ts:87
+#: ../../client/src/media/dir/stacks/menu-zip.tsx:22
 msgid "Extract"
 msgstr "Extraer"
 
@@ -195,8 +195,7 @@ msgstr "Fahrenheit"
 msgid "Feature in development..."
 msgstr ""
 
-#: ../../client/src/app/routes/menu/index.tsx:38
-#: ../../client/src/app/routes/menu/index.tsx:93
+#: ../../client/src/media/stacks/list/bar.tsx:83
 msgid "Files"
 msgstr "Archivos"
 
@@ -204,7 +203,7 @@ msgstr "Archivos"
 msgid "Filesystem"
 msgstr ""
 
-#: ../../client/src/media/dir/hfs/stacks/hfs-no-entries.tsx:22
+#: ../../client/src/media/dir/stacks/none-hfs.tsx:22
 msgid "Folder is empty. Drop items or select folder to import."
 msgstr ""
 
@@ -212,7 +211,7 @@ msgstr ""
 msgid "Fullscreen"
 msgstr "Pantalla completa"
 
-#: ../../client/src/app/routes/menu/index.tsx:118
+#: ../../client/src/media/stacks/list/bar.tsx:75
 msgid "Games"
 msgstr "Juegos"
 
@@ -248,7 +247,7 @@ msgstr "ID del Modelo Groq"
 msgid "Human"
 msgstr "Humano"
 
-#: ../../client/src/media/dir/hfs/stacks/hfs-no-entries.tsx:23
+#: ../../client/src/media/dir/stacks/none-hfs.tsx:23
 msgid "Import"
 msgstr "Importar"
 
@@ -321,11 +320,11 @@ msgstr "Medios"
 msgid "Miles"
 msgstr "Millas"
 
-#: ../../client/src/media/dir/hfs/stacks/hfs-menu.tsx:62
+#: ../../client/src/media/dir/stacks/menu-hfs.tsx:62
 msgid "Move"
 msgstr ""
 
-#: ../../client/src/app/routes/menu/index.tsx:103
+#: ../../client/src/media/stacks/list/bar.tsx:69
 msgid "Music"
 msgstr "Música"
 
@@ -341,7 +340,7 @@ msgstr "Siguiente"
 msgid "No events scheduled."
 msgstr "No hay eventos programados."
 
-#: ../../client/src/media/dir/hfs/stacks/hfs-menu.tsx:23
+#: ../../client/src/media/dir/stacks/menu-hfs.tsx:23
 msgid "Open"
 msgstr ""
 
@@ -361,7 +360,7 @@ msgstr "Clave de Propietario"
 msgid "Pause"
 msgstr "Pausar"
 
-#: ../../client/src/app/routes/menu/index.tsx:108
+#: ../../client/src/media/stacks/list/bar.tsx:71
 msgid "Pictures"
 msgstr "Imágenes"
 
@@ -417,7 +416,7 @@ msgstr ""
 msgid "Provide a url to use map features."
 msgstr ""
 
-#: ../../client/src/media/dir/hfs/stacks/hfs-menu.tsx:69
+#: ../../client/src/media/dir/stacks/menu-hfs.tsx:69
 msgid "Rename"
 msgstr ""
 
@@ -462,7 +461,7 @@ msgstr ""
 msgid "Settings"
 msgstr "Ajustes"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:256
+#: ../../client/src/media/dir/stacks/menu-hfs.tsx:30
 msgid "Share"
 msgstr "Compartir"
 
@@ -506,7 +505,7 @@ msgstr "Subidas"
 msgid "User Name"
 msgstr "Nombre de Usuario"
 
-#: ../../client/src/app/routes/menu/index.tsx:113
+#: ../../client/src/media/stacks/list/bar.tsx:73
 msgid "Videos"
 msgstr "Videos"
 

@@ -2,16 +2,16 @@ import {useMemo} from 'react';
 import {useLingui} from '@lingui/react/macro';
 import {MenuContext} from 'app/stacks/float';
 
-import type {TorrentFileEntry} from '../types';
-import type {useTorrentEntry} from '../hooks/use-torrent-entry';
+import type {TorrentFileEntry} from 'media/dir/types/torrent';
+import type {useEntryTorrent} from 'media/dir/hooks/use-entry-torrent';
 
-export interface TorrentMenuProps extends React.PropsWithChildren {
+export interface MenuTorrentProps extends React.PropsWithChildren {
   entry: TorrentFileEntry,
-  cmd: ReturnType<typeof useTorrentEntry>['cmd'],
+  cmd: ReturnType<typeof useEntryTorrent>['cmd'],
   on?: (open: boolean) => void,
 }
 
-export function TorrentMenu(props: TorrentMenuProps) {
+export function MenuTorrent(props: MenuTorrentProps) {
   const {entry, cmd, on} = props;
   const {t} = useLingui();
   return (

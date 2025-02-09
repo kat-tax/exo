@@ -1,7 +1,8 @@
 import {View} from 'react-native';
 import {useEffect, forwardRef} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {useTorrent, TorrentDir} from 'media/dir/torrent';
+import {useDirTorrent} from 'media/dir/hooks/use-dir-torrent';
+import {DirTorrent} from 'media/dir/stacks/dir-torrent';
 import {bytesize} from 'app/utils/formatting';
 import {Panel} from 'app/stacks/panel';
 
@@ -10,7 +11,7 @@ import type {FileProps} from 'media/file';
 export interface FileTorrent extends FileProps {}
 
 export default forwardRef((props: FileTorrent, _ref) => {
-  const {torrent, cmd} = useTorrent(props.path);
+  const {torrent, cmd} = useDirTorrent(props.path);
   const {styles} = useStyles(stylesheet);
 
   // Update file player bar info
@@ -31,7 +32,7 @@ export default forwardRef((props: FileTorrent, _ref) => {
         noFrame
         fullWidth>
         <View style={styles.inner}>
-          {torrent && <TorrentDir {...{torrent, cmd}}/>}
+          {torrent && <DirTorrent {...{torrent, cmd}}/>}
         </View>
       </Panel>
     </View>

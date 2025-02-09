@@ -1,15 +1,14 @@
 import {View} from 'react-native';
 import {LegendList} from '@legendapp/list';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {HfsNoEntries} from 'media/dir/hfs/stacks/hfs-no-entries';
-import {HfsEntry} from 'media/dir/hfs/stacks/hfs-entry';
+import {EntryHfs} from 'media/dir/stacks/entry-hfs';
+import {NoneHfs} from 'media/dir/stacks/none-hfs';
 import {ListBar} from 'media/stacks/list/bar';
 import {HEIGHT} from 'media/stacks/list/row';
-import type {HfsCtx} from '../types';
+import type {HfsCtx} from 'media/dir/types/hfs';
 
-export function HfsDir({hfs, cmd, ext, bar}: HfsCtx) {
+export function DirHfs({hfs, cmd, ext, bar}: HfsCtx) {
   const {styles} = useStyles(stylesheet);
-
   return (
     <View style={styles.root}>
       <ListBar
@@ -30,7 +29,7 @@ export function HfsDir({hfs, cmd, ext, bar}: HfsCtx) {
         contentContainerStyle={styles.list}
         ListHeaderComponent={<View style={styles.listHeader}/>}
         keyExtractor={(_,i) => i.toString()}
-        ListEmptyComponent={HfsNoEntries}
+        ListEmptyComponent={NoneHfs}
         renderItem={({item, index}) => {
           const path = hfs.path ? `${hfs.path}/${item.name}` : item.name;
           const prev = hfs.list[index - 1];
@@ -45,7 +44,7 @@ export function HfsDir({hfs, cmd, ext, bar}: HfsCtx) {
             },
           };
           return (
-            <HfsEntry idx={index} entry={item} {...{cmd, opt}}/>
+            <EntryHfs idx={index} entry={item} {...{cmd, opt}}/>
           );
         }}
       />

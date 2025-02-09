@@ -1,8 +1,8 @@
 import {View} from 'react-native';
 import {forwardRef, useEffect} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {useHfs} from 'media/dir/hfs/hooks/use-hfs';
-import {HfsDir} from 'media/dir/hfs';
+import {useDirHfs} from 'media/dir/hooks/use-dir-hfs';
+import {DirHfs} from 'media/dir/stacks/dir-hfs';
 import {Panel} from 'app/stacks/panel';
 
 import type {FileProps} from 'media/file';
@@ -10,7 +10,7 @@ import type {FileProps} from 'media/file';
 export interface FileDirectory extends FileProps {}
 
 export default forwardRef((props: FileDirectory, _ref) => {
-  const {hfs, cmd, ext} = useHfs(props.path);
+  const {hfs, cmd, ext} = useDirHfs(props.path);
   const {styles} = useStyles(stylesheet);
   const bar = {hidden: true};
 
@@ -29,7 +29,7 @@ export default forwardRef((props: FileDirectory, _ref) => {
       fullWidth
       noFrame>
       <View style={styles.root}>
-        {hfs && <HfsDir {...{hfs, cmd, ext, bar}}/>}
+        {hfs && <DirHfs {...{hfs, cmd, ext, bar}}/>}
       </View>
     </Panel>
   )

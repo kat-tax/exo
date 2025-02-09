@@ -1,12 +1,12 @@
 import {View} from 'react-native';
 import {useLingui} from '@lingui/react/macro';
 import {useState, useEffect} from 'react';
-import {useHfsAdd} from 'media/dir/hfs';
+import {useImportHfs} from 'media/dir/hooks/use-import-hfs';
 import {Watermark} from 'app/stacks/watermark';
 
-export function HfsNoEntries() {
+export function NoneHfs() {
   const [visible, setVisible] = useState(false);
-  const {importFolder} = useHfsAdd();
+  const {importFolder} = useImportHfs();
   const {t} = useLingui();
 
   useEffect(() => {

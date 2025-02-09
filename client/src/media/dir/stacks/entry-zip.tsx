@@ -1,29 +1,29 @@
 import {Touch} from 'app/stacks/touch';
 import {ListRow} from 'media/stacks/list/row';
-import {ZipMenu} from './zip-menu';
-import {useZipEntry} from '../hooks/use-zip-entry';
+import {MenuZip} from 'media/dir/stacks/menu-zip';
+import {useEntryZip} from 'media/dir/hooks/use-entry-zip';
 
-import type {ZipFileEntry, ZipCmd} from '../types';
+import type {ZipFileEntry, ZipCmd} from 'media/dir/types/zip';
 
-export interface ZipEntryProps {
+export interface EntryZipProps {
   entry: ZipFileEntry,
   cmd: ZipCmd,
   opt: {dragging?: boolean},
   idx: number,
 }
 
-export function ZipEntry(props: ZipEntryProps) {
+export function EntryZip(props: EntryZipProps) {
   const {entry} = props;
   const {name, size, dir} = entry;
-  const {ref, ext, cmd, opt} = useZipEntry(props);
+  const {ref, ext, cmd, opt} = useEntryZip(props);
   return (
     <Touch
       dragRef={ref}
       onPress={cmd.extract}
       onDoublePress={dir ? cmd.extract : undefined}>
-      <ZipMenu {...{entry, cmd}}>
+      <MenuZip {...{entry, cmd}}>
         <ListRow {...{name, size, ext, dir, opt}}/>
-      </ZipMenu>
+      </MenuZip>
     </Touch>
   );
 }

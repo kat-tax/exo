@@ -9,11 +9,11 @@ import {toPathInfo} from 'app/utils/formatting';
 import media from 'media/store';
 
 import type {FS} from '@zip.js/zip.js';
-import type {Zip, ZipCtx, ZipFileEntry} from '../types';
+import type {Zip, ZipCtx, ZipFileEntry} from 'media/dir/types/zip';
 import type {GestureResponderEvent} from 'react-native';
 import type {HfsDirectoryEntry} from 'react-exo/fs';
 
-export function useZip(path: string): ZipCtx {
+export function useDirZip(path: string): ZipCtx {
   const [zip, setZip] = useState<Zip | null>(null);
   const {path: url} = useCurrentPath();
   const buffer = useFile(path, 'arrayBuffer');

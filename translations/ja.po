@@ -50,7 +50,7 @@ msgstr "何でも聞いてください..."
 msgid "Auto"
 msgstr "自動"
 
-#: ../../client/src/app/routes/menu/index.tsx:123
+#: ../../client/src/media/stacks/list/bar.tsx:77
 msgid "Books"
 msgstr "本"
 
@@ -70,11 +70,11 @@ msgstr "摂氏"
 msgid "Close"
 msgstr "閉じる"
 
-#: ../../client/src/media/dir/hfs/stacks/hfs-menu.tsx:37
+#: ../../client/src/media/dir/stacks/menu-hfs.tsx:37
 msgid "Compress"
 msgstr ""
 
-#: ../../client/src/media/hooks/use-media-controls.ts:58
+#: ../../client/src/media/dir/stacks/menu-hfs.tsx:55
 msgid "Copy"
 msgstr ""
 
@@ -99,7 +99,7 @@ msgstr "データ"
 msgid "Database"
 msgstr ""
 
-#: ../../client/src/media/dir/hfs/stacks/hfs-menu.tsx:80
+#: ../../client/src/media/dir/stacks/menu-hfs.tsx:80
 msgid "Delete"
 msgstr ""
 
@@ -155,7 +155,7 @@ msgstr "ドキュメント"
 msgid "Documents"
 msgstr "ドキュメント"
 
-#: ../../client/src/media/file/file-binary.tsx:30
+#: ../../client/src/media/dir/stacks/menu-torrent.tsx:22
 msgid "Download"
 msgstr "ダウンロード"
 
@@ -183,7 +183,7 @@ msgstr ""
 msgid "Enter name"
 msgstr ""
 
-#: ../../client/src/media/hooks/use-media-controls.ts:87
+#: ../../client/src/media/dir/stacks/menu-zip.tsx:22
 msgid "Extract"
 msgstr "抽出"
 
@@ -195,8 +195,7 @@ msgstr "華氏"
 msgid "Feature in development..."
 msgstr ""
 
-#: ../../client/src/app/routes/menu/index.tsx:38
-#: ../../client/src/app/routes/menu/index.tsx:93
+#: ../../client/src/media/stacks/list/bar.tsx:83
 msgid "Files"
 msgstr "ファイル"
 
@@ -204,7 +203,7 @@ msgstr "ファイル"
 msgid "Filesystem"
 msgstr ""
 
-#: ../../client/src/media/dir/hfs/stacks/hfs-no-entries.tsx:22
+#: ../../client/src/media/dir/stacks/none-hfs.tsx:22
 msgid "Folder is empty. Drop items or select folder to import."
 msgstr ""
 
@@ -212,7 +211,7 @@ msgstr ""
 msgid "Fullscreen"
 msgstr "全画面"
 
-#: ../../client/src/app/routes/menu/index.tsx:118
+#: ../../client/src/media/stacks/list/bar.tsx:75
 msgid "Games"
 msgstr "ゲーム"
 
@@ -248,7 +247,7 @@ msgstr "GroqモデルID"
 msgid "Human"
 msgstr "ユーザー"
 
-#: ../../client/src/media/dir/hfs/stacks/hfs-no-entries.tsx:23
+#: ../../client/src/media/dir/stacks/none-hfs.tsx:23
 msgid "Import"
 msgstr "インポート"
 
@@ -321,11 +320,11 @@ msgstr "メディア"
 msgid "Miles"
 msgstr "マイル"
 
-#: ../../client/src/media/dir/hfs/stacks/hfs-menu.tsx:62
+#: ../../client/src/media/dir/stacks/menu-hfs.tsx:62
 msgid "Move"
 msgstr ""
 
-#: ../../client/src/app/routes/menu/index.tsx:103
+#: ../../client/src/media/stacks/list/bar.tsx:69
 msgid "Music"
 msgstr "音楽"
 
@@ -341,7 +340,7 @@ msgstr "次へ"
 msgid "No events scheduled."
 msgstr "予定されているイベントはありません。"
 
-#: ../../client/src/media/dir/hfs/stacks/hfs-menu.tsx:23
+#: ../../client/src/media/dir/stacks/menu-hfs.tsx:23
 msgid "Open"
 msgstr ""
 
@@ -361,7 +360,7 @@ msgstr "オーナーキー"
 msgid "Pause"
 msgstr "一時停止"
 
-#: ../../client/src/app/routes/menu/index.tsx:108
+#: ../../client/src/media/stacks/list/bar.tsx:71
 msgid "Pictures"
 msgstr "写真"
 
@@ -417,7 +416,7 @@ msgstr ""
 msgid "Provide a url to use map features."
 msgstr ""
 
-#: ../../client/src/media/dir/hfs/stacks/hfs-menu.tsx:69
+#: ../../client/src/media/dir/stacks/menu-hfs.tsx:69
 msgid "Rename"
 msgstr ""
 
@@ -462,7 +461,7 @@ msgstr ""
 msgid "Settings"
 msgstr "設定"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:256
+#: ../../client/src/media/dir/stacks/menu-hfs.tsx:30
 msgid "Share"
 msgstr "共有"
 
@@ -506,7 +505,7 @@ msgstr "アップロード"
 msgid "User Name"
 msgstr "ユーザー名"
 
-#: ../../client/src/app/routes/menu/index.tsx:113
+#: ../../client/src/media/stacks/list/bar.tsx:73
 msgid "Videos"
 msgstr "動画"
 

@@ -2,16 +2,16 @@ import {useMemo} from 'react';
 import {useLingui} from '@lingui/react/macro';
 import {MenuContext} from 'app/stacks/float';
 
-import type {ZipFileEntry} from '../types';
-import type {useZipEntry} from '../hooks/use-zip-entry';
+import type {ZipFileEntry} from 'media/dir/types/zip';
+import type {useEntryZip} from 'media/dir/hooks/use-entry-zip';
 
-export interface ZipMenuProps extends React.PropsWithChildren {
+export interface MenuZipProps extends React.PropsWithChildren {
   entry: ZipFileEntry,
-  cmd: ReturnType<typeof useZipEntry>['cmd'],
+  cmd: ReturnType<typeof useEntryZip>['cmd'],
   on?: (open: boolean) => void,
 }
 
-export function ZipMenu(props: ZipMenuProps) {
+export function MenuZip(props: MenuZipProps) {
   const {entry, cmd, on} = props;
   const {t} = useLingui();
   return (

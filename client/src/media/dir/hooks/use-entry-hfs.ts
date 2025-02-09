@@ -5,12 +5,12 @@ import * as dnd from 'app/utils/dragdrop';
 import {bind} from 'media/utils/bind';
 import media from 'media/store';
 
-import {isZipData} from 'media/dir/zip/hooks/use-zip-entry';
-import {isTorrentData} from 'media/dir/torrent/hooks/use-torrent-entry';
+import {isZipData} from './use-entry-zip';
+import {isTorrentData} from './use-entry-torrent';
 
 import type {View} from 'react-native';
 import type {CleanupFn} from 'app/utils/dragdrop';
-import type {HfsEntryProps} from '../stacks/hfs-entry';
+import type {EntryHfsProps} from 'media/dir/stacks/entry-hfs';
 import type {HfsDirectoryEntry} from 'react-exo/fs';
 
 const $ = Symbol('hfs');
@@ -18,7 +18,7 @@ export type HfsData = {[$]: true, entry: HfsDirectoryEntry};
 export const isHfsData = (data: Record<string | symbol, unknown>): data is HfsData => data[$] === true;
 export const getHfsData = (entry: HfsDirectoryEntry): HfsData => ({[$]: true, entry});
 
-export function useHfsEntry({entry, cmd, opt}: HfsEntryProps) {
+export function useEntryHfs({entry, cmd, opt}: EntryHfsProps) {
   const [dropping, setDropping] = useState(false);
   const ext = toPathInfo(entry.name, entry.isDirectory)?.ext;
   const ref = useRef<View>(null);

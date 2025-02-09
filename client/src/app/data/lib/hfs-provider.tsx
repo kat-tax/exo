@@ -1,5 +1,5 @@
 import {FS} from 'react-exo/fs';
-import {observe, poll} from 'media/dir/hfs/utils/fs';
+import {observe, poll} from 'media/dir/utils/hfs/fs';
 import {useContext, useEffect, useState, createContext} from 'react';
 
 import type {HfsImpl, HfsType} from 'react-exo/fs';

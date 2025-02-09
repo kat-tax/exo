@@ -1,5 +1,5 @@
 import {FS} from 'react-exo/fs';
-import {fetchIpfs} from 'media/dir/ipfs';
+import {fetchIpfs} from 'media/dir/utils/ipfs/fetch';
 import {toText} from 'app/utils/formatting';
 
 import type {FileData, FileFormat, FileProtocol, FileTransfer} from '../types';

@@ -5,14 +5,14 @@ import {useHfsCtx, useHfsWatch} from 'app/data/lib/hfs-provider';
 import {getData} from 'media/file/utils/data';
 import media from 'media/store';
 
-import {isInitDirectory, INIT_DIRECTORIES} from '../utils/path';
-import {saveAs} from '../utils/fs';
+import {isInitDirectory, INIT_DIRECTORIES} from '../utils/hfs/path';
+import {saveAs} from '../utils/hfs/fs';
 
 import type {GestureResponderEvent} from 'react-native';
 import type {HfsDirectoryEntry} from 'react-exo/fs';
-import type {HfsCtx} from '../types';
+import type {HfsCtx} from 'media/dir/types/hfs';
 
-export function useHfs(path: string): Omit<HfsCtx, 'bar'> {
+export function useDirHfs(path: string): Omit<HfsCtx, 'bar'> {
   const [list, setList] = useState<HfsDirectoryEntry[]>([]);
 
   const hfs = useHfsCtx();

@@ -50,7 +50,7 @@ msgstr "무엇이든 물어보세요..."
 msgid "Auto"
 msgstr "자동"
 
-#: ../../client/src/app/routes/menu/index.tsx:123
+#: ../../client/src/media/stacks/list/bar.tsx:77
 msgid "Books"
 msgstr "도서"
 
@@ -70,11 +70,11 @@ msgstr "섭씨"
 msgid "Close"
 msgstr "닫기"
 
-#: ../../client/src/media/dir/hfs/stacks/hfs-menu.tsx:37
+#: ../../client/src/media/dir/stacks/menu-hfs.tsx:37
 msgid "Compress"
 msgstr ""
 
-#: ../../client/src/media/hooks/use-media-controls.ts:58
+#: ../../client/src/media/dir/stacks/menu-hfs.tsx:55
 msgid "Copy"
 msgstr ""
 
@@ -99,7 +99,7 @@ msgstr "데이터"
 msgid "Database"
 msgstr ""
 
-#: ../../client/src/media/dir/hfs/stacks/hfs-menu.tsx:80
+#: ../../client/src/media/dir/stacks/menu-hfs.tsx:80
 msgid "Delete"
 msgstr ""
 
@@ -155,7 +155,7 @@ msgstr "문서"
 msgid "Documents"
 msgstr "문서"
 
-#: ../../client/src/media/file/file-binary.tsx:30
+#: ../../client/src/media/dir/stacks/menu-torrent.tsx:22
 msgid "Download"
 msgstr "다운로드"
 
@@ -183,7 +183,7 @@ msgstr ""
 msgid "Enter name"
 msgstr ""
 
-#: ../../client/src/media/hooks/use-media-controls.ts:87
+#: ../../client/src/media/dir/stacks/menu-zip.tsx:22
 msgid "Extract"
 msgstr "추출"
 
@@ -195,8 +195,7 @@ msgstr "화씨"
 msgid "Feature in development..."
 msgstr ""
 
-#: ../../client/src/app/routes/menu/index.tsx:38
-#: ../../client/src/app/routes/menu/index.tsx:93
+#: ../../client/src/media/stacks/list/bar.tsx:83
 msgid "Files"
 msgstr "파일"
 
@@ -204,7 +203,7 @@ msgstr "파일"
 msgid "Filesystem"
 msgstr ""
 
-#: ../../client/src/media/dir/hfs/stacks/hfs-no-entries.tsx:22
+#: ../../client/src/media/dir/stacks/none-hfs.tsx:22
 msgid "Folder is empty. Drop items or select folder to import."
 msgstr ""
 
@@ -212,7 +211,7 @@ msgstr ""
 msgid "Fullscreen"
 msgstr "전체화면"
 
-#: ../../client/src/app/routes/menu/index.tsx:118
+#: ../../client/src/media/stacks/list/bar.tsx:75
 msgid "Games"
 msgstr "게임"
 
@@ -248,7 +247,7 @@ msgstr "Groq 모델 ID"
 msgid "Human"
 msgstr "사용자"
 
-#: ../../client/src/media/dir/hfs/stacks/hfs-no-entries.tsx:23
+#: ../../client/src/media/dir/stacks/none-hfs.tsx:23
 msgid "Import"
 msgstr "가져오기"
 
@@ -321,11 +320,11 @@ msgstr "미디어"
 msgid "Miles"
 msgstr "마일"
 
-#: ../../client/src/media/dir/hfs/stacks/hfs-menu.tsx:62
+#: ../../client/src/media/dir/stacks/menu-hfs.tsx:62
 msgid "Move"
 msgstr ""
 
-#: ../../client/src/app/routes/menu/index.tsx:103
+#: ../../client/src/media/stacks/list/bar.tsx:69
 msgid "Music"
 msgstr "음악"
 
@@ -341,7 +340,7 @@ msgstr "다음"
 msgid "No events scheduled."
 msgstr "예정된 일정이 없습니다."
 
-#: ../../client/src/media/dir/hfs/stacks/hfs-menu.tsx:23
+#: ../../client/src/media/dir/stacks/menu-hfs.tsx:23
 msgid "Open"
 msgstr ""
 
@@ -361,7 +360,7 @@ msgstr "소유자 키"
 msgid "Pause"
 msgstr "일시정지"
 
-#: ../../client/src/app/routes/menu/index.tsx:108
+#: ../../client/src/media/stacks/list/bar.tsx:71
 msgid "Pictures"
 msgstr "사진"
 
@@ -417,7 +416,7 @@ msgstr ""
 msgid "Provide a url to use map features."
 msgstr ""
 
-#: ../../client/src/media/dir/hfs/stacks/hfs-menu.tsx:69
+#: ../../client/src/media/dir/stacks/menu-hfs.tsx:69
 msgid "Rename"
 msgstr ""
 
@@ -462,7 +461,7 @@ msgstr ""
 msgid "Settings"
 msgstr "설정"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:256
+#: ../../client/src/media/dir/stacks/menu-hfs.tsx:30
 msgid "Share"
 msgstr "공유"
 
@@ -506,7 +505,7 @@ msgstr "업로드"
 msgid "User Name"
 msgstr "사용자 이름"
 
-#: ../../client/src/app/routes/menu/index.tsx:113
+#: ../../client/src/media/stacks/list/bar.tsx:73
 msgid "Videos"
 msgstr "동영상"
 

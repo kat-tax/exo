@@ -5,15 +5,15 @@ import {useCallback, useMemo} from 'react';
 import {useCurrentPath} from 'app/hooks/use-current-path';
 import {useFile} from 'media/file/hooks/use-file';
 import {bytesize} from 'app/utils/formatting';
-import * as tor from '../utils/info';
-import store from '../utils/chunkstore';
+import * as tor from 'media/dir/utils/torrent/info';
+import store from 'media/dir/utils/torrent/chunkstore';
 import media from 'media/store';
 
-import type {Torrent, TorrentCtx, TorrentInfo, TorrentFileData, TorrentFileEntry} from '../types';
+import type {Torrent, TorrentCtx, TorrentInfo, TorrentFileData, TorrentFileEntry} from 'media/dir/types/torrent';
 import type {GestureResponderEvent} from 'react-native';
 import type {HfsDirectoryEntry} from 'react-exo/fs';
 
-export function useTorrent(path: string): TorrentCtx {
+export function useDirTorrent(path: string): TorrentCtx {
   const buffer = useFile(path, 'arrayBuffer');
   const {path: url} = useCurrentPath();
   const put = useDispatch();
