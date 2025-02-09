@@ -4,7 +4,7 @@ import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {Text, Pressable} from 'react-native';
 import {Icon} from 'react-exo/icon';
 import {isTouch} from 'app/utils/platform';
-import {ListRowIcon} from 'media/stacks/ListRowIcon';
+import {MediaIcon} from 'media/stacks/MediaIcon';
 import media from 'media/store';
 
 import type {HfsImpl} from 'react-exo/fs';
@@ -46,7 +46,7 @@ export function MediaSelectionItem(props: MediaSelectionItemProps) {
       key={path}
       onPress={() => put(media.actions.focus(path))}
       style={[styles.root, focused && styles.focus]}>
-      <ListRowIcon
+      <MediaIcon
         name={name ?? ''}
         size={ICON_SIZE}
         dir={dir}

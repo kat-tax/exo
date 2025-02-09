@@ -6,14 +6,14 @@ import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useScheme} from 'app/hooks/useScheme';
 import {getIcon} from 'media/file/icons';
 
-interface ListRowIcon {
+interface MediaIcon {
   name: string,
   size?: 0 | 1 | 2,
   dir?: boolean,
   ext?: string,
 }
 
-export function ListRowIcon(props: ListRowIcon) {
+export function MediaIcon(props: MediaIcon) {
   const {name, size = 1, ext = '', dir = false} = props;
   const [icon, setIcon] = useState<string | null>(null);
   const {styles, theme} = useStyles(stylesheet);

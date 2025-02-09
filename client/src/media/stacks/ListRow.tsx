@@ -1,6 +1,6 @@
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {View, Text} from 'react-native';
-import {ListRowIcon} from 'media/stacks/ListRowIcon';
+import {MediaIcon} from 'media/stacks/MediaIcon';
 import {bytesize} from 'app/utils/formatting';
 import {isTouch} from 'app/utils/platform';
 
@@ -46,7 +46,7 @@ export function ListRow(props: ListRow) {
 
   return (
     <View style={vstyles.root}>
-      <ListRowIcon {...{size: TOUCH ? 1 : 0, name, ext, dir}}/>
+      <MediaIcon {...{size: TOUCH ? 1 : 0, name, ext, dir}}/>
       <Text
         style={styles.text}
         ellipsizeMode="middle"

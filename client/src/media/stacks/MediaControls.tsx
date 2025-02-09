@@ -7,7 +7,7 @@ import {Image} from 'react-exo/image';
 import {Icon} from 'react-exo/icon';
 import {isTouch} from 'app/utils/platform';
 import {FileType} from 'media/file/types';
-import {ListRowIcon} from 'media/stacks/ListRowIcon';
+import {MediaIcon} from 'media/stacks/MediaIcon';
 import {useMediaControls} from 'media/hooks/useMediaControls';
 
 import type {FileProps} from 'media/file';
@@ -99,7 +99,7 @@ export function MediaControls(props: MediaControlsProps) {
                   height={imageSize}
                   width={imageSize}
               />
-            : <ListRowIcon
+            : <MediaIcon
                 name={name ?? ''}
                 ext={props.metadata.ext}
                 dir={isDir}
