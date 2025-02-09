@@ -2,7 +2,7 @@ import {Touch} from 'app/stacks/touch';
 import {ListRow} from 'media/stacks/list-row';
 
 import {TorrentMenu} from './torrent-menu';
-import {useTorrentEntry} from '../hooks/useTorrentEntry';
+import {useTorrentEntry} from '../hooks/use-torrent-entry';
 
 import type {TorrentFileEntry, TorrentCmd} from '../types';
 

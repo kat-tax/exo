@@ -1,7 +1,7 @@
 import {Touch} from 'app/stacks/touch';
 import {ListRow} from 'media/stacks/list-row';
 import {HfsMenu} from './hfs-menu';
-import {useHfsEntry} from '../hooks/useHfsEntry';
+import {useHfsEntry} from '../hooks/use-hfs-entry';
 
 import type {HfsDirectoryEntry} from 'react-exo/fs';
 import type {HfsCmd, HfsOpt} from '../types';

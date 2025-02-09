@@ -3,7 +3,7 @@ import {useInitialTheme, UnistylesRuntime} from 'react-native-unistyles';
 import {StatusBar, Appearance} from 'react-native';
 import {GestureProvider} from 'react-exo/gesture';
 import {ToastRoot} from 'react-exo/toast';
-import {useScheme} from 'app/hooks/useScheme';
+import {useScheme} from 'app/hooks/use-scheme';
 import {hideBootsplash} from 'app/utils/bootsplash';
 
 export function Theme(props: React.PropsWithChildren) {

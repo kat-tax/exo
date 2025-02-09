@@ -25,19 +25,19 @@ msgstr ""
 msgid "A mnemonic phrase for authentication."
 msgstr "認証用のニーモニックフレーズ。"
 
-#: ../../client/src/app/hooks/useSettings.ts:96
+#: ../../client/src/app/hooks/use-settings.ts:96
 msgid "Are you sure you want to change the owner key? This will reset the local database. This action cannot be undone."
 msgstr "オーナーキーを変更してもよろしいですか？ローカルデータベースがリセットされます。この操作は取り消せません。"
 
-#: ../../client/src/app/hooks/useSettings.ts:103
+#: ../../client/src/app/hooks/use-settings.ts:103
 msgid "Are you sure you want to reset your filesystem? This will delete all files."
 msgstr ""
 
-#: ../../client/src/app/hooks/useSettings.ts:90
+#: ../../client/src/app/hooks/use-settings.ts:90
 msgid "Are you sure you want to reset your local database? If data is not backed up on another device, it will be lost. This action cannot be undone."
 msgstr "ローカルデータベースをリセットしてもよろしいですか？他のデバイスにバックアップされていないデータは失われます。この操作は取り消せません。"
 
-#: ../../client/src/app/hooks/useSettings.ts:81
+#: ../../client/src/app/hooks/use-settings.ts:81
 msgid "Are you sure you want to reset your prompt history?"
 msgstr "プロンプト履歴をリセットしてもよろしいですか？"
 
@@ -66,7 +66,7 @@ msgstr "カレンダー"
 msgid "Celsius"
 msgstr "摂氏"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:286
+#: ../../client/src/media/hooks/use-media-controls.ts:286
 msgid "Close"
 msgstr "閉じる"
 
@@ -74,7 +74,7 @@ msgstr "閉じる"
 msgid "Compress"
 msgstr ""
 
-#: ../../client/src/media/dir/hfs/stacks/hfs-menu.tsx:55
+#: ../../client/src/media/hooks/use-media-controls.ts:58
 msgid "Copy"
 msgstr ""
 
@@ -163,7 +163,7 @@ msgstr "ダウンロード"
 msgid "Downloads"
 msgstr "ダウンロード"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:67
+#: ../../client/src/media/hooks/use-media-controls.ts:67
 msgid "Edit"
 msgstr "編集"
 
@@ -183,7 +183,7 @@ msgstr ""
 msgid "Enter name"
 msgstr ""
 
-#: ../../client/src/media/dir/zip/stacks/zip-menu.tsx:22
+#: ../../client/src/media/hooks/use-media-controls.ts:87
 msgid "Extract"
 msgstr "抽出"
 
@@ -208,7 +208,7 @@ msgstr ""
 msgid "Folder is empty. Drop items or select folder to import."
 msgstr ""
 
-#: ../../client/src/media/hooks/useMediaControls.ts:276
+#: ../../client/src/media/hooks/use-media-controls.ts:276
 msgid "Fullscreen"
 msgstr "全画面"
 
@@ -216,7 +216,7 @@ msgstr "全画面"
 msgid "Games"
 msgstr "ゲーム"
 
-#: ../../client/src/app/hooks/useGeolocation.ts:20
+#: ../../client/src/app/hooks/use-geolocation.ts:20
 msgid "Geolocation Error"
 msgstr "位置情報エラー"
 
@@ -236,7 +236,7 @@ msgstr "おはようございます"
 msgid "Groq API Key"
 msgstr "Groq APIキー"
 
-#: ../../client/src/home/hooks/useAI.tsx:44
+#: ../../client/src/home/hooks/use-ai.tsx:44
 msgid "Groq Failure"
 msgstr "Groqエラー"
 
@@ -277,7 +277,7 @@ msgstr "ライブラリ"
 msgid "Light"
 msgstr "ライト"
 
-#: ../../client/src/home/hooks/useWeather.ts:11
+#: ../../client/src/home/hooks/use-weather.ts:11
 msgid "Loading..."
 msgstr "読み込み中..."
 
@@ -333,7 +333,7 @@ msgstr "音楽"
 msgid "News"
 msgstr "ニュース"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:195
+#: ../../client/src/media/hooks/use-media-controls.ts:195
 msgid "Next"
 msgstr "次へ"
 
@@ -345,7 +345,7 @@ msgstr "予定されているイベントはありません。"
 msgid "Open"
 msgstr ""
 
-#: ../../client/src/media/hooks/useMediaControls.ts:231
+#: ../../client/src/media/hooks/use-media-controls.ts:231
 msgid "Options"
 msgstr "オプション"
 
@@ -357,7 +357,7 @@ msgstr "概要"
 msgid "Owner Key"
 msgstr "オーナーキー"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:130
+#: ../../client/src/media/hooks/use-media-controls.ts:130
 msgid "Pause"
 msgstr "一時停止"
 
@@ -365,11 +365,11 @@ msgstr "一時停止"
 msgid "Pictures"
 msgstr "写真"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:242
+#: ../../client/src/media/hooks/use-media-controls.ts:242
 msgid "Pin"
 msgstr "ピン留め"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:131
+#: ../../client/src/media/hooks/use-media-controls.ts:131
 msgid "Play"
 msgstr "再生"
 
@@ -377,7 +377,7 @@ msgstr "再生"
 msgid "Please set your Groq API Key"
 msgstr "Groq APIキーを設定してください"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:184
+#: ../../client/src/media/hooks/use-media-controls.ts:184
 msgid "Previous"
 msgstr "前へ"
 
@@ -385,7 +385,7 @@ msgstr "前へ"
 msgid "Profile"
 msgstr "プロフィール"
 
-#: ../../client/src/app/hooks/useSettings.ts:83
+#: ../../client/src/app/hooks/use-settings.ts:83
 msgid "Prompt History Reset"
 msgstr "プロンプト履歴のリセット"
 
@@ -421,7 +421,7 @@ msgstr ""
 msgid "Rename"
 msgstr ""
 
-#: ../../client/src/media/hooks/useMediaControls.ts:172
+#: ../../client/src/media/hooks/use-media-controls.ts:172
 msgid "Replay"
 msgstr "リプレイ"
 
@@ -429,7 +429,7 @@ msgstr "リプレイ"
 msgid "Rooms"
 msgstr ""
 
-#: ../../client/src/media/hooks/useMediaControls.ts:97
+#: ../../client/src/media/hooks/use-media-controls.ts:97
 msgid "Search"
 msgstr "検索"
 
@@ -462,15 +462,15 @@ msgstr ""
 msgid "Settings"
 msgstr "設定"
 
-#: ../../client/src/media/dir/hfs/stacks/hfs-menu.tsx:30
+#: ../../client/src/media/hooks/use-media-controls.ts:256
 msgid "Share"
 msgstr "共有"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:150
+#: ../../client/src/media/hooks/use-media-controls.ts:150
 msgid "Skip backward"
 msgstr "巻き戻し"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:161
+#: ../../client/src/media/hooks/use-media-controls.ts:161
 msgid "Skip forward"
 msgstr "早送り"
 
@@ -522,7 +522,7 @@ msgstr "イベントと時間関連情報を表示"
 msgid "View your latest news and rss feeds"
 msgstr "最新ニュースとRSSフィードを表示"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:219
+#: ../../client/src/media/hooks/use-media-controls.ts:219
 msgid "Volume"
 msgstr "音量"
 
@@ -539,11 +539,11 @@ msgstr "ようこそ、ユーザーさん"
 msgid "World"
 msgstr "ワールド"
 
-#: ../../client/src/app/hooks/useConnectivity.ts:15
+#: ../../client/src/app/hooks/use-connectivity.ts:15
 msgid "You are offline"
 msgstr "オフラインです"
 
-#: ../../client/src/app/hooks/useConnectivity.ts:13
+#: ../../client/src/app/hooks/use-connectivity.ts:13
 msgid "You are online"
 msgstr "オンラインです"
 
@@ -551,14 +551,14 @@ msgstr "オンラインです"
 msgid "Your name to display in the app."
 msgstr "アプリに表示する名前。"
 
-#: ../../client/src/app/hooks/useSettings.ts:84
+#: ../../client/src/app/hooks/use-settings.ts:84
 msgid "Your prompt history has been reset."
 msgstr "プロンプト履歴がリセットされました。"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:107
+#: ../../client/src/media/hooks/use-media-controls.ts:107
 msgid "Zoom in"
 msgstr "拡大"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:118
+#: ../../client/src/media/hooks/use-media-controls.ts:118
 msgid "Zoom out"
 msgstr "縮小"

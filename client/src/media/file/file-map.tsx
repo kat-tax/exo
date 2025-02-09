@@ -3,9 +3,9 @@ import {Map, Source, Layer} from 'react-map-gl/maplibre';
 import {View} from 'react-native';
 import {useEffect, useState, forwardRef} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {useFileData} from 'media/file/hooks/useFileData';
-import {useAppContext} from 'app/hooks/useAppContext';
-import {useScheme} from 'app/hooks/useScheme';
+import {useFile} from 'media/file/hooks/use-file';
+import {useAppContext} from 'app/hooks/use-app-context';
+import {useScheme} from 'app/hooks/use-scheme';
 import {getBounds} from 'app/utils/mapping';
 import {MarkerGeoJson} from 'world/stacks/marker-geojson';
 
@@ -15,8 +15,8 @@ import type {LngLatBounds} from 'maplibre-gl';
 export interface FileMap extends FileProps {}
 
 export default forwardRef((props: FileMap) => {
-  const url = useFileData(props.path, 'dataUrl');
-  const source = useFileData(props.path, 'text');
+  const url = useFile(props.path, 'dataUrl');
+  const source = useFile(props.path, 'text');
   const {profile} = useAppContext();
 
   const [bounds, setBounds] = useState<LngLatBounds | null>(null);

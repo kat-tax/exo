@@ -1,7 +1,7 @@
 import {Touch} from 'app/stacks/touch';
 import {ListRow} from 'media/stacks/list-row';
 import {ZipMenu} from './zip-menu';
-import {useZipEntry} from '../hooks/useZipEntry';
+import {useZipEntry} from '../hooks/use-zip-entry';
 
 import type {ZipFileEntry, ZipCmd} from '../types';
 

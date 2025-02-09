@@ -1,5 +1,5 @@
-import {useLocationPathInfo} from 'app/hooks/useCurrentPathInfo';
-import {useHfs} from 'media/dir/hfs/hooks/useHfs';
+import {useLocationPathInfo} from 'app/hooks/use-current-pathinfo';
+import {useHfs} from 'media/dir/hfs/hooks/use-hfs';
 import {HfsDir} from 'media/dir/hfs';
 import {Panel} from 'app/stacks/panel';
 

@@ -1,7 +1,7 @@
 import {View} from 'react-native';
 import {forwardRef, useEffect} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {useHfs} from 'media/dir/hfs/hooks/useHfs';
+import {useHfs} from 'media/dir/hfs/hooks/use-hfs';
 import {HfsDir} from 'media/dir/hfs';
 import {Panel} from 'app/stacks/panel';
 

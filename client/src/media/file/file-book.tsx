@@ -3,8 +3,8 @@ import {Book} from 'react-exo/book';
 import {useLingui} from '@lingui/react/macro';
 import {useEffect, useState, useCallback, forwardRef} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {useFileData} from 'media/file/hooks/useFileData';
-import {useScheme} from 'app/hooks/useScheme';
+import {useFile} from 'media/file/hooks/use-file';
+import {useScheme} from 'app/hooks/use-scheme';
 import {View, Platform} from 'react-native';
 
 import type {FileProps} from 'media/file';
@@ -17,7 +17,7 @@ export interface FileBook extends FileProps {}
 export type {BookRef};
 
 export default forwardRef((props: FileBook, ref: React.Ref<BookRef>) => {  
-  const source = useFileData(props.path, 'dataUrl', 'application/epub+zip');
+  const source = useFile(props.path, 'dataUrl', 'application/epub+zip');
   const [title, setTitle] = useState('');
   const [chapter, setChapter] = useState('');
   const {styles} = useStyles(stylesheet);

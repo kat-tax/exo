@@ -1,6 +1,6 @@
 import {useWindowDimensions, View, ScrollView, Text} from 'react-native';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {useAppContext} from 'app/hooks/useAppContext';
+import {useAppContext} from 'app/hooks/use-app-context';
 
 export interface PanelProps extends React.PropsWithChildren {
   title?: string | React.ReactNode,

@@ -2,7 +2,7 @@ import {useLingui} from '@lingui/react/macro';
 import {MenuContext} from 'app/stacks/float';
 
 import type {HfsDirectoryEntry} from 'react-exo/fs';
-import type {useHfsEntry} from '../hooks/useHfsEntry';
+import type {useHfsEntry} from '../hooks/use-hfs-entry';
 
 export interface HfsMenuProps extends React.PropsWithChildren {
   entry: HfsDirectoryEntry,

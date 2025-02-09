@@ -25,19 +25,19 @@ msgstr ""
 msgid "A mnemonic phrase for authentication."
 msgstr "Una frase mnemotécnica para autenticación."
 
-#: ../../client/src/app/hooks/useSettings.ts:96
+#: ../../client/src/app/hooks/use-settings.ts:96
 msgid "Are you sure you want to change the owner key? This will reset the local database. This action cannot be undone."
 msgstr "¿Estás seguro de que quieres cambiar la clave de propietario? Esto reiniciará la base de datos local. Esta acción no se puede deshacer."
 
-#: ../../client/src/app/hooks/useSettings.ts:103
+#: ../../client/src/app/hooks/use-settings.ts:103
 msgid "Are you sure you want to reset your filesystem? This will delete all files."
 msgstr ""
 
-#: ../../client/src/app/hooks/useSettings.ts:90
+#: ../../client/src/app/hooks/use-settings.ts:90
 msgid "Are you sure you want to reset your local database? If data is not backed up on another device, it will be lost. This action cannot be undone."
 msgstr "¿Estás seguro de que quieres reiniciar tu base de datos local? Si los datos no están respaldados en otro dispositivo, se perderán. Esta acción no se puede deshacer."
 
-#: ../../client/src/app/hooks/useSettings.ts:81
+#: ../../client/src/app/hooks/use-settings.ts:81
 msgid "Are you sure you want to reset your prompt history?"
 msgstr "¿Estás seguro de que quieres reiniciar tu historial de prompts?"
 
@@ -66,7 +66,7 @@ msgstr "Calendario"
 msgid "Celsius"
 msgstr "Celsius"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:286
+#: ../../client/src/media/hooks/use-media-controls.ts:286
 msgid "Close"
 msgstr "Cerrar"
 
@@ -74,7 +74,7 @@ msgstr "Cerrar"
 msgid "Compress"
 msgstr ""
 
-#: ../../client/src/media/dir/hfs/stacks/hfs-menu.tsx:55
+#: ../../client/src/media/hooks/use-media-controls.ts:58
 msgid "Copy"
 msgstr ""
 
@@ -163,7 +163,7 @@ msgstr "Descargar"
 msgid "Downloads"
 msgstr "Descargas"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:67
+#: ../../client/src/media/hooks/use-media-controls.ts:67
 msgid "Edit"
 msgstr "Editar"
 
@@ -183,7 +183,7 @@ msgstr ""
 msgid "Enter name"
 msgstr ""
 
-#: ../../client/src/media/dir/zip/stacks/zip-menu.tsx:22
+#: ../../client/src/media/hooks/use-media-controls.ts:87
 msgid "Extract"
 msgstr "Extraer"
 
@@ -208,7 +208,7 @@ msgstr ""
 msgid "Folder is empty. Drop items or select folder to import."
 msgstr ""
 
-#: ../../client/src/media/hooks/useMediaControls.ts:276
+#: ../../client/src/media/hooks/use-media-controls.ts:276
 msgid "Fullscreen"
 msgstr "Pantalla completa"
 
@@ -216,7 +216,7 @@ msgstr "Pantalla completa"
 msgid "Games"
 msgstr "Juegos"
 
-#: ../../client/src/app/hooks/useGeolocation.ts:20
+#: ../../client/src/app/hooks/use-geolocation.ts:20
 msgid "Geolocation Error"
 msgstr "Error de Geolocalización"
 
@@ -236,7 +236,7 @@ msgstr "Buenos días"
 msgid "Groq API Key"
 msgstr "Clave API de Groq"
 
-#: ../../client/src/home/hooks/useAI.tsx:44
+#: ../../client/src/home/hooks/use-ai.tsx:44
 msgid "Groq Failure"
 msgstr "Error de Groq"
 
@@ -277,7 +277,7 @@ msgstr "Biblioteca"
 msgid "Light"
 msgstr "Claro"
 
-#: ../../client/src/home/hooks/useWeather.ts:11
+#: ../../client/src/home/hooks/use-weather.ts:11
 msgid "Loading..."
 msgstr "Cargando..."
 
@@ -333,7 +333,7 @@ msgstr "Música"
 msgid "News"
 msgstr "Noticias"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:195
+#: ../../client/src/media/hooks/use-media-controls.ts:195
 msgid "Next"
 msgstr "Siguiente"
 
@@ -345,7 +345,7 @@ msgstr "No hay eventos programados."
 msgid "Open"
 msgstr ""
 
-#: ../../client/src/media/hooks/useMediaControls.ts:231
+#: ../../client/src/media/hooks/use-media-controls.ts:231
 msgid "Options"
 msgstr "Opciones"
 
@@ -357,7 +357,7 @@ msgstr "Resumen"
 msgid "Owner Key"
 msgstr "Clave de Propietario"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:130
+#: ../../client/src/media/hooks/use-media-controls.ts:130
 msgid "Pause"
 msgstr "Pausar"
 
@@ -365,11 +365,11 @@ msgstr "Pausar"
 msgid "Pictures"
 msgstr "Imágenes"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:242
+#: ../../client/src/media/hooks/use-media-controls.ts:242
 msgid "Pin"
 msgstr "Fijar"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:131
+#: ../../client/src/media/hooks/use-media-controls.ts:131
 msgid "Play"
 msgstr "Reproducir"
 
@@ -377,7 +377,7 @@ msgstr "Reproducir"
 msgid "Please set your Groq API Key"
 msgstr "Por favor configura tu clave API de Groq"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:184
+#: ../../client/src/media/hooks/use-media-controls.ts:184
 msgid "Previous"
 msgstr "Anterior"
 
@@ -385,7 +385,7 @@ msgstr "Anterior"
 msgid "Profile"
 msgstr "Perfil"
 
-#: ../../client/src/app/hooks/useSettings.ts:83
+#: ../../client/src/app/hooks/use-settings.ts:83
 msgid "Prompt History Reset"
 msgstr "Historial de Prompts Reiniciado"
 
@@ -421,7 +421,7 @@ msgstr ""
 msgid "Rename"
 msgstr ""
 
-#: ../../client/src/media/hooks/useMediaControls.ts:172
+#: ../../client/src/media/hooks/use-media-controls.ts:172
 msgid "Replay"
 msgstr "Repetir"
 
@@ -429,7 +429,7 @@ msgstr "Repetir"
 msgid "Rooms"
 msgstr ""
 
-#: ../../client/src/media/hooks/useMediaControls.ts:97
+#: ../../client/src/media/hooks/use-media-controls.ts:97
 msgid "Search"
 msgstr "Buscar"
 
@@ -462,15 +462,15 @@ msgstr ""
 msgid "Settings"
 msgstr "Ajustes"
 
-#: ../../client/src/media/dir/hfs/stacks/hfs-menu.tsx:30
+#: ../../client/src/media/hooks/use-media-controls.ts:256
 msgid "Share"
 msgstr "Compartir"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:150
+#: ../../client/src/media/hooks/use-media-controls.ts:150
 msgid "Skip backward"
 msgstr "Retroceder"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:161
+#: ../../client/src/media/hooks/use-media-controls.ts:161
 msgid "Skip forward"
 msgstr "Avanzar"
 
@@ -522,7 +522,7 @@ msgstr "Ver tus eventos e información relacionada con el tiempo"
 msgid "View your latest news and rss feeds"
 msgstr "Ver tus últimas noticias y feeds RSS"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:219
+#: ../../client/src/media/hooks/use-media-controls.ts:219
 msgid "Volume"
 msgstr "Volumen"
 
@@ -539,11 +539,11 @@ msgstr "Bienvenido, Humano"
 msgid "World"
 msgstr "Mundo"
 
-#: ../../client/src/app/hooks/useConnectivity.ts:15
+#: ../../client/src/app/hooks/use-connectivity.ts:15
 msgid "You are offline"
 msgstr "Estás desconectado"
 
-#: ../../client/src/app/hooks/useConnectivity.ts:13
+#: ../../client/src/app/hooks/use-connectivity.ts:13
 msgid "You are online"
 msgstr "Estás conectado"
 
@@ -551,14 +551,14 @@ msgstr "Estás conectado"
 msgid "Your name to display in the app."
 msgstr "Tu nombre para mostrar en la aplicación."
 
-#: ../../client/src/app/hooks/useSettings.ts:84
+#: ../../client/src/app/hooks/use-settings.ts:84
 msgid "Your prompt history has been reset."
 msgstr "Tu historial de prompts ha sido reiniciado."
 
-#: ../../client/src/media/hooks/useMediaControls.ts:107
+#: ../../client/src/media/hooks/use-media-controls.ts:107
 msgid "Zoom in"
 msgstr "Acercar"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:118
+#: ../../client/src/media/hooks/use-media-controls.ts:118
 msgid "Zoom out"
 msgstr "Alejar"

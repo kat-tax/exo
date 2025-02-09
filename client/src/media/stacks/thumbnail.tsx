@@ -3,7 +3,7 @@ import {View} from 'react-native';
 
 import {useEffect, useState} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {useScheme} from 'app/hooks/useScheme';
+import {useScheme} from 'app/hooks/use-scheme';
 import {getIcon} from 'media/file/icons';
 
 interface MediaIcon {

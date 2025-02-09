@@ -8,7 +8,7 @@ import {Icon} from 'react-exo/icon';
 import {isTouch} from 'app/utils/platform';
 import {FileType} from 'media/file/types';
 import {MediaIcon} from 'media/stacks/thumbnail';
-import {useMediaControls} from 'media/hooks/useMediaControls';
+import {useMediaControls} from 'media/hooks/use-media-controls';
 
 import type {FileProps} from 'media/file';
 import type {FileRef, FileRenderInfo} from 'media/file/types';

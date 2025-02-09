@@ -5,8 +5,8 @@ import * as dnd from 'app/utils/dragdrop';
 import {bind} from 'media/utils/bind';
 import media from 'media/store';
 
-import {isZipData} from 'media/dir/zip/hooks/useZipEntry';
-import {isTorrentData} from 'media/dir/torrent/hooks/useTorrentEntry';
+import {isZipData} from 'media/dir/zip/hooks/use-zip-entry';
+import {isTorrentData} from 'media/dir/torrent/hooks/use-torrent-entry';
 
 import type {View} from 'react-native';
 import type {CleanupFn} from 'app/utils/dragdrop';

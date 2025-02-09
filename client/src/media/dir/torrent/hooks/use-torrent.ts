@@ -2,8 +2,8 @@ import ExoTorrent from 'react-exo/torrent';
 import {web} from 'react-exo/fs';
 import {useDispatch} from 'react-redux';
 import {useCallback, useMemo} from 'react';
-import {useLocationPathInfo} from 'app/hooks/useCurrentPathInfo';
-import {useFileData} from 'media/file/hooks/useFileData';
+import {useLocationPathInfo} from 'app/hooks/use-current-pathinfo';
+import {useFile} from 'media/file/hooks/use-file';
 import {bytesize} from 'app/utils/formatting';
 import * as tor from '../utils/info';
 import store from '../utils/chunkstore';
@@ -14,7 +14,7 @@ import type {GestureResponderEvent} from 'react-native';
 import type {HfsDirectoryEntry} from 'react-exo/fs';
 
 export function useTorrent(path: string): TorrentCtx {
-  const buffer = useFileData(path, 'arrayBuffer');
+  const buffer = useFile(path, 'arrayBuffer');
   const {path: url} = useLocationPathInfo();
   const put = useDispatch();
 

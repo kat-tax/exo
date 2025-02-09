@@ -3,7 +3,7 @@ import {useLingui} from '@lingui/react/macro';
 import {MenuContext} from 'app/stacks/float';
 
 import type {TorrentFileEntry} from '../types';
-import type {useTorrentEntry} from '../hooks/useTorrentEntry';
+import type {useTorrentEntry} from '../hooks/use-torrent-entry';
 
 export interface TorrentMenuProps extends React.PropsWithChildren {
   entry: TorrentFileEntry,

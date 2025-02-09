@@ -4,8 +4,8 @@ import {useSelector} from 'react-redux';
 import {useLocation} from 'react-exo/navigation';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useWindowDimensions, View, StatusBar} from 'react-native';
-import {useDeviceSession} from 'app/hooks/useDeviceSession';
-import {useHotkeys} from 'app/hooks/useHotkeys';
+import {useDeviceSession} from 'app/hooks/use-device-session';
+import {useHotkeys} from 'app/hooks/use-hotkeys';
 import {useProfile} from 'app/data';
 import {toPathInfo} from 'app/utils/formatting';
 import {MediaAdd} from 'media/stacks/add';
@@ -13,7 +13,7 @@ import {Media} from 'media/stacks/media';
 import {Menu} from 'app/routes/menu';
 import media from 'media/store';
 
-import type {AppContext} from 'app/hooks/useAppContext';
+import type {AppContext} from 'app/hooks/use-app-context';
 
 export const APP_MENU_WIDTH = 146;
 export const APP_MENU_TAB_HEIGHT = 64;

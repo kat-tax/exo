@@ -4,7 +4,7 @@ import {useLocation} from 'react-exo/navigation';
 import {toPathInfo} from 'app/utils/formatting';
 import {getStartInDir} from '../utils/path';
 
-export function useHfsImporter() {
+export function useHfsAdd() {
   const {pathname} = useLocation();
   const {parts, startIn} = useMemo(() => {
     const path = toPathInfo(pathname, true);

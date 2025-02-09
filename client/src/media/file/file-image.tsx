@@ -5,7 +5,7 @@ import {getMatrixTransformStyles, TransformWrapper, TransformComponent} from 're
 //import {useImageResolution, ResumableZoom, fitContainer} from 'react-native-zoom-toolkit';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 
-import {useFileData} from 'media/file/hooks/useFileData';
+import {useFile} from 'media/file/hooks/use-file';
 
 import type {FileProps} from 'media/file';
 import type {ReactZoomPanPinchContentRef} from 'react-zoom-pan-pinch';
@@ -19,7 +19,7 @@ export interface ImageRef {
 }
 
 export default memo(forwardRef((props: FileImage, ref: React.Ref<ImageRef>) => {
-  const source = useFileData(props.path, 'dataUrl');
+  const source = useFile(props.path, 'dataUrl');
   const controls = useRef<ReactZoomPanPinchContentRef>(null);
   const [scale, setScale] = useState(1);
   const [width, setWidth] = useState(0);

@@ -25,19 +25,19 @@ msgstr ""
 msgid "A mnemonic phrase for authentication."
 msgstr "عبارة تذكيرية للمصادقة."
 
-#: ../../client/src/app/hooks/useSettings.ts:96
+#: ../../client/src/app/hooks/use-settings.ts:96
 msgid "Are you sure you want to change the owner key? This will reset the local database. This action cannot be undone."
 msgstr "هل أنت متأكد من أنك تريد تغيير مفتاح المالك؟ سيؤدي هذا إلى إعادة تعيين قاعدة البيانات المحلية. لا يمكن التراجع عن هذا الإجراء."
 
-#: ../../client/src/app/hooks/useSettings.ts:103
+#: ../../client/src/app/hooks/use-settings.ts:103
 msgid "Are you sure you want to reset your filesystem? This will delete all files."
 msgstr "هل أنت متأكد من أنك تريد إعادة تعيين نظام الملفات الخاص بك؟ سيؤدي هذا إلى حذف جميع الملفات."
 
-#: ../../client/src/app/hooks/useSettings.ts:90
+#: ../../client/src/app/hooks/use-settings.ts:90
 msgid "Are you sure you want to reset your local database? If data is not backed up on another device, it will be lost. This action cannot be undone."
 msgstr "هل أنت متأكد من أنك تريد إعادة تعيين قاعدة البيانات المحلية؟ إذا لم يتم نسخ البيانات احتياطيًا على جهاز آخر، فستفقد. لا يمكن التراجع عن هذا الإجراء."
 
-#: ../../client/src/app/hooks/useSettings.ts:81
+#: ../../client/src/app/hooks/use-settings.ts:81
 msgid "Are you sure you want to reset your prompt history?"
 msgstr "هل أنت متأكد من أنك تريد إعادة تعيين سجل المطالبات الخاص بك؟"
 
@@ -66,7 +66,7 @@ msgstr "التقويم"
 msgid "Celsius"
 msgstr "سيلزيوس"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:286
+#: ../../client/src/media/hooks/use-media-controls.ts:286
 msgid "Close"
 msgstr "إغلاق"
 
@@ -74,7 +74,7 @@ msgstr "إغلاق"
 msgid "Compress"
 msgstr ""
 
-#: ../../client/src/media/dir/hfs/stacks/hfs-menu.tsx:55
+#: ../../client/src/media/hooks/use-media-controls.ts:58
 msgid "Copy"
 msgstr "نسخ"
 
@@ -163,7 +163,7 @@ msgstr "تحميل"
 msgid "Downloads"
 msgstr "التنزيلات"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:67
+#: ../../client/src/media/hooks/use-media-controls.ts:67
 msgid "Edit"
 msgstr "تعديل"
 
@@ -183,7 +183,7 @@ msgstr "أدخل اسم المجلد"
 msgid "Enter name"
 msgstr ""
 
-#: ../../client/src/media/dir/zip/stacks/zip-menu.tsx:22
+#: ../../client/src/media/hooks/use-media-controls.ts:87
 msgid "Extract"
 msgstr "استخراج"
 
@@ -208,7 +208,7 @@ msgstr "نظام الملفات"
 msgid "Folder is empty. Drop items or select folder to import."
 msgstr ""
 
-#: ../../client/src/media/hooks/useMediaControls.ts:276
+#: ../../client/src/media/hooks/use-media-controls.ts:276
 msgid "Fullscreen"
 msgstr "ملء الشاشة"
 
@@ -216,7 +216,7 @@ msgstr "ملء الشاشة"
 msgid "Games"
 msgstr "الألعاب"
 
-#: ../../client/src/app/hooks/useGeolocation.ts:20
+#: ../../client/src/app/hooks/use-geolocation.ts:20
 msgid "Geolocation Error"
 msgstr "خطأ في تحديد الموقع"
 
@@ -236,7 +236,7 @@ msgstr "صباح الخير"
 msgid "Groq API Key"
 msgstr "مفتاح Groq API"
 
-#: ../../client/src/home/hooks/useAI.tsx:44
+#: ../../client/src/home/hooks/use-ai.tsx:44
 msgid "Groq Failure"
 msgstr "فشل Groq"
 
@@ -277,7 +277,7 @@ msgstr "المكتبة"
 msgid "Light"
 msgstr "فاتح"
 
-#: ../../client/src/home/hooks/useWeather.ts:11
+#: ../../client/src/home/hooks/use-weather.ts:11
 msgid "Loading..."
 msgstr "جاري التحميل..."
 
@@ -333,7 +333,7 @@ msgstr "الموسيقى"
 msgid "News"
 msgstr "الأخبار"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:195
+#: ../../client/src/media/hooks/use-media-controls.ts:195
 msgid "Next"
 msgstr "التالي"
 
@@ -345,7 +345,7 @@ msgstr "لا توجد أحداث مجدولة."
 msgid "Open"
 msgstr ""
 
-#: ../../client/src/media/hooks/useMediaControls.ts:231
+#: ../../client/src/media/hooks/use-media-controls.ts:231
 msgid "Options"
 msgstr "الخيارات"
 
@@ -357,7 +357,7 @@ msgstr "نظرة عامة"
 msgid "Owner Key"
 msgstr "مفتاح المالك"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:130
+#: ../../client/src/media/hooks/use-media-controls.ts:130
 msgid "Pause"
 msgstr "إيقاف مؤقت"
 
@@ -365,11 +365,11 @@ msgstr "إيقاف مؤقت"
 msgid "Pictures"
 msgstr "الصور"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:242
+#: ../../client/src/media/hooks/use-media-controls.ts:242
 msgid "Pin"
 msgstr "تثبيت"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:131
+#: ../../client/src/media/hooks/use-media-controls.ts:131
 msgid "Play"
 msgstr "تشغيل"
 
@@ -377,7 +377,7 @@ msgstr "تشغيل"
 msgid "Please set your Groq API Key"
 msgstr "يرجى تعيين مفتاح Groq API الخاص بك"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:184
+#: ../../client/src/media/hooks/use-media-controls.ts:184
 msgid "Previous"
 msgstr "السابق"
 
@@ -385,7 +385,7 @@ msgstr "السابق"
 msgid "Profile"
 msgstr "الملف الشخصي"
 
-#: ../../client/src/app/hooks/useSettings.ts:83
+#: ../../client/src/app/hooks/use-settings.ts:83
 msgid "Prompt History Reset"
 msgstr "إعادة تعيين سجل المطالبات"
 
@@ -421,7 +421,7 @@ msgstr ""
 msgid "Rename"
 msgstr "إعادة تسمية"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:172
+#: ../../client/src/media/hooks/use-media-controls.ts:172
 msgid "Replay"
 msgstr "إعادة التشغيل"
 
@@ -429,7 +429,7 @@ msgstr "إعادة التشغيل"
 msgid "Rooms"
 msgstr ""
 
-#: ../../client/src/media/hooks/useMediaControls.ts:97
+#: ../../client/src/media/hooks/use-media-controls.ts:97
 msgid "Search"
 msgstr "بحث"
 
@@ -462,15 +462,15 @@ msgstr ""
 msgid "Settings"
 msgstr "الإعدادات"
 
-#: ../../client/src/media/dir/hfs/stacks/hfs-menu.tsx:30
+#: ../../client/src/media/hooks/use-media-controls.ts:256
 msgid "Share"
 msgstr "مشاركة"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:150
+#: ../../client/src/media/hooks/use-media-controls.ts:150
 msgid "Skip backward"
 msgstr "تخطي للخلف"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:161
+#: ../../client/src/media/hooks/use-media-controls.ts:161
 msgid "Skip forward"
 msgstr "تخطي للأمام"
 
@@ -522,7 +522,7 @@ msgstr "عرض أحداثك والمعلومات المتعلقة بالوقت"
 msgid "View your latest news and rss feeds"
 msgstr "عرض آخر الأخبار وتغذيات RSS الخاصة بك"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:219
+#: ../../client/src/media/hooks/use-media-controls.ts:219
 msgid "Volume"
 msgstr "مستوى الصوت"
 
@@ -539,11 +539,11 @@ msgstr "مرحباً، أيها الإنسان"
 msgid "World"
 msgstr "العالم"
 
-#: ../../client/src/app/hooks/useConnectivity.ts:15
+#: ../../client/src/app/hooks/use-connectivity.ts:15
 msgid "You are offline"
 msgstr "أنت غير متصل"
 
-#: ../../client/src/app/hooks/useConnectivity.ts:13
+#: ../../client/src/app/hooks/use-connectivity.ts:13
 msgid "You are online"
 msgstr "أنت متصل"
 
@@ -551,14 +551,14 @@ msgstr "أنت متصل"
 msgid "Your name to display in the app."
 msgstr "اسمك للعرض في التطبيق."
 
-#: ../../client/src/app/hooks/useSettings.ts:84
+#: ../../client/src/app/hooks/use-settings.ts:84
 msgid "Your prompt history has been reset."
 msgstr "تم إعادة تعيين سجل المطالبات الخاص بك."
 
-#: ../../client/src/media/hooks/useMediaControls.ts:107
+#: ../../client/src/media/hooks/use-media-controls.ts:107
 msgid "Zoom in"
 msgstr "تكبير"
 
-#: ../../client/src/media/hooks/useMediaControls.ts:118
+#: ../../client/src/media/hooks/use-media-controls.ts:118
 msgid "Zoom out"
 msgstr "تصغير"

@@ -3,8 +3,8 @@ import {Code} from 'react-exo/code';
 import {View} from 'react-native';
 import {forwardRef, useEffect} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {useFileData} from 'media/file/hooks/useFileData';
-import {useScheme} from 'app/hooks/useScheme';
+import {useFile} from 'media/file/hooks/use-file';
+import {useScheme} from 'app/hooks/use-scheme';
 import {bytesize} from 'app/utils/formatting';
 
 import type {FileProps} from 'media/file';
@@ -15,7 +15,7 @@ export interface FileText extends FileProps {
 }
 
 export default forwardRef((props: FileText, _ref: React.Ref<View>) => {
-  const source = useFileData(props.path, 'text');
+  const source = useFile(props.path, 'text');
   const {styles} = useStyles(stylesheet);
   const [scheme] = useScheme();
 

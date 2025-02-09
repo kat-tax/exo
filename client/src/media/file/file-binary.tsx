@@ -1,6 +1,6 @@
 import {useEffect, forwardRef} from 'react';
 import {useLingui} from '@lingui/react/macro';
-import {useFileData} from 'media/file/hooks/useFileData';
+import {useFile} from 'media/file/hooks/use-file';
 import {Watermark} from 'app/stacks/watermark';
 
 import type {FileProps} from 'media/file';
@@ -8,7 +8,7 @@ import type {FileProps} from 'media/file';
 export interface FileBinary extends FileProps {}
 
 export default forwardRef((props: FileBinary) => {
-  const source = useFileData(props.path, 'dataUrl');
+  const source = useFile(props.path, 'dataUrl');
   const {t} = useLingui();
 
   const saveFile = async (uri: string) => {

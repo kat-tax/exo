@@ -1,7 +1,7 @@
 import {View, ScrollView} from 'react-native';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useLingui} from '@lingui/react/macro';
-import {useHfsImporter} from 'media/dir/hfs';
+import {useHfsAdd} from 'media/dir/hfs';
 import {StorageWidget} from 'media/stacks/storage-widget';
 
 import {MenuHeader} from './menu-header';
@@ -9,7 +9,7 @@ import {MenuSection} from './menu-section';
 import {MenuItemTab} from './menu-item-tab';
 import {MenuItem} from './menu-item';
 
-import type {AppContext} from 'app/hooks/useAppContext';
+import type {AppContext} from 'app/hooks/use-app-context';
 
 export interface MenuProps {
   context: AppContext,
@@ -17,7 +17,7 @@ export interface MenuProps {
 }
 
 export function Menu(props: MenuProps) {
-  const {importFile, createFolder} = useHfsImporter();
+  const {importFile, createFolder} = useHfsAdd();
   const {styles} = useStyles(stylesheet);
   const {t} = useLingui();
 

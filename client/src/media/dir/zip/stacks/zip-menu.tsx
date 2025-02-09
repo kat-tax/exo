@@ -3,7 +3,7 @@ import {useLingui} from '@lingui/react/macro';
 import {MenuContext} from 'app/stacks/float';
 
 import type {ZipFileEntry} from '../types';
-import type {useZipEntry} from '../hooks/useZipEntry';
+import type {useZipEntry} from '../hooks/use-zip-entry';
 
 export interface ZipMenuProps extends React.PropsWithChildren {
   entry: ZipFileEntry,

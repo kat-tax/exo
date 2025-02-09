@@ -1,4 +1,4 @@
-import {useScheme} from 'app/hooks/useScheme';
+import {useScheme} from 'app/hooks/use-scheme';
 import type {TouchProps} from './touch.types';
 
 export function Touch(props: TouchProps) {

@@ -1,8 +1,8 @@
 import Map from 'react-map-gl/maplibre';
 import {useState} from 'react';
 import {useDevices} from 'app/data';
-import {useAppContext} from 'app/hooks/useAppContext';
-import {useScheme} from 'app/hooks/useScheme';
+import {useAppContext} from 'app/hooks/use-app-context';
+import {useScheme} from 'app/hooks/use-scheme';
 import {Panel} from 'app/stacks/panel';
 
 import {MarkerDevice} from '../stacks/marker-device';

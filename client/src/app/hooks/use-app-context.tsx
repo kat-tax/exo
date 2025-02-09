@@ -1,6 +1,6 @@
 import {useOutletContext} from 'react-exo/navigation';
 
-import type {useDeviceSession} from 'app/hooks/useDeviceSession';
+import type {useDeviceSession} from 'app/hooks/use-device-session';
 import type {useProfile} from 'app/data';
 
 export type AppContext = ReturnType<typeof useAppContext>;

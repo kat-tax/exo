@@ -4,7 +4,7 @@ import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useHfsCtx} from 'app/data/lib/hfs-provider';
 import {MediaControls} from 'media/stacks/controls';
 import {MediaSelection} from 'media/stacks/selection';
-import {useMediaPictureInPicture} from 'media/hooks/useMediaPictureInPicture';
+import {useMediaPictureInPicture} from 'media/hooks/use-media-pip';
 import {getRenderer} from 'media/file/utils/render';
 import {FileType} from 'media/file/types';
 import File from 'media/file';

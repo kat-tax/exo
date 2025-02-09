@@ -3,7 +3,7 @@ import {useParams} from 'react-exo/navigation';
 import {useState, useCallback} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {Bubble, Embed, Avatar} from 'app/stacks/chat';
-import {useChatRoom} from 'app/hooks/useChatRoom';
+import {useChatRoom} from 'app/hooks/use-chat-room';
 import {bytesize} from 'app/utils/formatting';
 import {debounce} from 'app/utils/delay';
 

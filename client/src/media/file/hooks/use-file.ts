@@ -3,7 +3,7 @@ import {getData} from '../utils/data';
 
 import type {FileData, FileFormat} from 'media/file/types';
 
-export function useFileData<Format extends FileFormat>(
+export function useFile<Format extends FileFormat>(
   path: string,
   format: Format,
   mimetype = 'application/octet-stream',

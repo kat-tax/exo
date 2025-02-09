@@ -6,9 +6,9 @@ import {Picker} from 'react-exo/picker';
 import {Button} from 'design';
 import {Identicon} from 'app/stacks/identicon';
 import {Panel, PanelItem, PanelSection} from 'app/stacks/panel';
-import {useSettings} from 'app/hooks/useSettings';
-import {useLocale} from 'app/hooks/useLocale';
-import {useScheme} from 'app/hooks/useScheme';
+import {useSettings} from 'app/hooks/use-settings';
+import {useLocale} from 'app/hooks/use-locale';
+import {useScheme} from 'app/hooks/use-scheme';
 import {locales} from 'config/locales';
 
 export default function ScreenSettings() {
