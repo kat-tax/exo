@@ -51,7 +51,7 @@ msgstr "Ask anything..."
 msgid "Auto"
 msgstr "Auto"
 
-#: ../../client/src/media/stacks/ListBar.tsx:62
+#: ../../client/src/media/stacks/ListBar.tsx:77
 msgid "Books"
 msgstr "Books"
 
@@ -151,7 +151,7 @@ msgstr "Distance"
 msgid "Docs"
 msgstr "Docs"
 
-#: ../../client/src/media/stacks/ListBar.tsx:52
+#: ../../client/src/media/stacks/ListBar.tsx:67
 msgid "Documents"
 msgstr "Documents"
 
@@ -159,7 +159,7 @@ msgstr "Documents"
 msgid "Download"
 msgstr "Download"
 
-#: ../../client/src/media/stacks/ListBar.tsx:64
+#: ../../client/src/media/stacks/ListBar.tsx:79
 msgid "Downloads"
 msgstr "Downloads"
 
@@ -195,7 +195,7 @@ msgstr "Fahrenheit"
 msgid "Feature in development..."
 msgstr "Feature in development..."
 
-#: ../../client/src/media/stacks/ListBar.tsx:68
+#: ../../client/src/media/stacks/ListBar.tsx:83
 msgid "Files"
 msgstr "Files"
 
@@ -211,7 +211,7 @@ msgstr "Folder is empty. Drop items or select folder to import."
 msgid "Fullscreen"
 msgstr "Fullscreen"
 
-#: ../../client/src/media/stacks/ListBar.tsx:60
+#: ../../client/src/media/stacks/ListBar.tsx:75
 msgid "Games"
 msgstr "Games"
 
@@ -323,7 +323,7 @@ msgstr "Miles"
 msgid "Move"
 msgstr "Move"
 
-#: ../../client/src/media/stacks/ListBar.tsx:54
+#: ../../client/src/media/stacks/ListBar.tsx:69
 msgid "Music"
 msgstr "Music"
 
@@ -359,7 +359,7 @@ msgstr "Owner Key"
 msgid "Pause"
 msgstr "Pause"
 
-#: ../../client/src/media/stacks/ListBar.tsx:56
+#: ../../client/src/media/stacks/ListBar.tsx:71
 msgid "Pictures"
 msgstr "Pictures"
 
@@ -495,7 +495,7 @@ msgstr "This file can not be previewed."
 msgid "Unsupported File"
 msgstr "Unsupported File"
 
-#: ../../client/src/media/stacks/ListBar.tsx:66
+#: ../../client/src/media/stacks/ListBar.tsx:81
 msgid "Uploads"
 msgstr "Uploads"
 
@@ -503,7 +503,7 @@ msgstr "Uploads"
 msgid "User Name"
 msgstr "User Name"
 
-#: ../../client/src/media/stacks/ListBar.tsx:58
+#: ../../client/src/media/stacks/ListBar.tsx:73
 msgid "Videos"
 msgstr "Videos"
 

@@ -9,16 +9,16 @@ import type {HfsCtx} from '../types';
 
 export function HfsDir({hfs, cmd, ext, bar}: HfsCtx) {
   const {styles} = useStyles(stylesheet);
-  const actions = [
-    {icon: 'ph:plus', onPress: () => {}},
-    {icon: 'ph:faders', onPress: () => {}},
-    {icon: 'ph:squares-four', onPress: () => {}},
-  ];
+
   return (
     <View style={styles.root}>
       <ListBar
         path={hfs.path}
-        actions={actions}
+        actions={[
+          {icon: 'ph:plus', onPress: () => {}},
+          {icon: 'ph:faders', onPress: () => {}},
+          {icon: 'ph:squares-four', onPress: () => {}},
+        ]}
         {...bar}
       />
       <LegendList

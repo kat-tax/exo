@@ -19,13 +19,24 @@ export interface ListBarProps {
 
 export function ListBar({path, actions, hidden}: ListBarProps) {
   const {styles} = useStyles(stylesheet);
+  const tabs = path?.split('/');
   return !hidden ? (
     <View style={styles.root}>
       <View style={styles.breadcrumbs}>
-        {path.split('/').map((item, index, array) => (
+        {path ? (
+          <>
+            <ListBarItem name="Files" path="/browse"/>
+            <ListBarItemSeparator/>
+          </>
+        ) : null}
+        {tabs.map((name, index, array) => (
           <View key={index} style={styles.breadcrumb}>
-            <ListBarItem item={item} last={index === array.length - 1} />
-            {index < array.length - 1 && <ListBarItemSeparator />}
+            <ListBarItem
+              name={name}
+              path={tabs.slice(0, index + 1).join('/')}
+              last={index === array.length - 1}
+            />
+            {index < array.length - 1 && <ListBarItemSeparator/>}
           </View>
         ))}
       </View>
@@ -42,11 +53,15 @@ export function ListBar({path, actions, hidden}: ListBarProps) {
   ) : null;
 }
 
-export function ListBarItem({item, last}: {item: string, last: boolean}) {
+export function ListBarItem({name, path, last}: {
+  name?: string,
+  path?: string,
+  last?: boolean,
+}) {
   const {t} = useLingui();
   const nav = useNavigate();
-  const title = useCallback((name: string) => {
-    const dir = name as InitDirectory;
+  const title = useCallback((n?: string) => {
+    const dir = n as InitDirectory;
     switch (dir) {
       case InitDirectory.Documents:
         return t`Documents`;
@@ -71,9 +86,11 @@ export function ListBarItem({item, last}: {item: string, last: boolean}) {
 
   return (
     <TextButton
-      label={title(item)}
+      label={title(name)}
+      onPress={() => {
+        nav(path ?? name ?? '/browse');
+      }}
       state={last ? 'Default' : 'Disabled'}
-      onPress={() => nav(item)}
     />
   );
 }

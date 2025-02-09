@@ -15,7 +15,6 @@ export interface HfsCtx {
   },
   bar: {
     hidden: boolean,
-    transparent: boolean,
   },
 }
 

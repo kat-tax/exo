@@ -51,7 +51,7 @@ msgstr "اسأل أي شيء..."
 msgid "Auto"
 msgstr "تلقائي"
 
-#: ../../client/src/media/stacks/ListBar.tsx:62
+#: ../../client/src/media/stacks/ListBar.tsx:77
 msgid "Books"
 msgstr "الكتب"
 
@@ -151,7 +151,7 @@ msgstr "المسافة"
 msgid "Docs"
 msgstr "المستندات"
 
-#: ../../client/src/media/stacks/ListBar.tsx:52
+#: ../../client/src/media/stacks/ListBar.tsx:67
 msgid "Documents"
 msgstr "المستندات"
 
@@ -159,7 +159,7 @@ msgstr "المستندات"
 msgid "Download"
 msgstr "تحميل"
 
-#: ../../client/src/media/stacks/ListBar.tsx:64
+#: ../../client/src/media/stacks/ListBar.tsx:79
 msgid "Downloads"
 msgstr "التنزيلات"
 
@@ -195,7 +195,7 @@ msgstr "فهرنهايت"
 msgid "Feature in development..."
 msgstr ""
 
-#: ../../client/src/media/stacks/ListBar.tsx:68
+#: ../../client/src/media/stacks/ListBar.tsx:83
 msgid "Files"
 msgstr "الملفات"
 
@@ -211,7 +211,7 @@ msgstr ""
 msgid "Fullscreen"
 msgstr "ملء الشاشة"
 
-#: ../../client/src/media/stacks/ListBar.tsx:60
+#: ../../client/src/media/stacks/ListBar.tsx:75
 msgid "Games"
 msgstr "الألعاب"
 
@@ -323,7 +323,7 @@ msgstr "أميال"
 msgid "Move"
 msgstr "نقل"
 
-#: ../../client/src/media/stacks/ListBar.tsx:54
+#: ../../client/src/media/stacks/ListBar.tsx:69
 msgid "Music"
 msgstr "الموسيقى"
 
@@ -359,7 +359,7 @@ msgstr "مفتاح المالك"
 msgid "Pause"
 msgstr "إيقاف مؤقت"
 
-#: ../../client/src/media/stacks/ListBar.tsx:56
+#: ../../client/src/media/stacks/ListBar.tsx:71
 msgid "Pictures"
 msgstr "الصور"
 
@@ -495,7 +495,7 @@ msgstr ""
 msgid "Unsupported File"
 msgstr "ملف غير مدعوم"
 
-#: ../../client/src/media/stacks/ListBar.tsx:66
+#: ../../client/src/media/stacks/ListBar.tsx:81
 msgid "Uploads"
 msgstr "المرفوعات"
 
@@ -503,7 +503,7 @@ msgstr "المرفوعات"
 msgid "User Name"
 msgstr "اسم المستخدم"
 
-#: ../../client/src/media/stacks/ListBar.tsx:58
+#: ../../client/src/media/stacks/ListBar.tsx:73
 msgid "Videos"
 msgstr "الفيديوهات"
 

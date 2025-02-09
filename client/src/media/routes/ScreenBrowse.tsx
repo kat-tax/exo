@@ -6,7 +6,7 @@ import {Page} from 'app/interface/Page';
 export default function ScreenBrowse() {
   const {path} = useLocationPathInfo();
   const {hfs, cmd, ext} = useHfs(path);
-  const bar = {hidden: false, transparent: false};
+  const bar = {hidden: false};
 
   return (
     <Page fullWidth margin="none">

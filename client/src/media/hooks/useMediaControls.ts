@@ -227,7 +227,7 @@ export function useMediaControls(props: MediaControlsProps): MediaControls {
     },
     {
       name: 'options',
-      icon: 'ph:gear-six',
+      icon: 'ph:faders',
       label: t`Options`,
       media: CONFIGURABLE,
       action: () => {},

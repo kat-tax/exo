@@ -12,7 +12,7 @@ export interface FileDirectory extends FileProps {}
 export default forwardRef((props: FileDirectory, _ref) => {
   const {hfs, cmd, ext} = useHfs(props.path);
   const {styles} = useStyles(stylesheet);
-  const bar = {hidden: true, transparent: true};
+  const bar = {hidden: true};
 
   // Update file player bar info
   useEffect(() => {

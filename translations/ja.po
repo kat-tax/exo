@@ -51,7 +51,7 @@ msgstr "何でも聞いてください..."
 msgid "Auto"
 msgstr "自動"
 
-#: ../../client/src/media/stacks/ListBar.tsx:62
+#: ../../client/src/media/stacks/ListBar.tsx:77
 msgid "Books"
 msgstr "本"
 
@@ -151,7 +151,7 @@ msgstr "距離"
 msgid "Docs"
 msgstr "ドキュメント"
 
-#: ../../client/src/media/stacks/ListBar.tsx:52
+#: ../../client/src/media/stacks/ListBar.tsx:67
 msgid "Documents"
 msgstr "ドキュメント"
 
@@ -159,7 +159,7 @@ msgstr "ドキュメント"
 msgid "Download"
 msgstr "ダウンロード"
 
-#: ../../client/src/media/stacks/ListBar.tsx:64
+#: ../../client/src/media/stacks/ListBar.tsx:79
 msgid "Downloads"
 msgstr "ダウンロード"
 
@@ -195,7 +195,7 @@ msgstr "華氏"
 msgid "Feature in development..."
 msgstr ""
 
-#: ../../client/src/media/stacks/ListBar.tsx:68
+#: ../../client/src/media/stacks/ListBar.tsx:83
 msgid "Files"
 msgstr "ファイル"
 
@@ -211,7 +211,7 @@ msgstr ""
 msgid "Fullscreen"
 msgstr "全画面"
 
-#: ../../client/src/media/stacks/ListBar.tsx:60
+#: ../../client/src/media/stacks/ListBar.tsx:75
 msgid "Games"
 msgstr "ゲーム"
 
@@ -323,7 +323,7 @@ msgstr "マイル"
 msgid "Move"
 msgstr ""
 
-#: ../../client/src/media/stacks/ListBar.tsx:54
+#: ../../client/src/media/stacks/ListBar.tsx:69
 msgid "Music"
 msgstr "音楽"
 
@@ -359,7 +359,7 @@ msgstr "オーナーキー"
 msgid "Pause"
 msgstr "一時停止"
 
-#: ../../client/src/media/stacks/ListBar.tsx:56
+#: ../../client/src/media/stacks/ListBar.tsx:71
 msgid "Pictures"
 msgstr "写真"
 
@@ -495,7 +495,7 @@ msgstr ""
 msgid "Unsupported File"
 msgstr "サポートされていないファイル"
 
-#: ../../client/src/media/stacks/ListBar.tsx:66
+#: ../../client/src/media/stacks/ListBar.tsx:81
 msgid "Uploads"
 msgstr "アップロード"
 
@@ -503,7 +503,7 @@ msgstr "アップロード"
 msgid "User Name"
 msgstr "ユーザー名"
 
-#: ../../client/src/media/stacks/ListBar.tsx:58
+#: ../../client/src/media/stacks/ListBar.tsx:73
 msgid "Videos"
 msgstr "動画"
 
