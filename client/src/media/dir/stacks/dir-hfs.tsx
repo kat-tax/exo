@@ -20,34 +20,35 @@ export function DirHfs({hfs, cmd, ext, bar}: HfsCtx) {
         ]}
         {...bar}
       />
-      <LegendList
-        data={hfs.list}
-        extraData={ext}
-        recycleItems
-        drawDistance={HEIGHT * 20}
-        estimatedItemSize={HEIGHT}
-        contentContainerStyle={styles.list}
-        ListHeaderComponent={<View style={styles.listHeader}/>}
-        keyExtractor={(_,i) => i.toString()}
-        ListEmptyComponent={NoneHfs}
-        renderItem={({item, index}) => {
-          const path = hfs.path ? `${hfs.path}/${item.name}` : item.name;
-          const prev = hfs.list[index - 1];
-          const next = hfs.list[index + 1];
-          const opt = {
-            dragging: ext.dnd?.includes(path),
-            selected: {
-              self: ext.sel?.includes(path),
-              prev: ext.sel?.includes(hfs.path ? `${hfs.path}/${prev?.name}` : prev?.name),
-              next: ext.sel?.includes(hfs.path ? `${hfs.path}/${next?.name}` : next?.name),
-              count: ext.sel?.length,
-            },
-          };
-          return (
-            <EntryHfs idx={index} entry={item} {...{cmd, opt}}/>
-          );
-        }}
-      />
+      {!hfs.list?.length ? <NoneHfs offset={!bar.hidden ? -35 : 0}/> : (
+        <LegendList
+          data={hfs.list}
+          extraData={ext}
+          recycleItems
+          drawDistance={HEIGHT * 20}
+          estimatedItemSize={HEIGHT}
+          contentContainerStyle={styles.list}
+          ListHeaderComponent={!bar.hidden ? <View style={styles.listHeader}/> : null}
+          keyExtractor={(_,i) => i.toString()}
+          renderItem={({item, index}) => {
+            const path = hfs.path ? `${hfs.path}/${item.name}` : item.name;
+            const prev = hfs.list[index - 1];
+            const next = hfs.list[index + 1];
+            const opt = {
+              dragging: ext.dnd?.includes(path),
+              selected: {
+                self: ext.sel?.includes(path),
+                prev: ext.sel?.includes(hfs.path ? `${hfs.path}/${prev?.name}` : prev?.name),
+                next: ext.sel?.includes(hfs.path ? `${hfs.path}/${next?.name}` : next?.name),
+                count: ext.sel?.length,
+              },
+            };
+            return (
+              <EntryHfs idx={index} entry={item} {...{cmd, opt}}/>
+            );
+          }}
+        />
+      )}
     </View>
   );
 }

@@ -7,6 +7,7 @@ import type {PressableProps} from 'react-native';
 
 export interface ButtonIconProps extends PressableProps {
   icon: string,
+  size?: number,
   state: typeof ButtonIconVariants.state[number],
 }
 
@@ -29,7 +30,7 @@ export function ButtonIcon({state, ...props}: ButtonIconProps) {
         <Icon
           name={props.icon}
           color={e.hovered ? theme.colors.accentForeground : theme.colors.mutedForeground}
-          size={14}
+          size={props.size ?? 14}
         />
       </>}
     </Pressable>

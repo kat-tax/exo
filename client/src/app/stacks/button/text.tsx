@@ -6,6 +6,7 @@ import type {PressableProps} from 'react-native';
 
 export interface ButtonTextProps extends PressableProps {
   label: string,
+  size?: number,
   state: typeof ButtonTextVariants.state[number],
 }
 
@@ -25,7 +26,7 @@ export function ButtonText({state, ...props}: ButtonTextProps) {
   return (
     <Pressable style={vstyles.root} {...props}>
       {e => <>
-        <Text style={vstyles.label(e)}>
+        <Text style={[vstyles.label(e), {fontSize: props.size ?? 11}]}>
           {props.label}
         </Text>
       </>}
@@ -60,7 +61,6 @@ const stylesheet = createStyleSheet(theme => ({
   label: {
     color: theme.colors.accentForeground,
     fontFamily: theme.font.family,
-    fontSize: 11,
     fontWeight: theme.font.weight,
     lineHeight: theme.font.height,
   },

@@ -3,6 +3,9 @@ import {useLingui} from '@lingui/react/macro';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useImportHfs} from 'media/dir/hooks/use-import-hfs';
 import {Watermark} from 'app/stacks/watermark';
+import {isTouch} from 'react-exo/utils';
+
+const TOUCH = isTouch();
 
 interface HistoryProps {
   path: string,
@@ -16,10 +19,12 @@ export function History(props: HistoryProps) {
   return (
     <View style={styles.root}>
       <Watermark
-        title={t`No items selected. Drop items or select files to import.`}
+        title={TOUCH
+          ? t`No items selected. Drop items or select files to import.`
+          : t`No items selected. Select files to import.`}
         label={t`Import Files`}
         icon="ph:upload"
-        dnd={true}
+        dnd={!TOUCH}
         onAction={async () => {
           await importFile();
         }}

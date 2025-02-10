@@ -1,4 +1,5 @@
 import {View} from 'react-native';
+import {isTouch} from 'react-exo/utils';
 import {useLingui} from '@lingui/react/macro';
 import {useCallback} from 'react';
 import {useNavigate} from 'react-exo/navigation';
@@ -7,6 +8,11 @@ import {InitDirectory} from 'media/dir/utils/hfs/path';
 import {ButtonText} from 'app/stacks/button/text';
 import {ButtonIcon} from 'app/stacks/button/icon';
 import {Icon} from 'react-exo/icon';
+
+const TOUCH = isTouch();
+const ITEM_SIZE = TOUCH ? 46 : 32;
+const ICON_SIZE = TOUCH ? 18 : 14;
+const TEXT_SIZE = TOUCH ? 14 : 12;
 
 export interface ListBarProps {
   path: string,
@@ -42,11 +48,7 @@ export function ListBar({path, actions, hidden}: ListBarProps) {
       </View>
       <View style={styles.actions}>
         {actions.map(({icon, onPress}) => (
-          <ListBarAction
-            key={icon}
-            icon={icon}
-            onPress={onPress}
-          />
+          <ListBarAction key={icon} {...{icon, onPress}}/>
         ))}
       </View>
     </View>
@@ -87,10 +89,22 @@ export function ListBarItem({name, path, last}: {
   return (
     <ButtonText
       label={title(name)}
+      size={TEXT_SIZE}
       onPress={() => {
         nav(path ?? name ?? '/browse');
       }}
       state={last ? 'Default' : 'Disabled'}
+    />
+  );
+}
+
+export function ListBarAction({icon, onPress}: {icon: string, onPress: () => void}) {
+  return (
+    <ButtonIcon
+      icon={icon}
+      size={ICON_SIZE}
+      state="Default"
+      onPress={onPress}
     />
   );
 }
@@ -108,19 +122,9 @@ export function ListBarItemSeparator() {
   );
 }
 
-export function ListBarAction({icon, onPress}: {icon: string, onPress: () => void}) {
-  return (
-    <ButtonIcon
-      icon={icon}
-      state="Default"
-      onPress={onPress}
-    />
-  );
-}
-
 const stylesheet = createStyleSheet((theme) => ({
   root: {
-    height: 32,
+    height: ITEM_SIZE,
     paddingVertical: theme.display.space2,
     paddingHorizontal: 6,
     flexDirection: 'row',

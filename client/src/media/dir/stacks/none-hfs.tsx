@@ -3,8 +3,11 @@ import {useLingui} from '@lingui/react/macro';
 import {useState, useEffect} from 'react';
 import {useImportHfs} from 'media/dir/hooks/use-import-hfs';
 import {Watermark} from 'app/stacks/watermark';
+import {isTouch} from 'react-exo/utils';
 
-export function NoneHfs() {
+const TOUCH = isTouch();
+
+export function NoneHfs({offset}: {offset: number}) {
   const [visible, setVisible] = useState(false);
   const {importFolder} = useImportHfs();
   const {t} = useLingui();
@@ -17,16 +20,20 @@ export function NoneHfs() {
   }, []);
 
   return visible ? (
-    <View style={{marginTop: 30, marginHorizontal: 4}}>
-      <Watermark
-        title={t`Folder is empty. Drop items or select folder to import.`}
-        label={t`Import Folder`}
-        icon="ph:upload"
-        dnd={true}
-        onAction={async () => {
-          await importFolder();
-        }}
-      />
+    <View style={{marginHorizontal: 10, flex: 1, justifyContent: 'center'}}>
+      <View style={{marginTop: offset}}>
+        <Watermark
+          title={TOUCH
+            ? t`Directory empty. Select folder to import.`
+            : t`Directory empty. Drop items or select folder to import.`}
+          label={t`Import Folder`}
+          icon="ph:upload"
+          dnd={!TOUCH}
+          onAction={async () => {
+            await importFolder();
+          }}
+        />
+      </View>
     </View>
   ) : null;
 }

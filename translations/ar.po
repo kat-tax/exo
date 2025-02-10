@@ -51,8 +51,7 @@ msgstr "اسأل أي شيء..."
 msgid "Auto"
 msgstr "تلقائي"
 
-#: ../../client/src/media/stacks/list/bar.tsx:77
-#: ../../client/src/app/routes/menu/index.tsx:123
+#: ../../client/src/media/stacks/list/bar.tsx:79
 msgid "Books"
 msgstr "الكتب"
 
@@ -144,6 +143,14 @@ msgstr "وضع المطور"
 msgid "Device Space"
 msgstr "مساحة الجهاز"
 
+#: ../../client/src/media/dir/stacks/none-hfs.tsx:28
+msgid "Directory empty. Drop items or select folder to import."
+msgstr ""
+
+#: ../../client/src/media/dir/stacks/none-hfs.tsx:27
+msgid "Directory empty. Select folder to import."
+msgstr ""
+
 #: ../../client/src/app/routes/screen-settings.tsx:70
 msgid "Display"
 msgstr "العرض"
@@ -156,7 +163,7 @@ msgstr "المسافة"
 msgid "Docs"
 msgstr "المستندات"
 
-#: ../../client/src/media/stacks/list/bar.tsx:67
+#: ../../client/src/media/stacks/list/bar.tsx:69
 msgid "Documents"
 msgstr "المستندات"
 
@@ -167,7 +174,7 @@ msgstr "المستندات"
 msgid "Download"
 msgstr "تحميل"
 
-#: ../../client/src/media/stacks/list/bar.tsx:79
+#: ../../client/src/media/stacks/list/bar.tsx:81
 msgid "Downloads"
 msgstr "التنزيلات"
 
@@ -204,9 +211,7 @@ msgstr "فهرنهايت"
 msgid "Feature in development..."
 msgstr ""
 
-#: ../../client/src/media/stacks/list/bar.tsx:83
-#: ../../client/src/app/routes/menu/index.tsx:38
-#: ../../client/src/app/routes/menu/index.tsx:93
+#: ../../client/src/media/stacks/list/bar.tsx:85
 msgid "Files"
 msgstr "الملفات"
 
@@ -222,8 +227,7 @@ msgstr ""
 msgid "Fullscreen"
 msgstr "ملء الشاشة"
 
-#: ../../client/src/media/stacks/list/bar.tsx:75
-#: ../../client/src/app/routes/menu/index.tsx:118
+#: ../../client/src/media/stacks/list/bar.tsx:77
 msgid "Games"
 msgstr "الألعاب"
 
@@ -267,11 +271,11 @@ msgstr "استيراد"
 msgid "Import File(s)"
 msgstr ""
 
-#: ../../client/src/media/stacks/history.tsx:20
+#: ../../client/src/media/stacks/history.tsx:25
 msgid "Import Files"
 msgstr "استيراد الملفات"
 
-#: ../../client/src/media/dir/stacks/none-hfs.tsx:23
+#: ../../client/src/media/dir/stacks/none-hfs.tsx:29
 msgid "Import Folder"
 msgstr ""
 
@@ -346,8 +350,7 @@ msgstr "أميال"
 msgid "Move"
 msgstr "نقل"
 
-#: ../../client/src/media/stacks/list/bar.tsx:69
-#: ../../client/src/app/routes/menu/index.tsx:103
+#: ../../client/src/media/stacks/list/bar.tsx:71
 msgid "Music"
 msgstr "الموسيقى"
 
@@ -368,8 +371,12 @@ msgstr "لا توجد أحداث مجدولة."
 msgid "No items selected."
 msgstr ""
 
-#: ../../client/src/media/stacks/history.tsx:19
+#: ../../client/src/media/stacks/history.tsx:23
 msgid "No items selected. Drop items or select files to import."
+msgstr ""
+
+#: ../../client/src/media/stacks/history.tsx:24
+msgid "No items selected. Select files to import."
 msgstr ""
 
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:23
@@ -392,8 +399,7 @@ msgstr "مفتاح المالك"
 msgid "Pause"
 msgstr "إيقاف مؤقت"
 
-#: ../../client/src/media/stacks/list/bar.tsx:71
-#: ../../client/src/app/routes/menu/index.tsx:108
+#: ../../client/src/media/stacks/list/bar.tsx:73
 msgid "Pictures"
 msgstr "الصور"
 
@@ -537,7 +543,7 @@ msgstr "ملف غير مدعوم"
 msgid "Upload"
 msgstr ""
 
-#: ../../client/src/media/stacks/list/bar.tsx:81
+#: ../../client/src/media/stacks/list/bar.tsx:83
 msgid "Uploads"
 msgstr "المرفوعات"
 
@@ -545,8 +551,7 @@ msgstr "المرفوعات"
 msgid "User Name"
 msgstr "اسم المستخدم"
 
-#: ../../client/src/media/stacks/list/bar.tsx:73
-#: ../../client/src/app/routes/menu/index.tsx:113
+#: ../../client/src/media/stacks/list/bar.tsx:75
 msgid "Videos"
 msgstr "الفيديوهات"
 
