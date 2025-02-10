@@ -2,7 +2,7 @@ import {memo} from 'react';
 import {useStyles} from 'react-native-unistyles';
 import {Platform, StyleSheet} from 'react-native';
 import {Markdown as MarkdownBase} from 'react-exo/markdown';
-import {useTheme} from 'app/hooks/use-display';
+import {useTheme} from 'app/hooks/use-theme';
 import {Code} from 'react-exo/code';
 
 export const Markdown = memo(({text}: {text: string}) => {

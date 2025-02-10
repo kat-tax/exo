@@ -1,4 +1,4 @@
-import {useTheme} from 'app/hooks/use-display';
+import {useTheme} from 'app/hooks/use-theme';
 import type {TouchProps} from './touch.types';
 
 export function Touch(props: TouchProps) {

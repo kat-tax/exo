@@ -3,7 +3,7 @@ import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {I18nManager, View, Platform} from 'react-native';
 import {I18nProvider} from '@lingui/react';
 import {GestureProvider} from 'react-exo/gesture';
-import {useLocale} from 'app/hooks/use-display';
+import {useLocale} from 'app/hooks/use-locale';
 
 import {load, i18n, isRTL} from './loader';
 

@@ -2,7 +2,7 @@ import {View} from 'react-native';
 import {Map, Source, Layer} from 'react-map-gl/maplibre';
 import {useEffect, useState, forwardRef} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {useTheme} from 'app/hooks/use-display';
+import {useTheme} from 'app/hooks/use-theme';
 import {useApp} from 'app/hooks/use-app';
 import {useFile} from 'media/file/hooks/use-file';
 import {getBounds} from 'app/utils/mapping';

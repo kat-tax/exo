@@ -1,5 +1,5 @@
 import {Icon} from 'react-exo/icon';
-import {useLocale} from 'app/hooks/use-display';
+import {useLocale} from 'app/hooks/use-locale';
 import {Alert} from 'design';
 
 export function CalendarEvent() {

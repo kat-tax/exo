@@ -2,7 +2,7 @@ import {Icon} from 'react-exo/icon';
 import {View} from 'react-native';
 import {useEffect, useState} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {useTheme} from 'app/hooks/use-display';
+import {useTheme} from 'app/hooks/use-theme';
 import {getIcon} from 'media/file/icons';
 
 interface Thumb {

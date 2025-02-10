@@ -3,7 +3,7 @@ import {View, Platform} from 'react-native';
 import {useLingui} from '@lingui/react/macro';
 import {useEffect, useState, useCallback, forwardRef} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {useTheme} from 'app/hooks/use-display';
+import {useTheme} from 'app/hooks/use-theme';
 import {useFile} from 'media/file/hooks/use-file';
 
 import type {FileProps} from 'media/file';

@@ -1,7 +1,7 @@
 import Map from 'react-map-gl/maplibre';
 import {useState} from 'react';
 import {useDevices} from 'app/data';
-import {useTheme} from 'app/hooks/use-display';
+import {useTheme} from 'app/hooks/use-theme';
 import {useApp} from 'app/hooks/use-app';
 import {Panel} from 'app/stacks/panel';
 

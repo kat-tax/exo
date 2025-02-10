@@ -3,7 +3,7 @@ import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {Pressable, View, Text} from 'react-native';
 import {Icon} from 'react-exo/icon';
 import {isTouch} from 'app/utils/platform';
-import {useTheme} from 'app/hooks/use-display';
+import {useTheme} from 'app/hooks/use-theme';
 
 interface MenuGroupProps extends React.PropsWithChildren {
   label: string,

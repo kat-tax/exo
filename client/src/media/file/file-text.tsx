@@ -3,7 +3,7 @@ import {View} from 'react-native';
 import {forwardRef, useEffect} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useFile} from 'media/file/hooks/use-file';
-import {useTheme} from 'app/hooks/use-display';
+import {useTheme} from 'app/hooks/use-theme';
 import {bytesize} from 'app/utils/formatting';
 
 import type {FileProps} from 'media/file';

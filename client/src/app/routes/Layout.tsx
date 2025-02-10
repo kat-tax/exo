@@ -4,7 +4,7 @@ import {useSelector} from 'react-redux';
 import {useLocation} from 'react-exo/navigation';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useWindowDimensions, View, StatusBar} from 'react-native';
-import {useSession} from 'app/hooks/use-session';
+import {useDevice} from 'app/hooks/use-device';
 import {useHotkeys} from 'app/hooks/use-hotkeys';
 import {useProfile} from 'app/data';
 import {toPathInfo} from 'app/utils/formatting';
@@ -24,7 +24,7 @@ export default function Layout() {
   const {styles, theme} = useStyles(stylesheet);
   const {pathname} = useLocation();
   const profile = useProfile();
-  const device = useSession();
+  const device = useDevice();
   const screen = useWindowDimensions();
   const focused = useSelector(media.selectors.getFocused);
   const pathinfo = toPathInfo(focused, false);

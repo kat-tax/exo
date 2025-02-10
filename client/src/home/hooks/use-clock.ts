@@ -1,6 +1,6 @@
 import {useEffect, useState} from 'react';
 import {getCurrentTime} from 'home/utils/time';
-import {useLocale} from 'app/hooks/use-display';
+import {useLocale} from 'app/hooks/use-locale';
 
 export function useClock(timeFormat: 'short' | 'medium' | 'long' = 'short') {
   const [locale] = useLocale();
