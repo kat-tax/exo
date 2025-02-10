@@ -1,16 +1,14 @@
-import {useLingui} from '@lingui/react/macro';
+import {Icon} from 'react-exo/icon';
+import {Link} from 'react-exo/navigation';
+import {Text, View, TextInput, Pressable} from 'react-native';
 import {useRef, useState, useMemo, memo} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
+import {useLingui} from '@lingui/react/macro';
+import {useAI} from 'home/hooks/use-ai';
 import {useApp} from 'app/hooks/use-app';
-
-import {Text, View, TextInput, Pressable} from 'react-native';
-import {Link} from 'react-exo/navigation';
-import {Icon} from 'react-exo/icon';
-
 import {Spinner} from 'app/stacks/load';
 import {Markdown} from 'app/stacks/markdown';
 import {formatDate} from 'home/utils/time';
-import {useAI} from 'home/hooks/use-ai';
 
 const DEFAULT_MODEL = 'llama3-8b-8192';
 

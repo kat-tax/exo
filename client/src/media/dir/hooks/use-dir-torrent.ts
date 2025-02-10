@@ -1,4 +1,4 @@
-import ExoTorrent from 'react-exo/torrent';
+import Tor from 'react-exo/torrent';
 import {web} from 'react-exo/fs';
 import {useDispatch} from 'react-redux';
 import {useCallback, useMemo} from 'react';
@@ -41,7 +41,7 @@ export function useDirTorrent(path: string): TorrentCtx {
     target?: HfsDirectoryEntry,
   ) => {
     if (!torrent) return;
-    const client = new ExoTorrent();
+    const client = new Tor();
     // @ts-expect-error Incorrect vendor types
     client.add(torrent.file, {store}, async ({files}) => {
       const item = files.find(e => e.path.split('/').slice(1).join('/') === file.path);

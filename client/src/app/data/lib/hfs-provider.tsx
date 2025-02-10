@@ -18,9 +18,9 @@ export interface HfsContextType {
   watch: (path: string, fn: WatchFn) => () => void;
 }
 
-export function useHfsCtx() {
+export function useHfs() {
   const ctx = useContext(HfsContext);
-  if (!ctx) throw new Error('useHfsCtx must be used within a HfsProvider');
+  if (!ctx) throw new Error('useHfs must be used within a HfsProvider');
   return ctx.fs;
 }
 

@@ -41,7 +41,7 @@ msgstr "¿Estás seguro de que quieres reiniciar tu base de datos local? Si los 
 msgid "Are you sure you want to reset your prompt history?"
 msgstr "¿Estás seguro de que quieres reiniciar tu historial de prompts?"
 
-#: ../../client/src/home/stacks/assistant.tsx:52
+#: ../../client/src/home/stacks/assistant.tsx:50
 msgid "Ask anything..."
 msgstr "Pregunta lo que quieras..."
 
@@ -54,7 +54,7 @@ msgstr "Automático"
 msgid "Books"
 msgstr "Libros"
 
-#: ../../client/src/media/file/file-book.tsx:39
+#: ../../client/src/media/file/file-book.tsx:42
 msgid "by {0}"
 msgstr "por {0}"
 
@@ -155,7 +155,7 @@ msgstr "Documentos"
 msgid "Documents"
 msgstr "Documentos"
 
-#: ../../client/src/media/dir/stacks/menu-torrent.tsx:22
+#: ../../client/src/media/dir/stacks/menu-hfs.tsx:44
 msgid "Download"
 msgstr "Descargar"
 
@@ -373,7 +373,7 @@ msgstr "Fijar"
 msgid "Play"
 msgstr "Reproducir"
 
-#: ../../client/src/home/stacks/assistant.tsx:52
+#: ../../client/src/home/stacks/assistant.tsx:50
 msgid "Please set your Groq API Key"
 msgstr "Por favor configura tu clave API de Groq"
 
@@ -457,7 +457,8 @@ msgstr "Selecciona el tema para la aplicación."
 msgid "Services"
 msgstr ""
 
-#: ../../client/src/app/routes/screen-settings.tsx:23
+#: ../../client/src/app/routes/menu/index.tsx:48
+#: ../../client/src/app/routes/menu/index.tsx:183
 msgid "Settings"
 msgstr "Ajustes"
 
@@ -489,11 +490,11 @@ msgstr "Temperatura"
 msgid "Theme"
 msgstr "Tema"
 
-#: ../../client/src/media/file/file-binary.tsx:29
+#: ../../client/src/media/file/file-binary.tsx:35
 msgid "This file can not be previewed."
 msgstr ""
 
-#: ../../client/src/media/file/file-binary.tsx:24
+#: ../../client/src/media/file/file-binary.tsx:30
 msgid "Unsupported File"
 msgstr "Archivo no soportado"
 

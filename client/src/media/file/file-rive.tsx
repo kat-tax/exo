@@ -9,8 +9,8 @@ export interface FileRive extends FileProps {}
 
 export type {RiveRef};
 
-export default forwardRef((props: FileRive, ref: React.Ref<RiveRef>) => {
-  const source = useFile(props.path, 'dataUrl');
+export default forwardRef(({path}: FileRive, ref: React.Ref<RiveRef>) => {
+  const source = useFile(path, 'dataUrl');
 
   return source ? (
     <Rive

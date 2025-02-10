@@ -6,18 +6,20 @@ import {useFile} from 'media/file/hooks/use-file';
 import {toTimeRange} from 'app/utils/formatting';
 
 import type {FileProps} from 'media/file';
-import type {VideoRef} from 'react-exo/video';
+import type {VideoRef as AudioRef} from 'react-exo/video';
 
-export type {VideoRef};
+export type {AudioRef};
 
 export interface FileAudio extends FileProps {
-  ref: React.RefObject<VideoRef>,
+  ref: React.RefObject<AudioRef>,
 }
 
-export default forwardRef((props: Omit<FileAudio, 'ref'>, ref: React.Ref<VideoRef>) => {
-  const source = useFile(props.path, 'dataUrl');
+export default forwardRef((
+  {path, actions}: Omit<FileAudio, 'ref'>,
+  ref: React.Ref<AudioRef>,
+) => {
+  const source = useFile(path, 'dataUrl');
   const {styles} = useStyles(stylesheet);
-  const {actions} = props;
 
   return source ? (
     <View style={styles.root}>

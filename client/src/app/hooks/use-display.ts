@@ -7,12 +7,10 @@ import app from 'app/store';
 import type {Locales} from 'config/locales';
 import type {ColorSchemeName} from 'react-native';
 
-export type Display = {
-  theme: [ColorSchemeName, (scheme: ColorSchemeName) => void],
-  locale: [Locales | undefined, (locale: Locales) => void],
-}
-
-export function useTheme(storedOnly?: boolean): Display['theme'] {
+export function useTheme(storedOnly?: boolean): [
+  ColorSchemeName,
+  (scheme: ColorSchemeName) => void,
+] {
   const stored = useSelector(app.selectors.getScheme);
   const value = useColorScheme();
   const put = useDispatch();
@@ -22,7 +20,10 @@ export function useTheme(storedOnly?: boolean): Display['theme'] {
     : [value, set];
 }
 
-export function useLocale(storedOnly?: boolean): Display['locale'] {
+export function useLocale(storedOnly?: boolean): [
+  Locales | undefined,
+  (locale: Locales) => void,
+] {
   const stored = useSelector(app.selectors.getLocale);
   const value = useRef(getLocale() as Locales);
   const put = useDispatch();

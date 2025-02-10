@@ -13,10 +13,13 @@ export interface FilePdf extends FileProps {
   ref: React.RefObject<PdfRef>,
 }
 
-export default forwardRef((props: Omit<FilePdf, 'ref'>, ref: React.Ref<PdfRef>) => {
-  const source = useFile(props.path, 'dataUrl');
+export default forwardRef((
+  {path, actions}: Omit<FilePdf, 'ref'>,
+  ref: React.Ref<PdfRef>,
+) => {
+  const source = useFile(path, 'dataUrl');
   const {styles} = useStyles(stylesheet);
-  const {actions} = props;
+
   return source ? (
     <View style={styles.root}>
       <Pdf

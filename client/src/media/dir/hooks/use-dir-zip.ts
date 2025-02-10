@@ -4,7 +4,7 @@ import {useDispatch} from 'react-redux';
 import {useCallback, useEffect, useState, useRef} from 'react';
 import {usePath} from 'app/hooks/use-path';
 import {useFile} from 'media/file/hooks/use-file';
-import {useHfsCtx} from 'app/data/lib/hfs-provider';
+import {useHfs} from 'app/data/lib/hfs-provider';
 import {toPathInfo} from 'app/utils/formatting';
 import media from 'media/store';
 
@@ -18,7 +18,7 @@ export function useDirZip(path: string): ZipCtx {
   const {path: url} = usePath();
   const buffer = useFile(path, 'arrayBuffer');
   const zipfs = useRef<FS | null>(null);
-  const hfs = useHfsCtx();
+  const hfs = useHfs();
   const put = useDispatch();
 
   const extract = useCallback(async (

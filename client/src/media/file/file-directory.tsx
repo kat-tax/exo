@@ -9,21 +9,23 @@ import type {FileProps} from 'media/file';
 
 export interface FileDirectory extends FileProps {}
 
-export default forwardRef((props: FileDirectory, _ref) => {
-  const {hfs, cmd, ext} = useDirHfs(props.path);
+export default forwardRef((
+  {path, name, actions, embedded}: FileDirectory,
+  _ref: React.Ref<unknown>,
+) => {
+  const {hfs, cmd, ext} = useDirHfs(path);
   const {styles} = useStyles(stylesheet);
   const bar = {hidden: true};
 
-  // Update file player bar info
   useEffect(() => {
     if (!hfs) return;
-    props.actions.setInfo(`${hfs.list?.length ?? 0} files`);
-  }, [hfs, props.actions]);
+    actions.setInfo(`${hfs.list?.length ?? 0} files`);
+  }, [hfs, actions]);
 
   return (
     <Panel
-      title={props.embedded ? props.name : undefined}
-      message={props.embedded ? `${hfs?.list?.length} files` : undefined}
+      title={embedded ? name : undefined}
+      message={embedded ? `${hfs?.list?.length} files` : undefined}
       margin="none"
       noBackground
       fullWidth
@@ -32,7 +34,7 @@ export default forwardRef((props: FileDirectory, _ref) => {
         {hfs && <DirHfs {...{hfs, cmd, ext, bar}}/>}
       </View>
     </Panel>
-  )
+  );
 });
 
 const stylesheet = createStyleSheet((theme) => ({

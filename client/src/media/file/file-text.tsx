@@ -13,22 +13,21 @@ export interface FileText extends FileProps {
   language: CodeLanguages,
 }
 
-export default forwardRef((props: FileText, _ref: React.Ref<View>) => {
-  const source = useFile(props.path, 'text');
+export default forwardRef(({path, language, actions}: FileText, _ref: React.Ref<View>) => {
+  const source = useFile(path, 'text');
   const {styles} = useStyles(stylesheet);
   const [scheme] = useTheme();
 
-  // Update file player bar info
   useEffect(() => {
     if (!source) return;
     const size = bytesize(source.length);
-    props.actions.setInfo(`${source.split('\n').length} lines, ${size}`);
-  }, [source, props.actions]);
+    actions.setInfo(`${source.split('\n').length} lines, ${size}`);
+  }, [source, actions]);
 
   return source ? (
     <View style={styles.root}>
       <Code
-        lang={props.language ?? 'text'}
+        lang={language ?? 'text'}
         theme={scheme === 'dark' ? 'dark-plus' : 'light-plus'}>
         {source}
       </Code>

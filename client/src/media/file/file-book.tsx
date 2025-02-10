@@ -15,8 +15,11 @@ export interface FileBook extends FileProps {}
 
 export type {BookRef};
 
-export default forwardRef((props: FileBook, ref: React.Ref<BookRef>) => {  
-  const source = useFile(props.path, 'dataUrl', 'application/epub+zip');
+export default forwardRef((
+  {path, name, actions, maximized}: FileBook,
+  ref: React.Ref<BookRef>,
+) => {  
+  const source = useFile(path, 'dataUrl', 'application/epub+zip');
   const [title, setTitle] = useState('');
   const [chapter, setChapter] = useState('');
   const {styles} = useStyles(stylesheet);
@@ -35,33 +38,33 @@ export default forwardRef((props: FileBook, ref: React.Ref<BookRef>) => {
     fetch(EPUB_URL)
       .then((res) => res.json())
       .then((data) => {
-        setTitle(data.metadata.title || props.name);
+        setTitle(data.metadata.title || name);
         setChapter(t`by ${data.metadata.author}`);
       })
-      .catch(() => setTitle(props.name));
-  }, [props.name, t]);
+      .catch(() => setTitle(name));
+  }, [name, t]);
 
   // Update the title bar when the book title or chapter changes
   useEffect(() => {
-    props.actions.setInfo(chapter);
-    props.actions.setTitle(title);
-    props.actions.setCover('https://alice.dita.digital/images/cover.jpg');
-  }, [title, chapter, props.actions]);
+    actions.setInfo(chapter);
+    actions.setTitle(title);
+    actions.setCover('https://alice.dita.digital/images/cover.jpg');
+  }, [title, chapter, actions]);
 
   // biome-ignore lint/correctness/useExhaustiveDependencies: force render when min/maximized
-  useEffect(forceRender, [props.maximized]);
+  useEffect(forceRender, [maximized]);
 
   return source ? (
     <View style={styles.root}>
       <Book
         ref={ref}
         url={EPUB_URL}
-        style={props.maximized ? styles.maximized : undefined}
+        style={maximized ? styles.maximized : undefined}
         theme={scheme === 'light' ? 'default' : 'night'}
         onTableOfContents={console.log}
         onLocationChange={(e) => {
-          props.actions.setCurrent((e.locations?.totalProgression || 0) * 100);
-          props.actions.setDuration(100);
+          actions.setCurrent((e.locations?.totalProgression || 0) * 100);
+          actions.setDuration(100);
           e.title && setChapter(e.title);
         }}
       />

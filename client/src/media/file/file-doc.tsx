@@ -8,10 +8,9 @@ import type {FileProps} from 'media/file';
 
 export interface FileDoc extends FileProps {}
 
-export default forwardRef((props: FileDoc) => {
+export default forwardRef(({path}: FileDoc) => {
   // const source = useFile(props.path, 'dataUrl');
   // const {styles} = useStyles(stylesheet);
-
   return null;
 });
 

@@ -41,7 +41,7 @@ msgstr "هل أنت متأكد من أنك تريد إعادة تعيين قاع
 msgid "Are you sure you want to reset your prompt history?"
 msgstr "هل أنت متأكد من أنك تريد إعادة تعيين سجل المطالبات الخاص بك؟"
 
-#: ../../client/src/home/stacks/assistant.tsx:52
+#: ../../client/src/home/stacks/assistant.tsx:50
 msgid "Ask anything..."
 msgstr "اسأل أي شيء..."
 
@@ -54,7 +54,7 @@ msgstr "تلقائي"
 msgid "Books"
 msgstr "الكتب"
 
-#: ../../client/src/media/file/file-book.tsx:39
+#: ../../client/src/media/file/file-book.tsx:42
 msgid "by {0}"
 msgstr "بواسطة {0}"
 
@@ -155,7 +155,7 @@ msgstr "المستندات"
 msgid "Documents"
 msgstr "المستندات"
 
-#: ../../client/src/media/dir/stacks/menu-torrent.tsx:22
+#: ../../client/src/media/dir/stacks/menu-hfs.tsx:44
 msgid "Download"
 msgstr "تحميل"
 
@@ -373,7 +373,7 @@ msgstr "تثبيت"
 msgid "Play"
 msgstr "تشغيل"
 
-#: ../../client/src/home/stacks/assistant.tsx:52
+#: ../../client/src/home/stacks/assistant.tsx:50
 msgid "Please set your Groq API Key"
 msgstr "يرجى تعيين مفتاح Groq API الخاص بك"
 
@@ -457,7 +457,8 @@ msgstr "اختر سمة التطبيق."
 msgid "Services"
 msgstr ""
 
-#: ../../client/src/app/routes/screen-settings.tsx:23
+#: ../../client/src/app/routes/menu/index.tsx:48
+#: ../../client/src/app/routes/menu/index.tsx:183
 msgid "Settings"
 msgstr "الإعدادات"
 
@@ -489,11 +490,11 @@ msgstr "درجة الحرارة"
 msgid "Theme"
 msgstr "السمة"
 
-#: ../../client/src/media/file/file-binary.tsx:29
+#: ../../client/src/media/file/file-binary.tsx:35
 msgid "This file can not be previewed."
 msgstr ""
 
-#: ../../client/src/media/file/file-binary.tsx:24
+#: ../../client/src/media/file/file-binary.tsx:30
 msgid "Unsupported File"
 msgstr "ملف غير مدعوم"
 

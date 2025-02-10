@@ -9,15 +9,14 @@ import type {FileProps} from 'media/file';
 
 export interface FileMarkdown extends FileProps {}
 
-export default forwardRef((props: FileMarkdown) => {
-  const source = useFile(props.path, 'text');
+export default forwardRef(({path, actions}: FileMarkdown) => {
+  const source = useFile(path, 'text');
   const {styles} = useStyles(stylesheet);
 
-  // Update file player bar info
   useEffect(() => {
     if (!source) return;
-    props.actions.setInfo(`${source.split('\n').length ?? 0} lines, ${bytesize(source.length)}`);
-  }, [source, props.actions]);
+    actions.setInfo(`${source.split('\n').length ?? 0} lines, ${bytesize(source.length)}`);
+  }, [source, actions]);
 
   return source ? (
     <View style={styles.root}>

@@ -7,8 +7,8 @@ import type {FileProps} from 'media/file';
 
 export interface FileSpreadsheet extends FileProps {}
 
-export default forwardRef((props: FileSpreadsheet) => {
-  const source = useFile(props.path, 'dataUrl');
+export default forwardRef(({path}: FileSpreadsheet) => {
+  const source = useFile(path, 'dataUrl');
   const {styles} = useStyles(stylesheet);
 
   return source ? (

@@ -14,18 +14,20 @@ export interface FileVideo extends FileProps {
   ref: React.RefObject<VideoRef>,
 }
 
-export default forwardRef((props: Omit<FileVideo, 'ref'>, ref: React.Ref<VideoRef>) => {
-  const source = useFile(props.path, 'dataUrl');
+export default forwardRef((
+  {path, actions, embedded}: Omit<FileVideo, 'ref'>,
+  ref: React.Ref<VideoRef>,
+) => {
+  const source = useFile(path, 'dataUrl');
   const {styles} = useStyles(stylesheet);
-  const {actions} = props;
 
   return source ? (
     <View style={styles.root}>
       <Video
         ref={ref}
         source={{uri: source}}
-        paused={props.embedded}
-        controls={props.embedded}
+        paused={embedded}
+        controls={embedded}
         resizeMode="contain"
         onProgress={e => {
           actions.setCurrent(e.currentTime);

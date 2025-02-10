@@ -8,8 +8,8 @@ import type {FileProps} from 'media/file';
 
 export interface FileTypst extends FileProps {}
 
-export default forwardRef((props: FileTypst) => {
-  const source = useFile(props.path, 'text');
+export default forwardRef(({path}: FileTypst) => {
+  const source = useFile(path, 'text');
   const {styles} = useStyles(stylesheet);
 
   return source ? (

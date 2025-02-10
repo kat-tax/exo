@@ -1,7 +1,7 @@
 import {useRef, useState, useEffect} from 'react';
 import {toPathInfo} from 'app/utils/formatting';
-import {bind} from 'media/utils/bind';
 import * as dnd from 'app/utils/dragdrop';
+import {bind} from 'media/utils/bind';
 
 import type {View} from 'react-native';
 import type {CleanupFn} from 'app/utils/dragdrop';

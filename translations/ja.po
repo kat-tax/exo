@@ -41,7 +41,7 @@ msgstr "ローカルデータベースをリセットしてもよろしいです
 msgid "Are you sure you want to reset your prompt history?"
 msgstr "プロンプト履歴をリセットしてもよろしいですか？"
 
-#: ../../client/src/home/stacks/assistant.tsx:52
+#: ../../client/src/home/stacks/assistant.tsx:50
 msgid "Ask anything..."
 msgstr "何でも聞いてください..."
 
@@ -54,7 +54,7 @@ msgstr "自動"
 msgid "Books"
 msgstr "本"
 
-#: ../../client/src/media/file/file-book.tsx:39
+#: ../../client/src/media/file/file-book.tsx:42
 msgid "by {0}"
 msgstr "著者：{0}"
 
@@ -155,7 +155,7 @@ msgstr "ドキュメント"
 msgid "Documents"
 msgstr "ドキュメント"
 
-#: ../../client/src/media/dir/stacks/menu-torrent.tsx:22
+#: ../../client/src/media/dir/stacks/menu-hfs.tsx:44
 msgid "Download"
 msgstr "ダウンロード"
 
@@ -373,7 +373,7 @@ msgstr "ピン留め"
 msgid "Play"
 msgstr "再生"
 
-#: ../../client/src/home/stacks/assistant.tsx:52
+#: ../../client/src/home/stacks/assistant.tsx:50
 msgid "Please set your Groq API Key"
 msgstr "Groq APIキーを設定してください"
 
@@ -457,7 +457,8 @@ msgstr "アプリのテーマを選択してください。"
 msgid "Services"
 msgstr ""
 
-#: ../../client/src/app/routes/screen-settings.tsx:23
+#: ../../client/src/app/routes/menu/index.tsx:48
+#: ../../client/src/app/routes/menu/index.tsx:183
 msgid "Settings"
 msgstr "設定"
 
@@ -489,11 +490,11 @@ msgstr "温度"
 msgid "Theme"
 msgstr "テーマ"
 
-#: ../../client/src/media/file/file-binary.tsx:29
+#: ../../client/src/media/file/file-binary.tsx:35
 msgid "This file can not be previewed."
 msgstr ""
 
-#: ../../client/src/media/file/file-binary.tsx:24
+#: ../../client/src/media/file/file-binary.tsx:30
 msgid "Unsupported File"
 msgstr "サポートされていないファイル"
 

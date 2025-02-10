@@ -12,27 +12,29 @@ export interface FileGame extends FileProps {
 
 export interface GameRef extends Game {}
 
-export default forwardRef((props: FileGame, ref: React.Ref<GameRef>) => {
-  const source = useFile(props.path, 'dataUrl');
+export default forwardRef((
+  {path, name, actions, platform, embedded}: FileGame,
+  ref: React.Ref<GameRef>,
+) => {
+  const source = useFile(path, 'dataUrl');
   const {styles, theme} = useStyles(stylesheet);
 
-  // Update file player bar info
   useEffect(() => {
     if (!source) return;
-    props.actions.setInfo(PLATFORMS[props.platform]);
-  }, [source, props.platform, props.actions]);
+    actions.setInfo(PLATFORMS[platform]);
+  }, [source, platform, actions]);
 
   return source ? (
     <Game
       ref={ref}
       url={source}
-      name={props.name}
-      platform={props.platform}
+      name={name}
+      platform={platform}
       accent={theme.colors.accent}
       background={theme.colors.neutral}
-      bios={`/.bios/${props.platform}.bin`}
+      bios={`/.bios/${platform}.bin`}
       style={styles.root}
-      startOnLoaded={!props.embedded}
+      startOnLoaded={!embedded}
     />
   ) : null;
 });

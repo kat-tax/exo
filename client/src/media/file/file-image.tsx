@@ -18,8 +18,11 @@ export interface ImageRef {
   reset: () => void,
 }
 
-export default memo(forwardRef((props: FileImage, ref: React.Ref<ImageRef>) => {
-  const source = useFile(props.path, 'dataUrl');
+export default memo(forwardRef((
+  {path, actions, maximized, embedded}: FileImage,
+  ref: React.Ref<ImageRef>,
+) => {
+  const source = useFile(path, 'dataUrl');
   const controls = useRef<ReactZoomPanPinchContentRef>(null);
   const [scale, setScale] = useState(1);
   const [width, setWidth] = useState(0);
@@ -49,20 +52,20 @@ export default memo(forwardRef((props: FileImage, ref: React.Ref<ImageRef>) => {
 
   // Update image dimensions
   useEffect(() => {
-    if (!source || props.embedded) return;
+    if (!source || embedded) return;
     Image.getSize(source, (w, h) => {
       setWidth(w);
       setHeight(h);
     });
-  }, [source, props.actions]);
+  }, [source, embedded]);
 
   // Update file player bar info
   useEffect(() => {
-    if (!source || props.embedded) return;
-    props.actions.setInfo(`${width}x${height} (${Math.round(scale * 100)}%)`);
-  }, [width, height, scale]);
+    if (!source || embedded) return;
+    actions.setInfo(`${width}x${height} (${Math.round(scale * 100)}%)`);
+  }, [width, height, scale, actions, embedded]);
 
-  if (props.embedded) {
+  if (embedded) {
     return source ? (
       <View style={styles.root}>
         <ExoImage
@@ -90,7 +93,7 @@ export default memo(forwardRef((props: FileImage, ref: React.Ref<ImageRef>) => {
           <ExoImage
             url={source}
             style={styles.image}
-            resizeMode={props.maximized ? 'center' : 'cover'}
+            resizeMode={maximized ? 'center' : 'cover'}
           />
         </View>
       </TransformComponent>

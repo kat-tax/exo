@@ -8,15 +8,15 @@ import type {FileProps} from 'media/file';
 
 export interface FileLottie extends FileProps {}
 
-export default forwardRef((props: FileLottie) => {
-  const source = useFile(props.path, 'dataUrl');
+export default forwardRef(({path, maximized}: FileLottie) => {
+  const source = useFile(path, 'dataUrl');
   const {styles} = useStyles(stylesheet);
 
   return source ? (
     <View style={styles.root}>
       <Lottie
         url={source}
-        resizeMode={props.maximized ? 'contain' : 'cover'}
+        resizeMode={maximized ? 'contain' : 'cover'}
         width={'100%'}
         autoplay
         loop

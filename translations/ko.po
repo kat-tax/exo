@@ -41,7 +41,7 @@ msgstr "로컬 데이터베이스를 초기화하시겠습니까? 다른 기기�
 msgid "Are you sure you want to reset your prompt history?"
 msgstr "프롬프트 기록을 초기화하시겠습니까?"
 
-#: ../../client/src/home/stacks/assistant.tsx:52
+#: ../../client/src/home/stacks/assistant.tsx:50
 msgid "Ask anything..."
 msgstr "무엇이든 물어보세요..."
 
@@ -54,7 +54,7 @@ msgstr "자동"
 msgid "Books"
 msgstr "도서"
 
-#: ../../client/src/media/file/file-book.tsx:39
+#: ../../client/src/media/file/file-book.tsx:42
 msgid "by {0}"
 msgstr "{0} 저"
 
@@ -155,7 +155,7 @@ msgstr "문서"
 msgid "Documents"
 msgstr "문서"
 
-#: ../../client/src/media/dir/stacks/menu-torrent.tsx:22
+#: ../../client/src/media/dir/stacks/menu-hfs.tsx:44
 msgid "Download"
 msgstr "다운로드"
 
@@ -373,7 +373,7 @@ msgstr "고정"
 msgid "Play"
 msgstr "재생"
 
-#: ../../client/src/home/stacks/assistant.tsx:52
+#: ../../client/src/home/stacks/assistant.tsx:50
 msgid "Please set your Groq API Key"
 msgstr "Groq API 키를 설정해주세요"
 
@@ -457,7 +457,8 @@ msgstr "앱 테마를 선택하세요."
 msgid "Services"
 msgstr ""
 
-#: ../../client/src/app/routes/screen-settings.tsx:23
+#: ../../client/src/app/routes/menu/index.tsx:48
+#: ../../client/src/app/routes/menu/index.tsx:183
 msgid "Settings"
 msgstr "설정"
 
@@ -489,11 +490,11 @@ msgstr "온도"
 msgid "Theme"
 msgstr "테마"
 
-#: ../../client/src/media/file/file-binary.tsx:29
+#: ../../client/src/media/file/file-binary.tsx:35
 msgid "This file can not be previewed."
 msgstr ""
 
-#: ../../client/src/media/file/file-binary.tsx:24
+#: ../../client/src/media/file/file-binary.tsx:30
 msgid "Unsupported File"
 msgstr "지원되지 않는 파일"
 
