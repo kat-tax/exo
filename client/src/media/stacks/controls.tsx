@@ -1,14 +1,14 @@
-import {useCallback, useMemo} from 'react';
-import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {View, Text, Pressable} from 'react-native';
 import {Slider} from 'react-exo/slider';
 import {Motion} from 'react-exo/motion';
 import {Image} from 'react-exo/image';
 import {Icon} from 'react-exo/icon';
-import {Thumb} from 'media/stacks/thumb';
-import {FileType} from 'media/file/types';
-import {isTouch} from 'app/utils/platform';
+import {useCallback, useMemo} from 'react';
+import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useMediaControls} from 'media/hooks/use-media-controls';
+import {FileType} from 'media/file/types';
+import {Thumb} from 'media/stacks/thumb';
+import {isTouch} from 'app/utils/platform';
 
 import type {FileProps} from 'media/file';
 import type {FileRef, FileRenderInfo} from 'media/file/types';

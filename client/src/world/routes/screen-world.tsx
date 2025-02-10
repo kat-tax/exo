@@ -1,5 +1,5 @@
-import {useLingui} from '@lingui/react/macro';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
+import {useLingui} from '@lingui/react/macro';
 import {Link} from 'react-exo/navigation';
 import {View} from 'react-native';
 import {Panel} from 'app/stacks/panel';

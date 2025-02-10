@@ -1,9 +1,9 @@
-import {useDispatch} from 'react-redux';
-import {useCallback, useEffect, useState} from 'react';
-import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {Text, Pressable} from 'react-native';
 import {Icon} from 'react-exo/icon';
 import {Thumb} from 'media/stacks/thumb';
+import {Text, Pressable} from 'react-native';
+import {useCallback, useEffect, useState} from 'react';
+import {useStyles, createStyleSheet} from 'react-native-unistyles';
+import {useDispatch} from 'react-redux';
 import {isTouch} from 'app/utils/platform';
 import media from 'media/store';
 

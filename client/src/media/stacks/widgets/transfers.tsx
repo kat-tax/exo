@@ -1,8 +1,8 @@
+import {Progress} from 'react-exo/progress';
+import {View, Text} from 'react-native';
+import {getDiskSpace} from 'react-exo/fs';
 import {useState, useEffect} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {getDiskSpace} from 'react-exo/fs';
-import {View, Text} from 'react-native';
-import {Progress} from 'react-exo/progress';
 import {bytesize} from 'app/utils/formatting';
 
 interface TransfersWidgetProps {

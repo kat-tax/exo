@@ -13,7 +13,10 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
+#. placeholder {0}: 5
+#. placeholder {0}: 11
 #: ../../client/src/dev/routes/screen-library.tsx:22
+#: ../../client/src/dev/routes/screen-design.tsx:14
 msgid "{0} components"
 msgstr "{0}개 컴포넌트"
 
@@ -50,14 +53,17 @@ msgstr "무엇이든 물어보세요..."
 msgid "Auto"
 msgstr "자동"
 
+#: ../../client/src/media/stacks/list/bar.tsx:77
 #: ../../client/src/app/routes/menu/index.tsx:123
 msgid "Books"
 msgstr "도서"
 
+#. placeholder {0}: data.metadata.author
 #: ../../client/src/media/file/file-book.tsx:42
 msgid "by {0}"
 msgstr "{0} 저"
 
+#: ../../client/src/world/routes/screen-world.tsx:29
 #: ../../client/src/app/routes/menu/index.tsx:140
 msgid "Calendar"
 msgstr "달력"
@@ -74,6 +80,7 @@ msgstr "닫기"
 msgid "Compress"
 msgstr ""
 
+#: ../../client/src/media/hooks/use-media-controls.ts:58
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:55
 msgid "Copy"
 msgstr ""
@@ -127,6 +134,7 @@ msgstr "프롬프트 삭제"
 msgid "Delete the local database."
 msgstr "로컬 데이터베이스 삭제"
 
+#: ../../client/src/dev/routes/screen-design.tsx:13
 #: ../../client/src/app/routes/menu/index.tsx:161
 msgid "Design"
 msgstr "디자인"
@@ -155,6 +163,9 @@ msgstr "문서"
 msgid "Documents"
 msgstr "문서"
 
+#: ../../client/src/media/hooks/use-media-controls.ts:77
+#: ../../client/src/media/file/file-binary.tsx:36
+#: ../../client/src/media/dir/stacks/menu-torrent.tsx:22
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:44
 msgid "Download"
 msgstr "다운로드"
@@ -183,6 +194,7 @@ msgstr ""
 msgid "Enter name"
 msgstr ""
 
+#: ../../client/src/media/hooks/use-media-controls.ts:87
 #: ../../client/src/media/dir/stacks/menu-zip.tsx:22
 msgid "Extract"
 msgstr "추출"
@@ -195,6 +207,7 @@ msgstr "화씨"
 msgid "Feature in development..."
 msgstr ""
 
+#: ../../client/src/media/stacks/list/bar.tsx:83
 #: ../../client/src/app/routes/menu/index.tsx:38
 #: ../../client/src/app/routes/menu/index.tsx:93
 msgid "Files"
@@ -212,6 +225,7 @@ msgstr ""
 msgid "Fullscreen"
 msgstr "전체화면"
 
+#: ../../client/src/media/stacks/list/bar.tsx:75
 #: ../../client/src/app/routes/menu/index.tsx:118
 msgid "Games"
 msgstr "게임"
@@ -269,6 +283,7 @@ msgstr "킬로미터"
 msgid "Language"
 msgstr "언어"
 
+#: ../../client/src/dev/routes/screen-library.tsx:21
 #: ../../client/src/app/routes/menu/index.tsx:166
 msgid "Library"
 msgstr "라이브러리"
@@ -289,6 +304,7 @@ msgstr "설정 관리"
 msgid "Manage your storage"
 msgstr "저장소 관리"
 
+#: ../../client/src/world/routes/screen-world.tsx:17
 #: ../../client/src/app/routes/menu/index.tsx:130
 msgid "Map"
 msgstr "지도"
@@ -325,10 +341,12 @@ msgstr "마일"
 msgid "Move"
 msgstr ""
 
+#: ../../client/src/media/stacks/list/bar.tsx:69
 #: ../../client/src/app/routes/menu/index.tsx:103
 msgid "Music"
 msgstr "음악"
 
+#: ../../client/src/world/routes/screen-world.tsx:23
 #: ../../client/src/app/routes/menu/index.tsx:135
 msgid "News"
 msgstr "뉴스"
@@ -361,6 +379,7 @@ msgstr "소유자 키"
 msgid "Pause"
 msgstr "일시정지"
 
+#: ../../client/src/media/stacks/list/bar.tsx:71
 #: ../../client/src/app/routes/menu/index.tsx:108
 msgid "Pictures"
 msgstr "사진"
@@ -458,9 +477,12 @@ msgid "Services"
 msgstr ""
 
 #: ../../client/src/app/routes/screen-settings.tsx:24
+#: ../../client/src/app/routes/menu/index.tsx:48
+#: ../../client/src/app/routes/menu/index.tsx:183
 msgid "Settings"
 msgstr "설정"
 
+#: ../../client/src/media/hooks/use-media-controls.ts:256
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:30
 msgid "Share"
 msgstr "공유"
@@ -473,6 +495,7 @@ msgstr "뒤로 건너뛰기"
 msgid "Skip forward"
 msgstr "앞으로 건너뛰기"
 
+#: ../../client/src/app/routes/screen-storage.tsx:23
 #: ../../client/src/app/routes/menu/index.tsx:177
 msgid "Storage"
 msgstr "저장소"
@@ -505,6 +528,7 @@ msgstr "업로드"
 msgid "User Name"
 msgstr "사용자 이름"
 
+#: ../../client/src/media/stacks/list/bar.tsx:73
 #: ../../client/src/app/routes/menu/index.tsx:113
 msgid "Videos"
 msgstr "동영상"
@@ -525,6 +549,7 @@ msgstr "최신 뉴스 및 RSS 피드 보기"
 msgid "Volume"
 msgstr "볼륨"
 
+#. placeholder {0}: profile.name
 #: ../../client/src/home/routes/screen-home.tsx:38
 msgid "Welcome, {0}"
 msgstr "환영합니다, {0}님"

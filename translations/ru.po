@@ -13,7 +13,10 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
+#. placeholder {0}: 5
+#. placeholder {0}: 11
 #: ../../client/src/dev/routes/screen-library.tsx:22
+#: ../../client/src/dev/routes/screen-design.tsx:14
 msgid "{0} components"
 msgstr "{0} компонентов"
 
@@ -50,14 +53,17 @@ msgstr "Спрашивайте что угодно..."
 msgid "Auto"
 msgstr "Авто"
 
+#: ../../client/src/media/stacks/list/bar.tsx:77
 #: ../../client/src/app/routes/menu/index.tsx:123
 msgid "Books"
 msgstr "Книги"
 
+#. placeholder {0}: data.metadata.author
 #: ../../client/src/media/file/file-book.tsx:42
 msgid "by {0}"
 msgstr "автор {0}"
 
+#: ../../client/src/world/routes/screen-world.tsx:29
 #: ../../client/src/app/routes/menu/index.tsx:140
 msgid "Calendar"
 msgstr "Календарь"
@@ -74,6 +80,7 @@ msgstr "Закрыть"
 msgid "Compress"
 msgstr ""
 
+#: ../../client/src/media/hooks/use-media-controls.ts:58
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:55
 msgid "Copy"
 msgstr ""
@@ -127,6 +134,7 @@ msgstr "Удалить запросы"
 msgid "Delete the local database."
 msgstr "Удалить локальную базу данных."
 
+#: ../../client/src/dev/routes/screen-design.tsx:13
 #: ../../client/src/app/routes/menu/index.tsx:161
 msgid "Design"
 msgstr "Дизайн"
@@ -155,6 +163,9 @@ msgstr "Документы"
 msgid "Documents"
 msgstr "Документы"
 
+#: ../../client/src/media/hooks/use-media-controls.ts:77
+#: ../../client/src/media/file/file-binary.tsx:36
+#: ../../client/src/media/dir/stacks/menu-torrent.tsx:22
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:44
 msgid "Download"
 msgstr "Скачать"
@@ -183,6 +194,7 @@ msgstr ""
 msgid "Enter name"
 msgstr ""
 
+#: ../../client/src/media/hooks/use-media-controls.ts:87
 #: ../../client/src/media/dir/stacks/menu-zip.tsx:22
 msgid "Extract"
 msgstr "Извлечь"
@@ -195,6 +207,7 @@ msgstr "Фаренгейт"
 msgid "Feature in development..."
 msgstr ""
 
+#: ../../client/src/media/stacks/list/bar.tsx:83
 #: ../../client/src/app/routes/menu/index.tsx:38
 #: ../../client/src/app/routes/menu/index.tsx:93
 msgid "Files"
@@ -212,6 +225,7 @@ msgstr ""
 msgid "Fullscreen"
 msgstr "Полный экран"
 
+#: ../../client/src/media/stacks/list/bar.tsx:75
 #: ../../client/src/app/routes/menu/index.tsx:118
 msgid "Games"
 msgstr "Игры"
@@ -269,6 +283,7 @@ msgstr "Километры"
 msgid "Language"
 msgstr "Язык"
 
+#: ../../client/src/dev/routes/screen-library.tsx:21
 #: ../../client/src/app/routes/menu/index.tsx:166
 msgid "Library"
 msgstr "Библиотека"
@@ -289,6 +304,7 @@ msgstr "Управление настройками"
 msgid "Manage your storage"
 msgstr "Управление хранилищем"
 
+#: ../../client/src/world/routes/screen-world.tsx:17
 #: ../../client/src/app/routes/menu/index.tsx:130
 msgid "Map"
 msgstr "Карта"
@@ -325,10 +341,12 @@ msgstr "Мили"
 msgid "Move"
 msgstr ""
 
+#: ../../client/src/media/stacks/list/bar.tsx:69
 #: ../../client/src/app/routes/menu/index.tsx:103
 msgid "Music"
 msgstr "Музыка"
 
+#: ../../client/src/world/routes/screen-world.tsx:23
 #: ../../client/src/app/routes/menu/index.tsx:135
 msgid "News"
 msgstr "Новости"
@@ -361,6 +379,7 @@ msgstr "Ключ владельца"
 msgid "Pause"
 msgstr "Пауза"
 
+#: ../../client/src/media/stacks/list/bar.tsx:71
 #: ../../client/src/app/routes/menu/index.tsx:108
 msgid "Pictures"
 msgstr "Изображения"
@@ -458,9 +477,12 @@ msgid "Services"
 msgstr ""
 
 #: ../../client/src/app/routes/screen-settings.tsx:24
+#: ../../client/src/app/routes/menu/index.tsx:48
+#: ../../client/src/app/routes/menu/index.tsx:183
 msgid "Settings"
 msgstr "Настройки"
 
+#: ../../client/src/media/hooks/use-media-controls.ts:256
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:30
 msgid "Share"
 msgstr "Поделиться"
@@ -473,6 +495,7 @@ msgstr "Перемотать назад"
 msgid "Skip forward"
 msgstr "Перемотать вперед"
 
+#: ../../client/src/app/routes/screen-storage.tsx:23
 #: ../../client/src/app/routes/menu/index.tsx:177
 msgid "Storage"
 msgstr "Хранилище"
@@ -505,6 +528,7 @@ msgstr "Загрузки"
 msgid "User Name"
 msgstr "Имя пользователя"
 
+#: ../../client/src/media/stacks/list/bar.tsx:73
 #: ../../client/src/app/routes/menu/index.tsx:113
 msgid "Videos"
 msgstr "Видео"
@@ -525,6 +549,7 @@ msgstr "Просмотр последних новостей и RSS-канало
 msgid "Volume"
 msgstr "Громкость"
 
+#. placeholder {0}: profile.name
 #: ../../client/src/home/routes/screen-home.tsx:38
 msgid "Welcome, {0}"
 msgstr "Добро пожаловать, {0}"

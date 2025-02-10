@@ -1,7 +1,7 @@
+import {Motion} from 'react-exo/motion';
 import {useRef, useMemo, useCallback, useEffect} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useSelector, useDispatch} from 'react-redux';
-import {Motion} from 'react-exo/motion';
 import {toPathInfo} from 'app/utils/formatting';
 import media from 'media/store';
 

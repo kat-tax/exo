@@ -1,15 +1,14 @@
 import {useState} from 'react';
 import {useStyles} from 'react-native-unistyles';
 import {useLingui} from '@lingui/react/macro';
+import {Panel} from 'app/stacks/panel';
+import {Frame} from 'dev/stacks/frame';
 
 import {Icon} from 'react-exo/icon';
 import {Switch} from 'react-exo/switch';
 import {Slider} from 'react-exo/slider';
 import {Checkbox} from 'react-exo/checkbox';
 import {Progress} from 'react-exo/progress';
-
-import {Panel} from 'app/stacks/panel';
-import {Frame} from 'dev/stacks/frame';
 
 export default function ScreenHome() {
   const [slider, setSlider] = useState(0);

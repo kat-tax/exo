@@ -13,7 +13,10 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
+#. placeholder {0}: 5
+#. placeholder {0}: 11
 #: ../../client/src/dev/routes/screen-library.tsx:22
+#: ../../client/src/dev/routes/screen-design.tsx:14
 msgid "{0} components"
 msgstr "{0} مكونات"
 
@@ -50,14 +53,17 @@ msgstr "اسأل أي شيء..."
 msgid "Auto"
 msgstr "تلقائي"
 
+#: ../../client/src/media/stacks/list/bar.tsx:77
 #: ../../client/src/app/routes/menu/index.tsx:123
 msgid "Books"
 msgstr "الكتب"
 
+#. placeholder {0}: data.metadata.author
 #: ../../client/src/media/file/file-book.tsx:42
 msgid "by {0}"
 msgstr "بواسطة {0}"
 
+#: ../../client/src/world/routes/screen-world.tsx:29
 #: ../../client/src/app/routes/menu/index.tsx:140
 msgid "Calendar"
 msgstr "التقويم"
@@ -74,6 +80,7 @@ msgstr "إغلاق"
 msgid "Compress"
 msgstr ""
 
+#: ../../client/src/media/hooks/use-media-controls.ts:58
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:55
 msgid "Copy"
 msgstr "نسخ"
@@ -127,6 +134,7 @@ msgstr "حذف المطالبات"
 msgid "Delete the local database."
 msgstr "حذف قاعدة البيانات المحلية."
 
+#: ../../client/src/dev/routes/screen-design.tsx:13
 #: ../../client/src/app/routes/menu/index.tsx:161
 msgid "Design"
 msgstr "التصميم"
@@ -155,6 +163,9 @@ msgstr "المستندات"
 msgid "Documents"
 msgstr "المستندات"
 
+#: ../../client/src/media/hooks/use-media-controls.ts:77
+#: ../../client/src/media/file/file-binary.tsx:36
+#: ../../client/src/media/dir/stacks/menu-torrent.tsx:22
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:44
 msgid "Download"
 msgstr "تحميل"
@@ -183,6 +194,7 @@ msgstr "أدخل اسم المجلد"
 msgid "Enter name"
 msgstr ""
 
+#: ../../client/src/media/hooks/use-media-controls.ts:87
 #: ../../client/src/media/dir/stacks/menu-zip.tsx:22
 msgid "Extract"
 msgstr "استخراج"
@@ -195,6 +207,7 @@ msgstr "فهرنهايت"
 msgid "Feature in development..."
 msgstr ""
 
+#: ../../client/src/media/stacks/list/bar.tsx:83
 #: ../../client/src/app/routes/menu/index.tsx:38
 #: ../../client/src/app/routes/menu/index.tsx:93
 msgid "Files"
@@ -212,6 +225,7 @@ msgstr ""
 msgid "Fullscreen"
 msgstr "ملء الشاشة"
 
+#: ../../client/src/media/stacks/list/bar.tsx:75
 #: ../../client/src/app/routes/menu/index.tsx:118
 msgid "Games"
 msgstr "الألعاب"
@@ -269,6 +283,7 @@ msgstr "كيلومترات"
 msgid "Language"
 msgstr "اللغة"
 
+#: ../../client/src/dev/routes/screen-library.tsx:21
 #: ../../client/src/app/routes/menu/index.tsx:166
 msgid "Library"
 msgstr "المكتبة"
@@ -289,6 +304,7 @@ msgstr "إدارة إعداداتك"
 msgid "Manage your storage"
 msgstr "إدارة التخزين الخاص بك"
 
+#: ../../client/src/world/routes/screen-world.tsx:17
 #: ../../client/src/app/routes/menu/index.tsx:130
 msgid "Map"
 msgstr "الخريطة"
@@ -325,10 +341,12 @@ msgstr "أميال"
 msgid "Move"
 msgstr "نقل"
 
+#: ../../client/src/media/stacks/list/bar.tsx:69
 #: ../../client/src/app/routes/menu/index.tsx:103
 msgid "Music"
 msgstr "الموسيقى"
 
+#: ../../client/src/world/routes/screen-world.tsx:23
 #: ../../client/src/app/routes/menu/index.tsx:135
 msgid "News"
 msgstr "الأخبار"
@@ -361,6 +379,7 @@ msgstr "مفتاح المالك"
 msgid "Pause"
 msgstr "إيقاف مؤقت"
 
+#: ../../client/src/media/stacks/list/bar.tsx:71
 #: ../../client/src/app/routes/menu/index.tsx:108
 msgid "Pictures"
 msgstr "الصور"
@@ -458,9 +477,12 @@ msgid "Services"
 msgstr ""
 
 #: ../../client/src/app/routes/screen-settings.tsx:24
+#: ../../client/src/app/routes/menu/index.tsx:48
+#: ../../client/src/app/routes/menu/index.tsx:183
 msgid "Settings"
 msgstr "الإعدادات"
 
+#: ../../client/src/media/hooks/use-media-controls.ts:256
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:30
 msgid "Share"
 msgstr "مشاركة"
@@ -473,6 +495,7 @@ msgstr "تخطي للخلف"
 msgid "Skip forward"
 msgstr "تخطي للأمام"
 
+#: ../../client/src/app/routes/screen-storage.tsx:23
 #: ../../client/src/app/routes/menu/index.tsx:177
 msgid "Storage"
 msgstr "التخزين"
@@ -505,6 +528,7 @@ msgstr "المرفوعات"
 msgid "User Name"
 msgstr "اسم المستخدم"
 
+#: ../../client/src/media/stacks/list/bar.tsx:73
 #: ../../client/src/app/routes/menu/index.tsx:113
 msgid "Videos"
 msgstr "الفيديوهات"
@@ -525,6 +549,7 @@ msgstr "عرض آخر الأخبار وتغذيات RSS الخاصة بك"
 msgid "Volume"
 msgstr "مستوى الصوت"
 
+#. placeholder {0}: profile.name
 #: ../../client/src/home/routes/screen-home.tsx:38
 msgid "Welcome, {0}"
 msgstr "مرحباً، {0}"

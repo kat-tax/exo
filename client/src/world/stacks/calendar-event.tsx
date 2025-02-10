@@ -1,6 +1,6 @@
 import {Icon} from 'react-exo/icon';
-import {useLocale} from 'app/hooks/use-locale';
 import {Alert} from 'design';
+import {useLocale} from 'app/hooks/use-locale';
 
 export function CalendarEvent() {
   const [locale] = useLocale();

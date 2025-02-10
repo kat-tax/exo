@@ -13,7 +13,10 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
+#. placeholder {0}: 5
+#. placeholder {0}: 11
 #: ../../client/src/dev/routes/screen-library.tsx:22
+#: ../../client/src/dev/routes/screen-design.tsx:14
 msgid "{0} components"
 msgstr "{0}個のコンポーネント"
 
@@ -50,14 +53,17 @@ msgstr "何でも聞いてください..."
 msgid "Auto"
 msgstr "自動"
 
+#: ../../client/src/media/stacks/list/bar.tsx:77
 #: ../../client/src/app/routes/menu/index.tsx:123
 msgid "Books"
 msgstr "本"
 
+#. placeholder {0}: data.metadata.author
 #: ../../client/src/media/file/file-book.tsx:42
 msgid "by {0}"
 msgstr "著者：{0}"
 
+#: ../../client/src/world/routes/screen-world.tsx:29
 #: ../../client/src/app/routes/menu/index.tsx:140
 msgid "Calendar"
 msgstr "カレンダー"
@@ -74,6 +80,7 @@ msgstr "閉じる"
 msgid "Compress"
 msgstr ""
 
+#: ../../client/src/media/hooks/use-media-controls.ts:58
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:55
 msgid "Copy"
 msgstr ""
@@ -127,6 +134,7 @@ msgstr "プロンプトを削除"
 msgid "Delete the local database."
 msgstr "ローカルデータベースを削除します。"
 
+#: ../../client/src/dev/routes/screen-design.tsx:13
 #: ../../client/src/app/routes/menu/index.tsx:161
 msgid "Design"
 msgstr "デザイン"
@@ -155,6 +163,9 @@ msgstr "ドキュメント"
 msgid "Documents"
 msgstr "ドキュメント"
 
+#: ../../client/src/media/hooks/use-media-controls.ts:77
+#: ../../client/src/media/file/file-binary.tsx:36
+#: ../../client/src/media/dir/stacks/menu-torrent.tsx:22
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:44
 msgid "Download"
 msgstr "ダウンロード"
@@ -183,6 +194,7 @@ msgstr ""
 msgid "Enter name"
 msgstr ""
 
+#: ../../client/src/media/hooks/use-media-controls.ts:87
 #: ../../client/src/media/dir/stacks/menu-zip.tsx:22
 msgid "Extract"
 msgstr "抽出"
@@ -195,6 +207,7 @@ msgstr "華氏"
 msgid "Feature in development..."
 msgstr ""
 
+#: ../../client/src/media/stacks/list/bar.tsx:83
 #: ../../client/src/app/routes/menu/index.tsx:38
 #: ../../client/src/app/routes/menu/index.tsx:93
 msgid "Files"
@@ -212,6 +225,7 @@ msgstr ""
 msgid "Fullscreen"
 msgstr "全画面"
 
+#: ../../client/src/media/stacks/list/bar.tsx:75
 #: ../../client/src/app/routes/menu/index.tsx:118
 msgid "Games"
 msgstr "ゲーム"
@@ -269,6 +283,7 @@ msgstr "キロメートル"
 msgid "Language"
 msgstr "言語"
 
+#: ../../client/src/dev/routes/screen-library.tsx:21
 #: ../../client/src/app/routes/menu/index.tsx:166
 msgid "Library"
 msgstr "ライブラリ"
@@ -289,6 +304,7 @@ msgstr "設定を管理"
 msgid "Manage your storage"
 msgstr "ストレージを管理"
 
+#: ../../client/src/world/routes/screen-world.tsx:17
 #: ../../client/src/app/routes/menu/index.tsx:130
 msgid "Map"
 msgstr "地図"
@@ -325,10 +341,12 @@ msgstr "マイル"
 msgid "Move"
 msgstr ""
 
+#: ../../client/src/media/stacks/list/bar.tsx:69
 #: ../../client/src/app/routes/menu/index.tsx:103
 msgid "Music"
 msgstr "音楽"
 
+#: ../../client/src/world/routes/screen-world.tsx:23
 #: ../../client/src/app/routes/menu/index.tsx:135
 msgid "News"
 msgstr "ニュース"
@@ -361,6 +379,7 @@ msgstr "オーナーキー"
 msgid "Pause"
 msgstr "一時停止"
 
+#: ../../client/src/media/stacks/list/bar.tsx:71
 #: ../../client/src/app/routes/menu/index.tsx:108
 msgid "Pictures"
 msgstr "写真"
@@ -458,9 +477,12 @@ msgid "Services"
 msgstr ""
 
 #: ../../client/src/app/routes/screen-settings.tsx:24
+#: ../../client/src/app/routes/menu/index.tsx:48
+#: ../../client/src/app/routes/menu/index.tsx:183
 msgid "Settings"
 msgstr "設定"
 
+#: ../../client/src/media/hooks/use-media-controls.ts:256
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:30
 msgid "Share"
 msgstr "共有"
@@ -473,6 +495,7 @@ msgstr "巻き戻し"
 msgid "Skip forward"
 msgstr "早送り"
 
+#: ../../client/src/app/routes/screen-storage.tsx:23
 #: ../../client/src/app/routes/menu/index.tsx:177
 msgid "Storage"
 msgstr "ストレージ"
@@ -505,6 +528,7 @@ msgstr "アップロード"
 msgid "User Name"
 msgstr "ユーザー名"
 
+#: ../../client/src/media/stacks/list/bar.tsx:73
 #: ../../client/src/app/routes/menu/index.tsx:113
 msgid "Videos"
 msgstr "動画"
@@ -525,6 +549,7 @@ msgstr "最新ニュースとRSSフィードを表示"
 msgid "Volume"
 msgstr "音量"
 
+#. placeholder {0}: profile.name
 #: ../../client/src/home/routes/screen-home.tsx:38
 msgid "Welcome, {0}"
 msgstr "ようこそ、{0}さん"
