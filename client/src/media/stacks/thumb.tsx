@@ -1,9 +1,8 @@
 import {Icon} from 'react-exo/icon';
 import {View} from 'react-native';
-
 import {useEffect, useState} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {useScheme} from 'app/hooks/use-scheme';
+import {useTheme} from 'app/hooks/use-display';
 import {getIcon} from 'media/file/icons';
 
 interface Thumb {
@@ -17,7 +16,7 @@ export function Thumb(props: Thumb) {
   const {name, size = 1, ext = '', dir = false} = props;
   const [icon, setIcon] = useState<string | null>(null);
   const {styles, theme} = useStyles(stylesheet);
-  const [scheme] = useScheme();
+  const [scheme] = useTheme();
 
   const iconSize = size === 0 ? 14 : size === 2 ? 24 : 16;
   const iconScheme = scheme === 'light' ? 'light' : 'dark';

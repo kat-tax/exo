@@ -1,5 +1,4 @@
 import {Rive} from 'react-exo/rive';
-
 import {forwardRef} from 'react';
 import {useFile} from 'media/file/hooks/use-file';
 

@@ -4,7 +4,7 @@ import {useSelector} from 'react-redux';
 import {useLocation} from 'react-exo/navigation';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useWindowDimensions, View, StatusBar} from 'react-native';
-import {useDeviceSession} from 'app/hooks/use-device-session';
+import {useSession} from 'app/hooks/use-session';
 import {useHotkeys} from 'app/hooks/use-hotkeys';
 import {useProfile} from 'app/data';
 import {toPathInfo} from 'app/utils/formatting';
@@ -13,7 +13,7 @@ import {Media} from 'media/stacks/media';
 import {Menu} from 'app/routes/menu';
 import media from 'media/store';
 
-import type {AppContext} from 'app/hooks/use-app-context';
+import type {AppCtx} from 'app/hooks/use-app';
 
 export const APP_MENU_WIDTH = 146;
 export const APP_MENU_TAB_HEIGHT = 64;
@@ -24,7 +24,7 @@ export default function Layout() {
   const {styles, theme} = useStyles(stylesheet);
   const {pathname} = useLocation();
   const profile = useProfile();
-  const device = useDeviceSession();
+  const device = useSession();
   const screen = useWindowDimensions();
   const focused = useSelector(media.selectors.getFocused);
   const pathinfo = toPathInfo(focused, false);
@@ -37,7 +37,7 @@ export default function Layout() {
     content: [styles.content, isVertical && styles.contentVert],
   };
 
-  const context: AppContext = {
+  const context: AppCtx = {
     device,
     profile,
     layout: {

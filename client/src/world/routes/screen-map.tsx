@@ -1,16 +1,16 @@
 import Map from 'react-map-gl/maplibre';
 import {useState} from 'react';
 import {useDevices} from 'app/data';
-import {useAppContext} from 'app/hooks/use-app-context';
-import {useScheme} from 'app/hooks/use-scheme';
+import {useTheme} from 'app/hooks/use-display';
+import {useApp} from 'app/hooks/use-app';
 import {Panel} from 'app/stacks/panel';
 
 import {MarkerDevice} from '../stacks/marker-device';
 
 export default function ScreenMap() {
-  const {device, profile} = useAppContext();
+  const {device, profile} = useApp();
   const devices = useDevices();
-  const [scheme] = useScheme();
+  const [scheme] = useTheme();
   const [viewState, setViewState] = useState({
     latitude: device?.coords?.[0] ?? 0,
     longitude: device?.coords?.[1] ?? 0,

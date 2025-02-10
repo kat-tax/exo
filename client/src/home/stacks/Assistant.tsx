@@ -1,7 +1,7 @@
 import {useLingui} from '@lingui/react/macro';
 import {useRef, useState, useMemo, memo} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {useAppContext} from 'app/hooks/use-app-context';
+import {useApp} from 'app/hooks/use-app';
 
 import {Text, View, TextInput, Pressable} from 'react-native';
 import {Link} from 'react-exo/navigation';
@@ -15,8 +15,8 @@ import {useAI} from 'home/hooks/use-ai';
 const DEFAULT_MODEL = 'llama3-8b-8192';
 
 export const Assistant = memo(() => {
-  const {profile} = useAppContext();
   const {styles, theme} = useStyles(stylesheet);
+  const {profile} = useApp();
   const {t} = useLingui();
 
   const [multiline, setMultiline] = useState(false);

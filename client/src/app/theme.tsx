@@ -3,11 +3,11 @@ import {useInitialTheme, UnistylesRuntime} from 'react-native-unistyles';
 import {StatusBar, Appearance} from 'react-native';
 import {GestureProvider} from 'react-exo/gesture';
 import {ToastRoot} from 'react-exo/toast';
-import {useScheme} from 'app/hooks/use-scheme';
+import {useTheme} from 'app/hooks/use-display';
 import {hideBootsplash} from 'app/utils/bootsplash';
 
 export function Theme(props: React.PropsWithChildren) {
-  const [scheme] = useScheme();
+  const [scheme] = useTheme();
   const theme = scheme === 'dark' ? 'dark' : 'light';
 
   useInitialTheme(theme);

@@ -2,15 +2,15 @@ import {Text, View} from 'react-native';
 import {useMemo} from 'react';
 import {useLingui} from '@lingui/react/macro';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {useAppContext} from 'app/hooks/use-app-context';
-import {useWeather} from 'home/hooks/use-weather';
+import {useApp} from 'app/hooks/use-app';
 import {useClock} from 'home/hooks/use-clock';
+import {useWeather} from 'home/hooks/use-weather';
 import {Assistant} from 'home/stacks/assistant';
 import {getTimeOfDay} from 'home/utils/time';
 import {Panel} from 'app/stacks/panel';
 
 export default function ScreenHome() {
-  const {device, profile} = useAppContext();
+  const {device, profile} = useApp();
   const {styles} = useStyles(stylesheet);
   const weather = useWeather(device?.coords);
   const clock = useClock();

@@ -3,7 +3,7 @@ import {useLingui} from '@lingui/react/macro';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useDateRange, toDateId, Calendar} from '@marceloterreiro/flash-calendar';
 import {useCalendarTheme} from 'world/hooks/use-calendar-theme';
-import {useLocale} from 'app/hooks/use-locale';
+import {useLocale} from 'app/hooks/use-display';
 import {Panel} from 'app/stacks/panel';
 
 import {CalendarEvent} from '../stacks/calendar-event';

@@ -1,28 +1,30 @@
+import {View} from 'react-native';
 import {LegendList} from '@legendapp/list';
 import {useParams} from 'react-exo/navigation';
 import {useState, useCallback} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {Bubble, Embed, Avatar} from 'app/stacks/chat';
 import {useRoom} from 'app/hooks/use-room';
 import {bytesize} from 'app/utils/formatting';
 import {debounce} from 'app/utils/delay';
-
-import {View} from 'react-native';
 import {Panel} from 'app/stacks/panel';
+import {Bubble, Embed, Avatar} from 'app/stacks/chat';
 
 export default function ScreenRoom() {
   const [layout, setLayout] = useState<[number, number]>();
-  const {room} = useParams<{room: string}>();
   const {styles} = useStyles(stylesheet);
-  const messages = useRoom(room);
+  const {room} = useParams<{room: string}>();
+  const msgs = useRoom(room);
+
   const resize = useCallback(debounce((w: number, h: number) =>
-    setLayout([w, h]), 100), []);
+    setLayout([w, h])
+  , 100), []);
+
   return (
     <Panel margin="none">
       <View style={{flex: 1}}>
         <LegendList
           key={layout?.[0].toString()}
-          data={layout ? messages : []}
+          data={layout ? msgs : []}
           recycleItems
           alignItemsAtEnd
           maintainScrollAtEnd

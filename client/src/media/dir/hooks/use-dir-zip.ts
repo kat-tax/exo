@@ -2,7 +2,7 @@ import {fs} from '@zip.js/zip.js';
 import {web} from 'react-exo/fs';
 import {useDispatch} from 'react-redux';
 import {useCallback, useEffect, useState, useRef} from 'react';
-import {useCurrentPath} from 'app/hooks/use-current-path';
+import {usePath} from 'app/hooks/use-path';
 import {useFile} from 'media/file/hooks/use-file';
 import {useHfsCtx} from 'app/data/lib/hfs-provider';
 import {toPathInfo} from 'app/utils/formatting';
@@ -15,7 +15,7 @@ import type {HfsDirectoryEntry} from 'react-exo/fs';
 
 export function useDirZip(path: string): ZipCtx {
   const [zip, setZip] = useState<Zip | null>(null);
-  const {path: url} = useCurrentPath();
+  const {path: url} = usePath();
   const buffer = useFile(path, 'arrayBuffer');
   const zipfs = useRef<FS | null>(null);
   const hfs = useHfsCtx();

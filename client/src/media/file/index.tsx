@@ -1,8 +1,7 @@
-import File from 'media/file/loader';
-
 import {forwardRef, memo} from 'react';
 import {Suspense as $} from 'app/stacks/load';
 import {FileType} from 'media/file/types';
+import File from 'media/file/loader';
 
 import type {FileRef, FileRenderInfo} from 'media/file/types';
 

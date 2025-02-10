@@ -1,9 +1,9 @@
 import {useEffect} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {I18nManager, View, Platform} from 'react-native';
-import {GestureProvider} from 'react-exo/gesture';
 import {I18nProvider} from '@lingui/react';
-import {useLocale} from 'app/hooks/use-locale';
+import {GestureProvider} from 'react-exo/gesture';
+import {useLocale} from 'app/hooks/use-display';
 
 import {load, i18n, isRTL} from './loader';
 

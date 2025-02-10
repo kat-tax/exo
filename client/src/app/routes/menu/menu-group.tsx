@@ -3,7 +3,7 @@ import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {Pressable, View, Text} from 'react-native';
 import {Icon} from 'react-exo/icon';
 import {isTouch} from 'app/utils/platform';
-import {useScheme} from 'app/hooks/use-scheme';
+import {useTheme} from 'app/hooks/use-display';
 
 interface MenuGroupProps extends React.PropsWithChildren {
   label: string,
@@ -20,7 +20,7 @@ interface MenuGroupProps extends React.PropsWithChildren {
 export function MenuGroup(props: MenuGroupProps) {
   const {styles, theme} = useStyles(stylesheet);
   const [open, setOpen] = useState(!props.closed);
-  const [scheme] = useScheme();
+  const [scheme] = useTheme();
   const _hovered = useRef(false);
 
   if (props.disabled) return null;

@@ -1,11 +1,10 @@
 import {Book} from 'react-exo/book';
-
+import {View, Platform} from 'react-native';
 import {useLingui} from '@lingui/react/macro';
 import {useEffect, useState, useCallback, forwardRef} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
+import {useTheme} from 'app/hooks/use-display';
 import {useFile} from 'media/file/hooks/use-file';
-import {useScheme} from 'app/hooks/use-scheme';
-import {View, Platform} from 'react-native';
 
 import type {FileProps} from 'media/file';
 import type {BookRef} from 'react-exo/book';
@@ -21,7 +20,7 @@ export default forwardRef((props: FileBook, ref: React.Ref<BookRef>) => {
   const [title, setTitle] = useState('');
   const [chapter, setChapter] = useState('');
   const {styles} = useStyles(stylesheet);
-  const [scheme] = useScheme();
+  const [scheme] = useTheme();
   const {t} = useLingui();
 
   // Workaround: send resize event to force render

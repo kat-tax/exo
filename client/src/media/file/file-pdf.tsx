@@ -1,5 +1,4 @@
 import {Pdf} from 'react-exo/pdf';
-
 import {View} from 'react-native';
 import {forwardRef} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';

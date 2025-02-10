@@ -1,5 +1,4 @@
 import {Book} from 'react-exo/book';
-
 import {forwardRef} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useFile} from 'media/file/hooks/use-file';

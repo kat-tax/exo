@@ -3,12 +3,12 @@ import {useState, useEffect} from 'react';
 import {isOnline, suscribeOnline} from 'react-exo/device';
 import {toast} from 'react-exo/toast';
 
-export function useConnectivity() {
+export function useNetwork() {
   const [online, setOnline] = useState(false);
   const {t} = useLingui();
 
   useEffect(() => {
-    const handleConnectivity = (connected: boolean, init?: boolean) => {
+    const updateNetwork = (connected: boolean, init?: boolean) => {
       if (connected && !init) {
         toast({title: t`You are online`, preset: 'done'});
       } else if (!connected) {
@@ -17,8 +17,8 @@ export function useConnectivity() {
       setOnline(connected);
     };
     isOnline().then(connected =>
-      handleConnectivity(connected, true));
-    return suscribeOnline(handleConnectivity);
+      updateNetwork(connected, true));
+    return suscribeOnline(updateNetwork);
   }, [t]);
 
   return online;

@@ -1,11 +1,10 @@
-import {Map, Source, Layer} from 'react-map-gl/maplibre';
-
 import {View} from 'react-native';
+import {Map, Source, Layer} from 'react-map-gl/maplibre';
 import {useEffect, useState, forwardRef} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useFile} from 'media/file/hooks/use-file';
-import {useAppContext} from 'app/hooks/use-app-context';
-import {useScheme} from 'app/hooks/use-scheme';
+import {useApp} from 'app/hooks/use-app';
+import {useTheme} from 'app/hooks/use-display';
 import {getBounds} from 'app/utils/mapping';
 import {MarkerGeoJson} from 'world/stacks/marker-geojson';
 
@@ -17,13 +16,13 @@ export interface FileMap extends FileProps {}
 export default forwardRef((props: FileMap) => {
   const url = useFile(props.path, 'dataUrl');
   const source = useFile(props.path, 'text');
-  const {profile} = useAppContext();
+  const {profile} = useApp();
 
   const [bounds, setBounds] = useState<LngLatBounds | null>(null);
   const [markers, setMarkers] = useState<GeoJSON.Feature<GeoJSON.Point>[]>([]);
 
   const {styles, theme} = useStyles(stylesheet);
-  const [scheme] = useScheme();
+  const [scheme] = useTheme();
 
   const maptilerUrl = profile?.maptilerUrl ?? 'https://api.maptiler.com';
   const maptilerKey = profile?.maptilerKey ?? '';

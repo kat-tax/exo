@@ -4,15 +4,15 @@ import {useLingui} from '@lingui/react/macro';
 import {useImportHfs} from 'media/dir/hooks/use-import-hfs';
 import {StorageWidget} from 'media/stacks/widgets/storage';
 
-import {MenuGroup} from './menu-group';
 import {MenuHeader} from './menu-header';
+import {MenuGroup} from './menu-group';
 import {MenuItem} from './menu-item';
 import {MenuTab} from './menu-tab';
 
-import type {AppContext} from 'app/hooks/use-app-context';
+import type {AppCtx} from 'app/hooks/use-app';
 
 export interface MenuProps {
-  context: AppContext,
+  context: AppCtx,
   hasTabs?: boolean,
 }
 

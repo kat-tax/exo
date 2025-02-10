@@ -1,10 +1,9 @@
 import {Code} from 'react-exo/code';
-
 import {View} from 'react-native';
 import {forwardRef, useEffect} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useFile} from 'media/file/hooks/use-file';
-import {useScheme} from 'app/hooks/use-scheme';
+import {useTheme} from 'app/hooks/use-display';
 import {bytesize} from 'app/utils/formatting';
 
 import type {FileProps} from 'media/file';
@@ -17,7 +16,7 @@ export interface FileText extends FileProps {
 export default forwardRef((props: FileText, _ref: React.Ref<View>) => {
   const source = useFile(props.path, 'text');
   const {styles} = useStyles(stylesheet);
-  const [scheme] = useScheme();
+  const [scheme] = useTheme();
 
   // Update file player bar info
   useEffect(() => {

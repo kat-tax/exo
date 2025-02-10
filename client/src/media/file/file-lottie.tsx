@@ -1,5 +1,4 @@
 import {Lottie} from 'react-exo/lottie';
-
 import {View} from 'react-native';
 import {forwardRef} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';

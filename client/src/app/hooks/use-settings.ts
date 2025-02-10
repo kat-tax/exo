@@ -1,14 +1,14 @@
 import {alert} from 'react-exo/toast';
 import {useLingui} from '@lingui/react/macro';
 import {useEvolu, useOwner, parseMnemonic, NonEmptyString1000} from '@evolu/react-native';
-import {useAppContext} from 'app/hooks/use-app-context';
+import {useApp} from 'app/hooks/use-app';
 import {String50, decodeUnknownEither} from 'app/data';
 import {Effect, Either, Function} from 'effect';
 
 import type {DB} from 'app/data';
 
 export function useSettings() {
-  const {profile} = useAppContext();
+  const {profile} = useApp();
   const evolu = useEvolu<DB>();
   const owner = useOwner();
   const {t} = useLingui();
