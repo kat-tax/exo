@@ -1,7 +1,7 @@
 import {useOutletContext} from 'react-exo/navigation';
 
-import type {useProfile} from 'app/data';
 import type {useDevice} from 'app/hooks/use-device';
+import type {useProfile} from 'app/data';
 
 export type AppCtx = ReturnType<typeof useApp>;
 

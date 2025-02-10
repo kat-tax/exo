@@ -13,8 +13,6 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#. placeholder {0}: 5
-#. placeholder {0}: 11
 #: ../../client/src/dev/routes/screen-library.tsx:22
 #: ../../client/src/dev/routes/screen-design.tsx:14
 msgid "{0} components"
@@ -58,7 +56,6 @@ msgstr "تلقائي"
 msgid "Books"
 msgstr "الكتب"
 
-#. placeholder {0}: data.metadata.author
 #: ../../client/src/media/file/file-book.tsx:42
 msgid "by {0}"
 msgstr "بواسطة {0}"
@@ -230,7 +227,7 @@ msgstr "ملء الشاشة"
 msgid "Games"
 msgstr "الألعاب"
 
-#: ../../client/src/app/hooks/use-device.ts:59
+#: ../../client/src/app/hooks/use-device.ts:55
 msgid "Geolocation Error"
 msgstr "خطأ في تحديد الموقع"
 
@@ -549,7 +546,6 @@ msgstr "عرض آخر الأخبار وتغذيات RSS الخاصة بك"
 msgid "Volume"
 msgstr "مستوى الصوت"
 
-#. placeholder {0}: profile.name
 #: ../../client/src/home/routes/screen-home.tsx:38
 msgid "Welcome, {0}"
 msgstr "مرحباً، {0}"

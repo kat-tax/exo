@@ -4,7 +4,7 @@ import {useEvolu, cast} from '@evolu/react-native';
 import {useSelector} from 'react-redux';
 import {useLingui} from '@lingui/react/macro';
 import {useEffect, useMemo, useState} from 'react';
-import {useDevice as useDeviceData, useDevices} from 'app/data';
+import {useDevices, useDevice as useDeviceData} from 'app/data';
 import {toast} from 'react-exo/toast';
 import app from 'app/store';
 
@@ -36,30 +36,23 @@ export function useDevice(): Partial<ReturnType<typeof useDeviceData>> {
 
   // Connection
   useEffect(() => {
-    const update = (connected: boolean, init?: boolean) => {
-      if (connected && !init) {
+    const update = (online: boolean, init?: boolean) => {
+      if (online && !init) {
         toast({title: t`You are online`, preset: 'done'});
-      } else if (!connected) {
+      } else if (!online) {
         toast({title: t`You are offline`, preset: 'error'});
       }
-      setOnline(cast(connected));
+      setOnline(cast(online));
     };
-    isOnline().then(connected => update(connected, true));
+    isOnline().then(online => update(online, true));
     return suscribeOnline(update);
   }, [t]);
 
   // Position
   useEffect(() => {
     const id = Geolocation.watchPosition(
-      ({coords}) => setGeoloc([
-        coords.latitude,
-        coords.longitude,
-      ]),
-      ({message}) => toast({
-        title: t`Geolocation Error`,
-        preset: 'error',
-        message,
-      }),
+      ({coords: {latitude, longitude}}) => setGeoloc([latitude, longitude]),
+      ({message}) => toast({title: t`Geolocation Error`, preset: 'error', message}),
     );
     return () => Geolocation.clearWatch(id);
   }, [t]);

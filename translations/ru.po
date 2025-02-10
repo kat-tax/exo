@@ -13,8 +13,6 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#. placeholder {0}: 5
-#. placeholder {0}: 11
 #: ../../client/src/dev/routes/screen-library.tsx:22
 #: ../../client/src/dev/routes/screen-design.tsx:14
 msgid "{0} components"
@@ -58,7 +56,6 @@ msgstr "Авто"
 msgid "Books"
 msgstr "Книги"
 
-#. placeholder {0}: data.metadata.author
 #: ../../client/src/media/file/file-book.tsx:42
 msgid "by {0}"
 msgstr "автор {0}"
@@ -230,7 +227,7 @@ msgstr "Полный экран"
 msgid "Games"
 msgstr "Игры"
 
-#: ../../client/src/app/hooks/use-device.ts:59
+#: ../../client/src/app/hooks/use-device.ts:55
 msgid "Geolocation Error"
 msgstr "Ошибка геолокации"
 
@@ -549,7 +546,6 @@ msgstr "Просмотр последних новостей и RSS-канало
 msgid "Volume"
 msgstr "Громкость"
 
-#. placeholder {0}: profile.name
 #: ../../client/src/home/routes/screen-home.tsx:38
 msgid "Welcome, {0}"
 msgstr "Добро пожаловать, {0}"
