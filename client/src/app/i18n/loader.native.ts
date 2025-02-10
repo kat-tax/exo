@@ -1,5 +1,5 @@
 import {i18n} from '@lingui/core';
-import {isRTL} from 'app/locales/rtl';
+import {isRTL} from 'app/i18n/rtl';
 import {sourceLocale} from 'config/locales';
 import type {Locales} from 'config/locales';
 

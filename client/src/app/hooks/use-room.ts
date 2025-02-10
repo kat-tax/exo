@@ -11,7 +11,6 @@ export interface Message extends MatrixMessage {
 }
 
 export function useRoom(id?: string): Message[] {
-  // const messagesDemo = useMemo(() => DEMO, []);
   const [messages, setMessages] = useState<Message[]>([]);
   const {rooms, users} = useMatrix();
 
