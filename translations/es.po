@@ -51,7 +51,7 @@ msgstr "Pregunta lo que quieras..."
 msgid "Auto"
 msgstr "Automático"
 
-#: ../../client/src/media/stacks/list/bar.tsx:79
+#: ../../client/src/media/stacks/list/bar.tsx:82
 msgid "Books"
 msgstr "Libros"
 
@@ -163,7 +163,7 @@ msgstr "Distancia"
 msgid "Docs"
 msgstr "Documentos"
 
-#: ../../client/src/media/stacks/list/bar.tsx:69
+#: ../../client/src/media/stacks/list/bar.tsx:72
 msgid "Documents"
 msgstr "Documentos"
 
@@ -174,7 +174,7 @@ msgstr "Documentos"
 msgid "Download"
 msgstr "Descargar"
 
-#: ../../client/src/media/stacks/list/bar.tsx:81
+#: ../../client/src/media/stacks/list/bar.tsx:84
 msgid "Downloads"
 msgstr "Descargas"
 
@@ -211,7 +211,7 @@ msgstr "Fahrenheit"
 msgid "Feature in development..."
 msgstr ""
 
-#: ../../client/src/media/stacks/list/bar.tsx:85
+#: ../../client/src/media/stacks/list/bar.tsx:88
 msgid "Files"
 msgstr "Archivos"
 
@@ -227,7 +227,7 @@ msgstr ""
 msgid "Fullscreen"
 msgstr "Pantalla completa"
 
-#: ../../client/src/media/stacks/list/bar.tsx:77
+#: ../../client/src/media/stacks/list/bar.tsx:80
 msgid "Games"
 msgstr "Juegos"
 
@@ -350,7 +350,7 @@ msgstr "Millas"
 msgid "Move"
 msgstr ""
 
-#: ../../client/src/media/stacks/list/bar.tsx:71
+#: ../../client/src/media/stacks/list/bar.tsx:74
 msgid "Music"
 msgstr "Música"
 
@@ -399,7 +399,7 @@ msgstr "Clave de Propietario"
 msgid "Pause"
 msgstr "Pausar"
 
-#: ../../client/src/media/stacks/list/bar.tsx:73
+#: ../../client/src/media/stacks/list/bar.tsx:76
 msgid "Pictures"
 msgstr "Imágenes"
 
@@ -543,7 +543,7 @@ msgstr "Archivo no soportado"
 msgid "Upload"
 msgstr ""
 
-#: ../../client/src/media/stacks/list/bar.tsx:83
+#: ../../client/src/media/stacks/list/bar.tsx:86
 msgid "Uploads"
 msgstr "Subidas"
 
@@ -551,7 +551,7 @@ msgstr "Subidas"
 msgid "User Name"
 msgstr "Nombre de Usuario"
 
-#: ../../client/src/media/stacks/list/bar.tsx:75
+#: ../../client/src/media/stacks/list/bar.tsx:78
 msgid "Videos"
 msgstr "Videos"
 

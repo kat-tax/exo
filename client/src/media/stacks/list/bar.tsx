@@ -1,13 +1,13 @@
-import {View} from 'react-native';
-import {isTouch} from 'react-exo/utils';
-import {useLingui} from '@lingui/react/macro';
-import {useCallback} from 'react';
-import {useNavigate} from 'react-exo/navigation';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {InitDirectory} from 'media/dir/utils/hfs/path';
+import {useNavigate} from 'react-exo/navigation';
+import {useCallback} from 'react';
+import {useLingui} from '@lingui/react/macro';
+import {isTouch} from 'react-exo/utils';
+import {Icon} from 'react-exo/icon';
+import {View, ScrollView} from 'react-native';
 import {ButtonText} from 'app/stacks/button/text';
 import {ButtonIcon} from 'app/stacks/button/icon';
-import {Icon} from 'react-exo/icon';
+import {InitDirectory} from 'media/dir/utils/hfs/path';
 
 const TOUCH = isTouch();
 const ITEM_SIZE = TOUCH ? 46 : 32;
@@ -28,7 +28,10 @@ export function ListBar({path, actions, hidden}: ListBarProps) {
   const tabs = path?.split('/');
   return !hidden ? (
     <View style={styles.root}>
-      <View style={styles.breadcrumbs}>
+      <ScrollView
+        horizontal={true}
+        showsHorizontalScrollIndicator={false}
+        contentContainerStyle={styles.breadcrumbs}>
         {path ? (
           <>
             <ListBarItem name="Files" path="/browse"/>
@@ -45,7 +48,7 @@ export function ListBar({path, actions, hidden}: ListBarProps) {
             {index < array.length - 1 && <ListBarItemSeparator/>}
           </View>
         ))}
-      </View>
+      </ScrollView>
       <View style={styles.actions}>
         {actions.map(({icon, onPress}) => (
           <ListBarAction key={icon} {...{icon, onPress}}/>
@@ -134,6 +137,7 @@ const stylesheet = createStyleSheet((theme) => ({
     borderBottomColor: theme.colors.border,
   },
   breadcrumbs: {
+    height: ITEM_SIZE,
     flexDirection: 'row',
     alignItems: 'center',
     flexGrow: 1,
@@ -146,6 +150,7 @@ const stylesheet = createStyleSheet((theme) => ({
   },
   actions: {
     flexDirection: 'row',
+    marginLeft: theme.display.space1,
     paddingTop: 1,
     paddingLeft: 1,
     paddingBottom: 1,

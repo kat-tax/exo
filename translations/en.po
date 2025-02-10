@@ -51,7 +51,7 @@ msgstr "Ask anything..."
 msgid "Auto"
 msgstr "Auto"
 
-#: ../../client/src/media/stacks/list/bar.tsx:79
+#: ../../client/src/media/stacks/list/bar.tsx:82
 msgid "Books"
 msgstr "Books"
 
@@ -163,7 +163,7 @@ msgstr "Distance"
 msgid "Docs"
 msgstr "Docs"
 
-#: ../../client/src/media/stacks/list/bar.tsx:69
+#: ../../client/src/media/stacks/list/bar.tsx:72
 msgid "Documents"
 msgstr "Documents"
 
@@ -174,7 +174,7 @@ msgstr "Documents"
 msgid "Download"
 msgstr "Download"
 
-#: ../../client/src/media/stacks/list/bar.tsx:81
+#: ../../client/src/media/stacks/list/bar.tsx:84
 msgid "Downloads"
 msgstr "Downloads"
 
@@ -211,7 +211,7 @@ msgstr "Fahrenheit"
 msgid "Feature in development..."
 msgstr "Feature in development..."
 
-#: ../../client/src/media/stacks/list/bar.tsx:85
+#: ../../client/src/media/stacks/list/bar.tsx:88
 msgid "Files"
 msgstr "Files"
 
@@ -227,7 +227,7 @@ msgstr "Folder is empty. Drop items or select folder to import."
 msgid "Fullscreen"
 msgstr "Fullscreen"
 
-#: ../../client/src/media/stacks/list/bar.tsx:77
+#: ../../client/src/media/stacks/list/bar.tsx:80
 msgid "Games"
 msgstr "Games"
 
@@ -350,7 +350,7 @@ msgstr "Miles"
 msgid "Move"
 msgstr "Move"
 
-#: ../../client/src/media/stacks/list/bar.tsx:71
+#: ../../client/src/media/stacks/list/bar.tsx:74
 msgid "Music"
 msgstr "Music"
 
@@ -399,7 +399,7 @@ msgstr "Owner Key"
 msgid "Pause"
 msgstr "Pause"
 
-#: ../../client/src/media/stacks/list/bar.tsx:73
+#: ../../client/src/media/stacks/list/bar.tsx:76
 msgid "Pictures"
 msgstr "Pictures"
 
@@ -543,7 +543,7 @@ msgstr "Unsupported File"
 msgid "Upload"
 msgstr "Upload"
 
-#: ../../client/src/media/stacks/list/bar.tsx:83
+#: ../../client/src/media/stacks/list/bar.tsx:86
 msgid "Uploads"
 msgstr "Uploads"
 
@@ -551,7 +551,7 @@ msgstr "Uploads"
 msgid "User Name"
 msgstr "User Name"
 
-#: ../../client/src/media/stacks/list/bar.tsx:75
+#: ../../client/src/media/stacks/list/bar.tsx:78
 msgid "Videos"
 msgstr "Videos"
 
