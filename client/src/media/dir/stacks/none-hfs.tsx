@@ -20,7 +20,7 @@ export function NoneHfs() {
     <View style={{marginTop: 30, marginHorizontal: 4}}>
       <Watermark
         title={t`Folder is empty. Drop items or select folder to import.`}
-        label={t`Import`}
+        label={t`Import Folder`}
         icon="ph:upload"
         dnd={true}
         onAction={async () => {

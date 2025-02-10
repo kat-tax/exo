@@ -259,13 +259,21 @@ msgstr "Groq 모델 ID"
 msgid "Human"
 msgstr "사용자"
 
-#: ../../client/src/media/dir/stacks/none-hfs.tsx:23
+#: ../../client/src/media/stacks/history.tsx:20
 msgid "Import"
 msgstr "가져오기"
 
-#: ../../client/src/app/routes/menu/index.tsx:88
+#: ../../client/src/media/stacks/history.tsx:20
+msgid "Import File(s)"
+msgstr ""
+
+#: ../../client/src/media/stacks/history.tsx:20
 msgid "Import Files"
 msgstr "파일 가져오기"
+
+#: ../../client/src/media/dir/stacks/none-hfs.tsx:23
+msgid "Import Folder"
+msgstr ""
 
 #: ../../client/src/app/routes/menu/index.tsx:33
 #: ../../client/src/app/routes/menu/index.tsx:67
@@ -355,6 +363,14 @@ msgstr "다음"
 #: ../../client/src/world/routes/screen-calendar.tsx:41
 msgid "No events scheduled."
 msgstr "예정된 일정이 없습니다."
+
+#: ../../client/src/media/stacks/history.tsx:19
+msgid "No items selected."
+msgstr ""
+
+#: ../../client/src/media/stacks/history.tsx:19
+msgid "No items selected. Drop items or select files to import."
+msgstr ""
 
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:23
 msgid "Open"
@@ -516,6 +532,10 @@ msgstr ""
 #: ../../client/src/media/file/file-binary.tsx:30
 msgid "Unsupported File"
 msgstr "지원되지 않는 파일"
+
+#: ../../client/src/media/stacks/history.tsx:20
+msgid "Upload"
+msgstr ""
 
 #: ../../client/src/media/stacks/list/bar.tsx:81
 msgid "Uploads"

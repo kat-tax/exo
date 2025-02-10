@@ -259,13 +259,21 @@ msgstr "Groq Model ID"
 msgid "Human"
 msgstr "Human"
 
-#: ../../client/src/media/dir/stacks/none-hfs.tsx:23
+#: ../../client/src/media/stacks/history.tsx:20
 msgid "Import"
 msgstr "Import"
 
-#: ../../client/src/app/routes/menu/index.tsx:88
+#: ../../client/src/media/stacks/history.tsx:20
+msgid "Import File(s)"
+msgstr "Import File(s)"
+
+#: ../../client/src/media/stacks/history.tsx:20
 msgid "Import Files"
 msgstr "Import Files"
+
+#: ../../client/src/media/dir/stacks/none-hfs.tsx:23
+msgid "Import Folder"
+msgstr "Import Folder"
 
 #: ../../client/src/app/routes/menu/index.tsx:33
 #: ../../client/src/app/routes/menu/index.tsx:67
@@ -355,6 +363,14 @@ msgstr "Next"
 #: ../../client/src/world/routes/screen-calendar.tsx:41
 msgid "No events scheduled."
 msgstr "No events scheduled."
+
+#: ../../client/src/media/stacks/history.tsx:19
+msgid "No items selected."
+msgstr "No items selected."
+
+#: ../../client/src/media/stacks/history.tsx:19
+msgid "No items selected. Drop items or select files to import."
+msgstr "No items selected. Drop items or select files to import."
 
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:23
 msgid "Open"
@@ -516,6 +532,10 @@ msgstr "This file can not be previewed."
 #: ../../client/src/media/file/file-binary.tsx:30
 msgid "Unsupported File"
 msgstr "Unsupported File"
+
+#: ../../client/src/media/stacks/history.tsx:20
+msgid "Upload"
+msgstr "Upload"
 
 #: ../../client/src/media/stacks/list/bar.tsx:81
 msgid "Uploads"
