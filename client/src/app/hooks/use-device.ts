@@ -52,7 +52,8 @@ export function useDevice(): Partial<ReturnType<typeof useDeviceData>> {
   useEffect(() => {
     const id = Geolocation.watchPosition(
       ({coords: {latitude, longitude}}) => setGeoloc([latitude, longitude]),
-      ({message}) => toast({title: t`Geolocation Error`, preset: 'error', message}),
+      ({message}) => message !== 'Position update is unavailable'
+        && toast({title: t`Geolocation Error`, preset: 'error', message}),
     );
     return () => Geolocation.clearWatch(id);
   }, [t]);
