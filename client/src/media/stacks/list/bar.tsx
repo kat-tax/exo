@@ -128,7 +128,7 @@ const stylesheet = createStyleSheet((theme) => ({
   root: {
     height: ITEM_SIZE,
     paddingVertical: theme.display.space2,
-    paddingHorizontal: 6,
+    paddingHorizontal: TOUCH ? theme.display.space3 : 6,
     flexDirection: 'row',
     alignItems: 'center',
     alignSelf: 'stretch',
@@ -155,8 +155,7 @@ const stylesheet = createStyleSheet((theme) => ({
     paddingBottom: 1,
     paddingRight: 1,
     alignItems: 'center',
-    rowGap: 8,
-    columnGap: 8,
+    gap: TOUCH ? theme.display.space3 : theme.display.space2,
   },
   separator: {
     width: 10,
