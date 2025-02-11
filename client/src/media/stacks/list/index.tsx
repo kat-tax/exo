@@ -6,7 +6,7 @@ import {ListBar} from 'media/stacks/list/bar';
 import {HEIGHT} from 'media/stacks/list/row';
 
 export interface ListProps<T> {
-  data?: T[];
+  list?: T[];
   path?: string;
   ext?: any;
   bar?: {
@@ -21,17 +21,16 @@ export interface ListProps<T> {
   }) => React.ReactNode;
 }
 
-export function List<T>({path, data, ext, bar, render}: ListProps<T>) {
+export function List<T>({path, list, ext, bar, render}: ListProps<T>) {
   const {styles} = useStyles(stylesheet);
-
   return (
     <View style={styles.root}>
       {bar && <ListBar {...{path}} {...bar}/>}
-      {!data?.length 
+      {!list?.length 
         ? <ListEmpty offset={!bar ? -35 : 0}/>
         : (
           <LegendList
-            data={data}
+            data={list}
             extraData={ext}
             drawDistance={HEIGHT * 20}
             estimatedItemSize={HEIGHT}

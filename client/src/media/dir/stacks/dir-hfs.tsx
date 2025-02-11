@@ -3,23 +3,22 @@ import {EntryHfs} from 'media/dir/stacks/entry-hfs';
 import type {HfsCtx} from 'media/dir/types/hfs';
 
 export function DirHfs({hfs, cmd, ext, bar}: HfsCtx) {
+  const {list, path} = hfs;
+  const {dnd, sel} = ext;
   return (
     <List
-      ext={ext}
-      bar={bar}
-      path={hfs.path}
-      data={hfs.list || []}
+      {...{path, list, ext, bar}}
       render={({item, index}) => {
-        const path = hfs.path ? `${hfs.path}/${item.name}` : item.name;
-        const prev = hfs.list[index - 1];
-        const next = hfs.list[index + 1];
+        const self = path ? `${path}/${item.name}` : item.name;
+        const prev = list[index - 1];
+        const next = list[index + 1];
         const opt = {
-          dragging: ext.dnd?.includes(path),
+          dragging: dnd?.includes(self),
           selected: {
-            self: ext.sel?.includes(path),
-            prev: ext.sel?.includes(hfs.path ? `${hfs.path}/${prev?.name}` : prev?.name),
-            next: ext.sel?.includes(hfs.path ? `${hfs.path}/${next?.name}` : next?.name),
-            count: ext.sel?.length,
+            self: sel?.includes(self),
+            prev: sel?.includes(path ? `${path}/${prev?.name}` : prev?.name),
+            next: sel?.includes(path ? `${path}/${next?.name}` : next?.name),
+            count: sel?.length,
           },
         };
         return (

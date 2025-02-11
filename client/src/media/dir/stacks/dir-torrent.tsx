@@ -5,7 +5,7 @@ import type {TorrentCtx} from 'media/dir/types/torrent';
 export function DirTorrent({torrent, cmd}: TorrentCtx) {
   return (
     <List
-      data={torrent?.list || []}
+      list={torrent?.list}
       render={({item}) => <EntryTorrent {...{item, cmd, opt: {}}}/>}
     />
   );

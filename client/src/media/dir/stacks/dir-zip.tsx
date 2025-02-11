@@ -5,7 +5,7 @@ import type {ZipCtx} from 'media/dir/types/zip';
 export function DirZip({zip, cmd}: ZipCtx) {
   return (
     <List
-      data={zip?.list || []}
+      list={zip?.list}
       render={({item}) => <EntryZip {...{item, cmd, opt: {}}}/>}
     />
   );
