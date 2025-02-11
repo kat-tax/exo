@@ -1,7 +1,6 @@
-import type {View} from 'react-native';
-
 export interface TouchProps extends React.PropsWithChildren {
-  dragRef?: React.RefObject<View>;
+  // biome-ignore lint/suspicious/noExplicitAny: multiple ref types
+  refs?: any;
   onPress?: () => void;
   onDoublePress?: () => void;
 }

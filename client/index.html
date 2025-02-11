@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap" rel="stylesheet">
     <title>__APP_NAME__</title>
-    <script src="https://unpkg.com/react-scan/dist/auto.global.js"></script>
+    <!-- <script src="https://unpkg.com/react-scan/dist/auto.global.js"></script> -->
     <style>
       :root {
         font-family: __FONT_NAME__, sans-serif;
@@ -65,28 +65,17 @@
 
       /* PointerEvent */
       ._p {
+        cursor: default;
+        user-select: none;
         border-radius: 3px;
       }
-      ._p.dark:hover {
+      ._p.dark:hover,
+      ._p.dark.focus {
         background-color: rgba(255, 255, 255, 0.025);
       }
-      ._p.light:hover {
+      ._p.light:hover,
+      ._p.light.focus {
         background-color: rgba(0, 0, 0, 0.025);
-      }
-
-      /* Shiki */
-      pre {
-        margin: 0;
-        outline: none;
-        background: transparent !important;
-      }
-
-      pre code {
-        font-family: "Fira Code", serif;
-        font-optical-sizing: auto;
-        font-weight: 450;
-        font-size: 12px;
-        font-style: normal;
       }
 
       /* Readium */

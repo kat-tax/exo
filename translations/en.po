@@ -13,8 +13,8 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: ../../client/src/dev/routes/screen-library.tsx:22
-#: ../../client/src/dev/routes/screen-design.tsx:14
+#: ../../client/src/dev/routes/screen-library.tsx:21
+#: ../../client/src/dev/routes/screen-design.tsx:15
 msgid "{0} components"
 msgstr "{0} components"
 
@@ -60,7 +60,7 @@ msgid "by {0}"
 msgstr "by {0}"
 
 #: ../../client/src/world/routes/screen-world.tsx:29
-#: ../../client/src/app/routes/menu/index.tsx:140
+#: ../../client/src/app/routes/menu/index.tsx:149
 msgid "Calendar"
 msgstr "Calendar"
 
@@ -76,11 +76,12 @@ msgstr "Close"
 msgid "Compress"
 msgstr "Compress"
 
+#: ../../client/src/media/hooks/use-media-controls.ts:58
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:55
 msgid "Copy"
 msgstr "Copy"
 
-#: ../../client/src/app/routes/menu/index.tsx:77
+#: ../../client/src/app/routes/menu/index.tsx:86
 msgid "Create Folder"
 msgstr "Create Folder"
 
@@ -88,8 +89,8 @@ msgstr "Create Folder"
 msgid "Dark"
 msgstr "Dark"
 
-#: ../../client/src/app/routes/menu/index.tsx:28
-#: ../../client/src/app/routes/menu/index.tsx:62
+#: ../../client/src/app/routes/menu/index.tsx:36
+#: ../../client/src/app/routes/menu/index.tsx:71
 msgid "Dashboard"
 msgstr "Dashboard"
 
@@ -129,12 +130,12 @@ msgstr "Delete Prompts"
 msgid "Delete the local database."
 msgstr "Delete the local database."
 
-#: ../../client/src/dev/routes/screen-design.tsx:13
-#: ../../client/src/app/routes/menu/index.tsx:161
+#: ../../client/src/dev/routes/screen-design.tsx:14
+#: ../../client/src/app/routes/menu/index.tsx:170
 msgid "Design"
 msgstr "Design"
 
-#: ../../client/src/app/routes/menu/index.tsx:159
+#: ../../client/src/app/routes/menu/index.tsx:168
 msgid "Dev Mode"
 msgstr "Dev Mode"
 
@@ -158,7 +159,7 @@ msgstr "Display"
 msgid "Distance"
 msgstr "Distance"
 
-#: ../../client/src/app/routes/menu/index.tsx:98
+#: ../../client/src/app/routes/menu/index.tsx:107
 msgid "Docs"
 msgstr "Docs"
 
@@ -166,6 +167,9 @@ msgstr "Docs"
 msgid "Documents"
 msgstr "Documents"
 
+#: ../../client/src/media/hooks/use-media-controls.ts:77
+#: ../../client/src/media/file/file-binary.tsx:36
+#: ../../client/src/media/dir/stacks/menu-torrent.tsx:22
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:44
 msgid "Download"
 msgstr "Download"
@@ -186,7 +190,7 @@ msgstr "Enjoy the day"
 msgid "Enjoy the night"
 msgstr "Enjoy the night"
 
-#: ../../client/src/app/routes/menu/index.tsx:79
+#: ../../client/src/app/routes/menu/index.tsx:88
 msgid "Enter folder name"
 msgstr "Enter folder name"
 
@@ -194,6 +198,7 @@ msgstr "Enter folder name"
 msgid "Enter name"
 msgstr "Enter name"
 
+#: ../../client/src/media/hooks/use-media-controls.ts:87
 #: ../../client/src/media/dir/stacks/menu-zip.tsx:22
 msgid "Extract"
 msgstr "Extract"
@@ -213,10 +218,6 @@ msgstr "Files"
 #: ../../client/src/app/routes/screen-settings.tsx:246
 msgid "Filesystem"
 msgstr "Filesystem"
-
-#: ../../client/src/media/dir/stacks/none-hfs.tsx:22
-msgid "Folder is empty. Drop items or select folder to import."
-msgstr "Folder is empty. Drop items or select folder to import."
 
 #: ../../client/src/media/hooks/use-media-controls.ts:276
 msgid "Fullscreen"
@@ -258,15 +259,7 @@ msgstr "Groq Model ID"
 msgid "Human"
 msgstr "Human"
 
-#: ../../client/src/media/stacks/history.tsx:20
-msgid "Import"
-msgstr "Import"
-
-#: ../../client/src/media/stacks/history.tsx:20
-msgid "Import File(s)"
-msgstr "Import File(s)"
-
-#: ../../client/src/media/stacks/history.tsx:25
+#: ../../client/src/app/routes/menu/index.tsx:97
 msgid "Import Files"
 msgstr "Import Files"
 
@@ -274,8 +267,8 @@ msgstr "Import Files"
 msgid "Import Folder"
 msgstr "Import Folder"
 
-#: ../../client/src/app/routes/menu/index.tsx:33
-#: ../../client/src/app/routes/menu/index.tsx:67
+#: ../../client/src/app/routes/menu/index.tsx:41
+#: ../../client/src/app/routes/menu/index.tsx:76
 msgid "Inbox"
 msgstr "Inbox"
 
@@ -287,8 +280,8 @@ msgstr "Kilometers"
 msgid "Language"
 msgstr "Language"
 
-#: ../../client/src/dev/routes/screen-library.tsx:21
-#: ../../client/src/app/routes/menu/index.tsx:166
+#: ../../client/src/dev/routes/screen-library.tsx:20
+#: ../../client/src/app/routes/menu/index.tsx:175
 msgid "Library"
 msgstr "Library"
 
@@ -309,7 +302,7 @@ msgid "Manage your storage"
 msgstr "Manage your storage"
 
 #: ../../client/src/world/routes/screen-world.tsx:17
-#: ../../client/src/app/routes/menu/index.tsx:130
+#: ../../client/src/app/routes/menu/index.tsx:139
 msgid "Map"
 msgstr "Map"
 
@@ -333,7 +326,7 @@ msgstr "Matrix Base URL"
 msgid "Matrix User ID"
 msgstr "Matrix User ID"
 
-#: ../../client/src/app/routes/menu/index.tsx:72
+#: ../../client/src/app/routes/menu/index.tsx:81
 msgid "Media"
 msgstr "Media"
 
@@ -350,7 +343,7 @@ msgid "Music"
 msgstr "Music"
 
 #: ../../client/src/world/routes/screen-world.tsx:23
-#: ../../client/src/app/routes/menu/index.tsx:135
+#: ../../client/src/app/routes/menu/index.tsx:144
 msgid "News"
 msgstr "News"
 
@@ -361,18 +354,6 @@ msgstr "Next"
 #: ../../client/src/world/routes/screen-calendar.tsx:41
 msgid "No events scheduled."
 msgstr "No events scheduled."
-
-#: ../../client/src/media/stacks/history.tsx:19
-msgid "No items selected."
-msgstr "No items selected."
-
-#: ../../client/src/media/stacks/history.tsx:23
-msgid "No items selected. Drop items or select files to import."
-msgstr "No items selected. Drop items or select files to import."
-
-#: ../../client/src/media/stacks/history.tsx:24
-msgid "No items selected. Select files to import."
-msgstr "No items selected. Select files to import."
 
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:23
 msgid "Open"
@@ -458,10 +439,6 @@ msgstr "Rename"
 msgid "Replay"
 msgstr "Replay"
 
-#: ../../client/src/app/routes/menu/index.tsx:145
-msgid "Rooms"
-msgstr "Rooms"
-
 #: ../../client/src/media/hooks/use-media-controls.ts:97
 msgid "Search"
 msgstr "Search"
@@ -491,11 +468,12 @@ msgid "Services"
 msgstr "Services"
 
 #: ../../client/src/app/routes/screen-settings.tsx:24
-#: ../../client/src/app/routes/menu/index.tsx:48
-#: ../../client/src/app/routes/menu/index.tsx:183
+#: ../../client/src/app/routes/menu/index.tsx:56
+#: ../../client/src/app/routes/menu/index.tsx:192
 msgid "Settings"
 msgstr "Settings"
 
+#: ../../client/src/media/hooks/use-media-controls.ts:256
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:30
 msgid "Share"
 msgstr "Share"
@@ -509,7 +487,7 @@ msgid "Skip forward"
 msgstr "Skip forward"
 
 #: ../../client/src/app/routes/screen-storage.tsx:23
-#: ../../client/src/app/routes/menu/index.tsx:177
+#: ../../client/src/app/routes/menu/index.tsx:186
 msgid "Storage"
 msgstr "Storage"
 
@@ -532,10 +510,6 @@ msgstr "This file can not be previewed."
 #: ../../client/src/media/file/file-binary.tsx:30
 msgid "Unsupported File"
 msgstr "Unsupported File"
-
-#: ../../client/src/media/stacks/history.tsx:20
-msgid "Upload"
-msgstr "Upload"
 
 #: ../../client/src/media/stacks/list/bar.tsx:85
 msgid "Uploads"
@@ -573,8 +547,8 @@ msgstr "Welcome, {0}"
 msgid "Welcome, Human"
 msgstr "Welcome, Human"
 
-#: ../../client/src/app/routes/menu/index.tsx:43
-#: ../../client/src/app/routes/menu/index.tsx:128
+#: ../../client/src/app/routes/menu/index.tsx:51
+#: ../../client/src/app/routes/menu/index.tsx:137
 msgid "World"
 msgstr "World"
 

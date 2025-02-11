@@ -70,7 +70,7 @@ export function useDirHfs(path: string): Omit<HfsCtx, 'bar'> {
   const open = useCallback(async (entry: HfsDirectoryEntry, clearSel?: boolean) => {
     nav(path ? `${path}/${entry.name}` : entry.name);
     if (clearSel) put(media.actions.selectBulk([]));
-  }, [path, nav, put, sel]);
+  }, [path, nav, put]);
 
   const move = useCallback(async (from: HfsDirectoryEntry, to?: HfsDirectoryEntry) => {
     if (to) {
@@ -164,6 +164,7 @@ export function useDirHfs(path: string): Omit<HfsCtx, 'bar'> {
   }, [hfs]);
 
   // Refresh entries on mount
+  // biome-ignore lint/correctness/useExhaustiveDependencies: path explicit
   useEffect(() => {refresh()}, [path, refresh]);
 
   // Refresh entries on fs change

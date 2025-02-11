@@ -88,6 +88,9 @@ importers:
       '@marceloterreiro/flash-calendar':
         specifier: ^1.3.0
         version: 1.3.0(@shopify/flash-list@1.6.3(@babel/runtime@7.26.0)(react-native@0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8)(utf-8-validate@6.0.4))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1)(utf-8-validate@6.0.4))(react@18.3.1))(react-native@0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8)(utf-8-validate@6.0.4))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1)(utf-8-validate@6.0.4))(react@18.3.1)
+      '@noriginmedia/norigin-spatial-navigation':
+        specifier: ^2.2.3
+        version: 2.2.3(react@18.3.1)
       '@react-native-community/checkbox':
         specifier: ^0.5.17
         version: 0.5.17(react-native-windows@0.76.3(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8)(utf-8-validate@6.0.4))(@types/react@18.3.18)(bufferutil@4.0.8)(react-native@0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8)(utf-8-validate@6.0.4))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1)(utf-8-validate@6.0.4))(react@18.3.1)(tslib@2.8.1)(typescript@5.7.2)(utf-8-validate@6.0.4))(react-native@0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8)(utf-8-validate@6.0.4))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1)(utf-8-validate@6.0.4))(react@18.3.1)
@@ -3170,6 +3173,11 @@ packages:
   '@nodelib/fs.walk@1.2.8':
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
+
+  '@noriginmedia/norigin-spatial-navigation@2.2.3':
+    resolution: {integrity: sha512-xQz8kbnuAu7TeJLVRujJ2i6ixMtz8cZVOSvevMnIX8epl0KLhitdVObXGK4YfP6CtJ4IPuAEEdUnvLAMcHeXQQ==}
+    peerDependencies:
+      react: '>=16.8.0'
 
   '@npmcli/fs@3.1.1':
     resolution: {integrity: sha512-q9CRWjpHCMIh5sVyefoD1cA7PkvILqCZsnSOEUUivORLjxCO/Irmue2DprETiNgEqktDBZaM1Bi+jrarx1XdCg==}
@@ -16701,6 +16709,11 @@ snapshots:
     dependencies:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.16.0
+
+  '@noriginmedia/norigin-spatial-navigation@2.2.3(react@18.3.1)':
+    dependencies:
+      lodash: 4.17.21
+      react: 18.3.1
 
   '@npmcli/fs@3.1.1':
     dependencies:

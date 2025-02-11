@@ -1,7 +1,8 @@
 import {useRef, useState, useEffect} from 'react';
+import {useFocusable} from '@noriginmedia/norigin-spatial-navigation';
 import {useDispatch} from 'react-redux';
 import {toPathInfo} from 'app/utils/formatting';
-import * as dnd from 'app/utils/dragdrop';
+import * as _ from 'app/utils/dragdrop';
 import {bind} from 'media/utils/bind';
 import media from 'media/store';
 
@@ -9,9 +10,9 @@ import {isZipData} from './use-entry-zip';
 import {isTorrentData} from './use-entry-torrent';
 
 import type {View} from 'react-native';
-import type {CleanupFn} from 'app/utils/dragdrop';
-import type {EntryHfsProps} from 'media/dir/stacks/entry-hfs';
 import type {HfsDirectoryEntry} from 'react-exo/fs';
+import type {EntryHfsProps} from 'media/dir/stacks/entry-hfs';
+import type {CleanupFn} from 'app/utils/dragdrop';
 
 const $ = Symbol('hfs');
 export type HfsData = {[$]: true, entry: HfsDirectoryEntry};
@@ -20,22 +21,27 @@ export const getHfsData = (entry: HfsDirectoryEntry): HfsData => ({[$]: true, en
 
 export function useEntryHfs({item, cmd, opt}: EntryHfsProps) {
   const [dropping, setDropping] = useState(false);
-  const ext = toPathInfo(item.name, item.isDirectory)?.ext;
-  const ref = useRef<View>(null);
   const put = useDispatch();
-
+  
+  // Spatial navigation
+  const {focused, ref: refFoc} = useFocusable({
+    onEnterPress: () => cmd.select(item),
+  });
+  
+  // Drag and drop
+  const refDnd = useRef<View>(null);
   useEffect(() => {
-    if (!ref.current) return;
-    const element = ref.current as unknown as HTMLElement;
-    return dnd.combine(...[
-      dnd.draggable({
+    if (!refDnd.current) return;
+    const element = refDnd.current as unknown as HTMLElement;
+    return _.combine(...[
+      _.draggable({
         element,
         getInitialData: () => getHfsData(item),
-        onGenerateDragPreview: dnd.dragPreview(opt.selected.count),
+        onGenerateDragPreview: _.dragPreview(opt.selected.count),
         onDragStart: () => put(media.actions.drag(item.name)),
         onDrop: () => put(media.actions.drag(null)),
       }),
-      item.isDirectory && dnd.dropTargetForElements({
+      item.isDirectory && _.dropTargetForElements({
         element,
         canDrop: ({source}) => source.element !== element && (
              isHfsData(source.data)
@@ -56,27 +62,27 @@ export function useEntryHfs({item, cmd, opt}: EntryHfsProps) {
           }
         },
       }),
-      item.isDirectory && dnd.dropTargetForExternal({
+      item.isDirectory && _.dropTargetForExternal({
         element,
-        canDrop: dnd.containsFiles,
+        canDrop: _.containsFiles,
         getDropEffect: () => 'copy',
         onDragEnter: () => setDropping(true),
         onDragLeave: () => setDropping(false),
         onDrop: (e) => {
           setDropping(false);
-          const files = dnd.getFiles(e);
+          const files = _.getFiles(e);
           if (files.length) {
             cmd.upload(item, files);
           }
         },
       }),
     ].filter(Boolean) as CleanupFn[]);
-  }, [item, cmd]);
+  }, [item, cmd, opt.selected.count, put]);
 
   return {
-    ref,
-    ext,
+    ext: toPathInfo(item.name, item.isDirectory)?.ext,
     cmd: bind(cmd, item),
-    opt: {...opt, dropping},
+    opt: {...opt, focused, dropping},
+    ref: [refDnd, refFoc],
   };
 }

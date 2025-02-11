@@ -15,6 +15,7 @@ interface ListRow {
   opt?: {
     dragging?: boolean,
     dropping?: boolean,
+    focused?: boolean,
     selected?: {
       self?: boolean,
       prev?: boolean,
@@ -28,6 +29,7 @@ export function ListRow(props: ListRow) {
   const {styles} = useStyles(stylesheet);
   const {name, size, ext, dir, opt} = props;
   const {
+    focused,
     selected,
     dragging,
     dropping,
@@ -39,8 +41,8 @@ export function ListRow(props: ListRow) {
       selected?.self && styles.selected,
       selected?.prev && styles.selectedPrev,
       selected?.next && styles.selectedNext,
-      dragging && styles.dragging,
-      dropping && styles.dropping,
+      (dropping || focused) && !dragging && styles.outline,
+      dragging && styles.disabled,
     ],
   };
 
@@ -96,10 +98,10 @@ const stylesheet = createStyleSheet((theme) => ({
     flexShrink: 0,
   },
   /* States */
-  dropping: {
+  outline: {
     borderColor: theme.colors.foreground,
   },
-  dragging: {
+  disabled: {
     opacity: 0.5,
   },
   selected: {

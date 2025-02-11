@@ -37,16 +37,16 @@ export function ListBar({path, actions}: ListBarProps) {
             <ListBarItemSeparator/>
           </>
         ) : null}
-        {tabs?.map((name, index, array) => (
-          <View key={index} style={styles.breadcrumb}>
-            <ListBarItem
-              name={name}
-              path={tabs.slice(0, index + 1).join('/')}
-              last={index === array.length - 1}
-            />
-            {index < array.length - 1 && <ListBarItemSeparator/>}
-          </View>
-        ))}
+        {tabs?.map((name, index, array) => {
+          const path = tabs.slice(0, index + 1).join('/');
+          const last = index === array.length - 1;
+          return (
+            <View key={path} style={styles.breadcrumb}>
+              <ListBarItem {...{name, path, last}}/>
+              {index < array.length - 1 && <ListBarItemSeparator/>}
+            </View>
+          );
+        })}
       </ScrollView>
       <View style={styles.actions}>
         {actions?.map(({icon, onPress}) => (

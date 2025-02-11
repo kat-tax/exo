@@ -1,7 +1,8 @@
 import {Icon} from 'react-exo/icon';
 import {View, Text} from 'react-native';
+import {useFocusable} from '@noriginmedia/norigin-spatial-navigation';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {useLocation, Link} from 'react-exo/navigation';
+import {useLocation, useNavigate, Link} from 'react-exo/navigation';
 import {isTouch} from 'app/utils/platform';
 
 interface MenuItemProps extends React.PropsWithChildren {
@@ -13,8 +14,10 @@ interface MenuItemProps extends React.PropsWithChildren {
 }
 
 export function MenuItem(props: MenuItemProps) {
-  const {styles, theme} = useStyles(stylesheet);
+  const nav = useNavigate();
+  const {ref} = useFocusable({onFocus: () => nav(props.path)});
   const {pathname} = useLocation();
+  const {styles, theme} = useStyles(stylesheet);
 
   const mode = props.mode ?? 'default';
   const isDefault = mode === 'default';
@@ -23,7 +26,7 @@ export function MenuItem(props: MenuItemProps) {
   const isActive = props.path === decodeURIComponent(pathname);
 
   return (
-    <Link to={props.path}>
+    <Link ref={ref} to={props.path}>
       <View style={[
         styles.item,
         isAction && styles.itemAction,

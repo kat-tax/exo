@@ -34,7 +34,7 @@ export const Assistant = memo(() => {
               multiline={Boolean(ai.response?.isMultiline)}
               numberOfLines={ai.response?.isMultiline ? 8 : undefined}
               onKeyPress={(e) => ai.navigate(e)}
-              autoFocus
+              autoFocus={false}
               readOnly
             />
             <Text style={styles.timestamp}>
@@ -55,7 +55,7 @@ export const Assistant = memo(() => {
               multiline={multiline}
               numberOfLines={multiline ? 8 : undefined}
               readOnly={!keyVal}
-              autoFocus
+              autoFocus={false}
             />
             {!keyVal &&
               <View style={styles.button}>

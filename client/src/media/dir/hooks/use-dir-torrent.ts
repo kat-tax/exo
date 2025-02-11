@@ -68,7 +68,7 @@ export function useDirTorrent(path: string): TorrentCtx {
         isMulti: isCtrl ?? false,
       }));
     }
-  }, [torrent, url]);
+  }, [torrent, url, put]);
 
   return {
     torrent,

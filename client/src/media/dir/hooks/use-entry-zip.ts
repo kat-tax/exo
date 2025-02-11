@@ -1,4 +1,5 @@
 import {useRef, useState, useEffect} from 'react';
+import {useFocusable} from '@noriginmedia/norigin-spatial-navigation';
 import {toPathInfo} from 'app/utils/formatting';
 import * as dnd from 'app/utils/dragdrop';
 import {bind} from 'media/utils/bind';
@@ -15,12 +16,17 @@ export const getZipData = (entry: ZipFileEntry, cmd: ZipCmd): ZipData => ({[$]: 
 
 export function useEntryZip({item, cmd, opt}: EntryZipProps) {
   const [dragging, setDragging] = useState(false);
-  const ext = toPathInfo(item.name, item.dir)?.ext;
-  const ref = useRef<View>(null);
 
+  // Spatial navigation
+  const {focused, ref: refFoc} = useFocusable({
+    onEnterPress: () => cmd.extract(item),
+  });
+
+  // Drag and drop
+  const refDnd = useRef<View>(null);
   useEffect(() => {
-    if (!ref.current) return;
-    const element = ref.current as unknown as HTMLElement;
+    if (!refDnd.current) return;
+    const element = refDnd.current as unknown as HTMLElement;
     return dnd.combine(...[
       dnd.draggable({
         element,
@@ -33,9 +39,9 @@ export function useEntryZip({item, cmd, opt}: EntryZipProps) {
   }, [item, cmd]);
 
   return {
-    ref,
-    ext,
+    ext: toPathInfo(item.name, item.dir)?.ext,
     cmd: bind(cmd, item),
-    opt: {...opt, dragging},
+    opt: {...opt, focused, dragging},
+    ref: [refDnd, refFoc],
   };
 }

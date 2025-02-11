@@ -1,6 +1,8 @@
 import {View, ScrollView} from 'react-native';
-import {useStyles, createStyleSheet} from 'react-native-unistyles';
+import {useEffect} from 'react';
 import {useLingui} from '@lingui/react/macro';
+import {useFocusable, FocusContext} from '@noriginmedia/norigin-spatial-navigation';
+import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useImportHfs} from 'media/dir/hooks/use-import-hfs';
 import {StorageWidget} from 'media/stacks/widgets/storage';
 
@@ -17,9 +19,15 @@ export interface MenuProps {
 }
 
 export function Menu(props: MenuProps) {
-  const {importFile, createFolder} = useImportHfs();
-  const {styles} = useStyles(stylesheet);
   const {t} = useLingui();
+  const {styles} = useStyles(stylesheet);
+  const {importFile, createFolder} = useImportHfs();
+  const {ref, focusKey, focusSelf} = useFocusable({
+    isFocusBoundary: true,
+    focusBoundaryDirections: ['up', 'down'],
+  });
+
+  useEffect(() => {focusSelf()}, [focusSelf]);
 
   if (props.hasTabs) {
     return (
@@ -55,141 +63,143 @@ export function Menu(props: MenuProps) {
 
   return (
     <View style={styles.bg}>
-      <ScrollView contentContainerStyle={{flexGrow: 1}}>
-        <View style={styles.root}>
-          <MenuHeader {...props}/>
-          <MenuItem
-            label={t`Dashboard`}
-            icon="ph:squares-four"
-            path="/"
-          />
-          <MenuItem
-            label={t`Inbox`}
-            icon="ph:tray"
-            path="/inbox"
-          />
-          <MenuGroup
-            label={t`Media`}
-            actions={[
-              {
-                id: 'create-folder',
-                icon: 'ph:folder-simple-plus',
-                label: t`Create Folder`,
-                onPress: () => {
-                  const name = prompt(t`Enter folder name`);
-                  if (name) {
-                    createFolder(name);
-                  }
+      <FocusContext.Provider value={focusKey}>
+        <ScrollView ref={ref} contentContainerStyle={{flexGrow: 1}}>
+          <View style={styles.root}>
+            <MenuHeader {...props}/>
+            <MenuItem
+              label={t`Dashboard`}
+              icon="ph:squares-four"
+              path="/"
+            />
+            <MenuItem
+              label={t`Inbox`}
+              icon="ph:tray"
+              path="/inbox"
+            />
+            <MenuGroup
+              label={t`Media`}
+              actions={[
+                {
+                  id: 'create-folder',
+                  icon: 'ph:folder-simple-plus',
+                  label: t`Create Folder`,
+                  onPress: () => {
+                    const name = prompt(t`Enter folder name`);
+                    if (name) {
+                      createFolder(name);
+                    }
+                  },
                 },
-              },
-              {
-                id: 'import',
-                icon: 'ph:upload',
-                label: t`Import Files`,
-                onPress: importFile,
-              },
-            ]}>
-            <MenuItem
-              label={t`Files`}
-              icon="ph:folder"
-              path="/browse"
-            />
-            <MenuItem
-              label={t`Docs`}
-              icon="ph:file-text"
-              path="/browse/documents"
-            />
-            <MenuItem
-              label={t`Music`}
-              icon="ph:music-notes"
-              path="/browse/music"
-            />
-            <MenuItem
-              label={t`Pictures`}
-              icon="ph:image"
-              path="/browse/pictures"
-            />
-            <MenuItem
-              label={t`Videos`}
-              icon="ph:video"
-              path="/browse/videos"
-            />
-            <MenuItem
-              label={t`Games`}
-              icon="ph:game-controller"
-              path="/browse/games"
-            />
-            <MenuItem
-              label={t`Books`}
-              icon="ph:book-open-text"
-              path="/browse/books"
-            />
-          </MenuGroup>
-          <MenuGroup label={t`World`}>
-            <MenuItem
-              label={t`Map`}
-              icon="ph:map-trifold"
-              path="/map"
-            />
-            <MenuItem
-              label={t`News`}
-              icon="ph:rss"
-              path="/news"
-            />
-            <MenuItem
-              label={t`Calendar`}
-              icon="ph:calendar-dots"
-              path="/calendar"
-            />
-          </MenuGroup>
-          <MenuGroup label={t`Rooms`}>
-            {[{
-              name: 'Synkat',
-              icon: 'ph:cat',
-              path: '/matrix/!lwpprIOUgIZkrvffNC:matrix.org',
-            }, {
-              name: 'TheUltDev',
-              icon: 'ph:smiley-meh',
-              path: '/matrix/!oQWmCmkFrOESaZryui:matrix.org',
-            }].map(({name, icon, path}) =>
-              <MenuItem key={name} label={name} {...{icon, path}} mode="subitem"/>
-            )}
-          </MenuGroup>
-          {__DEV__ &&
-            <MenuGroup label={t`Dev Mode`} closed>
+                {
+                  id: 'import',
+                  icon: 'ph:upload',
+                  label: t`Import Files`,
+                  onPress: importFile,
+                },
+              ]}>
               <MenuItem
-                label={t`Design`}
-                icon="ph:palette"
-                path="/design"
+                label={t`Files`}
+                icon="ph:folder"
+                path="/browse"
               />
               <MenuItem
-                label={t`Library`}
-                icon="ph:package"
-                path="/library"
+                label={t`Docs`}
+                icon="ph:file-text"
+                path="/browse/documents"
+              />
+              <MenuItem
+                label={t`Music`}
+                icon="ph:music-notes"
+                path="/browse/music"
+              />
+              <MenuItem
+                label={t`Pictures`}
+                icon="ph:image"
+                path="/browse/pictures"
+              />
+              <MenuItem
+                label={t`Videos`}
+                icon="ph:video"
+                path="/browse/videos"
+              />
+              <MenuItem
+                label={t`Games`}
+                icon="ph:game-controller"
+                path="/browse/games"
+              />
+              <MenuItem
+                label={t`Books`}
+                icon="ph:book-open-text"
+                path="/browse/books"
               />
             </MenuGroup>
-          }
-          <View style={styles.spacer}/>
-          <View style={styles.footer}>
-            <StorageWidget actions={
-              <View style={styles.actions}>
+            <MenuGroup label={t`World`}>
+              <MenuItem
+                label={t`Map`}
+                icon="ph:map-trifold"
+                path="/map"
+              />
+              <MenuItem
+                label={t`News`}
+                icon="ph:rss"
+                path="/news"
+              />
+              <MenuItem
+                label={t`Calendar`}
+                icon="ph:calendar-dots"
+                path="/calendar"
+              />
+            </MenuGroup>
+            {/* <MenuGroup label={t`Rooms`}>
+              {[{
+                name: 'Synkat',
+                icon: 'ph:cat',
+                path: '/matrix/!lwpprIOUgIZkrvffNC:matrix.org',
+              }, {
+                name: 'TheUltDev',
+                icon: 'ph:smiley-meh',
+                path: '/matrix/!oQWmCmkFrOESaZryui:matrix.org',
+              }].map(({name, icon, path}) =>
+                <MenuItem key={name} label={name} {...{icon, path}} mode="subitem"/>
+              )}
+            </MenuGroup> */}
+            {__DEV__ &&
+              <MenuGroup label={t`Dev Mode`} closed>
                 <MenuItem
-                  label={t`Storage`}
-                  icon="ph:hard-drives"
-                  path="/storage"
-                  mode="action"
+                  label={t`Design`}
+                  icon="ph:palette"
+                  path="/design"
                 />
                 <MenuItem
-                  label={t`Settings`}
-                  icon="ph:gear"
-                  path="/settings"
-                  mode="action"
+                  label={t`Library`}
+                  icon="ph:package"
+                  path="/library"
                 />
-              </View>
-            }/>
+              </MenuGroup>
+            }
+            <View style={styles.spacer}/>
+            <View style={styles.footer}>
+              <StorageWidget actions={
+                <View style={styles.actions}>
+                  <MenuItem
+                    label={t`Storage`}
+                    icon="ph:hard-drives"
+                    path="/storage"
+                    mode="action"
+                  />
+                  <MenuItem
+                    label={t`Settings`}
+                    icon="ph:gear"
+                    path="/settings"
+                    mode="action"
+                  />
+                </View>
+              }/>
+            </View>
           </View>
-        </View>
-      </ScrollView>
+        </ScrollView>
+      </FocusContext.Provider>
     </View>
   );
 }

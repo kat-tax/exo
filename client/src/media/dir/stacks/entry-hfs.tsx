@@ -15,15 +15,15 @@ export interface EntryHfsProps {
 export function EntryHfs(props: EntryHfsProps) {
   const {item} = props;
   const {name, size, isFile} = item;
-  const {ref, ext, cmd, opt} = useEntryHfs(props);
+  const {ext, cmd, opt, ref} = useEntryHfs(props);
   const dir = !isFile;
 
   return (
     <Touch
-      dragRef={ref}
+      refs={ref}
       onPress={cmd.select}
       onDoublePress={dir ? () => cmd.open(true) : undefined}>
-      <MenuHfs {...{item, cmd, on: open => open && ref.current?.focus()}}>
+      <MenuHfs {...{item, cmd, on: open => open && ref[0]?.current?.focus()}}>
         <ListRow {...{name, size, ext, dir, opt}}/>
       </MenuHfs>
     </Touch>

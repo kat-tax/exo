@@ -13,8 +13,8 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: ../../client/src/dev/routes/screen-library.tsx:22
-#: ../../client/src/dev/routes/screen-design.tsx:14
+#: ../../client/src/dev/routes/screen-library.tsx:21
+#: ../../client/src/dev/routes/screen-design.tsx:15
 msgid "{0} components"
 msgstr "{0}개 컴포넌트"
 
@@ -60,7 +60,7 @@ msgid "by {0}"
 msgstr "{0} 저"
 
 #: ../../client/src/world/routes/screen-world.tsx:29
-#: ../../client/src/app/routes/menu/index.tsx:140
+#: ../../client/src/app/routes/menu/index.tsx:149
 msgid "Calendar"
 msgstr "달력"
 
@@ -76,11 +76,12 @@ msgstr "닫기"
 msgid "Compress"
 msgstr ""
 
+#: ../../client/src/media/hooks/use-media-controls.ts:58
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:55
 msgid "Copy"
 msgstr ""
 
-#: ../../client/src/app/routes/menu/index.tsx:77
+#: ../../client/src/app/routes/menu/index.tsx:86
 msgid "Create Folder"
 msgstr ""
 
@@ -88,8 +89,8 @@ msgstr ""
 msgid "Dark"
 msgstr "다크"
 
-#: ../../client/src/app/routes/menu/index.tsx:28
-#: ../../client/src/app/routes/menu/index.tsx:62
+#: ../../client/src/app/routes/menu/index.tsx:36
+#: ../../client/src/app/routes/menu/index.tsx:71
 msgid "Dashboard"
 msgstr "대시보드"
 
@@ -129,12 +130,12 @@ msgstr "프롬프트 삭제"
 msgid "Delete the local database."
 msgstr "로컬 데이터베이스 삭제"
 
-#: ../../client/src/dev/routes/screen-design.tsx:13
-#: ../../client/src/app/routes/menu/index.tsx:161
+#: ../../client/src/dev/routes/screen-design.tsx:14
+#: ../../client/src/app/routes/menu/index.tsx:170
 msgid "Design"
 msgstr "디자인"
 
-#: ../../client/src/app/routes/menu/index.tsx:159
+#: ../../client/src/app/routes/menu/index.tsx:168
 msgid "Dev Mode"
 msgstr "개발자 모드"
 
@@ -158,7 +159,7 @@ msgstr "디스플레이"
 msgid "Distance"
 msgstr "거리"
 
-#: ../../client/src/app/routes/menu/index.tsx:98
+#: ../../client/src/app/routes/menu/index.tsx:107
 msgid "Docs"
 msgstr "문서"
 
@@ -166,6 +167,9 @@ msgstr "문서"
 msgid "Documents"
 msgstr "문서"
 
+#: ../../client/src/media/hooks/use-media-controls.ts:77
+#: ../../client/src/media/file/file-binary.tsx:36
+#: ../../client/src/media/dir/stacks/menu-torrent.tsx:22
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:44
 msgid "Download"
 msgstr "다운로드"
@@ -186,7 +190,7 @@ msgstr "좋은 하루 되세요"
 msgid "Enjoy the night"
 msgstr "좋은 밤 되세요"
 
-#: ../../client/src/app/routes/menu/index.tsx:79
+#: ../../client/src/app/routes/menu/index.tsx:88
 msgid "Enter folder name"
 msgstr ""
 
@@ -194,6 +198,7 @@ msgstr ""
 msgid "Enter name"
 msgstr ""
 
+#: ../../client/src/media/hooks/use-media-controls.ts:87
 #: ../../client/src/media/dir/stacks/menu-zip.tsx:22
 msgid "Extract"
 msgstr "추출"
@@ -212,10 +217,6 @@ msgstr "파일"
 
 #: ../../client/src/app/routes/screen-settings.tsx:246
 msgid "Filesystem"
-msgstr ""
-
-#: ../../client/src/media/dir/stacks/none-hfs.tsx:22
-msgid "Folder is empty. Drop items or select folder to import."
 msgstr ""
 
 #: ../../client/src/media/hooks/use-media-controls.ts:276
@@ -258,15 +259,7 @@ msgstr "Groq 모델 ID"
 msgid "Human"
 msgstr "사용자"
 
-#: ../../client/src/media/stacks/history.tsx:20
-msgid "Import"
-msgstr "가져오기"
-
-#: ../../client/src/media/stacks/history.tsx:20
-msgid "Import File(s)"
-msgstr ""
-
-#: ../../client/src/media/stacks/history.tsx:25
+#: ../../client/src/app/routes/menu/index.tsx:97
 msgid "Import Files"
 msgstr "파일 가져오기"
 
@@ -274,8 +267,8 @@ msgstr "파일 가져오기"
 msgid "Import Folder"
 msgstr ""
 
-#: ../../client/src/app/routes/menu/index.tsx:33
-#: ../../client/src/app/routes/menu/index.tsx:67
+#: ../../client/src/app/routes/menu/index.tsx:41
+#: ../../client/src/app/routes/menu/index.tsx:76
 msgid "Inbox"
 msgstr "알림"
 
@@ -287,8 +280,8 @@ msgstr "킬로미터"
 msgid "Language"
 msgstr "언어"
 
-#: ../../client/src/dev/routes/screen-library.tsx:21
-#: ../../client/src/app/routes/menu/index.tsx:166
+#: ../../client/src/dev/routes/screen-library.tsx:20
+#: ../../client/src/app/routes/menu/index.tsx:175
 msgid "Library"
 msgstr "라이브러리"
 
@@ -309,7 +302,7 @@ msgid "Manage your storage"
 msgstr "저장소 관리"
 
 #: ../../client/src/world/routes/screen-world.tsx:17
-#: ../../client/src/app/routes/menu/index.tsx:130
+#: ../../client/src/app/routes/menu/index.tsx:139
 msgid "Map"
 msgstr "지도"
 
@@ -333,7 +326,7 @@ msgstr ""
 msgid "Matrix User ID"
 msgstr ""
 
-#: ../../client/src/app/routes/menu/index.tsx:72
+#: ../../client/src/app/routes/menu/index.tsx:81
 msgid "Media"
 msgstr "미디어"
 
@@ -350,7 +343,7 @@ msgid "Music"
 msgstr "음악"
 
 #: ../../client/src/world/routes/screen-world.tsx:23
-#: ../../client/src/app/routes/menu/index.tsx:135
+#: ../../client/src/app/routes/menu/index.tsx:144
 msgid "News"
 msgstr "뉴스"
 
@@ -361,18 +354,6 @@ msgstr "다음"
 #: ../../client/src/world/routes/screen-calendar.tsx:41
 msgid "No events scheduled."
 msgstr "예정된 일정이 없습니다."
-
-#: ../../client/src/media/stacks/history.tsx:19
-msgid "No items selected."
-msgstr ""
-
-#: ../../client/src/media/stacks/history.tsx:23
-msgid "No items selected. Drop items or select files to import."
-msgstr ""
-
-#: ../../client/src/media/stacks/history.tsx:24
-msgid "No items selected. Select files to import."
-msgstr ""
 
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:23
 msgid "Open"
@@ -458,10 +439,6 @@ msgstr ""
 msgid "Replay"
 msgstr "다시 재생"
 
-#: ../../client/src/app/routes/menu/index.tsx:145
-msgid "Rooms"
-msgstr ""
-
 #: ../../client/src/media/hooks/use-media-controls.ts:97
 msgid "Search"
 msgstr "검색"
@@ -491,11 +468,12 @@ msgid "Services"
 msgstr ""
 
 #: ../../client/src/app/routes/screen-settings.tsx:24
-#: ../../client/src/app/routes/menu/index.tsx:48
-#: ../../client/src/app/routes/menu/index.tsx:183
+#: ../../client/src/app/routes/menu/index.tsx:56
+#: ../../client/src/app/routes/menu/index.tsx:192
 msgid "Settings"
 msgstr "설정"
 
+#: ../../client/src/media/hooks/use-media-controls.ts:256
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:30
 msgid "Share"
 msgstr "공유"
@@ -509,7 +487,7 @@ msgid "Skip forward"
 msgstr "앞으로 건너뛰기"
 
 #: ../../client/src/app/routes/screen-storage.tsx:23
-#: ../../client/src/app/routes/menu/index.tsx:177
+#: ../../client/src/app/routes/menu/index.tsx:186
 msgid "Storage"
 msgstr "저장소"
 
@@ -532,10 +510,6 @@ msgstr ""
 #: ../../client/src/media/file/file-binary.tsx:30
 msgid "Unsupported File"
 msgstr "지원되지 않는 파일"
-
-#: ../../client/src/media/stacks/history.tsx:20
-msgid "Upload"
-msgstr ""
 
 #: ../../client/src/media/stacks/list/bar.tsx:85
 msgid "Uploads"
@@ -573,8 +547,8 @@ msgstr "환영합니다, {0}님"
 msgid "Welcome, Human"
 msgstr "환영합니다"
 
-#: ../../client/src/app/routes/menu/index.tsx:43
-#: ../../client/src/app/routes/menu/index.tsx:128
+#: ../../client/src/app/routes/menu/index.tsx:51
+#: ../../client/src/app/routes/menu/index.tsx:137
 msgid "World"
 msgstr "세계"
 
