@@ -27,7 +27,7 @@ export function List<T>({path, list, ext, bar, render}: ListProps<T>) {
     <View style={styles.root}>
       {bar && <ListBar {...{path}} {...bar}/>}
       {!list?.length 
-        ? <ListEmpty offset={!bar ? -35 : 0}/>
+        ? <ListEmpty offset={bar ? -35 : 0}/>
         : (
           <LegendList
             data={list}

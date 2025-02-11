@@ -12,7 +12,7 @@ import {InitDirectory} from 'media/dir/utils/hfs/path';
 const TOUCH = isTouch();
 const ITEM_SIZE = TOUCH ? 46 : 32;
 const ICON_SIZE = TOUCH ? 18 : 16;
-const TEXT_SIZE = TOUCH ? 14 : 12;
+const TEXT_SIZE = TOUCH ? 14 : 11;
 
 export interface ListBarProps {
   path?: string,
