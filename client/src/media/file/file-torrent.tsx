@@ -1,6 +1,4 @@
-import {View} from 'react-native';
 import {useEffect, forwardRef} from 'react';
-import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useDirTorrent} from 'media/dir/hooks/use-dir-torrent';
 import {DirTorrent} from 'media/dir/stacks/dir-torrent';
 import {bytesize} from 'app/utils/formatting';
@@ -10,9 +8,11 @@ import type {FileProps} from 'media/file';
 
 export interface FileTorrent extends FileProps {}
 
-export default forwardRef(({path, name, actions, embedded}: FileTorrent, _ref) => {
+export default forwardRef((
+  {path, name, actions, embedded}: FileTorrent,
+  _ref,
+) => {
   const {torrent, cmd} = useDirTorrent(path);
-  const {styles} = useStyles(stylesheet);
 
   useEffect(() => {
     if (!torrent) return;
@@ -22,23 +22,14 @@ export default forwardRef(({path, name, actions, embedded}: FileTorrent, _ref) =
   }, [torrent, actions]);
 
   return (
-    <View style={styles.root}>
-      <Panel
-        title={embedded ? name : undefined}
-        message={embedded ? `${torrent?.info.name}` : undefined}
-        margin="none"
-        noBackground
-        fullWidth
-        noFrame>
-        {torrent && <DirTorrent {...{torrent, cmd}}/>}
-      </Panel>
-    </View>
+    <Panel
+      title={embedded ? name : undefined}
+      message={embedded ? `${torrent?.info.name}` : undefined}
+      margin={embedded ? 'small' : 'none'}
+      transparent
+      noframe
+      fluid>
+      {torrent && <DirTorrent {...{torrent, cmd}}/>}
+    </Panel>
   )
 });
-
-const stylesheet = createStyleSheet((theme) => ({
-  root: {
-    flex: 1,
-    marginHorizontal: theme.display.space2,
-  },
-}));

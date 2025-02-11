@@ -23,9 +23,9 @@ export default forwardRef((
       title={embedded ? name : undefined}
       message={embedded ? `${hfs?.list?.length} files` : undefined}
       margin="none"
-      noBackground
-      fullWidth
-      noFrame>
+      transparent
+      noframe
+      fluid>
       {hfs && <DirHfs {...{hfs, cmd, ext}}/>}
     </Panel>
   );

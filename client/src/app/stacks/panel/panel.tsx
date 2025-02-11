@@ -6,11 +6,11 @@ export interface PanelProps extends React.PropsWithChildren {
   title?: string | React.ReactNode,
   message?: string | React.ReactNode,
   widget?: React.ReactNode,
-  center?: boolean,
-  fullWidth?: boolean,
-  noBackground?: boolean,
-  noFrame?: boolean,
   margin?: 'none' | 'small' | 'large',
+  transparent?: boolean,
+  noframe?: boolean,
+  center?: boolean,
+  fluid?: boolean,
 }
 
 export function Panel(props: PanelProps) {
@@ -21,24 +21,24 @@ export function Panel(props: PanelProps) {
   const hasTitle = Boolean(props.title);
   const hasMessage = Boolean(props.message);
   const hasHeader = hasTitle || hasMessage;
-  const hasNoFrame = props.noFrame || screen.width < theme.breakpoints.sm;
+  const hasNoFrame = props.noframe || screen.width < theme.breakpoints.sm;
   const vstyles = {
     root: [
       styles.root,
-      hasNoFrame && styles.noFrame,
-      layout?.hasPreviewPanel && styles.withPanel,
-      props.noBackground && styles.noBackground,
+      hasNoFrame && styles.frameless,
+      props.transparent && styles.transparent,
+      layout?.hasPreviewPanel && styles.paneled,
     ],
     content: [
       styles.content,
+      props.fluid && styles.contentFull,
       props.center && styles.contentCenter,
-      props.fullWidth && styles.contentFull,
       margin === 'large' && styles.contentSpacing,
       margin === 'small' && styles.contentSpacingSmall,
     ],
     header: [
       styles.header,
-      props.fullWidth && styles.headerAlign,
+      props.fluid && styles.headerAlign,
     ],
   };
 
@@ -89,16 +89,16 @@ const stylesheet = createStyleSheet((theme, rt) => ({
     borderColor: theme.colors.border,
     backgroundColor: theme.colors.card,
   },
-  withPanel: {
+  paneled: {
     marginRight: 0,
   },
-  noFrame: {
+  frameless: {
     margin: 0,
     borderWidth: 0,
     borderRadius: 0,
     borderTopWidth: rt.hairlineWidth,
   },
-  noBackground: {
+  transparent: {
     backgroundColor: 'transparent',
     borderTopWidth: 0,
     borderWidth: 0,

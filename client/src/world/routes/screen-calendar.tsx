@@ -21,7 +21,7 @@ export default function ScreenCalendar() {
   const showDebugEvent = false;
 
   return (
-    <Panel fullWidth margin="none">
+    <Panel fluid margin="none">
       <View style={styles.root}>
         <View style={styles.calendar}>
           <Calendar.List

@@ -20,7 +20,7 @@ export default function ScreenMap() {
   const maptilerUrl = profile?.maptilerUrl ?? 'https://api.maptiler.com';
   const maptilerKey = profile?.maptilerKey ?? '';
   return (
-    <Panel fullWidth margin="none">
+    <Panel fluid margin="none">
       <Map
         {...viewState}
         style={{width: '100%', height: '100%'}}

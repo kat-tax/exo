@@ -15,7 +15,7 @@ export default function ScreenBrowse() {
   };
 
   return (
-    <Panel fullWidth margin="none">
+    <Panel fluid margin="none">
       <DirHfs {...{hfs, cmd, ext, bar}}/>
     </Panel>
   );

@@ -1,6 +1,4 @@
-import {View} from 'react-native';
 import {forwardRef, useEffect} from 'react';
-import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useDirZip} from 'media/dir/hooks/use-dir-zip';
 import {DirZip} from 'media/dir/stacks/dir-zip';
 import {Panel} from 'app/stacks/panel';
@@ -15,7 +13,6 @@ export default forwardRef((
   _ref,
 ) => {
   const {zip, cmd} = useDirZip(path);
-  const {styles} = useStyles(stylesheet);
 
   useEffect(() => {
     if (!zip) return;
@@ -26,28 +23,14 @@ export default forwardRef((
   }, [zip, actions]);
 
   return (
-    <View style={styles.root}>
-      <Panel
-        title={embedded ? name : undefined}
-        message={embedded ? `${zip?.list?.length} files` : undefined}
-        margin="small"
-        noBackground
-        noFrame
-        fullWidth>
-        <View style={styles.inner}>
-          {zip && <DirZip {...{zip, cmd}}/>}
-        </View>
-      </Panel>
-    </View>
+    <Panel
+      title={embedded ? name : undefined}
+      message={embedded ? `${zip?.list?.length} files` : undefined}
+      margin={embedded ? 'small' : 'none'}
+      transparent
+      noframe
+      fluid>
+      {zip && <DirZip {...{zip, cmd}}/>}
+    </Panel>
   )
 });
-
-const stylesheet = createStyleSheet((theme) => ({
-  root: {
-    flex: 1,
-    marginHorizontal: theme.display.space2,
-  },
-  inner: {
-    paddingBottom: theme.display.space5,
-  },
-}));
