@@ -75,7 +75,9 @@ export default function Layout() {
               embedded={false}
               close={() => {}}
             />
-          : <History path={focused}/>
+          : isVertical
+            ? null
+            : <History path={focused}/>
         : null}
       </View>
     </View>

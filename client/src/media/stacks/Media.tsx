@@ -142,7 +142,7 @@ const stylesheet = createStyleSheet((theme, rt) => ({
     backgroundColor: theme.colors.neutral,
   },
   vertical: {
-    flex: 3,
+    flex: 2,
   },
   maximized: {
     maxWidth: '100%',
