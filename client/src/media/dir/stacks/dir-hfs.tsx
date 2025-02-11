@@ -28,7 +28,7 @@ export function DirHfs({hfs, cmd, ext, bar}: HfsCtx) {
           drawDistance={HEIGHT * 20}
           estimatedItemSize={HEIGHT}
           contentContainerStyle={styles.list}
-          ListHeaderComponent={!bar.hidden ? <View style={styles.listHeader}/> : null}
+          ListHeaderComponent={!bar.hidden ? <View style={styles.header}/> : null}
           keyExtractor={(_,i) => i.toString()}
           renderItem={({item, index}) => {
             const path = hfs.path ? `${hfs.path}/${item.name}` : item.name;
@@ -61,7 +61,8 @@ const stylesheet = createStyleSheet(theme => ({
     paddingHorizontal: theme.display.space2,
     paddingBottom: theme.display.space2,
   },
-  listHeader: {
+  header: {
     height: theme.display.space2,
   },
 }));
+
