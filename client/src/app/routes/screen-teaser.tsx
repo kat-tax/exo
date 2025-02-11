@@ -17,8 +17,8 @@ export default function ScreenTeaser() {
         <Lottie
           loop
           autoplay
-          width={320}
-          height={320}
+          width={240}
+          height={240}
           url="https://get.ult.dev/samples/cat.lottie"
         />
       </View>

@@ -71,8 +71,8 @@ const stylesheet = createStyleSheet(theme => ({
     fontSize: 11,
     ...isTouch() && {
       marginLeft: theme.display.space2,
-      lineHeight: 32,
-      fontSize: 12,
+      lineHeight: 40,
+      fontSize: 13,
     },
   },
 }));
