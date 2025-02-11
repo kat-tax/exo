@@ -12,13 +12,13 @@ import type {GestureResponderEvent} from 'react-native';
 import type {HfsDirectoryEntry} from 'react-exo/fs';
 import type {HfsCtx} from 'media/dir/types/hfs';
 
-export function useDirHfs(path: string): Omit<HfsCtx, 'bar'> {
+export function useDirHfs(path: string, tmp?: boolean): Omit<HfsCtx, 'bar'> {
   const [list, setList] = useState<HfsDirectoryEntry[]>([]);
 
   const hfs = useHfs();
   const sel = useSelector(media.selectors.getSelected);
   const dnd = useSelector(media.selectors.getDragging);
-  const ext = useMemo(() => ({sel, dnd}), [sel, dnd]);
+  const ext = useMemo(() => ({sel, dnd, tmp}), [sel, dnd, tmp]);
 
   const put = useDispatch();
   const nav = useNavigate();
@@ -68,6 +68,7 @@ export function useDirHfs(path: string): Omit<HfsCtx, 'bar'> {
   }, [hfs, path]);
 
   const open = useCallback(async (entry: HfsDirectoryEntry, clearSel?: boolean) => {
+    if (!entry.isDirectory) return;
     nav(path ? `${path}/${entry.name}` : entry.name);
     if (clearSel) put(media.actions.selectBulk([]));
   }, [path, nav, put]);

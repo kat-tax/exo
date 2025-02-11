@@ -12,6 +12,7 @@ export interface HfsCtx {
   cmd: HfsCmd,
   bar?: ListBarProps,
   ext: {
+    tmp?: boolean,
     sel: string[],
     dnd: string[],
   },

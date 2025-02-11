@@ -4,7 +4,7 @@ import type {HfsCtx} from 'media/dir/types/hfs';
 
 export function DirHfs({hfs, cmd, ext, bar}: HfsCtx) {
   const {list, path} = hfs;
-  const {dnd, sel} = ext;
+  const {dnd, sel, tmp} = ext;
   return (
     <List
       {...{path, list, ext, bar}}
@@ -22,7 +22,7 @@ export function DirHfs({hfs, cmd, ext, bar}: HfsCtx) {
           },
         };
         return (
-          <EntryHfs {...{item, cmd, opt}}/>
+          <EntryHfs {...{item, cmd, opt, tmp}}/>
         );
       }}
     />

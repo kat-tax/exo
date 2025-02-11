@@ -51,7 +51,7 @@ msgstr "Спрашивайте что угодно..."
 msgid "Auto"
 msgstr "Авто"
 
-#: ../../client/src/media/stacks/list/bar.tsx:81
+#: ../../client/src/app/routes/menu/index.tsx:132
 msgid "Books"
 msgstr "Книги"
 
@@ -59,7 +59,6 @@ msgstr "Книги"
 msgid "by {0}"
 msgstr "автор {0}"
 
-#: ../../client/src/world/routes/screen-world.tsx:29
 #: ../../client/src/app/routes/menu/index.tsx:149
 msgid "Calendar"
 msgstr "Календарь"
@@ -130,7 +129,6 @@ msgstr "Удалить запросы"
 msgid "Delete the local database."
 msgstr "Удалить локальную базу данных."
 
-#: ../../client/src/dev/routes/screen-design.tsx:14
 #: ../../client/src/app/routes/menu/index.tsx:170
 msgid "Design"
 msgstr "Дизайн"
@@ -211,7 +209,8 @@ msgstr "Фаренгейт"
 msgid "Feature in development..."
 msgstr ""
 
-#: ../../client/src/media/stacks/list/bar.tsx:87
+#: ../../client/src/app/routes/menu/index.tsx:46
+#: ../../client/src/app/routes/menu/index.tsx:102
 msgid "Files"
 msgstr "Файлы"
 
@@ -223,7 +222,7 @@ msgstr ""
 msgid "Fullscreen"
 msgstr "Полный экран"
 
-#: ../../client/src/media/stacks/list/bar.tsx:79
+#: ../../client/src/app/routes/menu/index.tsx:127
 msgid "Games"
 msgstr "Игры"
 
@@ -280,7 +279,6 @@ msgstr "Километры"
 msgid "Language"
 msgstr "Язык"
 
-#: ../../client/src/dev/routes/screen-library.tsx:20
 #: ../../client/src/app/routes/menu/index.tsx:175
 msgid "Library"
 msgstr "Библиотека"
@@ -301,7 +299,6 @@ msgstr "Управление настройками"
 msgid "Manage your storage"
 msgstr "Управление хранилищем"
 
-#: ../../client/src/world/routes/screen-world.tsx:17
 #: ../../client/src/app/routes/menu/index.tsx:139
 msgid "Map"
 msgstr "Карта"
@@ -338,11 +335,10 @@ msgstr "Мили"
 msgid "Move"
 msgstr ""
 
-#: ../../client/src/media/stacks/list/bar.tsx:73
+#: ../../client/src/app/routes/menu/index.tsx:112
 msgid "Music"
 msgstr "Музыка"
 
-#: ../../client/src/world/routes/screen-world.tsx:23
 #: ../../client/src/app/routes/menu/index.tsx:144
 msgid "News"
 msgstr "Новости"
@@ -375,7 +371,7 @@ msgstr "Ключ владельца"
 msgid "Pause"
 msgstr "Пауза"
 
-#: ../../client/src/media/stacks/list/bar.tsx:75
+#: ../../client/src/app/routes/menu/index.tsx:117
 msgid "Pictures"
 msgstr "Изображения"
 
@@ -467,7 +463,6 @@ msgstr "Выберите тему приложения."
 msgid "Services"
 msgstr ""
 
-#: ../../client/src/app/routes/screen-settings.tsx:24
 #: ../../client/src/app/routes/menu/index.tsx:56
 #: ../../client/src/app/routes/menu/index.tsx:192
 msgid "Settings"
@@ -486,7 +481,6 @@ msgstr "Перемотать назад"
 msgid "Skip forward"
 msgstr "Перемотать вперед"
 
-#: ../../client/src/app/routes/screen-storage.tsx:23
 #: ../../client/src/app/routes/menu/index.tsx:186
 msgid "Storage"
 msgstr "Хранилище"
@@ -519,7 +513,7 @@ msgstr "Загрузки"
 msgid "User Name"
 msgstr "Имя пользователя"
 
-#: ../../client/src/media/stacks/list/bar.tsx:77
+#: ../../client/src/app/routes/menu/index.tsx:122
 msgid "Videos"
 msgstr "Видео"
 

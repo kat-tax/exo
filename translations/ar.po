@@ -51,7 +51,7 @@ msgstr "اسأل أي شيء..."
 msgid "Auto"
 msgstr "تلقائي"
 
-#: ../../client/src/media/stacks/list/bar.tsx:81
+#: ../../client/src/app/routes/menu/index.tsx:132
 msgid "Books"
 msgstr "الكتب"
 
@@ -59,7 +59,6 @@ msgstr "الكتب"
 msgid "by {0}"
 msgstr "بواسطة {0}"
 
-#: ../../client/src/world/routes/screen-world.tsx:29
 #: ../../client/src/app/routes/menu/index.tsx:149
 msgid "Calendar"
 msgstr "التقويم"
@@ -130,7 +129,6 @@ msgstr "حذف المطالبات"
 msgid "Delete the local database."
 msgstr "حذف قاعدة البيانات المحلية."
 
-#: ../../client/src/dev/routes/screen-design.tsx:14
 #: ../../client/src/app/routes/menu/index.tsx:170
 msgid "Design"
 msgstr "التصميم"
@@ -211,7 +209,8 @@ msgstr "فهرنهايت"
 msgid "Feature in development..."
 msgstr ""
 
-#: ../../client/src/media/stacks/list/bar.tsx:87
+#: ../../client/src/app/routes/menu/index.tsx:46
+#: ../../client/src/app/routes/menu/index.tsx:102
 msgid "Files"
 msgstr "الملفات"
 
@@ -223,7 +222,7 @@ msgstr "نظام الملفات"
 msgid "Fullscreen"
 msgstr "ملء الشاشة"
 
-#: ../../client/src/media/stacks/list/bar.tsx:79
+#: ../../client/src/app/routes/menu/index.tsx:127
 msgid "Games"
 msgstr "الألعاب"
 
@@ -280,7 +279,6 @@ msgstr "كيلومترات"
 msgid "Language"
 msgstr "اللغة"
 
-#: ../../client/src/dev/routes/screen-library.tsx:20
 #: ../../client/src/app/routes/menu/index.tsx:175
 msgid "Library"
 msgstr "المكتبة"
@@ -301,7 +299,6 @@ msgstr "إدارة إعداداتك"
 msgid "Manage your storage"
 msgstr "إدارة التخزين الخاص بك"
 
-#: ../../client/src/world/routes/screen-world.tsx:17
 #: ../../client/src/app/routes/menu/index.tsx:139
 msgid "Map"
 msgstr "الخريطة"
@@ -338,11 +335,10 @@ msgstr "أميال"
 msgid "Move"
 msgstr "نقل"
 
-#: ../../client/src/media/stacks/list/bar.tsx:73
+#: ../../client/src/app/routes/menu/index.tsx:112
 msgid "Music"
 msgstr "الموسيقى"
 
-#: ../../client/src/world/routes/screen-world.tsx:23
 #: ../../client/src/app/routes/menu/index.tsx:144
 msgid "News"
 msgstr "الأخبار"
@@ -375,7 +371,7 @@ msgstr "مفتاح المالك"
 msgid "Pause"
 msgstr "إيقاف مؤقت"
 
-#: ../../client/src/media/stacks/list/bar.tsx:75
+#: ../../client/src/app/routes/menu/index.tsx:117
 msgid "Pictures"
 msgstr "الصور"
 
@@ -467,7 +463,6 @@ msgstr "اختر سمة التطبيق."
 msgid "Services"
 msgstr ""
 
-#: ../../client/src/app/routes/screen-settings.tsx:24
 #: ../../client/src/app/routes/menu/index.tsx:56
 #: ../../client/src/app/routes/menu/index.tsx:192
 msgid "Settings"
@@ -486,7 +481,6 @@ msgstr "تخطي للخلف"
 msgid "Skip forward"
 msgstr "تخطي للأمام"
 
-#: ../../client/src/app/routes/screen-storage.tsx:23
 #: ../../client/src/app/routes/menu/index.tsx:186
 msgid "Storage"
 msgstr "التخزين"
@@ -519,7 +513,7 @@ msgstr "المرفوعات"
 msgid "User Name"
 msgstr "اسم المستخدم"
 
-#: ../../client/src/media/stacks/list/bar.tsx:77
+#: ../../client/src/app/routes/menu/index.tsx:122
 msgid "Videos"
 msgstr "الفيديوهات"
 

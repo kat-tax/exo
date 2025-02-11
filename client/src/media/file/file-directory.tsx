@@ -11,7 +11,7 @@ export default forwardRef((
   {path, name, actions, embedded}: FileDirectory,
   _ref: React.Ref<unknown>,
 ) => {
-  const {hfs, cmd, ext} = useDirHfs(path);
+  const {hfs, cmd, ext} = useDirHfs(path, true);
 
   useEffect(() => {
     if (!hfs) return;

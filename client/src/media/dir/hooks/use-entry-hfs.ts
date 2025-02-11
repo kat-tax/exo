@@ -19,13 +19,18 @@ export type HfsData = {[$]: true, entry: HfsDirectoryEntry};
 export const isHfsData = (data: Record<string | symbol, unknown>): data is HfsData => data[$] === true;
 export const getHfsData = (entry: HfsDirectoryEntry): HfsData => ({[$]: true, entry});
 
-export function useEntryHfs({item, cmd, opt}: EntryHfsProps) {
+export function useEntryHfs({item, cmd, opt, tmp}: EntryHfsProps) {
   const [dropping, setDropping] = useState(false);
   const put = useDispatch();
   
   // Spatial navigation
   const {focused, ref: refFoc} = useFocusable({
-    onEnterPress: () => cmd.select(item),
+    onFocus: () => tmp
+      ? undefined
+      : cmd.select(item),
+    onEnterPress: () => tmp
+      ? cmd.select(item)
+      : cmd.open(item),
   });
   
   // Drag and drop

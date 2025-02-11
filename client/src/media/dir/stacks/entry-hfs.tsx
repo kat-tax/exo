@@ -10,6 +10,7 @@ export interface EntryHfsProps {
   item: HfsDirectoryEntry,
   cmd: HfsCmd,
   opt: HfsOpt,
+  tmp?: boolean,
 }
 
 export function EntryHfs(props: EntryHfsProps) {

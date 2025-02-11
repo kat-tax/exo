@@ -51,7 +51,7 @@ msgstr "何でも聞いてください..."
 msgid "Auto"
 msgstr "自動"
 
-#: ../../client/src/media/stacks/list/bar.tsx:81
+#: ../../client/src/app/routes/menu/index.tsx:132
 msgid "Books"
 msgstr "本"
 
@@ -59,7 +59,6 @@ msgstr "本"
 msgid "by {0}"
 msgstr "著者：{0}"
 
-#: ../../client/src/world/routes/screen-world.tsx:29
 #: ../../client/src/app/routes/menu/index.tsx:149
 msgid "Calendar"
 msgstr "カレンダー"
@@ -130,7 +129,6 @@ msgstr "プロンプトを削除"
 msgid "Delete the local database."
 msgstr "ローカルデータベースを削除します。"
 
-#: ../../client/src/dev/routes/screen-design.tsx:14
 #: ../../client/src/app/routes/menu/index.tsx:170
 msgid "Design"
 msgstr "デザイン"
@@ -211,7 +209,8 @@ msgstr "華氏"
 msgid "Feature in development..."
 msgstr ""
 
-#: ../../client/src/media/stacks/list/bar.tsx:87
+#: ../../client/src/app/routes/menu/index.tsx:46
+#: ../../client/src/app/routes/menu/index.tsx:102
 msgid "Files"
 msgstr "ファイル"
 
@@ -223,7 +222,7 @@ msgstr ""
 msgid "Fullscreen"
 msgstr "全画面"
 
-#: ../../client/src/media/stacks/list/bar.tsx:79
+#: ../../client/src/app/routes/menu/index.tsx:127
 msgid "Games"
 msgstr "ゲーム"
 
@@ -280,7 +279,6 @@ msgstr "キロメートル"
 msgid "Language"
 msgstr "言語"
 
-#: ../../client/src/dev/routes/screen-library.tsx:20
 #: ../../client/src/app/routes/menu/index.tsx:175
 msgid "Library"
 msgstr "ライブラリ"
@@ -301,7 +299,6 @@ msgstr "設定を管理"
 msgid "Manage your storage"
 msgstr "ストレージを管理"
 
-#: ../../client/src/world/routes/screen-world.tsx:17
 #: ../../client/src/app/routes/menu/index.tsx:139
 msgid "Map"
 msgstr "地図"
@@ -338,11 +335,10 @@ msgstr "マイル"
 msgid "Move"
 msgstr ""
 
-#: ../../client/src/media/stacks/list/bar.tsx:73
+#: ../../client/src/app/routes/menu/index.tsx:112
 msgid "Music"
 msgstr "音楽"
 
-#: ../../client/src/world/routes/screen-world.tsx:23
 #: ../../client/src/app/routes/menu/index.tsx:144
 msgid "News"
 msgstr "ニュース"
@@ -375,7 +371,7 @@ msgstr "オーナーキー"
 msgid "Pause"
 msgstr "一時停止"
 
-#: ../../client/src/media/stacks/list/bar.tsx:75
+#: ../../client/src/app/routes/menu/index.tsx:117
 msgid "Pictures"
 msgstr "写真"
 
@@ -467,7 +463,6 @@ msgstr "アプリのテーマを選択してください。"
 msgid "Services"
 msgstr ""
 
-#: ../../client/src/app/routes/screen-settings.tsx:24
 #: ../../client/src/app/routes/menu/index.tsx:56
 #: ../../client/src/app/routes/menu/index.tsx:192
 msgid "Settings"
@@ -486,7 +481,6 @@ msgstr "巻き戻し"
 msgid "Skip forward"
 msgstr "早送り"
 
-#: ../../client/src/app/routes/screen-storage.tsx:23
 #: ../../client/src/app/routes/menu/index.tsx:186
 msgid "Storage"
 msgstr "ストレージ"
@@ -519,7 +513,7 @@ msgstr "アップロード"
 msgid "User Name"
 msgstr "ユーザー名"
 
-#: ../../client/src/media/stacks/list/bar.tsx:77
+#: ../../client/src/app/routes/menu/index.tsx:122
 msgid "Videos"
 msgstr "動画"
 

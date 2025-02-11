@@ -51,7 +51,7 @@ msgstr "Pregunta lo que quieras..."
 msgid "Auto"
 msgstr "Automático"
 
-#: ../../client/src/media/stacks/list/bar.tsx:81
+#: ../../client/src/app/routes/menu/index.tsx:132
 msgid "Books"
 msgstr "Libros"
 
@@ -59,7 +59,6 @@ msgstr "Libros"
 msgid "by {0}"
 msgstr "por {0}"
 
-#: ../../client/src/world/routes/screen-world.tsx:29
 #: ../../client/src/app/routes/menu/index.tsx:149
 msgid "Calendar"
 msgstr "Calendario"
@@ -130,7 +129,6 @@ msgstr "Eliminar Prompts"
 msgid "Delete the local database."
 msgstr "Eliminar la base de datos local."
 
-#: ../../client/src/dev/routes/screen-design.tsx:14
 #: ../../client/src/app/routes/menu/index.tsx:170
 msgid "Design"
 msgstr "Diseño"
@@ -211,7 +209,8 @@ msgstr "Fahrenheit"
 msgid "Feature in development..."
 msgstr ""
 
-#: ../../client/src/media/stacks/list/bar.tsx:87
+#: ../../client/src/app/routes/menu/index.tsx:46
+#: ../../client/src/app/routes/menu/index.tsx:102
 msgid "Files"
 msgstr "Archivos"
 
@@ -223,7 +222,7 @@ msgstr ""
 msgid "Fullscreen"
 msgstr "Pantalla completa"
 
-#: ../../client/src/media/stacks/list/bar.tsx:79
+#: ../../client/src/app/routes/menu/index.tsx:127
 msgid "Games"
 msgstr "Juegos"
 
@@ -280,7 +279,6 @@ msgstr "Kilómetros"
 msgid "Language"
 msgstr "Idioma"
 
-#: ../../client/src/dev/routes/screen-library.tsx:20
 #: ../../client/src/app/routes/menu/index.tsx:175
 msgid "Library"
 msgstr "Biblioteca"
@@ -301,7 +299,6 @@ msgstr "Administra tus ajustes"
 msgid "Manage your storage"
 msgstr "Administra tu almacenamiento"
 
-#: ../../client/src/world/routes/screen-world.tsx:17
 #: ../../client/src/app/routes/menu/index.tsx:139
 msgid "Map"
 msgstr "Mapa"
@@ -338,11 +335,10 @@ msgstr "Millas"
 msgid "Move"
 msgstr ""
 
-#: ../../client/src/media/stacks/list/bar.tsx:73
+#: ../../client/src/app/routes/menu/index.tsx:112
 msgid "Music"
 msgstr "Música"
 
-#: ../../client/src/world/routes/screen-world.tsx:23
 #: ../../client/src/app/routes/menu/index.tsx:144
 msgid "News"
 msgstr "Noticias"
@@ -375,7 +371,7 @@ msgstr "Clave de Propietario"
 msgid "Pause"
 msgstr "Pausar"
 
-#: ../../client/src/media/stacks/list/bar.tsx:75
+#: ../../client/src/app/routes/menu/index.tsx:117
 msgid "Pictures"
 msgstr "Imágenes"
 
@@ -467,7 +463,6 @@ msgstr "Selecciona el tema para la aplicación."
 msgid "Services"
 msgstr ""
 
-#: ../../client/src/app/routes/screen-settings.tsx:24
 #: ../../client/src/app/routes/menu/index.tsx:56
 #: ../../client/src/app/routes/menu/index.tsx:192
 msgid "Settings"
@@ -486,7 +481,6 @@ msgstr "Retroceder"
 msgid "Skip forward"
 msgstr "Avanzar"
 
-#: ../../client/src/app/routes/screen-storage.tsx:23
 #: ../../client/src/app/routes/menu/index.tsx:186
 msgid "Storage"
 msgstr "Almacenamiento"
@@ -519,7 +513,7 @@ msgstr "Subidas"
 msgid "User Name"
 msgstr "Nombre de Usuario"
 
-#: ../../client/src/media/stacks/list/bar.tsx:77
+#: ../../client/src/app/routes/menu/index.tsx:122
 msgid "Videos"
 msgstr "Videos"
 
