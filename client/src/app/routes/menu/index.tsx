@@ -1,5 +1,4 @@
 import {View, ScrollView} from 'react-native';
-import {useEffect} from 'react';
 import {useLingui} from '@lingui/react/macro';
 import {useFocusable, FocusContext} from '@noriginmedia/norigin-spatial-navigation';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
@@ -22,12 +21,11 @@ export function Menu(props: MenuProps) {
   const {t} = useLingui();
   const {styles} = useStyles(stylesheet);
   const {importFile, createFolder} = useImportHfs();
-  const {ref, focusKey, focusSelf} = useFocusable({
+  const {ref, focusKey} = useFocusable({
     isFocusBoundary: true,
     focusBoundaryDirections: ['up', 'down'],
+    forceFocus: true,
   });
-
-  useEffect(() => {focusSelf()}, [focusSelf]);
 
   if (props.hasTabs) {
     return (

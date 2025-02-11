@@ -32,6 +32,7 @@ export function List<T>({path, list, ext, bar, render}: ListProps<T>) {
   const {ref, focusKey} = useFocusable({
     isFocusBoundary: true,
     focusBoundaryDirections: ['up', 'down'],
+    saveLastFocusedChild: !ext?.tmp,
   });
 
   return (
