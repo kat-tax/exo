@@ -13,10 +13,9 @@ export type TorrentData = {[$]: true; entry: TorrentFileEntry; cmd: TorrentCmd};
 export const isTorrentData = (data: Record<string | symbol, unknown>): data is TorrentData => data[$] === true;
 export const getTorrentData = (entry: TorrentFileEntry, cmd: TorrentCmd): TorrentData => ({[$]: true, entry, cmd});
 
-export function useEntryTorrent(props: EntryTorrentProps) {
-  const {entry, cmd, opt} = props;
+export function useEntryTorrent({item, cmd, opt}: EntryTorrentProps) {
   const [dragging, setDragging] = useState(false);
-  const ext = toPathInfo(entry.name, false)?.ext;
+  const ext = toPathInfo(item.name, false)?.ext;
   const ref = useRef<View>(null);
 
   useEffect(() => {
@@ -25,18 +24,18 @@ export function useEntryTorrent(props: EntryTorrentProps) {
     return dnd.combine(...[
       dnd.draggable({
         element,
-        getInitialData: () => getTorrentData(entry, cmd),
+        getInitialData: () => getTorrentData(item, cmd),
         onGenerateDragPreview: dnd.dragPreview(1),
         onDragStart: () => setDragging(true),
         onDrop: () => setDragging(false),
       }),
     ].filter(Boolean) as CleanupFn[]);
-  }, [entry, cmd]);
+  }, [item, cmd]);
 
   return {
     ref,
     ext,
-    cmd: bind(cmd, entry),
+    cmd: bind(cmd, item),
     opt: {...opt, dragging},
   };
 }

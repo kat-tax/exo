@@ -51,7 +51,7 @@ msgstr "Ask anything..."
 msgid "Auto"
 msgstr "Auto"
 
-#: ../../client/src/media/stacks/list/bar.tsx:82
+#: ../../client/src/media/stacks/list/bar.tsx:81
 msgid "Books"
 msgstr "Books"
 
@@ -76,7 +76,6 @@ msgstr "Close"
 msgid "Compress"
 msgstr "Compress"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:58
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:55
 msgid "Copy"
 msgstr "Copy"
@@ -143,11 +142,11 @@ msgstr "Dev Mode"
 msgid "Device Space"
 msgstr "Device Space"
 
-#: ../../client/src/media/dir/stacks/none-hfs.tsx:28
+#: ../../client/src/media/stacks/list/empty.tsx:28
 msgid "Directory empty. Drop items or select folder to import."
 msgstr "Directory empty. Drop items or select folder to import."
 
-#: ../../client/src/media/dir/stacks/none-hfs.tsx:27
+#: ../../client/src/media/stacks/list/empty.tsx:27
 msgid "Directory empty. Select folder to import."
 msgstr "Directory empty. Select folder to import."
 
@@ -163,18 +162,15 @@ msgstr "Distance"
 msgid "Docs"
 msgstr "Docs"
 
-#: ../../client/src/media/stacks/list/bar.tsx:72
+#: ../../client/src/media/stacks/list/bar.tsx:71
 msgid "Documents"
 msgstr "Documents"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:77
-#: ../../client/src/media/file/file-binary.tsx:36
-#: ../../client/src/media/dir/stacks/menu-torrent.tsx:22
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:44
 msgid "Download"
 msgstr "Download"
 
-#: ../../client/src/media/stacks/list/bar.tsx:84
+#: ../../client/src/media/stacks/list/bar.tsx:83
 msgid "Downloads"
 msgstr "Downloads"
 
@@ -198,7 +194,6 @@ msgstr "Enter folder name"
 msgid "Enter name"
 msgstr "Enter name"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:87
 #: ../../client/src/media/dir/stacks/menu-zip.tsx:22
 msgid "Extract"
 msgstr "Extract"
@@ -211,7 +206,7 @@ msgstr "Fahrenheit"
 msgid "Feature in development..."
 msgstr "Feature in development..."
 
-#: ../../client/src/media/stacks/list/bar.tsx:88
+#: ../../client/src/media/stacks/list/bar.tsx:87
 msgid "Files"
 msgstr "Files"
 
@@ -227,7 +222,7 @@ msgstr "Folder is empty. Drop items or select folder to import."
 msgid "Fullscreen"
 msgstr "Fullscreen"
 
-#: ../../client/src/media/stacks/list/bar.tsx:80
+#: ../../client/src/media/stacks/list/bar.tsx:79
 msgid "Games"
 msgstr "Games"
 
@@ -275,7 +270,7 @@ msgstr "Import File(s)"
 msgid "Import Files"
 msgstr "Import Files"
 
-#: ../../client/src/media/dir/stacks/none-hfs.tsx:29
+#: ../../client/src/media/stacks/list/empty.tsx:29
 msgid "Import Folder"
 msgstr "Import Folder"
 
@@ -350,7 +345,7 @@ msgstr "Miles"
 msgid "Move"
 msgstr "Move"
 
-#: ../../client/src/media/stacks/list/bar.tsx:74
+#: ../../client/src/media/stacks/list/bar.tsx:73
 msgid "Music"
 msgstr "Music"
 
@@ -399,7 +394,7 @@ msgstr "Owner Key"
 msgid "Pause"
 msgstr "Pause"
 
-#: ../../client/src/media/stacks/list/bar.tsx:76
+#: ../../client/src/media/stacks/list/bar.tsx:75
 msgid "Pictures"
 msgstr "Pictures"
 
@@ -501,7 +496,6 @@ msgstr "Services"
 msgid "Settings"
 msgstr "Settings"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:256
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:30
 msgid "Share"
 msgstr "Share"
@@ -543,7 +537,7 @@ msgstr "Unsupported File"
 msgid "Upload"
 msgstr "Upload"
 
-#: ../../client/src/media/stacks/list/bar.tsx:86
+#: ../../client/src/media/stacks/list/bar.tsx:85
 msgid "Uploads"
 msgstr "Uploads"
 
@@ -551,7 +545,7 @@ msgstr "Uploads"
 msgid "User Name"
 msgstr "User Name"
 
-#: ../../client/src/media/stacks/list/bar.tsx:78
+#: ../../client/src/media/stacks/list/bar.tsx:77
 msgid "Videos"
 msgstr "Videos"
 

@@ -7,23 +7,23 @@ import type {HfsDirectoryEntry} from 'react-exo/fs';
 import type {HfsCmd, HfsOpt} from 'media/dir/types/hfs';
 
 export interface EntryHfsProps {
-  entry: HfsDirectoryEntry,
+  item: HfsDirectoryEntry,
   cmd: HfsCmd,
   opt: HfsOpt,
-  idx: number,
 }
 
 export function EntryHfs(props: EntryHfsProps) {
-  const {entry} = props;
-  const {name, size, isFile} = entry;
+  const {item} = props;
+  const {name, size, isFile} = item;
   const {ref, ext, cmd, opt} = useEntryHfs(props);
   const dir = !isFile;
+
   return (
     <Touch
       dragRef={ref}
       onPress={cmd.select}
       onDoublePress={dir ? () => cmd.open(true) : undefined}>
-      <MenuHfs {...{entry, cmd, on: open => open && cmd.select()}}>
+      <MenuHfs {...{item, cmd, on: open => open && ref.current?.focus()}}>
         <ListRow {...{name, size, ext, dir, opt}}/>
       </MenuHfs>
     </Touch>

@@ -18,9 +18,9 @@ export type HfsData = {[$]: true, entry: HfsDirectoryEntry};
 export const isHfsData = (data: Record<string | symbol, unknown>): data is HfsData => data[$] === true;
 export const getHfsData = (entry: HfsDirectoryEntry): HfsData => ({[$]: true, entry});
 
-export function useEntryHfs({entry, cmd, opt}: EntryHfsProps) {
+export function useEntryHfs({item, cmd, opt}: EntryHfsProps) {
   const [dropping, setDropping] = useState(false);
-  const ext = toPathInfo(entry.name, entry.isDirectory)?.ext;
+  const ext = toPathInfo(item.name, item.isDirectory)?.ext;
   const ref = useRef<View>(null);
   const put = useDispatch();
 
@@ -30,12 +30,12 @@ export function useEntryHfs({entry, cmd, opt}: EntryHfsProps) {
     return dnd.combine(...[
       dnd.draggable({
         element,
-        getInitialData: () => getHfsData(entry),
+        getInitialData: () => getHfsData(item),
         onGenerateDragPreview: dnd.dragPreview(opt.selected.count),
-        onDragStart: () => put(media.actions.drag(entry.name)),
+        onDragStart: () => put(media.actions.drag(item.name)),
         onDrop: () => put(media.actions.drag(null)),
       }),
-      entry.isDirectory && dnd.dropTargetForElements({
+      item.isDirectory && dnd.dropTargetForElements({
         element,
         canDrop: ({source}) => source.element !== element && (
              isHfsData(source.data)
@@ -48,15 +48,15 @@ export function useEntryHfs({entry, cmd, opt}: EntryHfsProps) {
           setDropping(false);
           const {data} = e.source;
           if (isHfsData(data)) {
-            cmd.move(data.entry, entry);
+            cmd.move(data.entry, item);
           } else if (isZipData(data)) {
-            data.cmd.extract(data.entry, undefined, entry);
+            data.cmd.extract(data.entry, undefined, item);
           } else if (isTorrentData(data)) {
-            data.cmd.download(data.entry, undefined, entry);
+            data.cmd.download(data.entry, undefined, item);
           }
         },
       }),
-      entry.isDirectory && dnd.dropTargetForExternal({
+      item.isDirectory && dnd.dropTargetForExternal({
         element,
         canDrop: dnd.containsFiles,
         getDropEffect: () => 'copy',
@@ -66,17 +66,17 @@ export function useEntryHfs({entry, cmd, opt}: EntryHfsProps) {
           setDropping(false);
           const files = dnd.getFiles(e);
           if (files.length) {
-            cmd.upload(entry, files);
+            cmd.upload(item, files);
           }
         },
       }),
     ].filter(Boolean) as CleanupFn[]);
-  }, [entry, cmd]);
+  }, [item, cmd]);
 
   return {
     ref,
     ext,
-    cmd: bind(cmd, entry),
+    cmd: bind(cmd, item),
     opt: {...opt, dropping},
   };
 }

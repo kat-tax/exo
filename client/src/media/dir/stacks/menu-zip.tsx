@@ -6,16 +6,16 @@ import type {ZipFileEntry} from 'media/dir/types/zip';
 import type {useEntryZip} from 'media/dir/hooks/use-entry-zip';
 
 export interface MenuZipProps extends React.PropsWithChildren {
-  entry: ZipFileEntry,
+  item: ZipFileEntry,
   cmd: ReturnType<typeof useEntryZip>['cmd'],
   on?: (open: boolean) => void,
 }
 
 export function MenuZip(props: MenuZipProps) {
-  const {entry, cmd, on} = props;
+  const {item, cmd, on} = props;
   const {t} = useLingui();
   return (
-    <MenuContext label={entry.name} onOpenChange={on} items={useMemo(() => [
+    <MenuContext label={item.name} onOpenChange={on} items={useMemo(() => [
       {
         name: 'extract',
         icon: 'ph:extract',

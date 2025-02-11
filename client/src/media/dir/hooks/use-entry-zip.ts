@@ -13,10 +13,9 @@ export type ZipData = {[$]: true; entry: ZipFileEntry; cmd: ZipCmd};
 export const isZipData = (data: Record<string | symbol, unknown>): data is ZipData => data[$] === true;
 export const getZipData = (entry: ZipFileEntry, cmd: ZipCmd): ZipData => ({[$]: true, entry, cmd});
 
-export function useEntryZip(props: EntryZipProps) {
-  const {entry, cmd, opt} = props;
+export function useEntryZip({item, cmd, opt}: EntryZipProps) {
   const [dragging, setDragging] = useState(false);
-  const ext = toPathInfo(entry.name, entry.dir)?.ext;
+  const ext = toPathInfo(item.name, item.dir)?.ext;
   const ref = useRef<View>(null);
 
   useEffect(() => {
@@ -25,18 +24,18 @@ export function useEntryZip(props: EntryZipProps) {
     return dnd.combine(...[
       dnd.draggable({
         element,
-        getInitialData: () => getZipData(entry, cmd),
+        getInitialData: () => getZipData(item, cmd),
         onGenerateDragPreview: dnd.dragPreview(1),
         onDragStart: () => setDragging(true),
         onDrop: () => setDragging(false),
       }),
     ].filter(Boolean) as CleanupFn[]);
-  }, [entry, cmd]);
+  }, [item, cmd]);
 
   return {
     ref,
     ext,
-    cmd: bind(cmd, entry),
+    cmd: bind(cmd, item),
     opt: {...opt, dragging},
   };
 }

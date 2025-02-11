@@ -11,22 +11,21 @@ import {InitDirectory} from 'media/dir/utils/hfs/path';
 
 const TOUCH = isTouch();
 const ITEM_SIZE = TOUCH ? 46 : 32;
-const ICON_SIZE = TOUCH ? 18 : 14;
+const ICON_SIZE = TOUCH ? 18 : 16;
 const TEXT_SIZE = TOUCH ? 14 : 12;
 
 export interface ListBarProps {
-  path: string,
-  hidden: boolean,
-  actions: {
+  path?: string,
+  actions?: {
     icon: string,
     onPress: () => void,
   }[],
 }
 
-export function ListBar({path, actions, hidden}: ListBarProps) {
+export function ListBar({path, actions}: ListBarProps) {
   const {styles} = useStyles(stylesheet);
   const tabs = path?.split('/');
-  return !hidden ? (
+  return (
     <View style={styles.root}>
       <ScrollView
         horizontal={true}
@@ -38,7 +37,7 @@ export function ListBar({path, actions, hidden}: ListBarProps) {
             <ListBarItemSeparator/>
           </>
         ) : null}
-        {tabs.map((name, index, array) => (
+        {tabs?.map((name, index, array) => (
           <View key={index} style={styles.breadcrumb}>
             <ListBarItem
               name={name}
@@ -50,12 +49,12 @@ export function ListBar({path, actions, hidden}: ListBarProps) {
         ))}
       </ScrollView>
       <View style={styles.actions}>
-        {actions.map(({icon, onPress}) => (
+        {actions?.map(({icon, onPress}) => (
           <ListBarAction key={icon} {...{icon, onPress}}/>
         ))}
       </View>
     </View>
-  ) : null;
+  );
 }
 
 export function ListBarItem({name, path, last}: {

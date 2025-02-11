@@ -4,7 +4,7 @@ import {Thumb} from 'media/stacks/thumb';
 import {isTouch} from 'app/utils/platform';
 import {bytesize} from 'app/utils/formatting';
 
-export const TOUCH = isTouch();
+const TOUCH = isTouch();
 export const HEIGHT = TOUCH ? 40 : 26;
 
 interface ListRow {

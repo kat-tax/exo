@@ -12,7 +12,6 @@ export default forwardRef((
   _ref: React.Ref<unknown>,
 ) => {
   const {hfs, cmd, ext} = useDirHfs(path);
-  const bar = {hidden: true};
 
   useEffect(() => {
     if (!hfs) return;
@@ -27,7 +26,7 @@ export default forwardRef((
       noBackground
       fullWidth
       noFrame>
-      {hfs && <DirHfs {...{hfs, cmd, ext, bar}}/>}
+      {hfs && <DirHfs {...{hfs, cmd, ext}}/>}
     </Panel>
   );
 });

@@ -51,7 +51,7 @@ msgstr "Спрашивайте что угодно..."
 msgid "Auto"
 msgstr "Авто"
 
-#: ../../client/src/media/stacks/list/bar.tsx:82
+#: ../../client/src/media/stacks/list/bar.tsx:81
 msgid "Books"
 msgstr "Книги"
 
@@ -76,7 +76,6 @@ msgstr "Закрыть"
 msgid "Compress"
 msgstr ""
 
-#: ../../client/src/media/hooks/use-media-controls.ts:58
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:55
 msgid "Copy"
 msgstr ""
@@ -143,11 +142,11 @@ msgstr "Режим dev"
 msgid "Device Space"
 msgstr "Место на устройстве"
 
-#: ../../client/src/media/dir/stacks/none-hfs.tsx:28
+#: ../../client/src/media/stacks/list/empty.tsx:28
 msgid "Directory empty. Drop items or select folder to import."
 msgstr ""
 
-#: ../../client/src/media/dir/stacks/none-hfs.tsx:27
+#: ../../client/src/media/stacks/list/empty.tsx:27
 msgid "Directory empty. Select folder to import."
 msgstr ""
 
@@ -163,18 +162,15 @@ msgstr "Расстояние"
 msgid "Docs"
 msgstr "Документы"
 
-#: ../../client/src/media/stacks/list/bar.tsx:72
+#: ../../client/src/media/stacks/list/bar.tsx:71
 msgid "Documents"
 msgstr "Документы"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:77
-#: ../../client/src/media/file/file-binary.tsx:36
-#: ../../client/src/media/dir/stacks/menu-torrent.tsx:22
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:44
 msgid "Download"
 msgstr "Скачать"
 
-#: ../../client/src/media/stacks/list/bar.tsx:84
+#: ../../client/src/media/stacks/list/bar.tsx:83
 msgid "Downloads"
 msgstr "Загрузки"
 
@@ -198,7 +194,6 @@ msgstr ""
 msgid "Enter name"
 msgstr ""
 
-#: ../../client/src/media/hooks/use-media-controls.ts:87
 #: ../../client/src/media/dir/stacks/menu-zip.tsx:22
 msgid "Extract"
 msgstr "Извлечь"
@@ -211,7 +206,7 @@ msgstr "Фаренгейт"
 msgid "Feature in development..."
 msgstr ""
 
-#: ../../client/src/media/stacks/list/bar.tsx:88
+#: ../../client/src/media/stacks/list/bar.tsx:87
 msgid "Files"
 msgstr "Файлы"
 
@@ -227,7 +222,7 @@ msgstr ""
 msgid "Fullscreen"
 msgstr "Полный экран"
 
-#: ../../client/src/media/stacks/list/bar.tsx:80
+#: ../../client/src/media/stacks/list/bar.tsx:79
 msgid "Games"
 msgstr "Игры"
 
@@ -275,7 +270,7 @@ msgstr ""
 msgid "Import Files"
 msgstr "Импорт файлов"
 
-#: ../../client/src/media/dir/stacks/none-hfs.tsx:29
+#: ../../client/src/media/stacks/list/empty.tsx:29
 msgid "Import Folder"
 msgstr ""
 
@@ -350,7 +345,7 @@ msgstr "Мили"
 msgid "Move"
 msgstr ""
 
-#: ../../client/src/media/stacks/list/bar.tsx:74
+#: ../../client/src/media/stacks/list/bar.tsx:73
 msgid "Music"
 msgstr "Музыка"
 
@@ -399,7 +394,7 @@ msgstr "Ключ владельца"
 msgid "Pause"
 msgstr "Пауза"
 
-#: ../../client/src/media/stacks/list/bar.tsx:76
+#: ../../client/src/media/stacks/list/bar.tsx:75
 msgid "Pictures"
 msgstr "Изображения"
 
@@ -501,7 +496,6 @@ msgstr ""
 msgid "Settings"
 msgstr "Настройки"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:256
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:30
 msgid "Share"
 msgstr "Поделиться"
@@ -543,7 +537,7 @@ msgstr "Неподдерживаемый файл"
 msgid "Upload"
 msgstr ""
 
-#: ../../client/src/media/stacks/list/bar.tsx:86
+#: ../../client/src/media/stacks/list/bar.tsx:85
 msgid "Uploads"
 msgstr "Загрузки"
 
@@ -551,7 +545,7 @@ msgstr "Загрузки"
 msgid "User Name"
 msgstr "Имя пользователя"
 
-#: ../../client/src/media/stacks/list/bar.tsx:78
+#: ../../client/src/media/stacks/list/bar.tsx:77
 msgid "Videos"
 msgstr "Видео"
 

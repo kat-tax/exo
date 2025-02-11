@@ -1,5 +1,6 @@
 import type {HfsDirectoryEntry} from 'react-exo/fs';
 import type {GestureResponderEvent} from 'react-native';
+import type {ListBarProps} from 'media/stacks/list/bar';
 
 export interface Hfs {
   path: string,
@@ -9,12 +10,10 @@ export interface Hfs {
 export interface HfsCtx {
   hfs: Hfs,
   cmd: HfsCmd,
+  bar?: ListBarProps,
   ext: {
     sel: string[],
     dnd: string[],
-  },
-  bar: {
-    hidden: boolean,
   },
 }
 

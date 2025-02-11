@@ -5,18 +5,18 @@ import type {HfsDirectoryEntry} from 'react-exo/fs';
 import type {useEntryHfs} from 'media/dir/hooks/use-entry-hfs';
 
 export interface MenuHfsProps extends React.PropsWithChildren {
-  entry: HfsDirectoryEntry,
+  item: HfsDirectoryEntry,
   cmd: ReturnType<typeof useEntryHfs>['cmd'],
   on?: (open: boolean) => void,
 }
 
 export function MenuHfs(props: MenuHfsProps) {
-  const {entry, cmd, on} = props;
-  const dir = entry.isDirectory;
+  const {item, cmd, on} = props;
+  const dir = item.isDirectory;
   const {t} = useLingui();
 
   return (
-    <MenuContext label={entry.name} onOpenChange={on} items={[
+    <MenuContext label={item.name} onOpenChange={on} items={[
       dir && {
         name: 'open',
         icon: 'ph:folder-open',

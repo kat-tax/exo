@@ -6,24 +6,24 @@ import {useEntryTorrent} from 'media/dir/hooks/use-entry-torrent';
 import type {TorrentFileEntry, TorrentCmd} from 'media/dir/types/torrent';
 
 export interface EntryTorrentProps {
-  entry: TorrentFileEntry,
+  item: TorrentFileEntry,
   cmd: TorrentCmd,
   opt: {dragging?: boolean},
-  idx: number,
 }
 
 export function EntryTorrent(props: EntryTorrentProps) {
-  const {entry} = props;
-  const {name, length} = entry;
+  const {item} = props;
+  const {name, length} = item;
   const {ref, ext, cmd, opt} = useEntryTorrent(props);
   const size = length;
   const dir = false;
+
   return (
     <Touch
       dragRef={ref}
       onPress={cmd.download}
       onDoublePress={dir ? cmd.download : undefined}>
-      <MenuTorrent {...{entry, cmd}}>
+      <MenuTorrent {...{item, cmd, on: open => open && ref.current?.focus()}}>
         <ListRow {...{name, size, ext, dir, opt}}/>
       </MenuTorrent>
     </Touch>

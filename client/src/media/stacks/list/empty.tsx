@@ -7,7 +7,7 @@ import {isTouch} from 'react-exo/utils';
 
 const TOUCH = isTouch();
 
-export function NoneHfs({offset}: {offset: number}) {
+export function ListEmpty({offset}: {offset: number}) {
   const [visible, setVisible] = useState(false);
   const {importFolder} = useImportHfs();
   const {t} = useLingui();

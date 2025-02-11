@@ -6,22 +6,22 @@ import {useEntryZip} from 'media/dir/hooks/use-entry-zip';
 import type {ZipFileEntry, ZipCmd} from 'media/dir/types/zip';
 
 export interface EntryZipProps {
-  entry: ZipFileEntry,
+  item: ZipFileEntry,
   cmd: ZipCmd,
   opt: {dragging?: boolean},
-  idx: number,
 }
 
 export function EntryZip(props: EntryZipProps) {
-  const {entry} = props;
-  const {name, size, dir} = entry;
+  const {item} = props;
+  const {name, size, dir} = item;
   const {ref, ext, cmd, opt} = useEntryZip(props);
+
   return (
     <Touch
       dragRef={ref}
       onPress={cmd.extract}
       onDoublePress={dir ? cmd.extract : undefined}>
-      <MenuZip {...{entry, cmd}}>
+      <MenuZip {...{item, cmd, on: open => open && ref.current?.focus()}}>
         <ListRow {...{name, size, ext, dir, opt}}/>
       </MenuZip>
     </Touch>

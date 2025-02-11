@@ -26,13 +26,11 @@ export default forwardRef(({path, name, actions, embedded}: FileTorrent, _ref) =
       <Panel
         title={embedded ? name : undefined}
         message={embedded ? `${torrent?.info.name}` : undefined}
-        margin="small"
+        margin="none"
         noBackground
-        noFrame
-        fullWidth>
-        <View style={styles.inner}>
-          {torrent && <DirTorrent {...{torrent, cmd}}/>}
-        </View>
+        fullWidth
+        noFrame>
+        {torrent && <DirTorrent {...{torrent, cmd}}/>}
       </Panel>
     </View>
   )
@@ -42,8 +40,5 @@ const stylesheet = createStyleSheet((theme) => ({
   root: {
     flex: 1,
     marginHorizontal: theme.display.space2,
-  },
-  inner: {
-    paddingBottom: theme.display.space5,
   },
 }));
