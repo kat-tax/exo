@@ -32,7 +32,7 @@ export function SelectTabs({hfs}: SelectTabsProps) {
         ? 0
         : selection.length - 1];
     if (path) put(media.actions.focus(path));
-  }, [selection, focused]);
+  }, [selection, focused, put]);
 
   // Scroll to focus
   useEffect(() => {

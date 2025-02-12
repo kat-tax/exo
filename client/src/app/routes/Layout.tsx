@@ -67,7 +67,7 @@ export default function Layout() {
           <Outlet {...{context}}/>
         </View>
         {hasPanel ?
-          Boolean(focused) ?
+          focused ?
             <Media
               {...pathinfo}
               vertical={isVertical}

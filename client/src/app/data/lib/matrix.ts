@@ -28,7 +28,9 @@ export async function init(options: MatrixOptions) {
 
 export function populate(store: MatrixStore) {
   const rooms = client.getRooms();
-  rooms.forEach(room => store.addRoom(room));
+  for (const room of rooms) {
+    store.addRoom(room);
+  }
 }
 
 export function subscribe(store: MatrixStore) {

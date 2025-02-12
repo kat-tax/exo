@@ -25,7 +25,7 @@ export function MatrixProvider({children}: React.PropsWithChildren) {
     if (!profile?.matrixUserId || !profile?.matrixAccessToken) return;
     const bc = new BroadcastChannel('matrix');
     bc.onmessage = (event: MessageEvent<ServiceWorkerMessage>) => {
-      const {type, payload} = event?.data;
+      const {type, payload} = event.data;
       if (type !== 'matrix::update') return;
       setRooms(payload.rooms);
       setUsers(payload.users);

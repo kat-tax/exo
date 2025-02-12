@@ -38,7 +38,7 @@ export function useRoom(id?: string): Message[] {
           && Math.abs(next.ts - event.ts) <= MSG_GROUP_THRESHOLD,
       }
     }));
-  }, [rooms, users]);
+  }, [id, rooms, users]);
 
   return messages;
 }

@@ -1,6 +1,6 @@
-import {MatrixClient} from 'matrix-js-sdk/lib/client';
-import {MatrixEvent} from 'matrix-js-sdk/lib/models/event';
-import {Room} from 'matrix-js-sdk/lib/models/room';
+import type {MatrixClient} from 'matrix-js-sdk/lib/client';
+import type {MatrixEvent} from 'matrix-js-sdk/lib/models/event';
+import type {Room} from 'matrix-js-sdk/lib/models/room';
 
 export interface MatrixUser {
   id: string;
@@ -85,7 +85,7 @@ export class MatrixStore {
     };
     
     // Cache room members
-    room.getJoinedMembers().forEach(member => {
+    for (const member of room.getJoinedMembers()) {
       const user: MatrixUser = {
         id: member.userId,
         name: member.name,
@@ -97,7 +97,7 @@ export class MatrixStore {
       };
       _room.members.set(member.userId, user);
       this.users.set(member.userId, user);
-    });
+    }
 
     this.rooms.set(room.roomId, _room);
     this.sync();
@@ -106,9 +106,9 @@ export class MatrixStore {
   addMessage(roomId: string, event: MatrixEvent) {
     const room = this.rooms.get(roomId);
     if (!room) return;
-    const id = event.getId()!;
+    const id = event.getId() ?? '';
     const ts = event.getTs();
-    const sender = event.getSender()!;
+    const sender = event.getSender() ?? '';
     const content = event.getContent();
     const type = content?.msgtype ?? 'm.text';
     const self = sender === this.userId;
@@ -147,11 +147,11 @@ export class MatrixStore {
     if (!user) return;
     Object.assign(user, update);
     // Update user in all rooms they're a member of
-    this.rooms.forEach(room => {
+    for (const room of this.rooms.values()) {
       if (room.members.has(userId)) {
         room.members.set(userId, user);
       }
-    });
+    }
     this.sync();
   }
 

@@ -35,14 +35,18 @@ export function HfsProvider({type, children}: React.PropsWithChildren<HfsProvide
 
   const register = async (path: string) => {
     const disconnect = await observe(path, () => {
-      $.get(path)?.callbacks.forEach(c => c());
+      const callbacks = $.get(path)?.callbacks;
+      if (!callbacks) return;
+      for (const c of callbacks) c();
     });
     if (!disconnect) {
       let delta = 0;
       const interval = setInterval(async () => {
         if (await poll(path, delta)) {
           delta = Date.now();
-          $.get(path)?.callbacks.forEach(c => c());
+          const callbacks = $.get(path)?.callbacks;
+          if (!callbacks) return;
+          for (const c of callbacks) c();
         }
       }, 200);
       console.warn('>> fs [polling]', path);
@@ -56,12 +60,14 @@ export function HfsProvider({type, children}: React.PropsWithChildren<HfsProvide
     if (!$.has(path)) {
       $.set(path, {callbacks: new Set(), disconnect: () => {}});
       register(path).then(disconnect => {
-        $.get(path)!.disconnect = disconnect;
+        const callbacks = $.get(path);
+        if (!callbacks) return;
+        callbacks.disconnect = disconnect;
       });
     }
-    $.get(path)!.callbacks.add(fn);
+    $.get(path)?.callbacks.add(fn);
     return () => {
-      const {callbacks} = $.get(path)!;
+      const {callbacks} = $.get(path) ?? {};
       if (!callbacks) return;
       callbacks.delete(fn);
       if (callbacks.size === 0) {
@@ -73,7 +79,7 @@ export function HfsProvider({type, children}: React.PropsWithChildren<HfsProvide
 
   useEffect(() => {(async () =>
     setFs(await FS.init(type)))();
-  }, []);
+  }, [type]);
 
   return (
     <HfsContext.Provider value={{fs, watch}}>

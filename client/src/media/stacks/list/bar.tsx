@@ -24,7 +24,7 @@ export interface ListBarProps {
 
 export function ListBar({path, actions}: ListBarProps) {
   const {styles} = useStyles(stylesheet);
-  const tabs = path?.split('/');
+  const hierarchy = path?.split('/');
   return (
     <View style={styles.root}>
       <ScrollView
@@ -37,8 +37,8 @@ export function ListBar({path, actions}: ListBarProps) {
             <ListBarItemSeparator/>
           </>
         ) : null}
-        {tabs?.map((name, index, array) => {
-          const path = tabs.slice(0, index + 1).join('/');
+        {hierarchy?.map((name, index, array) => {
+          const path = hierarchy.slice(0, index + 1).join('/');
           const last = index === array.length - 1;
           return (
             <View key={path} style={styles.breadcrumb}>
