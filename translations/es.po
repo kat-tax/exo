@@ -51,7 +51,7 @@ msgstr "Pregunta lo que quieras..."
 msgid "Auto"
 msgstr "Automático"
 
-#: ../../client/src/app/routes/menu/index.tsx:132
+#: ../../client/src/media/stacks/list/bar.tsx:81
 msgid "Books"
 msgstr "Libros"
 
@@ -59,7 +59,7 @@ msgstr "Libros"
 msgid "by {0}"
 msgstr "por {0}"
 
-#: ../../client/src/app/routes/menu/index.tsx:149
+#: ../../client/src/app/routes/menu/index.tsx:147
 msgid "Calendar"
 msgstr "Calendario"
 
@@ -80,7 +80,7 @@ msgstr ""
 msgid "Copy"
 msgstr ""
 
-#: ../../client/src/app/routes/menu/index.tsx:86
+#: ../../client/src/app/routes/menu/index.tsx:84
 msgid "Create Folder"
 msgstr ""
 
@@ -88,8 +88,8 @@ msgstr ""
 msgid "Dark"
 msgstr "Oscuro"
 
-#: ../../client/src/app/routes/menu/index.tsx:36
-#: ../../client/src/app/routes/menu/index.tsx:71
+#: ../../client/src/app/routes/menu/index.tsx:34
+#: ../../client/src/app/routes/menu/index.tsx:69
 msgid "Dashboard"
 msgstr "Panel"
 
@@ -129,11 +129,11 @@ msgstr "Eliminar Prompts"
 msgid "Delete the local database."
 msgstr "Eliminar la base de datos local."
 
-#: ../../client/src/app/routes/menu/index.tsx:170
+#: ../../client/src/app/routes/menu/index.tsx:168
 msgid "Design"
 msgstr "Diseño"
 
-#: ../../client/src/app/routes/menu/index.tsx:168
+#: ../../client/src/app/routes/menu/index.tsx:166
 msgid "Dev Mode"
 msgstr "Modo Desarrollador"
 
@@ -157,7 +157,7 @@ msgstr "Pantalla"
 msgid "Distance"
 msgstr "Distancia"
 
-#: ../../client/src/app/routes/menu/index.tsx:107
+#: ../../client/src/app/routes/menu/index.tsx:105
 msgid "Docs"
 msgstr "Documentos"
 
@@ -188,7 +188,7 @@ msgstr "Disfruta el día"
 msgid "Enjoy the night"
 msgstr "Disfruta la noche"
 
-#: ../../client/src/app/routes/menu/index.tsx:88
+#: ../../client/src/app/routes/menu/index.tsx:86
 msgid "Enter folder name"
 msgstr ""
 
@@ -209,8 +209,7 @@ msgstr "Fahrenheit"
 msgid "Feature in development..."
 msgstr ""
 
-#: ../../client/src/app/routes/menu/index.tsx:46
-#: ../../client/src/app/routes/menu/index.tsx:102
+#: ../../client/src/media/stacks/list/bar.tsx:87
 msgid "Files"
 msgstr "Archivos"
 
@@ -222,11 +221,11 @@ msgstr ""
 msgid "Fullscreen"
 msgstr "Pantalla completa"
 
-#: ../../client/src/app/routes/menu/index.tsx:127
+#: ../../client/src/media/stacks/list/bar.tsx:79
 msgid "Games"
 msgstr "Juegos"
 
-#: ../../client/src/app/hooks/use-device.ts:55
+#: ../../client/src/app/hooks/use-device.ts:56
 msgid "Geolocation Error"
 msgstr "Error de Geolocalización"
 
@@ -258,7 +257,7 @@ msgstr "ID del Modelo Groq"
 msgid "Human"
 msgstr "Humano"
 
-#: ../../client/src/app/routes/menu/index.tsx:97
+#: ../../client/src/app/routes/menu/index.tsx:95
 msgid "Import Files"
 msgstr "Importar Archivos"
 
@@ -266,8 +265,8 @@ msgstr "Importar Archivos"
 msgid "Import Folder"
 msgstr ""
 
-#: ../../client/src/app/routes/menu/index.tsx:41
-#: ../../client/src/app/routes/menu/index.tsx:76
+#: ../../client/src/app/routes/menu/index.tsx:39
+#: ../../client/src/app/routes/menu/index.tsx:74
 msgid "Inbox"
 msgstr "Notificaciones"
 
@@ -279,7 +278,7 @@ msgstr "Kilómetros"
 msgid "Language"
 msgstr "Idioma"
 
-#: ../../client/src/app/routes/menu/index.tsx:175
+#: ../../client/src/app/routes/menu/index.tsx:173
 msgid "Library"
 msgstr "Biblioteca"
 
@@ -299,7 +298,7 @@ msgstr "Administra tus ajustes"
 msgid "Manage your storage"
 msgstr "Administra tu almacenamiento"
 
-#: ../../client/src/app/routes/menu/index.tsx:139
+#: ../../client/src/app/routes/menu/index.tsx:137
 msgid "Map"
 msgstr "Mapa"
 
@@ -323,7 +322,7 @@ msgstr ""
 msgid "Matrix User ID"
 msgstr ""
 
-#: ../../client/src/app/routes/menu/index.tsx:81
+#: ../../client/src/app/routes/menu/index.tsx:79
 msgid "Media"
 msgstr "Medios"
 
@@ -335,11 +334,11 @@ msgstr "Millas"
 msgid "Move"
 msgstr ""
 
-#: ../../client/src/app/routes/menu/index.tsx:112
+#: ../../client/src/media/stacks/list/bar.tsx:73
 msgid "Music"
 msgstr "Música"
 
-#: ../../client/src/app/routes/menu/index.tsx:144
+#: ../../client/src/app/routes/menu/index.tsx:142
 msgid "News"
 msgstr "Noticias"
 
@@ -371,7 +370,7 @@ msgstr "Clave de Propietario"
 msgid "Pause"
 msgstr "Pausar"
 
-#: ../../client/src/app/routes/menu/index.tsx:117
+#: ../../client/src/media/stacks/list/bar.tsx:75
 msgid "Pictures"
 msgstr "Imágenes"
 
@@ -463,8 +462,8 @@ msgstr "Selecciona el tema para la aplicación."
 msgid "Services"
 msgstr ""
 
-#: ../../client/src/app/routes/menu/index.tsx:56
-#: ../../client/src/app/routes/menu/index.tsx:192
+#: ../../client/src/app/routes/menu/index.tsx:54
+#: ../../client/src/app/routes/menu/index.tsx:190
 msgid "Settings"
 msgstr "Ajustes"
 
@@ -481,7 +480,7 @@ msgstr "Retroceder"
 msgid "Skip forward"
 msgstr "Avanzar"
 
-#: ../../client/src/app/routes/menu/index.tsx:186
+#: ../../client/src/app/routes/menu/index.tsx:184
 msgid "Storage"
 msgstr "Almacenamiento"
 
@@ -513,7 +512,7 @@ msgstr "Subidas"
 msgid "User Name"
 msgstr "Nombre de Usuario"
 
-#: ../../client/src/app/routes/menu/index.tsx:122
+#: ../../client/src/media/stacks/list/bar.tsx:77
 msgid "Videos"
 msgstr "Videos"
 
@@ -541,8 +540,8 @@ msgstr "Bienvenido, {0}"
 msgid "Welcome, Human"
 msgstr "Bienvenido, Humano"
 
-#: ../../client/src/app/routes/menu/index.tsx:51
-#: ../../client/src/app/routes/menu/index.tsx:137
+#: ../../client/src/app/routes/menu/index.tsx:49
+#: ../../client/src/app/routes/menu/index.tsx:135
 msgid "World"
 msgstr "Mundo"
 

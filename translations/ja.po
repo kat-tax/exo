@@ -51,7 +51,7 @@ msgstr "何でも聞いてください..."
 msgid "Auto"
 msgstr "自動"
 
-#: ../../client/src/app/routes/menu/index.tsx:132
+#: ../../client/src/media/stacks/list/bar.tsx:81
 msgid "Books"
 msgstr "本"
 
@@ -59,7 +59,7 @@ msgstr "本"
 msgid "by {0}"
 msgstr "著者：{0}"
 
-#: ../../client/src/app/routes/menu/index.tsx:149
+#: ../../client/src/app/routes/menu/index.tsx:147
 msgid "Calendar"
 msgstr "カレンダー"
 
@@ -80,7 +80,7 @@ msgstr ""
 msgid "Copy"
 msgstr ""
 
-#: ../../client/src/app/routes/menu/index.tsx:86
+#: ../../client/src/app/routes/menu/index.tsx:84
 msgid "Create Folder"
 msgstr ""
 
@@ -88,8 +88,8 @@ msgstr ""
 msgid "Dark"
 msgstr "ダーク"
 
-#: ../../client/src/app/routes/menu/index.tsx:36
-#: ../../client/src/app/routes/menu/index.tsx:71
+#: ../../client/src/app/routes/menu/index.tsx:34
+#: ../../client/src/app/routes/menu/index.tsx:69
 msgid "Dashboard"
 msgstr "ダッシュボード"
 
@@ -129,11 +129,11 @@ msgstr "プロンプトを削除"
 msgid "Delete the local database."
 msgstr "ローカルデータベースを削除します。"
 
-#: ../../client/src/app/routes/menu/index.tsx:170
+#: ../../client/src/app/routes/menu/index.tsx:168
 msgid "Design"
 msgstr "デザイン"
 
-#: ../../client/src/app/routes/menu/index.tsx:168
+#: ../../client/src/app/routes/menu/index.tsx:166
 msgid "Dev Mode"
 msgstr "開発モード"
 
@@ -157,7 +157,7 @@ msgstr "表示"
 msgid "Distance"
 msgstr "距離"
 
-#: ../../client/src/app/routes/menu/index.tsx:107
+#: ../../client/src/app/routes/menu/index.tsx:105
 msgid "Docs"
 msgstr "ドキュメント"
 
@@ -188,7 +188,7 @@ msgstr "良い一日を"
 msgid "Enjoy the night"
 msgstr "良い夜を"
 
-#: ../../client/src/app/routes/menu/index.tsx:88
+#: ../../client/src/app/routes/menu/index.tsx:86
 msgid "Enter folder name"
 msgstr ""
 
@@ -209,8 +209,7 @@ msgstr "華氏"
 msgid "Feature in development..."
 msgstr ""
 
-#: ../../client/src/app/routes/menu/index.tsx:46
-#: ../../client/src/app/routes/menu/index.tsx:102
+#: ../../client/src/media/stacks/list/bar.tsx:87
 msgid "Files"
 msgstr "ファイル"
 
@@ -222,11 +221,11 @@ msgstr ""
 msgid "Fullscreen"
 msgstr "全画面"
 
-#: ../../client/src/app/routes/menu/index.tsx:127
+#: ../../client/src/media/stacks/list/bar.tsx:79
 msgid "Games"
 msgstr "ゲーム"
 
-#: ../../client/src/app/hooks/use-device.ts:55
+#: ../../client/src/app/hooks/use-device.ts:56
 msgid "Geolocation Error"
 msgstr "位置情報エラー"
 
@@ -258,7 +257,7 @@ msgstr "GroqモデルID"
 msgid "Human"
 msgstr "ユーザー"
 
-#: ../../client/src/app/routes/menu/index.tsx:97
+#: ../../client/src/app/routes/menu/index.tsx:95
 msgid "Import Files"
 msgstr "ファイルをインポート"
 
@@ -266,8 +265,8 @@ msgstr "ファイルをインポート"
 msgid "Import Folder"
 msgstr ""
 
-#: ../../client/src/app/routes/menu/index.tsx:41
-#: ../../client/src/app/routes/menu/index.tsx:76
+#: ../../client/src/app/routes/menu/index.tsx:39
+#: ../../client/src/app/routes/menu/index.tsx:74
 msgid "Inbox"
 msgstr "受信トレイ"
 
@@ -279,7 +278,7 @@ msgstr "キロメートル"
 msgid "Language"
 msgstr "言語"
 
-#: ../../client/src/app/routes/menu/index.tsx:175
+#: ../../client/src/app/routes/menu/index.tsx:173
 msgid "Library"
 msgstr "ライブラリ"
 
@@ -299,7 +298,7 @@ msgstr "設定を管理"
 msgid "Manage your storage"
 msgstr "ストレージを管理"
 
-#: ../../client/src/app/routes/menu/index.tsx:139
+#: ../../client/src/app/routes/menu/index.tsx:137
 msgid "Map"
 msgstr "地図"
 
@@ -323,7 +322,7 @@ msgstr ""
 msgid "Matrix User ID"
 msgstr ""
 
-#: ../../client/src/app/routes/menu/index.tsx:81
+#: ../../client/src/app/routes/menu/index.tsx:79
 msgid "Media"
 msgstr "メディア"
 
@@ -335,11 +334,11 @@ msgstr "マイル"
 msgid "Move"
 msgstr ""
 
-#: ../../client/src/app/routes/menu/index.tsx:112
+#: ../../client/src/media/stacks/list/bar.tsx:73
 msgid "Music"
 msgstr "音楽"
 
-#: ../../client/src/app/routes/menu/index.tsx:144
+#: ../../client/src/app/routes/menu/index.tsx:142
 msgid "News"
 msgstr "ニュース"
 
@@ -371,7 +370,7 @@ msgstr "オーナーキー"
 msgid "Pause"
 msgstr "一時停止"
 
-#: ../../client/src/app/routes/menu/index.tsx:117
+#: ../../client/src/media/stacks/list/bar.tsx:75
 msgid "Pictures"
 msgstr "写真"
 
@@ -463,8 +462,8 @@ msgstr "アプリのテーマを選択してください。"
 msgid "Services"
 msgstr ""
 
-#: ../../client/src/app/routes/menu/index.tsx:56
-#: ../../client/src/app/routes/menu/index.tsx:192
+#: ../../client/src/app/routes/menu/index.tsx:54
+#: ../../client/src/app/routes/menu/index.tsx:190
 msgid "Settings"
 msgstr "設定"
 
@@ -481,7 +480,7 @@ msgstr "巻き戻し"
 msgid "Skip forward"
 msgstr "早送り"
 
-#: ../../client/src/app/routes/menu/index.tsx:186
+#: ../../client/src/app/routes/menu/index.tsx:184
 msgid "Storage"
 msgstr "ストレージ"
 
@@ -513,7 +512,7 @@ msgstr "アップロード"
 msgid "User Name"
 msgstr "ユーザー名"
 
-#: ../../client/src/app/routes/menu/index.tsx:122
+#: ../../client/src/media/stacks/list/bar.tsx:77
 msgid "Videos"
 msgstr "動画"
 
@@ -541,8 +540,8 @@ msgstr "ようこそ、{0}さん"
 msgid "Welcome, Human"
 msgstr "ようこそ、ユーザーさん"
 
-#: ../../client/src/app/routes/menu/index.tsx:51
-#: ../../client/src/app/routes/menu/index.tsx:137
+#: ../../client/src/app/routes/menu/index.tsx:49
+#: ../../client/src/app/routes/menu/index.tsx:135
 msgid "World"
 msgstr "ワールド"
 
