@@ -15,9 +15,12 @@ interface MenuItemProps extends React.PropsWithChildren {
 
 export function MenuItem(props: MenuItemProps) {
   const nav = useNavigate();
-  const {ref} = useFocusable({onFocus: () => nav(props.path)});
-  const {pathname} = useLocation();
   const {styles, theme} = useStyles(stylesheet);
+  const {pathname} = useLocation();
+  const {ref} = useFocusable({
+    focusKey: `menu@${props.path}`,
+    onFocus: () => nav(props.path),
+  });
 
   const mode = props.mode ?? 'default';
   const isDefault = mode === 'default';

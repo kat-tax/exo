@@ -1,5 +1,6 @@
 import {View, ScrollView} from 'react-native';
 import {useLingui} from '@lingui/react/macro';
+import {useLocation} from 'react-exo/navigation';
 import {useFocusable, FocusContext} from '@noriginmedia/norigin-spatial-navigation';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useImportHfs} from 'media/dir/hooks/use-import-hfs';
@@ -20,10 +21,12 @@ export interface MenuProps {
 export function Menu(props: MenuProps) {
   const {t} = useLingui();
   const {styles} = useStyles(stylesheet);
+  const {pathname} = useLocation();
   const {importFile, createFolder} = useImportHfs();
   const {ref, focusKey} = useFocusable({
     isFocusBoundary: true,
     focusBoundaryDirections: ['up', 'down'],
+    preferredChildFocusKey: `menu@${pathname}`,
     forceFocus: true,
   });
 

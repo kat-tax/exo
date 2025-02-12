@@ -51,7 +51,7 @@ msgstr "무엇이든 물어보세요..."
 msgid "Auto"
 msgstr "자동"
 
-#: ../../client/src/media/stacks/list/bar.tsx:101
+#: ../../client/src/app/routes/menu/index.tsx:133
 msgid "Books"
 msgstr "도서"
 
@@ -59,7 +59,7 @@ msgstr "도서"
 msgid "by {0}"
 msgstr "{0} 저"
 
-#: ../../client/src/app/routes/menu/index.tsx:147
+#: ../../client/src/app/routes/menu/index.tsx:150
 msgid "Calendar"
 msgstr "달력"
 
@@ -80,7 +80,7 @@ msgstr ""
 msgid "Copy"
 msgstr ""
 
-#: ../../client/src/app/routes/menu/index.tsx:84
+#: ../../client/src/app/routes/menu/index.tsx:87
 msgid "Create Folder"
 msgstr ""
 
@@ -88,8 +88,8 @@ msgstr ""
 msgid "Dark"
 msgstr "다크"
 
-#: ../../client/src/app/routes/menu/index.tsx:34
-#: ../../client/src/app/routes/menu/index.tsx:69
+#: ../../client/src/app/routes/menu/index.tsx:37
+#: ../../client/src/app/routes/menu/index.tsx:72
 msgid "Dashboard"
 msgstr "대시보드"
 
@@ -129,11 +129,11 @@ msgstr "프롬프트 삭제"
 msgid "Delete the local database."
 msgstr "로컬 데이터베이스 삭제"
 
-#: ../../client/src/app/routes/menu/index.tsx:168
+#: ../../client/src/app/routes/menu/index.tsx:171
 msgid "Design"
 msgstr "디자인"
 
-#: ../../client/src/app/routes/menu/index.tsx:166
+#: ../../client/src/app/routes/menu/index.tsx:169
 msgid "Dev Mode"
 msgstr "개발자 모드"
 
@@ -157,7 +157,7 @@ msgstr "디스플레이"
 msgid "Distance"
 msgstr "거리"
 
-#: ../../client/src/app/routes/menu/index.tsx:105
+#: ../../client/src/app/routes/menu/index.tsx:108
 msgid "Docs"
 msgstr "문서"
 
@@ -188,7 +188,7 @@ msgstr "좋은 하루 되세요"
 msgid "Enjoy the night"
 msgstr "좋은 밤 되세요"
 
-#: ../../client/src/app/routes/menu/index.tsx:86
+#: ../../client/src/app/routes/menu/index.tsx:89
 msgid "Enter folder name"
 msgstr ""
 
@@ -209,7 +209,8 @@ msgstr "화씨"
 msgid "Feature in development..."
 msgstr ""
 
-#: ../../client/src/media/stacks/list/bar.tsx:107
+#: ../../client/src/app/routes/menu/index.tsx:47
+#: ../../client/src/app/routes/menu/index.tsx:103
 msgid "Files"
 msgstr "파일"
 
@@ -221,7 +222,7 @@ msgstr ""
 msgid "Fullscreen"
 msgstr "전체화면"
 
-#: ../../client/src/media/stacks/list/bar.tsx:99
+#: ../../client/src/app/routes/menu/index.tsx:128
 msgid "Games"
 msgstr "게임"
 
@@ -257,7 +258,7 @@ msgstr "Groq 모델 ID"
 msgid "Human"
 msgstr "사용자"
 
-#: ../../client/src/app/routes/menu/index.tsx:95
+#: ../../client/src/app/routes/menu/index.tsx:98
 msgid "Import Files"
 msgstr "파일 가져오기"
 
@@ -265,8 +266,8 @@ msgstr "파일 가져오기"
 msgid "Import Folder"
 msgstr ""
 
-#: ../../client/src/app/routes/menu/index.tsx:39
-#: ../../client/src/app/routes/menu/index.tsx:74
+#: ../../client/src/app/routes/menu/index.tsx:42
+#: ../../client/src/app/routes/menu/index.tsx:77
 msgid "Inbox"
 msgstr "알림"
 
@@ -278,7 +279,7 @@ msgstr "킬로미터"
 msgid "Language"
 msgstr "언어"
 
-#: ../../client/src/app/routes/menu/index.tsx:173
+#: ../../client/src/app/routes/menu/index.tsx:176
 msgid "Library"
 msgstr "라이브러리"
 
@@ -298,7 +299,7 @@ msgstr "설정 관리"
 msgid "Manage your storage"
 msgstr "저장소 관리"
 
-#: ../../client/src/app/routes/menu/index.tsx:137
+#: ../../client/src/app/routes/menu/index.tsx:140
 msgid "Map"
 msgstr "지도"
 
@@ -322,7 +323,7 @@ msgstr ""
 msgid "Matrix User ID"
 msgstr ""
 
-#: ../../client/src/app/routes/menu/index.tsx:79
+#: ../../client/src/app/routes/menu/index.tsx:82
 msgid "Media"
 msgstr "미디어"
 
@@ -334,11 +335,11 @@ msgstr "마일"
 msgid "Move"
 msgstr ""
 
-#: ../../client/src/media/stacks/list/bar.tsx:93
+#: ../../client/src/app/routes/menu/index.tsx:113
 msgid "Music"
 msgstr "음악"
 
-#: ../../client/src/app/routes/menu/index.tsx:142
+#: ../../client/src/app/routes/menu/index.tsx:145
 msgid "News"
 msgstr "뉴스"
 
@@ -370,7 +371,7 @@ msgstr "소유자 키"
 msgid "Pause"
 msgstr "일시정지"
 
-#: ../../client/src/media/stacks/list/bar.tsx:95
+#: ../../client/src/app/routes/menu/index.tsx:118
 msgid "Pictures"
 msgstr "사진"
 
@@ -462,8 +463,8 @@ msgstr "앱 테마를 선택하세요."
 msgid "Services"
 msgstr ""
 
-#: ../../client/src/app/routes/menu/index.tsx:54
-#: ../../client/src/app/routes/menu/index.tsx:190
+#: ../../client/src/app/routes/menu/index.tsx:57
+#: ../../client/src/app/routes/menu/index.tsx:193
 msgid "Settings"
 msgstr "설정"
 
@@ -480,7 +481,7 @@ msgstr "뒤로 건너뛰기"
 msgid "Skip forward"
 msgstr "앞으로 건너뛰기"
 
-#: ../../client/src/app/routes/menu/index.tsx:184
+#: ../../client/src/app/routes/menu/index.tsx:187
 msgid "Storage"
 msgstr "저장소"
 
@@ -512,7 +513,7 @@ msgstr "업로드"
 msgid "User Name"
 msgstr "사용자 이름"
 
-#: ../../client/src/media/stacks/list/bar.tsx:97
+#: ../../client/src/app/routes/menu/index.tsx:123
 msgid "Videos"
 msgstr "동영상"
 
@@ -540,8 +541,8 @@ msgstr "환영합니다, {0}님"
 msgid "Welcome, Human"
 msgstr "환영합니다"
 
-#: ../../client/src/app/routes/menu/index.tsx:49
-#: ../../client/src/app/routes/menu/index.tsx:135
+#: ../../client/src/app/routes/menu/index.tsx:52
+#: ../../client/src/app/routes/menu/index.tsx:138
 msgid "World"
 msgstr "세계"
 
