@@ -1,6 +1,6 @@
+import {useCallback, useEffect, useRef} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useNavigate} from 'react-exo/navigation';
-import {useCallback} from 'react';
 import {useLingui} from '@lingui/react/macro';
 import {isTouch} from 'react-exo/utils';
 import {Icon} from 'react-exo/icon';
@@ -25,9 +25,17 @@ export interface ListBarProps {
 export function ListBar({path, actions}: ListBarProps) {
   const {styles} = useStyles(stylesheet);
   const hierarchy = path?.split('/');
+  const scrollRef = useRef<ScrollView>(null);
+
+  // biome-ignore lint/correctness/useExhaustiveDependencies: explicit
+  useEffect(() => {
+    scrollRef.current?.scrollToEnd({animated: true});
+  }, [path]);
+
   return (
     <View style={styles.root}>
       <ScrollView
+        ref={scrollRef}
         horizontal={true}
         showsHorizontalScrollIndicator={false}
         contentContainerStyle={styles.breadcrumbs}>

@@ -51,7 +51,7 @@ msgstr "무엇이든 물어보세요..."
 msgid "Auto"
 msgstr "자동"
 
-#: ../../client/src/media/stacks/list/bar.tsx:81
+#: ../../client/src/media/stacks/list/bar.tsx:89
 msgid "Books"
 msgstr "도서"
 
@@ -161,7 +161,7 @@ msgstr "거리"
 msgid "Docs"
 msgstr "문서"
 
-#: ../../client/src/media/stacks/list/bar.tsx:71
+#: ../../client/src/media/stacks/list/bar.tsx:79
 msgid "Documents"
 msgstr "문서"
 
@@ -172,7 +172,7 @@ msgstr "문서"
 msgid "Download"
 msgstr "다운로드"
 
-#: ../../client/src/media/stacks/list/bar.tsx:83
+#: ../../client/src/media/stacks/list/bar.tsx:91
 msgid "Downloads"
 msgstr "다운로드"
 
@@ -209,7 +209,7 @@ msgstr "화씨"
 msgid "Feature in development..."
 msgstr ""
 
-#: ../../client/src/media/stacks/list/bar.tsx:87
+#: ../../client/src/media/stacks/list/bar.tsx:95
 msgid "Files"
 msgstr "파일"
 
@@ -221,7 +221,7 @@ msgstr ""
 msgid "Fullscreen"
 msgstr "전체화면"
 
-#: ../../client/src/media/stacks/list/bar.tsx:79
+#: ../../client/src/media/stacks/list/bar.tsx:87
 msgid "Games"
 msgstr "게임"
 
@@ -334,7 +334,7 @@ msgstr "마일"
 msgid "Move"
 msgstr ""
 
-#: ../../client/src/media/stacks/list/bar.tsx:73
+#: ../../client/src/media/stacks/list/bar.tsx:81
 msgid "Music"
 msgstr "음악"
 
@@ -370,7 +370,7 @@ msgstr "소유자 키"
 msgid "Pause"
 msgstr "일시정지"
 
-#: ../../client/src/media/stacks/list/bar.tsx:75
+#: ../../client/src/media/stacks/list/bar.tsx:83
 msgid "Pictures"
 msgstr "사진"
 
@@ -504,7 +504,7 @@ msgstr ""
 msgid "Unsupported File"
 msgstr "지원되지 않는 파일"
 
-#: ../../client/src/media/stacks/list/bar.tsx:85
+#: ../../client/src/media/stacks/list/bar.tsx:93
 msgid "Uploads"
 msgstr "업로드"
 
@@ -512,7 +512,7 @@ msgstr "업로드"
 msgid "User Name"
 msgstr "사용자 이름"
 
-#: ../../client/src/media/stacks/list/bar.tsx:77
+#: ../../client/src/media/stacks/list/bar.tsx:85
 msgid "Videos"
 msgstr "동영상"
 
