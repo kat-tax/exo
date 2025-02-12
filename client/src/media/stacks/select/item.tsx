@@ -36,6 +36,7 @@ export function SelectItem(props: SelectItemProps) {
   }, [put]);
 
   const {ref} = useFocusable({
+    focusKey: `select@${path}`,
     onFocus: () => {
       put(media.actions.focus(path));
     },

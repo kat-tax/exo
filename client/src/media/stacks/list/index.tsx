@@ -33,8 +33,6 @@ export function List<T>({path, list, ext, bar, render}: ListProps<T>) {
   const listRef = useRef<LegendListRef>(null);
   const {styles} = useStyles(stylesheet);
   const {ref, focusKey} = useFocusable({
-    isFocusBoundary: true,
-    focusBoundaryDirections: ['up', 'down'],
     saveLastFocusedChild: !ext?.tmp, // TODO: type ext
   });
 

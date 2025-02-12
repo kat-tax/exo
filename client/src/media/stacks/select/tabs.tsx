@@ -17,8 +17,8 @@ interface SelectTabsProps {
 }
 
 export function SelectTabs({hfs}: SelectTabsProps) {
+  const scroll = useRef<ScrollView>(null);
   const {styles} = useStyles(stylesheet);
-  const scrollRef = useRef<ScrollView>(null);
   const selection = useSelector(media.selectors.getSelected);
   const focused = useSelector(media.selectors.getFocused);
   const list = useMemo(() => selection.map(selectItem => {
@@ -27,19 +27,18 @@ export function SelectTabs({hfs}: SelectTabsProps) {
   }), [selection]);
 
   const {ref, focusKey} = useFocusable({
-    isFocusBoundary: true,
-    focusBoundaryDirections: ['up', 'down'],
-    forceFocus: true,
+    preferredChildFocusKey: `select@${focused}`,
+    saveLastFocusedChild: false,
   });
   
   const put = useDispatch();
-  const refs = useComposedRefs(ref, scrollRef);
+  const refs = useComposedRefs(ref, scroll);
 
   // Scroll to focus
   useEffect(() => {
     const index = list.findIndex(item => item.path === focused);
     if (index > -1) {
-      scrollRef.current?.scrollTo({x: index * 100, animated: true});
+      scroll.current?.scrollTo({x: index * 100, animated: true});
     }
   }, [focused, list]);
 

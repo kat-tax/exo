@@ -51,7 +51,7 @@ msgstr "Pregunta lo que quieras..."
 msgid "Auto"
 msgstr "Automático"
 
-#: ../../client/src/app/routes/menu/index.tsx:130
+#: ../../client/src/media/stacks/list/bar.tsx:101
 msgid "Books"
 msgstr "Libros"
 
@@ -209,8 +209,7 @@ msgstr "Fahrenheit"
 msgid "Feature in development..."
 msgstr ""
 
-#: ../../client/src/app/routes/menu/index.tsx:44
-#: ../../client/src/app/routes/menu/index.tsx:100
+#: ../../client/src/media/stacks/list/bar.tsx:107
 msgid "Files"
 msgstr "Archivos"
 
@@ -222,7 +221,7 @@ msgstr ""
 msgid "Fullscreen"
 msgstr "Pantalla completa"
 
-#: ../../client/src/app/routes/menu/index.tsx:125
+#: ../../client/src/media/stacks/list/bar.tsx:99
 msgid "Games"
 msgstr "Juegos"
 
@@ -335,7 +334,7 @@ msgstr "Millas"
 msgid "Move"
 msgstr ""
 
-#: ../../client/src/app/routes/menu/index.tsx:110
+#: ../../client/src/media/stacks/list/bar.tsx:93
 msgid "Music"
 msgstr "Música"
 
@@ -371,7 +370,7 @@ msgstr "Clave de Propietario"
 msgid "Pause"
 msgstr "Pausar"
 
-#: ../../client/src/app/routes/menu/index.tsx:115
+#: ../../client/src/media/stacks/list/bar.tsx:95
 msgid "Pictures"
 msgstr "Imágenes"
 
@@ -513,7 +512,7 @@ msgstr "Subidas"
 msgid "User Name"
 msgstr "Nombre de Usuario"
 
-#: ../../client/src/app/routes/menu/index.tsx:120
+#: ../../client/src/media/stacks/list/bar.tsx:97
 msgid "Videos"
 msgstr "Videos"
 

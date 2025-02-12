@@ -31,7 +31,7 @@ export function ListBar({path, actions}: ListBarProps) {
   const scroll = useRef<ScrollView>(null);
   const {styles} = useStyles(stylesheet);
   const {ref, focusKey} = useFocusable({
-    preferredChildFocusKey: `@${path}`,
+    preferredChildFocusKey: `bar@${path}`,
     saveLastFocusedChild: false,
   });
   
@@ -109,7 +109,7 @@ export function ListBarItem({name, path, last, scroll}: {
   }, [t]);
 
   const {ref, focused} = useFocusable({
-    focusKey: `@${path}`,
+    focusKey: `bar@${path}`,
     onEnterPress: goto,
     onFocus: () => {
       // TODO: scroll to the item once flashlist is used
@@ -136,7 +136,7 @@ export function ListBarItem({name, path, last, scroll}: {
 export function ListBarAction({id, icon, onPress}: ListBarAction) {
   const {ref, focused} = useFocusable({
     onEnterPress: onPress,
-    focusKey: `@${id}`,
+    focusKey: `bar@${id}`,
   });
 
   return (

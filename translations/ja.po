@@ -51,7 +51,7 @@ msgstr "何でも聞いてください..."
 msgid "Auto"
 msgstr "自動"
 
-#: ../../client/src/app/routes/menu/index.tsx:130
+#: ../../client/src/media/stacks/list/bar.tsx:101
 msgid "Books"
 msgstr "本"
 
@@ -209,8 +209,7 @@ msgstr "華氏"
 msgid "Feature in development..."
 msgstr ""
 
-#: ../../client/src/app/routes/menu/index.tsx:44
-#: ../../client/src/app/routes/menu/index.tsx:100
+#: ../../client/src/media/stacks/list/bar.tsx:107
 msgid "Files"
 msgstr "ファイル"
 
@@ -222,7 +221,7 @@ msgstr ""
 msgid "Fullscreen"
 msgstr "全画面"
 
-#: ../../client/src/app/routes/menu/index.tsx:125
+#: ../../client/src/media/stacks/list/bar.tsx:99
 msgid "Games"
 msgstr "ゲーム"
 
@@ -335,7 +334,7 @@ msgstr "マイル"
 msgid "Move"
 msgstr ""
 
-#: ../../client/src/app/routes/menu/index.tsx:110
+#: ../../client/src/media/stacks/list/bar.tsx:93
 msgid "Music"
 msgstr "音楽"
 
@@ -371,7 +370,7 @@ msgstr "オーナーキー"
 msgid "Pause"
 msgstr "一時停止"
 
-#: ../../client/src/app/routes/menu/index.tsx:115
+#: ../../client/src/media/stacks/list/bar.tsx:95
 msgid "Pictures"
 msgstr "写真"
 
@@ -513,7 +512,7 @@ msgstr "アップロード"
 msgid "User Name"
 msgstr "ユーザー名"
 
-#: ../../client/src/app/routes/menu/index.tsx:120
+#: ../../client/src/media/stacks/list/bar.tsx:97
 msgid "Videos"
 msgstr "動画"
 
