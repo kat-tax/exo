@@ -9,8 +9,8 @@ import media from 'media/store';
 import {isZipData} from './use-entry-zip';
 import {isTorrentData} from './use-entry-torrent';
 
-import type {View} from 'react-native';
 import type {HfsDirectoryEntry} from 'react-exo/fs';
+import type {View, GestureResponderEvent} from 'react-native';
 import type {EntryHfsProps} from 'media/dir/stacks/entry-hfs';
 import type {CleanupFn} from 'app/utils/dragdrop';
 
@@ -25,12 +25,17 @@ export function useEntryHfs({item, cmd, opt, tmp}: EntryHfsProps) {
   
   // Spatial navigation
   const {focused, ref: refFoc} = useFocusable({
-    onFocus: () => tmp
+    onFocus: (_lay, _props, e) => tmp
       ? undefined
-      : cmd.select(item),
+      : cmd.select(item, e.event as unknown as GestureResponderEvent),
     onEnterPress: () => tmp
       ? cmd.select(item)
       : cmd.open(item),
+    onArrowPress: (dir) => {
+      if (dir !== 'left' || tmp) return true;
+      if (cmd.goUp()) return false;
+      return true;
+    },
   });
   
   // Drag and drop

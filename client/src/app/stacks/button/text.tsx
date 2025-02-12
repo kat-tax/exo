@@ -2,11 +2,13 @@ import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useVariants} from 'react-exo/utils';
 import {Text, Pressable} from 'react-native';
 
-import type {PressableProps} from 'react-native';
+import type {LegacyRef} from 'react';
+import type {PressableProps, View} from 'react-native';
 
 export interface ButtonTextProps extends PressableProps {
   label: string,
   size?: number,
+  vref?: LegacyRef<View>,
   state: typeof ButtonTextVariants.state[number],
 }
 
@@ -20,13 +22,13 @@ export const ButtonTextVariants = {
   ],
 } as const;
 
-export function ButtonText({state, ...props}: ButtonTextProps) {
+export function ButtonText({state, vref, ...props}: ButtonTextProps) {
   const {styles} = useStyles(stylesheet);
   const {vstyles} = useVariants(ButtonTextVariants, {state}, styles);
   return (
-    <Pressable style={vstyles.root} {...props}>
+    <Pressable ref={vref} style={vstyles.root} {...props}>
       {e => <>
-        <Text style={[vstyles.label(e), {fontSize: props.size ?? 11}]}>
+        <Text style={[vstyles.label(e), {fontSize: props.size ?? 11}]} selectable={false}>
           {props.label}
         </Text>
       </>}

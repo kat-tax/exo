@@ -1,11 +1,13 @@
 import {LegendList} from '@legendapp/list';
 import {View} from 'react-native';
 import {useRef} from 'react';
+import {useSelector} from 'react-redux';
 import {useFocusable, FocusContext} from '@noriginmedia/norigin-spatial-navigation';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {ListEmpty} from 'media/stacks/list/empty';
 import {ListBar} from 'media/stacks/list/bar';
 import {HEIGHT} from 'media/stacks/list/row';
+import media from 'media/store';
 
 import type {LegendListRef} from '@legendapp/list';
 
@@ -15,6 +17,7 @@ export interface ListProps<T> {
   ext?: unknown;
   bar?: {
     actions?: Array<{
+      id: string,
       icon: string,
       onPress: () => void,
     }>;
@@ -26,26 +29,28 @@ export interface ListProps<T> {
 }
 
 export function List<T>({path, list, ext, bar, render}: ListProps<T>) {
+  const layout = useSelector(media.selectors.getLayout);
   const listRef = useRef<LegendListRef>(null);
-  const hasList = !!list?.length;
   const {styles} = useStyles(stylesheet);
   const {ref, focusKey} = useFocusable({
     isFocusBoundary: true,
     focusBoundaryDirections: ['up', 'down'],
-    saveLastFocusedChild: !ext?.tmp,
+    saveLastFocusedChild: !ext?.tmp, // TODO: type ext
   });
 
   return (
     <FocusContext.Provider value={focusKey}>
       <View ref={ref} style={styles.root}>
         {bar && <ListBar {...{path}} {...bar}/>}
-        {!hasList
+        {!list?.length
           ? <ListEmpty offset={bar ? -35 : 0}/>
           : (
             <LegendList
+              key={layout}
               ref={listRef}
               data={list}
               extraData={ext}
+              numColumns={layout === 'grid' ? 3 : 1}
               drawDistance={HEIGHT * 20}
               estimatedItemSize={HEIGHT}
               contentContainerStyle={styles.list}

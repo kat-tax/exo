@@ -23,6 +23,13 @@ export function useDirHfs(path: string, tmp?: boolean): Omit<HfsCtx, 'bar'> {
   const put = useDispatch();
   const nav = useNavigate();
 
+  const goUp = useCallback(() => {
+    if (!path) return false;
+    const parent = path.split('/').slice(0, -1).join('/');
+    nav(parent);
+    return true;
+  }, [path, nav]);
+
   const refresh = useCallback(async () => {
     const showHidden = true;
     const entries: HfsDirectoryEntry[] = [];
@@ -178,6 +185,7 @@ export function useDirHfs(path: string, tmp?: boolean): Omit<HfsCtx, 'bar'> {
       path,
     },
     cmd: {
+      goUp,
       open,
       move,
       copy,

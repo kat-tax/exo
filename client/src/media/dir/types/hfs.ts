@@ -28,6 +28,7 @@ export interface HfsOpt {
 }
 
 export interface HfsCmd {
+  goUp: () => boolean,
   share: (entry: HfsDirectoryEntry) => Promise<void>,
   open: (entry: HfsDirectoryEntry, clearSel?: boolean) => Promise<void>,
   copy: (entry: HfsDirectoryEntry) => Promise<void>,

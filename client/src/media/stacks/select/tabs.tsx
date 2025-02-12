@@ -1,7 +1,9 @@
 import {Motion} from 'react-exo/motion';
-import {useRef, useMemo, useCallback, useEffect} from 'react';
+import {useFocusable, FocusContext} from '@noriginmedia/norigin-spatial-navigation';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
+import {useRef, useMemo, useEffect} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
+import {useComposedRefs} from 'app/utils/components';
 import {toPathInfo} from 'app/utils/formatting';
 import media from 'media/store';
 
@@ -24,15 +26,14 @@ export function SelectTabs({hfs}: SelectTabsProps) {
     return {path, name, ext};
   }), [selection]);
 
+  const {ref, focusKey} = useFocusable({
+    isFocusBoundary: true,
+    focusBoundaryDirections: ['up', 'down'],
+    forceFocus: true,
+  });
+  
   const put = useDispatch();
-  const goto = useCallback((delta: number | 'start' | 'end') => {
-    const path = selection[typeof delta === 'number'
-      ? (selection.indexOf(focused) + delta + selection.length) % selection.length
-      : delta === 'start'
-        ? 0
-        : selection.length - 1];
-    if (path) put(media.actions.focus(path));
-  }, [selection, focused, put]);
+  const refs = useComposedRefs(ref, scrollRef);
 
   // Scroll to focus
   useEffect(() => {
@@ -47,12 +48,6 @@ export function SelectTabs({hfs}: SelectTabsProps) {
     const down = (e: KeyboardEvent) => {
       const {key} = e;
       switch (key) {
-        case 'ArrowLeft':
-          goto(e.shiftKey ? 'start' : -1);
-          break;
-        case 'ArrowRight':
-          goto(e.shiftKey ? 'end' : 1);
-          break;
         case 'Escape':
           put(media.actions.selectBulk([]));
           break;
@@ -62,30 +57,32 @@ export function SelectTabs({hfs}: SelectTabsProps) {
     return () => {
       window.removeEventListener('keydown', down);
     };
-  }, [goto, put]);
+  }, [put]);
 
   return list.length > 0 ? (
-    <Motion.ScrollView
-      horizontal
-      ref={scrollRef}
-      style={styles.root}
-      contentContainerStyle={styles.inner}
-      showsHorizontalScrollIndicator={false}
-      initial={{opacity: 0}}
-      animate={{opacity: 1}}
-      exit={{opacity: 0}}>
-      {list.map(({path, name, ext}, index) => (
-        <SelectItem
-          key={path}
-          hfs={hfs}
-          focused={focused === path}
-          index={index}
-          path={path}
-          name={name}
-          ext={ext}
-        />
-      ))}
-    </Motion.ScrollView>
+    <FocusContext.Provider value={focusKey}>
+      <Motion.ScrollView
+        horizontal
+        ref={refs}
+        style={styles.root}
+        contentContainerStyle={styles.inner}
+        showsHorizontalScrollIndicator={false}
+        initial={{opacity: 0}}
+        animate={{opacity: 1}}
+        exit={{opacity: 0}}>
+        {list.map(({path, name, ext}, index) => (
+          <SelectItem
+            key={path}
+            hfs={hfs}
+            focused={focused === path}
+            index={index}
+            path={path}
+            name={name}
+            ext={ext}
+          />
+        ))}
+      </Motion.ScrollView>
+    </FocusContext.Provider>
   ) : null;
 }
 

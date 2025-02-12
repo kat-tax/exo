@@ -3,11 +3,13 @@ import {useVariants} from 'react-exo/utils';
 import {Pressable} from 'react-native';
 import {Icon} from 'react-exo/icon';
 
-import type {PressableProps} from 'react-native';
+import type {LegacyRef} from 'react';
+import type {PressableProps, View} from 'react-native';
 
 export interface ButtonIconProps extends PressableProps {
   icon: string,
   size?: number,
+  vref?: LegacyRef<View>,
   state: typeof ButtonIconVariants.state[number],
 }
 
@@ -21,11 +23,11 @@ export const ButtonIconVariants = {
   ],
 } as const;
 
-export function ButtonIcon({state, ...props}: ButtonIconProps) {
+export function ButtonIcon({state, vref, ...props}: ButtonIconProps) {
   const {styles, theme} = useStyles(stylesheet);
   const {vstyles} = useVariants(ButtonIconVariants, {state}, styles);
   return (
-    <Pressable style={vstyles.root} {...props}>
+    <Pressable ref={vref} style={vstyles.root} {...props}>
       {e => <>
         <Icon
           name={props.icon}

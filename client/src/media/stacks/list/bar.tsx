@@ -1,5 +1,6 @@
 import {useCallback, useEffect, useRef} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
+import {useFocusable, FocusContext} from '@noriginmedia/norigin-spatial-navigation';
 import {useNavigate} from 'react-exo/navigation';
 import {useLingui} from '@lingui/react/macro';
 import {isTouch} from 'react-exo/utils';
@@ -16,62 +17,73 @@ const TEXT_SIZE = TOUCH ? 14 : 11;
 
 export interface ListBarProps {
   path?: string,
-  actions?: {
-    icon: string,
-    onPress: () => void,
-  }[],
+  actions?: Array<ListBarAction>,
+}
+
+export interface ListBarAction {
+  id: string,
+  icon: string,
+  onPress: () => void,
 }
 
 export function ListBar({path, actions}: ListBarProps) {
+  const items = path?.split('/');
+  const scroll = useRef<ScrollView>(null);
   const {styles} = useStyles(stylesheet);
-  const hierarchy = path?.split('/');
-  const scrollRef = useRef<ScrollView>(null);
-
+  const {ref, focusKey} = useFocusable({
+    preferredChildFocusKey: `@${path}`,
+    saveLastFocusedChild: false,
+  });
+  
   // biome-ignore lint/correctness/useExhaustiveDependencies: explicit
   useEffect(() => {
-    scrollRef.current?.scrollToEnd({animated: true});
+    scroll.current?.scrollToEnd({animated: true});
   }, [path]);
-
+  
   return (
-    <View style={styles.root}>
-      <ScrollView
-        ref={scrollRef}
-        horizontal={true}
-        showsHorizontalScrollIndicator={false}
-        contentContainerStyle={styles.breadcrumbs}>
-        {path ? (
-          <>
-            <ListBarItem name="Files" path="/browse"/>
-            <ListBarItemSeparator/>
-          </>
-        ) : null}
-        {hierarchy?.map((name, index, array) => {
-          const path = hierarchy.slice(0, index + 1).join('/');
-          const last = index === array.length - 1;
-          return (
-            <View key={path} style={styles.breadcrumb}>
-              <ListBarItem {...{name, path, last}}/>
-              {index < array.length - 1 && <ListBarItemSeparator/>}
-            </View>
-          );
-        })}
-      </ScrollView>
-      <View style={styles.actions}>
-        {actions?.map(({icon, onPress}) => (
-          <ListBarAction key={icon} {...{icon, onPress}}/>
-        ))}
+    <FocusContext.Provider value={focusKey}>
+      <View ref={ref} style={styles.root}>
+        <ScrollView
+          ref={scroll}
+          horizontal={true}
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={styles.breadcrumbs}>
+          {path ? (
+            <>
+              <ListBarItem name="Files" path="/browse"/>
+              <ListBarItemSeparator/>
+            </>
+          ) : null}
+          {items?.map((name, index, array) => {
+            const path = array.slice(0, index + 1).join('/');
+            const last = index === array.length - 1;
+            return (
+              <View key={path} style={styles.breadcrumb}>
+                <ListBarItem {...{name, path, last, scroll}}/>
+                {index < array.length - 1 && <ListBarItemSeparator/>}
+              </View>
+            );
+          })}
+        </ScrollView>
+        <View style={styles.actions}>
+          {actions?.map(({id, icon, onPress}) => (
+            <ListBarAction key={id} {...{id, icon, onPress}}/>
+          ))}
+        </View>
       </View>
-    </View>
+    </FocusContext.Provider>
   );
 }
 
-export function ListBarItem({name, path, last}: {
+export function ListBarItem({name, path, last, scroll}: {
   name?: string,
   path?: string,
   last?: boolean,
+  scroll?: React.RefObject<ScrollView>,
 }) {
   const {t} = useLingui();
   const nav = useNavigate();
+  const goto = useCallback(() => nav(path ?? name ?? '/browse'), [nav, path, name]);
   const title = useCallback((n?: string) => {
     const dir = n as InitDirectory;
     switch (dir) {
@@ -96,24 +108,43 @@ export function ListBarItem({name, path, last}: {
     }
   }, [t]);
 
+  const {ref, focused} = useFocusable({
+    focusKey: `@${path}`,
+    onEnterPress: goto,
+    onFocus: () => {
+      // TODO: scroll to the item once flashlist is used
+      // scroll?.current?.scrollTo({x: layout.x, animated: true});
+    },
+  });
+
   return (
     <ButtonText
+      vref={ref}
       label={title(name)}
       size={TEXT_SIZE}
-      onPress={() => {
-        nav(path ?? name ?? '/browse');
-      }}
-      state={last ? 'Default' : 'Disabled'}
+      onPress={goto}
+      state={focused
+        ? 'Focused'
+        : last
+          ? 'Default'
+          : 'Disabled'
+      }
     />
   );
 }
 
-export function ListBarAction({icon, onPress}: {icon: string, onPress: () => void}) {
+export function ListBarAction({id, icon, onPress}: ListBarAction) {
+  const {ref, focused} = useFocusable({
+    onEnterPress: onPress,
+    focusKey: `@${id}`,
+  });
+
   return (
     <ButtonIcon
+      vref={ref}
       icon={icon}
       size={ICON_SIZE}
-      state="Default"
+      state={focused ? 'Focused' : 'Default'}
       onPress={onPress}
     />
   );
@@ -121,6 +152,7 @@ export function ListBarAction({icon, onPress}: {icon: string, onPress: () => voi
 
 export function ListBarItemSeparator() {
   const {styles, theme} = useStyles(stylesheet);
+
   return (
     <View tabIndex={-1} style={styles.separator}>
       <Icon

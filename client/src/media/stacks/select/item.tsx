@@ -3,6 +3,7 @@ import {Thumb} from 'media/stacks/thumb';
 import {Text, Pressable} from 'react-native';
 import {useCallback, useEffect, useState} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
+import {useFocusable} from '@noriginmedia/norigin-spatial-navigation';
 import {useDispatch} from 'react-redux';
 import {isTouch} from 'app/utils/platform';
 import media from 'media/store';
@@ -29,10 +30,18 @@ export function SelectItem(props: SelectItemProps) {
   const [dir, setDir] = useState(!ext);
 
   const put = useDispatch();
+
   const close = useCallback((index: number) => {
     put(media.actions.selectRemove(index));
   }, [put]);
 
+  const {ref} = useFocusable({
+    onFocus: () => {
+      put(media.actions.focus(path));
+    },
+  });
+
+  // Check if the item is a directory
   useEffect(() => {
     (async () => {
       setDir(!path.includes('://')
@@ -43,6 +52,7 @@ export function SelectItem(props: SelectItemProps) {
 
   return (
     <Pressable
+      ref={ref}
       key={path}
       onPress={() => put(media.actions.focus(path))}
       style={[styles.root, focused && styles.focus]}>

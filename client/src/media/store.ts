@@ -2,6 +2,7 @@ import {createSlice} from 'react-exo/redux';
 import type {PayloadAction} from 'react-exo/redux';
 
 export type Media = {
+  layout: 'list' | 'grid',
   focused: string,
   contents: string[],
   selected: string[],
@@ -14,6 +15,7 @@ export type Media = {
 export default createSlice({
   name: 'media',
   initialState: <Media> {
+    layout: 'list',
     focused: '',
     contents: [],
     selected: [],
@@ -23,6 +25,7 @@ export default createSlice({
     moving: [],
   },
   selectors: {
+    getLayout: (media) => media.layout,
     getFocused: (media) => media.focused,
     getContents: (media) => media.contents,
     getSelected: (media) => media.selected,
@@ -32,6 +35,9 @@ export default createSlice({
     getMoving: (media) => media.moving,
   },
   reducers: {
+    layout(media, action: PayloadAction<'list' | 'grid'>) {
+      media.layout = action.payload;
+    },
     list(media, action: PayloadAction<string[]>) {
       media.contents = action.payload;
     },
