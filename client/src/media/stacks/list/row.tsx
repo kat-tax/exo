@@ -5,13 +5,15 @@ import {isTouch} from 'app/utils/platform';
 import {bytesize} from 'app/utils/formatting';
 
 const TOUCH = isTouch();
-export const HEIGHT = TOUCH ? 40 : 26;
+export const HEIGHT_ROW = TOUCH ? 40 : 26;
+export const HEIGHT_CELL = 130;
 
 interface ListRow {
   name: string,
   size?: number,
   ext?: string,
   dir?: boolean,
+  tmp?: boolean,
   opt?: {
     dragging?: boolean,
     dropping?: boolean,
@@ -35,6 +37,8 @@ export function ListRow(props: ListRow) {
     dropping,
   } = opt ?? {};
 
+  const cell = props.tmp;
+  const thumbSize = cell ? 4 : TOUCH ? 1 : 0;
   const vstyles = {
     root: [
       styles.root,
@@ -43,41 +47,73 @@ export function ListRow(props: ListRow) {
       selected?.next && styles.selectedNext,
       (dropping || focused) && !dragging && styles.outline,
       dragging && styles.disabled,
+      cell && styles.cell,
     ],
   };
 
   return (
     <View style={vstyles.root}>
-      <Thumb {...{size: TOUCH ? 1 : 0, name, ext, dir}}/>
-      <Text
-        style={styles.text}
-        ellipsizeMode="middle"
-        numberOfLines={1}>
-        {name}
-      </Text>
-      {Boolean(size) &&
+      <View style={styles.thumb}>
+        <Thumb {...{size: thumbSize, name, ext, dir}}/>
+      </View>
+      <View style={[styles.info, cell && styles.infoCell]}>
         <Text
-          style={[styles.text, styles.size]}
-          numberOfLines={1}>
-          {bytesize(size ?? 0)}
+          style={[styles.text, cell && styles.textCell]}
+          numberOfLines={cell ? 2 : 1}
+          ellipsizeMode="middle">
+          {name}
         </Text>
-      }
+        <Text
+          style={[styles.text, styles.size, cell && styles.textCell]}
+          numberOfLines={1}>
+          {size ? bytesize(size) : '‎'}
+        </Text>
+      </View>
     </View>
   );
 }
 
 const stylesheet = createStyleSheet((theme) => ({
   root: {
+    gap: 6,
     flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
+    height: HEIGHT_ROW,
     paddingHorizontal: theme.display.space2,
     paddingVertical: theme.display.space1,
     borderRadius: theme.display.radius1,
     borderWidth: 1,
-    height: HEIGHT,
     borderColor: 'rgba(0,0,0,0)',
+  },
+  cell: {
+    gap: theme.display.space1,
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    height: HEIGHT_CELL,
+    borderRadius: theme.display.radius1,
+    paddingVertical: theme.display.space1,
+    paddingHorizontal: theme.display.space1,
+  },
+  thumb: {
+    width: 16,
+  },
+  info: {
     gap: theme.display.space2,
+    flex: 1,
+    flexDirection: 'row',
+    // backgroundColor: 'orange',
+  },
+  infoCell: {
+    flex: 1,
+    flexWrap: 'wrap',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignContent: 'center',
+    columnGap: 9999,
+    rowGap: theme.display.space1,
+    marginBottom: theme.display.space1,
+    width: '100%',
   },
   text: {
     fontFamily: theme.font.family,
@@ -91,6 +127,10 @@ const stylesheet = createStyleSheet((theme) => ({
       lineHeight: theme.font.contentHeight,
       letterSpacing: theme.font.contentSpacing,
     },
+  },
+  textCell: {
+    textAlign: 'center',
+    alignSelf: 'center',
   },
   size: {
     color: theme.colors.mutedForeground,

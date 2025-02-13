@@ -4,9 +4,9 @@ import {useRef} from 'react';
 import {useSelector} from 'react-redux';
 import {useFocusable, FocusContext} from '@noriginmedia/norigin-spatial-navigation';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
+import {HEIGHT_ROW, HEIGHT_CELL} from 'media/stacks/list/row';
 import {ListEmpty} from 'media/stacks/list/empty';
 import {ListBar} from 'media/stacks/list/bar';
-import {HEIGHT} from 'media/stacks/list/row';
 import media from 'media/store';
 
 import type {LegendListRef} from '@legendapp/list';
@@ -29,7 +29,10 @@ export interface ListProps<T> {
 }
 
 export function List<T>({path, list, ext, bar, render}: ListProps<T>) {
-  const layout = useSelector(media.selectors.getLayout);
+  //const layout = useSelector(media.selectors.getLayout);
+  const layout = !ext?.tmp ? 'list' : 'grid';
+  const height = layout === 'list' ? HEIGHT_ROW : HEIGHT_CELL;
+  const columns = layout === 'grid' ? 5 : 1;
   const listRef = useRef<LegendListRef>(null);
   const {styles} = useStyles(stylesheet);
   const {ref, focusKey} = useFocusable({
@@ -48,9 +51,9 @@ export function List<T>({path, list, ext, bar, render}: ListProps<T>) {
               ref={listRef}
               data={list}
               extraData={ext}
-              numColumns={layout === 'grid' ? 3 : 1}
-              drawDistance={HEIGHT * 20}
-              estimatedItemSize={HEIGHT}
+              numColumns={columns}
+              drawDistance={height * 20}
+              estimatedItemSize={height}
               contentContainerStyle={styles.list}
               ListHeaderComponent={bar ? <View style={styles.header}/> : null}
               keyExtractor={(_,i) => i.toString()}

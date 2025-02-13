@@ -1,3 +1,5 @@
+import type {ColorSchemeName} from 'react-native';
+
 let _manifest: Promise<typeof import('./icon-manifest.json')> | null = null;
 
 async function getManifest() {
@@ -39,12 +41,22 @@ export async function injectStyles() {
   const classes: string = Object.keys(ext.iconDefinitions).map((key: string) => {
     const icon = ext.iconDefinitions[key as keyof typeof ext.iconDefinitions];
     return `
+      .icon.icon${key} {
+        position: relative;
+      }
       .icon.icon${key}::before {
         font-family: ${icon.fontId || 'inherit'};
         font-weight: ${'fontWeight' in icon ? icon.fontWeight : 'inherit'};
         font-size: ${'fontSize' in icon ? icon.fontSize : 'inherit'};
         content: "${icon.fontCharacter}";
         color: ${'fontColor' in icon ? icon.fontColor : 'inherit'};
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
     `;
   }).join('\n');
@@ -58,7 +70,7 @@ export async function getIconClass(
   fileName: string,
   fileExtension: string,
   language: string,
-  theme: 'light' | 'dark',
+  theme: ColorSchemeName,
 ) {
   const ext = await getManifest();
   // Default icons
@@ -93,7 +105,7 @@ export async function getIcon(
   fileName: string,
   fileExtension: string,
   language: string,
-  theme: 'light' | 'dark',
+  theme: ColorSchemeName,
 ) {
   const icon = await getIconClass(fileName, fileExtension, language, theme);
   return `icon icon${icon}`;
