@@ -63,9 +63,7 @@ export default function Layout() {
         </View>
       }
       <View style={vstyles.content}>
-        <View style={styles.outlet}>
-          <Outlet {...{context}}/>
-        </View>
+        <Outlet {...{context}}/>
         {hasPanel ?
           focused ?
             <Media
@@ -94,7 +92,7 @@ const stylesheet = createStyleSheet(theme => ({
     flexDirection: 'column-reverse',
   },
   outlet: {
-    flex: 1,
+    // flex: 1,
   },
   menu: {
     width: APP_MENU_WIDTH,

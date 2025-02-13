@@ -1,7 +1,6 @@
 import {View, Text, Pressable} from 'react-native';
 import {Slider} from 'react-exo/slider';
 import {Motion} from 'react-exo/motion';
-import {Image} from 'react-exo/image';
 import {Icon} from 'react-exo/icon';
 import {useCallback, useMemo} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
@@ -45,9 +44,6 @@ export function MediaControls(props: MediaControlsProps) {
   const [fileType] = props.renderer ?? [];
   const isDir = fileType === FileType.Directory;
   const isBook = fileType === FileType.Book;
-  const sizeGroup = TOUCH ? 1 : 0;
-  const imageSize = sizeGroup === 1 ? 36 : 32;
-  const iconSize = sizeGroup === 1 ? 20 : 18;
   const vstyles = useMemo(() => ({
     icon: (state: PressableStateCallbackType) =>
       state.hovered || TOUCH
@@ -92,20 +88,15 @@ export function MediaControls(props: MediaControlsProps) {
       }
       {controls.map(({name, icon, title, action}) => title
         ? <Pressable key={name} style={styles.content} onPress={toc}>
-            {props.metadata.cover
-              ? <Image
-                  url={props.metadata.cover}
-                  resizeMode="contain"
-                  height={imageSize}
-                  width={imageSize}
-              />
-            : <Thumb
+            <View style={styles.thumb}>
+              <Thumb
+                size={TOUCH ? 3 : 2}
                 name={name ?? ''}
                 ext={props.metadata.ext}
+                img={() => Promise.resolve(props.metadata.cover ?? null)}
                 dir={isDir}
-                size={2}
               />
-            }
+            </View>
             <Text style={styles.metadata} numberOfLines={2} selectable={false}>
               <View>
                 <Text style={styles.title} numberOfLines={TOUCH ? 2 : 1}>
@@ -122,7 +113,7 @@ export function MediaControls(props: MediaControlsProps) {
               icon && <Icon
                 name={icon}
                 color={vstyles.icon(state)}
-                size={iconSize}
+                size={TOUCH ? 20 : 18}
               />
             )}
           </Pressable>
@@ -169,6 +160,9 @@ const stylesheet = createStyleSheet((theme, rt) => ({
     justifyContent: 'center',
     marginVertical: theme.display.space1,
     paddingHorizontal: theme.display.space1,
+  },
+  thumb: {
+    width: 32,
   },
   metadata: {
     marginTop: -2,

@@ -27,19 +27,19 @@ export enum ThumbSize {
 export const getHeight = (size: ThumbSize) => {
   switch (size) {
     case 6:
-      return 90;
+      return 90; // XXXL
     case 5:
-      return 72;
+      return 72; // XXL
     case 4:
-      return 64;
+      return 64; // XL
     case 3:
-      return 48;
+      return 48; // LG
     case 2:
-      return 32;
+      return 32; // MD
     case 1:
-      return 24;
+      return 24; // SM
     default:
-      return 16;
+      return 16; // XS
   }
 };
 

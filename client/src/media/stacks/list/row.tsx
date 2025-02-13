@@ -30,7 +30,7 @@ interface ListRow {
 
 export function ListRow(props: ListRow) {
   const {styles} = useStyles(stylesheet);
-  const {name, size, ext, img, dir, opt} = props;
+  const {name, size, ext, dir, tmp, opt, img} = props;
   const {
     focused,
     selected,
@@ -46,7 +46,7 @@ export function ListRow(props: ListRow) {
       selected?.self && styles.selected,
       selected?.prev && styles.selectedPrev,
       selected?.next && styles.selectedNext,
-      (dropping || focused) && !dragging && styles.outline,
+      (dropping || (focused && tmp)) && !dragging && styles.outline,
       dragging && styles.disabled,
       cell && styles.cell,
     ],

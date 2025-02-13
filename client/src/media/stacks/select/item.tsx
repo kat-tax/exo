@@ -1,6 +1,6 @@
 import {Icon} from 'react-exo/icon';
 import {Thumb} from 'media/stacks/thumb';
-import {Text, Pressable} from 'react-native';
+import {Text, View, Pressable} from 'react-native';
 import {useCallback, useEffect, useState} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useFocusable} from '@noriginmedia/norigin-spatial-navigation';
@@ -57,12 +57,14 @@ export function SelectItem(props: SelectItemProps) {
       key={path}
       onPress={() => put(media.actions.focus(path))}
       style={[styles.root, focused && styles.focus]}>
-      <Thumb
-        name={name ?? ''}
-        size={ICON_SIZE}
-        dir={dir}
-        ext={ext}
-      />
+      <View style={styles.thumb}>
+        <Thumb
+          name={name ?? ''}
+          size={ICON_SIZE}
+          dir={dir}
+          ext={ext}
+        />
+      </View>
       <Text
         style={[styles.text, focused && styles.textFocused]}
         selectable={false}
@@ -96,6 +98,9 @@ const stylesheet = createStyleSheet((theme) => ({
   },
   focus: {
     borderColor: theme.colors.primary,
+  },
+  thumb: {
+    width: 16,
   },
   text: {
     fontFamily: theme.font.family,
