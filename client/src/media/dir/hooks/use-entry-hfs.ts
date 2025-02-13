@@ -2,8 +2,8 @@ import {useRef, useState, useEffect} from 'react';
 import {useFocusable} from '@noriginmedia/norigin-spatial-navigation';
 import {useDispatch} from 'react-redux';
 import {toPathInfo} from 'app/utils/formatting';
-import * as _ from 'app/utils/dragdrop';
 import {bind} from 'media/utils/bind';
+import * as _ from 'app/utils/dragdrop';
 import media from 'media/store';
 
 import {isZipData} from './use-entry-zip';

@@ -6,6 +6,7 @@ import {getData} from 'media/file/utils/data';
 import media from 'media/store';
 
 import {isInitDirectory, INIT_DIRECTORIES} from '../utils/hfs/path';
+import {getThumbnail} from '../utils/hfs/meta';
 import {saveAs} from '../utils/hfs/fs';
 
 import type {GestureResponderEvent} from 'react-native';
@@ -99,6 +100,12 @@ export function useDirHfs(path: string, tmp?: boolean): Omit<HfsCtx, 'bar'> {
       console.log('>> fs [copy]', from);
     }
   }, [hfs]);
+  
+  const purge = useCallback(async (entry: HfsDirectoryEntry) => {
+    const base = path ? `${path}/` : '';
+    const uri = `${base}${entry.name}`;
+    await hfs?.deleteAll?.(uri);
+  }, [hfs, path]);
 
   const rename = useCallback(async (entry: HfsDirectoryEntry, name?: string) => {
     if (name) {
@@ -107,13 +114,7 @@ export function useDirHfs(path: string, tmp?: boolean): Omit<HfsCtx, 'bar'> {
       console.log('>> fs [rename]', entry);
     }
   }, [hfs]);
-
-  const purge = useCallback(async (entry: HfsDirectoryEntry) => {
-    const base = path ? `${path}/` : '';
-    const uri = `${base}${entry.name}`;
-    await hfs?.deleteAll?.(uri);
-  }, [hfs, path]);
-
+  
   const select = useCallback((entry: HfsDirectoryEntry, event?: GestureResponderEvent) => {
     const [isShift, isCtrl] = [event?.shiftKey, event?.metaKey || event?.ctrlKey];
     const fullPath = path ? `${path}/${entry.name}` : entry.name;
@@ -149,6 +150,10 @@ export function useDirHfs(path: string, tmp?: boolean): Omit<HfsCtx, 'bar'> {
   const compress = useCallback(async (entry: HfsDirectoryEntry) => {
     console.log('>> fs [compress]', entry);
   }, []);
+
+  const thumbnail = useCallback(async (entry: HfsDirectoryEntry) => {
+    return getThumbnail(path, entry);
+  }, [path]);
 
   const share = useCallback(async (entry: HfsDirectoryEntry) => {
     console.log('>> fs [share]', entry);
@@ -186,16 +191,17 @@ export function useDirHfs(path: string, tmp?: boolean): Omit<HfsCtx, 'bar'> {
     },
     cmd: {
       goUp,
+      share,
       open,
       move,
       copy,
-      rename,
       purge,
+      rename,
       select,
       upload,
       download,
       compress,
-      share,
+      thumbnail,
     },
   };
 }

@@ -14,6 +14,7 @@ interface ListRow {
   ext?: string,
   dir?: boolean,
   tmp?: boolean,
+  img?: () => Promise<string | null>,
   opt?: {
     dragging?: boolean,
     dropping?: boolean,
@@ -29,7 +30,7 @@ interface ListRow {
 
 export function ListRow(props: ListRow) {
   const {styles} = useStyles(stylesheet);
-  const {name, size, ext, dir, opt} = props;
+  const {name, size, ext, img, dir, opt} = props;
   const {
     focused,
     selected,
@@ -53,8 +54,8 @@ export function ListRow(props: ListRow) {
 
   return (
     <View style={vstyles.root}>
-      <View style={styles.thumb}>
-        <Thumb {...{size: thumbSize, name, ext, dir}}/>
+      <View style={[styles.thumb, cell && styles.thumbCell]}>
+        <Thumb {...{size: thumbSize, name, ext, img, dir}}/>
       </View>
       <View style={[styles.info, cell && styles.infoCell]}>
         <Text
@@ -66,7 +67,7 @@ export function ListRow(props: ListRow) {
         <Text
           style={[styles.text, styles.size, cell && styles.textCell]}
           numberOfLines={1}>
-          {size ? bytesize(size) : '‎'}
+          {dir ? '‎' : bytesize(size ?? 0)}
         </Text>
       </View>
     </View>
@@ -98,11 +99,13 @@ const stylesheet = createStyleSheet((theme) => ({
   thumb: {
     width: 16,
   },
+  thumbCell: {
+    width: '100%',
+  },
   info: {
     gap: theme.display.space2,
     flex: 1,
     flexDirection: 'row',
-    // backgroundColor: 'orange',
   },
   infoCell: {
     flex: 1,

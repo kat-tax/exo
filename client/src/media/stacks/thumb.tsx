@@ -1,5 +1,6 @@
-import {Icon} from 'react-exo/icon';
 import {View} from 'react-native';
+import {Icon} from 'react-exo/icon';
+import {Image} from 'react-exo/image';
 import {useEffect, useState} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useTheme} from 'app/hooks/use-theme';
@@ -9,6 +10,7 @@ interface ThumbProps {
   size?: ThumbSize,
   name?: string,
   dir?: boolean,
+  img?: () => Promise<string | null>,
   ext?: string,
 }
 
@@ -46,29 +48,48 @@ export function Thumb({
   name = '',
   ext = '',
   dir = false,
+  img = undefined,
 }: ThumbProps) {
   const height = getHeight(size);
   const [scheme] = useTheme();
   const {styles, theme} = useStyles(stylesheet);
   const [icon, setIcon] = useState<string | null>(null);
+  const [image, setImage] = useState<string | null>(null);
 
+  // Set icon based when name and extension change
   useEffect(() => {
     getIcon(name, ext, '', scheme).then(setIcon);
   }, [name, ext, scheme]);
 
+  // Set image when img function changes
+  useEffect(() => {
+    if (!img) return;
+    img().then(setImage);
+  }, [img]);
+
+  // Revoke image when component unmounts
+  useEffect(() => () => {
+    if (image) URL.revokeObjectURL(image);
+  }, [image]);
+
   return (
     <View style={[styles.root, {height}]}>
-      {dir ? (
-        <Icon
-          name="ph:folder-simple-fill"
-          color={theme.colors.foreground}
-          size={height}
-        />
-      ) : (
-        <span
-          className={icon ?? ''}
-          style={{fontSize: height / 1.3, color: theme.colors.foreground}}
-        />
+      {(img && image
+        ? <Image
+            url={image}
+            style={{height, width: '100%'}}
+            resizeMode="contain"
+          />
+        : dir
+          ? <Icon
+              name="ph:folder-simple-fill"
+              color={theme.colors.foreground}
+              size={height}
+            />
+          : <span
+              className={icon ?? ''}
+              style={{fontSize: height / 1.3, color: theme.colors.foreground}}
+            />
       )}
     </View>
   );
