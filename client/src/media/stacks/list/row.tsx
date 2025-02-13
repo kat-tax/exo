@@ -38,7 +38,7 @@ export function ListRow(props: ListRow) {
     dropping,
   } = opt ?? {};
 
-  const cell = props.tmp;
+  const cell = tmp;
   const thumbSize = cell ? 4 : TOUCH ? 1 : 0;
   const vstyles = {
     root: [
@@ -46,7 +46,7 @@ export function ListRow(props: ListRow) {
       selected?.self && styles.selected,
       selected?.prev && styles.selectedPrev,
       selected?.next && styles.selectedNext,
-      (dropping || (focused && tmp)) && !dragging && styles.outline,
+      (dropping || focused) && !dragging && styles.outline,
       dragging && styles.disabled,
       cell && styles.cell,
     ],
@@ -142,7 +142,7 @@ const stylesheet = createStyleSheet((theme) => ({
   },
   /* States */
   outline: {
-    borderColor: theme.colors.foreground,
+    borderColor: theme.colors.outline,
   },
   disabled: {
     opacity: 0.5,

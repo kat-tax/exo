@@ -15,9 +15,9 @@ interface MenuItemProps extends React.PropsWithChildren {
 
 export function MenuItem(props: MenuItemProps) {
   const nav = useNavigate();
-  const {styles, theme} = useStyles(stylesheet);
   const {pathname} = useLocation();
-  const {ref} = useFocusable({
+  const {styles, theme} = useStyles(stylesheet);
+  const {ref, focused} = useFocusable({
     focusKey: `menu@${props.path}`,
     onFocus: () => nav(props.path),
   });
@@ -34,6 +34,7 @@ export function MenuItem(props: MenuItemProps) {
         styles.item,
         isAction && styles.itemAction,
         isActive && styles.itemActive,
+        focused && styles.itemFocus,
       ]}>
         {props.icon &&
           <Icon
@@ -61,6 +62,8 @@ const stylesheet = createStyleSheet(theme => ({
     alignItems: 'center',
     borderRadius: theme.display.radius1,
     paddingHorizontal: theme.display.space2,
+    borderColor: 'transparent',
+    borderWidth: 1,
   },
   itemAction: {
     paddingHorizontal: theme.display.space1,
@@ -68,6 +71,9 @@ const stylesheet = createStyleSheet(theme => ({
   },
   itemActive: {
     backgroundColor: theme.colors.card,
+  },
+  itemFocus: {
+    borderColor: theme.colors.outline,
   },
   label: {
     userSelect: 'none',

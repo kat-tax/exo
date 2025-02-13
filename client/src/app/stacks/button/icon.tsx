@@ -57,7 +57,7 @@ const stylesheet = createStyleSheet(theme => ({
     opacity: 0.8,
   },
   rootStateFocused: {
-    borderColor: theme.colors.ring,
+    borderColor: theme.colors.outline,
   },
   rootStateDisabled: {
     opacity: 0.4,

@@ -35,7 +35,7 @@ export function SelectItem(props: SelectItemProps) {
     put(media.actions.selectRemove(index));
   }, [put]);
 
-  const {ref} = useFocusable({
+  const {ref, focused: focusedSpatial} = useFocusable({
     focusKey: `select@${path}`,
     onFocus: () => {
       put(media.actions.focus(path));
@@ -56,7 +56,7 @@ export function SelectItem(props: SelectItemProps) {
       ref={ref}
       key={path}
       onPress={() => put(media.actions.focus(path))}
-      style={[styles.root, focused && styles.focus]}>
+      style={[styles.root, focused && styles.focus, focusedSpatial && styles.focusSpatial]}>
       <View style={styles.thumb}>
         <Thumb
           name={name ?? ''}
@@ -98,6 +98,9 @@ const stylesheet = createStyleSheet((theme) => ({
   },
   focus: {
     borderColor: theme.colors.primary,
+  },
+  focusSpatial: {
+    borderColor: theme.colors.outline,
   },
   thumb: {
     width: 16,
