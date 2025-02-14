@@ -1,14 +1,13 @@
 import type {OpenDirectoryOptions} from 'react-exo/fs';
 
 export enum InitDirectory {
+  Transfers = 'transfers',
   Documents = 'documents',
   Music = 'music',
   Pictures = 'pictures',
   Videos = 'videos',
   Games = 'games',
   Books = 'books',
-  Downloads = 'downloads',
-  Uploads = 'uploads'
 }
 
 export const INIT_DIRECTORIES = Object.values(InitDirectory)

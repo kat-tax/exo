@@ -13,8 +13,6 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#. placeholder {0}: 5
-#. placeholder {0}: 11
 #: ../../client/src/dev/routes/screen-library.tsx:21
 #: ../../client/src/dev/routes/screen-design.tsx:15
 msgid "{0} components"
@@ -53,12 +51,10 @@ msgstr "何でも聞いてください..."
 msgid "Auto"
 msgstr "自動"
 
-#: ../../client/src/media/hooks/use-media-name.ts:21
-#: ../../client/src/app/routes/menu/index.tsx:133
+#: ../../client/src/media/hooks/use-media-name.ts:23
 msgid "Books"
 msgstr "本"
 
-#. placeholder {0}: data.metadata.author
 #: ../../client/src/media/file/file-book.tsx:42
 msgid "by {0}"
 msgstr "著者：{0}"
@@ -167,7 +163,7 @@ msgstr "距離"
 msgid "Docs"
 msgstr "ドキュメント"
 
-#: ../../client/src/media/hooks/use-media-name.ts:11
+#: ../../client/src/media/hooks/use-media-name.ts:13
 msgid "Documents"
 msgstr "ドキュメント"
 
@@ -215,10 +211,7 @@ msgstr "華氏"
 msgid "Feature in development..."
 msgstr "開発中の機能..."
 
-#: ../../client/src/media/stacks/list/bar.tsx:54
-#: ../../client/src/media/hooks/use-media-name.ts:27
-#: ../../client/src/app/routes/menu/index.tsx:47
-#: ../../client/src/app/routes/menu/index.tsx:103
+#: ../../client/src/media/hooks/use-media-name.ts:25
 msgid "Files"
 msgstr "ファイル"
 
@@ -230,8 +223,7 @@ msgstr "ファイルシステム"
 msgid "Fullscreen"
 msgstr "全画面"
 
-#: ../../client/src/media/hooks/use-media-name.ts:19
-#: ../../client/src/app/routes/menu/index.tsx:128
+#: ../../client/src/media/hooks/use-media-name.ts:21
 msgid "Games"
 msgstr "ゲーム"
 
@@ -346,8 +338,7 @@ msgstr "マイル"
 msgid "Move"
 msgstr "移動"
 
-#: ../../client/src/media/hooks/use-media-name.ts:13
-#: ../../client/src/app/routes/menu/index.tsx:113
+#: ../../client/src/media/hooks/use-media-name.ts:15
 msgid "Music"
 msgstr "音楽"
 
@@ -384,8 +375,7 @@ msgstr "オーナーキー"
 msgid "Pause"
 msgstr "一時停止"
 
-#: ../../client/src/media/hooks/use-media-name.ts:15
-#: ../../client/src/app/routes/menu/index.tsx:118
+#: ../../client/src/media/hooks/use-media-name.ts:17
 msgid "Pictures"
 msgstr "写真"
 
@@ -521,6 +511,10 @@ msgstr "テーマ"
 msgid "This file can not be previewed."
 msgstr "このファイルはプレビューできません。"
 
+#: ../../client/src/media/hooks/use-media-name.ts:11
+msgid "Transfers"
+msgstr ""
+
 #: ../../client/src/media/file/file-binary.tsx:30
 msgid "Unsupported File"
 msgstr "サポートされていないファイル"
@@ -533,8 +527,7 @@ msgstr "アップロード"
 msgid "User Name"
 msgstr "ユーザー名"
 
-#: ../../client/src/media/hooks/use-media-name.ts:17
-#: ../../client/src/app/routes/menu/index.tsx:123
+#: ../../client/src/media/hooks/use-media-name.ts:19
 msgid "Videos"
 msgstr "動画"
 
@@ -554,7 +547,6 @@ msgstr "最新ニュースとRSSフィードを表示"
 msgid "Volume"
 msgstr "音量"
 
-#. placeholder {0}: profile.name
 #: ../../client/src/home/routes/screen-home.tsx:38
 msgid "Welcome, {0}"
 msgstr "ようこそ、{0}さん"
