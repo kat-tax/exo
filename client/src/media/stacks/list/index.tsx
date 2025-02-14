@@ -56,7 +56,7 @@ export function List<T>({path, list, ext, bar, render}: ListProps<T>) {
               numColumns={columns}
               drawDistance={height * 20}
               estimatedItemSize={height}
-              contentContainerStyle={styles.list}
+              contentContainerStyle={[styles.list, layout === 'grid' && styles.grid]}
               ListHeaderComponent={bar ? <View style={styles.header}/> : null}
               keyExtractor={(_,i) => i.toString()}
               renderItem={render}
@@ -74,10 +74,14 @@ const stylesheet = createStyleSheet(theme => ({
     flex: 1,
   },
   list: {
+    paddingHorizontal: theme.display.space1,
+    paddingBottom: theme.display.space1,
+  },
+  grid: {
     paddingHorizontal: theme.display.space2,
     paddingBottom: theme.display.space2,
   },
   header: {
-    height: theme.display.space2,
+    height: theme.display.space1,
   },
 })); 

@@ -53,8 +53,8 @@ export function useDirHfs(path: string, tmp?: boolean): Omit<HfsCtx, 'bar'> {
         if (entry.name.startsWith('.') && !showHidden)
           continue;
         // Initial directories
-        if (dirPath === '.' && isInitDirectory(entry.name))
-          continue;
+        // if (dirPath === '.' && isInitDirectory(entry.name))
+        //   continue;
         entries.push(entry);
       }
       setList(entries.sort((a, b) => {

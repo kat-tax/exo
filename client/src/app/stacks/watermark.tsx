@@ -42,7 +42,7 @@ const stylesheet = createStyleSheet(theme => ({
   },
   box: {
     gap: theme.display.space5,
-    padding: theme.display.space8,
+    padding: theme.display.space6,
     borderStyle: 'dashed',
     borderWidth: 0,
     borderColor: theme.colors.muted,

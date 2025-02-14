@@ -141,11 +141,11 @@ msgstr "Dev Mode"
 msgid "Device Space"
 msgstr "Device Space"
 
-#: ../../client/src/media/stacks/list/empty.tsx:28
+#: ../../client/src/media/stacks/history.tsx:24
 msgid "Directory empty. Drop items or select folder to import."
 msgstr "Directory empty. Drop items or select folder to import."
 
-#: ../../client/src/media/stacks/list/empty.tsx:27
+#: ../../client/src/media/stacks/history.tsx:23
 msgid "Directory empty. Select folder to import."
 msgstr "Directory empty. Select folder to import."
 
@@ -262,7 +262,7 @@ msgstr "Human"
 msgid "Import Files"
 msgstr "Import Files"
 
-#: ../../client/src/media/stacks/list/empty.tsx:29
+#: ../../client/src/media/stacks/history.tsx:25
 msgid "Import Folder"
 msgstr "Import Folder"
 
@@ -351,9 +351,17 @@ msgstr "Next"
 msgid "No events scheduled."
 msgstr "No events scheduled."
 
+#: ../../client/src/media/stacks/history.tsx:20
+msgid "No selected items."
+msgstr "No selected items."
+
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:23
 msgid "Open"
 msgstr "Open"
+
+#: ../../client/src/media/stacks/history.tsx:21
+msgid "Open All"
+msgstr "Open All"
 
 #: ../../client/src/media/hooks/use-media-controls.ts:231
 msgid "Options"
@@ -382,6 +390,10 @@ msgstr "Pin"
 #: ../../client/src/media/hooks/use-media-controls.ts:131
 msgid "Play"
 msgstr "Play"
+
+#: ../../client/src/media/stacks/history.tsx:21
+msgid "Play All"
+msgstr "Play All"
 
 #: ../../client/src/home/stacks/assistant.tsx:50
 msgid "Please set your Groq API Key"
@@ -438,6 +450,10 @@ msgstr "Replay"
 #: ../../client/src/media/hooks/use-media-controls.ts:97
 msgid "Search"
 msgstr "Search"
+
+#: ../../client/src/media/stacks/history.tsx:16
+msgid "Select All"
+msgstr "Select All"
 
 #: ../../client/src/app/routes/screen-settings.tsx:148
 msgid "Select the AI model to use."

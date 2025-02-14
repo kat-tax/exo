@@ -27,7 +27,6 @@ export default function Layout() {
   const device = useDevice();
   const screen = useWindowDimensions();
   const focused = useSelector(media.selectors.getFocused);
-  const pathinfo = toPathInfo(focused, false);
   const hasPanel = pathname.includes('/browse') || Boolean(focused);
   const hasTabs = screen.width < theme.breakpoints.xs;
   const isVertical = screen.width < theme.breakpoints.sm;
@@ -67,7 +66,7 @@ export default function Layout() {
         {hasPanel ?
           focused ?
             <Media
-              {...pathinfo}
+              {...toPathInfo(focused, false)}
               vertical={isVertical}
               maximized={true}
               embedded={false}
@@ -75,7 +74,7 @@ export default function Layout() {
             />
           : isVertical
             ? null
-            : <History path={focused}/>
+            : <History/>
         : null}
       </View>
     </View>

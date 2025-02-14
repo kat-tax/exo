@@ -141,11 +141,11 @@ msgstr "وضع المطور"
 msgid "Device Space"
 msgstr "مساحة الجهاز"
 
-#: ../../client/src/media/stacks/list/empty.tsx:28
+#: ../../client/src/media/stacks/history.tsx:24
 msgid "Directory empty. Drop items or select folder to import."
 msgstr ""
 
-#: ../../client/src/media/stacks/list/empty.tsx:27
+#: ../../client/src/media/stacks/history.tsx:23
 msgid "Directory empty. Select folder to import."
 msgstr ""
 
@@ -262,7 +262,7 @@ msgstr "إنسان"
 msgid "Import Files"
 msgstr "استيراد الملفات"
 
-#: ../../client/src/media/stacks/list/empty.tsx:29
+#: ../../client/src/media/stacks/history.tsx:25
 msgid "Import Folder"
 msgstr ""
 
@@ -351,8 +351,16 @@ msgstr "التالي"
 msgid "No events scheduled."
 msgstr "لا توجد أحداث مجدولة."
 
+#: ../../client/src/media/stacks/history.tsx:20
+msgid "No selected items."
+msgstr ""
+
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:23
 msgid "Open"
+msgstr ""
+
+#: ../../client/src/media/stacks/history.tsx:21
+msgid "Open All"
 msgstr ""
 
 #: ../../client/src/media/hooks/use-media-controls.ts:231
@@ -382,6 +390,10 @@ msgstr "تثبيت"
 #: ../../client/src/media/hooks/use-media-controls.ts:131
 msgid "Play"
 msgstr "تشغيل"
+
+#: ../../client/src/media/stacks/history.tsx:21
+msgid "Play All"
+msgstr ""
 
 #: ../../client/src/home/stacks/assistant.tsx:50
 msgid "Please set your Groq API Key"
@@ -438,6 +450,10 @@ msgstr "إعادة التشغيل"
 #: ../../client/src/media/hooks/use-media-controls.ts:97
 msgid "Search"
 msgstr "بحث"
+
+#: ../../client/src/media/stacks/history.tsx:16
+msgid "Select All"
+msgstr ""
 
 #: ../../client/src/app/routes/screen-settings.tsx:148
 msgid "Select the AI model to use."
