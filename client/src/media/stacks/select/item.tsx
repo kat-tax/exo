@@ -1,6 +1,7 @@
 import {Icon} from 'react-exo/icon';
 import {Thumb} from 'media/stacks/thumb';
 import {Text, View, Pressable} from 'react-native';
+import {useNavigate, useLocation} from 'react-exo/navigation';
 import {useCallback, useEffect, useState} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useFocusable} from '@noriginmedia/norigin-spatial-navigation';
@@ -29,9 +30,19 @@ export function SelectItem(props: SelectItemProps) {
   const {focused, index, path, name, ext, hfs} = props;
   const {styles, theme} = useStyles(stylesheet);
   const [dir, setDir] = useState(!ext);
+  const {pathname} = useLocation();
   const title = useMediaName(name);
 
+  const nav = useNavigate();
   const put = useDispatch();
+
+  const open = useCallback(() => {
+    put(media.actions.focus(path));
+    const parent = path.split('/').slice(0, -1).join('/');
+    const uri = parent ? `/browse/${parent}` : '/browse';
+    if (uri === pathname) return;
+    nav(uri);
+  }, [path, pathname, nav, put]);
 
   const close = useCallback((index: number) => {
     put(media.actions.selectRemove(index));
@@ -39,9 +50,7 @@ export function SelectItem(props: SelectItemProps) {
 
   const {ref, focused: focusedSpatial} = useFocusable({
     focusKey: `select@${path}`,
-    onFocus: () => {
-      put(media.actions.focus(path));
-    },
+    onFocus: open,
   });
 
   // Check if the item is a directory
@@ -57,7 +66,7 @@ export function SelectItem(props: SelectItemProps) {
     <Pressable
       ref={ref}
       key={path}
-      onPress={() => put(media.actions.focus(path))}
+      onPress={open}
       style={[styles.root, focused && styles.focus, focusedSpatial && styles.focusSpatial]}>
       <View style={styles.thumb}>
         <Thumb

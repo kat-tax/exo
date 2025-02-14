@@ -21,6 +21,7 @@ export function SelectTabs({hfs}: SelectTabsProps) {
   const {styles} = useStyles(stylesheet);
   const selection = useSelector(media.selectors.getSelected);
   const focused = useSelector(media.selectors.getFocused);
+
   const list = useMemo(() => selection.map(selectItem => {
     const {path, name, ext} = toPathInfo(selectItem, false);
     return {path, name, ext};
