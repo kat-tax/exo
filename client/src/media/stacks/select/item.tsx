@@ -13,9 +13,9 @@ import media from 'media/store';
 import type {HfsImpl} from 'react-exo/fs';
 
 const TOUCH = isTouch();
-const TAB_SIZE = TOUCH ? 46 : 32;
-const ICON_SIZE = TOUCH ? 1 : 0;
-const TEXT_LINES = TOUCH ? 2 : 1;
+export const HEIGHT = TOUCH ? 46 : 32;
+export const ICON_SIZE = TOUCH ? 1 : 0;
+export const TEXT_LINES = TOUCH ? 2 : 1;
 
 interface SelectItemProps {
   focused: boolean,
@@ -32,6 +32,7 @@ export function SelectItem(props: SelectItemProps) {
   const [dir, setDir] = useState(!ext);
   const {pathname} = useLocation();
   const title = useMediaName(name);
+  const virt = index === -1;
 
   const nav = useNavigate();
   const put = useDispatch();
@@ -67,7 +68,13 @@ export function SelectItem(props: SelectItemProps) {
       ref={ref}
       key={path}
       onPress={open}
-      style={[styles.root, focused && styles.focus, focusedSpatial && styles.focusSpatial]}>
+      disabled={virt}
+      style={[
+        styles.root,
+        focused && styles.focus,
+        focusedSpatial && styles.focusSpatial,
+        virt && styles.disabled,
+      ]}>
       <View style={styles.thumb}>
         <Thumb
           name={name ?? ''}
@@ -80,22 +87,24 @@ export function SelectItem(props: SelectItemProps) {
         style={[styles.text, focused && styles.textFocused]}
         selectable={false}
         numberOfLines={TEXT_LINES}>
-        {name ? title : `.${ext}`}
+        {(name || virt) ? title : `.${ext}`}
       </Text>
-      <Pressable style={styles.close} onPress={() => close(index)}>
-        <Icon
-          name="ph:x"
-          size={TOUCH ? 16 : 14}
-          color={focused ? theme.colors.foreground : theme.colors.mutedForeground}
-        />
-      </Pressable>
+      {index !== -1 &&
+        <Pressable style={styles.close} onPress={() => close(index)}>
+          <Icon
+            name="ph:x"
+            size={TOUCH ? 16 : 14}
+            color={focused ? theme.colors.foreground : theme.colors.mutedForeground}
+          />
+        </Pressable>
+      }
     </Pressable>
   );
 }
 
 const stylesheet = createStyleSheet((theme) => ({
   root: {
-    height: TAB_SIZE,
+    height: HEIGHT,
     gap: TOUCH ? theme.display.space3 : theme.display.space2,
     flexDirection: 'row',
     alignItems: 'center',
@@ -106,6 +115,9 @@ const stylesheet = createStyleSheet((theme) => ({
     borderRadius: theme.display.radius1,
     borderColor: theme.colors.border,
     borderWidth: 1,
+  },
+  disabled: {
+    opacity: 0.5,
   },
   focus: {
     borderColor: theme.colors.primary,

@@ -90,7 +90,7 @@ export function Media({ext, name, path, vertical, maximized, embedded, layout, c
   useEffect(() => {
     (async () => {
       const isDir = !path.includes('://')
-        ? await hfs?.isDirectory?.(path)!
+        ? await hfs?.isDirectory?.(path || '.') ?? false
         : false;
       setRenderer(await getRenderer(ext, path, isDir));
     })();
@@ -98,7 +98,7 @@ export function Media({ext, name, path, vertical, maximized, embedded, layout, c
 
   return (
     <View style={vstyles.root}>
-      {!embedded && <SelectTabs {...{hfs}}/>}
+      {!embedded && <SelectTabs {...{hfs, path, name, ext}}/>}
       <ScrollView style={vstyles.frame} contentContainerStyle={styles.contents}>
         <File
           ref={file}

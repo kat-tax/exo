@@ -8,7 +8,6 @@ import {useDevice} from 'app/hooks/use-device';
 import {useHotkeys} from 'app/hooks/use-hotkeys';
 import {useProfile} from 'app/data';
 import {toPathInfo} from 'app/utils/formatting';
-import {History} from 'media/stacks/history';
 import {Media} from 'media/stacks/media';
 import {Menu} from 'app/routes/menu';
 import media from 'media/store';
@@ -27,13 +26,13 @@ export default function Layout() {
   const device = useDevice();
   const screen = useWindowDimensions();
   const focused = useSelector(media.selectors.getFocused);
-  const hasPanel = pathname.includes('/browse') || Boolean(focused);
+  const isVert = screen.width < theme.breakpoints.sm;
   const hasTabs = screen.width < theme.breakpoints.xs;
-  const isVertical = screen.width < theme.breakpoints.sm;
+  const hasPanel = (pathname.includes('/browse') && !isVert) || Boolean(focused);
   const vstyles = {
     root: [styles.root, hasTabs && styles.rootTabs],
     menu: [styles.menu, hasTabs && styles.menuTabs],
-    content: [styles.content, isVertical && styles.contentVert],
+    content: [styles.content, isVert && styles.contentVert],
   };
 
   const context: AppCtx = {
@@ -63,19 +62,15 @@ export default function Layout() {
       }
       <View style={vstyles.content}>
         <Outlet {...{context}}/>
-        {hasPanel ?
-          focused ?
-            <Media
-              {...toPathInfo(focused, false)}
-              vertical={isVertical}
-              maximized={true}
-              embedded={false}
-              close={() => {}}
-            />
-          : isVertical
-            ? null
-            : <History/>
-        : null}
+        {hasPanel &&
+          <Media
+            {...toPathInfo(focused ?? pathname, false)}
+            vertical={isVert}
+            maximized={true}
+            embedded={false}
+            close={() => {}}
+          />
+        }
       </View>
     </View>
   </>;
