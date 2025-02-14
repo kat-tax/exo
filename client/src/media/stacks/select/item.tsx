@@ -77,7 +77,7 @@ export function SelectItem(props: SelectItemProps) {
         <Icon
           name="ph:x"
           size={TOUCH ? 16 : 14}
-          color={theme.colors.mutedForeground}
+          color={focused ? theme.colors.foreground : theme.colors.mutedForeground}
         />
       </Pressable>
     </Pressable>
