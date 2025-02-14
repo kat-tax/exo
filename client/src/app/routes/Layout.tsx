@@ -64,7 +64,7 @@ export default function Layout() {
         <Outlet {...{context}}/>
         {hasPanel &&
           <Media
-            {...toPathInfo(focused ?? pathname, false)}
+            {...toPathInfo(focused || pathname, false)}
             vertical={isVert}
             maximized={true}
             embedded={false}
