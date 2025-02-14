@@ -68,7 +68,7 @@ msgstr "Calendar"
 msgid "Celsius"
 msgstr "Celsius"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:284
+#: ../../client/src/media/hooks/use-media-controls.ts:298
 msgid "Close"
 msgstr "Close"
 
@@ -76,8 +76,7 @@ msgstr "Close"
 msgid "Compress"
 msgstr "Compress"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:58
-#: ../../client/src/media/dir/stacks/menu-hfs.tsx:55
+#: ../../client/src/media/hooks/use-media-controls.ts:72
 msgid "Copy"
 msgstr "Copy"
 
@@ -167,10 +166,7 @@ msgstr "Docs"
 msgid "Documents"
 msgstr "Documents"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:77
-#: ../../client/src/media/file/file-binary.tsx:36
-#: ../../client/src/media/dir/stacks/menu-torrent.tsx:22
-#: ../../client/src/media/dir/stacks/menu-hfs.tsx:44
+#: ../../client/src/media/hooks/use-media-controls.ts:91
 msgid "Download"
 msgstr "Download"
 
@@ -178,7 +174,7 @@ msgstr "Download"
 msgid "Downloads"
 msgstr "Downloads"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:67
+#: ../../client/src/media/hooks/use-media-controls.ts:81
 msgid "Edit"
 msgstr "Edit"
 
@@ -198,8 +194,7 @@ msgstr "Enter folder name"
 msgid "Enter name"
 msgstr "Enter name"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:87
-#: ../../client/src/media/dir/stacks/menu-zip.tsx:22
+#: ../../client/src/media/hooks/use-media-controls.ts:101
 msgid "Extract"
 msgstr "Extract"
 
@@ -219,7 +214,7 @@ msgstr "Files"
 msgid "Filesystem"
 msgstr "Filesystem"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:274
+#: ../../client/src/media/hooks/use-media-controls.ts:288
 msgid "Fullscreen"
 msgstr "Fullscreen"
 
@@ -347,7 +342,7 @@ msgstr "Music"
 msgid "News"
 msgstr "News"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:195
+#: ../../client/src/media/hooks/use-media-controls.ts:209
 msgid "Next"
 msgstr "Next"
 
@@ -359,7 +354,7 @@ msgstr "No events scheduled."
 msgid "Open"
 msgstr "Open"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:229
+#: ../../client/src/media/hooks/use-media-controls.ts:243
 msgid "Options"
 msgstr "Options"
 
@@ -371,7 +366,7 @@ msgstr "Overview"
 msgid "Owner Key"
 msgstr "Owner Key"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:130
+#: ../../client/src/media/hooks/use-media-controls.ts:144
 msgid "Pause"
 msgstr "Pause"
 
@@ -379,11 +374,11 @@ msgstr "Pause"
 msgid "Pictures"
 msgstr "Pictures"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:240
+#: ../../client/src/media/hooks/use-media-controls.ts:254
 msgid "Pin"
 msgstr "Pin"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:131
+#: ../../client/src/media/hooks/use-media-controls.ts:145
 msgid "Play"
 msgstr "Play"
 
@@ -391,7 +386,7 @@ msgstr "Play"
 msgid "Please set your Groq API Key"
 msgstr "Please set your Groq API Key"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:184
+#: ../../client/src/media/hooks/use-media-controls.ts:198
 msgid "Previous"
 msgstr "Previous"
 
@@ -435,13 +430,17 @@ msgstr "Provide a url to use map features."
 msgid "Rename"
 msgstr "Rename"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:172
+#: ../../client/src/media/hooks/use-media-controls.ts:186
 msgid "Replay"
 msgstr "Replay"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:97
+#: ../../client/src/media/hooks/use-media-controls.ts:111
 msgid "Search"
 msgstr "Search"
+
+#: ../../client/src/media/hooks/use-media-controls.ts:62
+msgid "Select all"
+msgstr "Select all"
 
 #: ../../client/src/media/stacks/history.tsx:16
 msgid "Select All"
@@ -477,16 +476,15 @@ msgstr "Services"
 msgid "Settings"
 msgstr "Settings"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:254
-#: ../../client/src/media/dir/stacks/menu-hfs.tsx:30
+#: ../../client/src/media/hooks/use-media-controls.ts:268
 msgid "Share"
 msgstr "Share"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:150
+#: ../../client/src/media/hooks/use-media-controls.ts:164
 msgid "Skip backward"
 msgstr "Skip backward"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:161
+#: ../../client/src/media/hooks/use-media-controls.ts:175
 msgid "Skip forward"
 msgstr "Skip forward"
 
@@ -543,7 +541,7 @@ msgstr "View your events and time-related info"
 msgid "View your latest news and rss feeds"
 msgstr "View your latest news and rss feeds"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:217
+#: ../../client/src/media/hooks/use-media-controls.ts:231
 msgid "Volume"
 msgstr "Volume"
 
@@ -576,10 +574,10 @@ msgstr "Your name to display in the app."
 msgid "Your prompt history has been reset."
 msgstr "Your prompt history has been reset."
 
-#: ../../client/src/media/hooks/use-media-controls.ts:107
+#: ../../client/src/media/hooks/use-media-controls.ts:121
 msgid "Zoom in"
 msgstr "Zoom in"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:118
+#: ../../client/src/media/hooks/use-media-controls.ts:132
 msgid "Zoom out"
 msgstr "Zoom out"

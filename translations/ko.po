@@ -68,7 +68,7 @@ msgstr "달력"
 msgid "Celsius"
 msgstr "섭씨"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:284
+#: ../../client/src/media/hooks/use-media-controls.ts:298
 msgid "Close"
 msgstr "닫기"
 
@@ -76,8 +76,7 @@ msgstr "닫기"
 msgid "Compress"
 msgstr "압축"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:58
-#: ../../client/src/media/dir/stacks/menu-hfs.tsx:55
+#: ../../client/src/media/hooks/use-media-controls.ts:72
 msgid "Copy"
 msgstr "복사"
 
@@ -167,10 +166,7 @@ msgstr "문서"
 msgid "Documents"
 msgstr "문서"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:77
-#: ../../client/src/media/file/file-binary.tsx:36
-#: ../../client/src/media/dir/stacks/menu-torrent.tsx:22
-#: ../../client/src/media/dir/stacks/menu-hfs.tsx:44
+#: ../../client/src/media/hooks/use-media-controls.ts:91
 msgid "Download"
 msgstr "다운로드"
 
@@ -178,7 +174,7 @@ msgstr "다운로드"
 msgid "Downloads"
 msgstr "다운로드"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:67
+#: ../../client/src/media/hooks/use-media-controls.ts:81
 msgid "Edit"
 msgstr "편집"
 
@@ -198,8 +194,7 @@ msgstr "폴더 이름 입력"
 msgid "Enter name"
 msgstr "이름 입력"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:87
-#: ../../client/src/media/dir/stacks/menu-zip.tsx:22
+#: ../../client/src/media/hooks/use-media-controls.ts:101
 msgid "Extract"
 msgstr "추출"
 
@@ -219,7 +214,7 @@ msgstr "파일"
 msgid "Filesystem"
 msgstr "파일시스템"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:274
+#: ../../client/src/media/hooks/use-media-controls.ts:288
 msgid "Fullscreen"
 msgstr "전체화면"
 
@@ -347,7 +342,7 @@ msgstr "음악"
 msgid "News"
 msgstr "뉴스"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:195
+#: ../../client/src/media/hooks/use-media-controls.ts:209
 msgid "Next"
 msgstr "다음"
 
@@ -359,7 +354,7 @@ msgstr "예정된 일정이 없습니다."
 msgid "Open"
 msgstr "열기"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:229
+#: ../../client/src/media/hooks/use-media-controls.ts:243
 msgid "Options"
 msgstr "옵션"
 
@@ -371,7 +366,7 @@ msgstr "개요"
 msgid "Owner Key"
 msgstr "소유자 키"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:130
+#: ../../client/src/media/hooks/use-media-controls.ts:144
 msgid "Pause"
 msgstr "일시정지"
 
@@ -379,11 +374,11 @@ msgstr "일시정지"
 msgid "Pictures"
 msgstr "사진"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:240
+#: ../../client/src/media/hooks/use-media-controls.ts:254
 msgid "Pin"
 msgstr "고정"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:131
+#: ../../client/src/media/hooks/use-media-controls.ts:145
 msgid "Play"
 msgstr "재생"
 
@@ -391,7 +386,7 @@ msgstr "재생"
 msgid "Please set your Groq API Key"
 msgstr "Groq API 키를 설정해주세요"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:184
+#: ../../client/src/media/hooks/use-media-controls.ts:198
 msgid "Previous"
 msgstr "이전"
 
@@ -435,13 +430,17 @@ msgstr "지도 기능을 사용하려면 URL을 입력하세요."
 msgid "Rename"
 msgstr "이름 변경"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:172
+#: ../../client/src/media/hooks/use-media-controls.ts:186
 msgid "Replay"
 msgstr "다시 재생"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:97
+#: ../../client/src/media/hooks/use-media-controls.ts:111
 msgid "Search"
 msgstr "검색"
+
+#: ../../client/src/media/hooks/use-media-controls.ts:62
+msgid "Select all"
+msgstr ""
 
 #: ../../client/src/media/stacks/history.tsx:16
 msgid "Select All"
@@ -477,16 +476,15 @@ msgstr "서비스"
 msgid "Settings"
 msgstr "설정"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:254
-#: ../../client/src/media/dir/stacks/menu-hfs.tsx:30
+#: ../../client/src/media/hooks/use-media-controls.ts:268
 msgid "Share"
 msgstr "공유"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:150
+#: ../../client/src/media/hooks/use-media-controls.ts:164
 msgid "Skip backward"
 msgstr "뒤로 건너뛰기"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:161
+#: ../../client/src/media/hooks/use-media-controls.ts:175
 msgid "Skip forward"
 msgstr "앞으로 건너뛰기"
 
@@ -543,7 +541,7 @@ msgstr "일정 및 시간 관련 정보 보기"
 msgid "View your latest news and rss feeds"
 msgstr "최신 뉴스 및 RSS 피드 보기"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:217
+#: ../../client/src/media/hooks/use-media-controls.ts:231
 msgid "Volume"
 msgstr "볼륨"
 
@@ -576,10 +574,10 @@ msgstr "앱에 표시될 이름입니다."
 msgid "Your prompt history has been reset."
 msgstr "프롬프트 기록이 초기화되었습니다."
 
-#: ../../client/src/media/hooks/use-media-controls.ts:107
+#: ../../client/src/media/hooks/use-media-controls.ts:121
 msgid "Zoom in"
 msgstr "확대"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:118
+#: ../../client/src/media/hooks/use-media-controls.ts:132
 msgid "Zoom out"
 msgstr "축소"

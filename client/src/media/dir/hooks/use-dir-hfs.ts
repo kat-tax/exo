@@ -126,8 +126,9 @@ export function useDirHfs(path: string, tmp?: boolean): Omit<HfsCtx, 'bar'> {
       path: fullPath,
       isRange: isShift ?? false,
       isMulti: isCtrl ?? false,
+      namespace: tmp ? 'temp' : 'main',
     }));
-  }, [path, sel, open, put]);
+  }, [path, tmp, sel, open, put]);
 
   const upload = useCallback(async (entry: HfsDirectoryEntry, files: File[]) => {
     if (!hfs) return;
@@ -161,8 +162,11 @@ export function useDirHfs(path: string, tmp?: boolean): Omit<HfsCtx, 'bar'> {
 
   // Update state with current files (for range-select)
   useEffect(() => {
-    put(media.actions.list(list.map(e => path ? `${path}/${e.name}` : e.name)));
-  }, [list, path, put]);
+    put(media.actions.list({
+      list: tmp ? 'temp' : 'main',
+      items: list.map(e => path ? `${path}/${e.name}` : e.name),
+    }));
+  }, [list, path, put, tmp]);
 
   // Create initial directories
   useEffect(() => {

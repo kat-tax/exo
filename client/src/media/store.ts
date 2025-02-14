@@ -4,12 +4,15 @@ import type {PayloadAction} from 'react-exo/redux';
 export type Media = {
   layout: 'list' | 'grid',
   focused: string,
-  contents: string[],
   selected: string[],
   dragging: string[],
   renaming: string[],
   copying: string[],
   moving: string[],
+  lists: {
+    main: string[],
+    temp: string[],
+  },
 }
 
 export default createSlice({
@@ -17,17 +20,19 @@ export default createSlice({
   initialState: <Media> {
     layout: 'list',
     focused: '',
-    contents: [],
     selected: [],
     dragging: [],
     renaming: [],
     copying: [],
     moving: [],
+    lists: {
+      main: [],
+      temp: [],
+    },
   },
   selectors: {
     getLayout: (media) => media.layout,
     getFocused: (media) => media.focused,
-    getContents: (media) => media.contents,
     getSelected: (media) => media.selected,
     getDragging: (media) => media.dragging,
     getRenaming: (media) => media.renaming,
@@ -38,8 +43,9 @@ export default createSlice({
     layout(media, action: PayloadAction<'list' | 'grid'>) {
       media.layout = action.payload;
     },
-    list(media, action: PayloadAction<string[]>) {
-      media.contents = action.payload;
+    list(media, action: PayloadAction<{list: 'main' | 'temp', items: string[]}>) {
+      const {list, items} = action.payload;
+      media.lists[list] = items;
     },
     focus(media, action: PayloadAction<string>) {
       media.focused = action.payload;
@@ -53,8 +59,11 @@ export default createSlice({
         media.dragging = media.selected;
       }
     },
-    selectBulk(media, action: PayloadAction<string[] | 'all'>) {
-      media.selected = action.payload === 'all' ? media.contents : action.payload;
+    selectBulk(media, action: PayloadAction<string[] | 'main' | 'temp'>) {
+      media.selected = Array.isArray(action.payload)
+        ? action.payload
+        : media.lists[action.payload];
+      // Refocus after selection changes
       if (media.selected.length === 0) {
         media.focused = '';
       } else {
@@ -72,17 +81,17 @@ export default createSlice({
       path: string,
       isMulti: boolean,
       isRange: boolean,
+      namespace?: 'main' | 'temp',
     }>) {
-      const {path, isMulti, isRange} = action.payload;
+      const {path, isMulti, isRange, namespace = 'main'} = action.payload;
       const indexSelected = media.selected.indexOf(path);
-      const indexLast = media.contents.indexOf(media.focused);
-      const indexNew = media.contents.indexOf(path);
       // Range select (shift+click)
       if (isRange) {
-        const start = Math.min(indexLast, indexNew);
-        const end = Math.max(indexLast, indexNew);
-        const rng = media.contents.slice(start, end + 1);
-        media.selected = [...new Set([...media.selected, ...rng])];
+        const _ = media.lists[namespace];
+        const to = _.indexOf(path);
+        const from = _.indexOf(media.focused);
+        const range = _.slice(Math.min(from, to), Math.max(from, to) + 1);
+        media.selected = [...new Set([...media.selected, ...range])];
       // Multi select (cmd+click)
       } else if (isMulti) {
         if (indexSelected !== -1) {

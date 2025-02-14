@@ -16,7 +16,7 @@ export function History() {
           label={t`Select All`}
           icon="ph:selection-all"
           onAction={async () => {
-            put(media.actions.selectBulk('all'));
+            put(media.actions.selectBulk('main'));
           }}
         />
     </View>

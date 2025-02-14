@@ -25,7 +25,7 @@ export function useHotkeys(hotkeys: Hotkeys) {
         case 'a':
           if (!(e.metaKey || e.ctrlKey)) return;
           e.preventDefault();
-          put(media.actions.selectBulk('all'));
+          put(media.actions.selectBulk('main'));
           break;
         // Clear selection
         case 'Escape':

@@ -68,7 +68,7 @@ msgstr "التقويم"
 msgid "Celsius"
 msgstr "سيلزيوس"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:284
+#: ../../client/src/media/hooks/use-media-controls.ts:298
 msgid "Close"
 msgstr "إغلاق"
 
@@ -76,8 +76,7 @@ msgstr "إغلاق"
 msgid "Compress"
 msgstr "ضغط"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:58
-#: ../../client/src/media/dir/stacks/menu-hfs.tsx:55
+#: ../../client/src/media/hooks/use-media-controls.ts:72
 msgid "Copy"
 msgstr "نسخ"
 
@@ -167,10 +166,7 @@ msgstr "المستندات"
 msgid "Documents"
 msgstr "المستندات"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:77
-#: ../../client/src/media/file/file-binary.tsx:36
-#: ../../client/src/media/dir/stacks/menu-torrent.tsx:22
-#: ../../client/src/media/dir/stacks/menu-hfs.tsx:44
+#: ../../client/src/media/hooks/use-media-controls.ts:91
 msgid "Download"
 msgstr "تحميل"
 
@@ -178,7 +174,7 @@ msgstr "تحميل"
 msgid "Downloads"
 msgstr "التنزيلات"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:67
+#: ../../client/src/media/hooks/use-media-controls.ts:81
 msgid "Edit"
 msgstr "تعديل"
 
@@ -198,8 +194,7 @@ msgstr "أدخل اسم المجلد"
 msgid "Enter name"
 msgstr "أدخل الاسم"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:87
-#: ../../client/src/media/dir/stacks/menu-zip.tsx:22
+#: ../../client/src/media/hooks/use-media-controls.ts:101
 msgid "Extract"
 msgstr "استخراج"
 
@@ -219,7 +214,7 @@ msgstr "الملفات"
 msgid "Filesystem"
 msgstr "نظام الملفات"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:274
+#: ../../client/src/media/hooks/use-media-controls.ts:288
 msgid "Fullscreen"
 msgstr "ملء الشاشة"
 
@@ -347,7 +342,7 @@ msgstr "الموسيقى"
 msgid "News"
 msgstr "الأخبار"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:195
+#: ../../client/src/media/hooks/use-media-controls.ts:209
 msgid "Next"
 msgstr "التالي"
 
@@ -359,7 +354,7 @@ msgstr "لا توجد أحداث مجدولة."
 msgid "Open"
 msgstr "فتح"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:229
+#: ../../client/src/media/hooks/use-media-controls.ts:243
 msgid "Options"
 msgstr "الخيارات"
 
@@ -371,7 +366,7 @@ msgstr "نظرة عامة"
 msgid "Owner Key"
 msgstr "مفتاح المالك"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:130
+#: ../../client/src/media/hooks/use-media-controls.ts:144
 msgid "Pause"
 msgstr "إيقاف مؤقت"
 
@@ -379,11 +374,11 @@ msgstr "إيقاف مؤقت"
 msgid "Pictures"
 msgstr "الصور"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:240
+#: ../../client/src/media/hooks/use-media-controls.ts:254
 msgid "Pin"
 msgstr "تثبيت"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:131
+#: ../../client/src/media/hooks/use-media-controls.ts:145
 msgid "Play"
 msgstr "تشغيل"
 
@@ -391,7 +386,7 @@ msgstr "تشغيل"
 msgid "Please set your Groq API Key"
 msgstr "يرجى تعيين مفتاح Groq API الخاص بك"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:184
+#: ../../client/src/media/hooks/use-media-controls.ts:198
 msgid "Previous"
 msgstr "السابق"
 
@@ -435,13 +430,17 @@ msgstr "قدم رابطاً لاستخدام ميزات الخريطة."
 msgid "Rename"
 msgstr "إعادة تسمية"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:172
+#: ../../client/src/media/hooks/use-media-controls.ts:186
 msgid "Replay"
 msgstr "إعادة التشغيل"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:97
+#: ../../client/src/media/hooks/use-media-controls.ts:111
 msgid "Search"
 msgstr "بحث"
+
+#: ../../client/src/media/hooks/use-media-controls.ts:62
+msgid "Select all"
+msgstr ""
 
 #: ../../client/src/media/stacks/history.tsx:16
 msgid "Select All"
@@ -477,16 +476,15 @@ msgstr "الخدمات"
 msgid "Settings"
 msgstr "الإعدادات"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:254
-#: ../../client/src/media/dir/stacks/menu-hfs.tsx:30
+#: ../../client/src/media/hooks/use-media-controls.ts:268
 msgid "Share"
 msgstr "مشاركة"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:150
+#: ../../client/src/media/hooks/use-media-controls.ts:164
 msgid "Skip backward"
 msgstr "تخطي للخلف"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:161
+#: ../../client/src/media/hooks/use-media-controls.ts:175
 msgid "Skip forward"
 msgstr "تخطي للأمام"
 
@@ -543,7 +541,7 @@ msgstr "عرض أحداثك والمعلومات المتعلقة بالوقت"
 msgid "View your latest news and rss feeds"
 msgstr "عرض آخر الأخبار وتغذيات RSS الخاصة بك"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:217
+#: ../../client/src/media/hooks/use-media-controls.ts:231
 msgid "Volume"
 msgstr "مستوى الصوت"
 
@@ -576,10 +574,10 @@ msgstr "اسمك للعرض في التطبيق."
 msgid "Your prompt history has been reset."
 msgstr "تم إعادة تعيين سجل المطالبات الخاص بك."
 
-#: ../../client/src/media/hooks/use-media-controls.ts:107
+#: ../../client/src/media/hooks/use-media-controls.ts:121
 msgid "Zoom in"
 msgstr "تكبير"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:118
+#: ../../client/src/media/hooks/use-media-controls.ts:132
 msgid "Zoom out"
 msgstr "تصغير"

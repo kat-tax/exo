@@ -68,7 +68,7 @@ msgstr "カレンダー"
 msgid "Celsius"
 msgstr "摂氏"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:284
+#: ../../client/src/media/hooks/use-media-controls.ts:298
 msgid "Close"
 msgstr "閉じる"
 
@@ -76,8 +76,7 @@ msgstr "閉じる"
 msgid "Compress"
 msgstr "圧縮"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:58
-#: ../../client/src/media/dir/stacks/menu-hfs.tsx:55
+#: ../../client/src/media/hooks/use-media-controls.ts:72
 msgid "Copy"
 msgstr "コピー"
 
@@ -167,10 +166,7 @@ msgstr "ドキュメント"
 msgid "Documents"
 msgstr "ドキュメント"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:77
-#: ../../client/src/media/file/file-binary.tsx:36
-#: ../../client/src/media/dir/stacks/menu-torrent.tsx:22
-#: ../../client/src/media/dir/stacks/menu-hfs.tsx:44
+#: ../../client/src/media/hooks/use-media-controls.ts:91
 msgid "Download"
 msgstr "ダウンロード"
 
@@ -178,7 +174,7 @@ msgstr "ダウンロード"
 msgid "Downloads"
 msgstr "ダウンロード"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:67
+#: ../../client/src/media/hooks/use-media-controls.ts:81
 msgid "Edit"
 msgstr "編集"
 
@@ -198,8 +194,7 @@ msgstr "フォルダ名を入力"
 msgid "Enter name"
 msgstr "名前を入力"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:87
-#: ../../client/src/media/dir/stacks/menu-zip.tsx:22
+#: ../../client/src/media/hooks/use-media-controls.ts:101
 msgid "Extract"
 msgstr "抽出"
 
@@ -219,7 +214,7 @@ msgstr "ファイル"
 msgid "Filesystem"
 msgstr "ファイルシステム"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:274
+#: ../../client/src/media/hooks/use-media-controls.ts:288
 msgid "Fullscreen"
 msgstr "全画面"
 
@@ -347,7 +342,7 @@ msgstr "音楽"
 msgid "News"
 msgstr "ニュース"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:195
+#: ../../client/src/media/hooks/use-media-controls.ts:209
 msgid "Next"
 msgstr "次へ"
 
@@ -359,7 +354,7 @@ msgstr "予定されているイベントはありません。"
 msgid "Open"
 msgstr "開く"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:229
+#: ../../client/src/media/hooks/use-media-controls.ts:243
 msgid "Options"
 msgstr "オプション"
 
@@ -371,7 +366,7 @@ msgstr "概要"
 msgid "Owner Key"
 msgstr "オーナーキー"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:130
+#: ../../client/src/media/hooks/use-media-controls.ts:144
 msgid "Pause"
 msgstr "一時停止"
 
@@ -379,11 +374,11 @@ msgstr "一時停止"
 msgid "Pictures"
 msgstr "写真"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:240
+#: ../../client/src/media/hooks/use-media-controls.ts:254
 msgid "Pin"
 msgstr "ピン留め"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:131
+#: ../../client/src/media/hooks/use-media-controls.ts:145
 msgid "Play"
 msgstr "再生"
 
@@ -391,7 +386,7 @@ msgstr "再生"
 msgid "Please set your Groq API Key"
 msgstr "Groq APIキーを設定してください"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:184
+#: ../../client/src/media/hooks/use-media-controls.ts:198
 msgid "Previous"
 msgstr "前へ"
 
@@ -435,13 +430,17 @@ msgstr "地図機能を使用するにはURLを提供してください。"
 msgid "Rename"
 msgstr "名前変更"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:172
+#: ../../client/src/media/hooks/use-media-controls.ts:186
 msgid "Replay"
 msgstr "リプレイ"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:97
+#: ../../client/src/media/hooks/use-media-controls.ts:111
 msgid "Search"
 msgstr "検索"
+
+#: ../../client/src/media/hooks/use-media-controls.ts:62
+msgid "Select all"
+msgstr ""
 
 #: ../../client/src/media/stacks/history.tsx:16
 msgid "Select All"
@@ -477,16 +476,15 @@ msgstr "サービス"
 msgid "Settings"
 msgstr "設定"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:254
-#: ../../client/src/media/dir/stacks/menu-hfs.tsx:30
+#: ../../client/src/media/hooks/use-media-controls.ts:268
 msgid "Share"
 msgstr "共有"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:150
+#: ../../client/src/media/hooks/use-media-controls.ts:164
 msgid "Skip backward"
 msgstr "巻き戻し"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:161
+#: ../../client/src/media/hooks/use-media-controls.ts:175
 msgid "Skip forward"
 msgstr "早送り"
 
@@ -543,7 +541,7 @@ msgstr "イベントと時間関連情報を表示"
 msgid "View your latest news and rss feeds"
 msgstr "最新ニュースとRSSフィードを表示"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:217
+#: ../../client/src/media/hooks/use-media-controls.ts:231
 msgid "Volume"
 msgstr "音量"
 
@@ -576,10 +574,10 @@ msgstr "アプリに表示する名前。"
 msgid "Your prompt history has been reset."
 msgstr "プロンプト履歴がリセットされました。"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:107
+#: ../../client/src/media/hooks/use-media-controls.ts:121
 msgid "Zoom in"
 msgstr "拡大"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:118
+#: ../../client/src/media/hooks/use-media-controls.ts:132
 msgid "Zoom out"
 msgstr "縮小"

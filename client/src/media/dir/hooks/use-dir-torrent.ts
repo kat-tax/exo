@@ -66,6 +66,7 @@ export function useDirTorrent(path: string): TorrentCtx {
         path: url ? `${url}/${file.name}` : file.name,
         isRange: isShift ?? false,
         isMulti: isCtrl ?? false,
+        namespace: 'temp',
       }));
     }
   }, [torrent, url, put]);

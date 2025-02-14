@@ -1,12 +1,15 @@
 import {useMemo, useState, useEffect} from 'react';
+import {useDispatch} from 'react-redux';
 import {useLingui} from '@lingui/react/macro';
 import {share} from 'react-exo/device';
 import {web} from 'react-exo/fs';
 import {pinFile} from 'media/dir/utils/ipfs/pin';
 import {FileType} from 'media/file/types';
+import media from 'media/store';
 
 import type {MediaControlsProps} from 'media/stacks/controls';
 
+export const ITERABLE = [FileType.Directory];
 export const SHAREABLE = [FileType.Image, FileType.Video, FileType.Audio, FileType.Pdf];
 export const EXTRACTABLE = [FileType.Zip];
 export const DOWNLOADABLE = [FileType.Torrent, FileType.Binary];
@@ -41,6 +44,7 @@ export function useMediaControls(props: MediaControlsProps): MediaControls {
   const {file, renderer, metadata, actions} = props;
   const [pinning, setPinning] = useState(false);
   const [pinned, setPinned] = useState<string>();
+  const put = useDispatch();
   const {t} = useLingui();
 
   useEffect(() => {
@@ -51,6 +55,16 @@ export function useMediaControls(props: MediaControlsProps): MediaControls {
   }, [metadata]);
 
   const controls = useMemo(() => renderer ? [
+    // Directory controls
+    {
+      name: 'select-all',
+      icon: 'ph:selection-all',
+      label: t`Select all`,
+      media: ITERABLE,
+      action: () => {
+        put(media.actions.selectBulk('temp'));
+      },
+    },
     // Edit controls
     {
       name: 'copy',
@@ -287,7 +301,7 @@ export function useMediaControls(props: MediaControlsProps): MediaControls {
     }]
     .filter((e) => (!e.media || e.media?.includes(renderer[0])))
     .filter((e) => !e.filter || e.filter())
-  : [], [file, renderer, metadata, pinning, pinned, actions, t]);
+  : [], [file, renderer, metadata, pinning, pinned, actions, put, t]);
 
   return {
     controls,
