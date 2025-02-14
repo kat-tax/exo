@@ -200,11 +200,9 @@ export function useMediaControls(props: MediaControlsProps): MediaControls {
         }
       },
     },
-    // Title (center)
+    // Center banner
     {
       name: 'banner',
-      title: metadata.title,
-      cover: metadata.cover,
     },
     // Window controls
     {

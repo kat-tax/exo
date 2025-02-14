@@ -3,6 +3,7 @@ import {View, Text} from 'react-native';
 import {Thumb} from 'media/stacks/thumb';
 import {isTouch} from 'app/utils/platform';
 import {bytesize} from 'app/utils/formatting';
+import {useMediaName} from 'media/hooks/use-media-name';
 
 const TOUCH = isTouch();
 export const HEIGHT_ROW = TOUCH ? 40 : 26;
@@ -29,6 +30,7 @@ interface ListRow {
 }
 
 export function ListRow(props: ListRow) {
+  const title = useMediaName(props.name);
   const {styles} = useStyles(stylesheet);
   const {name, size, ext, dir, tmp, opt, img} = props;
   const {
@@ -62,7 +64,7 @@ export function ListRow(props: ListRow) {
           style={[styles.text, cell && styles.textCell]}
           numberOfLines={cell ? 2 : 1}
           ellipsizeMode="middle">
-          {name}
+          {title}
         </Text>
         <Text
           style={[styles.text, styles.size, cell && styles.textCell]}

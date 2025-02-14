@@ -5,6 +5,7 @@ import {Icon} from 'react-exo/icon';
 import {useCallback, useMemo} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useMediaControls} from 'media/hooks/use-media-controls';
+import {useMediaName} from 'media/hooks/use-media-name';
 import {FileType} from 'media/file/types';
 import {Thumb} from 'media/stacks/thumb';
 import {isTouch} from 'app/utils/platform';
@@ -42,8 +43,9 @@ export function MediaControls(props: MediaControlsProps) {
   const {controls, seekable} = useMediaControls(props);
   const {styles, theme} = useStyles(stylesheet);
   const [fileType] = props.renderer ?? [];
-  const isDir = fileType === FileType.Directory;
   const isBook = fileType === FileType.Book;
+  const isDir = fileType === FileType.Directory;
+  const title = useMediaName(props.metadata.name);
   const vstyles = useMemo(() => ({
     icon: (state: PressableStateCallbackType) =>
       state.hovered || TOUCH
@@ -86,7 +88,7 @@ export function MediaControls(props: MediaControlsProps) {
           />
         </View>
       }
-      {controls.map(({name, icon, title, action}) => title
+      {controls.map(({name, icon, action}) => name === 'banner'
         ? <Pressable key={name} style={styles.content} onPress={toc}>
             <View style={styles.thumb}>
               <Thumb

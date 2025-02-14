@@ -51,7 +51,7 @@ msgstr "무엇이든 물어보세요..."
 msgid "Auto"
 msgstr "자동"
 
-#: ../../client/src/app/routes/menu/index.tsx:133
+#: ../../client/src/media/hooks/use-media-name.ts:21
 msgid "Books"
 msgstr "도서"
 
@@ -67,7 +67,7 @@ msgstr "달력"
 msgid "Celsius"
 msgstr "섭씨"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:286
+#: ../../client/src/media/hooks/use-media-controls.ts:284
 msgid "Close"
 msgstr "닫기"
 
@@ -76,7 +76,6 @@ msgid "Compress"
 msgstr ""
 
 #: ../../client/src/media/hooks/use-media-controls.ts:58
-#: ../../client/src/media/dir/stacks/menu-hfs.tsx:55
 msgid "Copy"
 msgstr ""
 
@@ -161,18 +160,15 @@ msgstr "거리"
 msgid "Docs"
 msgstr "문서"
 
-#: ../../client/src/media/stacks/list/bar.tsx:91
+#: ../../client/src/media/hooks/use-media-name.ts:11
 msgid "Documents"
 msgstr "문서"
 
 #: ../../client/src/media/hooks/use-media-controls.ts:77
-#: ../../client/src/media/file/file-binary.tsx:36
-#: ../../client/src/media/dir/stacks/menu-torrent.tsx:22
-#: ../../client/src/media/dir/stacks/menu-hfs.tsx:44
 msgid "Download"
 msgstr "다운로드"
 
-#: ../../client/src/media/stacks/list/bar.tsx:103
+#: ../../client/src/media/hooks/use-media-name.ts:23
 msgid "Downloads"
 msgstr "다운로드"
 
@@ -197,7 +193,6 @@ msgid "Enter name"
 msgstr ""
 
 #: ../../client/src/media/hooks/use-media-controls.ts:87
-#: ../../client/src/media/dir/stacks/menu-zip.tsx:22
 msgid "Extract"
 msgstr "추출"
 
@@ -209,8 +204,7 @@ msgstr "화씨"
 msgid "Feature in development..."
 msgstr ""
 
-#: ../../client/src/app/routes/menu/index.tsx:47
-#: ../../client/src/app/routes/menu/index.tsx:103
+#: ../../client/src/media/hooks/use-media-name.ts:27
 msgid "Files"
 msgstr "파일"
 
@@ -218,11 +212,11 @@ msgstr "파일"
 msgid "Filesystem"
 msgstr ""
 
-#: ../../client/src/media/hooks/use-media-controls.ts:276
+#: ../../client/src/media/hooks/use-media-controls.ts:274
 msgid "Fullscreen"
 msgstr "전체화면"
 
-#: ../../client/src/app/routes/menu/index.tsx:128
+#: ../../client/src/media/hooks/use-media-name.ts:19
 msgid "Games"
 msgstr "게임"
 
@@ -335,7 +329,7 @@ msgstr "마일"
 msgid "Move"
 msgstr ""
 
-#: ../../client/src/app/routes/menu/index.tsx:113
+#: ../../client/src/media/hooks/use-media-name.ts:13
 msgid "Music"
 msgstr "음악"
 
@@ -363,7 +357,7 @@ msgstr ""
 msgid "Open All"
 msgstr ""
 
-#: ../../client/src/media/hooks/use-media-controls.ts:231
+#: ../../client/src/media/hooks/use-media-controls.ts:229
 msgid "Options"
 msgstr "옵션"
 
@@ -379,11 +373,11 @@ msgstr "소유자 키"
 msgid "Pause"
 msgstr "일시정지"
 
-#: ../../client/src/app/routes/menu/index.tsx:118
+#: ../../client/src/media/hooks/use-media-name.ts:15
 msgid "Pictures"
 msgstr "사진"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:242
+#: ../../client/src/media/hooks/use-media-controls.ts:240
 msgid "Pin"
 msgstr "고정"
 
@@ -484,8 +478,7 @@ msgstr ""
 msgid "Settings"
 msgstr "설정"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:256
-#: ../../client/src/media/dir/stacks/menu-hfs.tsx:30
+#: ../../client/src/media/hooks/use-media-controls.ts:254
 msgid "Share"
 msgstr "공유"
 
@@ -521,7 +514,7 @@ msgstr ""
 msgid "Unsupported File"
 msgstr "지원되지 않는 파일"
 
-#: ../../client/src/media/stacks/list/bar.tsx:105
+#: ../../client/src/media/hooks/use-media-name.ts:25
 msgid "Uploads"
 msgstr "업로드"
 
@@ -529,7 +522,7 @@ msgstr "업로드"
 msgid "User Name"
 msgstr "사용자 이름"
 
-#: ../../client/src/app/routes/menu/index.tsx:123
+#: ../../client/src/media/hooks/use-media-name.ts:17
 msgid "Videos"
 msgstr "동영상"
 
@@ -545,7 +538,7 @@ msgstr "일정 및 시간 관련 정보 보기"
 msgid "View your latest news and rss feeds"
 msgstr "최신 뉴스 및 RSS 피드 보기"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:219
+#: ../../client/src/media/hooks/use-media-controls.ts:217
 msgid "Volume"
 msgstr "볼륨"
 

@@ -4,6 +4,7 @@ import {Text, View, Pressable} from 'react-native';
 import {useCallback, useEffect, useState} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useFocusable} from '@noriginmedia/norigin-spatial-navigation';
+import {useMediaName} from 'media/hooks/use-media-name';
 import {useDispatch} from 'react-redux';
 import {isTouch} from 'app/utils/platform';
 import media from 'media/store';
@@ -28,6 +29,7 @@ export function SelectItem(props: SelectItemProps) {
   const {focused, index, path, name, ext, hfs} = props;
   const {styles, theme} = useStyles(stylesheet);
   const [dir, setDir] = useState(!ext);
+  const title = useMediaName(name);
 
   const put = useDispatch();
 
@@ -69,7 +71,7 @@ export function SelectItem(props: SelectItemProps) {
         style={[styles.text, focused && styles.textFocused]}
         selectable={false}
         numberOfLines={TEXT_LINES}>
-        {name || `.${ext}`}
+        {name ? title : `.${ext}`}
       </Text>
       <Pressable style={styles.close} onPress={() => close(index)}>
         <Icon

@@ -51,7 +51,7 @@ msgstr "Pregunta lo que quieras..."
 msgid "Auto"
 msgstr "Automático"
 
-#: ../../client/src/app/routes/menu/index.tsx:133
+#: ../../client/src/media/hooks/use-media-name.ts:21
 msgid "Books"
 msgstr "Libros"
 
@@ -67,7 +67,7 @@ msgstr "Calendario"
 msgid "Celsius"
 msgstr "Celsius"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:286
+#: ../../client/src/media/hooks/use-media-controls.ts:284
 msgid "Close"
 msgstr "Cerrar"
 
@@ -76,7 +76,6 @@ msgid "Compress"
 msgstr ""
 
 #: ../../client/src/media/hooks/use-media-controls.ts:58
-#: ../../client/src/media/dir/stacks/menu-hfs.tsx:55
 msgid "Copy"
 msgstr ""
 
@@ -161,18 +160,15 @@ msgstr "Distancia"
 msgid "Docs"
 msgstr "Documentos"
 
-#: ../../client/src/media/stacks/list/bar.tsx:91
+#: ../../client/src/media/hooks/use-media-name.ts:11
 msgid "Documents"
 msgstr "Documentos"
 
 #: ../../client/src/media/hooks/use-media-controls.ts:77
-#: ../../client/src/media/file/file-binary.tsx:36
-#: ../../client/src/media/dir/stacks/menu-torrent.tsx:22
-#: ../../client/src/media/dir/stacks/menu-hfs.tsx:44
 msgid "Download"
 msgstr "Descargar"
 
-#: ../../client/src/media/stacks/list/bar.tsx:103
+#: ../../client/src/media/hooks/use-media-name.ts:23
 msgid "Downloads"
 msgstr "Descargas"
 
@@ -197,7 +193,6 @@ msgid "Enter name"
 msgstr ""
 
 #: ../../client/src/media/hooks/use-media-controls.ts:87
-#: ../../client/src/media/dir/stacks/menu-zip.tsx:22
 msgid "Extract"
 msgstr "Extraer"
 
@@ -209,8 +204,7 @@ msgstr "Fahrenheit"
 msgid "Feature in development..."
 msgstr ""
 
-#: ../../client/src/app/routes/menu/index.tsx:47
-#: ../../client/src/app/routes/menu/index.tsx:103
+#: ../../client/src/media/hooks/use-media-name.ts:27
 msgid "Files"
 msgstr "Archivos"
 
@@ -218,11 +212,11 @@ msgstr "Archivos"
 msgid "Filesystem"
 msgstr ""
 
-#: ../../client/src/media/hooks/use-media-controls.ts:276
+#: ../../client/src/media/hooks/use-media-controls.ts:274
 msgid "Fullscreen"
 msgstr "Pantalla completa"
 
-#: ../../client/src/app/routes/menu/index.tsx:128
+#: ../../client/src/media/hooks/use-media-name.ts:19
 msgid "Games"
 msgstr "Juegos"
 
@@ -335,7 +329,7 @@ msgstr "Millas"
 msgid "Move"
 msgstr ""
 
-#: ../../client/src/app/routes/menu/index.tsx:113
+#: ../../client/src/media/hooks/use-media-name.ts:13
 msgid "Music"
 msgstr "Música"
 
@@ -363,7 +357,7 @@ msgstr ""
 msgid "Open All"
 msgstr ""
 
-#: ../../client/src/media/hooks/use-media-controls.ts:231
+#: ../../client/src/media/hooks/use-media-controls.ts:229
 msgid "Options"
 msgstr "Opciones"
 
@@ -379,11 +373,11 @@ msgstr "Clave de Propietario"
 msgid "Pause"
 msgstr "Pausar"
 
-#: ../../client/src/app/routes/menu/index.tsx:118
+#: ../../client/src/media/hooks/use-media-name.ts:15
 msgid "Pictures"
 msgstr "Imágenes"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:242
+#: ../../client/src/media/hooks/use-media-controls.ts:240
 msgid "Pin"
 msgstr "Fijar"
 
@@ -484,8 +478,7 @@ msgstr ""
 msgid "Settings"
 msgstr "Ajustes"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:256
-#: ../../client/src/media/dir/stacks/menu-hfs.tsx:30
+#: ../../client/src/media/hooks/use-media-controls.ts:254
 msgid "Share"
 msgstr "Compartir"
 
@@ -521,7 +514,7 @@ msgstr ""
 msgid "Unsupported File"
 msgstr "Archivo no soportado"
 
-#: ../../client/src/media/stacks/list/bar.tsx:105
+#: ../../client/src/media/hooks/use-media-name.ts:25
 msgid "Uploads"
 msgstr "Subidas"
 
@@ -529,7 +522,7 @@ msgstr "Subidas"
 msgid "User Name"
 msgstr "Nombre de Usuario"
 
-#: ../../client/src/app/routes/menu/index.tsx:123
+#: ../../client/src/media/hooks/use-media-name.ts:17
 msgid "Videos"
 msgstr "Videos"
 
@@ -545,7 +538,7 @@ msgstr "Ver tus eventos e información relacionada con el tiempo"
 msgid "View your latest news and rss feeds"
 msgstr "Ver tus últimas noticias y feeds RSS"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:219
+#: ../../client/src/media/hooks/use-media-controls.ts:217
 msgid "Volume"
 msgstr "Volumen"
 

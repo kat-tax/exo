@@ -51,7 +51,7 @@ msgstr "اسأل أي شيء..."
 msgid "Auto"
 msgstr "تلقائي"
 
-#: ../../client/src/app/routes/menu/index.tsx:133
+#: ../../client/src/media/hooks/use-media-name.ts:21
 msgid "Books"
 msgstr "الكتب"
 
@@ -67,7 +67,7 @@ msgstr "التقويم"
 msgid "Celsius"
 msgstr "سيلزيوس"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:286
+#: ../../client/src/media/hooks/use-media-controls.ts:284
 msgid "Close"
 msgstr "إغلاق"
 
@@ -76,7 +76,6 @@ msgid "Compress"
 msgstr ""
 
 #: ../../client/src/media/hooks/use-media-controls.ts:58
-#: ../../client/src/media/dir/stacks/menu-hfs.tsx:55
 msgid "Copy"
 msgstr "نسخ"
 
@@ -161,18 +160,15 @@ msgstr "المسافة"
 msgid "Docs"
 msgstr "المستندات"
 
-#: ../../client/src/media/stacks/list/bar.tsx:91
+#: ../../client/src/media/hooks/use-media-name.ts:11
 msgid "Documents"
 msgstr "المستندات"
 
 #: ../../client/src/media/hooks/use-media-controls.ts:77
-#: ../../client/src/media/file/file-binary.tsx:36
-#: ../../client/src/media/dir/stacks/menu-torrent.tsx:22
-#: ../../client/src/media/dir/stacks/menu-hfs.tsx:44
 msgid "Download"
 msgstr "تحميل"
 
-#: ../../client/src/media/stacks/list/bar.tsx:103
+#: ../../client/src/media/hooks/use-media-name.ts:23
 msgid "Downloads"
 msgstr "التنزيلات"
 
@@ -197,7 +193,6 @@ msgid "Enter name"
 msgstr ""
 
 #: ../../client/src/media/hooks/use-media-controls.ts:87
-#: ../../client/src/media/dir/stacks/menu-zip.tsx:22
 msgid "Extract"
 msgstr "استخراج"
 
@@ -209,8 +204,7 @@ msgstr "فهرنهايت"
 msgid "Feature in development..."
 msgstr ""
 
-#: ../../client/src/app/routes/menu/index.tsx:47
-#: ../../client/src/app/routes/menu/index.tsx:103
+#: ../../client/src/media/hooks/use-media-name.ts:27
 msgid "Files"
 msgstr "الملفات"
 
@@ -218,11 +212,11 @@ msgstr "الملفات"
 msgid "Filesystem"
 msgstr "نظام الملفات"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:276
+#: ../../client/src/media/hooks/use-media-controls.ts:274
 msgid "Fullscreen"
 msgstr "ملء الشاشة"
 
-#: ../../client/src/app/routes/menu/index.tsx:128
+#: ../../client/src/media/hooks/use-media-name.ts:19
 msgid "Games"
 msgstr "الألعاب"
 
@@ -335,7 +329,7 @@ msgstr "أميال"
 msgid "Move"
 msgstr "نقل"
 
-#: ../../client/src/app/routes/menu/index.tsx:113
+#: ../../client/src/media/hooks/use-media-name.ts:13
 msgid "Music"
 msgstr "الموسيقى"
 
@@ -363,7 +357,7 @@ msgstr ""
 msgid "Open All"
 msgstr ""
 
-#: ../../client/src/media/hooks/use-media-controls.ts:231
+#: ../../client/src/media/hooks/use-media-controls.ts:229
 msgid "Options"
 msgstr "الخيارات"
 
@@ -379,11 +373,11 @@ msgstr "مفتاح المالك"
 msgid "Pause"
 msgstr "إيقاف مؤقت"
 
-#: ../../client/src/app/routes/menu/index.tsx:118
+#: ../../client/src/media/hooks/use-media-name.ts:15
 msgid "Pictures"
 msgstr "الصور"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:242
+#: ../../client/src/media/hooks/use-media-controls.ts:240
 msgid "Pin"
 msgstr "تثبيت"
 
@@ -484,8 +478,7 @@ msgstr ""
 msgid "Settings"
 msgstr "الإعدادات"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:256
-#: ../../client/src/media/dir/stacks/menu-hfs.tsx:30
+#: ../../client/src/media/hooks/use-media-controls.ts:254
 msgid "Share"
 msgstr "مشاركة"
 
@@ -521,7 +514,7 @@ msgstr ""
 msgid "Unsupported File"
 msgstr "ملف غير مدعوم"
 
-#: ../../client/src/media/stacks/list/bar.tsx:105
+#: ../../client/src/media/hooks/use-media-name.ts:25
 msgid "Uploads"
 msgstr "المرفوعات"
 
@@ -529,7 +522,7 @@ msgstr "المرفوعات"
 msgid "User Name"
 msgstr "اسم المستخدم"
 
-#: ../../client/src/app/routes/menu/index.tsx:123
+#: ../../client/src/media/hooks/use-media-name.ts:17
 msgid "Videos"
 msgstr "الفيديوهات"
 
@@ -545,7 +538,7 @@ msgstr "عرض أحداثك والمعلومات المتعلقة بالوقت"
 msgid "View your latest news and rss feeds"
 msgstr "عرض آخر الأخبار وتغذيات RSS الخاصة بك"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:219
+#: ../../client/src/media/hooks/use-media-controls.ts:217
 msgid "Volume"
 msgstr "مستوى الصوت"
 

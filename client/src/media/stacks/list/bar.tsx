@@ -1,14 +1,13 @@
+import {View, ScrollView} from 'react-native';
+import {Icon} from 'react-exo/icon';
+import {isTouch} from 'react-exo/utils';
+import {useNavigate} from 'react-exo/navigation';
 import {useCallback, useEffect, useRef} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useFocusable, FocusContext} from '@noriginmedia/norigin-spatial-navigation';
-import {useNavigate} from 'react-exo/navigation';
-import {useLingui} from '@lingui/react/macro';
-import {isTouch} from 'react-exo/utils';
-import {Icon} from 'react-exo/icon';
-import {View, ScrollView} from 'react-native';
+import {useMediaName} from 'media/hooks/use-media-name';
 import {ButtonText} from 'app/stacks/button/text';
 import {ButtonIcon} from 'app/stacks/button/icon';
-import {InitDirectory} from 'media/dir/utils/hfs/path';
 
 const TOUCH = isTouch();
 const ITEM_SIZE = TOUCH ? 46 : 32;
@@ -81,32 +80,9 @@ export function ListBarItem({name, path, last, scroll}: {
   last?: boolean,
   scroll?: React.RefObject<ScrollView>,
 }) {
-  const {t} = useLingui();
   const nav = useNavigate();
   const goto = useCallback(() => nav(path ?? name ?? '/browse'), [nav, path, name]);
-  const title = useCallback((n?: string) => {
-    const dir = n as InitDirectory;
-    switch (dir) {
-      case InitDirectory.Documents:
-        return t`Documents`;
-      case InitDirectory.Music:
-        return t`Music`;
-      case InitDirectory.Pictures:
-        return t`Pictures`;
-      case InitDirectory.Videos:
-        return t`Videos`;
-      case InitDirectory.Games:
-        return t`Games`;
-      case InitDirectory.Books:
-        return t`Books`;
-      case InitDirectory.Downloads:
-        return t`Downloads`;
-      case InitDirectory.Uploads:
-        return t`Uploads`;
-      default: dir satisfies never;
-        return dir || t`Files`;
-    }
-  }, [t]);
+  const title = useMediaName(name);
 
   const {ref, focused} = useFocusable({
     focusKey: `bar@${path}`,
@@ -120,7 +96,7 @@ export function ListBarItem({name, path, last, scroll}: {
   return (
     <ButtonText
       vref={ref}
-      label={title(name)}
+      label={title}
       size={TEXT_SIZE}
       onPress={goto}
       state={focused
