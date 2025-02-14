@@ -26,7 +26,7 @@
     "react-native-ultimate-config": "^6.0.1"
   },
   "devDependencies": {
-    "@lingui/conf": "^5.1.2",
+    "@lingui/conf": "^5.2.0",
     "gray-matter": "^4.0.3",
     "vocs": "1.0.0-alpha.62",
     "typescript": "^5.7.2"

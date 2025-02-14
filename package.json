@@ -26,7 +26,7 @@
     "postinstall": "pnpm generate"
   },
   "devDependencies": {
-    "@lingui/cli": "^5.1.2",
+    "@lingui/cli": "^5.2.0",
     "@qrgrid/core": "^0.2.2",
     "cli-cursor": "^3.0.0",
     "concurrently": "^9.1.2",

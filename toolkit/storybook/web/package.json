@@ -8,9 +8,9 @@
     "build": "storybook build -o ../../../output/storybook"
   },
   "dependencies": {
-    "@lingui/core": "^5.1.2",
-    "@lingui/macro": "^5.1.2",
-    "@lingui/react": "^5.1.2",
+    "@lingui/core": "^5.2.0",
+    "@lingui/macro": "^5.2.0",
+    "@lingui/react": "^5.2.0",
     "@storybook/blocks": "^8.4.7",
     "design": "workspace:react-exo-ui@*",
     "react": "^18.3.1",
