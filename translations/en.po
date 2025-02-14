@@ -204,7 +204,7 @@ msgstr "Fahrenheit"
 msgid "Feature in development..."
 msgstr "Feature in development..."
 
-#: ../../client/src/media/hooks/use-media-name.ts:27
+#: ../../client/src/media/stacks/list/bar.tsx:54
 msgid "Files"
 msgstr "Files"
 

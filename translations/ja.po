@@ -204,7 +204,7 @@ msgstr "華氏"
 msgid "Feature in development..."
 msgstr ""
 
-#: ../../client/src/media/hooks/use-media-name.ts:27
+#: ../../client/src/media/stacks/list/bar.tsx:54
 msgid "Files"
 msgstr "ファイル"
 

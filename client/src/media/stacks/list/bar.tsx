@@ -1,6 +1,7 @@
 import {View, ScrollView} from 'react-native';
 import {Icon} from 'react-exo/icon';
 import {isTouch} from 'react-exo/utils';
+import {useLingui} from '@lingui/react/macro';
 import {useNavigate} from 'react-exo/navigation';
 import {useCallback, useEffect, useRef} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
@@ -26,6 +27,7 @@ export interface ListBarAction {
 }
 
 export function ListBar({path, actions}: ListBarProps) {
+  const {t} = useLingui();
   const items = path?.split('/');
   const scroll = useRef<ScrollView>(null);
   const {styles} = useStyles(stylesheet);
@@ -49,7 +51,7 @@ export function ListBar({path, actions}: ListBarProps) {
           contentContainerStyle={styles.breadcrumbs}>
           {path ? (
             <>
-              <ListBarItem name="Files" path="/browse"/>
+              <ListBarItem name={t`Files`} path="/browse"/>
               <ListBarItemSeparator/>
             </>
           ) : null}
