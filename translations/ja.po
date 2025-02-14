@@ -22,7 +22,7 @@ msgstr "{0}個のコンポーネント"
 
 #: ../../client/src/app/routes/screen-settings.tsx:217
 msgid "<matrix access token>"
-msgstr ""
+msgstr "<Matrixアクセストークン>"
 
 #: ../../client/src/app/routes/screen-settings.tsx:50
 msgid "A mnemonic phrase for authentication."
@@ -34,7 +34,7 @@ msgstr "オーナーキーを変更してもよろしいですか？ローカル
 
 #: ../../client/src/app/hooks/use-settings.ts:103
 msgid "Are you sure you want to reset your filesystem? This will delete all files."
-msgstr ""
+msgstr "ファイルシステムをリセットしてもよろしいですか？すべてのファイルが削除されます。"
 
 #: ../../client/src/app/hooks/use-settings.ts:90
 msgid "Are you sure you want to reset your local database? If data is not backed up on another device, it will be lost. This action cannot be undone."
@@ -78,16 +78,16 @@ msgstr "閉じる"
 
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:37
 msgid "Compress"
-msgstr ""
+msgstr "圧縮"
 
 #: ../../client/src/media/hooks/use-media-controls.ts:58
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:55
 msgid "Copy"
-msgstr ""
+msgstr "コピー"
 
 #: ../../client/src/app/routes/menu/index.tsx:87
 msgid "Create Folder"
-msgstr ""
+msgstr "フォルダを作成"
 
 #: ../../client/src/app/routes/screen-settings.tsx:102
 msgid "Dark"
@@ -104,19 +104,19 @@ msgstr "データ"
 
 #: ../../client/src/app/routes/screen-settings.tsx:236
 msgid "Database"
-msgstr ""
+msgstr "データベース"
 
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:80
 msgid "Delete"
-msgstr ""
+msgstr "削除"
 
 #: ../../client/src/app/routes/screen-settings.tsx:247
 msgid "Delete all local files."
-msgstr ""
+msgstr "すべてのローカルファイルを削除します。"
 
 #: ../../client/src/app/routes/screen-settings.tsx:227
 msgid "Delete all local prompt data."
-msgstr ""
+msgstr "すべてのローカルプロンプトデータを削除します。"
 
 #: ../../client/src/app/routes/screen-settings.tsx:239
 msgid "Delete Database"
@@ -124,7 +124,7 @@ msgstr "データベースを削除"
 
 #: ../../client/src/app/routes/screen-settings.tsx:249
 msgid "Delete Filesystem"
-msgstr ""
+msgstr "ファイルシステムを削除"
 
 #: ../../client/src/app/routes/screen-settings.tsx:229
 msgid "Delete Prompts"
@@ -149,11 +149,11 @@ msgstr "デバイス容量"
 
 #: ../../client/src/media/stacks/list/empty.tsx:28
 msgid "Directory empty. Drop items or select folder to import."
-msgstr ""
+msgstr "ディレクトリが空です。アイテムをドロップするかフォルダを選択してインポートしてください。"
 
 #: ../../client/src/media/stacks/list/empty.tsx:27
 msgid "Directory empty. Select folder to import."
-msgstr ""
+msgstr "ディレクトリが空です。インポートするフォルダを選択してください。"
 
 #: ../../client/src/app/routes/screen-settings.tsx:70
 msgid "Display"
@@ -196,11 +196,11 @@ msgstr "良い夜を"
 
 #: ../../client/src/app/routes/menu/index.tsx:89
 msgid "Enter folder name"
-msgstr ""
+msgstr "フォルダ名を入力"
 
 #: ../../client/src/app/routes/screen-settings.tsx:44
 msgid "Enter name"
-msgstr ""
+msgstr "名前を入力"
 
 #: ../../client/src/media/hooks/use-media-controls.ts:87
 #: ../../client/src/media/dir/stacks/menu-zip.tsx:22
@@ -213,7 +213,7 @@ msgstr "華氏"
 
 #: ../../client/src/app/routes/screen-teaser.tsx:15
 msgid "Feature in development..."
-msgstr ""
+msgstr "開発中の機能..."
 
 #: ../../client/src/media/stacks/list/bar.tsx:54
 #: ../../client/src/media/hooks/use-media-name.ts:27
@@ -224,7 +224,7 @@ msgstr "ファイル"
 
 #: ../../client/src/app/routes/screen-settings.tsx:246
 msgid "Filesystem"
-msgstr ""
+msgstr "ファイルシステム"
 
 #: ../../client/src/media/hooks/use-media-controls.ts:274
 msgid "Fullscreen"
@@ -273,7 +273,7 @@ msgstr "ファイルをインポート"
 
 #: ../../client/src/media/stacks/list/empty.tsx:29
 msgid "Import Folder"
-msgstr ""
+msgstr "フォルダをインポート"
 
 #: ../../client/src/app/routes/menu/index.tsx:42
 #: ../../client/src/app/routes/menu/index.tsx:77
@@ -316,23 +316,23 @@ msgstr "地図"
 
 #: ../../client/src/app/routes/screen-settings.tsx:174
 msgid "Maptiler API Key"
-msgstr ""
+msgstr "Maptiler APIキー"
 
 #: ../../client/src/app/routes/screen-settings.tsx:162
 msgid "Maptiler URL"
-msgstr ""
+msgstr "Maptiler URL"
 
 #: ../../client/src/app/routes/screen-settings.tsx:211
 msgid "Matrix Access Token"
-msgstr ""
+msgstr "Matrixアクセストークン"
 
 #: ../../client/src/app/routes/screen-settings.tsx:199
 msgid "Matrix Base URL"
-msgstr ""
+msgstr "MatrixベースURL"
 
 #: ../../client/src/app/routes/screen-settings.tsx:187
 msgid "Matrix User ID"
-msgstr ""
+msgstr "MatrixユーザーID"
 
 #: ../../client/src/app/routes/menu/index.tsx:82
 msgid "Media"
@@ -344,7 +344,7 @@ msgstr "マイル"
 
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:62
 msgid "Move"
-msgstr ""
+msgstr "移動"
 
 #: ../../client/src/media/hooks/use-media-name.ts:13
 #: ../../client/src/app/routes/menu/index.tsx:113
@@ -366,7 +366,7 @@ msgstr "予定されているイベントはありません。"
 
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:23
 msgid "Open"
-msgstr ""
+msgstr "開く"
 
 #: ../../client/src/media/hooks/use-media-controls.ts:229
 msgid "Options"
@@ -419,7 +419,7 @@ msgstr "プロンプト"
 
 #: ../../client/src/app/routes/screen-settings.tsx:200
 msgid "Provide a base url to use social features."
-msgstr ""
+msgstr "ソーシャル機能を使用するにはベースURLを提供してください。"
 
 #: ../../client/src/app/routes/screen-settings.tsx:135
 msgid "Provide a key to use AI features."
@@ -427,23 +427,23 @@ msgstr "AI機能を使用するにはキーを提供してください。"
 
 #: ../../client/src/app/routes/screen-settings.tsx:175
 msgid "Provide a key to use map features."
-msgstr ""
+msgstr "地図機能を使用するにはキーを提供してください。"
 
 #: ../../client/src/app/routes/screen-settings.tsx:188
 msgid "Provide a matrix user to use social features."
-msgstr ""
+msgstr "ソーシャル機能を使用するにはMatrixユーザーを提供してください。"
 
 #: ../../client/src/app/routes/screen-settings.tsx:212
 msgid "Provide a token to use social features."
-msgstr ""
+msgstr "ソーシャル機能を使用するにはトークンを提供してください。"
 
 #: ../../client/src/app/routes/screen-settings.tsx:163
 msgid "Provide a url to use map features."
-msgstr ""
+msgstr "地図機能を使用するにはURLを提供してください。"
 
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:69
 msgid "Rename"
-msgstr ""
+msgstr "名前変更"
 
 #: ../../client/src/media/hooks/use-media-controls.ts:172
 msgid "Replay"
@@ -455,7 +455,7 @@ msgstr "検索"
 
 #: ../../client/src/media/stacks/history.tsx:16
 msgid "Select All"
-msgstr ""
+msgstr "すべて選択"
 
 #: ../../client/src/app/routes/screen-settings.tsx:148
 msgid "Select the AI model to use."
@@ -479,7 +479,7 @@ msgstr "アプリのテーマを選択してください。"
 
 #: ../../client/src/app/routes/screen-settings.tsx:132
 msgid "Services"
-msgstr ""
+msgstr "サービス"
 
 #: ../../client/src/app/routes/screen-settings.tsx:24
 #: ../../client/src/app/routes/menu/index.tsx:57
@@ -519,7 +519,7 @@ msgstr "テーマ"
 
 #: ../../client/src/media/file/file-binary.tsx:35
 msgid "This file can not be previewed."
-msgstr ""
+msgstr "このファイルはプレビューできません。"
 
 #: ../../client/src/media/file/file-binary.tsx:30
 msgid "Unsupported File"

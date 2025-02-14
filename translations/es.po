@@ -22,7 +22,7 @@ msgstr "{0} componentes"
 
 #: ../../client/src/app/routes/screen-settings.tsx:217
 msgid "<matrix access token>"
-msgstr ""
+msgstr "<token de acceso matrix>"
 
 #: ../../client/src/app/routes/screen-settings.tsx:50
 msgid "A mnemonic phrase for authentication."
@@ -34,7 +34,7 @@ msgstr "¿Estás seguro de que quieres cambiar la clave de propietario? Esto rei
 
 #: ../../client/src/app/hooks/use-settings.ts:103
 msgid "Are you sure you want to reset your filesystem? This will delete all files."
-msgstr ""
+msgstr "¿Estás seguro de que quieres reiniciar tu sistema de archivos? Esto eliminará todos los archivos."
 
 #: ../../client/src/app/hooks/use-settings.ts:90
 msgid "Are you sure you want to reset your local database? If data is not backed up on another device, it will be lost. This action cannot be undone."
@@ -78,16 +78,16 @@ msgstr "Cerrar"
 
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:37
 msgid "Compress"
-msgstr ""
+msgstr "Comprimir"
 
 #: ../../client/src/media/hooks/use-media-controls.ts:58
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:55
 msgid "Copy"
-msgstr ""
+msgstr "Copiar"
 
 #: ../../client/src/app/routes/menu/index.tsx:87
 msgid "Create Folder"
-msgstr ""
+msgstr "Crear Carpeta"
 
 #: ../../client/src/app/routes/screen-settings.tsx:102
 msgid "Dark"
@@ -104,19 +104,19 @@ msgstr "Datos"
 
 #: ../../client/src/app/routes/screen-settings.tsx:236
 msgid "Database"
-msgstr ""
+msgstr "Base de datos"
 
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:80
 msgid "Delete"
-msgstr ""
+msgstr "Eliminar"
 
 #: ../../client/src/app/routes/screen-settings.tsx:247
 msgid "Delete all local files."
-msgstr ""
+msgstr "Eliminar todos los archivos locales."
 
 #: ../../client/src/app/routes/screen-settings.tsx:227
 msgid "Delete all local prompt data."
-msgstr ""
+msgstr "Eliminar todos los datos de prompts locales."
 
 #: ../../client/src/app/routes/screen-settings.tsx:239
 msgid "Delete Database"
@@ -124,7 +124,7 @@ msgstr "Eliminar Base de Datos"
 
 #: ../../client/src/app/routes/screen-settings.tsx:249
 msgid "Delete Filesystem"
-msgstr ""
+msgstr "Eliminar Sistema de Archivos"
 
 #: ../../client/src/app/routes/screen-settings.tsx:229
 msgid "Delete Prompts"
@@ -149,11 +149,11 @@ msgstr "Espacio del Dispositivo"
 
 #: ../../client/src/media/stacks/list/empty.tsx:28
 msgid "Directory empty. Drop items or select folder to import."
-msgstr ""
+msgstr "Directorio vacío. Suelta elementos o selecciona carpeta para importar."
 
 #: ../../client/src/media/stacks/list/empty.tsx:27
 msgid "Directory empty. Select folder to import."
-msgstr ""
+msgstr "Directorio vacío. Selecciona carpeta para importar."
 
 #: ../../client/src/app/routes/screen-settings.tsx:70
 msgid "Display"
@@ -196,11 +196,11 @@ msgstr "Disfruta la noche"
 
 #: ../../client/src/app/routes/menu/index.tsx:89
 msgid "Enter folder name"
-msgstr ""
+msgstr "Ingresa nombre de carpeta"
 
 #: ../../client/src/app/routes/screen-settings.tsx:44
 msgid "Enter name"
-msgstr ""
+msgstr "Ingresa nombre"
 
 #: ../../client/src/media/hooks/use-media-controls.ts:87
 #: ../../client/src/media/dir/stacks/menu-zip.tsx:22
@@ -213,7 +213,7 @@ msgstr "Fahrenheit"
 
 #: ../../client/src/app/routes/screen-teaser.tsx:15
 msgid "Feature in development..."
-msgstr ""
+msgstr "Función en desarrollo..."
 
 #: ../../client/src/media/stacks/list/bar.tsx:54
 #: ../../client/src/media/hooks/use-media-name.ts:27
@@ -224,7 +224,7 @@ msgstr "Archivos"
 
 #: ../../client/src/app/routes/screen-settings.tsx:246
 msgid "Filesystem"
-msgstr ""
+msgstr "Sistema de archivos"
 
 #: ../../client/src/media/hooks/use-media-controls.ts:274
 msgid "Fullscreen"
@@ -273,7 +273,7 @@ msgstr "Importar Archivos"
 
 #: ../../client/src/media/stacks/list/empty.tsx:29
 msgid "Import Folder"
-msgstr ""
+msgstr "Importar Carpeta"
 
 #: ../../client/src/app/routes/menu/index.tsx:42
 #: ../../client/src/app/routes/menu/index.tsx:77
@@ -316,23 +316,23 @@ msgstr "Mapa"
 
 #: ../../client/src/app/routes/screen-settings.tsx:174
 msgid "Maptiler API Key"
-msgstr ""
+msgstr "Clave API de Maptiler"
 
 #: ../../client/src/app/routes/screen-settings.tsx:162
 msgid "Maptiler URL"
-msgstr ""
+msgstr "URL de Maptiler"
 
 #: ../../client/src/app/routes/screen-settings.tsx:211
 msgid "Matrix Access Token"
-msgstr ""
+msgstr "Token de Acceso Matrix"
 
 #: ../../client/src/app/routes/screen-settings.tsx:199
 msgid "Matrix Base URL"
-msgstr ""
+msgstr "URL Base de Matrix"
 
 #: ../../client/src/app/routes/screen-settings.tsx:187
 msgid "Matrix User ID"
-msgstr ""
+msgstr "ID de Usuario Matrix"
 
 #: ../../client/src/app/routes/menu/index.tsx:82
 msgid "Media"
@@ -344,7 +344,7 @@ msgstr "Millas"
 
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:62
 msgid "Move"
-msgstr ""
+msgstr "Mover"
 
 #: ../../client/src/media/hooks/use-media-name.ts:13
 #: ../../client/src/app/routes/menu/index.tsx:113
@@ -366,7 +366,7 @@ msgstr "No hay eventos programados."
 
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:23
 msgid "Open"
-msgstr ""
+msgstr "Abrir"
 
 #: ../../client/src/media/hooks/use-media-controls.ts:229
 msgid "Options"
@@ -419,7 +419,7 @@ msgstr "Prompts"
 
 #: ../../client/src/app/routes/screen-settings.tsx:200
 msgid "Provide a base url to use social features."
-msgstr ""
+msgstr "Proporciona una URL base para usar funciones sociales."
 
 #: ../../client/src/app/routes/screen-settings.tsx:135
 msgid "Provide a key to use AI features."
@@ -427,23 +427,23 @@ msgstr "Proporciona una clave para usar las funciones de IA."
 
 #: ../../client/src/app/routes/screen-settings.tsx:175
 msgid "Provide a key to use map features."
-msgstr ""
+msgstr "Proporciona una clave para usar funciones de mapa."
 
 #: ../../client/src/app/routes/screen-settings.tsx:188
 msgid "Provide a matrix user to use social features."
-msgstr ""
+msgstr "Proporciona un usuario matrix para usar funciones sociales."
 
 #: ../../client/src/app/routes/screen-settings.tsx:212
 msgid "Provide a token to use social features."
-msgstr ""
+msgstr "Proporciona un token para usar funciones sociales."
 
 #: ../../client/src/app/routes/screen-settings.tsx:163
 msgid "Provide a url to use map features."
-msgstr ""
+msgstr "Proporciona una URL para usar funciones de mapa."
 
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:69
 msgid "Rename"
-msgstr ""
+msgstr "Renombrar"
 
 #: ../../client/src/media/hooks/use-media-controls.ts:172
 msgid "Replay"
@@ -455,7 +455,7 @@ msgstr "Buscar"
 
 #: ../../client/src/media/stacks/history.tsx:16
 msgid "Select All"
-msgstr ""
+msgstr "Seleccionar Todo"
 
 #: ../../client/src/app/routes/screen-settings.tsx:148
 msgid "Select the AI model to use."
@@ -479,7 +479,7 @@ msgstr "Selecciona el tema para la aplicación."
 
 #: ../../client/src/app/routes/screen-settings.tsx:132
 msgid "Services"
-msgstr ""
+msgstr "Servicios"
 
 #: ../../client/src/app/routes/screen-settings.tsx:24
 #: ../../client/src/app/routes/menu/index.tsx:57
@@ -519,7 +519,7 @@ msgstr "Tema"
 
 #: ../../client/src/media/file/file-binary.tsx:35
 msgid "This file can not be previewed."
-msgstr ""
+msgstr "Este archivo no se puede previsualizar."
 
 #: ../../client/src/media/file/file-binary.tsx:30
 msgid "Unsupported File"

@@ -22,7 +22,7 @@ msgstr "{0} مكونات"
 
 #: ../../client/src/app/routes/screen-settings.tsx:217
 msgid "<matrix access token>"
-msgstr ""
+msgstr "<رمز وصول ماتريكس>"
 
 #: ../../client/src/app/routes/screen-settings.tsx:50
 msgid "A mnemonic phrase for authentication."
@@ -78,7 +78,7 @@ msgstr "إغلاق"
 
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:37
 msgid "Compress"
-msgstr ""
+msgstr "ضغط"
 
 #: ../../client/src/media/hooks/use-media-controls.ts:58
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:55
@@ -112,11 +112,11 @@ msgstr "حذف"
 
 #: ../../client/src/app/routes/screen-settings.tsx:247
 msgid "Delete all local files."
-msgstr ""
+msgstr "حذف جميع الملفات المحلية."
 
 #: ../../client/src/app/routes/screen-settings.tsx:227
 msgid "Delete all local prompt data."
-msgstr ""
+msgstr "حذف جميع بيانات المطالبات المحلية."
 
 #: ../../client/src/app/routes/screen-settings.tsx:239
 msgid "Delete Database"
@@ -149,11 +149,11 @@ msgstr "مساحة الجهاز"
 
 #: ../../client/src/media/stacks/list/empty.tsx:28
 msgid "Directory empty. Drop items or select folder to import."
-msgstr ""
+msgstr "المجلد فارغ. اسحب العناصر أو حدد مجلداً للاستيراد."
 
 #: ../../client/src/media/stacks/list/empty.tsx:27
 msgid "Directory empty. Select folder to import."
-msgstr ""
+msgstr "المجلد فارغ. حدد مجلداً للاستيراد."
 
 #: ../../client/src/app/routes/screen-settings.tsx:70
 msgid "Display"
@@ -200,7 +200,7 @@ msgstr "أدخل اسم المجلد"
 
 #: ../../client/src/app/routes/screen-settings.tsx:44
 msgid "Enter name"
-msgstr ""
+msgstr "أدخل الاسم"
 
 #: ../../client/src/media/hooks/use-media-controls.ts:87
 #: ../../client/src/media/dir/stacks/menu-zip.tsx:22
@@ -213,7 +213,7 @@ msgstr "فهرنهايت"
 
 #: ../../client/src/app/routes/screen-teaser.tsx:15
 msgid "Feature in development..."
-msgstr ""
+msgstr "الميزة قيد التطوير..."
 
 #: ../../client/src/media/stacks/list/bar.tsx:54
 #: ../../client/src/media/hooks/use-media-name.ts:27
@@ -273,7 +273,7 @@ msgstr "استيراد الملفات"
 
 #: ../../client/src/media/stacks/list/empty.tsx:29
 msgid "Import Folder"
-msgstr ""
+msgstr "استيراد مجلد"
 
 #: ../../client/src/app/routes/menu/index.tsx:42
 #: ../../client/src/app/routes/menu/index.tsx:77
@@ -316,23 +316,23 @@ msgstr "الخريطة"
 
 #: ../../client/src/app/routes/screen-settings.tsx:174
 msgid "Maptiler API Key"
-msgstr ""
+msgstr "مفتاح Maptiler API"
 
 #: ../../client/src/app/routes/screen-settings.tsx:162
 msgid "Maptiler URL"
-msgstr ""
+msgstr "رابط Maptiler"
 
 #: ../../client/src/app/routes/screen-settings.tsx:211
 msgid "Matrix Access Token"
-msgstr ""
+msgstr "رمز وصول ماتريكس"
 
 #: ../../client/src/app/routes/screen-settings.tsx:199
 msgid "Matrix Base URL"
-msgstr ""
+msgstr "رابط ماتريكس الأساسي"
 
 #: ../../client/src/app/routes/screen-settings.tsx:187
 msgid "Matrix User ID"
-msgstr ""
+msgstr "معرف مستخدم ماتريكس"
 
 #: ../../client/src/app/routes/menu/index.tsx:82
 msgid "Media"
@@ -366,7 +366,7 @@ msgstr "لا توجد أحداث مجدولة."
 
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:23
 msgid "Open"
-msgstr ""
+msgstr "فتح"
 
 #: ../../client/src/media/hooks/use-media-controls.ts:229
 msgid "Options"
@@ -419,27 +419,27 @@ msgstr "المطالبات"
 
 #: ../../client/src/app/routes/screen-settings.tsx:200
 msgid "Provide a base url to use social features."
-msgstr ""
+msgstr "قدم رابطاً أساسياً لاستخدام الميزات الاجتماعية."
 
 #: ../../client/src/app/routes/screen-settings.tsx:135
 msgid "Provide a key to use AI features."
-msgstr "قدم مفتاحًا لاستخدام ميزات الذكاء الاصطناعي."
+msgstr "قدم مفتاحاً لاستخدام ميزات الذكاء الاصطناعي."
 
 #: ../../client/src/app/routes/screen-settings.tsx:175
 msgid "Provide a key to use map features."
-msgstr ""
+msgstr "قدم مفتاحاً لاستخدام ميزات الخريطة."
 
 #: ../../client/src/app/routes/screen-settings.tsx:188
 msgid "Provide a matrix user to use social features."
-msgstr ""
+msgstr "قدم مستخدم ماتريكس لاستخدام الميزات الاجتماعية."
 
 #: ../../client/src/app/routes/screen-settings.tsx:212
 msgid "Provide a token to use social features."
-msgstr ""
+msgstr "قدم رمزاً لاستخدام الميزات الاجتماعية."
 
 #: ../../client/src/app/routes/screen-settings.tsx:163
 msgid "Provide a url to use map features."
-msgstr ""
+msgstr "قدم رابطاً لاستخدام ميزات الخريطة."
 
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:69
 msgid "Rename"
@@ -455,7 +455,7 @@ msgstr "بحث"
 
 #: ../../client/src/media/stacks/history.tsx:16
 msgid "Select All"
-msgstr ""
+msgstr "تحديد الكل"
 
 #: ../../client/src/app/routes/screen-settings.tsx:148
 msgid "Select the AI model to use."
@@ -479,7 +479,7 @@ msgstr "اختر سمة التطبيق."
 
 #: ../../client/src/app/routes/screen-settings.tsx:132
 msgid "Services"
-msgstr ""
+msgstr "الخدمات"
 
 #: ../../client/src/app/routes/screen-settings.tsx:24
 #: ../../client/src/app/routes/menu/index.tsx:57
@@ -519,7 +519,7 @@ msgstr "السمة"
 
 #: ../../client/src/media/file/file-binary.tsx:35
 msgid "This file can not be previewed."
-msgstr ""
+msgstr "لا يمكن معاينة هذا الملف."
 
 #: ../../client/src/media/file/file-binary.tsx:30
 msgid "Unsupported File"

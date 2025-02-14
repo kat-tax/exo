@@ -22,7 +22,7 @@ msgstr "{0}개 컴포넌트"
 
 #: ../../client/src/app/routes/screen-settings.tsx:217
 msgid "<matrix access token>"
-msgstr ""
+msgstr "<매트릭스 접근 토큰>"
 
 #: ../../client/src/app/routes/screen-settings.tsx:50
 msgid "A mnemonic phrase for authentication."
@@ -34,7 +34,7 @@ msgstr "소유자 키를 변경하시겠습니까? 로컬 데이터베이스가 
 
 #: ../../client/src/app/hooks/use-settings.ts:103
 msgid "Are you sure you want to reset your filesystem? This will delete all files."
-msgstr ""
+msgstr "파일시스템을 초기화하시겠습니까? 모든 파일이 삭제됩니다."
 
 #: ../../client/src/app/hooks/use-settings.ts:90
 msgid "Are you sure you want to reset your local database? If data is not backed up on another device, it will be lost. This action cannot be undone."
@@ -78,16 +78,16 @@ msgstr "닫기"
 
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:37
 msgid "Compress"
-msgstr ""
+msgstr "압축"
 
 #: ../../client/src/media/hooks/use-media-controls.ts:58
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:55
 msgid "Copy"
-msgstr ""
+msgstr "복사"
 
 #: ../../client/src/app/routes/menu/index.tsx:87
 msgid "Create Folder"
-msgstr ""
+msgstr "폴더 생성"
 
 #: ../../client/src/app/routes/screen-settings.tsx:102
 msgid "Dark"
@@ -104,19 +104,19 @@ msgstr "데이터"
 
 #: ../../client/src/app/routes/screen-settings.tsx:236
 msgid "Database"
-msgstr ""
+msgstr "데이터베이스"
 
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:80
 msgid "Delete"
-msgstr ""
+msgstr "삭제"
 
 #: ../../client/src/app/routes/screen-settings.tsx:247
 msgid "Delete all local files."
-msgstr ""
+msgstr "모든 로컬 파일 삭제"
 
 #: ../../client/src/app/routes/screen-settings.tsx:227
 msgid "Delete all local prompt data."
-msgstr ""
+msgstr "모든 로컬 프롬프트 데이터 삭제"
 
 #: ../../client/src/app/routes/screen-settings.tsx:239
 msgid "Delete Database"
@@ -124,7 +124,7 @@ msgstr "데이터베이스 삭제"
 
 #: ../../client/src/app/routes/screen-settings.tsx:249
 msgid "Delete Filesystem"
-msgstr ""
+msgstr "파일시스템 삭제"
 
 #: ../../client/src/app/routes/screen-settings.tsx:229
 msgid "Delete Prompts"
@@ -149,11 +149,11 @@ msgstr "기기 저장공간"
 
 #: ../../client/src/media/stacks/list/empty.tsx:28
 msgid "Directory empty. Drop items or select folder to import."
-msgstr ""
+msgstr "빈 디렉토리. 항목을 끌어다 놓거나 가져올 폴더를 선택하세요."
 
 #: ../../client/src/media/stacks/list/empty.tsx:27
 msgid "Directory empty. Select folder to import."
-msgstr ""
+msgstr "빈 디렉토리. 가져올 폴더를 선택하세요."
 
 #: ../../client/src/app/routes/screen-settings.tsx:70
 msgid "Display"
@@ -196,11 +196,11 @@ msgstr "좋은 밤 되세요"
 
 #: ../../client/src/app/routes/menu/index.tsx:89
 msgid "Enter folder name"
-msgstr ""
+msgstr "폴더 이름 입력"
 
 #: ../../client/src/app/routes/screen-settings.tsx:44
 msgid "Enter name"
-msgstr ""
+msgstr "이름 입력"
 
 #: ../../client/src/media/hooks/use-media-controls.ts:87
 #: ../../client/src/media/dir/stacks/menu-zip.tsx:22
@@ -213,7 +213,7 @@ msgstr "화씨"
 
 #: ../../client/src/app/routes/screen-teaser.tsx:15
 msgid "Feature in development..."
-msgstr ""
+msgstr "개발 중인 기능..."
 
 #: ../../client/src/media/stacks/list/bar.tsx:54
 #: ../../client/src/media/hooks/use-media-name.ts:27
@@ -224,7 +224,7 @@ msgstr "파일"
 
 #: ../../client/src/app/routes/screen-settings.tsx:246
 msgid "Filesystem"
-msgstr ""
+msgstr "파일시스템"
 
 #: ../../client/src/media/hooks/use-media-controls.ts:274
 msgid "Fullscreen"
@@ -273,7 +273,7 @@ msgstr "파일 가져오기"
 
 #: ../../client/src/media/stacks/list/empty.tsx:29
 msgid "Import Folder"
-msgstr ""
+msgstr "폴더 가져오기"
 
 #: ../../client/src/app/routes/menu/index.tsx:42
 #: ../../client/src/app/routes/menu/index.tsx:77
@@ -316,23 +316,23 @@ msgstr "지도"
 
 #: ../../client/src/app/routes/screen-settings.tsx:174
 msgid "Maptiler API Key"
-msgstr ""
+msgstr "Maptiler API 키"
 
 #: ../../client/src/app/routes/screen-settings.tsx:162
 msgid "Maptiler URL"
-msgstr ""
+msgstr "Maptiler URL"
 
 #: ../../client/src/app/routes/screen-settings.tsx:211
 msgid "Matrix Access Token"
-msgstr ""
+msgstr "매트릭스 접근 토큰"
 
 #: ../../client/src/app/routes/screen-settings.tsx:199
 msgid "Matrix Base URL"
-msgstr ""
+msgstr "매트릭스 기본 URL"
 
 #: ../../client/src/app/routes/screen-settings.tsx:187
 msgid "Matrix User ID"
-msgstr ""
+msgstr "매트릭스 사용자 ID"
 
 #: ../../client/src/app/routes/menu/index.tsx:82
 msgid "Media"
@@ -344,7 +344,7 @@ msgstr "마일"
 
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:62
 msgid "Move"
-msgstr ""
+msgstr "이동"
 
 #: ../../client/src/media/hooks/use-media-name.ts:13
 #: ../../client/src/app/routes/menu/index.tsx:113
@@ -366,7 +366,7 @@ msgstr "예정된 일정이 없습니다."
 
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:23
 msgid "Open"
-msgstr ""
+msgstr "열기"
 
 #: ../../client/src/media/hooks/use-media-controls.ts:229
 msgid "Options"
@@ -419,7 +419,7 @@ msgstr "프롬프트"
 
 #: ../../client/src/app/routes/screen-settings.tsx:200
 msgid "Provide a base url to use social features."
-msgstr ""
+msgstr "소셜 기능을 사용하려면 기본 URL을 입력하세요."
 
 #: ../../client/src/app/routes/screen-settings.tsx:135
 msgid "Provide a key to use AI features."
@@ -427,23 +427,23 @@ msgstr "AI 기능을 사용하려면 키를 입력하세요."
 
 #: ../../client/src/app/routes/screen-settings.tsx:175
 msgid "Provide a key to use map features."
-msgstr ""
+msgstr "지도 기능을 사용하려면 키를 입력하세요."
 
 #: ../../client/src/app/routes/screen-settings.tsx:188
 msgid "Provide a matrix user to use social features."
-msgstr ""
+msgstr "소셜 기능을 사용하려면 매트릭스 사용자를 입력하세요."
 
 #: ../../client/src/app/routes/screen-settings.tsx:212
 msgid "Provide a token to use social features."
-msgstr ""
+msgstr "소셜 기능을 사용하려면 토큰을 입력하세요."
 
 #: ../../client/src/app/routes/screen-settings.tsx:163
 msgid "Provide a url to use map features."
-msgstr ""
+msgstr "지도 기능을 사용하려면 URL을 입력하세요."
 
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:69
 msgid "Rename"
-msgstr ""
+msgstr "이름 변경"
 
 #: ../../client/src/media/hooks/use-media-controls.ts:172
 msgid "Replay"
@@ -455,7 +455,7 @@ msgstr "검색"
 
 #: ../../client/src/media/stacks/history.tsx:16
 msgid "Select All"
-msgstr ""
+msgstr "모두 선택"
 
 #: ../../client/src/app/routes/screen-settings.tsx:148
 msgid "Select the AI model to use."
@@ -479,7 +479,7 @@ msgstr "앱 테마를 선택하세요."
 
 #: ../../client/src/app/routes/screen-settings.tsx:132
 msgid "Services"
-msgstr ""
+msgstr "서비스"
 
 #: ../../client/src/app/routes/screen-settings.tsx:24
 #: ../../client/src/app/routes/menu/index.tsx:57
@@ -519,7 +519,7 @@ msgstr "테마"
 
 #: ../../client/src/media/file/file-binary.tsx:35
 msgid "This file can not be previewed."
-msgstr ""
+msgstr "이 파일은 미리보기가 불가능합니다."
 
 #: ../../client/src/media/file/file-binary.tsx:30
 msgid "Unsupported File"
