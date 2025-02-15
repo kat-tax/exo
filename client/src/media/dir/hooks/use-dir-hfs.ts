@@ -11,11 +11,10 @@ import {getThumbnail} from '../utils/hfs/meta';
 import {saveAs} from '../utils/hfs/fs';
 
 import type {GestureResponderEvent} from 'react-native';
-import type {HfsDirectoryEntry} from 'react-exo/fs';
-import type {HfsCtx} from 'media/dir/types/hfs';
+import type {HfsCtx, HfsFileEntry} from 'media/dir/types/hfs';
 
 export function useDirHfs(path: string, tmp?: boolean): Omit<HfsCtx, 'bar'> {
-  const [list, setList] = useState<HfsDirectoryEntry[]>([]);
+  const [list, setList] = useState<HfsFileEntry[]>([]);
 
   const hfs = useHfs();
   const sel = useGet(media.selectors.getSelected);
@@ -34,7 +33,7 @@ export function useDirHfs(path: string, tmp?: boolean): Omit<HfsCtx, 'bar'> {
 
   const refresh = useCallback(async () => {
     const showHidden = true;
-    const entries: HfsDirectoryEntry[] = [];
+    const entries: HfsFileEntry[] = [];
     const dirPath = path || '.';
     try {
       // Check if path is valid
@@ -76,13 +75,13 @@ export function useDirHfs(path: string, tmp?: boolean): Omit<HfsCtx, 'bar'> {
     }
   }, [hfs, path]);
 
-  const open = useCallback(async (entry: HfsDirectoryEntry, clearSel?: boolean) => {
+  const open = useCallback(async (entry: HfsFileEntry, clearSel?: boolean) => {
     if (!entry.isDirectory) return;
     nav(path ? `${path}/${entry.name}` : entry.name);
     if (clearSel) put(media.actions.selectBulk([]));
   }, [path, nav, put]);
 
-  const move = useCallback(async (from: HfsDirectoryEntry, to?: HfsDirectoryEntry) => {
+  const move = useCallback(async (from: HfsFileEntry, to?: HfsFileEntry) => {
     if (to) {
       const base = path ? `${path}/` : '';
       const src = `${base}${from.name}`;
@@ -94,7 +93,7 @@ export function useDirHfs(path: string, tmp?: boolean): Omit<HfsCtx, 'bar'> {
     }
   }, [hfs, path]);
 
-  const copy = useCallback(async (from: HfsDirectoryEntry, to?: HfsDirectoryEntry) => {
+  const copy = useCallback(async (from: HfsFileEntry, to?: HfsFileEntry) => {
     if (to) {
       await hfs?.copy?.(from.name, to.name);
     } else {
@@ -102,13 +101,13 @@ export function useDirHfs(path: string, tmp?: boolean): Omit<HfsCtx, 'bar'> {
     }
   }, [hfs]);
   
-  const purge = useCallback(async (entry: HfsDirectoryEntry) => {
+  const purge = useCallback(async (entry: HfsFileEntry) => {
     const base = path ? `${path}/` : '';
     const uri = `${base}${entry.name}`;
     await hfs?.deleteAll?.(uri);
   }, [hfs, path]);
 
-  const rename = useCallback(async (entry: HfsDirectoryEntry, name?: string) => {
+  const rename = useCallback(async (entry: HfsFileEntry, name?: string) => {
     if (name) {
       await hfs?.move?.(entry.name, name);
     } else {
@@ -116,7 +115,7 @@ export function useDirHfs(path: string, tmp?: boolean): Omit<HfsCtx, 'bar'> {
     }
   }, [hfs]);
   
-  const select = useCallback((entry: HfsDirectoryEntry, event?: GestureResponderEvent) => {
+  const select = useCallback((entry: HfsFileEntry, event?: GestureResponderEvent) => {
     if (isZeego(event)) return;
     const [isShift, isCtrl] = [event?.shiftKey, event?.metaKey || event?.ctrlKey];
     const fullPath = path ? `${path}/${entry.name}` : entry.name;
@@ -132,7 +131,7 @@ export function useDirHfs(path: string, tmp?: boolean): Omit<HfsCtx, 'bar'> {
     }));
   }, [path, tmp, sel, open, put]);
 
-  const upload = useCallback(async (entry: HfsDirectoryEntry, files: File[]) => {
+  const upload = useCallback(async (entry: HfsFileEntry, files: File[]) => {
     if (!hfs) return;
     for (const file of files) {
       const data = await file.arrayBuffer();
@@ -143,22 +142,22 @@ export function useDirHfs(path: string, tmp?: boolean): Omit<HfsCtx, 'bar'> {
     }
   }, [hfs]);
 
-  const download = useCallback(async (entry: HfsDirectoryEntry) => {
+  const download = useCallback(async (entry: HfsFileEntry) => {
     if (entry.isFile) {
       const uri = path ? `${path}/${entry.name}` : entry.name;
       saveAs(await getData(uri, 'dataUrl'), entry.name);
     }
   }, [path]);
 
-  const compress = useCallback(async (entry: HfsDirectoryEntry) => {
+  const compress = useCallback(async (entry: HfsFileEntry) => {
     console.log('>> fs [compress]', entry);
   }, []);
 
-  const thumbnail = useCallback(async (entry: HfsDirectoryEntry) => {
+  const thumbnail = useCallback(async (entry: HfsFileEntry) => {
     return getThumbnail(path, entry);
   }, [path]);
 
-  const share = useCallback(async (entry: HfsDirectoryEntry) => {
+  const share = useCallback(async (entry: HfsFileEntry) => {
     console.log('>> fs [share]', entry);
   }, []);
 

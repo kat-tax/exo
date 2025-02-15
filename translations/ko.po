@@ -76,7 +76,7 @@ msgstr "닫기"
 msgid "Compress"
 msgstr "압축"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:72
+#: ../../client/src/media/dir/stacks/menu-hfs.tsx:55
 msgid "Copy"
 msgstr "복사"
 
@@ -166,7 +166,7 @@ msgstr "문서"
 msgid "Documents"
 msgstr "문서"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:91
+#: ../../client/src/media/dir/stacks/menu-hfs.tsx:44
 msgid "Download"
 msgstr "다운로드"
 
@@ -476,7 +476,7 @@ msgstr "서비스"
 msgid "Settings"
 msgstr "설정"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:268
+#: ../../client/src/media/dir/stacks/menu-hfs.tsx:30
 msgid "Share"
 msgstr "공유"
 

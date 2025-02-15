@@ -10,7 +10,7 @@ import media from 'media/store';
 import type {FS} from '@zip.js/zip.js';
 import type {Zip, ZipCtx, ZipFileEntry} from 'media/dir/types/zip';
 import type {GestureResponderEvent} from 'react-native';
-import type {HfsDirectoryEntry} from 'react-exo/fs';
+import type {HfsFileEntry} from 'media/dir/types/hfs';
 
 export function useDirZip(path: string): ZipCtx {
   const [zip, setZip] = useState<Zip | null>(null);
@@ -22,7 +22,7 @@ export function useDirZip(path: string): ZipCtx {
   const extract = useCallback(async (
     file: ZipFileEntry,
     event?: GestureResponderEvent,
-    target?: HfsDirectoryEntry,
+    target?: HfsFileEntry,
   ) => {
     if (!zip) return;
     const source = zipfs.current?.getById(file.id);

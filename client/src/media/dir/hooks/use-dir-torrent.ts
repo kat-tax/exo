@@ -11,11 +11,11 @@ import media from 'media/store';
 
 import type {Torrent, TorrentCtx, TorrentInfo, TorrentFileData, TorrentFileEntry} from 'media/dir/types/torrent';
 import type {GestureResponderEvent} from 'react-native';
-import type {HfsDirectoryEntry} from 'react-exo/fs';
+import type {HfsFileEntry} from 'media/dir/types/hfs';
 
 export function useDirTorrent(path: string): TorrentCtx {
-  const buffer = useFile(path, 'arrayBuffer');
   const {path: url} = usePath();
+  const buffer = useFile(path, 'arrayBuffer');
   const put = usePut();
 
   const torrent: Torrent | null = useMemo(() => {
@@ -38,7 +38,7 @@ export function useDirTorrent(path: string): TorrentCtx {
   const download = useCallback(async (
     file: TorrentFileEntry,
     event?: GestureResponderEvent,
-    target?: HfsDirectoryEntry,
+    target?: HfsFileEntry,
   ) => {
     if (!torrent) return;
     const client = new Tor();
@@ -46,6 +46,7 @@ export function useDirTorrent(path: string): TorrentCtx {
     client.add(torrent.file, {store}, async ({files}) => {
       const item = files.find(e => e.path.split('/').slice(1).join('/') === file.path);
       const root = url ? `${url}/` : '';
+      console.log('>> torrent [url]', url);
       const head = target?.name ? `${target.name}/` : '';
       const dest = `${root}${head}${file.path}`;
       const handle = await web.getFileHandle(dest, {create: true});

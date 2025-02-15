@@ -3,11 +3,10 @@ import {ListRow} from 'media/stacks/list/row';
 import {MenuHfs} from 'media/dir/stacks/menu-hfs';
 import {useEntryHfs} from 'media/dir/hooks/use-entry-hfs';
 
-import type {HfsDirectoryEntry} from 'react-exo/fs';
-import type {HfsCmd, HfsOpt} from 'media/dir/types/hfs';
+import type {HfsCmd, HfsOpt, HfsFileEntry} from 'media/dir/types/hfs';
 
 export interface EntryHfsProps {
-  item: HfsDirectoryEntry,
+  item: HfsFileEntry,
   cmd: HfsCmd,
   opt: HfsOpt,
   tmp?: boolean,

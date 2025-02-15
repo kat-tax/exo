@@ -9,13 +9,12 @@ import media from 'media/store';
 import {is as isZip} from './use-entry-zip';
 import {is as isTorrent} from './use-entry-torrent';
 
-import type {HfsDirectoryEntry} from 'react-exo/fs';
 import type {View, GestureResponderEvent} from 'react-native';
+import type {HfsCmd, HfsFileEntry} from 'media/dir/types/hfs';
 import type {EntryHfsProps} from 'media/dir/stacks/entry-hfs';
 import type {CleanupFn} from 'app/utils/dragdrop';
-import type {HfsCmd} from 'media/dir/types/hfs';
 
-export const {is, get, type} = $.tag<HfsDirectoryEntry, HfsCmd>('hfs');
+export const {is, get, type} = $.tag<HfsFileEntry, HfsCmd>('hfs');
 
 export function useEntryHfs({item, cmd, opt, tmp}: EntryHfsProps) {
   const [dropping, setDropping] = useState(false);

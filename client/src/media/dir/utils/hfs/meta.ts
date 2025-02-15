@@ -3,11 +3,11 @@ import {FileType} from 'media/file/types';
 import {getRenderer} from 'media/file/utils/render';
 import {toPath} from 'app/utils/formatting';
 
-import type {HfsDirectoryEntry} from 'react-exo/fs';
+import type {HfsFileEntry} from 'media/dir/types/hfs';
 
 const THUMB_MAX_SIZE = 320;
 
-export async function getThumbnail(path: string, item: HfsDirectoryEntry) {
+export async function getThumbnail(path: string, item: HfsFileEntry) {
   if (item.isDirectory) return null;
   // Resolve path
   const uri = path ? `${path}/${item.name}` : item.name;

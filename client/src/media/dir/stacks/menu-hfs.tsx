@@ -1,11 +1,11 @@
 import {useLingui} from '@lingui/react/macro';
 import {MenuContext} from 'app/stacks/float';
 
-import type {HfsDirectoryEntry} from 'react-exo/fs';
 import type {useEntryHfs} from 'media/dir/hooks/use-entry-hfs';
+import type {HfsFileEntry} from 'media/dir/types/hfs';
 
 export interface MenuHfsProps extends React.PropsWithChildren {
-  item: HfsDirectoryEntry,
+  item: HfsFileEntry,
   cmd: ReturnType<typeof useEntryHfs>['cmd'],
   on?: (open: boolean) => void,
 }

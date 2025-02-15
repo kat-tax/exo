@@ -76,7 +76,7 @@ msgstr "閉じる"
 msgid "Compress"
 msgstr "圧縮"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:72
+#: ../../client/src/media/dir/stacks/menu-hfs.tsx:55
 msgid "Copy"
 msgstr "コピー"
 
@@ -166,7 +166,7 @@ msgstr "ドキュメント"
 msgid "Documents"
 msgstr "ドキュメント"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:91
+#: ../../client/src/media/dir/stacks/menu-hfs.tsx:44
 msgid "Download"
 msgstr "ダウンロード"
 
@@ -476,7 +476,7 @@ msgstr "サービス"
 msgid "Settings"
 msgstr "設定"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:268
+#: ../../client/src/media/dir/stacks/menu-hfs.tsx:30
 msgid "Share"
 msgstr "共有"
 
