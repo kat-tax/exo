@@ -6,6 +6,7 @@ export function DirZip({zip, cmd}: ZipCtx) {
   return (
     <List
       list={zip?.list}
+      ext={{tmp: true}}
       render={({item}) => <EntryZip {...{item, cmd, opt: {}}}/>}
     />
   );

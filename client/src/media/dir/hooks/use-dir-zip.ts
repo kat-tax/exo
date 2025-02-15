@@ -83,6 +83,17 @@ export function useDirZip(path: string): ZipCtx {
             ext: entry.name.split('.').pop() ?? '',
             dir: entry.data?.directory ?? false,
           }))
+          .sort((a, b) => {
+            if (a.name.startsWith('.'))
+              return 1;
+            if (b.name.startsWith('.'))
+              return -1;
+            if (a.dir && !b.dir)
+              return -1;
+            if (!a.dir && b.dir)
+              return 1;
+            return a.name.localeCompare(b.name);
+          })
           .filter(Boolean),
       });
     })();

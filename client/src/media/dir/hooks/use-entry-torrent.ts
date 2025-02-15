@@ -2,17 +2,14 @@ import {useRef, useState, useEffect} from 'react';
 import {useFocusable} from '@noriginmedia/norigin-spatial-navigation';
 import {toPath} from 'app/utils/formatting';
 import * as dnd from 'app/utils/dragdrop';
-import {bind} from 'media/utils/bind';
+import * as $ from 'media/utils/entry';
 
 import type {View} from 'react-native';
 import type {CleanupFn} from 'app/utils/dragdrop';
 import type {TorrentFileEntry, TorrentCmd} from 'media/dir/types/torrent';
 import type {EntryTorrentProps} from 'media/dir/stacks/entry-torrent';
 
-const $ = Symbol('torrent');
-export type TorrentData = {[$]: true; entry: TorrentFileEntry; cmd: TorrentCmd};
-export const isTorrentData = (data: Record<string | symbol, unknown>): data is TorrentData => data[$] === true;
-export const getTorrentData = (entry: TorrentFileEntry, cmd: TorrentCmd): TorrentData => ({[$]: true, entry, cmd});
+export const {is, get, type} = $.tag<TorrentFileEntry, TorrentCmd>('torrent');
 
 export function useEntryTorrent({item, cmd, opt}: EntryTorrentProps) {
   const [dragging, setDragging] = useState(false);
@@ -30,7 +27,7 @@ export function useEntryTorrent({item, cmd, opt}: EntryTorrentProps) {
     return dnd.combine(...[
       dnd.draggable({
         element,
-        getInitialData: () => getTorrentData(item, cmd),
+        getInitialData: () => get(item, cmd),
         onGenerateDragPreview: dnd.dragPreview(1),
         onDragStart: () => setDragging(true),
         onDrop: () => setDragging(false),
@@ -40,7 +37,7 @@ export function useEntryTorrent({item, cmd, opt}: EntryTorrentProps) {
 
   return {
     ext: toPath(item.name, false)?.ext,
-    cmd: bind(cmd, item),
+    cmd: $.bind(cmd, item),
     opt: {...opt, focused, dragging},
     ref: [refDnd, refFoc],
   };

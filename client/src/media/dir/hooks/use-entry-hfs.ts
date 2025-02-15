@@ -2,22 +2,20 @@ import {useRef, useState, useEffect} from 'react';
 import {useFocusable} from '@noriginmedia/norigin-spatial-navigation';
 import {usePut} from 'app/data/store';
 import {toPath} from 'app/utils/formatting';
-import {bind} from 'media/utils/bind';
 import * as _ from 'app/utils/dragdrop';
+import * as $ from 'media/utils/entry';
 import media from 'media/store';
 
-import {isZipData} from './use-entry-zip';
-import {isTorrentData} from './use-entry-torrent';
+import {is as isZip} from './use-entry-zip';
+import {is as isTorrent} from './use-entry-torrent';
 
 import type {HfsDirectoryEntry} from 'react-exo/fs';
 import type {View, GestureResponderEvent} from 'react-native';
 import type {EntryHfsProps} from 'media/dir/stacks/entry-hfs';
 import type {CleanupFn} from 'app/utils/dragdrop';
+import type {HfsCmd} from 'media/dir/types/hfs';
 
-const $ = Symbol('hfs');
-export type HfsData = {[$]: true, entry: HfsDirectoryEntry};
-export const isHfsData = (data: Record<string | symbol, unknown>): data is HfsData => data[$] === true;
-export const getHfsData = (entry: HfsDirectoryEntry): HfsData => ({[$]: true, entry});
+export const {is, get, type} = $.tag<HfsDirectoryEntry, HfsCmd>('hfs');
 
 export function useEntryHfs({item, cmd, opt, tmp}: EntryHfsProps) {
   const [dropping, setDropping] = useState(false);
@@ -48,7 +46,7 @@ export function useEntryHfs({item, cmd, opt, tmp}: EntryHfsProps) {
     return _.combine(...[
       _.draggable({
         element,
-        getInitialData: () => getHfsData(item),
+        getInitialData: () => get(item, cmd),
         onGenerateDragPreview: _.dragPreview(opt.selected.count),
         onDragStart: () => put(media.actions.drag(item.name)),
         onDrop: () => put(media.actions.drag(null)),
@@ -56,20 +54,20 @@ export function useEntryHfs({item, cmd, opt, tmp}: EntryHfsProps) {
       item.isDirectory && _.dropTargetForElements({
         element,
         canDrop: ({source}) => source.element !== element && (
-             isHfsData(source.data)
-          || isZipData(source.data)
-          || isTorrentData(source.data)
+             is(source.data)
+          || isZip(source.data)
+          || isTorrent(source.data)
         ),
         onDragEnter: () => setDropping(true),
         onDragLeave: () => setDropping(false),
         onDrop: (e) => {
           setDropping(false);
           const {data} = e.source;
-          if (isHfsData(data)) {
+          if (is(data)) {
             cmd.move(data.entry, item);
-          } else if (isZipData(data)) {
+          } else if (isZip(data)) {
             data.cmd.extract(data.entry, undefined, item);
-          } else if (isTorrentData(data)) {
+          } else if (isTorrent(data)) {
             data.cmd.download(data.entry, undefined, item);
           }
         },
@@ -93,7 +91,7 @@ export function useEntryHfs({item, cmd, opt, tmp}: EntryHfsProps) {
 
   return {
     ext: toPath(item.name, item.isDirectory)?.ext,
-    cmd: bind(cmd, item),
+    cmd: $.bind(cmd, item),
     opt: {...opt, focused, dropping},
     ref: [refDnd, refFoc],
   };

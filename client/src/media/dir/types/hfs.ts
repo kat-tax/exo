@@ -7,7 +7,7 @@ export interface Hfs {
   list: Array<HfsDirectoryEntry>,
 }
 
-export interface HfsCtx {
+export type HfsCtx = {
   hfs: Hfs,
   cmd: HfsCmd,
   bar?: ListBarProps,
@@ -18,7 +18,7 @@ export interface HfsCtx {
   },
 }
 
-export interface HfsOpt {
+export type HfsOpt = {
   selected: {
     self: boolean,
     prev: boolean,
@@ -27,7 +27,7 @@ export interface HfsOpt {
   },
 }
 
-export interface HfsCmd {
+export type HfsCmd = {
   goUp: () => boolean,
   share: (entry: HfsDirectoryEntry) => Promise<void>,
   open: (entry: HfsDirectoryEntry, clearSel?: boolean) => Promise<void>,
