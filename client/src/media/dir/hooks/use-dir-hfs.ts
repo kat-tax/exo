@@ -1,7 +1,7 @@
 import {useNavigate} from 'react-exo/navigation';
-import {useDispatch, useSelector} from 'react-redux';
 import {useState, useCallback, useMemo, useEffect} from 'react';
 import {useHfs, useHfsWatch} from 'app/data/lib/hfs-provider';
+import {usePut, useGet} from 'app/data/store';
 import {getData} from 'media/file/utils/data';
 import media from 'media/store';
 
@@ -17,11 +17,11 @@ export function useDirHfs(path: string, tmp?: boolean): Omit<HfsCtx, 'bar'> {
   const [list, setList] = useState<HfsDirectoryEntry[]>([]);
 
   const hfs = useHfs();
-  const sel = useSelector(media.selectors.getSelected);
-  const dnd = useSelector(media.selectors.getDragging);
+  const sel = useGet(media.selectors.getSelected);
+  const dnd = useGet(media.selectors.getDragging);
   const ext = useMemo(() => ({sel, dnd, tmp}), [sel, dnd, tmp]);
 
-  const put = useDispatch();
+  const put = usePut();
   const nav = useNavigate();
 
   const goUp = useCallback(() => {

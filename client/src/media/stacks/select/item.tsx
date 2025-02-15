@@ -6,7 +6,7 @@ import {useCallback, useEffect, useState} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useFocusable} from '@noriginmedia/norigin-spatial-navigation';
 import {useMediaName} from 'media/hooks/use-media-name';
-import {useDispatch} from 'react-redux';
+import {usePut} from 'app/data/store';
 import {isTouch} from 'app/utils/platform';
 import media from 'media/store';
 
@@ -35,7 +35,7 @@ export function SelectItem(props: SelectItemProps) {
   const virt = index === -1;
 
   const nav = useNavigate();
-  const put = useDispatch();
+  const put = usePut();
 
   const open = useCallback(() => {
     put(media.actions.focus(path));

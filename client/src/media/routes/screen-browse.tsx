@@ -1,11 +1,11 @@
-// import {useDispatch, useSelector} from 'react-redux';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useWindowDimensions, View} from 'react-native';
+// import {usePut, useGet} from 'app/data/store';
 import {useDirHfs} from 'media/dir/hooks/use-dir-hfs';
 import {usePath} from 'app/hooks/use-path';
 import {DirHfs} from 'media/dir/stacks/dir-hfs';
-// import media from 'media/store';
 import {Panel} from 'app/stacks/panel';
+// import media from 'media/store';
 
 export default function ScreenBrowse() {
   const screen = useWindowDimensions();
@@ -14,8 +14,8 @@ export default function ScreenBrowse() {
   const {theme, styles} = useStyles(stylesheet);
   const isVertical = screen.width < theme.breakpoints.sm;
 
-  // const layout = useSelector(media.selectors.getLayout);
-  // const dispatch = useDispatch();
+  // const layout = useGet(media.selectors.getLayout);
+  // const put = usePut();
 
   const bar = {
     actions: [
@@ -32,7 +32,7 @@ export default function ScreenBrowse() {
       // {
       //   id: 'layout',
       //   icon: layout === 'grid' ? 'ph:square-split-vertical' : 'ph:squares-four',
-      //   onPress: () => dispatch(media.actions.layout(layout === 'grid' ? 'list' : 'grid')),
+      //   onPress: () => put(media.actions.layout(layout === 'grid' ? 'list' : 'grid')),
       // },
     ],
   };

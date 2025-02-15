@@ -1,15 +1,15 @@
 import {Outlet} from 'react-exo/navigation';
 import {useState} from 'react';
-import {useSelector} from 'react-redux';
 import {useLocation} from 'react-exo/navigation';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useWindowDimensions, View, StatusBar} from 'react-native';
-import {useDevice} from 'app/hooks/use-device';
-import {useHotkeys} from 'app/hooks/use-hotkeys';
 import {useProfile} from 'app/data';
+import {useHotkeys} from 'app/hooks/use-hotkeys';
+import {useDevice} from 'app/hooks/use-device';
+import {useGet} from 'app/data/store';
 import {toPathInfo} from 'app/utils/formatting';
-import {Media} from 'media/stacks/media';
 import {Menu} from 'app/routes/menu';
+import {Media} from 'media/stacks/media';
 import media from 'media/store';
 
 import type {AppCtx} from 'app/hooks/use-app';
@@ -25,7 +25,7 @@ export default function Layout() {
   const profile = useProfile();
   const device = useDevice();
   const screen = useWindowDimensions();
-  const focused = useSelector(media.selectors.getFocused);
+  const focused = useGet(media.selectors.getFocused);
   const isVert = screen.width < theme.breakpoints.sm;
   const hasTabs = screen.width < theme.breakpoints.xs;
   const hasPanel = (pathname.includes('/browse') && !isVert) || Boolean(focused);

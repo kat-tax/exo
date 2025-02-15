@@ -1,7 +1,7 @@
+import {useDispatch, useSelector} from 'react-redux';
 import * as $ from 'react-exo/redux';
 import {KV} from 'react-exo/kv';
 import cfg from 'config';
-
 import app from 'app/store';
 import media from 'media/store';
 
@@ -34,5 +34,8 @@ $.history.init(store);
 
 export type Store = typeof store;
 export type State = ReturnType<typeof store.getState>
+export type AppPut = typeof store.dispatch;
+export const usePut = useDispatch.withTypes<AppPut>();
+export const useGet = useSelector.withTypes<State>();
 export const history = $.history.state;
 export default store;

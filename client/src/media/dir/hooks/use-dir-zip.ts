@@ -1,8 +1,8 @@
 import {fs} from '@zip.js/zip.js';
 import {web} from 'react-exo/fs';
-import {useDispatch} from 'react-redux';
 import {useCallback, useEffect, useState, useRef} from 'react';
 import {usePath} from 'app/hooks/use-path';
+import {usePut} from 'app/data/store';
 import {useFile} from 'media/file/hooks/use-file';
 import {toPathInfo} from 'app/utils/formatting';
 import media from 'media/store';
@@ -17,7 +17,7 @@ export function useDirZip(path: string): ZipCtx {
   const {path: url} = usePath();
   const buffer = useFile(path, 'arrayBuffer');
   const zipfs = useRef<FS | null>(null);
-  const put = useDispatch();
+  const put = usePut();
 
   const extract = useCallback(async (
     file: ZipFileEntry,

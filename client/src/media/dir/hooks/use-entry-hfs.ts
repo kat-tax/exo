@@ -1,6 +1,6 @@
 import {useRef, useState, useEffect} from 'react';
 import {useFocusable} from '@noriginmedia/norigin-spatial-navigation';
-import {useDispatch} from 'react-redux';
+import {usePut} from 'app/data/store';
 import {toPathInfo} from 'app/utils/formatting';
 import {bind} from 'media/utils/bind';
 import * as _ from 'app/utils/dragdrop';
@@ -21,7 +21,7 @@ export const getHfsData = (entry: HfsDirectoryEntry): HfsData => ({[$]: true, en
 
 export function useEntryHfs({item, cmd, opt, tmp}: EntryHfsProps) {
   const [dropping, setDropping] = useState(false);
-  const put = useDispatch();
+  const put = usePut();
   
   // Spatial navigation
   const {focused, ref: refFoc} = useFocusable({

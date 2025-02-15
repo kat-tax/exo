@@ -1,14 +1,14 @@
-import {LegendList} from '@legendapp/list';
 import {View} from 'react-native';
-import {useRef} from 'react';
-import {useSelector} from 'react-redux';
-import {useWindowDimensions} from 'react-native';
+import {LegendList} from '@legendapp/list';
 import {useFocusable, FocusContext} from '@noriginmedia/norigin-spatial-navigation';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {HEIGHT_ROW, HEIGHT_CELL} from 'media/stacks/list/row';
-import {ListEmpty} from 'media/stacks/list/empty';
+import {useWindowDimensions} from 'react-native';
+import {useRef} from 'react';
+// import {useGet} from 'app/data/store';
 import {ListBar} from 'media/stacks/list/bar';
-import media from 'media/store';
+import {ListEmpty} from 'media/stacks/list/empty';
+import {HEIGHT_ROW, HEIGHT_CELL} from 'media/stacks/list/row';
+// import media from 'media/store';
 
 import type {LegendListRef} from '@legendapp/list';
 
@@ -30,7 +30,7 @@ export interface ListProps<T> {
 }
 
 export function List<T>({path, list, ext, bar, render}: ListProps<T>) {
-  //const layout = useSelector(media.selectors.getLayout);
+  //const layout = useGet(media.selectors.getLayout);
   const {width} = useWindowDimensions();
   const layout = !ext?.tmp ? 'list' : 'grid';
   const height = layout === 'list' ? HEIGHT_ROW : HEIGHT_CELL;

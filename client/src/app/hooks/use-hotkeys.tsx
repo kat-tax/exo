@@ -1,5 +1,5 @@
-import {useDispatch} from 'react-redux';
 import {useEffect} from 'react';
+import {usePut} from 'app/data/store';
 import media from 'media/store';
 
 export interface Hotkeys {
@@ -8,7 +8,7 @@ export interface Hotkeys {
 }
 
 export function useHotkeys(hotkeys: Hotkeys) {
-  const put = useDispatch();
+  const put = usePut();
   useEffect(() => {
     const down = (e: KeyboardEvent) => {
       const {key} = e;

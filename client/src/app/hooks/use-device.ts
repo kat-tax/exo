@@ -1,11 +1,11 @@
-import Geolocation from '@react-native-community/geolocation';
 import {isOnline, suscribeOnline} from 'react-exo/device';
-import {useEvolu, cast} from '@evolu/react-native';
-import {useSelector} from 'react-redux';
+import Geolocation from '@react-native-community/geolocation';
+import {toast} from 'react-exo/toast';
 import {useLingui} from '@lingui/react/macro';
+import {useEvolu, cast} from '@evolu/react-native';
 import {useEffect, useMemo, useState} from 'react';
 import {useDevices, useDevice as useDeviceData} from 'app/data';
-import {toast} from 'react-exo/toast';
+import {useGet} from 'app/data/store';
 import app from 'app/store';
 
 import type {DB} from 'app/data';
@@ -17,7 +17,7 @@ export function useDevice(): Partial<ReturnType<typeof useDeviceData>> {
   const [online, setOnline] = useState(cast(false));
   const [geoloc, setGeoloc] = useState<[number, number]>();
 
-  const uuid = useSelector(app.selectors.getDevice);
+  const uuid = useGet(app.selectors.getDevice);
   const evolu = useEvolu<DB>();
   const device = useDeviceData(uuid);
   const devices = useDevices();

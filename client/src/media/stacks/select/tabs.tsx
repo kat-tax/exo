@@ -1,9 +1,9 @@
 import {Motion} from 'react-exo/motion';
-import {useSelector} from 'react-redux';
 import {useRef, useMemo, useEffect} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useFocusable, FocusContext} from '@noriginmedia/norigin-spatial-navigation';
 import {useComposedRefs} from 'app/utils/components';
+import {useGet} from 'app/data/store';
 import {toPathInfo} from 'app/utils/formatting';
 import media from 'media/store';
 
@@ -22,8 +22,8 @@ interface SelectTabsProps {
 export function SelectTabs({hfs, path, name, ext}: SelectTabsProps) {
   const scroll = useRef<ScrollView>(null);
   const {styles} = useStyles(stylesheet);
-  const selection = useSelector(media.selectors.getSelected);
-  const focused = useSelector(media.selectors.getFocused);
+  const selection = useGet(media.selectors.getSelected);
+  const focused = useGet(media.selectors.getFocused);
   const list = useMemo(() => selection.map(selectItem => {
     const {path, name, ext} = toPathInfo(selectItem, false);
     return {path, name, ext};

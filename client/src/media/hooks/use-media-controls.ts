@@ -1,8 +1,8 @@
-import {useMemo, useState, useEffect} from 'react';
-import {useDispatch} from 'react-redux';
-import {useLingui} from '@lingui/react/macro';
-import {share} from 'react-exo/device';
 import {web} from 'react-exo/fs';
+import {share} from 'react-exo/device';
+import {useMemo, useState, useEffect} from 'react';
+import {useLingui} from '@lingui/react/macro';
+import {usePut} from 'app/data/store';
 import {pinFile} from 'media/dir/utils/ipfs/pin';
 import {FileType} from 'media/file/types';
 import media from 'media/store';
@@ -44,8 +44,8 @@ export function useMediaControls(props: MediaControlsProps): MediaControls {
   const {file, renderer, metadata, actions} = props;
   const [pinning, setPinning] = useState(false);
   const [pinned, setPinned] = useState<string>();
-  const put = useDispatch();
   const {t} = useLingui();
+  const put = usePut();
 
   useEffect(() => {
     if (metadata.path) {
