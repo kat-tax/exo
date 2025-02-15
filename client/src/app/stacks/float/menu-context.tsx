@@ -3,6 +3,7 @@ import {Icon} from 'react-exo/icon';
 import {useStyles} from 'react-native-unistyles';
 
 import type {ComponentProps} from 'react';
+import type {GestureResponderEvent} from 'react-native';
 
 export interface MenuContextProps extends ComponentProps<typeof Z['Root']> {
   label: string,
@@ -137,3 +138,8 @@ export const CheckboxItem = Z.create((props: ComponentProps<typeof Z['CheckboxIt
     <Z.CheckboxItem className="ContextMenuCheckboxItem" {...props}/>
   )
 }, 'CheckboxItem');
+
+export const isZeego = (event?: GestureResponderEvent) => {
+  // @ts-expect-error Workaround for Zeego clicking the trigger component
+  if (event?.target?.className === 'ContextMenuItemTitle') return true;
+}

@@ -2,6 +2,7 @@ import {useNavigate} from 'react-exo/navigation';
 import {useState, useCallback, useMemo, useEffect} from 'react';
 import {useHfs, useHfsWatch} from 'app/data/lib/hfs-provider';
 import {usePut, useGet} from 'app/data/store';
+import {isZeego} from 'app/stacks/float/menu-context';
 import {getData} from 'media/file/utils/data';
 import media from 'media/store';
 
@@ -53,8 +54,8 @@ export function useDirHfs(path: string, tmp?: boolean): Omit<HfsCtx, 'bar'> {
         if (entry.name.startsWith('.') && !showHidden)
           continue;
         // Initial directories
-        // if (dirPath === '.' && isInitDirectory(entry.name))
-        //   continue;
+        if (dirPath === '.' && isInitDirectory(entry.name))
+          continue;
         entries.push(entry);
       }
       setList(entries.sort((a, b) => {
@@ -116,6 +117,7 @@ export function useDirHfs(path: string, tmp?: boolean): Omit<HfsCtx, 'bar'> {
   }, [hfs]);
   
   const select = useCallback((entry: HfsDirectoryEntry, event?: GestureResponderEvent) => {
+    if (isZeego(event)) return;
     const [isShift, isCtrl] = [event?.shiftKey, event?.metaKey || event?.ctrlKey];
     const fullPath = path ? `${path}/${entry.name}` : entry.name;
     const isSelected = sel?.includes(fullPath);

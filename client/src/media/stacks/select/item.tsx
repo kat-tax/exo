@@ -87,7 +87,7 @@ export function SelectItem(props: SelectItemProps) {
         style={[styles.text, focused && styles.textFocused]}
         selectable={false}
         numberOfLines={TEXT_LINES}>
-        {(name || virt) ? title : `.${ext}`}
+        {name ? title : ext ? `.${ext}` : title}
       </Text>
       {index !== -1 &&
         <Pressable style={styles.close} onPress={() => close(index)}>
