@@ -15,7 +15,7 @@ export function useEntryTorrent({item, cmd, opt}: EntryTorrentProps) {
   const [dragging, setDragging] = useState(false);
 
   // Spatial navigation
-  const {focused, ref: refFoc} = useFocusable({
+  const {focused, ref: refFoc, focusSelf: foc} = useFocusable({
     onEnterPress: () => cmd.download(item),
   });
 
@@ -40,5 +40,6 @@ export function useEntryTorrent({item, cmd, opt}: EntryTorrentProps) {
     cmd: $.bind(cmd, item),
     opt: {...opt, focused, dragging},
     ref: [refDnd, refFoc],
+    foc,
   };
 }

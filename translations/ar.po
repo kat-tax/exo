@@ -166,7 +166,7 @@ msgstr "المستندات"
 msgid "Documents"
 msgstr "المستندات"
 
-#: ../../client/src/media/dir/stacks/menu-hfs.tsx:44
+#: ../../client/src/media/dir/stacks/menu-torrent.tsx:23
 msgid "Download"
 msgstr "تحميل"
 
@@ -194,7 +194,7 @@ msgstr "أدخل اسم المجلد"
 msgid "Enter name"
 msgstr "أدخل الاسم"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:101
+#: ../../client/src/media/dir/stacks/menu-zip.tsx:23
 msgid "Extract"
 msgstr "استخراج"
 

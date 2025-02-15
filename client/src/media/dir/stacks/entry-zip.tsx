@@ -14,14 +14,14 @@ export interface EntryZipProps {
 export function EntryZip(props: EntryZipProps) {
   const {item} = props;
   const {name, size, dir} = item;
-  const {ext, cmd, opt, ref} = useEntryZip(props);
+  const {ext, cmd, opt, ref, foc} = useEntryZip(props);
 
   return (
     <Touch
       refs={ref}
       onPress={cmd.extract}
       onDoublePress={dir ? cmd.extract : undefined}>
-      <MenuZip {...{item, cmd, on: open => open && ref[0]?.current?.focus()}}>
+      <MenuZip {...{item, cmd}} on={() => foc()}>
         <ListRow {...{name, size, ext, dir, opt, tmp: true}}/>
       </MenuZip>
     </Touch>

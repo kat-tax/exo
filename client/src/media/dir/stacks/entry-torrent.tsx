@@ -14,7 +14,7 @@ export interface EntryTorrentProps {
 export function EntryTorrent(props: EntryTorrentProps) {
   const {item} = props;
   const {name, length} = item;
-  const {ext, cmd, opt, ref} = useEntryTorrent(props);
+  const {ext, cmd, opt, ref, foc} = useEntryTorrent(props);
   const size = length;
   const dir = false;
 
@@ -23,7 +23,7 @@ export function EntryTorrent(props: EntryTorrentProps) {
       refs={ref}
       onPress={cmd.download}
       onDoublePress={dir ? cmd.download : undefined}>
-      <MenuTorrent {...{item, cmd, on: open => open && ref[0]?.current?.focus()}}>
+      <MenuTorrent {...{item, cmd}} on={() => foc()}>
         <ListRow {...{name, size, ext, dir, opt}}/>
       </MenuTorrent>
     </Touch>

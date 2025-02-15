@@ -166,7 +166,7 @@ msgstr "ドキュメント"
 msgid "Documents"
 msgstr "ドキュメント"
 
-#: ../../client/src/media/dir/stacks/menu-hfs.tsx:44
+#: ../../client/src/media/dir/stacks/menu-torrent.tsx:23
 msgid "Download"
 msgstr "ダウンロード"
 
@@ -194,7 +194,7 @@ msgstr "フォルダ名を入力"
 msgid "Enter name"
 msgstr "名前を入力"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:101
+#: ../../client/src/media/dir/stacks/menu-zip.tsx:23
 msgid "Extract"
 msgstr "抽出"
 

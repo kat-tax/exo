@@ -21,7 +21,7 @@ export function useEntryHfs({item, cmd, opt, tmp}: EntryHfsProps) {
   const put = usePut();
   
   // Spatial navigation
-  const {focused, ref: refFoc} = useFocusable({
+  const {focused, ref: refFoc, focusSelf: foc} = useFocusable({
     onFocus: (_lay, _props, e) => tmp
       ? undefined
       : cmd.select(item, e.event as unknown as GestureResponderEvent),
@@ -93,5 +93,6 @@ export function useEntryHfs({item, cmd, opt, tmp}: EntryHfsProps) {
     cmd: $.bind(cmd, item),
     opt: {...opt, focused, dropping},
     ref: [refDnd, refFoc],
+    foc,
   };
 }

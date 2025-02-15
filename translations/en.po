@@ -166,7 +166,7 @@ msgstr "Docs"
 msgid "Documents"
 msgstr "Documents"
 
-#: ../../client/src/media/dir/stacks/menu-hfs.tsx:44
+#: ../../client/src/media/dir/stacks/menu-torrent.tsx:23
 msgid "Download"
 msgstr "Download"
 
@@ -194,7 +194,7 @@ msgstr "Enter folder name"
 msgid "Enter name"
 msgstr "Enter name"
 
-#: ../../client/src/media/hooks/use-media-controls.ts:101
+#: ../../client/src/media/dir/stacks/menu-zip.tsx:23
 msgid "Extract"
 msgstr "Extract"
 

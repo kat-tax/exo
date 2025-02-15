@@ -15,7 +15,7 @@ export function useEntryZip({item, cmd, opt}: EntryZipProps) {
   const [dragging, setDragging] = useState(false);
 
   // Spatial navigation
-  const {focused, ref: refFoc} = useFocusable({
+  const {focused, ref: refFoc, focusSelf: foc} = useFocusable({
     onEnterPress: () => cmd.extract(item),
   });
 
@@ -40,5 +40,6 @@ export function useEntryZip({item, cmd, opt}: EntryZipProps) {
     cmd: $.bind(cmd, item),
     opt: {...opt, focused, dragging},
     ref: [refDnd, refFoc],
+    foc,
   };
 }
