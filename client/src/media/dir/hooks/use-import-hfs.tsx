@@ -2,12 +2,12 @@ import {FS} from 'react-exo/fs';
 import {useLocation} from 'react-exo/navigation';
 import {useCallback, useMemo} from 'react';
 import {getStartInDir} from 'media/dir/utils/hfs/path';
-import {toPathInfo} from 'app/utils/formatting';
+import {toPath} from 'app/utils/formatting';
 
 export function useImportHfs() {
   const {pathname} = useLocation();
   const {parts, startIn} = useMemo(() => {
-    const path = toPathInfo(pathname, true);
+    const path = toPath(pathname, true);
     const startIn = getStartInDir(path.parts[0]);
     return {startIn, parts: path.parts};
   }, [pathname]);

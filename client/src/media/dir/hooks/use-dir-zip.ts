@@ -4,7 +4,7 @@ import {useCallback, useEffect, useState, useRef} from 'react';
 import {usePath} from 'app/hooks/use-path';
 import {usePut} from 'app/data/store';
 import {useFile} from 'media/file/hooks/use-file';
-import {toPathInfo} from 'app/utils/formatting';
+import {toPath} from 'app/utils/formatting';
 import media from 'media/store';
 
 import type {FS} from '@zip.js/zip.js';
@@ -27,8 +27,8 @@ export function useDirZip(path: string): ZipCtx {
     if (!zip) return;
     const source = zipfs.current?.getById(file.id);
     if (!source) return;
-    const {name, ext} = toPathInfo(file.name, false);
-    const {name: zdir} = toPathInfo(path, false); // TODO: only for extract all
+    const {name, ext} = toPath(file.name, false);
+    const {name: zdir} = toPath(path, false); // TODO: only for extract all
     const root = url ? `${url}/` : '';
     const head = target?.name ? `${target.name}/` : '';
     const tail = false && zdir ? `${zdir}/` : ''; // TODO: this is for extract all

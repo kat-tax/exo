@@ -4,7 +4,7 @@ import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useFocusable, FocusContext} from '@noriginmedia/norigin-spatial-navigation';
 import {useComposedRefs} from 'app/utils/components';
 import {useGet} from 'app/data/store';
-import {toPathInfo} from 'app/utils/formatting';
+import {toPath} from 'app/utils/formatting';
 import media from 'media/store';
 
 import {SelectItem} from './item';
@@ -25,7 +25,7 @@ export function SelectTabs({hfs, path, name, ext}: SelectTabsProps) {
   const selection = useGet(media.selectors.getSelected);
   const focused = useGet(media.selectors.getFocused);
   const list = useMemo(() => selection.map(selectItem => {
-    const {path, name, ext} = toPathInfo(selectItem, false);
+    const {path, name, ext} = toPath(selectItem, false);
     return {path, name, ext};
   }), [selection]);
 

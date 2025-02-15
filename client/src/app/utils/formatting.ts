@@ -39,7 +39,7 @@ export function toTimeRange(from: number, to: number) {
   return `${currentTime} / ${durationTime}`;
 }
 
-export function toPathInfo(url: string, isDirectory: boolean) {
+export function toPath(url: string, isDirectory: boolean) {
   // Normalize path to use forward slashes (remove /browse prefix)
   const _path = decodeURIComponent(url).replace(/^\/browse\/?/, '').replace(/\\/g, '/');
   // Split path into parts

@@ -7,9 +7,9 @@ import {useProfile} from 'app/data';
 import {useHotkeys} from 'app/hooks/use-hotkeys';
 import {useDevice} from 'app/hooks/use-device';
 import {useGet} from 'app/data/store';
-import {toPathInfo} from 'app/utils/formatting';
-import {Menu} from 'app/routes/menu';
+import {toPath} from 'app/utils/formatting';
 import {Media} from 'media/stacks/media';
+import {Menu} from 'app/routes/menu';
 import media from 'media/store';
 
 import type {AppCtx} from 'app/hooks/use-app';
@@ -64,7 +64,7 @@ export default function Layout() {
         <Outlet {...{context}}/>
         {hasPanel &&
           <Media
-            {...toPathInfo(focused || pathname, false)}
+            {...toPath(focused || pathname, false)}
             vertical={isVert}
             maximized={true}
             embedded={false}

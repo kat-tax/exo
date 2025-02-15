@@ -1,7 +1,7 @@
 import {useRef, useState, useEffect} from 'react';
 import {useFocusable} from '@noriginmedia/norigin-spatial-navigation';
 import {usePut} from 'app/data/store';
-import {toPathInfo} from 'app/utils/formatting';
+import {toPath} from 'app/utils/formatting';
 import {bind} from 'media/utils/bind';
 import * as _ from 'app/utils/dragdrop';
 import media from 'media/store';
@@ -90,7 +90,7 @@ export function useEntryHfs({item, cmd, opt, tmp}: EntryHfsProps) {
   }, [item, cmd, opt.selected.count, put]);
 
   return {
-    ext: toPathInfo(item.name, item.isDirectory)?.ext,
+    ext: toPath(item.name, item.isDirectory)?.ext,
     cmd: bind(cmd, item),
     opt: {...opt, focused, dropping},
     ref: [refDnd, refFoc],

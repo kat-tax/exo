@@ -1,7 +1,7 @@
 import {web} from 'react-exo/fs';
 import {FileType} from 'media/file/types';
 import {getRenderer} from 'media/file/utils/render';
-import {toPathInfo} from 'app/utils/formatting';
+import {toPath} from 'app/utils/formatting';
 
 import type {HfsDirectoryEntry} from 'react-exo/fs';
 
@@ -12,7 +12,7 @@ export async function getThumbnail(path: string, item: HfsDirectoryEntry) {
   // Resolve path
   const uri = path ? `${path}/${item.name}` : item.name;
   // Check if file is image
-  const info = toPathInfo(item.name, false);
+  const info = toPath(item.name, false);
   const [type] = await getRenderer(info.ext, uri);
   if (type !== FileType.Image) return null;
   // Get image

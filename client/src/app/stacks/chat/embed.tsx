@@ -1,7 +1,7 @@
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {View} from 'react-native';
 import {Media} from 'media/stacks/media';
-import {toPathInfo} from 'app/utils/formatting';
+import {toPath} from 'app/utils/formatting';
 
 import type {BubbleProps} from './bubble';
 
@@ -14,7 +14,7 @@ interface EmbedProps {
 
 export function Embed(props: EmbedProps) {
   const {path, origin, layout} = props;
-  const {name, ext} = toPathInfo(props.name ?? path, false);
+  const {name, ext} = toPath(props.name ?? path, false);
   const {styles} = useStyles(stylesheet);
   return (
     <View style={[styles.root, origin === 'Remote' ? styles.remote : styles.local]}>

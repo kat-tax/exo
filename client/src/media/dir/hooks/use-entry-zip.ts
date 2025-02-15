@@ -1,6 +1,6 @@
 import {useRef, useState, useEffect} from 'react';
 import {useFocusable} from '@noriginmedia/norigin-spatial-navigation';
-import {toPathInfo} from 'app/utils/formatting';
+import {toPath} from 'app/utils/formatting';
 import * as dnd from 'app/utils/dragdrop';
 import {bind} from 'media/utils/bind';
 
@@ -39,7 +39,7 @@ export function useEntryZip({item, cmd, opt}: EntryZipProps) {
   }, [item, cmd]);
 
   return {
-    ext: toPathInfo(item.name, item.dir)?.ext,
+    ext: toPath(item.name, item.dir)?.ext,
     cmd: bind(cmd, item),
     opt: {...opt, focused, dragging},
     ref: [refDnd, refFoc],

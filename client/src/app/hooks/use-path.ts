@@ -1,8 +1,8 @@
-import {useMemo} from 'react';
 import {useLocation} from 'react-exo/navigation';
-import {toPathInfo} from 'app/utils/formatting';
+import {useMemo} from 'react';
+import {toPath} from 'app/utils/formatting';
 
-export function usePath(): ReturnType<typeof toPathInfo> {
+export function usePath(): ReturnType<typeof toPath> {
   const {pathname} = useLocation();
-  return useMemo(() => toPathInfo(pathname, true), [pathname]);
+  return useMemo(() => toPath(pathname, true), [pathname]);
 }
