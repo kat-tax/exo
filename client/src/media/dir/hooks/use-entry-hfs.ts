@@ -30,7 +30,9 @@ export function useEntryHfs({item, cmd, opt, tmp}: EntryHfsProps) {
       : cmd.select(item, e.event as unknown as GestureResponderEvent),
     onEnterPress: () => tmp
       ? cmd.select(item)
-      : cmd.open(item),
+      : item.isDirectory
+        ? cmd.open(item)
+        : cmd.select(item),
     onArrowPress: (dir) => {
       if (dir !== 'left' || tmp) return true;
       if (cmd.goUp()) return false;

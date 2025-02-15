@@ -11,6 +11,8 @@ import File from 'media/file';
 
 import type {FileRef, FileRenderInfo} from 'media/file/types';
 
+const PLACEHOLDER = '‎';
+
 interface MediaProps {
   ext: string,
   name: string,
@@ -28,10 +30,9 @@ export function Media({ext, name, path, vertical, maximized, embedded, layout, c
   const pip = useMediaPictInPict(ext, layout);
   const hfs = useHfs();
 
-  // File information
   const [renderer, setRenderer] = useState<FileRenderInfo>();
-  const [title, setTitle] = useState(`${name}.${ext}`);
-  const [info, setInfo] = useState('‎');
+  const [title, setTitle] = useState(PLACEHOLDER);
+  const [info, setInfo] = useState(PLACEHOLDER);
   const [cover, setCover] = useState('');
   const [muted, setMuted] = useState(false);
   const [volume, setVolume] = useState(100);
@@ -39,7 +40,6 @@ export function Media({ext, name, path, vertical, maximized, embedded, layout, c
   const [current, setCurrent] = useState(0);
   const [duration, setDuration] = useState(0);
 
-  // File visualization
   const vstyles = useMemo(() => ({
     root: [
       styles.root,
@@ -60,7 +60,6 @@ export function Media({ext, name, path, vertical, maximized, embedded, layout, c
     ],
   }), [styles, pip, vertical, maximized, embedded, theme.breakpoints]);
 
-  // File actions
   const actions = useMemo(() => ({
     open: () => console.log('open'),
     close,
@@ -76,14 +75,16 @@ export function Media({ext, name, path, vertical, maximized, embedded, layout, c
 
   // Reset information when file changes
   useEffect(() => {
-    setTitle(renderer?.[0] === FileType.Directory ? name : `${name}.${ext}`);
-    setCover('');
-    setInfo('‎');
-    setMuted(false);
-    setVolume(100);
     setPlaying(false);
+    setMuted(false);
+    setCover('');
     setCurrent(0);
     setDuration(0);
+    setVolume(100);
+    setInfo(PLACEHOLDER);
+    setTitle(renderer?.[0] === FileType.Directory
+      ? name || `.${ext}`
+      : `${name}.${ext}`);
   }, [name, ext, renderer]);
 
   // Update renderer when file extension changes
