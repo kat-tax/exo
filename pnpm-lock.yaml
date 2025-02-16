@@ -5,9 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 patchedDependencies:
-  '@legendapp/list':
+  '@legendapp/list@1.0.0-beta.8':
     hash: hmdbp6wo6pc3phpobhdfqyhpjm
-    path: patches/@legendapp__list.patch
+    path: patches/@legendapp__list@1.0.0-beta.8.patch
 
 importers:
 
@@ -523,7 +523,7 @@ importers:
         version: link:../../config
       react-exo:
         specifier: 0.18.24
-        version: 0.18.24(qpt63qelzsqwm3seod2lw2jetu)
+        version: 0.18.24(fyexz3mz3sf73rbqis2skwrgwe)
       react-native:
         specifier: ^0.76.5
         version: 0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1)
@@ -18103,7 +18103,7 @@ snapshots:
       execa: 5.1.1
       invariant: 2.2.4
       metro: 0.81.0(bufferutil@4.0.8)
-      metro-config: 0.81.0(bufferutil@4.0.8)
+      metro-config: 0.81.0(bufferutil@4.0.8)(utf-8-validate@6.0.4)
       metro-core: 0.81.0
       node-fetch: 2.7.0
       readline: 1.3.0
@@ -18150,7 +18150,7 @@ snapshots:
       execa: 5.1.1
       invariant: 2.2.4
       metro: 0.81.0(bufferutil@4.0.8)
-      metro-config: 0.81.0(bufferutil@4.0.8)
+      metro-config: 0.81.0(bufferutil@4.0.8)(utf-8-validate@6.0.4)
       metro-core: 0.81.0
       node-fetch: 2.7.0
       readline: 1.3.0
@@ -18197,7 +18197,7 @@ snapshots:
       execa: 5.1.1
       invariant: 2.2.4
       metro: 0.81.0(bufferutil@4.0.8)
-      metro-config: 0.81.0(bufferutil@4.0.8)
+      metro-config: 0.81.0(bufferutil@4.0.8)(utf-8-validate@6.0.4)
       metro-core: 0.81.0
       node-fetch: 2.7.0
       readline: 1.3.0
@@ -24819,21 +24819,6 @@ snapshots:
       flow-enums-runtime: 0.0.6
       metro-core: 0.81.0
 
-  metro-config@0.81.0(bufferutil@4.0.8):
-    dependencies:
-      connect: 3.7.0
-      cosmiconfig: 5.2.1
-      flow-enums-runtime: 0.0.6
-      jest-validate: 29.7.0
-      metro: 0.81.0(bufferutil@4.0.8)
-      metro-cache: 0.81.0
-      metro-core: 0.81.0
-      metro-runtime: 0.81.0
-    transitivePeerDependencies:
-      - bufferutil
-      - supports-color
-      - utf-8-validate
-
   metro-config@0.81.0(bufferutil@4.0.8)(utf-8-validate@6.0.4):
     dependencies:
       connect: 3.7.0
@@ -24992,7 +24977,7 @@ snapshots:
       metro-babel-transformer: 0.81.0
       metro-cache: 0.81.0
       metro-cache-key: 0.81.0
-      metro-config: 0.81.0(bufferutil@4.0.8)
+      metro-config: 0.81.0(bufferutil@4.0.8)(utf-8-validate@6.0.4)
       metro-core: 0.81.0
       metro-file-map: 0.81.0
       metro-resolver: 0.81.0
@@ -26582,79 +26567,6 @@ snapshots:
       shiki: 1.26.1
       thumbhash: 0.1.1
       vite-plugin-node-polyfills: 0.22.0(rollup@4.29.1)(vite@5.4.11(@types/node@20.12.3)(lightningcss@1.28.2)(sass@1.77.8)(terser@5.26.0))
-      webtorrent: 2.5.11
-    transitivePeerDependencies:
-      - '@babel/core'
-      - '@types/react'
-      - '@types/react-dom'
-      - browserslist
-      - bufferutil
-      - encoding
-      - expo
-      - mapbox-gl
-      - nativewind
-      - rollup
-      - supports-color
-      - utf-8-validate
-      - vite
-      - worker-loader
-
-  react-exo@0.18.24(qpt63qelzsqwm3seod2lw2jetu):
-    dependencies:
-      '@candlefinance/faster-image': 1.7.2(react-native@0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1))(react@18.3.1)
-      '@helia/unixfs': 4.0.1
-      '@iconify/json': 2.2.290
-      '@iconify/react': 5.1.0(react@18.3.1)
-      '@iconify/utils': 2.2.1
-      '@legendapp/list': 1.0.0-beta.8(patch_hash=hmdbp6wo6pc3phpobhdfqyhpjm)(react-native@0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1))(react@18.3.1)
-      '@legendapp/motion': 2.4.0(nativewind@2.0.11(react@18.3.1)(tailwindcss@3.4.17))(react-native@0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1))(react@18.3.1)
-      '@lottiefiles/dotlottie-react': 0.12.0(react@18.3.1)
-      '@radix-ui/react-checkbox': 1.1.3(@types/react-dom@18.3.5(@types/react@18.3.18))(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@radix-ui/react-progress': 1.1.1(@types/react-dom@18.3.5(@types/react@18.3.18))(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@radix-ui/react-radio-group': 1.2.2(@types/react-dom@18.3.5(@types/react@18.3.18))(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@radix-ui/react-slider': 1.2.2(@types/react-dom@18.3.5(@types/react@18.3.18))(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@radix-ui/react-switch': 1.1.2(@types/react-dom@18.3.5(@types/react@18.3.18))(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@react-native-community/checkbox': 0.5.17(react-native-windows@0.76.3(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8))(@types/react@18.3.18)(bufferutil@4.0.8)(react-native@0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1))(react@18.3.1)(tslib@2.8.1)(typescript@5.7.2))(react-native@0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1))(react@18.3.1)
-      '@react-native-community/netinfo': 11.4.1(react-native@0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1))
-      '@react-native-community/slider': 4.5.5
-      '@react-native-picker/picker': 2.10.2(react-native@0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1))(react@18.3.1)
-      '@reduxjs/toolkit': 2.5.0(react-redux@9.2.0(@types/react@18.3.18)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
-      '@rive-app/react-canvas': 4.17.5(react@18.3.1)
-      burnt: 0.12.2(expo@51.0.20(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(bufferutil@4.0.8))(react-dom@18.3.1(react@18.3.1))(react-native@0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1))(react@18.3.1)
-      comlink: 4.4.2
-      css-to-react-native: 3.2.0
-      helia: 5.1.1(bufferutil@4.0.8)(react-native@0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1))
-      history: 5.3.0
-      idb-keyval: 6.2.1
-      maplibre-gl: 4.7.1
-      markdown-it: 13.0.2
-      multiformats: 13.3.1
-      mupdf: 1.2.0
-      react: 18.3.1
-      react-content-loader: 7.0.2(react@18.3.1)
-      react-dom: 18.3.1(react@18.3.1)
-      react-map-gl: 7.1.8(maplibre-gl@4.7.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      react-native: 0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1)
-      react-native-file-access: 3.1.1(react-native@0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1))(react@18.3.1)
-      react-native-gesture-handler: 2.21.2(react-native@0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1))(react@18.3.1)
-      react-native-linear-gradient: 2.8.3(react-native@0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1))(react@18.3.1)
-      react-native-mmkv: 3.2.0(react-native@0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1))(react@18.3.1)
-      react-native-pdf-renderer: 1.6.0(react-native@0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1))
-      react-native-readium: 2.0.2(@babel/core@7.26.0)(browserslist@4.24.3)(react-native@0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1))(react@18.3.1)
-      react-native-screens: 4.4.0(react-native@0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1))(react@18.3.1)
-      react-native-shiki-engine: 0.1.8(react-native@0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1))(react@18.3.1)
-      react-native-skottie: 2.1.4(6spd4lpnosnpd7gpheoykq2cnq)
-      react-native-svg: 15.10.1(react-native@0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1))(react@18.3.1)
-      react-native-video: 6.8.2(react-native@0.76.5(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@react-native-community/cli-server-api@15.1.3(bufferutil@4.0.8))(@types/react@18.3.18)(bufferutil@4.0.8)(react@18.3.1))(react@18.3.1)
-      react-redux: 9.2.0(@types/react@18.3.18)(react@18.3.1)(redux@5.0.1)
-      react-router: 6.28.1(react@18.3.1)
-      react-virtuoso: 4.12.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      redux: 5.0.1
-      redux-first-history: 5.2.0(history@5.3.0)(redux@5.0.1)
-      redux-persist: 6.0.0(react@18.3.1)(redux@5.0.1)
-      shiki: 1.26.1
-      thumbhash: 0.1.1
-      vite-plugin-node-polyfills: 0.22.0(rollup@2.79.2)(vite@5.4.11(@types/node@20.12.3)(lightningcss@1.28.2)(sass@1.77.8)(terser@5.26.0))
       webtorrent: 2.5.11
     transitivePeerDependencies:
       - '@babel/core'

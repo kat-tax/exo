@@ -40,7 +40,7 @@
   "packageManager": "pnpm@8.14.0",
   "pnpm": {
     "patchedDependencies": {
-      "@legendapp/list": "patches/@legendapp__list.patch"
+      "@legendapp/list@1.0.0-beta.8": "patches/@legendapp__list@1.0.0-beta.8.patch"
     }
   }
 }
