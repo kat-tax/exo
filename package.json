@@ -37,11 +37,5 @@
   "engines": {
     "node": ">=18"
   },
-  "packageManager": "pnpm@8.14.0",
-  "pnpm": {
-    "patchedDependencies": {
-      "react-native-readium": "patches/react-native-readium.patch",
-      "vocs": "patches/vocs.patch"
-    }
-  }
+  "packageManager": "pnpm@8.14.0"
 }
