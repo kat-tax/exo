@@ -10,8 +10,8 @@ import {isInitDirectory, INIT_DIRECTORIES} from '../utils/hfs/path';
 import {getThumbnail} from '../utils/hfs/meta';
 import {saveAs} from '../utils/hfs/fs';
 
-import type {GestureResponderEvent} from 'react-native';
 import type {HfsCtx, HfsFileEntry} from 'media/dir/types/hfs';
+import type {GestureResponderEvent} from 'react-native';
 
 export function useDirHfs(path: string, tmp?: boolean): Omit<HfsCtx, 'bar'> {
   const [list, setList] = useState<HfsFileEntry[]>([]);

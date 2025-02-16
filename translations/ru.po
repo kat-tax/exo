@@ -142,11 +142,11 @@ msgstr "Режим dev"
 msgid "Device Space"
 msgstr "Место на устройстве"
 
-#: ../../client/src/media/stacks/list/empty.tsx:28
+#: ../../client/src/media/stacks/list/empty.tsx:25
 msgid "Directory empty. Drop items or select folder to import."
 msgstr "Каталог пуст. Перетащите элементы или выберите папку для импорта."
 
-#: ../../client/src/media/stacks/list/empty.tsx:27
+#: ../../client/src/media/stacks/list/empty.tsx:24
 msgid "Directory empty. Select folder to import."
 msgstr "Каталог пуст. Выберите папку для импорта."
 
@@ -206,7 +206,7 @@ msgstr "Фаренгейт"
 msgid "Feature in development..."
 msgstr "Функция в разработке..."
 
-#: ../../client/src/media/hooks/use-media-name.ts:25
+#: ../../client/src/media/stacks/list/bar.tsx:52
 msgid "Files"
 msgstr "Файлы"
 
@@ -258,7 +258,7 @@ msgstr "Человек"
 msgid "Import Files"
 msgstr "Импорт файлов"
 
-#: ../../client/src/media/stacks/list/empty.tsx:29
+#: ../../client/src/media/stacks/list/empty.tsx:26
 msgid "Import Folder"
 msgstr "Импорт папки"
 

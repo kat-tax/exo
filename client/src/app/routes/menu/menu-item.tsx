@@ -3,7 +3,6 @@ import {View, Text} from 'react-native';
 import {useFocusable} from '@noriginmedia/norigin-spatial-navigation';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useLocation, useNavigate, Link} from 'react-exo/navigation';
-import {isTouch} from 'app/utils/platform';
 
 interface MenuItemProps extends React.PropsWithChildren {
   path: string,
@@ -81,7 +80,7 @@ const stylesheet = createStyleSheet(theme => ({
     color: theme.colors.secondaryForeground,
     lineHeight: 24,
     fontSize: 11,
-    ...isTouch() && {
+    ...__TOUCH__ && {
       marginLeft: theme.display.space2,
       lineHeight: 40,
       fontSize: 13,

@@ -1,12 +1,12 @@
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {View, Text} from 'react-native';
 import {Thumb} from 'media/stacks/thumb';
-import {isTouch} from 'app/utils/platform';
 import {bytesize} from 'app/utils/formatting';
 import {useMediaName} from 'media/hooks/use-media-name';
 
-const TOUCH = isTouch();
-export const HEIGHT_ROW = TOUCH ? 40 : 26;
+import type {HfsOpt} from 'media/dir/types/hfs';
+
+export const HEIGHT_ROW = __TOUCH__ ? 40 : 26;
 export const HEIGHT_CELL = 130;
 
 interface ListRow {
@@ -14,34 +14,17 @@ interface ListRow {
   size?: number,
   ext?: string,
   dir?: boolean,
-  tmp?: boolean,
-  img?: () => Promise<string | null>,
-  opt?: {
-    dragging?: boolean,
-    dropping?: boolean,
-    focused?: boolean,
-    selected?: {
-      self?: boolean,
-      prev?: boolean,
-      next?: boolean,
-      count?: number,
-    },
-  }
+  img?: (() => Promise<string | null>) | string,
+  opt?: Partial<HfsOpt>,
 }
 
 export function ListRow(props: ListRow) {
   const title = useMediaName(props.name);
   const {styles} = useStyles(stylesheet);
-  const {name, size, ext, dir, tmp, opt, img} = props;
-  const {
-    focused,
-    selected,
-    dragging,
-    dropping,
-  } = opt ?? {};
-
-  const cell = tmp;
-  const thumbSize = cell ? 4 : TOUCH ? 1 : 0;
+  const {name, size, ext, dir, opt, img} = props;
+  const {focused, selected, dragging, dropping} = opt ?? {};
+  const isGrid = opt?.layout === 'grid';
+  const thumbSize = isGrid ? 4 : __TOUCH__ ? 1 : 0;
   const vstyles = {
     root: [
       styles.root,
@@ -50,24 +33,24 @@ export function ListRow(props: ListRow) {
       selected?.next && styles.selectedNext,
       (dropping || focused) && !dragging && styles.outline,
       dragging && styles.disabled,
-      cell && styles.cell,
+      isGrid && styles.cell,
     ],
   };
 
   return (
     <View style={vstyles.root}>
-      <View style={[styles.thumb, cell && styles.thumbCell]}>
-        <Thumb {...{size: thumbSize, name, ext, img, dir}}/>
+      <View style={[styles.thumb, isGrid && styles.thumbCell]}>
+        <Thumb size={thumbSize} {...{name, ext, img, dir}}/>
       </View>
-      <View style={[styles.info, cell && styles.infoCell]}>
+      <View style={[styles.info, isGrid && styles.infoCell]}>
         <Text
-          style={[styles.text, cell && styles.textCell]}
-          numberOfLines={cell ? 2 : 1}
+          style={[styles.text, isGrid && styles.textCell]}
+          numberOfLines={isGrid ? 2 : 1}
           ellipsizeMode="middle">
           {title}
         </Text>
         <Text
-          style={[styles.text, styles.size, cell && styles.textCell]}
+          style={[styles.text, styles.size, isGrid && styles.textCell]}
           numberOfLines={1}>
           {dir ? '‎' : bytesize(size ?? 0)}
         </Text>
@@ -127,7 +110,7 @@ const stylesheet = createStyleSheet((theme) => ({
     lineHeight: theme.font.height,
     letterSpacing: theme.font.spacing,
     color: theme.colors.foreground,
-    ...TOUCH && {
+    ...__TOUCH__ && {
       fontSize: theme.font.contentSize,
       lineHeight: theme.font.contentHeight,
       letterSpacing: theme.font.contentSpacing,

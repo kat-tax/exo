@@ -4,10 +4,10 @@ import {toPath} from 'app/utils/formatting';
 import * as dnd from 'app/utils/dragdrop';
 import * as $ from 'media/utils/entry';
 
-import type {View} from 'react-native';
-import type {CleanupFn} from 'app/utils/dragdrop';
 import type {ZipFileEntry, ZipCmd} from 'media/dir/types/zip';
 import type {EntryZipProps} from 'media/dir/stacks/entry-zip';
+import type {CleanupFn} from 'app/utils/dragdrop';
+import type * as RN from 'react-native';
 
 export const {is, get, type} = $.tag<ZipFileEntry, ZipCmd>('zip');
 
@@ -20,7 +20,7 @@ export function useEntryZip({item, cmd, opt}: EntryZipProps) {
   });
 
   // Drag and drop
-  const refDnd = useRef<View>(null);
+  const refDnd = useRef<RN.View>(null);
   useEffect(() => {
     if (!refDnd.current) return;
     const element = refDnd.current as unknown as HTMLElement;

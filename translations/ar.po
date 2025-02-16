@@ -142,11 +142,11 @@ msgstr "وضع المطور"
 msgid "Device Space"
 msgstr "مساحة الجهاز"
 
-#: ../../client/src/media/stacks/list/empty.tsx:28
+#: ../../client/src/media/stacks/list/empty.tsx:25
 msgid "Directory empty. Drop items or select folder to import."
 msgstr "المجلد فارغ. اسحب العناصر أو حدد مجلداً للاستيراد."
 
-#: ../../client/src/media/stacks/list/empty.tsx:27
+#: ../../client/src/media/stacks/list/empty.tsx:24
 msgid "Directory empty. Select folder to import."
 msgstr "المجلد فارغ. حدد مجلداً للاستيراد."
 
@@ -206,7 +206,7 @@ msgstr "فهرنهايت"
 msgid "Feature in development..."
 msgstr "الميزة قيد التطوير..."
 
-#: ../../client/src/media/hooks/use-media-name.ts:25
+#: ../../client/src/media/stacks/list/bar.tsx:52
 msgid "Files"
 msgstr "الملفات"
 
@@ -258,7 +258,7 @@ msgstr "إنسان"
 msgid "Import Files"
 msgstr "استيراد الملفات"
 
-#: ../../client/src/media/stacks/list/empty.tsx:29
+#: ../../client/src/media/stacks/list/empty.tsx:26
 msgid "Import Folder"
 msgstr "استيراد مجلد"
 

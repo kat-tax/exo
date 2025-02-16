@@ -21,8 +21,7 @@ export function EntryTorrent(props: EntryTorrentProps) {
   return (
     <Touch
       refs={ref}
-      onPress={cmd.download}
-      onDoublePress={dir ? cmd.download : undefined}>
+      onPress={cmd.download}>
       <MenuTorrent {...{item, cmd}} on={() => foc()}>
         <ListRow {...{name, size, ext, dir, opt}}/>
       </MenuTorrent>

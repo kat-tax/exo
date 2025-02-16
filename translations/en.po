@@ -142,11 +142,11 @@ msgstr "Dev Mode"
 msgid "Device Space"
 msgstr "Device Space"
 
-#: ../../client/src/media/stacks/list/empty.tsx:28
+#: ../../client/src/media/stacks/list/empty.tsx:25
 msgid "Directory empty. Drop items or select folder to import."
 msgstr "Directory empty. Drop items or select folder to import."
 
-#: ../../client/src/media/stacks/list/empty.tsx:27
+#: ../../client/src/media/stacks/list/empty.tsx:24
 msgid "Directory empty. Select folder to import."
 msgstr "Directory empty. Select folder to import."
 
@@ -206,7 +206,7 @@ msgstr "Fahrenheit"
 msgid "Feature in development..."
 msgstr "Feature in development..."
 
-#: ../../client/src/media/hooks/use-media-name.ts:25
+#: ../../client/src/media/stacks/list/bar.tsx:52
 msgid "Files"
 msgstr "Files"
 
@@ -258,7 +258,7 @@ msgstr "Human"
 msgid "Import Files"
 msgstr "Import Files"
 
-#: ../../client/src/media/stacks/list/empty.tsx:29
+#: ../../client/src/media/stacks/list/empty.tsx:26
 msgid "Import Folder"
 msgstr "Import Folder"
 

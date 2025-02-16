@@ -142,11 +142,11 @@ msgstr "개발자 모드"
 msgid "Device Space"
 msgstr "기기 저장공간"
 
-#: ../../client/src/media/stacks/list/empty.tsx:28
+#: ../../client/src/media/stacks/list/empty.tsx:25
 msgid "Directory empty. Drop items or select folder to import."
 msgstr "빈 디렉토리. 항목을 끌어다 놓거나 가져올 폴더를 선택하세요."
 
-#: ../../client/src/media/stacks/list/empty.tsx:27
+#: ../../client/src/media/stacks/list/empty.tsx:24
 msgid "Directory empty. Select folder to import."
 msgstr "빈 디렉토리. 가져올 폴더를 선택하세요."
 
@@ -206,7 +206,7 @@ msgstr "화씨"
 msgid "Feature in development..."
 msgstr "개발 중인 기능..."
 
-#: ../../client/src/media/hooks/use-media-name.ts:25
+#: ../../client/src/media/stacks/list/bar.tsx:52
 msgid "Files"
 msgstr "파일"
 
@@ -258,7 +258,7 @@ msgstr "사용자"
 msgid "Import Files"
 msgstr "파일 가져오기"
 
-#: ../../client/src/media/stacks/list/empty.tsx:29
+#: ../../client/src/media/stacks/list/empty.tsx:26
 msgid "Import Folder"
 msgstr "폴더 가져오기"
 

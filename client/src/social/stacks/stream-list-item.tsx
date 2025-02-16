@@ -2,7 +2,6 @@ import {useRef, useEffect, useState} from 'react';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {View, Text} from 'react-native';
 import {Link} from 'react-exo/navigation';
-import {isTouch} from 'app/utils/platform';
 
 import type {StreamMediaProps} from 'social/stacks/stream-media';
 
@@ -63,7 +62,7 @@ const stylesheet = createStyleSheet((theme) => ({
     lineHeight: theme.font.height,
     letterSpacing: theme.font.spacing,
     color: theme.colors.foreground,
-    ...isTouch() && {
+    ...__TOUCH__ && {
       fontSize: theme.font.contentSize,
       letterSpacing: theme.font.contentSpacing,
       lineHeight: 32,

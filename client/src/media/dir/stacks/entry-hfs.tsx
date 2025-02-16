@@ -9,11 +9,10 @@ export interface EntryHfsProps {
   item: HfsFileEntry,
   cmd: HfsCmd,
   opt: HfsOpt,
-  tmp?: boolean,
 }
 
 export function EntryHfs(props: EntryHfsProps) {
-  const {item, tmp} = props;
+  const {item} = props;
   const {name, size, isFile} = item;
   const {ext, cmd, opt, ref, foc} = useEntryHfs(props);
   const dir = !isFile;
@@ -24,7 +23,7 @@ export function EntryHfs(props: EntryHfsProps) {
       onPress={cmd.select}
       onDoublePress={dir ? () => cmd.open(true) : undefined}>
       <MenuHfs {...{item, cmd}} on={() => foc()}>
-        <ListRow {...{name, size, ext, dir, tmp, opt}} img={cmd.thumbnail}/>
+        <ListRow {...{name, size, ext, dir, opt}} img={cmd.thumbnail}/>
       </MenuHfs>
     </Touch>
   );

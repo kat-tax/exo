@@ -10,7 +10,7 @@ interface ThumbProps {
   size?: ThumbSize,
   name?: string,
   dir?: boolean,
-  img?: () => Promise<string | null>,
+  img?: (() => Promise<string | null>) | string,
   ext?: string,
 }
 
@@ -61,10 +61,14 @@ export function Thumb({
     getIcon(name, ext, '', scheme).then(setIcon);
   }, [name, ext, scheme]);
 
-  // Set image when img function changes
+  // Set image when source changes
   useEffect(() => {
     if (!img) return;
-    img().then(setImage);
+    if (typeof img === 'string') {
+      setImage(img);
+    } else {
+      img().then(setImage);
+    }
   }, [img]);
 
   // Revoke image when component unmounts

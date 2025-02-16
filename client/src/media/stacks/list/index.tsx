@@ -4,60 +4,56 @@ import {useFocusable, FocusContext} from '@noriginmedia/norigin-spatial-navigati
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useWindowDimensions} from 'react-native';
 import {useRef} from 'react';
-// import {useGet} from 'app/data/store';
 import {ListBar} from 'media/stacks/list/bar';
 import {ListEmpty} from 'media/stacks/list/empty';
 import {HEIGHT_ROW, HEIGHT_CELL} from 'media/stacks/list/row';
-// import media from 'media/store';
 
 import type {LegendListRef} from '@legendapp/list';
 
 export interface ListProps<T> {
-  list?: T[];
-  path?: string;
-  ext?: unknown;
-  bar?: {
-    actions?: Array<{
-      id: string,
-      icon: string,
-      onPress: () => void,
-    }>;
-  },
+  items?: T[];
+  data?: unknown;
+  opts?: {
+    preview?: boolean,
+    layout?: 'list' | 'grid',
+    header?: {
+      path: string,
+      actions?: Array<{id: string, icon: string, onPress: () => void}>,
+    },
+  };
   render: (props: {
     item: T,
     index: number,
   }) => React.ReactNode;
 }
 
-export function List<T>({path, list, ext, bar, render}: ListProps<T>) {
-  //const layout = useGet(media.selectors.getLayout);
-  const {width} = useWindowDimensions();
-  const layout = !ext?.tmp ? 'list' : 'grid';
-  const height = layout === 'list' ? HEIGHT_ROW : HEIGHT_CELL;
-  const columns = layout === 'grid' ? Math.floor(width / (HEIGHT_CELL * 1.15)) : 1;
-  const listRef = useRef<LegendListRef>(null);
+export function List<T>({items, data, opts, render}: ListProps<T>) {
+  const {ref, focusKey} = useFocusable({saveLastFocusedChild: !opts?.preview});
   const {styles} = useStyles(stylesheet);
-  const {ref, focusKey} = useFocusable({
-    saveLastFocusedChild: !ext?.tmp, // TODO: type ext
-  });
+  const {width} = useWindowDimensions();
+  const listRef = useRef<LegendListRef>(null);
+  const layout = opts?.layout ?? 'list';
+  const isGrid = layout === 'grid';
+  const height = isGrid ? HEIGHT_CELL : HEIGHT_ROW;
+  const columns = isGrid ? Math.floor(width / (HEIGHT_CELL * 1.15)) : 1;
 
   return (
     <FocusContext.Provider value={focusKey}>
       <View ref={ref} style={styles.root}>
-        {bar && <ListBar {...{path}} {...bar}/>}
-        {!list?.length
-          ? <ListEmpty offset={bar ? -35 : 0}/>
+        {opts?.header && <ListBar {...opts.header}/>}
+        {!items?.length
+          ? <ListEmpty offset={opts?.header ? -35 : 0}/>
           : (
             <LegendList
               key={`${layout}:${columns}`}
               ref={listRef}
-              data={list}
-              extraData={ext}
+              data={items}
+              extraData={data}
               numColumns={columns}
               drawDistance={height * 20}
               estimatedItemSize={height}
-              contentContainerStyle={[styles.list, layout === 'grid' && styles.grid]}
-              ListHeaderComponent={bar ? <View style={styles.header}/> : null}
+              contentContainerStyle={[styles.list, isGrid && styles.grid]}
+              ListHeaderComponent={opts?.header ? <View style={styles.header}/> : null}
               keyExtractor={(_,i) => i.toString()}
               renderItem={render}
               recycleItems
@@ -84,4 +80,4 @@ const stylesheet = createStyleSheet(theme => ({
   header: {
     height: theme.display.space1,
   },
-})); 
+}));

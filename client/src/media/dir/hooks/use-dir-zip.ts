@@ -1,16 +1,16 @@
 import {fs} from '@zip.js/zip.js';
 import {web} from 'react-exo/fs';
-import {useCallback, useEffect, useState, useRef} from 'react';
+import {useEffect, useCallback, useState, useRef} from 'react';
 import {usePath} from 'app/hooks/use-path';
 import {usePut} from 'app/data/store';
 import {useFile} from 'media/file/hooks/use-file';
 import {toPath} from 'app/utils/formatting';
 import media from 'media/store';
 
-import type {FS} from '@zip.js/zip.js';
 import type {Zip, ZipCtx, ZipFileEntry} from 'media/dir/types/zip';
 import type {GestureResponderEvent} from 'react-native';
 import type {HfsFileEntry} from 'media/dir/types/hfs';
+import type {FS} from '@zip.js/zip.js';
 
 export function useDirZip(path: string): ZipCtx {
   const [zip, setZip] = useState<Zip | null>(null);
@@ -99,5 +99,8 @@ export function useDirZip(path: string): ZipCtx {
     })();
   }, [buffer]);
 
-  return {zip, cmd: {extract}};
+  return {
+    zip,
+    cmd: {extract}
+  };
 }

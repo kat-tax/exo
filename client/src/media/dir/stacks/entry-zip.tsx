@@ -19,8 +19,7 @@ export function EntryZip(props: EntryZipProps) {
   return (
     <Touch
       refs={ref}
-      onPress={cmd.extract}
-      onDoublePress={dir ? cmd.extract : undefined}>
+      onPress={cmd.extract}>
       <MenuZip {...{item, cmd}} on={() => foc()}>
         <ListRow {...{name, size, ext, dir, opt, tmp: true}}/>
       </MenuZip>

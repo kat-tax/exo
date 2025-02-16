@@ -1,3 +1,4 @@
+import 'global';
 import 'design/styles';
 import 'react-exo/gesture';
 import 'react-native-url-polyfill/auto';

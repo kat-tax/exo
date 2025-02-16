@@ -20,6 +20,13 @@ export interface Zip {
   }>,
 }
 
+export type ZipOpt = {
+  layout?: 'list' | 'grid',
+  preview?: boolean,
+  focused?: boolean,
+  dragging?: boolean,
+};
+
 export type ZipCtx = {
   zip: Zip | null,
   cmd: ZipCmd,

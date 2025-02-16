@@ -9,36 +9,36 @@ import media from 'media/store';
 import {is as isZip} from './use-entry-zip';
 import {is as isTorrent} from './use-entry-torrent';
 
-import type {View, GestureResponderEvent} from 'react-native';
 import type {HfsCmd, HfsFileEntry} from 'media/dir/types/hfs';
 import type {EntryHfsProps} from 'media/dir/stacks/entry-hfs';
 import type {CleanupFn} from 'app/utils/dragdrop';
+import type * as RN from 'react-native';
 
 export const {is, get, type} = $.tag<HfsFileEntry, HfsCmd>('hfs');
 
-export function useEntryHfs({item, cmd, opt, tmp}: EntryHfsProps) {
+export function useEntryHfs({item, cmd, opt}: EntryHfsProps) {
   const [dropping, setDropping] = useState(false);
   const put = usePut();
   
   // Spatial navigation
   const {focused, ref: refFoc, focusSelf: foc} = useFocusable({
-    onFocus: (_lay, _props, e) => tmp
+    onFocus: (_lay, _props, e) => opt.preview
       ? undefined
-      : cmd.select(item, e.event as unknown as GestureResponderEvent),
-    onEnterPress: () => tmp
+      : cmd.select(item, e.event as unknown as RN.GestureResponderEvent),
+    onEnterPress: () => opt.preview
       ? cmd.select(item)
       : item.isDirectory
         ? cmd.open(item)
         : cmd.select(item),
     onArrowPress: (dir) => {
-      if (dir !== 'left' || tmp) return true;
+      if (dir !== 'left' || opt.preview) return true;
       if (cmd.goUp()) return false;
       return true;
     },
   });
   
   // Drag and drop
-  const refDnd = useRef<View>(null);
+  const refDnd = useRef<RN.View>(null);
   useEffect(() => {
     if (!refDnd.current) return;
     const element = refDnd.current as unknown as HTMLElement;
@@ -46,7 +46,7 @@ export function useEntryHfs({item, cmd, opt, tmp}: EntryHfsProps) {
       _.draggable({
         element,
         getInitialData: () => get(item, cmd),
-        onGenerateDragPreview: _.dragPreview(opt.selected.count),
+        onGenerateDragPreview: _.dragPreview(opt.selected?.count ?? 1),
         onDragStart: () => put(media.actions.drag(item.name)),
         onDrop: () => put(media.actions.drag(null)),
       }),
@@ -86,7 +86,7 @@ export function useEntryHfs({item, cmd, opt, tmp}: EntryHfsProps) {
         },
       }),
     ].filter(Boolean) as CleanupFn[]);
-  }, [item, cmd, opt.selected.count, put]);
+  }, [item, cmd, opt.selected?.count, put]);
 
   return {
     ext: toPath(item.name, item.isDirectory)?.ext,

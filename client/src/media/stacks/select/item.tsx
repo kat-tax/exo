@@ -7,15 +7,13 @@ import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useFocusable} from '@noriginmedia/norigin-spatial-navigation';
 import {useMediaName} from 'media/hooks/use-media-name';
 import {usePut} from 'app/data/store';
-import {isTouch} from 'app/utils/platform';
 import media from 'media/store';
 
 import type {HfsImpl} from 'react-exo/fs';
 
-const TOUCH = isTouch();
-export const HEIGHT = TOUCH ? 46 : 32;
-export const ICON_SIZE = TOUCH ? 1 : 0;
-export const TEXT_LINES = TOUCH ? 2 : 1;
+export const HEIGHT = __TOUCH__ ? 46 : 32;
+export const ICON_SIZE = __TOUCH__ ? 1 : 0;
+export const TEXT_LINES = __TOUCH__ ? 2 : 1;
 
 interface SelectItemProps {
   focused: boolean,
@@ -93,7 +91,7 @@ export function SelectItem(props: SelectItemProps) {
         <Pressable style={styles.close} onPress={() => close(index)}>
           <Icon
             name="ph:x"
-            size={TOUCH ? 16 : 14}
+            size={__TOUCH__ ? 16 : 14}
             color={focused ? theme.colors.foreground : theme.colors.mutedForeground}
           />
         </Pressable>
@@ -105,13 +103,13 @@ export function SelectItem(props: SelectItemProps) {
 const stylesheet = createStyleSheet((theme) => ({
   root: {
     height: HEIGHT,
-    gap: TOUCH ? theme.display.space3 : theme.display.space2,
+    gap: __TOUCH__ ? theme.display.space3 : theme.display.space2,
     flexDirection: 'row',
     alignItems: 'center',
     alignContent: 'center',
     justifyContent: 'center',
     paddingVertical: theme.display.space1,
-    paddingHorizontal: TOUCH ? theme.display.space3 : theme.display.space2,
+    paddingHorizontal: __TOUCH__ ? theme.display.space3 : theme.display.space2,
     borderRadius: theme.display.radius1,
     borderColor: theme.colors.border,
     borderWidth: 1,

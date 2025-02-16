@@ -15,6 +15,13 @@ export type TorrentCtx = {
   cmd: TorrentCmd,
 }
 
+export type TorrentOpt = {
+  layout?: 'list' | 'grid',
+  preview?: boolean,
+  focused?: boolean,
+  dragging?: boolean,
+};
+
 export type TorrentCmd = {
   download: (
     file: TorrentFileEntry,

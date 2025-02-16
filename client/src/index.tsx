@@ -1,3 +1,4 @@
+import 'global';
 import 'design/styles';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import 'react-exo/checkbox.css';

@@ -1,6 +1,5 @@
 import {View, ScrollView} from 'react-native';
 import {Icon} from 'react-exo/icon';
-import {isTouch} from 'react-exo/utils';
 import {useLingui} from '@lingui/react/macro';
 import {useNavigate} from 'react-exo/navigation';
 import {useCallback, useEffect, useRef} from 'react';
@@ -10,10 +9,9 @@ import {useMediaName} from 'media/hooks/use-media-name';
 import {ButtonText} from 'app/stacks/button/text';
 import {ButtonIcon} from 'app/stacks/button/icon';
 
-const TOUCH = isTouch();
-const ITEM_SIZE = TOUCH ? 46 : 32;
-const ICON_SIZE = TOUCH ? 18 : 16;
-const TEXT_SIZE = TOUCH ? 14 : 11;
+const ITEM_SIZE = __TOUCH__ ? 46 : 32;
+const ICON_SIZE = __TOUCH__ ? 18 : 16;
+const TEXT_SIZE = __TOUCH__ ? 14 : 11;
 
 export interface ListBarProps {
   path?: string,
@@ -146,7 +144,7 @@ const stylesheet = createStyleSheet((theme) => ({
   root: {
     height: ITEM_SIZE,
     paddingVertical: theme.display.space2,
-    paddingHorizontal: TOUCH ? theme.display.space3 : 6,
+    paddingHorizontal: __TOUCH__ ? theme.display.space3 : 6,
     flexDirection: 'row',
     alignItems: 'center',
     alignSelf: 'stretch',
@@ -173,7 +171,7 @@ const stylesheet = createStyleSheet((theme) => ({
     paddingBottom: 1,
     paddingRight: 1,
     alignItems: 'center',
-    gap: TOUCH ? theme.display.space3 : theme.display.space2,
+    gap: __TOUCH__ ? theme.display.space3 : theme.display.space2,
   },
   separator: {
     width: 10,

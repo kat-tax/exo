@@ -19,7 +19,12 @@ export type HfsCtx = {
 }
 
 export type HfsOpt = {
-  selected: {
+  layout?: 'list' | 'grid',
+  preview?: boolean,
+  focused?: boolean,
+  dragging?: boolean,
+  dropping?: boolean,
+  selected?: {
     self: boolean,
     prev: boolean,
     next: boolean,
