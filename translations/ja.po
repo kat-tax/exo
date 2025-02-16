@@ -13,6 +13,8 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
+#. placeholder {0}: 5
+#. placeholder {0}: 11
 #: ../../client/src/dev/routes/screen-library.tsx:21
 #: ../../client/src/dev/routes/screen-design.tsx:15
 msgid "{0} components"
@@ -52,9 +54,11 @@ msgid "Auto"
 msgstr "自動"
 
 #: ../../client/src/media/hooks/use-media-name.ts:23
+#: ../../client/src/app/routes/menu/index.tsx:133
 msgid "Books"
 msgstr "本"
 
+#. placeholder {0}: data.metadata.author
 #: ../../client/src/media/file/file-book.tsx:42
 msgid "by {0}"
 msgstr "著者：{0}"
@@ -76,6 +80,7 @@ msgstr "閉じる"
 msgid "Compress"
 msgstr "圧縮"
 
+#: ../../client/src/media/hooks/use-media-controls.ts:72
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:55
 msgid "Copy"
 msgstr "コピー"
@@ -166,12 +171,11 @@ msgstr "ドキュメント"
 msgid "Documents"
 msgstr "ドキュメント"
 
+#: ../../client/src/media/hooks/use-media-controls.ts:91
+#: ../../client/src/media/file/file-binary.tsx:36
 #: ../../client/src/media/dir/stacks/menu-torrent.tsx:23
+#: ../../client/src/media/dir/stacks/menu-hfs.tsx:44
 msgid "Download"
-msgstr "ダウンロード"
-
-#: ../../client/src/media/hooks/use-media-name.ts:23
-msgid "Downloads"
 msgstr "ダウンロード"
 
 #: ../../client/src/media/hooks/use-media-controls.ts:81
@@ -194,6 +198,7 @@ msgstr "フォルダ名を入力"
 msgid "Enter name"
 msgstr "名前を入力"
 
+#: ../../client/src/media/hooks/use-media-controls.ts:101
 #: ../../client/src/media/dir/stacks/menu-zip.tsx:23
 msgid "Extract"
 msgstr "抽出"
@@ -207,6 +212,9 @@ msgid "Feature in development..."
 msgstr "開発中の機能..."
 
 #: ../../client/src/media/stacks/list/bar.tsx:52
+#: ../../client/src/media/hooks/use-media-name.ts:25
+#: ../../client/src/app/routes/menu/index.tsx:47
+#: ../../client/src/app/routes/menu/index.tsx:103
 msgid "Files"
 msgstr "ファイル"
 
@@ -219,6 +227,7 @@ msgid "Fullscreen"
 msgstr "全画面"
 
 #: ../../client/src/media/hooks/use-media-name.ts:21
+#: ../../client/src/app/routes/menu/index.tsx:128
 msgid "Games"
 msgstr "ゲーム"
 
@@ -334,6 +343,7 @@ msgid "Move"
 msgstr "移動"
 
 #: ../../client/src/media/hooks/use-media-name.ts:15
+#: ../../client/src/app/routes/menu/index.tsx:113
 msgid "Music"
 msgstr "音楽"
 
@@ -371,6 +381,7 @@ msgid "Pause"
 msgstr "一時停止"
 
 #: ../../client/src/media/hooks/use-media-name.ts:17
+#: ../../client/src/app/routes/menu/index.tsx:118
 msgid "Pictures"
 msgstr "写真"
 
@@ -442,10 +453,6 @@ msgstr "検索"
 msgid "Select all"
 msgstr ""
 
-#: ../../client/src/media/stacks/history.tsx:16
-msgid "Select All"
-msgstr "すべて選択"
-
 #: ../../client/src/app/routes/screen-settings.tsx:148
 msgid "Select the AI model to use."
 msgstr "使用するAIモデルを選択してください。"
@@ -476,6 +483,7 @@ msgstr "サービス"
 msgid "Settings"
 msgstr "設定"
 
+#: ../../client/src/media/hooks/use-media-controls.ts:268
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:30
 msgid "Share"
 msgstr "共有"
@@ -517,15 +525,12 @@ msgstr ""
 msgid "Unsupported File"
 msgstr "サポートされていないファイル"
 
-#: ../../client/src/media/hooks/use-media-name.ts:25
-msgid "Uploads"
-msgstr "アップロード"
-
 #: ../../client/src/app/routes/screen-settings.tsx:37
 msgid "User Name"
 msgstr "ユーザー名"
 
 #: ../../client/src/media/hooks/use-media-name.ts:19
+#: ../../client/src/app/routes/menu/index.tsx:123
 msgid "Videos"
 msgstr "動画"
 
@@ -545,6 +550,7 @@ msgstr "最新ニュースとRSSフィードを表示"
 msgid "Volume"
 msgstr "音量"
 
+#. placeholder {0}: profile.name
 #: ../../client/src/home/routes/screen-home.tsx:38
 msgid "Welcome, {0}"
 msgstr "ようこそ、{0}さん"
