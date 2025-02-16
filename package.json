@@ -19,8 +19,8 @@
     "storybook:build": "pnpm -F ./toolkit/storybook/web run build",
     "storybook:native": "pnpm -F ./toolkit/storybook/native run start",
     "storybook:web": "pnpm -F ./toolkit/storybook/web run start",
-    "docs:start": "pnpm -F ./toolkit/vocs start",
-    "docs:build": "pnpm -F ./toolkit/vocs build",
+    "docs:_start": "pnpm -F ./toolkit/vocs start",
+    "docs:_build": "pnpm -F ./toolkit/vocs build",
     "server:_start": "pnpm -F ./server run start",
     "generate": "pnpm config:build && pnpm translate:build && pnpm bundler:build && pnpm design:build",
     "postinstall": "pnpm generate"
