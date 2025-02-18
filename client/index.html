@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta httpEquiv="x-ua-compatible" content="ie=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="preconnect" href="https://rsms.me/" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <title>__APP_NAME__</title>
+    <style>
+      :root {
+        font-family: __FONT_NAME__, sans-serif;
+        font-feature-settings:
+          "liga" 1,
+          "calt" 1;
+      }
+
+      a:-webkit-any-link {
+        cursor: default;
+      }
+
+      *:focus {
+        outline: none;
+      }
+
+      html,
+      body,
+      #root {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        display: flex;
+        background: #fff;
+        overscroll-behavior: none;
+        overflow: hidden;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        html,
+        body,
+        #root {
+          background: #000;
+        }
+      }
+
+      @supports (font-variation-settings: normal) {
+        :root {
+          font-family: __FONT_NAME__Variable, sans-serif;
+        }
+      }
+
+      @media (prefers-reduced-motion: no-preference) {
+        html {
+          scroll-behavior: smooth;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="./src/index.tsx"></script>
+  </body>
+</html>

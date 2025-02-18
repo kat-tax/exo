@@ -1,0 +1,29 @@
+# General
+APP_NAME: EXO
+APP_DISPLAY_NAME: EXO
+
+# Design
+FONT_NAME: InterVariable
+
+# State
+STORE_VERSION: 1.0
+
+# Library
+LIB_NAME: react-exo
+LIB_VERSION: 1.0.0
+
+# Web
+LINK_DOCS: https://exo.ult.dev
+LINK_STORYBOOK: https://exo.fig.run
+LINK_DISCORD: https://discord.gg/KpMZVKmfnb
+LINK_GITHUB: https://github.com/kat-tax/exo
+LINK_X: https://x.com/theultdev
+
+# Native
+PACKAGE_IOS: com.exo.ios
+PACKAGE_MACOS: com.exo.macos
+PACKAGE_ANDROID: com.exo.android
+PACKAGE_WINDOWS: com.exo.windows
+
+# Backend
+SYNC_HOST: 'https://evolu.world'

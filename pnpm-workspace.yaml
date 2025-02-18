@@ -1,0 +1,6 @@
+packages:
+  - 'client/**'
+  - 'design/**'
+  - 'locales/**'
+  - 'toolkit/**'
+  - '!**/test/**'

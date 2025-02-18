@@ -1,0 +1,26 @@
+---
+layout: landing
+---
+
+import {HomePage, Sponsors} from 'vocs/components'
+import cfg from 'config';
+
+<HomePage.Root>
+  <HomePage.Logo/>
+  <HomePage.Tagline>
+    Developer Documentation
+  </HomePage.Tagline>
+  <HomePage.InstallPackage
+    name={cfg.LIB_NAME}
+    type="install"
+  />
+  <HomePage.Buttons>
+    <HomePage.Button href="/start" variant="accent">
+      Get started
+    </HomePage.Button>
+    <HomePage.Button href={cfg.LINK_GITHUB}>
+      GitHub
+    </HomePage.Button>
+  </HomePage.Buttons>
+  <Sponsors/>
+</HomePage.Root>

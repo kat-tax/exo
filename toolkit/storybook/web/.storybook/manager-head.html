@@ -1,0 +1,42 @@
+<link rel="preconnect" href="https://rsms.me/">
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+<style>
+  :root {
+    font-family: Inter, sans-serif;
+    font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
+  }
+  @supports (font-variation-settings: normal) {
+    :root { font-family: InterVariable, sans-serif; }
+  }
+</style>
+<style>
+  .sidebar-header div {
+    margin-right: 0;
+  }
+  .sidebar-header img {
+    width: 160px;
+  }
+  #storybook-preview-wrapper {
+    background-color: transparent;
+  }
+  #storybook-preview-iframe {
+    background-color: transparent;
+  }
+  div:has(> a[href="https://storybook.js.org/docs/react/essentials/controls"]) {
+    display: none;
+  }
+  /*#list-item-reset {
+    display: none !important;
+  }*/
+</style>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const q = document.location.search;
+    if (!q || q.startsWith('?path=/docs/references')) {
+      setTimeout(() => {
+        document.getElementById('primitives-assets').click();
+        document.getElementById('primitives-widgets').click();
+      }, 50);
+    }
+  });
+</script>

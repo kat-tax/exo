@@ -1,0 +1,35 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/react-native-test-app/trunk/schema.json",
+  "name": "EXO",
+  "displayName": "EXO",
+  "singleApp": "exo",
+  "components": [
+    {
+      "appKey": "EXO",
+      "displayName": "EXO",
+      "slug": "exo"
+    }
+  ],
+  "svgAppIcon": {
+    "foregroundPath": "../design/assets/svg/logo.svg",
+    "backgroundPath": "../design/assets/svg/logo-bg.svg"
+  },
+  "resources": {
+    "android": [
+      "dist/res",
+      "dist/main.android.jsbundle"
+    ],
+    "ios": [
+      "dist/assets",
+      "dist/main.ios.jsbundle"
+    ],
+    "macos": [
+      "dist/assets",
+      "dist/main.macos.jsbundle"
+    ],
+    "windows": [
+      "dist/assets",
+      "dist/main.windows.bundle"
+    ]
+  }
+}

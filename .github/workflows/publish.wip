@@ -1,0 +1,83 @@
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+env:
+  STORE_PATH: ''
+
+jobs:
+  build:
+    runs-on: ${{matrix.os}}
+    strategy:
+      matrix:
+        os: [
+          ubuntu-latest,
+          # windows-latest,
+          # macos-latest,
+        ]
+    concurrency:
+      group: ${{github.workflow}}-${{github.ref}}
+      cancel-in-progress: true
+    steps:
+      # Setup
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+      - name: Install Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install PNPM
+        uses: pnpm/action-setup@v4
+        with:
+          version: 8
+          run_install: false
+      # Cache
+      - name: Set PNPM Store Path
+        shell: bash
+        run: echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+      - name: Setup PNPM Cache
+        uses: actions/cache@v4
+        with:
+          path: ${{env.STORE_PATH}}
+          key: ${{runner.os}}-pnpm-store-${{hashFiles('**/pnpm-lock.yaml')}}
+          restore-keys: ${{runner.os}}-pnpm-store-
+      # Init
+      - name: Install Dependencies
+        run: pnpm install
+      # Docs
+      - name: Build Docs
+        run: pnpm docs:build
+      - name: Upload to GitHub Pages
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: output/docs
+      # Artifacts
+      # - name: Upload Output
+      #   uses: actions/upload-artifact@v2
+      #   with:
+      #     name: output
+      #     path: output
+
+  deploy:
+    if: github.ref == 'refs/heads/master'
+    needs: build
+    runs-on: ubuntu-latest
+    concurrency: ci-${{github.ref}}
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{steps.gh_pages_deploy.outputs.page_url}}
+    steps:
+      # Docs
+      - name: Deploy to GitHub Pages
+        id: gh_pages_deploy
+        uses: actions/deploy-pages@v2
+      # Artifacts
+      # - name: Download Output
+      #   uses: actions/download-artifact@v2
+      #   with:
+      #     name: output

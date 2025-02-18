@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "./typescript/node.tsconfig.json",
+  "display": "Config",
+  "compilerOptions": {
+    "rootDir": ".",
+    "outDir": "./gen"
+  },
+  "include": [
+    "./*.ts",
+    "./*.cjs"
+  ]
+}

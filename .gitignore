@@ -1,0 +1,36 @@
+# Project
+**/locales/messages/
+**/i18n/messages/
+toolkit/vocs/pages/
+library/metadata.json
+example/
+dev-dist/
+output/
+dist/
+gen/
+WIP.md
+TODO.md
+
+# RNTA
+client/ReactTestApp-*
+
+# MacOS
+.DS_Store
+*.pem
+
+# Env
+.env*.local
+
+# Typescript
+*.tsbuildinfo
+
+# Vocs
+vocs.config.ts.timestamp-*
+
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Testing
+/coverage

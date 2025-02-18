@@ -1,0 +1,47 @@
+{
+  // Language
+  "deno.enable": false,
+  "typescript.tsdk": "client/node_modules/typescript/lib",
+  "typescript.tsserver.watchOptions": {
+    "watchDirectory": "useFsEvents",
+    "fallbackPolling": "dynamicPriorityPolling",
+    "watchFile": "useFsEventsOnParentDirectory",
+    "excludeDirectories": ["**/node_modules/**/*"],
+    "synchronousWatchDirectory": true,
+  },
+  // Icons
+  "material-icon-theme.saturation": 0.6,
+  "material-icon-theme.opacity": 0.8,
+  "material-icon-theme.activeIconPack": "react_redux",
+  "material-icon-theme.folders.associations": {
+    // General
+    ".exo": "batch",
+    "output": "dist",
+    "client": "mobile",
+    "guides": "content",
+    "stacks": "react-components",
+    "utils": "include",
+    // App
+    "interface": "layout",
+    "loader": "import",
+    // Platforms
+    "native": "target",
+    "targets": "target",
+    "android-tv": "android",
+    "visionos": "macos",
+    "tvos": "macos",
+    // Tools
+    "vocs": "vue",
+    "bundler": "container",
+  },
+  "material-icon-theme.files.associations": {
+    "app/theme.tsx": "renovate",
+    "app/provider.tsx": "dll",
+    "app/index.tsx": "tree",
+    "routes/index.tsx": "routing",
+    "routes/index.native.tsx": "routing",
+    "store.ts": "redux-reducer",
+    "data/store.ts": "redux-store",
+    "data/schema.ts": "database",
+  },
+}

@@ -1,0 +1,57 @@
+{
+  "name": "react-exo-ui",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "conc -c 'auto' 'pnpm:*:dev'",
+    "build": "conc -c 'auto' -g 'pnpm:*:build'",
+    "web:dev": "vite dev  -c ../toolkit/bundler/gen/libs/design.web.js --port 6406",
+    "web:build": "vite build -c ../toolkit/bundler/gen/libs/design.web.js",
+    "native:dev": "vite dev  -c ../toolkit/bundler/gen/libs/design.native.js --port 6506",
+    "native:build": "vite build -c ../toolkit/bundler/gen/libs/design.native.js"
+  },
+  "exports": {
+    ".": {
+      "import": "./index.ts",
+      "require": "./gen/native/index.js"
+    },
+    "./theme": {
+      "import": "./theme.ts",
+      "require": "./gen/native/theme.js"
+    },
+    "./styles": {
+      "import": "./styles.ts",
+      "require": "./gen/native/styles.js"
+    },
+    "./gen.theme": {
+      "import": "./gen/web/theme.js",
+      "require": "./gen/native/theme.js"
+    },
+    "./gen.styles": {
+      "import": "./gen/web/styles.js",
+      "require": "./gen/native/styles.js"
+    }
+  },
+  "dependencies": {
+    "@lingui/core": "^5.2.0",
+    "@lingui/macro": "^5.2.0",
+    "@lingui/react": "^5.2.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-exo": "0.18.27",
+    "react-native": "^0.77.1",
+    "react-native-svg": "^15.11.1",
+    "react-native-unistyles": "^2.20.0",
+    "react-native-web": "^0.19.13"
+  },
+  "devDependencies": {
+    "@storybook/blocks": "^8.5.6",
+    "@storybook/react": "^8.5.6",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "bundler": "workspace:*",
+    "config": "workspace:*",
+    "typescript": "^5.7.3"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "name": "config",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "pnpm gen:cfg && pnpm gen:locales && tsc && pnpm gen:files",
+    "gen:cfg": "rnuc --project-root ../../client --lib-root ./node_modules/react-native-ultimate-config ../../config.yaml",
+    "gen:files": "node ./scripts/gen-app-json.js && node ./scripts/gen-docs-sidebar.js",
+    "gen:locales": "node ./scripts/gen-user-locales.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./gen/index.d.ts",
+      "import": "./gen/index.js",
+      "require": "./gen/index.cjs"
+    },
+    "./app.json": "./gen/app.json",
+    "./locales": "./gen/locales.js",
+    "./lingui": "./gen/lingui.js",
+    "./docs.sidebar": "./gen/docs.sidebar.js",
+    "./tsconfig.app.json": "./typescript/app.tsconfig.json",
+    "./tsconfig.node.json": "./typescript/node.tsconfig.json"
+  },
+  "dependencies": {
+    "react-native-ultimate-config": "^6.0.1"
+  },
+  "devDependencies": {
+    "@lingui/conf": "^5.2.0",
+    "gray-matter": "^4.0.3",
+    "vocs": "1.0.0-alpha.62",
+    "typescript": "^5.7.3"
+  }
+}

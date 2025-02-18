@@ -1,0 +1,84 @@
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2025-02-16 22:48-0600\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: ja\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Plural-Forms: \n"
+
+#. placeholder {0}: 11
+#: ../../client/src/app/routes/screen-design.tsx:15
+msgid "{0} components"
+msgstr "{0}個のコンポーネント"
+
+#: ../../client/src/app/routes/screen-settings.tsx:31
+#: ../../client/src/app/routes/screen-settings.tsx:51
+msgid "Auto"
+msgstr "自動"
+
+#: ../../client/src/app/routes/screen-settings.tsx:53
+msgid "Dark"
+msgstr "ダーク"
+
+#: ../../client/src/app/routes/menu/index.tsx:30
+#: ../../client/src/app/routes/menu/index.tsx:50
+msgid "Dashboard"
+msgstr "ダッシュボード"
+
+#: ../../client/src/app/routes/screen-design.tsx:14
+#: ../../client/src/app/routes/menu/index.tsx:62
+msgid "Design"
+msgstr "デザイン"
+
+#: ../../client/src/app/routes/menu/index.tsx:60
+msgid "Dev Mode"
+msgstr "開発モード"
+
+#: ../../client/src/app/routes/screen-settings.tsx:21
+msgid "Display"
+msgstr "表示"
+
+#: ../../client/src/home/routes/screen-dashboard.tsx:15
+msgid "Godspeed!"
+msgstr "頑張って！"
+
+#: ../../client/src/app/routes/screen-settings.tsx:23
+msgid "Language"
+msgstr "言語"
+
+#: ../../client/src/app/routes/screen-settings.tsx:52
+msgid "Light"
+msgstr "ライト"
+
+#: ../../client/src/app/routes/screen-settings.tsx:19
+msgid "Manage your settings"
+msgstr "設定を管理"
+
+#: ../../client/src/app/routes/screen-settings.tsx:24
+msgid "Select the language for the app."
+msgstr "アプリの言語を選択"
+
+#: ../../client/src/app/routes/screen-settings.tsx:44
+msgid "Select the theme for the app."
+msgstr "アプリのテーマを選択"
+
+#: ../../client/src/app/routes/screen-settings.tsx:18
+#: ../../client/src/app/routes/menu/index.tsx:35
+#: ../../client/src/app/routes/menu/index.tsx:55
+msgid "Settings"
+msgstr "設定"
+
+#: ../../client/src/app/routes/screen-settings.tsx:43
+msgid "Theme"
+msgstr "テーマ"
+
+#: ../../client/src/home/routes/screen-dashboard.tsx:14
+msgid "Welcome to EXO"
+msgstr "EXOへようこそ"
