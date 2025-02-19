@@ -25,7 +25,9 @@ export function MenuItem({icon, path, label, active}: MenuItemProps) {
         active && styles.active,
         focused && styles.focus,
       ]}>
-        {icon}
+        <View style={styles.icon}>
+          {icon}
+        </View>
         <Text style={styles.label}>
           {label}
         </Text>
@@ -60,6 +62,9 @@ const stylesheet = createStyleSheet(theme => ({
       lineHeight: 40,
       fontSize: 13,
     },
+  },
+  icon: {
+    pointerEvents: 'none',
   },
 }));
 

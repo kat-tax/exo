@@ -19,9 +19,7 @@ export function PanelItem(props: PanelItemProps) {
           {props.description}
         </Text>
       </View>
-      <View>
-        {props.children}
-      </View>
+      {props.children}
     </View>
   );
 }

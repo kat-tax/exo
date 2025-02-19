@@ -16,7 +16,9 @@ export function MenuTab(props: MenuTabProps) {
   return (
     <Link to={props.path}>
       <View style={styles.item}>
-        {props.icon}
+        <View style={styles.icon}>
+          {props.icon}
+        </View>
         <Text style={[styles.label, isActive && styles.active]}>
           {props.label}
         </Text>
@@ -43,6 +45,9 @@ const stylesheet = createStyleSheet(theme => ({
   },
   active: {
     color: theme.colors.foreground,
+  },
+  icon: {
+    pointerEvents: 'none',
   },
 }));
 
