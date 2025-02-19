@@ -13,11 +13,6 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#. placeholder {0}: 11
-#: ../../client/src/app/routes/screen-design.tsx:15
-msgid "{0} components"
-msgstr "{0}個のコンポーネント"
-
 #: ../../client/src/app/routes/screen-settings.tsx:31
 #: ../../client/src/app/routes/screen-settings.tsx:51
 msgid "Auto"
@@ -27,17 +22,16 @@ msgstr "自動"
 msgid "Dark"
 msgstr "ダーク"
 
-#: ../../client/src/app/routes/menu/index.tsx:30
-#: ../../client/src/app/routes/menu/index.tsx:50
+#: ../../client/src/app/routes/menu/index.tsx:26
+#: ../../client/src/app/routes/menu/index.tsx:42
 msgid "Dashboard"
 msgstr "ダッシュボード"
 
-#: ../../client/src/app/routes/screen-design.tsx:14
-#: ../../client/src/app/routes/menu/index.tsx:62
+#: ../../client/src/app/routes/menu/index.tsx:54
 msgid "Design"
 msgstr "デザイン"
 
-#: ../../client/src/app/routes/menu/index.tsx:60
+#: ../../client/src/app/routes/menu/index.tsx:52
 msgid "Dev Mode"
 msgstr "開発モード"
 
@@ -70,8 +64,8 @@ msgid "Select the theme for the app."
 msgstr "アプリのテーマを選択"
 
 #: ../../client/src/app/routes/screen-settings.tsx:18
-#: ../../client/src/app/routes/menu/index.tsx:35
-#: ../../client/src/app/routes/menu/index.tsx:55
+#: ../../client/src/app/routes/menu/index.tsx:31
+#: ../../client/src/app/routes/menu/index.tsx:47
 msgid "Settings"
 msgstr "設定"
 

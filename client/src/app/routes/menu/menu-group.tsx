@@ -22,11 +22,10 @@ export function MenuGroup(props: MenuGroupProps) {
             style={styles.label}>
             {props.label}
           </Text>
-          <Icon
-            name={open ? 'ph:caret-down-fill' : 'ph:caret-right-fill'}
-            color={theme.colors.mutedForeground}
-            size={8}
-          />
+          {open
+            ? <Icon name="ph:caret-down-fill" color={theme.colors.mutedForeground} size={8}/>
+            : <Icon name="ph:caret-right-fill" color={theme.colors.mutedForeground} size={8}/>
+          }
         </View>
       </Pressable>
       {open && props.children}

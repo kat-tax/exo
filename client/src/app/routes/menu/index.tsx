@@ -1,3 +1,4 @@
+import {Icon} from 'react-exo/icon';
 import {useLingui} from '@lingui/react/macro';
 import {useLocation} from 'react-exo/navigation';
 import {useFocusable, FocusContext} from '@noriginmedia/norigin-spatial-navigation';
@@ -24,13 +25,13 @@ export function Menu() {
       <View style={styles.tabs}>
         <MenuTab
           label={t`Dashboard`}
-          icon="ph:squares-four"
           path="/"
+          icon={<Icon name="ph:squares-four"/>}
         />
         <MenuTab
           label={t`Settings`}
-          icon="ph:gear"
           path="/settings"
+          icon={<Icon name="ph:gear"/>}
         />
       </View>
       <View style={styles.menu}>
@@ -40,20 +41,20 @@ export function Menu() {
               <MenuHeader/>
               <MenuItem
                 label={t`Dashboard`}
-                icon="ph:squares-four"
                 path="/"
+                icon={<Icon name="ph:squares-four"/>}
               />
               <MenuItem
                 label={t`Settings`}
-                icon="ph:gear"
                 path="/settings"
+                icon={<Icon name="ph:gear"/>}
               />
               {__DEV__ &&
                 <MenuGroup label={t`Dev Mode`} closed>
                   <MenuItem
                     label={t`Design`}
-                    icon="ph:palette"
                     path="/design"
+                    icon={<Icon name="ph:palette"/>}
                   />
                 </MenuGroup>
               }

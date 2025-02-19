@@ -1,15 +1,36 @@
 {
   "$schema": "https://raw.githubusercontent.com/microsoft/react-native-test-app/trunk/schema.json",
+  "version": "1.0.0",
   "name": "EXO",
   "displayName": "EXO",
   "singleApp": "exo",
   "components": [
     {
+      "slug": "exo",
       "appKey": "EXO",
-      "displayName": "EXO",
-      "slug": "exo"
+      "displayName": "EXO"
     }
   ],
+  "ios": {
+    "bundleIdentifier": "com.exo.ios"
+  },
+  "android": {
+    "package": "com.exo.android",
+    "signingConfigs": {
+      "debug": {
+        "keyAlias": "androiddebugkey",
+        "keyPassword": "android",
+        "storeFile": "debug.keystore",
+        "storePassword": "android"
+      },
+      "release": {
+        "keyAlias": "androiddebugkey",
+        "keyPassword": "android",
+        "storeFile": "release.keystore",
+        "storePassword": "android"
+      }
+    }
+  },
   "svgAppIcon": {
     "foregroundPath": "../design/assets/svg/logo.svg",
     "backgroundPath": "../design/assets/svg/logo-bg.svg"

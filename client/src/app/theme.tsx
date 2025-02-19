@@ -2,7 +2,6 @@ import {useEffect} from 'react';
 import {useInitialTheme, UnistylesRuntime} from 'react-native-unistyles';
 import {StatusBar, Appearance} from 'react-native';
 import {GestureProvider} from 'react-exo/gesture';
-import {ToastRoot} from 'react-exo/toast';
 import {useTheme} from 'app/hooks/use-theme';
 
 export function Theme(props: React.PropsWithChildren) {
@@ -25,11 +24,6 @@ export function Theme(props: React.PropsWithChildren) {
         barStyle={`${theme}-content`}
       />
       {props.children}
-      <ToastRoot
-        theme={theme}
-        offset={12}
-        position="bottom-center"
-      />
     </GestureProvider>
   );
 }

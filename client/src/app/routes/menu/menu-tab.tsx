@@ -1,12 +1,12 @@
-import {Icon} from 'react-exo/icon';
+import {cloneElement} from 'react';
 import {View, Text} from 'react-native';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useLocation, Link} from 'react-exo/navigation';
 
 interface MenuTabProps extends React.PropsWithChildren {
   path: string,
-  icon: string,
   label: string,
+  icon: React.ReactNode,
 }
 
 export function MenuTab(props: MenuTabProps) {
@@ -18,11 +18,10 @@ export function MenuTab(props: MenuTabProps) {
     <Link to={props.path}>
       <View style={styles.item}>
         {props.icon &&
-          <Icon
-            color={isActive ? theme.colors.foreground : theme.colors.mutedForeground}
-            name={props.icon}
-            size={20}
-          />
+          cloneElement(props.icon as React.ReactElement, {
+            color: isActive ? theme.colors.foreground : theme.colors.mutedForeground,
+            size: 20,
+          })
         }
         <Text style={[styles.label, isActive && styles.active]}>
           {props.label}
