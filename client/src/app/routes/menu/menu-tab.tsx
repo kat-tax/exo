@@ -1,28 +1,22 @@
-import {cloneElement} from 'react';
 import {View, Text} from 'react-native';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {useLocation, Link} from 'react-exo/navigation';
+import {Link} from 'react-exo/navigation';
 
 interface MenuTabProps extends React.PropsWithChildren {
-  path: string,
   label: string,
+  path: string,
   icon: React.ReactNode,
+  active: boolean,
 }
 
 export function MenuTab(props: MenuTabProps) {
-  const {pathname} = useLocation();
-  const {styles, theme} = useStyles(stylesheet);
-  const isActive = props.path === decodeURIComponent(pathname);
+  const {styles} = useStyles(stylesheet);
+  const isActive = props.active;
 
   return (
     <Link to={props.path}>
       <View style={styles.item}>
-        {props.icon &&
-          cloneElement(props.icon as React.ReactElement, {
-            color: isActive ? theme.colors.foreground : theme.colors.mutedForeground,
-            size: 20,
-          })
-        }
+        {props.icon}
         <Text style={[styles.label, isActive && styles.active]}>
           {props.label}
         </Text>

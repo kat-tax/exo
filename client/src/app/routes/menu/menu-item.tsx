@@ -1,42 +1,33 @@
-import {cloneElement} from 'react';
 import {View, Text} from 'react-native';
 import {useFocusable} from '@noriginmedia/norigin-spatial-navigation';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {useLocation, useNavigate, Link} from 'react-exo/navigation';
+import {useNavigate, Link} from 'react-exo/navigation';
 
 interface MenuItemProps extends React.PropsWithChildren {
-  path: string,
   label: string,
+  path: string,
   icon?: React.ReactNode,
+  active: boolean,
 }
 
-export function MenuItem(props: MenuItemProps) {
+export function MenuItem({icon, path, label, active}: MenuItemProps) {
   const nav = useNavigate();
-  const loc = useLocation();
-  const active = props.path === decodeURIComponent(loc.pathname);
-  const {styles, theme} = useStyles(stylesheet);
+  const {styles} = useStyles(stylesheet);
   const {ref, focused} = useFocusable({
-    focusKey: `menu@${props.path}`,
-    onFocus: () => nav(props.path),
+    focusKey: `menu@${path}`,
+    onFocus: () => nav(path),
   });
 
   return (
-    <Link ref={ref} to={props.path}>
+    <Link ref={ref} to={path}>
       <View style={[
         styles.item,
         active && styles.active,
         focused && styles.focus,
       ]}>
-        {props.icon &&
-          cloneElement(props.icon as React.ReactElement, {
-            size: 16,
-            color: active
-              ? theme.colors.foreground
-              : theme.colors.mutedForeground,
-          })
-        }
+        {icon}
         <Text style={styles.label}>
-          {props.label}
+          {label}
         </Text>
       </View>
     </Link>

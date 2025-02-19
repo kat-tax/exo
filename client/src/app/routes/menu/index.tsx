@@ -11,8 +11,8 @@ import {MenuTab} from './menu-tab';
 
 export function Menu() {
   const {t} = useLingui();
-  const {styles} = useStyles(stylesheet);
   const {pathname} = useLocation();
+  const {styles, theme} = useStyles(stylesheet);
   const {ref, focusKey} = useFocusable({
     isFocusBoundary: true,
     focusBoundaryDirections: ['up', 'down'],
@@ -20,18 +20,27 @@ export function Menu() {
     forceFocus: true,
   });
 
+  // TEMP: replace with icon map in consts.tsx
+  const path = decodeURIComponent(pathname);
+  const active = (_path: string) => path === _path;
+  const color = (_path: string) => path === _path
+    ? theme.colors.foreground
+    : theme.colors.mutedForeground;
+
   return (
     <>
       <View style={styles.tabs}>
         <MenuTab
           label={t`Dashboard`}
           path="/"
-          icon={<Icon name="ph:squares-four"/>}
+          icon={<Icon name="ph:squares-four" size={20} color={color('/')}/>}
+          active={active('/')}
         />
         <MenuTab
           label={t`Settings`}
           path="/settings"
-          icon={<Icon name="ph:gear"/>}
+          icon={<Icon name="ph:gear" size={20} color={color('/settings')}/>}
+          active={active('/settings')}
         />
       </View>
       <View style={styles.menu}>
@@ -42,19 +51,22 @@ export function Menu() {
               <MenuItem
                 label={t`Dashboard`}
                 path="/"
-                icon={<Icon name="ph:squares-four"/>}
+                icon={<Icon name="ph:squares-four" size={16} color={color('/')}/>}
+                active={active('/')}
               />
               <MenuItem
                 label={t`Settings`}
                 path="/settings"
-                icon={<Icon name="ph:gear"/>}
+                icon={<Icon name="ph:gear" size={16} color={color('/settings')}/>}
+                active={active('/settings')}
               />
               {__DEV__ &&
                 <MenuGroup label={t`Dev Mode`} closed>
                   <MenuItem
                     label={t`Design`}
                     path="/design"
-                    icon={<Icon name="ph:palette"/>}
+                    icon={<Icon name="ph:palette" size={16} color={color('/design')}/>}
+                    active={active('/design')}
                   />
                 </MenuGroup>
               }
