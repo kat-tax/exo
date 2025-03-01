@@ -18,9 +18,7 @@ export const Empty: Story = {
     showCaption: true,
     showLabel: true,
     icon: (
-      <Icon
-        name="ph:envelope"
-      />
+      <Icon name="ph:envelope"/>
     ),
   },
 };

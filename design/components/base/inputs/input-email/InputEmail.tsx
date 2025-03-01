@@ -1,5 +1,5 @@
-import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useVariants, createIcon} from 'react-exo/utils';
+import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {View, TextInput, Text} from 'react-native';
 
 export interface InputEmailProps {
@@ -92,7 +92,7 @@ const stylesheet = createStyleSheet(theme => ({
     fontFamily: theme.font.family,
     fontSize: theme.font.inputSize,
     fontStyle: 'normal',
-    fontWeight: theme.font.inputWeight,
+    fontWeight: theme.font.weight,
     lineHeight: theme.font.inputHeight,
     letterSpacing: theme.font.inputSpacing,
   },

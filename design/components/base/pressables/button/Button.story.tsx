@@ -16,9 +16,7 @@ export const PrimaryDefault: Story = {
     state: 'Default',
     showIcon: true,
     icon: (
-      <Icon
-        name="ph:placeholder"
-      />
+      <Icon name="ph:placeholder"/>
     ),
   },
 };

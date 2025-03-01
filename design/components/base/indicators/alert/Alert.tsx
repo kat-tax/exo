@@ -1,5 +1,5 @@
-import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useVariants, createIcon} from 'react-exo/utils';
+import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {View, Text} from 'react-native';
 
 export interface AlertProps {

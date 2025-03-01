@@ -44,9 +44,7 @@ export function Prompt(props: PromptProps) {
                 state="Default"
                 showIcon
                 icon={
-                  <Icon
-                    name="ph:x"
-                  />
+                  <Icon name="ph:x"/>
                 }
               />
             }

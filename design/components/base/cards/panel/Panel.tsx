@@ -55,11 +55,11 @@ const stylesheet = createStyleSheet(theme => ({
   header: {
     color: theme.colors.cardForeground,
     fontFamily: theme.font.family,
-    fontSize: theme.font.titleSize,
+    fontSize: theme.font.headerSize,
     fontStyle: 'normal',
-    fontWeight: theme.font.titleWeight,
-    lineHeight: theme.font.titleHeight,
-    letterSpacing: theme.font.titleSpacing,
+    fontWeight: theme.font.headerWeight,
+    lineHeight: theme.font.headerHeight,
+    letterSpacing: theme.font.headerSpacing,
   },
   description: {
     alignSelf: 'stretch',

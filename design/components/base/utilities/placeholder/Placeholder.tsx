@@ -21,6 +21,7 @@ const stylesheet = createStyleSheet(theme => ({
     flexShrink: 0,
     flexBasis: 0,
     alignSelf: 'stretch',
-    backgroundColor: theme.colors.input,
+    opacity: 0.3,
+    backgroundColor: 'lightgray',
   },
 }));

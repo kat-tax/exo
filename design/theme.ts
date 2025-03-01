@@ -78,7 +78,7 @@ export const typography = {
 } as const;
 
 export const font = {
-  family: 'InterVariable',
+  family: 'Inter',
   size: typography.size1,
   weight: typography.weightRegular,
   spacing: typography.letterSpacing1,
@@ -355,7 +355,6 @@ export const palette = {
 export const themes = {
   light: {
     colors: {
-      neutral: palette.white,
       background: palette.white,
       foreground: palette.zinc950,
       card: palette.white,
@@ -368,7 +367,7 @@ export const themes = {
       secondaryForeground: palette.zinc900,
       muted: palette.zinc100,
       mutedForeground: palette.zinc500,
-      accent: palette.zinc100,
+      accent: palette.zinc200,
       accentForeground: palette.zinc900,
       info: palette.blue500,
       success: palette.green500,
@@ -388,10 +387,9 @@ export const themes = {
   },
   dark: {
     colors: {
-      neutral: palette.black,
       background: palette.zinc950,
       foreground: palette.zinc50,
-      card: palette.zinc900,
+      card: palette.zinc950,
       cardForeground: palette.zinc50,
       popover: palette.zinc950,
       popoverForeground: palette.zinc50,
@@ -401,7 +399,7 @@ export const themes = {
       secondaryForeground: palette.zinc50,
       muted: palette.zinc800,
       mutedForeground: palette.zinc400,
-      accent: palette.zinc800,
+      accent: palette.zinc600,
       accentForeground: palette.zinc50,
       info: palette.blue900,
       success: palette.green900,
