@@ -20,18 +20,18 @@
     "@lingui/vite-plugin": "^5.3.3",
     "@lingui/babel-plugin-lingui-macro": "^5.3.3",
     "@rollup/plugin-dynamic-import-vars": "^2.1.5",
-    "@types/react": "18.3.18",
-    "@types/react-dom": "18.3.5",
-    "@vitejs/plugin-react": "^4.3.4",
+    "@types/react": "18.3.23",
+    "@types/react-dom": "18.3.7",
+    "@vitejs/plugin-react": "^4.7.0",
     "config": "workspace:*",
-    "lightningcss": "^1.29.1",
-    "react-native": "^0.77.1",
+    "lightningcss": "^1.30.1",
+    "react-native": "^0.77.3",
     "sonda": "latest",
     "typescript": "^5.8.3",
-    "vite": "^5.4.14",
-    "vite-plugin-dts": "^4.5.0",
-    "vite-plugin-pwa": "^0.21.1",
+    "vite": "^5.4.19",
+    "vite-plugin-dts": "^4.5.4",
+    "vite-plugin-pwa": "^1.0.1",
     "vite-tsconfig-paths": "^5.1.4",
-    "vocs": "1.0.0-alpha.62"
+    "vocs": "1.0.13"
   }
 }
