@@ -52,6 +52,6 @@
     "@types/react-dom": "^18.3.5",
     "bundler": "workspace:*",
     "config": "workspace:*",
-    "typescript": "^5.7.3"
+    "typescript": "^5.8.3"
   }
 }

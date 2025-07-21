@@ -29,6 +29,6 @@
     "@lingui/conf": "^5.3.3",
     "gray-matter": "^4.0.3",
     "vocs": "1.0.0-alpha.62",
-    "typescript": "^5.7.3"
+    "typescript": "^5.8.3"
   }
 }

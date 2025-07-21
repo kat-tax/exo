@@ -151,7 +151,7 @@ importers:
         specifier: workspace:*
         version: link:../toolkit/config
       typescript:
-        specifier: ^5.7.3
+        specifier: ^5.8.3
         version: 5.8.3
       workbox-build:
         specifier: ^7.3.0
@@ -218,7 +218,7 @@ importers:
         specifier: workspace:*
         version: link:../toolkit/config
       typescript:
-        specifier: ^5.7.3
+        specifier: ^5.8.3
         version: 5.8.3
 
   toolkit/bundler:
@@ -257,7 +257,7 @@ importers:
         specifier: latest
         version: 0.9.0
       typescript:
-        specifier: ^5.7.3
+        specifier: ^5.8.3
         version: 5.8.3
       vite:
         specifier: ^5.4.14
@@ -288,7 +288,7 @@ importers:
         specifier: ^4.0.3
         version: 4.0.3
       typescript:
-        specifier: ^5.7.3
+        specifier: ^5.8.3
         version: 5.8.3
       vocs:
         specifier: 1.0.0-alpha.62
@@ -334,7 +334,7 @@ importers:
         specifier: ^0.77.1
         version: 0.77.3(@babel/core@7.28.0)(@babel/preset-env@7.28.0(@babel/core@7.28.0))(@types/react@18.3.18)(react@18.3.1)
       typescript:
-        specifier: ^5.7.3
+        specifier: ^5.8.3
         version: 5.8.3
 
   toolkit/storybook/web:
@@ -428,7 +428,7 @@ importers:
         specifier: 8.5.6
         version: 8.5.6
       typescript:
-        specifier: ^5.7.3
+        specifier: ^5.8.3
         version: 5.8.3
 
   toolkit/vocs:
@@ -489,7 +489,7 @@ importers:
         specifier: latest
         version: 4.20.3
       typescript:
-        specifier: ^5.7.3
+        specifier: ^5.8.3
         version: 5.8.3
       vocs:
         specifier: 1.0.0-alpha.62
