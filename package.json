@@ -25,16 +25,15 @@
     "postinstall": "pnpm generate"
   },
   "devDependencies": {
-    "@lingui/cli": "^5.2.0",
-    "@qrgrid/core": "^0.2.2",
-    "cli-cursor": "^3.0.0",
-    "concurrently": "^9.1.2",
+    "@lingui/cli": "^5.3.3",
+    "@qrgrid/core": "^0.2.3",
+    "cli-cursor": "^5.0.0",
+    "concurrently": "^9.2.0",
     "strip-ansi": "^7.1.0",
-    "yocto-spinner": "^0.1.2",
     "yoctocolors": "^2.1.1"
   },
   "engines": {
     "node": ">=22"
   },
-  "packageManager": "pnpm@9.12.3"
+  "packageManager": "pnpm@10.13.1"
 }

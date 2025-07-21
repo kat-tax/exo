@@ -34,9 +34,9 @@
     }
   },
   "dependencies": {
-    "@lingui/core": "^5.2.0",
-    "@lingui/macro": "^5.2.0",
-    "@lingui/react": "^5.2.0",
+    "@lingui/core": "^5.3.3",
+    "@lingui/macro": "^5.3.3",
+    "@lingui/react": "^5.3.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-exo": "0.18.27",

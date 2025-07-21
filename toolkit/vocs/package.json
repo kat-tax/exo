@@ -9,9 +9,9 @@
     "preview": "tsx utils/setup && vocs preview"
   },
   "dependencies": {
-    "@lingui/core": "^5.2.0",
-    "@lingui/macro": "^5.2.0",
-    "@lingui/react": "^5.2.0",
+    "@lingui/core": "^5.3.3",
+    "@lingui/macro": "^5.3.3",
+    "@lingui/react": "^5.3.3",
     "design": "workspace:react-exo-ui@*",
     "react": "^18.3.1",
     "react-docgen": "^7.1.0",

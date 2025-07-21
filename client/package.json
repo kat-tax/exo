@@ -24,9 +24,9 @@
     "_postinstall": "pnpm generate:*"
   },
   "dependencies": {
-    "@lingui/core": "^5.2.0",
-    "@lingui/macro": "^5.2.0",
-    "@lingui/react": "^5.2.0",
+    "@lingui/core": "^5.3.3",
+    "@lingui/macro": "^5.3.3",
+    "@lingui/react": "^5.3.3",
     "@noriginmedia/norigin-spatial-navigation": "^2.2.3",
     "@react-native-community/netinfo": "^11.4.1",
     "@react-native-picker/picker": "^2.11.0",

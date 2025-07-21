@@ -3,7 +3,7 @@ import {VitePWA} from 'vite-plugin-pwa';
 import webConfig from '../vite.web.js';
 
 import cfg from 'config';
-import sonda from 'sonda/vite'; 
+import sonda from 'sonda/vite';
 import react from '@vitejs/plugin-react';
 import {lingui} from '@lingui/vite-plugin';
 
@@ -68,7 +68,6 @@ export default defineConfig(env => mergeConfig(
       sonda({
         open: false,
         sources: true,
-        detailed: true,
         filename: 'bundle.inspect.html',
       }),
     ],

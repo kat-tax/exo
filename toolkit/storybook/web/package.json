@@ -8,9 +8,9 @@
     "build": "storybook build -o ../../../output/storybook"
   },
   "dependencies": {
-    "@lingui/core": "^5.2.0",
-    "@lingui/macro": "^5.2.0",
-    "@lingui/react": "^5.2.0",
+    "@lingui/core": "^5.3.3",
+    "@lingui/macro": "^5.3.3",
+    "@lingui/react": "^5.3.3",
     "@storybook/blocks": "^8.5.6",
     "design": "workspace:react-exo-ui@*",
     "react": "^18.3.1",
@@ -23,7 +23,7 @@
     "storybook-common": "workspace:*"
   },
   "devDependencies": {
-    "@iconify/react": "^5.2.0",
+    "@iconify/react": "^6.0.0",
     "@storybook/addon-a11y": "^8.5.6",
     "@storybook/addon-designs": "^8.2.0",
     "@storybook/addon-essentials": "8.5.6",

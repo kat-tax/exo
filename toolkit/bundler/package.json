@@ -16,9 +16,9 @@
     "./lib.design.web.cfg": "./gen/libs/design.web.js"
   },
   "devDependencies": {
-    "@lingui/core": "^5.2.0",
-    "@lingui/vite-plugin": "^5.2.0",
-    "@lingui/babel-plugin-lingui-macro": "^5.2.0",
+    "@lingui/core": "^5.3.3",
+    "@lingui/vite-plugin": "^5.3.3",
+    "@lingui/babel-plugin-lingui-macro": "^5.3.3",
     "@rollup/plugin-dynamic-import-vars": "^2.1.5",
     "@types/react": "18.3.18",
     "@types/react-dom": "18.3.5",
