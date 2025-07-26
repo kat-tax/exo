@@ -29,9 +29,9 @@ export default class ReadLine extends Transform {
 
     try {
       if (this._buf !== null) {
-        this._buf += str;  
+        this._buf += str;
       } else {
-        this._buf = str;  
+        this._buf = str;
       }
 
       const lines = this._buf.split(this._brRe);

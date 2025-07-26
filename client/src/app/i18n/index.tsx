@@ -10,7 +10,7 @@ i18n.activate('en');
 
 export function I18n(props: React.PropsWithChildren) {
   const [locale] = useLocale();
-  
+
   useEffect(() => {
     const isRtl = isRTL(locale);
     if (Platform.OS === 'web') {

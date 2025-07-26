@@ -27,7 +27,7 @@ export function Status(props: StatusProps) {
 
   return (
     <View style={vstyles.root()} testID={props.testID ?? "5235:309"}>
-      {props.hasValue && 
+      {props.hasValue &&
         <View style={vstyles.content()} testID="5235:304">
           <Text style={vstyles.value()} testID="5235:303">
             {props.value}

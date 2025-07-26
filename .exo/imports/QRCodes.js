@@ -14,7 +14,7 @@ export default function QRCodes(input) {
   const entries = Array.isArray(input) ? input.filter(Boolean) : [input];
   const qrcodes = entries.map(input => new QR(input.url, {errorCorrection: 'L'}));
   const gridSize = qrcodes[0].gridSize;
-  
+
   // Add labels first
   let _output = ' ';
   for (let qrIndex = 0; qrIndex < qrcodes.length; qrIndex++) {
