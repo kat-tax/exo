@@ -8,7 +8,7 @@
     "build:web": "vite build",
     "start:web": "vite dev --port 6206 --host",
     "_start:native": "react-native rnx-start --reset-cache",
-    "_generate:pods": "pod install --project-directory=ios && pod install --project-directory=macos && pod install --project-directory=visionos",
+    "_generate:pods": "pod install --project-directory=ios",
     "_generate:icons": "react-native-svg-app-icon generate",
     "_generate:splash": "react-native generate-bootsplash ../design/assets/svg/logo.svg",
     "_postinstall": "pnpm generate:*"
