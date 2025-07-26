@@ -23,14 +23,6 @@
     "./styles": {
       "import": "./styles.ts",
       "require": "./gen/native/styles.js"
-    },
-    "./gen.theme": {
-      "import": "./gen/web/theme.js",
-      "require": "./gen/native/theme.js"
-    },
-    "./gen.styles": {
-      "import": "./gen/web/styles.js",
-      "require": "./gen/native/styles.js"
     }
   },
   "dependencies": {

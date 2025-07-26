@@ -1,5 +1,5 @@
 import {useColorScheme} from 'react-native';
-import {usePut, useGet} from 'app/data/store';
+import {useSet, useGet} from 'app/data/store';
 import app from 'app/store';
 
 import type {ColorSchemeName} from 'react-native';
@@ -10,10 +10,9 @@ export function useTheme(storedOnly?: boolean): [
 ] {
   const stored = useGet(app.selectors.getScheme);
   const value = useColorScheme();
-  const put = usePut();
-  const set = (scheme: ColorSchemeName) =>
-    put(app.actions.setScheme(scheme));
+  const set = useSet();
+  const $ = (scheme: ColorSchemeName) => set(app.actions.setScheme(scheme));
   return (stored || storedOnly)
-    ? [stored, set]
-    : [value, set];
+    ? [stored, $]
+    : [value, $];
 }

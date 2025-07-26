@@ -30,8 +30,7 @@ $.history.init(store);
 
 export type Store = typeof store;
 export type State = ReturnType<typeof store.getState>
-export type AppPut = typeof store.dispatch;
-export const usePut = $.useDispatch.withTypes<AppPut>();
+export const useSet = $.useDispatch.withTypes<typeof store.dispatch>();
 export const useGet = $.useSelector.withTypes<State>();
 export const history = $.history.state;
 export default store;
