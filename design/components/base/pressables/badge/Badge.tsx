@@ -18,9 +18,9 @@ export interface BadgeProps extends PressableProps {
   /** Whether the label should be displayed on the badge. */
   showLabel?: boolean,
   /** Optional icon element to be displayed on the badge. */
-  icon?: JSX.Element,
+  icon?: React.ReactNode,
   /** Optional indicator element to be displayed on the badge. */
-  indicator?: JSX.Element,
+  indicator?: React.ReactNode,
 }
 
 export const BadgeVariants = {
@@ -40,17 +40,17 @@ export function Badge(props: BadgeProps) {
   return (
     <Pressable style={vstyles.root} testID={props.testID ?? "5232:201"} {...props}>
       {e => <>
-        {props.showIcon && 
+        {props.showIcon &&
           createIcon(props.icon, vstyles.phPlaceholder(e))
         }
-        {props.showLabel && 
+        {props.showLabel &&
           <Text style={vstyles.label(e)} testID="5232:189">
             {props.label}
           </Text>
         }
-        {props.showIndicator && 
+        {props.showIndicator &&
           <View style={vstyles.indicator(e)} testID="5235:308">
-            {props.showIndicator && 
+            {props.showIndicator &&
               props.indicator
             }
           </View>

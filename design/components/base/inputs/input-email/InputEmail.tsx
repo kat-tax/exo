@@ -16,7 +16,7 @@ export interface InputEmailProps {
   /** Whether the label should be displayed. */
   showLabel?: boolean,
   /** Optional icon to display within the input field. */
-  icon?: JSX.Element,
+  icon?: React.ReactNode,
   /** Used to locate this view in end-to-end tests. */
   testID?: string,
 }
@@ -35,7 +35,7 @@ export function InputEmail(props: InputEmailProps) {
 
   return (
     <View style={vstyles.root()} testID={props.testID ?? "4107:142"}>
-      {props.showLabel && 
+      {props.showLabel &&
         <Text style={vstyles.label()} testID="4107:144">
           {props.label}
         </Text>
@@ -51,7 +51,7 @@ export function InputEmail(props: InputEmailProps) {
           placeholderTextColor={theme.colors.mutedForeground}
         />
       </View>
-      {props.showCaption && 
+      {props.showCaption &&
         <Text style={vstyles.caption()} testID="4107:148">
           {props.caption}
         </Text>

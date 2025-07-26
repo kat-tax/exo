@@ -15,9 +15,9 @@ export interface ArticleProps {
   /** Whether a thumbnail should be displayed. */
   hasThumbnail?: boolean,
   /** Optional element representing tags. */
-  tags?: JSX.Element,
+  tags?: React.ReactNode,
   /** Optional element representing a thumbnail. */
-  thumbnail?: JSX.Element,
+  thumbnail?: React.ReactNode,
   /** Used to locate this view in end-to-end tests. */
   testID?: string,
 }
@@ -30,7 +30,7 @@ export function Article(props: ArticleProps) {
 
   return (
     <View style={styles.root} testID={props.testID ?? "2218:99"}>
-      {props.hasThumbnail && 
+      {props.hasThumbnail &&
         <View style={styles.thumbnail} testID="5234:214">
           {props.thumbnail}
         </View>
@@ -39,7 +39,7 @@ export function Article(props: ArticleProps) {
         <Text style={styles.header} testID="2218:102">
           {props.header}
         </Text>
-        {props.hasTags && 
+        {props.hasTags &&
           <View style={styles.tags} testID="5283:474">
             {props.tags}
           </View>
@@ -47,7 +47,7 @@ export function Article(props: ArticleProps) {
         <Text style={styles.body} testID="2218:103">
           {props.body}
         </Text>
-        {props.hasFooter && 
+        {props.hasFooter &&
           <Text style={styles.footer} testID="2218:116">
             {props.footer}
           </Text>

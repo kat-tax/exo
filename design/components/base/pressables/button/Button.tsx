@@ -14,7 +14,7 @@ export interface ButtonProps extends PressableProps {
   /** Whether to display an icon button. */
   showIcon?: boolean,
   /** The icon element to display if showIcon is true. */
-  icon?: JSX.Element,
+  icon?: React.ReactNode,
 }
 
 export const ButtonVariants = {
@@ -34,7 +34,7 @@ export function Button(props: ButtonProps) {
   return (
     <Pressable style={vstyles.root} testID={props.testID ?? "2028:395"} {...props}>
       {e => <>
-        {props.showIcon && 
+        {props.showIcon &&
           createIcon(props.icon, vstyles.phPlaceholder(e))
         }
         <Text style={vstyles.label(e)} testID="2028:398">

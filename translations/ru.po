@@ -23,6 +23,10 @@ msgstr ""
 msgid "Auto"
 msgstr ""
 
+#: ../../design/components/base/popovers/prompt/Prompt.tsx:44
+msgid "Cancel"
+msgstr ""
+
 #: ../../client/src/app/routes/screen-settings.tsx:53
 msgid "Dark"
 msgstr ""

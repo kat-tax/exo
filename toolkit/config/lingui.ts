@@ -10,11 +10,10 @@ export default <LinguiConfig> {
   catalogs: [{
     path: 'translations/{locale}',
     include: [
-      'client',
-      'design',
+      'client/src',
+      'design/components',
     ],
     exclude: [
-      '**/node_modules/**',
       '/__tests__/',
       '*.spec.*',
     ],

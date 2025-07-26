@@ -16,7 +16,7 @@ export interface InputPasswordProps {
   /** Determines if the label should be displayed. */
   showLabel?: boolean,
   /** Optional icon to display within the input field. */
-  icon?: JSX.Element,
+  icon?: React.ReactNode,
   /** Used to locate this view in end-to-end tests. */
   testID?: string,
 }
@@ -35,7 +35,7 @@ export function InputPassword(props: InputPasswordProps) {
 
   return (
     <View style={vstyles.root()} testID={props.testID ?? "4029:244"}>
-      {props.showLabel && 
+      {props.showLabel &&
         <Text style={vstyles.label()} testID="4029:246">
           {props.label}
         </Text>
@@ -52,7 +52,7 @@ export function InputPassword(props: InputPasswordProps) {
           secureTextEntry
         />
       </View>
-      {props.showCaption && 
+      {props.showCaption &&
         <Text style={vstyles.caption()} testID="4029:250">
           {props.caption}
         </Text>

@@ -12,7 +12,7 @@ export interface AlertProps {
   /** Whether the icon should be displayed. */
   hasIcon?: boolean,
   /** Optional icon element to display. */
-  icon?: JSX.Element,
+  icon?: React.ReactNode,
   /** Used to locate this view in end-to-end tests. */
   testID?: string,
 }
@@ -31,7 +31,7 @@ export function Alert(props: AlertProps) {
 
   return (
     <View style={vstyles.root()} testID={props.testID ?? "5290:611"}>
-      {props.hasIcon && 
+      {props.hasIcon &&
         <View style={vstyles.icon()} testID="5290:613">
           {createIcon(props.icon, vstyles.phPlaceholder())}
         </View>
