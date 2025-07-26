@@ -5,7 +5,7 @@ export default <LinguiConfig> {
   locales: Object.keys(locales),
   sourceLocale,
   format: 'po',
-  compileNamespace: 'ts',
+  compileNamespace: 'json',
   catalogsMergePath: './client/src/app/i18n/messages/{locale}',
   catalogs: [{
     path: 'translations/{locale}',
