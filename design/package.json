@@ -36,20 +36,29 @@
   "dependencies": {
     "@lingui/core": "^5.3.3",
     "@lingui/macro": "^5.3.3",
-    "@lingui/react": "^5.3.3",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-exo": "0.18.27",
-    "react-native": "^0.77.1",
-    "react-native-svg": "^15.11.1",
-    "react-native-unistyles": "^2.20.0",
-    "react-native-web": "^0.19.13"
+    "@lingui/react": "^5.3.3"
+  },
+  "peerDependencies": {
+    "react": ">=19",
+    "react-dom": ">=19",
+    "react-exo": ">=0.18",
+    "react-native": ">=0.80",
+    "react-native-web": ">=0.21",
+    "react-native-svg": ">=15",
+    "react-native-unistyles": ">=2"
   },
   "devDependencies": {
-    "@types/react": "^18.3.18",
-    "@types/react-dom": "^18.3.5",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
     "bundler": "workspace:*",
     "config": "workspace:*",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-exo": "0.18.37",
+    "react-native": "^0.80.2",
+    "react-native-svg": "^15.12.0",
+    "react-native-unistyles": "^2.43.0",
+    "react-native-web": "^0.21.0",
     "typescript": "^5.8.3"
   }
 }
