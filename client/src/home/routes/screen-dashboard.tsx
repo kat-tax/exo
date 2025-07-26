@@ -20,6 +20,9 @@ export default function ScreenDashboard() {
           </Text>
         </View>
       }>
+      <View style={styles.main}>
+        {/** TIP: Add content here */}
+      </View>
     </Panel>
   );
 }
@@ -37,5 +40,8 @@ const stylesheet = createStyleSheet(theme => ({
     fontWeight: theme.typography.weightThin,
     letterSpacing: theme.font.headerSpacing,
     color: theme.colors.foreground,
+  },
+  main: {
+    flex: 1,
   },
 }));
