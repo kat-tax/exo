@@ -10,6 +10,7 @@ dist/
 gen/
 WIP.md
 TODO.md
+.sonda/
 
 # RNTA
 client/ReactTestApp-*

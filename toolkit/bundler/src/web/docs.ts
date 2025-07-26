@@ -9,13 +9,6 @@ export default defineConfig(env => mergeConfig(
       outDir: '../output/docs',
       emptyOutDir: true,
       chunkSizeWarningLimit: 1000,
-      target: [
-        'esnext',
-        'safari15',
-        'chrome128',
-        'firefox128',
-        'edge128',
-      ],
     },
     plugins: [
       react({

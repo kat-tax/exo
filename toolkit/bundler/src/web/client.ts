@@ -15,13 +15,6 @@ export default defineConfig(env => mergeConfig(
       sourcemap: true,
       emptyOutDir: true,
       chunkSizeWarningLimit: 1500,
-      target: [
-        'esnext',
-        'safari15',
-        'chrome128',
-        'firefox128',
-        'edge128',
-      ],
       rollupOptions: {
         output: {
           format: 'es',
@@ -37,14 +30,15 @@ export default defineConfig(env => mergeConfig(
       open: false,
     },
     plugins: [
-      lingui(),
       react({
         babel: {
           plugins: [
             '@lingui/babel-plugin-lingui-macro',
+            'babel-plugin-react-compiler',
           ],
         },
       }),
+      lingui(),
       VitePWA({
         registerType: 'autoUpdate',
         strategies: 'generateSW',
