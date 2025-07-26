@@ -64,11 +64,11 @@ const stylesheet = createStyleSheet(theme => ({
     marginHorizontal: theme.display.space1,
     color: theme.colors.secondaryForeground,
     lineHeight: 24,
-    fontSize: 11,
+    fontSize: 12,
     ...__TOUCH__ && {
       marginLeft: theme.display.space2,
       lineHeight: 40,
-      fontSize: 13,
+      fontSize: 14,
     },
   },
 }));
