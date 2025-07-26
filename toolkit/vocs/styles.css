@@ -1,9 +1,0 @@
-.show-light {display: block}
-.show-dark {display: none}
-
-.dark .show-light {display: none}
-.dark .show-dark {display: block}
-
-video {
-  position: relative !important;
-}

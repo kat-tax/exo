@@ -26,8 +26,8 @@ bridge.pipe(readLine).pipe(lineOutput);
 
 // Progression
 const $ = new Spinners();
-$.add('Documentation', {text: `${_.bold('Documentation')} • ${_.gray('starting…')}`});
-$.add('Storybook', {text: `${_.bold('Storybook')} • ${_.gray('starting…')}`});
+//$.add('Documentation', {text: `${_.bold('Documentation')} • ${_.gray('starting…')}`});
+//$.add('Storybook', {text: `${_.bold('Storybook')} • ${_.gray('starting…')}`});
 $.add('Native', {text: `${_.bold('Native')} • ${_.gray('starting…')}`});
 $.add('Web', {text: `${_.bold('Web')} • ${_.gray('starting…')}`});
 
@@ -175,7 +175,7 @@ function help(ondemand) {
   const _hotkeys = Object.entries(HotKeys);
   const columnWidths = _hotkeys.map(([title, hotkeys]) => {
     const titleWidth = stripAnsi(title).length;
-    const contentWidth = Math.max(...hotkeys.map(h => 
+    const contentWidth = Math.max(...hotkeys.map(h =>
       stripAnsi(`[${h.key}] = ${h.label}`).length
     ));
     return Math.max(titleWidth, contentWidth) + 3;
