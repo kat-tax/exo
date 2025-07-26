@@ -8,14 +8,13 @@
     "config:build": "pnpm -F ./toolkit/config build",
     "bundler:build": "pnpm -F ./toolkit/bundler build",
     "translate:start": "conc -P 'pnpm:translate:extract {1}' 'pnpm:translate:compile {1}' -- --watch",
-    "translate:build": "pnpm translate:extract && pnpm translate:compile",
-    "translate:extract": "lingui extract --verbose --clean --config ./toolkit/config/lingui.ts",
+    "translate:extract": "lingui extract --clean --config ./toolkit/config/lingui.ts",
     "translate:compile": "lingui compile --config ./toolkit/config/lingui.ts",
     "design:build": "pnpm -F ./design build",
     "design:publish": "pnpm -F ./design publish",
     "client:start": "pnpm -F ./client run start",
     "client:build": "pnpm -F ./client run build",
-    "generate": "pnpm config:build && pnpm translate:build && pnpm bundler:build && pnpm design:build",
+    "generate": "pnpm config:build && pnpm bundler:build && pnpm translate:extract && pnpm translate:compile && pnpm design:build",
     "postinstall": "pnpm generate"
   },
   "devDependencies": {
