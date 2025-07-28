@@ -8,6 +8,6 @@ import type {Locales} from 'config/locales';
 export {i18n, isRTL};
 
 export async function load(locale: Locales = sourceLocale) {
-  const {messages} = await import(`./messages/${locale}.json`) as {messages: Messages};
+  const {messages} = await import(`./messages/${locale}.json?lingui`) as {messages: Messages};
   i18n.loadAndActivate({locale, messages});
 }
