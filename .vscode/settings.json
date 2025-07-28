@@ -1,6 +1,5 @@
 {
   // Language
-  "deno.enable": false,
   "typescript.tsdk": "client/node_modules/typescript/lib",
   "typescript.tsserver.watchOptions": {
     "watchDirectory": "useFsEvents",
