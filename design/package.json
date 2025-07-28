@@ -3,32 +3,28 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
-  "scripts": {
-    "dev": "conc -c 'auto' 'pnpm:*:dev'",
-    "build": "conc -c 'auto' -g 'pnpm:*:build'",
-    "web:dev": "vite dev  -c ../toolkit/bundler/gen/libs/design.web.js --port 6406",
-    "web:build": "vite build -c ../toolkit/bundler/gen/libs/design.web.js",
-    "native:dev": "vite dev  -c ../toolkit/bundler/gen/libs/design.native.js --port 6506",
-    "native:build": "vite build -c ../toolkit/bundler/gen/libs/design.native.js"
-  },
   "exports": {
-    ".": {
-      "import": "./index.ts",
-      "require": "./gen/native/index.js"
-    },
-    "./theme": {
-      "import": "./theme.ts",
-      "require": "./gen/native/theme.js"
-    },
-    "./styles": {
-      "import": "./styles.ts",
-      "require": "./gen/native/styles.js"
-    }
+    ".": "./index.ts",
+    "./theme": "./theme.ts",
+    "./styles": "./styles.ts"
   },
   "dependencies": {
     "@lingui/core": "^5.3.3",
     "@lingui/macro": "^5.3.3",
     "@lingui/react": "^5.3.3"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "config": "workspace:*",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-exo": "0.18.37",
+    "react-native": "^0.80.2",
+    "react-native-svg": "^15.12.0",
+    "react-native-unistyles": "^2.43.0",
+    "react-native-web": "^0.21.0",
+    "typescript": "^5.8.3"
   },
   "peerDependencies": {
     "react": ">=19",
@@ -39,18 +35,15 @@
     "react-native-svg": ">=15",
     "react-native-unistyles": ">=2"
   },
-  "devDependencies": {
-    "@types/react": "^19.1.8",
-    "@types/react-dom": "^19.1.6",
-    "bundler": "workspace:*",
-    "config": "workspace:*",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "react-exo": "0.18.37",
-    "react-native": "^0.80.2",
-    "react-native-svg": "^15.12.0",
-    "react-native-unistyles": "^2.43.0",
-    "react-native-web": "^0.21.0",
-    "typescript": "^5.8.3"
+  "peerDependenciesMeta": {
+    "react-dom": {
+      "optional": true
+    },
+    "react-native": {
+      "optional": true
+    },
+    "react-native-web": {
+      "optional": true
+    }
   }
 }

@@ -3,18 +3,15 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "start": "node ./.exo/scripts/start",
+    "start": "node ./build/scripts/start.js",
     "build": "conc -c 'gray,auto' -g 'pnpm:*:build'",
-    "config:build": "pnpm -F ./toolkit/config build",
-    "bundler:build": "pnpm -F ./toolkit/bundler build",
+    "config:build": "pnpm -F ./build/config build",
     "translate:start": "conc -P 'pnpm:translate:extract {1}' 'pnpm:translate:compile {1}' -- --watch",
-    "translate:extract": "lingui extract --clean --config ./toolkit/config/lingui.ts",
-    "translate:compile": "lingui compile --config ./toolkit/config/lingui.ts",
-    "design:build": "pnpm -F ./design build",
-    "design:publish": "pnpm -F ./design publish",
+    "translate:extract": "lingui extract --clean --config ./build/config/lingui.ts",
+    "translate:compile": "lingui compile --config ./build/config/lingui.ts",
     "client:start": "pnpm -F ./client run start",
     "client:build": "pnpm -F ./client run build",
-    "generate": "pnpm config:build && pnpm bundler:build && pnpm translate:extract && pnpm translate:compile && pnpm design:build",
+    "generate": "pnpm config:build && pnpm translate:extract && pnpm translate:compile",
     "postinstall": "pnpm generate"
   },
   "devDependencies": {

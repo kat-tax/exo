@@ -15,6 +15,7 @@
   "material-icon-theme.folders.associations": {
     // General
     ".exo": "batch",
+    "build": "job",
     "output": "dist",
     "client": "mobile",
     "guides": "content",
@@ -31,7 +32,6 @@
     "tvos": "macos",
     // Tools
     "vocs": "vue",
-    "bundler": "container",
   },
   "material-icon-theme.files.associations": {
     "app/theme.tsx": "renovate",

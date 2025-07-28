@@ -4,11 +4,11 @@ import concurrently from 'concurrently';
 import {PassThrough} from 'node:stream';
 import {exec} from 'node:child_process';
 
-import ReadLine from '../imports/ReadLine.js';
-import Spinners from '../imports/Spinners.js';
-import QRCodes from '../imports/QRCodes.js';
-import HotKeys from '../configs/hotkeys.js';
-import Matches from '../configs/matches.js';
+import ReadLine from './lib/ReadLine.js';
+import Spinners from './lib/Spinners.js';
+import QRCodes from './lib/QRCodes.js';
+import HotKeys from './cfg/hotkeys.js';
+import Matches from './cfg/matches.js';
 
 // Initialization
 console.log(_.italic('Welcome to EXO. Godspeed!\n'));

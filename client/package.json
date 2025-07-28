@@ -37,7 +37,6 @@
     "@types/react-dom": "^19.1.6",
     "babel-plugin-macros": "^3.1.0",
     "babel-plugin-tsconfig-paths-module-resolver": "^1.0.4",
-    "bundler": "workspace:*",
     "config": "workspace:*",
     "typescript": "^5.8.3"
   },

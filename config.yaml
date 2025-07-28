@@ -8,10 +8,6 @@ FONT_NAME: InterVariable
 # State
 STORE_VERSION: 1.0
 
-# Library
-LIB_NAME: react-exo
-LIB_VERSION: 1.0.0
-
 # Web
 LINK_DOCS: https://exo.ult.dev
 LINK_STORYBOOK: https://exo.fig.run

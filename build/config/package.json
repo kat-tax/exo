@@ -3,11 +3,14 @@
   "type": "module",
   "version": "0.0.0",
   "private": true,
+  "bin": {
+    "vite": "./node_modules/vite/bin/vite.js"
+  },
   "scripts": {
-    "build": "pnpm gen:cfg && pnpm gen:locales && tsc && pnpm gen:files",
+    "build": "pnpm gen:cfg && pnpm gen:locales && tsc && pnpm gen:app-json",
     "gen:cfg": "rnuc --project-root ../../client --lib-root ./node_modules/react-native-ultimate-config ../../config.yaml",
-    "gen:files": "node ./scripts/gen-app-json.js",
-    "gen:locales": "node ./scripts/gen-user-locales.js"
+    "gen:locales": "node ./scripts/gen-user-locales.js",
+    "gen:app-json": "node ./scripts/gen-app-json.js"
   },
   "exports": {
     ".": {
@@ -18,6 +21,7 @@
     "./app.json": "./gen/app.json",
     "./locales": "./gen/locales.js",
     "./lingui": "./gen/lingui.js",
+    "./vite": "./gen/vite.config.js",
     "./tsconfig.app.json": "./typescript/app.tsconfig.json",
     "./tsconfig.node.json": "./typescript/node.tsconfig.json"
   },
@@ -26,7 +30,16 @@
   },
   "devDependencies": {
     "@lingui/conf": "^5.3.3",
-    "gray-matter": "^4.0.3",
+    "@lingui/babel-plugin-lingui-macro": "^5.3.3",
+    "@lingui/core": "^5.3.3",
+    "@lingui/vite-plugin": "^5.3.3",
+    "@vitejs/plugin-react": "^4.7.0",
+    "babel-plugin-react-compiler": "19.1.0-rc.2",
+    "lightningcss": "^1.30.1",
+    "sonda": "latest",
+    "vite": "^7.0.6",
+    "vite-plugin-pwa": "^1.0.2",
+    "vite-tsconfig-paths": "^5.1.4",
     "typescript": "^5.8.3"
   }
 }

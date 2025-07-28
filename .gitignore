@@ -1,8 +1,5 @@
 # Project
-**/locales/messages/
 **/i18n/messages/
-toolkit/vocs/pages/
-library/metadata.json
 example/
 dev-dist/
 output/
@@ -11,9 +8,6 @@ gen/
 WIP.md
 TODO.md
 .sonda/
-
-# RNTA
-client/ReactTestApp-*
 
 # MacOS
 .DS_Store
