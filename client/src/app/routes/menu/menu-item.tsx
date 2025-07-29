@@ -1,13 +1,13 @@
-import {Icon} from 'react-exo/icon';
 import {View, Text} from 'react-native';
 import {useFocusable} from '@noriginmedia/norigin-spatial-navigation';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useLocation, useNavigate, Link} from 'react-exo/navigation';
+import {createIcon} from 'react-exo/utils';
 
 interface MenuItemProps extends React.PropsWithChildren {
-  path: string,
   label: string,
-  icon?: string,
+  path: string,
+  icon: React.ReactElement,
 }
 
 export function MenuItem(props: MenuItemProps) {
@@ -27,15 +27,12 @@ export function MenuItem(props: MenuItemProps) {
         active && styles.active,
         focused && styles.focus,
       ]}>
-        {props.icon &&
-          <Icon
-            size={16}
-            name={props.icon}
-            color={active
-              ? theme.colors.foreground
-              : theme.colors.mutedForeground}
-          />
-        }
+        {props.icon && createIcon(props.icon, {
+          size: 16,
+          color: active
+            ? theme.colors.foreground
+            : theme.colors.mutedForeground,
+        })}
         <Text style={styles.label}>
           {props.label}
         </Text>

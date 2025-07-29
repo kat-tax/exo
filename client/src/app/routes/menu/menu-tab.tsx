@@ -1,12 +1,12 @@
-import {Icon} from 'react-exo/icon';
 import {View, Text} from 'react-native';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useLocation, Link} from 'react-exo/navigation';
+import {createIcon} from 'react-exo/utils';
 
 interface MenuTabProps extends React.PropsWithChildren {
-  path: string,
-  icon: string,
   label: string,
+  path: string,
+  icon: React.ReactElement,
 }
 
 export function MenuTab(props: MenuTabProps) {
@@ -17,13 +17,12 @@ export function MenuTab(props: MenuTabProps) {
   return (
     <Link to={props.path}>
       <View style={styles.item}>
-        {props.icon &&
-          <Icon
-            color={isActive ? theme.colors.foreground : theme.colors.mutedForeground}
-            name={props.icon}
-            size={20}
-          />
-        }
+        {props.icon && createIcon(props.icon, {
+          size: 20,
+          color: isActive
+            ? theme.colors.foreground
+            : theme.colors.mutedForeground,
+        })}
         <Text style={[styles.label, isActive && styles.active]}>
           {props.label}
         </Text>
