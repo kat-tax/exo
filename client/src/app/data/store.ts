@@ -1,15 +1,12 @@
 import * as $ from 'react-exo/redux';
-import {KV} from 'react-exo/kv';
+import storage from 'app/data/kv';
 import cfg from 'config';
 import app from 'app/store';
 
 const reducer = $.persistReducer({
   key: cfg.APP_NAME,
   version: cfg.STORE_VERSION,
-  storage: KV.init(
-    `${cfg.APP_NAME}::state`,
-    cfg.STORE_VERSION,
-  ),
+  storage,
   blacklist: [
     'router',
   ],
