@@ -77,6 +77,9 @@ const stylesheet = createStyleSheet(theme => ({
       ios: {
         width: '100%',
       },
+      android: {
+        minWidth: 200,
+      },
       default: {
         padding: theme.display.space2,
         color: theme.colors.foreground,
@@ -90,6 +93,7 @@ const stylesheet = createStyleSheet(theme => ({
         borderRadius: theme.display.radius3,
         borderColor: 'transparent',
         borderWidth: 1,
+        minWidth: 120,
         // Move dropdown arrow to the left
         ['border-right']: 'inset 8px transparent',
       },

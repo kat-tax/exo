@@ -22,7 +22,10 @@ export function Theme(props: React.PropsWithChildren) {
   return (
     <GestureProvider style={{flex: 1}}>
       <StatusBar
-        barStyle={`${theme}-content`}
+        barStyle={theme === 'dark'
+          ? 'light-content'
+          : 'dark-content'
+        }
       />
       {props.children}
       <ToastRoot
