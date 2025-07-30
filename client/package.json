@@ -11,8 +11,7 @@
     "ios": "react-native run-ios --no-packager",
     "android": "react-native run-android --no-packager",
     "generate:pods": "pod install --project-directory=ios",
-    "generate:icons": "react-native-svg-app-icon generate",
-    "generate:splash": "react-native generate-bootsplash ../design/assets/svg/logo.svg"
+    "generate:icons": "react-native-svg-app-icon generate"
   },
   "dependencies": {
     "@lingui/core": "^5.3.3",
