@@ -10,10 +10,9 @@
     "start:native": "react-native start",
     "ios": "react-native run-ios --no-packager",
     "android": "react-native run-android --no-packager",
-    "_generate:pods": "pod install --project-directory=ios",
-    "_generate:icons": "react-native-svg-app-icon generate",
-    "_generate:splash": "react-native generate-bootsplash ../design/assets/svg/logo.svg",
-    "_postinstall": "pnpm generate:*"
+    "generate:pods": "pod install --project-directory=ios",
+    "generate:icons": "react-native-svg-app-icon generate",
+    "generate:splash": "react-native generate-bootsplash ../design/assets/svg/logo.svg"
   },
   "dependencies": {
     "@lingui/core": "^5.3.3",
