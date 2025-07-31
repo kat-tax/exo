@@ -5,7 +5,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
-"Language: ar\n"
+"Language: es\n"
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: \n"
@@ -13,76 +13,70 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#. placeholder {0}: 11
-#: ../../client/src/app/routes/screen-design.tsx:15
-msgid "{0} components"
-msgstr "{0} مكونات"
-
 #: ../../client/src/app/routes/screen-settings.tsx:31
 #: ../../client/src/app/routes/screen-settings.tsx:51
 msgid "Auto"
-msgstr "تلقائي"
+msgstr "Auto"
 
 #: ../../design/components/base/popovers/prompt/Prompt.tsx:44
 msgid "Cancel"
-msgstr "إلغاء"
+msgstr "Cancelar"
 
 #: ../../client/src/app/routes/screen-settings.tsx:53
 msgid "Dark"
-msgstr "داكن"
+msgstr "Oscuro"
 
-#: ../../client/src/app/routes/menu/index.tsx:26
-#: ../../client/src/app/routes/menu/index.tsx:42
+#: ../../client/src/app/routes/menu/index.tsx:27
+#: ../../client/src/app/routes/menu/index.tsx:43
 msgid "Dashboard"
-msgstr "لوحة التحكم"
+msgstr "Panel"
 
-#: ../../client/src/app/routes/screen-design.tsx:14
-#: ../../client/src/app/routes/menu/index.tsx:54
+#: ../../client/src/app/routes/menu/index.tsx:55
 msgid "Design"
-msgstr "تصميم"
+msgstr "Diseño"
 
-#: ../../client/src/app/routes/menu/index.tsx:52
+#: ../../client/src/app/routes/menu/index.tsx:53
 msgid "Dev Mode"
-msgstr "وضع المطور"
+msgstr "Modo Dev"
 
 #: ../../client/src/app/routes/screen-settings.tsx:21
 msgid "Display"
-msgstr "العرض"
+msgstr "Pantalla"
 
 #: ../../client/src/home/routes/screen-dashboard.tsx:15
 msgid "Godspeed!"
-msgstr "بالتوفيق!"
+msgstr "¡Buena suerte!"
 
 #: ../../client/src/app/routes/screen-settings.tsx:23
 msgid "Language"
-msgstr "اللغة"
+msgstr "Idioma"
 
 #: ../../client/src/app/routes/screen-settings.tsx:52
 msgid "Light"
-msgstr "فاتح"
+msgstr "Claro"
 
 #: ../../client/src/app/routes/screen-settings.tsx:19
 msgid "Manage your settings"
-msgstr "إدارة الإعدادات"
+msgstr "Gestiona tu configuración"
 
 #: ../../client/src/app/routes/screen-settings.tsx:24
 msgid "Select the language for the app."
-msgstr "اختر لغة التطبيق."
+msgstr "Selecciona el idioma de la app."
 
 #: ../../client/src/app/routes/screen-settings.tsx:44
 msgid "Select the theme for the app."
-msgstr "اختر نسق التطبيق."
+msgstr "Selecciona el tema de la app."
 
 #: ../../client/src/app/routes/screen-settings.tsx:18
-#: ../../client/src/app/routes/menu/index.tsx:31
-#: ../../client/src/app/routes/menu/index.tsx:47
+#: ../../client/src/app/routes/menu/index.tsx:32
+#: ../../client/src/app/routes/menu/index.tsx:48
 msgid "Settings"
-msgstr "الإعدادات"
+msgstr "Configuración"
 
 #: ../../client/src/app/routes/screen-settings.tsx:43
 msgid "Theme"
-msgstr "النسق"
+msgstr "Tema"
 
 #: ../../client/src/home/routes/screen-dashboard.tsx:14
 msgid "Welcome to EXO"
-msgstr "مرحباً بك في EXO"
+msgstr "Bienvenido a EXO"

@@ -8,7 +8,7 @@ export default <LinguiConfig> {
   compileNamespace: 'json',
   catalogsMergePath: './client/src/app/i18n/messages/{locale}',
   catalogs: [{
-    path: 'translations/{locale}',
+    path: 'locales/{locale}',
     include: [
       'client/src',
       'design/components',

@@ -5,7 +5,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
-"Language: ja\n"
+"Language: ru\n"
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: \n"
@@ -13,76 +13,70 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#. placeholder {0}: 11
-#: ../../client/src/app/routes/screen-design.tsx:15
-msgid "{0} components"
-msgstr "{0}個のコンポーネント"
-
 #: ../../client/src/app/routes/screen-settings.tsx:31
 #: ../../client/src/app/routes/screen-settings.tsx:51
 msgid "Auto"
-msgstr "自動"
+msgstr "Авто"
 
 #: ../../design/components/base/popovers/prompt/Prompt.tsx:44
 msgid "Cancel"
-msgstr "キャンセル"
+msgstr "Отмена"
 
 #: ../../client/src/app/routes/screen-settings.tsx:53
 msgid "Dark"
-msgstr "ダーク"
+msgstr "Тёмная"
 
-#: ../../client/src/app/routes/menu/index.tsx:26
-#: ../../client/src/app/routes/menu/index.tsx:42
+#: ../../client/src/app/routes/menu/index.tsx:27
+#: ../../client/src/app/routes/menu/index.tsx:43
 msgid "Dashboard"
-msgstr "ダッシュボード"
+msgstr "Панель"
 
-#: ../../client/src/app/routes/screen-design.tsx:14
-#: ../../client/src/app/routes/menu/index.tsx:54
+#: ../../client/src/app/routes/menu/index.tsx:55
 msgid "Design"
-msgstr "デザイン"
+msgstr "Дизайн"
 
-#: ../../client/src/app/routes/menu/index.tsx:52
+#: ../../client/src/app/routes/menu/index.tsx:53
 msgid "Dev Mode"
-msgstr "開発モード"
+msgstr "Режим разработчика"
 
 #: ../../client/src/app/routes/screen-settings.tsx:21
 msgid "Display"
-msgstr "表示"
+msgstr "Экран"
 
 #: ../../client/src/home/routes/screen-dashboard.tsx:15
 msgid "Godspeed!"
-msgstr "頑張って！"
+msgstr "Удачи!"
 
 #: ../../client/src/app/routes/screen-settings.tsx:23
 msgid "Language"
-msgstr "言語"
+msgstr "Язык"
 
 #: ../../client/src/app/routes/screen-settings.tsx:52
 msgid "Light"
-msgstr "ライト"
+msgstr "Светлая"
 
 #: ../../client/src/app/routes/screen-settings.tsx:19
 msgid "Manage your settings"
-msgstr "設定を管理"
+msgstr "Настройки"
 
 #: ../../client/src/app/routes/screen-settings.tsx:24
 msgid "Select the language for the app."
-msgstr "アプリの言語を選択してください。"
+msgstr "Выберите язык приложения."
 
 #: ../../client/src/app/routes/screen-settings.tsx:44
 msgid "Select the theme for the app."
-msgstr "アプリのテーマを選択してください。"
+msgstr "Выберите тему приложения."
 
 #: ../../client/src/app/routes/screen-settings.tsx:18
-#: ../../client/src/app/routes/menu/index.tsx:31
-#: ../../client/src/app/routes/menu/index.tsx:47
+#: ../../client/src/app/routes/menu/index.tsx:32
+#: ../../client/src/app/routes/menu/index.tsx:48
 msgid "Settings"
-msgstr "設定"
+msgstr "Настройки"
 
 #: ../../client/src/app/routes/screen-settings.tsx:43
 msgid "Theme"
-msgstr "テーマ"
+msgstr "Тема"
 
 #: ../../client/src/home/routes/screen-dashboard.tsx:14
 msgid "Welcome to EXO"
-msgstr "EXOへようこそ"
+msgstr "Добро пожаловать в EXO"

@@ -13,11 +13,6 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#. placeholder {0}: 11
-#: ../../client/src/app/routes/screen-design.tsx:15
-msgid "{0} components"
-msgstr "{0} components"
-
 #: ../../client/src/app/routes/screen-settings.tsx:31
 #: ../../client/src/app/routes/screen-settings.tsx:51
 msgid "Auto"
@@ -31,17 +26,16 @@ msgstr "Cancel"
 msgid "Dark"
 msgstr "Dark"
 
-#: ../../client/src/app/routes/menu/index.tsx:26
-#: ../../client/src/app/routes/menu/index.tsx:42
+#: ../../client/src/app/routes/menu/index.tsx:27
+#: ../../client/src/app/routes/menu/index.tsx:43
 msgid "Dashboard"
 msgstr "Dashboard"
 
-#: ../../client/src/app/routes/screen-design.tsx:14
-#: ../../client/src/app/routes/menu/index.tsx:54
+#: ../../client/src/app/routes/menu/index.tsx:55
 msgid "Design"
 msgstr "Design"
 
-#: ../../client/src/app/routes/menu/index.tsx:52
+#: ../../client/src/app/routes/menu/index.tsx:53
 msgid "Dev Mode"
 msgstr "Dev Mode"
 
@@ -74,8 +68,8 @@ msgid "Select the theme for the app."
 msgstr "Select the theme for the app."
 
 #: ../../client/src/app/routes/screen-settings.tsx:18
-#: ../../client/src/app/routes/menu/index.tsx:31
-#: ../../client/src/app/routes/menu/index.tsx:47
+#: ../../client/src/app/routes/menu/index.tsx:32
+#: ../../client/src/app/routes/menu/index.tsx:48
 msgid "Settings"
 msgstr "Settings"
 
