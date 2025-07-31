@@ -5,7 +5,7 @@ import {loadedIcons, iconJsonCache} from './state';
 
 const DIR_CACHE = './gen/icons';
 
-export function loadIconSets() {
+export function loadIconSets(): void {
   if (!existsSync(DIR_CACHE)) return;
   const files = readdirSync(DIR_CACHE);
   const sets = files.filter(file => file.endsWith('.json'));
@@ -15,7 +15,7 @@ export function loadIconSets() {
   }
 }
 
-export function saveIconSet(set: string, json: i.IconifyJSON, icons: string[]) {
+export function saveIconSet(set: string, json: i.IconifyJSON, icons: string[]): void {
   iconJsonCache.set(set, json);
   for (const icon of icons)
     loadedIcons.set(`${set}:${icon}`, true);

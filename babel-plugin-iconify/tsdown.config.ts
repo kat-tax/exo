@@ -1,14 +1,10 @@
 import {defineConfig} from 'tsdown/config';
 
-export default defineConfig([
-  {
-    entry: 'plugins/extract.ts',
-    platform: 'node',
-    exports: true,
-  },
-  {
-    entry: 'plugins/transform.ts',
-    platform: 'node',
-    exports: true,
-  },
-]);
+export default defineConfig({
+  entry: './src/plugins/{extract,transform}.ts',
+  platform: 'node',
+  sourcemap: true,
+  unbundle: true,
+  exports: true,
+  dts: true,
+});

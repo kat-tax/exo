@@ -12,24 +12,10 @@
     "icons",
     "macro"
   ],
-  "exports": {
-    "./extract": {
-      "types": "./dist/extract.d.ts",
-      "require": "./dist/extract.cjs",
-      "import": "./plugins/extract.ts"
-    },
-    "./transform": {
-      "types": "./dist/transform.d.ts",
-      "require": "./dist/transform.cjs",
-      "import": "./plugins/transform.ts"
-    }
-  },
   "scripts": {
+    "start": "tsdown --watch",
     "build": "tsdown"
   },
-  "files": [
-    "dist/"
-  ],
   "engines": {
     "node": ">=20.0.0"
   },
@@ -43,5 +29,13 @@
     "@types/node": "24.1.0",
     "config": "workspace:*",
     "tsdown": "^0.13.0"
+  },
+  "main": "./dist/extract.mjs",
+  "module": "./dist/extract.mjs",
+  "types": "./dist/extract.d.mts",
+  "exports": {
+    "./extract": "./dist/extract.mjs",
+    "./transform": "./dist/transform.mjs",
+    "./package.json": "./package.json"
   }
 }
