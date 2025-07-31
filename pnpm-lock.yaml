@@ -57,33 +57,6 @@ importers:
         specifier: ^0.13.0
         version: 0.13.0(typescript@5.8.3)
 
-  babel-plugin-iconify-extract:
-    devDependencies:
-      '@babel/core':
-        specifier: 7.28.0
-        version: 7.28.0
-      '@babel/traverse':
-        specifier: 7.28.0
-        version: 7.28.0
-      '@babel/types':
-        specifier: 7.28.2
-        version: 7.28.2
-      '@iconify/react':
-        specifier: ^6.0.0
-        version: 6.0.0(react@19.1.0)
-      '@iconify/utils':
-        specifier: ^2.3.0
-        version: 2.3.0
-      '@types/babel__core':
-        specifier: 7.20.5
-        version: 7.20.5
-      '@types/node':
-        specifier: 24.1.0
-        version: 24.1.0
-      config:
-        specifier: workspace:*
-        version: link:../build/config
-
   build/config:
     dependencies:
       react-native-ultimate-config:
@@ -238,6 +211,9 @@ importers:
       '@types/react-dom':
         specifier: ^19.1.6
         version: 19.1.6(@types/react@19.1.8)
+      babel-plugin-iconify:
+        specifier: workspace:*
+        version: link:../babel-plugin-iconify
       babel-plugin-macros:
         specifier: ^3.1.0
         version: 3.1.0

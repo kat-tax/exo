@@ -5,8 +5,8 @@ export default {
     {key: 'a', label: 'Android'},
     {key: 'w', label: 'Web'},
     {key: 'i', label: 'iOS'},
-    {key: 'm', label: 'MacOS'},
-    {key: 'x', label: 'Windows'},
+    //{key: 'm', label: 'MacOS'},
+    //{key: 'x', label: 'Windows'},
   ],
   'Press to deploy': [
     {key: 'b', label: 'Build'},
