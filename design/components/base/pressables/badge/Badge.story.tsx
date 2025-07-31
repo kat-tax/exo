@@ -1,5 +1,5 @@
-import {Badge as Component} from '../../../base/pressables/badge';
-import {Status} from '../../../base/indicators/status';
+import {Badge as Component} from 'components/base/pressables/badge';
+import {Status} from 'components/base/indicators/status';
 import {Icon} from 'react-exo/icon';
 import type {StoryObj, Meta} from '@storybook/react';
 

@@ -2,7 +2,7 @@ import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useLingui} from '@lingui/react/macro';
 import {View, Text} from 'react-native';
 import {Icon} from 'react-exo/icon';
-import {Button} from '../../../base/pressables/button';
+import {Button} from 'components/base/pressables/button';
 
 export interface PromptProps {
   /** The main message text of the prompt. */

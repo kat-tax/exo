@@ -1,6 +1,6 @@
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {View, Text} from 'react-native';
-import {Placeholder} from '../../../base/utilities/placeholder';
+import {Placeholder} from 'components/base/utilities/placeholder';
 
 export interface PanelProps {
   header: string,

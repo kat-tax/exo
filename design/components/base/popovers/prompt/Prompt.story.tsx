@@ -1,5 +1,5 @@
-import {Prompt as Component} from '../../../base/popovers/prompt';
-import {Button} from '../../../base/pressables/button';
+import {Prompt as Component} from 'components/base/popovers/prompt';
+import {Button} from 'components/base/pressables/button';
 import {Icon} from 'react-exo/icon';
 import type {StoryObj, Meta} from '@storybook/react';
 

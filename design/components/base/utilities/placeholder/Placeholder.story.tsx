@@ -1,4 +1,4 @@
-import {Placeholder as Component} from '../../../base/utilities/placeholder';
+import {Placeholder as Component} from 'components/base/utilities/placeholder';
 import type {StoryObj, Meta} from '@storybook/react';
 
 type Story = StoryObj<typeof Component>;

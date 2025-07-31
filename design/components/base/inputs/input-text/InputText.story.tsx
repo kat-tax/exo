@@ -1,4 +1,4 @@
-import {InputText as Component} from '../../../base/inputs/input-text';
+import {InputText as Component} from 'components/base/inputs/input-text';
 import {Icon} from 'react-exo/icon';
 import type {StoryObj, Meta} from '@storybook/react';
 

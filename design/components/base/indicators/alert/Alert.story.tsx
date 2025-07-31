@@ -1,4 +1,4 @@
-import {Alert as Component} from '../../../base/indicators/alert';
+import {Alert as Component} from 'components/base/indicators/alert';
 import {Icon} from 'react-exo/icon';
 import type {StoryObj, Meta} from '@storybook/react';
 

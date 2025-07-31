@@ -7,7 +7,7 @@
     "build": "conc -c 'auto' -g 'pnpm:build:*'",
     "build:web": "vite build",
     "start:web": "vite dev --port 6206 --host",
-    "start:native": "react-native start",
+    "start:native": "react-native start --reset-cache",
     "ios": "react-native run-ios --no-packager",
     "android": "react-native run-android --no-packager",
     "generate:pods": "pod install --project-directory=ios",

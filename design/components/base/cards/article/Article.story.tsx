@@ -1,5 +1,5 @@
-import {Article as Component} from '../../../base/cards/article';
-import {Placeholder} from '../../../base/utilities/placeholder';
+import {Article as Component} from 'components/base/cards/article';
+import {Placeholder} from 'components/base/utilities/placeholder';
 import type {StoryObj, Meta} from '@storybook/react';
 
 type Story = StoryObj<typeof Component>;
