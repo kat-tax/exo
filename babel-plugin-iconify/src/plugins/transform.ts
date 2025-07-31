@@ -3,6 +3,8 @@ import type * as t from '@babel/types';
 
 import {getIconFromJSX} from '../utils/extract';
 import {getIconifyData} from '../utils/iconify';
+import {loadIconSets} from '../utils/persist';
+import {isInitialized, markInitialized} from '../utils/global-state';
 
 export default (babel: typeof b): b.PluginObj => {
   const {types: t} = babel;
@@ -10,6 +12,15 @@ export default (babel: typeof b): b.PluginObj => {
   return {
     name: 'iconify-transform',
     visitor: {
+      Program: {
+        enter() {
+          // Initialize cache on first plugin instance only
+          if (!isInitialized) {
+            loadIconSets();
+            markInitialized();
+          }
+        }
+      },
       JSXElement(path: b.NodePath<t.JSXElement>) {
         // Get the icon object (if any)
         const icon = getIconFromJSX(path.node, t);
@@ -17,7 +28,18 @@ export default (babel: typeof b): b.PluginObj => {
 
         // Load the icon data (if any)
         const data = getIconifyData(icon);
-        if (!data) return;
+        if (!data) {
+          // Icon not available yet - will be fetched in background and available in next build
+          if (process.env.NODE_ENV !== 'production') {
+            console.warn(`Iconify: Icon "${icon.prefix}:${icon.name}" not yet available, will be fetched for next build`);
+          }
+          return;
+        }
+
+        // Debug: Log successful transformation
+        if (process.env.NODE_ENV !== 'production') {
+          console.log(`Iconify: Transforming icon "${icon.prefix}:${icon.name}"`);
+        }
 
         // Create the icon data object
         const dataExpression = [t.objectProperty(
