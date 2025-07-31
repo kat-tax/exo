@@ -52,7 +52,6 @@
     "@rnx-kit/metro-resolver-symlinks": "^0.2.6",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
-    "babel-plugin-iconify": "workspace:*",
     "babel-plugin-macros": "^3.1.0",
     "babel-plugin-tsconfig-paths-module-resolver": "^1.0.4",
     "typescript": "^5.8.3"
