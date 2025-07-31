@@ -1,6 +1,6 @@
 import type * as i from '@iconify/react/dist/iconify.js';
 
-import {existsSync, readdirSync, readFileSync, writeFileSync, mkdirSync} from 'fs';
+import {existsSync, readdirSync, readFileSync, writeFileSync, mkdirSync} from 'node:fs';
 import {loadedIcons, iconJsonCache} from './state';
 
 const DIR_CACHE = './gen/icons';
