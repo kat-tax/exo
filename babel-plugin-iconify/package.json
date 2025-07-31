@@ -1,0 +1,47 @@
+{
+  "name": "babel-plugin-iconify",
+  "version": "1.0.0",
+  "author": "KATTAX",
+  "description": "Babel plugin for extracting iconify icons from source code",
+  "license": "MIT",
+  "keywords": [
+    "babel-plugin",
+    "react-native",
+    "react-native-web",
+    "iconify",
+    "icons",
+    "macro"
+  ],
+  "exports": {
+    "./extract": {
+      "types": "./dist/extract.d.ts",
+      "require": "./dist/extract.cjs",
+      "import": "./plugins/extract.ts"
+    },
+    "./transform": {
+      "types": "./dist/transform.d.ts",
+      "require": "./dist/transform.cjs",
+      "import": "./plugins/transform.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsdown"
+  },
+  "files": [
+    "dist/"
+  ],
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "7.28.0",
+    "@babel/traverse": "7.28.0",
+    "@babel/types": "7.28.2",
+    "@iconify/react": "^6.0.0",
+    "@iconify/utils": "^2.3.0",
+    "@types/babel__core": "7.20.5",
+    "@types/node": "24.1.0",
+    "config": "workspace:*",
+    "tsdown": "^0.13.0"
+  }
+}

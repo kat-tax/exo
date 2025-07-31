@@ -1,4 +1,5 @@
 packages:
+  - 'babel-plugin-iconify'
   - 'build/**'
   - 'client/**'
   - 'native/**'
