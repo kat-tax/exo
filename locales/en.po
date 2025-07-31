@@ -13,6 +13,11 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
+#. placeholder {0}: 11
+#: ../../client/src/app/routes/screen-design.tsx:15
+msgid "{0} components"
+msgstr "{0} components"
+
 #: ../../client/src/app/routes/screen-settings.tsx:31
 #: ../../client/src/app/routes/screen-settings.tsx:51
 msgid "Auto"
@@ -31,6 +36,7 @@ msgstr "Dark"
 msgid "Dashboard"
 msgstr "Dashboard"
 
+#: ../../client/src/app/routes/screen-design.tsx:14
 #: ../../client/src/app/routes/menu/index.tsx:55
 msgid "Design"
 msgstr "Design"

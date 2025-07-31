@@ -1,4 +1,4 @@
-import {InputEmail as Component} from 'components/base/inputs/input-email';
+import {InputEmail as Component} from '../../../base/inputs/input-email';
 import {Icon} from 'react-exo/icon';
 import type {StoryObj, Meta} from '@storybook/react';
 

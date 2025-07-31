@@ -25,7 +25,7 @@
     }
   },
   "files": {
-    "ignore": ["output", "gen", ".vscode", "client/app"]
+    "ignore": ["output", "gen", ".vscode"]
   },
   "overrides": [
     {

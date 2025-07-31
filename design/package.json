@@ -31,9 +31,9 @@
     "react-dom": ">=19",
     "react-exo": ">=0.18",
     "react-native": ">=0.80",
-    "react-native-web": ">=0.21",
     "react-native-svg": ">=15",
-    "react-native-unistyles": ">=2"
+    "react-native-unistyles": ">=2",
+    "react-native-web": ">=0.21"
   },
   "peerDependenciesMeta": {
     "react-dom": {

@@ -1,4 +1,4 @@
-import {Status as Component} from 'components/base/indicators/status';
+import {Status as Component} from '../../../base/indicators/status';
 import type {StoryObj, Meta} from '@storybook/react';
 
 type Story = StoryObj<typeof Component>;

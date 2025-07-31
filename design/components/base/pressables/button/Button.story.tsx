@@ -1,4 +1,4 @@
-import {Button as Component} from 'components/base/pressables/button';
+import {Button as Component} from '../../../base/pressables/button';
 import {Icon} from 'react-exo/icon';
 import type {StoryObj, Meta} from '@storybook/react';
 

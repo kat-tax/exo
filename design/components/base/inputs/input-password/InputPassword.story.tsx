@@ -1,4 +1,4 @@
-import {InputPassword as Component} from 'components/base/inputs/input-password';
+import {InputPassword as Component} from '../../../base/inputs/input-password';
 import {Icon} from 'react-exo/icon';
 import type {StoryObj, Meta} from '@storybook/react';
 
