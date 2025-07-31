@@ -3,7 +3,7 @@ import type * as i from '@iconify/react/dist/iconify.js';
 import {existsSync, readdirSync, readFileSync, writeFileSync, mkdirSync} from 'node:fs';
 import {loadedIcons, iconJsonCache} from './state';
 
-const DIR_CACHE = './gen/icons';
+const DIR_CACHE = './.icons';
 
 export function loadIconSets(): void {
   if (!existsSync(DIR_CACHE)) return;

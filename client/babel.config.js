@@ -19,8 +19,8 @@ module.exports = {
   plugins: [
     'macros',
     ['tsconfig-paths-module-resolver', {resolvePath}],
-    'react-exo/babel-plugin-iconify-extract',
-    'react-exo/babel-plugin-iconify-transform',
+    'react-exo/babel-plugin-iconify/extract',
+    'react-exo/babel-plugin-iconify/transform',
     '@lingui/babel-plugin-lingui-macro',
   ],
   presets: [
