@@ -22,6 +22,7 @@
     "./locales": "./gen/locales.js",
     "./lingui": "./gen/lingui.js",
     "./vite": "./gen/vite.config.js",
+    "./babel.config.js": "./gen/babel.config.js",
     "./tsconfig.app.json": "./typescript/app.tsconfig.json",
     "./tsconfig.node.json": "./typescript/node.tsconfig.json"
   },
@@ -29,17 +30,24 @@
     "react-native-ultimate-config": "^6.0.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.25.2",
+    "@babel/preset-env": "^7.25.3",
+    "@babel/runtime": "^7.25.0",
     "@lingui/conf": "^5.3.3",
     "@lingui/babel-plugin-lingui-macro": "^5.3.3",
     "@lingui/core": "^5.3.3",
     "@lingui/vite-plugin": "^5.3.3",
+    "@react-native/babel-preset": "0.80.2",
     "@vitejs/plugin-react": "^4.7.0",
+    "babel-plugin-macros": "^3.1.0",
     "babel-plugin-react-compiler": "19.1.0-rc.2",
+    "babel-plugin-tsconfig-paths-module-resolver": "^1.0.4",
+    "react-exo": "latest",
     "lightningcss": "^1.30.1",
     "sonda": "latest",
+    "typescript": "^5.8.3",
     "vite": "^7.0.6",
     "vite-plugin-pwa": "^1.0.2",
-    "vite-tsconfig-paths": "^5.1.4",
-    "typescript": "^5.8.3"
+    "vite-tsconfig-paths": "^5.1.4"
   }
 }
