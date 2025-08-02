@@ -6,7 +6,7 @@
     "start": "conc -c 'auto' 'pnpm:start:*'",
     "build": "conc -c 'auto' -g 'pnpm:build:*'",
     "build:web": "vite build",
-    "start:web": "vite dev --port 8080 --host",
+    "start:web": "vite dev --port 8180 --host",
     "start:native": "react-native start --reset-cache",
     "generate:pods": "pod install --project-directory=ios",
     "generate:icons": "react-native-svg-app-icon generate"
