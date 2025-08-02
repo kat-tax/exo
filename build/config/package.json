@@ -18,11 +18,10 @@
       "import": "./gen/index.js",
       "require": "./gen/index.cjs"
     },
-    "./app.json": "./gen/app.json",
     "./locales": "./gen/locales.js",
     "./lingui": "./gen/lingui.js",
     "./vite": "./gen/vite.config.js",
-    "./babel.config.js": "./gen/babel.config.js",
+    "./babel": "./gen/babel.config.js",
     "./tsconfig.app.json": "./typescript/app.tsconfig.json",
     "./tsconfig.node.json": "./typescript/node.tsconfig.json"
   },
