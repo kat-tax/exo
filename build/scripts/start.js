@@ -14,13 +14,13 @@ import QRCodes from './vendor/QRCodes.js';
 
 const hotkeys = {
   'Launch applications': [
-    {key: 'w', label: 'Web Browser'},
+    {key: 'b', label: 'Web Browser'},
     {key: 'a', label: 'Android'},
-    {key: 'i', label: 'iOS'},
-    {key: 'm', label: 'MacOS'},
-    {key: 'x', label: 'Windows'},
-    {key: 's', label: 'Storybook'},
-    {key: 'l', label: 'Landing Page'},
+    {key: 'i', label: 'iOS', disabled: process.platform !== 'darwin'},
+    {key: 'm', label: 'MacOS', disabled: process.platform !== 'darwin'},
+    {key: 'w', label: 'Windows', disabled: process.platform !== 'win32'},
+    //{key: 's', label: 'Storybook'},
+    //{key: 'l', label: 'Landing Page'},
   ],
   'Control server': [
     {key: 'j', label: 'Devtools'},
@@ -30,11 +30,10 @@ const hotkeys = {
     {key: 'q', label: 'Quit'},
   ],
   'Manage project': [
-    {key: 'g', label: 'Git Repo'},
+    //{key: 'd', label: 'Dashboard'},
     {key: 'e', label: 'Editor'},
-    {key: 'f', label: 'Folder'},
-    {key: 'd', label: 'Design'},
-    //{key: 'u', label: 'ULT'},
+    {key: 'f', label: 'Figma'},
+    {key: 'g', label: 'Git'},
   ],
 };
 
@@ -174,35 +173,26 @@ function done() {
     if (key === '\u0003' || key === 'q')
       exit();
     switch(key) {
+      case 'b':
+        exec(`pnpm ult-run web --port ${_servers.Web.port}`);
+        break;
       case 'd':
-        exec(`open http://localhost:${_servers.Documentation.port}`);
+        exec(`pnpm ult-run web --port ${_servers.Documentation.port}`);
         break;
       case 's':
-        exec(`open http://localhost:${_servers.Storybook.port}`);
-        break;
-      case 'a':
-        exec('pnpm android');
-        break;
-      case 'w':
-        exec(`open http://localhost:${_servers.Web.port}`);
+        exec(`pnpm ult-run web --port ${_servers.Storybook.port}`);
         break;
       case 'i':
-        exec('pnpm ios');
+        exec('pnpm ult-run ios');
+        break;
+      case 'a':
+        exec('pnpm ult-run android');
         break;
       case 'm':
-        exec('pnpm macos');
+        exec('pnpm ult-run macos');
         break;
-      case 'x':
-        exec('pnpm windows');
-        break;
-      case 'b':
-        exec('pnpm build');
-        break;
-      case 'u':
-        exec('pnpm update');
-        break;
-      case 'p':
-        exec('pnpm publish');
+      case 'w':
+        exec('pnpm ult-run windows');
         break;
       case 'h':
         help(true);
@@ -260,7 +250,9 @@ function help(ondemand) {
     const lines = [
       _.italic(title),
       '─'.repeat(columnWidths[index] - 3),
-      ...hotkeys.map(h => `[${_.yellow(h.key)}] = ${_.bold(h.label)}`),
+      ...hotkeys.map(h => h.disabled
+        ? _.gray(`[${h.key}] = ${h.label}`)
+        : `[${_.yellow(h.key)}] = ${_.bold(h.label)}`),
       ''
     ];
     return lines.map(line => {

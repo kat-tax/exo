@@ -87,9 +87,21 @@ importers:
       '@qrgrid/core':
         specifier: ^0.2.3
         version: 0.2.3
+      '@react-native-community/cli':
+        specifier: 19.1.1
+        version: 19.1.1(typescript@5.8.3)
+      '@react-native-community/cli-platform-android':
+        specifier: 19.1.1
+        version: 19.1.1
+      '@react-native-community/cli-platform-ios':
+        specifier: 19.1.1
+        version: 19.1.1
       cli-cursor:
         specifier: ^5.0.0
         version: 5.0.0
+      config:
+        specifier: workspace:*
+        version: link:../config
       strip-ansi:
         specifier: ^7.1.0
         version: 7.1.0
@@ -169,15 +181,6 @@ importers:
         specifier: ^0.21.0
         version: 0.21.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
     devDependencies:
-      '@react-native-community/cli':
-        specifier: 19.1.1
-        version: 19.1.1(typescript@5.8.3)
-      '@react-native-community/cli-platform-android':
-        specifier: 19.1.1
-        version: 19.1.1
-      '@react-native-community/cli-platform-ios':
-        specifier: 19.1.1
-        version: 19.1.1
       '@react-native/codegen':
         specifier: ^0.80.2
         version: 0.80.2(@babel/core@7.28.0)
