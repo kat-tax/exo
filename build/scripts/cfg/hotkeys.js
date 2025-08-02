@@ -1,12 +1,12 @@
 export default {
   'Press to launch app': [
-    {key: 'd', label: 'Documentation'},
-    {key: 's', label: 'Storybook'},
+    {key: 'w', label: 'Web Browser'},
     {key: 'a', label: 'Android'},
-    {key: 'w', label: 'Web'},
     {key: 'i', label: 'iOS'},
     //{key: 'm', label: 'MacOS'},
     //{key: 'x', label: 'Windows'},
+    //{key: 's', label: 'Storybook'},
+    //{key: 'd', label: 'Documentation'},
   ],
   'Press to deploy': [
     {key: 'b', label: 'Build'},

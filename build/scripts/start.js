@@ -26,10 +26,10 @@ bridge.pipe(readLine).pipe(lineOutput);
 
 // Progression
 const $ = new Spinners();
-//$.add('Documentation', {text: `${_.bold('Documentation')} • ${_.gray('starting…')}`});
-//$.add('Storybook', {text: `${_.bold('Storybook')} • ${_.gray('starting…')}`});
-$.add('Native', {text: `${_.bold('Native')} • ${_.gray('starting…')}`});
 $.add('Web', {text: `${_.bold('Web')} • ${_.gray('starting…')}`});
+$.add('Native', {text: `${_.bold('Native')} • ${_.gray('starting…')}`});
+//$.add('Storybook', {text: `${_.bold('Storybook')} • ${_.gray('starting…')}`});
+//$.add('Documentation', {text: `${_.bold('Documentation')} • ${_.gray('starting…')}`});
 
 // Execution
 const {commands} = concurrently(['pnpm:*:start'], {
@@ -161,12 +161,12 @@ function help(ondemand) {
       _servers.Native.version && {label: `${_.gray(`${_.bold('Native Server')} [v${_servers.Native.version}]`)}`, url: `${_lanIP}:8081`},
     ]));
     // Show more QR codes if requested
-    if (ondemand) {
-      console.log(QRCodes([
-        _servers.Storybook.version && {label: `${_.gray(`${_.bold('Storybook')} [v${_servers.Storybook.version}]`)}`, url: `${_lanIP}:${_servers.Storybook.port}`},
-        _servers.Documentation.version && {label: `${_.gray(`${_.bold('Documentation')} [v${_servers.Documentation.version}]`)}`, url: `${_lanIP}:${_servers.Documentation.port}`},
-      ]));
-    }
+    // if (ondemand) {
+    //   console.log(QRCodes([
+    //     _servers.Storybook.version && {label: `${_.gray(`${_.bold('Storybook')} [v${_servers.Storybook.version}]`)}`, url: `${_lanIP}:${_servers.Storybook.port}`},
+    //     _servers.Documentation.version && {label: `${_.gray(`${_.bold('Documentation')} [v${_servers.Documentation.version}]`)}`, url: `${_lanIP}:${_servers.Documentation.port}`},
+    //   ]));
+    // }
   } else {
     console.log();
   }
