@@ -8,8 +8,6 @@
     "build:web": "vite build",
     "start:web": "vite dev --port 8080 --host",
     "start:native": "react-native start --reset-cache",
-    "ios": "react-native run-ios --no-packager",
-    "android": "react-native run-android --no-packager",
     "generate:pods": "pod install --project-directory=ios",
     "generate:icons": "react-native-svg-app-icon generate"
   },

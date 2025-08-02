@@ -13,28 +13,25 @@ import QRCodes from './vendor/QRCodes.js';
 // CONFIGURATION
 
 const hotkeys = {
-  'Launch applications': [
+  'Press to launch app': [
     {key: 'w', label: 'Web Browser'},
     {key: 'a', label: 'Android'},
     {key: 'i', label: 'iOS'},
-    {key: 'm', label: 'MacOS'},
-    {key: 'x', label: 'Windows'},
-    {key: 's', label: 'Storybook'},
-    {key: 'l', label: 'Landing Page'},
+    //{key: 'm', label: 'MacOS'},
+    //{key: 'x', label: 'Windows'},
+    //{key: 's', label: 'Storybook'},
+    //{key: 'd', label: 'Documentation'},
   ],
-  'Control server': [
-    {key: 'j', label: 'Devtools'},
+  'Press to deploy': [
+    {key: 'b', label: 'Build'},
+    {key: 'u', label: 'Update'},
+    {key: 'p', label: 'Publish'},
+  ],
+  'Press to admin': [
     {key: 'h', label: 'Hotkeys'},
     {key: 'r', label: 'Reload'},
     {key: 'c', label: 'Clear'},
     {key: 'q', label: 'Quit'},
-  ],
-  'Manage project': [
-    {key: 'g', label: 'Git Repo'},
-    {key: 'e', label: 'Editor'},
-    {key: 'f', label: 'Folder'},
-    {key: 'd', label: 'Design'},
-    //{key: 'u', label: 'ULT'},
   ],
 };
 
@@ -71,7 +68,7 @@ const matches = [
 
 // INITIALIZATION
 
-console.log(_.italic('Welcome to ULT. Godspeed!\n'));
+console.log(_.italic('Welcome to EXO. Godspeed!\n'));
 const _servers = {};
 let _finished = false;
 let _exiting = false;

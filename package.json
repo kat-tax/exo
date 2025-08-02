@@ -3,24 +3,24 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "start": "node ./build/scripts/start.js",
-    "build": "conc -c 'gray,auto' -g 'pnpm:*:build'",
-    "config:build": "pnpm -F ./build/config build",
+    "start": "ult-start",
+    "build": "ult-build",
+    "web": "ult-run web",
+    "ios": "ult-run ios",
+    "android": "ult-run android",
+    "client:start": "pnpm -F ./client run start",
+    "client:build": "pnpm -F ./client run build",
     "translate:start": "conc -P 'pnpm:translate:extract {1}' 'pnpm:translate:compile {1}' -- --watch",
     "translate:extract": "lingui extract --clean --config ./build/config/lingui.ts",
     "translate:compile": "lingui compile --config ./build/config/lingui.ts",
-    "client:start": "pnpm -F ./client run start",
-    "client:build": "pnpm -F ./client run build",
-    "generate": "pnpm config:build && pnpm translate:extract && pnpm translate:compile",
+    "generate": "pnpm -F ./build/config build && pnpm translate:extract && pnpm translate:compile",
+    "prebuild": "pnpm generate",
     "postinstall": "pnpm generate"
   },
   "devDependencies": {
     "@lingui/cli": "^5.3.3",
-    "@qrgrid/core": "^0.2.3",
-    "cli-cursor": "^5.0.0",
     "concurrently": "^9.2.0",
-    "strip-ansi": "^7.1.0",
-    "yoctocolors": "^2.1.1"
+    "ult-scripts": "workspace:*"
   },
   "engines": {
     "node": ">=20",

@@ -1,0 +1,16 @@
+{
+  "type": "module",
+  "name": "ult-scripts",
+  "private": true,
+  "bin": {
+    "ult-run": "./run.js",
+    "ult-build": "./build.js",
+    "ult-start": "./start.js"
+  },
+  "devDependencies": {
+    "@qrgrid/core": "^0.2.3",
+    "cli-cursor": "^5.0.0",
+    "strip-ansi": "^7.1.0",
+    "yoctocolors": "^2.1.1"
+  }
+}
