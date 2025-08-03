@@ -11,7 +11,7 @@
     "start:web": "vite dev --port 8181 --host",
     "start:native": "react-native start --reset-cache",
     "generate:pods": "pod install --project-directory=ios",
-    "generate:icons": "react-native-svg-app-icon generate"
+    "generate:icons": "react-native-svg-app-icon generate --background-path ../design/assets/svg/logo-bg.svg --foreground-path ../design/assets/svg/logo.svg"
   },
   "dependencies": {
     "@lingui/core": "^5.4.0",
