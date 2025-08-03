@@ -49,9 +49,11 @@ const stylesheet = createStyleSheet(theme => ({
     fontSize: theme.typography.size8,
     fontWeight: theme.typography.weightThin,
     letterSpacing: theme.font.headerSpacing,
-    color: theme.colors.foreground,
+    color: theme.colors.mutedForeground,
   },
   main: {
     flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 }));
