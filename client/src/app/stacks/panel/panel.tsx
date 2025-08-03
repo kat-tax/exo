@@ -4,14 +4,15 @@ import {useStyles, createStyleSheet} from 'react-native-unistyles';
 export interface PanelProps extends React.PropsWithChildren {
   title?: string | React.ReactNode,
   message?: string | React.ReactNode,
-  widget?: React.ReactNode,
+  right?: React.ReactNode,
+  left?: React.ReactNode,
 }
 
 export function Panel(props: PanelProps) {
   const {styles} = useStyles(stylesheet);
   const hasTitle = Boolean(props.title);
   const hasMessage = Boolean(props.message);
-  const hasHeader = hasTitle || hasMessage;
+  const hasHeader = hasTitle || hasMessage || props.right || props.left;
 
   return (
     <View style={styles.root}>
@@ -19,27 +20,38 @@ export function Panel(props: PanelProps) {
         <View style={styles.content}>
           {hasHeader &&
             <View style={styles.header}>
-              <View style={styles.greeting}>
-                {hasTitle &&
-                  <Text
-                    style={styles.title}
-                    selectable={false}
-                    ellipsizeMode="tail"
-                    numberOfLines={1}>
-                    {props.title}
-                  </Text>
-                }
-                {hasMessage &&
-                  <Text
-                    style={styles.message}
-                    selectable={false}
-                    ellipsizeMode="tail"
-                    numberOfLines={1}>
-                    {props.message}
-                  </Text>
-                }
-              </View>
-              {props.widget}
+              {props.left &&
+                <View style={[styles.widget, styles.widgetLeft]}>
+                  {props.left}
+                </View>
+              }
+              {(hasTitle || hasMessage) &&
+                <View style={styles.greeting}>
+                  {hasTitle &&
+                    <Text
+                      style={styles.title}
+                      selectable={false}
+                      ellipsizeMode="tail"
+                      numberOfLines={1}>
+                      {props.title}
+                    </Text>
+                  }
+                  {hasMessage &&
+                    <Text
+                      style={styles.message}
+                      selectable={false}
+                      ellipsizeMode="tail"
+                      numberOfLines={1}>
+                      {props.message}
+                    </Text>
+                  }
+                </View>
+              }
+              {props.right &&
+                <View style={[styles.widget, styles.widgetRight]}>
+                  {props.right}
+                </View>
+              }
             </View>
           }
           {props.children}
@@ -89,6 +101,18 @@ const stylesheet = createStyleSheet((theme, rt) => ({
     justifyContent: 'space-between',
     marginTop: theme.display.space2,
     marginBottom: theme.display.space3,
+  },
+  widget: {
+    flex: 1,
+    gap: theme.display.space2,
+  },
+  widgetLeft: {
+    alignItems: 'flex-start',
+    justifyContent: 'flex-start',
+  },
+  widgetRight: {
+    alignItems: 'flex-end',
+    justifyContent: 'flex-end',
   },
   greeting: {
     gap: theme.display.space2,

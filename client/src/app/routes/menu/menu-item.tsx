@@ -28,10 +28,8 @@ export function MenuItem(props: MenuItemProps) {
         focused && styles.focus,
       ]}>
         {props.icon && createIcon(props.icon, {
-          size: 16,
-          color: active
-            ? theme.colors.foreground
-            : theme.colors.mutedForeground,
+          color: theme.colors.mutedForeground,
+          size: 18,
         })}
         <Text style={styles.label}>
           {props.label}
@@ -60,8 +58,9 @@ const stylesheet = createStyleSheet(theme => ({
     userSelect: 'none',
     marginHorizontal: theme.display.space1,
     color: theme.colors.secondaryForeground,
-    lineHeight: 24,
-    fontSize: 12,
+    fontSize: theme.font.size,
+    lineHeight: theme.font.headerHeight,
+    letterSpacing: theme.font.spacing,
     ...__TOUCH__ && {
       marginLeft: theme.display.space2,
       lineHeight: 40,

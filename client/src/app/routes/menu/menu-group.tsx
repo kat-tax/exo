@@ -60,10 +60,10 @@ const stylesheet = createStyleSheet(theme => ({
     marginRight: theme.display.space1,
     color: theme.colors.mutedForeground,
     lineHeight: theme.font.labelHeight,
-    fontSize: 11,
+    fontSize: theme.font.size,
     ...__TOUCH__ && {
+      fontSize: theme.font.contentSize,
       lineHeight: 36,
-      fontSize: 12,
     },
   },
 }));

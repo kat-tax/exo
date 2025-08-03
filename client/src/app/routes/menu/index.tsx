@@ -50,7 +50,7 @@ export function Menu() {
                 path="/settings"
               />
               {__DEV__ &&
-                <MenuGroup label={t`Dev Mode`} closed>
+                <MenuGroup label={t`Development`} closed>
                   <MenuItem
                     label={t`Design`}
                     icon={<Icon name="ph:palette"/>}

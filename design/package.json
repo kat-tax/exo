@@ -6,8 +6,13 @@
   "exports": {
     ".": "./index.ts",
     "./theme": "./theme.ts",
-    "./styles": "./styles.ts"
+    "./styles": "./styles.ts",
+    "./brand/logo.svg": "./brand/logo.svg"
   },
+  "files": [
+    "assets",
+    "brand"
+  ],
   "dependencies": {
     "@lingui/core": "^5.4.0",
     "@lingui/macro": "^5.4.0",

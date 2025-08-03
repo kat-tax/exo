@@ -42,16 +42,12 @@ msgid "Design"
 msgstr "デザイン"
 
 #: ../../client/src/app/routes/menu/index.tsx:53
-msgid "Dev Mode"
-msgstr "開発モード"
+msgid "Development"
+msgstr ""
 
 #: ../../client/src/app/routes/screen-settings.tsx:21
 msgid "Display"
 msgstr "表示"
-
-#: ../../client/src/home/routes/screen-dashboard.tsx:15
-msgid "Godspeed!"
-msgstr "頑張って！"
 
 #: ../../client/src/app/routes/screen-settings.tsx:23
 msgid "Language"
@@ -82,7 +78,3 @@ msgstr "設定"
 #: ../../client/src/app/routes/screen-settings.tsx:43
 msgid "Theme"
 msgstr "テーマ"
-
-#: ../../client/src/home/routes/screen-dashboard.tsx:14
-msgid "Welcome to EXO"
-msgstr "EXOへようこそ"
