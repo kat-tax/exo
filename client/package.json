@@ -14,10 +14,15 @@
     "generate:icons": "react-native-svg-app-icon generate --background-path ../design/brand/logo-bg.svg --foreground-path ../design/brand/logo.svg"
   },
   "dependencies": {
+    "@evolu/common": "6.0.1-preview.17",
+    "@evolu/react": "9.0.1-preview.3",
+    "@evolu/react-web": "1.0.1-preview.2",
+    "@evolu/react-native": "12.0.1-preview.3",
     "@lingui/core": "^5.4.0",
     "@lingui/macro": "^5.4.0",
     "@lingui/react": "^5.4.0",
     "@noriginmedia/norigin-spatial-navigation": "^2.3.0",
+    "@op-engineering/op-sqlite": "14.1.3",
     "@react-native-community/netinfo": "^11.4.1",
     "@react-native-picker/picker": "^2.11.1",
     "blo": "^2.0.0",
@@ -30,6 +35,7 @@
     "react-exo-ui": "workspace:*",
     "react-native": "0.80.2",
     "react-native-gesture-handler": "^2.27.2",
+    "react-native-quick-crypto": "0.7.16",
     "react-native-mmkv": "^3.3.0",
     "react-native-random-values-jsi-helper": "^2.0.1",
     "react-native-svg": "^15.12.1",

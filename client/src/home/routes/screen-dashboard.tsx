@@ -40,7 +40,7 @@ const stylesheet = createStyleSheet(theme => ({
   name: {
     fontFamily: theme.font.family,
     fontSize: theme.typography.size8,
-    fontWeight: theme.typography.weightThin,
+    fontWeight: theme.typography.weightLight,
     letterSpacing: theme.font.headerSpacing,
     color: theme.colors.foreground,
   },
