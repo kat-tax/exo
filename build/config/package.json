@@ -7,10 +7,9 @@
     "vite": "./node_modules/vite/bin/vite.js"
   },
   "scripts": {
-    "build": "pnpm gen:config && pnpm gen:locales && tsc && pnpm gen:app-json",
+    "build": "pnpm gen:config && pnpm gen:locales && tsc",
     "gen:config": "rnuc --project-root ../../client --lib-root ./node_modules/react-native-ultimate-config ../../config.yaml",
-    "gen:locales": "node ./scripts/gen-locales.js",
-    "gen:app-json": "node ./scripts/gen-app-json.js"
+    "gen:locales": "node ./scripts/gen-locales.js"
   },
   "exports": {
     ".": {
@@ -23,8 +22,7 @@
     "./vite": "./gen/vite.config.js",
     "./babel": "./gen/babel.config.js",
     "./metro": "./metro.config.cjs",
-    "./tsconfig.app.json": "./typescript/app.tsconfig.json",
-    "./tsconfig.node.json": "./typescript/node.tsconfig.json"
+    "./tsconfig.app.json": "./tsconfig.app.json"
   },
   "dependencies": {
     "react-native-ultimate-config": "^6.0.1"

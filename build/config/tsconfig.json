@@ -1,10 +1,17 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "extends": "./typescript/node.tsconfig.json",
-  "display": "Config",
   "compilerOptions": {
     "rootDir": ".",
-    "outDir": "./gen"
+    "outDir": "./gen",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+    "composite": true,
+    "allowJs": true
   },
   "include": [
     "./*.ts",

@@ -1,4 +1,3 @@
-
 import path from 'path';
 import createResolve from 'babel-plugin-tsconfig-paths-module-resolver/create-resolve';
 import type {TransformOptions} from '@babel/core';
