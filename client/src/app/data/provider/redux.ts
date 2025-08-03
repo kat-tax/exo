@@ -1,12 +1,21 @@
 import * as $ from 'react-exo/redux';
-import storage from 'app/data/lib/kv';
 import cfg from 'config';
+import kv from './lib/kv';
+
 import app from 'app/store';
+
+// @ts-ignore
+const slices = import.meta.glob('./**/store.ts', {
+  import: 'default',
+  eager: true,
+});
+
+console.log(slices);
 
 const reducer = $.persistReducer({
   key: cfg.APP_NAME,
   version: cfg.STORE_VERSION,
-  storage,
+  storage: kv,
   blacklist: [
     'router',
   ],
