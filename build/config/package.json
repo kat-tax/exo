@@ -31,6 +31,7 @@
   "devDependencies": {
     "@babel/core": "^7.25.2",
     "@babel/preset-env": "^7.25.3",
+    "@types/babel__core": "^7.20.5",
     "@babel/runtime": "^7.25.0",
     "@lingui/conf": "^5.4.0",
     "@lingui/babel-plugin-lingui-macro": "^5.4.0",
