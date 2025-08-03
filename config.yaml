@@ -6,7 +6,7 @@ APP_DISPLAY_NAME: EXO
 FONT_NAME: InterVariable
 
 # Data
-SYNC_HOST: 'https://evolu.world'
+SYNC_HOST: 'wss://free.evoluhq.com'
 STORE_VERSION: 1.0
 
 # Web

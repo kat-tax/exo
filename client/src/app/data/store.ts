@@ -1,5 +1,5 @@
 import * as $ from 'react-exo/redux';
-import storage from 'app/data/kv';
+import storage from 'app/data/lib/kv';
 import cfg from 'config';
 import app from 'app/store';
 
