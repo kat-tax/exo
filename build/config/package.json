@@ -30,8 +30,9 @@
   "devDependencies": {
     "@babel/core": "^7.25.2",
     "@babel/preset-env": "^7.25.3",
-    "@types/babel__core": "^7.20.5",
     "@babel/runtime": "^7.25.0",
+    "@babel/plugin-transform-export-namespace-from": "^7.25.9",
+    "@types/babel__core": "^7.20.5",
     "@lingui/conf": "^5.4.0",
     "@lingui/babel-plugin-lingui-macro": "^5.4.0",
     "@lingui/core": "^5.4.0",

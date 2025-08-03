@@ -1,5 +1,5 @@
 import {useColorScheme} from 'react-native';
-import {useSet, useGet} from 'app/data/store';
+import {useSet, useGet} from 'app/data';
 import app from 'app/store';
 
 import type {ColorSchemeName} from 'react-native';

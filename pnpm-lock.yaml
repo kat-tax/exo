@@ -27,6 +27,9 @@ importers:
       '@babel/core':
         specifier: ^7.25.2
         version: 7.28.0
+      '@babel/plugin-transform-export-namespace-from':
+        specifier: ^7.25.9
+        version: 7.27.1(@babel/core@7.28.0)
       '@babel/preset-env':
         specifier: ^7.25.3
         version: 7.28.0(@babel/core@7.28.0)

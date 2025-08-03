@@ -1,6 +1,6 @@
 import {useRef} from 'react';
 import {getLocale} from 'react-exo/device';
-import {useSet, useGet} from 'app/data/store';
+import {useSet, useGet} from 'app/data';
 import app from 'app/store';
 
 import type {Locales} from 'config/locales';

@@ -1,5 +1,5 @@
 import {Router as _, Routes, Route} from 'react-exo/navigation';
-import {history} from 'app/data/store';
+import {history} from 'app/data';
 
 import {Layout, Screen} from './loader';
 

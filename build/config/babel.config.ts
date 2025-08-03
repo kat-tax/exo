@@ -17,14 +17,16 @@ const resolvePath = (sourceFile: string, currentFile: string, opts: any) => {
 };
 
 export default <TransformOptions> {
+  presets: [
+    '@react-native/babel-preset',
+  ],
   plugins: [
     'macros',
     ['tsconfig-paths-module-resolver', {resolvePath}],
     '@lingui/babel-plugin-lingui-macro',
     'react-exo/babel-plugin-iconify-extract',
     'react-exo/babel-plugin-iconify-transform',
-  ],
-  presets: [
-    '@react-native/babel-preset',
+    '@babel/plugin-transform-export-namespace-from',
+    '@babel/plugin-transform-dynamic-import',
   ],
 };

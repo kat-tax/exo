@@ -4,6 +4,7 @@ import {Spinner} from 'app/stacks/load';
 import evolu from './provider/evolu';
 import redux from './provider/redux';
 
+export * from './provider/redux';
 export * from './queries';
 export * from './types';
 
