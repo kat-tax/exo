@@ -41,8 +41,6 @@
   "devDependencies": {
     "@react-native/codegen": "0.80.2",
     "@react-native/gradle-plugin": "0.80.2",
-    "@rnx-kit/metro-config": "^2.1.0",
-    "@rnx-kit/metro-resolver-symlinks": "^0.2.6",
     "@types/react": "^19.1.9",
     "@types/react-dom": "^19.1.7",
     "typescript": "^5.9.2"

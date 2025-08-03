@@ -48,6 +48,12 @@ importers:
       '@react-native/babel-preset':
         specifier: 0.80.2
         version: 0.80.2(@babel/core@7.28.0)
+      '@rnx-kit/metro-config':
+        specifier: ^2.1.0
+        version: 2.1.0(@react-native/metro-config@0.80.2(@babel/core@7.28.0))(react-native@0.80.2(@babel/core@7.28.0)(@react-native-community/cli@19.1.1(typescript@5.9.2))(@types/react@19.1.9)(react@19.1.1))(react@19.1.1)
+      '@rnx-kit/metro-resolver-symlinks':
+        specifier: ^0.2.6
+        version: 0.2.6
       '@types/babel__core':
         specifier: ^7.20.5
         version: 7.20.5
@@ -181,12 +187,6 @@ importers:
       '@react-native/gradle-plugin':
         specifier: 0.80.2
         version: 0.80.2
-      '@rnx-kit/metro-config':
-        specifier: ^2.1.0
-        version: 2.1.0(@react-native/metro-config@0.80.2(@babel/core@7.28.0))(react-native@0.80.2(@babel/core@7.28.0)(@react-native-community/cli@19.1.1(typescript@5.9.2))(@types/react@19.1.9)(react@19.1.0))(react@19.1.0)
-      '@rnx-kit/metro-resolver-symlinks':
-        specifier: ^0.2.6
-        version: 0.2.6
       '@types/react':
         specifier: ^19.1.9
         version: 19.1.9
@@ -8398,13 +8398,13 @@ snapshots:
 
   '@rnx-kit/console@2.0.0': {}
 
-  '@rnx-kit/metro-config@2.1.0(@react-native/metro-config@0.80.2(@babel/core@7.28.0))(react-native@0.80.2(@babel/core@7.28.0)(@react-native-community/cli@19.1.1(typescript@5.9.2))(@types/react@19.1.9)(react@19.1.0))(react@19.1.0)':
+  '@rnx-kit/metro-config@2.1.0(@react-native/metro-config@0.80.2(@babel/core@7.28.0))(react-native@0.80.2(@babel/core@7.28.0)(@react-native-community/cli@19.1.1(typescript@5.9.2))(@types/react@19.1.9)(react@19.1.1))(react@19.1.1)':
     dependencies:
       '@rnx-kit/tools-node': 3.0.2
       '@rnx-kit/tools-react-native': 2.2.0
       '@rnx-kit/tools-workspaces': 0.2.3
-      react: 19.1.0
-      react-native: 0.80.2(@babel/core@7.28.0)(@react-native-community/cli@19.1.1(typescript@5.9.2))(@types/react@19.1.9)(react@19.1.0)
+      react: 19.1.1
+      react-native: 0.80.2(@babel/core@7.28.0)(@react-native-community/cli@19.1.1(typescript@5.9.2))(@types/react@19.1.9)(react@19.1.1)
     optionalDependencies:
       '@react-native/metro-config': 0.80.2(@babel/core@7.28.0)
 

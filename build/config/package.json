@@ -22,6 +22,7 @@
     "./lingui": "./gen/lingui.js",
     "./vite": "./gen/vite.config.js",
     "./babel": "./gen/babel.config.js",
+    "./metro": "./metro.config.cjs",
     "./tsconfig.app.json": "./typescript/app.tsconfig.json",
     "./tsconfig.node.json": "./typescript/node.tsconfig.json"
   },
@@ -38,6 +39,8 @@
     "@lingui/core": "^5.4.0",
     "@lingui/vite-plugin": "^5.4.0",
     "@react-native/babel-preset": "0.80.2",
+    "@rnx-kit/metro-config": "^2.1.0",
+    "@rnx-kit/metro-resolver-symlinks": "^0.2.6",
     "@vitejs/plugin-react": "^4.7.0",
     "babel-plugin-macros": "^3.1.0",
     "babel-plugin-react-compiler": "19.1.0-rc.2",
