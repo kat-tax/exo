@@ -74,7 +74,8 @@ export default defineConfig(env => ({
     sonda({
       open: false,
       sources: true,
-      filename: 'bundle.inspect.html',
+      filename: 'index.html',
+      outputDir: '../output/inspect/web',
     }),
   ],
   optimizeDeps: {
