@@ -2,8 +2,6 @@
   "ignore": [
     ".git",
     "node_modules",
-    "design",
-    "server",
     "output",
     "dist"
   ]

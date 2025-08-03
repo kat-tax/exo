@@ -17,7 +17,7 @@
     "client:build:web": "pnpm -F ./client run build:web",
     "client:build:ios": "pnpm -F ./client run build:ios",
     "client:build:android": "pnpm -F ./client run build:android",
-    "generate": "pnpm -F ./build/config build && pnpm i18n:extract && pnpm i18n:compile",
+    "generate": "pnpm -F ./build/config build && pnpm i18n:build",
     "postinstall": "pnpm generate"
   },
   "devDependencies": {
