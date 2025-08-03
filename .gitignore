@@ -1,14 +1,13 @@
 # Project
 **/i18n/messages/
-example/
-dev-dist/
+.icons/
 output/
 dist/
 gen/
+
+# Notes
 WIP.md
 TODO.md
-.icons/
-.sonda/
 
 # MacOS
 .DS_Store
@@ -19,9 +18,6 @@ TODO.md
 
 # Typescript
 *.tsbuildinfo
-
-# Vocs
-vocs.config.ts.timestamp-*
 
 # Node
 node_modules/
