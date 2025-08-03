@@ -6,7 +6,7 @@
     "start": "conc -c 'auto' 'pnpm:start:*'",
     "build": "conc -c 'auto' -g 'pnpm:build:*'",
     "build:web": "vite build",
-    "start:web": "vite dev --port 8180 --host",
+    "start:web": "vite dev --port 8181 --host",
     "start:native": "react-native start --reset-cache",
     "generate:pods": "pod install --project-directory=ios",
     "generate:icons": "react-native-svg-app-icon generate"
@@ -37,6 +37,9 @@
     "react-native-web": "^0.21.0"
   },
   "devDependencies": {
+    "@react-native-community/cli": "19.1.1",
+    "@react-native-community/cli-platform-android": "19.1.1",
+    "@react-native-community/cli-platform-ios": "19.1.1",
     "@react-native/codegen": "^0.80.2",
     "@react-native/gradle-plugin": "^0.80.2",
     "@rnx-kit/metro-config": "^2.1.0",

@@ -87,10 +87,10 @@ bridge.pipe(readLine).pipe(lineOutput);
 // PROGRESSION
 
 const $ = new Spinners();
+//$.add('Storybook', {text: `${_.bold('Storybook')} • ${_.gray('starting…')}`});
+//$.add('Landing', {text: `${_.bold('Landing')} • ${_.gray('starting…')}`});
 $.add('Web', {text: `${_.bold('Web')} • ${_.gray('starting…')}`});
 $.add('Native', {text: `${_.bold('Native')} • ${_.gray('starting…')}`});
-//$.add('Storybook', {text: `${_.bold('Storybook')} • ${_.gray('starting…')}`});
-//$.add('Documentation', {text: `${_.bold('Documentation')} • ${_.gray('starting…')}`});
 
 // EXECUTION
 

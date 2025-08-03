@@ -7,9 +7,9 @@
     "ult-start": "./start.js"
   },
   "devDependencies": {
-    "@react-native-community/cli": "19.1.1",
-    "@react-native-community/cli-platform-android": "19.1.1",
-    "@react-native-community/cli-platform-ios": "19.1.1",
+    "@react-native-community/cli": "^19.1.1",
+    "@react-native-community/cli-platform-android": "^19.1.1",
+    "@react-native-community/cli-platform-ios": "^19.1.1",
     "@qrgrid/core": "^0.2.3",
     "config": "workspace:*",
     "cli-cursor": "^5.0.0",

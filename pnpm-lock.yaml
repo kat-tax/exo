@@ -10,7 +10,16 @@ importers:
     devDependencies:
       '@lingui/cli':
         specifier: ^5.3.3
-        version: 5.3.3(babel-plugin-macros@3.1.0)
+        version: 5.3.3(babel-plugin-macros@3.1.0)(typescript@5.8.3)
+      '@react-native-community/cli':
+        specifier: ^19.1.1
+        version: 19.1.1(typescript@5.8.3)
+      '@react-native-community/cli-platform-android':
+        specifier: ^19.1.1
+        version: 19.1.1
+      '@react-native-community/cli-platform-ios':
+        specifier: ^19.1.1
+        version: 19.1.1
       concurrently:
         specifier: ^9.2.0
         version: 9.2.0
@@ -88,13 +97,13 @@ importers:
         specifier: ^0.2.3
         version: 0.2.3
       '@react-native-community/cli':
-        specifier: 19.1.1
+        specifier: ^19.1.1
         version: 19.1.1(typescript@5.8.3)
       '@react-native-community/cli-platform-android':
-        specifier: 19.1.1
+        specifier: ^19.1.1
         version: 19.1.1
       '@react-native-community/cli-platform-ios':
-        specifier: 19.1.1
+        specifier: ^19.1.1
         version: 19.1.1
       cli-cursor:
         specifier: ^5.0.0
@@ -181,6 +190,15 @@ importers:
         specifier: ^0.21.0
         version: 0.21.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
     devDependencies:
+      '@react-native-community/cli':
+        specifier: 19.1.1
+        version: 19.1.1(typescript@5.8.3)
+      '@react-native-community/cli-platform-android':
+        specifier: 19.1.1
+        version: 19.1.1
+      '@react-native-community/cli-platform-ios':
+        specifier: 19.1.1
+        version: 19.1.1
       '@react-native/codegen':
         specifier: ^0.80.2
         version: 0.80.2(@babel/core@7.28.0)
@@ -7299,20 +7317,6 @@ snapshots:
 
   '@lingui/babel-plugin-extract-messages@5.3.3': {}
 
-  '@lingui/babel-plugin-lingui-macro@5.3.3(babel-plugin-macros@3.1.0)':
-    dependencies:
-      '@babel/core': 7.28.0
-      '@babel/runtime': 7.27.6
-      '@babel/types': 7.28.2
-      '@lingui/conf': 5.3.3(typescript@5.8.3)
-      '@lingui/core': 5.3.3(@lingui/babel-plugin-lingui-macro@5.3.3(babel-plugin-macros@3.1.0))(babel-plugin-macros@3.1.0)
-      '@lingui/message-utils': 5.3.3
-    optionalDependencies:
-      babel-plugin-macros: 3.1.0
-    transitivePeerDependencies:
-      - supports-color
-      - typescript
-
   '@lingui/babel-plugin-lingui-macro@5.3.3(babel-plugin-macros@3.1.0)(typescript@5.8.3)':
     dependencies:
       '@babel/core': 7.28.0
@@ -7324,38 +7328,6 @@ snapshots:
     optionalDependencies:
       babel-plugin-macros: 3.1.0
     transitivePeerDependencies:
-      - supports-color
-      - typescript
-
-  '@lingui/cli@5.3.3(babel-plugin-macros@3.1.0)':
-    dependencies:
-      '@babel/core': 7.28.0
-      '@babel/generator': 7.28.0
-      '@babel/parser': 7.28.0
-      '@babel/runtime': 7.27.6
-      '@babel/types': 7.28.2
-      '@lingui/babel-plugin-extract-messages': 5.3.3
-      '@lingui/babel-plugin-lingui-macro': 5.3.3(babel-plugin-macros@3.1.0)
-      '@lingui/conf': 5.3.3(typescript@5.8.3)
-      '@lingui/core': 5.3.3(@lingui/babel-plugin-lingui-macro@5.3.3(babel-plugin-macros@3.1.0))(babel-plugin-macros@3.1.0)
-      '@lingui/format-po': 5.3.3(typescript@5.8.3)
-      '@lingui/message-utils': 5.3.3
-      chokidar: 3.5.1
-      cli-table: 0.3.11
-      commander: 10.0.1
-      convert-source-map: 2.0.0
-      date-fns: 3.6.0
-      esbuild: 0.25.8
-      glob: 11.0.3
-      micromatch: 4.0.8
-      normalize-path: 3.0.0
-      ora: 5.4.1
-      picocolors: 1.1.1
-      pofile: 1.1.4
-      pseudolocale: 2.1.0
-      source-map: 0.8.0-beta.0
-    transitivePeerDependencies:
-      - babel-plugin-macros
       - supports-color
       - typescript
 
@@ -7407,14 +7379,6 @@ snapshots:
       '@lingui/message-utils': 5.3.3
     optionalDependencies:
       '@lingui/babel-plugin-lingui-macro': 5.3.3(babel-plugin-macros@3.1.0)(typescript@5.8.3)
-      babel-plugin-macros: 3.1.0
-
-  '@lingui/core@5.3.3(@lingui/babel-plugin-lingui-macro@5.3.3(babel-plugin-macros@3.1.0))(babel-plugin-macros@3.1.0)':
-    dependencies:
-      '@babel/runtime': 7.27.6
-      '@lingui/message-utils': 5.3.3
-    optionalDependencies:
-      '@lingui/babel-plugin-lingui-macro': 5.3.3(babel-plugin-macros@3.1.0)
       babel-plugin-macros: 3.1.0
 
   '@lingui/format-po@5.3.3(typescript@5.8.3)':
