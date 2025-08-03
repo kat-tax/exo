@@ -10,10 +10,10 @@ async function main() {
   const config = ((port = 8080) => {
     return {
       web: `${openUrl} http://localhost:${port}`,
-      android: 'react-native run-android --no-packager',
-      ios: 'react-native run-ios --no-packager',
-      macos: 'react-native run-macos --no-packager',
-      windows: 'react-native run-windows --no-packager',
+      android: 'cd client && pnpx react-native run-android --no-packager',
+      ios: 'cd client && pnpx react-native run-ios --no-packager',
+      macos: 'cd client && pnpx react-native run-macos --no-packager',
+      windows: 'cd client && pnpx react-native run-windows --no-packager',
     };
   })(parseInt(args[args.indexOf('--port') + 1]) || 8080);
 
