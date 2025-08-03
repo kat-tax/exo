@@ -1,9 +1,8 @@
 import {Text, View} from 'react-native';
-import {Image} from 'react-exo/image';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useClock} from 'home/hooks/use-clock';
 import {Panel} from 'app/stacks/panel';
-import logo from 'design/brand/logo.svg';
+import {Logo} from 'design';
 import cfg from 'config';
 
 export default function ScreenDashboard() {
@@ -14,11 +13,7 @@ export default function ScreenDashboard() {
     <Panel
       left={
         <View style={styles.header}>
-          <Image
-            style={styles.logo}
-            resizeMode={'contain'}
-            url={logo}
-          />
+          <Logo/>
           <Text style={styles.name}>
             {cfg.APP_NAME}
           </Text>
@@ -41,10 +36,6 @@ const stylesheet = createStyleSheet(theme => ({
     flexDirection: 'row',
     alignItems: 'center',
     gap: theme.display.space3,
-  },
-  logo: {
-    width: 42,
-    height: 42,
   },
   name: {
     fontFamily: theme.font.family,
