@@ -99,8 +99,8 @@ const stylesheet = createStyleSheet((theme, rt) => ({
     flexDirection: 'row',
     alignItems: 'flex-start',
     justifyContent: 'space-between',
-    marginTop: theme.display.space2,
-    marginBottom: theme.display.space3,
+    marginTop: theme.display.space1,
+    marginBottom: theme.display.space6,
   },
   widget: {
     flex: 1,
@@ -120,7 +120,7 @@ const stylesheet = createStyleSheet((theme, rt) => ({
   },
   title: {
     fontFamily: theme.font.family,
-    fontSize: theme.font.headerSize,
+    fontSize: theme.typography.size7,
     fontWeight: theme.font.headerWeight,
     letterSpacing: theme.font.headerSpacing,
     color: theme.colors.foreground,
@@ -128,7 +128,7 @@ const stylesheet = createStyleSheet((theme, rt) => ({
   message: {
     fontWeight: '300',
     fontFamily: theme.font.family,
-    fontSize: theme.font.contentSize,
+    fontSize: theme.typography.size4,
     letterSpacing: theme.font.contentSpacing,
     color: theme.colors.mutedForeground,
   },

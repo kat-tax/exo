@@ -18,16 +18,19 @@ msgstr ""
 msgid "{0} components"
 msgstr ""
 
-#: ../../client/src/app/routes/screen-settings.tsx:31
-#: ../../client/src/app/routes/screen-settings.tsx:51
-msgid "Auto"
-msgstr "Авто"
+#: ../../client/src/app/hooks/use-settings.ts:39
+msgid "Are you sure you want to change the owner key? This will reset the local database. This action cannot be undone."
+msgstr ""
+
+#: ../../client/src/app/hooks/use-settings.ts:31
+msgid "Are you sure you want to reset your local database? If data is not backed up on another device, it will be lost. This action cannot be undone."
+msgstr ""
 
 #: ../../design/components/base/popovers/prompt/Prompt.tsx:44
 msgid "Cancel"
 msgstr "Отмена"
 
-#: ../../client/src/app/routes/screen-settings.tsx:53
+#: ../../client/src/app/routes/screen-settings.tsx:102
 msgid "Dark"
 msgstr "Тёмная"
 
@@ -45,36 +48,78 @@ msgstr "Дизайн"
 msgid "Development"
 msgstr ""
 
-#: ../../client/src/app/routes/screen-settings.tsx:21
+#: ../../client/src/app/routes/screen-settings.tsx:70
 msgid "Display"
 msgstr "Экран"
 
-#: ../../client/src/app/routes/screen-settings.tsx:23
+#: ../../client/src/app/routes/screen-settings.tsx:42
+msgid "Enter name"
+msgstr ""
+
+#: ../../client/src/app/hooks/use-settings.ts:23
+#: ../../client/src/app/hooks/use-settings.ts:46
+msgid "Error"
+msgstr ""
+
+#: ../../client/src/app/hooks/use-settings.ts:25
+msgid "Invalid name (max 25 characters)."
+msgstr ""
+
+#: ../../client/src/app/hooks/use-settings.ts:48
+msgid "Invalid owner key."
+msgstr ""
+
+#: ../../client/src/app/routes/screen-settings.tsx:72
 msgid "Language"
 msgstr "Язык"
 
-#: ../../client/src/app/routes/screen-settings.tsx:52
+#: ../../client/src/app/routes/screen-settings.tsx:101
 msgid "Light"
 msgstr "Светлая"
 
-#: ../../client/src/app/routes/screen-settings.tsx:19
+#: ../../client/src/app/routes/screen-settings.tsx:24
 msgid "Manage your settings"
 msgstr "Настройки"
 
-#: ../../client/src/app/routes/screen-settings.tsx:24
+#: ../../client/src/app/routes/screen-settings.tsx:47
+msgid "Owner Key"
+msgstr ""
+
+#: ../../client/src/app/routes/screen-settings.tsx:33
+msgid "Profile"
+msgstr ""
+
+#: ../../client/src/app/routes/screen-settings.tsx:73
 msgid "Select the language for the app."
 msgstr "Выберите язык приложения."
 
-#: ../../client/src/app/routes/screen-settings.tsx:44
+#: ../../client/src/app/routes/screen-settings.tsx:93
 msgid "Select the theme for the app."
 msgstr "Выберите тему приложения."
 
-#: ../../client/src/app/routes/screen-settings.tsx:18
+#: ../../client/src/app/routes/screen-settings.tsx:23
 #: ../../client/src/app/routes/menu/index.tsx:32
 #: ../../client/src/app/routes/menu/index.tsx:48
 msgid "Settings"
 msgstr "Настройки"
 
-#: ../../client/src/app/routes/screen-settings.tsx:43
+#: ../../client/src/app/routes/screen-settings.tsx:80
+#: ../../client/src/app/routes/screen-settings.tsx:100
+msgid "System"
+msgstr ""
+
+#: ../../client/src/app/routes/screen-settings.tsx:48
+msgid "The passphrase for your database."
+msgstr ""
+
+#: ../../client/src/app/routes/screen-settings.tsx:92
 msgid "Theme"
 msgstr "Тема"
+
+#: ../../client/src/app/routes/screen-settings.tsx:35
+msgid "User Name"
+msgstr ""
+
+#: ../../client/src/app/routes/screen-settings.tsx:36
+msgid "Your name to display in the app."
+msgstr ""

@@ -18,16 +18,19 @@ msgstr ""
 msgid "{0} components"
 msgstr "{0} components"
 
-#: ../../client/src/app/routes/screen-settings.tsx:31
-#: ../../client/src/app/routes/screen-settings.tsx:51
-msgid "Auto"
-msgstr "Auto"
+#: ../../client/src/app/hooks/use-settings.ts:39
+msgid "Are you sure you want to change the owner key? This will reset the local database. This action cannot be undone."
+msgstr "Are you sure you want to change the owner key? This will reset the local database. This action cannot be undone."
+
+#: ../../client/src/app/hooks/use-settings.ts:31
+msgid "Are you sure you want to reset your local database? If data is not backed up on another device, it will be lost. This action cannot be undone."
+msgstr "Are you sure you want to reset your local database? If data is not backed up on another device, it will be lost. This action cannot be undone."
 
 #: ../../design/components/base/popovers/prompt/Prompt.tsx:44
 msgid "Cancel"
 msgstr "Cancel"
 
-#: ../../client/src/app/routes/screen-settings.tsx:53
+#: ../../client/src/app/routes/screen-settings.tsx:102
 msgid "Dark"
 msgstr "Dark"
 
@@ -45,36 +48,78 @@ msgstr "Design"
 msgid "Development"
 msgstr "Development"
 
-#: ../../client/src/app/routes/screen-settings.tsx:21
+#: ../../client/src/app/routes/screen-settings.tsx:70
 msgid "Display"
 msgstr "Display"
 
-#: ../../client/src/app/routes/screen-settings.tsx:23
+#: ../../client/src/app/routes/screen-settings.tsx:42
+msgid "Enter name"
+msgstr "Enter name"
+
+#: ../../client/src/app/hooks/use-settings.ts:23
+#: ../../client/src/app/hooks/use-settings.ts:46
+msgid "Error"
+msgstr "Error"
+
+#: ../../client/src/app/hooks/use-settings.ts:25
+msgid "Invalid name (max 25 characters)."
+msgstr "Invalid name (max 25 characters)."
+
+#: ../../client/src/app/hooks/use-settings.ts:48
+msgid "Invalid owner key."
+msgstr "Invalid owner key."
+
+#: ../../client/src/app/routes/screen-settings.tsx:72
 msgid "Language"
 msgstr "Language"
 
-#: ../../client/src/app/routes/screen-settings.tsx:52
+#: ../../client/src/app/routes/screen-settings.tsx:101
 msgid "Light"
 msgstr "Light"
 
-#: ../../client/src/app/routes/screen-settings.tsx:19
+#: ../../client/src/app/routes/screen-settings.tsx:24
 msgid "Manage your settings"
 msgstr "Manage your settings"
 
-#: ../../client/src/app/routes/screen-settings.tsx:24
+#: ../../client/src/app/routes/screen-settings.tsx:47
+msgid "Owner Key"
+msgstr "Owner Key"
+
+#: ../../client/src/app/routes/screen-settings.tsx:33
+msgid "Profile"
+msgstr "Profile"
+
+#: ../../client/src/app/routes/screen-settings.tsx:73
 msgid "Select the language for the app."
 msgstr "Select the language for the app."
 
-#: ../../client/src/app/routes/screen-settings.tsx:44
+#: ../../client/src/app/routes/screen-settings.tsx:93
 msgid "Select the theme for the app."
 msgstr "Select the theme for the app."
 
-#: ../../client/src/app/routes/screen-settings.tsx:18
+#: ../../client/src/app/routes/screen-settings.tsx:23
 #: ../../client/src/app/routes/menu/index.tsx:32
 #: ../../client/src/app/routes/menu/index.tsx:48
 msgid "Settings"
 msgstr "Settings"
 
-#: ../../client/src/app/routes/screen-settings.tsx:43
+#: ../../client/src/app/routes/screen-settings.tsx:80
+#: ../../client/src/app/routes/screen-settings.tsx:100
+msgid "System"
+msgstr "System"
+
+#: ../../client/src/app/routes/screen-settings.tsx:48
+msgid "The passphrase for your database."
+msgstr "The passphrase for your database."
+
+#: ../../client/src/app/routes/screen-settings.tsx:92
 msgid "Theme"
 msgstr "Theme"
+
+#: ../../client/src/app/routes/screen-settings.tsx:35
+msgid "User Name"
+msgstr "User Name"
+
+#: ../../client/src/app/routes/screen-settings.tsx:36
+msgid "Your name to display in the app."
+msgstr "Your name to display in the app."
