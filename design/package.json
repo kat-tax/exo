@@ -6,8 +6,7 @@
   "exports": {
     ".": "./index.ts",
     "./theme": "./theme.ts",
-    "./styles": "./styles.ts",
-    "./brand/logo.svg": "./brand/logo.svg"
+    "./styles": "./styles.ts"
   },
   "files": [
     "assets",

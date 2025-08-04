@@ -1,7 +1,7 @@
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {View} from 'react-native';
-import {Image} from 'react-exo/image';
-import logo from 'brand/logo.svg';
+//import {Image} from 'react-exo/image';
+//import logo from './assets/logo.svg';
 
 export interface LogoProps {
   /** Used to locate this view in end-to-end tests. */
@@ -13,11 +13,11 @@ export function Logo(props: LogoProps) {
 
   return (
     <View style={styles.root} testID={props.testID ?? "2237:443"}>
-      <Image
+      {/* <Image
         style={styles.logo}
         resizeMode={'contain'}
         url={logo}
-      />
+      /> */}
     </View>
   );
 }

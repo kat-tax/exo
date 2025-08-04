@@ -7,9 +7,10 @@
     "vite": "./node_modules/vite/bin/vite.js"
   },
   "scripts": {
-    "build": "pnpm gen:config && pnpm gen:locales && tsc",
+    "build": "pnpm gen:config && pnpm gen:locales && pnpm gen:slices && tsc",
     "gen:config": "rnuc --project-root ../../client --lib-root ./node_modules/react-native-ultimate-config ../../config.yaml",
-    "gen:locales": "node ./scripts/gen-locales.js"
+    "gen:locales": "node ./scripts/gen-locales.js",
+    "gen:slices": "node ./scripts/gen-slices.js"
   },
   "exports": {
     ".": {
