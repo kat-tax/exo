@@ -1,4 +1,6 @@
 # Generated
+build/config/locales.ts
+**/slices.types.ts
 **/i18n/messages/
 .icons/
 output/
