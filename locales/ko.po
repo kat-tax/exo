@@ -16,15 +16,15 @@ msgstr ""
 #. placeholder {0}: 11
 #: ../../client/src/app/routes/screen-design.tsx:15
 msgid "{0} components"
-msgstr ""
+msgstr "{0}개 컴포넌트"
 
-#: ../../client/src/app/hooks/use-settings.ts:44
+#: ../../client/src/app/hooks/use-settings.ts:39
 msgid "Are you sure you want to change the owner key? This will reset the local database. This action cannot be undone."
-msgstr ""
+msgstr "소유자 키를 변경하시겠습니까? 로컬 데이터베이스가 초기화됩니다. 이 작업은 되돌릴 수 없습니다."
 
-#: ../../client/src/app/hooks/use-settings.ts:36
+#: ../../client/src/app/hooks/use-settings.ts:31
 msgid "Are you sure you want to reset your local database? If data is not backed up on another device, it will be lost. This action cannot be undone."
-msgstr ""
+msgstr "로컬 데이터베이스를 초기화하시겠습니까? 다른 기기에 백업되지 않은 데이터는 손실됩니다. 이 작업은 되돌릴 수 없습니다."
 
 #: ../../design/components/base/popovers/prompt/Prompt.tsx:44
 msgid "Cancel"
@@ -46,7 +46,7 @@ msgstr "디자인"
 
 #: ../../client/src/app/routes/menu/index.tsx:53
 msgid "Development"
-msgstr ""
+msgstr "개발"
 
 #: ../../client/src/app/routes/screen-settings.tsx:70
 msgid "Display"
@@ -54,23 +54,32 @@ msgstr "화면"
 
 #: ../../client/src/app/routes/screen-settings.tsx:35
 msgid "Display Name"
-msgstr ""
+msgstr "표시 이름"
 
 #: ../../client/src/app/routes/screen-settings.tsx:54
 msgid "Enter mnemonic"
-msgstr ""
+msgstr "니모닉 입력"
 
 #: ../../client/src/app/routes/screen-settings.tsx:42
 msgid "Enter name"
-msgstr ""
+msgstr "이름 입력"
 
-#: ../../client/src/app/hooks/use-settings.ts:51
+#: ../../client/src/app/hooks/use-settings.ts:23
+#: ../../client/src/app/hooks/use-settings.ts:46
 msgid "Error"
-msgstr ""
+msgstr "오류"
 
-#: ../../client/src/app/hooks/use-settings.ts:53
+#: ../../client/src/app/routes/menu/menu-header.tsx:21
+msgid "Human"
+msgstr "인간"
+
+#: ../../client/src/app/hooks/use-settings.ts:25
+msgid "Invalid name (max 25 characters)."
+msgstr "잘못된 이름 (최대 25자)."
+
+#: ../../client/src/app/hooks/use-settings.ts:48
 msgid "Invalid owner key."
-msgstr ""
+msgstr "잘못된 소유자 키입니다."
 
 #: ../../client/src/app/routes/screen-settings.tsx:72
 msgid "Language"
@@ -86,11 +95,11 @@ msgstr "설정 관리"
 
 #: ../../client/src/app/routes/screen-settings.tsx:47
 msgid "Owner Key"
-msgstr ""
+msgstr "소유자 키"
 
 #: ../../client/src/app/routes/screen-settings.tsx:33
 msgid "Profile"
-msgstr ""
+msgstr "프로필"
 
 #: ../../client/src/app/routes/screen-settings.tsx:73
 msgid "Select the language for the app."
@@ -109,11 +118,11 @@ msgstr "설정"
 #: ../../client/src/app/routes/screen-settings.tsx:80
 #: ../../client/src/app/routes/screen-settings.tsx:100
 msgid "System"
-msgstr ""
+msgstr "시스템"
 
 #: ../../client/src/app/routes/screen-settings.tsx:48
 msgid "The mnemonic phrase for your database."
-msgstr ""
+msgstr "데이터베이스용 니모닉 구문입니다."
 
 #: ../../client/src/app/routes/screen-settings.tsx:92
 msgid "Theme"
@@ -121,4 +130,4 @@ msgstr "테마"
 
 #: ../../client/src/app/routes/screen-settings.tsx:36
 msgid "Your name to display in the app."
-msgstr ""
+msgstr "앱에 표시할 이름입니다."

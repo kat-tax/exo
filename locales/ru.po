@@ -16,15 +16,15 @@ msgstr ""
 #. placeholder {0}: 11
 #: ../../client/src/app/routes/screen-design.tsx:15
 msgid "{0} components"
-msgstr ""
+msgstr "{0} компонентов"
 
-#: ../../client/src/app/hooks/use-settings.ts:44
+#: ../../client/src/app/hooks/use-settings.ts:39
 msgid "Are you sure you want to change the owner key? This will reset the local database. This action cannot be undone."
-msgstr ""
+msgstr "Вы уверены, что хотите изменить ключ владельца? Это сбросит локальную базу данных. Это действие нельзя отменить."
 
-#: ../../client/src/app/hooks/use-settings.ts:36
+#: ../../client/src/app/hooks/use-settings.ts:31
 msgid "Are you sure you want to reset your local database? If data is not backed up on another device, it will be lost. This action cannot be undone."
-msgstr ""
+msgstr "Вы уверены, что хотите сбросить локальную базу данных? Если данные не сохранены на другом устройстве, они будут потеряны. Это действие нельзя отменить."
 
 #: ../../design/components/base/popovers/prompt/Prompt.tsx:44
 msgid "Cancel"
@@ -46,7 +46,7 @@ msgstr "Дизайн"
 
 #: ../../client/src/app/routes/menu/index.tsx:53
 msgid "Development"
-msgstr ""
+msgstr "Разработка"
 
 #: ../../client/src/app/routes/screen-settings.tsx:70
 msgid "Display"
@@ -54,23 +54,32 @@ msgstr "Экран"
 
 #: ../../client/src/app/routes/screen-settings.tsx:35
 msgid "Display Name"
-msgstr ""
+msgstr "Имя"
 
 #: ../../client/src/app/routes/screen-settings.tsx:54
 msgid "Enter mnemonic"
-msgstr ""
+msgstr "Введите мнемонику"
 
 #: ../../client/src/app/routes/screen-settings.tsx:42
 msgid "Enter name"
-msgstr ""
+msgstr "Введите имя"
 
-#: ../../client/src/app/hooks/use-settings.ts:51
+#: ../../client/src/app/hooks/use-settings.ts:23
+#: ../../client/src/app/hooks/use-settings.ts:46
 msgid "Error"
-msgstr ""
+msgstr "Ошибка"
 
-#: ../../client/src/app/hooks/use-settings.ts:53
+#: ../../client/src/app/routes/menu/menu-header.tsx:21
+msgid "Human"
+msgstr "Человек"
+
+#: ../../client/src/app/hooks/use-settings.ts:25
+msgid "Invalid name (max 25 characters)."
+msgstr "Неверное имя (максимум 25 символов)."
+
+#: ../../client/src/app/hooks/use-settings.ts:48
 msgid "Invalid owner key."
-msgstr ""
+msgstr "Неверный ключ владельца."
 
 #: ../../client/src/app/routes/screen-settings.tsx:72
 msgid "Language"
@@ -86,11 +95,11 @@ msgstr "Настройки"
 
 #: ../../client/src/app/routes/screen-settings.tsx:47
 msgid "Owner Key"
-msgstr ""
+msgstr "Ключ владельца"
 
 #: ../../client/src/app/routes/screen-settings.tsx:33
 msgid "Profile"
-msgstr ""
+msgstr "Профиль"
 
 #: ../../client/src/app/routes/screen-settings.tsx:73
 msgid "Select the language for the app."
@@ -109,11 +118,11 @@ msgstr "Настройки"
 #: ../../client/src/app/routes/screen-settings.tsx:80
 #: ../../client/src/app/routes/screen-settings.tsx:100
 msgid "System"
-msgstr ""
+msgstr "Системная"
 
 #: ../../client/src/app/routes/screen-settings.tsx:48
 msgid "The mnemonic phrase for your database."
-msgstr ""
+msgstr "Мнемоническая фраза для вашей базы данных."
 
 #: ../../client/src/app/routes/screen-settings.tsx:92
 msgid "Theme"
@@ -121,4 +130,4 @@ msgstr "Тема"
 
 #: ../../client/src/app/routes/screen-settings.tsx:36
 msgid "Your name to display in the app."
-msgstr ""
+msgstr "Ваше имя для отображения в приложении."

@@ -18,11 +18,11 @@ msgstr ""
 msgid "{0} components"
 msgstr "{0} components"
 
-#: ../../client/src/app/hooks/use-settings.ts:44
+#: ../../client/src/app/hooks/use-settings.ts:39
 msgid "Are you sure you want to change the owner key? This will reset the local database. This action cannot be undone."
 msgstr "Are you sure you want to change the owner key? This will reset the local database. This action cannot be undone."
 
-#: ../../client/src/app/hooks/use-settings.ts:36
+#: ../../client/src/app/hooks/use-settings.ts:31
 msgid "Are you sure you want to reset your local database? If data is not backed up on another device, it will be lost. This action cannot be undone."
 msgstr "Are you sure you want to reset your local database? If data is not backed up on another device, it will be lost. This action cannot be undone."
 
@@ -64,11 +64,20 @@ msgstr "Enter mnemonic"
 msgid "Enter name"
 msgstr "Enter name"
 
-#: ../../client/src/app/hooks/use-settings.ts:51
+#: ../../client/src/app/hooks/use-settings.ts:23
+#: ../../client/src/app/hooks/use-settings.ts:46
 msgid "Error"
 msgstr "Error"
 
-#: ../../client/src/app/hooks/use-settings.ts:53
+#: ../../client/src/app/routes/menu/menu-header.tsx:21
+msgid "Human"
+msgstr "Human"
+
+#: ../../client/src/app/hooks/use-settings.ts:25
+msgid "Invalid name (max 25 characters)."
+msgstr "Invalid name (max 25 characters)."
+
+#: ../../client/src/app/hooks/use-settings.ts:48
 msgid "Invalid owner key."
 msgstr "Invalid owner key."
 
