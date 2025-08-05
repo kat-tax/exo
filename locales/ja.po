@@ -18,11 +18,11 @@ msgstr ""
 msgid "{0} components"
 msgstr ""
 
-#: ../../client/src/app/hooks/use-settings.ts:39
+#: ../../client/src/app/hooks/use-settings.ts:44
 msgid "Are you sure you want to change the owner key? This will reset the local database. This action cannot be undone."
 msgstr ""
 
-#: ../../client/src/app/hooks/use-settings.ts:31
+#: ../../client/src/app/hooks/use-settings.ts:36
 msgid "Are you sure you want to reset your local database? If data is not backed up on another device, it will be lost. This action cannot be undone."
 msgstr ""
 
@@ -52,20 +52,23 @@ msgstr ""
 msgid "Display"
 msgstr "表示"
 
+#: ../../client/src/app/routes/screen-settings.tsx:35
+msgid "Display Name"
+msgstr ""
+
+#: ../../client/src/app/routes/screen-settings.tsx:54
+msgid "Enter mnemonic"
+msgstr ""
+
 #: ../../client/src/app/routes/screen-settings.tsx:42
 msgid "Enter name"
 msgstr ""
 
-#: ../../client/src/app/hooks/use-settings.ts:23
-#: ../../client/src/app/hooks/use-settings.ts:46
+#: ../../client/src/app/hooks/use-settings.ts:51
 msgid "Error"
 msgstr ""
 
-#: ../../client/src/app/hooks/use-settings.ts:25
-msgid "Invalid name (max 25 characters)."
-msgstr ""
-
-#: ../../client/src/app/hooks/use-settings.ts:48
+#: ../../client/src/app/hooks/use-settings.ts:53
 msgid "Invalid owner key."
 msgstr ""
 
@@ -109,16 +112,12 @@ msgid "System"
 msgstr ""
 
 #: ../../client/src/app/routes/screen-settings.tsx:48
-msgid "The passphrase for your database."
+msgid "The mnemonic phrase for your database."
 msgstr ""
 
 #: ../../client/src/app/routes/screen-settings.tsx:92
 msgid "Theme"
 msgstr "テーマ"
-
-#: ../../client/src/app/routes/screen-settings.tsx:35
-msgid "User Name"
-msgstr ""
 
 #: ../../client/src/app/routes/screen-settings.tsx:36
 msgid "Your name to display in the app."

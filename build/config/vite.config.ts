@@ -7,6 +7,7 @@ import sonda from 'sonda/vite';
 import cfg from 'config';
 
 export default defineConfig(env => ({
+  // Output Configuration
   build: {
     outDir: '../output/client/web',
     sourcemap: true,
@@ -23,6 +24,7 @@ export default defineConfig(env => ({
       },
     },
   },
+  // React Native Web Support
   resolve: {
     extensions: [
       '.web.tsx',
@@ -41,6 +43,7 @@ export default defineConfig(env => ({
     },
   },
   plugins: [
+    // Support TypeScript Base URL
     paths(),
     react({
       babel: {
@@ -50,9 +53,11 @@ export default defineConfig(env => ({
         ],
       },
     }),
+    // Support Lingui Macros
     lingui(),
+    // Generate Service Worker & PWA Assets
     VitePWA({
-      registerType: 'autoUpdate',
+      registerType: 'prompt',
       strategies: 'generateSW',
       manifest: {
         name: cfg.APP_NAME,
@@ -65,7 +70,11 @@ export default defineConfig(env => ({
         cleanupOutdatedCaches: true,
         clientsClaim: true,
       },
+      devOptions: {
+        enabled: false,
+      },
     }),
+    // Config Placeholders in index.html
     {
       name: 'index-html-config',
       transformIndexHtml(html) {
@@ -76,6 +85,7 @@ export default defineConfig(env => ({
         return out;
       },
     },
+    // Bundle File Inspector
     sonda({
       open: false,
       sources: true,
@@ -83,15 +93,18 @@ export default defineConfig(env => ({
       outputDir: '../output/inspect/web',
     }),
   ],
+  // Exclude Packages with Workers
   optimizeDeps: {
-    exclude: ['@sqlite.org/sqlite-wasm'],
+    exclude: [
+      '@sqlite.org/sqlite-wasm',
+      '@evolu/react-web',
+    ],
   },
+  // Do not open preview in browser
   preview: {
     open: false,
   },
-  worker: {
-    format: 'es',
-  },
+  // Common Environment Variables
   define: {
     __DEV__: JSON.stringify(env.mode === 'development'),
     process: {

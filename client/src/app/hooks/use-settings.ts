@@ -2,11 +2,11 @@ import {alert} from 'react-exo/toast';
 import {useLingui} from '@lingui/react/macro';
 import {useCallback} from 'react';
 import {useQuery, useAppOwner} from '@evolu/react';
-import {useEvolu, getOrThrow, getProfile, Mnemonic, NonEmptyString25} from 'app/data';
+import {useEvolu, getProfile, getOrThrow, Mnemonic, NonEmptyString25} from 'app/data';
 
 export function useSettings() {
-  const owner = useAppOwner();
   const profiles = useQuery(getProfile);
+  const owner = useAppOwner();
   const evolu = useEvolu();
   const {t} = useLingui();
 

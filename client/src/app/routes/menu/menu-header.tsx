@@ -1,20 +1,22 @@
 import {View, Text} from 'react-native';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
+import {useQuery} from '@evolu/react';
+import {useAppOwner} from '@evolu/react';
+import {getProfile} from 'app/data';
 import {Identicon} from 'app/stacks/identicon';
-import {uuid} from 'app/utils/random';
-
-const USER = uuid();
 
 export function MenuHeader() {
   const {styles} = useStyles(stylesheet);
+  const profiles = useQuery(getProfile);
+  const appOwner = useAppOwner();
 
   return (
     <View style={styles.root}>
       <View style={styles.head}>
-        <Identicon id={USER} width={22} height={22}/>
+        <Identicon id={appOwner?.id} width={22} height={22}/>
         <View style={styles.info}>
           <Text style={styles.name} selectable={false}>
-            {'Human'}
+            {profiles[0]?.name ?? ''}
           </Text>
         </View>
       </View>
