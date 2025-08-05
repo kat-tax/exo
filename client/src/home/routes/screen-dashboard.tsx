@@ -2,7 +2,7 @@ import {Text, View} from 'react-native';
 import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useClock} from 'home/hooks/use-clock';
 import {Panel} from 'app/stacks/panel';
-import {Logo} from 'design';
+//import {Logo} from 'design';
 import cfg from 'config';
 
 export default function ScreenDashboard() {
@@ -13,7 +13,7 @@ export default function ScreenDashboard() {
     <Panel
       left={
         <View style={styles.header}>
-          <Logo/>
+          {/*<Logo/>*/}
           <Text style={styles.name}>
             {cfg.APP_NAME}
           </Text>
