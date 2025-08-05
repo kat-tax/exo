@@ -4,8 +4,10 @@ import {useQuery} from '@evolu/react';
 import {useAppOwner} from '@evolu/react';
 import {getProfile} from 'app/data';
 import {Identicon} from 'app/stacks/identicon';
+import {useLingui} from '@lingui/react/macro';
 
 export function MenuHeader() {
+  const {t} = useLingui();
   const {styles} = useStyles(stylesheet);
   const profiles = useQuery(getProfile);
   const appOwner = useAppOwner();
@@ -16,7 +18,7 @@ export function MenuHeader() {
         <Identicon id={appOwner?.id} width={22} height={22}/>
         <View style={styles.info}>
           <Text style={styles.name} selectable={false}>
-            {profiles[0]?.name ?? ''}
+            {profiles[0]?.name ?? t`Human`}
           </Text>
         </View>
       </View>

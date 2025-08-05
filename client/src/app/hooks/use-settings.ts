@@ -5,10 +5,10 @@ import {useQuery, useAppOwner} from '@evolu/react';
 import {useEvolu, getProfile, getOrThrow, Mnemonic, NonEmptyString25} from 'app/data';
 
 export function useSettings() {
-  const profiles = useQuery(getProfile);
-  const owner = useAppOwner();
-  const evolu = useEvolu();
   const {t} = useLingui();
+  const evolu = useEvolu();
+  const owner = useAppOwner();
+  const profiles = useQuery(getProfile);
 
   const updateName = useCallback((text: string) => {
     try {
