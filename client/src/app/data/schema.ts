@@ -1,14 +1,19 @@
 import * as $ from './types';
 
+export type ProfileId = typeof ProfileId.Type;
+export const ProfileId = $.id('Profile');
+
+export type ShortcutId = typeof ShortcutId.Type;
+export const ShortcutId = $.id('Shortcut');
+
 export default {
   profile: {
-    id: $.ProfileId,
+    id: ProfileId,
     name: $.NonEmptyString25,
   },
   shortcut: {
-    id: $.ShortcutId,
+    id: ShortcutId,
     url: $.NonEmptyString1000,
     name: $.NonEmptyString50,
-    image: $.nullOr($.Uint8Array),
   },
 };

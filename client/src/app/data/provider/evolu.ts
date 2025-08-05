@@ -4,8 +4,9 @@ import deps from './lib/deps';
 import schema from '../schema';
 
 const evolu = $.createEvolu(deps)(schema, {
-  name: $.getOrThrow($.SimpleName.from(cfg.APP_NAME)),
+  name: $.getOrThrow($.SimpleName.from(`${cfg.APP_NAME}-${cfg.STORE_VERSION}`)),
   syncUrl: cfg.SYNC_HOST,
+  enableLogging: __DEV__,
 });
 
 evolu.subscribeError(() => {

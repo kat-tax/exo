@@ -181,8 +181,8 @@ importers:
         specifier: ^3.3.0
         version: 3.3.0(react-native@0.80.2(@babel/core@7.28.0)(@react-native-community/cli@19.1.1(typescript@5.9.2))(@types/react@19.1.9)(react@19.1.0))(react@19.1.0)
       react-native-quick-crypto:
-        specifier: 0.7.16
-        version: 0.7.16(react-native@0.80.2(@babel/core@7.28.0)(@react-native-community/cli@19.1.1(typescript@5.9.2))(@types/react@19.1.9)(react@19.1.0))(react@19.1.0)
+        specifier: 0.7.17
+        version: 0.7.17(react-native@0.80.2(@babel/core@7.28.0)(@react-native-community/cli@19.1.1(typescript@5.9.2))(@types/react@19.1.9)(react@19.1.0))(react@19.1.0)
       react-native-random-values-jsi-helper:
         specifier: ^2.0.1
         version: 2.0.1(react-native@0.80.2(@babel/core@7.28.0)(@react-native-community/cli@19.1.1(typescript@5.9.2))(@types/react@19.1.9)(react@19.1.0))(react@19.1.0)
@@ -5049,8 +5049,8 @@ packages:
       react: '*'
       react-native: '*'
 
-  react-native-quick-crypto@0.7.16:
-    resolution: {integrity: sha512-R6MYxj2Em7/72C2fc42guG5WO9SFsR3VB74o8I/pSOb7yGDWqylC9YreCHlFvhZgtFY4Ssab80I2TVGc68TLbg==}
+  react-native-quick-crypto@0.7.17:
+    resolution: {integrity: sha512-cJzp6oA/dM1lujt+Rwtn46Mgcs3w9F/0oQvNz1jcADc/AXktveAOUTzzKrDMxyg6YPziCYnoqMDzHBo6OLSU1g==}
 
   react-native-random-values-jsi-helper@2.0.1:
     resolution: {integrity: sha512-eBmKD8nUrKUDeucYRI0ChfOtRRAmZVTxIgqz0gqY4Wf2F/B6/LoAzLQ23Xt+pF6JP8KiU/vAMHKOJMsk6Nb9dw==}
@@ -12164,7 +12164,7 @@ snapshots:
       react: 19.1.0
       react-native: 0.80.2(@babel/core@7.28.0)(@react-native-community/cli@19.1.1(typescript@5.9.2))(@types/react@19.1.9)(react@19.1.0)
 
-  react-native-quick-crypto@0.7.16(react-native@0.80.2(@babel/core@7.28.0)(@react-native-community/cli@19.1.1(typescript@5.9.2))(@types/react@19.1.9)(react@19.1.0))(react@19.1.0):
+  react-native-quick-crypto@0.7.17(react-native@0.80.2(@babel/core@7.28.0)(@react-native-community/cli@19.1.1(typescript@5.9.2))(@types/react@19.1.9)(react@19.1.0))(react@19.1.0):
     dependencies:
       '@craftzdog/react-native-buffer': 6.1.0(react-native@0.80.2(@babel/core@7.28.0)(@react-native-community/cli@19.1.1(typescript@5.9.2))(@types/react@19.1.9)(react@19.1.0))(react@19.1.0)
       events: 3.3.0

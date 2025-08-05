@@ -1,6 +1,5 @@
 import 'global';
 import 'design/styles';
-
 import {init} from '@noriginmedia/norigin-spatial-navigation';
 import {AppRegistry} from 'react-native';
 import AppRoot from 'app';

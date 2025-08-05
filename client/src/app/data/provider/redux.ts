@@ -1,28 +1,30 @@
 import * as $ from 'react-exo/redux';
 import cfg from 'config';
-import kv from './lib/kv';
-import _ from './lib/slices';
+import mmkv from './lib/kv';
+import slices from './lib/slices';
 
-const reducer = $.persistReducer({
-  key: cfg.APP_NAME,
-  version: cfg.STORE_VERSION,
-  storage: kv,
-  blacklist: ['router'],
-}, $.combineReducers({..._, router: $.history.context.routerReducer}));
-
-const store = $.configureStore({
-  reducer,
+const redux = $.configureStore({
   devTools: __DEV__,
+  reducer: $.persistReducer({
+    key: cfg.APP_NAME,
+    version: cfg.STORE_VERSION,
+    storage: mmkv,
+    blacklist: ['router'],
+  }, $.combineReducers({
+    ...slices,
+    router: $.history.context.routerReducer,
+  })),
   middleware: () => new $.Tuple(
     $.history.context.routerMiddleware,
   ),
 });
 
-$.history.init(store);
+$.history.init(redux);
 
-export type ReduxStore = typeof store;
-export type ReduxState = ReturnType<typeof store.getState>
-export const useSet = $.useDispatch.withTypes<typeof store.dispatch>();
+export type ReduxStore = typeof redux;
+export type ReduxState = ReturnType<typeof redux.getState>
+export const useSet = $.useDispatch.withTypes<typeof redux.dispatch>();
 export const useGet = $.useSelector.withTypes<ReduxState>();
 export const history = $.history.state;
-export default store;
+
+export default redux;
