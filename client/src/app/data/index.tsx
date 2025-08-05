@@ -1,6 +1,6 @@
 import {createUseEvolu, EvoluProvider} from '@evolu/react';
 import {Provider as ReduxProvider} from 'react-exo/redux';
-import {Spinner} from 'app/stacks/load';
+import {Spinner} from 'app/stacks/base';
 import evolu from './provider/evolu';
 import redux from './provider/redux';
 

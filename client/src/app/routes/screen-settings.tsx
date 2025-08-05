@@ -1,9 +1,9 @@
-import {Picker} from 'react-exo/picker';
 import {useState} from 'react';
 import {useLingui} from '@lingui/react/macro';
-import {View, TextInput, Platform} from 'react-native';
-import {useStyles, createStyleSheet} from 'react-native-unistyles';
+import {StyleSheet} from 'react-native-unistyles';
+import {View, Platform} from 'react-native';
 import {Panel, PanelItem, PanelSection} from 'app/stacks/panel';
+import {Picker, TextInput} from 'app/stacks/base';
 import {Identicon} from 'app/stacks/identicon';
 import {useSettings} from 'app/hooks/use-settings';
 import {useLocale} from 'app/hooks/use-locale';
@@ -11,10 +11,9 @@ import {useTheme} from 'app/hooks/use-theme';
 import {locales} from 'config/locales';
 
 export default function ScreenSettings() {
-  const [showKey, setShowKey] = useState(false);
   const [scheme, setScheme] = useTheme(true);
   const [locale, setLocale] = useLocale(true);
-  const {styles, theme} = useStyles(stylesheet);
+  const [showKey, setShowKey] = useState(false);
   const settings = useSettings();
   const {t} = useLingui();
 
@@ -40,7 +39,6 @@ export default function ScreenSettings() {
               defaultValue={settings.name}
               onChangeText={settings.updateName}
               placeholder={t`Enter name`}
-              placeholderTextColor={theme.colors.mutedForeground}
             />
           </PanelItem>
           <PanelItem
@@ -52,7 +50,6 @@ export default function ScreenSettings() {
               secureTextEntry={!showKey}
               defaultValue={settings.owner?.mnemonic?.toString() ?? ''}
               placeholder={t`Enter mnemonic`}
-              placeholderTextColor={theme.colors.mutedForeground}
               importantForAutofill="no"
               autoCapitalize="none"
               autoComplete="off"
@@ -74,16 +71,14 @@ export default function ScreenSettings() {
             <Picker
               style={styles.select}
               itemStyle={styles.selectItem}
-              dropdownIconColor={theme.colors.foreground}
               selectedValue={locale}
               onValueChange={setLocale}>
-              <Picker.Item label={t`System`} value="" color={theme.colors.foreground}/>
+              <Picker.Item label={t`System`} value=""/>
               {Object.entries(locales).map(([value, label]) => (
                 <Picker.Item
                   key={value}
                   value={value}
                   label={label}
-                  color={theme.colors.foreground}
                 />
               ))}
             </Picker>
@@ -94,12 +89,11 @@ export default function ScreenSettings() {
             <Picker
               style={styles.select}
               itemStyle={styles.selectItem}
-              dropdownIconColor={theme.colors.foreground}
               selectedValue={scheme}
               onValueChange={setScheme}>
-              <Picker.Item label={t`System`} value="" color={theme.colors.foreground}/>
-              <Picker.Item label={t`Light`} value="light" color={theme.colors.foreground}/>
-              <Picker.Item label={t`Dark`} value="dark" color={theme.colors.foreground}/>
+              <Picker.Item label={t`System`} value=""/>
+              <Picker.Item label={t`Light`} value="light"/>
+              <Picker.Item label={t`Dark`} value="dark"/>
             </Picker>
           </PanelItem>
         </PanelSection>
@@ -108,7 +102,7 @@ export default function ScreenSettings() {
   );
 }
 
-const stylesheet = createStyleSheet(theme => ({
+const styles = StyleSheet.create((theme) => ({
   root: {
     marginTop: theme.display.space5,
     paddingBottom: theme.display.space9,
@@ -137,31 +131,21 @@ const stylesheet = createStyleSheet(theme => ({
     width: 215,
   },
   select: {
-    ...Platform.select({
-      ios: {
-        width: '100%',
-      },
-      android: {
-        minWidth: 200,
-      },
-      default: {
-        padding: theme.display.space2,
-        color: theme.colors.foreground,
-        fontSize: theme.typography.size2,
-        fontWeight: theme.typography.weightLight,
-        lineHeight: theme.typography.lineHeight2,
-        letterSpacing: theme.typography.letterSpacing2,
-        fontFamily: theme.font.family,
-        backgroundColor: theme.colors.card,
-        boxShadow: `0px 0px 0px 1px ${theme.colors.border}`,
-        borderRadius: theme.display.radius3,
-        borderColor: 'transparent',
-        borderWidth: 1,
-        minWidth: 120,
-        // Move dropdown arrow to the left
-        ['border-right']: 'inset 8px transparent',
-      },
-    }),
+    padding: theme.display.space2,
+    color: theme.colors.foreground,
+    fontSize: theme.typography.size2,
+    fontWeight: theme.typography.weightLight,
+    lineHeight: theme.typography.lineHeight2,
+    letterSpacing: theme.typography.letterSpacing2,
+    fontFamily: theme.font.family,
+    backgroundColor: theme.colors.card,
+    boxShadow: `0px 0px 0px 1px ${theme.colors.border}`,
+    borderRadius: theme.display.radius3,
+    borderColor: 'transparent',
+    borderWidth: 1,
+    minWidth: 120,
+    // Move dropdown arrow to the left
+    borderRight: 'inset 8px transparent',
   },
   selectItem: {
     color: theme.colors.foreground,

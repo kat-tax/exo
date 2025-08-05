@@ -50,6 +50,7 @@ export default defineConfig(env => ({
         plugins: [
           '@lingui/babel-plugin-lingui-macro',
           'babel-plugin-react-compiler',
+          ['react-native-unistyles/plugin', {root: 'src'}],
         ],
       },
     }),

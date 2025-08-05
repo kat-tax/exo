@@ -1,17 +1,16 @@
-import {Icon} from 'react-exo/icon';
-import {useLingui} from '@lingui/react/macro';
-import {useLocation} from 'react-exo/navigation';
-import {useFocusable, FocusContext} from '@noriginmedia/norigin-spatial-navigation';
-import {useStyles, createStyleSheet} from 'react-native-unistyles';
+import {StyleSheet} from 'react-native-unistyles';
 import {View, ScrollView} from 'react-native';
-import {MenuHeader} from './menu-header';
-import {MenuGroup} from './menu-group';
-import {MenuItem} from './menu-item';
+import {useFocusable, FocusContext} from '@noriginmedia/norigin-spatial-navigation';
+import {useLocation} from 'react-exo/navigation';
+import {useLingui} from '@lingui/react/macro';
+import {Icon} from 'app/stacks/base';
 import {MenuTab} from './menu-tab';
+import {MenuItem} from './menu-item';
+import {MenuGroup} from './menu-group';
+import {MenuHeader} from './menu-header';
 
 export function Menu() {
   const {t} = useLingui();
-  const {styles} = useStyles(stylesheet);
   const {pathname} = useLocation();
   const {ref, focusKey} = useFocusable({
     isFocusBoundary: true,
@@ -50,7 +49,7 @@ export function Menu() {
                 path="/settings"
               />
               {__DEV__ &&
-                <MenuGroup label={t`Development`} closed>
+                <MenuGroup label={t`Development`}>
                   <MenuItem
                     label={t`Design`}
                     icon={<Icon name="ph:palette"/>}
@@ -66,14 +65,14 @@ export function Menu() {
   );
 }
 
-const stylesheet = createStyleSheet((theme, rt) => ({
+const styles = StyleSheet.create((theme) => ({
   tabs: {
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center',
     borderColor: theme.colors.border,
-    borderTopWidth: rt.hairlineWidth,
+    borderTopWidth: StyleSheet.hairlineWidth,
     backgroundColor: theme.colors.background,
     display: {
       initial: 'flex',
@@ -92,7 +91,7 @@ const stylesheet = createStyleSheet((theme, rt) => ({
     flex: 1,
     flexDirection: 'column',
     borderColor: theme.colors.border,
-    borderStartWidth: rt.hairlineWidth,
+    borderStartWidth: StyleSheet.hairlineWidth,
     paddingStart: theme.display.space2,
   },
 }));

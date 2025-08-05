@@ -1,5 +1,5 @@
 import {View, Text} from 'react-native';
-import {useStyles, createStyleSheet} from 'react-native-unistyles';
+import {StyleSheet} from 'react-native-unistyles';
 import {useLocation, Link} from 'react-exo/navigation';
 import {createIcon} from 'react-exo/utils';
 
@@ -11,7 +11,6 @@ interface MenuTabProps extends React.PropsWithChildren {
 
 export function MenuTab(props: MenuTabProps) {
   const {pathname} = useLocation();
-  const {styles, theme} = useStyles(stylesheet);
   const isActive = props.path === decodeURIComponent(pathname);
 
   return (
@@ -19,9 +18,11 @@ export function MenuTab(props: MenuTabProps) {
       <View style={styles.item}>
         {props.icon && createIcon(props.icon, {
           size: 20,
-          color: isActive
-            ? theme.colors.foreground
-            : theme.colors.mutedForeground,
+          uniProps: (theme: any) => ({
+            color: isActive
+              ? theme.colors.foreground
+              : theme.colors.mutedForeground,
+          }),
         })}
         <Text style={[styles.label, isActive && styles.active]}>
           {props.label}
@@ -31,7 +32,7 @@ export function MenuTab(props: MenuTabProps) {
   );
 }
 
-const stylesheet = createStyleSheet(theme => ({
+const styles = StyleSheet.create((theme) => ({
   item: {
     width: 60,
     flexDirection: 'column',
@@ -51,4 +52,3 @@ const stylesheet = createStyleSheet(theme => ({
     color: theme.colors.foreground,
   },
 }));
-

@@ -1,13 +1,11 @@
 import {View, Text} from 'react-native';
-import {useStyles, createStyleSheet} from 'react-native-unistyles';
+import {StyleSheet} from 'react-native-unistyles';
 
 interface PanelSectionProps extends React.PropsWithChildren {
   title: string,
 }
 
 export function PanelSection(props: PanelSectionProps) {
-  const {styles} = useStyles(stylesheet);
-
   return (
     <View style={styles.root}>
       <Text style={styles.header}>
@@ -18,7 +16,7 @@ export function PanelSection(props: PanelSectionProps) {
   );
 }
 
-const stylesheet = createStyleSheet(theme => ({
+const styles = StyleSheet.create((theme) => ({
   root: {
     gap: theme.display.space5,
   },

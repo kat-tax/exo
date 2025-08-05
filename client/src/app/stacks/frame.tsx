@@ -1,4 +1,4 @@
-import {useStyles, createStyleSheet} from 'react-native-unistyles';
+import {StyleSheet} from 'react-native-unistyles';
 import {View, ScrollView, Text} from 'react-native';
 
 export interface FrameProps {
@@ -7,8 +7,6 @@ export interface FrameProps {
 }
 
 export function Frame(props: FrameProps) {
-  const {styles} = useStyles(stylesheet);
-
   return (
     <View style={styles.root}>
       <Text style={styles.title}>
@@ -21,14 +19,14 @@ export function Frame(props: FrameProps) {
   );
 }
 
-const stylesheet = createStyleSheet((theme, rt) => ({
+const styles = StyleSheet.create((theme) => ({
   root: {
     gap: theme.display.space7,
     marginBottom: theme.display.space5,
     paddingBottom: theme.display.space5,
     paddingHorizontal: theme.display.space3,
     borderColor: theme.colors.border,
-    borderWidth: rt.hairlineWidth,
+    borderWidth: StyleSheet.hairlineWidth,
     borderStyle: 'dashed',
     borderRadius: 4,
   },

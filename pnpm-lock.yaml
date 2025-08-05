@@ -78,6 +78,9 @@ importers:
       react-exo:
         specifier: latest
         version: 0.18.37(01cd99de141d9f62011ce2942ec80454)
+      react-native-unistyles:
+        specifier: ^3.0.7
+        version: 3.0.7(@react-native/normalize-colors@0.80.2)(react-native-edge-to-edge@1.6.2(react-native@0.80.2(@babel/core@7.28.0)(@react-native-community/cli@19.1.1(typescript@5.9.2))(@types/react@19.1.9)(react@19.1.1))(react@19.1.1))(react-native-nitro-modules@0.27.3(react-native@0.80.2(@babel/core@7.28.0)(@react-native-community/cli@19.1.1(typescript@5.9.2))(@types/react@19.1.9)(react@19.1.1))(react@19.1.1))(react-native@0.80.2(@babel/core@7.28.0)(@react-native-community/cli@19.1.1(typescript@5.9.2))(@types/react@19.1.9)(react@19.1.1))(react@19.1.1)
       sonda:
         specifier: latest
         version: 0.9.0
@@ -174,12 +177,18 @@ importers:
       react-native:
         specifier: 0.80.2
         version: 0.80.2(@babel/core@7.28.0)(@react-native-community/cli@19.1.1(typescript@5.9.2))(@types/react@19.1.9)(react@19.1.0)
+      react-native-edge-to-edge:
+        specifier: ^1.6.2
+        version: 1.6.2(react-native@0.80.2(@babel/core@7.28.0)(@react-native-community/cli@19.1.1(typescript@5.9.2))(@types/react@19.1.9)(react@19.1.0))(react@19.1.0)
       react-native-gesture-handler:
         specifier: ^2.27.2
         version: 2.27.2(react-native@0.80.2(@babel/core@7.28.0)(@react-native-community/cli@19.1.1(typescript@5.9.2))(@types/react@19.1.9)(react@19.1.0))(react@19.1.0)
       react-native-mmkv:
         specifier: ^3.3.0
         version: 3.3.0(react-native@0.80.2(@babel/core@7.28.0)(@react-native-community/cli@19.1.1(typescript@5.9.2))(@types/react@19.1.9)(react@19.1.0))(react@19.1.0)
+      react-native-nitro-modules:
+        specifier: ^0.27.3
+        version: 0.27.3(react-native@0.80.2(@babel/core@7.28.0)(@react-native-community/cli@19.1.1(typescript@5.9.2))(@types/react@19.1.9)(react@19.1.0))(react@19.1.0)
       react-native-quick-crypto:
         specifier: 0.7.17
         version: 0.7.17(react-native@0.80.2(@babel/core@7.28.0)(@react-native-community/cli@19.1.1(typescript@5.9.2))(@types/react@19.1.9)(react@19.1.0))(react@19.1.0)
@@ -193,8 +202,8 @@ importers:
         specifier: ^0.6.1
         version: 0.6.1
       react-native-unistyles:
-        specifier: ^2.43.0
-        version: 2.43.0(@react-native/normalize-colors@0.80.2)(react-native-web@0.21.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react-native@0.80.2(@babel/core@7.28.0)(@react-native-community/cli@19.1.1(typescript@5.9.2))(@types/react@19.1.9)(react@19.1.0))(react@19.1.0)
+        specifier: ^3.0.7
+        version: 3.0.7(@react-native/normalize-colors@0.80.2)(react-native-edge-to-edge@1.6.2(react-native@0.80.2(@babel/core@7.28.0)(@react-native-community/cli@19.1.1(typescript@5.9.2))(@types/react@19.1.9)(react@19.1.0))(react@19.1.0))(react-native-nitro-modules@0.27.3(react-native@0.80.2(@babel/core@7.28.0)(@react-native-community/cli@19.1.1(typescript@5.9.2))(@types/react@19.1.9)(react@19.1.0))(react@19.1.0))(react-native@0.80.2(@babel/core@7.28.0)(@react-native-community/cli@19.1.1(typescript@5.9.2))(@types/react@19.1.9)(react@19.1.0))(react@19.1.0)
       react-native-url-polyfill:
         specifier: ^2.0.0
         version: 2.0.0(react-native@0.80.2(@babel/core@7.28.0)(@react-native-community/cli@19.1.1(typescript@5.9.2))(@types/react@19.1.9)(react@19.1.0))
@@ -255,8 +264,8 @@ importers:
         specifier: ^15.12.1
         version: 15.12.1(react-native@0.80.2(@babel/core@7.28.0)(@react-native-community/cli@19.1.1(typescript@5.9.2))(@types/react@19.1.9)(react@19.1.0))(react@19.1.0)
       react-native-unistyles:
-        specifier: ^2.43.0
-        version: 2.43.0(@react-native/normalize-colors@0.80.2)(react-native-web@0.21.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react-native@0.80.2(@babel/core@7.28.0)(@react-native-community/cli@19.1.1(typescript@5.9.2))(@types/react@19.1.9)(react@19.1.0))(react@19.1.0)
+        specifier: ^3.0.7
+        version: 3.0.7(@react-native/normalize-colors@0.80.2)(react-native-edge-to-edge@1.6.2(react-native@0.80.2(@babel/core@7.28.0)(@react-native-community/cli@19.1.1(typescript@5.9.2))(@types/react@19.1.9)(react@19.1.0))(react@19.1.0))(react-native-nitro-modules@0.27.3(react-native@0.80.2(@babel/core@7.28.0)(@react-native-community/cli@19.1.1(typescript@5.9.2))(@types/react@19.1.9)(react@19.1.0))(react@19.1.0))(react-native@0.80.2(@babel/core@7.28.0)(@react-native-community/cli@19.1.1(typescript@5.9.2))(@types/react@19.1.9)(react@19.1.0))(react@19.1.0)
       react-native-web:
         specifier: ^0.21.0
         version: 0.21.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -5025,6 +5034,12 @@ packages:
       react: '*'
       react-native: '*'
 
+  react-native-edge-to-edge@1.6.2:
+    resolution: {integrity: sha512-koEF6WRAfdGNelXlP7NtHrQhFGtplwciYNWLHOCTCk0Thc7dlxtqxHRYSA5vPJgWOEkVBFqxcoOqKwAtqOmLNw==}
+    peerDependencies:
+      react: '*'
+      react-native: '*'
+
   react-native-gesture-handler@2.27.2:
     resolution: {integrity: sha512-+kNaY2m7uQu5+5ls8os6z92DTk9expsEAYsaPv30n08mrqX2r64G8iVGDwNWzZcId54+P7RlDnhyszTql0sQ0w==}
     peerDependencies:
@@ -5039,6 +5054,12 @@ packages:
 
   react-native-mmkv@3.3.0:
     resolution: {integrity: sha512-2iPjIJ+IAODXN35wm53EN6nv+hR/0NXLLiLWOdPA/0gXDB2dYVrr6MqvoiFpxhLhdj0B8fkf5ARNVavJaSvuuQ==}
+    peerDependencies:
+      react: '*'
+      react-native: '*'
+
+  react-native-nitro-modules@0.27.3:
+    resolution: {integrity: sha512-CQfydkO3IFy3Cd4qjOJKzFmEIhAIaSneeFtiXb3xZJFALecuDI22lsMUVP+G/VuqmXk5+QI1HfNTtc/e79YplA==}
     peerDependencies:
       react: '*'
       react-native: '*'
@@ -5082,22 +5103,18 @@ packages:
     peerDependencies:
       react-native: '>=0.60.0-rc.0 <1.0.x'
 
-  react-native-unistyles@2.43.0:
-    resolution: {integrity: sha512-TSqbGu6NLNvDR7XufT1kUsFivBgmCP6cQuttd5sLst8xsvcjuEjunVYeloYZiLm7/68lKMiV5zGQiTTZt8M0LQ==}
+  react-native-unistyles@3.0.7:
+    resolution: {integrity: sha512-lgbEgrMSAJOMYhD5TI1EcRfL0EaJpmbJIxOhLP6t6hziCWy4bcrC8tZ7e+KAhcipPGs9UEVfW1aWgVwQXqwykw==}
     engines: {node: '>= 18.0.0'}
     peerDependencies:
       '@react-native/normalize-colors': '*'
       react: '*'
-      react-native: '*'
-      react-native-macos: '*'
-      react-native-web: '*'
-      react-native-windows: '*'
+      react-native: '>=0.76.0'
+      react-native-edge-to-edge: '*'
+      react-native-nitro-modules: '*'
+      react-native-reanimated: '*'
     peerDependenciesMeta:
-      react-native-macos:
-        optional: true
-      react-native-web:
-        optional: true
-      react-native-windows:
+      react-native-reanimated:
         optional: true
 
   react-native-url-polyfill@2.0.0:
@@ -12121,6 +12138,16 @@ snapshots:
       react-native: 0.80.2(@babel/core@7.28.0)(@react-native-community/cli@19.1.1(typescript@5.9.2))(@types/react@19.1.9)(react@19.1.1)
     optional: true
 
+  react-native-edge-to-edge@1.6.2(react-native@0.80.2(@babel/core@7.28.0)(@react-native-community/cli@19.1.1(typescript@5.9.2))(@types/react@19.1.9)(react@19.1.0))(react@19.1.0):
+    dependencies:
+      react: 19.1.0
+      react-native: 0.80.2(@babel/core@7.28.0)(@react-native-community/cli@19.1.1(typescript@5.9.2))(@types/react@19.1.9)(react@19.1.0)
+
+  react-native-edge-to-edge@1.6.2(react-native@0.80.2(@babel/core@7.28.0)(@react-native-community/cli@19.1.1(typescript@5.9.2))(@types/react@19.1.9)(react@19.1.1))(react@19.1.1):
+    dependencies:
+      react: 19.1.1
+      react-native: 0.80.2(@babel/core@7.28.0)(@react-native-community/cli@19.1.1(typescript@5.9.2))(@types/react@19.1.9)(react@19.1.1)
+
   react-native-gesture-handler@2.27.2(react-native@0.80.2(@babel/core@7.28.0)(@react-native-community/cli@19.1.1(typescript@5.9.2))(@types/react@19.1.9)(react@19.1.0))(react@19.1.0):
     dependencies:
       '@egjs/hammerjs': 2.0.17
@@ -12158,6 +12185,16 @@ snapshots:
       react: 19.1.1
       react-native: 0.80.2(@babel/core@7.28.0)(@react-native-community/cli@19.1.1(typescript@5.9.2))(@types/react@19.1.9)(react@19.1.1)
     optional: true
+
+  react-native-nitro-modules@0.27.3(react-native@0.80.2(@babel/core@7.28.0)(@react-native-community/cli@19.1.1(typescript@5.9.2))(@types/react@19.1.9)(react@19.1.0))(react@19.1.0):
+    dependencies:
+      react: 19.1.0
+      react-native: 0.80.2(@babel/core@7.28.0)(@react-native-community/cli@19.1.1(typescript@5.9.2))(@types/react@19.1.9)(react@19.1.0)
+
+  react-native-nitro-modules@0.27.3(react-native@0.80.2(@babel/core@7.28.0)(@react-native-community/cli@19.1.1(typescript@5.9.2))(@types/react@19.1.9)(react@19.1.1))(react@19.1.1):
+    dependencies:
+      react: 19.1.1
+      react-native: 0.80.2(@babel/core@7.28.0)(@react-native-community/cli@19.1.1(typescript@5.9.2))(@types/react@19.1.9)(react@19.1.1)
 
   react-native-quick-base64@2.2.1(react-native@0.80.2(@babel/core@7.28.0)(@react-native-community/cli@19.1.1(typescript@5.9.2))(@types/react@19.1.9)(react@19.1.0))(react@19.1.0):
     dependencies:
@@ -12228,13 +12265,21 @@ snapshots:
       react-native: 0.80.2(@babel/core@7.28.0)(@react-native-community/cli@19.1.1(typescript@5.9.2))(@types/react@19.1.9)(react@19.1.1)
       yargs: 17.7.2
 
-  react-native-unistyles@2.43.0(@react-native/normalize-colors@0.80.2)(react-native-web@0.21.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react-native@0.80.2(@babel/core@7.28.0)(@react-native-community/cli@19.1.1(typescript@5.9.2))(@types/react@19.1.9)(react@19.1.0))(react@19.1.0):
+  react-native-unistyles@3.0.7(@react-native/normalize-colors@0.80.2)(react-native-edge-to-edge@1.6.2(react-native@0.80.2(@babel/core@7.28.0)(@react-native-community/cli@19.1.1(typescript@5.9.2))(@types/react@19.1.9)(react@19.1.0))(react@19.1.0))(react-native-nitro-modules@0.27.3(react-native@0.80.2(@babel/core@7.28.0)(@react-native-community/cli@19.1.1(typescript@5.9.2))(@types/react@19.1.9)(react@19.1.0))(react@19.1.0))(react-native@0.80.2(@babel/core@7.28.0)(@react-native-community/cli@19.1.1(typescript@5.9.2))(@types/react@19.1.9)(react@19.1.0))(react@19.1.0):
     dependencies:
       '@react-native/normalize-colors': 0.80.2
       react: 19.1.0
       react-native: 0.80.2(@babel/core@7.28.0)(@react-native-community/cli@19.1.1(typescript@5.9.2))(@types/react@19.1.9)(react@19.1.0)
-    optionalDependencies:
-      react-native-web: 0.21.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      react-native-edge-to-edge: 1.6.2(react-native@0.80.2(@babel/core@7.28.0)(@react-native-community/cli@19.1.1(typescript@5.9.2))(@types/react@19.1.9)(react@19.1.0))(react@19.1.0)
+      react-native-nitro-modules: 0.27.3(react-native@0.80.2(@babel/core@7.28.0)(@react-native-community/cli@19.1.1(typescript@5.9.2))(@types/react@19.1.9)(react@19.1.0))(react@19.1.0)
+
+  react-native-unistyles@3.0.7(@react-native/normalize-colors@0.80.2)(react-native-edge-to-edge@1.6.2(react-native@0.80.2(@babel/core@7.28.0)(@react-native-community/cli@19.1.1(typescript@5.9.2))(@types/react@19.1.9)(react@19.1.1))(react@19.1.1))(react-native-nitro-modules@0.27.3(react-native@0.80.2(@babel/core@7.28.0)(@react-native-community/cli@19.1.1(typescript@5.9.2))(@types/react@19.1.9)(react@19.1.1))(react@19.1.1))(react-native@0.80.2(@babel/core@7.28.0)(@react-native-community/cli@19.1.1(typescript@5.9.2))(@types/react@19.1.9)(react@19.1.1))(react@19.1.1):
+    dependencies:
+      '@react-native/normalize-colors': 0.80.2
+      react: 19.1.1
+      react-native: 0.80.2(@babel/core@7.28.0)(@react-native-community/cli@19.1.1(typescript@5.9.2))(@types/react@19.1.9)(react@19.1.1)
+      react-native-edge-to-edge: 1.6.2(react-native@0.80.2(@babel/core@7.28.0)(@react-native-community/cli@19.1.1(typescript@5.9.2))(@types/react@19.1.9)(react@19.1.1))(react@19.1.1)
+      react-native-nitro-modules: 0.27.3(react-native@0.80.2(@babel/core@7.28.0)(@react-native-community/cli@19.1.1(typescript@5.9.2))(@types/react@19.1.9)(react@19.1.1))(react@19.1.1)
 
   react-native-url-polyfill@2.0.0(react-native@0.80.2(@babel/core@7.28.0)(@react-native-community/cli@19.1.1(typescript@5.9.2))(@types/react@19.1.9)(react@19.1.0)):
     dependencies:

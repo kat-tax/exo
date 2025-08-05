@@ -1,7 +1,7 @@
 import {useState} from 'react';
-import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {Pressable, View, Text} from 'react-native';
-import {Icon} from 'react-exo/icon';
+import {StyleSheet} from 'react-native-unistyles';
+import {Icon} from 'app/stacks/base';
 
 interface MenuGroupProps extends React.PropsWithChildren {
   label: string,
@@ -9,9 +9,7 @@ interface MenuGroupProps extends React.PropsWithChildren {
 }
 
 export function MenuGroup(props: MenuGroupProps) {
-  const {styles, theme} = useStyles(stylesheet);
   const [open, setOpen] = useState(!props.closed);
-
   return (
     <>
       <Pressable
@@ -26,13 +24,17 @@ export function MenuGroup(props: MenuGroupProps) {
             <Icon
               name="ph:caret-down-fill"
               size={8}
-              color={theme.colors.mutedForeground}
+              uniProps={theme => ({
+                color: theme.colors.mutedForeground,
+              })}
             />
           ) : (
             <Icon
               name="ph:caret-right-fill"
               size={8}
-              color={theme.colors.mutedForeground}
+              uniProps={theme => ({
+                color: theme.colors.mutedForeground,
+              })}
             />
           )}
         </View>
@@ -42,7 +44,7 @@ export function MenuGroup(props: MenuGroupProps) {
   );
 }
 
-const stylesheet = createStyleSheet(theme => ({
+const styles = StyleSheet.create((theme) => ({
   root: {
     flexDirection: 'row',
     alignItems: 'center',

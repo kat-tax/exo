@@ -1,5 +1,5 @@
 import {View, Text} from 'react-native';
-import {useStyles, createStyleSheet} from 'react-native-unistyles';
+import {StyleSheet} from 'react-native-unistyles';
 
 interface PanelItemProps extends React.PropsWithChildren {
   label: string,
@@ -7,8 +7,6 @@ interface PanelItemProps extends React.PropsWithChildren {
 }
 
 export function PanelItem(props: PanelItemProps) {
-  const {styles} = useStyles(stylesheet);
-
   return (
     <View style={styles.root}>
       <View style={styles.info}>
@@ -26,7 +24,7 @@ export function PanelItem(props: PanelItemProps) {
   );
 }
 
-const stylesheet = createStyleSheet(theme => ({
+const styles = StyleSheet.create((theme) => ({
   root: {
     gap: theme.display.space5,
     borderBottomColor: theme.colors.border,

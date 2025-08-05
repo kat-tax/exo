@@ -1,6 +1,6 @@
 import {View, Text} from 'react-native';
+import {StyleSheet} from 'react-native-unistyles';
 import {useFocusable} from '@noriginmedia/norigin-spatial-navigation';
-import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useLocation, useNavigate, Link} from 'react-exo/navigation';
 import {createIcon} from 'react-exo/utils';
 
@@ -14,7 +14,6 @@ export function MenuItem(props: MenuItemProps) {
   const nav = useNavigate();
   const loc = useLocation();
   const active = props.path === decodeURIComponent(loc.pathname);
-  const {styles, theme} = useStyles(stylesheet);
   const {ref, focused} = useFocusable({
     focusKey: `menu@${props.path}`,
     onFocus: () => nav(props.path),
@@ -28,7 +27,9 @@ export function MenuItem(props: MenuItemProps) {
         focused && styles.focus,
       ]}>
         {props.icon && createIcon(props.icon, {
-          color: theme.colors.mutedForeground,
+          uniProps: (theme: any) => ({
+            color: theme.colors.mutedForeground,
+          }),
           size: 18,
         })}
         <Text style={styles.label}>
@@ -39,7 +40,7 @@ export function MenuItem(props: MenuItemProps) {
   );
 }
 
-const stylesheet = createStyleSheet(theme => ({
+const styles = StyleSheet.create((theme) => ({
   item: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -49,7 +50,7 @@ const stylesheet = createStyleSheet(theme => ({
     borderWidth: 1,
   },
   active: {
-    backgroundColor: theme.colors.card,
+    backgroundColor: theme.colors.secondary,
   },
   focus: {
     borderColor: theme.colors.outline,

@@ -1,5 +1,5 @@
 import {useEffect} from 'react';
-import {useInitialTheme, UnistylesRuntime} from 'react-native-unistyles';
+import {UnistylesRuntime} from 'react-native-unistyles';
 import {StatusBar, Appearance} from 'react-native';
 import {GestureProvider} from 'react-exo/gesture';
 import {ToastRoot} from 'react-exo/toast';
@@ -7,31 +7,25 @@ import {useTheme} from 'app/hooks/use-theme';
 
 export function Theme(props: React.PropsWithChildren) {
   const [scheme] = useTheme();
-  const theme = scheme === 'dark' ? 'dark' : 'light';
 
-  useInitialTheme(theme);
   useEffect(() => {
     if (scheme) {
       UnistylesRuntime.setTheme(scheme);
-      if (Appearance?.setColorScheme) {
-        Appearance.setColorScheme(scheme);
-      }
+      Appearance?.setColorScheme?.(scheme);
+      UnistylesRuntime.setRootViewBackgroundColor(scheme === 'dark' ? '#000000' : '#ffffff');
     }
   }, [scheme]);
 
   return (
     <GestureProvider style={{flex: 1}}>
       <StatusBar
-        barStyle={theme === 'dark'
-          ? 'light-content'
-          : 'dark-content'
-        }
+        barStyle={scheme === 'dark' ? 'light-content' : 'dark-content'}
       />
       {props.children}
       <ToastRoot
-        theme={theme}
-        offset={12}
+        theme={scheme === 'dark' ? 'dark' : 'light'}
         position="bottom-center"
+        offset={12}
       />
     </GestureProvider>
   );

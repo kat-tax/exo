@@ -1,12 +1,11 @@
 import {Text, View} from 'react-native';
-import {useStyles, createStyleSheet} from 'react-native-unistyles';
+import {StyleSheet} from 'react-native-unistyles';
 import {useClock} from 'home/hooks/use-clock';
 import {Panel} from 'app/stacks/panel';
 //import {Logo} from 'design';
 import cfg from 'config';
 
 export default function ScreenDashboard() {
-  const {styles} = useStyles(stylesheet);
   const clock = useClock();
 
   return (
@@ -31,7 +30,7 @@ export default function ScreenDashboard() {
   );
 }
 
-const stylesheet = createStyleSheet(theme => ({
+const styles = StyleSheet.create((theme) => ({
   header: {
     flexDirection: 'row',
     alignItems: 'center',

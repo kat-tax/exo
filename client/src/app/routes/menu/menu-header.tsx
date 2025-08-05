@@ -1,14 +1,13 @@
 import {View, Text} from 'react-native';
-import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {useQuery} from '@evolu/react';
+import {StyleSheet} from 'react-native-unistyles';
 import {useAppOwner} from '@evolu/react';
-import {getProfile} from 'app/data';
+import {useQuery} from '@evolu/react';
 import {Identicon} from 'app/stacks/identicon';
+import {getProfile} from 'app/data';
 import {useLingui} from '@lingui/react/macro';
 
 export function MenuHeader() {
   const {t} = useLingui();
-  const {styles} = useStyles(stylesheet);
   const profiles = useQuery(getProfile);
   const appOwner = useAppOwner();
 
@@ -26,7 +25,7 @@ export function MenuHeader() {
   );
 }
 
-const stylesheet = createStyleSheet(theme => ({
+const styles = StyleSheet.create((theme) => ({
   root: {
     marginVertical: theme.display.space4,
   },

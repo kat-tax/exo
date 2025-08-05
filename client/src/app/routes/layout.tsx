@@ -1,4 +1,4 @@
-import {useStyles, createStyleSheet} from 'react-native-unistyles';
+import {StyleSheet} from 'react-native-unistyles';
 import {Outlet} from 'react-exo/navigation';
 import {View} from 'react-native';
 import {Menu} from 'app/routes/menu';
@@ -7,8 +7,6 @@ export const APP_MENU_WIDTH = 146;
 export const APP_MENU_TAB_HEIGHT = 64;
 
 export default function Layout() {
-  const {styles} = useStyles(stylesheet);
-
   return (
     <View style={styles.root}>
       <View style={styles.menu}>
@@ -21,7 +19,7 @@ export default function Layout() {
   );
 }
 
-const stylesheet = createStyleSheet(theme => ({
+const styles = StyleSheet.create((theme) => ({
   root: {
     flex: 1,
     backgroundColor: theme.colors.neutral,

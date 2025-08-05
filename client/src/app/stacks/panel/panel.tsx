@@ -1,5 +1,5 @@
 import {View, ScrollView, Text} from 'react-native';
-import {useStyles, createStyleSheet} from 'react-native-unistyles';
+import {StyleSheet} from 'react-native-unistyles';
 
 export interface PanelProps extends React.PropsWithChildren {
   title?: string | React.ReactNode,
@@ -9,7 +9,6 @@ export interface PanelProps extends React.PropsWithChildren {
 }
 
 export function Panel(props: PanelProps) {
-  const {styles} = useStyles(stylesheet);
   const hasTitle = Boolean(props.title);
   const hasMessage = Boolean(props.message);
   const hasHeader = hasTitle || hasMessage || props.right || props.left;
@@ -61,14 +60,14 @@ export function Panel(props: PanelProps) {
   );
 }
 
-const stylesheet = createStyleSheet((theme, rt) => ({
+const styles = StyleSheet.create((theme) => ({
   root: {
     flex: 1,
   },
   scroll: {
     backgroundColor: theme.colors.card,
     borderColor: theme.colors.border,
-    borderWidth: rt.hairlineWidth,
+    borderWidth: StyleSheet.hairlineWidth,
     borderRadius: {
       initial: 0,
       xs: theme.display.radius2,
