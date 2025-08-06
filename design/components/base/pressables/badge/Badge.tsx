@@ -1,6 +1,6 @@
-import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {useVariants, createIcon} from 'react-exo/utils';
 import {View, Text, Pressable} from 'react-native';
+import {StyleSheet} from 'react-native-unistyles';
+import {useVariants, createIcon} from 'react-exo/utils';
 
 import type {PressableProps} from 'react-native';
 
@@ -18,9 +18,9 @@ export interface BadgeProps extends PressableProps {
   /** Whether the label should be displayed on the badge. */
   showLabel?: boolean,
   /** Optional icon element to be displayed on the badge. */
-  icon?: React.ReactNode,
+  icon?: React.ReactElement,
   /** Optional indicator element to be displayed on the badge. */
-  indicator?: React.ReactNode,
+  indicator?: React.ReactElement,
 }
 
 export const BadgeVariants = {
@@ -34,7 +34,6 @@ export const BadgeVariants = {
  */
 export function Badge(props: BadgeProps) {
   const {mode, state} = props;
-  const {styles} = useStyles(stylesheet);
   const {vstyles} = useVariants(BadgeVariants, {mode, state}, styles);
 
   return (
@@ -60,7 +59,7 @@ export function Badge(props: BadgeProps) {
   );
 }
 
-const stylesheet = createStyleSheet(theme => ({
+const styles = StyleSheet.create((theme) => ({
   root: {
     flexDirection: 'row',
     paddingTop: theme.display.space1,

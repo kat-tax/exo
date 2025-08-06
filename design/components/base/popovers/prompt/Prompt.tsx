@@ -1,6 +1,6 @@
-import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {useLingui} from '@lingui/react/macro';
 import {View, Text} from 'react-native';
+import {StyleSheet} from 'react-native-unistyles';
 import {Icon} from 'react-exo/icon';
 import {Button} from 'components/base/pressables/button';
 
@@ -12,7 +12,7 @@ export interface PromptProps {
   /** Optional flag to show a close button. */
   showClose?: boolean,
   /** Optional JSX element for a custom confirm button. */
-  confirmButton?: React.ReactNode,
+  confirmButton?: React.ReactElement,
   /** Used to locate this view in end-to-end tests. */
   testID?: string,
 }
@@ -22,7 +22,6 @@ export interface PromptProps {
  * Meant to be used inside a modal, bottom sheet, or similar container.
  */
 export function Prompt(props: PromptProps) {
-  const {styles} = useStyles(stylesheet);
   const {t} = useLingui();
 
   return (
@@ -60,7 +59,7 @@ export function Prompt(props: PromptProps) {
   );
 }
 
-const stylesheet = createStyleSheet(theme => ({
+const styles = StyleSheet.create((theme) => ({
   root: {
     minWidth: 320,
     minHeight: 200,

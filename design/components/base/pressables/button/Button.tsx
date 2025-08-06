@@ -1,6 +1,6 @@
-import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {useVariants, createIcon} from 'react-exo/utils';
 import {Text, Pressable} from 'react-native';
+import {StyleSheet} from 'react-native-unistyles';
+import {useVariants, createIcon} from 'react-exo/utils';
 
 import type {PressableProps} from 'react-native';
 
@@ -14,7 +14,7 @@ export interface ButtonProps extends PressableProps {
   /** Whether to display an icon button. */
   showIcon?: boolean,
   /** The icon element to display if showIcon is true. */
-  icon?: React.ReactNode,
+  icon?: React.ReactElement,
 }
 
 export const ButtonVariants = {
@@ -28,7 +28,6 @@ export const ButtonVariants = {
  */
 export function Button(props: ButtonProps) {
   const {mode, state} = props;
-  const {styles} = useStyles(stylesheet);
   const {vstyles} = useVariants(ButtonVariants, {mode, state}, styles);
 
   return (
@@ -45,7 +44,7 @@ export function Button(props: ButtonProps) {
   );
 }
 
-const stylesheet = createStyleSheet(theme => ({
+const styles = StyleSheet.create((theme) => ({
   root: {
     flexDirection: 'row',
     height: 36,

@@ -1,5 +1,5 @@
-import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {View} from 'react-native';
+import {StyleSheet} from 'react-native-unistyles';
 //import {Image} from 'react-exo/image';
 //import logo from './assets/logo.svg';
 
@@ -9,8 +9,6 @@ export interface LogoProps {
 }
 
 export function Logo(props: LogoProps) {
-  const {styles} = useStyles(stylesheet);
-
   return (
     <View style={styles.root} testID={props.testID ?? "2237:443"}>
       {/* <Image
@@ -22,7 +20,7 @@ export function Logo(props: LogoProps) {
   );
 }
 
-const stylesheet = createStyleSheet(_theme => ({
+const styles = StyleSheet.create((theme) => ({
   root: {
     alignItems: 'center',
     justifyContent: 'center',

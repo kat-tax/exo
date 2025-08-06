@@ -1,6 +1,6 @@
-import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {useVariants, createIcon} from 'react-exo/utils';
 import {View, TextInput, Text} from 'react-native';
+import {StyleSheet, withUnistyles} from 'react-native-unistyles';
+import {useVariants, createIcon} from 'react-exo/utils';
 
 export interface InputEmailProps {
   /** Text to display as a caption below the input field. */
@@ -16,7 +16,7 @@ export interface InputEmailProps {
   /** Whether the label should be displayed. */
   showLabel?: boolean,
   /** Optional icon to display within the input field. */
-  icon?: React.ReactNode,
+  icon?: React.ReactElement,
   /** Used to locate this view in end-to-end tests. */
   testID?: string,
 }
@@ -30,7 +30,6 @@ export const InputEmailVariants = {
  */
 export function InputEmail(props: InputEmailProps) {
   const {state} = props;
-  const {styles, theme} = useStyles(stylesheet);
   const {vstyles} = useVariants(InputEmailVariants, {state}, styles);
 
   return (
@@ -42,13 +41,12 @@ export function InputEmail(props: InputEmailProps) {
       }
       <View style={vstyles.input()} testID="4107:145">
         {createIcon(props.icon, vstyles.phPlaceholder())}
-        <TextInput
+        <UniTextInput
           style={styles.textinputEmail}
           testID="4107:147"
           inputMode="email"
           defaultValue={''}
           placeholder={props.placeholder}
-          placeholderTextColor={theme.colors.mutedForeground}
         />
       </View>
       {props.showCaption &&
@@ -60,7 +58,11 @@ export function InputEmail(props: InputEmailProps) {
   );
 }
 
-const stylesheet = createStyleSheet(theme => ({
+const UniTextInput = withUnistyles(TextInput, (theme) => ({
+  placeholderTextColor: theme.colors.mutedForeground,
+}));
+
+const styles = StyleSheet.create((theme) => ({
   root: {
     width: 264,
     minHeight: 36,

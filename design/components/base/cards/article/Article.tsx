@@ -1,5 +1,5 @@
-import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {View, Text} from 'react-native';
+import {StyleSheet} from 'react-native-unistyles';
 
 export interface ArticleProps {
   /** The main content text of the article. */
@@ -15,9 +15,9 @@ export interface ArticleProps {
   /** Whether a thumbnail should be displayed. */
   hasThumbnail?: boolean,
   /** Optional element representing tags. */
-  tags?: React.ReactNode,
+  tags?: React.ReactElement,
   /** Optional element representing a thumbnail. */
-  thumbnail?: React.ReactNode,
+  thumbnail?: React.ReactElement,
   /** Used to locate this view in end-to-end tests. */
   testID?: string,
 }
@@ -26,8 +26,6 @@ export interface ArticleProps {
  * A component that renders an article layout with optional thumbnail, tags, and footer.
  */
 export function Article(props: ArticleProps) {
-  const {styles} = useStyles(stylesheet);
-
   return (
     <View style={styles.root} testID={props.testID ?? "2218:99"}>
       {props.hasThumbnail &&
@@ -57,7 +55,7 @@ export function Article(props: ArticleProps) {
   );
 }
 
-const stylesheet = createStyleSheet(theme => ({
+const styles = StyleSheet.create((theme) => ({
   root: {
     flexDirection: 'row',
     minWidth: 270,
