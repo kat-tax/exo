@@ -14,7 +14,7 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. placeholder {0}: 11
-#: ../../client/src/app/routes/screen-design.tsx:15
+#: ../../client/src/app/routes/screen-design.tsx:14
 msgid "{0} components"
 msgstr "{0}개 컴포넌트"
 
@@ -26,41 +26,41 @@ msgstr "소유자 키를 변경하시겠습니까? 로컬 데이터베이스가 
 msgid "Are you sure you want to reset your local database? If data is not backed up on another device, it will be lost. This action cannot be undone."
 msgstr "로컬 데이터베이스를 초기화하시겠습니까? 다른 기기에 백업되지 않은 데이터는 손실됩니다. 이 작업은 되돌릴 수 없습니다."
 
-#: ../../design/components/base/popovers/prompt/Prompt.tsx:44
+#: ../../design/components/base/popovers/prompt/Prompt.tsx:43
 msgid "Cancel"
 msgstr "취소"
 
-#: ../../client/src/app/routes/screen-settings.tsx:102
+#: ../../client/src/app/routes/screen-settings.tsx:90
 msgid "Dark"
 msgstr "다크"
 
-#: ../../client/src/app/routes/menu/index.tsx:27
-#: ../../client/src/app/routes/menu/index.tsx:43
+#: ../../client/src/app/routes/menu/index.tsx:29
+#: ../../client/src/app/routes/menu/index.tsx:47
 msgid "Dashboard"
 msgstr "대시보드"
 
-#: ../../client/src/app/routes/screen-design.tsx:14
-#: ../../client/src/app/routes/menu/index.tsx:55
+#: ../../client/src/app/routes/screen-design.tsx:13
+#: ../../client/src/app/routes/menu/index.tsx:59
 msgid "Design"
 msgstr "디자인"
 
-#: ../../client/src/app/routes/menu/index.tsx:53
+#: ../../client/src/app/routes/menu/index.tsx:57
 msgid "Development"
 msgstr "개발"
 
-#: ../../client/src/app/routes/screen-settings.tsx:70
+#: ../../client/src/app/routes/screen-settings.tsx:61
 msgid "Display"
 msgstr "화면"
 
-#: ../../client/src/app/routes/screen-settings.tsx:35
+#: ../../client/src/app/routes/screen-settings.tsx:28
 msgid "Display Name"
 msgstr "표시 이름"
 
-#: ../../client/src/app/routes/screen-settings.tsx:54
+#: ../../client/src/app/routes/screen-settings.tsx:46
 msgid "Enter mnemonic"
 msgstr "니모닉 입력"
 
-#: ../../client/src/app/routes/screen-settings.tsx:42
+#: ../../client/src/app/routes/screen-settings.tsx:35
 msgid "Enter name"
 msgstr "이름 입력"
 
@@ -69,7 +69,7 @@ msgstr "이름 입력"
 msgid "Error"
 msgstr "오류"
 
-#: ../../client/src/app/routes/menu/menu-header.tsx:21
+#: ../../client/src/app/routes/menu/menu-header.tsx:20
 msgid "Human"
 msgstr "인간"
 
@@ -81,53 +81,53 @@ msgstr "잘못된 이름 (최대 25자)."
 msgid "Invalid owner key."
 msgstr "잘못된 소유자 키입니다."
 
-#: ../../client/src/app/routes/screen-settings.tsx:72
+#: ../../client/src/app/routes/screen-settings.tsx:63
 msgid "Language"
 msgstr "언어"
 
-#: ../../client/src/app/routes/screen-settings.tsx:101
+#: ../../client/src/app/routes/screen-settings.tsx:89
 msgid "Light"
 msgstr "라이트"
 
-#: ../../client/src/app/routes/screen-settings.tsx:24
+#: ../../client/src/app/routes/screen-settings.tsx:23
 msgid "Manage your settings"
 msgstr "설정 관리"
 
-#: ../../client/src/app/routes/screen-settings.tsx:47
+#: ../../client/src/app/routes/screen-settings.tsx:39
 msgid "Owner Key"
 msgstr "소유자 키"
 
-#: ../../client/src/app/routes/screen-settings.tsx:33
+#: ../../client/src/app/routes/screen-settings.tsx:26
 msgid "Profile"
 msgstr "프로필"
 
-#: ../../client/src/app/routes/screen-settings.tsx:73
+#: ../../client/src/app/routes/screen-settings.tsx:64
 msgid "Select the language for the app."
 msgstr "앱 언어를 선택하세요."
 
-#: ../../client/src/app/routes/screen-settings.tsx:93
+#: ../../client/src/app/routes/screen-settings.tsx:82
 msgid "Select the theme for the app."
 msgstr "앱 테마를 선택하세요."
 
-#: ../../client/src/app/routes/screen-settings.tsx:23
-#: ../../client/src/app/routes/menu/index.tsx:32
-#: ../../client/src/app/routes/menu/index.tsx:48
+#: ../../client/src/app/routes/screen-settings.tsx:22
+#: ../../client/src/app/routes/menu/index.tsx:34
+#: ../../client/src/app/routes/menu/index.tsx:52
 msgid "Settings"
 msgstr "설정"
 
-#: ../../client/src/app/routes/screen-settings.tsx:80
-#: ../../client/src/app/routes/screen-settings.tsx:100
+#: ../../client/src/app/routes/screen-settings.tsx:70
+#: ../../client/src/app/routes/screen-settings.tsx:88
 msgid "System"
 msgstr "시스템"
 
-#: ../../client/src/app/routes/screen-settings.tsx:48
+#: ../../client/src/app/routes/screen-settings.tsx:40
 msgid "The mnemonic phrase for your database."
 msgstr "데이터베이스용 니모닉 구문입니다."
 
-#: ../../client/src/app/routes/screen-settings.tsx:92
+#: ../../client/src/app/routes/screen-settings.tsx:81
 msgid "Theme"
 msgstr "테마"
 
-#: ../../client/src/app/routes/screen-settings.tsx:36
+#: ../../client/src/app/routes/screen-settings.tsx:29
 msgid "Your name to display in the app."
 msgstr "앱에 표시할 이름입니다."

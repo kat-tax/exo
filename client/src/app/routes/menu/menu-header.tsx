@@ -14,7 +14,7 @@ export function MenuHeader() {
   return (
     <View style={styles.root}>
       <View style={styles.head}>
-        <Identicon id={appOwner?.id} width={22} height={22}/>
+        <Identicon id={appOwner?.id} size={22}/>
         <View style={styles.info}>
           <Text style={styles.name} selectable={false}>
             {profiles[0]?.name ?? t`Human`}

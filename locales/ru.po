@@ -14,7 +14,7 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. placeholder {0}: 11
-#: ../../client/src/app/routes/screen-design.tsx:15
+#: ../../client/src/app/routes/screen-design.tsx:14
 msgid "{0} components"
 msgstr "{0} компонентов"
 
@@ -26,41 +26,41 @@ msgstr "Вы уверены, что хотите изменить ключ вл�
 msgid "Are you sure you want to reset your local database? If data is not backed up on another device, it will be lost. This action cannot be undone."
 msgstr "Вы уверены, что хотите сбросить локальную базу данных? Если данные не сохранены на другом устройстве, они будут потеряны. Это действие нельзя отменить."
 
-#: ../../design/components/base/popovers/prompt/Prompt.tsx:44
+#: ../../design/components/base/popovers/prompt/Prompt.tsx:43
 msgid "Cancel"
 msgstr "Отмена"
 
-#: ../../client/src/app/routes/screen-settings.tsx:102
+#: ../../client/src/app/routes/screen-settings.tsx:90
 msgid "Dark"
 msgstr "Тёмная"
 
-#: ../../client/src/app/routes/menu/index.tsx:27
-#: ../../client/src/app/routes/menu/index.tsx:43
+#: ../../client/src/app/routes/menu/index.tsx:29
+#: ../../client/src/app/routes/menu/index.tsx:47
 msgid "Dashboard"
 msgstr "Панель"
 
-#: ../../client/src/app/routes/screen-design.tsx:14
-#: ../../client/src/app/routes/menu/index.tsx:55
+#: ../../client/src/app/routes/screen-design.tsx:13
+#: ../../client/src/app/routes/menu/index.tsx:59
 msgid "Design"
 msgstr "Дизайн"
 
-#: ../../client/src/app/routes/menu/index.tsx:53
+#: ../../client/src/app/routes/menu/index.tsx:57
 msgid "Development"
 msgstr "Разработка"
 
-#: ../../client/src/app/routes/screen-settings.tsx:70
+#: ../../client/src/app/routes/screen-settings.tsx:61
 msgid "Display"
 msgstr "Экран"
 
-#: ../../client/src/app/routes/screen-settings.tsx:35
+#: ../../client/src/app/routes/screen-settings.tsx:28
 msgid "Display Name"
 msgstr "Имя"
 
-#: ../../client/src/app/routes/screen-settings.tsx:54
+#: ../../client/src/app/routes/screen-settings.tsx:46
 msgid "Enter mnemonic"
 msgstr "Введите мнемонику"
 
-#: ../../client/src/app/routes/screen-settings.tsx:42
+#: ../../client/src/app/routes/screen-settings.tsx:35
 msgid "Enter name"
 msgstr "Введите имя"
 
@@ -69,7 +69,7 @@ msgstr "Введите имя"
 msgid "Error"
 msgstr "Ошибка"
 
-#: ../../client/src/app/routes/menu/menu-header.tsx:21
+#: ../../client/src/app/routes/menu/menu-header.tsx:20
 msgid "Human"
 msgstr "Человек"
 
@@ -81,53 +81,53 @@ msgstr "Неверное имя (максимум 25 символов)."
 msgid "Invalid owner key."
 msgstr "Неверный ключ владельца."
 
-#: ../../client/src/app/routes/screen-settings.tsx:72
+#: ../../client/src/app/routes/screen-settings.tsx:63
 msgid "Language"
 msgstr "Язык"
 
-#: ../../client/src/app/routes/screen-settings.tsx:101
+#: ../../client/src/app/routes/screen-settings.tsx:89
 msgid "Light"
 msgstr "Светлая"
 
-#: ../../client/src/app/routes/screen-settings.tsx:24
+#: ../../client/src/app/routes/screen-settings.tsx:23
 msgid "Manage your settings"
 msgstr "Настройки"
 
-#: ../../client/src/app/routes/screen-settings.tsx:47
+#: ../../client/src/app/routes/screen-settings.tsx:39
 msgid "Owner Key"
 msgstr "Ключ владельца"
 
-#: ../../client/src/app/routes/screen-settings.tsx:33
+#: ../../client/src/app/routes/screen-settings.tsx:26
 msgid "Profile"
 msgstr "Профиль"
 
-#: ../../client/src/app/routes/screen-settings.tsx:73
+#: ../../client/src/app/routes/screen-settings.tsx:64
 msgid "Select the language for the app."
 msgstr "Выберите язык приложения."
 
-#: ../../client/src/app/routes/screen-settings.tsx:93
+#: ../../client/src/app/routes/screen-settings.tsx:82
 msgid "Select the theme for the app."
 msgstr "Выберите тему приложения."
 
-#: ../../client/src/app/routes/screen-settings.tsx:23
-#: ../../client/src/app/routes/menu/index.tsx:32
-#: ../../client/src/app/routes/menu/index.tsx:48
+#: ../../client/src/app/routes/screen-settings.tsx:22
+#: ../../client/src/app/routes/menu/index.tsx:34
+#: ../../client/src/app/routes/menu/index.tsx:52
 msgid "Settings"
 msgstr "Настройки"
 
-#: ../../client/src/app/routes/screen-settings.tsx:80
-#: ../../client/src/app/routes/screen-settings.tsx:100
+#: ../../client/src/app/routes/screen-settings.tsx:70
+#: ../../client/src/app/routes/screen-settings.tsx:88
 msgid "System"
 msgstr "Системная"
 
-#: ../../client/src/app/routes/screen-settings.tsx:48
+#: ../../client/src/app/routes/screen-settings.tsx:40
 msgid "The mnemonic phrase for your database."
 msgstr "Мнемоническая фраза для вашей базы данных."
 
-#: ../../client/src/app/routes/screen-settings.tsx:92
+#: ../../client/src/app/routes/screen-settings.tsx:81
 msgid "Theme"
 msgstr "Тема"
 
-#: ../../client/src/app/routes/screen-settings.tsx:36
+#: ../../client/src/app/routes/screen-settings.tsx:29
 msgid "Your name to display in the app."
 msgstr "Ваше имя для отображения в приложении."

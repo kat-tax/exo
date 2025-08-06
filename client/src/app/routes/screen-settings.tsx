@@ -21,13 +21,7 @@ export default function ScreenSettings() {
     <Panel
       title={t`Settings`}
       message={t`Manage your settings`}
-      right={
-        <Identicon
-          id={settings.owner?.id}
-          width={64}
-          height={64}
-        />
-      }>
+      right={<Identicon id={settings.owner?.id} size={64}/>}>
       <View style={styles.root}>
         <PanelSection title={t`Profile`}>
           <PanelItem
@@ -57,6 +51,10 @@ export default function ScreenSettings() {
               passwordRules="none"
               autoCorrect={false}
               onFocus={() => setShowKey(true)}
+              onSubmitEditing={e => {
+                setShowKey(false);
+                settings.changeOwner(e.nativeEvent.text);
+              }}
               onBlur={e => {
                 setShowKey(false);
                 settings.changeOwner(e.nativeEvent.text);

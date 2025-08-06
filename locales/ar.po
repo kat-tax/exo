@@ -14,7 +14,7 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. placeholder {0}: 11
-#: ../../client/src/app/routes/screen-design.tsx:15
+#: ../../client/src/app/routes/screen-design.tsx:14
 msgid "{0} components"
 msgstr "{0} مكونات"
 
@@ -26,41 +26,41 @@ msgstr "هل أنت متأكد من تغيير مفتاح المالك؟ سيؤ�
 msgid "Are you sure you want to reset your local database? If data is not backed up on another device, it will be lost. This action cannot be undone."
 msgstr "هل أنت متأكد من إعادة تعيين قاعدة البيانات المحلية؟ إذا لم يتم نسخ البيانات احتياطياً على جهاز آخر، فستفقد. لا يمكن التراجع عن هذا الإجراء."
 
-#: ../../design/components/base/popovers/prompt/Prompt.tsx:44
+#: ../../design/components/base/popovers/prompt/Prompt.tsx:43
 msgid "Cancel"
 msgstr "إلغاء"
 
-#: ../../client/src/app/routes/screen-settings.tsx:102
+#: ../../client/src/app/routes/screen-settings.tsx:90
 msgid "Dark"
 msgstr "داكن"
 
-#: ../../client/src/app/routes/menu/index.tsx:27
-#: ../../client/src/app/routes/menu/index.tsx:43
+#: ../../client/src/app/routes/menu/index.tsx:29
+#: ../../client/src/app/routes/menu/index.tsx:47
 msgid "Dashboard"
 msgstr "لوحة التحكم"
 
-#: ../../client/src/app/routes/screen-design.tsx:14
-#: ../../client/src/app/routes/menu/index.tsx:55
+#: ../../client/src/app/routes/screen-design.tsx:13
+#: ../../client/src/app/routes/menu/index.tsx:59
 msgid "Design"
 msgstr "تصميم"
 
-#: ../../client/src/app/routes/menu/index.tsx:53
+#: ../../client/src/app/routes/menu/index.tsx:57
 msgid "Development"
 msgstr "تطوير"
 
-#: ../../client/src/app/routes/screen-settings.tsx:70
+#: ../../client/src/app/routes/screen-settings.tsx:61
 msgid "Display"
 msgstr "العرض"
 
-#: ../../client/src/app/routes/screen-settings.tsx:35
+#: ../../client/src/app/routes/screen-settings.tsx:28
 msgid "Display Name"
 msgstr "اسم العرض"
 
-#: ../../client/src/app/routes/screen-settings.tsx:54
+#: ../../client/src/app/routes/screen-settings.tsx:46
 msgid "Enter mnemonic"
 msgstr "أدخل العبارة المساعدة"
 
-#: ../../client/src/app/routes/screen-settings.tsx:42
+#: ../../client/src/app/routes/screen-settings.tsx:35
 msgid "Enter name"
 msgstr "أدخل الاسم"
 
@@ -69,7 +69,7 @@ msgstr "أدخل الاسم"
 msgid "Error"
 msgstr "خطأ"
 
-#: ../../client/src/app/routes/menu/menu-header.tsx:21
+#: ../../client/src/app/routes/menu/menu-header.tsx:20
 msgid "Human"
 msgstr "بشري"
 
@@ -81,53 +81,53 @@ msgstr "اسم غير صالح (أقصى 25 حرف)."
 msgid "Invalid owner key."
 msgstr "مفتاح المالك غير صالح."
 
-#: ../../client/src/app/routes/screen-settings.tsx:72
+#: ../../client/src/app/routes/screen-settings.tsx:63
 msgid "Language"
 msgstr "اللغة"
 
-#: ../../client/src/app/routes/screen-settings.tsx:101
+#: ../../client/src/app/routes/screen-settings.tsx:89
 msgid "Light"
 msgstr "فاتح"
 
-#: ../../client/src/app/routes/screen-settings.tsx:24
+#: ../../client/src/app/routes/screen-settings.tsx:23
 msgid "Manage your settings"
 msgstr "إدارة الإعدادات"
 
-#: ../../client/src/app/routes/screen-settings.tsx:47
+#: ../../client/src/app/routes/screen-settings.tsx:39
 msgid "Owner Key"
 msgstr "مفتاح المالك"
 
-#: ../../client/src/app/routes/screen-settings.tsx:33
+#: ../../client/src/app/routes/screen-settings.tsx:26
 msgid "Profile"
 msgstr "الملف الشخصي"
 
-#: ../../client/src/app/routes/screen-settings.tsx:73
+#: ../../client/src/app/routes/screen-settings.tsx:64
 msgid "Select the language for the app."
 msgstr "اختر لغة التطبيق."
 
-#: ../../client/src/app/routes/screen-settings.tsx:93
+#: ../../client/src/app/routes/screen-settings.tsx:82
 msgid "Select the theme for the app."
 msgstr "اختر نسق التطبيق."
 
-#: ../../client/src/app/routes/screen-settings.tsx:23
-#: ../../client/src/app/routes/menu/index.tsx:32
-#: ../../client/src/app/routes/menu/index.tsx:48
+#: ../../client/src/app/routes/screen-settings.tsx:22
+#: ../../client/src/app/routes/menu/index.tsx:34
+#: ../../client/src/app/routes/menu/index.tsx:52
 msgid "Settings"
 msgstr "الإعدادات"
 
-#: ../../client/src/app/routes/screen-settings.tsx:80
-#: ../../client/src/app/routes/screen-settings.tsx:100
+#: ../../client/src/app/routes/screen-settings.tsx:70
+#: ../../client/src/app/routes/screen-settings.tsx:88
 msgid "System"
 msgstr "النظام"
 
-#: ../../client/src/app/routes/screen-settings.tsx:48
+#: ../../client/src/app/routes/screen-settings.tsx:40
 msgid "The mnemonic phrase for your database."
 msgstr "العبارة المساعدة لقاعدة البيانات."
 
-#: ../../client/src/app/routes/screen-settings.tsx:92
+#: ../../client/src/app/routes/screen-settings.tsx:81
 msgid "Theme"
 msgstr "النسق"
 
-#: ../../client/src/app/routes/screen-settings.tsx:36
+#: ../../client/src/app/routes/screen-settings.tsx:29
 msgid "Your name to display in the app."
 msgstr "اسمك للعرض في التطبيق."
