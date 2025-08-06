@@ -3,12 +3,13 @@ import {StyleSheet, Display, mq} from 'react-native-unistyles';
 import {useFocusable, FocusContext} from '@noriginmedia/norigin-spatial-navigation';
 import {useLocation} from 'react-exo/navigation';
 import {useLingui} from '@lingui/react/macro';
+import {breakpoints} from 'design/theme';
 import {Icon} from 'app/stacks/base';
+
 import {MenuTab} from './menu-tab';
 import {MenuItem} from './menu-item';
 import {MenuGroup} from './menu-group';
 import {MenuHeader} from './menu-header';
-import {breakpoints} from 'design/theme';
 
 export function Menu() {
   const {t} = useLingui();
