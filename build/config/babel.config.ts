@@ -26,6 +26,8 @@ export default <TransformOptions> {
     '@lingui/babel-plugin-lingui-macro',
     'react-exo/babel-plugin-iconify-extract',
     'react-exo/babel-plugin-iconify-transform',
+    ['react-native-unistyles/plugin', {root: 'src'}],
+    'babel-plugin-react-compiler',
     '@babel/plugin-transform-export-namespace-from',
     '@babel/plugin-transform-dynamic-import',
   ],

@@ -60,14 +60,25 @@ export function Panel(props: PanelProps) {
   );
 }
 
-const styles = StyleSheet.create((theme) => ({
+const styles = StyleSheet.create((theme, rt) => ({
   root: {
     flex: 1,
+    backgroundColor: {
+      initial: theme.colors.card,
+      xs: 'transparent',
+    },
+    paddingTop: {
+      initial: rt.insets.top / 1.5,
+      xs: 0,
+    },
   },
   scroll: {
     backgroundColor: theme.colors.card,
     borderColor: theme.colors.border,
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: {
+      initial: 0,
+      xs: StyleSheet.hairlineWidth,
+    },
     borderRadius: {
       initial: 0,
       xs: theme.display.radius2,
@@ -98,8 +109,7 @@ const styles = StyleSheet.create((theme) => ({
     flexDirection: 'row',
     alignItems: 'flex-start',
     justifyContent: 'space-between',
-    marginTop: theme.display.space1,
-    marginBottom: theme.display.space6,
+    marginBottom: theme.display.space5,
   },
   widget: {
     flex: 1,

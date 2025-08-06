@@ -19,7 +19,7 @@ export default function Layout() {
   );
 }
 
-const styles = StyleSheet.create((theme) => ({
+const styles = StyleSheet.create((theme, rt) => ({
   root: {
     flex: 1,
     backgroundColor: theme.colors.neutral,
@@ -32,6 +32,10 @@ const styles = StyleSheet.create((theme) => ({
     width: {
       initial: '100%',
       xs: APP_MENU_WIDTH,
+    },
+    marginBottom: {
+      initial: rt.insets.bottom / 1.5,
+      landscape: 0,
     },
     height: {
       initial: APP_MENU_TAB_HEIGHT,

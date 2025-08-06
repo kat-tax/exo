@@ -1,6 +1,6 @@
 import {useEffect} from 'react';
-import {UnistylesRuntime} from 'react-native-unistyles';
 import {StatusBar, Appearance} from 'react-native';
+import {UnistylesRuntime} from 'react-native-unistyles';
 import {GestureProvider} from 'react-exo/gesture';
 import {ToastRoot} from 'react-exo/toast';
 import {useTheme} from 'app/hooks/use-theme';

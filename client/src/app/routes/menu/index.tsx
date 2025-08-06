@@ -13,10 +13,10 @@ export function Menu() {
   const {t} = useLingui();
   const {pathname} = useLocation();
   const {ref, focusKey} = useFocusable({
+    forceFocus: true,
     isFocusBoundary: true,
     focusBoundaryDirections: ['up', 'down'],
     preferredChildFocusKey: `menu@${pathname}`,
-    forceFocus: true,
   });
 
   return (

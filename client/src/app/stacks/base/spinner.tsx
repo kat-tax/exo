@@ -1,13 +1,15 @@
 import {StyleSheet, withUnistyles} from 'react-native-unistyles';
 import {ActivityIndicator as RNActivityIndicator, View} from 'react-native';
 
+import type {ActivityIndicatorProps} from 'react-native';
+
 export const ActivityIndicator = withUnistyles(RNActivityIndicator, (theme) => ({
   color: theme.colors.neutral,
 }));
 
-export const Spinner = () => (
+export const Spinner = (props: ActivityIndicatorProps) => (
   <View style={styles.root}>
-    <ActivityIndicator size="large"/>
+    <ActivityIndicator size="large" {...props}/>
   </View>
 );
 
