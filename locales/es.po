@@ -30,7 +30,7 @@ msgstr "¿Estás seguro de reiniciar tu base de datos local? Si los datos no est
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: ../../client/src/app/routes/screen-settings.tsx:90
+#: ../../client/src/app/routes/screen-settings.tsx:94
 msgid "Dark"
 msgstr "Oscuro"
 
@@ -48,7 +48,7 @@ msgstr "Diseño"
 msgid "Development"
 msgstr "Desarrollo"
 
-#: ../../client/src/app/routes/screen-settings.tsx:61
+#: ../../client/src/app/routes/screen-settings.tsx:65
 msgid "Display"
 msgstr "Pantalla"
 
@@ -81,11 +81,11 @@ msgstr "Nombre inválido (máximo 25 caracteres)."
 msgid "Invalid owner key."
 msgstr "Clave propietaria inválida."
 
-#: ../../client/src/app/routes/screen-settings.tsx:63
+#: ../../client/src/app/routes/screen-settings.tsx:67
 msgid "Language"
 msgstr "Idioma"
 
-#: ../../client/src/app/routes/screen-settings.tsx:89
+#: ../../client/src/app/routes/screen-settings.tsx:93
 msgid "Light"
 msgstr "Claro"
 
@@ -101,11 +101,11 @@ msgstr "Clave Propietaria"
 msgid "Profile"
 msgstr "Perfil"
 
-#: ../../client/src/app/routes/screen-settings.tsx:64
+#: ../../client/src/app/routes/screen-settings.tsx:68
 msgid "Select the language for the app."
 msgstr "Selecciona el idioma de la app."
 
-#: ../../client/src/app/routes/screen-settings.tsx:82
+#: ../../client/src/app/routes/screen-settings.tsx:86
 msgid "Select the theme for the app."
 msgstr "Selecciona el tema de la app."
 
@@ -115,8 +115,8 @@ msgstr "Selecciona el tema de la app."
 msgid "Settings"
 msgstr "Configuración"
 
-#: ../../client/src/app/routes/screen-settings.tsx:70
-#: ../../client/src/app/routes/screen-settings.tsx:88
+#: ../../client/src/app/routes/screen-settings.tsx:74
+#: ../../client/src/app/routes/screen-settings.tsx:92
 msgid "System"
 msgstr "Sistema"
 
@@ -124,7 +124,7 @@ msgstr "Sistema"
 msgid "The mnemonic phrase for your database."
 msgstr "La frase mnemónica para tu base de datos."
 
-#: ../../client/src/app/routes/screen-settings.tsx:81
+#: ../../client/src/app/routes/screen-settings.tsx:85
 msgid "Theme"
 msgstr "Tema"
 

@@ -30,7 +30,7 @@ msgstr "Вы уверены, что хотите сбросить локальн
 msgid "Cancel"
 msgstr "Отмена"
 
-#: ../../client/src/app/routes/screen-settings.tsx:90
+#: ../../client/src/app/routes/screen-settings.tsx:94
 msgid "Dark"
 msgstr "Тёмная"
 
@@ -48,7 +48,7 @@ msgstr "Дизайн"
 msgid "Development"
 msgstr "Разработка"
 
-#: ../../client/src/app/routes/screen-settings.tsx:61
+#: ../../client/src/app/routes/screen-settings.tsx:65
 msgid "Display"
 msgstr "Экран"
 
@@ -81,11 +81,11 @@ msgstr "Неверное имя (максимум 25 символов)."
 msgid "Invalid owner key."
 msgstr "Неверный ключ владельца."
 
-#: ../../client/src/app/routes/screen-settings.tsx:63
+#: ../../client/src/app/routes/screen-settings.tsx:67
 msgid "Language"
 msgstr "Язык"
 
-#: ../../client/src/app/routes/screen-settings.tsx:89
+#: ../../client/src/app/routes/screen-settings.tsx:93
 msgid "Light"
 msgstr "Светлая"
 
@@ -101,11 +101,11 @@ msgstr "Ключ владельца"
 msgid "Profile"
 msgstr "Профиль"
 
-#: ../../client/src/app/routes/screen-settings.tsx:64
+#: ../../client/src/app/routes/screen-settings.tsx:68
 msgid "Select the language for the app."
 msgstr "Выберите язык приложения."
 
-#: ../../client/src/app/routes/screen-settings.tsx:82
+#: ../../client/src/app/routes/screen-settings.tsx:86
 msgid "Select the theme for the app."
 msgstr "Выберите тему приложения."
 
@@ -115,8 +115,8 @@ msgstr "Выберите тему приложения."
 msgid "Settings"
 msgstr "Настройки"
 
-#: ../../client/src/app/routes/screen-settings.tsx:70
-#: ../../client/src/app/routes/screen-settings.tsx:88
+#: ../../client/src/app/routes/screen-settings.tsx:74
+#: ../../client/src/app/routes/screen-settings.tsx:92
 msgid "System"
 msgstr "Системная"
 
@@ -124,7 +124,7 @@ msgstr "Системная"
 msgid "The mnemonic phrase for your database."
 msgstr "Мнемоническая фраза для вашей базы данных."
 
-#: ../../client/src/app/routes/screen-settings.tsx:81
+#: ../../client/src/app/routes/screen-settings.tsx:85
 msgid "Theme"
 msgstr "Тема"
 
