@@ -5,13 +5,12 @@ import {lingui} from '@lingui/vite-plugin';
 import react from '@vitejs/plugin-react';
 import paths from 'vite-tsconfig-paths';
 import sonda from 'sonda/vite';
-import path from 'node:path';
 import cfg from 'config';
 
 export default defineConfig(env => ({
   // Output Configuration
   build: {
-    outDir: '../output/web',
+    outDir: '../output/client/web',
     sourcemap: true,
     emptyOutDir: true,
     chunkSizeWarningLimit: 1500,
@@ -91,7 +90,8 @@ export default defineConfig(env => ({
           }, ['iPad Air 9.7"']),
         },
         integration: {
-          outDir: path.resolve('../output/web/brand'),
+          // Note: this strange path is needed to workaround a bug in vite-plugin-pwa
+          outDir: '../output/client/web/web/web',
         },
       },
       workbox: {
@@ -118,8 +118,8 @@ export default defineConfig(env => ({
     sonda({
       open: false,
       sources: true,
-      filename: 'index.html',
-      outputDir: '../output/inspect',
+      filename: 'inspect.html',
+      outputDir: '../output',
     }),
   ],
   // Exclude Packages with Workers
