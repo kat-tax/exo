@@ -17,7 +17,7 @@ export default defineConfig(env => ({
     rollupOptions: {
       output: {
         format: 'es',
-        chunkFileNames: '[name]-[hash].js',
+        chunkFileNames: 'assets/dyn/[name]-[hash].js',
       },
       onwarn: (warning, warn) => {
         if (warning.code === 'EVAL') return;
