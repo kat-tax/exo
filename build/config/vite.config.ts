@@ -1,5 +1,7 @@
 import * as pwaAssets from '@vite-pwa/assets-generator/config';
 import {defineConfig} from 'vite';
+import {readFileSync} from 'node:fs';
+import {readFile} from 'node:fs/promises';
 import {VitePWA} from 'vite-plugin-pwa';
 import {lingui} from '@lingui/vite-plugin';
 import react from '@vitejs/plugin-react';
@@ -72,22 +74,24 @@ export default defineConfig(env => ({
         preset: {
           ...pwaAssets.minimal2023Preset,
           appleSplashScreens: pwaAssets.createAppleSplashScreens({
-            padding: 0.3,
+            darkImageResolver: async () => readFile(`../logo-dark.svg`),
+            padding: 0.8,
             resizeOptions: {
-              background: '#ffffff',
+              background: readFileSync('../logo-bg.svg', 'utf8').match(/fill="([^"]+)"/)?.[1],
               fit: 'contain',
             },
             darkResizeOptions: {
-              background: '#000000',
+              background: readFileSync('../logo-bg-dark.svg', 'utf8').match(/fill="([^"]+)"/)?.[1],
               fit: 'contain',
             },
             linkMediaOptions: {
-              basePath: '/',
               addMediaScreen: true,
-              xhtml: true,
+              basePath: '/',
               log: true,
             },
-          }, ['iPad Air 9.7"']),
+          }, [
+            'iPad Air 9.7"',
+          ]),
         },
         integration: {
           // Note: this strange path is needed to workaround a bug in vite-plugin-pwa
