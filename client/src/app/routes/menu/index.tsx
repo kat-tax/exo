@@ -88,8 +88,6 @@ const styles = StyleSheet.create((theme) => ({
   list: {
     flex: 1,
     flexDirection: 'column',
-    borderColor: theme.colors.border,
-    borderStartWidth: StyleSheet.hairlineWidth,
     paddingStart: theme.display.space2,
   },
 }));
