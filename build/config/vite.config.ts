@@ -86,7 +86,7 @@ export default defineConfig(env => ({
           },
           maskable: {
             sizes: [512],
-            padding: 0.5,
+            padding: 0.3,
             resizeOptions: {
               background: PWA_BG_COLOR,
               fit: 'contain',
@@ -94,7 +94,7 @@ export default defineConfig(env => ({
           },
           apple: {
             sizes: [180],
-            padding: 0.5,
+            padding: 0.3,
             resizeOptions: {
               background: PWA_BG_COLOR,
               fit: 'contain',
