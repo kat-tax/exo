@@ -68,10 +68,22 @@ export default defineConfig(env => ({
         theme_color: '#000000',
         background_color: '#000000',
       },
+      injectManifest: {
+        swDest: '../output/client/web/assets/sw.js',
+      },
       pwaAssets: {
         image: '../logo.svg',
+        injectThemeColor: false,
         preset: {
           ...pwaAssets.minimal2023Preset,
+          maskable: {
+            sizes: [512],
+            padding: 0.3,
+            resizeOptions: {
+              background: '#000000',
+              fit: 'contain',
+            },
+          },
           appleSplashScreens: pwaAssets.createAppleSplashScreens({
             padding: 0.8,
             linkMediaOptions: {
