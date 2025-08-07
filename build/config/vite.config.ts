@@ -78,9 +78,17 @@ export default defineConfig(env => ({
           ...pwaAssets.minimal2023Preset,
           maskable: {
             sizes: [512],
-            padding: 0.3,
+            padding: 0.5,
             resizeOptions: {
-              background: '#000000',
+              background: '#222222',
+              fit: 'contain',
+            },
+          },
+          apple: {
+            sizes: [180],
+            padding: 0.5,
+            resizeOptions: {
+              background: '#222222',
               fit: 'contain',
             },
           },
@@ -96,7 +104,7 @@ export default defineConfig(env => ({
               fit: 'contain',
             },
             darkResizeOptions: {
-              background: '#000000',
+              background: '#222222',
               fit: 'contain',
             },
           }, [
