@@ -9,6 +9,6 @@ export const getProfile = _.createQuery(db => db
 export const getLinks = _.createQuery(db => db
   .selectFrom('link')
   .orderBy('createdAt', 'desc')
-  .where('isDeleted', 'is', 0)
+  .where('isDeleted', 'is not', 1)
   .selectAll()
 );

@@ -7,6 +7,7 @@ import {Panel, PanelSection, PanelItem} from 'app/ui/panel';
 import {IconRemote, TextInput} from 'app/ui/base';
 import {Grid, GridCell} from 'app/ui/grid';
 import {Button} from 'design';
+import {useLinks} from 'home/hooks/use-links';
 
 export default function ScreenNewLink() {
   const [url, setUrl] = useState('');
@@ -16,6 +17,24 @@ export default function ScreenNewLink() {
 
   const {t} = useLingui();
   const nav = useNavigate();
+  const {createLink} = useLinks();
+
+  const handleSave = () => {
+    if (!url.trim() || !name.trim() || !icon.trim() || !color.trim()) {
+      return;
+    }
+
+    const success = createLink({
+      url: url.trim(),
+      name: name.trim(),
+      icon: icon.trim(),
+      color: color.trim(),
+    });
+
+    if (success) {
+      nav('/');
+    }
+  };
 
   return (
     <Panel
@@ -33,10 +52,7 @@ export default function ScreenNewLink() {
             label={t`Save`}
             mode="Primary"
             state="Default"
-            onPress={() => {
-              console.log('save');
-              nav('/');
-            }}
+            onPress={handleSave}
           />
         </View>
       }>

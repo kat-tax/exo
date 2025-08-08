@@ -9,42 +9,15 @@ import {Icon, IconRemote} from 'app/ui/base';
 import {Panel} from 'app/ui/panel';
 import {Grid} from 'app/ui/grid';
 import {GridCell} from 'app/ui/grid';
+import {useQuery} from 'app/data';
+import {getLinks} from 'app/data/queries';
 import cfg from 'config';
 
 export default function ScreenHome() {
   const settings = useSettings();
   const clock = useClock();
+  const links = useQuery(getLinks);
   const nav = useNavigate();
-
-  const links: Array<{
-    id: string;
-    url: string;
-    name: string;
-    icon: string;
-    color: string;
-  }> = [
-    {
-      id: '1',
-      url: 'https://search.brave.com',
-      name: 'Brave',
-      icon: 'simple-icons:brave',
-      color: '#3b82f6',
-    },
-    {
-      id: '2',
-      url: 'https://github.com/trending',
-      name: 'GitHub',
-      icon: 'simple-icons:github',
-      color: '#999999',
-    },
-    {
-      id: '3',
-      url: 'https://news.ycombinator.com/news',
-      name: 'Hacker News',
-      icon: 'simple-icons:ycombinator',
-      color: '#ff6600',
-    },
-  ];
 
   return (
     <Panel
@@ -60,11 +33,11 @@ export default function ScreenHome() {
           <GridCell
             key={link.id}
             focusKey={`link-${link.id}`}
-            onSelect={() => Linking.openURL(link.url)}>
+            onSelect={() => link.url && Linking.openURL(link.url)}>
             <View style={styles.link}>
               <IconRemote
-                name={link.icon}
-                color={link.color}
+                name={link.icon ?? 'simple-icons:brave'}
+                color={link.color ?? '#888'}
                 size={'50%'}
               />
             </View>
