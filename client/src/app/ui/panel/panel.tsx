@@ -91,8 +91,12 @@ const styles = StyleSheet.create((theme, rt) => ({
   content: {
     flex: 1,
     alignSelf: 'center',
-    padding: theme.display.space5,
     maxWidth: '100%',
+    paddingVertical: theme.display.space5,
+    paddingHorizontal: {
+      initial: theme.display.space5,
+      md: 0,
+    },
     width: {
       initial: '100%',
       md: 800,

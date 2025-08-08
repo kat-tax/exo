@@ -53,7 +53,7 @@ const styles = StyleSheet.create((theme) => ({
     backgroundColor: theme.colors.secondary,
   },
   focus: {
-    borderColor: theme.colors.outline,
+    borderColor: theme.colors.ring,
   },
   label: {
     userSelect: 'none',

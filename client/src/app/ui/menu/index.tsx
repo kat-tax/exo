@@ -23,7 +23,7 @@ export function Menu() {
 
   return (
     <>
-      <Display mq={mq.only.width(0, breakpoints.xs)}>
+      <Display mq={mq.only.width(0, breakpoints.xs - 1)}>
         <View style={styles.tabs}>
           <MenuTab
             label={t`Dashboard`}

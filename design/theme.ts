@@ -1,8 +1,12 @@
 export type Themes = keyof typeof themes;
 
 export const breakpoints = {
-  /** Phones (portrait) */
+  /** Required */
   initial: 0,
+  /** Custom */
+  xxxs: 240,
+  /** Custom */
+  xxs: 375,
   /** Phones (landscape) */
   xs: 520,
   /** Tablets (portrait) */
