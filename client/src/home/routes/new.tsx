@@ -47,6 +47,8 @@ export default function ScreenNewLink() {
               description={t`The web page to link to.`}>
               <TextInput
                 style={styles.input}
+                selectTextOnFocus
+                maxLength={1000}
                 placeholder={`https://search.brave.com`}
                 onChangeText={setUrl}
                 value={url}
@@ -57,6 +59,8 @@ export default function ScreenNewLink() {
               description={t`The display name of the link.`}>
               <TextInput
                 style={styles.input}
+                selectTextOnFocus
+                maxLength={25}
                 placeholder={`Brave`}
                 onChangeText={setName}
                 value={name}
@@ -70,6 +74,7 @@ export default function ScreenNewLink() {
               <TextInput
                 style={styles.input}
                 selectTextOnFocus
+                maxLength={25}
                 placeholder={`simple-icons:brave`}
                 onChangeText={setIcon}
                 value={icon}
@@ -81,6 +86,7 @@ export default function ScreenNewLink() {
               <TextInput
                 style={styles.input}
                 selectTextOnFocus
+                maxLength={25}
                 placeholder={`#888`}
                 onChangeText={setColor}
                 value={color}

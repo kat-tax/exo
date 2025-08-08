@@ -3,17 +3,19 @@ import * as $ from 'app/data/types';
 export type ProfileId = typeof ProfileId.Type;
 export const ProfileId = $.id('Profile');
 
-export type ShortcutId = typeof ShortcutId.Type;
-export const ShortcutId = $.id('Shortcut');
+export type LinkId = typeof LinkId.Type;
+export const LinkId = $.id('Shortcut');
 
 export default {
   profile: {
     id: ProfileId,
     name: $.NonEmptyString25,
   },
-  shortcut: {
-    id: ShortcutId,
+  link: {
+    id: LinkId,
     url: $.NonEmptyString1000,
-    name: $.NonEmptyString50,
+    name: $.NonEmptyString25,
+    icon: $.NonEmptyString25,
+    color: $.NonEmptyString25,
   },
 };

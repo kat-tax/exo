@@ -6,8 +6,8 @@ export const getProfile = _.createQuery(db => db
   .limit(1)
 );
 
-export const getShortcuts = _.createQuery(db => db
-  .selectFrom('shortcut')
+export const getLinks = _.createQuery(db => db
+  .selectFrom('link')
   .orderBy('createdAt', 'desc')
   .where('isDeleted', 'is', 0)
   .selectAll()
