@@ -1,7 +1,7 @@
 import {View, Text} from 'react-native';
 import {StyleSheet} from 'react-native-unistyles';
-import {useLocation, Link} from 'react-exo/navigation';
 import {createIcon} from 'react-exo/utils';
+import {useLocation, Link} from 'react-exo/navigation';
 
 interface MenuTabProps extends React.PropsWithChildren {
   label: string,

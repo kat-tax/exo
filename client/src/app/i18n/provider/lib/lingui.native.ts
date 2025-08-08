@@ -1,6 +1,6 @@
-import {i18n} from '@lingui/core';
-import {isRTL} from 'app/i18n/rtl';
 import {sourceLocale} from 'config/locales';
+import {i18n} from '@lingui/core';
+import {isRTL} from './rtl';
 
 import type {Messages} from '@lingui/core';
 import type {Locales} from 'config/locales';

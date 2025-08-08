@@ -1,7 +1,7 @@
 import {Router as _, Routes, Route} from 'react-exo/navigation';
 import {history} from 'app/data';
 
-import {Layout, Screen} from './loader';
+import {Layout, Screen} from './provider';
 
 export function Router() {
   return (

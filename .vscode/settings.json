@@ -21,6 +21,7 @@
     "guides": "content",
     "stacks": "react-components",
     "utils": "include",
+    "msg": "messages",
     // App
     "interface": "layout",
     "loader": "import",

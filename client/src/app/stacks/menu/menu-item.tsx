@@ -1,8 +1,8 @@
 import {View, Text} from 'react-native';
 import {StyleSheet} from 'react-native-unistyles';
+import {createIcon} from 'react-exo/utils';
 import {useFocusable} from '@noriginmedia/norigin-spatial-navigation';
 import {useLocation, useNavigate, Link} from 'react-exo/navigation';
-import {createIcon} from 'react-exo/utils';
 
 interface MenuItemProps extends React.PropsWithChildren {
   label: string,

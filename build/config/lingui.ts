@@ -6,7 +6,7 @@ export default <LinguiConfig> {
   sourceLocale,
   format: 'po',
   compileNamespace: 'json',
-  catalogsMergePath: './client/src/app/i18n/messages/{locale}',
+  catalogsMergePath: './client/src/app/i18n/provider/msg/{locale}',
   catalogs: [{
     path: 'locales/{locale}',
     include: [

@@ -1,10 +1,10 @@
 import {View, Text} from 'react-native';
 import {StyleSheet} from 'react-native-unistyles';
-import {useAppOwner} from '@evolu/react';
 import {useQuery} from '@evolu/react';
+import {useAppOwner} from '@evolu/react';
+import {useLingui} from '@lingui/react/macro';
 import {Identicon} from 'app/stacks/identicon';
 import {getProfile} from 'app/data';
-import {useLingui} from '@lingui/react/macro';
 
 export function MenuHeader() {
   const {t} = useLingui();
