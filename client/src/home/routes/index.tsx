@@ -72,7 +72,7 @@ export default function ScreenHome() {
         ))}
         <GridCell
           focusKey="link-add"
-          onSelect={() => navigate('/settings')}>
+          onSelect={() => navigate('/new-link')}>
           <View style={[styles.link, styles.linkAdd]}>
             <Icon name="ph:plus" size={32} uniProps={
               (theme: any) => ({
