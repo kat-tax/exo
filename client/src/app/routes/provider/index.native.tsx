@@ -1,4 +1,4 @@
-import App from 'app/routes/layout';
+import App from 'app/layout';
 import Settings from 'settings/routes/screen-settings';
 import Dashboard from 'home/routes/screen-dashboard';
 
