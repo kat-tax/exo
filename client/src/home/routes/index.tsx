@@ -16,7 +16,7 @@ export default function ScreenHome() {
   const settings = useSettings();
   const clock = useClock();
 
-  const shortcuts: Array<{
+  const links: Array<{
     id: string;
     url: string;
     name: string;
@@ -56,24 +56,24 @@ export default function ScreenHome() {
         </Text>
       }>
       <Grid>
-        {shortcuts.map((shortcut) => (
+        {links.map((link) => (
           <GridCell
-            key={shortcut.id}
-            focusKey={`shortcut-${shortcut.id}`}
-            onSelect={() => Linking.openURL(shortcut.url)}>
-            <View style={styles.shortcut}>
+            key={link.id}
+            focusKey={`link-${link.id}`}
+            onSelect={() => Linking.openURL(link.url)}>
+            <View style={styles.link}>
               <IconRemote
-                name={shortcut.icon}
-                color={shortcut.color}
+                name={link.icon}
+                color={link.color}
                 size={'50%'}
               />
             </View>
           </GridCell>
         ))}
         <GridCell
-          focusKey="shortcut-add"
+          focusKey="link-add"
           onSelect={() => navigate('/settings')}>
-          <View style={[styles.shortcut, styles.shortcutAdd]}>
+          <View style={[styles.link, styles.linkAdd]}>
             <Icon name="ph:plus" size={32} uniProps={
               (theme: any) => ({
                 color: theme.colors.mutedForeground,
@@ -94,7 +94,7 @@ const styles = StyleSheet.create((theme) => ({
     letterSpacing: theme.font.headerSpacing,
     color: theme.colors.foreground,
   },
-  shortcut: {
+  link: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
@@ -104,7 +104,7 @@ const styles = StyleSheet.create((theme) => ({
     borderWidth: 1,
     overflow: 'hidden',
   },
-  shortcutAdd: {
+  linkAdd: {
     backgroundColor: theme.colors.accent,
   },
 }));
