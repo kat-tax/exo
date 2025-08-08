@@ -1,5 +1,5 @@
 import {useEffect, useState} from 'react';
-import {useLocale} from 'app/hooks/use-locale';
+import {useLocale} from 'settings/hooks/use-locale';
 import {getTime} from 'home/utils/time';
 
 export function useClock(timeFormat: 'short' | 'medium' | 'long' = 'short') {

@@ -1,7 +1,7 @@
 import {I18nManager, Platform} from 'react-native';
 import {I18nProvider} from '@lingui/react';
 import {useEffect} from 'react';
-import {useLocale} from 'app/hooks/use-locale';
+import {useLocale} from 'settings/hooks/use-locale';
 
 import {load, i18n, isRTL} from './loader';
 

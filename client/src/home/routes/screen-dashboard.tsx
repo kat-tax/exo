@@ -1,7 +1,7 @@
 import {Trans} from '@lingui/react';
 import {Text, View} from 'react-native';
 import {StyleSheet} from 'react-native-unistyles';
-import {useSettings} from 'app/hooks/use-settings';
+import {useSettings} from 'settings/hooks/use-settings';
 import {useClock} from 'home/hooks/use-clock';
 import {greetMsg} from 'home/utils/time';
 import {Panel} from 'app/stacks/panel';

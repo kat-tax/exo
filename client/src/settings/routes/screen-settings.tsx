@@ -5,9 +5,9 @@ import {View, Platform} from 'react-native';
 import {Panel, PanelItem, PanelSection} from 'app/stacks/panel';
 import {Picker, TextInput} from 'app/stacks/base';
 import {Identicon} from 'app/stacks/identicon';
-import {useSettings} from 'app/hooks/use-settings';
-import {useLocale} from 'app/hooks/use-locale';
-import {useTheme} from 'app/hooks/use-theme';
+import {useTheme} from 'settings/hooks/use-theme';
+import {useLocale} from 'settings/hooks/use-locale';
+import {useSettings} from 'settings/hooks/use-settings';
 import {locales} from 'config/locales';
 
 export default function ScreenSettings() {

@@ -1,6 +1,6 @@
 import {lazy} from 'react';
 import App from 'app/routes/layout';
-import Settings from 'app/routes/screen-settings';
+import Settings from 'settings/routes/screen-settings';
 import Dashboard from 'home/routes/screen-dashboard';
 
 export const Layout = {
