@@ -14,6 +14,7 @@ export default function ScreenNewLink() {
   const [name, setName] = useState('');
   const [icon, setIcon] = useState('');
   const [color, setColor] = useState('');
+  const savedDisabled = !url.trim() || !name.trim() || !icon.trim() || !color.trim();
 
   const {t} = useLingui();
   const nav = useNavigate();
@@ -51,7 +52,8 @@ export default function ScreenNewLink() {
           <Button
             label={t`Save`}
             mode="Primary"
-            state="Default"
+            state={savedDisabled ? 'Disabled' : 'Default'}
+            disabled={savedDisabled}
             onPress={handleSave}
           />
         </View>
