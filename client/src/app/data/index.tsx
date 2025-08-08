@@ -6,7 +6,7 @@ import redux from './provider/redux';
 
 export * from './provider/redux';
 export * from './types';
-export * from '../queries'
+export * from '../queries';
 
 export const useEvolu = createUseEvolu(evolu);
 
