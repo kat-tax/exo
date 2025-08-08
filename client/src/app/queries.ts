@@ -1,4 +1,4 @@
-import _ from './provider/evolu';
+import _ from 'app/data/provider/evolu';
 
 export const getProfile = _.createQuery(db => db
   .selectFrom('profile')

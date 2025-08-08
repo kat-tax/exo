@@ -35,13 +35,11 @@
     "vocs": "vue",
   },
   "material-icon-theme.files.associations": {
-    "app/theme.tsx": "renovate",
-    "app/provider.tsx": "dll",
     "app/index.tsx": "tree",
-    "routes/index.tsx": "routing",
-    "routes/index.native.tsx": "routing",
+    "app/layout.tsx": "templ",
+    "app/queries.ts": "search",
+    "app/schema.ts": "database",
+    "app/theme.tsx": "palette",
     "store.ts": "redux-reducer",
-    "data/store.ts": "redux-store",
-    "data/schema.ts": "database",
   },
 }

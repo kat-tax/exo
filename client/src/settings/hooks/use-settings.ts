@@ -2,7 +2,8 @@ import {alert} from 'react-exo/toast';
 import {useLingui} from '@lingui/react/macro';
 import {useCallback} from 'react';
 import {useQuery, useAppOwner} from '@evolu/react';
-import {useEvolu, getProfile, getOrThrow, Mnemonic, NonEmptyString25} from 'app/data';
+import {useEvolu, getOrThrow, Mnemonic, NonEmptyString25} from 'app/data';
+import {getProfile} from 'app/queries';
 
 export function useSettings() {
   const {t} = useLingui();

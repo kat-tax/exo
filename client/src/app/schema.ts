@@ -1,4 +1,4 @@
-import * as $ from './types';
+import * as $ from 'app/data/types';
 
 export type ProfileId = typeof ProfileId.Type;
 export const ProfileId = $.id('Profile');
