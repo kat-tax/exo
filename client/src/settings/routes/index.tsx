@@ -3,7 +3,7 @@ import {useLingui} from '@lingui/react/macro';
 import {StyleSheet} from 'react-native-unistyles';
 import {View, Platform} from 'react-native';
 import {Picker, TextInput} from 'app/ui/base';
-import {Panel, PanelItem, PanelSection} from 'app/ui/panel';
+import {Panel, PanelSection, PanelItem} from 'app/ui/panel';
 import {Identicon} from 'app/ui/identicon';
 import {useTheme} from 'settings/hooks/use-theme';
 import {useLocale} from 'settings/hooks/use-locale';
@@ -102,7 +102,7 @@ export default function ScreenSettings() {
 
 const styles = StyleSheet.create((theme) => ({
   root: {
-    marginTop: theme.display.space5,
+    marginTop: theme.display.space6,
     paddingBottom: theme.display.space9,
     ...Platform.select({
       ios: {

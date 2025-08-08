@@ -40,7 +40,7 @@ export function Panel(props: PanelProps) {
                       style={styles.message}
                       selectable={false}
                       ellipsizeMode="tail"
-                      numberOfLines={1}>
+                      numberOfLines={3}>
                       {props.message}
                     </Text>
                   }

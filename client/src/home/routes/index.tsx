@@ -12,9 +12,9 @@ import {GridCell} from 'app/ui/grid';
 import cfg from 'config';
 
 export default function ScreenHome() {
-  const navigate = useNavigate();
   const settings = useSettings();
   const clock = useClock();
+  const nav = useNavigate();
 
   const links: Array<{
     id: string;
@@ -72,7 +72,7 @@ export default function ScreenHome() {
         ))}
         <GridCell
           focusKey="link-add"
-          onSelect={() => navigate('/new-link')}>
+          onSelect={() => nav('/new-link')}>
           <View style={[styles.link, styles.linkAdd]}>
             <Icon name="ph:plus" size={32} uniProps={
               (theme: any) => ({
