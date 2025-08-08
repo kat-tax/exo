@@ -35,7 +35,7 @@ export default function ScreenHome() {
       url: 'https://github.com/trending',
       name: 'GitHub',
       icon: 'simple-icons:github',
-      color: '#ffffff',
+      color: '#999999',
     },
     {
       id: '3',
