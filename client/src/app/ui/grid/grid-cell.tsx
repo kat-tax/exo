@@ -12,6 +12,7 @@ interface GridCellProps extends ViewProps {
 export function GridCell(props: GridCellProps) {
   const {ref, focused} = useFocusable({
     focusKey: `grid-cell-${props.focusKey}`,
+    onEnterPress: () => props.onSelect?.(),
   });
 
   return (

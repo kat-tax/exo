@@ -2,12 +2,11 @@ import {useState} from 'react';
 import {useLingui} from '@lingui/react/macro';
 import {useNavigate} from 'react-exo/navigation';
 import {StyleSheet} from 'react-native-unistyles';
-import {Linking, Platform, View} from 'react-native';
+import {Platform, View} from 'react-native';
 import {Panel, PanelSection, PanelItem} from 'app/ui/panel';
 import {IconRemote, TextInput} from 'app/ui/base';
-import {Grid, GridCell} from 'app/ui/grid';
-import {Button} from 'design';
 import {useLinks} from 'home/hooks/use-links';
+import {Button} from 'design';
 
 export default function ScreenNewLink() {
   const [url, setUrl] = useState('');
@@ -39,22 +38,14 @@ export default function ScreenNewLink() {
 
   return (
     <Panel
-      title={t`New Link`}
-      message={t`Add a dashboard shortcut`}
+      title={name || t`Untitled`}
+      message={t`Configure dashboard link`}
       right={
-        <View style={styles.actions}>
-          <Button
-            label={t`Cancel`}
-            mode="Secondary"
-            state="Default"
-            onPress={() => nav('/')}
-          />
-          <Button
-            label={t`Save`}
-            mode="Primary"
-            state={savedDisabled ? 'Disabled' : 'Default'}
-            disabled={savedDisabled}
-            onPress={handleSave}
+        <View style={styles.link}>
+          <IconRemote
+            name={icon || 'simple-icons:brave'}
+            color={color || '#888'}
+            size={'50%'}
           />
         </View>
       }>
@@ -66,6 +57,10 @@ export default function ScreenNewLink() {
               <TextInput
                 style={styles.input}
                 selectTextOnFocus
+                autoCapitalize="none"
+                autoComplete="url"
+                keyboardType="url"
+                textContentType="URL"
                 maxLength={1000}
                 placeholder={`https://search.brave.com`}
                 onChangeText={setUrl}
@@ -92,6 +87,7 @@ export default function ScreenNewLink() {
               <TextInput
                 style={styles.input}
                 selectTextOnFocus
+                autoCapitalize="none"
                 maxLength={25}
                 placeholder={`simple-icons:brave`}
                 onChangeText={setIcon}
@@ -104,6 +100,7 @@ export default function ScreenNewLink() {
               <TextInput
                 style={styles.input}
                 selectTextOnFocus
+                autoCapitalize="none"
                 maxLength={25}
                 placeholder={`#888`}
                 onChangeText={setColor}
@@ -111,21 +108,21 @@ export default function ScreenNewLink() {
               />
             </PanelItem>
           </PanelSection>
-          <PanelSection title={t`Preview`}>
-            <Grid>
-              <GridCell
-                focusKey="link-preview"
-                onSelect={() => url && Linking.openURL(url)}>
-                <View style={styles.link}>
-                  <IconRemote
-                    name={icon || 'simple-icons:brave'}
-                    color={color || '#888'}
-                    size={'50%'}
-                  />
-                </View>
-              </GridCell>
-            </Grid>
-          </PanelSection>
+          <View style={styles.actions}>
+            <Button
+              label={t`Cancel`}
+              mode="Secondary"
+              state="Default"
+              onPress={() => nav('/')}
+            />
+            <Button
+              label={t`Save Link`}
+              mode="Primary"
+              state={savedDisabled ? 'Disabled' : 'Default'}
+              disabled={savedDisabled}
+              onPress={handleSave}
+            />
+          </View>
         </View>
     </Panel>
   );
@@ -133,7 +130,6 @@ export default function ScreenNewLink() {
 
 const styles = StyleSheet.create((theme) => ({
   root: {
-    marginTop: theme.display.space6,
     paddingBottom: theme.display.space9,
     ...Platform.select({
       ios: {
@@ -146,10 +142,8 @@ const styles = StyleSheet.create((theme) => ({
   },
   actions: {
     gap: theme.display.space4,
-    flexDirection: {
-      initial: 'column',
-      xs: 'row',
-    },
+    flexDirection: 'row',
+    marginTop: theme.display.space3,
   },
   input: {
     padding: theme.display.space2,
@@ -167,7 +161,8 @@ const styles = StyleSheet.create((theme) => ({
     width: 215,
   },
   link: {
-    flex: 1,
+    width: 100,
+    height: 100,
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: theme.colors.card,

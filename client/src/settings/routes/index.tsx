@@ -21,7 +21,7 @@ export default function ScreenSettings() {
     <Panel
       title={t`Settings`}
       message={t`Manage your settings`}
-      right={<Identicon id={settings.owner?.id} size={64}/>}>
+      right={<Identicon id={settings.owner?.id} size={100}/>}>
       <View style={styles.root}>
         <PanelSection title={t`Profile`}>
           <PanelItem
@@ -102,7 +102,6 @@ export default function ScreenSettings() {
 
 const styles = StyleSheet.create((theme) => ({
   root: {
-    marginTop: theme.display.space6,
     paddingBottom: theme.display.space9,
     ...Platform.select({
       ios: {
