@@ -17,10 +17,7 @@ export const IconRemote = (props: {
         height: props.size,
         color: props.color,
         backgroundColor: props.color,
-        mask: `url(${`https://api.iconify.design/${props.name.replace(':', '/')}.svg`})`,
-        maskSize: '100% 100%',
-        maskRepeat: 'no-repeat',
-        maskPosition: 'center',
+        mask: `url(${`https://api.iconify.design/${props.name.replace(':', '/')}.svg`}) no-repeat center / 100%`,
       }}
     />
   );
