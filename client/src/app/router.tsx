@@ -1,6 +1,6 @@
 import {Router as _, Routes, Route} from 'react-exo/navigation';
+import {layout, screen} from 'app/lib/nav';
 import {history} from 'app/data';
-import {layout, screen} from './provider';
 
 export function Router() {
   return (

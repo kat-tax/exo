@@ -2,7 +2,7 @@ import {I18nManager, Platform} from 'react-native';
 import {I18nProvider} from '@lingui/react';
 import {useEffect} from 'react';
 import {useLocale} from 'settings/hooks/use-locale';
-import {load, i18n, isRTL} from './provider/lib/lingui';
+import {load, i18n, isRTL} from 'app/lib/lingui';
 
 load('en');
 i18n.activate('en');

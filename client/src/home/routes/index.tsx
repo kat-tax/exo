@@ -4,7 +4,7 @@ import {StyleSheet} from 'react-native-unistyles';
 import {useSettings} from 'settings/hooks/use-settings';
 import {useClock} from 'home/hooks/use-clock';
 import {greetMsg} from 'home/utils/time';
-import {Panel} from 'app/stacks/panel';
+import {Panel} from 'app/ui/panel';
 import cfg from 'config';
 
 export default function ScreenHome() {

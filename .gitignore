@@ -1,7 +1,7 @@
 # Generated
 build/config/locales.ts
-**/slices.types.ts
-**/i18n/provider/msg/
+**/redux.types.ts
+**/messages/*.json
 .icons/
 output/
 dist/

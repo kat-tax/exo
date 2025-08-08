@@ -1,7 +1,7 @@
 import * as $ from 'react-exo/redux';
 import cfg from 'config';
-import mmkv from './lib/kv';
-import slices from './lib/slices';
+import mmkv from 'app/lib/kv';
+import slices from 'app/lib/redux.slices';
 
 const redux = $.configureStore({
   devTools: __DEV__,

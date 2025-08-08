@@ -4,7 +4,7 @@ import {useFocusable, FocusContext} from '@noriginmedia/norigin-spatial-navigati
 import {useLocation} from 'react-exo/navigation';
 import {useLingui} from '@lingui/react/macro';
 import {breakpoints} from 'design/theme';
-import {Icon} from 'app/stacks/base';
+import {Icon} from 'app/ui/base';
 
 import {MenuTab} from './menu-tab';
 import {MenuItem} from './menu-item';

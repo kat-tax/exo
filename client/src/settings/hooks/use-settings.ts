@@ -1,9 +1,9 @@
 import {alert} from 'react-exo/toast';
 import {useLingui} from '@lingui/react/macro';
 import {useCallback} from 'react';
-import {useQuery, useAppOwner} from '@evolu/react';
-import {useEvolu, getOrThrow, Mnemonic, NonEmptyString25} from 'app/data';
-import {getProfile} from 'app/queries';
+import {useEvolu, useAppOwner, useQuery} from 'app/data';
+import {getProfile} from 'app/data/queries';
+import * as $ from 'app/data/types';
 
 export function useSettings() {
   const {t} = useLingui();
@@ -13,7 +13,7 @@ export function useSettings() {
 
   const updateName = useCallback((text: string) => {
     try {
-      const name = getOrThrow(NonEmptyString25.from(text));
+      const name = $.getOrThrow($.NonEmptyString25.from(text));
       if (profiles.length === 0) {
         evolu.insert('profile', {name});
       } else {
@@ -40,7 +40,7 @@ export function useSettings() {
     if (typeof window !== 'undefined' && !window.confirm(t`Are you sure you want to change the owner key? This will reset the local database. This action cannot be undone.`))
       return;
     try {
-      const parsed = getOrThrow(Mnemonic.from(key));
+      const parsed = $.getOrThrow($.Mnemonic.from(key));
       evolu.restoreAppOwner(parsed, {reload: true});
     } catch (error) {
       alert({

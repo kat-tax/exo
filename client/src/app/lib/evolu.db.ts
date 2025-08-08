@@ -1,7 +1,7 @@
 import * as $ from '@evolu/common';
-import schema from 'app/schema';
+import schema from 'app/data/schema';
+import deps from './evolu';
 import cfg from 'config';
-import deps from './lib/deps';
 
 const evolu = $.createEvolu(deps)(schema, {
   name: $.getOrThrow($.SimpleName.from(`${cfg.APP_NAME}-${cfg.STORE_VERSION}`)),

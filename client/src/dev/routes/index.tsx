@@ -1,7 +1,7 @@
 import {useLingui} from '@lingui/react/macro';
 import {View} from 'react-native';
 import {Icon} from 'react-exo/icon';
-import {Panel} from 'app/stacks/panel';
+import {Panel} from 'app/ui/panel';
 import {Frame} from 'dev/stacks/frame';
 
 import * as Design from 'design';

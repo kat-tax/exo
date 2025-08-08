@@ -1,12 +1,12 @@
 import {createUseEvolu, EvoluProvider} from '@evolu/react';
 import {Provider as ReduxProvider} from 'react-exo/redux';
-import {Spinner} from 'app/stacks/base';
-import evolu from './provider/evolu';
-import redux from './provider/redux';
+import {Spinner} from 'app/ui/base';
+import evolu from 'app/lib/evolu.db';
+import redux from 'app/lib/redux.db';
 
-export * from './provider/redux';
-export * from './types';
-export * from '../queries';
+export * from '@evolu/react';
+export * from 'app/lib/evolu.db';
+export * from 'app/lib/redux.db';
 
 export const useEvolu = createUseEvolu(evolu);
 

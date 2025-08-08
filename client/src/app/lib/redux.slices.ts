@@ -1,5 +1,5 @@
 import type {Reducer} from 'react-exo/redux';
-import type {ReducerKeys} from './slices.types';
+import type {ReducerKeys} from './redux.types';
 
 const ctx = (import.meta as any).glob('./**/store.ts', {
   base: '/',
