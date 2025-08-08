@@ -36,10 +36,10 @@
   },
   "material-icon-theme.files.associations": {
     "app/index.tsx": "tree",
-    "app/layout.tsx": "templ",
-    "app/queries.ts": "search",
-    "app/schema.ts": "database",
     "app/theme.tsx": "palette",
+    "app/layout.tsx": "templ",
+    "data/queries.ts": "search",
+    "data/schema.ts": "database",
     "store.ts": "redux-reducer",
   },
 }
