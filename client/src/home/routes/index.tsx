@@ -7,7 +7,7 @@ import {greetMsg} from 'home/utils/time';
 import {Panel} from 'app/stacks/panel';
 import cfg from 'config';
 
-export default function ScreenDashboard() {
+export default function ScreenHome() {
   const settings = useSettings();
   const clock = useClock();
 

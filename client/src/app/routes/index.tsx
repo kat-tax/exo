@@ -1,18 +1,17 @@
 import {Router as _, Routes, Route} from 'react-exo/navigation';
 import {history} from 'app/data';
-
-import {Layout, Screen} from './provider';
+import {layout, screen} from './provider';
 
 export function Router() {
   return (
     <_ {...{history}}>
       <Routes>
-        <Route path="/" element={<Layout.App/>}>
+        <Route path="/" element={<layout.app/>}>
           {/* General */}
-          <Route index element={<Screen.Dashboard/>}/>
-          <Route path="settings" element={<Screen.Settings/>}/>
+          <Route index element={<screen.home.index/>}/>
+          <Route path="settings" element={<screen.settings.index/>}/>
           {/* Dev Mode */}
-          <Route path="design" element={<Screen.Design/>}/>
+          <Route path="design" element={<screen.dev.index/>}/>
         </Route>
       </Routes>
     </_>
