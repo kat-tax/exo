@@ -1,6 +1,6 @@
 import App from 'app/layout';
-import Settings from 'settings/routes/screen-settings';
-import Dashboard from 'home/routes/screen-dashboard';
+import Settings from 'settings/settings';
+import Dashboard from 'home/dashboard';
 
 export const Layout = {
   App,
