@@ -28,11 +28,6 @@ export default function ScreenHome() {
 }
 
 const styles = StyleSheet.create((theme) => ({
-  header: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: theme.display.space3,
-  },
   clock: {
     fontFamily: theme.font.family,
     fontSize: theme.typography.size7,
