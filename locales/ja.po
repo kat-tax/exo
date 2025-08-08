@@ -37,7 +37,7 @@ msgstr "ダーク"
 #: ../../client/src/app/routes/menu/index.tsx:29
 #: ../../client/src/app/routes/menu/index.tsx:47
 msgid "Dashboard"
-msgstr "ダッシュボード"
+msgstr "ホーム"
 
 #: ../../client/src/app/routes/screen-design.tsx:13
 #: ../../client/src/app/routes/menu/index.tsx:59
