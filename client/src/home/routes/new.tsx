@@ -1,50 +1,32 @@
-import {useState} from 'react';
-import {useLingui} from '@lingui/react/macro';
-import {useNavigate} from 'react-exo/navigation';
-import {StyleSheet} from 'react-native-unistyles';
 import {Platform, View} from 'react-native';
+import {StyleSheet} from 'react-native-unistyles';
+import {useLingui} from '@lingui/react/macro';
+import {useNavigate, useLocation} from 'react-exo/navigation';
 import {Panel, PanelSection, PanelItem} from 'app/ui/panel';
 import {IconRemote, TextInput} from 'app/ui/base';
 import {useLinks} from 'home/hooks/use-links';
+import {useQuery} from 'app/data';
+import {getLink} from 'app/data/queries';
 import {Button} from 'design';
 
 export default function ScreenNewLink() {
-  const [url, setUrl] = useState('');
-  const [name, setName] = useState('');
-  const [icon, setIcon] = useState('');
-  const [color, setColor] = useState('');
-  const savedDisabled = !url.trim() || !name.trim() || !icon.trim() || !color.trim();
+  const location = useLocation();
+  const links = useLinks();
+  const link = useQuery(getLink(location.state?.id))[0];
 
-  const {t} = useLingui();
+  const update = links.update.bind(null, location.state?.id);
   const nav = useNavigate();
-  const {createLink} = useLinks();
-
-  const handleSave = () => {
-    if (!url.trim() || !name.trim() || !icon.trim() || !color.trim()) {
-      return;
-    }
-
-    const success = createLink({
-      url: url.trim(),
-      name: name.trim(),
-      icon: icon.trim(),
-      color: color.trim(),
-    });
-
-    if (success) {
-      nav('/');
-    }
-  };
+  const {t} = useLingui();
 
   return (
     <Panel
-      title={name || t`Untitled`}
+      title={link.name || t`New`}
       message={t`Configure dashboard link`}
       right={
         <View style={styles.link}>
           <IconRemote
-            name={icon || 'simple-icons:brave'}
-            color={color || '#888'}
+            name={link.icon ?? 'simple-icons:brave'}
+            color={link.color ?? '#888'}
             size={'50%'}
           />
         </View>
@@ -56,15 +38,14 @@ export default function ScreenNewLink() {
               description={t`The web page to link to.`}>
               <TextInput
                 style={styles.input}
-                selectTextOnFocus
                 autoCapitalize="none"
                 autoComplete="url"
                 keyboardType="url"
                 textContentType="URL"
                 maxLength={1000}
                 placeholder={`https://search.brave.com`}
-                onChangeText={setUrl}
-                value={url}
+                onChangeText={update.bind(null, 'url')}
+                value={link.url ?? ''}
               />
             </PanelItem>
             <PanelItem
@@ -72,11 +53,10 @@ export default function ScreenNewLink() {
               description={t`The display name of the link.`}>
               <TextInput
                 style={styles.input}
-                selectTextOnFocus
                 maxLength={25}
                 placeholder={`Brave`}
-                onChangeText={setName}
-                value={name}
+                onChangeText={update.bind(null, 'name')}
+                value={link.name ?? ''}
               />
             </PanelItem>
           </PanelSection>
@@ -86,12 +66,11 @@ export default function ScreenNewLink() {
               description={t`The icon to display for the link.`}>
               <TextInput
                 style={styles.input}
-                selectTextOnFocus
                 autoCapitalize="none"
                 maxLength={25}
                 placeholder={`simple-icons:brave`}
-                onChangeText={setIcon}
-                value={icon}
+                onChangeText={update.bind(null, 'icon')}
+                value={link.icon ?? ''}
               />
             </PanelItem>
             <PanelItem
@@ -99,12 +78,11 @@ export default function ScreenNewLink() {
               description={t`The color of the link icon.`}>
               <TextInput
                 style={styles.input}
-                selectTextOnFocus
                 autoCapitalize="none"
                 maxLength={25}
                 placeholder={`#888`}
-                onChangeText={setColor}
-                value={color}
+                onChangeText={update.bind(null, 'color')}
+                value={link.color ?? ''}
               />
             </PanelItem>
           </PanelSection>
@@ -116,11 +94,13 @@ export default function ScreenNewLink() {
               onPress={() => nav('/')}
             />
             <Button
-              label={t`Save Link`}
-              mode="Primary"
-              state={savedDisabled ? 'Disabled' : 'Default'}
-              disabled={savedDisabled}
-              onPress={handleSave}
+              label={t`Delete`}
+              mode="Destructive"
+              state="Default"
+              onPress={() => {
+                links.remove(location.state?.id);
+                nav('/');
+              }}
             />
           </View>
         </View>

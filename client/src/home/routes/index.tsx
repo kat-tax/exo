@@ -1,5 +1,5 @@
 import {Trans} from '@lingui/react';
-import {Linking, Text, View} from 'react-native';
+import {Linking, Pressable, Text, View} from 'react-native';
 import {StyleSheet} from 'react-native-unistyles';
 import {useSettings} from 'settings/hooks/use-settings';
 import {useNavigate} from 'react-exo/navigation';
@@ -11,12 +11,14 @@ import {Grid} from 'app/ui/grid';
 import {GridCell} from 'app/ui/grid';
 import {useQuery} from 'app/data';
 import {getLinks} from 'app/data/queries';
+import {useLinks} from 'home/hooks/use-links';
 import cfg from 'config';
 
 export default function ScreenHome() {
   const settings = useSettings();
   const clock = useClock();
-  const links = useQuery(getLinks);
+  const links = useLinks();
+  const data = useQuery(getLinks);
   const nav = useNavigate();
 
   return (
@@ -29,23 +31,37 @@ export default function ScreenHome() {
         </Text>
       }>
       <Grid>
-        {links.map((link) => (
+        {data.map(({id, url, icon, color}) => (
           <GridCell
-            key={link.id}
-            focusKey={`link-${link.id}`}
-            onSelect={() => link.url && Linking.openURL(link.url)}>
+            key={id}
+            focusKey={`link-${id}`}
+            onSelect={() => url && Linking.openURL(url)}>
             <View style={styles.link}>
               <IconRemote
-                name={link.icon ?? 'simple-icons:brave'}
-                color={link.color ?? '#888'}
+                name={icon ?? ''}
+                color={color ?? ''}
                 size={'50%'}
               />
+              <Pressable
+                style={styles.editButton}
+                onPress={() => nav(`/new-link`, {state: {id}})}>
+                <Icon
+                  name="ph:pencil-simple"
+                  size={16}
+                  uniProps={(theme: any) => ({
+                    color: theme.colors.mutedForeground,
+                  })}
+                />
+              </Pressable>
             </View>
           </GridCell>
         ))}
         <GridCell
           focusKey="link-add"
-          onSelect={() => nav('/new-link')}>
+          onSelect={() => {
+            const id = links.create();
+            if (id) nav(`/new-link`, {state: {id}});
+          }}>
           <View style={[styles.link, styles.linkAdd]}>
             <Icon name="ph:plus" size={32} uniProps={
               (theme: any) => ({
@@ -79,5 +95,14 @@ const styles = StyleSheet.create((theme) => ({
   },
   linkAdd: {
     backgroundColor: theme.colors.accent,
+  },
+  editButton: {
+    position: 'absolute',
+    top: theme.display.space1,
+    right: theme.display.space1,
+    padding: theme.display.space1,
+    borderRadius: theme.display.radius2,
+    backgroundColor: theme.colors.background,
+    opacity: 0.9,
   },
 }));
