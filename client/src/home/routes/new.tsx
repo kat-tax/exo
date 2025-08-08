@@ -1,15 +1,21 @@
-import {Platform, View} from 'react-native';
-import {StyleSheet} from 'react-native-unistyles';
+import {useState} from 'react';
 import {useLingui} from '@lingui/react/macro';
 import {useNavigate} from 'react-exo/navigation';
+import {StyleSheet} from 'react-native-unistyles';
+import {Linking, Platform, View} from 'react-native';
 import {Panel, PanelSection, PanelItem} from 'app/ui/panel';
 import {IconRemote, TextInput} from 'app/ui/base';
-import {Button} from 'design';
 import {Grid, GridCell} from 'app/ui/grid';
+import {Button} from 'design';
 
 export default function ScreenNewLink() {
-  const nav = useNavigate();
+  const [url, setUrl] = useState('');
+  const [name, setName] = useState('');
+  const [icon, setIcon] = useState('');
+  const [color, setColor] = useState('');
+
   const {t} = useLingui();
+  const nav = useNavigate();
 
   return (
     <Panel
@@ -41,11 +47,9 @@ export default function ScreenNewLink() {
               description={t`The web page to link to.`}>
               <TextInput
                 style={styles.input}
-                selectTextOnFocus
-                defaultValue={''}
                 placeholder={`https://search.brave.com`}
-                onSubmitEditing={() => {}}
-                onBlur={() => {}}
+                onChangeText={setUrl}
+                value={url}
               />
             </PanelItem>
             <PanelItem
@@ -53,11 +57,9 @@ export default function ScreenNewLink() {
               description={t`The display name of the link.`}>
               <TextInput
                 style={styles.input}
-                selectTextOnFocus
-                defaultValue={''}
                 placeholder={`Brave`}
-                onSubmitEditing={() => {}}
-                onBlur={() => {}}
+                onChangeText={setName}
+                value={name}
               />
             </PanelItem>
           </PanelSection>
@@ -68,10 +70,9 @@ export default function ScreenNewLink() {
               <TextInput
                 style={styles.input}
                 selectTextOnFocus
-                defaultValue={''}
                 placeholder={`simple-icons:brave`}
-                onSubmitEditing={() => {}}
-                onBlur={() => {}}
+                onChangeText={setIcon}
+                value={icon}
               />
             </PanelItem>
             <PanelItem
@@ -80,20 +81,21 @@ export default function ScreenNewLink() {
               <TextInput
                 style={styles.input}
                 selectTextOnFocus
-                defaultValue={''}
                 placeholder={`#888`}
-                onSubmitEditing={() => {}}
-                onBlur={() => {}}
+                onChangeText={setColor}
+                value={color}
               />
             </PanelItem>
           </PanelSection>
           <PanelSection title={t`Preview`}>
             <Grid>
-              <GridCell focusKey="link-preview">
+              <GridCell
+                focusKey="link-preview"
+                onSelect={() => url && Linking.openURL(url)}>
                 <View style={styles.link}>
                   <IconRemote
-                    name={'simple-icons:brave'}
-                    color={'#FB542B'}
+                    name={icon || 'simple-icons:brave'}
+                    color={color || '#888'}
                     size={'50%'}
                   />
                 </View>
