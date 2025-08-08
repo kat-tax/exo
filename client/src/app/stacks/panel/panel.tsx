@@ -112,7 +112,6 @@ const styles = StyleSheet.create((theme, rt) => ({
     marginBottom: theme.display.space5,
   },
   widget: {
-    flex: 1,
     gap: theme.display.space2,
   },
   widgetLeft: {

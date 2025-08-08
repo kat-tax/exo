@@ -33,16 +33,9 @@ const styles = StyleSheet.create((theme) => ({
     alignItems: 'center',
     gap: theme.display.space3,
   },
-  name: {
-    fontFamily: theme.font.family,
-    fontSize: theme.typography.size8,
-    fontWeight: theme.typography.weightLight,
-    letterSpacing: theme.font.headerSpacing,
-    color: theme.colors.foreground,
-  },
   clock: {
     fontFamily: theme.font.family,
-    fontSize: theme.typography.size8,
+    fontSize: theme.typography.size7,
     fontWeight: theme.typography.weightThin,
     letterSpacing: theme.font.headerSpacing,
     color: theme.colors.foreground,
