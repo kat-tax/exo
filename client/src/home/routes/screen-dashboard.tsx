@@ -1,23 +1,20 @@
+import {Trans} from '@lingui/react';
 import {Text, View} from 'react-native';
 import {StyleSheet} from 'react-native-unistyles';
+import {useSettings} from 'app/hooks/use-settings';
 import {useClock} from 'home/hooks/use-clock';
+import {greetMsg} from 'home/utils/time';
 import {Panel} from 'app/stacks/panel';
-//import {Logo} from 'design';
 import cfg from 'config';
 
 export default function ScreenDashboard() {
+  const settings = useSettings();
   const clock = useClock();
 
   return (
     <Panel
-      left={
-        <View style={styles.header}>
-          {/*<Logo/>*/}
-          <Text style={styles.name}>
-            {cfg.APP_NAME}
-          </Text>
-        </View>
-      }
+      title={cfg.APP_NAME}
+      message={<Trans {...greetMsg(settings.name)}/>}
       right={
         <Text style={styles.clock}>
           {clock}
@@ -48,7 +45,7 @@ const styles = StyleSheet.create((theme) => ({
     fontSize: theme.typography.size8,
     fontWeight: theme.typography.weightThin,
     letterSpacing: theme.font.headerSpacing,
-    color: theme.colors.mutedForeground,
+    color: theme.colors.foreground,
   },
   main: {
     flex: 1,

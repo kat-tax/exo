@@ -69,6 +69,22 @@ msgstr "أدخل الاسم"
 msgid "Error"
 msgstr "خطأ"
 
+#: ../../client/src/home/utils/time.ts:16
+msgid "Good afternoon, {name}."
+msgstr "مساء الخير، {name}."
+
+#: ../../client/src/home/utils/time.ts:18
+msgid "Good evening, {name}."
+msgstr "مساء الخير، {name}."
+
+#: ../../client/src/home/utils/time.ts:14
+msgid "Good morning, {name}."
+msgstr "صباح الخير، {name}."
+
+#: ../../client/src/home/utils/time.ts:20
+msgid "Good night, {name}."
+msgstr "تصبح على خير، {name}."
+
 #: ../../client/src/app/routes/menu/menu-header.tsx:20
 msgid "Human"
 msgstr "بشري"
@@ -127,6 +143,10 @@ msgstr "العبارة المساعدة لقاعدة البيانات."
 #: ../../client/src/app/routes/screen-settings.tsx:85
 msgid "Theme"
 msgstr "النسق"
+
+#: ../../client/src/home/utils/time.ts:21
+msgid "Welcome back, {name}."
+msgstr "أهلاً بعودتك، {name}."
 
 #: ../../client/src/app/routes/screen-settings.tsx:29
 msgid "Your name to display in the app."

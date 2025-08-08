@@ -1,5 +1,4 @@
 export {Placeholder} from './components/base/utilities/placeholder';
-export {Logo} from './components/base/utilities/logo';
 export {Alert} from './components/base/indicators/alert';
 export {Status} from './components/base/indicators/status';
 export {Article} from './components/base/cards/article';

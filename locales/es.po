@@ -69,6 +69,22 @@ msgstr "Ingresa nombre"
 msgid "Error"
 msgstr "Error"
 
+#: ../../client/src/home/utils/time.ts:16
+msgid "Good afternoon, {name}."
+msgstr "Buenas tardes, {name}."
+
+#: ../../client/src/home/utils/time.ts:18
+msgid "Good evening, {name}."
+msgstr "Buenas noches, {name}."
+
+#: ../../client/src/home/utils/time.ts:14
+msgid "Good morning, {name}."
+msgstr "Buenos días, {name}."
+
+#: ../../client/src/home/utils/time.ts:20
+msgid "Good night, {name}."
+msgstr "Buenas noches, {name}."
+
 #: ../../client/src/app/routes/menu/menu-header.tsx:20
 msgid "Human"
 msgstr "Humano"
@@ -127,6 +143,10 @@ msgstr "La frase mnemónica para tu base de datos."
 #: ../../client/src/app/routes/screen-settings.tsx:85
 msgid "Theme"
 msgstr "Tema"
+
+#: ../../client/src/home/utils/time.ts:21
+msgid "Welcome back, {name}."
+msgstr "Bienvenido, {name}."
 
 #: ../../client/src/app/routes/screen-settings.tsx:29
 msgid "Your name to display in the app."

@@ -69,6 +69,22 @@ msgstr "Введите имя"
 msgid "Error"
 msgstr "Ошибка"
 
+#: ../../client/src/home/utils/time.ts:16
+msgid "Good afternoon, {name}."
+msgstr "Добрый день, {name}."
+
+#: ../../client/src/home/utils/time.ts:18
+msgid "Good evening, {name}."
+msgstr "Добрый вечер, {name}."
+
+#: ../../client/src/home/utils/time.ts:14
+msgid "Good morning, {name}."
+msgstr "Доброе утро, {name}."
+
+#: ../../client/src/home/utils/time.ts:20
+msgid "Good night, {name}."
+msgstr "Спокойной ночи, {name}."
+
 #: ../../client/src/app/routes/menu/menu-header.tsx:20
 msgid "Human"
 msgstr "Человек"
@@ -127,6 +143,10 @@ msgstr "Мнемоническая фраза для вашей базы дан�
 #: ../../client/src/app/routes/screen-settings.tsx:85
 msgid "Theme"
 msgstr "Тема"
+
+#: ../../client/src/home/utils/time.ts:21
+msgid "Welcome back, {name}."
+msgstr "С возвращением, {name}."
 
 #: ../../client/src/app/routes/screen-settings.tsx:29
 msgid "Your name to display in the app."
