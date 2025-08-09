@@ -18,7 +18,7 @@ msgstr ""
 msgid "{0} components"
 msgstr "{0}개 컴포넌트"
 
-#: ../../client/src/home/routes/new.tsx:63
+#: ../../client/src/home/routes/link.tsx:65
 msgid "Appearance"
 msgstr "외관"
 
@@ -30,16 +30,16 @@ msgstr "소유자 키를 변경하시겠습니까? 로컬 데이터베이스가 
 msgid "Are you sure you want to reset your local database? If data is not backed up on another device, it will be lost. This action cannot be undone."
 msgstr "로컬 데이터베이스를 초기화하시겠습니까? 다른 기기에 백업되지 않은 데이터는 손실됩니다. 이 작업은 되돌릴 수 없습니다."
 
-#: ../../client/src/home/routes/new.tsx:91
+#: ../../client/src/home/routes/link.tsx:93
 #: ../../design/components/base/popovers/prompt/Prompt.tsx:43
 msgid "Cancel"
 msgstr "취소"
 
-#: ../../client/src/home/routes/new.tsx:77
+#: ../../client/src/home/routes/link.tsx:79
 msgid "Color"
 msgstr "색상"
 
-#: ../../client/src/home/routes/new.tsx:24
+#: ../../client/src/home/routes/link.tsx:24
 msgid "Configure dashboard link"
 msgstr "대시보드 링크 설정"
 
@@ -52,7 +52,7 @@ msgstr "다크"
 msgid "Dashboard"
 msgstr "대시보드"
 
-#: ../../client/src/home/routes/new.tsx:97
+#: ../../client/src/home/routes/link.tsx:99
 msgid "Delete"
 msgstr "삭제"
 
@@ -99,7 +99,7 @@ msgstr "링크 삭제에 실패했습니다."
 msgid "Failed to update link."
 msgstr "링크 업데이트에 실패했습니다."
 
-#: ../../client/src/home/routes/new.tsx:35
+#: ../../client/src/home/routes/link.tsx:37
 msgid "General"
 msgstr "일반"
 
@@ -123,7 +123,7 @@ msgstr "안녕히 주무세요, {name}님."
 msgid "Human"
 msgstr "인간"
 
-#: ../../client/src/home/routes/new.tsx:65
+#: ../../client/src/home/routes/link.tsx:67
 msgid "Icon"
 msgstr "아이콘"
 
@@ -167,13 +167,9 @@ msgstr "라이트"
 msgid "Manage your settings"
 msgstr "설정 관리"
 
-#: ../../client/src/home/routes/new.tsx:52
+#: ../../client/src/home/routes/link.tsx:54
 msgid "Name"
 msgstr "이름"
-
-#: ../../client/src/home/routes/new.tsx:23
-msgid "New"
-msgstr "새로 만들기"
 
 #: ../../client/src/settings/routes/index.tsx:39
 msgid "Owner Key"
@@ -202,15 +198,15 @@ msgstr "설정"
 msgid "System"
 msgstr "시스템"
 
-#: ../../client/src/home/routes/new.tsx:78
+#: ../../client/src/home/routes/link.tsx:80
 msgid "The color of the link icon."
 msgstr "링크 아이콘의 색상입니다."
 
-#: ../../client/src/home/routes/new.tsx:53
+#: ../../client/src/home/routes/link.tsx:55
 msgid "The display name of the link."
 msgstr "링크의 표시 이름입니다."
 
-#: ../../client/src/home/routes/new.tsx:66
+#: ../../client/src/home/routes/link.tsx:68
 msgid "The icon to display for the link."
 msgstr "링크에 표시할 아이콘입니다."
 
@@ -218,7 +214,7 @@ msgstr "링크에 표시할 아이콘입니다."
 msgid "The mnemonic phrase for your database."
 msgstr "데이터베이스용 니모닉 구문입니다."
 
-#: ../../client/src/home/routes/new.tsx:38
+#: ../../client/src/home/routes/link.tsx:40
 msgid "The web page to link to."
 msgstr "연결할 웹페이지입니다."
 
@@ -226,7 +222,11 @@ msgstr "연결할 웹페이지입니다."
 msgid "Theme"
 msgstr "테마"
 
-#: ../../client/src/home/routes/new.tsx:37
+#: ../../client/src/home/routes/link.tsx:23
+msgid "Untitled"
+msgstr "제목 없음"
+
+#: ../../client/src/home/routes/link.tsx:39
 msgid "URL"
 msgstr "URL"
 

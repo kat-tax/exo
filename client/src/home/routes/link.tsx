@@ -9,7 +9,7 @@ import {useQuery} from 'app/data';
 import {getLink} from 'app/data/queries';
 import {Button} from 'design';
 
-export default function ScreenNewLink() {
+export default function ScreenLink() {
   const location = useLocation();
   const links = useLinks();
   const link = useQuery(getLink(location.state?.id))[0];
@@ -20,14 +20,16 @@ export default function ScreenNewLink() {
 
   return (
     <Panel
-      title={link.name || t`New`}
+      title={link.name || t`Untitled`}
       message={t`Configure dashboard link`}
       right={
         <View style={styles.link}>
           <IconRemote
-            name={link.icon ?? 'simple-icons:brave'}
-            color={link.color ?? '#888'}
+            name={link.icon ?? 'ph:globe'}
             size={'50%'}
+            uniProps={(theme: any) => ({
+              color: link.color ?? theme.colors.foreground,
+            })}
           />
         </View>
       }>
@@ -86,7 +88,6 @@ export default function ScreenNewLink() {
               />
             </PanelItem>
           </PanelSection>
-          <View style={styles.spacer}/>
           <View style={styles.actions}>
             <Button
               label={t`Cancel`}
@@ -111,7 +112,6 @@ export default function ScreenNewLink() {
 
 const styles = StyleSheet.create((theme) => ({
   root: {
-    paddingBottom: theme.display.space9,
     ...Platform.select({
       ios: {
         gap: 0,
@@ -121,13 +121,9 @@ const styles = StyleSheet.create((theme) => ({
       },
     }),
   },
-  spacer: {
-    flex: 1,
-  },
   actions: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginTop: theme.display.space3,
+    marginBottom: theme.display.space5,
     gap: theme.display.space4,
   },
   input: {

@@ -18,7 +18,7 @@ msgstr ""
 msgid "{0} components"
 msgstr "{0} مكونات"
 
-#: ../../client/src/home/routes/new.tsx:63
+#: ../../client/src/home/routes/link.tsx:65
 msgid "Appearance"
 msgstr "المظهر"
 
@@ -30,16 +30,16 @@ msgstr "هل أنت متأكد من تغيير مفتاح المالك؟ سيؤ�
 msgid "Are you sure you want to reset your local database? If data is not backed up on another device, it will be lost. This action cannot be undone."
 msgstr "هل أنت متأكد من إعادة تعيين قاعدة البيانات المحلية؟ إذا لم يتم نسخ البيانات احتياطياً على جهاز آخر، فستفقد. لا يمكن التراجع عن هذا الإجراء."
 
-#: ../../client/src/home/routes/new.tsx:91
+#: ../../client/src/home/routes/link.tsx:93
 #: ../../design/components/base/popovers/prompt/Prompt.tsx:43
 msgid "Cancel"
 msgstr "إلغاء"
 
-#: ../../client/src/home/routes/new.tsx:77
+#: ../../client/src/home/routes/link.tsx:79
 msgid "Color"
 msgstr "اللون"
 
-#: ../../client/src/home/routes/new.tsx:24
+#: ../../client/src/home/routes/link.tsx:24
 msgid "Configure dashboard link"
 msgstr "تكوين رابط لوحة التحكم"
 
@@ -52,7 +52,7 @@ msgstr "داكن"
 msgid "Dashboard"
 msgstr "لوحة التحكم"
 
-#: ../../client/src/home/routes/new.tsx:97
+#: ../../client/src/home/routes/link.tsx:99
 msgid "Delete"
 msgstr "حذف"
 
@@ -99,7 +99,7 @@ msgstr "فشل في حذف الرابط."
 msgid "Failed to update link."
 msgstr "فشل في تحديث الرابط."
 
-#: ../../client/src/home/routes/new.tsx:35
+#: ../../client/src/home/routes/link.tsx:37
 msgid "General"
 msgstr "عام"
 
@@ -123,7 +123,7 @@ msgstr "تصبح على خير، {name}."
 msgid "Human"
 msgstr "بشري"
 
-#: ../../client/src/home/routes/new.tsx:65
+#: ../../client/src/home/routes/link.tsx:67
 msgid "Icon"
 msgstr "أيقونة"
 
@@ -167,13 +167,9 @@ msgstr "فاتح"
 msgid "Manage your settings"
 msgstr "إدارة الإعدادات"
 
-#: ../../client/src/home/routes/new.tsx:52
+#: ../../client/src/home/routes/link.tsx:54
 msgid "Name"
 msgstr "الاسم"
-
-#: ../../client/src/home/routes/new.tsx:23
-msgid "New"
-msgstr "جديد"
 
 #: ../../client/src/settings/routes/index.tsx:39
 msgid "Owner Key"
@@ -202,15 +198,15 @@ msgstr "الإعدادات"
 msgid "System"
 msgstr "النظام"
 
-#: ../../client/src/home/routes/new.tsx:78
+#: ../../client/src/home/routes/link.tsx:80
 msgid "The color of the link icon."
 msgstr "لون أيقونة الرابط."
 
-#: ../../client/src/home/routes/new.tsx:53
+#: ../../client/src/home/routes/link.tsx:55
 msgid "The display name of the link."
 msgstr "اسم عرض الرابط."
 
-#: ../../client/src/home/routes/new.tsx:66
+#: ../../client/src/home/routes/link.tsx:68
 msgid "The icon to display for the link."
 msgstr "الأيقونة المعروضة للرابط."
 
@@ -218,7 +214,7 @@ msgstr "الأيقونة المعروضة للرابط."
 msgid "The mnemonic phrase for your database."
 msgstr "العبارة المساعدة لقاعدة البيانات."
 
-#: ../../client/src/home/routes/new.tsx:38
+#: ../../client/src/home/routes/link.tsx:40
 msgid "The web page to link to."
 msgstr "صفحة الويب للربط بها."
 
@@ -226,7 +222,11 @@ msgstr "صفحة الويب للربط بها."
 msgid "Theme"
 msgstr "النسق"
 
-#: ../../client/src/home/routes/new.tsx:37
+#: ../../client/src/home/routes/link.tsx:23
+msgid "Untitled"
+msgstr "بدون عنوان"
+
+#: ../../client/src/home/routes/link.tsx:39
 msgid "URL"
 msgstr "الرابط"
 

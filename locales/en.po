@@ -18,7 +18,7 @@ msgstr ""
 msgid "{0} components"
 msgstr "{0} components"
 
-#: ../../client/src/home/routes/new.tsx:63
+#: ../../client/src/home/routes/link.tsx:65
 msgid "Appearance"
 msgstr "Appearance"
 
@@ -30,16 +30,16 @@ msgstr "Are you sure you want to change the owner key? This will reset the local
 msgid "Are you sure you want to reset your local database? If data is not backed up on another device, it will be lost. This action cannot be undone."
 msgstr "Are you sure you want to reset your local database? If data is not backed up on another device, it will be lost. This action cannot be undone."
 
-#: ../../client/src/home/routes/new.tsx:91
+#: ../../client/src/home/routes/link.tsx:93
 #: ../../design/components/base/popovers/prompt/Prompt.tsx:43
 msgid "Cancel"
 msgstr "Cancel"
 
-#: ../../client/src/home/routes/new.tsx:77
+#: ../../client/src/home/routes/link.tsx:79
 msgid "Color"
 msgstr "Color"
 
-#: ../../client/src/home/routes/new.tsx:24
+#: ../../client/src/home/routes/link.tsx:24
 msgid "Configure dashboard link"
 msgstr "Configure dashboard link"
 
@@ -52,7 +52,7 @@ msgstr "Dark"
 msgid "Dashboard"
 msgstr "Dashboard"
 
-#: ../../client/src/home/routes/new.tsx:97
+#: ../../client/src/home/routes/link.tsx:99
 msgid "Delete"
 msgstr "Delete"
 
@@ -99,7 +99,7 @@ msgstr "Failed to delete link."
 msgid "Failed to update link."
 msgstr "Failed to update link."
 
-#: ../../client/src/home/routes/new.tsx:35
+#: ../../client/src/home/routes/link.tsx:37
 msgid "General"
 msgstr "General"
 
@@ -123,7 +123,7 @@ msgstr "Good night, {name}."
 msgid "Human"
 msgstr "Human"
 
-#: ../../client/src/home/routes/new.tsx:65
+#: ../../client/src/home/routes/link.tsx:67
 msgid "Icon"
 msgstr "Icon"
 
@@ -167,13 +167,9 @@ msgstr "Light"
 msgid "Manage your settings"
 msgstr "Manage your settings"
 
-#: ../../client/src/home/routes/new.tsx:52
+#: ../../client/src/home/routes/link.tsx:54
 msgid "Name"
 msgstr "Name"
-
-#: ../../client/src/home/routes/new.tsx:23
-msgid "New"
-msgstr "New"
 
 #: ../../client/src/settings/routes/index.tsx:39
 msgid "Owner Key"
@@ -202,15 +198,15 @@ msgstr "Settings"
 msgid "System"
 msgstr "System"
 
-#: ../../client/src/home/routes/new.tsx:78
+#: ../../client/src/home/routes/link.tsx:80
 msgid "The color of the link icon."
 msgstr "The color of the link icon."
 
-#: ../../client/src/home/routes/new.tsx:53
+#: ../../client/src/home/routes/link.tsx:55
 msgid "The display name of the link."
 msgstr "The display name of the link."
 
-#: ../../client/src/home/routes/new.tsx:66
+#: ../../client/src/home/routes/link.tsx:68
 msgid "The icon to display for the link."
 msgstr "The icon to display for the link."
 
@@ -218,7 +214,7 @@ msgstr "The icon to display for the link."
 msgid "The mnemonic phrase for your database."
 msgstr "The mnemonic phrase for your database."
 
-#: ../../client/src/home/routes/new.tsx:38
+#: ../../client/src/home/routes/link.tsx:40
 msgid "The web page to link to."
 msgstr "The web page to link to."
 
@@ -226,7 +222,11 @@ msgstr "The web page to link to."
 msgid "Theme"
 msgstr "Theme"
 
-#: ../../client/src/home/routes/new.tsx:37
+#: ../../client/src/home/routes/link.tsx:23
+msgid "Untitled"
+msgstr "Untitled"
+
+#: ../../client/src/home/routes/link.tsx:39
 msgid "URL"
 msgstr "URL"
 

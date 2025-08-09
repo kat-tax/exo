@@ -18,7 +18,7 @@ msgstr ""
 msgid "{0} components"
 msgstr "{0} компонентов"
 
-#: ../../client/src/home/routes/new.tsx:63
+#: ../../client/src/home/routes/link.tsx:65
 msgid "Appearance"
 msgstr "Внешний вид"
 
@@ -30,16 +30,16 @@ msgstr "Вы уверены, что хотите изменить ключ вл�
 msgid "Are you sure you want to reset your local database? If data is not backed up on another device, it will be lost. This action cannot be undone."
 msgstr "Вы уверены, что хотите сбросить локальную базу данных? Если данные не сохранены на другом устройстве, они будут потеряны. Это действие нельзя отменить."
 
-#: ../../client/src/home/routes/new.tsx:91
+#: ../../client/src/home/routes/link.tsx:93
 #: ../../design/components/base/popovers/prompt/Prompt.tsx:43
 msgid "Cancel"
 msgstr "Отмена"
 
-#: ../../client/src/home/routes/new.tsx:77
+#: ../../client/src/home/routes/link.tsx:79
 msgid "Color"
 msgstr "Цвет"
 
-#: ../../client/src/home/routes/new.tsx:24
+#: ../../client/src/home/routes/link.tsx:24
 msgid "Configure dashboard link"
 msgstr "Настроить ссылку"
 
@@ -52,7 +52,7 @@ msgstr "Тёмная"
 msgid "Dashboard"
 msgstr "Панель"
 
-#: ../../client/src/home/routes/new.tsx:97
+#: ../../client/src/home/routes/link.tsx:99
 msgid "Delete"
 msgstr "Удалить"
 
@@ -99,7 +99,7 @@ msgstr "Не удалось удалить ссылку."
 msgid "Failed to update link."
 msgstr "Не удалось обновить ссылку."
 
-#: ../../client/src/home/routes/new.tsx:35
+#: ../../client/src/home/routes/link.tsx:37
 msgid "General"
 msgstr "Основное"
 
@@ -123,7 +123,7 @@ msgstr "Спокойной ночи, {name}."
 msgid "Human"
 msgstr "Человек"
 
-#: ../../client/src/home/routes/new.tsx:65
+#: ../../client/src/home/routes/link.tsx:67
 msgid "Icon"
 msgstr "Иконка"
 
@@ -167,13 +167,9 @@ msgstr "Светлая"
 msgid "Manage your settings"
 msgstr "Настройки"
 
-#: ../../client/src/home/routes/new.tsx:52
+#: ../../client/src/home/routes/link.tsx:54
 msgid "Name"
 msgstr "Название"
-
-#: ../../client/src/home/routes/new.tsx:23
-msgid "New"
-msgstr "Новая"
 
 #: ../../client/src/settings/routes/index.tsx:39
 msgid "Owner Key"
@@ -202,15 +198,15 @@ msgstr "Настройки"
 msgid "System"
 msgstr "Системная"
 
-#: ../../client/src/home/routes/new.tsx:78
+#: ../../client/src/home/routes/link.tsx:80
 msgid "The color of the link icon."
 msgstr "Цвет иконки ссылки."
 
-#: ../../client/src/home/routes/new.tsx:53
+#: ../../client/src/home/routes/link.tsx:55
 msgid "The display name of the link."
 msgstr "Отображаемое название ссылки."
 
-#: ../../client/src/home/routes/new.tsx:66
+#: ../../client/src/home/routes/link.tsx:68
 msgid "The icon to display for the link."
 msgstr "Иконка для отображения ссылки."
 
@@ -218,7 +214,7 @@ msgstr "Иконка для отображения ссылки."
 msgid "The mnemonic phrase for your database."
 msgstr "Мнемоническая фраза для вашей базы данных."
 
-#: ../../client/src/home/routes/new.tsx:38
+#: ../../client/src/home/routes/link.tsx:40
 msgid "The web page to link to."
 msgstr "Веб-страница для ссылки."
 
@@ -226,7 +222,11 @@ msgstr "Веб-страница для ссылки."
 msgid "Theme"
 msgstr "Тема"
 
-#: ../../client/src/home/routes/new.tsx:37
+#: ../../client/src/home/routes/link.tsx:23
+msgid "Untitled"
+msgstr "Без названия"
+
+#: ../../client/src/home/routes/link.tsx:39
 msgid "URL"
 msgstr "URL"
 

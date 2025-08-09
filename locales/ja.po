@@ -18,7 +18,7 @@ msgstr ""
 msgid "{0} components"
 msgstr "{0}個のコンポーネント"
 
-#: ../../client/src/home/routes/new.tsx:63
+#: ../../client/src/home/routes/link.tsx:65
 msgid "Appearance"
 msgstr "外観"
 
@@ -30,16 +30,16 @@ msgstr "オーナーキーを変更しますか？ローカルデータベース
 msgid "Are you sure you want to reset your local database? If data is not backed up on another device, it will be lost. This action cannot be undone."
 msgstr "ローカルデータベースをリセットしますか？他のデバイスにバックアップがない場合、データは失われます。この操作は元に戻せません。"
 
-#: ../../client/src/home/routes/new.tsx:91
+#: ../../client/src/home/routes/link.tsx:93
 #: ../../design/components/base/popovers/prompt/Prompt.tsx:43
 msgid "Cancel"
 msgstr "キャンセル"
 
-#: ../../client/src/home/routes/new.tsx:77
+#: ../../client/src/home/routes/link.tsx:79
 msgid "Color"
 msgstr "色"
 
-#: ../../client/src/home/routes/new.tsx:24
+#: ../../client/src/home/routes/link.tsx:24
 msgid "Configure dashboard link"
 msgstr "ダッシュボードリンクを設定"
 
@@ -52,7 +52,7 @@ msgstr "ダーク"
 msgid "Dashboard"
 msgstr "ダッシュボード"
 
-#: ../../client/src/home/routes/new.tsx:97
+#: ../../client/src/home/routes/link.tsx:99
 msgid "Delete"
 msgstr "削除"
 
@@ -99,7 +99,7 @@ msgstr "リンクの削除に失敗しました。"
 msgid "Failed to update link."
 msgstr "リンクの更新に失敗しました。"
 
-#: ../../client/src/home/routes/new.tsx:35
+#: ../../client/src/home/routes/link.tsx:37
 msgid "General"
 msgstr "一般"
 
@@ -123,7 +123,7 @@ msgstr "おやすみなさい、{name}さん。"
 msgid "Human"
 msgstr "人間"
 
-#: ../../client/src/home/routes/new.tsx:65
+#: ../../client/src/home/routes/link.tsx:67
 msgid "Icon"
 msgstr "アイコン"
 
@@ -167,13 +167,9 @@ msgstr "ライト"
 msgid "Manage your settings"
 msgstr "設定を管理"
 
-#: ../../client/src/home/routes/new.tsx:52
+#: ../../client/src/home/routes/link.tsx:54
 msgid "Name"
 msgstr "名前"
-
-#: ../../client/src/home/routes/new.tsx:23
-msgid "New"
-msgstr "新規"
 
 #: ../../client/src/settings/routes/index.tsx:39
 msgid "Owner Key"
@@ -202,15 +198,15 @@ msgstr "設定"
 msgid "System"
 msgstr "システム"
 
-#: ../../client/src/home/routes/new.tsx:78
+#: ../../client/src/home/routes/link.tsx:80
 msgid "The color of the link icon."
 msgstr "リンクアイコンの色。"
 
-#: ../../client/src/home/routes/new.tsx:53
+#: ../../client/src/home/routes/link.tsx:55
 msgid "The display name of the link."
 msgstr "リンクの表示名。"
 
-#: ../../client/src/home/routes/new.tsx:66
+#: ../../client/src/home/routes/link.tsx:68
 msgid "The icon to display for the link."
 msgstr "リンクに表示するアイコン。"
 
@@ -218,7 +214,7 @@ msgstr "リンクに表示するアイコン。"
 msgid "The mnemonic phrase for your database."
 msgstr "データベースのニーモニックフレーズ。"
 
-#: ../../client/src/home/routes/new.tsx:38
+#: ../../client/src/home/routes/link.tsx:40
 msgid "The web page to link to."
 msgstr "リンク先のWebページ。"
 
@@ -226,7 +222,11 @@ msgstr "リンク先のWebページ。"
 msgid "Theme"
 msgstr "テーマ"
 
-#: ../../client/src/home/routes/new.tsx:37
+#: ../../client/src/home/routes/link.tsx:23
+msgid "Untitled"
+msgstr "タイトルなし"
+
+#: ../../client/src/home/routes/link.tsx:39
 msgid "URL"
 msgstr "URL"
 

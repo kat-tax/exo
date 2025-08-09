@@ -36,7 +36,7 @@ export default function ScreenHome() {
             key={id}
             focusKey={`link-${id}`}
             onSelect={() => url && Linking.openURL(url)}
-            onEditSelect={() => nav(`/new-link`, {state: {id}})}>
+            onEditSelect={() => nav(`/link`, {state: {id}})}>
             <View style={[styles.link, !url && styles.linkAdd]}>
               <IconRemote
                 name={icon ?? ''}
@@ -52,7 +52,7 @@ export default function ScreenHome() {
           focusKey="link-add"
           onSelect={() => {
             const id = data?.find(link => !link.url)?.id ?? links.create();
-            if (id) nav(`/new-link`, {state: {id}});
+            if (id) nav(`/link`, {state: {id}});
           }}>
           <View style={[styles.link, styles.linkAdd]}>
             <Icon

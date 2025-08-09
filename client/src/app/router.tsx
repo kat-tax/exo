@@ -9,7 +9,7 @@ export function Router() {
         <Route path="/" element={<layout.app/>}>
           {/* General */}
           <Route index element={<screen.home.index/>}/>
-          <Route path="new-link" element={<screen.home.new/>}/>
+          <Route path="link" element={<screen.home.link/>}/>
           <Route path="settings" element={<screen.settings.index/>}/>
           {/* Dev Mode */}
           <Route path="design" element={<screen.dev.design/>}/>
