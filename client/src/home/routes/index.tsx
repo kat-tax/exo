@@ -1,5 +1,5 @@
 import {Trans} from '@lingui/react';
-import {Linking, Pressable, Text, View} from 'react-native';
+import {Linking, Text, View} from 'react-native';
 import {StyleSheet} from 'react-native-unistyles';
 import {useSettings} from 'settings/hooks/use-settings';
 import {useNavigate} from 'react-exo/navigation';
@@ -35,24 +35,14 @@ export default function ScreenHome() {
           <GridCell
             key={id}
             focusKey={`link-${id}`}
-            onSelect={() => url && Linking.openURL(url)}>
+            onSelect={() => url && Linking.openURL(url)}
+            onEditSelect={() => nav(`/new-link`, {state: {id}})}>
             <View style={styles.link}>
               <IconRemote
                 name={icon ?? ''}
                 size={'50%'}
                 uniProps={(theme: any) => ({color: color ?? theme.colors.foreground})}
               />
-              <Pressable
-                style={styles.editButton}
-                onPress={() => nav(`/new-link`, {state: {id}})}>
-                <Icon
-                  name="ph:pencil-simple"
-                  size={16}
-                  uniProps={(theme: any) => ({
-                    color: theme.colors.mutedForeground,
-                  })}
-                />
-              </Pressable>
             </View>
           </GridCell>
         ))}
@@ -95,14 +85,5 @@ const styles = StyleSheet.create((theme) => ({
   },
   linkAdd: {
     backgroundColor: theme.colors.accent,
-  },
-  editButton: {
-    position: 'absolute',
-    top: theme.display.space1,
-    right: theme.display.space1,
-    padding: theme.display.space1,
-    borderRadius: theme.display.radius2,
-    backgroundColor: theme.colors.background,
-    opacity: 0.9,
   },
 }));
