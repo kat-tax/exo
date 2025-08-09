@@ -39,8 +39,8 @@ export default function ScreenHome() {
             <View style={styles.link}>
               <IconRemote
                 name={icon ?? ''}
-                color={color ?? ''}
                 size={'50%'}
+                uniProps={(theme: any) => ({color: color ?? theme.colors.foreground})}
               />
               <Pressable
                 style={styles.editButton}

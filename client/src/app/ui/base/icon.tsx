@@ -5,7 +5,7 @@ export const Icon = withUnistyles(RNIcon, (theme) => ({
   color: theme.colors.foreground,
 }));
 
-export const IconRemote = (props: {
+export const IconRemote = withUnistyles((props: {
   size: `${number}%` | number;
   color: string;
   name: string;
@@ -21,4 +21,6 @@ export const IconRemote = (props: {
       }}
     />
   );
-};
+}, (theme) => ({
+  color: theme.colors.foreground,
+}));
