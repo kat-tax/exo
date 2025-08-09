@@ -31,17 +31,19 @@ export default function ScreenHome() {
         </Text>
       }>
       <Grid>
-        {data.map(({id, url, icon, color}) => (
+        {data?.filter(link => link.url)?.map(({id, url, icon, color}) => (
           <GridCell
             key={id}
             focusKey={`link-${id}`}
             onSelect={() => url && Linking.openURL(url)}
             onEditSelect={() => nav(`/new-link`, {state: {id}})}>
-            <View style={styles.link}>
+            <View style={[styles.link, !url && styles.linkAdd]}>
               <IconRemote
                 name={icon ?? ''}
                 size={'50%'}
-                uniProps={(theme: any) => ({color: color ?? theme.colors.foreground})}
+                uniProps={(theme: any) => ({
+                  color: color ?? theme.colors.foreground,
+                })}
               />
             </View>
           </GridCell>
@@ -49,15 +51,17 @@ export default function ScreenHome() {
         <GridCell
           focusKey="link-add"
           onSelect={() => {
-            const id = links.create();
+            const id = data?.find(link => !link.url)?.id ?? links.create();
             if (id) nav(`/new-link`, {state: {id}});
           }}>
           <View style={[styles.link, styles.linkAdd]}>
-            <Icon name="ph:plus" size={32} uniProps={
-              (theme: any) => ({
+            <Icon
+              name="ph:plus"
+              size={32}
+              uniProps={(theme: any) => ({
                 color: theme.colors.mutedForeground,
-              })
-            }/>
+              })}
+            />
           </View>
         </GridCell>
       </Grid>
