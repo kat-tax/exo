@@ -24,7 +24,7 @@ export default function ScreenHome() {
   return (
     <Panel
       title={cfg.APP_NAME}
-      message={<Trans {...greetMsg(settings.name)}/>}
+      message={<Trans {...greetMsg(settings.name ?? 'Human')}/>}
       right={
         <Text style={styles.clock}>
           {clock}
