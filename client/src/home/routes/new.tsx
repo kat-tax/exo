@@ -86,6 +86,7 @@ export default function ScreenNewLink() {
               />
             </PanelItem>
           </PanelSection>
+          <View style={styles.spacer}/>
           <View style={styles.actions}>
             <Button
               label={t`Cancel`}
@@ -120,10 +121,14 @@ const styles = StyleSheet.create((theme) => ({
       },
     }),
   },
+  spacer: {
+    flex: 1,
+  },
   actions: {
-    gap: theme.display.space4,
     flexDirection: 'row',
+    justifyContent: 'space-between',
     marginTop: theme.display.space3,
+    gap: theme.display.space4,
   },
   input: {
     padding: theme.display.space2,
