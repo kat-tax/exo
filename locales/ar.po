@@ -14,9 +14,13 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. placeholder {0}: 11
-#: ../../client/src/dev/routes/index.tsx:14
+#: ../../client/src/dev/routes/design.tsx:14
 msgid "{0} components"
 msgstr "{0} مكونات"
+
+#: ../../client/src/home/routes/new.tsx:63
+msgid "Appearance"
+msgstr "المظهر"
 
 #: ../../client/src/settings/hooks/use-settings.ts:40
 msgid "Are you sure you want to change the owner key? This will reset the local database. This action cannot be undone."
@@ -26,9 +30,18 @@ msgstr "هل أنت متأكد من تغيير مفتاح المالك؟ سيؤ�
 msgid "Are you sure you want to reset your local database? If data is not backed up on another device, it will be lost. This action cannot be undone."
 msgstr "هل أنت متأكد من إعادة تعيين قاعدة البيانات المحلية؟ إذا لم يتم نسخ البيانات احتياطياً على جهاز آخر، فستفقد. لا يمكن التراجع عن هذا الإجراء."
 
+#: ../../client/src/home/routes/new.tsx:91
 #: ../../design/components/base/popovers/prompt/Prompt.tsx:43
 msgid "Cancel"
 msgstr "إلغاء"
+
+#: ../../client/src/home/routes/new.tsx:77
+msgid "Color"
+msgstr "اللون"
+
+#: ../../client/src/home/routes/new.tsx:24
+msgid "Configure dashboard link"
+msgstr "تكوين رابط لوحة التحكم"
 
 #: ../../client/src/settings/routes/index.tsx:94
 msgid "Dark"
@@ -39,7 +52,11 @@ msgstr "داكن"
 msgid "Dashboard"
 msgstr "لوحة التحكم"
 
-#: ../../client/src/dev/routes/index.tsx:13
+#: ../../client/src/home/routes/new.tsx:97
+msgid "Delete"
+msgstr "حذف"
+
+#: ../../client/src/dev/routes/design.tsx:13
 #: ../../client/src/app/ui/menu/index.tsx:59
 msgid "Design"
 msgstr "تصميم"
@@ -66,8 +83,25 @@ msgstr "أدخل الاسم"
 
 #: ../../client/src/settings/hooks/use-settings.ts:24
 #: ../../client/src/settings/hooks/use-settings.ts:47
+#: ../../client/src/home/hooks/use-links.ts:13
 msgid "Error"
 msgstr "خطأ"
+
+#: ../../client/src/home/hooks/use-links.ts:81
+msgid "Failed to create new link."
+msgstr "فشل في إنشاء رابط جديد."
+
+#: ../../client/src/home/hooks/use-links.ts:90
+msgid "Failed to delete link."
+msgstr "فشل في حذف الرابط."
+
+#: ../../client/src/home/hooks/use-links.ts:74
+msgid "Failed to update link."
+msgstr "فشل في تحديث الرابط."
+
+#: ../../client/src/home/routes/new.tsx:35
+msgid "General"
+msgstr "عام"
 
 #: ../../client/src/home/utils/time.ts:16
 msgid "Good afternoon, {name}."
@@ -85,17 +119,41 @@ msgstr "صباح الخير، {name}."
 msgid "Good night, {name}."
 msgstr "تصبح على خير، {name}."
 
-#: ../../client/src/app/ui/menu/menu-header.tsx:20
+#: ../../client/src/app/ui/menu/menu-header.tsx:19
 msgid "Human"
 msgstr "بشري"
+
+#: ../../client/src/home/routes/new.tsx:65
+msgid "Icon"
+msgstr "أيقونة"
+
+#: ../../client/src/home/hooks/use-links.ts:60
+msgid "Invalid color field."
+msgstr "حقل اللون غير صالح."
+
+#: ../../client/src/home/hooks/use-links.ts:52
+msgid "Invalid icon field."
+msgstr "حقل الأيقونة غير صالح."
+
+#: ../../client/src/home/hooks/use-links.ts:24
+msgid "Invalid link ID."
+msgstr "معرف الرابط غير صالح."
 
 #: ../../client/src/settings/hooks/use-settings.ts:26
 msgid "Invalid name (max 25 characters)."
 msgstr "اسم غير صالح (أقصى 25 حرف)."
 
+#: ../../client/src/home/hooks/use-links.ts:44
+msgid "Invalid name field."
+msgstr "حقل الاسم غير صالح."
+
 #: ../../client/src/settings/hooks/use-settings.ts:49
 msgid "Invalid owner key."
 msgstr "مفتاح المالك غير صالح."
+
+#: ../../client/src/home/hooks/use-links.ts:36
+msgid "Invalid URL field."
+msgstr "حقل الرابط غير صالح."
 
 #: ../../client/src/settings/routes/index.tsx:67
 msgid "Language"
@@ -108,6 +166,14 @@ msgstr "فاتح"
 #: ../../client/src/settings/routes/index.tsx:23
 msgid "Manage your settings"
 msgstr "إدارة الإعدادات"
+
+#: ../../client/src/home/routes/new.tsx:52
+msgid "Name"
+msgstr "الاسم"
+
+#: ../../client/src/home/routes/new.tsx:23
+msgid "New"
+msgstr "جديد"
 
 #: ../../client/src/settings/routes/index.tsx:39
 msgid "Owner Key"
@@ -136,13 +202,33 @@ msgstr "الإعدادات"
 msgid "System"
 msgstr "النظام"
 
+#: ../../client/src/home/routes/new.tsx:78
+msgid "The color of the link icon."
+msgstr "لون أيقونة الرابط."
+
+#: ../../client/src/home/routes/new.tsx:53
+msgid "The display name of the link."
+msgstr "اسم عرض الرابط."
+
+#: ../../client/src/home/routes/new.tsx:66
+msgid "The icon to display for the link."
+msgstr "الأيقونة المعروضة للرابط."
+
 #: ../../client/src/settings/routes/index.tsx:40
 msgid "The mnemonic phrase for your database."
 msgstr "العبارة المساعدة لقاعدة البيانات."
 
+#: ../../client/src/home/routes/new.tsx:38
+msgid "The web page to link to."
+msgstr "صفحة الويب للربط بها."
+
 #: ../../client/src/settings/routes/index.tsx:85
 msgid "Theme"
 msgstr "النسق"
+
+#: ../../client/src/home/routes/new.tsx:37
+msgid "URL"
+msgstr "الرابط"
 
 #: ../../client/src/home/utils/time.ts:21
 msgid "Welcome back, {name}."

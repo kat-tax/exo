@@ -14,9 +14,13 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. placeholder {0}: 11
-#: ../../client/src/dev/routes/index.tsx:14
+#: ../../client/src/dev/routes/design.tsx:14
 msgid "{0} components"
 msgstr "{0}個のコンポーネント"
+
+#: ../../client/src/home/routes/new.tsx:63
+msgid "Appearance"
+msgstr "外観"
 
 #: ../../client/src/settings/hooks/use-settings.ts:40
 msgid "Are you sure you want to change the owner key? This will reset the local database. This action cannot be undone."
@@ -26,9 +30,18 @@ msgstr "オーナーキーを変更しますか？ローカルデータベース
 msgid "Are you sure you want to reset your local database? If data is not backed up on another device, it will be lost. This action cannot be undone."
 msgstr "ローカルデータベースをリセットしますか？他のデバイスにバックアップがない場合、データは失われます。この操作は元に戻せません。"
 
+#: ../../client/src/home/routes/new.tsx:91
 #: ../../design/components/base/popovers/prompt/Prompt.tsx:43
 msgid "Cancel"
 msgstr "キャンセル"
+
+#: ../../client/src/home/routes/new.tsx:77
+msgid "Color"
+msgstr "色"
+
+#: ../../client/src/home/routes/new.tsx:24
+msgid "Configure dashboard link"
+msgstr "ダッシュボードリンクを設定"
 
 #: ../../client/src/settings/routes/index.tsx:94
 msgid "Dark"
@@ -37,9 +50,13 @@ msgstr "ダーク"
 #: ../../client/src/app/ui/menu/index.tsx:29
 #: ../../client/src/app/ui/menu/index.tsx:47
 msgid "Dashboard"
-msgstr "ホーム"
+msgstr "ダッシュボード"
 
-#: ../../client/src/dev/routes/index.tsx:13
+#: ../../client/src/home/routes/new.tsx:97
+msgid "Delete"
+msgstr "削除"
+
+#: ../../client/src/dev/routes/design.tsx:13
 #: ../../client/src/app/ui/menu/index.tsx:59
 msgid "Design"
 msgstr "デザイン"
@@ -66,8 +83,25 @@ msgstr "名前を入力"
 
 #: ../../client/src/settings/hooks/use-settings.ts:24
 #: ../../client/src/settings/hooks/use-settings.ts:47
+#: ../../client/src/home/hooks/use-links.ts:13
 msgid "Error"
 msgstr "エラー"
+
+#: ../../client/src/home/hooks/use-links.ts:81
+msgid "Failed to create new link."
+msgstr "新しいリンクの作成に失敗しました。"
+
+#: ../../client/src/home/hooks/use-links.ts:90
+msgid "Failed to delete link."
+msgstr "リンクの削除に失敗しました。"
+
+#: ../../client/src/home/hooks/use-links.ts:74
+msgid "Failed to update link."
+msgstr "リンクの更新に失敗しました。"
+
+#: ../../client/src/home/routes/new.tsx:35
+msgid "General"
+msgstr "一般"
 
 #: ../../client/src/home/utils/time.ts:16
 msgid "Good afternoon, {name}."
@@ -85,17 +119,41 @@ msgstr "おはようございます、{name}さん。"
 msgid "Good night, {name}."
 msgstr "おやすみなさい、{name}さん。"
 
-#: ../../client/src/app/ui/menu/menu-header.tsx:20
+#: ../../client/src/app/ui/menu/menu-header.tsx:19
 msgid "Human"
 msgstr "人間"
+
+#: ../../client/src/home/routes/new.tsx:65
+msgid "Icon"
+msgstr "アイコン"
+
+#: ../../client/src/home/hooks/use-links.ts:60
+msgid "Invalid color field."
+msgstr "無効な色です。"
+
+#: ../../client/src/home/hooks/use-links.ts:52
+msgid "Invalid icon field."
+msgstr "無効なアイコンです。"
+
+#: ../../client/src/home/hooks/use-links.ts:24
+msgid "Invalid link ID."
+msgstr "無効なリンクIDです。"
 
 #: ../../client/src/settings/hooks/use-settings.ts:26
 msgid "Invalid name (max 25 characters)."
 msgstr "無効な名前（最大25文字）。"
 
+#: ../../client/src/home/hooks/use-links.ts:44
+msgid "Invalid name field."
+msgstr "無効な名前です。"
+
 #: ../../client/src/settings/hooks/use-settings.ts:49
 msgid "Invalid owner key."
 msgstr "無効なオーナーキーです。"
+
+#: ../../client/src/home/hooks/use-links.ts:36
+msgid "Invalid URL field."
+msgstr "無効なURLです。"
 
 #: ../../client/src/settings/routes/index.tsx:67
 msgid "Language"
@@ -108,6 +166,14 @@ msgstr "ライト"
 #: ../../client/src/settings/routes/index.tsx:23
 msgid "Manage your settings"
 msgstr "設定を管理"
+
+#: ../../client/src/home/routes/new.tsx:52
+msgid "Name"
+msgstr "名前"
+
+#: ../../client/src/home/routes/new.tsx:23
+msgid "New"
+msgstr "新規"
 
 #: ../../client/src/settings/routes/index.tsx:39
 msgid "Owner Key"
@@ -136,13 +202,33 @@ msgstr "設定"
 msgid "System"
 msgstr "システム"
 
+#: ../../client/src/home/routes/new.tsx:78
+msgid "The color of the link icon."
+msgstr "リンクアイコンの色。"
+
+#: ../../client/src/home/routes/new.tsx:53
+msgid "The display name of the link."
+msgstr "リンクの表示名。"
+
+#: ../../client/src/home/routes/new.tsx:66
+msgid "The icon to display for the link."
+msgstr "リンクに表示するアイコン。"
+
 #: ../../client/src/settings/routes/index.tsx:40
 msgid "The mnemonic phrase for your database."
 msgstr "データベースのニーモニックフレーズ。"
 
+#: ../../client/src/home/routes/new.tsx:38
+msgid "The web page to link to."
+msgstr "リンク先のWebページ。"
+
 #: ../../client/src/settings/routes/index.tsx:85
 msgid "Theme"
 msgstr "テーマ"
+
+#: ../../client/src/home/routes/new.tsx:37
+msgid "URL"
+msgstr "URL"
 
 #: ../../client/src/home/utils/time.ts:21
 msgid "Welcome back, {name}."
