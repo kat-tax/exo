@@ -29,6 +29,7 @@
     "burnt": "^0.13.0",
     "config": "workspace:*",
     "design": "workspace:react-exo-ui@*",
+    "lodash": "^4.17.21",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-exo": "0.18.37",
@@ -49,6 +50,7 @@
   "devDependencies": {
     "@react-native/codegen": "0.80.2",
     "@react-native/gradle-plugin": "0.80.2",
+    "@types/lodash": "^4.17.20",
     "@types/react": "^19.1.9",
     "@types/react-dom": "^19.1.7",
     "typescript": "^5.9.2"

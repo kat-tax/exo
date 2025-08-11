@@ -18,7 +18,8 @@ msgstr ""
 msgid "{0} components"
 msgstr "{0} componentes"
 
-#: ../../client/src/home/routes/link.tsx:65
+#: ../../client/src/home/routes/shortcut.tsx:72
+#: ../../client/src/home/routes/list_edit.tsx:57
 msgid "Appearance"
 msgstr "Apariencia"
 
@@ -30,38 +31,51 @@ msgstr "¿Estás seguro de cambiar la clave propietaria? Esto reiniciará la bas
 msgid "Are you sure you want to reset your local database? If data is not backed up on another device, it will be lost. This action cannot be undone."
 msgstr "¿Estás seguro de reiniciar tu base de datos local? Si los datos no están respaldados en otro dispositivo, se perderán. Esta acción no se puede deshacer."
 
-#: ../../client/src/home/routes/link.tsx:93
 #: ../../design/components/base/popovers/prompt/Prompt.tsx:43
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: ../../client/src/home/routes/link.tsx:79
+#: ../../client/src/settings/routes/index.tsx:29
+msgid "Choose your display name."
+msgstr ""
+
+#: ../../client/src/home/routes/shortcut.tsx:86
+#: ../../client/src/home/routes/list_edit.tsx:71
 msgid "Color"
 msgstr "Color"
 
-#: ../../client/src/home/routes/link.tsx:24
-msgid "Configure dashboard link"
-msgstr "Configurar enlace del panel"
+#: ../../client/src/home/routes/shortcut.tsx:31
+msgid "Configure dashboard shortcut"
+msgstr ""
+
+#: ../../client/src/home/routes/list_edit.tsx:31
+msgid "Configure list"
+msgstr ""
+
+#: ../../client/src/settings/routes/index.tsx:23
+msgid "Configure the app"
+msgstr ""
 
 #: ../../client/src/settings/routes/index.tsx:94
 msgid "Dark"
 msgstr "Oscuro"
 
 #: ../../client/src/app/ui/menu/index.tsx:29
-#: ../../client/src/app/ui/menu/index.tsx:47
+#: ../../client/src/app/ui/menu/index.tsx:52
 msgid "Dashboard"
 msgstr "Panel"
 
-#: ../../client/src/home/routes/link.tsx:99
+#: ../../client/src/home/routes/shortcut.tsx:106
+#: ../../client/src/home/routes/list_edit.tsx:91
 msgid "Delete"
 msgstr "Eliminar"
 
 #: ../../client/src/dev/routes/design.tsx:13
-#: ../../client/src/app/ui/menu/index.tsx:59
+#: ../../client/src/app/ui/menu/index.tsx:69
 msgid "Design"
 msgstr "Diseño"
 
-#: ../../client/src/app/ui/menu/index.tsx:57
+#: ../../client/src/app/ui/menu/index.tsx:67
 msgid "Development"
 msgstr "Desarrollo"
 
@@ -81,27 +95,49 @@ msgstr "Ingresa mnemónico"
 msgid "Enter name"
 msgstr "Ingresa nombre"
 
+#: ../../client/src/settings/routes/index.tsx:40
+msgid "Enter your mnemonic phrase."
+msgstr ""
+
 #: ../../client/src/settings/hooks/use-settings.ts:24
 #: ../../client/src/settings/hooks/use-settings.ts:47
-#: ../../client/src/home/hooks/use-links.ts:13
 msgid "Error"
 msgstr "Error"
 
-#: ../../client/src/home/hooks/use-links.ts:81
-msgid "Failed to create new link."
-msgstr "Error al crear nuevo enlace."
+#: ../../client/src/home/hooks/use-lists.ts:34
+msgid "Failed to create new list."
+msgstr ""
 
-#: ../../client/src/home/hooks/use-links.ts:90
-msgid "Failed to delete link."
-msgstr "Error al eliminar enlace."
+#: ../../client/src/home/hooks/use-shortcuts.ts:34
+msgid "Failed to create new shortcut."
+msgstr ""
 
-#: ../../client/src/home/hooks/use-links.ts:74
-msgid "Failed to update link."
-msgstr "Error al actualizar enlace."
+#: ../../client/src/home/hooks/use-lists.ts:88
+msgid "Failed to delete list."
+msgstr ""
 
-#: ../../client/src/home/routes/link.tsx:37
+#: ../../client/src/home/hooks/use-shortcuts.ts:96
+msgid "Failed to delete shortcut."
+msgstr ""
+
+#: ../../client/src/home/hooks/use-lists.ts:79
+msgid "Failed to update list."
+msgstr ""
+
+#: ../../client/src/home/hooks/use-shortcuts.ts:87
+msgid "Failed to update shortcut."
+msgstr ""
+
+#: ../../client/src/home/routes/shortcut.tsx:44
+#: ../../client/src/home/routes/list_edit.tsx:44
 msgid "General"
 msgstr "General"
+
+#: ../../client/src/home/routes/shortcut.tsx:100
+#: ../../client/src/home/routes/list_edit.tsx:85
+#: ../../client/src/home/routes/list.tsx:46
+msgid "Go Back"
+msgstr ""
 
 #: ../../client/src/home/utils/time.ts:16
 msgid "Good afternoon, {name}."
@@ -119,31 +155,39 @@ msgstr "Buenos días, {name}."
 msgid "Good night, {name}."
 msgstr "Buenas noches, {name}."
 
+#: ../../client/src/home/routes/list_edit.tsx:51
+msgid "Groceries"
+msgstr ""
+
 #: ../../client/src/app/ui/menu/menu-header.tsx:19
 msgid "Human"
 msgstr "Humano"
 
-#: ../../client/src/home/routes/link.tsx:67
+#: ../../client/src/home/routes/shortcut.tsx:74
+#: ../../client/src/home/routes/list_edit.tsx:59
 msgid "Icon"
 msgstr "Icono"
 
-#: ../../client/src/home/hooks/use-links.ts:60
+#: ../../client/src/home/hooks/use-shortcuts.ts:74
+#: ../../client/src/home/hooks/use-lists.ts:66
 msgid "Invalid color field."
 msgstr "Campo de color inválido."
 
-#: ../../client/src/home/hooks/use-links.ts:52
+#: ../../client/src/home/hooks/use-shortcuts.ts:66
+#: ../../client/src/home/hooks/use-lists.ts:58
 msgid "Invalid icon field."
 msgstr "Campo de icono inválido."
 
-#: ../../client/src/home/hooks/use-links.ts:24
-msgid "Invalid link ID."
-msgstr "ID de enlace inválido."
+#: ../../client/src/home/hooks/use-lists.ts:25
+msgid "Invalid list id."
+msgstr ""
 
 #: ../../client/src/settings/hooks/use-settings.ts:26
 msgid "Invalid name (max 25 characters)."
 msgstr "Nombre inválido (máximo 25 caracteres)."
 
-#: ../../client/src/home/hooks/use-links.ts:44
+#: ../../client/src/home/hooks/use-shortcuts.ts:58
+#: ../../client/src/home/hooks/use-lists.ts:50
 msgid "Invalid name field."
 msgstr "Campo de nombre inválido."
 
@@ -151,7 +195,11 @@ msgstr "Campo de nombre inválido."
 msgid "Invalid owner key."
 msgstr "Clave propietaria inválida."
 
-#: ../../client/src/home/hooks/use-links.ts:36
+#: ../../client/src/home/hooks/use-shortcuts.ts:25
+msgid "Invalid shortcut id."
+msgstr ""
+
+#: ../../client/src/home/hooks/use-shortcuts.ts:50
 msgid "Invalid URL field."
 msgstr "Campo de URL inválido."
 
@@ -163,13 +211,32 @@ msgstr "Idioma"
 msgid "Light"
 msgstr "Claro"
 
-#: ../../client/src/settings/routes/index.tsx:23
-msgid "Manage your settings"
-msgstr "Gestiona tu configuración"
+#: ../../client/src/home/hooks/use-lists.ts:12
+msgid "List Error"
+msgstr ""
 
-#: ../../client/src/home/routes/link.tsx:54
+#: ../../client/src/home/routes/lists.tsx:21
+#: ../../client/src/app/ui/menu/index.tsx:34
+#: ../../client/src/app/ui/menu/index.tsx:57
+msgid "Lists"
+msgstr ""
+
+#: ../../client/src/home/hooks/use-lists.ts:20
+msgid "Missing list id."
+msgstr ""
+
+#: ../../client/src/home/hooks/use-shortcuts.ts:20
+msgid "Missing shortcut id."
+msgstr ""
+
+#: ../../client/src/home/routes/shortcut.tsx:61
+#: ../../client/src/home/routes/list_edit.tsx:46
 msgid "Name"
 msgstr "Nombre"
+
+#: ../../client/src/home/routes/lists.tsx:22
+msgid "Organize your tasks"
+msgstr ""
 
 #: ../../client/src/settings/routes/index.tsx:39
 msgid "Owner Key"
@@ -179,42 +246,54 @@ msgstr "Clave Propietaria"
 msgid "Profile"
 msgstr "Perfil"
 
-#: ../../client/src/settings/routes/index.tsx:68
-msgid "Select the language for the app."
-msgstr "Selecciona el idioma de la app."
-
 #: ../../client/src/settings/routes/index.tsx:86
-msgid "Select the theme for the app."
-msgstr "Selecciona el tema de la app."
+msgid "Select the color scheme."
+msgstr ""
+
+#: ../../client/src/settings/routes/index.tsx:68
+msgid "Select your preferred language."
+msgstr ""
 
 #: ../../client/src/settings/routes/index.tsx:22
-#: ../../client/src/app/ui/menu/index.tsx:34
-#: ../../client/src/app/ui/menu/index.tsx:52
+#: ../../client/src/app/ui/menu/index.tsx:39
+#: ../../client/src/app/ui/menu/index.tsx:62
 msgid "Settings"
 msgstr "Configuración"
+
+#: ../../client/src/home/hooks/use-shortcuts.ts:12
+msgid "Shortcut Error"
+msgstr ""
 
 #: ../../client/src/settings/routes/index.tsx:74
 #: ../../client/src/settings/routes/index.tsx:92
 msgid "System"
 msgstr "Sistema"
 
-#: ../../client/src/home/routes/link.tsx:80
-msgid "The color of the link icon."
-msgstr "El color del icono del enlace."
+#: ../../client/src/home/routes/list_edit.tsx:72
+msgid "The color of the list icon."
+msgstr ""
 
-#: ../../client/src/home/routes/link.tsx:55
-msgid "The display name of the link."
-msgstr "El nombre del enlace a mostrar."
+#: ../../client/src/home/routes/shortcut.tsx:87
+msgid "The color of the shortcut icon."
+msgstr ""
 
-#: ../../client/src/home/routes/link.tsx:68
-msgid "The icon to display for the link."
-msgstr "El icono a mostrar para el enlace."
+#: ../../client/src/home/routes/list_edit.tsx:47
+msgid "The display name of the list."
+msgstr ""
 
-#: ../../client/src/settings/routes/index.tsx:40
-msgid "The mnemonic phrase for your database."
-msgstr "La frase mnemónica para tu base de datos."
+#: ../../client/src/home/routes/shortcut.tsx:62
+msgid "The display name of the shortcut."
+msgstr ""
 
-#: ../../client/src/home/routes/link.tsx:40
+#: ../../client/src/home/routes/list_edit.tsx:60
+msgid "The icon to display for the list."
+msgstr ""
+
+#: ../../client/src/home/routes/shortcut.tsx:75
+msgid "The icon to display for the shortcut."
+msgstr ""
+
+#: ../../client/src/home/routes/shortcut.tsx:47
 msgid "The web page to link to."
 msgstr "La página web a enlazar."
 
@@ -222,18 +301,16 @@ msgstr "La página web a enlazar."
 msgid "Theme"
 msgstr "Tema"
 
-#: ../../client/src/home/routes/link.tsx:23
+#: ../../client/src/home/routes/shortcut.tsx:30
+#: ../../client/src/home/routes/list_edit.tsx:30
+#: ../../client/src/home/routes/list.tsx:30
 msgid "Untitled"
 msgstr "Sin título"
 
-#: ../../client/src/home/routes/link.tsx:39
+#: ../../client/src/home/routes/shortcut.tsx:46
 msgid "URL"
 msgstr "URL"
 
 #: ../../client/src/home/utils/time.ts:21
 msgid "Welcome back, {name}."
 msgstr "Bienvenido, {name}."
-
-#: ../../client/src/settings/routes/index.tsx:29
-msgid "Your name to display in the app."
-msgstr "Tu nombre para mostrar en la app."

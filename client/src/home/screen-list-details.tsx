@@ -48,15 +48,6 @@ export default function ScreenList() {
               state="Default"
               onPress={() => nav('/lists')}
             />
-            <Button
-              label={t`Delete`}
-              mode="Destructive"
-              state="Default"
-              onPress={() => {
-                lists.remove(listId);
-                nav('/lists');
-              }}
-            />
           </View>
         </View>
     </Panel>

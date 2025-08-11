@@ -36,3 +36,11 @@ export const getList = (id: $.ListId | null) => _.createQuery(db => db
   .selectAll()
   .limit(1)
 );
+
+export const getListItems = (id: $.ListId) => _.createQuery(db => db
+  .selectFrom('listItem')
+  .where('listId', '=', id)
+  .where('isDeleted', 'is not', 1)
+  .orderBy('createdAt', 'asc')
+  .selectAll()
+);

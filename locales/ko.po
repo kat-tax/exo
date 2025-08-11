@@ -18,7 +18,8 @@ msgstr ""
 msgid "{0} components"
 msgstr "{0}개 컴포넌트"
 
-#: ../../client/src/home/routes/link.tsx:65
+#: ../../client/src/home/routes/shortcut.tsx:72
+#: ../../client/src/home/routes/list_edit.tsx:57
 msgid "Appearance"
 msgstr "외관"
 
@@ -30,38 +31,51 @@ msgstr "소유자 키를 변경하시겠습니까? 로컬 데이터베이스가 
 msgid "Are you sure you want to reset your local database? If data is not backed up on another device, it will be lost. This action cannot be undone."
 msgstr "로컬 데이터베이스를 초기화하시겠습니까? 다른 기기에 백업되지 않은 데이터는 손실됩니다. 이 작업은 되돌릴 수 없습니다."
 
-#: ../../client/src/home/routes/link.tsx:93
 #: ../../design/components/base/popovers/prompt/Prompt.tsx:43
 msgid "Cancel"
 msgstr "취소"
 
-#: ../../client/src/home/routes/link.tsx:79
+#: ../../client/src/settings/routes/index.tsx:29
+msgid "Choose your display name."
+msgstr ""
+
+#: ../../client/src/home/routes/shortcut.tsx:86
+#: ../../client/src/home/routes/list_edit.tsx:71
 msgid "Color"
 msgstr "색상"
 
-#: ../../client/src/home/routes/link.tsx:24
-msgid "Configure dashboard link"
-msgstr "대시보드 링크 설정"
+#: ../../client/src/home/routes/shortcut.tsx:31
+msgid "Configure dashboard shortcut"
+msgstr ""
+
+#: ../../client/src/home/routes/list_edit.tsx:31
+msgid "Configure list"
+msgstr ""
+
+#: ../../client/src/settings/routes/index.tsx:23
+msgid "Configure the app"
+msgstr ""
 
 #: ../../client/src/settings/routes/index.tsx:94
 msgid "Dark"
 msgstr "다크"
 
 #: ../../client/src/app/ui/menu/index.tsx:29
-#: ../../client/src/app/ui/menu/index.tsx:47
+#: ../../client/src/app/ui/menu/index.tsx:52
 msgid "Dashboard"
 msgstr "대시보드"
 
-#: ../../client/src/home/routes/link.tsx:99
+#: ../../client/src/home/routes/shortcut.tsx:106
+#: ../../client/src/home/routes/list_edit.tsx:91
 msgid "Delete"
 msgstr "삭제"
 
 #: ../../client/src/dev/routes/design.tsx:13
-#: ../../client/src/app/ui/menu/index.tsx:59
+#: ../../client/src/app/ui/menu/index.tsx:69
 msgid "Design"
 msgstr "디자인"
 
-#: ../../client/src/app/ui/menu/index.tsx:57
+#: ../../client/src/app/ui/menu/index.tsx:67
 msgid "Development"
 msgstr "개발"
 
@@ -81,27 +95,49 @@ msgstr "니모닉 입력"
 msgid "Enter name"
 msgstr "이름 입력"
 
+#: ../../client/src/settings/routes/index.tsx:40
+msgid "Enter your mnemonic phrase."
+msgstr ""
+
 #: ../../client/src/settings/hooks/use-settings.ts:24
 #: ../../client/src/settings/hooks/use-settings.ts:47
-#: ../../client/src/home/hooks/use-links.ts:13
 msgid "Error"
 msgstr "오류"
 
-#: ../../client/src/home/hooks/use-links.ts:81
-msgid "Failed to create new link."
-msgstr "새 링크 생성에 실패했습니다."
+#: ../../client/src/home/hooks/use-lists.ts:34
+msgid "Failed to create new list."
+msgstr ""
 
-#: ../../client/src/home/hooks/use-links.ts:90
-msgid "Failed to delete link."
-msgstr "링크 삭제에 실패했습니다."
+#: ../../client/src/home/hooks/use-shortcuts.ts:34
+msgid "Failed to create new shortcut."
+msgstr ""
 
-#: ../../client/src/home/hooks/use-links.ts:74
-msgid "Failed to update link."
-msgstr "링크 업데이트에 실패했습니다."
+#: ../../client/src/home/hooks/use-lists.ts:88
+msgid "Failed to delete list."
+msgstr ""
 
-#: ../../client/src/home/routes/link.tsx:37
+#: ../../client/src/home/hooks/use-shortcuts.ts:96
+msgid "Failed to delete shortcut."
+msgstr ""
+
+#: ../../client/src/home/hooks/use-lists.ts:79
+msgid "Failed to update list."
+msgstr ""
+
+#: ../../client/src/home/hooks/use-shortcuts.ts:87
+msgid "Failed to update shortcut."
+msgstr ""
+
+#: ../../client/src/home/routes/shortcut.tsx:44
+#: ../../client/src/home/routes/list_edit.tsx:44
 msgid "General"
 msgstr "일반"
+
+#: ../../client/src/home/routes/shortcut.tsx:100
+#: ../../client/src/home/routes/list_edit.tsx:85
+#: ../../client/src/home/routes/list.tsx:46
+msgid "Go Back"
+msgstr ""
 
 #: ../../client/src/home/utils/time.ts:16
 msgid "Good afternoon, {name}."
@@ -119,31 +155,39 @@ msgstr "안녕하세요, {name}님."
 msgid "Good night, {name}."
 msgstr "안녕히 주무세요, {name}님."
 
+#: ../../client/src/home/routes/list_edit.tsx:51
+msgid "Groceries"
+msgstr ""
+
 #: ../../client/src/app/ui/menu/menu-header.tsx:19
 msgid "Human"
 msgstr "인간"
 
-#: ../../client/src/home/routes/link.tsx:67
+#: ../../client/src/home/routes/shortcut.tsx:74
+#: ../../client/src/home/routes/list_edit.tsx:59
 msgid "Icon"
 msgstr "아이콘"
 
-#: ../../client/src/home/hooks/use-links.ts:60
+#: ../../client/src/home/hooks/use-shortcuts.ts:74
+#: ../../client/src/home/hooks/use-lists.ts:66
 msgid "Invalid color field."
 msgstr "잘못된 색상 필드입니다."
 
-#: ../../client/src/home/hooks/use-links.ts:52
+#: ../../client/src/home/hooks/use-shortcuts.ts:66
+#: ../../client/src/home/hooks/use-lists.ts:58
 msgid "Invalid icon field."
 msgstr "잘못된 아이콘 필드입니다."
 
-#: ../../client/src/home/hooks/use-links.ts:24
-msgid "Invalid link ID."
-msgstr "잘못된 링크 ID입니다."
+#: ../../client/src/home/hooks/use-lists.ts:25
+msgid "Invalid list id."
+msgstr ""
 
 #: ../../client/src/settings/hooks/use-settings.ts:26
 msgid "Invalid name (max 25 characters)."
 msgstr "잘못된 이름 (최대 25자)."
 
-#: ../../client/src/home/hooks/use-links.ts:44
+#: ../../client/src/home/hooks/use-shortcuts.ts:58
+#: ../../client/src/home/hooks/use-lists.ts:50
 msgid "Invalid name field."
 msgstr "잘못된 이름 필드입니다."
 
@@ -151,7 +195,11 @@ msgstr "잘못된 이름 필드입니다."
 msgid "Invalid owner key."
 msgstr "잘못된 소유자 키입니다."
 
-#: ../../client/src/home/hooks/use-links.ts:36
+#: ../../client/src/home/hooks/use-shortcuts.ts:25
+msgid "Invalid shortcut id."
+msgstr ""
+
+#: ../../client/src/home/hooks/use-shortcuts.ts:50
 msgid "Invalid URL field."
 msgstr "잘못된 URL 필드입니다."
 
@@ -163,13 +211,32 @@ msgstr "언어"
 msgid "Light"
 msgstr "라이트"
 
-#: ../../client/src/settings/routes/index.tsx:23
-msgid "Manage your settings"
-msgstr "설정 관리"
+#: ../../client/src/home/hooks/use-lists.ts:12
+msgid "List Error"
+msgstr ""
 
-#: ../../client/src/home/routes/link.tsx:54
+#: ../../client/src/home/routes/lists.tsx:21
+#: ../../client/src/app/ui/menu/index.tsx:34
+#: ../../client/src/app/ui/menu/index.tsx:57
+msgid "Lists"
+msgstr ""
+
+#: ../../client/src/home/hooks/use-lists.ts:20
+msgid "Missing list id."
+msgstr ""
+
+#: ../../client/src/home/hooks/use-shortcuts.ts:20
+msgid "Missing shortcut id."
+msgstr ""
+
+#: ../../client/src/home/routes/shortcut.tsx:61
+#: ../../client/src/home/routes/list_edit.tsx:46
 msgid "Name"
 msgstr "이름"
+
+#: ../../client/src/home/routes/lists.tsx:22
+msgid "Organize your tasks"
+msgstr ""
 
 #: ../../client/src/settings/routes/index.tsx:39
 msgid "Owner Key"
@@ -179,42 +246,54 @@ msgstr "소유자 키"
 msgid "Profile"
 msgstr "프로필"
 
-#: ../../client/src/settings/routes/index.tsx:68
-msgid "Select the language for the app."
-msgstr "앱 언어를 선택하세요."
-
 #: ../../client/src/settings/routes/index.tsx:86
-msgid "Select the theme for the app."
-msgstr "앱 테마를 선택하세요."
+msgid "Select the color scheme."
+msgstr ""
+
+#: ../../client/src/settings/routes/index.tsx:68
+msgid "Select your preferred language."
+msgstr ""
 
 #: ../../client/src/settings/routes/index.tsx:22
-#: ../../client/src/app/ui/menu/index.tsx:34
-#: ../../client/src/app/ui/menu/index.tsx:52
+#: ../../client/src/app/ui/menu/index.tsx:39
+#: ../../client/src/app/ui/menu/index.tsx:62
 msgid "Settings"
 msgstr "설정"
+
+#: ../../client/src/home/hooks/use-shortcuts.ts:12
+msgid "Shortcut Error"
+msgstr ""
 
 #: ../../client/src/settings/routes/index.tsx:74
 #: ../../client/src/settings/routes/index.tsx:92
 msgid "System"
 msgstr "시스템"
 
-#: ../../client/src/home/routes/link.tsx:80
-msgid "The color of the link icon."
-msgstr "링크 아이콘의 색상입니다."
+#: ../../client/src/home/routes/list_edit.tsx:72
+msgid "The color of the list icon."
+msgstr ""
 
-#: ../../client/src/home/routes/link.tsx:55
-msgid "The display name of the link."
-msgstr "링크의 표시 이름입니다."
+#: ../../client/src/home/routes/shortcut.tsx:87
+msgid "The color of the shortcut icon."
+msgstr ""
 
-#: ../../client/src/home/routes/link.tsx:68
-msgid "The icon to display for the link."
-msgstr "링크에 표시할 아이콘입니다."
+#: ../../client/src/home/routes/list_edit.tsx:47
+msgid "The display name of the list."
+msgstr ""
 
-#: ../../client/src/settings/routes/index.tsx:40
-msgid "The mnemonic phrase for your database."
-msgstr "데이터베이스용 니모닉 구문입니다."
+#: ../../client/src/home/routes/shortcut.tsx:62
+msgid "The display name of the shortcut."
+msgstr ""
 
-#: ../../client/src/home/routes/link.tsx:40
+#: ../../client/src/home/routes/list_edit.tsx:60
+msgid "The icon to display for the list."
+msgstr ""
+
+#: ../../client/src/home/routes/shortcut.tsx:75
+msgid "The icon to display for the shortcut."
+msgstr ""
+
+#: ../../client/src/home/routes/shortcut.tsx:47
 msgid "The web page to link to."
 msgstr "연결할 웹페이지입니다."
 
@@ -222,18 +301,16 @@ msgstr "연결할 웹페이지입니다."
 msgid "Theme"
 msgstr "테마"
 
-#: ../../client/src/home/routes/link.tsx:23
+#: ../../client/src/home/routes/shortcut.tsx:30
+#: ../../client/src/home/routes/list_edit.tsx:30
+#: ../../client/src/home/routes/list.tsx:30
 msgid "Untitled"
 msgstr "제목 없음"
 
-#: ../../client/src/home/routes/link.tsx:39
+#: ../../client/src/home/routes/shortcut.tsx:46
 msgid "URL"
 msgstr "URL"
 
 #: ../../client/src/home/utils/time.ts:21
 msgid "Welcome back, {name}."
 msgstr "다시 오신 것을 환영합니다, {name}님."
-
-#: ../../client/src/settings/routes/index.tsx:29
-msgid "Your name to display in the app."
-msgstr "앱에 표시할 이름입니다."

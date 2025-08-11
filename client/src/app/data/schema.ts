@@ -21,7 +21,7 @@ export default {
   listItem: {
     id: $.ListItemId,
     listId: $.ListId,
-    isComplete: $.Boolean,
-    textContent: $.NonEmptyString1000,
+    isComplete: $.SqliteBoolean,
+    textContent: $.String1000,
   },
 };

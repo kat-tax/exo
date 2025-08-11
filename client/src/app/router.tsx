@@ -1,22 +1,22 @@
 import {Router as _, Routes, Route} from 'react-exo/navigation';
-import {layout, screen} from 'app/lib/nav';
+import {Layout, Screen} from 'app/lib/nav';
 import {history} from 'app/data';
 
 export function Router() {
   return (
     <_ {...{history}}>
       <Routes>
-        <Route path="/" element={<layout.app/>}>
+        <Route path="/" element={<Layout.App/>}>
           {/* Home */}
-          <Route index element={<screen.home.dashboard/>}/>
-          <Route path="shortcut/:id" element={<screen.home.shortcut/>}/>
-          <Route path="lists" element={<screen.home.lists/>}/>
-          <Route path="list/:id" element={<screen.home.list/>}/>
-          <Route path="list/:id/edit" element={<screen.home.list_edit/>}/>
+          <Route index element={<Screen.Home.Dashboard/>}/>
+          <Route path="shortcut/:id" element={<Screen.Home.ShortcutEdit/>}/>
+          <Route path="lists" element={<Screen.Home.ListAll/>}/>
+          <Route path="list/:id" element={<Screen.Home.ListDetails/>}/>
+          <Route path="list/:id/edit" element={<Screen.Home.ListEdit/>}/>
           {/* Settings */}
-          <Route path="settings" element={<screen.settings.index/>}/>
+          <Route path="settings" element={<Screen.Settings.Settings/>}/>
           {/* Dev Mode */}
-          <Route path="design" element={<screen.dev.design/>}/>
+          <Route path="design" element={<Screen.Dev.Design/>}/>
         </Route>
       </Routes>
     </_>

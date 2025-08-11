@@ -71,11 +71,15 @@ export default function ScreenHome() {
 
 const styles = StyleSheet.create((theme) => ({
   clock: {
-    fontFamily: theme.font.family,
-    fontSize: theme.typography.size9,
-    fontWeight: theme.typography.weightThin,
-    letterSpacing: theme.font.headerSpacing,
     color: theme.colors.foreground,
+    letterSpacing: theme.font.headerSpacing,
+    fontWeight: theme.typography.weightThin,
+    fontFamily: theme.font.family,
+    fontSize: {
+      initial: theme.typography.size7,
+      xxs: theme.typography.size8,
+      xs: theme.typography.size9,
+    },
   },
   shortcut: {
     flex: 1,
