@@ -10,15 +10,15 @@ import {Panel} from 'app/ui/panel';
 import {Grid} from 'app/ui/grid';
 import {GridCell} from 'app/ui/grid';
 import {useQuery} from 'app/data';
-import {getLinks} from 'app/data/queries';
-import {useLinks} from 'home/hooks/use-links';
+import {getShortcuts} from 'app/data/queries';
+import {useShortcuts} from 'home/hooks/use-shortcuts';
 import cfg from 'config';
 
 export default function ScreenHome() {
+  const shortcuts = useShortcuts();
   const settings = useSettings();
-  const links = useLinks();
   const clock = useClock();
-  const data = useQuery(getLinks);
+  const data = useQuery(getShortcuts);
   const nav = useNavigate();
 
   return (
@@ -31,13 +31,13 @@ export default function ScreenHome() {
         </Text>
       }>
       <Grid>
-        {data?.filter(link => link.url)?.map(({id, url, icon, color}) => (
+        {data?.filter(shortcut => shortcut.url)?.map(({id, url, icon, color}) => (
           <GridCell
             key={id}
-            focusKey={`link-${id}`}
+            focusKey={`shortcut-${id}`}
             onSelect={() => url && Linking.openURL(url)}
-            onEditSelect={() => nav(`/link/${id}`)}>
-            <View style={[styles.link, !url && styles.linkAdd]}>
+            onEditSelect={() => nav(`/shortcut/${id}`)}>
+            <View style={[styles.shortcut, !url && styles.shortcutAdd]}>
               <IconRemote
                 name={icon ?? ''}
                 size={'50%'}
@@ -49,12 +49,12 @@ export default function ScreenHome() {
           </GridCell>
         ))}
         <GridCell
-          focusKey="link-add"
+          focusKey="shortcut-add"
           onSelect={() => {
-            const id = data?.find(link => !link.url)?.id ?? links.create();
-            if (id) nav(`/link/${id}`);
+            const id = data?.find(shortcut => !shortcut.url)?.id ?? shortcuts.create();
+            if (id) nav(`/shortcut/${id}`);
           }}>
-          <View style={[styles.link, styles.linkAdd]}>
+          <View style={[styles.shortcut, styles.shortcutAdd]}>
             <Icon
               name="ph:plus"
               size={32}
@@ -72,12 +72,12 @@ export default function ScreenHome() {
 const styles = StyleSheet.create((theme) => ({
   clock: {
     fontFamily: theme.font.family,
-    fontSize: theme.typography.size7,
+    fontSize: theme.typography.size9,
     fontWeight: theme.typography.weightThin,
     letterSpacing: theme.font.headerSpacing,
     color: theme.colors.foreground,
   },
-  link: {
+  shortcut: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
@@ -87,7 +87,7 @@ const styles = StyleSheet.create((theme) => ({
     borderWidth: 1,
     overflow: 'hidden',
   },
-  linkAdd: {
+  shortcutAdd: {
     backgroundColor: theme.colors.accent,
   },
 }));

@@ -3,13 +3,13 @@ import {useLingui} from '@lingui/react/macro';
 import {useEvolu} from 'app/data';
 import * as $ from 'app/data/types';
 
-export function useLinks() {
+export function useLists() {
   const {t} = useLingui();
   const evolu = useEvolu();
 
   const fail = (message: string) => {
     alert({
-      title: t`Link Error`,
+      title: t`List Error`,
       preset: 'error',
       message,
     });
@@ -17,40 +17,32 @@ export function useLinks() {
 
   const getId = (id?: string) => {
     if (!id) {
-      fail(t`Link ID is required.`);
+      fail(t`Missing list id.`);
       return null;
     }
-    const linkId = $.LinkId.from(id);
-    if (!linkId.ok) {
-      fail(linkId.error.value as string ?? t`Invalid link ID.`);
+    const listId = $.ListId.from(id);
+    if (!listId.ok) {
+      fail(listId.error.value as string ?? t`Invalid list id.`);
       return null;
     }
-    return linkId.value;
+    return listId.value;
   };
 
   const create = () => {
-    const result = evolu.insert('link', {});
+    const result = evolu.insert('list', {});
     if (!result.ok) {
-      fail(result.error.value as string ?? t`Failed to create new link.`);
+      fail(result.error.value as string ?? t`Failed to create new list.`);
       return null;
     }
     return result.value.id;
   };
 
-  const update = (id: $.LinkId | null, field: 'url' | 'name' | 'icon' | 'color', value: string) => {
+  const update = (id: $.ListId | null, field: 'name' | 'icon' | 'color', value: string) => {
     if (!id) return;
 
     let valid = true;
     let error = '';
     switch (field) {
-      case 'url': {
-        const field = $.NonEmptyString1000.from(value);
-        if (!field.ok) {
-          valid = false;
-          error = field.error.value as string ?? t`Invalid URL field.`;
-        }
-        break;
-      }
       case 'name': {
         const field = $.NonEmptyString25.from(value);
         if (!field.ok) {
@@ -82,18 +74,18 @@ export function useLinks() {
       return;
     }
 
-    const result = evolu.update('link', {id, [field]: value});
+    const result = evolu.update('list', {id, [field]: value});
     if (!result.ok) {
-      fail(result.error.value as string ?? t`Failed to update link.`);
+      fail(result.error.value as string ?? t`Failed to update list.`);
     }
   };
 
-  const remove = (id: $.LinkId | null) => {
+  const remove = (id: $.ListId | null) => {
     if (!id) return;
 
-    const result = evolu.update('link', {id, isDeleted: true});
+    const result = evolu.update('list', {id, isDeleted: true});
     if (!result.ok) {
-      fail(result.error.value as string ?? t`Failed to delete link.`);
+      fail(result.error.value as string ?? t`Failed to delete list.`);
     }
   };
 

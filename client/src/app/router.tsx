@@ -7,9 +7,13 @@ export function Router() {
     <_ {...{history}}>
       <Routes>
         <Route path="/" element={<layout.app/>}>
-          {/* General */}
-          <Route index element={<screen.home.index/>}/>
-          <Route path="link/:id" element={<screen.home.link/>}/>
+          {/* Home */}
+          <Route index element={<screen.home.dashboard/>}/>
+          <Route path="shortcut/:id" element={<screen.home.shortcut/>}/>
+          <Route path="lists" element={<screen.home.lists/>}/>
+          <Route path="list/:id" element={<screen.home.list/>}/>
+          <Route path="list/:id/edit" element={<screen.home.list_edit/>}/>
+          {/* Settings */}
           <Route path="settings" element={<screen.settings.index/>}/>
           {/* Dev Mode */}
           <Route path="design" element={<screen.dev.design/>}/>

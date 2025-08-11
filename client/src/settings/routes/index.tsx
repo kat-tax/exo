@@ -20,7 +20,7 @@ export default function ScreenSettings() {
   return (
     <Panel
       title={t`Settings`}
-      message={t`Manage your settings`}
+      message={t`Configure the app`}
       right={<Identicon id={settings.owner?.id} size={100}/>}>
       <View style={styles.root}>
         <PanelSection title={t`Profile`}>

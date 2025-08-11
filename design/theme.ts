@@ -54,7 +54,7 @@ export const typography = {
   size6: 24,
   size7: 28,
   size8: 35,
-  size9: 60,
+  size9: 52,
   weightThin: '200',
   weightLight: '300',
   weightRegular: '400',

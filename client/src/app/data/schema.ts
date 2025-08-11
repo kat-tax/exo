@@ -5,11 +5,23 @@ export default {
     id: $.ProfileId,
     name: $.NonEmptyString25,
   },
-  link: {
-    id: $.LinkId,
+  shortcut: {
+    id: $.ShortcutId,
     url: $.nullOr($.NonEmptyString1000),
     name: $.nullOr($.NonEmptyString25),
     icon: $.nullOr($.NonEmptyString25),
     color: $.nullOr($.NonEmptyString25),
+  },
+  list: {
+    id: $.ListId,
+    name: $.nullOr($.NonEmptyString25),
+    icon: $.nullOr($.NonEmptyString25),
+    color: $.nullOr($.NonEmptyString25),
+  },
+  listItem: {
+    id: $.ListItemId,
+    listId: $.ListId,
+    isComplete: $.Boolean,
+    textContent: $.NonEmptyString1000,
   },
 };

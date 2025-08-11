@@ -5,37 +5,37 @@ import {Platform, View} from 'react-native';
 import {useNavigate, useParams} from 'react-exo/navigation';
 import {Panel, PanelSection, PanelItem} from 'app/ui/panel';
 import {IconRemote, TextInput} from 'app/ui/base';
-import {useLinks} from 'home/hooks/use-links';
+import {useShortcuts} from 'home/hooks/use-shortcuts';
+import {getShortcut} from 'app/data/queries';
 import {useQuery} from 'app/data';
-import {getLink} from 'app/data/queries';
 import {Button} from 'design';
 
-export default function ScreenLink() {
+export default function ScreenShortcut() {
   const {id} = useParams<{id: string}>();
-  const links = useLinks();
-  const linkId = useMemo(() => links.getId(id), [id]);
-  const linkData = useQuery(getLink(linkId))[0];
+  const shortcuts = useShortcuts();
+  const shortcutId = useMemo(() => shortcuts.getId(id), [id]);
+  const shortcutData = useQuery(getShortcut(shortcutId))[0];
 
-  const update = links.update.bind(null, linkId);
+  const update = shortcuts.update.bind(null, shortcutId);
   const nav = useNavigate();
   const {t} = useLingui();
 
-  if (!linkData) {
+  if (!shortcutData) {
     nav('/');
     return null;
   }
 
   return (
     <Panel
-      title={linkData.name || t`Untitled`}
-      message={t`Configure dashboard link`}
+      title={shortcutData.name || t`Untitled`}
+      message={t`Configure dashboard shortcut`}
       right={
-        <View style={styles.link}>
+        <View style={styles.shortcut}>
           <IconRemote
-            name={linkData.icon ?? 'ph:globe'}
+            name={shortcutData.icon ?? 'ph:globe'}
             size={'50%'}
             uniProps={(theme: any) => ({
-              color: linkData.color ?? theme.colors.foreground,
+              color: shortcutData.color ?? theme.colors.foreground,
             })}
           />
         </View>
@@ -54,44 +54,44 @@ export default function ScreenLink() {
                 maxLength={1000}
                 placeholder={`https://search.brave.com`}
                 onChangeText={update.bind(null, 'url')}
-                value={linkData.url ?? ''}
+                value={shortcutData.url ?? ''}
               />
             </PanelItem>
             <PanelItem
               label={t`Name`}
-              description={t`The display name of the link.`}>
+              description={t`The display name of the shortcut.`}>
               <TextInput
                 style={styles.input}
                 maxLength={25}
                 placeholder={`Brave`}
                 onChangeText={update.bind(null, 'name')}
-                value={linkData.name ?? ''}
+                value={shortcutData.name ?? ''}
               />
             </PanelItem>
           </PanelSection>
           <PanelSection title={t`Appearance`}>
             <PanelItem
               label={t`Icon`}
-              description={t`The icon to display for the link.`}>
+              description={t`The icon to display for the shortcut.`}>
               <TextInput
                 style={styles.input}
                 autoCapitalize="none"
                 maxLength={25}
                 placeholder={`simple-icons:brave`}
                 onChangeText={update.bind(null, 'icon')}
-                value={linkData.icon ?? ''}
+                value={shortcutData.icon ?? ''}
               />
             </PanelItem>
             <PanelItem
               label={t`Color`}
-              description={t`The color of the link icon.`}>
+              description={t`The color of the shortcut icon.`}>
               <TextInput
                 style={styles.input}
                 autoCapitalize="none"
                 maxLength={25}
                 placeholder={`#888`}
                 onChangeText={update.bind(null, 'color')}
-                value={linkData.color ?? ''}
+                value={shortcutData.color ?? ''}
               />
             </PanelItem>
           </PanelSection>
@@ -107,7 +107,7 @@ export default function ScreenLink() {
               mode="Destructive"
               state="Default"
               onPress={() => {
-                links.remove(linkId);
+                shortcuts.remove(shortcutId);
                 nav('/');
               }}
             />
@@ -152,7 +152,7 @@ const styles = StyleSheet.create((theme) => ({
     borderColor: theme.colors.border,
     borderWidth: 1,
   },
-  link: {
+  shortcut: {
     width: 100,
     height: 100,
     alignItems: 'center',
