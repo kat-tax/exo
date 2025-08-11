@@ -1,6 +1,5 @@
 import {alert} from 'react-exo/toast';
 import {useLingui} from '@lingui/react/macro';
-import {useCallback} from 'react';
 import {useEvolu} from 'app/data';
 import * as $ from 'app/data/types';
 
@@ -8,24 +7,39 @@ export function useLinks() {
   const {t} = useLingui();
   const evolu = useEvolu();
 
-  const sendError = useCallback((message: string) => {
+  const fail = (message: string) => {
     alert({
-      title: t`Error`,
+      title: t`Link Error`,
       preset: 'error',
       message,
     });
-  }, [t]);
+  };
 
-  const update = useCallback((id: string, field: 'url' | 'name' | 'icon' | 'color', value: string) => {
-    const link = $.LinkId.from(id);
-
-    // Validate link ID
-    if (!link.ok) {
-      sendError(link.error.value as string ?? t`Invalid link ID.`);
-      return;
+  const getId = (id?: string) => {
+    if (!id) {
+      fail(t`Link ID is required.`);
+      return null;
     }
+    const linkId = $.LinkId.from(id);
+    if (!linkId.ok) {
+      fail(linkId.error.value as string ?? t`Invalid link ID.`);
+      return null;
+    }
+    return linkId.value;
+  };
 
-    // Validate fields
+  const create = () => {
+    const result = evolu.insert('link', {});
+    if (!result.ok) {
+      fail(result.error.value as string ?? t`Failed to create new link.`);
+      return null;
+    }
+    return result.value.id;
+  };
+
+  const update = (id: $.LinkId | null, field: 'url' | 'name' | 'icon' | 'color', value: string) => {
+    if (!id) return;
+
     let valid = true;
     let error = '';
     switch (field) {
@@ -64,34 +78,27 @@ export function useLinks() {
       default: field satisfies never;
     }
     if (!valid) {
-      sendError(error);
+      fail(error);
       return;
     }
 
-    // Update link
     const result = evolu.update('link', {id, [field]: value});
     if (!result.ok) {
-      sendError(result.error.value as string ?? t`Failed to update link.`);
+      fail(result.error.value as string ?? t`Failed to update link.`);
     }
-  }, [evolu, t]);
+  };
 
-  const create = useCallback(() => {
-    const result = evolu.insert('link', {});
-    if (!result.ok) {
-      sendError(result.error.value as string ?? t`Failed to create new link.`);
-      return null;
-    }
-    return result.value.id;
-  }, [evolu, t]);
+  const remove = (id: $.LinkId | null) => {
+    if (!id) return;
 
-  const remove = useCallback((id: string) => {
     const result = evolu.update('link', {id, isDeleted: true});
     if (!result.ok) {
-      sendError(result.error.value as string ?? t`Failed to delete link.`);
+      fail(result.error.value as string ?? t`Failed to delete link.`);
     }
-  }, [evolu, t]);
+  };
 
   return {
+    getId,
     create,
     update,
     remove,

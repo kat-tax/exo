@@ -31,6 +31,11 @@ export function Menu() {
             path="/"
           />
           <MenuTab
+            label={t`Lists`}
+            icon={<Icon name="ph:list-checks"/>}
+            path="/lists"
+          />
+          <MenuTab
             label={t`Settings`}
             icon={<Icon name="ph:gear"/>}
             path="/settings"
@@ -47,6 +52,11 @@ export function Menu() {
                   label={t`Dashboard`}
                   icon={<Icon name="ph:squares-four"/>}
                   path="/"
+                />
+                <MenuItem
+                  label={t`Lists`}
+                  icon={<Icon name="ph:list-checks"/>}
+                  path="/lists"
                 />
                 <MenuItem
                   label={t`Settings`}

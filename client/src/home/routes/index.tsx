@@ -16,8 +16,8 @@ import cfg from 'config';
 
 export default function ScreenHome() {
   const settings = useSettings();
-  const clock = useClock();
   const links = useLinks();
+  const clock = useClock();
   const data = useQuery(getLinks);
   const nav = useNavigate();
 
@@ -36,7 +36,7 @@ export default function ScreenHome() {
             key={id}
             focusKey={`link-${id}`}
             onSelect={() => url && Linking.openURL(url)}
-            onEditSelect={() => nav(`/link`, {state: {id}})}>
+            onEditSelect={() => nav(`/link/${id}`)}>
             <View style={[styles.link, !url && styles.linkAdd]}>
               <IconRemote
                 name={icon ?? ''}
@@ -52,7 +52,7 @@ export default function ScreenHome() {
           focusKey="link-add"
           onSelect={() => {
             const id = data?.find(link => !link.url)?.id ?? links.create();
-            if (id) nav(`/link`, {state: {id}});
+            if (id) nav(`/link/${id}`);
           }}>
           <View style={[styles.link, styles.linkAdd]}>
             <Icon

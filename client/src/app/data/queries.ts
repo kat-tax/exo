@@ -14,7 +14,7 @@ export const getLinks = _.createQuery(db => db
   .selectAll()
 );
 
-export const getLink = (id: $.LinkId) => _.createQuery(db => db
+export const getLink = (id: $.LinkId | null) => _.createQuery(db => db
   .selectFrom('link')
   .where('id', '=', id)
   .where('isDeleted', 'is not', 1)

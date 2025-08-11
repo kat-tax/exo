@@ -1,7 +1,8 @@
-import {Platform, View} from 'react-native';
-import {StyleSheet} from 'react-native-unistyles';
+import {useMemo} from 'react';
 import {useLingui} from '@lingui/react/macro';
-import {useNavigate, useLocation} from 'react-exo/navigation';
+import {StyleSheet} from 'react-native-unistyles';
+import {Platform, View} from 'react-native';
+import {useNavigate, useParams} from 'react-exo/navigation';
 import {Panel, PanelSection, PanelItem} from 'app/ui/panel';
 import {IconRemote, TextInput} from 'app/ui/base';
 import {useLinks} from 'home/hooks/use-links';
@@ -10,25 +11,31 @@ import {getLink} from 'app/data/queries';
 import {Button} from 'design';
 
 export default function ScreenLink() {
-  const location = useLocation();
+  const {id} = useParams<{id: string}>();
   const links = useLinks();
-  const link = useQuery(getLink(location.state?.id))[0];
+  const linkId = useMemo(() => links.getId(id), [id]);
+  const linkData = useQuery(getLink(linkId))[0];
 
-  const update = links.update.bind(null, location.state?.id);
+  const update = links.update.bind(null, linkId);
   const nav = useNavigate();
   const {t} = useLingui();
 
+  if (!linkData) {
+    nav('/');
+    return null;
+  }
+
   return (
     <Panel
-      title={link.name || t`Untitled`}
+      title={linkData.name || t`Untitled`}
       message={t`Configure dashboard link`}
       right={
         <View style={styles.link}>
           <IconRemote
-            name={link.icon ?? 'ph:globe'}
+            name={linkData.icon ?? 'ph:globe'}
             size={'50%'}
             uniProps={(theme: any) => ({
-              color: link.color ?? theme.colors.foreground,
+              color: linkData.color ?? theme.colors.foreground,
             })}
           />
         </View>
@@ -47,7 +54,7 @@ export default function ScreenLink() {
                 maxLength={1000}
                 placeholder={`https://search.brave.com`}
                 onChangeText={update.bind(null, 'url')}
-                value={link.url ?? ''}
+                value={linkData.url ?? ''}
               />
             </PanelItem>
             <PanelItem
@@ -58,7 +65,7 @@ export default function ScreenLink() {
                 maxLength={25}
                 placeholder={`Brave`}
                 onChangeText={update.bind(null, 'name')}
-                value={link.name ?? ''}
+                value={linkData.name ?? ''}
               />
             </PanelItem>
           </PanelSection>
@@ -72,7 +79,7 @@ export default function ScreenLink() {
                 maxLength={25}
                 placeholder={`simple-icons:brave`}
                 onChangeText={update.bind(null, 'icon')}
-                value={link.icon ?? ''}
+                value={linkData.icon ?? ''}
               />
             </PanelItem>
             <PanelItem
@@ -84,13 +91,13 @@ export default function ScreenLink() {
                 maxLength={25}
                 placeholder={`#888`}
                 onChangeText={update.bind(null, 'color')}
-                value={link.color ?? ''}
+                value={linkData.color ?? ''}
               />
             </PanelItem>
           </PanelSection>
           <View style={styles.actions}>
             <Button
-              label={t`Cancel`}
+              label={t`Go Back`}
               mode="Secondary"
               state="Default"
               onPress={() => nav('/')}
@@ -100,7 +107,7 @@ export default function ScreenLink() {
               mode="Destructive"
               state="Default"
               onPress={() => {
-                links.remove(location.state?.id);
+                links.remove(linkId);
                 nav('/');
               }}
             />
