@@ -134,6 +134,11 @@ const styles = StyleSheet.create((theme) => ({
     gap: theme.display.space4,
   },
   input: {
+    width: {
+      initial: '100%',
+      xxs: 120,
+      sm: 215,
+    },
     padding: theme.display.space2,
     paddingHorizontal: theme.display.space3,
     color: theme.colors.foreground,
@@ -146,7 +151,6 @@ const styles = StyleSheet.create((theme) => ({
     borderRadius: theme.display.radius3,
     borderColor: theme.colors.border,
     borderWidth: 1,
-    width: 215,
   },
   link: {
     width: 100,

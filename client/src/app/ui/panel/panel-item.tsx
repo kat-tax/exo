@@ -32,15 +32,15 @@ const styles = StyleSheet.create((theme) => ({
     borderBottomWidth: 1,
     alignItems: {
       initial: 'flex-start',
-      sm: 'center',
+      xxs: 'center',
     },
     justifyContent: {
       initial: 'flex-start',
-      sm: 'space-between',
+      xxs: 'space-between',
     },
     flexDirection: {
       initial: 'column',
-      sm: 'row',
+      xxs: 'row',
     },
   },
   info: {

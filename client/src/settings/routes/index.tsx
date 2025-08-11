@@ -26,7 +26,7 @@ export default function ScreenSettings() {
         <PanelSection title={t`Profile`}>
           <PanelItem
             label={t`Display Name`}
-            description={t`Your name to display in the app.`}>
+            description={t`Choose your display name.`}>
             <TextInput
               style={styles.input}
               maxLength={25}
@@ -37,7 +37,7 @@ export default function ScreenSettings() {
           </PanelItem>
           <PanelItem
             label={t`Owner Key`}
-            description={t`The mnemonic phrase for your database.`}>
+            description={t`Enter your mnemonic phrase.`}>
             <TextInput
               style={styles.input}
               selectTextOnFocus
@@ -65,7 +65,7 @@ export default function ScreenSettings() {
         <PanelSection title={t`Display`}>
           <PanelItem
             label={t`Language`}
-            description={t`Select the language for the app.`}>
+            description={t`Select your preferred language.`}>
             <Picker
               style={styles.select}
               itemStyle={styles.selectItem}
@@ -83,7 +83,7 @@ export default function ScreenSettings() {
           </PanelItem>
           <PanelItem
             label={t`Theme`}
-            description={t`Select the theme for the app.`}>
+            description={t`Select the color scheme.`}>
             <Picker
               style={styles.select}
               itemStyle={styles.selectItem}
@@ -113,6 +113,11 @@ const styles = StyleSheet.create((theme) => ({
     }),
   },
   input: {
+    width: {
+      initial: '100%',
+      xxs: 120,
+      sm: 215,
+    },
     padding: theme.display.space2,
     paddingHorizontal: theme.display.space3,
     color: theme.colors.foreground,
@@ -125,7 +130,6 @@ const styles = StyleSheet.create((theme) => ({
     borderRadius: theme.display.radius3,
     borderColor: theme.colors.border,
     borderWidth: 1,
-    width: 215,
   },
   select: {
     ...Platform.select({
@@ -136,6 +140,7 @@ const styles = StyleSheet.create((theme) => ({
         minWidth: 200,
       },
       default: {
+        minWidth: 120,
         padding: theme.display.space2,
         color: theme.colors.foreground,
         fontSize: theme.typography.size2,
@@ -148,7 +153,6 @@ const styles = StyleSheet.create((theme) => ({
         borderRadius: theme.display.radius3,
         borderColor: 'transparent',
         borderWidth: 1,
-        minWidth: 120,
         borderRight: 'inset 8px transparent',
       },
     }),
