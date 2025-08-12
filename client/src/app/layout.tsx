@@ -6,7 +6,7 @@ import {Menu} from 'app/ui/menu';
 export const APP_MENU_WIDTH = 146;
 export const APP_MENU_TAB_HEIGHT = 64;
 
-export default function Layout() {
+export default function LayoutApp() {
   return (
     <View style={styles.root}>
       <View style={styles.menu}>

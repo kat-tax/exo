@@ -9,10 +9,10 @@ export function Router() {
         <Route path="/" element={<Layout.App/>}>
           {/* Home */}
           <Route index element={<Screen.Home.Dashboard/>}/>
-          <Route path="shortcut/:id" element={<Screen.Home.ShortcutEdit/>}/>
           <Route path="lists" element={<Screen.Home.ListAll/>}/>
           <Route path="list/:id" element={<Screen.Home.ListDetails/>}/>
           <Route path="list/:id/edit" element={<Screen.Home.ListEdit/>}/>
+          <Route path="shortcut/:id" element={<Screen.Home.ShortcutEdit/>}/>
           {/* Settings */}
           <Route path="settings" element={<Screen.Settings.Settings/>}/>
           {/* Dev Mode */}

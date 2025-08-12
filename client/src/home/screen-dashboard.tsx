@@ -14,7 +14,7 @@ import {getShortcuts} from 'app/data/queries';
 import {useShortcuts} from 'home/hooks/use-shortcuts';
 import cfg from 'config';
 
-export default function ScreenHome() {
+export default function ScreenDashboard() {
   const shortcuts = useShortcuts();
   const settings = useSettings();
   const clock = useClock();

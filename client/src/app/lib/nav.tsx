@@ -16,7 +16,6 @@ export const Layout = Object.entries(ctx.layouts).reduce((acc, [_, layout]) => {
   const match = _.match(/\.\/src\/([^/]+)\/layout\.tsx$/);
   if (match) {
     const slice = startCase(match[1]).replace(/\s/g, '');
-    console.log('>> LAYOUT', slice);
     acc[slice] = lazy(layout as NavFile);
   }
   return acc;
@@ -27,7 +26,6 @@ export const Screen = Object.entries(ctx.screens).reduce((acc, [_, screen]) => {
   if (match) {
     const slice = startCase(match[1]).replace(/\s/g, '');
     const name = startCase(match[2]).replace(/\s/g, '');
-    console.log('>> SCREEN', slice, name);
     if (!acc[slice]) acc[slice] = {};
     acc[slice][name] = lazy(screen as NavFile);
   }
