@@ -8,6 +8,18 @@ import sonda from 'sonda/vite';
 import cfg from 'config';
 
 const PWA_BG_COLOR = '#18181b';
+const EXTENSIONS = [
+  '.web.tsx',
+  '.web.ts',
+  '.web.js',
+  '.mjs',
+  '.mts',
+  '.ts',
+  '.tsx',
+  '.js',
+  '.jsx',
+  '.json',
+];
 
 export default defineConfig(env => ({
   // Output Configuration
@@ -27,23 +39,23 @@ export default defineConfig(env => ({
       },
     },
   },
-  // React Native Web Support
+  // React Native Web Compatibility
   resolve: {
-    extensions: [
-      '.web.tsx',
-      '.web.ts',
-      '.web.js',
-      '.mjs',
-      '.mts',
-      '.ts',
-      '.tsx',
-      '.js',
-      '.jsx',
-      '.json',
-    ],
+    extensions: EXTENSIONS,
     alias: {
       'react-native': 'react-native-web',
     },
+  },
+  optimizeDeps: {
+    // React Native Web Compatibility
+    esbuildOptions: {
+      resolveExtensions: EXTENSIONS,
+    },
+    // Exclude Packages with Workers
+    exclude: [
+      '@sqlite.org/sqlite-wasm',
+      '@evolu/react-web',
+    ],
   },
   plugins: [
     // Support TypeScript Base URL
@@ -152,13 +164,6 @@ export default defineConfig(env => ({
       outputDir: '../output',
     }),
   ],
-  // Exclude Packages with Workers
-  optimizeDeps: {
-    exclude: [
-      '@sqlite.org/sqlite-wasm',
-      '@evolu/react-web',
-    ],
-  },
   // Do not open preview in browser
   preview: {
     open: false,

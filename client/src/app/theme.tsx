@@ -11,8 +11,12 @@ export function Theme(props: React.PropsWithChildren) {
   useEffect(() => {
     if (scheme) {
       UnistylesRuntime.setTheme(scheme);
-      Appearance?.setColorScheme?.(scheme);
       UnistylesRuntime.setRootViewBackgroundColor(scheme === 'dark' ? '#000000' : '#ffffff');
+      if (__WEB__) {
+        document.documentElement.style.colorScheme = scheme;
+      } else {
+        Appearance?.setColorScheme?.(scheme);
+      }
     }
   }, [scheme]);
 
