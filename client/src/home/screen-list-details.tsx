@@ -144,11 +144,7 @@ const styles = StyleSheet.create((theme) => ({
     gap: theme.display.space2,
   },
   input: {
-    width: {
-      initial: '100%',
-      xxs: 120,
-      sm: 215,
-    },
+    width: '100%',
     padding: theme.display.space2,
     paddingHorizontal: theme.display.space3,
     color: theme.colors.foreground,
