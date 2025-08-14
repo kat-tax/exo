@@ -78,7 +78,7 @@ const styles = StyleSheet.create((theme) => ({
     fontSize: {
       initial: theme.typography.size7,
       xxs: theme.typography.size8,
-      xs: theme.typography.size9,
+      md: theme.typography.size9,
     },
   },
   shortcut: {

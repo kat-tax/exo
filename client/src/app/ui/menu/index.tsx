@@ -69,16 +69,18 @@ export function Menu() {
                   </MenuGroup>
                 }
               </View>
-              <MenuFooter actions={
-                <View style={styles.actions}>
-                  <MenuItem
-                    label={t`Settings`}
-                    icon={<Icon name="ph:gear"/>}
-                    path="/settings"
-                    mode="action"
-                  />
-                </View>
-              }/>
+              {__WEB__ && (
+                <MenuFooter actions={
+                  <View style={styles.actions}>
+                    <MenuItem
+                      label={t`Settings`}
+                      icon={<Icon name="ph:gear"/>}
+                      path="/settings"
+                      mode="action"
+                    />
+                  </View>
+                }/>
+              )}
             </ScrollView>
           </FocusContext.Provider>
         </View>
@@ -87,7 +89,7 @@ export function Menu() {
   );
 }
 
-const styles = StyleSheet.create((theme) => ({
+const styles = StyleSheet.create((theme, rt) => ({
   tabs: {
     flex: 1,
     flexDirection: 'row',
@@ -100,6 +102,9 @@ const styles = StyleSheet.create((theme) => ({
   menu: {
     flex: 1,
     backgroundColor: theme.colors.neutral,
+    paddingTop: rt.insets.top / 1.5,
+    paddingBottom: rt.insets.bottom / 1.5,
+    paddingStart: rt.insets.left,
   },
   scroll: {
     flex: 1,
