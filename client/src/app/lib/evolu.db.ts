@@ -12,7 +12,6 @@ const evolu = $.createEvolu(deps)(schema, {
 evolu.subscribeError(() => {
   const error = evolu.getError();
   if (!error) return;
-  alert('🚨 Evolu error occurred! Check the console.');
   console.error(error);
 });
 
