@@ -10,6 +10,7 @@ import {MenuTab} from './menu-tab';
 import {MenuItem} from './menu-item';
 import {MenuGroup} from './menu-group';
 import {MenuHeader} from './menu-header';
+import {MenuFooter} from './menu-footer';
 
 export function Menu() {
   const {t} = useLingui();
@@ -45,7 +46,7 @@ export function Menu() {
       <Display mq={mq.only.width(breakpoints.xs)}>
         <View style={styles.menu}>
           <FocusContext.Provider value={focusKey}>
-            <ScrollView ref={ref} contentContainerStyle={{flexGrow: 1}}>
+            <ScrollView ref={ref} style={styles.scroll} contentContainerStyle={{flexGrow: 1}}>
               <View style={styles.list}>
                 <MenuHeader/>
                 <MenuItem
@@ -58,11 +59,6 @@ export function Menu() {
                   icon={<Icon name="ph:list-checks"/>}
                   path="/lists"
                 />
-                <MenuItem
-                  label={t`Settings`}
-                  icon={<Icon name="ph:gear"/>}
-                  path="/settings"
-                />
                 {__DEV__ &&
                   <MenuGroup label={t`Development`}>
                     <MenuItem
@@ -73,6 +69,16 @@ export function Menu() {
                   </MenuGroup>
                 }
               </View>
+              <MenuFooter actions={
+                <View style={styles.actions}>
+                  <MenuItem
+                    label={t`Settings`}
+                    icon={<Icon name="ph:gear"/>}
+                    path="/settings"
+                    mode="action"
+                  />
+                </View>
+              }/>
             </ScrollView>
           </FocusContext.Provider>
         </View>
@@ -95,9 +101,15 @@ const styles = StyleSheet.create((theme) => ({
     flex: 1,
     backgroundColor: theme.colors.neutral,
   },
+  scroll: {
+    flex: 1,
+    paddingStart: theme.display.space2,
+  },
   list: {
     flex: 1,
     flexDirection: 'column',
-    paddingStart: theme.display.space2,
+  },
+  actions: {
+    flexDirection: 'row',
   },
 }));

@@ -8,11 +8,14 @@ interface MenuItemProps extends React.PropsWithChildren {
   label: string,
   path: string,
   icon: React.ReactElement,
+  mode?: 'default' | 'action',
 }
 
 export function MenuItem(props: MenuItemProps) {
   const nav = useNavigate();
   const loc = useLocation();
+  const mode = props.mode ?? 'default';
+  const action = mode === 'action';
   const active = props.path === decodeURIComponent(loc.pathname);
   const {ref, focused} = useFocusable({
     focusKey: `menu@${props.path}`,
@@ -23,18 +26,23 @@ export function MenuItem(props: MenuItemProps) {
     <Link ref={ref} to={props.path}>
       <View style={[
         styles.item,
+        action && styles.action,
         active && styles.active,
         focused && styles.focus,
       ]}>
         {props.icon && createIcon(props.icon, {
+          size: action && !__TOUCH__ ? 14 : 18,
           uniProps: (theme: any) => ({
-            color: theme.colors.mutedForeground,
+            color: action && active
+              ? theme.colors.foreground
+              : theme.colors.mutedForeground,
           }),
-          size: 18,
         })}
-        <Text style={styles.label}>
-          {props.label}
-        </Text>
+        {!action && (
+          <Text style={styles.label}>
+            {props.label}
+          </Text>
+        )}
       </View>
     </Link>
   );
@@ -48,6 +56,10 @@ const styles = StyleSheet.create((theme) => ({
     paddingHorizontal: theme.display.space2,
     borderColor: 'transparent',
     borderWidth: 1,
+  },
+  action: {
+    paddingVertical: theme.display.space1,
+    paddingHorizontal: theme.display.space1,
   },
   active: {
     backgroundColor: theme.colors.secondary,
