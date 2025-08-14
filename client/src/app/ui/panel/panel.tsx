@@ -1,17 +1,19 @@
 import {View, ScrollView, Text} from 'react-native';
 import {StyleSheet} from 'react-native-unistyles';
+import {Link} from 'react-exo/navigation';
+import {Icon} from 'app/ui/base';
 
 export interface PanelProps extends React.PropsWithChildren {
   title?: string | React.ReactNode,
   message?: string | React.ReactNode,
   right?: React.ReactNode,
-  left?: React.ReactNode,
+  back?: string,
 }
 
 export function Panel(props: PanelProps) {
   const hasTitle = Boolean(props.title);
   const hasMessage = Boolean(props.message);
-  const hasHeader = hasTitle || hasMessage || props.right || props.left;
+  const hasHeader = hasTitle || hasMessage || props.right;
 
   return (
     <View style={styles.root}>
@@ -19,21 +21,31 @@ export function Panel(props: PanelProps) {
         <View style={styles.content}>
           {hasHeader &&
             <View style={styles.header}>
-              {props.left &&
-                <View style={[styles.widget, styles.widgetLeft]}>
-                  {props.left}
-                </View>
-              }
               {(hasTitle || hasMessage) &&
                 <View style={styles.greeting}>
                   {hasTitle &&
-                    <Text
-                      style={styles.title}
-                      selectable={false}
-                      ellipsizeMode="tail"
-                      numberOfLines={1}>
-                      {props.title}
-                    </Text>
+                    <View style={styles.titlebar}>
+                      {props.back &&
+                        <View style={styles.back}>
+                          <Link to={props.back}>
+                            <Icon
+                              name="ph:arrow-left"
+                              size={28}
+                              uniProps={(theme: any) => ({
+                                color: theme.colors.foreground,
+                              })}
+                            />
+                          </Link>
+                        </View>
+                      }
+                      <Text
+                        style={styles.title}
+                        selectable={false}
+                        ellipsizeMode="tail"
+                        numberOfLines={1}>
+                        {props.title}
+                      </Text>
+                    </View>
                   }
                   {hasMessage &&
                     <Text
@@ -115,12 +127,11 @@ const styles = StyleSheet.create((theme, rt) => ({
     justifyContent: 'space-between',
     marginBottom: theme.display.space5,
   },
+  back: {
+    marginTop: 2,
+  },
   widget: {
     gap: theme.display.space2,
-  },
-  widgetLeft: {
-    alignItems: 'flex-start',
-    justifyContent: 'flex-start',
   },
   widgetRight: {
     alignItems: 'flex-end',
@@ -129,6 +140,11 @@ const styles = StyleSheet.create((theme, rt) => ({
   greeting: {
     gap: theme.display.space2,
     flex: 1,
+  },
+  titlebar: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: theme.display.space3,
   },
   title: {
     fontFamily: theme.font.family,

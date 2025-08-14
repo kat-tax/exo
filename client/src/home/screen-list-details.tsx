@@ -1,22 +1,25 @@
-import {useMemo} from 'react';
-import {useLingui} from '@lingui/react/macro';
 import {StyleSheet} from 'react-native-unistyles';
-import {Platform, View} from 'react-native';
+import {Platform, Pressable, View} from 'react-native';
 import {useNavigate, useParams} from 'react-exo/navigation';
-import {Panel} from 'app/ui/panel';
-import {IconRemote, TextInput} from 'app/ui/base';
+import {useMemo, useRef} from 'react';
+import {useLingui} from '@lingui/react/macro';
 import {useLists} from 'home/hooks/use-lists';
 import {useQuery} from 'app/data';
-import {getList} from 'app/data/queries';
-import {Button} from 'design';
+import {Panel} from 'app/ui/panel';
+import {Icon, IconRemote, TextInput} from 'app/ui/base';
+import {getList, getListItems} from 'app/data/queries';
+
+import type {TextInput as TextInputType} from 'react-native';
 
 export default function ScreenList() {
   const {id} = useParams<{id: string}>();
+  const ref = useRef<TextInputType>(null);
   const lists = useLists();
   const listId = useMemo(() => lists.getId(id), [id]);
   const listData = useQuery(getList(listId))[0];
+  const listItems = useQuery(getListItems(listId));
 
-  const update = lists.update.bind(null, listId);
+  const create = lists.createItem.bind(null, listId);
   const nav = useNavigate();
   const {t} = useLingui();
 
@@ -28,9 +31,10 @@ export default function ScreenList() {
   return (
     <Panel
       title={listData.name || t`Untitled`}
-      message={`${0} / ${12} completed`}
+      message={`${listItems.filter((item) => item.isCompleted).length} / ${listItems.length} completed`}
+      back={'/lists'}
       right={
-        <View style={styles.list}>
+        <View style={styles.icon}>
           <IconRemote
             name={listData.icon ?? 'ph:list-checks'}
             size={'50%'}
@@ -41,13 +45,66 @@ export default function ScreenList() {
         </View>
       }>
         <View style={styles.root}>
-          <View style={styles.actions}>
-            <Button
-              label={t`Go Back`}
-              mode="Secondary"
-              state="Default"
-              onPress={() => nav('/lists')}
-            />
+          <View style={styles.items}>
+            {listItems.map((item) => (
+              <View key={item.id} style={styles.item}>
+                <Pressable onPress={() => {
+                  lists.updateItemStatus(item.id, !item.isCompleted);
+                }}>
+                  {item.isCompleted ? (
+                    <Icon
+                      name="ph:check-square"
+                      size={24}
+                      uniProps={(theme: any) => ({
+                        color: theme.colors.mutedForeground,
+                      })}
+                    />
+                  ) : (
+                    <Icon
+                      name="ph:square"
+                      size={24}
+                      uniProps={(theme: any) => ({
+                        color: theme.colors.mutedForeground,
+                      })}
+                    />
+                  )}
+                </Pressable>
+                <TextInput
+                  style={styles.input}
+                  placeholder={t`Edit Item...`}
+                  value={item.textContent ?? ''}
+                  maxLength={1000}
+                  onChangeText={(value) => {
+                    lists.updateItemText(item.id, value);
+                  }}
+                  onBlur={() => {
+                    if (item.textContent === '') {
+                      lists.removeItem(item.id);
+                    }
+                  }}
+                />
+              </View>
+            ))}
+            <View style={styles.item}>
+              <Icon
+                name="ph:plus"
+                size={24}
+                uniProps={(theme: any) => ({
+                  color: theme.colors.mutedForeground,
+                })}
+              />
+              <TextInput
+                ref={ref}
+                style={styles.input}
+                placeholder={t`New item...`}
+                maxLength={1000}
+                defaultValue={''}
+                onSubmitEditing={(e) => {
+                  create(e.nativeEvent.text);
+                  ref.current?.clear();
+                }}
+              />
+            </View>
           </View>
         </View>
     </Panel>
@@ -65,10 +122,26 @@ const styles = StyleSheet.create((theme) => ({
       },
     }),
   },
-  actions: {
+  icon: {
+    width: 100,
+    height: 100,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: theme.colors.card,
+    borderRadius: theme.display.radius3,
+    borderColor: theme.colors.border,
+    borderWidth: 1,
+    overflow: 'hidden',
+  },
+  items: {
+    flexDirection: 'column',
+    gap: theme.display.space2,
+  },
+  item: {
+    flex: 1,
     flexDirection: 'row',
-    marginBottom: theme.display.space5,
-    gap: theme.display.space4,
+    alignItems: 'center',
+    gap: theme.display.space2,
   },
   input: {
     width: {
@@ -79,25 +152,10 @@ const styles = StyleSheet.create((theme) => ({
     padding: theme.display.space2,
     paddingHorizontal: theme.display.space3,
     color: theme.colors.foreground,
-    fontSize: theme.typography.size2,
-    fontWeight: theme.typography.weightLight,
-    lineHeight: theme.typography.lineHeight2,
-    letterSpacing: theme.typography.letterSpacing2,
     fontFamily: theme.font.family,
-    backgroundColor: theme.colors.card,
-    borderRadius: theme.display.radius3,
-    borderColor: theme.colors.border,
-    borderWidth: 1,
-  },
-  list: {
-    width: 100,
-    height: 100,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: theme.colors.card,
-    borderRadius: theme.display.radius3,
-    borderColor: theme.colors.border,
-    borderWidth: 1,
-    overflow: 'hidden',
+    fontSize: theme.font.inputSize,
+    fontWeight: theme.font.inputWeight,
+    lineHeight: theme.font.inputHeight,
+    letterSpacing: theme.font.inputSpacing,
   },
 }));

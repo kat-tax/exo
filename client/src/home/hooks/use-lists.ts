@@ -37,6 +37,15 @@ export function useLists() {
     return result.value.id;
   };
 
+  const remove = (id: $.ListId | null) => {
+    if (!id) return;
+
+    const result = evolu.update('list', {id, isDeleted: true});
+    if (!result.ok) {
+      fail(result.error.value as string ?? t`Failed to delete list.`);
+    }
+  };
+
   const update = (id: $.ListId | null, field: 'name' | 'icon' | 'color', value: string) => {
     if (!id) return;
 
@@ -80,19 +89,55 @@ export function useLists() {
     }
   };
 
-  const remove = (id: $.ListId | null) => {
-    if (!id) return;
+  const createItem = (listId: $.ListId | null, value: string) => {
+    if (!listId) return;
 
-    const result = evolu.update('list', {id, isDeleted: true});
+    const field = $.NonEmptyString1000.from(value);
+    if (!field.ok) {
+      fail(field.error.value as string ?? t`Invalid text content field.`);
+      return;
+    }
+
+    const result = evolu.insert('listItem', {listId, textContent: field.value, isCompleted: false});
     if (!result.ok) {
-      fail(result.error.value as string ?? t`Failed to delete list.`);
+      fail(result.error.value as string ?? t`Failed to create list item.`);
+    }
+  };
+
+  const removeItem = (id: $.ListItemId) => {
+    const result = evolu.update('listItem', {id, isDeleted: true});
+    if (!result.ok) {
+      fail(result.error.value as string ?? t`Failed to delete list item.`);
+    }
+  };
+
+  const updateItemText = (id: $.ListItemId, value: string) => {
+    const field = $.String1000.from(value);
+    if (!field.ok) {
+      fail(field.error.value as string ?? t`Invalid text content field.`);
+      return;
+    }
+    const result = evolu.update('listItem', {id, textContent: field.value});
+    if (!result.ok) {
+      fail(result.error.value as string ?? t`Failed to update list item text.`);
+    }
+  };
+
+  const updateItemStatus = (id: $.ListItemId, value: boolean) => {
+    const result = evolu.update('listItem', {id, isCompleted: value});
+    if (!result.ok) {
+      fail(result.error.value as string ?? t`Failed to update list item status.`);
     }
   };
 
   return {
     getId,
     create,
-    update,
     remove,
+    update,
+    createItem,
+    removeItem,
+    updateItemText,
+    updateItemStatus,
   };
 }

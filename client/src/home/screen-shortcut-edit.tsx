@@ -30,7 +30,7 @@ export default function ScreenShortcut() {
       title={shortcutData.name || t`Untitled`}
       message={t`Configure dashboard shortcut`}
       right={
-        <View style={styles.shortcut}>
+        <View style={styles.icon}>
           <IconRemote
             name={shortcutData.icon ?? 'ph:globe'}
             size={'50%'}
@@ -133,6 +133,17 @@ const styles = StyleSheet.create((theme) => ({
     marginBottom: theme.display.space5,
     gap: theme.display.space4,
   },
+  icon: {
+    width: 100,
+    height: 100,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: theme.colors.card,
+    borderRadius: theme.display.radius3,
+    borderColor: theme.colors.border,
+    borderWidth: 1,
+    overflow: 'hidden',
+  },
   input: {
     width: {
       initial: '100%',
@@ -151,16 +162,5 @@ const styles = StyleSheet.create((theme) => ({
     borderRadius: theme.display.radius3,
     borderColor: theme.colors.border,
     borderWidth: 1,
-  },
-  shortcut: {
-    width: 100,
-    height: 100,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: theme.colors.card,
-    borderRadius: theme.display.radius3,
-    borderColor: theme.colors.border,
-    borderWidth: 1,
-    overflow: 'hidden',
   },
 }));
