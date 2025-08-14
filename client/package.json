@@ -45,7 +45,8 @@
     "react-native-svg-app-icon": "^0.6.1",
     "react-native-unistyles": "^3.0.7",
     "react-native-url-polyfill": "^2.0.0",
-    "react-native-web": "^0.21.0"
+    "react-native-web": "^0.21.0",
+    "rmapi-js": "^8.3.0"
   },
   "devDependencies": {
     "@react-native/codegen": "0.80.2",

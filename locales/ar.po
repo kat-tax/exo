@@ -14,12 +14,12 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. placeholder {0}: 11
-#: ../../client/src/dev/routes/design.tsx:14
+#: ../../client/src/dev/screen-design.tsx:14
 msgid "{0} components"
 msgstr "{0} مكونات"
 
-#: ../../client/src/home/routes/shortcut.tsx:72
-#: ../../client/src/home/routes/list_edit.tsx:57
+#: ../../client/src/home/screen-shortcut-edit.tsx:72
+#: ../../client/src/home/screen-list-edit.tsx:57
 msgid "Appearance"
 msgstr "المظهر"
 
@@ -35,67 +35,71 @@ msgstr "هل أنت متأكد من إعادة تعيين قاعدة البيا�
 msgid "Cancel"
 msgstr "إلغاء"
 
-#: ../../client/src/settings/routes/index.tsx:29
+#: ../../client/src/settings/screen-settings.tsx:29
 msgid "Choose your display name."
 msgstr ""
 
-#: ../../client/src/home/routes/shortcut.tsx:86
-#: ../../client/src/home/routes/list_edit.tsx:71
+#: ../../client/src/home/screen-shortcut-edit.tsx:86
+#: ../../client/src/home/screen-list-edit.tsx:71
 msgid "Color"
 msgstr "اللون"
 
-#: ../../client/src/home/routes/shortcut.tsx:31
+#: ../../client/src/home/screen-shortcut-edit.tsx:31
 msgid "Configure dashboard shortcut"
 msgstr ""
 
-#: ../../client/src/home/routes/list_edit.tsx:31
+#: ../../client/src/home/screen-list-edit.tsx:31
 msgid "Configure list"
 msgstr ""
 
-#: ../../client/src/settings/routes/index.tsx:23
+#: ../../client/src/settings/screen-settings.tsx:23
 msgid "Configure the app"
 msgstr ""
 
-#: ../../client/src/settings/routes/index.tsx:94
+#: ../../client/src/settings/screen-settings.tsx:94
 msgid "Dark"
 msgstr "داكن"
 
-#: ../../client/src/app/ui/menu/index.tsx:29
-#: ../../client/src/app/ui/menu/index.tsx:52
+#: ../../client/src/app/ui/menu/index.tsx:30
+#: ../../client/src/app/ui/menu/index.tsx:53
 msgid "Dashboard"
 msgstr "لوحة التحكم"
 
-#: ../../client/src/home/routes/shortcut.tsx:106
-#: ../../client/src/home/routes/list_edit.tsx:91
+#: ../../client/src/home/screen-shortcut-edit.tsx:106
+#: ../../client/src/home/screen-list-edit.tsx:91
 msgid "Delete"
 msgstr "حذف"
 
-#: ../../client/src/dev/routes/design.tsx:13
-#: ../../client/src/app/ui/menu/index.tsx:69
+#: ../../client/src/dev/screen-design.tsx:13
+#: ../../client/src/app/ui/menu/index.tsx:65
 msgid "Design"
 msgstr "تصميم"
 
-#: ../../client/src/app/ui/menu/index.tsx:67
+#: ../../client/src/app/ui/menu/index.tsx:63
 msgid "Development"
 msgstr "تطوير"
 
-#: ../../client/src/settings/routes/index.tsx:65
+#: ../../client/src/settings/screen-settings.tsx:65
 msgid "Display"
 msgstr "العرض"
 
-#: ../../client/src/settings/routes/index.tsx:28
+#: ../../client/src/settings/screen-settings.tsx:28
 msgid "Display Name"
 msgstr "اسم العرض"
 
-#: ../../client/src/settings/routes/index.tsx:46
+#: ../../client/src/home/screen-list-details.tsx:74
+msgid "Edit Item..."
+msgstr ""
+
+#: ../../client/src/settings/screen-settings.tsx:46
 msgid "Enter mnemonic"
 msgstr "أدخل العبارة المساعدة"
 
-#: ../../client/src/settings/routes/index.tsx:35
+#: ../../client/src/settings/screen-settings.tsx:35
 msgid "Enter name"
 msgstr "أدخل الاسم"
 
-#: ../../client/src/settings/routes/index.tsx:40
+#: ../../client/src/settings/screen-settings.tsx:40
 msgid "Enter your mnemonic phrase."
 msgstr ""
 
@@ -103,6 +107,10 @@ msgstr ""
 #: ../../client/src/settings/hooks/use-settings.ts:47
 msgid "Error"
 msgstr "خطأ"
+
+#: ../../client/src/home/hooks/use-lists.ts:103
+msgid "Failed to create list item."
+msgstr ""
 
 #: ../../client/src/home/hooks/use-lists.ts:34
 msgid "Failed to create new list."
@@ -112,7 +120,11 @@ msgstr ""
 msgid "Failed to create new shortcut."
 msgstr ""
 
-#: ../../client/src/home/hooks/use-lists.ts:88
+#: ../../client/src/home/hooks/use-lists.ts:110
+msgid "Failed to delete list item."
+msgstr ""
+
+#: ../../client/src/home/hooks/use-lists.ts:45
 msgid "Failed to delete list."
 msgstr ""
 
@@ -120,7 +132,15 @@ msgstr ""
 msgid "Failed to delete shortcut."
 msgstr ""
 
-#: ../../client/src/home/hooks/use-lists.ts:79
+#: ../../client/src/home/hooks/use-lists.ts:129
+msgid "Failed to update list item status."
+msgstr ""
+
+#: ../../client/src/home/hooks/use-lists.ts:122
+msgid "Failed to update list item text."
+msgstr ""
+
+#: ../../client/src/home/hooks/use-lists.ts:88
 msgid "Failed to update list."
 msgstr ""
 
@@ -128,14 +148,13 @@ msgstr ""
 msgid "Failed to update shortcut."
 msgstr ""
 
-#: ../../client/src/home/routes/shortcut.tsx:44
-#: ../../client/src/home/routes/list_edit.tsx:44
+#: ../../client/src/home/screen-shortcut-edit.tsx:44
+#: ../../client/src/home/screen-list-edit.tsx:44
 msgid "General"
 msgstr "عام"
 
-#: ../../client/src/home/routes/shortcut.tsx:100
-#: ../../client/src/home/routes/list_edit.tsx:85
-#: ../../client/src/home/routes/list.tsx:46
+#: ../../client/src/home/screen-shortcut-edit.tsx:100
+#: ../../client/src/home/screen-list-edit.tsx:85
 msgid "Go Back"
 msgstr ""
 
@@ -155,7 +174,7 @@ msgstr "صباح الخير، {name}."
 msgid "Good night, {name}."
 msgstr "تصبح على خير، {name}."
 
-#: ../../client/src/home/routes/list_edit.tsx:51
+#: ../../client/src/home/screen-list-edit.tsx:51
 msgid "Groceries"
 msgstr ""
 
@@ -163,18 +182,18 @@ msgstr ""
 msgid "Human"
 msgstr "بشري"
 
-#: ../../client/src/home/routes/shortcut.tsx:74
-#: ../../client/src/home/routes/list_edit.tsx:59
+#: ../../client/src/home/screen-shortcut-edit.tsx:74
+#: ../../client/src/home/screen-list-edit.tsx:59
 msgid "Icon"
 msgstr "أيقونة"
 
 #: ../../client/src/home/hooks/use-shortcuts.ts:74
-#: ../../client/src/home/hooks/use-lists.ts:66
+#: ../../client/src/home/hooks/use-lists.ts:75
 msgid "Invalid color field."
 msgstr "حقل اللون غير صالح."
 
 #: ../../client/src/home/hooks/use-shortcuts.ts:66
-#: ../../client/src/home/hooks/use-lists.ts:58
+#: ../../client/src/home/hooks/use-lists.ts:67
 msgid "Invalid icon field."
 msgstr "حقل الأيقونة غير صالح."
 
@@ -187,7 +206,7 @@ msgid "Invalid name (max 25 characters)."
 msgstr "اسم غير صالح (أقصى 25 حرف)."
 
 #: ../../client/src/home/hooks/use-shortcuts.ts:58
-#: ../../client/src/home/hooks/use-lists.ts:50
+#: ../../client/src/home/hooks/use-lists.ts:59
 msgid "Invalid name field."
 msgstr "حقل الاسم غير صالح."
 
@@ -199,15 +218,20 @@ msgstr "مفتاح المالك غير صالح."
 msgid "Invalid shortcut id."
 msgstr ""
 
+#: ../../client/src/home/hooks/use-lists.ts:97
+#: ../../client/src/home/hooks/use-lists.ts:117
+msgid "Invalid text content field."
+msgstr ""
+
 #: ../../client/src/home/hooks/use-shortcuts.ts:50
 msgid "Invalid URL field."
 msgstr "حقل الرابط غير صالح."
 
-#: ../../client/src/settings/routes/index.tsx:67
+#: ../../client/src/settings/screen-settings.tsx:67
 msgid "Language"
 msgstr "اللغة"
 
-#: ../../client/src/settings/routes/index.tsx:93
+#: ../../client/src/settings/screen-settings.tsx:93
 msgid "Light"
 msgstr "فاتح"
 
@@ -215,9 +239,9 @@ msgstr "فاتح"
 msgid "List Error"
 msgstr ""
 
-#: ../../client/src/home/routes/lists.tsx:21
-#: ../../client/src/app/ui/menu/index.tsx:34
-#: ../../client/src/app/ui/menu/index.tsx:57
+#: ../../client/src/home/screen-list-all.tsx:21
+#: ../../client/src/app/ui/menu/index.tsx:35
+#: ../../client/src/app/ui/menu/index.tsx:58
 msgid "Lists"
 msgstr ""
 
@@ -229,34 +253,38 @@ msgstr ""
 msgid "Missing shortcut id."
 msgstr ""
 
-#: ../../client/src/home/routes/shortcut.tsx:61
-#: ../../client/src/home/routes/list_edit.tsx:46
+#: ../../client/src/home/screen-shortcut-edit.tsx:61
+#: ../../client/src/home/screen-list-edit.tsx:46
 msgid "Name"
 msgstr "الاسم"
 
-#: ../../client/src/home/routes/lists.tsx:22
+#: ../../client/src/home/screen-list-details.tsx:99
+msgid "New item..."
+msgstr ""
+
+#: ../../client/src/home/screen-list-all.tsx:22
 msgid "Organize your tasks"
 msgstr ""
 
-#: ../../client/src/settings/routes/index.tsx:39
+#: ../../client/src/settings/screen-settings.tsx:39
 msgid "Owner Key"
 msgstr "مفتاح المالك"
 
-#: ../../client/src/settings/routes/index.tsx:26
+#: ../../client/src/settings/screen-settings.tsx:26
 msgid "Profile"
 msgstr "الملف الشخصي"
 
-#: ../../client/src/settings/routes/index.tsx:86
+#: ../../client/src/settings/screen-settings.tsx:86
 msgid "Select the color scheme."
 msgstr ""
 
-#: ../../client/src/settings/routes/index.tsx:68
+#: ../../client/src/settings/screen-settings.tsx:68
 msgid "Select your preferred language."
 msgstr ""
 
-#: ../../client/src/settings/routes/index.tsx:22
-#: ../../client/src/app/ui/menu/index.tsx:39
-#: ../../client/src/app/ui/menu/index.tsx:62
+#: ../../client/src/settings/screen-settings.tsx:22
+#: ../../client/src/app/ui/menu/index.tsx:40
+#: ../../client/src/app/ui/menu/index.tsx:76
 msgid "Settings"
 msgstr "الإعدادات"
 
@@ -264,50 +292,50 @@ msgstr "الإعدادات"
 msgid "Shortcut Error"
 msgstr ""
 
-#: ../../client/src/settings/routes/index.tsx:74
-#: ../../client/src/settings/routes/index.tsx:92
+#: ../../client/src/settings/screen-settings.tsx:74
+#: ../../client/src/settings/screen-settings.tsx:92
 msgid "System"
 msgstr "النظام"
 
-#: ../../client/src/home/routes/list_edit.tsx:72
+#: ../../client/src/home/screen-list-edit.tsx:72
 msgid "The color of the list icon."
 msgstr ""
 
-#: ../../client/src/home/routes/shortcut.tsx:87
+#: ../../client/src/home/screen-shortcut-edit.tsx:87
 msgid "The color of the shortcut icon."
 msgstr ""
 
-#: ../../client/src/home/routes/list_edit.tsx:47
+#: ../../client/src/home/screen-list-edit.tsx:47
 msgid "The display name of the list."
 msgstr ""
 
-#: ../../client/src/home/routes/shortcut.tsx:62
+#: ../../client/src/home/screen-shortcut-edit.tsx:62
 msgid "The display name of the shortcut."
 msgstr ""
 
-#: ../../client/src/home/routes/list_edit.tsx:60
+#: ../../client/src/home/screen-list-edit.tsx:60
 msgid "The icon to display for the list."
 msgstr ""
 
-#: ../../client/src/home/routes/shortcut.tsx:75
+#: ../../client/src/home/screen-shortcut-edit.tsx:75
 msgid "The icon to display for the shortcut."
 msgstr ""
 
-#: ../../client/src/home/routes/shortcut.tsx:47
+#: ../../client/src/home/screen-shortcut-edit.tsx:47
 msgid "The web page to link to."
 msgstr "صفحة الويب للربط بها."
 
-#: ../../client/src/settings/routes/index.tsx:85
+#: ../../client/src/settings/screen-settings.tsx:85
 msgid "Theme"
 msgstr "النسق"
 
-#: ../../client/src/home/routes/shortcut.tsx:30
-#: ../../client/src/home/routes/list_edit.tsx:30
-#: ../../client/src/home/routes/list.tsx:30
+#: ../../client/src/home/screen-shortcut-edit.tsx:30
+#: ../../client/src/home/screen-list-edit.tsx:30
+#: ../../client/src/home/screen-list-details.tsx:33
 msgid "Untitled"
 msgstr "بدون عنوان"
 
-#: ../../client/src/home/routes/shortcut.tsx:46
+#: ../../client/src/home/screen-shortcut-edit.tsx:46
 msgid "URL"
 msgstr "الرابط"
 
