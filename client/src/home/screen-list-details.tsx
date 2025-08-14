@@ -97,6 +97,7 @@ export default function ScreenList() {
                 ref={ref}
                 style={styles.input}
                 placeholder={t`New item...`}
+                autoFocus={true}
                 maxLength={1000}
                 defaultValue={''}
                 onSubmitEditing={(e) => {
