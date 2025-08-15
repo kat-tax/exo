@@ -44,3 +44,13 @@ export const getListItems = (id: $.ListId | null) => _.createQuery(db => db
   .orderBy('createdAt', 'asc')
   .selectAll()
 );
+
+export const getListCounts = (id: $.ListId | null) => _.createQuery(db => db
+  .selectFrom('listItem')
+  .where('listId', '=', id)
+  .where('isDeleted', 'is not', 1)
+  .select((eb) => [
+    eb.fn.countAll<number>().as('total'),
+    eb.fn.count<number>(eb.case().when('isCompleted', '=', 1).then(1).end()).as('completed')
+  ])
+);

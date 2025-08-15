@@ -17,7 +17,7 @@ export function Panel(props: PanelProps) {
 
   return (
     <View style={styles.root}>
-      <ScrollView style={styles.scroll} contentContainerStyle={{flex: 1}}>
+      <ScrollView style={styles.scroll}>
         <View style={styles.content}>
           {hasHeader &&
             <View style={styles.header}>
