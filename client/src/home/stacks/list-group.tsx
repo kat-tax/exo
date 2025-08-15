@@ -23,27 +23,37 @@ export function ListGroup({id}: ListGroupProps) {
   const create = lists.createItem.bind(null, listId);
   const {t} = useLingui();
 
-  const resetInput = useCallback(() => {
+  const resetInput = () => {
     ref.current?.clear();
     setTimeout(() => {
       ref.current?.focus();
     }, 100);
-  }, []);
+  };
 
-  const handleMultiLine = useCallback((text: string) => {
+  const handleSingleLine = (text: string) => {
+    if (text.length > 0) {
+      if (!handleMultiLine(text)) {
+        create(text);
+        resetInput();
+      }
+    }
+  };
+
+  const handleMultiLine = (text: string) => {
     const lines = text.split(/\r?\n/).filter(line => line.trim().length > 0);
     if (lines.length > 1) {
       lines.forEach(line => {
         const trimmedLine = line.trim();
         if (trimmedLine.length > 0) {
           create(trimmedLine);
+          resetInput();
         }
       });
       resetInput();
       return true;
     }
     return false;
-  }, [create, resetInput]);
+  }
 
   return (
     <View style={styles.root}>
@@ -90,6 +100,7 @@ export function ListGroup({id}: ListGroupProps) {
                 if (e.nativeEvent.key === 'Backspace') {
                   if (item.textContent === '') {
                     lists.removeItem(item.id);
+                    ref.current?.focus();
                   }
                 }
               }}
@@ -123,19 +134,20 @@ export function ListGroup({id}: ListGroupProps) {
             maxLength={1000}
             defaultValue={''}
             numberOfLines={1}
-            onChangeText={(text) => {
-              if (text.includes('\n') || text.includes('\r')) {
-                handleMultiLine(text);
+            submitBehavior="blurAndSubmit"
+            onKeyPress={e => {
+              if (e.nativeEvent.key === 'Enter') {
+                e.preventDefault();
+                handleSingleLine(ref.current?.value?.trim() ?? '');
               }
             }}
-            onSubmitEditing={(e) => {
-              const text = e.nativeEvent.text.trim();
-              if (text.length > 0) {
-                if (!handleMultiLine(text)) {
-                  create(text);
-                  resetInput();
-                }
+            onChangeText={e => {
+              if (e.includes('\n') || e.includes('\r')) {
+                handleMultiLine(e);
               }
+            }}
+            onSubmitEditing={e => {
+              handleSingleLine(e.nativeEvent.text.trim());
             }}
           />
         </View>
