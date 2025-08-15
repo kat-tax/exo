@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native-unistyles';
-import {Platform, View} from 'react-native';
+import {Platform, Pressable, View} from 'react-native';
 import {useNavigate, useParams} from 'react-exo/navigation';
 import {useMemo} from 'react';
 import {useLingui} from '@lingui/react/macro';
@@ -35,7 +35,9 @@ export default function ScreenList() {
       message={`${listCounts.completed ?? 0} / ${listCounts.total ?? 0} completed`}
       back={'/lists'}
       right={
-        <View style={styles.icon}>
+        <Pressable
+          style={styles.icon}
+          onPress={() => nav(`/list/${listId}/edit`)}>
           <IconRemote
             name={listData.icon ?? 'ph:list-checks'}
             size={'50%'}
@@ -43,7 +45,7 @@ export default function ScreenList() {
               color: listData.color ?? theme.colors.foreground,
             })}
           />
-        </View>
+        </Pressable>
       }>
       <View style={styles.root}>
         {listGroups.map((group) => (
