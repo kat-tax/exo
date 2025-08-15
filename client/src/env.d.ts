@@ -49,19 +49,14 @@ declare module 'react-native' {
   interface PlatformStatic {
     isVision: boolean;
   }
-  interface PressableStateCallbackType {
-    hovered?: boolean;
-    focused?: boolean;
-  }
-  interface TextInputKeyPressEventData {
-    key: string;
-    metaKey: boolean;
-    ctrlKey: boolean;
-  }
-  interface GestureResponderEvent {
-    shiftKey: boolean;
-    metaKey: boolean;
-    ctrlKey: boolean;
+  interface ViewProps {
+    onClick?: (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void;
+    accessibilityRole?: string;
+    href?: string;
+    hrefAttrs?: {
+      rel: 'noreferrer';
+      target?: '_blank';
+    };
   }
   interface ViewStyle {
     transitionProperty?: string;
@@ -76,13 +71,21 @@ declare module 'react-native' {
       target?: '_blank';
     };
   }
-  interface ViewProps {
-    onClick?: (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void;
-    accessibilityRole?: string;
-    href?: string;
-    hrefAttrs?: {
-      rel: 'noreferrer';
-      target?: '_blank';
-    };
+  interface TextInput {
+    value?: string;
+  }
+  interface TextInputKeyPressEventData {
+    key: string;
+    metaKey: boolean;
+    ctrlKey: boolean;
+  }
+  interface PressableStateCallbackType {
+    hovered?: boolean;
+    focused?: boolean;
+  }
+  interface GestureResponderEvent {
+    shiftKey: boolean;
+    metaKey: boolean;
+    ctrlKey: boolean;
   }
 }
