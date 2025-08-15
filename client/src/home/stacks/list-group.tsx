@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native-unistyles';
 import {Pressable, View} from 'react-native';
-import {useMemo, useRef} from 'react';
+import {useMemo, useRef, useCallback} from 'react';
 import {useLingui} from '@lingui/react/macro';
 import {useLists} from 'home/hooks/use-lists';
 import {useQuery} from 'app/data';
@@ -22,6 +22,28 @@ export function ListGroup({id}: ListGroupProps) {
 
   const create = lists.createItem.bind(null, listId);
   const {t} = useLingui();
+
+  const resetInput = useCallback(() => {
+    ref.current?.clear();
+    setTimeout(() => {
+      ref.current?.focus();
+    }, 100);
+  }, []);
+
+  const handleMultiLine = useCallback((text: string) => {
+    const lines = text.split(/\r?\n/).filter(line => line.trim().length > 0);
+    if (lines.length > 1) {
+      lines.forEach(line => {
+        const trimmedLine = line.trim();
+        if (trimmedLine.length > 0) {
+          create(trimmedLine);
+        }
+      });
+      resetInput();
+      return true;
+    }
+    return false;
+  }, [create, resetInput]);
 
   return (
     <View style={styles.root}>
@@ -63,11 +85,21 @@ export function ListGroup({id}: ListGroupProps) {
               onChangeText={(value) => {
                 lists.updateItemText(item.id, value);
               }}
+              // Clear item if backspace is pressed and the item is empty
+              onKeyPress={(e) => {
+                if (e.nativeEvent.key === 'Backspace') {
+                  if (item.textContent === '') {
+                    lists.removeItem(item.id);
+                  }
+                }
+              }}
+              // Clear item if it is empty and the user blurs the input
               onBlur={() => {
                 if (item.textContent === '') {
                   lists.removeItem(item.id);
                 }
               }}
+              // Focus new item input when user submits the current item
               onSubmitEditing={() => {
                 ref.current?.focus();
               }}
@@ -87,14 +119,23 @@ export function ListGroup({id}: ListGroupProps) {
             style={styles.itemInput}
             placeholder={t`New item...`}
             autoFocus={true}
+            multiline={true}
             maxLength={1000}
             defaultValue={''}
+            numberOfLines={1}
+            onChangeText={(text) => {
+              if (text.includes('\n') || text.includes('\r')) {
+                handleMultiLine(text);
+              }
+            }}
             onSubmitEditing={(e) => {
-              create(e.nativeEvent.text);
-              ref.current?.clear();
-              setTimeout(() => {
-                ref.current?.focus();
-              }, 100);
+              const text = e.nativeEvent.text.trim();
+              if (text.length > 0) {
+                if (!handleMultiLine(text)) {
+                  create(text);
+                  resetInput();
+                }
+              }
             }}
           />
         </View>

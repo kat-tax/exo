@@ -5,8 +5,8 @@ import {useMemo} from 'react';
 import {useLingui} from '@lingui/react/macro';
 import {useLists} from 'home/hooks/use-lists';
 import {useQuery} from 'app/data';
-import {IconRemote} from 'app/ui/base';
 import {Panel} from 'app/ui/panel';
+import {IconRemote} from 'app/ui/base';
 import {ListGroup} from 'home/stacks/list-group';
 import {getList, getListCounts} from 'app/data/queries';
 
