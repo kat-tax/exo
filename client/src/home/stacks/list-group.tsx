@@ -1,11 +1,11 @@
 import {StyleSheet} from 'react-native-unistyles';
 import {Pressable, View} from 'react-native';
-import {useMemo, useRef, useCallback} from 'react';
+import {useMemo, useRef} from 'react';
 import {useLingui} from '@lingui/react/macro';
 import {useLists} from 'home/hooks/use-lists';
 import {useQuery} from 'app/data';
-import {Icon, TextInput} from 'app/ui/base';
 import {getListItems} from 'app/data/queries';
+import {Icon, TextInput} from 'app/ui/base';
 
 import type {ListId} from 'app/data/types';
 import type {TextInput as TextInputType} from 'react-native';
@@ -135,17 +135,20 @@ export function ListGroup({id}: ListGroupProps) {
             defaultValue={''}
             numberOfLines={1}
             submitBehavior="blurAndSubmit"
+            // Prevent new lines in input field (web workaround for submitBehavior)
             onKeyPress={e => {
               if (e.nativeEvent.key === 'Enter') {
                 e.preventDefault();
                 handleSingleLine(ref.current?.value?.trim() ?? '');
               }
             }}
+            // Detect multi-line input
             onChangeText={e => {
               if (e.includes('\n') || e.includes('\r')) {
                 handleMultiLine(e);
               }
             }}
+            // Native submission behavior (native since onKeyPress handles web)
             onSubmitEditing={e => {
               handleSingleLine(e.nativeEvent.text.trim());
             }}
