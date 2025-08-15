@@ -31,7 +31,7 @@ const styles = StyleSheet.create((theme, rt) => ({
   menu: {
     width: {
       initial: '100%',
-      xs: __WEB__ ? 146 : 180,
+      xs: __WEB__ ? APP_MENU_WIDTH : undefined,
     },
     marginBottom: {
       initial: rt.insets.bottom / 1.5,
