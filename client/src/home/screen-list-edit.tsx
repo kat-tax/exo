@@ -42,6 +42,7 @@ export default function ScreenListEdit() {
     <Panel
       title={listData.name || t`Untitled`}
       message={t`Configure list`}
+      back="/lists"
       right={
         <View style={styles.list}>
           <IconRemote
@@ -144,23 +145,21 @@ export default function ScreenListEdit() {
               />
             </PanelItem>
           </PanelSection>
-          <View style={styles.actions}>
-            <Button
-              label={t`Go Back`}
-              mode="Secondary"
-              state="Default"
-              onPress={() => nav('/lists')}
-            />
-            <Button
-              label={t`Delete`}
-              mode="Destructive"
-              state="Default"
-              onPress={() => {
-                lists.remove(listId);
-                nav('/lists');
-              }}
-            />
-          </View>
+          <PanelSection title={t`Danger Zone`}>
+            <PanelItem
+              label={t`Delete List`}
+              description={t`Permanently delete list.`}>
+              <Button
+                label={t`Delete List`}
+                mode="Destructive"
+                state="Default"
+                onPress={() => {
+                  lists.remove(listId);
+                  nav('/lists');
+                }}
+              />
+            </PanelItem>
+          </PanelSection>
         </View>
     </Panel>
   );
@@ -176,11 +175,6 @@ const styles = StyleSheet.create((theme) => ({
         gap: theme.display.space8,
       },
     }),
-  },
-  actions: {
-    flexDirection: 'row',
-    marginBottom: theme.display.space5,
-    gap: theme.display.space4,
   },
   input: {
     width: {

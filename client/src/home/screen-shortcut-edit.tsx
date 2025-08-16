@@ -29,6 +29,7 @@ export default function ScreenShortcut() {
     <Panel
       title={shortcutData.name || t`Untitled`}
       message={t`Configure dashboard shortcut`}
+      back="/"
       right={
         <View style={styles.icon}>
           <IconRemote
@@ -95,23 +96,21 @@ export default function ScreenShortcut() {
               />
             </PanelItem>
           </PanelSection>
-          <View style={styles.actions}>
-            <Button
-              label={t`Go Back`}
-              mode="Secondary"
-              state="Default"
-              onPress={() => nav('/')}
-            />
-            <Button
-              label={t`Delete`}
-              mode="Destructive"
-              state="Default"
-              onPress={() => {
-                shortcuts.remove(shortcutId);
-                nav('/');
-              }}
-            />
-          </View>
+          <PanelSection title={t`Danger Zone`}>
+            <PanelItem
+              label={t`Delete Shortcut`}
+              description={t`Permanently delete shortcut.`}>
+              <Button
+                label={t`Delete Shortcut`}
+                mode="Destructive"
+                state="Default"
+                onPress={() => {
+                  shortcuts.remove(shortcutId);
+                  nav('/');
+                }}
+              />
+            </PanelItem>
+          </PanelSection>
         </View>
     </Panel>
   );

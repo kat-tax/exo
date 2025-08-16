@@ -9,6 +9,7 @@ import {useTheme} from 'settings/hooks/use-theme';
 import {useLocale} from 'settings/hooks/use-locale';
 import {useSettings} from 'settings/hooks/use-settings';
 import {locales} from 'config/locales';
+import {Button} from 'design';
 
 export default function ScreenSettings() {
   const [scheme, setScheme] = useTheme(true);
@@ -35,34 +36,8 @@ export default function ScreenSettings() {
               placeholder={t`Enter name`}
             />
           </PanelItem>
-          <PanelItem
-            label={t`Owner Key`}
-            description={t`Enter your mnemonic phrase.`}>
-            <TextInput
-              style={styles.input}
-              selectTextOnFocus
-              secureTextEntry={!showKey}
-              defaultValue={settings.owner?.mnemonic?.toString() ?? ''}
-              placeholder={t`Enter mnemonic`}
-              importantForAutofill="no"
-              autoCapitalize="none"
-              autoComplete="off"
-              spellCheck={false}
-              passwordRules="none"
-              autoCorrect={false}
-              onFocus={() => setShowKey(true)}
-              onSubmitEditing={e => {
-                setShowKey(false);
-                settings.changeOwner(e.nativeEvent.text);
-              }}
-              onBlur={e => {
-                setShowKey(false);
-                settings.changeOwner(e.nativeEvent.text);
-              }}
-            />
-          </PanelItem>
         </PanelSection>
-        <PanelSection title={t`Display`}>
+        <PanelSection title={t`Appearance`}>
           <PanelItem
             label={t`Language`}
             description={t`Select your preferred language.`}>
@@ -93,6 +68,44 @@ export default function ScreenSettings() {
               <Picker.Item label={t`Light`} value="light"/>
               <Picker.Item label={t`Dark`} value="dark"/>
             </Picker>
+          </PanelItem>
+        </PanelSection>
+        <PanelSection title={t`Data`}>
+          <PanelItem
+            label={t`Owner Key`}
+            description={t`Set mnemonic to sync devices.`}>
+            <TextInput
+              style={styles.input}
+              selectTextOnFocus
+              secureTextEntry={!showKey}
+              defaultValue={settings.owner?.mnemonic?.toString() ?? ''}
+              placeholder={t`Enter mnemonic`}
+              importantForAutofill="no"
+              autoCapitalize="none"
+              autoComplete="off"
+              spellCheck={false}
+              passwordRules="none"
+              autoCorrect={false}
+              onFocus={() => setShowKey(true)}
+              onSubmitEditing={e => {
+                setShowKey(false);
+                settings.changeOwner(e.nativeEvent.text);
+              }}
+              onBlur={e => {
+                setShowKey(false);
+                settings.changeOwner(e.nativeEvent.text);
+              }}
+            />
+          </PanelItem>
+          <PanelItem
+            label={t`Clear Data`}
+            description={t`Reset owner and delete database.`}>
+            <Button
+              label={t`Reset Database`}
+              mode="Destructive"
+              state="Default"
+              onPress={settings.resetOwner}
+            />
           </PanelItem>
         </PanelSection>
       </View>
