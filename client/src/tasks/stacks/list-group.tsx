@@ -2,7 +2,7 @@ import {StyleSheet} from 'react-native-unistyles';
 import {Pressable, View} from 'react-native';
 import {useMemo, useRef} from 'react';
 import {useLingui} from '@lingui/react/macro';
-import {useLists} from 'home/hooks/use-lists';
+import {useLists} from 'tasks/hooks/use-lists';
 import {useQuery} from 'app/data';
 import {getListItems} from 'app/data/queries';
 import {Icon, TextInput} from 'app/ui/base';

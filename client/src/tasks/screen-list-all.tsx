@@ -8,7 +8,7 @@ import {Grid} from 'app/ui/grid';
 import {GridCell} from 'app/ui/grid';
 import {useQuery} from 'app/data';
 import {getLists} from 'app/data/queries';
-import {useLists} from 'home/hooks/use-lists';
+import {useLists} from 'tasks/hooks/use-lists';
 
 export default function ScreenLists() {
   const lists = useLists();

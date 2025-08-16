@@ -1,9 +1,9 @@
-import {Platform, View, Pressable} from 'react-native';
 import {StyleSheet} from 'react-native-unistyles';
-import {useLingui} from '@lingui/react/macro';
-import {useMemo, useRef} from 'react';
+import {Platform, View, Pressable} from 'react-native';
 import {useNavigate, useParams} from 'react-exo/navigation';
-import {useLists} from 'home/hooks/use-lists';
+import {useMemo, useRef} from 'react';
+import {useLingui} from '@lingui/react/macro';
+import {useLists} from 'tasks/hooks/use-lists';
 import {Panel, PanelSection, PanelItem} from 'app/ui/panel';
 import {IconRemote, TextInput, Icon} from 'app/ui/base';
 import {getList, getListCategories} from 'app/data/queries';
@@ -41,7 +41,7 @@ export default function ScreenListEdit() {
   return (
     <Panel
       title={listData.name || t`Untitled`}
-      message={t`Configure list`}
+      message={t`Configure task list`}
       back="/lists"
       right={
         <View style={styles.list}>

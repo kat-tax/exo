@@ -3,11 +3,11 @@ import {Platform, Pressable, View} from 'react-native';
 import {useNavigate, useParams} from 'react-exo/navigation';
 import {useMemo} from 'react';
 import {useLingui} from '@lingui/react/macro';
-import {useLists} from 'home/hooks/use-lists';
+import {useLists} from 'tasks/hooks/use-lists';
 import {useQuery} from 'app/data';
 import {Panel} from 'app/ui/panel';
 import {IconRemote} from 'app/ui/base';
-import {ListGroup} from 'home/stacks/list-group';
+import {ListGroup} from 'tasks/stacks/list-group';
 import {getList, getListCounts, getListCategories} from 'app/data/queries';
 
 export default function ScreenList() {
