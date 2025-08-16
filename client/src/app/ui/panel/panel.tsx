@@ -31,7 +31,7 @@ export function Panel(props: PanelProps) {
                             <Icon
                               name="ph:arrow-left"
                               size={28}
-                              uniProps={(theme: any) => ({
+                              uniProps={(theme) => ({
                                 color: theme.colors.foreground,
                               })}
                             />

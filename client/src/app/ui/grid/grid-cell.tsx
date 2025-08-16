@@ -39,7 +39,7 @@ export function GridCell(props: GridCellProps) {
               <Icon
                 name="ph:pencil-simple"
                 size={16}
-                uniProps={(theme: any) => ({
+                uniProps={(theme) => ({
                   color: theme.colors.mutedForeground,
                 })}
               />

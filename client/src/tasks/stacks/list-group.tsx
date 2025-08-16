@@ -81,7 +81,7 @@ export function ListGroup({id, categoryId, categoryName}: ListGroupProps) {
                 <Icon
                   name="ph:check-square"
                   size={24}
-                  uniProps={(theme: any) => ({
+                  uniProps={(theme) => ({
                     color: theme.colors.mutedForeground,
                   })}
                 />
@@ -89,7 +89,7 @@ export function ListGroup({id, categoryId, categoryName}: ListGroupProps) {
                 <Icon
                   name="ph:square"
                   size={24}
-                  uniProps={(theme: any) => ({
+                  uniProps={(theme) => ({
                     color: theme.colors.mutedForeground,
                   })}
                 />
@@ -130,7 +130,7 @@ export function ListGroup({id, categoryId, categoryName}: ListGroupProps) {
           <Icon
             name="ph:plus"
             size={24}
-            uniProps={(theme: any) => ({
+            uniProps={(theme) => ({
               color: theme.colors.mutedForeground,
             })}
           />

@@ -41,7 +41,7 @@ export default function ScreenDashboard() {
               <IconRemote
                 name={icon ?? ''}
                 size={'50%'}
-                uniProps={(theme: any) => ({
+                uniProps={(theme) => ({
                   color: color ?? theme.colors.foreground,
                 })}
               />
@@ -58,7 +58,7 @@ export default function ScreenDashboard() {
             <Icon
               name="ph:plus"
               size={32}
-              uniProps={(theme: any) => ({
+              uniProps={(theme) => ({
                 color: theme.colors.mutedForeground,
               })}
             />

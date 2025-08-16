@@ -35,7 +35,7 @@ export default function ScreenShortcut() {
           <IconRemote
             name={shortcutData.icon ?? 'ph:globe'}
             size={'50%'}
-            uniProps={(theme: any) => ({
+            uniProps={(theme) => ({
               color: shortcutData.color ?? theme.colors.foreground,
             })}
           />

@@ -48,7 +48,7 @@ export default function ScreenListEdit() {
           <IconRemote
             name={listData.icon ?? 'ph:list-checks'}
             size={'50%'}
-            uniProps={(theme: any) => ({
+            uniProps={(theme) => ({
               color: listData.color ?? theme.colors.foreground,
             })}
           />
@@ -79,7 +79,7 @@ export default function ScreenListEdit() {
                       <Icon
                         name="ph:x"
                         size={16}
-                        uniProps={(theme: any) => ({
+                        uniProps={(theme) => ({
                           color: theme.colors.mutedForeground,
                         })}
                       />
