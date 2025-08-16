@@ -76,7 +76,7 @@ const styles = StyleSheet.create((theme) => ({
     opacity: 0.4,
   },
   rootModeSecondaryStateDefault: {
-    backgroundColor: 'unset' as any,
+    backgroundColor: theme.colors.secondary,
     borderColor: theme.colors.border,
   },
   rootModeSecondaryStateHovered: {
@@ -94,7 +94,7 @@ const styles = StyleSheet.create((theme) => ({
     backgroundColor: theme.colors.secondary,
   },
   rootModeSecondaryStateDisabled: {
-    backgroundColor: 'unset' as any,
+    backgroundColor: theme.colors.secondary,
     borderColor: theme.colors.border,
     opacity: 0.4,
   },
@@ -122,25 +122,24 @@ const styles = StyleSheet.create((theme) => ({
     backgroundColor: theme.colors.destructive,
   },
   rootModeTextStateDefault: {
-    backgroundColor: 'unset' as any,
+    backgroundColor: undefined,
     borderColor: 'rgba(0, 0, 0, 0)',
   },
   rootModeTextStateHovered: {
-    backgroundColor: 'unset' as any,
     borderColor: 'rgba(0, 0, 0, 0)',
     opacity: 0.9,
   },
   rootModeTextStatePressed: {
-    backgroundColor: 'unset' as any,
+    backgroundColor: undefined,
     borderColor: 'rgba(0, 0, 0, 0)',
     opacity: 0.8,
   },
   rootModeTextStateFocused: {
-    backgroundColor: 'unset' as any,
+    backgroundColor: undefined,
     borderColor: theme.colors.ring,
   },
   rootModeTextStateDisabled: {
-    backgroundColor: 'unset' as any,
+    backgroundColor: undefined,
     borderColor: 'rgba(0, 0, 0, 0)',
     opacity: 0.4,
   },

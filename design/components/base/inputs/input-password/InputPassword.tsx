@@ -42,7 +42,7 @@ export function InputPassword(props: InputPasswordProps) {
       <View style={vstyles.input()} testID="4029:247">
         {createIcon(props.icon, vstyles.phPlaceholder())}
         <UniTextInput
-          style={styles.textinputTextSecureTextEntry}
+          style={styles.textinputText}
           testID="4029:249"
           inputMode="text"
           defaultValue={''}
@@ -87,7 +87,7 @@ const styles = StyleSheet.create((theme) => ({
   labelStateDisabled: {
     opacity: 0.5,
   },
-  textinputTextSecureTextEntry: {
+  textinputText: {
     flexGrow: 1,
     flexShrink: 0,
     flexBasis: 0,
@@ -129,9 +129,9 @@ const styles = StyleSheet.create((theme) => ({
     borderColor: theme.colors.outline,
   },
   inputStateDisabled: {
-    borderWidth: 'unset' as any,
-    borderStyle: 'unset' as any,
-    borderColor: 'unset' as any,
+    borderWidth: undefined,
+    borderStyle: undefined,
+    borderColor: undefined,
     opacity: 0.5,
   },
   caption: {

@@ -128,9 +128,9 @@ const styles = StyleSheet.create((theme) => ({
     borderColor: theme.colors.outline,
   },
   inputStateDisabled: {
-    borderWidth: 'unset' as any,
-    borderStyle: 'unset' as any,
-    borderColor: 'unset' as any,
+    borderWidth: undefined,
+    borderStyle: undefined,
+    borderColor: undefined,
     opacity: 0.5,
   },
   caption: {

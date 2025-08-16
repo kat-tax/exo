@@ -83,7 +83,7 @@ export default function ScreenDesign() {
           caption=""
           label=""
           placeholder="Email Address"
-          icon={<Icon name="ph:mail"/>}
+          icon={<Icon name="ph:envelope"/>}
           showLabel={false}
           showCaption={false}
         />
