@@ -1,6 +1,7 @@
 import {alert} from 'react-exo/toast';
 import {useLingui} from '@lingui/react/macro';
 import {useEvolu} from 'app/data';
+import {getListItems} from 'app/data/queries';
 import * as $ from 'app/data/types';
 
 export function useLists() {
@@ -31,7 +32,7 @@ export function useLists() {
   const create = () => {
     const result = evolu.insert('list', {});
     if (!result.ok) {
-      fail(result.error.value as string ?? t`Failed to create new list.`);
+      fail(t`Failed to create new list.`);
       return null;
     }
     return result.value.id;
@@ -42,7 +43,7 @@ export function useLists() {
 
     const result = evolu.update('list', {id, isDeleted: true});
     if (!result.ok) {
-      fail(result.error.value as string ?? t`Failed to delete list.`);
+      fail(t`Failed to delete list.`);
     }
   };
 
@@ -56,7 +57,7 @@ export function useLists() {
         const field = $.NonEmptyString25.from(value);
         if (!field.ok) {
           valid = false;
-          error = field.error.value as string ?? t`Invalid name field.`;
+          error = t`Invalid name field.`;
         }
         break;
       }
@@ -64,7 +65,7 @@ export function useLists() {
         const field = $.NonEmptyString25.from(value);
         if (!field.ok) {
           valid = false;
-          error = field.error.value as string ?? t`Invalid icon field.`;
+          error = t`Invalid icon field.`;
         }
         break;
       }
@@ -72,7 +73,7 @@ export function useLists() {
         const field = $.NonEmptyString25.from(value);
         if (!field.ok) {
           valid = false;
-          error = field.error.value as string ?? t`Invalid color field.`;
+          error = t`Invalid color field.`;
         }
         break;
       }
@@ -85,48 +86,95 @@ export function useLists() {
 
     const result = evolu.update('list', {id, [field]: value});
     if (!result.ok) {
-      fail(result.error.value as string ?? t`Failed to update list.`);
+      fail(t`Failed to update list.`);
     }
   };
 
-  const createItem = (listId: $.ListId | null, value: string) => {
+  const createItem = (listId: $.ListId | null, categoryId: $.ListCategoryId | null, value: string) => {
     if (!listId) return;
 
     const field = $.NonEmptyString1000.from(value);
     if (!field.ok) {
-      fail(field.error.value as string ?? t`Invalid text content field.`);
+      fail(t`Invalid text content field.`);
       return;
     }
 
-    const result = evolu.insert('listItem', {listId, textContent: field.value, isCompleted: false});
+    const result = evolu.insert('listItem', {listId, categoryId, textContent: field.value, isCompleted: false});
     if (!result.ok) {
-      fail(result.error.value as string ?? t`Failed to create list item.`);
+      fail(t`Failed to create list item.`);
     }
   };
 
   const removeItem = (id: $.ListItemId) => {
     const result = evolu.update('listItem', {id, isDeleted: true});
     if (!result.ok) {
-      fail(result.error.value as string ?? t`Failed to delete list item.`);
+      fail(t`Failed to delete list item.`);
     }
   };
 
   const updateItemText = (id: $.ListItemId, value: string) => {
     const field = $.String1000.from(value);
     if (!field.ok) {
-      fail(field.error.value as string ?? t`Invalid text content field.`);
+      fail(t`Invalid text content field.`);
       return;
     }
     const result = evolu.update('listItem', {id, textContent: field.value});
     if (!result.ok) {
-      fail(result.error.value as string ?? t`Failed to update list item text.`);
+      fail(t`Failed to update list item text.`);
     }
   };
 
   const updateItemStatus = (id: $.ListItemId, value: boolean) => {
     const result = evolu.update('listItem', {id, isCompleted: value});
     if (!result.ok) {
-      fail(result.error.value as string ?? t`Failed to update list item status.`);
+      fail(t`Failed to update list item status.`);
+    }
+  };
+
+  const createCategory = (listId: $.ListId | null, value: string) => {
+    if (!listId) return null;
+
+    const field = $.NonEmptyString50.from(value);
+    if (!field.ok) {
+      fail(t`Invalid category name.`);
+      return null;
+    }
+
+    const result = evolu.insert('listCategory', {listId, name: field.value});
+    if (!result.ok) {
+      fail(t`Failed to create category.`);
+      return null;
+    }
+    return result.value.id;
+  };
+
+  const removeCategory = (listId: $.ListId | null, categoryId: $.ListCategoryId) => {
+    if (!listId) return;
+
+    // Clear items from category.
+    evolu.loadQuery(getListItems(listId, categoryId)).then(items => {
+      items.forEach(item => {
+        evolu.update('listItem', {id: item.id, categoryId: null});
+      });
+    });
+
+    // Delete category.
+    const result = evolu.update('listCategory', {id: categoryId, isDeleted: true});
+    if (!result.ok) {
+      fail(t`Failed to delete category.`);
+    }
+  };
+
+  const updateCategory = (id: $.ListCategoryId, value: string) => {
+    const field = $.NonEmptyString50.from(value);
+    if (!field.ok) {
+      fail(t`Invalid category name.`);
+      return;
+    }
+
+    const result = evolu.update('listCategory', {id, name: field.value});
+    if (!result.ok) {
+      fail(t`Failed to update category.`);
     }
   };
 
@@ -139,5 +187,8 @@ export function useLists() {
     removeItem,
     updateItemText,
     updateItemStatus,
+    createCategory,
+    removeCategory,
+    updateCategory,
   };
 }

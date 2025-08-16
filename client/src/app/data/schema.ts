@@ -21,7 +21,13 @@ export default {
   listItem: {
     id: $.ListItemId,
     listId: $.ListId,
+    categoryId: $.nullOr($.ListCategoryId),
     textContent: $.String1000,
     isCompleted: $.SqliteBoolean,
+  },
+  listCategory: {
+    id: $.ListCategoryId,
+    name: $.NonEmptyString50,
+    listId: $.ListId,
   },
 };

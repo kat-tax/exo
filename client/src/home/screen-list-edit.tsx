@@ -1,24 +1,37 @@
-import {useMemo} from 'react';
-import {useLingui} from '@lingui/react/macro';
+import {Platform, View, Pressable} from 'react-native';
 import {StyleSheet} from 'react-native-unistyles';
-import {Platform, View} from 'react-native';
+import {useLingui} from '@lingui/react/macro';
+import {useMemo, useRef} from 'react';
 import {useNavigate, useParams} from 'react-exo/navigation';
-import {Panel, PanelSection, PanelItem} from 'app/ui/panel';
-import {IconRemote, TextInput} from 'app/ui/base';
 import {useLists} from 'home/hooks/use-lists';
+import {Panel, PanelSection, PanelItem} from 'app/ui/panel';
+import {IconRemote, TextInput, Icon} from 'app/ui/base';
+import {getList, getListCategories} from 'app/data/queries';
 import {useQuery} from 'app/data';
-import {getList} from 'app/data/queries';
 import {Button} from 'design';
+
+import type {TextInput as TextInputType} from 'react-native';
 
 export default function ScreenListEdit() {
   const {id} = useParams<{id: string}>();
   const lists = useLists();
   const listId = useMemo(() => lists.getId(id), [id]);
   const listData = useQuery(getList(listId))[0];
+  const categories = useQuery(getListCategories(listId));
+  const categoryInputRef = useRef<TextInputType>(null);
 
   const update = lists.update.bind(null, listId);
   const nav = useNavigate();
   const {t} = useLingui();
+
+  const removeCategory = lists.removeCategory.bind(null, listId);
+  const createCategory = (text: string) => {
+    if (text.length > 0) {
+      lists.createCategory(listId, text);
+      categoryInputRef.current?.clear();
+      categoryInputRef.current?.focus();
+    }
+  };
 
   if (!listData) {
     nav('/lists');
@@ -48,10 +61,61 @@ export default function ScreenListEdit() {
               <TextInput
                 style={styles.input}
                 maxLength={25}
-                placeholder={t`Groceries`}
+                placeholder={t`List name`}
                 onChangeText={update.bind(null, 'name')}
                 value={listData.name ?? ''}
               />
+            </PanelItem>
+            <PanelItem
+              label={t`Categories`}
+              description={t`Add section names for items.`}>
+              <View style={styles.categoryList}>
+                {categories.map((category) => (
+                  <View key={category.id} style={styles.categoryRow}>
+                    <Pressable
+                      style={styles.categoryDelete}
+                      onPress={() => removeCategory(category.id)}>
+                      <Icon
+                        name="ph:x"
+                        size={16}
+                        uniProps={(theme: any) => ({
+                          color: theme.colors.mutedForeground,
+                        })}
+                      />
+                    </Pressable>
+                    <TextInput
+                      style={[styles.input, styles.categoryInput]}
+                      value={category.name ?? ''}
+                      maxLength={50}
+                      onChangeText={text => {
+                        lists.updateCategory(category.id, text);
+                      }}
+                      onKeyPress={e => {
+                        if (e.nativeEvent.key === 'Backspace' && (category.name ?? '') === '') {
+                          removeCategory(category.id);
+                        }
+                      }}
+                      onBlur={() => {
+                        if (!category.name || category.name.trim() === '') {
+                          removeCategory(category.id);
+                        }
+                      }}
+                    />
+                  </View>
+                ))}
+                <TextInput
+                  ref={categoryInputRef}
+                  style={styles.input}
+                  placeholder={t`Add category...`}
+                  maxLength={50}
+                  onBlur={e => {
+                    createCategory(e.nativeEvent.text.trim());
+                  }}
+                  onSubmitEditing={(e) => {
+                    createCategory(e.nativeEvent.text.trim());
+                  }}
+                />
+              </View>
             </PanelItem>
           </PanelSection>
           <PanelSection title={t`Appearance`}>
@@ -62,7 +126,7 @@ export default function ScreenListEdit() {
                 style={styles.input}
                 autoCapitalize="none"
                 maxLength={25}
-                placeholder={`ph:shopping-cart`}
+                placeholder={`ph:list-checks`}
                 onChangeText={update.bind(null, 'icon')}
                 value={listData.icon ?? ''}
               />
@@ -147,5 +211,23 @@ const styles = StyleSheet.create((theme) => ({
     borderColor: theme.colors.border,
     borderWidth: 1,
     overflow: 'hidden',
+  },
+  categoryList: {
+    alignItems: 'flex-end',
+    gap: theme.display.space2,
+  },
+  categoryRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: theme.display.space2,
+  },
+  categoryInput: {
+    flex: 1,
+  },
+  categoryDelete: {
+    padding: theme.display.space1,
+    borderRadius: theme.display.radius2,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 }));

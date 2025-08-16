@@ -30,10 +30,6 @@ const styles = StyleSheet.create((theme) => ({
     borderBottomColor: theme.colors.border,
     paddingBottom: theme.display.space5,
     borderBottomWidth: 1,
-    alignItems: {
-      initial: 'flex-start',
-      xxs: 'center',
-    },
     justifyContent: {
       initial: 'flex-start',
       xxs: 'space-between',

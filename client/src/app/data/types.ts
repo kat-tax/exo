@@ -1,6 +1,8 @@
 import * as $ from '@evolu/common';
 export * from '@evolu/common';
 
+/** Identifiers */
+
 export type ProfileId = typeof ProfileId.Type;
 export const ProfileId = $.id('Profile');
 
@@ -12,6 +14,11 @@ export const ListId = $.id('List');
 
 export type ListItemId = typeof ListItemId.Type;
 export const ListItemId = $.id('ListItem');
+
+export type ListCategoryId = typeof ListCategoryId.Type;
+export const ListCategoryId = $.id('ListCategory');
+
+/** Strings */
 
 export type NonEmptyString25 = typeof NonEmptyString25.Type;
 export const NonEmptyString25 = $.maxLength(25)($.String);

@@ -7,20 +7,22 @@ import {useQuery} from 'app/data';
 import {getListItems} from 'app/data/queries';
 import {Icon, TextInput} from 'app/ui/base';
 
-import type {ListId} from 'app/data/types';
+import type {ListId, ListCategoryId} from 'app/data/types';
 import type {TextInput as TextInputType} from 'react-native';
 
 interface ListGroupProps {
   id: ListId | null;
+  categoryId: ListCategoryId | null;
+  categoryName: string | null;
 }
 
-export function ListGroup({id}: ListGroupProps) {
+export function ListGroup({id, categoryId, categoryName}: ListGroupProps) {
   const ref = useRef<TextInputType>(null);
   const lists = useLists();
   const listId = useMemo(() => lists.getId(id ?? ''), [id]);
-  const listItems = useQuery(getListItems(listId));
+  const listItems = useQuery(getListItems(listId, categoryId));
 
-  const create = lists.createItem.bind(null, listId);
+  const create = lists.createItem.bind(null, listId, categoryId);
   const {t} = useLingui();
 
   const resetInput = () => {
@@ -55,13 +57,20 @@ export function ListGroup({id}: ListGroupProps) {
     return false;
   }
 
+  if (listItems.length === 0 && categoryId === null) {
+    return null;
+  }
+
   return (
     <View style={styles.root}>
-      <TextInput
-        style={styles.input}
-        placeholder={t`Category`}
-        defaultValue={'H-E-B'}
-      />
+      {categoryName !== null && (
+        <TextInput
+          style={styles.input}
+          placeholder={t`Category`}
+          value={categoryName}
+          editable={false}
+        />
+      )}
       <View style={styles.list}>
         {listItems.map((item) => (
           <View key={item.id} style={styles.item}>
@@ -143,9 +152,9 @@ export function ListGroup({id}: ListGroupProps) {
               }
             }}
             // Detect multi-line input
-            onChangeText={e => {
-              if (e.includes('\n') || e.includes('\r')) {
-                handleMultiLine(e);
+            onChangeText={text => {
+              if (text.includes('\n') || text.includes('\r')) {
+                handleMultiLine(text);
               }
             }}
             // Native submission behavior (native since onKeyPress handles web)

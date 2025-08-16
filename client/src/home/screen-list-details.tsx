@@ -8,7 +8,7 @@ import {useQuery} from 'app/data';
 import {Panel} from 'app/ui/panel';
 import {IconRemote} from 'app/ui/base';
 import {ListGroup} from 'home/stacks/list-group';
-import {getList, getListCounts} from 'app/data/queries';
+import {getList, getListCounts, getListCategories} from 'app/data/queries';
 
 export default function ScreenList() {
   const {id} = useParams<{id: string}>();
@@ -16,10 +16,7 @@ export default function ScreenList() {
   const listId = useMemo(() => lists.getId(id), [id]);
   const listData = useQuery(getList(listId))[0];
   const listCounts = useQuery(getListCounts(listId))[0];
-  const listGroups = [{
-    id: 'heb',
-    name: 'H-E-B',
-  }];
+  const listCategories = useQuery(getListCategories(listId));
 
   const nav = useNavigate();
   const {t} = useLingui();
@@ -48,8 +45,18 @@ export default function ScreenList() {
         </Pressable>
       }>
       <View style={styles.root}>
-        {listGroups.map((group) => (
-          <ListGroup key={group.id} id={listId}/>
+        <ListGroup
+          id={listId}
+          categoryId={null}
+          categoryName={null}
+        />
+        {listCategories?.map((category) => (
+          <ListGroup
+            key={category.id}
+            id={listId}
+            categoryId={category.id}
+            categoryName={category.name}
+          />
         ))}
       </View>
     </Panel>
