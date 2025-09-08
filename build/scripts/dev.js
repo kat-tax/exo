@@ -12,6 +12,8 @@ import QRCodes from './vendor/QRCodes.js';
 
 // CONFIGURATION
 
+const command = 'pnpm:*:dev';
+
 const hotkeys = {
   'Launch applications': [
     {key: 'b', label: 'Web Browser'},
@@ -94,7 +96,7 @@ $.add('Native', {text: `${_.bold('Native')} • ${_.gray('starting…')}`});
 
 // EXECUTION
 
-const {commands} = concurrently(['pnpm:*:start'], {outputStream: bridge, killSignal: 'SIGINT'});
+const {commands} = concurrently([command], {outputStream: bridge, killSignal: 'SIGINT'});
 lineOutput.on('data', (line) => {
   if (_exiting) return;
   const _line = stripAnsi(line);

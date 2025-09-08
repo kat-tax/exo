@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "conc -c 'auto' 'pnpm:start:*'",
+    "dev": "conc -c 'auto' 'pnpm:start:*'",
     "build": "conc -c 'auto' -g 'pnpm:build:*'",
     "build:web": "vite build",
     "build:android": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res",

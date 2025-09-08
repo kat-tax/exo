@@ -3,8 +3,8 @@
   "name": "ult-scripts",
   "private": true,
   "bin": {
-    "ult-run": "./run.js",
-    "ult-start": "./start.js"
+    "ult-dev": "./dev.js",
+    "ult-run": "./run.js"
   },
   "devDependencies": {
     "@qrgrid/core": "^0.2.3",
