@@ -221,8 +221,8 @@ function help(ondemand) {
     console.log();
     // Show QR codes for web and native
     console.log(QRCodes([
-      _servers.Web.version && {label: `${_.gray(`${_.bold('Web Server')} [v${_servers.Web.version}]`)}`, url: `${_lanIP}:${_servers.Web.port}`},
-      _servers.Native.version && {label: `${_.gray(`${_.bold('Native Server')} [v${_servers.Native.version}]`)}`, url: `${_lanIP}:8081`},
+      _servers.Web.version && {label: `${_.gray(`${_.bold('Web')} [Vite ${_servers.Web.version}]`)}`, url: `${_lanIP}:${_servers.Web.port}`},
+      _servers.Native.version && {label: `${_.gray(`${_.bold('Native')} [Metro ${_servers.Native.version}]`)}`, url: `${_lanIP}:8081`},
     ]));
     // Show more QR codes if requested
     // if (ondemand) {

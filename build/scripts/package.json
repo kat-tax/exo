@@ -8,8 +8,8 @@
   },
   "devDependencies": {
     "@qrgrid/core": "^0.2.3",
-    "config": "workspace:*",
     "cli-cursor": "^5.0.0",
+    "config": "workspace:*",
     "strip-ansi": "^7.1.0",
     "yoctocolors": "^2.1.1"
   }

@@ -18,8 +18,17 @@ msgstr ""
 msgid "{0} components"
 msgstr "{0}개 컴포넌트"
 
-#: ../../client/src/home/screen-shortcut-edit.tsx:72
-#: ../../client/src/home/screen-list-edit.tsx:57
+#: ../../client/src/tasks/screen-list-edit.tsx:110
+msgid "Add category..."
+msgstr ""
+
+#: ../../client/src/tasks/screen-list-edit.tsx:72
+msgid "Add section names for items."
+msgstr ""
+
+#: ../../client/src/tasks/screen-list-edit.tsx:122
+#: ../../client/src/settings/screen-settings.tsx:40
+#: ../../client/src/home/screen-shortcut.tsx:73
 msgid "Appearance"
 msgstr "외관"
 
@@ -35,28 +44,45 @@ msgstr "로컬 데이터베이스를 초기화하시겠습니까? 다른 기기�
 msgid "Cancel"
 msgstr "취소"
 
-#: ../../client/src/settings/screen-settings.tsx:29
+#: ../../client/src/tasks/screen-list-edit.tsx:71
+msgid "Categories"
+msgstr ""
+
+#: ../../client/src/tasks/stacks/list-group.tsx:69
+msgid "Category"
+msgstr ""
+
+#: ../../client/src/settings/screen-settings.tsx:30
 msgid "Choose your display name."
 msgstr ""
 
-#: ../../client/src/home/screen-shortcut-edit.tsx:86
-#: ../../client/src/home/screen-list-edit.tsx:71
+#: ../../client/src/settings/screen-settings.tsx:101
+msgid "Clear Data"
+msgstr ""
+
+#: ../../client/src/tasks/screen-list-edit.tsx:136
+#: ../../client/src/home/screen-shortcut.tsx:87
 msgid "Color"
 msgstr "색상"
 
-#: ../../client/src/home/screen-shortcut-edit.tsx:31
+#: ../../client/src/home/screen-shortcut.tsx:31
 msgid "Configure dashboard shortcut"
 msgstr ""
 
-#: ../../client/src/home/screen-list-edit.tsx:31
-msgid "Configure list"
+#: ../../client/src/tasks/screen-list-edit.tsx:44
+msgid "Configure task list"
 msgstr ""
 
-#: ../../client/src/settings/screen-settings.tsx:23
+#: ../../client/src/settings/screen-settings.tsx:24
 msgid "Configure the app"
 msgstr ""
 
-#: ../../client/src/settings/screen-settings.tsx:94
+#: ../../client/src/tasks/screen-list-edit.tsx:148
+#: ../../client/src/home/screen-shortcut.tsx:99
+msgid "Danger Zone"
+msgstr ""
+
+#: ../../client/src/settings/screen-settings.tsx:69
 msgid "Dark"
 msgstr "다크"
 
@@ -65,10 +91,19 @@ msgstr "다크"
 msgid "Dashboard"
 msgstr "대시보드"
 
-#: ../../client/src/home/screen-shortcut-edit.tsx:106
-#: ../../client/src/home/screen-list-edit.tsx:91
-msgid "Delete"
-msgstr "삭제"
+#: ../../client/src/settings/screen-settings.tsx:73
+msgid "Data"
+msgstr ""
+
+#: ../../client/src/tasks/screen-list-edit.tsx:150
+#: ../../client/src/tasks/screen-list-edit.tsx:153
+msgid "Delete List"
+msgstr ""
+
+#: ../../client/src/home/screen-shortcut.tsx:101
+#: ../../client/src/home/screen-shortcut.tsx:104
+msgid "Delete Shortcut"
+msgstr ""
 
 #: ../../client/src/dev/screen-design.tsx:13
 #: ../../client/src/app/ui/menu/index.tsx:65
@@ -79,40 +114,36 @@ msgstr "디자인"
 msgid "Development"
 msgstr "개발"
 
-#: ../../client/src/settings/screen-settings.tsx:65
-msgid "Display"
-msgstr "화면"
-
-#: ../../client/src/settings/screen-settings.tsx:28
+#: ../../client/src/settings/screen-settings.tsx:29
 msgid "Display Name"
 msgstr "표시 이름"
 
-#: ../../client/src/home/screen-list-details.tsx:74
+#: ../../client/src/tasks/stacks/list-group.tsx:100
 msgid "Edit Item..."
 msgstr ""
 
-#: ../../client/src/settings/screen-settings.tsx:46
+#: ../../client/src/settings/screen-settings.tsx:82
 msgid "Enter mnemonic"
 msgstr "니모닉 입력"
 
-#: ../../client/src/settings/screen-settings.tsx:35
+#: ../../client/src/settings/screen-settings.tsx:36
 msgid "Enter name"
 msgstr "이름 입력"
-
-#: ../../client/src/settings/screen-settings.tsx:40
-msgid "Enter your mnemonic phrase."
-msgstr ""
 
 #: ../../client/src/settings/hooks/use-settings.ts:24
 #: ../../client/src/settings/hooks/use-settings.ts:47
 msgid "Error"
 msgstr "오류"
 
-#: ../../client/src/home/hooks/use-lists.ts:103
+#: ../../client/src/tasks/hooks/use-lists.ts:145
+msgid "Failed to create category."
+msgstr ""
+
+#: ../../client/src/tasks/hooks/use-lists.ts:104
 msgid "Failed to create list item."
 msgstr ""
 
-#: ../../client/src/home/hooks/use-lists.ts:34
+#: ../../client/src/tasks/hooks/use-lists.ts:35
 msgid "Failed to create new list."
 msgstr ""
 
@@ -120,11 +151,15 @@ msgstr ""
 msgid "Failed to create new shortcut."
 msgstr ""
 
-#: ../../client/src/home/hooks/use-lists.ts:110
+#: ../../client/src/tasks/hooks/use-lists.ts:164
+msgid "Failed to delete category."
+msgstr ""
+
+#: ../../client/src/tasks/hooks/use-lists.ts:111
 msgid "Failed to delete list item."
 msgstr ""
 
-#: ../../client/src/home/hooks/use-lists.ts:45
+#: ../../client/src/tasks/hooks/use-lists.ts:46
 msgid "Failed to delete list."
 msgstr ""
 
@@ -132,15 +167,19 @@ msgstr ""
 msgid "Failed to delete shortcut."
 msgstr ""
 
-#: ../../client/src/home/hooks/use-lists.ts:129
+#: ../../client/src/tasks/hooks/use-lists.ts:177
+msgid "Failed to update category."
+msgstr ""
+
+#: ../../client/src/tasks/hooks/use-lists.ts:130
 msgid "Failed to update list item status."
 msgstr ""
 
-#: ../../client/src/home/hooks/use-lists.ts:122
+#: ../../client/src/tasks/hooks/use-lists.ts:123
 msgid "Failed to update list item text."
 msgstr ""
 
-#: ../../client/src/home/hooks/use-lists.ts:88
+#: ../../client/src/tasks/hooks/use-lists.ts:89
 msgid "Failed to update list."
 msgstr ""
 
@@ -148,15 +187,10 @@ msgstr ""
 msgid "Failed to update shortcut."
 msgstr ""
 
-#: ../../client/src/home/screen-shortcut-edit.tsx:44
-#: ../../client/src/home/screen-list-edit.tsx:44
+#: ../../client/src/tasks/screen-list-edit.tsx:58
+#: ../../client/src/home/screen-shortcut.tsx:45
 msgid "General"
 msgstr "일반"
-
-#: ../../client/src/home/screen-shortcut-edit.tsx:100
-#: ../../client/src/home/screen-list-edit.tsx:85
-msgid "Go Back"
-msgstr ""
 
 #: ../../client/src/home/utils/time.ts:16
 msgid "Good afternoon, {name}."
@@ -174,30 +208,31 @@ msgstr "안녕하세요, {name}님."
 msgid "Good night, {name}."
 msgstr "안녕히 주무세요, {name}님."
 
-#: ../../client/src/home/screen-list-edit.tsx:51
-msgid "Groceries"
-msgstr ""
-
 #: ../../client/src/app/ui/menu/menu-header.tsx:19
 msgid "Human"
 msgstr "인간"
 
-#: ../../client/src/home/screen-shortcut-edit.tsx:74
-#: ../../client/src/home/screen-list-edit.tsx:59
+#: ../../client/src/tasks/screen-list-edit.tsx:124
+#: ../../client/src/home/screen-shortcut.tsx:75
 msgid "Icon"
 msgstr "아이콘"
 
+#: ../../client/src/tasks/hooks/use-lists.ts:139
+#: ../../client/src/tasks/hooks/use-lists.ts:171
+msgid "Invalid category name."
+msgstr ""
+
+#: ../../client/src/tasks/hooks/use-lists.ts:76
 #: ../../client/src/home/hooks/use-shortcuts.ts:74
-#: ../../client/src/home/hooks/use-lists.ts:75
 msgid "Invalid color field."
 msgstr "잘못된 색상 필드입니다."
 
+#: ../../client/src/tasks/hooks/use-lists.ts:68
 #: ../../client/src/home/hooks/use-shortcuts.ts:66
-#: ../../client/src/home/hooks/use-lists.ts:67
 msgid "Invalid icon field."
 msgstr "잘못된 아이콘 필드입니다."
 
-#: ../../client/src/home/hooks/use-lists.ts:25
+#: ../../client/src/tasks/hooks/use-lists.ts:26
 msgid "Invalid list id."
 msgstr ""
 
@@ -205,8 +240,8 @@ msgstr ""
 msgid "Invalid name (max 25 characters)."
 msgstr "잘못된 이름 (최대 25자)."
 
+#: ../../client/src/tasks/hooks/use-lists.ts:60
 #: ../../client/src/home/hooks/use-shortcuts.ts:58
-#: ../../client/src/home/hooks/use-lists.ts:59
 msgid "Invalid name field."
 msgstr "잘못된 이름 필드입니다."
 
@@ -218,8 +253,8 @@ msgstr "잘못된 소유자 키입니다."
 msgid "Invalid shortcut id."
 msgstr ""
 
-#: ../../client/src/home/hooks/use-lists.ts:97
-#: ../../client/src/home/hooks/use-lists.ts:117
+#: ../../client/src/tasks/hooks/use-lists.ts:98
+#: ../../client/src/tasks/hooks/use-lists.ts:118
 msgid "Invalid text content field."
 msgstr ""
 
@@ -227,25 +262,29 @@ msgstr ""
 msgid "Invalid URL field."
 msgstr "잘못된 URL 필드입니다."
 
-#: ../../client/src/settings/screen-settings.tsx:67
+#: ../../client/src/settings/screen-settings.tsx:42
 msgid "Language"
 msgstr "언어"
 
-#: ../../client/src/settings/screen-settings.tsx:93
+#: ../../client/src/settings/screen-settings.tsx:68
 msgid "Light"
 msgstr "라이트"
 
-#: ../../client/src/home/hooks/use-lists.ts:12
+#: ../../client/src/tasks/hooks/use-lists.ts:13
 msgid "List Error"
 msgstr ""
 
-#: ../../client/src/home/screen-list-all.tsx:21
+#: ../../client/src/tasks/screen-list-edit.tsx:65
+msgid "List name"
+msgstr ""
+
+#: ../../client/src/tasks/screen-list-all.tsx:21
 #: ../../client/src/app/ui/menu/index.tsx:35
 #: ../../client/src/app/ui/menu/index.tsx:58
 msgid "Lists"
 msgstr ""
 
-#: ../../client/src/home/hooks/use-lists.ts:20
+#: ../../client/src/tasks/hooks/use-lists.ts:21
 msgid "Missing list id."
 msgstr ""
 
@@ -253,36 +292,56 @@ msgstr ""
 msgid "Missing shortcut id."
 msgstr ""
 
-#: ../../client/src/home/screen-shortcut-edit.tsx:61
-#: ../../client/src/home/screen-list-edit.tsx:46
+#: ../../client/src/tasks/screen-list-edit.tsx:60
+#: ../../client/src/home/screen-shortcut.tsx:62
 msgid "Name"
 msgstr "이름"
 
-#: ../../client/src/home/screen-list-details.tsx:99
+#: ../../client/src/tasks/stacks/list-group.tsx:140
 msgid "New item..."
 msgstr ""
 
-#: ../../client/src/home/screen-list-all.tsx:22
+#: ../../client/src/tasks/screen-list-all.tsx:22
 msgid "Organize your tasks"
 msgstr ""
 
-#: ../../client/src/settings/screen-settings.tsx:39
+#: ../../client/src/settings/screen-settings.tsx:75
 msgid "Owner Key"
 msgstr "소유자 키"
 
-#: ../../client/src/settings/screen-settings.tsx:26
+#: ../../client/src/tasks/screen-list-edit.tsx:151
+msgid "Permanently delete list."
+msgstr ""
+
+#: ../../client/src/home/screen-shortcut.tsx:102
+msgid "Permanently delete shortcut."
+msgstr ""
+
+#: ../../client/src/settings/screen-settings.tsx:27
 msgid "Profile"
 msgstr "프로필"
 
-#: ../../client/src/settings/screen-settings.tsx:86
+#: ../../client/src/settings/screen-settings.tsx:104
+msgid "Reset Database"
+msgstr ""
+
+#: ../../client/src/settings/screen-settings.tsx:102
+msgid "Reset owner and delete database."
+msgstr ""
+
+#: ../../client/src/settings/screen-settings.tsx:61
 msgid "Select the color scheme."
 msgstr ""
 
-#: ../../client/src/settings/screen-settings.tsx:68
+#: ../../client/src/settings/screen-settings.tsx:43
 msgid "Select your preferred language."
 msgstr ""
 
-#: ../../client/src/settings/screen-settings.tsx:22
+#: ../../client/src/settings/screen-settings.tsx:76
+msgid "Set mnemonic to sync devices."
+msgstr ""
+
+#: ../../client/src/settings/screen-settings.tsx:23
 #: ../../client/src/app/ui/menu/index.tsx:40
 #: ../../client/src/app/ui/menu/index.tsx:76
 msgid "Settings"
@@ -292,50 +351,50 @@ msgstr "설정"
 msgid "Shortcut Error"
 msgstr ""
 
-#: ../../client/src/settings/screen-settings.tsx:74
-#: ../../client/src/settings/screen-settings.tsx:92
+#: ../../client/src/settings/screen-settings.tsx:49
+#: ../../client/src/settings/screen-settings.tsx:67
 msgid "System"
 msgstr "시스템"
 
-#: ../../client/src/home/screen-list-edit.tsx:72
+#: ../../client/src/tasks/screen-list-edit.tsx:137
 msgid "The color of the list icon."
 msgstr ""
 
-#: ../../client/src/home/screen-shortcut-edit.tsx:87
+#: ../../client/src/home/screen-shortcut.tsx:88
 msgid "The color of the shortcut icon."
 msgstr ""
 
-#: ../../client/src/home/screen-list-edit.tsx:47
+#: ../../client/src/tasks/screen-list-edit.tsx:61
 msgid "The display name of the list."
 msgstr ""
 
-#: ../../client/src/home/screen-shortcut-edit.tsx:62
+#: ../../client/src/home/screen-shortcut.tsx:63
 msgid "The display name of the shortcut."
 msgstr ""
 
-#: ../../client/src/home/screen-list-edit.tsx:60
+#: ../../client/src/tasks/screen-list-edit.tsx:125
 msgid "The icon to display for the list."
 msgstr ""
 
-#: ../../client/src/home/screen-shortcut-edit.tsx:75
+#: ../../client/src/home/screen-shortcut.tsx:76
 msgid "The icon to display for the shortcut."
 msgstr ""
 
-#: ../../client/src/home/screen-shortcut-edit.tsx:47
+#: ../../client/src/home/screen-shortcut.tsx:48
 msgid "The web page to link to."
 msgstr "연결할 웹페이지입니다."
 
-#: ../../client/src/settings/screen-settings.tsx:85
+#: ../../client/src/settings/screen-settings.tsx:60
 msgid "Theme"
 msgstr "테마"
 
-#: ../../client/src/home/screen-shortcut-edit.tsx:30
-#: ../../client/src/home/screen-list-edit.tsx:30
-#: ../../client/src/home/screen-list-details.tsx:33
+#: ../../client/src/tasks/screen-list-edit.tsx:43
+#: ../../client/src/tasks/screen-list-details.tsx:31
+#: ../../client/src/home/screen-shortcut.tsx:30
 msgid "Untitled"
 msgstr "제목 없음"
 
-#: ../../client/src/home/screen-shortcut-edit.tsx:46
+#: ../../client/src/home/screen-shortcut.tsx:47
 msgid "URL"
 msgstr "URL"
 
