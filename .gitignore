@@ -1,18 +1,15 @@
-# Project
-**/locales/messages/
-**/i18n/messages/
-toolkit/vocs/pages/
-library/metadata.json
-example/
-dev-dist/
+# Generated
+build/config/locales.ts
+**/redux.types.ts
+**/messages/*.json
+.icons/
 output/
 dist/
 gen/
+
+# Notes
 WIP.md
 TODO.md
-
-# RNTA
-client/ReactTestApp-*
 
 # MacOS
 .DS_Store
@@ -24,13 +21,9 @@ client/ReactTestApp-*
 # Typescript
 *.tsbuildinfo
 
-# Vocs
-vocs.config.ts.timestamp-*
-
 # Node
 node_modules/
 npm-debug.log
-yarn-error.log
 
 # Testing
 /coverage

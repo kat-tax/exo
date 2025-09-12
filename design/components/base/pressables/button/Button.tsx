@@ -1,6 +1,6 @@
-import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {useVariants, createIcon} from 'react-exo/utils';
 import {Text, Pressable} from 'react-native';
+import {StyleSheet} from 'react-native-unistyles';
+import {useVariants, createIcon} from 'react-exo/utils';
 
 import type {PressableProps} from 'react-native';
 
@@ -14,7 +14,7 @@ export interface ButtonProps extends PressableProps {
   /** Whether to display an icon button. */
   showIcon?: boolean,
   /** The icon element to display if showIcon is true. */
-  icon?: JSX.Element,
+  icon?: React.ReactElement,
 }
 
 export const ButtonVariants = {
@@ -28,13 +28,12 @@ export const ButtonVariants = {
  */
 export function Button(props: ButtonProps) {
   const {mode, state} = props;
-  const {styles} = useStyles(stylesheet);
   const {vstyles} = useVariants(ButtonVariants, {mode, state}, styles);
 
   return (
     <Pressable style={vstyles.root} testID={props.testID ?? "2028:395"} {...props}>
       {e => <>
-        {props.showIcon && 
+        {props.showIcon &&
           createIcon(props.icon, vstyles.phPlaceholder(e))
         }
         <Text style={vstyles.label(e)} testID="2028:398">
@@ -45,7 +44,7 @@ export function Button(props: ButtonProps) {
   );
 }
 
-const stylesheet = createStyleSheet(theme => ({
+const styles = StyleSheet.create((theme) => ({
   root: {
     flexDirection: 'row',
     height: 36,
@@ -77,7 +76,7 @@ const stylesheet = createStyleSheet(theme => ({
     opacity: 0.4,
   },
   rootModeSecondaryStateDefault: {
-    backgroundColor: 'unset' as any,
+    backgroundColor: theme.colors.secondary,
     borderColor: theme.colors.border,
   },
   rootModeSecondaryStateHovered: {
@@ -95,7 +94,7 @@ const stylesheet = createStyleSheet(theme => ({
     backgroundColor: theme.colors.secondary,
   },
   rootModeSecondaryStateDisabled: {
-    backgroundColor: 'unset' as any,
+    backgroundColor: theme.colors.secondary,
     borderColor: theme.colors.border,
     opacity: 0.4,
   },
@@ -123,25 +122,24 @@ const stylesheet = createStyleSheet(theme => ({
     backgroundColor: theme.colors.destructive,
   },
   rootModeTextStateDefault: {
-    backgroundColor: 'unset' as any,
+    backgroundColor: undefined,
     borderColor: 'rgba(0, 0, 0, 0)',
   },
   rootModeTextStateHovered: {
-    backgroundColor: 'unset' as any,
     borderColor: 'rgba(0, 0, 0, 0)',
     opacity: 0.9,
   },
   rootModeTextStatePressed: {
-    backgroundColor: 'unset' as any,
+    backgroundColor: undefined,
     borderColor: 'rgba(0, 0, 0, 0)',
     opacity: 0.8,
   },
   rootModeTextStateFocused: {
-    backgroundColor: 'unset' as any,
+    backgroundColor: undefined,
     borderColor: theme.colors.ring,
   },
   rootModeTextStateDisabled: {
-    backgroundColor: 'unset' as any,
+    backgroundColor: undefined,
     borderColor: 'rgba(0, 0, 0, 0)',
     opacity: 0.4,
   },

@@ -1,0 +1,32 @@
+import {writeFileSync} from 'node:fs';
+import config from 'react-native-ultimate-config/index.web.js';
+
+const LOCALE_TEMPLATE = `// THIS FILE IS AUTO-GENERATED. DO NOT EDIT OR COMMIT THIS FILE.
+// EDIT THE "locales.ts" FILE IN THE ROOT INSTEAD.
+
+/** Supported languages */
+export type Locales = keyof typeof locales;
+
+export const sourceLocale: Locales = '{{SOURCE_LOCALE}}';
+export const locales = {{LOCALES}} as const;
+`;
+
+const defaultSourceLocale = 'en';
+const defaultLocales = {en: 'English'};
+
+let sourceLocale = '';
+let locales = {};
+for (const [key, value] of Object.entries(config)) {
+  if (key.startsWith('LANG_')) {
+    if (!sourceLocale) sourceLocale = key.slice(5).toLowerCase();
+    locales[key.slice(5).toLowerCase()] = value;
+  }
+}
+
+writeFileSync(
+  './locales.ts',
+  LOCALE_TEMPLATE
+    .replace('{{SOURCE_LOCALE}}', sourceLocale ?? defaultSourceLocale)
+    .replace('{{LOCALES}}', JSON.stringify(sourceLocale ? locales : defaultLocales, null, 2)),
+  'utf-8'
+);

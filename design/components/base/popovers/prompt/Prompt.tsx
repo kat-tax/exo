@@ -1,5 +1,6 @@
-import {useStyles, createStyleSheet} from 'react-native-unistyles';
+import {useLingui} from '@lingui/react/macro';
 import {View, Text} from 'react-native';
+import {StyleSheet} from 'react-native-unistyles';
 import {Icon} from 'react-exo/icon';
 import {Button} from 'components/base/pressables/button';
 
@@ -11,7 +12,7 @@ export interface PromptProps {
   /** Optional flag to show a close button. */
   showClose?: boolean,
   /** Optional JSX element for a custom confirm button. */
-  confirmButton?: JSX.Element,
+  confirmButton?: React.ReactElement,
   /** Used to locate this view in end-to-end tests. */
   testID?: string,
 }
@@ -21,7 +22,7 @@ export interface PromptProps {
  * Meant to be used inside a modal, bottom sheet, or similar container.
  */
 export function Prompt(props: PromptProps) {
-  const {styles} = useStyles(stylesheet);
+  const {t} = useLingui();
 
   return (
     <View style={styles.root} testID={props.testID ?? "1034:553"}>
@@ -34,12 +35,12 @@ export function Prompt(props: PromptProps) {
         {props.message}
       </Text>
       <View style={styles.buttons} testID="1034:543">
-        {props.showClose && 
+        {props.showClose &&
           <View style={styles.cancel} testID="5759:459">
-            {props.showClose && 
+            {props.showClose &&
               <Button
                 testID="1034:544"
-                label="Cancel"
+                label={t`Cancel`}
                 mode="Text"
                 state="Default"
                 showIcon
@@ -58,7 +59,7 @@ export function Prompt(props: PromptProps) {
   );
 }
 
-const stylesheet = createStyleSheet(theme => ({
+const styles = StyleSheet.create((theme) => ({
   root: {
     minWidth: 320,
     minHeight: 200,

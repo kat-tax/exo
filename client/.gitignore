@@ -1,70 +1,79 @@
-bundle.inspect.html
-!debug.keystore
-!default.mode1v3
-!default.mode2v3
-!default.pbxuser
-!default.perspectivev3
-!dist/.gitignore
-.cxx/
+# OSX
+#
 .DS_Store
-.gradle
-.gradle/
-.idea
-.idea/
-.metro-health-check*
-.vs/
-.xcode.env
-[Bb]in/
-[Dd]ebug/
-[Dd]ebugPublic/
-[Oo]bj/
-[Rr]elease/
-[Rr]eleases/
-*.binlog
-*.hmap
-*.hprof
-*.iml
-*.ipa
-*.jks
-*.key
-*.keystore
-*.mobileprovision
-*.mode1v3
-*.mode2v3
-*.moved-aside
-*.orig.*
-*.p12
-*.p8
-*.pbxuser
-*.perspectivev3
-*.sln
-*.sln.docstates
-*.suo
-*.user
-*.xccheckout
-*.xcuserstate
-*.xcworkspace/
-*.zip
-**/Generated Files/**
-AppPackages/
-ARM64/
-bld/
-build/
-DerivedData
-dist/
-dist/*
-ExperimentalFeatures.props
-fastlane/Preview.html
-fastlane/report.xml
-fastlane/screenshots
-fastlane/test_output
-local.properties
-msbuild.binlog
-NuGet.Config
-packages/
-Pods/
+
+# Ult Config
 rnuc.xcconfig
-vendor/bundle/
-x64/
-x86/
+
+# Xcode
+#
+build/
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
 xcuserdata
+*.xccheckout
+*.moved-aside
+DerivedData
+*.hmap
+*.ipa
+*.xcuserstate
+**/.xcode.env.local
+
+# Android/IntelliJ
+#
+build/
+.idea
+.gradle
+local.properties
+*.iml
+*.hprof
+.cxx/
+*.keystore
+!debug.keystore
+.kotlin/
+
+# node.js
+#
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# fastlane
+#
+# It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the
+# screenshots whenever they are needed.
+# For more information about the recommended setup visit:
+# https://docs.fastlane.tools/best-practices/source-control/
+
+**/fastlane/report.xml
+**/fastlane/Preview.html
+**/fastlane/screenshots
+**/fastlane/test_output
+
+# Bundle artifact
+*.jsbundle
+android/app/src/main/assets/
+
+# Ruby / CocoaPods
+**/Pods/
+/vendor/bundle/
+
+# Temporary files created by Metro to check the health of the file watcher
+.metro-health-check*
+
+# testing
+/coverage
+
+# Yarn
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions

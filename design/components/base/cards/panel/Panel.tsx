@@ -1,5 +1,5 @@
-import {useStyles, createStyleSheet} from 'react-native-unistyles';
 import {View, Text} from 'react-native';
+import {StyleSheet} from 'react-native-unistyles';
 import {Placeholder} from 'components/base/utilities/placeholder';
 
 export interface PanelProps {
@@ -13,8 +13,6 @@ export interface PanelProps {
  * A component that renders a panel with a header, content, and footer section.
  */
 export function Panel(props: PanelProps) {
-  const {styles} = useStyles(stylesheet);
-
   return (
     <View style={styles.root} testID={props.testID ?? "5290:674"}>
       <View style={styles.contents} testID="5290:668">
@@ -37,7 +35,7 @@ export function Panel(props: PanelProps) {
   );
 }
 
-const stylesheet = createStyleSheet(theme => ({
+const styles = StyleSheet.create((theme) => ({
   root: {
     flexDirection: 'row',
     minWidth: 270,

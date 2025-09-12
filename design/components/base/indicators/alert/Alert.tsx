@@ -1,6 +1,6 @@
-import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {useVariants, createIcon} from 'react-exo/utils';
 import {View, Text} from 'react-native';
+import {StyleSheet} from 'react-native-unistyles';
+import {useVariants, createIcon} from 'react-exo/utils';
 
 export interface AlertProps {
   /** Main content text of the alert. */
@@ -12,7 +12,7 @@ export interface AlertProps {
   /** Whether the icon should be displayed. */
   hasIcon?: boolean,
   /** Optional icon element to display. */
-  icon?: JSX.Element,
+  icon?: React.ReactElement,
   /** Used to locate this view in end-to-end tests. */
   testID?: string,
 }
@@ -26,12 +26,11 @@ export const AlertVariants = {
  */
 export function Alert(props: AlertProps) {
   const {mode} = props;
-  const {styles} = useStyles(stylesheet);
   const {vstyles} = useVariants(AlertVariants, {mode}, styles);
 
   return (
     <View style={vstyles.root()} testID={props.testID ?? "5290:611"}>
-      {props.hasIcon && 
+      {props.hasIcon &&
         <View style={vstyles.icon()} testID="5290:613">
           {createIcon(props.icon, vstyles.phPlaceholder())}
         </View>
@@ -48,7 +47,7 @@ export function Alert(props: AlertProps) {
   );
 }
 
-const stylesheet = createStyleSheet(theme => ({
+const styles = StyleSheet.create((theme) => ({
   root: {
     flexDirection: 'row',
     width: 378,

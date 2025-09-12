@@ -3,6 +3,7 @@
   "extends": "config/tsconfig.app.json",
   "display": "Client",
   "compilerOptions": {
-    "baseUrl": "./src"
+    "baseUrl": "./src",
+    "types": ["./src/env.d.ts"]
   }
 }

@@ -1,0 +1,403 @@
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2025-07-26 12:55-0500\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: es\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Plural-Forms: \n"
+
+#. placeholder {0}: 11
+#: ../../client/src/dev/screen-design.tsx:14
+msgid "{0} components"
+msgstr "{0} componentes"
+
+#: ../../client/src/tasks/screen-list-edit.tsx:110
+msgid "Add category..."
+msgstr ""
+
+#: ../../client/src/tasks/screen-list-edit.tsx:72
+msgid "Add section names for items."
+msgstr ""
+
+#: ../../client/src/tasks/screen-list-edit.tsx:122
+#: ../../client/src/settings/screen-settings.tsx:40
+#: ../../client/src/home/screen-shortcut.tsx:73
+msgid "Appearance"
+msgstr "Apariencia"
+
+#: ../../client/src/settings/hooks/use-settings.ts:40
+msgid "Are you sure you want to change the owner key? This will reset the local database. This action cannot be undone."
+msgstr "¿Estás seguro de cambiar la clave propietaria? Esto reiniciará la base de datos local. Esta acción no se puede deshacer."
+
+#: ../../client/src/settings/hooks/use-settings.ts:32
+msgid "Are you sure you want to reset your local database? If data is not backed up on another device, it will be lost. This action cannot be undone."
+msgstr "¿Estás seguro de reiniciar tu base de datos local? Si los datos no están respaldados en otro dispositivo, se perderán. Esta acción no se puede deshacer."
+
+#: ../../design/components/base/popovers/prompt/Prompt.tsx:43
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: ../../client/src/tasks/screen-list-edit.tsx:71
+msgid "Categories"
+msgstr ""
+
+#: ../../client/src/tasks/stacks/list-group.tsx:69
+msgid "Category"
+msgstr ""
+
+#: ../../client/src/settings/screen-settings.tsx:30
+msgid "Choose your display name."
+msgstr ""
+
+#: ../../client/src/settings/screen-settings.tsx:101
+msgid "Clear Data"
+msgstr ""
+
+#: ../../client/src/tasks/screen-list-edit.tsx:136
+#: ../../client/src/home/screen-shortcut.tsx:87
+msgid "Color"
+msgstr "Color"
+
+#: ../../client/src/home/screen-shortcut.tsx:31
+msgid "Configure dashboard shortcut"
+msgstr ""
+
+#: ../../client/src/tasks/screen-list-edit.tsx:44
+msgid "Configure task list"
+msgstr ""
+
+#: ../../client/src/settings/screen-settings.tsx:24
+msgid "Configure the app"
+msgstr ""
+
+#: ../../client/src/tasks/screen-list-edit.tsx:148
+#: ../../client/src/home/screen-shortcut.tsx:99
+msgid "Danger Zone"
+msgstr ""
+
+#: ../../client/src/settings/screen-settings.tsx:69
+msgid "Dark"
+msgstr "Oscuro"
+
+#: ../../client/src/app/ui/menu/index.tsx:30
+#: ../../client/src/app/ui/menu/index.tsx:53
+msgid "Dashboard"
+msgstr "Panel"
+
+#: ../../client/src/settings/screen-settings.tsx:73
+msgid "Data"
+msgstr ""
+
+#: ../../client/src/tasks/screen-list-edit.tsx:150
+#: ../../client/src/tasks/screen-list-edit.tsx:153
+msgid "Delete List"
+msgstr ""
+
+#: ../../client/src/home/screen-shortcut.tsx:101
+#: ../../client/src/home/screen-shortcut.tsx:104
+msgid "Delete Shortcut"
+msgstr ""
+
+#: ../../client/src/dev/screen-design.tsx:13
+#: ../../client/src/app/ui/menu/index.tsx:65
+msgid "Design"
+msgstr "Diseño"
+
+#: ../../client/src/app/ui/menu/index.tsx:63
+msgid "Development"
+msgstr "Desarrollo"
+
+#: ../../client/src/settings/screen-settings.tsx:29
+msgid "Display Name"
+msgstr "Nombre"
+
+#: ../../client/src/tasks/stacks/list-group.tsx:100
+msgid "Edit Item..."
+msgstr ""
+
+#: ../../client/src/settings/screen-settings.tsx:82
+msgid "Enter mnemonic"
+msgstr "Ingresa mnemónico"
+
+#: ../../client/src/settings/screen-settings.tsx:36
+msgid "Enter name"
+msgstr "Ingresa nombre"
+
+#: ../../client/src/settings/hooks/use-settings.ts:24
+#: ../../client/src/settings/hooks/use-settings.ts:47
+msgid "Error"
+msgstr "Error"
+
+#: ../../client/src/tasks/hooks/use-lists.ts:145
+msgid "Failed to create category."
+msgstr ""
+
+#: ../../client/src/tasks/hooks/use-lists.ts:104
+msgid "Failed to create list item."
+msgstr ""
+
+#: ../../client/src/tasks/hooks/use-lists.ts:35
+msgid "Failed to create new list."
+msgstr ""
+
+#: ../../client/src/home/hooks/use-shortcuts.ts:34
+msgid "Failed to create new shortcut."
+msgstr ""
+
+#: ../../client/src/tasks/hooks/use-lists.ts:164
+msgid "Failed to delete category."
+msgstr ""
+
+#: ../../client/src/tasks/hooks/use-lists.ts:111
+msgid "Failed to delete list item."
+msgstr ""
+
+#: ../../client/src/tasks/hooks/use-lists.ts:46
+msgid "Failed to delete list."
+msgstr ""
+
+#: ../../client/src/home/hooks/use-shortcuts.ts:96
+msgid "Failed to delete shortcut."
+msgstr ""
+
+#: ../../client/src/tasks/hooks/use-lists.ts:177
+msgid "Failed to update category."
+msgstr ""
+
+#: ../../client/src/tasks/hooks/use-lists.ts:130
+msgid "Failed to update list item status."
+msgstr ""
+
+#: ../../client/src/tasks/hooks/use-lists.ts:123
+msgid "Failed to update list item text."
+msgstr ""
+
+#: ../../client/src/tasks/hooks/use-lists.ts:89
+msgid "Failed to update list."
+msgstr ""
+
+#: ../../client/src/home/hooks/use-shortcuts.ts:87
+msgid "Failed to update shortcut."
+msgstr ""
+
+#: ../../client/src/tasks/screen-list-edit.tsx:58
+#: ../../client/src/home/screen-shortcut.tsx:45
+msgid "General"
+msgstr "General"
+
+#: ../../client/src/home/utils/time.ts:16
+msgid "Good afternoon, {name}."
+msgstr "Buenas tardes, {name}."
+
+#: ../../client/src/home/utils/time.ts:18
+msgid "Good evening, {name}."
+msgstr "Buenas noches, {name}."
+
+#: ../../client/src/home/utils/time.ts:14
+msgid "Good morning, {name}."
+msgstr "Buenos días, {name}."
+
+#: ../../client/src/home/utils/time.ts:20
+msgid "Good night, {name}."
+msgstr "Buenas noches, {name}."
+
+#: ../../client/src/app/ui/menu/menu-header.tsx:19
+msgid "Human"
+msgstr "Humano"
+
+#: ../../client/src/tasks/screen-list-edit.tsx:124
+#: ../../client/src/home/screen-shortcut.tsx:75
+msgid "Icon"
+msgstr "Icono"
+
+#: ../../client/src/tasks/hooks/use-lists.ts:139
+#: ../../client/src/tasks/hooks/use-lists.ts:171
+msgid "Invalid category name."
+msgstr ""
+
+#: ../../client/src/tasks/hooks/use-lists.ts:76
+#: ../../client/src/home/hooks/use-shortcuts.ts:74
+msgid "Invalid color field."
+msgstr "Campo de color inválido."
+
+#: ../../client/src/tasks/hooks/use-lists.ts:68
+#: ../../client/src/home/hooks/use-shortcuts.ts:66
+msgid "Invalid icon field."
+msgstr "Campo de icono inválido."
+
+#: ../../client/src/tasks/hooks/use-lists.ts:26
+msgid "Invalid list id."
+msgstr ""
+
+#: ../../client/src/settings/hooks/use-settings.ts:26
+msgid "Invalid name (max 25 characters)."
+msgstr "Nombre inválido (máximo 25 caracteres)."
+
+#: ../../client/src/tasks/hooks/use-lists.ts:60
+#: ../../client/src/home/hooks/use-shortcuts.ts:58
+msgid "Invalid name field."
+msgstr "Campo de nombre inválido."
+
+#: ../../client/src/settings/hooks/use-settings.ts:49
+msgid "Invalid owner key."
+msgstr "Clave propietaria inválida."
+
+#: ../../client/src/home/hooks/use-shortcuts.ts:25
+msgid "Invalid shortcut id."
+msgstr ""
+
+#: ../../client/src/tasks/hooks/use-lists.ts:98
+#: ../../client/src/tasks/hooks/use-lists.ts:118
+msgid "Invalid text content field."
+msgstr ""
+
+#: ../../client/src/home/hooks/use-shortcuts.ts:50
+msgid "Invalid URL field."
+msgstr "Campo de URL inválido."
+
+#: ../../client/src/settings/screen-settings.tsx:42
+msgid "Language"
+msgstr "Idioma"
+
+#: ../../client/src/settings/screen-settings.tsx:68
+msgid "Light"
+msgstr "Claro"
+
+#: ../../client/src/tasks/hooks/use-lists.ts:13
+msgid "List Error"
+msgstr ""
+
+#: ../../client/src/tasks/screen-list-edit.tsx:65
+msgid "List name"
+msgstr ""
+
+#: ../../client/src/tasks/screen-list-all.tsx:21
+#: ../../client/src/app/ui/menu/index.tsx:35
+#: ../../client/src/app/ui/menu/index.tsx:58
+msgid "Lists"
+msgstr ""
+
+#: ../../client/src/tasks/hooks/use-lists.ts:21
+msgid "Missing list id."
+msgstr ""
+
+#: ../../client/src/home/hooks/use-shortcuts.ts:20
+msgid "Missing shortcut id."
+msgstr ""
+
+#: ../../client/src/tasks/screen-list-edit.tsx:60
+#: ../../client/src/home/screen-shortcut.tsx:62
+msgid "Name"
+msgstr "Nombre"
+
+#: ../../client/src/tasks/stacks/list-group.tsx:140
+msgid "New item..."
+msgstr ""
+
+#: ../../client/src/tasks/screen-list-all.tsx:22
+msgid "Organize your tasks"
+msgstr ""
+
+#: ../../client/src/settings/screen-settings.tsx:75
+msgid "Owner Key"
+msgstr "Clave Propietaria"
+
+#: ../../client/src/tasks/screen-list-edit.tsx:151
+msgid "Permanently delete list."
+msgstr ""
+
+#: ../../client/src/home/screen-shortcut.tsx:102
+msgid "Permanently delete shortcut."
+msgstr ""
+
+#: ../../client/src/settings/screen-settings.tsx:27
+msgid "Profile"
+msgstr "Perfil"
+
+#: ../../client/src/settings/screen-settings.tsx:104
+msgid "Reset Database"
+msgstr ""
+
+#: ../../client/src/settings/screen-settings.tsx:102
+msgid "Reset owner and delete database."
+msgstr ""
+
+#: ../../client/src/settings/screen-settings.tsx:61
+msgid "Select the color scheme."
+msgstr ""
+
+#: ../../client/src/settings/screen-settings.tsx:43
+msgid "Select your preferred language."
+msgstr ""
+
+#: ../../client/src/settings/screen-settings.tsx:76
+msgid "Set mnemonic to sync devices."
+msgstr ""
+
+#: ../../client/src/settings/screen-settings.tsx:23
+#: ../../client/src/app/ui/menu/index.tsx:40
+#: ../../client/src/app/ui/menu/index.tsx:76
+msgid "Settings"
+msgstr "Configuración"
+
+#: ../../client/src/home/hooks/use-shortcuts.ts:12
+msgid "Shortcut Error"
+msgstr ""
+
+#: ../../client/src/settings/screen-settings.tsx:49
+#: ../../client/src/settings/screen-settings.tsx:67
+msgid "System"
+msgstr "Sistema"
+
+#: ../../client/src/tasks/screen-list-edit.tsx:137
+msgid "The color of the list icon."
+msgstr ""
+
+#: ../../client/src/home/screen-shortcut.tsx:88
+msgid "The color of the shortcut icon."
+msgstr ""
+
+#: ../../client/src/tasks/screen-list-edit.tsx:61
+msgid "The display name of the list."
+msgstr ""
+
+#: ../../client/src/home/screen-shortcut.tsx:63
+msgid "The display name of the shortcut."
+msgstr ""
+
+#: ../../client/src/tasks/screen-list-edit.tsx:125
+msgid "The icon to display for the list."
+msgstr ""
+
+#: ../../client/src/home/screen-shortcut.tsx:76
+msgid "The icon to display for the shortcut."
+msgstr ""
+
+#: ../../client/src/home/screen-shortcut.tsx:48
+msgid "The web page to link to."
+msgstr "La página web a enlazar."
+
+#: ../../client/src/settings/screen-settings.tsx:60
+msgid "Theme"
+msgstr "Tema"
+
+#: ../../client/src/tasks/screen-list-edit.tsx:43
+#: ../../client/src/tasks/screen-list-details.tsx:31
+#: ../../client/src/home/screen-shortcut.tsx:30
+msgid "Untitled"
+msgstr "Sin título"
+
+#: ../../client/src/home/screen-shortcut.tsx:47
+msgid "URL"
+msgstr "URL"
+
+#: ../../client/src/home/utils/time.ts:21
+msgid "Welcome back, {name}."
+msgstr "Bienvenido, {name}."

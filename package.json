@@ -3,38 +3,30 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "start": "node ./.exo/scripts/start",
-    "build": "conc -c 'gray,auto' -g 'pnpm:*:build'",
-    "config:build": "pnpm -F ./toolkit/config build",
-    "bundler:build": "pnpm -F ./toolkit/bundler build",
-    "translate:start": "conc -P 'pnpm:translate:extract {1}' 'pnpm:translate:compile {1}' -- --watch",
-    "translate:build": "pnpm translate:extract && pnpm translate:compile",
-    "translate:extract": "lingui extract --clean --config ./toolkit/config/lingui.ts",
-    "translate:compile": "lingui compile --config ./toolkit/config/lingui.ts",
-    "design:build": "pnpm -F ./design build",
-    "design:publish": "pnpm -F ./design publish",
-    "storybook:start": "conc 'pnpm:storybook:web' 'pnpm:storybook:native'",
-    "storybook:build": "pnpm -F ./toolkit/storybook/web run build",
-    "storybook:native": "pnpm -F ./toolkit/storybook/native run start",
-    "storybook:web": "pnpm -F ./toolkit/storybook/web run start",
-    "docs:_start": "pnpm -F ./toolkit/vocs start",
-    "docs:_build": "pnpm -F ./toolkit/vocs build",
-    "client:start": "pnpm -F ./client run start",
+    "dev": "ult-dev",
+    "web": "ult-run web",
+    "ios": "ult-run ios",
+    "android": "ult-run android",
+    "i18n:dev": "conc -P 'pnpm:i18n:extract {1}' 'pnpm:i18n:compile {1}' -- --watch",
+    "i18n:build": "pnpm i18n:extract && pnpm i18n:compile",
+    "i18n:extract": "lingui extract --clean --config ./build/config/lingui.ts",
+    "i18n:compile": "lingui compile --config ./build/config/lingui.ts",
+    "client:dev": "pnpm -F ./client run dev",
     "client:build": "pnpm -F ./client run build",
-    "generate": "pnpm config:build && pnpm translate:build && pnpm bundler:build && pnpm design:build",
+    "client:build:web": "pnpm -F ./client run build:web",
+    "client:build:ios": "pnpm -F ./client run build:ios",
+    "client:build:android": "pnpm -F ./client run build:android",
+    "generate": "pnpm -F ./build/config build && pnpm i18n:build",
     "postinstall": "pnpm generate"
   },
   "devDependencies": {
-    "@lingui/cli": "^5.2.0",
-    "@qrgrid/core": "^0.2.2",
-    "cli-cursor": "^3.0.0",
-    "concurrently": "^9.1.2",
-    "strip-ansi": "^7.1.0",
-    "yocto-spinner": "^0.1.2",
-    "yoctocolors": "^2.1.1"
+    "@lingui/cli": "^5.3.3",
+    "concurrently": "^9.2.0",
+    "ult-scripts": "workspace:*"
   },
   "engines": {
-    "node": ">=22"
+    "node": ">=20",
+    "pnpm": ">=10"
   },
-  "packageManager": "pnpm@9.12.3"
+  "packageManager": "pnpm@10.13.1"
 }

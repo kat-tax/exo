@@ -1,4 +1,4 @@
-import {useStyles, createStyleSheet} from 'react-native-unistyles';
+import {StyleSheet} from 'react-native-unistyles';
 import {View} from 'react-native';
 
 export interface PlaceholderProps {
@@ -7,15 +7,13 @@ export interface PlaceholderProps {
 }
 
 export function Placeholder(props: PlaceholderProps) {
-  const {styles} = useStyles(stylesheet);
-
   return (
     <View style={styles.root} testID={props.testID ?? "2237:443"}>
     </View>
   );
 }
 
-const stylesheet = createStyleSheet(theme => ({
+const styles = StyleSheet.create((theme) => ({
   root: {
     flexGrow: 1,
     flexShrink: 0,

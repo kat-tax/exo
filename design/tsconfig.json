@@ -3,9 +3,6 @@
   "extends": "config/tsconfig.app.json",
   "display": "Design",
   "compilerOptions": {
-    "baseUrl": "./",
-    "paths": {
-      "types": ["./env.d.ts"]
-    }
+    "baseUrl": "./"
   }
 }

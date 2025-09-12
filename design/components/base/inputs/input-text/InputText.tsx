@@ -1,6 +1,6 @@
-import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {useVariants, createIcon} from 'react-exo/utils';
 import {View, TextInput, Text} from 'react-native';
+import {StyleSheet, withUnistyles} from 'react-native-unistyles';
+import {useVariants, createIcon} from 'react-exo/utils';
 
 export interface InputTextProps {
   /** Text to display as a caption below the input field. */
@@ -16,7 +16,7 @@ export interface InputTextProps {
   /** Whether the label should be displayed. */
   showLabel?: boolean,
   /** Optional icon to display within the input field. */
-  icon?: JSX.Element,
+  icon?: React.ReactElement,
   /** Used to locate this view in end-to-end tests. */
   testID?: string,
 }
@@ -30,28 +30,26 @@ export const InputTextVariants = {
  */
 export function InputText(props: InputTextProps) {
   const {state} = props;
-  const {styles, theme} = useStyles(stylesheet);
   const {vstyles} = useVariants(InputTextVariants, {state}, styles);
 
   return (
     <View style={vstyles.root()} testID={props.testID ?? "4029:279"}>
-      {props.showLabel && 
+      {props.showLabel &&
         <Text style={vstyles.label()} testID="4029:281">
           {props.label}
         </Text>
       }
       <View style={vstyles.input()} testID="4029:282">
         {createIcon(props.icon, vstyles.phPlaceholder())}
-        <TextInput
+        <UniTextInput
           style={styles.textinputText}
           testID="4029:284"
           inputMode="text"
           defaultValue={''}
           placeholder={props.placeholder}
-          placeholderTextColor={theme.colors.mutedForeground}
         />
       </View>
-      {props.showCaption && 
+      {props.showCaption &&
         <Text style={vstyles.caption()} testID="4029:285">
           {props.caption}
         </Text>
@@ -60,7 +58,11 @@ export function InputText(props: InputTextProps) {
   );
 }
 
-const stylesheet = createStyleSheet(theme => ({
+const UniTextInput = withUnistyles(TextInput, (theme) => ({
+  placeholderTextColor: theme.colors.mutedForeground,
+}));
+
+const styles = StyleSheet.create((theme) => ({
   root: {
     width: 264,
     minHeight: 36,
@@ -126,9 +128,9 @@ const stylesheet = createStyleSheet(theme => ({
     borderColor: theme.colors.outline,
   },
   inputStateDisabled: {
-    borderWidth: 'unset' as any,
-    borderStyle: 'unset' as any,
-    borderColor: 'unset' as any,
+    borderWidth: undefined,
+    borderStyle: undefined,
+    borderColor: undefined,
     opacity: 0.5,
   },
   caption: {

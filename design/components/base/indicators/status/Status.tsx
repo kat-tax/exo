@@ -1,6 +1,6 @@
-import {useStyles, createStyleSheet} from 'react-native-unistyles';
-import {useVariants} from 'react-exo/utils';
 import {View, Text} from 'react-native';
+import {StyleSheet} from 'react-native-unistyles';
+import {useVariants} from 'react-exo/utils';
 
 export interface StatusProps {
   /** The value to display within the status component. */
@@ -22,12 +22,11 @@ export const StatusVariants = {
  */
 export function Status(props: StatusProps) {
   const {mode} = props;
-  const {styles} = useStyles(stylesheet);
   const {vstyles} = useVariants(StatusVariants, {mode}, styles);
 
   return (
     <View style={vstyles.root()} testID={props.testID ?? "5235:309"}>
-      {props.hasValue && 
+      {props.hasValue &&
         <View style={vstyles.content()} testID="5235:304">
           <Text style={vstyles.value()} testID="5235:303">
             {props.value}
@@ -38,7 +37,7 @@ export function Status(props: StatusProps) {
   );
 }
 
-const stylesheet = createStyleSheet(theme => ({
+const styles = StyleSheet.create((theme) => ({
   root: {
     height: 16,
     minWidth: 16,

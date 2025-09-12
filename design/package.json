@@ -3,55 +3,51 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
-  "scripts": {
-    "dev": "conc -c 'auto' 'pnpm:*:dev'",
-    "build": "conc -c 'auto' -g 'pnpm:*:build'",
-    "web:dev": "vite dev  -c ../toolkit/bundler/gen/libs/design.web.js --port 6406",
-    "web:build": "vite build -c ../toolkit/bundler/gen/libs/design.web.js",
-    "native:dev": "vite dev  -c ../toolkit/bundler/gen/libs/design.native.js --port 6506",
-    "native:build": "vite build -c ../toolkit/bundler/gen/libs/design.native.js"
-  },
   "exports": {
-    ".": {
-      "import": "./index.ts",
-      "require": "./gen/native/index.js"
-    },
-    "./theme": {
-      "import": "./theme.ts",
-      "require": "./gen/native/theme.js"
-    },
-    "./styles": {
-      "import": "./styles.ts",
-      "require": "./gen/native/styles.js"
-    },
-    "./gen.theme": {
-      "import": "./gen/web/theme.js",
-      "require": "./gen/native/theme.js"
-    },
-    "./gen.styles": {
-      "import": "./gen/web/styles.js",
-      "require": "./gen/native/styles.js"
-    }
+    ".": "./index.ts",
+    "./theme": "./theme.ts",
+    "./styles": "./styles.ts"
   },
+  "files": [
+    "assets",
+    "brand"
+  ],
   "dependencies": {
-    "@lingui/core": "^5.2.0",
-    "@lingui/macro": "^5.2.0",
-    "@lingui/react": "^5.2.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-exo": "0.18.27",
-    "react-native": "^0.77.1",
-    "react-native-svg": "^15.11.1",
-    "react-native-unistyles": "^2.20.0",
-    "react-native-web": "^0.19.13"
+    "@lingui/core": "^5.4.0",
+    "@lingui/macro": "^5.4.0",
+    "@lingui/react": "^5.4.0"
   },
   "devDependencies": {
-    "@storybook/blocks": "^8.5.6",
-    "@storybook/react": "^8.5.6",
-    "@types/react": "^18.3.18",
-    "@types/react-dom": "^18.3.5",
-    "bundler": "workspace:*",
+    "@types/react": "^19.1.9",
+    "@types/react-dom": "^19.1.7",
     "config": "workspace:*",
-    "typescript": "^5.7.3"
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "react-exo": "0.18.37",
+    "react-native": "0.80.2",
+    "react-native-svg": "^15.12.1",
+    "react-native-unistyles": "^3.0.7",
+    "react-native-web": "^0.21.0",
+    "typescript": "^5.9.2"
+  },
+  "peerDependencies": {
+    "react": ">=19",
+    "react-dom": ">=19",
+    "react-exo": ">=0.18",
+    "react-native": ">=0.80",
+    "react-native-svg": ">=15",
+    "react-native-unistyles": ">=3",
+    "react-native-web": ">=0.21"
+  },
+  "peerDependenciesMeta": {
+    "react-dom": {
+      "optional": true
+    },
+    "react-native": {
+      "optional": true
+    },
+    "react-native-web": {
+      "optional": true
+    }
   }
 }

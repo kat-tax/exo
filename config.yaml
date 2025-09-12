@@ -5,12 +5,9 @@ APP_DISPLAY_NAME: EXO
 # Design
 FONT_NAME: InterVariable
 
-# State
+# Data
+SYNC_HOST: 'wss://free.evoluhq.com'
 STORE_VERSION: 1.0
-
-# Library
-LIB_NAME: react-exo
-LIB_VERSION: 1.0.0
 
 # Web
 LINK_DOCS: https://exo.ult.dev
@@ -25,5 +22,10 @@ PACKAGE_MACOS: com.exo.macos
 PACKAGE_ANDROID: com.exo.android
 PACKAGE_WINDOWS: com.exo.windows
 
-# Backend
-SYNC_HOST: 'https://evolu.world'
+# Translations
+LANG_EN: English
+LANG_ES: Español
+LANG_RU: Русский
+LANG_JA: 日本語
+LANG_KO: 한국어
+LANG_AR: عربي

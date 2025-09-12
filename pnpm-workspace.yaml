@@ -1,6 +1,7 @@
 packages:
+  - 'build/**'
   - 'client/**'
+  - 'native/**'
   - 'design/**'
   - 'locales/**'
-  - 'toolkit/**'
   - '!**/test/**'

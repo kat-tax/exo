@@ -2,10 +2,7 @@
   "ignore": [
     ".git",
     "node_modules",
-    "dist",
-    "toolkit",
-    "library",
-    "design",
-    "server"
+    "output",
+    "dist"
   ]
 }

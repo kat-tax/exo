@@ -1,8 +1,0 @@
-{
-  "$schema": "https://json.schemastore.org/tsconfig",
-  "extends": "config/tsconfig.app.json",
-  "display": "Storybook Common",
-  "compilerOptions": {
-    "baseUrl": "./"
-  }
-}
