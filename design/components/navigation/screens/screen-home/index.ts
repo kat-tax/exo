@@ -1,1 +1,0 @@
-export {ScreenHome} from './ScreenHome';

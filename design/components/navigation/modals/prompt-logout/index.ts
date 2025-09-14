@@ -1,1 +1,0 @@
-export {PromptLogout} from './PromptLogout';
