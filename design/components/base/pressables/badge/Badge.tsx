@@ -1,8 +1,9 @@
-import {View, Text, Pressable} from 'react-native';
+import {useVariants} from 'react-exo/utils';
 import {StyleSheet} from 'react-native-unistyles';
-import {useVariants, createIcon} from 'react-exo/utils';
+import {View, Text, Pressable} from 'react-native';
+import {Icon} from 'icons.tsx';
 
-import type {PressableProps} from 'react-native';
+import type {ViewStyle, StyleProp, PressableProps} from 'react-native';
 
 export interface BadgeProps extends PressableProps {
   /** Text label to be displayed on the badge. */
@@ -21,6 +22,8 @@ export interface BadgeProps extends PressableProps {
   icon?: React.ReactElement,
   /** Optional indicator element to be displayed on the badge. */
   indicator?: React.ReactElement,
+  /** Used to override the default root style. */
+  style?: StyleProp<ViewStyle>,
 }
 
 export const BadgeVariants = {
@@ -37,19 +40,19 @@ export function Badge(props: BadgeProps) {
   const {vstyles} = useVariants(BadgeVariants, {mode, state}, styles);
 
   return (
-    <Pressable style={vstyles.root} testID={props.testID ?? "5232:201"} {...props}>
+    <Pressable testID={props.testID ?? "5232:201"} style={vstyles.root} {...props}>
       {e => <>
-        {props.showIcon &&
-          createIcon(props.icon, vstyles.phPlaceholder(e))
+        {props.showIcon && 
+          Icon.New(props.icon, vstyles.icon(e))
         }
-        {props.showLabel &&
-          <Text style={vstyles.label(e)} testID="5232:189">
+        {props.showLabel && 
+          <Text testID="5232:189" style={vstyles.label(e)}>
             {props.label}
           </Text>
         }
-        {props.showIndicator &&
-          <View style={vstyles.indicator(e)} testID="5235:308">
-            {props.showIndicator &&
+        {props.showIndicator && 
+          <View testID="5235:308" style={vstyles.indicator(e)}>
+            {props.showIndicator && 
               props.indicator
             }
           </View>
@@ -59,7 +62,7 @@ export function Badge(props: BadgeProps) {
   );
 }
 
-const styles = StyleSheet.create((theme) => ({
+const styles = StyleSheet.create(theme => ({
   root: {
     flexDirection: 'row',
     paddingTop: theme.display.space1,
@@ -70,6 +73,9 @@ const styles = StyleSheet.create((theme) => ({
     alignItems: 'center',
     gap: theme.display.space1,
     borderRadius: theme.display.radius3,
+    borderWidth: 1,
+    borderStyle: 'solid',
+    borderColor: 'rgba(0, 0, 0, 0)',
     backgroundColor: theme.colors.accent,
   },
   rootModeDefaultStateHovered: {
@@ -79,8 +85,6 @@ const styles = StyleSheet.create((theme) => ({
     opacity: 0.8,
   },
   rootModeDefaultStateFocused: {
-    borderWidth: 1,
-    borderStyle: 'solid',
     borderColor: theme.colors.ring,
   },
   rootModeDefaultStateDisabled: {
@@ -98,8 +102,6 @@ const styles = StyleSheet.create((theme) => ({
     backgroundColor: theme.colors.info,
   },
   rootModeInfoStateFocused: {
-    borderWidth: 1,
-    borderStyle: 'solid',
     borderColor: theme.colors.ring,
     backgroundColor: theme.colors.info,
   },
@@ -119,8 +121,6 @@ const styles = StyleSheet.create((theme) => ({
     backgroundColor: theme.colors.success,
   },
   rootModeSuccessStateFocused: {
-    borderWidth: 1,
-    borderStyle: 'solid',
     borderColor: theme.colors.ring,
     backgroundColor: theme.colors.success,
   },
@@ -140,8 +140,6 @@ const styles = StyleSheet.create((theme) => ({
     backgroundColor: theme.colors.warning,
   },
   rootModeWarningStateFocused: {
-    borderWidth: 1,
-    borderStyle: 'solid',
     borderColor: theme.colors.ring,
     backgroundColor: theme.colors.warning,
   },
@@ -161,8 +159,6 @@ const styles = StyleSheet.create((theme) => ({
     backgroundColor: theme.colors.destructive,
   },
   rootModeErrorStateFocused: {
-    borderWidth: 1,
-    borderStyle: 'solid',
     borderColor: theme.colors.ring,
     backgroundColor: theme.colors.destructive,
   },
@@ -238,6 +234,22 @@ const styles = StyleSheet.create((theme) => ({
   labelModeErrorStateDisabled: {
     color: theme.colors.destructiveForeground,
   },
+  status: {
+    height: 16,
+    minWidth: 16,
+    minHeight: 6,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderBottomLeftRadius: 9999,
+    borderBottomRightRadius: 9999,
+    borderTopLeftRadius: 9999,
+    borderTopRightRadius: 9999,
+    borderWidth: 1,
+    borderStyle: 'solid',
+    borderColor: theme.colors.border,
+    backgroundColor: theme.colors.popoverForeground,
+  },
   indicator: {
     flexDirection: 'column',
     justifyContent: 'center',
@@ -248,68 +260,68 @@ const styles = StyleSheet.create((theme) => ({
     right: -5,
     top: -7,
   },
-  phPlaceholder: {
+  icon: {
     color: theme.colors.accentForeground,
     size: 12,
   },
-  phPlaceholderModeInfoStateDefault: {
+  iconModeInfoStateDefault: {
     color: theme.colors.destructiveForeground,
   },
-  phPlaceholderModeInfoStateHovered: {
+  iconModeInfoStateHovered: {
     color: theme.colors.destructiveForeground,
   },
-  phPlaceholderModeInfoStatePressed: {
+  iconModeInfoStatePressed: {
     color: theme.colors.destructiveForeground,
   },
-  phPlaceholderModeInfoStateFocused: {
+  iconModeInfoStateFocused: {
     color: theme.colors.destructiveForeground,
   },
-  phPlaceholderModeInfoStateDisabled: {
+  iconModeInfoStateDisabled: {
     color: theme.colors.destructiveForeground,
   },
-  phPlaceholderModeSuccessStateDefault: {
+  iconModeSuccessStateDefault: {
     color: theme.colors.destructiveForeground,
   },
-  phPlaceholderModeSuccessStateHovered: {
+  iconModeSuccessStateHovered: {
     color: theme.colors.destructiveForeground,
   },
-  phPlaceholderModeSuccessStatePressed: {
+  iconModeSuccessStatePressed: {
     color: theme.colors.destructiveForeground,
   },
-  phPlaceholderModeSuccessStateFocused: {
+  iconModeSuccessStateFocused: {
     color: theme.colors.destructiveForeground,
   },
-  phPlaceholderModeSuccessStateDisabled: {
+  iconModeSuccessStateDisabled: {
     color: theme.colors.destructiveForeground,
   },
-  phPlaceholderModeWarningStateDefault: {
+  iconModeWarningStateDefault: {
     color: theme.colors.destructiveForeground,
   },
-  phPlaceholderModeWarningStateHovered: {
+  iconModeWarningStateHovered: {
     color: theme.colors.destructiveForeground,
   },
-  phPlaceholderModeWarningStatePressed: {
+  iconModeWarningStatePressed: {
     color: theme.colors.destructiveForeground,
   },
-  phPlaceholderModeWarningStateFocused: {
+  iconModeWarningStateFocused: {
     color: theme.colors.destructiveForeground,
   },
-  phPlaceholderModeWarningStateDisabled: {
+  iconModeWarningStateDisabled: {
     color: theme.colors.destructiveForeground,
   },
-  phPlaceholderModeErrorStateDefault: {
+  iconModeErrorStateDefault: {
     color: theme.colors.destructiveForeground,
   },
-  phPlaceholderModeErrorStateHovered: {
+  iconModeErrorStateHovered: {
     color: theme.colors.destructiveForeground,
   },
-  phPlaceholderModeErrorStatePressed: {
+  iconModeErrorStatePressed: {
     color: theme.colors.destructiveForeground,
   },
-  phPlaceholderModeErrorStateFocused: {
+  iconModeErrorStateFocused: {
     color: theme.colors.destructiveForeground,
   },
-  phPlaceholderModeErrorStateDisabled: {
+  iconModeErrorStateDisabled: {
     color: theme.colors.destructiveForeground,
   },
 }));

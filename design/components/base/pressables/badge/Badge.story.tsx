@@ -19,9 +19,7 @@ export const DefaultDefault: Story = {
     showIndicator: false,
     showLabel: true,
     icon: (
-      <Icon
-        name="ph:placeholder"
-      />
+      <Icon name="ph:placeholder"/>
     ),
     indicator: (
       <Status

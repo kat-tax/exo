@@ -22,9 +22,7 @@ export const Prompt: Story = {
         state="Default"
         showIcon
         icon={
-          <Icon
-            name="ph:placeholder"
-          />
+          <Icon name="ph:placeholder"/>
         }
       />
     ),

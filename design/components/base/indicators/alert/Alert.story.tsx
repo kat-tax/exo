@@ -16,9 +16,7 @@ export const Default: Story = {
     mode: 'Default',
     hasIcon: true,
     icon: (
-      <Icon
-        name="ph:placeholder"
-      />
+      <Icon name="ph:placeholder"/>
     ),
   },
 };

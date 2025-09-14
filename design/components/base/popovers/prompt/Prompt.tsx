@@ -1,8 +1,11 @@
 import {useLingui} from '@lingui/react/macro';
-import {View, Text} from 'react-native';
 import {StyleSheet} from 'react-native-unistyles';
-import {Icon} from 'react-exo/icon';
+import {View, Text} from 'react-native';
+import {Icon} from 'icons.tsx';
+
 import {Button} from 'components/base/pressables/button';
+
+import type {ViewStyle, StyleProp} from 'react-native';
 
 export interface PromptProps {
   /** The main message text of the prompt. */
@@ -13,6 +16,8 @@ export interface PromptProps {
   showClose?: boolean,
   /** Optional JSX element for a custom confirm button. */
   confirmButton?: React.ReactElement,
+  /** Used to override the default root style. */
+  style?: StyleProp<ViewStyle>,
   /** Used to locate this view in end-to-end tests. */
   testID?: string,
 }
@@ -25,29 +30,28 @@ export function Prompt(props: PromptProps) {
   const {t} = useLingui();
 
   return (
-    <View style={styles.root} testID={props.testID ?? "1034:553"}>
-      <View style={styles.header} testID="1034:537">
-        <Text style={styles.title} testID="1034:538">
+    <View testID={props.testID ?? "1034:553"} style={[styles.root, props.style]}>
+      <View testID="1034:537" style={styles.header}>
+        <Text testID="1034:538"
+          style={styles.title}
+          selectable={false}>
           {props.title}
         </Text>
       </View>
-      <Text style={styles.message} testID="1034:542">
+      <Text testID="1034:542" style={styles.message}>
         {props.message}
       </Text>
-      <View style={styles.buttons} testID="1034:543">
-        {props.showClose &&
-          <View style={styles.cancel} testID="5759:459">
-            {props.showClose &&
-              <Button
-                testID="1034:544"
+      <View testID="1034:543" style={styles.buttons}>
+        {props.showClose && 
+          <View testID="5759:459" style={styles.cancel}>
+            {props.showClose && 
+              <Button testID="1034:544"
                 label={t`Cancel`}
                 mode="Text"
                 state="Default"
                 showIcon
                 icon={
-                  <Icon
-                    name="ph:x"
-                  />
+                  <Icon name="ph:x"/>
                 }
               />
             }
@@ -59,7 +63,7 @@ export function Prompt(props: PromptProps) {
   );
 }
 
-const styles = StyleSheet.create((theme) => ({
+const styles = StyleSheet.create(theme => ({
   root: {
     minWidth: 320,
     minHeight: 200,
@@ -100,6 +104,21 @@ const styles = StyleSheet.create((theme) => ({
     lineHeight: theme.font.contentHeight,
     letterSpacing: theme.font.contentSpacing,
   },
+  button: {
+    flexDirection: 'row',
+    height: 36,
+    paddingTop: 0,
+    paddingLeft: theme.display.space4,
+    paddingBottom: 0,
+    paddingRight: theme.display.space4,
+    justifyContent: 'center',
+    alignItems: 'center',
+    gap: theme.display.space2,
+    borderRadius: theme.display.radius3,
+    borderWidth: 1,
+    borderStyle: 'solid',
+    borderColor: 'rgba(0, 0, 0, 0)',
+  },
   buttons: {
     flexDirection: 'row',
     justifyContent: 'flex-end',
@@ -111,5 +130,21 @@ const styles = StyleSheet.create((theme) => ({
     flexDirection: 'column',
     justifyContent: 'flex-end',
     alignItems: 'center',
+  },
+  button2: {
+    flexDirection: 'row',
+    height: 36,
+    paddingTop: 0,
+    paddingLeft: theme.display.space4,
+    paddingBottom: 0,
+    paddingRight: theme.display.space4,
+    justifyContent: 'center',
+    alignItems: 'center',
+    gap: theme.display.space2,
+    borderRadius: theme.display.radius3,
+    borderWidth: 1,
+    borderStyle: 'solid',
+    borderColor: theme.colors.primary,
+    backgroundColor: theme.colors.primary,
   },
 }));

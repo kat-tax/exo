@@ -1,6 +1,6 @@
 :::imports
 
-import {Panel} from 'react-exo-ui';
+import {Panel, Placeholder} from 'react-exo-ui';
 
 :::
 
@@ -11,6 +11,12 @@ import {Panel} from 'react-exo-ui';
 <Panel
   header="Header"
   message="Lorem ipsum dolor sit amet"
+  content={
+    <Placeholder/>
+  }
+  footer={
+    <Placeholder/>
+  }
 />
 
 :::

@@ -1,6 +1,10 @@
-import {View, TextInput, Text} from 'react-native';
-import {StyleSheet, withUnistyles} from 'react-native-unistyles';
-import {useVariants, createIcon} from 'react-exo/utils';
+import {useVariants} from 'react-exo/utils';
+import {StyleSheet} from 'react-native-unistyles';
+import {View, Text} from 'react-native';
+import {TextInput} from 'textinput.tsx';
+import {Icon} from 'icons.tsx';
+
+import type {ViewStyle, StyleProp} from 'react-native';
 
 export interface InputPasswordProps {
   /** Text to display as a caption below the input field. */
@@ -17,6 +21,8 @@ export interface InputPasswordProps {
   showLabel?: boolean,
   /** Optional icon to display within the input field. */
   icon?: React.ReactElement,
+  /** Used to override the default root style. */
+  style?: StyleProp<ViewStyle>,
   /** Used to locate this view in end-to-end tests. */
   testID?: string,
 }
@@ -33,25 +39,25 @@ export function InputPassword(props: InputPasswordProps) {
   const {vstyles} = useVariants(InputPasswordVariants, {state}, styles);
 
   return (
-    <View style={vstyles.root()} testID={props.testID ?? "4029:244"}>
-      {props.showLabel &&
-        <Text style={vstyles.label()} testID="4029:246">
+    <View testID={props.testID ?? "4029:244"} style={[vstyles.root(), props.style]}>
+      {props.showLabel && 
+        <Text testID="4029:246" style={vstyles.label()}>
           {props.label}
         </Text>
       }
-      <View style={vstyles.input()} testID="4029:247">
-        {createIcon(props.icon, vstyles.phPlaceholder())}
-        <UniTextInput
-          style={styles.textinputText}
-          testID="4029:249"
-          inputMode="text"
-          defaultValue={''}
-          placeholder={props.placeholder}
+      <View testID="4029:247" style={vstyles.input()}>
+        {Icon.New(props.icon, vstyles.icon())}
+        <TextInput testID="4029:249"
+          style={vstyles.textinput()}
           secureTextEntry
+          placeholder={props.placeholder}
+          uniProps={theme => ({
+            placeholderTextColor: theme.colors.mutedForeground,
+          })}
         />
       </View>
-      {props.showCaption &&
-        <Text style={vstyles.caption()} testID="4029:250">
+      {props.showCaption && 
+        <Text testID="4029:250" style={vstyles.caption()}>
           {props.caption}
         </Text>
       }
@@ -59,11 +65,7 @@ export function InputPassword(props: InputPasswordProps) {
   );
 }
 
-const UniTextInput = withUnistyles(TextInput, (theme) => ({
-  placeholderTextColor: theme.colors.mutedForeground,
-}));
-
-const styles = StyleSheet.create((theme) => ({
+const styles = StyleSheet.create(theme => ({
   root: {
     width: 264,
     minHeight: 36,
@@ -87,7 +89,7 @@ const styles = StyleSheet.create((theme) => ({
   labelStateDisabled: {
     opacity: 0.5,
   },
-  textinputText: {
+  textinput: {
     flexGrow: 1,
     flexShrink: 0,
     flexBasis: 0,
@@ -95,9 +97,15 @@ const styles = StyleSheet.create((theme) => ({
     fontFamily: theme.font.family,
     fontSize: theme.font.inputSize,
     fontStyle: 'normal',
-    fontWeight: theme.font.inputWeight,
+    fontWeight: theme.font.weight,
     lineHeight: theme.font.inputHeight,
     letterSpacing: theme.font.inputSpacing,
+  },
+  textinputStateFocusedFilled: {
+    flexGrow: undefined,
+    flexShrink: undefined,
+    flexBasis: undefined,
+    color: theme.colors.foreground,
   },
   input: {
     flexDirection: 'row',
@@ -145,7 +153,7 @@ const styles = StyleSheet.create((theme) => ({
     letterSpacing: theme.font.contentSpacing,
     opacity: 0.5,
   },
-  phPlaceholder: {
+  icon: {
     name: 'ph:lock',
     color: theme.colors.secondaryForeground,
     size: 20,
