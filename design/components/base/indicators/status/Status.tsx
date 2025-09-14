@@ -1,6 +1,8 @@
-import {View, Text} from 'react-native';
-import {StyleSheet} from 'react-native-unistyles';
 import {useVariants} from 'react-exo/utils';
+import {StyleSheet} from 'react-native-unistyles';
+import {View, Text} from 'react-native';
+
+import type {ViewStyle, StyleProp} from 'react-native';
 
 export interface StatusProps {
   /** The value to display within the status component. */
@@ -9,6 +11,8 @@ export interface StatusProps {
   mode: typeof StatusVariants.mode[number],
   /** Whether the value should be displayed. */
   hasValue?: boolean,
+  /** Used to override the default root style. */
+  style?: StyleProp<ViewStyle>,
   /** Used to locate this view in end-to-end tests. */
   testID?: string,
 }
@@ -25,10 +29,10 @@ export function Status(props: StatusProps) {
   const {vstyles} = useVariants(StatusVariants, {mode}, styles);
 
   return (
-    <View style={vstyles.root()} testID={props.testID ?? "5235:309"}>
-      {props.hasValue &&
-        <View style={vstyles.content()} testID="5235:304">
-          <Text style={vstyles.value()} testID="5235:303">
+    <View testID={props.testID ?? "5235:309"} style={[vstyles.root(), props.style]}>
+      {props.hasValue && 
+        <View testID="5235:304" style={vstyles.content()}>
+          <Text testID="5235:303" style={vstyles.value()}>
             {props.value}
           </Text>
         </View>
@@ -37,7 +41,7 @@ export function Status(props: StatusProps) {
   );
 }
 
-const styles = StyleSheet.create((theme) => ({
+const styles = StyleSheet.create(theme => ({
   root: {
     height: 16,
     minWidth: 16,

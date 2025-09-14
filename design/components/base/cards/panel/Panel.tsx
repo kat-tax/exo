@@ -1,10 +1,15 @@
-import {View, Text} from 'react-native';
 import {StyleSheet} from 'react-native-unistyles';
-import {Placeholder} from 'components/base/utilities/placeholder';
+import {View, Text} from 'react-native';
+
+import type {ViewStyle, StyleProp} from 'react-native';
 
 export interface PanelProps {
   header: string,
   message: string,
+  content?: React.ReactElement,
+  footer?: React.ReactElement,
+  /** Used to override the default root style. */
+  style?: StyleProp<ViewStyle>,
   /** Used to locate this view in end-to-end tests. */
   testID?: string,
 }
@@ -14,28 +19,28 @@ export interface PanelProps {
  */
 export function Panel(props: PanelProps) {
   return (
-    <View style={styles.root} testID={props.testID ?? "5290:674"}>
-      <View style={styles.contents} testID="5290:668">
-        <View style={styles.title} testID="5525:470">
-          <Text style={styles.header} testID="5290:669">
+    <View testID={props.testID ?? "5290:674"} style={[styles.root, props.style]}>
+      <View testID="5290:668" style={styles.contents}>
+        <View testID="5525:470" style={styles.title}>
+          <Text testID="5290:669" style={styles.header}>
             {props.header}
           </Text>
-          <Text style={styles.description} testID="5290:672">
+          <Text testID="5290:672" style={styles.description}>
             {props.message}
           </Text>
         </View>
-        <View style={styles.content} testID="5290:670">
-          <Placeholder testID="5290:671"/>
+        <View testID="5290:670" style={styles.content}>
+          {props.content}
         </View>
-        <View style={styles.footer} testID="5290:675">
-          <Placeholder testID="5290:676"/>
+        <View testID="5290:675" style={styles.footer}>
+          {props.footer}
         </View>
       </View>
     </View>
   );
 }
 
-const styles = StyleSheet.create((theme) => ({
+const styles = StyleSheet.create(theme => ({
   root: {
     flexDirection: 'row',
     minWidth: 270,
@@ -51,13 +56,13 @@ const styles = StyleSheet.create((theme) => ({
     backgroundColor: theme.colors.card,
   },
   header: {
-    color: theme.colors.cardForeground,
+    color: theme.colors.popoverForeground,
     fontFamily: theme.font.family,
-    fontSize: theme.font.titleSize,
+    fontSize: theme.font.headerSize,
     fontStyle: 'normal',
-    fontWeight: theme.font.titleWeight,
-    lineHeight: theme.font.titleHeight,
-    letterSpacing: theme.font.titleSpacing,
+    fontWeight: theme.font.headerWeight,
+    lineHeight: theme.font.headerHeight,
+    letterSpacing: theme.font.headerSpacing,
   },
   description: {
     alignSelf: 'stretch',

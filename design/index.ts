@@ -9,3 +9,4 @@ export {InputEmail} from './components/base/inputs/input-email';
 export {InputText} from './components/base/inputs/input-text';
 export {Badge} from './components/base/pressables/badge';
 export {Button} from './components/base/pressables/button';
+export {Message} from './components/features/chat/message';

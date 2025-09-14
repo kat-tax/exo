@@ -2,11 +2,11 @@
 APP_NAME: EXO
 FONT_NAME: Inter
 DESIGN_NAME: react-exo-ui
-DESIGN_VERSION: 1.1.12
+DESIGN_VERSION: 1.1.13
 STORE_VERSION: 1
 
 # Services
-EVOLU_RELAY: 'wss://free.evoluhq.com'
+EVOLU_RELAY: wss://free.evoluhq.com
 
 # Apps
 IOS: com.exo.ios
@@ -16,6 +16,7 @@ WINDOWS: com.exo.windows
 
 # Web
 LINK_DOCS: https://exo.ult.dev
+LINK_FIGMA: https://www.figma.com/file/DFmPlavFWyMaYJtoGLhGz3
 LINK_STORYBOOK: https://exo.fig.run
 LINK_DISCORD: https://discord.gg/KpMZVKmfnb
 LINK_GITHUB: https://github.com/kat-tax/exo
@@ -25,6 +26,6 @@ LINK_X: https://x.com/theultdev
 LANG_EN: English
 LANG_ES: Español
 LANG_RU: Русский
-LANG_JA: 日本語
+LANG_JA: やまと
 LANG_KO: 한국어
 LANG_AR: عربي

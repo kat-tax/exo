@@ -1,5 +1,7 @@
-import {View, Text} from 'react-native';
 import {StyleSheet} from 'react-native-unistyles';
+import {View, Text} from 'react-native';
+
+import type {ViewStyle, StyleProp} from 'react-native';
 
 export interface ArticleProps {
   /** The main content text of the article. */
@@ -18,6 +20,8 @@ export interface ArticleProps {
   tags?: React.ReactElement,
   /** Optional element representing a thumbnail. */
   thumbnail?: React.ReactElement,
+  /** Used to override the default root style. */
+  style?: StyleProp<ViewStyle>,
   /** Used to locate this view in end-to-end tests. */
   testID?: string,
 }
@@ -27,26 +31,26 @@ export interface ArticleProps {
  */
 export function Article(props: ArticleProps) {
   return (
-    <View style={styles.root} testID={props.testID ?? "2218:99"}>
-      {props.hasThumbnail &&
-        <View style={styles.thumbnail} testID="5234:214">
+    <View testID={props.testID ?? "2218:99"} style={[styles.root, props.style]}>
+      {props.hasThumbnail && 
+        <View testID="5234:214" style={styles.thumbnail}>
           {props.thumbnail}
         </View>
       }
-      <View style={styles.contents} testID="2218:101">
-        <Text style={styles.header} testID="2218:102">
+      <View testID="2218:101" style={styles.contents}>
+        <Text testID="2218:102" style={styles.header}>
           {props.header}
         </Text>
-        {props.hasTags &&
-          <View style={styles.tags} testID="5283:474">
+        {props.hasTags && 
+          <View testID="5283:474" style={styles.tags}>
             {props.tags}
           </View>
         }
-        <Text style={styles.body} testID="2218:103">
+        <Text testID="2218:103" style={styles.body}>
           {props.body}
         </Text>
-        {props.hasFooter &&
-          <Text style={styles.footer} testID="2218:116">
+        {props.hasFooter && 
+          <Text testID="2218:116" style={styles.footer}>
             {props.footer}
           </Text>
         }
@@ -55,7 +59,7 @@ export function Article(props: ArticleProps) {
   );
 }
 
-const styles = StyleSheet.create((theme) => ({
+const styles = StyleSheet.create(theme => ({
   root: {
     flexDirection: 'row',
     minWidth: 270,

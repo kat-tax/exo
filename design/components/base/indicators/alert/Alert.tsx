@@ -1,6 +1,9 @@
-import {View, Text} from 'react-native';
+import {useVariants} from 'react-exo/utils';
 import {StyleSheet} from 'react-native-unistyles';
-import {useVariants, createIcon} from 'react-exo/utils';
+import {View, Text} from 'react-native';
+import {Icon} from 'icons.tsx';
+
+import type {ViewStyle, StyleProp} from 'react-native';
 
 export interface AlertProps {
   /** Main content text of the alert. */
@@ -13,6 +16,8 @@ export interface AlertProps {
   hasIcon?: boolean,
   /** Optional icon element to display. */
   icon?: React.ReactElement,
+  /** Used to override the default root style. */
+  style?: StyleProp<ViewStyle>,
   /** Used to locate this view in end-to-end tests. */
   testID?: string,
 }
@@ -29,17 +34,19 @@ export function Alert(props: AlertProps) {
   const {vstyles} = useVariants(AlertVariants, {mode}, styles);
 
   return (
-    <View style={vstyles.root()} testID={props.testID ?? "5290:611"}>
-      {props.hasIcon &&
-        <View style={vstyles.icon()} testID="5290:613">
-          {createIcon(props.icon, vstyles.phPlaceholder())}
+    <View testID={props.testID ?? "5290:611"} style={[vstyles.root(), props.style]}>
+      {props.hasIcon && 
+        <View testID="5290:613" style={vstyles.status()}>
+          {Icon.New(props.icon, vstyles.icon())}
         </View>
       }
-      <View style={vstyles.contents()} testID="5290:615">
-        <Text style={vstyles.header()} testID="5290:616">
+      <View testID="5290:615" style={vstyles.contents()}>
+        <Text testID="5290:616"
+          style={vstyles.header()}
+          selectable>
           {props.header}
         </Text>
-        <Text style={vstyles.body()} testID="5290:617">
+        <Text testID="5290:617" style={vstyles.body()}>
           {props.body}
         </Text>
       </View>
@@ -47,7 +54,7 @@ export function Alert(props: AlertProps) {
   );
 }
 
-const styles = StyleSheet.create((theme) => ({
+const styles = StyleSheet.create(theme => ({
   root: {
     flexDirection: 'row',
     width: 378,
@@ -63,7 +70,7 @@ const styles = StyleSheet.create((theme) => ({
   rootModeDestructive: {
     borderColor: theme.colors.destructive,
   },
-  icon: {
+  status: {
     width: 20,
     height: 20,
     flexDirection: 'column',
@@ -92,11 +99,11 @@ const styles = StyleSheet.create((theme) => ({
     alignItems: 'flex-start',
     gap: theme.display.space1,
   },
-  phPlaceholder: {
+  icon: {
     color: theme.colors.foreground,
     size: 20,
   },
-  phPlaceholderModeDestructive: {
+  iconModeDestructive: {
     color: theme.colors.destructive,
   },
 }));

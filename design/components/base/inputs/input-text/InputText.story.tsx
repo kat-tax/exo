@@ -13,14 +13,12 @@ export const Empty: Story = {
   args: {
     caption: 'Caption',
     label: 'Label',
-    placeholder: 'Text',
+    placeholder: 'Lorem ipsum...',
     state: 'Empty',
     showCaption: true,
     showLabel: true,
     icon: (
-      <Icon
-        name="ph:placeholder"
-      />
+      <Icon name="ph:placeholder"/>
     ),
   },
 };

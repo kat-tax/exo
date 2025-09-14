@@ -1,8 +1,9 @@
-import {Text, Pressable} from 'react-native';
+import {useVariants} from 'react-exo/utils';
 import {StyleSheet} from 'react-native-unistyles';
-import {useVariants, createIcon} from 'react-exo/utils';
+import {Text, Pressable} from 'react-native';
+import {Icon} from 'icons.tsx';
 
-import type {PressableProps} from 'react-native';
+import type {ViewStyle, StyleProp, PressableProps} from 'react-native';
 
 export interface ButtonProps extends PressableProps {
   /** The text label displayed on the button. */
@@ -15,6 +16,8 @@ export interface ButtonProps extends PressableProps {
   showIcon?: boolean,
   /** The icon element to display if showIcon is true. */
   icon?: React.ReactElement,
+  /** Used to override the default root style. */
+  style?: StyleProp<ViewStyle>,
 }
 
 export const ButtonVariants = {
@@ -31,12 +34,12 @@ export function Button(props: ButtonProps) {
   const {vstyles} = useVariants(ButtonVariants, {mode, state}, styles);
 
   return (
-    <Pressable style={vstyles.root} testID={props.testID ?? "2028:395"} {...props}>
+    <Pressable testID={props.testID ?? "2028:395"} style={vstyles.root} {...props}>
       {e => <>
-        {props.showIcon &&
-          createIcon(props.icon, vstyles.phPlaceholder(e))
+        {props.showIcon && 
+          Icon.New(props.icon, vstyles.icon(e))
         }
-        <Text style={vstyles.label(e)} testID="2028:398">
+        <Text testID="2028:398" style={vstyles.label(e)}>
           {props.label}
         </Text>
       </>}
@@ -44,7 +47,7 @@ export function Button(props: ButtonProps) {
   );
 }
 
-const styles = StyleSheet.create((theme) => ({
+const styles = StyleSheet.create(theme => ({
   root: {
     flexDirection: 'row',
     height: 36,
@@ -76,8 +79,8 @@ const styles = StyleSheet.create((theme) => ({
     opacity: 0.4,
   },
   rootModeSecondaryStateDefault: {
-    backgroundColor: theme.colors.secondary,
     borderColor: theme.colors.border,
+    backgroundColor: theme.colors.secondary,
   },
   rootModeSecondaryStateHovered: {
     borderColor: theme.colors.border,
@@ -94,9 +97,9 @@ const styles = StyleSheet.create((theme) => ({
     backgroundColor: theme.colors.secondary,
   },
   rootModeSecondaryStateDisabled: {
-    backgroundColor: theme.colors.secondary,
     borderColor: theme.colors.border,
     opacity: 0.4,
+    backgroundColor: theme.colors.secondary,
   },
   rootModeDestructiveStateDefault: {
     borderColor: theme.colors.destructive,
@@ -126,6 +129,7 @@ const styles = StyleSheet.create((theme) => ({
     borderColor: 'rgba(0, 0, 0, 0)',
   },
   rootModeTextStateHovered: {
+    backgroundColor: undefined,
     borderColor: 'rgba(0, 0, 0, 0)',
     opacity: 0.9,
   },
@@ -197,53 +201,53 @@ const styles = StyleSheet.create((theme) => ({
   labelModeTextStateDisabled: {
     color: theme.colors.secondaryForeground,
   },
-  phPlaceholder: {
+  icon: {
     color: theme.colors.primaryForeground,
     size: 16,
   },
-  phPlaceholderModeSecondaryStateDefault: {
+  iconModeSecondaryStateDefault: {
     color: theme.colors.secondaryForeground,
   },
-  phPlaceholderModeSecondaryStateHovered: {
+  iconModeSecondaryStateHovered: {
     color: theme.colors.secondaryForeground,
   },
-  phPlaceholderModeSecondaryStatePressed: {
+  iconModeSecondaryStatePressed: {
     color: theme.colors.secondaryForeground,
   },
-  phPlaceholderModeSecondaryStateFocused: {
+  iconModeSecondaryStateFocused: {
     color: theme.colors.secondaryForeground,
   },
-  phPlaceholderModeSecondaryStateDisabled: {
+  iconModeSecondaryStateDisabled: {
     color: theme.colors.secondaryForeground,
   },
-  phPlaceholderModeDestructiveStateDefault: {
+  iconModeDestructiveStateDefault: {
     color: theme.colors.destructiveForeground,
   },
-  phPlaceholderModeDestructiveStateHovered: {
+  iconModeDestructiveStateHovered: {
     color: theme.colors.destructiveForeground,
   },
-  phPlaceholderModeDestructiveStatePressed: {
+  iconModeDestructiveStatePressed: {
     color: theme.colors.destructiveForeground,
   },
-  phPlaceholderModeDestructiveStateFocused: {
+  iconModeDestructiveStateFocused: {
     color: theme.colors.destructiveForeground,
   },
-  phPlaceholderModeDestructiveStateDisabled: {
+  iconModeDestructiveStateDisabled: {
     color: theme.colors.destructiveForeground,
   },
-  phPlaceholderModeTextStateDefault: {
+  iconModeTextStateDefault: {
     color: theme.colors.secondaryForeground,
   },
-  phPlaceholderModeTextStateHovered: {
+  iconModeTextStateHovered: {
     color: theme.colors.secondaryForeground,
   },
-  phPlaceholderModeTextStatePressed: {
+  iconModeTextStatePressed: {
     color: theme.colors.secondaryForeground,
   },
-  phPlaceholderModeTextStateFocused: {
+  iconModeTextStateFocused: {
     color: theme.colors.secondaryForeground,
   },
-  phPlaceholderModeTextStateDisabled: {
+  iconModeTextStateDisabled: {
     color: theme.colors.secondaryForeground,
   },
 }));
