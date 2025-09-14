@@ -5,7 +5,7 @@ import cfg from 'config';
 
 const evolu = $.createEvolu(deps)(schema, {
   name: $.getOrThrow($.SimpleName.from(`${cfg.APP_NAME}-${cfg.STORE_VERSION}`)),
-  syncUrl: cfg.SYNC_HOST,
+  syncUrl: cfg.EVOLU_RELAY,
   enableLogging: __DEV__,
 });
 

@@ -104,14 +104,19 @@ export default function ScreenDesign() {
           header="Lorem Ipsum"
           body="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
           footer="Lorem ipsum dolor sit amet"
+          tags={<Design.Placeholder/>}
+          thumbnail={<Design.Placeholder/>}
+          hasThumbnail={true}
           hasFooter={true}
-          hasTags={false}
+          hasTags={true}
         />
       </Frame>
       <Frame title="Panel">
         <Design.Panel
           header="Lorem Ipsum"
           message="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+          content={<Design.Placeholder/>}
+          footer={<Design.Placeholder/>}
         />
       </Frame>
       <Frame title="Prompt">
