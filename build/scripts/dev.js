@@ -6,6 +6,10 @@ import concurrently from 'concurrently';
 import {PassThrough} from 'node:stream';
 import {exec} from 'node:child_process';
 
+import {openUrl} from './utils/url.js';
+import {parseConfig} from './utils/config.js';
+import {sendMetroCmd} from './utils/metro.js';
+
 import ReadLine from './vendor/ReadLine.js';
 import Spinners from './vendor/Spinners.js';
 import QRCodes from './vendor/QRCodes.js';
@@ -26,14 +30,13 @@ const hotkeys = {
   ],
   'Control server': [
     {key: 'j', label: 'Devtools'},
-    {key: 'h', label: 'Hotkeys'},
     {key: 'r', label: 'Reload'},
     {key: 'c', label: 'Clear'},
+    {key: 'h', label: 'Help'},
     {key: 'q', label: 'Quit'},
   ],
   'Manage project': [
-    //{key: 'u', label: 'Dashboard'},
-    {key: 'e', label: 'Editor'},
+    {key: 'd', label: 'Dashboard'},
     {key: 'f', label: 'Figma'},
     {key: 'g', label: 'Git'},
   ],
@@ -178,26 +181,25 @@ function done() {
       case 'b':
         exec(`pnpm ult-run web --port ${_servers.Web.port}`);
         break;
-      case 'd':
-        exec(`pnpm ult-run web --port ${_servers.Documentation.port}`);
-        break;
       case 's':
         exec(`pnpm ult-run web --port ${_servers.Storybook.port}`);
         break;
       case 'r':
-        console.log('>> Reloading React Native clients connected to Metro not implemented yet');
+        sendMetroCmd('reload', _servers.Native.port);
         break;
       case 'j':
-        console.log('>> Opening React Native Devtools not implemented yet');
+        sendMetroCmd('open-debugger', _servers.Native.port);
         break;
-      case 'e':
-        console.log('>> Opening in Code Editor not implemented yet');
+      case 'd':
+        openUrl(`http://ult.dev`);
         break;
       case 'f':
-        console.log('>> Opening in Figma not implemented yet');
+        const config = parseConfig();
+        openUrl(config.LINK_FIGMA + '?try-plugin-id=821138713091291738&try-plugin-version-id=139053&try-plugin-name=Figma+-%3E+React+Native&is-widget=0&is-playground-file=0&try-plugin-file-key=tmRcxoy1M3XdGWYKoJQDOt&mode=design&type=design');
         break;
       case 'g':
-        console.log('>> Opening in Git not implemented yet');
+        const gitConfig = parseConfig();
+        openUrl(gitConfig.LINK_GITHUB);
         break;
       case 'i':
         if (process.platform === 'darwin') {
