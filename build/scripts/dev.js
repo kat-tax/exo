@@ -32,7 +32,7 @@ const hotkeys = {
     {key: 'q', label: 'Quit'},
   ],
   'Manage project': [
-    //{key: 'd', label: 'Dashboard'},
+    //{key: 'u', label: 'Dashboard'},
     {key: 'e', label: 'Editor'},
     {key: 'f', label: 'Figma'},
     {key: 'g', label: 'Git'},
@@ -184,18 +184,37 @@ function done() {
       case 's':
         exec(`pnpm ult-run web --port ${_servers.Storybook.port}`);
         break;
+      case 'r':
+        console.log('>> Reloading React Native clients connected to Metro not implemented yet');
+        break;
+      case 'j':
+        console.log('>> Opening React Native Devtools not implemented yet');
+        break;
+      case 'e':
+        console.log('>> Opening in Code Editor not implemented yet');
+        break;
+      case 'f':
+        console.log('>> Opening in Figma not implemented yet');
+        break;
+      case 'g':
+        console.log('>> Opening in Git not implemented yet');
+        break;
       case 'i':
-        exec('pnpm ult-run ios');
+        if (process.platform === 'darwin') {
+          exec('pnpm ult-run ios');
+        }
         break;
       case 'a':
         exec('pnpm ult-run android');
         break;
-      case 'm':
-        exec('pnpm ult-run macos');
-        break;
-      case 'w':
-        exec('pnpm ult-run windows');
-        break;
+      // case 'm':
+      //   if (process.platform === 'darwin') {
+      //     exec('pnpm ult-run macos');
+      //   }
+      //   break;
+      // case 'w':
+      //   exec('pnpm ult-run windows');
+      //   break;
       case 'h':
         help(true);
         break;
