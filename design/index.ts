@@ -10,3 +10,8 @@ export {InputText} from './components/base/inputs/input-text';
 export {Badge} from './components/base/pressables/badge';
 export {Button} from './components/base/pressables/button';
 export {Message} from './components/features/chat/message';
+export {PromptLogout} from './components/navigation/modals/prompt-logout';
+export {ScreenSignup} from './components/navigation/screens/screen-signup';
+export {ScreenLogin} from './components/navigation/screens/screen-login';
+export {ScreenHome} from './components/navigation/screens/screen-home';
+export {LayoutApp} from './components/navigation/layouts/layout-app';

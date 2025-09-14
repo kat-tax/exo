@@ -49,6 +49,11 @@ export function InputEmail(props: InputEmailProps) {
         {Icon.New(props.icon, vstyles.icon())}
         <TextInput testID="4107:147"
           style={vstyles.textinput()}
+          autoCorrect={false}
+          autoCapitalize="none"
+          autoComplete="email"
+          keyboardType="email-address"
+          textContentType="emailAddress"
           placeholder={props.placeholder}
           uniProps={theme => ({
             placeholderTextColor: theme.colors.mutedForeground,
