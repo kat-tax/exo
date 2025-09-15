@@ -11,7 +11,7 @@
     "start:web": "vite dev --port 8181 --host",
     "start:native": "react-native start --reset-cache",
     "generate:pods": "pod install --project-directory=ios",
-    "generate:icons": "react-native-svg-app-icon generate --background-path ../logo-bg.svg --foreground-path ../logo-padded.svg"
+    "generate:icons": "react-native-svg-app-icon generate --background-path ../build/config/gen/logo-bg.svg --foreground-path ../build/config/gen/logo-padded.svg"
   },
   "dependencies": {
     "@evolu/common": "6.0.1-preview.17",
