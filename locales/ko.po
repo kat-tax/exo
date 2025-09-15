@@ -26,9 +26,9 @@ msgstr ""
 msgid "Add section names for items."
 msgstr ""
 
-#: ../../client/src/tasks/screen-list-edit.tsx:122
-#: ../../client/src/settings/screen-settings.tsx:40
 #: ../../client/src/home/screen-shortcut.tsx:73
+#: ../../client/src/settings/screen-settings.tsx:40
+#: ../../client/src/tasks/screen-list-edit.tsx:122
 msgid "Appearance"
 msgstr "외관"
 
@@ -40,7 +40,7 @@ msgstr "소유자 키를 변경하시겠습니까? 로컬 데이터베이스가 
 msgid "Are you sure you want to reset your local database? If data is not backed up on another device, it will be lost. This action cannot be undone."
 msgstr "로컬 데이터베이스를 초기화하시겠습니까? 다른 기기에 백업되지 않은 데이터는 손실됩니다. 이 작업은 되돌릴 수 없습니다."
 
-#: ../../design/components/base/popovers/prompt/Prompt.tsx:43
+#: ../../design/components/base/popovers/prompt/Prompt.tsx:49
 msgid "Cancel"
 msgstr "취소"
 
@@ -60,8 +60,8 @@ msgstr ""
 msgid "Clear Data"
 msgstr ""
 
-#: ../../client/src/tasks/screen-list-edit.tsx:136
 #: ../../client/src/home/screen-shortcut.tsx:87
+#: ../../client/src/tasks/screen-list-edit.tsx:136
 msgid "Color"
 msgstr "색상"
 
@@ -77,8 +77,8 @@ msgstr ""
 msgid "Configure the app"
 msgstr ""
 
-#: ../../client/src/tasks/screen-list-edit.tsx:148
 #: ../../client/src/home/screen-shortcut.tsx:99
+#: ../../client/src/tasks/screen-list-edit.tsx:148
 msgid "Danger Zone"
 msgstr ""
 
@@ -105,8 +105,8 @@ msgstr ""
 msgid "Delete Shortcut"
 msgstr ""
 
-#: ../../client/src/dev/screen-design.tsx:13
 #: ../../client/src/app/ui/menu/index.tsx:65
+#: ../../client/src/dev/screen-design.tsx:13
 msgid "Design"
 msgstr "디자인"
 
@@ -187,8 +187,8 @@ msgstr ""
 msgid "Failed to update shortcut."
 msgstr ""
 
-#: ../../client/src/tasks/screen-list-edit.tsx:58
 #: ../../client/src/home/screen-shortcut.tsx:45
+#: ../../client/src/tasks/screen-list-edit.tsx:58
 msgid "General"
 msgstr "일반"
 
@@ -212,8 +212,8 @@ msgstr "안녕히 주무세요, {name}님."
 msgid "Human"
 msgstr "인간"
 
-#: ../../client/src/tasks/screen-list-edit.tsx:124
 #: ../../client/src/home/screen-shortcut.tsx:75
+#: ../../client/src/tasks/screen-list-edit.tsx:124
 msgid "Icon"
 msgstr "아이콘"
 
@@ -222,13 +222,13 @@ msgstr "아이콘"
 msgid "Invalid category name."
 msgstr ""
 
-#: ../../client/src/tasks/hooks/use-lists.ts:76
 #: ../../client/src/home/hooks/use-shortcuts.ts:74
+#: ../../client/src/tasks/hooks/use-lists.ts:76
 msgid "Invalid color field."
 msgstr "잘못된 색상 필드입니다."
 
-#: ../../client/src/tasks/hooks/use-lists.ts:68
 #: ../../client/src/home/hooks/use-shortcuts.ts:66
+#: ../../client/src/tasks/hooks/use-lists.ts:68
 msgid "Invalid icon field."
 msgstr "잘못된 아이콘 필드입니다."
 
@@ -240,8 +240,8 @@ msgstr ""
 msgid "Invalid name (max 25 characters)."
 msgstr "잘못된 이름 (최대 25자)."
 
-#: ../../client/src/tasks/hooks/use-lists.ts:60
 #: ../../client/src/home/hooks/use-shortcuts.ts:58
+#: ../../client/src/tasks/hooks/use-lists.ts:60
 msgid "Invalid name field."
 msgstr "잘못된 이름 필드입니다."
 
@@ -278,9 +278,9 @@ msgstr ""
 msgid "List name"
 msgstr ""
 
-#: ../../client/src/tasks/screen-list-all.tsx:21
 #: ../../client/src/app/ui/menu/index.tsx:35
 #: ../../client/src/app/ui/menu/index.tsx:58
+#: ../../client/src/tasks/screen-list-all.tsx:21
 msgid "Lists"
 msgstr ""
 
@@ -292,8 +292,8 @@ msgstr ""
 msgid "Missing shortcut id."
 msgstr ""
 
-#: ../../client/src/tasks/screen-list-edit.tsx:60
 #: ../../client/src/home/screen-shortcut.tsx:62
+#: ../../client/src/tasks/screen-list-edit.tsx:60
 msgid "Name"
 msgstr "이름"
 
@@ -341,9 +341,9 @@ msgstr ""
 msgid "Set mnemonic to sync devices."
 msgstr ""
 
-#: ../../client/src/settings/screen-settings.tsx:23
 #: ../../client/src/app/ui/menu/index.tsx:40
-#: ../../client/src/app/ui/menu/index.tsx:76
+#: ../../client/src/app/ui/menu/index.tsx:75
+#: ../../client/src/settings/screen-settings.tsx:23
 msgid "Settings"
 msgstr "설정"
 
@@ -388,9 +388,9 @@ msgstr "연결할 웹페이지입니다."
 msgid "Theme"
 msgstr "테마"
 
-#: ../../client/src/tasks/screen-list-edit.tsx:43
-#: ../../client/src/tasks/screen-list-details.tsx:31
 #: ../../client/src/home/screen-shortcut.tsx:30
+#: ../../client/src/tasks/screen-list-details.tsx:31
+#: ../../client/src/tasks/screen-list-edit.tsx:43
 msgid "Untitled"
 msgstr "제목 없음"
 

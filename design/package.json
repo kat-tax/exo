@@ -13,21 +13,21 @@
     "brand"
   ],
   "dependencies": {
-    "@lingui/core": "^5.4.0",
-    "@lingui/macro": "^5.4.0",
-    "@lingui/react": "^5.4.0"
+    "@lingui/core": "^5.5.0",
+    "@lingui/macro": "^5.5.0",
+    "@lingui/react": "^5.5.0"
   },
   "devDependencies": {
-    "@types/react": "^19.1.9",
-    "@types/react-dom": "^19.1.7",
+    "@types/react": "^19.1.13",
+    "@types/react-dom": "^19.1.9",
     "config": "workspace:*",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-exo": "0.20.7",
     "react-native": "0.80.2",
-    "react-native-svg": "^15.12.1",
-    "react-native-unistyles": "^3.0.7",
-    "react-native-web": "^0.21.0",
+    "react-native-svg": "^15.13.0",
+    "react-native-unistyles": "^3.0.12",
+    "react-native-web": "^0.21.1",
     "typescript": "^5.9.2"
   },
   "peerDependencies": {
