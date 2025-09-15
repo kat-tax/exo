@@ -1,8 +1,8 @@
 import {useVariants} from 'react-exo/utils';
 import {StyleSheet} from 'react-native-unistyles';
 import {View, Text} from 'react-native';
-import {TextInput} from 'textinput.tsx';
-import {Icon} from 'icons.tsx';
+import {TextInput} from '../../../../textinput.tsx';
+import {Icon} from 'react-exo/icon';
 
 import type {ViewStyle, StyleProp} from 'react-native';
 
@@ -40,7 +40,7 @@ export function InputText(props: InputTextProps) {
 
   return (
     <View testID={props.testID ?? "8597:503"} style={[vstyles.root(), props.style]}>
-      {props.showLabel && 
+      {props.showLabel &&
         <Text testID="8597:505" style={vstyles.label()}>
           {props.label}
         </Text>
@@ -55,7 +55,7 @@ export function InputText(props: InputTextProps) {
           })}
         />
       </View>
-      {props.showCaption && 
+      {props.showCaption &&
         <Text testID="8597:509" style={vstyles.caption()}>
           {props.caption}
         </Text>

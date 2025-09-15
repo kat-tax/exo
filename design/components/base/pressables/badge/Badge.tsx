@@ -1,7 +1,7 @@
 import {useVariants} from 'react-exo/utils';
 import {StyleSheet} from 'react-native-unistyles';
 import {View, Text, Pressable} from 'react-native';
-import {Icon} from 'icons.tsx';
+import {Icon} from 'react-exo/icon';
 
 import type {ViewStyle, StyleProp, PressableProps} from 'react-native';
 
@@ -42,17 +42,17 @@ export function Badge(props: BadgeProps) {
   return (
     <Pressable testID={props.testID ?? "5232:201"} style={vstyles.root} {...props}>
       {e => <>
-        {props.showIcon && 
+        {props.showIcon &&
           Icon.New(props.icon, vstyles.icon(e))
         }
-        {props.showLabel && 
+        {props.showLabel &&
           <Text testID="5232:189" style={vstyles.label(e)}>
             {props.label}
           </Text>
         }
-        {props.showIndicator && 
+        {props.showIndicator &&
           <View testID="5235:308" style={vstyles.indicator(e)}>
-            {props.showIndicator && 
+            {props.showIndicator &&
               props.indicator
             }
           </View>

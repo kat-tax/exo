@@ -1,8 +1,8 @@
 import {useVariants} from 'react-exo/utils';
 import {StyleSheet} from 'react-native-unistyles';
 import {View, Text} from 'react-native';
-import {TextInput} from 'textinput.tsx';
-import {Icon} from 'icons.tsx';
+import {TextInput} from '../../../../textinput.tsx';
+import {Icon} from 'react-exo/icon';
 
 import type {ViewStyle, StyleProp} from 'react-native';
 
@@ -40,7 +40,7 @@ export function InputPassword(props: InputPasswordProps) {
 
   return (
     <View testID={props.testID ?? "4029:244"} style={[vstyles.root(), props.style]}>
-      {props.showLabel && 
+      {props.showLabel &&
         <Text testID="4029:246" style={vstyles.label()}>
           {props.label}
         </Text>
@@ -56,7 +56,7 @@ export function InputPassword(props: InputPasswordProps) {
           })}
         />
       </View>
-      {props.showCaption && 
+      {props.showCaption &&
         <Text testID="4029:250" style={vstyles.caption()}>
           {props.caption}
         </Text>

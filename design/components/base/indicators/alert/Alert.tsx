@@ -1,7 +1,7 @@
 import {useVariants} from 'react-exo/utils';
 import {StyleSheet} from 'react-native-unistyles';
 import {View, Text} from 'react-native';
-import {Icon} from 'icons.tsx';
+import {Icon} from 'react-exo/icon';
 
 import type {ViewStyle, StyleProp} from 'react-native';
 
@@ -35,7 +35,7 @@ export function Alert(props: AlertProps) {
 
   return (
     <View testID={props.testID ?? "5290:611"} style={[vstyles.root(), props.style]}>
-      {props.hasIcon && 
+      {props.hasIcon &&
         <View testID="5290:613" style={vstyles.status()}>
           {Icon.New(props.icon, vstyles.icon())}
         </View>

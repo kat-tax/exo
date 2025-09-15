@@ -1,7 +1,7 @@
 import {useLingui} from '@lingui/react/macro';
 import {StyleSheet} from 'react-native-unistyles';
 import {View, Text} from 'react-native';
-import {Icon} from 'icons.tsx';
+import {Icon} from 'react-exo/icon';
 
 import {Button} from 'components/base/pressables/button';
 
@@ -42,9 +42,9 @@ export function Prompt(props: PromptProps) {
         {props.message}
       </Text>
       <View testID="1034:543" style={styles.buttons}>
-        {props.showClose && 
+        {props.showClose &&
           <View testID="5759:459" style={styles.cancel}>
-            {props.showClose && 
+            {props.showClose &&
               <Button testID="1034:544"
                 label={t`Cancel`}
                 mode="Text"

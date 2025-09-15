@@ -1,7 +1,7 @@
 import {useVariants} from 'react-exo/utils';
 import {StyleSheet} from 'react-native-unistyles';
 import {Text, Pressable} from 'react-native';
-import {Icon} from 'icons.tsx';
+import {Icon} from 'react-exo/icon';
 
 import type {ViewStyle, StyleProp, PressableProps} from 'react-native';
 
@@ -36,7 +36,7 @@ export function Button(props: ButtonProps) {
   return (
     <Pressable testID={props.testID ?? "2028:395"} style={vstyles.root} {...props}>
       {e => <>
-        {props.showIcon && 
+        {props.showIcon &&
           Icon.New(props.icon, vstyles.icon(e))
         }
         <Text testID="2028:398" style={vstyles.label(e)}>
