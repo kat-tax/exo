@@ -43,7 +43,7 @@
     "@rnx-kit/metro-resolver-symlinks": "^0.2.6",
     "@types/babel__core": "^7.20.5",
     "@vite-pwa/assets-generator": "^1.0.1",
-    "@vitejs/plugin-react": "^4.7.0",
+    "@vitejs/plugin-react": "4.7.0",
     "babel-plugin-macros": "^3.1.0",
     "babel-plugin-react-compiler": "19.1.0-rc.2",
     "babel-plugin-tsconfig-paths-module-resolver": "^1.0.4",
