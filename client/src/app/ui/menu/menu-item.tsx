@@ -1,6 +1,6 @@
+import {Icon} from 'react-exo/icon';
 import {View, Text} from 'react-native';
 import {StyleSheet} from 'react-native-unistyles';
-import {createIcon} from 'react-exo/utils';
 import {useFocusable} from '@noriginmedia/norigin-spatial-navigation';
 import {useLocation, useNavigate, Link} from 'react-exo/navigation';
 
@@ -30,7 +30,7 @@ export function MenuItem(props: MenuItemProps) {
         active && styles.active,
         focused && styles.focus,
       ]}>
-        {props.icon && createIcon(props.icon, {
+        {props.icon && Icon.New(props.icon, {
           size: action && !__TOUCH__ ? 14 : 18,
           uniProps: (theme: any) => ({
             color: action && active

@@ -56,16 +56,3 @@
 - Follow me [@TheUltDev](https://the.ult.dev)
 
 <br/>
-
-### Donate
-
-> Note: Developing this takes a lot of time and makes no money. *Please consider donating.*
-
-- Sponsor [@TheUltDev](https://github.com/sponsors/TheUltDev) on Github
-- Send a crypto donation:
-
-```
-BTC 3MxrqVM7S8FGb7UwKMLxQ9gG1B2n24Y1NP
-ETH 0x6F373884D766803Eb8BC5969804Be4FAf77BC335
-XMR 86tDLzweVEmUunPeucZpRmW4MZ4RoTQUfjZ4KZATdYZBUkH3biwiLF3X1LhMkzvThZMQxGfGZFFwxRRWA7M5sVfv7AMPjsD
-```

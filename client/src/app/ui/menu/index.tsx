@@ -69,18 +69,16 @@ export function Menu() {
                   </MenuGroup>
                 }
               </View>
-              {__WEB__ && (
-                <MenuFooter actions={
-                  <View style={styles.actions}>
-                    <MenuItem
-                      label={t`Settings`}
-                      icon={<Icon name="ph:gear"/>}
-                      path="/settings"
-                      mode="action"
-                    />
-                  </View>
-                }/>
-              )}
+              <MenuFooter actions={
+                <View style={styles.actions}>
+                  <MenuItem
+                    label={t`Settings`}
+                    icon={<Icon name="ph:gear"/>}
+                    path="/settings"
+                    mode="action"
+                  />
+                </View>
+              }/>
             </ScrollView>
           </FocusContext.Provider>
         </View>

@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react';
 import {View, Text} from 'react-native';
 import {StyleSheet} from 'react-native-unistyles';
-import {getDiskSpace} from 'app/lib/disk';
+import {getDiskSpace} from 'react-exo/fs';
 import {bytesize} from 'app/lib/format';
 import {Progress} from 'app/ui/base';
 

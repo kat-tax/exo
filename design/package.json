@@ -23,7 +23,7 @@
     "config": "workspace:*",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "react-exo": "0.18.37",
+    "react-exo": "0.20.7",
     "react-native": "0.80.2",
     "react-native-svg": "^15.12.1",
     "react-native-unistyles": "^3.0.7",
@@ -33,7 +33,7 @@
   "peerDependencies": {
     "react": ">=19",
     "react-dom": ">=19",
-    "react-exo": ">=0.18",
+    "react-exo": ">=0.20",
     "react-native": ">=0.80",
     "react-native-svg": ">=15",
     "react-native-unistyles": ">=3",

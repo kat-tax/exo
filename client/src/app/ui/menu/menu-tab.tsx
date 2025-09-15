@@ -1,7 +1,7 @@
 import {View, Text} from 'react-native';
 import {StyleSheet} from 'react-native-unistyles';
-import {createIcon} from 'react-exo/utils';
 import {useLocation, Link} from 'react-exo/navigation';
+import {Icon} from 'react-exo/icon';
 
 interface MenuTabProps extends React.PropsWithChildren {
   label: string,
@@ -16,7 +16,7 @@ export function MenuTab(props: MenuTabProps) {
   return (
     <Link to={props.path}>
       <View style={styles.item}>
-        {props.icon && createIcon(props.icon, {
+        {props.icon && Icon.New(props.icon, {
           size: 20,
           uniProps: (theme: any) => ({
             color: isActive

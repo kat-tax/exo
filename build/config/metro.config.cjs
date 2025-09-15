@@ -5,7 +5,6 @@ module.exports = makeMetroConfig({
   // Needed for PNPM symlinks
   resolver: {
     resolveRequest: MetroSymlinksResolver(),
-    unstable_enablePackageExports: true,
   },
   // Needed for Lingui imports
   transformer: {
