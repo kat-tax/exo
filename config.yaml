@@ -1,7 +1,7 @@
 # General
 APP_NAME: EXO
-FONT_NAME: Inter
-BACKGROUND: "#18181b"
+APP_FONT: Inter
+APP_SPLASH: "#18181b"
 DESIGN_NAME: react-exo-ui
 DESIGN_VERSION: 1.1.18
 STORE_VERSION: 1
@@ -9,11 +9,10 @@ STORE_VERSION: 1
 # Services
 EVOLU_RELAY: wss://free.evoluhq.com
 
-# Apps
-IOS: com.exo.ios
-MACOS: com.exo.macos
-ANDROID: com.exo.android
-WINDOWS: com.exo.windows
+# Native
+PACKAGE_IOS: com.exo.ios
+PACKAGE_ANDROID: com.exo.android
+PACKAGE_DESKTOP: com.exo.desktop
 
 # Web
 LINK_DOCS: https://exo.ult.dev

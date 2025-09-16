@@ -24,7 +24,7 @@ import config from 'react-native-ultimate-config/index.web.js';
 
 // Generate logo-bg.svg
 const logoBgTemplate = `<svg xmlns="http://www.w3.org/2000/svg" width="108" height="108" viewBox="0 0 108 108">
-  <path d="M0 0h108v108H0V0z" fill="${config.BACKGROUND}"/>
+  <path d="M0 0h108v108H0V0z" fill="${config.APP_SPLASH}"/>
 </svg>`;
 
 writeFileSync('./gen/logo-bg.svg', logoBgTemplate, 'utf-8');
