@@ -1,7 +1,12 @@
 packages:
-  - 'build/**'
-  - 'client/**'
-  - 'native/**'
-  - 'design/**'
-  - 'locales/**'
+  - build/**
+  - client/**
+  - native/**
+  - design/**
+  - locales/**
   - '!**/test/**'
+
+onlyBuiltDependencies:
+  - react-native-nitro-modules
+
+minimumReleaseAge: 1440
