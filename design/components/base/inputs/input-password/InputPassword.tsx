@@ -1,7 +1,7 @@
 import {useVariants} from 'react-exo/utils';
 import {StyleSheet} from 'react-native-unistyles';
 import {View, Text} from 'react-native';
-import {TextInput} from '../../../../textinput.tsx';
+import {TextInput} from 'react-exo/textinput';
 import {Icon} from 'react-exo/icon';
 
 import type {ViewStyle, StyleProp} from 'react-native';
@@ -28,7 +28,7 @@ export interface InputPasswordProps {
 }
 
 export const InputPasswordVariants = {
-  state: ['Empty', 'Hover', 'Focused', 'FocusedFilled', 'Disabled'],
+  state: ['Empty', 'Hover', 'Failed', 'Default', 'Disabled'],
 } as const;
 
 /**
@@ -40,24 +40,20 @@ export function InputPassword(props: InputPasswordProps) {
 
   return (
     <View testID={props.testID ?? "4029:244"} style={[vstyles.root(), props.style]}>
-      {props.showLabel &&
-        <Text testID="4029:246" style={vstyles.label()}>
+      {props.showLabel && 
+        <Text testID="4029:266" style={vstyles.label()}>
           {props.label}
         </Text>
       }
-      <View testID="4029:247" style={vstyles.input()}>
+      <View testID="4029:267" style={vstyles.input()}>
         {Icon.New(props.icon, vstyles.icon())}
-        <TextInput testID="4029:249"
+        <TextInput testID="4029:270"
           style={vstyles.textinput()}
-          secureTextEntry
           placeholder={props.placeholder}
-          uniProps={theme => ({
-            placeholderTextColor: theme.colors.mutedForeground,
-          })}
         />
       </View>
-      {props.showCaption &&
-        <Text testID="4029:250" style={vstyles.caption()}>
+      {props.showCaption && 
+        <Text testID="4029:272" style={vstyles.caption()}>
           {props.caption}
         </Text>
       }
@@ -90,10 +86,7 @@ const styles = StyleSheet.create(theme => ({
     opacity: 0.5,
   },
   textinput: {
-    flexGrow: 1,
-    flexShrink: 0,
-    flexBasis: 0,
-    color: theme.colors.mutedForeground,
+    color: theme.colors.foreground,
     fontFamily: theme.font.family,
     fontSize: theme.font.inputSize,
     fontStyle: 'normal',
@@ -101,11 +94,28 @@ const styles = StyleSheet.create(theme => ({
     lineHeight: theme.font.inputHeight,
     letterSpacing: theme.font.inputSpacing,
   },
-  textinputStateFocusedFilled: {
-    flexGrow: undefined,
-    flexShrink: undefined,
-    flexBasis: undefined,
-    color: theme.colors.foreground,
+  textinputStateEmpty: {
+    flexGrow: 1,
+    flexShrink: 0,
+    flexBasis: 0,
+    color: theme.colors.mutedForeground,
+  },
+  textinputStateHover: {
+    flexGrow: 1,
+    flexShrink: 0,
+    flexBasis: 0,
+    color: theme.colors.mutedForeground,
+  },
+  textinputStateFailed: {
+    flexGrow: 1,
+    flexShrink: 0,
+    flexBasis: 0,
+  },
+  textinputStateDisabled: {
+    flexGrow: 1,
+    flexShrink: 0,
+    flexBasis: 0,
+    color: theme.colors.mutedForeground,
   },
   input: {
     flexDirection: 'row',
@@ -121,25 +131,22 @@ const styles = StyleSheet.create(theme => ({
     borderRadius: theme.display.radius3,
     borderWidth: 1,
     borderStyle: 'solid',
-    borderColor: theme.colors.border,
-    backgroundColor: theme.colors.input,
+    borderColor: theme.colors.outline,
     shadowColor: 'rgba(0, 0, 0, 0.12156862765550613)',
     shadowRadius: 2,
     shadowOffset: {"width":0,"height":1},
   },
+  inputStateEmpty: {
+    borderColor: theme.colors.border,
+  },
   inputStateHover: {
     borderColor: theme.colors.ring,
   },
-  inputStateFocused: {
-    borderColor: theme.colors.outline,
-  },
-  inputStateFocusedFilled: {
-    borderColor: theme.colors.outline,
+  inputStateFailed: {
+    borderColor: theme.colors.destructive,
   },
   inputStateDisabled: {
-    borderWidth: undefined,
-    borderStyle: undefined,
-    borderColor: undefined,
+    borderColor: theme.colors.border,
     opacity: 0.5,
   },
   caption: {
@@ -153,9 +160,16 @@ const styles = StyleSheet.create(theme => ({
     letterSpacing: theme.font.contentSpacing,
     opacity: 0.5,
   },
+  captionStateFailed: {
+    opacity: undefined,
+    color: theme.colors.destructive,
+  },
   icon: {
     name: 'ph:lock',
     color: theme.colors.secondaryForeground,
     size: 20,
+  },
+  iconStateFailed: {
+    color: theme.colors.destructive,
   },
 }));

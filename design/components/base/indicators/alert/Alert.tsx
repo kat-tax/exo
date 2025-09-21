@@ -35,7 +35,7 @@ export function Alert(props: AlertProps) {
 
   return (
     <View testID={props.testID ?? "5290:611"} style={[vstyles.root(), props.style]}>
-      {props.hasIcon &&
+      {props.hasIcon && 
         <View testID="5290:613" style={vstyles.status()}>
           {Icon.New(props.icon, vstyles.icon())}
         </View>
