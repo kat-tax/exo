@@ -11,7 +11,7 @@ export default function ScreenDesign() {
   return (
     <Panel
       title={t`Design`}
-      message={t`${11} components`}>
+      message={t`${12} components`}>
       <Frame title="Button">
         <Design.Button
           mode="Primary"
@@ -135,6 +135,22 @@ export default function ScreenDesign() {
           />
         </View>
       </Frame>
+      <Frame title="Alert">
+        <Design.Alert
+          mode="Default"
+          header="Lorem Ipsum"
+          body="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+          hasIcon={true}
+          icon={<Icon name="ph:info"/>}
+        />
+        <Design.Alert
+          mode="Destructive"
+          header="Lorem Ipsum"
+          body="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+          hasIcon={true}
+          icon={<Icon name="ph:warning"/>}
+        />
+      </Frame>
       <Frame title="Status">
         <Design.Status
           mode="Default"
@@ -162,21 +178,11 @@ export default function ScreenDesign() {
           hasValue={true}
         />
       </Frame>
-      <Frame title="Alert">
-        <Design.Alert
-          mode="Default"
-          header="Lorem Ipsum"
-          body="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
-          hasIcon={true}
-          icon={<Icon name="ph:info"/>}
-        />
-        <Design.Alert
-          mode="Destructive"
-          header="Lorem Ipsum"
-          body="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
-          hasIcon={true}
-          icon={<Icon name="ph:warning"/>}
-        />
+      <Frame title="Login">
+        <Design.Login/>
+      </Frame>
+      <Frame title="Signup">
+        <Design.Signup/>
       </Frame>
     </Panel>
   );
