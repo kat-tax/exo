@@ -3,7 +3,7 @@ APP_NAME: EXO
 APP_FONT: Inter
 APP_SPLASH: "#18181b"
 DESIGN_NAME: react-exo-ui
-DESIGN_VERSION: 1.1.18
+DESIGN_VERSION: 1.1.23
 STORE_VERSION: 1
 
 # Services
@@ -18,7 +18,7 @@ PACKAGE_DESKTOP: com.exo.desktop
 LINK_DOCS: https://exo.ult.dev
 LINK_FIGMA: https://www.figma.com/file/DFmPlavFWyMaYJtoGLhGz3
 LINK_STORYBOOK: https://exo.fig.run
-LINK_DISCORD: https://discord.gg/KpMZVKmfnb
+LINK_DISCORD: https://discord.kat.tax
 LINK_GITHUB: https://github.com/kat-tax/exo
 LINK_X: https://x.com/theultdev
 

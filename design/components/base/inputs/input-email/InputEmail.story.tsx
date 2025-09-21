@@ -9,12 +9,12 @@ const meta: Meta<typeof Component> = {
   component: Component,
 };
 
-export const Empty: Story = {
+export const Default: Story = {
   args: {
     caption: 'Caption',
     label: 'Label',
     placeholder: 'Email Address',
-    state: 'Empty',
+    state: 'Default',
     showCaption: true,
     showLabel: true,
     icon: (
@@ -23,30 +23,30 @@ export const Empty: Story = {
   },
 };
 
+export const Empty: Story = {
+  args: {
+    ...Default.args,
+    state: 'Empty',
+  }
+};
+
 export const Hover: Story = {
   args: {
-    ...Empty.args,
+    ...Default.args,
     state: 'Hover',
   }
 };
 
-export const Focused: Story = {
+export const Failed: Story = {
   args: {
-    ...Empty.args,
-    state: 'Focused',
-  }
-};
-
-export const FocusedFilled: Story = {
-  args: {
-    ...Empty.args,
-    state: 'FocusedFilled',
+    ...Default.args,
+    state: 'Failed',
   }
 };
 
 export const Disabled: Story = {
   args: {
-    ...Empty.args,
+    ...Default.args,
     state: 'Disabled',
   }
 };

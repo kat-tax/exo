@@ -1,6 +1,6 @@
 :::imports
 
-import {InputText} from 'react-exo-ui';
+import {MenuItem} from 'react-exo-ui';
 import {Icon} from 'react-exo/icon';
 
 :::
@@ -9,13 +9,10 @@ import {Icon} from 'react-exo/icon';
 
 :::demo
 
-<InputText
-  caption="Caption"
-  label="Label"
-  placeholder="Lorem ipsum..."
-  state="Default"
-  showCaption
-  showLabel
+<MenuItem
+  body="Lorem ipsum dolor sit amet"
+  mode="Default"
+  hasIcon
   icon={
     <Icon name="ph:placeholder"/>
   }

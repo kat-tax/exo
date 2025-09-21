@@ -36,7 +36,7 @@ export function Button(props: ButtonProps) {
   return (
     <Pressable testID={props.testID ?? "2028:395"} style={vstyles.root} {...props}>
       {e => <>
-        {props.showIcon &&
+        {props.showIcon && 
           Icon.New(props.icon, vstyles.icon(e))
         }
         <Text testID="2028:398" style={vstyles.label(e)}>

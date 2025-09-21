@@ -89,7 +89,7 @@ export const font = {
   height: typography.lineHeight1,
   contentSize: typography.size2,
   inputSize: typography.size2,
-  inputWeight: typography.weightMedium,
+  inputWeight: typography.weightRegular,
   inputSpacing: typography.letterSpacing2,
   inputHeight: typography.lineHeight2,
   contentWeight: typography.weightRegular,
