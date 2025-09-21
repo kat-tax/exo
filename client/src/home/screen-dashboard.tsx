@@ -53,30 +53,30 @@ export default function ScreenDashboard() {
             </View>
           </GridCell>
         ))}
-        <Sheet trigger={
-          <GridCell
-            focusKey="shortcut-add"
-            onPress={() => {
-              //const id = data?.find(shortcut => !shortcut.url)?.id ?? shortcuts.create();
-              //if (id) nav(`/shortcut/${id}`);
-              setOpen(true);
-            }}>
-            <View style={[styles.shortcut, styles.shortcutAdd]}>
-              <Icon
-                name="ph:plus"
-                size={32}
-                uniProps={(theme) => ({
-                  color: theme.colors.mutedForeground,
-                })}
-              />
-            </View>
-            <Sheet open={open} onOpenChange={setOpen}>
-              <Signup/>
-            </Sheet>
-          </GridCell>
-        }>
-          <Logout/>
-        </Sheet>
+        <GridCell
+          focusKey="shortcut-add"
+          onPress={() => {
+            //const id = data?.find(shortcut => !shortcut.url)?.id ?? shortcuts.create();
+            //if (id) nav(`/shortcut/${id}`);
+            setOpen(true);
+          }}>
+          <View style={[styles.shortcut, styles.shortcutAdd]}>
+            <Icon
+              name="ph:plus"
+              size={32}
+              uniProps={(theme) => ({
+                color: theme.colors.mutedForeground,
+              })}
+            />
+          </View>
+          <Sheet
+            open={open}
+            dimmed={true}
+            dismissible={true}
+            onOpenChange={setOpen}>
+            <Signup/>
+          </Sheet>
+        </GridCell>
       </Grid>
     </Panel>
   );

@@ -1,6 +1,7 @@
 import {Drawer} from 'vaul';
 import {forwardRef, useImperativeHandle, useState} from 'react';
 import {SheetProps, SheetHandle} from './Sheet.base';
+import './Sheet.css';
 
 export const Sheet = forwardRef<SheetHandle, SheetProps>((props, ref) => {
   const [internalOpen, setInternalOpen] = useState(false);
@@ -28,17 +29,33 @@ export const Sheet = forwardRef<SheetHandle, SheetProps>((props, ref) => {
   return (
     <Drawer.Root
       open={open}
-      onOpenChange={onOpenChange}>
+      onOpenChange={onOpenChange}
+      snapPoints={props.sizes ?? []}
+      dismissible={props.dismissible}
+      fadeFromIndex={props.dimmedIndex ?? 0}
+      modal={props.dimmed ?? true}
+    >
       {props.trigger && (
-        <Drawer.Trigger>
+        <Drawer.Trigger asChild>
           {props.trigger}
         </Drawer.Trigger>
       )}
       <Drawer.Portal>
-        <Drawer.Overlay/>
-        <Drawer.Content>
-          <>{props.children}</>
-          <>{props.FooterComponent}</>
+        <Drawer.Overlay className="sheet-overlay"/>
+        <Drawer.Content className="sheet-content">
+          <div className="sheet-main">
+            <div className="sheet-handle" aria-hidden/>
+            <div className="sheet-content-wrapper">
+              {props.children}
+            </div>
+          </div>
+          {props.FooterComponent && (
+            <div className="sheet-footer">
+              <div className="sheet-footer-content">
+                <>{props.FooterComponent}</>
+              </div>
+            </div>
+          )}
         </Drawer.Content>
       </Drawer.Portal>
     </Drawer.Root>
