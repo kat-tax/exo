@@ -8,7 +8,7 @@ import type {ViewProps} from 'react-native';
 
 interface GridCellProps extends ViewProps {
   focusKey: string;
-  onSelect?: () => void;
+  onPress?: () => void;
   onEditSelect?: () => void;
 }
 
@@ -16,13 +16,13 @@ export function GridCell(props: GridCellProps) {
   const _hovered = useRef(false);
   const {ref, focused} = useFocusable({
     focusKey: `grid-cell-${props.focusKey}`,
-    onEnterPress: () => props.onSelect?.(),
+    onEnterPress: () => props.onPress?.(),
   });
 
   return (
     <Pressable
       style={styles.root}
-      onPress={() => props.onSelect?.()}
+      onPress={() => props.onPress?.()}
       onLongPress={() => props.onEditSelect?.()}>
       {root => (
         <View ref={ref} style={[styles.inner, focused && styles.focused]}>

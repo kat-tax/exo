@@ -14,7 +14,12 @@ import {getShortcuts} from 'app/data/queries';
 import {useShortcuts} from 'home/hooks/use-shortcuts';
 import cfg from 'config';
 
+import {Sheet} from 'app/ui/sheet';
+import {useState} from 'react';
+import {Logout, Signup} from 'design';
+
 export default function ScreenDashboard() {
+  const [open, setOpen] = useState(false);
   const shortcuts = useShortcuts();
   const settings = useSettings();
   const clock = useClock();
@@ -35,7 +40,7 @@ export default function ScreenDashboard() {
           <GridCell
             key={id}
             focusKey={`shortcut-${id}`}
-            onSelect={() => url && Linking.openURL(url)}
+            onPress={() => url && Linking.openURL(url)}
             onEditSelect={() => nav(`/shortcut/${id}`)}>
             <View style={[styles.shortcut, !url && styles.shortcutAdd]}>
               <Icon.Remote
@@ -48,22 +53,30 @@ export default function ScreenDashboard() {
             </View>
           </GridCell>
         ))}
-        <GridCell
-          focusKey="shortcut-add"
-          onSelect={() => {
-            const id = data?.find(shortcut => !shortcut.url)?.id ?? shortcuts.create();
-            if (id) nav(`/shortcut/${id}`);
-          }}>
-          <View style={[styles.shortcut, styles.shortcutAdd]}>
-            <Icon
-              name="ph:plus"
-              size={32}
-              uniProps={(theme) => ({
-                color: theme.colors.mutedForeground,
-              })}
-            />
-          </View>
-        </GridCell>
+        <Sheet trigger={
+          <GridCell
+            focusKey="shortcut-add"
+            onPress={() => {
+              //const id = data?.find(shortcut => !shortcut.url)?.id ?? shortcuts.create();
+              //if (id) nav(`/shortcut/${id}`);
+              setOpen(true);
+            }}>
+            <View style={[styles.shortcut, styles.shortcutAdd]}>
+              <Icon
+                name="ph:plus"
+                size={32}
+                uniProps={(theme) => ({
+                  color: theme.colors.mutedForeground,
+                })}
+              />
+            </View>
+            <Sheet open={open} onOpenChange={setOpen}>
+              <Signup/>
+            </Sheet>
+          </GridCell>
+        }>
+          <Logout/>
+        </Sheet>
       </Grid>
     </Panel>
   );

@@ -6,7 +6,7 @@ export interface SheetHandle {
   dismiss: () => Promise<void>;
 }
 
-export interface SheetProps extends Omit<TrueSheetProps, 'open'> {
+export interface SheetProps extends TrueSheetProps {
   open?: boolean;
   trigger?: ReactNode;
   onOpenChange?: (open: boolean) => void;

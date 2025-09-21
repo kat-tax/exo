@@ -1,47 +1,89 @@
-import {forwardRef, useRef, useImperativeHandle, useEffect} from 'react';
 import {TrueSheet} from '@lodev09/react-native-true-sheet';
+import {withUnistyles} from 'react-native-unistyles';
+import {View, Pressable} from 'react-native';
+import {forwardRef, useRef, useImperativeHandle, useEffect, useState, cloneElement, isValidElement} from 'react';
+
 import {SheetProps, SheetHandle} from './Sheet.base';
 
+const ThemedSheet = withUnistyles(TrueSheet, (theme) => ({
+  backgroundColor: theme.colors.background,
+}));
+
 export const Sheet = forwardRef<SheetHandle, SheetProps>((props, ref) => {
+  const [internalOpen, setInternalOpen] = useState(false);
+  const {open, onOpenChange, trigger, ...trueSheetProps} = props;
   const sheet = useRef<TrueSheet>(null);
+  const controlled = open !== undefined;
+  const effectiveOpen = controlled ? open : internalOpen;
+  const effectiveOnOpenChange = controlled ? onOpenChange : setInternalOpen;
+
+  const handleTriggerPress = () => {
+    if (controlled && onOpenChange) {
+      onOpenChange(true);
+    } else {
+      setInternalOpen(true);
+    }
+  };
+
+  const renderTrigger = () => {
+    if (!trigger) return null;
+    // React element with onPress, clone it and add our handler
+    if (isValidElement(trigger)) {
+      const triggerProps = trigger.props as any;
+      if (triggerProps && typeof triggerProps === 'object' && 'onPress' in triggerProps) {
+        const originalOnPress = triggerProps.onPress;
+        return cloneElement(trigger as any, {
+          onPress: (e: any) => {
+            originalOnPress?.(e);
+            handleTriggerPress();
+          }
+        });
+      }
+    }
+    // Otherwise wrap it in a Pressable
+    return (
+      <Pressable onPress={handleTriggerPress}>
+        {trigger}
+      </Pressable>
+    );
+  };
 
   useImperativeHandle(ref, () => ({
     present: async () => {
-      await sheet.current?.present();
+      if (controlled && onOpenChange) {
+        onOpenChange(true);
+      } else {
+        setInternalOpen(true);
+      }
     },
     dismiss: async () => {
-      await sheet.current?.dismiss();
-    }
-  }), []);
-
-  // Handle controlled open state
-  useEffect(() => {
-    if (props.open !== undefined) {
-      if (props.open) {
-        sheet.current?.present();
+      if (controlled && onOpenChange) {
+        onOpenChange(false);
       } else {
-        sheet.current?.dismiss();
+        setInternalOpen(false);
       }
     }
-  }, [props.open]);
+  }), [controlled, onOpenChange]);
 
-  // Extract open, onOpenChange, trigger from props to avoid passing them to TrueSheet
-  const {open, onOpenChange, trigger, FooterComponent, ...trueSheetProps} = props;
-
-  // Type-safe FooterComponent handling
-  const validFooterComponent = FooterComponent &&
-    (typeof FooterComponent === 'function' ||
-     (typeof FooterComponent === 'object' && FooterComponent !== null && 'type' in FooterComponent))
-    ? FooterComponent as React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | React.ComponentType<unknown>
-    : undefined;
+  useEffect(() => {
+    if (effectiveOpen) {
+      sheet.current?.present();
+    } else {
+      sheet.current?.dismiss();
+    }
+  }, [effectiveOpen]);
 
   return (
-    <TrueSheet
-      ref={sheet}
-      onDismiss={() => onOpenChange?.(false)}
-      FooterComponent={validFooterComponent}
-      {...trueSheetProps}
-    />
+    <View>
+      {renderTrigger()}
+      <ThemedSheet
+        ref={sheet}
+        edgeToEdge
+        sizes={['auto', '80%', 'large']}
+        onDismiss={() => effectiveOnOpenChange?.(false)}
+        {...trueSheetProps}
+      />
+    </View>
   );
 });
 
