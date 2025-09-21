@@ -1,13 +1,8 @@
 import {TrueSheet} from '@lodev09/react-native-true-sheet';
-import {withUnistyles} from 'react-native-unistyles';
 import {View, Pressable} from 'react-native';
 import {forwardRef, useRef, useImperativeHandle, useEffect, useState, cloneElement, isValidElement} from 'react';
 
 import {SheetProps, SheetHandle} from './Sheet.base';
-
-const ThemedSheet = withUnistyles(TrueSheet, (theme) => ({
-  backgroundColor: theme.colors.background,
-}));
 
 export const Sheet = forwardRef<SheetHandle, SheetProps>((props, ref) => {
   const [internalOpen, setInternalOpen] = useState(false);
@@ -76,7 +71,7 @@ export const Sheet = forwardRef<SheetHandle, SheetProps>((props, ref) => {
   return (
     <View>
       {renderTrigger()}
-      <ThemedSheet
+      <TrueSheet
         ref={sheet}
         edgeToEdge
         sizes={['auto', '80%', 'large']}

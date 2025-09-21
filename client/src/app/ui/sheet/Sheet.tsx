@@ -5,6 +5,7 @@ import './Sheet.css';
 
 export const Sheet = forwardRef<SheetHandle, SheetProps>((props, ref) => {
   const [internalOpen, setInternalOpen] = useState(false);
+  const backgroundColor = (props.backgroundColor ?? 'white') as React.CSSProperties['backgroundColor'];
   const controlled = props.open !== undefined;
   const open = controlled ? props.open : internalOpen;
   const onOpenChange = controlled ? props.onOpenChange : setInternalOpen;
@@ -42,9 +43,11 @@ export const Sheet = forwardRef<SheetHandle, SheetProps>((props, ref) => {
       )}
       <Drawer.Portal>
         <Drawer.Overlay className="sheet-overlay"/>
-        <Drawer.Content className="sheet-content">
-          <div className="sheet-main">
-            <div className="sheet-handle" aria-hidden/>
+        <Drawer.Content className="sheet-content" style={{backgroundColor}}>
+          <div className="sheet-main" style={{backgroundColor}}>
+            {props.grabber && (
+              <div className="sheet-handle" aria-hidden/>
+            )}
             <div className="sheet-content-wrapper">
               {props.children}
             </div>

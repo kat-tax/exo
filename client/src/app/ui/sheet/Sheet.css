@@ -34,7 +34,7 @@
 
 /* Drag Handle */
 .sheet-handle {
-  margin: 0 auto 2rem auto; /* mx-auto mb-8 */
+  margin: 0 auto 1rem auto; /* mx-auto mb-8 */
   width: 3rem; /* w-12 */
   height: 0.375rem; /* h-1.5 */
   flex-shrink: 0;
@@ -113,7 +113,7 @@
 
 /* Animation styles for enter/exit transitions */
 .sheet-content {
-  animation: slideUp 0.3s ease-out;
+  animation: slideUp 0.1s ease-out;
 }
 
 @keyframes slideUp {

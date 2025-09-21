@@ -72,9 +72,10 @@ export default function ScreenDashboard() {
           <Sheet
             open={open}
             dimmed={true}
+            grabber={false}
             dismissible={true}
             onOpenChange={setOpen}>
-            <Signup/>
+            <Logout/>
           </Sheet>
         </GridCell>
       </Grid>
