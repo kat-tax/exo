@@ -2,9 +2,10 @@ import {useState} from 'react';
 import {useLingui} from '@lingui/react/macro';
 import {StyleSheet} from 'react-native-unistyles';
 import {View, Platform} from 'react-native';
-import {Picker, TextInput} from 'app/ui/base';
+import {TextInput} from 'react-exo/textinput';
+import {Avatar} from 'react-exo/avatar';
+import {Picker} from 'react-exo/picker';
 import {Panel, PanelSection, PanelItem} from 'app/ui/panel';
-import {Identicon} from 'app/ui/identicon';
 import {useTheme} from 'settings/hooks/use-theme';
 import {useLocale} from 'settings/hooks/use-locale';
 import {useSettings} from 'settings/hooks/use-settings';
@@ -22,7 +23,7 @@ export default function ScreenSettings() {
     <Panel
       title={t`Settings`}
       message={t`Configure the app`}
-      right={<Identicon id={settings.owner?.id} size={100}/>}>
+      right={<Avatar id={settings.owner?.id} size={100}/>}>
       <View style={styles.root}>
         <PanelSection title={t`Profile`}>
           <PanelItem

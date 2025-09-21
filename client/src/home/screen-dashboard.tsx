@@ -1,3 +1,4 @@
+import {Icon} from 'react-exo/icon';
 import {Trans} from '@lingui/react';
 import {Linking, Text, View} from 'react-native';
 import {StyleSheet} from 'react-native-unistyles';
@@ -5,7 +6,6 @@ import {useSettings} from 'settings/hooks/use-settings';
 import {useNavigate} from 'react-exo/navigation';
 import {useClock} from 'home/hooks/use-clock';
 import {greetMsg} from 'home/utils/time';
-import {Icon, IconRemote} from 'app/ui/base';
 import {Panel} from 'app/ui/panel';
 import {Grid} from 'app/ui/grid';
 import {GridCell} from 'app/ui/grid';
@@ -38,7 +38,7 @@ export default function ScreenDashboard() {
             onSelect={() => url && Linking.openURL(url)}
             onEditSelect={() => nav(`/shortcut/${id}`)}>
             <View style={[styles.shortcut, !url && styles.shortcutAdd]}>
-              <IconRemote
+              <Icon.Remote
                 name={icon ?? ''}
                 size={'50%'}
                 uniProps={(theme) => ({

@@ -1,10 +1,11 @@
 import {useMemo} from 'react';
 import {useLingui} from '@lingui/react/macro';
-import {StyleSheet} from 'react-native-unistyles';
-import {Platform, View} from 'react-native';
 import {useNavigate, useParams} from 'react-exo/navigation';
+import {Platform, View} from 'react-native';
+import {StyleSheet} from 'react-native-unistyles';
+import {TextInput} from 'react-exo/textinput';
+import {Icon} from 'react-exo/icon';
 import {Panel, PanelSection, PanelItem} from 'app/ui/panel';
-import {IconRemote, TextInput} from 'app/ui/base';
 import {useShortcuts} from 'home/hooks/use-shortcuts';
 import {getShortcut} from 'app/data/queries';
 import {useQuery} from 'app/data';
@@ -32,7 +33,7 @@ export default function ScreenShortcut() {
       back="/"
       right={
         <View style={styles.icon}>
-          <IconRemote
+          <Icon.Remote
             name={shortcutData.icon ?? 'ph:globe'}
             size={'50%'}
             uniProps={(theme) => ({

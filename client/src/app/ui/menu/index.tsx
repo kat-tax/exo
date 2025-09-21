@@ -1,10 +1,10 @@
+import {Icon} from 'react-exo/icon';
 import {View, ScrollView} from 'react-native';
 import {StyleSheet, Display, mq} from 'react-native-unistyles';
 import {useFocusable, FocusContext} from '@noriginmedia/norigin-spatial-navigation';
 import {useLocation} from 'react-exo/navigation';
 import {useLingui} from '@lingui/react/macro';
 import {breakpoints} from 'design/theme';
-import {Icon} from 'app/ui/base';
 
 import {MenuTab} from './menu-tab';
 import {MenuItem} from './menu-item';

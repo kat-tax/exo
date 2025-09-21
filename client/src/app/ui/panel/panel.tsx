@@ -1,7 +1,7 @@
 import {View, ScrollView, Text} from 'react-native';
 import {StyleSheet} from 'react-native-unistyles';
 import {Link} from 'react-exo/navigation';
-import {Icon} from 'app/ui/base';
+import {Icon} from 'react-exo/icon';
 
 export interface PanelProps extends React.PropsWithChildren {
   title?: string | React.ReactNode,
@@ -28,13 +28,7 @@ export function Panel(props: PanelProps) {
                       {props.back &&
                         <View style={styles.back}>
                           <Link to={props.back}>
-                            <Icon
-                              name="ph:arrow-left"
-                              size={28}
-                              uniProps={(theme) => ({
-                                color: theme.colors.foreground,
-                              })}
-                            />
+                            <Icon name="ph:arrow-left" size={28}/>
                           </Link>
                         </View>
                       }

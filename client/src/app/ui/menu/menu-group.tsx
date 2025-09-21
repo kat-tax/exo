@@ -1,7 +1,7 @@
 import {useState} from 'react';
 import {Pressable, View, Text} from 'react-native';
 import {StyleSheet} from 'react-native-unistyles';
-import {Icon} from 'app/ui/base';
+import {Icon} from 'react-exo/icon';
 
 interface MenuGroupProps extends React.PropsWithChildren {
   label: string,

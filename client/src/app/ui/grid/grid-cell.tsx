@@ -2,7 +2,7 @@ import {useRef} from 'react';
 import {useFocusable} from '@noriginmedia/norigin-spatial-navigation';
 import {View, Pressable} from 'react-native';
 import {StyleSheet} from 'react-native-unistyles';
-import {Icon} from 'app/ui/base';
+import {Icon} from 'react-exo/icon';
 
 import type {ViewProps} from 'react-native';
 

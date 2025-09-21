@@ -1,7 +1,7 @@
+import {Avatar} from 'react-exo/avatar';
 import {View, Text} from 'react-native';
 import {StyleSheet} from 'react-native-unistyles';
 import {useLingui} from '@lingui/react/macro';
-import {Identicon} from 'app/ui/identicon';
 import {getProfile} from 'app/data/queries';
 import {useQuery, useAppOwner} from 'app/data';
 
@@ -13,7 +13,7 @@ export function MenuHeader() {
   return (
     <View style={styles.root}>
       <View style={styles.head}>
-        <Identicon id={appOwner?.id} size={22}/>
+        <Avatar id={appOwner?.id} size={22}/>
         <View style={styles.info}>
           <Text style={styles.name} selectable={false}>
             {profiles[0]?.name ?? t`Human`}

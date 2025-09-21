@@ -18,17 +18,17 @@ msgstr ""
 msgid "{0} components"
 msgstr "{0} components"
 
-#: ../../client/src/tasks/screen-list-edit.tsx:110
+#: ../../client/src/tasks/screen-list-edit.tsx:112
 msgid "Add category..."
 msgstr "Add category..."
 
-#: ../../client/src/tasks/screen-list-edit.tsx:72
+#: ../../client/src/tasks/screen-list-edit.tsx:74
 msgid "Add section names for items."
 msgstr "Add section names for items."
 
-#: ../../client/src/home/screen-shortcut.tsx:73
-#: ../../client/src/settings/screen-settings.tsx:40
-#: ../../client/src/tasks/screen-list-edit.tsx:122
+#: ../../client/src/home/screen-shortcut.tsx:74
+#: ../../client/src/settings/screen-settings.tsx:41
+#: ../../client/src/tasks/screen-list-edit.tsx:124
 msgid "Appearance"
 msgstr "Appearance"
 
@@ -44,45 +44,45 @@ msgstr "Are you sure you want to reset your local database? If data is not backe
 msgid "Cancel"
 msgstr "Cancel"
 
-#: ../../client/src/tasks/screen-list-edit.tsx:71
+#: ../../client/src/tasks/screen-list-edit.tsx:73
 msgid "Categories"
 msgstr "Categories"
 
-#: ../../client/src/tasks/stacks/list-group.tsx:69
+#: ../../client/src/tasks/stacks/list-group.tsx:70
 msgid "Category"
 msgstr "Category"
 
-#: ../../client/src/settings/screen-settings.tsx:30
+#: ../../client/src/settings/screen-settings.tsx:31
 msgid "Choose your display name."
 msgstr "Choose your display name."
 
-#: ../../client/src/settings/screen-settings.tsx:101
+#: ../../client/src/settings/screen-settings.tsx:102
 msgid "Clear Data"
 msgstr "Clear Data"
 
-#: ../../client/src/home/screen-shortcut.tsx:87
-#: ../../client/src/tasks/screen-list-edit.tsx:136
+#: ../../client/src/home/screen-shortcut.tsx:88
+#: ../../client/src/tasks/screen-list-edit.tsx:138
 msgid "Color"
 msgstr "Color"
 
-#: ../../client/src/home/screen-shortcut.tsx:31
+#: ../../client/src/home/screen-shortcut.tsx:32
 msgid "Configure dashboard shortcut"
 msgstr "Configure dashboard shortcut"
 
-#: ../../client/src/tasks/screen-list-edit.tsx:44
+#: ../../client/src/tasks/screen-list-edit.tsx:46
 msgid "Configure task list"
 msgstr "Configure task list"
 
-#: ../../client/src/settings/screen-settings.tsx:24
+#: ../../client/src/settings/screen-settings.tsx:25
 msgid "Configure the app"
 msgstr "Configure the app"
 
-#: ../../client/src/home/screen-shortcut.tsx:99
-#: ../../client/src/tasks/screen-list-edit.tsx:148
+#: ../../client/src/home/screen-shortcut.tsx:100
+#: ../../client/src/tasks/screen-list-edit.tsx:150
 msgid "Danger Zone"
 msgstr "Danger Zone"
 
-#: ../../client/src/settings/screen-settings.tsx:69
+#: ../../client/src/settings/screen-settings.tsx:70
 msgid "Dark"
 msgstr "Dark"
 
@@ -91,17 +91,17 @@ msgstr "Dark"
 msgid "Dashboard"
 msgstr "Dashboard"
 
-#: ../../client/src/settings/screen-settings.tsx:73
+#: ../../client/src/settings/screen-settings.tsx:74
 msgid "Data"
 msgstr "Data"
 
-#: ../../client/src/tasks/screen-list-edit.tsx:150
-#: ../../client/src/tasks/screen-list-edit.tsx:153
+#: ../../client/src/tasks/screen-list-edit.tsx:152
+#: ../../client/src/tasks/screen-list-edit.tsx:155
 msgid "Delete List"
 msgstr "Delete List"
 
-#: ../../client/src/home/screen-shortcut.tsx:101
-#: ../../client/src/home/screen-shortcut.tsx:104
+#: ../../client/src/home/screen-shortcut.tsx:102
+#: ../../client/src/home/screen-shortcut.tsx:105
 msgid "Delete Shortcut"
 msgstr "Delete Shortcut"
 
@@ -114,19 +114,19 @@ msgstr "Design"
 msgid "Development"
 msgstr "Development"
 
-#: ../../client/src/settings/screen-settings.tsx:29
+#: ../../client/src/settings/screen-settings.tsx:30
 msgid "Display Name"
 msgstr "Display Name"
 
-#: ../../client/src/tasks/stacks/list-group.tsx:100
+#: ../../client/src/tasks/stacks/list-group.tsx:101
 msgid "Edit Item..."
 msgstr "Edit Item..."
 
-#: ../../client/src/settings/screen-settings.tsx:82
+#: ../../client/src/settings/screen-settings.tsx:83
 msgid "Enter mnemonic"
 msgstr "Enter mnemonic"
 
-#: ../../client/src/settings/screen-settings.tsx:36
+#: ../../client/src/settings/screen-settings.tsx:37
 msgid "Enter name"
 msgstr "Enter name"
 
@@ -187,8 +187,8 @@ msgstr "Failed to update list."
 msgid "Failed to update shortcut."
 msgstr "Failed to update shortcut."
 
-#: ../../client/src/home/screen-shortcut.tsx:45
-#: ../../client/src/tasks/screen-list-edit.tsx:58
+#: ../../client/src/home/screen-shortcut.tsx:46
+#: ../../client/src/tasks/screen-list-edit.tsx:60
 msgid "General"
 msgstr "General"
 
@@ -212,8 +212,8 @@ msgstr "Good night, {name}."
 msgid "Human"
 msgstr "Human"
 
-#: ../../client/src/home/screen-shortcut.tsx:75
-#: ../../client/src/tasks/screen-list-edit.tsx:124
+#: ../../client/src/home/screen-shortcut.tsx:76
+#: ../../client/src/tasks/screen-list-edit.tsx:126
 msgid "Icon"
 msgstr "Icon"
 
@@ -262,11 +262,11 @@ msgstr "Invalid text content field."
 msgid "Invalid URL field."
 msgstr "Invalid URL field."
 
-#: ../../client/src/settings/screen-settings.tsx:42
+#: ../../client/src/settings/screen-settings.tsx:43
 msgid "Language"
 msgstr "Language"
 
-#: ../../client/src/settings/screen-settings.tsx:68
+#: ../../client/src/settings/screen-settings.tsx:69
 msgid "Light"
 msgstr "Light"
 
@@ -274,7 +274,7 @@ msgstr "Light"
 msgid "List Error"
 msgstr "List Error"
 
-#: ../../client/src/tasks/screen-list-edit.tsx:65
+#: ../../client/src/tasks/screen-list-edit.tsx:67
 msgid "List name"
 msgstr "List name"
 
@@ -292,12 +292,12 @@ msgstr "Missing list id."
 msgid "Missing shortcut id."
 msgstr "Missing shortcut id."
 
-#: ../../client/src/home/screen-shortcut.tsx:62
-#: ../../client/src/tasks/screen-list-edit.tsx:60
+#: ../../client/src/home/screen-shortcut.tsx:63
+#: ../../client/src/tasks/screen-list-edit.tsx:62
 msgid "Name"
 msgstr "Name"
 
-#: ../../client/src/tasks/stacks/list-group.tsx:140
+#: ../../client/src/tasks/stacks/list-group.tsx:141
 msgid "New item..."
 msgstr "New item..."
 
@@ -305,45 +305,45 @@ msgstr "New item..."
 msgid "Organize your tasks"
 msgstr "Organize your tasks"
 
-#: ../../client/src/settings/screen-settings.tsx:75
+#: ../../client/src/settings/screen-settings.tsx:76
 msgid "Owner Key"
 msgstr "Owner Key"
 
-#: ../../client/src/tasks/screen-list-edit.tsx:151
+#: ../../client/src/tasks/screen-list-edit.tsx:153
 msgid "Permanently delete list."
 msgstr "Permanently delete list."
 
-#: ../../client/src/home/screen-shortcut.tsx:102
+#: ../../client/src/home/screen-shortcut.tsx:103
 msgid "Permanently delete shortcut."
 msgstr "Permanently delete shortcut."
 
-#: ../../client/src/settings/screen-settings.tsx:27
+#: ../../client/src/settings/screen-settings.tsx:28
 msgid "Profile"
 msgstr "Profile"
 
-#: ../../client/src/settings/screen-settings.tsx:104
+#: ../../client/src/settings/screen-settings.tsx:105
 msgid "Reset Database"
 msgstr "Reset Database"
 
-#: ../../client/src/settings/screen-settings.tsx:102
+#: ../../client/src/settings/screen-settings.tsx:103
 msgid "Reset owner and delete database."
 msgstr "Reset owner and delete database."
 
-#: ../../client/src/settings/screen-settings.tsx:61
+#: ../../client/src/settings/screen-settings.tsx:62
 msgid "Select the color scheme."
 msgstr "Select the color scheme."
 
-#: ../../client/src/settings/screen-settings.tsx:43
+#: ../../client/src/settings/screen-settings.tsx:44
 msgid "Select your preferred language."
 msgstr "Select your preferred language."
 
-#: ../../client/src/settings/screen-settings.tsx:76
+#: ../../client/src/settings/screen-settings.tsx:77
 msgid "Set mnemonic to sync devices."
 msgstr "Set mnemonic to sync devices."
 
 #: ../../client/src/app/ui/menu/index.tsx:40
 #: ../../client/src/app/ui/menu/index.tsx:75
-#: ../../client/src/settings/screen-settings.tsx:23
+#: ../../client/src/settings/screen-settings.tsx:24
 msgid "Settings"
 msgstr "Settings"
 
@@ -351,50 +351,50 @@ msgstr "Settings"
 msgid "Shortcut Error"
 msgstr "Shortcut Error"
 
-#: ../../client/src/settings/screen-settings.tsx:49
-#: ../../client/src/settings/screen-settings.tsx:67
+#: ../../client/src/settings/screen-settings.tsx:50
+#: ../../client/src/settings/screen-settings.tsx:68
 msgid "System"
 msgstr "System"
 
-#: ../../client/src/tasks/screen-list-edit.tsx:137
+#: ../../client/src/tasks/screen-list-edit.tsx:139
 msgid "The color of the list icon."
 msgstr "The color of the list icon."
 
-#: ../../client/src/home/screen-shortcut.tsx:88
+#: ../../client/src/home/screen-shortcut.tsx:89
 msgid "The color of the shortcut icon."
 msgstr "The color of the shortcut icon."
 
-#: ../../client/src/tasks/screen-list-edit.tsx:61
+#: ../../client/src/tasks/screen-list-edit.tsx:63
 msgid "The display name of the list."
 msgstr "The display name of the list."
 
-#: ../../client/src/home/screen-shortcut.tsx:63
+#: ../../client/src/home/screen-shortcut.tsx:64
 msgid "The display name of the shortcut."
 msgstr "The display name of the shortcut."
 
-#: ../../client/src/tasks/screen-list-edit.tsx:125
+#: ../../client/src/tasks/screen-list-edit.tsx:127
 msgid "The icon to display for the list."
 msgstr "The icon to display for the list."
 
-#: ../../client/src/home/screen-shortcut.tsx:76
+#: ../../client/src/home/screen-shortcut.tsx:77
 msgid "The icon to display for the shortcut."
 msgstr "The icon to display for the shortcut."
 
-#: ../../client/src/home/screen-shortcut.tsx:48
+#: ../../client/src/home/screen-shortcut.tsx:49
 msgid "The web page to link to."
 msgstr "The web page to link to."
 
-#: ../../client/src/settings/screen-settings.tsx:60
+#: ../../client/src/settings/screen-settings.tsx:61
 msgid "Theme"
 msgstr "Theme"
 
-#: ../../client/src/home/screen-shortcut.tsx:30
+#: ../../client/src/home/screen-shortcut.tsx:31
 #: ../../client/src/tasks/screen-list-details.tsx:31
-#: ../../client/src/tasks/screen-list-edit.tsx:43
+#: ../../client/src/tasks/screen-list-edit.tsx:45
 msgid "Untitled"
 msgstr "Untitled"
 
-#: ../../client/src/home/screen-shortcut.tsx:47
+#: ../../client/src/home/screen-shortcut.tsx:48
 msgid "URL"
 msgstr "URL"
 

@@ -1,3 +1,5 @@
+import {Icon} from 'react-exo/icon';
+import {TextInput} from 'react-exo/textinput';
 import {StyleSheet} from 'react-native-unistyles';
 import {Pressable, View} from 'react-native';
 import {useMemo, useRef} from 'react';
@@ -5,7 +7,6 @@ import {useLingui} from '@lingui/react/macro';
 import {useLists} from 'tasks/hooks/use-lists';
 import {useQuery} from 'app/data';
 import {getListItems} from 'app/data/queries';
-import {Icon, TextInput} from 'app/ui/base';
 
 import type {ListId, ListCategoryId} from 'app/data/types';
 import type {TextInput as TextInputType} from 'react-native';

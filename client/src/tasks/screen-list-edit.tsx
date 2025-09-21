@@ -1,14 +1,16 @@
-import {StyleSheet} from 'react-native-unistyles';
-import {Platform, View, Pressable} from 'react-native';
-import {useNavigate, useParams} from 'react-exo/navigation';
 import {useMemo, useRef} from 'react';
 import {useLingui} from '@lingui/react/macro';
-import {useLists} from 'tasks/hooks/use-lists';
-import {Panel, PanelSection, PanelItem} from 'app/ui/panel';
-import {IconRemote, TextInput, Icon} from 'app/ui/base';
-import {getList, getListCategories} from 'app/data/queries';
-import {useQuery} from 'app/data';
+import {useNavigate, useParams} from 'react-exo/navigation';
+import {Platform, View, Pressable} from 'react-native';
+import {StyleSheet} from 'react-native-unistyles';
+import {TextInput} from 'react-exo/textinput';
+import {Icon} from 'react-exo/icon';
 import {Button} from 'design';
+import {Panel, PanelSection, PanelItem} from 'app/ui/panel';
+
+import {useQuery} from 'app/data';
+import {useLists} from 'tasks/hooks/use-lists';
+import {getList, getListCategories} from 'app/data/queries';
 
 import type {TextInput as TextInputType} from 'react-native';
 
@@ -45,7 +47,7 @@ export default function ScreenListEdit() {
       back="/lists"
       right={
         <View style={styles.list}>
-          <IconRemote
+          <Icon.Remote
             name={listData.icon ?? 'ph:list-checks'}
             size={'50%'}
             uniProps={(theme) => ({

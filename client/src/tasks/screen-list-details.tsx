@@ -1,3 +1,4 @@
+import {Icon} from 'react-exo/icon';
 import {StyleSheet} from 'react-native-unistyles';
 import {Platform, Pressable, View} from 'react-native';
 import {useNavigate, useParams} from 'react-exo/navigation';
@@ -6,7 +7,6 @@ import {useLingui} from '@lingui/react/macro';
 import {useLists} from 'tasks/hooks/use-lists';
 import {useQuery} from 'app/data';
 import {Panel} from 'app/ui/panel';
-import {IconRemote} from 'app/ui/base';
 import {ListGroup} from 'tasks/stacks/list-group';
 import {getList, getListCounts, getListCategories} from 'app/data/queries';
 
@@ -35,7 +35,7 @@ export default function ScreenList() {
         <Pressable
           style={styles.icon}
           onPress={() => nav(`/list/${listId}/edit`)}>
-          <IconRemote
+          <Icon.Remote
             name={listData.icon ?? 'ph:list-checks'}
             size={'50%'}
             uniProps={(theme) => ({

@@ -1,8 +1,8 @@
 import {View} from 'react-native';
+import {Icon} from 'react-exo/icon';
 import {StyleSheet} from 'react-native-unistyles';
 import {useNavigate} from 'react-exo/navigation';
 import {useLingui} from '@lingui/react/macro';
-import {Icon, IconRemote} from 'app/ui/base';
 import {Panel} from 'app/ui/panel';
 import {Grid} from 'app/ui/grid';
 import {GridCell} from 'app/ui/grid';
@@ -28,7 +28,7 @@ export default function ScreenLists() {
             onSelect={() => nav(`/list/${id}`)}
             onEditSelect={() => nav(`/list/${id}/edit`)}>
             <View style={[styles.list, !name && styles.listAdd]}>
-              <IconRemote
+              <Icon.Remote
                 name={icon ?? ''}
                 size={'50%'}
                 uniProps={(theme) => ({
