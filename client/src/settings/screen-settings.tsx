@@ -103,7 +103,7 @@ export default function ScreenSettings() {
           <PanelItem
             label={t`Clear Data`}
             description={t`Reset owner and delete database.`}>
-            <Sheet trigger={
+            <Sheet autoWebSize={250} trigger={
               <Button
                 label={t`Reset Database`}
                 mode="Destructive"
@@ -116,7 +116,7 @@ export default function ScreenSettings() {
                 showClose={false}
                 confirmButton={
                   <Button
-                    label={t`Reset`}
+                    label={t`Proceed`}
                     mode="Destructive"
                     state="Default"
                     onPress={settings.resetOwner}

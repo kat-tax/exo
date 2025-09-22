@@ -11,7 +11,8 @@ export const Sheet = forwardRef<SheetHandle, SheetProps>((props, ref) => {
     const points = props.sizes ?? DEFAULT_SIZES;
     const newPoints = points.map((point) => {
       // Convert special values to decimal
-      if (point === 'auto') return 0.3; // TODO: implement "auto" in vaul
+      // TODO: implement "auto" in vaul
+      if (point === 'auto') return props.autoWebSize ? `${props.autoWebSize}px` : 0.3;
       if (point === 'small') return 0.3;
       if (point === 'medium') return 0.8;
       if (point === 'large') return 1;

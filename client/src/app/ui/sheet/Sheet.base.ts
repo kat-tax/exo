@@ -17,5 +17,7 @@ export interface SheetProps extends TrueSheetProps {
   title?: string;
   description?: string;
   trigger?: ReactNode;
+  /** Temporary property for web only, will be removed when vaul supports "auto" */
+  autoWebSize?: number;
   onOpenChange?: (open: boolean) => void;
 }
