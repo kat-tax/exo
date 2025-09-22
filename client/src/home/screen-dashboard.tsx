@@ -35,7 +35,7 @@ export default function ScreenDashboard() {
           <GridCell
             key={id}
             focusKey={`shortcut-${id}`}
-            onSelect={() => url && Linking.openURL(url)}
+            onPress={() => url && Linking.openURL(url)}
             onEditSelect={() => nav(`/shortcut/${id}`)}>
             <View style={[styles.shortcut, !url && styles.shortcutAdd]}>
               <Icon.Remote
@@ -50,7 +50,7 @@ export default function ScreenDashboard() {
         ))}
         <GridCell
           focusKey="shortcut-add"
-          onSelect={() => {
+          onPress={() => {
             const id = data?.find(shortcut => !shortcut.url)?.id ?? shortcuts.create();
             if (id) nav(`/shortcut/${id}`);
           }}>

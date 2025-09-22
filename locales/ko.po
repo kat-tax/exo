@@ -13,7 +13,7 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#. placeholder {0}: 11
+#. placeholder {0}: 12
 #: ../../client/src/dev/screen-design.tsx:14
 msgid "{0} components"
 msgstr "{0}개 컴포넌트"
@@ -43,6 +43,14 @@ msgstr "로컬 데이터베이스를 초기화하시겠습니까? 다른 기기�
 #: ../../design/components/base/popovers/prompt/Prompt.tsx:49
 msgid "Cancel"
 msgstr "취소"
+
+#: ../../design/components/features/auth/login/Login.tsx:28
+#: ../../design/components/features/auth/login/Login.tsx:40
+#: ../../design/components/features/auth/signup/Signup.tsx:28
+#: ../../design/components/features/auth/signup/Signup.tsx:40
+#: ../../design/components/features/auth/signup/Signup.tsx:52
+msgid "Caption"
+msgstr ""
 
 #: ../../client/src/tasks/screen-list-edit.tsx:73
 msgid "Categories"
@@ -75,6 +83,15 @@ msgstr ""
 
 #: ../../client/src/settings/screen-settings.tsx:25
 msgid "Configure the app"
+msgstr ""
+
+#: ../../design/components/features/auth/signup/Signup.tsx:53
+msgid "Confirm"
+msgstr ""
+
+#: ../../design/components/features/auth/login/Login.tsx:62
+#: ../../design/components/features/auth/signup/Signup.tsx:65
+msgid "Create Account"
 msgstr ""
 
 #: ../../client/src/home/screen-shortcut.tsx:100
@@ -120,6 +137,11 @@ msgstr "표시 이름"
 
 #: ../../client/src/tasks/stacks/list-group.tsx:101
 msgid "Edit Item..."
+msgstr ""
+
+#: ../../design/components/features/auth/login/Login.tsx:29
+#: ../../design/components/features/auth/signup/Signup.tsx:29
+msgid "Email"
 msgstr ""
 
 #: ../../client/src/settings/screen-settings.tsx:83
@@ -284,6 +306,15 @@ msgstr ""
 msgid "Lists"
 msgstr ""
 
+#: ../../design/components/features/auth/login/Login.tsx:53
+#: ../../design/components/features/auth/signup/Signup.tsx:74
+msgid "Login"
+msgstr ""
+
+#: ../../design/components/features/auth/logout/Logout.tsx:25
+msgid "Logout?"
+msgstr ""
+
 #: ../../client/src/tasks/hooks/use-lists.ts:21
 msgid "Missing list id."
 msgstr ""
@@ -308,6 +339,17 @@ msgstr ""
 #: ../../client/src/settings/screen-settings.tsx:76
 msgid "Owner Key"
 msgstr "소유자 키"
+
+#: ../../design/components/features/auth/login/Login.tsx:42
+#: ../../design/components/features/auth/signup/Signup.tsx:42
+#: ../../design/components/features/auth/signup/Signup.tsx:54
+msgid "password"
+msgstr ""
+
+#: ../../design/components/features/auth/login/Login.tsx:41
+#: ../../design/components/features/auth/signup/Signup.tsx:41
+msgid "Password"
+msgstr ""
 
 #: ../../client/src/tasks/screen-list-edit.tsx:153
 msgid "Permanently delete list."
@@ -388,6 +430,10 @@ msgstr "연결할 웹페이지입니다."
 msgid "Theme"
 msgstr "테마"
 
+#: ../../design/components/features/auth/logout/Logout.tsx:24
+msgid "This will clear all session data. Are you sure you would like to proceed?"
+msgstr ""
+
 #: ../../client/src/home/screen-shortcut.tsx:31
 #: ../../client/src/tasks/screen-list-details.tsx:31
 #: ../../client/src/tasks/screen-list-edit.tsx:45
@@ -397,6 +443,11 @@ msgstr "제목 없음"
 #: ../../client/src/home/screen-shortcut.tsx:48
 msgid "URL"
 msgstr "URL"
+
+#: ../../design/components/features/auth/login/Login.tsx:30
+#: ../../design/components/features/auth/signup/Signup.tsx:30
+msgid "user@example.com"
+msgstr ""
 
 #: ../../client/src/home/utils/time.ts:21
 msgid "Welcome back, {name}."

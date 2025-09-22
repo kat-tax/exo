@@ -25,7 +25,7 @@ export default function ScreenLists() {
           <GridCell
             key={id}
             focusKey={`list-${id}`}
-            onSelect={() => nav(`/list/${id}`)}
+            onPress={() => nav(`/list/${id}`)}
             onEditSelect={() => nav(`/list/${id}/edit`)}>
             <View style={[styles.list, !name && styles.listAdd]}>
               <Icon.Remote
@@ -40,7 +40,7 @@ export default function ScreenLists() {
         ))}
         <GridCell
           focusKey="list-add"
-          onSelect={() => {
+          onPress={() => {
             const id = data?.find(list => !list.name)?.id ?? lists.create();
             if (id) nav(`/list/${id}/edit`);
           }}>

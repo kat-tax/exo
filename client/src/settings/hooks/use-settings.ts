@@ -29,8 +29,6 @@ export function useSettings() {
   }, [evolu, profiles, t]);
 
   const resetOwner = useCallback(() => {
-    if (typeof window !== 'undefined' && !window.confirm(t`Are you sure you want to reset your local database? If data is not backed up on another device, it will be lost. This action cannot be undone.`))
-      return;
     evolu.resetAppOwner();
   }, [evolu, t]);
 

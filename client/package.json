@@ -21,6 +21,7 @@
     "@lingui/core": "^5.5.0",
     "@lingui/macro": "^5.5.0",
     "@lingui/react": "^5.5.0",
+    "@lodev09/react-native-true-sheet": "^2.0.6",
     "@noriginmedia/norigin-spatial-navigation": "^2.3.0",
     "@op-engineering/op-sqlite": "15.0.3",
     "@react-native-community/netinfo": "^11.4.1",
@@ -35,8 +36,8 @@
     "react-exo-ui": "workspace:*",
     "react-native": "0.80.2",
     "react-native-edge-to-edge": "^1.7.0",
-    "react-native-gesture-handler": "^2.28.0",
     "react-native-file-access": "^3.2.0",
+    "react-native-gesture-handler": "^2.28.0",
     "react-native-mmkv": "^3.3.1",
     "react-native-nitro-modules": "^0.29.6",
     "react-native-quick-crypto": "0.7.17",
@@ -45,7 +46,8 @@
     "react-native-svg-app-icon": "^0.6.1",
     "react-native-unistyles": "^3.0.12",
     "react-native-url-polyfill": "^2.0.0",
-    "react-native-web": "^0.21.1"
+    "react-native-web": "^0.21.1",
+    "vaul": "^1.1.2"
   },
   "devDependencies": {
     "@react-native-community/cli": "latest",
