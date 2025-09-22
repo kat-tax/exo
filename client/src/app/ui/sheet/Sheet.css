@@ -5,6 +5,7 @@
   position: fixed;
   inset: 0;
   background-color: rgba(0, 0, 0, 0.5);
+  z-index: 40;
 }
 
 /* Trigger Styles */
@@ -21,13 +22,13 @@
   border-top-left-radius: 10px; /* rounded-t-[10px] */
   border-top-right-radius: 10px;
   margin-top: 6rem; /* mt-24 */
-  height: fit-content; /* h-fit */
-  height: -webkit-fill-available;
+  height: 100%;
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
   outline: none;
+  z-index: 50;
 }
 
 /* Main Content Area */
@@ -115,20 +116,6 @@
 @media (max-width: 768px) {
   .sheet-content {
     margin-top: 1rem; /* Reduced margin on mobile */
-  }
-}
-
-/* Animation styles for enter/exit transitions */
-.sheet-content {
-  animation: slideUp 0.1s ease-out;
-}
-
-@keyframes slideUp {
-  from {
-    transform: translateY(100%);
-  }
-  to {
-    transform: translateY(0);
   }
 }
 
