@@ -18,6 +18,7 @@ export default function ScreenSettings() {
   const [scheme, setScheme] = useTheme(true);
   const [locale, setLocale] = useLocale(true);
   const [showKey, setShowKey] = useState(false);
+  const [deleteConfirm, setDeleteConfirm] = useState('');
   const settings = useSettings();
   const {t} = useLingui();
 
@@ -110,19 +111,34 @@ export default function ScreenSettings() {
                 state="Default"
               />
             }>
-              <Prompt
-                title={t`Reset Database`}
-                message={t`This will reset your owner key and delete your local database. This action is irreversible. If you have data you wish to backup, make sure to save your owner key and sync to a relay.`}
-                showClose={false}
-                confirmButton={
-                  <Button
-                    label={t`Proceed`}
-                    mode="Destructive"
-                    state="Default"
-                    onPress={settings.resetOwner}
-                  />
-                }
-              />
+              <View style={styles.confirmRoot}>
+                <Prompt
+                  title={t`Reset Database`}
+                  message={t`This will reset your owner key and delete your local database. This action is irreversible. If you have data you wish to backup make sure to save your owner key.`}
+                  showClose={false}
+                  confirmButton={
+                    <View style={styles.confirmForm}>
+                      <TextInput
+                        style={styles.confirmInput}
+                        value={deleteConfirm}
+                        onChangeText={setDeleteConfirm}
+                        placeholder={t`Type "${'delete'}" to confirm`}
+                        maxLength={6}
+                        autoCapitalize="none"
+                        autoCorrect={false}
+                        spellCheck={false}
+                      />
+                      <Button
+                        label={t`Confirm`}
+                        mode="Destructive"
+                        state={deleteConfirm === 'delete' ? "Default" : "Disabled"}
+                        disabled={deleteConfirm !== 'delete'}
+                        onPress={deleteConfirm === 'delete' ? settings.resetOwner : undefined}
+                      />
+                    </View>
+                  }
+                />
+              </View>
             </Sheet>
           </PanelItem>
         </PanelSection>
@@ -190,5 +206,31 @@ const styles = StyleSheet.create((theme) => ({
   },
   selectItem: {
     color: theme.colors.foreground,
+  },
+  confirmRoot: {
+    marginTop: theme.display.space4,
+    marginBottom: theme.display.space4,
+  },
+  confirmForm: {
+    flex: 1,
+    gap: theme.display.space2,
+    marginTop: theme.display.space4,
+    justifyContent: 'flex-end',
+    flexDirection: 'row',
+  },
+  confirmInput: {
+    width: '50%',
+    minWidth: 200,
+    padding: theme.display.space2,
+    paddingHorizontal: theme.display.space3,
+    color: theme.colors.foreground,
+    fontSize: theme.typography.size2,
+    fontWeight: theme.typography.weightLight,
+    lineHeight: theme.typography.lineHeight2,
+    letterSpacing: theme.typography.letterSpacing2,
+    fontFamily: theme.font.family,
+    borderRadius: theme.display.radius3,
+    borderColor: theme.colors.border,
+    borderWidth: 1,
   },
 }));
