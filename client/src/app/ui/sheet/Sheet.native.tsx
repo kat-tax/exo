@@ -1,7 +1,7 @@
 import {TrueSheet} from '@lodev09/react-native-true-sheet';
 import {forwardRef, useRef, useImperativeHandle, useEffect, useState, cloneElement} from 'react';
 
-import {SheetProps, SheetHandle} from './Sheet.base';
+import {SheetProps, SheetHandle, DEFAULT_SIZES} from './Sheet.base';
 
 export const Sheet = forwardRef<SheetHandle, SheetProps>((props, ref) => {
   const [internalOpen, setInternalOpen] = useState(false);
@@ -56,8 +56,9 @@ export const Sheet = forwardRef<SheetHandle, SheetProps>((props, ref) => {
       {renderTrigger()}
       <TrueSheet
         ref={sheet}
+        name={trueSheetProps.title}
+        sizes={DEFAULT_SIZES}
         edgeToEdge
-        sizes={['auto', '80%', 'large']}
         onDismiss={() => effectiveOnOpenChange?.(false)}
         {...trueSheetProps}
       />

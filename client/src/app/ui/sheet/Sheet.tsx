@@ -1,13 +1,31 @@
 import {Drawer} from 'vaul';
-import {cloneElement, forwardRef, useImperativeHandle, useState} from 'react';
-import {SheetProps, SheetHandle} from './Sheet.base';
+import {cloneElement, forwardRef, useImperativeHandle, useMemo, useState} from 'react';
+import {SheetProps, SheetHandle, DEFAULT_SIZES} from './Sheet.base';
+
 import './Sheet.css';
 
-const DEFAULT_SNAP_POINTS = [0.3, 0.8, 1];
-
 export const Sheet = forwardRef<SheetHandle, SheetProps>((props, ref) => {
-  const [snap, setSnap] = useState<number | string | null>(DEFAULT_SNAP_POINTS[0]);
+  const [snap, setSnap] = useState<number | string | null>(DEFAULT_SIZES[0]);
   const [internalOpen, setInternalOpen] = useState(false);
+  const snapPoints = useMemo(() => {
+    const points = props.sizes ?? DEFAULT_SIZES;
+    const newPoints = points.map((point) => {
+      // Convert special values to decimal
+      if (point === 'auto') return 0.3; // TODO: implement "auto" in vaul
+      if (point === 'small') return 0.3;
+      if (point === 'medium') return 0.8;
+      if (point === 'large') return 1;
+      // Convert number to pixel (implied on native, needed on web)
+      if (typeof point === 'number') {
+        return `${point}px`;
+      }
+      // Convert percentage to decimal (vaul expects decimal)
+      return parseFloat(point) / 100;
+    });
+    setSnap(newPoints[0]);
+    return newPoints;
+  }, [props.sizes]);
+
   const controlled = props.open !== undefined;
   const open = controlled ? props.open : internalOpen;
   const onOpenChange = controlled ? props.onOpenChange : setInternalOpen;
@@ -42,11 +60,10 @@ export const Sheet = forwardRef<SheetHandle, SheetProps>((props, ref) => {
     <Drawer.Root
       open={open}
       onOpenChange={onOpenChange}
-      snapPoints={DEFAULT_SNAP_POINTS}
+      snapPoints={snapPoints}
       activeSnapPoint={snap}
       setActiveSnapPoint={setSnap}
       dismissible={props.dismissible}
-      //repositionInputs={false}
       fadeFromIndex={props.dimmedIndex ?? 0}
       modal={props.dimmed ?? true}>
       {props.trigger && (
@@ -67,15 +84,13 @@ export const Sheet = forwardRef<SheetHandle, SheetProps>((props, ref) => {
             )}
             <div className="sheet-content-wrapper">
               {props.children}
+              {props.FooterComponent && (
+                <div className="sheet-footer">
+                  <>{props.FooterComponent}</>
+                </div>
+              )}
             </div>
           </div>
-          {props.FooterComponent && (
-            <div className="sheet-footer">
-              <div className="sheet-footer-content">
-                <>{props.FooterComponent}</>
-              </div>
-            </div>
-          )}
         </Drawer.Content>
       </Drawer.Portal>
     </Drawer.Root>

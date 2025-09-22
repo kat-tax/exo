@@ -1,5 +1,11 @@
-import type {TrueSheetProps} from '@lodev09/react-native-true-sheet';
+import type {TrueSheetProps, SheetSize} from '@lodev09/react-native-true-sheet';
 import type {ReactNode} from 'react';
+
+export const DEFAULT_SIZES: SheetSize[] = [
+  'auto',  // collapsed
+  '80%',   // half-expanded
+  'large', // expanded
+];
 
 export interface SheetHandle {
   present: () => Promise<void>;
