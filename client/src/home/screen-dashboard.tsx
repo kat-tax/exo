@@ -72,7 +72,7 @@ export default function ScreenDashboard() {
           <Sheet
             open={open}
             dimmed={true}
-            grabber={false}
+            grabber={true}
             dismissible={true}
             onOpenChange={setOpen}>
             <Logout/>

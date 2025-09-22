@@ -25,7 +25,7 @@
 
 /* Main Content Area */
 .sheet-main {
-  padding: 1rem; /* p-4 */
+  padding: 0.5rem; /* p-4 */
   background-color: white;
   border-top-left-radius: 10px; /* rounded-t-[10px] */
   border-top-right-radius: 10px;

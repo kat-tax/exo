@@ -5,10 +5,18 @@ import './Sheet.css';
 
 export const Sheet = forwardRef<SheetHandle, SheetProps>((props, ref) => {
   const [internalOpen, setInternalOpen] = useState(false);
-  const backgroundColor = (props.backgroundColor ?? 'white') as React.CSSProperties['backgroundColor'];
   const controlled = props.open !== undefined;
   const open = controlled ? props.open : internalOpen;
   const onOpenChange = controlled ? props.onOpenChange : setInternalOpen;
+
+  const backgroundColor = (props.backgroundColor ?? 'white') as React.CSSProperties['backgroundColor'];
+  const grabberStyle = props.grabberProps ? {
+    backgroundColor: props.grabberProps.color as React.CSSProperties['backgroundColor'],
+    height: props.grabberProps.height ? `${props.grabberProps.height}px` : undefined,
+    width: props.grabberProps.width ? `${props.grabberProps.width}px` : undefined,
+    marginTop: props.grabberProps.topOffset ? `${props.grabberProps.topOffset}px` : undefined,
+    display: props.grabberProps.visible === false ? 'none' : undefined,
+  } : {};
 
   useImperativeHandle(ref, () => ({
     present: async () => {
@@ -46,7 +54,7 @@ export const Sheet = forwardRef<SheetHandle, SheetProps>((props, ref) => {
         <Drawer.Content className="sheet-content" style={{backgroundColor}}>
           <div className="sheet-main" style={{backgroundColor}}>
             {props.grabber && (
-              <div className="sheet-handle" aria-hidden/>
+              <div className="sheet-handle" aria-hidden style={grabberStyle}/>
             )}
             <div className="sheet-content-wrapper">
               {props.children}
