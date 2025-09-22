@@ -1,9 +1,12 @@
 import {Drawer} from 'vaul';
-import {forwardRef, useImperativeHandle, useState} from 'react';
+import {cloneElement, forwardRef, useImperativeHandle, useState} from 'react';
 import {SheetProps, SheetHandle} from './Sheet.base';
 import './Sheet.css';
 
+const DEFAULT_SNAP_POINTS = [0.3, 0.8, 1];
+
 export const Sheet = forwardRef<SheetHandle, SheetProps>((props, ref) => {
+  const [snap, setSnap] = useState<number | string | null>(DEFAULT_SNAP_POINTS[0]);
   const [internalOpen, setInternalOpen] = useState(false);
   const controlled = props.open !== undefined;
   const open = controlled ? props.open : internalOpen;
@@ -39,22 +42,28 @@ export const Sheet = forwardRef<SheetHandle, SheetProps>((props, ref) => {
     <Drawer.Root
       open={open}
       onOpenChange={onOpenChange}
-      snapPoints={props.sizes ?? []}
+      snapPoints={DEFAULT_SNAP_POINTS}
+      activeSnapPoint={snap}
+      setActiveSnapPoint={setSnap}
       dismissible={props.dismissible}
+      //repositionInputs={false}
       fadeFromIndex={props.dimmedIndex ?? 0}
-      modal={props.dimmed ?? true}
-    >
+      modal={props.dimmed ?? true}>
       {props.trigger && (
         <Drawer.Trigger asChild>
-          {props.trigger}
+          {cloneElement(props.trigger as any, {
+            onPress: () => onOpenChange?.(true),
+          })}
         </Drawer.Trigger>
       )}
       <Drawer.Portal>
+        <Drawer.Title>{props.title}</Drawer.Title>
+        <Drawer.Description>{props.description}</Drawer.Description>
         <Drawer.Overlay className="sheet-overlay"/>
         <Drawer.Content className="sheet-content" style={{backgroundColor}}>
           <div className="sheet-main" style={{backgroundColor}}>
-            {props.grabber && (
-              <div className="sheet-handle" aria-hidden style={grabberStyle}/>
+            {props.grabber !== false && (
+              <Drawer.Handle className="sheet-handle" style={grabberStyle}/>
             )}
             <div className="sheet-content-wrapper">
               {props.children}

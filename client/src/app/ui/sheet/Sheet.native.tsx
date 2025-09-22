@@ -1,6 +1,5 @@
 import {TrueSheet} from '@lodev09/react-native-true-sheet';
-import {View, Pressable} from 'react-native';
-import {forwardRef, useRef, useImperativeHandle, useEffect, useState, cloneElement, isValidElement} from 'react';
+import {forwardRef, useRef, useImperativeHandle, useEffect, useState, cloneElement} from 'react';
 
 import {SheetProps, SheetHandle} from './Sheet.base';
 
@@ -22,25 +21,9 @@ export const Sheet = forwardRef<SheetHandle, SheetProps>((props, ref) => {
 
   const renderTrigger = () => {
     if (!trigger) return null;
-    // React element with onPress, clone it and add our handler
-    if (isValidElement(trigger)) {
-      const triggerProps = trigger.props as any;
-      if (triggerProps && typeof triggerProps === 'object' && 'onPress' in triggerProps) {
-        const originalOnPress = triggerProps.onPress;
-        return cloneElement(trigger as any, {
-          onPress: (e: any) => {
-            originalOnPress?.(e);
-            handleTriggerPress();
-          }
-        });
-      }
-    }
-    // Otherwise wrap it in a Pressable
-    return (
-      <Pressable onPress={handleTriggerPress}>
-        {trigger}
-      </Pressable>
-    );
+    return cloneElement(trigger as any, {
+      onPress: handleTriggerPress,
+    });
   };
 
   useImperativeHandle(ref, () => ({
@@ -69,7 +52,7 @@ export const Sheet = forwardRef<SheetHandle, SheetProps>((props, ref) => {
   }, [effectiveOpen]);
 
   return (
-    <View>
+    <>
       {renderTrigger()}
       <TrueSheet
         ref={sheet}
@@ -78,7 +61,7 @@ export const Sheet = forwardRef<SheetHandle, SheetProps>((props, ref) => {
         onDismiss={() => effectiveOnOpenChange?.(false)}
         {...trueSheetProps}
       />
-    </View>
+    </>
   );
 });
 

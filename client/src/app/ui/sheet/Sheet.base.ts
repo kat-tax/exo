@@ -8,6 +8,8 @@ export interface SheetHandle {
 
 export interface SheetProps extends TrueSheetProps {
   open?: boolean;
+  title?: string;
+  description?: string;
   trigger?: ReactNode;
   onOpenChange?: (open: boolean) => void;
 }

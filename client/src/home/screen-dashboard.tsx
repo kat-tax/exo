@@ -14,12 +14,7 @@ import {getShortcuts} from 'app/data/queries';
 import {useShortcuts} from 'home/hooks/use-shortcuts';
 import cfg from 'config';
 
-import {Sheet} from 'app/ui/sheet';
-import {useState} from 'react';
-import {Logout, Signup} from 'design';
-
 export default function ScreenDashboard() {
-  const [open, setOpen] = useState(false);
   const shortcuts = useShortcuts();
   const settings = useSettings();
   const clock = useClock();
@@ -56,9 +51,8 @@ export default function ScreenDashboard() {
         <GridCell
           focusKey="shortcut-add"
           onPress={() => {
-            //const id = data?.find(shortcut => !shortcut.url)?.id ?? shortcuts.create();
-            //if (id) nav(`/shortcut/${id}`);
-            setOpen(true);
+            const id = data?.find(shortcut => !shortcut.url)?.id ?? shortcuts.create();
+            if (id) nav(`/shortcut/${id}`);
           }}>
           <View style={[styles.shortcut, styles.shortcutAdd]}>
             <Icon
@@ -69,14 +63,6 @@ export default function ScreenDashboard() {
               })}
             />
           </View>
-          <Sheet
-            open={open}
-            dimmed={true}
-            grabber={true}
-            dismissible={true}
-            onOpenChange={setOpen}>
-            <Logout/>
-          </Sheet>
         </GridCell>
       </Grid>
     </Panel>

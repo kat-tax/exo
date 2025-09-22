@@ -10,7 +10,9 @@ import {useTheme} from 'settings/hooks/use-theme';
 import {useLocale} from 'settings/hooks/use-locale';
 import {useSettings} from 'settings/hooks/use-settings';
 import {locales} from 'config/locales';
-import {Button} from 'design';
+import {Button, Prompt} from 'design';
+
+import {Sheet} from 'app/ui/sheet';
 
 export default function ScreenSettings() {
   const [scheme, setScheme] = useTheme(true);
@@ -101,12 +103,27 @@ export default function ScreenSettings() {
           <PanelItem
             label={t`Clear Data`}
             description={t`Reset owner and delete database.`}>
-            <Button
-              label={t`Reset Database`}
-              mode="Destructive"
-              state="Default"
-              onPress={settings.resetOwner}
-            />
+            <Sheet trigger={
+              <Button
+                label={t`Reset Database`}
+                mode="Destructive"
+                state="Default"
+              />
+            }>
+              <Prompt
+                title={t`Reset Database`}
+                message={t`This will reset your owner key and delete your local database. This action is irreversible. If you have data you wish to backup, make sure to save your owner key and sync to a relay.`}
+                showClose={false}
+                confirmButton={
+                  <Button
+                    label={t`Reset`}
+                    mode="Destructive"
+                    state="Default"
+                    onPress={settings.resetOwner}
+                  />
+                }
+              />
+            </Sheet>
           </PanelItem>
         </PanelSection>
       </View>
