@@ -1,7 +1,17 @@
 /// <reference types="vite/client"/>
 
-import type {AppThemes, AppBreakpoints} from 'design/styles';
 import type {SvgProps} from 'react-native-svg';
+import type {NativeStackScreenProps} from '@react-navigation/native-stack';
+import type {AppThemes, AppBreakpoints} from 'design/styles';
+import type {RootStackParamList} from 'app/navigation';
+
+// Navigation types
+declare global {
+  namespace ReactNavigation {
+    interface RootParamList extends RootStackParamList {}
+    interface ScreenProps<T extends keyof RootStackParamList> extends NativeStackScreenProps<RootStackParamList, T> {}
+  }
+}
 
 // Platform globals
 declare global {

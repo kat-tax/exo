@@ -1,6 +1,6 @@
 import {useMemo, useRef} from 'react';
 import {useLingui} from '@lingui/react/macro';
-import {useNavigate, useParams} from 'react-exo/navigation';
+// import {useNavigate, useParams} from 'react-exo/navigation';
 import {Platform, View, Pressable} from 'react-native';
 import {StyleSheet} from 'react-native-unistyles';
 import {TextInput} from 'react-exo/textinput';
@@ -14,8 +14,10 @@ import {getList, getListCategories} from 'app/data/queries';
 
 import type {TextInput as TextInputType} from 'react-native';
 
-export default function ScreenListEdit() {
-  const {id} = useParams<{id: string}>();
+export default function ScreenListEdit({route, navigation}: ReactNavigation.ScreenProps<'TasksListEdit'>) {
+  // const {id} = useParams<{id: string}>();
+  const {id} = route.params;
+  // const {id} = useParams<{id: string}>();
   const lists = useLists();
   const listId = useMemo(() => lists.getId(id), [id]);
   const listData = useQuery(getList(listId))[0];
@@ -23,7 +25,7 @@ export default function ScreenListEdit() {
   const categoryInputRef = useRef<TextInputType>(null);
 
   const update = lists.update.bind(null, listId);
-  const nav = useNavigate();
+  // const nav = useNavigate();
   const {t} = useLingui();
 
   const removeCategory = lists.removeCategory.bind(null, listId);
@@ -36,7 +38,8 @@ export default function ScreenListEdit() {
   };
 
   if (!listData) {
-    nav('/lists');
+    // nav('/lists');
+    navigation.navigate('TasksListAll');
     return null;
   }
 
@@ -44,7 +47,7 @@ export default function ScreenListEdit() {
     <Panel
       title={listData.name || t`Untitled`}
       message={t`Configure task list`}
-      back="/lists"
+      back="TasksListAll"
       right={
         <View style={styles.list}>
           <Icon.Remote
@@ -157,7 +160,8 @@ export default function ScreenListEdit() {
                 state="Default"
                 onPress={() => {
                   lists.remove(listId);
-                  nav('/lists');
+                  // nav('/lists');
+                  navigation.navigate('TasksListAll');
                 }}
               />
             </PanelItem>

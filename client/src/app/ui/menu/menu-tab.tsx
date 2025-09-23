@@ -1,20 +1,26 @@
 import {View, Text} from 'react-native';
 import {StyleSheet} from 'react-native-unistyles';
-import {useLocation, Link} from 'react-exo/navigation';
+//import {useLocation, Link} from 'react-exo/navigation';
+import {useRoute} from '@react-navigation/native';
+import {Link} from '@react-navigation/native';
 import {Icon} from 'react-exo/icon';
+
+import type {RootStackParamList} from 'app/navigation';
 
 interface MenuTabProps extends React.PropsWithChildren {
   label: string,
-  path: string,
+  path: keyof RootStackParamList,
   icon: React.ReactElement,
 }
 
 export function MenuTab(props: MenuTabProps) {
-  const {pathname} = useLocation();
-  const isActive = props.path === decodeURIComponent(pathname);
+  //const {pathname} = useLocation();
+  //const isActive = props.path === decodeURIComponent(pathname);
+  const route = useRoute();
+  const isActive = route.name === props.path;
 
   return (
-    <Link to={props.path}>
+    <Link screen={props.path} params={{}}>
       <View style={styles.item}>
         {props.icon && Icon.New(props.icon, {
           size: 20,

@@ -2,29 +2,37 @@ import {Icon} from 'react-exo/icon';
 import {View, Text} from 'react-native';
 import {StyleSheet} from 'react-native-unistyles';
 import {useFocusable} from '@noriginmedia/norigin-spatial-navigation';
-import {useLocation, useNavigate, Link} from 'react-exo/navigation';
+// import {useLocation, useNavigate, Link} from 'react-exo/navigation';
+import {useNavigation} from '@react-navigation/native';
+import {useRoute} from '@react-navigation/native';
+import {Link} from '@react-navigation/native';
+
+import type {RootStackParamList} from 'app/navigation';
 
 interface MenuItemProps extends React.PropsWithChildren {
   label: string,
-  path: string,
+  path: keyof RootStackParamList,
   icon: React.ReactElement,
   mode?: 'default' | 'action',
 }
 
 export function MenuItem(props: MenuItemProps) {
-  const nav = useNavigate();
-  const loc = useLocation();
+  //const nav = useNavigate();
+  //const loc = useLocation();
+  //const active = props.path === decodeURIComponent(loc.pathname);
+  const nav = useNavigation();
+  const route = useRoute();
+  const active = route.name === props.path;
   const mode = props.mode ?? 'default';
   const action = mode === 'action';
-  const active = props.path === decodeURIComponent(loc.pathname);
   const {ref, focused} = useFocusable({
     focusKey: `menu@${props.path}`,
-    onFocus: () => nav(props.path),
+    //onFocus: () => nav(props.path),
   });
 
   return (
-    <Link ref={ref} to={props.path}>
-      <View style={[
+    <Link screen={props.path} params={{}} style={{width: '100%'}}>
+      <View ref={ref} style={[
         styles.item,
         action && styles.action,
         active && styles.active,
@@ -50,6 +58,7 @@ export function MenuItem(props: MenuItemProps) {
 
 const styles = StyleSheet.create((theme) => ({
   item: {
+    width: '100%',
     flexDirection: 'row',
     alignItems: 'center',
     borderRadius: theme.display.radius1,

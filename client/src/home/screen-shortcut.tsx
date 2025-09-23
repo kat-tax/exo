@@ -1,6 +1,6 @@
 import {useMemo} from 'react';
 import {useLingui} from '@lingui/react/macro';
-import {useNavigate, useParams} from 'react-exo/navigation';
+//import {useNavigate, useParams} from 'react-exo/navigation';
 import {Platform, View} from 'react-native';
 import {StyleSheet} from 'react-native-unistyles';
 import {TextInput} from 'react-exo/textinput';
@@ -11,18 +11,20 @@ import {getShortcut} from 'app/data/queries';
 import {useQuery} from 'app/data';
 import {Button} from 'design';
 
-export default function ScreenShortcut() {
-  const {id} = useParams<{id: string}>();
+export default function ScreenShortcutEdit({route, navigation}: ReactNavigation.ScreenProps<'HomeShortcut'>) {
+  // const {id} = useParams<{id: string}>();
+  const {id} = route.params;
   const shortcuts = useShortcuts();
   const shortcutId = useMemo(() => shortcuts.getId(id), [id]);
   const shortcutData = useQuery(getShortcut(shortcutId))[0];
 
   const update = shortcuts.update.bind(null, shortcutId);
-  const nav = useNavigate();
+  //const nav = useNavigate();
   const {t} = useLingui();
 
   if (!shortcutData) {
-    nav('/');
+    //nav('/');
+    navigation.navigate('HomeDashboard');
     return null;
   }
 
@@ -30,7 +32,7 @@ export default function ScreenShortcut() {
     <Panel
       title={shortcutData.name || t`Untitled`}
       message={t`Configure dashboard shortcut`}
-      back="/"
+      back="HomeDashboard"
       right={
         <View style={styles.icon}>
           <Icon.Remote
@@ -107,7 +109,8 @@ export default function ScreenShortcut() {
                 state="Default"
                 onPress={() => {
                   shortcuts.remove(shortcutId);
-                  nav('/');
+                  navigation.navigate('HomeDashboard');
+                  //nav('/');
                 }}
               />
             </PanelItem>

@@ -3,7 +3,8 @@ import {Trans} from '@lingui/react';
 import {Linking, Text, View} from 'react-native';
 import {StyleSheet} from 'react-native-unistyles';
 import {useSettings} from 'settings/hooks/use-settings';
-import {useNavigate} from 'react-exo/navigation';
+// import {useNavigate} from 'react-exo/navigation';
+import {useNavigation} from '@react-navigation/native';
 import {useClock} from 'home/hooks/use-clock';
 import {greetMsg} from 'home/utils/time';
 import {Panel} from 'app/ui/panel';
@@ -19,7 +20,8 @@ export default function ScreenDashboard() {
   const settings = useSettings();
   const clock = useClock();
   const data = useQuery(getShortcuts);
-  const nav = useNavigate();
+  //const nav = useNavigate();
+  const nav = useNavigation();
 
   return (
     <Panel
@@ -36,7 +38,7 @@ export default function ScreenDashboard() {
             key={id}
             focusKey={`shortcut-${id}`}
             onPress={() => url && Linking.openURL(url)}
-            onEditSelect={() => nav(`/shortcut/${id}`)}>
+            onEditSelect={() => nav.navigate('HomeShortcut', {id})}>
             <View style={[styles.shortcut, !url && styles.shortcutAdd]}>
               <Icon.Remote
                 name={icon ?? ''}
@@ -52,7 +54,7 @@ export default function ScreenDashboard() {
           focusKey="shortcut-add"
           onPress={() => {
             const id = data?.find(shortcut => !shortcut.url)?.id ?? shortcuts.create();
-            if (id) nav(`/shortcut/${id}`);
+            if (id) nav.navigate('HomeShortcut', {id});
           }}>
           <View style={[styles.shortcut, styles.shortcutAdd]}>
             <Icon

@@ -2,7 +2,8 @@ import {Icon} from 'react-exo/icon';
 import {View, ScrollView} from 'react-native';
 import {StyleSheet, Display, mq} from 'react-native-unistyles';
 import {useFocusable, FocusContext} from '@noriginmedia/norigin-spatial-navigation';
-import {useLocation} from 'react-exo/navigation';
+//import {useLocation} from 'react-exo/navigation';
+import {useRoute} from '@react-navigation/native';
 import {useLingui} from '@lingui/react/macro';
 import {breakpoints} from 'design/theme';
 
@@ -14,12 +15,14 @@ import {MenuFooter} from './menu-footer';
 
 export function Menu() {
   const {t} = useLingui();
-  const {pathname} = useLocation();
+  const route = useRoute();
+  //const {pathname} = useLocation();
   const {ref, focusKey} = useFocusable({
     forceFocus: true,
     isFocusBoundary: true,
     focusBoundaryDirections: ['up', 'down'],
-    preferredChildFocusKey: `menu@${pathname}`,
+    //preferredChildFocusKey: `menu@${pathname}`,
+    preferredChildFocusKey: `menu@${route.key}`,
   });
 
   return (
@@ -29,22 +32,22 @@ export function Menu() {
           <MenuTab
             label={t`Dashboard`}
             icon={<Icon name="ph:squares-four"/>}
-            path="/"
+            path="HomeDashboard"
           />
           <MenuTab
             label={t`Lists`}
             icon={<Icon name="ph:list-checks"/>}
-            path="/lists"
+            path="TasksListAll"
           />
           <MenuTab
             label={t`Charts`}
             icon={<Icon name="ph:chart-line"/>}
-            path="/charts"
+            path="DevCharts"
           />
           <MenuTab
             label={t`Settings`}
             icon={<Icon name="ph:gear"/>}
-            path="/settings"
+            path="Settings"
           />
         </View>
       </Display>
@@ -57,24 +60,24 @@ export function Menu() {
                 <MenuItem
                   label={t`Dashboard`}
                   icon={<Icon name="ph:squares-four"/>}
-                  path="/"
+                  path="HomeDashboard"
                 />
                 <MenuItem
                   label={t`Lists`}
                   icon={<Icon name="ph:list-checks"/>}
-                  path="/lists"
+                  path="TasksListAll"
                 />
                 {__DEV__ &&
                   <MenuGroup label={t`Development`}>
                     <MenuItem
                       label={t`Design`}
                       icon={<Icon name="ph:palette"/>}
-                      path="/design"
+                      path="DevDesign"
                     />
                     <MenuItem
                       label={t`Charts`}
                       icon={<Icon name="ph:chart-line"/>}
-                      path="/charts"
+                      path="DevCharts"
                     />
                   </MenuGroup>
                 }
@@ -84,7 +87,7 @@ export function Menu() {
                   <MenuItem
                     label={t`Settings`}
                     icon={<Icon name="ph:gear"/>}
-                    path="/settings"
+                    path="Settings"
                     mode="action"
                   />
                 </View>

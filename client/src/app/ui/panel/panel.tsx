@@ -1,13 +1,16 @@
 import {View, ScrollView, Text} from 'react-native';
 import {StyleSheet} from 'react-native-unistyles';
-import {Link} from 'react-exo/navigation';
+// import {Link} from 'react-exo/navigation';
+import {Link} from '@react-navigation/native';
 import {Icon} from 'react-exo/icon';
+
+import type {RootStackParamList} from 'app/navigation';
 
 export interface PanelProps extends React.PropsWithChildren {
   title?: string | React.ReactNode,
   message?: string | React.ReactNode,
   right?: React.ReactNode,
-  back?: string,
+  back?: keyof RootStackParamList,
 }
 
 export function Panel(props: PanelProps) {
@@ -27,7 +30,7 @@ export function Panel(props: PanelProps) {
                     <View style={styles.titlebar}>
                       {props.back &&
                         <View style={styles.back}>
-                          <Link to={props.back}>
+                          <Link screen={props.back} params={{}}>
                             <Icon name="ph:arrow-left" size={28}/>
                           </Link>
                         </View>
