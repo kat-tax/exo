@@ -1,7 +1,7 @@
 import * as echarts from 'echarts/core';
 import * as E from './lib/loader';
-import renderer from './lib/renderer';
-import SkiaChart from '@wuba/react-native-echarts/skiaChart';
+import Renderer from './lib/renderer';
+import ChartView from '@wuba/react-native-echarts/skiaChart';
 import {useRef, useEffect, useCallback} from 'react';
 import {withUnistyles} from 'react-native-unistyles';
 import {View} from 'react-native';
@@ -9,7 +9,7 @@ import {View} from 'react-native';
 import type {ChartOption} from './lib/loader';
 import type {ColorSchemeName, LayoutChangeEvent, StyleProp, ViewStyle} from 'react-native';
 
-echarts.use([renderer, ...Object.values(E)]);
+echarts.use([Renderer, ...Object.values(E)]);
 
 interface ChartProps {
   option: ChartOption;
@@ -71,7 +71,7 @@ export const Chart = withUnistyles(({
         height: height === 'auto' ? undefined : height,
         width: width === 'auto' ? undefined : width,
       }, style]}>
-      <SkiaChart ref={skia} useRNGH={useRNGH}/>
+      <ChartView ref={skia} useRNGH={useRNGH}/>
     </View>
   );
 }, () => ({

@@ -184,7 +184,7 @@ const styles = StyleSheet.create((theme) => ({
         width: '100%',
       },
       android: {
-        minWidth: 200,
+        minWidth: 120,
       },
       default: {
         minWidth: 120,
