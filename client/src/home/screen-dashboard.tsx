@@ -12,14 +12,11 @@ import {GridCell} from 'app/ui/grid';
 import {useQuery} from 'app/data';
 import {getShortcuts} from 'app/data/queries';
 import {useShortcuts} from 'home/hooks/use-shortcuts';
-import {useTheme} from 'settings/hooks/use-theme';
 import cfg from 'config';
-import {Chart} from 'app/ui/chart/Chart';
 
 export default function ScreenDashboard() {
   const shortcuts = useShortcuts();
   const settings = useSettings();
-  const [theme] = useTheme();
   const clock = useClock();
   const data = useQuery(getShortcuts);
   const nav = useNavigate();
@@ -33,42 +30,6 @@ export default function ScreenDashboard() {
           {clock}
         </Text>
       }>
-      <Chart theme={theme} option={{
-        series: [
-          {
-            data: [150, 230, 224, 218, 135, 147, 260],
-            type: 'line',
-          },
-        ],
-        xAxis: {
-          type: 'category',
-          data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-        },
-        yAxis: {
-          type: 'value',
-        },
-      }}/>
-      <Chart theme={theme} option={{
-        series: [
-          {
-            type: 'pie',
-            data: [
-              {
-                value: 335,
-                name: 'Direct'
-              },
-              {
-                value: 234,
-                name: 'Index'
-              },
-              {
-                value: 1548,
-                name: 'Social'
-              }
-            ]
-          }
-        ]
-      }}/>
       <Grid>
         {data?.filter(shortcut => shortcut.url)?.map(({id, url, icon, color}) => (
           <GridCell

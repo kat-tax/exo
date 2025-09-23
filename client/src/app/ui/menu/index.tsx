@@ -37,6 +37,11 @@ export function Menu() {
             path="/lists"
           />
           <MenuTab
+            label={t`Charts`}
+            icon={<Icon name="ph:chart-line"/>}
+            path="/charts"
+          />
+          <MenuTab
             label={t`Settings`}
             icon={<Icon name="ph:gear"/>}
             path="/settings"
@@ -65,6 +70,11 @@ export function Menu() {
                       label={t`Design`}
                       icon={<Icon name="ph:palette"/>}
                       path="/design"
+                    />
+                    <MenuItem
+                      label={t`Charts`}
+                      icon={<Icon name="ph:chart-line"/>}
+                      path="/charts"
                     />
                   </MenuGroup>
                 }

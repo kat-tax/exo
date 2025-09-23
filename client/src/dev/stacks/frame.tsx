@@ -4,6 +4,7 @@ import {View, ScrollView, Text} from 'react-native';
 export interface FrameProps {
   title: string,
   children?: React.ReactNode,
+  noScroll?: boolean,
 }
 
 export function Frame(props: FrameProps) {
@@ -12,9 +13,15 @@ export function Frame(props: FrameProps) {
       <Text style={styles.title}>
         {props.title}
       </Text>
-      <ScrollView horizontal contentContainerStyle={styles.content}>
-        {props.children}
-      </ScrollView>
+      {!props.noScroll ? (
+        <ScrollView horizontal contentContainerStyle={styles.content}>
+          {props.children}
+        </ScrollView>
+      ) : (
+        <View style={styles.content}>
+          {props.children}
+        </View>
+      )}
     </View>
   );
 }

@@ -18,6 +18,7 @@ export function Router() {
           <Route path="settings" element={<Screen.Settings.Settings/>}/>
           {/* Dev Mode */}
           <Route path="design" element={<Screen.Dev.Design/>}/>
+          <Route path="charts" element={<Screen.Dev.Charts/>}/>
         </Route>
       </Routes>
     </_>
