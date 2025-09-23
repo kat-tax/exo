@@ -14,7 +14,7 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. placeholder {0}: 12
-#: ../../client/src/dev/screen-design.tsx:14
+#: ../../client/src/dev/screen-design.tsx:15
 msgid "{0} components"
 msgstr "{0} components"
 
@@ -27,18 +27,14 @@ msgid "Add section names for items."
 msgstr "Add section names for items."
 
 #: ../../client/src/home/screen-shortcut.tsx:74
-#: ../../client/src/settings/screen-settings.tsx:41
+#: ../../client/src/settings/screen-settings.tsx:43
 #: ../../client/src/tasks/screen-list-edit.tsx:124
 msgid "Appearance"
 msgstr "Appearance"
 
-#: ../../client/src/settings/hooks/use-settings.ts:40
+#: ../../client/src/settings/hooks/use-settings.ts:38
 msgid "Are you sure you want to change the owner key? This will reset the local database. This action cannot be undone."
 msgstr "Are you sure you want to change the owner key? This will reset the local database. This action cannot be undone."
-
-#: ../../client/src/settings/hooks/use-settings.ts:32
-msgid "Are you sure you want to reset your local database? If data is not backed up on another device, it will be lost. This action cannot be undone."
-msgstr "Are you sure you want to reset your local database? If data is not backed up on another device, it will be lost. This action cannot be undone."
 
 #: ../../design/components/base/popovers/prompt/Prompt.tsx:49
 msgid "Cancel"
@@ -60,11 +56,17 @@ msgstr "Categories"
 msgid "Category"
 msgstr "Category"
 
-#: ../../client/src/settings/screen-settings.tsx:31
+#: ../../client/src/app/ui/menu/index.tsx:40
+#: ../../client/src/app/ui/menu/index.tsx:75
+#: ../../client/src/dev/screen-charts.tsx:14
+msgid "Charts"
+msgstr "Charts"
+
+#: ../../client/src/settings/screen-settings.tsx:33
 msgid "Choose your display name."
 msgstr "Choose your display name."
 
-#: ../../client/src/settings/screen-settings.tsx:102
+#: ../../client/src/settings/screen-settings.tsx:104
 msgid "Clear Data"
 msgstr "Clear Data"
 
@@ -81,10 +83,11 @@ msgstr "Configure dashboard shortcut"
 msgid "Configure task list"
 msgstr "Configure task list"
 
-#: ../../client/src/settings/screen-settings.tsx:25
+#: ../../client/src/settings/screen-settings.tsx:27
 msgid "Configure the app"
 msgstr "Configure the app"
 
+#: ../../client/src/settings/screen-settings.tsx:131
 #: ../../design/components/features/auth/signup/Signup.tsx:53
 msgid "Confirm"
 msgstr "Confirm"
@@ -99,16 +102,16 @@ msgstr "Create Account"
 msgid "Danger Zone"
 msgstr "Danger Zone"
 
-#: ../../client/src/settings/screen-settings.tsx:70
+#: ../../client/src/settings/screen-settings.tsx:72
 msgid "Dark"
 msgstr "Dark"
 
 #: ../../client/src/app/ui/menu/index.tsx:30
-#: ../../client/src/app/ui/menu/index.tsx:53
+#: ../../client/src/app/ui/menu/index.tsx:58
 msgid "Dashboard"
 msgstr "Dashboard"
 
-#: ../../client/src/settings/screen-settings.tsx:74
+#: ../../client/src/settings/screen-settings.tsx:76
 msgid "Data"
 msgstr "Data"
 
@@ -122,16 +125,16 @@ msgstr "Delete List"
 msgid "Delete Shortcut"
 msgstr "Delete Shortcut"
 
-#: ../../client/src/app/ui/menu/index.tsx:65
-#: ../../client/src/dev/screen-design.tsx:13
+#: ../../client/src/app/ui/menu/index.tsx:70
+#: ../../client/src/dev/screen-design.tsx:14
 msgid "Design"
 msgstr "Design"
 
-#: ../../client/src/app/ui/menu/index.tsx:63
+#: ../../client/src/app/ui/menu/index.tsx:68
 msgid "Development"
 msgstr "Development"
 
-#: ../../client/src/settings/screen-settings.tsx:30
+#: ../../client/src/settings/screen-settings.tsx:32
 msgid "Display Name"
 msgstr "Display Name"
 
@@ -144,16 +147,16 @@ msgstr "Edit Item..."
 msgid "Email"
 msgstr "Email"
 
-#: ../../client/src/settings/screen-settings.tsx:83
+#: ../../client/src/settings/screen-settings.tsx:85
 msgid "Enter mnemonic"
 msgstr "Enter mnemonic"
 
-#: ../../client/src/settings/screen-settings.tsx:37
+#: ../../client/src/settings/screen-settings.tsx:39
 msgid "Enter name"
 msgstr "Enter name"
 
 #: ../../client/src/settings/hooks/use-settings.ts:24
-#: ../../client/src/settings/hooks/use-settings.ts:47
+#: ../../client/src/settings/hooks/use-settings.ts:45
 msgid "Error"
 msgstr "Error"
 
@@ -267,7 +270,7 @@ msgstr "Invalid name (max 25 characters)."
 msgid "Invalid name field."
 msgstr "Invalid name field."
 
-#: ../../client/src/settings/hooks/use-settings.ts:49
+#: ../../client/src/settings/hooks/use-settings.ts:47
 msgid "Invalid owner key."
 msgstr "Invalid owner key."
 
@@ -284,11 +287,11 @@ msgstr "Invalid text content field."
 msgid "Invalid URL field."
 msgstr "Invalid URL field."
 
-#: ../../client/src/settings/screen-settings.tsx:43
+#: ../../client/src/settings/screen-settings.tsx:45
 msgid "Language"
 msgstr "Language"
 
-#: ../../client/src/settings/screen-settings.tsx:69
+#: ../../client/src/settings/screen-settings.tsx:71
 msgid "Light"
 msgstr "Light"
 
@@ -301,7 +304,7 @@ msgid "List name"
 msgstr "List name"
 
 #: ../../client/src/app/ui/menu/index.tsx:35
-#: ../../client/src/app/ui/menu/index.tsx:58
+#: ../../client/src/app/ui/menu/index.tsx:63
 #: ../../client/src/tasks/screen-list-all.tsx:21
 msgid "Lists"
 msgstr "Lists"
@@ -336,7 +339,7 @@ msgstr "New item..."
 msgid "Organize your tasks"
 msgstr "Organize your tasks"
 
-#: ../../client/src/settings/screen-settings.tsx:76
+#: ../../client/src/settings/screen-settings.tsx:78
 msgid "Owner Key"
 msgstr "Owner Key"
 
@@ -359,33 +362,34 @@ msgstr "Permanently delete list."
 msgid "Permanently delete shortcut."
 msgstr "Permanently delete shortcut."
 
-#: ../../client/src/settings/screen-settings.tsx:28
+#: ../../client/src/settings/screen-settings.tsx:30
 msgid "Profile"
 msgstr "Profile"
 
-#: ../../client/src/settings/screen-settings.tsx:105
+#: ../../client/src/settings/screen-settings.tsx:108
+#: ../../client/src/settings/screen-settings.tsx:115
 msgid "Reset Database"
 msgstr "Reset Database"
 
-#: ../../client/src/settings/screen-settings.tsx:103
+#: ../../client/src/settings/screen-settings.tsx:105
 msgid "Reset owner and delete database."
 msgstr "Reset owner and delete database."
 
-#: ../../client/src/settings/screen-settings.tsx:62
+#: ../../client/src/settings/screen-settings.tsx:64
 msgid "Select the color scheme."
 msgstr "Select the color scheme."
 
-#: ../../client/src/settings/screen-settings.tsx:44
+#: ../../client/src/settings/screen-settings.tsx:46
 msgid "Select your preferred language."
 msgstr "Select your preferred language."
 
-#: ../../client/src/settings/screen-settings.tsx:77
+#: ../../client/src/settings/screen-settings.tsx:79
 msgid "Set mnemonic to sync devices."
 msgstr "Set mnemonic to sync devices."
 
-#: ../../client/src/app/ui/menu/index.tsx:40
-#: ../../client/src/app/ui/menu/index.tsx:75
-#: ../../client/src/settings/screen-settings.tsx:24
+#: ../../client/src/app/ui/menu/index.tsx:45
+#: ../../client/src/app/ui/menu/index.tsx:85
+#: ../../client/src/settings/screen-settings.tsx:26
 msgid "Settings"
 msgstr "Settings"
 
@@ -393,8 +397,8 @@ msgstr "Settings"
 msgid "Shortcut Error"
 msgstr "Shortcut Error"
 
-#: ../../client/src/settings/screen-settings.tsx:50
-#: ../../client/src/settings/screen-settings.tsx:68
+#: ../../client/src/settings/screen-settings.tsx:52
+#: ../../client/src/settings/screen-settings.tsx:70
 msgid "System"
 msgstr "System"
 
@@ -426,13 +430,22 @@ msgstr "The icon to display for the shortcut."
 msgid "The web page to link to."
 msgstr "The web page to link to."
 
-#: ../../client/src/settings/screen-settings.tsx:61
+#: ../../client/src/settings/screen-settings.tsx:63
 msgid "Theme"
 msgstr "Theme"
 
 #: ../../design/components/features/auth/logout/Logout.tsx:24
 msgid "This will clear all session data. Are you sure you would like to proceed?"
 msgstr "This will clear all session data. Are you sure you would like to proceed?"
+
+#: ../../client/src/settings/screen-settings.tsx:116
+msgid "This will reset your owner key and delete your local database. This action is irreversible. If you have data you wish to backup make sure to save your owner key."
+msgstr "This will reset your owner key and delete your local database. This action is irreversible. If you have data you wish to backup make sure to save your owner key."
+
+#. placeholder {0}: 'delete'
+#: ../../client/src/settings/screen-settings.tsx:124
+msgid "Type \"{0}\" to confirm"
+msgstr "Type \"{0}\" to confirm"
 
 #: ../../client/src/home/screen-shortcut.tsx:31
 #: ../../client/src/tasks/screen-list-details.tsx:31

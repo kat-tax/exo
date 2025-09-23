@@ -14,7 +14,7 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. placeholder {0}: 12
-#: ../../client/src/dev/screen-design.tsx:14
+#: ../../client/src/dev/screen-design.tsx:15
 msgid "{0} components"
 msgstr "{0}개 컴포넌트"
 
@@ -27,18 +27,14 @@ msgid "Add section names for items."
 msgstr ""
 
 #: ../../client/src/home/screen-shortcut.tsx:74
-#: ../../client/src/settings/screen-settings.tsx:41
+#: ../../client/src/settings/screen-settings.tsx:43
 #: ../../client/src/tasks/screen-list-edit.tsx:124
 msgid "Appearance"
 msgstr "외관"
 
-#: ../../client/src/settings/hooks/use-settings.ts:40
+#: ../../client/src/settings/hooks/use-settings.ts:38
 msgid "Are you sure you want to change the owner key? This will reset the local database. This action cannot be undone."
 msgstr "소유자 키를 변경하시겠습니까? 로컬 데이터베이스가 초기화됩니다. 이 작업은 되돌릴 수 없습니다."
-
-#: ../../client/src/settings/hooks/use-settings.ts:32
-msgid "Are you sure you want to reset your local database? If data is not backed up on another device, it will be lost. This action cannot be undone."
-msgstr "로컬 데이터베이스를 초기화하시겠습니까? 다른 기기에 백업되지 않은 데이터는 손실됩니다. 이 작업은 되돌릴 수 없습니다."
 
 #: ../../design/components/base/popovers/prompt/Prompt.tsx:49
 msgid "Cancel"
@@ -60,11 +56,17 @@ msgstr ""
 msgid "Category"
 msgstr ""
 
-#: ../../client/src/settings/screen-settings.tsx:31
+#: ../../client/src/app/ui/menu/index.tsx:40
+#: ../../client/src/app/ui/menu/index.tsx:75
+#: ../../client/src/dev/screen-charts.tsx:14
+msgid "Charts"
+msgstr ""
+
+#: ../../client/src/settings/screen-settings.tsx:33
 msgid "Choose your display name."
 msgstr ""
 
-#: ../../client/src/settings/screen-settings.tsx:102
+#: ../../client/src/settings/screen-settings.tsx:104
 msgid "Clear Data"
 msgstr ""
 
@@ -81,10 +83,11 @@ msgstr ""
 msgid "Configure task list"
 msgstr ""
 
-#: ../../client/src/settings/screen-settings.tsx:25
+#: ../../client/src/settings/screen-settings.tsx:27
 msgid "Configure the app"
 msgstr ""
 
+#: ../../client/src/settings/screen-settings.tsx:131
 #: ../../design/components/features/auth/signup/Signup.tsx:53
 msgid "Confirm"
 msgstr ""
@@ -99,16 +102,16 @@ msgstr ""
 msgid "Danger Zone"
 msgstr ""
 
-#: ../../client/src/settings/screen-settings.tsx:70
+#: ../../client/src/settings/screen-settings.tsx:72
 msgid "Dark"
 msgstr "다크"
 
 #: ../../client/src/app/ui/menu/index.tsx:30
-#: ../../client/src/app/ui/menu/index.tsx:53
+#: ../../client/src/app/ui/menu/index.tsx:58
 msgid "Dashboard"
 msgstr "대시보드"
 
-#: ../../client/src/settings/screen-settings.tsx:74
+#: ../../client/src/settings/screen-settings.tsx:76
 msgid "Data"
 msgstr ""
 
@@ -122,16 +125,16 @@ msgstr ""
 msgid "Delete Shortcut"
 msgstr ""
 
-#: ../../client/src/app/ui/menu/index.tsx:65
-#: ../../client/src/dev/screen-design.tsx:13
+#: ../../client/src/app/ui/menu/index.tsx:70
+#: ../../client/src/dev/screen-design.tsx:14
 msgid "Design"
 msgstr "디자인"
 
-#: ../../client/src/app/ui/menu/index.tsx:63
+#: ../../client/src/app/ui/menu/index.tsx:68
 msgid "Development"
 msgstr "개발"
 
-#: ../../client/src/settings/screen-settings.tsx:30
+#: ../../client/src/settings/screen-settings.tsx:32
 msgid "Display Name"
 msgstr "표시 이름"
 
@@ -144,16 +147,16 @@ msgstr ""
 msgid "Email"
 msgstr ""
 
-#: ../../client/src/settings/screen-settings.tsx:83
+#: ../../client/src/settings/screen-settings.tsx:85
 msgid "Enter mnemonic"
 msgstr "니모닉 입력"
 
-#: ../../client/src/settings/screen-settings.tsx:37
+#: ../../client/src/settings/screen-settings.tsx:39
 msgid "Enter name"
 msgstr "이름 입력"
 
 #: ../../client/src/settings/hooks/use-settings.ts:24
-#: ../../client/src/settings/hooks/use-settings.ts:47
+#: ../../client/src/settings/hooks/use-settings.ts:45
 msgid "Error"
 msgstr "오류"
 
@@ -267,7 +270,7 @@ msgstr "잘못된 이름 (최대 25자)."
 msgid "Invalid name field."
 msgstr "잘못된 이름 필드입니다."
 
-#: ../../client/src/settings/hooks/use-settings.ts:49
+#: ../../client/src/settings/hooks/use-settings.ts:47
 msgid "Invalid owner key."
 msgstr "잘못된 소유자 키입니다."
 
@@ -284,11 +287,11 @@ msgstr ""
 msgid "Invalid URL field."
 msgstr "잘못된 URL 필드입니다."
 
-#: ../../client/src/settings/screen-settings.tsx:43
+#: ../../client/src/settings/screen-settings.tsx:45
 msgid "Language"
 msgstr "언어"
 
-#: ../../client/src/settings/screen-settings.tsx:69
+#: ../../client/src/settings/screen-settings.tsx:71
 msgid "Light"
 msgstr "라이트"
 
@@ -301,7 +304,7 @@ msgid "List name"
 msgstr ""
 
 #: ../../client/src/app/ui/menu/index.tsx:35
-#: ../../client/src/app/ui/menu/index.tsx:58
+#: ../../client/src/app/ui/menu/index.tsx:63
 #: ../../client/src/tasks/screen-list-all.tsx:21
 msgid "Lists"
 msgstr ""
@@ -336,7 +339,7 @@ msgstr ""
 msgid "Organize your tasks"
 msgstr ""
 
-#: ../../client/src/settings/screen-settings.tsx:76
+#: ../../client/src/settings/screen-settings.tsx:78
 msgid "Owner Key"
 msgstr "소유자 키"
 
@@ -359,33 +362,34 @@ msgstr ""
 msgid "Permanently delete shortcut."
 msgstr ""
 
-#: ../../client/src/settings/screen-settings.tsx:28
+#: ../../client/src/settings/screen-settings.tsx:30
 msgid "Profile"
 msgstr "프로필"
 
-#: ../../client/src/settings/screen-settings.tsx:105
+#: ../../client/src/settings/screen-settings.tsx:108
+#: ../../client/src/settings/screen-settings.tsx:115
 msgid "Reset Database"
 msgstr ""
 
-#: ../../client/src/settings/screen-settings.tsx:103
+#: ../../client/src/settings/screen-settings.tsx:105
 msgid "Reset owner and delete database."
 msgstr ""
 
-#: ../../client/src/settings/screen-settings.tsx:62
+#: ../../client/src/settings/screen-settings.tsx:64
 msgid "Select the color scheme."
 msgstr ""
 
-#: ../../client/src/settings/screen-settings.tsx:44
+#: ../../client/src/settings/screen-settings.tsx:46
 msgid "Select your preferred language."
 msgstr ""
 
-#: ../../client/src/settings/screen-settings.tsx:77
+#: ../../client/src/settings/screen-settings.tsx:79
 msgid "Set mnemonic to sync devices."
 msgstr ""
 
-#: ../../client/src/app/ui/menu/index.tsx:40
-#: ../../client/src/app/ui/menu/index.tsx:75
-#: ../../client/src/settings/screen-settings.tsx:24
+#: ../../client/src/app/ui/menu/index.tsx:45
+#: ../../client/src/app/ui/menu/index.tsx:85
+#: ../../client/src/settings/screen-settings.tsx:26
 msgid "Settings"
 msgstr "설정"
 
@@ -393,8 +397,8 @@ msgstr "설정"
 msgid "Shortcut Error"
 msgstr ""
 
-#: ../../client/src/settings/screen-settings.tsx:50
-#: ../../client/src/settings/screen-settings.tsx:68
+#: ../../client/src/settings/screen-settings.tsx:52
+#: ../../client/src/settings/screen-settings.tsx:70
 msgid "System"
 msgstr "시스템"
 
@@ -426,12 +430,21 @@ msgstr ""
 msgid "The web page to link to."
 msgstr "연결할 웹페이지입니다."
 
-#: ../../client/src/settings/screen-settings.tsx:61
+#: ../../client/src/settings/screen-settings.tsx:63
 msgid "Theme"
 msgstr "테마"
 
 #: ../../design/components/features/auth/logout/Logout.tsx:24
 msgid "This will clear all session data. Are you sure you would like to proceed?"
+msgstr ""
+
+#: ../../client/src/settings/screen-settings.tsx:116
+msgid "This will reset your owner key and delete your local database. This action is irreversible. If you have data you wish to backup make sure to save your owner key."
+msgstr ""
+
+#. placeholder {0}: 'delete'
+#: ../../client/src/settings/screen-settings.tsx:124
+msgid "Type \"{0}\" to confirm"
 msgstr ""
 
 #: ../../client/src/home/screen-shortcut.tsx:31

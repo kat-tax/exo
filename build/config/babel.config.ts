@@ -30,5 +30,6 @@ export default <TransformOptions> {
     'babel-plugin-react-compiler',
     '@babel/plugin-transform-export-namespace-from',
     '@babel/plugin-transform-dynamic-import',
+    'react-native-reanimated/plugin',
   ],
 };

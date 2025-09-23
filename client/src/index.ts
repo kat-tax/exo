@@ -1,5 +1,6 @@
 import 'global';
 import 'design/styles';
+import 'react-exo/sheet.css';
 import {init} from '@noriginmedia/norigin-spatial-navigation';
 import {AppRegistry} from 'react-native';
 import AppRoot from 'app';

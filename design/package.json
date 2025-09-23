@@ -23,7 +23,7 @@
     "config": "workspace:*",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "react-exo": "0.20.15",
+    "react-exo": "0.20.17",
     "react-native": "0.80.2",
     "react-native-svg": "^15.13.0",
     "react-native-unistyles": "^3.0.12",

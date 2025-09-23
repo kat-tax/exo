@@ -3,6 +3,7 @@ import {useLingui} from '@lingui/react/macro';
 import {StyleSheet} from 'react-native-unistyles';
 import {View, Platform} from 'react-native';
 import {TextInput} from 'react-exo/textinput';
+import {Sheet} from 'react-exo/sheet';
 import {Avatar} from 'react-exo/avatar';
 import {Picker} from 'react-exo/picker';
 import {Panel, PanelSection, PanelItem} from 'app/ui/panel';
@@ -11,8 +12,6 @@ import {useLocale} from 'settings/hooks/use-locale';
 import {useSettings} from 'settings/hooks/use-settings';
 import {locales} from 'config/locales';
 import {Button, Prompt} from 'design';
-
-import {Sheet} from 'app/ui/sheet';
 
 export default function ScreenSettings() {
   const [scheme, setScheme] = useTheme(true);
@@ -104,7 +103,7 @@ export default function ScreenSettings() {
           <PanelItem
             label={t`Clear Data`}
             description={t`Reset owner and delete database.`}>
-            <Sheet autoWebSize={250} trigger={
+            <Sheet autoWebSize={250} edgeToEdge={false} trigger={
               <Button
                 label={t`Reset Database`}
                 mode="Destructive"
@@ -184,7 +183,7 @@ const styles = StyleSheet.create((theme) => ({
         width: '100%',
       },
       android: {
-        minWidth: 200,
+        minWidth: 120,
       },
       default: {
         minWidth: 120,
