@@ -29,15 +29,13 @@
     "@react-native-community/netinfo": "^11.4.1",
     "@react-native-picker/picker": "^2.11.2",
     "@shopify/react-native-skia": "^2.2.18",
-    "@wuba/react-native-echarts": "^2.0.3",
     "burnt": "^0.13.0",
     "config": "workspace:*",
     "design": "workspace:react-exo-ui@*",
-    "echarts": "^6.0.0",
     "lodash": "^4.17.21",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "react-exo": "0.20.15",
+    "react-exo": "0.20.17",
     "react-exo-ui": "workspace:*",
     "react-native": "0.80.2",
     "react-native-edge-to-edge": "^1.7.0",
@@ -52,8 +50,7 @@
     "react-native-svg-app-icon": "^0.6.1",
     "react-native-unistyles": "^3.0.12",
     "react-native-url-polyfill": "^2.0.0",
-    "react-native-web": "^0.21.1",
-    "vaul": "^1.1.2"
+    "react-native-web": "^0.21.1"
   },
   "devDependencies": {
     "@react-native-community/cli": "latest",

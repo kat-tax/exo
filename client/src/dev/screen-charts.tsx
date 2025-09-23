@@ -3,8 +3,8 @@ import {useTheme} from 'settings/hooks/use-theme';
 import {Panel} from 'app/ui/panel';
 import {Grid} from 'dev/stacks/grid';
 import {Frame} from 'dev/stacks/frame';
-import {Chart} from 'app/ui/chart/Chart';
-import charts from 'app/ui/chart/demo';
+import {Chart} from 'react-exo/chart';
+import charts from 'react-exo/demo/charts';
 
 export default function ScreenCharts() {
   const [theme] = useTheme();
