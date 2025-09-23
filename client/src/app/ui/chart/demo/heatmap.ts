@@ -1,5 +1,5 @@
 import * as echarts from 'echarts/core';
-import type {ECBasicOption} from "echarts/types/dist/shared";
+import type {ChartOption} from '../lib/loader';
 
 function getVirtualData(year: string) {
   const date = +echarts.time.parse(year + '-01-01');
@@ -15,12 +15,7 @@ function getVirtualData(year: string) {
   return data;
 }
 
-export default <ECBasicOption> {
-  title: {
-    top: 30,
-    left: 'center',
-    text: 'Daily Step Count'
-  },
+export default <ChartOption> {
   tooltip: {},
   visualMap: {
     min: 0,
@@ -45,5 +40,5 @@ export default <ECBasicOption> {
     type: 'heatmap',
     coordinateSystem: 'calendar',
     data: getVirtualData('2016')
-  }
+  } as ChartOption['series']
 }

@@ -1,10 +1,6 @@
-import type {ECBasicOption} from "echarts/types/dist/shared";
+import type {ChartOption} from '../lib/loader';
 
-export default <ECBasicOption> {
-  title: {
-    text: 'Resources',
-    top: 0,
-  },
+export default <ChartOption> {
   tooltip: {
     formatter: '{a} {b} : {c}%'
   },

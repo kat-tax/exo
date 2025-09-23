@@ -1,10 +1,6 @@
-import type {ECBasicOption} from "echarts/types/dist/shared";
+import type {ChartOption} from '../lib/loader';
 
-export default <ECBasicOption> {
-  title: {
-    text: 'Commits',
-    top: 0,
-  },
+export default <ChartOption> {
   xAxis: {
     type: 'category',
     data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],

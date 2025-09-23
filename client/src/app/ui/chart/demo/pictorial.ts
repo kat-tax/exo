@@ -1,4 +1,5 @@
-import type {ECBasicOption, PictorialBarSeriesOption} from "echarts/types/dist/shared";
+import type {PictorialBarSeriesOption} from 'echarts/types/dist/shared';
+import type {ChartOption} from '../lib/loader';
 
 const pathSymbols = {
   reindeer:
@@ -18,10 +19,7 @@ const labelSetting: PictorialBarSeriesOption['label'] = {
   fontSize: 16
 };
 
-export default <ECBasicOption> {
-  title: {
-    text: 'Vehicles in X City'
-  },
+export default <ChartOption> {
   legend: {
     data: ['2015', '2016']
   },

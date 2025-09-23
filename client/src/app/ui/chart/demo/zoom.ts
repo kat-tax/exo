@@ -1,4 +1,4 @@
-import type {ECBasicOption} from "echarts/types/dist/shared";
+import type {ChartOption} from '../lib/loader';
 
 let timeData = [
   '2009/6/12 2:00', '2009/6/12 3:00', '2009/6/12 4:00', '2009/6/12 5:00', '2009/6/12 6:00', '2009/6/12 7:00', '2009/6/12 8:00', '2009/6/12 9:00', '2009/6/12 10:00', '2009/6/12 11:00', '2009/6/12 12:00', '2009/6/12 13:00', '2009/6/12 14:00', '2009/6/12 15:00', '2009/6/12 16:00', '2009/6/12 17:00', '2009/6/12 18:00', '2009/6/12 19:00', '2009/6/12 20:00', '2009/6/12 21:00', '2009/6/12 22:00', '2009/6/12 23:00',
@@ -59,11 +59,7 @@ timeData = timeData.map(function (str) {
 return str.replace('2009/', '');
 });
 
-export default <ECBasicOption> {
-  title: {
-    text: 'Rainfall vs Evaporation',
-    top: 0,
-  },
+export default <ChartOption> {
   tooltip: {
     trigger: 'axis',
     axisPointer: {

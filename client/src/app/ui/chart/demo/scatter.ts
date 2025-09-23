@@ -1,11 +1,6 @@
-import type {ECBasicOption} from "echarts/types/dist/shared";
+import type {ChartOption} from '../lib/loader';
 
-export default <ECBasicOption> {
-  title: {
-    text: 'Male and female height and weight distribution',
-    subtext: 'Data from: Heinz 2003',
-    top: 0,
-  },
+export default <ChartOption> {
   grid: {
     left: '3%',
     right: '7%',
@@ -48,7 +43,7 @@ export default <ECBasicOption> {
   legend: {
     data: ['Female', 'Male'],
     left: 'center',
-    bottom: 10
+    bottom: 10,
   },
   xAxis: [
     {

@@ -1,4 +1,4 @@
-import type {ECBasicOption} from "echarts/types/dist/shared";
+import type {ChartOption} from '../lib/loader';
 
 function createNodes(count: number) {
   const nodes = [];
@@ -29,11 +29,7 @@ for (let i = 0; i < 16; i++) {
   });
 }
 
-export default <ECBasicOption> {
-  title: {
-    text: 'Force Layout',
-    top: 0,
-  },
+export default <ChartOption> {
   series: datas.map(function (item, idx) {
     return {
       type: 'graph',
