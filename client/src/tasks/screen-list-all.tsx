@@ -11,7 +11,7 @@ import {useQuery} from 'app/data';
 import {getLists} from 'app/data/queries';
 import {useLists} from 'tasks/hooks/use-lists';
 
-export default function ScreenLists({}: ReactNavigation.ScreenProps<'TasksListAll'>) {
+export default function ScreenLists() {
   const lists = useLists();
   const data = useQuery(getLists);
   // const nav = useNavigate();

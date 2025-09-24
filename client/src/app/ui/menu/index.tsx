@@ -12,6 +12,7 @@ import {MenuItem} from './menu-item';
 import {MenuGroup} from './menu-group';
 import {MenuHeader} from './menu-header';
 import {MenuFooter} from './menu-footer';
+import {MenuIconLink} from './menu-icon-link';
 
 export function Menu() {
   const {t} = useLingui();
@@ -30,24 +31,24 @@ export function Menu() {
       <Display mq={mq.only.width(0, breakpoints.xs - 1)}>
         <View style={styles.tabs}>
           <MenuTab
+            path="HomeDashboard"
             label={t`Dashboard`}
             icon={<Icon name="ph:squares-four"/>}
-            path="HomeDashboard"
           />
           <MenuTab
+            path="TasksListAll"
             label={t`Lists`}
             icon={<Icon name="ph:list-checks"/>}
-            path="TasksListAll"
           />
           <MenuTab
+            path="DevCharts"
             label={t`Charts`}
             icon={<Icon name="ph:chart-line"/>}
-            path="DevCharts"
           />
           <MenuTab
+            path="Settings"
             label={t`Settings`}
             icon={<Icon name="ph:gear"/>}
-            path="Settings"
           />
         </View>
       </Display>
@@ -58,37 +59,36 @@ export function Menu() {
               <View style={styles.list}>
                 <MenuHeader/>
                 <MenuItem
+                  path="HomeDashboard"
                   label={t`Dashboard`}
                   icon={<Icon name="ph:squares-four"/>}
-                  path="HomeDashboard"
                 />
                 <MenuItem
+                  path="TasksListAll"
                   label={t`Lists`}
                   icon={<Icon name="ph:list-checks"/>}
-                  path="TasksListAll"
                 />
                 {__DEV__ &&
                   <MenuGroup label={t`Development`}>
                     <MenuItem
+                      path="DevDesign"
                       label={t`Design`}
                       icon={<Icon name="ph:palette"/>}
-                      path="DevDesign"
                     />
                     <MenuItem
+                      path="DevCharts"
                       label={t`Charts`}
                       icon={<Icon name="ph:chart-line"/>}
-                      path="DevCharts"
                     />
                   </MenuGroup>
                 }
               </View>
               <MenuFooter actions={
                 <View style={styles.actions}>
-                  <MenuItem
+                  <MenuIconLink
+                    path="Settings"
                     label={t`Settings`}
                     icon={<Icon name="ph:gear"/>}
-                    path="Settings"
-                    mode="action"
                   />
                 </View>
               }/>

@@ -1,5 +1,5 @@
 import {Icon} from 'react-exo/icon';
-import {View, Text} from 'react-native';
+import {View} from 'react-native';
 import {StyleSheet} from 'react-native-unistyles';
 import {useFocusable} from '@noriginmedia/norigin-spatial-navigation';
 import {useVariants} from 'react-exo/utils';
@@ -9,17 +9,17 @@ import {Link} from '@react-navigation/native';
 
 import type {RootStackParamList} from 'app/navigation';
 
-interface MenuItemProps extends React.PropsWithChildren {
+interface MenuIconLinkProps extends React.PropsWithChildren {
   label: string,
   path: keyof RootStackParamList,
   icon: React.ReactElement,
 }
 
-export const MenuItemVariants = {
+export const MenuIconLinkVariants = {
   state: ['Default', 'Active', 'Focused'],
 } as const;
 
-export function MenuItem(props: MenuItemProps) {
+export function MenuIconLink(props: MenuIconLinkProps) {
   const nav = useNavigation();
   const route = useRoute();
   const {ref, focused} = useFocusable({
@@ -29,15 +29,12 @@ export function MenuItem(props: MenuItemProps) {
 
   const active = route.name === props.path;
   const state = active ? 'Active' : focused ? 'Focused' : 'Default';
-  const {vstyles} = useVariants(MenuItemVariants, {state}, styles);
+  const {vstyles} = useVariants(MenuIconLinkVariants, {state}, styles);
 
   return (
     <Link screen={props.path} params={{}} style={{width: '100%'}}>
-      <View ref={ref} style={vstyles.item()}>
+      <View aria-label={props.label} ref={ref} style={vstyles.item()}>
         {props.icon && Icon.New(props.icon, vstyles.icon())}
-        <Text style={vstyles.label()}>
-          {props.label}
-        </Text>
       </View>
     </Link>
   );
@@ -48,8 +45,8 @@ const styles = StyleSheet.create((theme) => ({
     width: '100%',
     flexDirection: 'row',
     alignItems: 'center',
+    padding: theme.display.space1,
     borderRadius: theme.display.radius1,
-    paddingHorizontal: theme.display.space2,
     borderColor: 'transparent',
     borderWidth: 1,
   },
@@ -61,23 +58,9 @@ const styles = StyleSheet.create((theme) => ({
   },
   icon: {
     color: theme.colors.mutedForeground,
-    size: __TOUCH__ ? 20 : 18,
+    size: __TOUCH__ ? 20 : 16,
   },
   iconStateActive: {
     color: theme.colors.foreground,
   },
-  label: {
-    userSelect: 'none',
-    marginHorizontal: theme.display.space1,
-    color: theme.colors.secondaryForeground,
-    fontSize: theme.font.size,
-    lineHeight: theme.font.headerHeight,
-    letterSpacing: theme.font.spacing,
-    ...__TOUCH__ && {
-      marginLeft: theme.display.space2,
-      lineHeight: 40,
-      fontSize: 14,
-    },
-  },
 }));
-

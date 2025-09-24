@@ -1,6 +1,6 @@
 import {View, Text} from 'react-native';
 import {StyleSheet} from 'react-native-unistyles';
-//import {useLocation, Link} from 'react-exo/navigation';
+import {useVariants} from 'react-exo/utils';
 import {useRoute} from '@react-navigation/native';
 import {Link} from '@react-navigation/native';
 import {Icon} from 'react-exo/icon';
@@ -13,24 +13,20 @@ interface MenuTabProps extends React.PropsWithChildren {
   icon: React.ReactElement,
 }
 
+export const MenuTabVariants = {
+  state: ['Default', 'Active'],
+} as const;
+
 export function MenuTab(props: MenuTabProps) {
-  //const {pathname} = useLocation();
-  //const isActive = props.path === decodeURIComponent(pathname);
   const route = useRoute();
-  const isActive = route.name === props.path;
+  const state = route.name === props.path ? 'Active' : 'Default';
+  const {vstyles} = useVariants(MenuTabVariants, {state}, styles);
 
   return (
     <Link screen={props.path} params={{}}>
-      <View style={styles.item}>
-        {props.icon && Icon.New(props.icon, {
-          size: 20,
-          uniProps: (theme: any) => ({
-            color: isActive
-              ? theme.colors.foreground
-              : theme.colors.mutedForeground,
-          }),
-        })}
-        <Text style={[styles.label, isActive && styles.active]}>
+      <View style={vstyles.item()}>
+        {props.icon && Icon.New(props.icon, vstyles.icon())}
+        <Text style={vstyles.label()}>
           {props.label}
         </Text>
       </View>
@@ -54,7 +50,14 @@ const styles = StyleSheet.create((theme) => ({
     lineHeight: 24,
     fontSize: 9,
   },
-  active: {
+  labelStateActive: {
+    color: theme.colors.foreground,
+  },
+  icon: {
+    size: 20,
+    color: theme.colors.mutedForeground,
+  },
+  iconStateActive: {
     color: theme.colors.foreground,
   },
 }));
