@@ -1,5 +1,4 @@
 import {StyleSheet} from 'react-native-unistyles';
-// import {Outlet} from 'react-exo/navigation';
 import {View} from 'react-native';
 import {Menu} from 'app/ui/menu';
 
@@ -13,14 +12,13 @@ export default function LayoutApp({children}: React.PropsWithChildren) {
         <Menu/>
       </View>
       <View style={styles.content}>
-        {/* <Outlet/> */}
         {children}
       </View>
     </View>
   );
 }
 
-const styles = StyleSheet.create((theme, rt) => ({
+const styles = StyleSheet.create((theme) => ({
   root: {
     flex: 1,
     backgroundColor: theme.colors.neutral,
@@ -33,10 +31,6 @@ const styles = StyleSheet.create((theme, rt) => ({
     width: {
       initial: '100%',
       xs: __WEB__ ? APP_MENU_WIDTH : undefined,
-    },
-    marginBottom: {
-      initial: rt.insets.bottom / 1.5,
-      landscape: 0,
     },
     height: {
       initial: APP_MENU_TAB_HEIGHT,

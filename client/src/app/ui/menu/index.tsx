@@ -100,7 +100,7 @@ export function Menu() {
   );
 }
 
-const styles = StyleSheet.create((theme, rt) => ({
+const styles = StyleSheet.create((theme) => ({
   tabs: {
     flex: 1,
     flexDirection: 'row',
@@ -113,9 +113,6 @@ const styles = StyleSheet.create((theme, rt) => ({
   menu: {
     flex: 1,
     backgroundColor: theme.colors.neutral,
-    paddingTop: rt.insets.top / 1.5,
-    paddingBottom: rt.insets.bottom / 1.5,
-    paddingStart: rt.insets.left,
   },
   scroll: {
     flex: 1,

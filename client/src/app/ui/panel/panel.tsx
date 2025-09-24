@@ -1,6 +1,5 @@
 import {View, ScrollView, Text} from 'react-native';
 import {StyleSheet} from 'react-native-unistyles';
-// import {Link} from 'react-exo/navigation';
 import {Link} from '@react-navigation/native';
 import {Icon} from 'react-exo/icon';
 
@@ -77,7 +76,7 @@ const styles = StyleSheet.create((theme, rt) => ({
       xs: 'transparent',
     },
     paddingTop: {
-      initial: rt.insets.top / 1.5,
+      initial: rt.insets.top / 2,
       xs: 0,
     },
   },

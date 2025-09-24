@@ -45,8 +45,8 @@ export const Router = () => {
           fontSize: theme.font.size,
         }}
         backBehavior="order"
-        rippleColor={theme.colors.accent}
-        activeIndicatorColor={theme.colors.card}
+        rippleColor={theme.colors.card}
+        activeIndicatorColor={theme.colors.accent}
         screenOptions={{
           tabBarActiveTintColor: theme.colors.foreground,
         }}>

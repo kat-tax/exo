@@ -103,13 +103,16 @@ export default function ScreenSettings() {
           <PanelItem
             label={t`Clear Data`}
             description={t`Reset owner and delete database.`}>
-            <Sheet autoWebSize={250} edgeToEdge={false} trigger={
-              <Button
-                label={t`Reset Database`}
-                mode="Destructive"
-                state="Default"
-              />
-            }>
+            <Sheet
+              autoWebSize={250}
+              edgeToEdge={false}
+              trigger={
+                <Button
+                  label={t`Reset Database`}
+                  mode="Destructive"
+                  state="Default"
+                />
+              }>
               <View style={styles.confirmRoot}>
                 <Prompt
                   title={t`Reset Database`}
