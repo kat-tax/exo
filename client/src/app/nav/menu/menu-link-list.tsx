@@ -13,7 +13,11 @@ export function MenuLinkList(props: MenuLinkProps) {
 
   return (
     <Link screen={props.path} params={{}} style={{width: '100%'}}>
-      <View ref={ref} style={vstyles.root()}>
+      <View ref={ref} style={[
+        styles.root,
+        state === 'Active' && styles.rootStateActive,
+        state === 'Focused' && styles.rootStateFocused,
+      ]}>
         {props.icon && Icon.New(props.icon, vstyles.icon())}
         <Text style={vstyles.label()}>
           {props.label}

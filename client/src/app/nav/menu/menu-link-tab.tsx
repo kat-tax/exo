@@ -13,9 +13,15 @@ export function MenuLinkTab(props: MenuLinkProps) {
 
   return (
     <Link screen={props.path} params={{}}>
-      <View ref={ref} style={vstyles.root()}>
+      <View ref={ref} style={[
+        styles.root,
+        state === 'Focused' && styles.rootStateFocused,
+      ]}>
         {props.icon && Icon.New(props.icon, vstyles.icon())}
-        <Text style={vstyles.label()}>
+        <Text style={[
+          styles.label,
+          state === 'Active' && styles.labelStateActive,
+        ]}>
           {props.label}
         </Text>
       </View>

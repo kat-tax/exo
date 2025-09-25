@@ -86,7 +86,6 @@ const styles = StyleSheet.create((theme) => ({
     alignItems: 'center',
     justifyContent: 'space-around',
     borderColor: theme.colors.border,
-    borderTopWidth: StyleSheet.hairlineWidth,
     backgroundColor: theme.colors.background,
   },
   menu: {
