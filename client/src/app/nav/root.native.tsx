@@ -2,8 +2,7 @@ import {createTabs} from 'app/lib/nav.tabs';
 import {Screen} from 'app/lib/nav';
 
 import type {Theme} from 'app/ui/types';
-import type {RootTabsParamList} from 'app/nav/types';
-import type {MenuItemList} from 'app/nav/menu/menu-item';
+import type {MenuItemList, RootTabsParamList} from 'app/nav/types';
 
 export default (links: MenuItemList, theme: Theme) => createTabs<RootTabsParamList>({
   // Functionality
@@ -32,7 +31,7 @@ export default (links: MenuItemList, theme: Theme) => createTabs<RootTabsParamLi
       },
       options: {
         title: links.HomeDashboard.label,
-        tabBarIcon: () => require('./icons/PhSquaresFour.png')
+        tabBarIcon: links.HomeDashboard.iconNative,
       },
     },
     TasksListAll: {
@@ -42,7 +41,7 @@ export default (links: MenuItemList, theme: Theme) => createTabs<RootTabsParamLi
       },
       options: {
         title: links.TasksListAll.label,
-        tabBarIcon: () => require('./icons/PhListChecks.png')
+        tabBarIcon: links.TasksListAll.iconNative,
       },
     },
     Settings: {
@@ -52,7 +51,7 @@ export default (links: MenuItemList, theme: Theme) => createTabs<RootTabsParamLi
       },
       options: {
         title: links.Settings.label,
-        tabBarIcon: () => require('./icons/PhGear.png')
+        tabBarIcon: links.Settings.iconNative,
       },
     },
   },

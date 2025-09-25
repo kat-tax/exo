@@ -4,8 +4,7 @@ import {Screen} from 'app/lib/nav';
 import {Suspend} from 'app/ui/base';
 
 import type {Theme} from 'app/ui/types';
-import type {RootStackParamList} from 'app/nav/types';
-import type {MenuItemList} from 'app/nav/menu/menu-item';
+import type {MenuItemList, RootStackParamList} from 'app/nav/types';
 
 export default (links: MenuItemList, theme: Theme) => createStack<RootStackParamList>({
   layout: Layout,

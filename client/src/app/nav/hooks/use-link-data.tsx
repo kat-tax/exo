@@ -1,55 +1,8 @@
-import {Icon} from 'react-exo/icon';
 import {useLingui} from '@lingui/react/macro';
-import type {MenuItemList} from './menu-item';
+import type {MenuItemList} from 'app/nav/types';
 
 export function useLinkData() {
   const {t} = useLingui();
-
-  const links: MenuItemList = {
-    HomeDashboard: {
-      label: t`Dashboard`,
-      path: '',
-      icon: <Icon name="ph:squares-four"/>,
-    },
-    HomeShortcut: {
-      label: t`Shortcut`,
-      path: 'shortcut/:id',
-    },
-    NotFound: {
-      label: t`Not Found`,
-      path: '*',
-    },
-    Settings: {
-      label: t`Settings`,
-      path: 'settings',
-      icon: <Icon name="ph:gear"/>,
-    },
-    TasksListAll: {
-      label: t`Lists`,
-      path: 'lists',
-      icon: <Icon name="ph:list-checks"/>,
-    },
-    TasksListDetails: {
-      label: t`Details`,
-      path: 'list/:id',
-      icon: <Icon name="ph:list-checks"/>,
-    },
-    TasksListEdit: {
-      label: t`Edit`,
-      path: 'list/:id/edit',
-      icon: <Icon name="ph:list-checks"/>,
-    },
-    DevDesign: {
-      label: t`Design`,
-      path: 'design',
-      icon: <Icon name="ph:palette"/>,
-    },
-    DevCharts: {
-      label: t`Charts`,
-      path: 'charts',
-      icon: <Icon name="ph:chart-line"/>,
-    },
-  };
 
   const config: Record<string, Array<keyof MenuItemList>> = {
     tabs: [
@@ -70,8 +23,57 @@ export function useLinkData() {
     ],
   } as const;
 
+  const links: MenuItemList = {
+    HomeDashboard: {
+      label: t`Dashboard`,
+      path: '',
+      icon: 'ph:squares-four',
+      iconNative: () => require('../icons/PhSquaresFour.png'),
+    },
+    HomeShortcut: {
+      label: t`Shortcut`,
+      path: 'shortcut/:id',
+    },
+    NotFound: {
+      label: t`Not Found`,
+      path: '*',
+    },
+    Settings: {
+      label: t`Settings`,
+      path: 'settings',
+      icon: 'ph:gear',
+      iconNative: () => require('../icons/PhGear.png'),
+    },
+    TasksListAll: {
+      label: t`Lists`,
+      path: 'lists',
+      icon: 'ph:list-checks',
+      iconNative: () => require('../icons/PhListChecks.png'),
+    },
+    TasksListDetails: {
+      label: t`Details`,
+      path: 'list/:id',
+      icon: 'ph:list-checks',
+    },
+    TasksListEdit: {
+      label: t`Edit`,
+      path: 'list/:id/edit',
+      icon: 'ph:list-checks',
+    },
+    DevDesign: {
+      label: t`Design`,
+      path: 'design',
+      icon: 'ph:palette',
+    },
+    DevCharts: {
+      label: t`Charts`,
+      path: 'charts',
+      icon: 'ph:chart-line',
+    },
+  };
+
   return {
-    links,
     config,
+    links,
   };
 }

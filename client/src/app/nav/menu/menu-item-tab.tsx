@@ -2,25 +2,31 @@ import {Icon} from 'react-exo/icon';
 import {Link} from '@react-navigation/native';
 import {View, Text} from 'react-native';
 import {StyleSheet} from 'react-native-unistyles';
-import {useVariants} from 'react-exo/utils';
-import {useLinkState} from './use-link-state';
-import {MenuItemVariants} from './menu-item';
-import type {MenuItemProps} from './menu-item';
+import {createElement} from 'react';
+import {useLinkState} from 'app/nav/hooks/use-link-state';
+import type {MenuItemProps} from 'app/nav/types';
 
 export function MenuItemTab(props: MenuItemProps) {
-  const {ref, state, active, focused} = useLinkState(props);
-  const {vstyles} = useVariants(MenuItemVariants, {state}, styles);
+  const {ref, active, focused} = useLinkState(props);
 
   return (
     <Link screen={props.name} params={{}}>
       <View ref={ref} style={[
         styles.root,
-        focused && styles.rootStateFocused,
+        focused && styles.focused,
       ]}>
-        {props.icon && Icon.New(props.icon, vstyles.icon())}
+        {props.icon && createElement(Icon, {
+          name: props.icon,
+          size: 20,
+          uniProps: (theme) => ({
+            color: active
+              ? theme.colors.foreground
+              : theme.colors.mutedForeground,
+          }),
+        })}
         <Text style={[
           styles.label,
-          active && styles.labelStateActive,
+          active && styles.labelActive,
         ]}>
           {props.label}
         </Text>
@@ -38,7 +44,7 @@ const styles = StyleSheet.create((theme) => ({
     marginTop: theme.display.space1,
     borderRadius: theme.display.radius1,
   },
-  rootStateFocused: {
+  focused: {
     borderColor: theme.colors.ring,
   },
   label: {
@@ -48,14 +54,7 @@ const styles = StyleSheet.create((theme) => ({
     lineHeight: 24,
     fontSize: 9,
   },
-  labelStateActive: {
-    color: theme.colors.foreground,
-  },
-  icon: {
-    size: 20,
-    color: theme.colors.mutedForeground,
-  },
-  iconStateActive: {
+  labelActive: {
     color: theme.colors.foreground,
   },
 }));

@@ -2,7 +2,7 @@ import {useMemo} from 'react';
 import {useTheme} from 'settings/hooks/use-theme';
 import {useUnistyles} from 'react-native-unistyles';
 import {createStaticNavigation, DarkTheme, DefaultTheme} from '@react-navigation/native';
-import {useLinkData} from 'app/nav/menu/use-link-data';
+import {useLinkData} from 'app/nav/hooks/use-link-data';
 import nav from 'app/nav/root';
 import cfg from 'config';
 
