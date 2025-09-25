@@ -24,6 +24,10 @@ export function useLinkData() {
   } as const;
 
   const links: MenuItemList = {
+    NotFound: {
+      label: t`Not Found`,
+      path: '*',
+    },
     HomeDashboard: {
       label: t`Dashboard`,
       path: '',
@@ -33,10 +37,6 @@ export function useLinkData() {
     HomeShortcut: {
       label: t`Shortcut`,
       path: 'shortcut/:id',
-    },
-    NotFound: {
-      label: t`Not Found`,
-      path: '*',
     },
     Settings: {
       label: t`Settings`,

@@ -27,19 +27,19 @@ export function Layout(props: LayoutProps) {
   });
 
   return (
-    <View ref={ref} style={styles.root}>
-      <Display mq={mq.only.width(0, breakpoints.xs - 1)}>
-        <Tabs {...props}/>
-      </Display>
-      <Display mq={mq.only.width(breakpoints.xs)}>
-        <FocusContext.Provider value={focusKey}>
+    <FocusContext.Provider value={focusKey}>
+      <View ref={ref} style={styles.root}>
+        <Display mq={mq.only.width(0, breakpoints.xs - 1)}>
+          <Tabs {...props}/>
+        </Display>
+        <Display mq={mq.only.width(breakpoints.xs)}>
           <Menu {...props}/>
-        </FocusContext.Provider>
-      </Display>
-      <View style={styles.content}>
-        {children}
+        </Display>
+        <View style={styles.content}>
+          {children}
+        </View>
       </View>
-    </View>
+    </FocusContext.Provider>
   );
 }
 
