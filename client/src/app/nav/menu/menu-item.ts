@@ -9,8 +9,8 @@ export type MenuItemState = typeof MenuItemVariants['state'][number];
 
 export type MenuItemData = {
   label: string,
-  icon: React.ReactElement,
-  path: keyof RootStackParamList,
+  name: keyof RootStackParamList,
+  icon?: React.ReactElement,
 }
 
 export type MenuItemList = Record<keyof RootStackParamList, MenuItemData>;

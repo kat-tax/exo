@@ -12,7 +12,7 @@ export function MenuItemIcon(props: MenuItemProps) {
   const {vstyles} = useVariants(MenuItemVariants, {state}, styles);
 
   return (
-    <Link screen={props.path} params={{}} style={{width: '100%'}}>
+    <Link screen={props.name} params={{}} style={{width: '100%'}}>
       <View ref={ref} style={[
         styles.root,
         active && styles.rootStateActive,

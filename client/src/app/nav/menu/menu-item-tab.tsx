@@ -12,7 +12,7 @@ export function MenuItemTab(props: MenuItemProps) {
   const {vstyles} = useVariants(MenuItemVariants, {state}, styles);
 
   return (
-    <Link screen={props.path} params={{}}>
+    <Link screen={props.name} params={{}}>
       <View ref={ref} style={[
         styles.root,
         focused && styles.rootStateFocused,

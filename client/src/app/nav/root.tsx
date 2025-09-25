@@ -23,6 +23,12 @@ export default (theme: Theme) => createStack<RootStackParamList>({
         path: '',
       },
     },
+    HomeShortcut: {
+      screen: Screen.Home.Shortcut,
+      linking: {
+        path: 'shortcut/:id',
+      },
+    },
     NotFound: {
       screen: Screen.Home.NotFound,
       linking: {
@@ -51,12 +57,6 @@ export default (theme: Theme) => createStack<RootStackParamList>({
       screen: Screen.Tasks.ListEdit,
       linking: {
         path: 'list/:id/edit',
-      },
-    },
-    HomeShortcut: {
-      screen: Screen.Home.Shortcut,
-      linking: {
-        path: 'shortcut/:id',
       },
     },
     DevDesign: {

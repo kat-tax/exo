@@ -31,7 +31,7 @@ export default (theme: Theme) => createTabs<RootTabsParamList>({
       },
       options: {
         tabBarLabel: 'Home',
-        tabBarIcon: __NATIVE__ ? () => require('./icons/PhSquaresFour.png') : undefined,
+        tabBarIcon: () => require('./icons/PhSquaresFour.png')
       },
     },
     TasksListAll: {
@@ -41,7 +41,7 @@ export default (theme: Theme) => createTabs<RootTabsParamList>({
       },
       options: {
         tabBarLabel: 'Lists',
-        tabBarIcon: __NATIVE__ ? () => require('./icons/PhListChecks.png') : undefined,
+        tabBarIcon: () => require('./icons/PhListChecks.png')
       },
     },
     Settings: {
@@ -51,7 +51,7 @@ export default (theme: Theme) => createTabs<RootTabsParamList>({
       },
       options: {
         tabBarLabel: 'Settings',
-        tabBarIcon: __NATIVE__ ? () => require('./icons/PhGear.png') : undefined,
+        tabBarIcon: () => require('./icons/PhGear.png')
       },
     },
   },

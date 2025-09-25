@@ -24,7 +24,7 @@ export function Tabs(props: LayoutProps) {
     <View style={styles.tabs}>
       {config.tabs.map((tab) => (
         <MenuItemTab
-          key={tab.path}
+          key={tab.name}
           {...{navigation, activeRoute}}
           {...tab}
         />
@@ -46,7 +46,7 @@ export function Menu(props: LayoutProps) {
           <MenuHeader/>
           {config.menuTop.map((link) => (
             <MenuItemList
-              key={link.path}
+              key={link.name}
               {...{navigation, activeRoute}}
               {...link}
             />
@@ -55,7 +55,7 @@ export function Menu(props: LayoutProps) {
             <MenuGroup label={t`Development`}>
               {config.menuDevMenu.map((link) => (
                 <MenuItemList
-                  key={link.path}
+                  key={link.name}
                   {...{navigation, activeRoute}}
                   {...link}
                 />
@@ -67,7 +67,7 @@ export function Menu(props: LayoutProps) {
           <View style={styles.actions}>
             {config.menuFooterIcons.map((link) => (
               <MenuItemIcon
-                key={link.path}
+                key={link.name}
                 {...{navigation, activeRoute}}
                 {...link}
               />

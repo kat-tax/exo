@@ -3,11 +3,11 @@ import type {MenuItemProps, MenuItemState} from './menu-item';
 
 export function useLinkState(props: MenuItemProps) {
   const {ref, focused} = useFocusable({
-    focusKey: `menu@${props.path}`,
-    onEnterPress: () => props.navigation.navigate(props.path as never),
+    focusKey: `menu@${props.name}`,
+    onEnterPress: () => props.navigation.navigate(props.name as never),
   });
 
-  const active = props.activeRoute.name === props.path;
+  const active = props.activeRoute.name === props.name;
   const state: MenuItemState = active ? 'Active' : focused ? 'Focused' : 'Default';
 
   return {

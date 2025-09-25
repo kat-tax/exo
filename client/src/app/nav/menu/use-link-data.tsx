@@ -7,49 +7,47 @@ export function useLinkData() {
 
   const links: MenuItemList = {
     HomeDashboard: {
-      path: 'HomeDashboard',
+      name: 'HomeDashboard',
       label: t`Dashboard`,
       icon: <Icon name="ph:squares-four"/>,
     },
-    TasksListAll: {
-      path: 'TasksListAll',
-      label: t`Lists`,
-      icon: <Icon name="ph:list-checks"/>,
+    HomeShortcut: {
+      name: 'HomeShortcut',
+      label: t`Shortcut`,
+    },
+    NotFound: {
+      name: 'NotFound',
+      label: t`Not Found`,
     },
     Settings: {
-      path: 'Settings',
+      name: 'Settings',
       label: t`Settings`,
       icon: <Icon name="ph:gear"/>,
     },
-    HomeShortcut: {
-      path: 'HomeShortcut',
-      label: t`Shortcut`,
-      icon: <Icon name="ph:squares-four"/>,
+    TasksListAll: {
+      name: 'TasksListAll',
+      label: t`Lists`,
+      icon: <Icon name="ph:list-checks"/>,
     },
     TasksListDetails: {
-      path: 'TasksListDetails',
+      name: 'TasksListDetails',
       label: t`Details`,
       icon: <Icon name="ph:list-checks"/>,
     },
     TasksListEdit: {
-      path: 'TasksListEdit',
+      name: 'TasksListEdit',
       label: t`Edit`,
       icon: <Icon name="ph:list-checks"/>,
     },
     DevDesign: {
-      path: 'DevDesign',
+      name: 'DevDesign',
       label: t`Design`,
       icon: <Icon name="ph:palette"/>,
     },
     DevCharts: {
-      path: 'DevCharts',
+      name: 'DevCharts',
       label: t`Charts`,
       icon: <Icon name="ph:chart-line"/>,
-    },
-    NotFound: {
-      path: 'NotFound',
-      label: t`Not Found`,
-      icon: <Icon name="ph:squares-four"/>,
     },
   };
 
