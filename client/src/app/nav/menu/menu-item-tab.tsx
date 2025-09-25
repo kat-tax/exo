@@ -8,19 +8,19 @@ import {MenuItemVariants} from './menu-item';
 import type {MenuItemProps} from './menu-item';
 
 export function MenuItemTab(props: MenuItemProps) {
-  const {ref, state} = useLinkState(props);
+  const {ref, state, active, focused} = useLinkState(props);
   const {vstyles} = useVariants(MenuItemVariants, {state}, styles);
 
   return (
     <Link screen={props.path} params={{}}>
       <View ref={ref} style={[
         styles.root,
-        state === 'Focused' && styles.rootStateFocused,
+        focused && styles.rootStateFocused,
       ]}>
         {props.icon && Icon.New(props.icon, vstyles.icon())}
         <Text style={[
           styles.label,
-          state === 'Active' && styles.labelStateActive,
+          active && styles.labelStateActive,
         ]}>
           {props.label}
         </Text>

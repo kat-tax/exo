@@ -13,5 +13,7 @@ export function useLinkState(props: MenuItemProps) {
   return {
     ref,
     state,
+    active,
+    focused,
   };
 }

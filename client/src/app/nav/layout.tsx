@@ -2,7 +2,7 @@ import {View} from 'react-native';
 import {StyleSheet, Display, mq} from 'react-native-unistyles';
 import {useFocusable, FocusContext} from '@noriginmedia/norigin-spatial-navigation';
 import {breakpoints} from 'design/theme';
-import {Tabs, Menu} from 'app/nav/menu';
+import {Menu, Tabs} from 'app/nav/menu';
 
 import type {NavigationHelpers, NavigationState} from '@react-navigation/native';
 import type {RootStackParamList} from 'app/nav/types';
