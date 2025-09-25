@@ -56,7 +56,7 @@ msgstr ""
 msgid "Category"
 msgstr ""
 
-#: ../../client/src/app/ui/menu/index.tsx:76
+#: ../../client/src/app/nav/hooks/use-link-data.tsx:69
 #: ../../client/src/dev/screen-charts.tsx:14
 msgid "Charts"
 msgstr ""
@@ -105,7 +105,7 @@ msgstr ""
 msgid "Dark"
 msgstr "Тёмная"
 
-#: ../../client/src/app/ui/menu/index.tsx:41
+#: ../../client/src/app/nav/hooks/use-link-data.tsx:32
 msgid "Dashboard"
 msgstr "Панель"
 
@@ -123,16 +123,16 @@ msgstr ""
 msgid "Delete Shortcut"
 msgstr ""
 
-#: ../../client/src/app/ui/menu/index.tsx:71
+#: ../../client/src/app/nav/hooks/use-link-data.tsx:64
 #: ../../client/src/dev/screen-design.tsx:14
 msgid "Design"
 msgstr "Дизайн"
 
-#: ../../client/src/app/ui/menu/index.tsx:61
+#: ../../client/src/app/nav/hooks/use-link-data.tsx:54
 msgid "Details"
 msgstr ""
 
-#: ../../client/src/app/ui/menu/index.tsx:132
+#: ../../client/src/app/nav/menu/index.tsx:56
 msgid "Development"
 msgstr "Разработка"
 
@@ -140,7 +140,7 @@ msgstr "Разработка"
 msgid "Display Name"
 msgstr "Имя"
 
-#: ../../client/src/app/ui/menu/index.tsx:66
+#: ../../client/src/app/nav/hooks/use-link-data.tsx:59
 msgid "Edit"
 msgstr ""
 
@@ -239,7 +239,7 @@ msgstr "Доброе утро, {name}."
 msgid "Good night, {name}."
 msgstr "Спокойной ночи, {name}."
 
-#: ../../client/src/app/ui/menu/menu-header.tsx:19
+#: ../../client/src/app/nav/menu/menu-header.tsx:19
 msgid "Human"
 msgstr "Человек"
 
@@ -309,7 +309,7 @@ msgstr ""
 msgid "List name"
 msgstr ""
 
-#: ../../client/src/app/ui/menu/index.tsx:46
+#: ../../client/src/app/nav/hooks/use-link-data.tsx:48
 #: ../../client/src/tasks/screen-list-all.tsx:21
 msgid "Lists"
 msgstr ""
@@ -340,7 +340,7 @@ msgstr "Название"
 msgid "New item..."
 msgstr ""
 
-#: ../../client/src/app/ui/menu/index.tsx:81
+#: ../../client/src/app/nav/hooks/use-link-data.tsx:28
 msgid "Not Found"
 msgstr ""
 
@@ -352,7 +352,7 @@ msgstr ""
 msgid "Owner Key"
 msgstr "Ключ владельца"
 
-#: ../../client/src/home/screen-not-found.tsx:12
+#: ../../client/src/home/screen-not-found.tsx:11
 msgid "Page not found"
 msgstr ""
 
@@ -400,12 +400,12 @@ msgstr ""
 msgid "Set mnemonic to sync devices."
 msgstr ""
 
-#: ../../client/src/app/ui/menu/index.tsx:51
+#: ../../client/src/app/nav/hooks/use-link-data.tsx:42
 #: ../../client/src/settings/screen-settings.tsx:26
 msgid "Settings"
 msgstr "Настройки"
 
-#: ../../client/src/app/ui/menu/index.tsx:56
+#: ../../client/src/app/nav/hooks/use-link-data.tsx:38
 msgid "Shortcut"
 msgstr ""
 

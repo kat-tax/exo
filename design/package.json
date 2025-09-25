@@ -13,31 +13,31 @@
     "brand"
   ],
   "dependencies": {
-    "@lingui/core": "^5.5.0",
-    "@lingui/macro": "^5.5.0",
-    "@lingui/react": "^5.5.0"
+    "@lingui/core": "catalog:",
+    "@lingui/macro": "catalog:",
+    "@lingui/react": "catalog:"
   },
   "devDependencies": {
-    "@types/react": "^19.1.13",
-    "@types/react-dom": "^19.1.9",
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
     "config": "workspace:*",
-    "react": "19.1.0",
-    "react-dom": "19.1.0",
-    "react-exo": "0.20.17",
-    "react-native": "0.80.2",
-    "react-native-svg": "^15.13.0",
-    "react-native-unistyles": "^3.0.12",
-    "react-native-web": "^0.21.1",
-    "typescript": "^5.9.2"
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-exo": "catalog:",
+    "react-native": "catalog:",
+    "react-native-svg": "catalog:",
+    "react-native-unistyles": "catalog:",
+    "react-native-web": "catalog:",
+    "typescript": "catalog:"
   },
   "peerDependencies": {
-    "react": ">=19",
-    "react-dom": ">=19",
-    "react-exo": ">=0.20",
-    "react-native": ">=0.80",
-    "react-native-svg": ">=15",
-    "react-native-unistyles": ">=3",
-    "react-native-web": ">=0.21"
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-exo": "catalog:",
+    "react-native": "catalog:",
+    "react-native-svg": "catalog:",
+    "react-native-unistyles": "catalog:",
+    "react-native-web": "catalog:"
   },
   "peerDependenciesMeta": {
     "react-dom": {

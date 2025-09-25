@@ -4,12 +4,69 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+catalogs:
+  default:
+    '@lingui/babel-plugin-lingui-macro':
+      specifier: ^5.5.0
+      version: 5.5.0
+    '@lingui/cli':
+      specifier: ^5.5.0
+      version: 5.5.0
+    '@lingui/conf':
+      specifier: ^5.5.0
+      version: 5.5.0
+    '@lingui/core':
+      specifier: ^5.5.0
+      version: 5.5.0
+    '@lingui/macro':
+      specifier: ^5.5.0
+      version: 5.5.0
+    '@lingui/react':
+      specifier: ^5.5.0
+      version: 5.5.0
+    '@lingui/vite-plugin':
+      specifier: ^5.5.0
+      version: 5.5.0
+    '@types/react':
+      specifier: ^19.1.13
+      version: 19.1.13
+    '@types/react-dom':
+      specifier: ^19.1.9
+      version: 19.1.9
+    react:
+      specifier: 19.1.0
+      version: 19.1.0
+    react-dom:
+      specifier: 19.1.0
+      version: 19.1.0
+    react-exo:
+      specifier: 0.20.17
+      version: 0.20.17
+    react-native:
+      specifier: 0.80.2
+      version: 0.80.2
+    react-native-reanimated:
+      specifier: ^3.19.1
+      version: 3.19.1
+    react-native-svg:
+      specifier: ^15.13.0
+      version: 15.13.0
+    react-native-unistyles:
+      specifier: ^3.0.12
+      version: 3.0.12
+    react-native-web:
+      specifier: 0.21.1
+      version: 0.21.1
+    typescript:
+      specifier: ^5.9.2
+      version: 5.9.2
+
 importers:
 
   .:
     devDependencies:
       '@lingui/cli':
-        specifier: ^5.5.0
+        specifier: 'catalog:'
         version: 5.5.0(babel-plugin-macros@3.1.0)
       concurrently:
         specifier: ^9.2.1
@@ -37,16 +94,16 @@ importers:
         specifier: ^7.28.4
         version: 7.28.4
       '@lingui/babel-plugin-lingui-macro':
-        specifier: ^5.5.0
+        specifier: 'catalog:'
         version: 5.5.0(babel-plugin-macros@3.1.0)(typescript@5.9.2)
       '@lingui/conf':
-        specifier: ^5.5.0
+        specifier: 'catalog:'
         version: 5.5.0(typescript@5.9.2)
       '@lingui/core':
-        specifier: ^5.5.0
+        specifier: 'catalog:'
         version: 5.5.0(@lingui/babel-plugin-lingui-macro@5.5.0(babel-plugin-macros@3.1.0)(typescript@5.9.2))(babel-plugin-macros@3.1.0)
       '@lingui/vite-plugin':
-        specifier: ^5.5.0
+        specifier: 'catalog:'
         version: 5.5.0(babel-plugin-macros@3.1.0)(typescript@5.9.2)(vite@7.1.5(@types/node@24.4.0)(jiti@2.5.1)(lightningcss@1.30.1)(terser@5.44.0)(yaml@2.8.1))
       '@react-native/babel-preset':
         specifier: 0.80.2
@@ -79,13 +136,13 @@ importers:
         specifier: ^1.30.1
         version: 1.30.1
       react-exo:
-        specifier: 0.20.17
+        specifier: 'catalog:'
         version: 0.20.17(9865dfd43c5c93d81a5e70a39434bea9)
       react-native-reanimated:
-        specifier: ^3.19.1
+        specifier: 'catalog:'
         version: 3.19.1(@babel/core@7.28.4)(react-native@0.81.4(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@react-native/metro-config@0.81.1(@babel/core@7.28.4))(@types/react@19.1.13)(react@19.1.1))(react@19.1.1)
       react-native-unistyles:
-        specifier: ^3.0.12
+        specifier: 'catalog:'
         version: 3.0.12(@react-native/normalize-colors@0.81.4)(react-native-edge-to-edge@1.7.0(react-native@0.81.4(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@react-native/metro-config@0.81.1(@babel/core@7.28.4))(@types/react@19.1.13)(react@19.1.1))(react@19.1.1))(react-native-nitro-modules@0.29.6(react-native@0.81.4(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@react-native/metro-config@0.81.1(@babel/core@7.28.4))(@types/react@19.1.13)(react@19.1.1))(react@19.1.1))(react-native-reanimated@3.19.1(@babel/core@7.28.4)(react-native@0.81.4(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@react-native/metro-config@0.81.1(@babel/core@7.28.4))(@types/react@19.1.13)(react@19.1.1))(react@19.1.1))(react-native@0.81.4(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@react-native/metro-config@0.81.1(@babel/core@7.28.4))(@types/react@19.1.13)(react@19.1.1))(react@19.1.1)
       sharp:
         specifier: ^0.34.3
@@ -97,7 +154,7 @@ importers:
         specifier: latest
         version: 0.9.0
       typescript:
-        specifier: ^5.9.2
+        specifier: 'catalog:'
         version: 5.9.2
       vite:
         specifier: ^7.1.5
@@ -145,13 +202,13 @@ importers:
         specifier: 1.0.1-preview.3
         version: 1.0.1-preview.3(@evolu/common@6.0.1-preview.19)(@evolu/web@1.0.1-preview.5(@evolu/common@6.0.1-preview.19))(react-dom@19.1.0(react@19.1.0))
       '@lingui/core':
-        specifier: ^5.5.0
+        specifier: 'catalog:'
         version: 5.5.0(@lingui/babel-plugin-lingui-macro@5.5.0(babel-plugin-macros@3.1.0)(typescript@5.9.2))(babel-plugin-macros@3.1.0)
       '@lingui/macro':
-        specifier: ^5.5.0
+        specifier: 'catalog:'
         version: 5.5.0(@lingui/babel-plugin-lingui-macro@5.5.0(babel-plugin-macros@3.1.0)(typescript@5.9.2))(babel-plugin-macros@3.1.0)(react@19.1.0)
       '@lingui/react':
-        specifier: ^5.5.0
+        specifier: 'catalog:'
         version: 5.5.0(@lingui/babel-plugin-lingui-macro@5.5.0(babel-plugin-macros@3.1.0)(typescript@5.9.2))(babel-plugin-macros@3.1.0)(react@19.1.0)
       '@lodev09/react-native-true-sheet':
         specifier: ^2.0.6
@@ -193,19 +250,19 @@ importers:
         specifier: ^4.17.21
         version: 4.17.21
       react:
-        specifier: 19.1.0
+        specifier: 'catalog:'
         version: 19.1.0
       react-dom:
-        specifier: 19.1.0
+        specifier: 'catalog:'
         version: 19.1.0(react@19.1.0)
       react-exo:
-        specifier: 0.20.17
+        specifier: 'catalog:'
         version: 0.20.17(b685079e16b5aac959b3b6b1356a7756)
       react-exo-ui:
         specifier: workspace:*
         version: link:../design
       react-native:
-        specifier: 0.80.2
+        specifier: 'catalog:'
         version: 0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@types/react@19.1.13)(react@19.1.0)
       react-native-bottom-tabs:
         specifier: ^0.11.2
@@ -232,7 +289,7 @@ importers:
         specifier: ^2.0.1
         version: 2.0.1(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@types/react@19.1.13)(react@19.1.0))(react@19.1.0)
       react-native-reanimated:
-        specifier: ^3.19.1
+        specifier: 'catalog:'
         version: 3.19.1(@babel/core@7.28.4)(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@types/react@19.1.13)(react@19.1.0))(react@19.1.0)
       react-native-safe-area-context:
         specifier: ^5.6.1
@@ -241,19 +298,19 @@ importers:
         specifier: ^4.16.0
         version: 4.16.0(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@types/react@19.1.13)(react@19.1.0))(react@19.1.0)
       react-native-svg:
-        specifier: ^15.13.0
+        specifier: 'catalog:'
         version: 15.13.0(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@types/react@19.1.13)(react@19.1.0))(react@19.1.0)
       react-native-svg-app-icon:
         specifier: ^0.6.1
         version: 0.6.1
       react-native-unistyles:
-        specifier: ^3.0.12
+        specifier: 'catalog:'
         version: 3.0.12(@react-native/normalize-colors@0.81.4)(react-native-edge-to-edge@1.7.0(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@types/react@19.1.13)(react@19.1.0))(react@19.1.0))(react-native-nitro-modules@0.29.6(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@types/react@19.1.13)(react@19.1.0))(react@19.1.0))(react-native-reanimated@3.19.1(@babel/core@7.28.4)(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@types/react@19.1.13)(react@19.1.0))(react@19.1.0))(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@types/react@19.1.13)(react@19.1.0))(react@19.1.0)
       react-native-url-polyfill:
         specifier: ^2.0.0
         version: 2.0.0(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@types/react@19.1.13)(react@19.1.0))
       react-native-web:
-        specifier: ^0.21.1
+        specifier: 'catalog:'
         version: 0.21.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
     devDependencies:
       '@react-native-community/cli':
@@ -272,59 +329,59 @@ importers:
         specifier: ^4.17.20
         version: 4.17.20
       '@types/react':
-        specifier: ^19.1.13
+        specifier: 'catalog:'
         version: 19.1.13
       '@types/react-dom':
-        specifier: ^19.1.9
+        specifier: 'catalog:'
         version: 19.1.9(@types/react@19.1.13)
       typescript:
-        specifier: ^5.9.2
+        specifier: 'catalog:'
         version: 5.9.2
 
   design:
     dependencies:
       '@lingui/core':
-        specifier: ^5.5.0
+        specifier: 'catalog:'
         version: 5.5.0(@lingui/babel-plugin-lingui-macro@5.5.0(babel-plugin-macros@3.1.0)(typescript@5.9.2))(babel-plugin-macros@3.1.0)
       '@lingui/macro':
-        specifier: ^5.5.0
+        specifier: 'catalog:'
         version: 5.5.0(@lingui/babel-plugin-lingui-macro@5.5.0(babel-plugin-macros@3.1.0)(typescript@5.9.2))(babel-plugin-macros@3.1.0)(react@19.1.0)
       '@lingui/react':
-        specifier: ^5.5.0
+        specifier: 'catalog:'
         version: 5.5.0(@lingui/babel-plugin-lingui-macro@5.5.0(babel-plugin-macros@3.1.0)(typescript@5.9.2))(babel-plugin-macros@3.1.0)(react@19.1.0)
     devDependencies:
       '@types/react':
-        specifier: ^19.1.13
+        specifier: 'catalog:'
         version: 19.1.13
       '@types/react-dom':
-        specifier: ^19.1.9
+        specifier: 'catalog:'
         version: 19.1.9(@types/react@19.1.13)
       config:
         specifier: workspace:*
         version: link:../build/config
       react:
-        specifier: 19.1.0
+        specifier: 'catalog:'
         version: 19.1.0
       react-dom:
-        specifier: 19.1.0
+        specifier: 'catalog:'
         version: 19.1.0(react@19.1.0)
       react-exo:
-        specifier: 0.20.17
+        specifier: 'catalog:'
         version: 0.20.17(b685079e16b5aac959b3b6b1356a7756)
       react-native:
-        specifier: 0.80.2
+        specifier: 'catalog:'
         version: 0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@types/react@19.1.13)(react@19.1.0)
       react-native-svg:
-        specifier: ^15.13.0
+        specifier: 'catalog:'
         version: 15.13.0(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@types/react@19.1.13)(react@19.1.0))(react@19.1.0)
       react-native-unistyles:
-        specifier: ^3.0.12
+        specifier: 'catalog:'
         version: 3.0.12(@react-native/normalize-colors@0.81.4)(react-native-edge-to-edge@1.7.0(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@types/react@19.1.13)(react@19.1.0))(react@19.1.0))(react-native-nitro-modules@0.29.6(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@types/react@19.1.13)(react@19.1.0))(react@19.1.0))(react-native-reanimated@3.19.1(@babel/core@7.28.4)(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@types/react@19.1.13)(react@19.1.0))(react@19.1.0))(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@types/react@19.1.13)(react@19.1.0))(react@19.1.0)
       react-native-web:
-        specifier: ^0.21.1
+        specifier: 'catalog:'
         version: 0.21.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       typescript:
-        specifier: ^5.9.2
+        specifier: 'catalog:'
         version: 5.9.2
 
 packages:
