@@ -2,13 +2,17 @@ import {useMemo} from 'react';
 import {useTheme} from 'settings/hooks/use-theme';
 import {useUnistyles} from 'react-native-unistyles';
 import {createStaticNavigation, DarkTheme, DefaultTheme} from '@react-navigation/native';
+import {useLinkData} from 'app/nav/menu/use-link-data';
 import nav from 'app/nav/root';
 import cfg from 'config';
 
 export function Router() {
+  const {links} = useLinkData();
   const {theme} = useUnistyles();
   const [scheme] = useTheme();
-  const Navigation = useMemo(() => createStaticNavigation(nav(theme)), [theme]);
+  const Navigation = useMemo(() =>
+    createStaticNavigation(nav(links, theme))
+  , [theme, links]);
 
   return (
     <Navigation

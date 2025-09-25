@@ -8,36 +8,45 @@ export function useLinkData() {
   const links: MenuItemList = {
     HomeDashboard: {
       label: t`Dashboard`,
+      path: '',
       icon: <Icon name="ph:squares-four"/>,
     },
     HomeShortcut: {
       label: t`Shortcut`,
+      path: 'shortcut/:id',
     },
     NotFound: {
       label: t`Not Found`,
+      path: '*',
     },
     Settings: {
       label: t`Settings`,
+      path: 'settings',
       icon: <Icon name="ph:gear"/>,
     },
     TasksListAll: {
       label: t`Lists`,
+      path: 'lists',
       icon: <Icon name="ph:list-checks"/>,
     },
     TasksListDetails: {
       label: t`Details`,
+      path: 'list/:id',
       icon: <Icon name="ph:list-checks"/>,
     },
     TasksListEdit: {
       label: t`Edit`,
+      path: 'list/:id/edit',
       icon: <Icon name="ph:list-checks"/>,
     },
     DevDesign: {
       label: t`Design`,
+      path: 'design',
       icon: <Icon name="ph:palette"/>,
     },
     DevCharts: {
       label: t`Charts`,
+      path: 'charts',
       icon: <Icon name="ph:chart-line"/>,
     },
   };

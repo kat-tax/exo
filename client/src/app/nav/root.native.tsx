@@ -3,8 +3,9 @@ import {Screen} from 'app/lib/nav';
 
 import type {Theme} from 'app/ui/types';
 import type {RootTabsParamList} from 'app/nav/types';
+import type {MenuItemList} from 'app/nav/menu/menu-item';
 
-export default (theme: Theme) => createTabs<RootTabsParamList>({
+export default (links: MenuItemList, theme: Theme) => createTabs<RootTabsParamList>({
   // Functionality
   backBehavior: 'order',
   disablePageAnimations: false,
@@ -27,30 +28,30 @@ export default (theme: Theme) => createTabs<RootTabsParamList>({
     HomeDashboard: {
       screen: Screen.Home.Dashboard,
       linking: {
-        path: '',
+        path: links.HomeDashboard.path,
       },
       options: {
-        tabBarLabel: 'Home',
+        title: links.HomeDashboard.label,
         tabBarIcon: () => require('./icons/PhSquaresFour.png')
       },
     },
     TasksListAll: {
       screen: Screen.Tasks.ListAll,
       linking: {
-        path: 'lists',
+        path: links.TasksListAll.path,
       },
       options: {
-        tabBarLabel: 'Lists',
+        title: links.TasksListAll.label,
         tabBarIcon: () => require('./icons/PhListChecks.png')
       },
     },
     Settings: {
       screen: Screen.Settings.Settings,
       linking: {
-        path: 'settings',
+        path: links.Settings.path,
       },
       options: {
-        tabBarLabel: 'Settings',
+        title: links.Settings.label,
         tabBarIcon: () => require('./icons/PhGear.png')
       },
     },

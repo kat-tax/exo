@@ -5,8 +5,9 @@ import {Suspend} from 'app/ui/base';
 
 import type {Theme} from 'app/ui/types';
 import type {RootStackParamList} from 'app/nav/types';
+import type {MenuItemList} from 'app/nav/menu/menu-item';
 
-export default (theme: Theme) => createStack<RootStackParamList>({
+export default (links: MenuItemList, theme: Theme) => createStack<RootStackParamList>({
   layout: Layout,
   screenLayout: Suspend,
   screenOptions: {
@@ -20,57 +21,84 @@ export default (theme: Theme) => createStack<RootStackParamList>({
     HomeDashboard: {
       screen: Screen.Home.Dashboard,
       linking: {
-        path: '',
+        path: links.HomeDashboard.path,
+      },
+      options: {
+        title: links.HomeDashboard.label,
       },
     },
     HomeShortcut: {
       screen: Screen.Home.Shortcut,
       linking: {
-        path: 'shortcut/:id',
+        path: links.HomeShortcut.path,
+      },
+      options: {
+        title: links.HomeShortcut.label,
       },
     },
     NotFound: {
       screen: Screen.Home.NotFound,
       linking: {
-        path: '*',
+        path: links.NotFound.path,
+      },
+      options: {
+        title: links.NotFound.label,
       },
     },
     Settings: {
       screen: Screen.Settings.Settings,
       linking: {
-        path: 'settings',
+        path: links.Settings.path,
+      },
+      options: {
+        title: links.Settings.label,
       },
     },
     TasksListAll: {
       screen: Screen.Tasks.ListAll,
       linking: {
-        path: 'lists',
+        path: links.TasksListAll.path,
+      },
+      options: {
+        title: links.TasksListAll.label,
       },
     },
     TasksListDetails: {
       screen: Screen.Tasks.ListDetails,
       linking: {
-        path: 'list/:id',
+        path: links.TasksListDetails.path,
+      },
+      options: {
+        title: links.TasksListDetails.label,
       },
     },
     TasksListEdit: {
       screen: Screen.Tasks.ListEdit,
       linking: {
-        path: 'list/:id/edit',
+        path: links.TasksListEdit.path,
+      },
+      options: {
+        title: links.TasksListEdit.label,
       },
     },
     DevDesign: {
-      screen: Screen.Dev.Design,
       if: () => __DEV__,
+      screen: Screen.Dev.Design,
       linking: {
-        path: 'design',
+        path: links.DevDesign.path,
+      },
+      options: {
+        title: links.DevDesign.label,
       },
     },
     DevCharts: {
-      screen: Screen.Dev.Charts,
       if: () => __DEV__,
+      screen: Screen.Dev.Charts,
       linking: {
-        path: 'charts',
+        path: links.DevCharts.path,
+      },
+      options: {
+        title: links.DevCharts.label,
       },
     },
   },
