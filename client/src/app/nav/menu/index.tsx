@@ -6,9 +6,9 @@ import {useLinkData} from './use-link-data';
 import {MenuHeader} from './menu-header';
 import {MenuFooter} from './menu-footer';
 import {MenuGroup} from './menu-group';
-import {MenuLinkTab} from './menu-link-tab';
-import {MenuLinkList} from './menu-link-list';
-import {MenuLinkIcon} from './menu-link-icon'
+import {MenuItemTab} from './menu-item-tab';
+import {MenuItemList} from './menu-item-list';
+import {MenuItemIcon} from './menu-item-icon'
 
 import type {LayoutProps} from '../layout';
 
@@ -23,7 +23,7 @@ export function Tabs(props: LayoutProps) {
   return (
     <View style={styles.tabs}>
       {config.tabs.map((tab) => (
-        <MenuLinkTab
+        <MenuItemTab
           key={tab.path}
           {...{navigation, activeRoute}}
           {...tab}
@@ -45,7 +45,7 @@ export function Menu(props: LayoutProps) {
         <View style={styles.list}>
           <MenuHeader/>
           {config.menuTop.map((link) => (
-            <MenuLinkList
+            <MenuItemList
               key={link.path}
               {...{navigation, activeRoute}}
               {...link}
@@ -54,7 +54,7 @@ export function Menu(props: LayoutProps) {
           {__DEV__ &&
             <MenuGroup label={t`Development`}>
               {config.menuDevMenu.map((link) => (
-                <MenuLinkList
+                <MenuItemList
                   key={link.path}
                   {...{navigation, activeRoute}}
                   {...link}
@@ -66,7 +66,7 @@ export function Menu(props: LayoutProps) {
         <MenuFooter actions={
           <View style={styles.actions}>
             {config.menuFooterIcons.map((link) => (
-              <MenuLinkIcon
+              <MenuItemIcon
                 key={link.path}
                 {...{navigation, activeRoute}}
                 {...link}

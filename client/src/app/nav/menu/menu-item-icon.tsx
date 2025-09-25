@@ -4,12 +4,12 @@ import {View} from 'react-native';
 import {StyleSheet} from 'react-native-unistyles';
 import {useVariants} from 'react-exo/utils';
 import {useLinkState} from './use-link-state';
-import {MenuLinkVariants} from './menu-link';
-import type {MenuLinkProps} from './menu-link';
+import {MenuItemVariants} from './menu-item';
+import type {MenuItemProps} from './menu-item';
 
-export function MenuLinkIcon(props: MenuLinkProps) {
+export function MenuItemIcon(props: MenuItemProps) {
   const {ref, state} = useLinkState(props);
-  const {vstyles} = useVariants(MenuLinkVariants, {state}, styles);
+  const {vstyles} = useVariants(MenuItemVariants, {state}, styles);
 
   return (
     <Link screen={props.path} params={{}} style={{width: '100%'}}>

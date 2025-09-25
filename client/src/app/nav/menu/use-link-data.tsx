@@ -1,11 +1,11 @@
-import {useLingui} from '@lingui/react/macro';
 import {Icon} from 'react-exo/icon';
-import {MenuLinkData} from './menu-link';
+import {useLingui} from '@lingui/react/macro';
+import type {MenuItemList} from './menu-item';
 
 export function useLinkData() {
   const {t} = useLingui();
 
-  const links: MenuLinkData = {
+  const links: MenuItemList = {
     HomeDashboard: {
       path: 'HomeDashboard',
       label: t`Dashboard`,
