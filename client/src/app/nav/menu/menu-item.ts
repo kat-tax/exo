@@ -13,7 +13,10 @@ export type MenuItemData = {
   icon?: React.ReactElement,
 }
 
-export type MenuItemList = Record<keyof RootStackParamList, MenuItemData>;
+export type MenuItemList = Record<
+  keyof RootStackParamList,
+  Omit<MenuItemData, 'name'>
+>;
 
 export interface MenuItemProps extends MenuItemData, React.PropsWithChildren {
   activeRoute: NavigationRoute<RootStackParamList, keyof RootStackParamList>

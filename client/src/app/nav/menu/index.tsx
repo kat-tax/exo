@@ -16,7 +16,7 @@ export const APP_MENU_WIDTH = 146;
 export const APP_MENU_TAB_HEIGHT = 64;
 
 export function Tabs(props: LayoutProps) {
-  const {config} = useLinkData();
+  const {config, links} = useLinkData();
   const {state, navigation} = props;
   const activeRoute = state.routes[state.index];
 
@@ -24,9 +24,10 @@ export function Tabs(props: LayoutProps) {
     <View style={styles.tabs}>
       {config.tabs.map((tab) => (
         <MenuItemTab
-          key={tab.name}
+          key={tab}
+          name={tab}
           {...{navigation, activeRoute}}
-          {...tab}
+          {...links[tab]}
         />
       ))}
     </View>
@@ -35,7 +36,7 @@ export function Tabs(props: LayoutProps) {
 
 export function Menu(props: LayoutProps) {
   const {t} = useLingui();
-  const {config} = useLinkData();
+  const {config, links} = useLinkData();
   const {state, navigation} = props;
   const activeRoute = state.routes[state.index];
 
@@ -46,18 +47,20 @@ export function Menu(props: LayoutProps) {
           <MenuHeader/>
           {config.menuTop.map((link) => (
             <MenuItemList
-              key={link.name}
+              key={link}
+              name={link}
               {...{navigation, activeRoute}}
-              {...link}
+              {...links[link]}
             />
           ))}
           {__DEV__ &&
             <MenuGroup label={t`Development`}>
               {config.menuDevMenu.map((link) => (
                 <MenuItemList
-                  key={link.name}
+                  key={link}
+                  name={link}
                   {...{navigation, activeRoute}}
-                  {...link}
+                  {...links[link]}
                 />
               ))}
             </MenuGroup>
@@ -67,9 +70,10 @@ export function Menu(props: LayoutProps) {
           <View style={styles.actions}>
             {config.menuFooterIcons.map((link) => (
               <MenuItemIcon
-                key={link.name}
+                key={link}
+                name={link}
                 {...{navigation, activeRoute}}
-                {...link}
+                {...links[link]}
               />
             ))}
           </View>
