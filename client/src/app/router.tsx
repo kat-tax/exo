@@ -1,26 +1,35 @@
-import {Router as _, Routes, Route} from 'react-exo/navigation';
-import {Layout, Screen} from 'app/lib/nav';
-import {history} from 'app/data';
+import {useMemo} from 'react';
+import {useTheme} from 'settings/hooks/use-theme';
+import {useUnistyles} from 'react-native-unistyles';
+import {createStaticNavigation, DarkTheme, DefaultTheme} from '@react-navigation/native';
+import nav from 'app/nav/root';
+import cfg from 'config';
 
 export function Router() {
+  const {theme} = useUnistyles();
+  const [scheme] = useTheme();
+  const Navigation = useMemo(() => createStaticNavigation(nav(theme)), [theme]);
+
   return (
-    <_ {...{history}}>
-      <Routes>
-        <Route path="/" element={<Layout.App/>}>
-          {/* Home */}
-          <Route index element={<Screen.Home.Dashboard/>}/>
-          <Route path="shortcut/:id" element={<Screen.Home.Shortcut/>}/>
-          {/* Tasks */}
-          <Route path="lists" element={<Screen.Tasks.ListAll/>}/>
-          <Route path="list/:id" element={<Screen.Tasks.ListDetails/>}/>
-          <Route path="list/:id/edit" element={<Screen.Tasks.ListEdit/>}/>
-          {/* Settings */}
-          <Route path="settings" element={<Screen.Settings.Settings/>}/>
-          {/* Dev Mode */}
-          <Route path="design" element={<Screen.Dev.Design/>}/>
-          <Route path="charts" element={<Screen.Dev.Charts/>}/>
-        </Route>
-      </Routes>
-    </_>
+    <Navigation
+      linking={{
+        enabled: 'auto',
+        prefixes: [
+          'https://exo.ult.dev',
+          'exo://',
+        ],
+      }}
+      // TODO: map unistyles themes to react-navigation themes
+      theme={scheme === 'dark'
+        ? DarkTheme
+        : DefaultTheme
+      }
+      documentTitle={{
+        enabled: true,
+        formatter: (options, _route) => options?.title
+          ? `${cfg.APP_NAME} - ${options?.title}`
+          : cfg.APP_NAME
+      }}
+    />
   );
 }

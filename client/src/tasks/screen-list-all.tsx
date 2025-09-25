@@ -1,7 +1,6 @@
 import {View} from 'react-native';
 import {Icon} from 'react-exo/icon';
 import {StyleSheet} from 'react-native-unistyles';
-// import {useNavigate} from 'react-exo/navigation';
 import {useNavigation} from '@react-navigation/native';
 import {useLingui} from '@lingui/react/macro';
 import {Panel} from 'app/ui/panel';
@@ -14,7 +13,6 @@ import {useLists} from 'tasks/hooks/use-lists';
 export default function ScreenLists() {
   const lists = useLists();
   const data = useQuery(getLists);
-  // const nav = useNavigate();
   const nav = useNavigation();
   const {t} = useLingui();
 

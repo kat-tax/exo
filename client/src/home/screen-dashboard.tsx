@@ -3,7 +3,6 @@ import {Trans} from '@lingui/react';
 import {Linking, Text, View} from 'react-native';
 import {StyleSheet} from 'react-native-unistyles';
 import {useSettings} from 'settings/hooks/use-settings';
-// import {useNavigate} from 'react-exo/navigation';
 import {useNavigation} from '@react-navigation/native';
 import {useClock} from 'home/hooks/use-clock';
 import {greetMsg} from 'home/utils/time';
@@ -20,7 +19,6 @@ export default function ScreenDashboard() {
   const settings = useSettings();
   const clock = useClock();
   const data = useQuery(getShortcuts);
-  //const nav = useNavigate();
   const nav = useNavigation();
 
   return (

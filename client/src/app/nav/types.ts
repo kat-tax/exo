@@ -7,4 +7,11 @@ export type RootStackParamList = {
   DevDesign: undefined;
   DevCharts: undefined;
   Settings: undefined;
+  NotFound: undefined;
+};
+
+export type RootTabsParamList = {
+  HomeDashboard: undefined;
+  TasksListAll: undefined;
+  Settings: undefined;
 };

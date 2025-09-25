@@ -1,39 +1,19 @@
 import {Icon} from 'react-exo/icon';
+import {Link} from '@react-navigation/native';
 import {View, Text} from 'react-native';
 import {StyleSheet} from 'react-native-unistyles';
-import {useFocusable} from '@noriginmedia/norigin-spatial-navigation';
 import {useVariants} from 'react-exo/utils';
-import {useNavigation} from '@react-navigation/native';
-import {useRoute} from '@react-navigation/native';
-import {Link} from '@react-navigation/native';
+import {useLinkState} from './use-link-state';
+import {MenuLinkVariants} from './menu-link';
+import type {MenuLinkProps} from './menu-link';
 
-import type {RootStackParamList} from 'app/navigation';
-
-interface MenuItemProps extends React.PropsWithChildren {
-  label: string,
-  path: keyof RootStackParamList,
-  icon: React.ReactElement,
-}
-
-export const MenuItemVariants = {
-  state: ['Default', 'Active', 'Focused'],
-} as const;
-
-export function MenuItem(props: MenuItemProps) {
-  const nav = useNavigation();
-  const route = useRoute();
-  const {ref, focused} = useFocusable({
-    focusKey: `menu@${props.path}`,
-    onEnterPress: () => nav.navigate(props.path as any),
-  });
-
-  const active = route.name === props.path;
-  const state = active ? 'Active' : focused ? 'Focused' : 'Default';
-  const {vstyles} = useVariants(MenuItemVariants, {state}, styles);
+export function MenuLinkList(props: MenuLinkProps) {
+  const {ref, state} = useLinkState(props);
+  const {vstyles} = useVariants(MenuLinkVariants, {state}, styles);
 
   return (
     <Link screen={props.path} params={{}} style={{width: '100%'}}>
-      <View ref={ref} style={vstyles.item()}>
+      <View ref={ref} style={vstyles.root()}>
         {props.icon && Icon.New(props.icon, vstyles.icon())}
         <Text style={vstyles.label()}>
           {props.label}
@@ -44,7 +24,7 @@ export function MenuItem(props: MenuItemProps) {
 }
 
 const styles = StyleSheet.create((theme) => ({
-  item: {
+  root: {
     width: '100%',
     flexDirection: 'row',
     alignItems: 'center',
@@ -53,10 +33,10 @@ const styles = StyleSheet.create((theme) => ({
     borderColor: 'transparent',
     borderWidth: 1,
   },
-  itemStateActive: {
+  rootStateActive: {
     backgroundColor: theme.colors.secondary,
   },
-  itemStateFocused: {
+  rootStateFocused: {
     borderColor: theme.colors.ring,
   },
   icon: {

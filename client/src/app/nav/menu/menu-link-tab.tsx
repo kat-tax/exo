@@ -1,30 +1,19 @@
+import {Icon} from 'react-exo/icon';
+import {Link} from '@react-navigation/native';
 import {View, Text} from 'react-native';
 import {StyleSheet} from 'react-native-unistyles';
 import {useVariants} from 'react-exo/utils';
-import {useRoute} from '@react-navigation/native';
-import {Link} from '@react-navigation/native';
-import {Icon} from 'react-exo/icon';
+import {useLinkState} from './use-link-state';
+import {MenuLinkVariants} from './menu-link';
+import type {MenuLinkProps} from './menu-link';
 
-import type {RootStackParamList} from 'app/navigation';
-
-interface MenuTabProps extends React.PropsWithChildren {
-  label: string,
-  path: keyof RootStackParamList,
-  icon: React.ReactElement,
-}
-
-export const MenuTabVariants = {
-  state: ['Default', 'Active'],
-} as const;
-
-export function MenuTab(props: MenuTabProps) {
-  const route = useRoute();
-  const state = route.name === props.path ? 'Active' : 'Default';
-  const {vstyles} = useVariants(MenuTabVariants, {state}, styles);
+export function MenuLinkTab(props: MenuLinkProps) {
+  const {ref, state} = useLinkState(props);
+  const {vstyles} = useVariants(MenuLinkVariants, {state}, styles);
 
   return (
     <Link screen={props.path} params={{}}>
-      <View style={vstyles.item()}>
+      <View ref={ref} style={vstyles.root()}>
         {props.icon && Icon.New(props.icon, vstyles.icon())}
         <Text style={vstyles.label()}>
           {props.label}
@@ -35,13 +24,16 @@ export function MenuTab(props: MenuTabProps) {
 }
 
 const styles = StyleSheet.create((theme) => ({
-  item: {
+  root: {
     width: 60,
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
     marginTop: theme.display.space1,
     borderRadius: theme.display.radius1,
+  },
+  rootStateFocused: {
+    borderColor: theme.colors.ring,
   },
   label: {
     userSelect: 'none',
