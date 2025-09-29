@@ -197,7 +197,7 @@ importers:
         version: 9.0.1-preview.4(@evolu/common@6.0.1-preview.19)(react@19.1.0)
       '@evolu/react-native':
         specifier: 12.0.1-preview.4
-        version: 12.0.1-preview.4(@evolu/common@6.0.1-preview.19)(@evolu/react@9.0.1-preview.4(@evolu/common@6.0.1-preview.19)(react@19.1.0))(@op-engineering/op-sqlite@15.0.3(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@types/react@19.1.13)(react@19.1.0))(react@19.1.0))(expo@54.0.7(@babel/core@7.28.4)(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@types/react@19.1.13)(react@19.1.0))(react@19.1.0))(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@types/react@19.1.13)(react@19.1.0))
+        version: 12.0.1-preview.4(@evolu/common@6.0.1-preview.19)(@evolu/react@9.0.1-preview.4(@evolu/common@6.0.1-preview.19)(react@19.1.0))(@op-engineering/op-sqlite@15.0.5(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@types/react@19.1.13)(react@19.1.0))(react@19.1.0))(expo@54.0.7(@babel/core@7.28.4)(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@types/react@19.1.13)(react@19.1.0))(react@19.1.0))(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@types/react@19.1.13)(react@19.1.0))
       '@evolu/react-web':
         specifier: 1.0.1-preview.3
         version: 1.0.1-preview.3(@evolu/common@6.0.1-preview.19)(@evolu/web@1.0.1-preview.5(@evolu/common@6.0.1-preview.19))(react-dom@19.1.0(react@19.1.0))
@@ -217,8 +217,8 @@ importers:
         specifier: ^2.3.0
         version: 2.3.0(react@19.1.0)
       '@op-engineering/op-sqlite':
-        specifier: 15.0.3
-        version: 15.0.3(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@types/react@19.1.13)(react@19.1.0))(react@19.1.0)
+        specifier: 15.0.5
+        version: 15.0.5(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@types/react@19.1.13)(react@19.1.0))(react@19.1.0)
       '@react-native-community/netinfo':
         specifier: ^11.4.1
         version: 11.4.1(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@types/react@19.1.13)(react@19.1.0))
@@ -1879,8 +1879,8 @@ packages:
     peerDependencies:
       react: '>=16.8.0'
 
-  '@op-engineering/op-sqlite@15.0.3':
-    resolution: {integrity: sha512-vAUrw2hg2TQTDNM6tAsjtxQiyNTZCynjbV6F+FsiSYgbmfuqIL7gRu94IqmLM5/dPvqbBaDZdo4a9n6KMGN8RQ==}
+  '@op-engineering/op-sqlite@15.0.5':
+    resolution: {integrity: sha512-nRWL2+sWb8D+F504xRpX9n4ZyERfvC4MVfZph86LOwqk+sOXnPwxUMNz3EuuLMoB2KSrgWOQsqjI2qRQSAXaow==}
     peerDependencies:
       react: '*'
       react-native: '*'
@@ -7694,13 +7694,13 @@ snapshots:
       nanoid: 3.3.11
       random: 5.4.1
 
-  '@evolu/react-native@12.0.1-preview.4(@evolu/common@6.0.1-preview.19)(@evolu/react@9.0.1-preview.4(@evolu/common@6.0.1-preview.19)(react@19.1.0))(@op-engineering/op-sqlite@15.0.3(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@types/react@19.1.13)(react@19.1.0))(react@19.1.0))(expo@54.0.7(@babel/core@7.28.4)(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@types/react@19.1.13)(react@19.1.0))(react@19.1.0))(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@types/react@19.1.13)(react@19.1.0))':
+  '@evolu/react-native@12.0.1-preview.4(@evolu/common@6.0.1-preview.19)(@evolu/react@9.0.1-preview.4(@evolu/common@6.0.1-preview.19)(react@19.1.0))(@op-engineering/op-sqlite@15.0.5(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@types/react@19.1.13)(react@19.1.0))(react@19.1.0))(expo@54.0.7(@babel/core@7.28.4)(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@types/react@19.1.13)(react@19.1.0))(react@19.1.0))(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@types/react@19.1.13)(react@19.1.0))':
     dependencies:
       '@evolu/common': 6.0.1-preview.19
       '@evolu/react': 9.0.1-preview.4(@evolu/common@6.0.1-preview.19)(react@19.1.0)
       react-native: 0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@types/react@19.1.13)(react@19.1.0)
     optionalDependencies:
-      '@op-engineering/op-sqlite': 15.0.3(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@types/react@19.1.13)(react@19.1.0))(react@19.1.0)
+      '@op-engineering/op-sqlite': 15.0.5(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@types/react@19.1.13)(react@19.1.0))(react@19.1.0)
       expo: 54.0.7(@babel/core@7.28.4)(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@types/react@19.1.13)(react@19.1.0))(react@19.1.0)
 
   '@evolu/react-web@1.0.1-preview.3(@evolu/common@6.0.1-preview.19)(@evolu/web@1.0.1-preview.5(@evolu/common@6.0.1-preview.19))(react-dom@19.1.0(react@19.1.0))':
@@ -8672,7 +8672,7 @@ snapshots:
       lodash: 4.17.21
       react: 19.1.0
 
-  '@op-engineering/op-sqlite@15.0.3(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@types/react@19.1.13)(react@19.1.0))(react@19.1.0)':
+  '@op-engineering/op-sqlite@15.0.5(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@types/react@19.1.13)(react@19.1.0))(react@19.1.0)':
     dependencies:
       react: 19.1.0
       react-native: 0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@types/react@19.1.13)(react@19.1.0)

@@ -26,7 +26,7 @@
     "@lingui/react": "catalog:",
     "@lodev09/react-native-true-sheet": "^2.0.6",
     "@noriginmedia/norigin-spatial-navigation": "^2.3.0",
-    "@op-engineering/op-sqlite": "15.0.3",
+    "@op-engineering/op-sqlite": "15.0.5",
     "@react-native-community/netinfo": "^11.4.1",
     "@react-native-picker/picker": "^2.11.2",
     "@react-navigation/bottom-tabs": "^7.4.7",
