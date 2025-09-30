@@ -1,5 +1,5 @@
 import {createStack} from 'app/lib/nav.stack';
-import {Screen} from 'app/lib/nav';
+import {Screen} from 'app/lib/screens';
 import {Layout} from 'app/nav/custom/layout';
 import {ScreenLayout} from 'app/nav/custom/screenLayout';
 

@@ -56,7 +56,7 @@ msgstr "Categories"
 msgid "Category"
 msgstr "Category"
 
-#: ../../client/src/app/nav/hooks/use-link-data.tsx:69
+#: ../../client/src/app/nav/hooks/use-link-data.tsx:87
 #: ../../client/src/dev/screen-charts.tsx:14
 msgid "Charts"
 msgstr "Charts"
@@ -105,7 +105,7 @@ msgstr "Danger Zone"
 msgid "Dark"
 msgstr "Dark"
 
-#: ../../client/src/app/nav/hooks/use-link-data.tsx:32
+#: ../../client/src/app/nav/hooks/use-link-data.tsx:36
 msgid "Dashboard"
 msgstr "Dashboard"
 
@@ -123,16 +123,12 @@ msgstr "Delete List"
 msgid "Delete Shortcut"
 msgstr "Delete Shortcut"
 
-#: ../../client/src/app/nav/hooks/use-link-data.tsx:64
+#: ../../client/src/app/nav/hooks/use-link-data.tsx:79
 #: ../../client/src/dev/screen-design.tsx:14
 msgid "Design"
 msgstr "Design"
 
-#: ../../client/src/app/nav/hooks/use-link-data.tsx:54
-msgid "Details"
-msgstr "Details"
-
-#: ../../client/src/app/nav/menu/index.tsx:56
+#: ../../client/src/app/nav/custom/menu/index.tsx:57
 msgid "Development"
 msgstr "Development"
 
@@ -140,13 +136,13 @@ msgstr "Development"
 msgid "Display Name"
 msgstr "Display Name"
 
-#: ../../client/src/app/nav/hooks/use-link-data.tsx:59
-msgid "Edit"
-msgstr "Edit"
-
 #: ../../client/src/tasks/stacks/list-group.tsx:101
 msgid "Edit Item..."
 msgstr "Edit Item..."
+
+#: ../../client/src/app/nav/hooks/use-link-data.tsx:72
+msgid "Edit List"
+msgstr "Edit List"
 
 #: ../../design/components/features/auth/login/Login.tsx:29
 #: ../../design/components/features/auth/signup/Signup.tsx:29
@@ -239,7 +235,7 @@ msgstr "Good morning, {name}."
 msgid "Good night, {name}."
 msgstr "Good night, {name}."
 
-#: ../../client/src/app/nav/menu/menu-header.tsx:19
+#: ../../client/src/app/nav/custom/menu/menu-header.tsx:19
 msgid "Human"
 msgstr "Human"
 
@@ -301,6 +297,10 @@ msgstr "Language"
 msgid "Light"
 msgstr "Light"
 
+#: ../../client/src/app/nav/hooks/use-link-data.tsx:66
+msgid "List Details"
+msgstr "List Details"
+
 #: ../../client/src/tasks/hooks/use-lists.ts:13
 msgid "List Error"
 msgstr "List Error"
@@ -309,7 +309,7 @@ msgstr "List Error"
 msgid "List name"
 msgstr "List name"
 
-#: ../../client/src/app/nav/hooks/use-link-data.tsx:48
+#: ../../client/src/app/nav/hooks/use-link-data.tsx:58
 #: ../../client/src/tasks/screen-list-all.tsx:21
 msgid "Lists"
 msgstr "Lists"
@@ -340,7 +340,7 @@ msgstr "Name"
 msgid "New item..."
 msgstr "New item..."
 
-#: ../../client/src/app/nav/hooks/use-link-data.tsx:28
+#: ../../client/src/app/nav/hooks/use-link-data.tsx:30
 msgid "Not Found"
 msgstr "Not Found"
 
@@ -400,12 +400,12 @@ msgstr "Select your preferred language."
 msgid "Set mnemonic to sync devices."
 msgstr "Set mnemonic to sync devices."
 
-#: ../../client/src/app/nav/hooks/use-link-data.tsx:42
+#: ../../client/src/app/nav/hooks/use-link-data.tsx:50
 #: ../../client/src/settings/screen-settings.tsx:26
 msgid "Settings"
 msgstr "Settings"
 
-#: ../../client/src/app/nav/hooks/use-link-data.tsx:38
+#: ../../client/src/app/nav/hooks/use-link-data.tsx:44
 msgid "Shortcut"
 msgstr "Shortcut"
 

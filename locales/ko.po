@@ -56,7 +56,7 @@ msgstr ""
 msgid "Category"
 msgstr ""
 
-#: ../../client/src/app/nav/hooks/use-link-data.tsx:69
+#: ../../client/src/app/nav/hooks/use-link-data.tsx:87
 #: ../../client/src/dev/screen-charts.tsx:14
 msgid "Charts"
 msgstr ""
@@ -105,7 +105,7 @@ msgstr ""
 msgid "Dark"
 msgstr "다크"
 
-#: ../../client/src/app/nav/hooks/use-link-data.tsx:32
+#: ../../client/src/app/nav/hooks/use-link-data.tsx:36
 msgid "Dashboard"
 msgstr "대시보드"
 
@@ -123,16 +123,12 @@ msgstr ""
 msgid "Delete Shortcut"
 msgstr ""
 
-#: ../../client/src/app/nav/hooks/use-link-data.tsx:64
+#: ../../client/src/app/nav/hooks/use-link-data.tsx:79
 #: ../../client/src/dev/screen-design.tsx:14
 msgid "Design"
 msgstr "디자인"
 
-#: ../../client/src/app/nav/hooks/use-link-data.tsx:54
-msgid "Details"
-msgstr ""
-
-#: ../../client/src/app/nav/menu/index.tsx:56
+#: ../../client/src/app/nav/custom/menu/index.tsx:57
 msgid "Development"
 msgstr "개발"
 
@@ -140,12 +136,12 @@ msgstr "개발"
 msgid "Display Name"
 msgstr "표시 이름"
 
-#: ../../client/src/app/nav/hooks/use-link-data.tsx:59
-msgid "Edit"
-msgstr ""
-
 #: ../../client/src/tasks/stacks/list-group.tsx:101
 msgid "Edit Item..."
+msgstr ""
+
+#: ../../client/src/app/nav/hooks/use-link-data.tsx:72
+msgid "Edit List"
 msgstr ""
 
 #: ../../design/components/features/auth/login/Login.tsx:29
@@ -239,7 +235,7 @@ msgstr "안녕하세요, {name}님."
 msgid "Good night, {name}."
 msgstr "안녕히 주무세요, {name}님."
 
-#: ../../client/src/app/nav/menu/menu-header.tsx:19
+#: ../../client/src/app/nav/custom/menu/menu-header.tsx:19
 msgid "Human"
 msgstr "인간"
 
@@ -301,6 +297,10 @@ msgstr "언어"
 msgid "Light"
 msgstr "라이트"
 
+#: ../../client/src/app/nav/hooks/use-link-data.tsx:66
+msgid "List Details"
+msgstr ""
+
 #: ../../client/src/tasks/hooks/use-lists.ts:13
 msgid "List Error"
 msgstr ""
@@ -309,7 +309,7 @@ msgstr ""
 msgid "List name"
 msgstr ""
 
-#: ../../client/src/app/nav/hooks/use-link-data.tsx:48
+#: ../../client/src/app/nav/hooks/use-link-data.tsx:58
 #: ../../client/src/tasks/screen-list-all.tsx:21
 msgid "Lists"
 msgstr ""
@@ -340,7 +340,7 @@ msgstr "이름"
 msgid "New item..."
 msgstr ""
 
-#: ../../client/src/app/nav/hooks/use-link-data.tsx:28
+#: ../../client/src/app/nav/hooks/use-link-data.tsx:30
 msgid "Not Found"
 msgstr ""
 
@@ -400,12 +400,12 @@ msgstr ""
 msgid "Set mnemonic to sync devices."
 msgstr ""
 
-#: ../../client/src/app/nav/hooks/use-link-data.tsx:42
+#: ../../client/src/app/nav/hooks/use-link-data.tsx:50
 #: ../../client/src/settings/screen-settings.tsx:26
 msgid "Settings"
 msgstr "설정"
 
-#: ../../client/src/app/nav/hooks/use-link-data.tsx:38
+#: ../../client/src/app/nav/hooks/use-link-data.tsx:44
 msgid "Shortcut"
 msgstr ""
 

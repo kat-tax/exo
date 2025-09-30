@@ -1,8 +1,7 @@
 import {useState, useEffect} from 'react';
-import {View, Text} from 'react-native';
+import {getDiskSpace, bytesize} from 'react-exo/fs';
 import {StyleSheet} from 'react-native-unistyles';
-import {getDiskSpace} from 'react-exo/fs';
-import {bytesize} from 'app/lib/format';
+import {View, Text} from 'react-native';
 import {Progress} from 'app/ui/base';
 
 interface MenuFooterProps {

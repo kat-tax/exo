@@ -1,5 +1,5 @@
 import {createTabs} from 'app/lib/nav.tabs';
-import {Screen} from 'app/lib/nav';
+import {Screen} from 'app/lib/screens';
 
 import type {Theme} from 'app/ui/types';
 import type {MenuItemList, RootTabsParamList} from 'app/nav/types';
