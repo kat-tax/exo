@@ -1,10 +1,10 @@
 import {useLingui} from '@lingui/react/macro';
-import type {MenuItemList} from 'app/nav/types';
+import type {NavScreens} from 'app/nav';
 
-export function useLinkData() {
+export function useScreens() {
   const {t} = useLingui();
 
-  const config: Record<string, Array<keyof MenuItemList>> = {
+  const config: Record<string, Array<keyof NavScreens>> = {
     tabs: [
       'HomeDashboard',
       'TasksListAll',
@@ -23,7 +23,7 @@ export function useLinkData() {
     ],
   } as const;
 
-  const links: MenuItemList = {
+  const links: NavScreens = {
     NotFound: {
       linking: '*',
       options: {
@@ -35,7 +35,7 @@ export function useLinkData() {
       options: {
         title: t`Dashboard`,
         icon: 'ph:squares-four',
-        tabBarIcon: () => require('../icons/PhSquaresFour.png'),
+        tabBarIcon: () => require('./icons/ph-squares-four.png'),
       },
     },
     HomeShortcut: {
@@ -49,7 +49,7 @@ export function useLinkData() {
       options: {
         title: t`Settings`,
         icon: 'ph:gear',
-        tabBarIcon: () => require('../icons/PhGear.png'),
+        tabBarIcon: () => require('./icons/ph-gear.png'),
       },
     },
     TasksListAll: {
@@ -57,7 +57,7 @@ export function useLinkData() {
       options: {
         title: t`Lists`,
         icon: 'ph:list-checks',
-        tabBarIcon: () => require('../icons/PhListChecks.png'),
+        tabBarIcon: () => require('./icons/ph-list-checks.png'),
       },
     },
     TasksListDetails: {

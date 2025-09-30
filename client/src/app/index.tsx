@@ -1,15 +1,15 @@
 import {Data} from 'app/data';
 import {I18n} from 'app/i18n';
-import {Theme} from 'app/theme';
-import {Router} from 'app/router';
+import {Interface} from 'app/ui';
+import {Navigator} from 'app/nav';
 
 export default () => {
   return (
     <Data>
       <I18n>
-        <Theme>
-          <Router/>
-        </Theme>
+        <Interface>
+          <Navigator/>
+        </Interface>
       </I18n>
     </Data>
   )

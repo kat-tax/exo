@@ -6,7 +6,10 @@ import {GestureProvider} from 'react-exo/gesture';
 import {ToastRoot} from 'react-exo/toast';
 import {useTheme} from 'settings/hooks/use-theme';
 
-export function Theme(props: React.PropsWithChildren) {
+import type {UnistylesThemes} from 'react-native-unistyles';
+export type Theme = UnistylesThemes[keyof UnistylesThemes];
+
+export function Interface(props: React.PropsWithChildren) {
   const [scheme] = useTheme();
 
   useEffect(() => {

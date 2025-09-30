@@ -3,10 +3,10 @@ import {Screen} from './lib/screens';
 import {Layout} from './custom/layout';
 import {ScreenLayout} from './custom/screenLayout';
 
-import type {Theme} from 'app/ui/types';
-import type {MenuItemList, RootStackParamList} from './types';
+import type {Theme} from 'app/ui';
+import type {NavScreens, RootStackParamList} from 'app/nav';
 
-export default (links: MenuItemList, theme: Theme) => createStack<RootStackParamList>({
+export default (links: NavScreens, theme: Theme) => createStack<RootStackParamList>({
   layout: Layout,
   screenLayout: ScreenLayout,
   screenOptions: {

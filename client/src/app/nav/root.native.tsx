@@ -1,10 +1,10 @@
 import {createTabs} from './lib/nav.tabs';
 import {Screen} from './lib/screens';
 
-import type {Theme} from 'app/ui/types';
-import type {MenuItemList, RootTabsParamList} from './types';
+import type {Theme} from 'app/ui';
+import type {RootTabsParamList, NavScreens} from 'app/nav';
 
-export default (links: MenuItemList, theme: Theme) => createTabs<RootTabsParamList>({
+export default (links: NavScreens, theme: Theme) => createTabs<RootTabsParamList>({
   backBehavior: 'order',
   tabBarStyle: {
     backgroundColor: theme.colors.neutral,

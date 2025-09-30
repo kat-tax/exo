@@ -5,7 +5,7 @@ import {breakpoints} from 'design/theme';
 import {Menu, Tabs} from './menu';
 
 import type {NavigationHelpers, NavigationState} from '@react-navigation/native';
-import type {RootStackParamList} from 'app/nav/types';
+import type {RootStackParamList} from 'app/nav';
 
 export interface LayoutProps {
   state: NavigationState<RootStackParamList>;

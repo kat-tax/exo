@@ -3,8 +3,8 @@ import {Link} from '@react-navigation/native';
 import {View, Text} from 'react-native';
 import {StyleSheet} from 'react-native-unistyles';
 import {createElement} from 'react';
-import {useLinkState} from 'app/nav/hooks/use-link-state';
-import type {MenuItemProps} from 'app/nav/types';
+import {useLinkState} from './use-link-state';
+import type {MenuItemProps} from './use-link-state';
 
 export function MenuItemList(props: MenuItemProps) {
   const {ref, active, focused} = useLinkState(props);

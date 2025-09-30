@@ -1,7 +1,7 @@
 import {View, ScrollView} from 'react-native';
 import {StyleSheet} from 'react-native-unistyles';
 import {useLingui} from '@lingui/react/macro';
-import {useLinkData} from 'app/nav/hooks/use-link-data';
+import {useScreens} from 'app/nav/use-screens';
 
 import {MenuHeader} from './menu-header';
 import {MenuFooter} from './menu-footer';
@@ -16,7 +16,7 @@ export const APP_MENU_WIDTH = 146;
 export const APP_MENU_TAB_HEIGHT = 64;
 
 export function Tabs(props: LayoutProps) {
-  const {config, links} = useLinkData();
+  const {config, links} = useScreens();
   const {state, navigation} = props;
   const activeRoute = state.routes[state.index];
 
@@ -36,7 +36,7 @@ export function Tabs(props: LayoutProps) {
 
 export function Menu(props: LayoutProps) {
   const {t} = useLingui();
-  const {config, links} = useLinkData();
+  const {config, links} = useScreens();
   const {state, navigation} = props;
   const activeRoute = state.routes[state.index];
 
