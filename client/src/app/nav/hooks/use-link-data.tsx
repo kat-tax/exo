@@ -63,18 +63,17 @@ export function useLinkData() {
     TasksListDetails: {
       linking: 'list/:id',
       options: {
-        title: t`Details`,
-        icon: 'ph:list-checks',
+        title: t`List Details`,
       },
     },
     TasksListEdit: {
       linking: 'list/:id/edit',
       options: {
-        title: t`Edit`,
-        icon: 'ph:list-checks',
+        title: t`Edit List`,
       },
     },
     DevDesign: {
+      if: () => __DEV__,
       linking: 'design',
       options: {
         title: t`Design`,
@@ -82,6 +81,7 @@ export function useLinkData() {
       },
     },
     DevCharts: {
+      if: () => __DEV__,
       linking: 'charts',
       options: {
         title: t`Charts`,
