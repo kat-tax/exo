@@ -40,8 +40,8 @@ catalogs:
       specifier: 19.1.0
       version: 19.1.0
     react-exo:
-      specifier: 0.20.17
-      version: 0.20.17
+      specifier: 0.20.18
+      version: 0.20.18
     react-native:
       specifier: 0.80.2
       version: 0.80.2
@@ -137,7 +137,7 @@ importers:
         version: 1.30.1
       react-exo:
         specifier: 'catalog:'
-        version: 0.20.17(9865dfd43c5c93d81a5e70a39434bea9)
+        version: 0.20.18(7c4698252c63a1b4bcfff284a222482d)
       react-native-reanimated:
         specifier: 'catalog:'
         version: 3.19.1(@babel/core@7.28.4)(react-native@0.81.4(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@react-native/metro-config@0.81.1(@babel/core@7.28.4))(@types/react@19.1.13)(react@19.1.1))(react@19.1.1)
@@ -257,7 +257,7 @@ importers:
         version: 19.1.0(react@19.1.0)
       react-exo:
         specifier: 'catalog:'
-        version: 0.20.17(b685079e16b5aac959b3b6b1356a7756)
+        version: 0.20.18(b1f7e941b6f97d48b73c68512bc3f10b)
       react-exo-ui:
         specifier: workspace:*
         version: link:../design
@@ -277,10 +277,10 @@ importers:
         specifier: ^2.28.0
         version: 2.28.0(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@types/react@19.1.13)(react@19.1.0))(react@19.1.0)
       react-native-mmkv:
-        specifier: ^3.3.1
-        version: 3.3.1(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@types/react@19.1.13)(react@19.1.0))(react@19.1.0)
+        specifier: ^4.0.0-beta.12
+        version: 4.0.0-beta.12(react-native-nitro-modules@0.29.6(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@types/react@19.1.13)(react@19.1.0))(react@19.1.0))(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@types/react@19.1.13)(react@19.1.0))(react@19.1.0)
       react-native-nitro-modules:
-        specifier: ^0.29.6
+        specifier: 0.29.6
         version: 0.29.6(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@types/react@19.1.13)(react@19.1.0))(react@19.1.0)
       react-native-quick-crypto:
         specifier: 0.7.17
@@ -307,8 +307,8 @@ importers:
         specifier: 'catalog:'
         version: 3.0.12(@react-native/normalize-colors@0.81.4)(react-native-edge-to-edge@1.7.0(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@types/react@19.1.13)(react@19.1.0))(react@19.1.0))(react-native-nitro-modules@0.29.6(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@types/react@19.1.13)(react@19.1.0))(react@19.1.0))(react-native-reanimated@3.19.1(@babel/core@7.28.4)(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@types/react@19.1.13)(react@19.1.0))(react@19.1.0))(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@types/react@19.1.13)(react@19.1.0))(react@19.1.0)
       react-native-url-polyfill:
-        specifier: ^2.0.0
-        version: 2.0.0(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@types/react@19.1.13)(react@19.1.0))
+        specifier: ^3.0.0
+        version: 3.0.0(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@types/react@19.1.13)(react@19.1.0))
       react-native-web:
         specifier: 'catalog:'
         version: 0.21.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -367,7 +367,7 @@ importers:
         version: 19.1.0(react@19.1.0)
       react-exo:
         specifier: 'catalog:'
-        version: 0.20.17(b685079e16b5aac959b3b6b1356a7756)
+        version: 0.20.18(b1f7e941b6f97d48b73c68512bc3f10b)
       react-native:
         specifier: 'catalog:'
         version: 0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@types/react@19.1.13)(react@19.1.0)
@@ -5250,8 +5250,8 @@ packages:
     peerDependencies:
       react: ^19.1.1
 
-  react-exo@0.20.17:
-    resolution: {integrity: sha512-bf+XK8D8BuCpYHMZkcgZFQ2izwXPYGADRSL8JbPDLMvjhPkDuiUwHjLDuSQ4eyiQNfXuhigIplA5RHUyvwh3Ug==}
+  react-exo@0.20.18:
+    resolution: {integrity: sha512-0iEjnuXOVOAvXA+wfqXKSX5m+RUuZcjpnIW5M5d0rx6OIcrk1/px+JTCCiFv4Dei7Azf1coWYrG68F3l0QQkPw==}
     peerDependencies:
       '@candlefinance/faster-image': '>=1.7'
       '@helia/unixfs': '>=4'
@@ -5278,7 +5278,7 @@ packages:
       react-native: '>=0.80'
       react-native-file-access: '>=3'
       react-native-gesture-handler: '>=2'
-      react-native-mmkv: '>=3'
+      react-native-mmkv: '>=4'
       react-native-pdf-renderer: '>=1.6'
       react-native-readium: '>=2'
       react-native-screens: '>=4'
@@ -5411,11 +5411,12 @@ packages:
       react: '*'
       react-native: '*'
 
-  react-native-mmkv@3.3.1:
-    resolution: {integrity: sha512-LYamDWQirPTUJZ9Re+BkCD+zLRGNr+EVJDeIeblvoJXGatWy9PXnChtajDSLqwjX3EXVeUyjgrembs7wlBw9ug==}
+  react-native-mmkv@4.0.0-beta.12:
+    resolution: {integrity: sha512-iSqvhnA9GGWXbJiktNmT61C/B+WrOQfhd22Npqo+KjkOOsGibxB9nQF6G+LxUr9CNEc5+PAwAaRSWKLBxECA1Q==}
     peerDependencies:
       react: '*'
       react-native: '*'
+      react-native-nitro-modules: '*'
 
   react-native-nitro-modules@0.29.6:
     resolution: {integrity: sha512-Zm7x7DPx2bYc/eMfJ4lg2CCyXRCEm6as1ZyVU/2vCqMskiQxQquL3INqjne+tEJw+/h+mrnKrb7z7PiUitzEQw==}
@@ -5489,8 +5490,8 @@ packages:
       react-native-reanimated:
         optional: true
 
-  react-native-url-polyfill@2.0.0:
-    resolution: {integrity: sha512-My330Do7/DvKnEvwQc0WdcBnFPploYKp9CYlefDXzIdEaA+PAhDYllkvGeEroEzvc4Kzzj2O4yVdz8v6fjRvhA==}
+  react-native-url-polyfill@3.0.0:
+    resolution: {integrity: sha512-aA5CiuUCUb/lbrliVCJ6lZ17/RpNJzvTO/C7gC/YmDQhTUoRD5q5HlJfwLWcxz4VgAhHwXKzhxH+wUN24tAdqg==}
     peerDependencies:
       react-native: '*'
 
@@ -9707,9 +9708,7 @@ snapshots:
       metro-runtime: 0.83.1
     transitivePeerDependencies:
       - '@babel/core'
-      - bufferutil
       - supports-color
-      - utf-8-validate
     optional: true
 
   '@react-native/normalize-colors@0.74.89': {}
@@ -13092,7 +13091,7 @@ snapshots:
       react: 19.1.1
       scheduler: 0.26.0
 
-  react-exo@0.20.17(9865dfd43c5c93d81a5e70a39434bea9):
+  react-exo@0.20.18(7c4698252c63a1b4bcfff284a222482d):
     dependencies:
       '@iconify/react': 5.2.1(react@19.1.1)
       '@iconify/utils': 2.3.0
@@ -13128,7 +13127,6 @@ snapshots:
       react-native: 0.81.4(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@react-native/metro-config@0.81.1(@babel/core@7.28.4))(@types/react@19.1.13)(react@19.1.1)
       react-native-file-access: 3.2.0(react-native@0.81.4(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@react-native/metro-config@0.81.1(@babel/core@7.28.4))(@types/react@19.1.13)(react@19.1.1))(react@19.1.1)
       react-native-gesture-handler: 2.28.0(react-native@0.81.4(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@react-native/metro-config@0.81.1(@babel/core@7.28.4))(@types/react@19.1.13)(react@19.1.1))(react@19.1.1)
-      react-native-mmkv: 3.3.1(react-native@0.81.4(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@react-native/metro-config@0.81.1(@babel/core@7.28.4))(@types/react@19.1.13)(react@19.1.1))(react@19.1.1)
       react-native-svg: 15.13.0(react-native@0.81.4(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@react-native/metro-config@0.81.1(@babel/core@7.28.4))(@types/react@19.1.13)(react@19.1.1))(react@19.1.1)
       react-native-web: 0.21.1(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       rmapi-js: 8.4.0
@@ -13137,7 +13135,7 @@ snapshots:
       - '@types/react-dom'
       - supports-color
 
-  react-exo@0.20.17(b685079e16b5aac959b3b6b1356a7756):
+  react-exo@0.20.18(b1f7e941b6f97d48b73c68512bc3f10b):
     dependencies:
       '@iconify/react': 5.2.1(react@19.1.0)
       '@iconify/utils': 2.3.0
@@ -13173,7 +13171,7 @@ snapshots:
       react-native: 0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@types/react@19.1.13)(react@19.1.0)
       react-native-file-access: 3.2.0(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@types/react@19.1.13)(react@19.1.0))(react@19.1.0)
       react-native-gesture-handler: 2.28.0(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@types/react@19.1.13)(react@19.1.0))(react@19.1.0)
-      react-native-mmkv: 3.3.1(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@types/react@19.1.13)(react@19.1.0))(react@19.1.0)
+      react-native-mmkv: 4.0.0-beta.12(react-native-nitro-modules@0.29.6(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@types/react@19.1.13)(react@19.1.0))(react@19.1.0))(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@types/react@19.1.13)(react@19.1.0))(react@19.1.0)
       react-native-svg: 15.13.0(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@types/react@19.1.13)(react@19.1.0))(react@19.1.0)
       react-native-web: 0.21.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       rmapi-js: 8.4.0
@@ -13262,16 +13260,11 @@ snapshots:
       react: 19.1.1
       react-native: 0.81.4(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@react-native/metro-config@0.81.1(@babel/core@7.28.4))(@types/react@19.1.13)(react@19.1.1)
 
-  react-native-mmkv@3.3.1(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@types/react@19.1.13)(react@19.1.0))(react@19.1.0):
+  react-native-mmkv@4.0.0-beta.12(react-native-nitro-modules@0.29.6(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@types/react@19.1.13)(react@19.1.0))(react@19.1.0))(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@types/react@19.1.13)(react@19.1.0))(react@19.1.0):
     dependencies:
       react: 19.1.0
       react-native: 0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@types/react@19.1.13)(react@19.1.0)
-
-  react-native-mmkv@3.3.1(react-native@0.81.4(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@react-native/metro-config@0.81.1(@babel/core@7.28.4))(@types/react@19.1.13)(react@19.1.1))(react@19.1.1):
-    dependencies:
-      react: 19.1.1
-      react-native: 0.81.4(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@react-native/metro-config@0.81.1(@babel/core@7.28.4))(@types/react@19.1.13)(react@19.1.1)
-    optional: true
+      react-native-nitro-modules: 0.29.6(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@types/react@19.1.13)(react@19.1.0))(react@19.1.0)
 
   react-native-nitro-modules@0.29.6(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@types/react@19.1.13)(react@19.1.0))(react@19.1.0):
     dependencies:
@@ -13417,7 +13410,7 @@ snapshots:
     optionalDependencies:
       react-native-reanimated: 3.19.1(@babel/core@7.28.4)(react-native@0.81.4(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@react-native/metro-config@0.81.1(@babel/core@7.28.4))(@types/react@19.1.13)(react@19.1.1))(react@19.1.1)
 
-  react-native-url-polyfill@2.0.0(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@types/react@19.1.13)(react@19.1.0)):
+  react-native-url-polyfill@3.0.0(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@types/react@19.1.13)(react@19.1.0)):
     dependencies:
       react-native: 0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.2))(@types/react@19.1.13)(react@19.1.0)
       whatwg-url-without-unicode: 8.0.0-3
