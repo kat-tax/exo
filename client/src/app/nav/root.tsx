@@ -1,16 +1,12 @@
 import {createStack} from 'app/lib/nav.stack';
 import {Screen} from 'app/lib/nav';
-import {Layout} from 'app/nav/layout';
-import {Suspend} from 'app/ui/base';
+import layout from 'app/nav/layout';
 
 import type {Theme} from 'app/ui/types';
 import type {MenuItemList, RootStackParamList} from 'app/nav/types';
 
 export default (links: MenuItemList, theme: Theme) => createStack<RootStackParamList>({
-  // Functionality
-  layout: Layout,
-  screenLayout: Suspend,
-  // Appearance
+  ...layout,
   screenOptions: {
     headerShown: false,
     headerTintColor: theme.colors.foreground,
@@ -18,7 +14,6 @@ export default (links: MenuItemList, theme: Theme) => createStack<RootStackParam
       backgroundColor: theme.colors.background,
     },
   },
-  // Setup
   screens: {
     HomeDashboard: {
       screen: Screen.Home.Dashboard,

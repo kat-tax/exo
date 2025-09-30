@@ -1,14 +1,13 @@
 import {View} from 'react-native';
+import {Suspense} from 'react';
 import {StyleSheet, Display, mq} from 'react-native-unistyles';
 import {useFocusable, FocusContext} from '@noriginmedia/norigin-spatial-navigation';
 import {breakpoints} from 'design/theme';
 import {Menu, Tabs} from 'app/nav/menu';
+import {Panel} from 'app/ui/panel';
 
 import type {NavigationHelpers, NavigationState} from '@react-navigation/native';
 import type {RootStackParamList} from 'app/nav/types';
-
-export const APP_MENU_WIDTH = 146;
-export const APP_MENU_TAB_HEIGHT = 64;
 
 export interface LayoutProps {
   state: NavigationState<RootStackParamList>;
@@ -16,7 +15,7 @@ export interface LayoutProps {
   children: React.ReactNode;
 };
 
-export function Layout(props: LayoutProps) {
+const layout = (props: LayoutProps) => {
   const {state, children} = props;
   const activeRoute = state.routes[state.index];
   const {ref, focusKey} = useFocusable({
@@ -41,7 +40,13 @@ export function Layout(props: LayoutProps) {
       </View>
     </FocusContext.Provider>
   );
-}
+};
+
+const screenLayout = (props: React.PropsWithChildren) => (
+  <Suspense fallback={<Panel/>}>
+    {props.children}
+  </Suspense>
+);
 
 const styles = StyleSheet.create(() => ({
   root: {
@@ -56,3 +61,5 @@ const styles = StyleSheet.create(() => ({
     flexDirection: 'row',
   },
 }));
+
+export default {layout, screenLayout};
