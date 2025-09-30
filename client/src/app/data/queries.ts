@@ -1,5 +1,5 @@
-import _ from 'app/lib/evolu.db';
-import * as $ from 'app/data/types';
+import _ from './lib/evolu.db';
+import * as $ from './types';
 
 /**
  * Query the latest profile.

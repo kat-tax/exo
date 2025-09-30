@@ -6,8 +6,8 @@ type NavLayouts = {[slice: string]: () => JSX.Element};
 type NavScreens = {[slice: string]: {[path: string]: () => JSX.Element}};
 
 const ctx = {
-  layouts: (require as any).context('../../../', true, /\/layout\.tsx$/),
-  screens: (require as any).context('../../../', true, /\/screen-.+\.tsx$/),
+  layouts: (require as any).context('../../../../', true, /\/layout\.tsx$/),
+  screens: (require as any).context('../../../../', true, /\/screen-.+\.tsx$/),
 };
 
 export const Layout = ctx.layouts.keys().reduce((acc: NavLayouts, path: string) => {

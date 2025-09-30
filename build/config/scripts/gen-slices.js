@@ -21,7 +21,7 @@ for (const folder of folders) {
 }
 
 writeFileSync(
-  `${CLIENT_SRC}/app/lib/redux.types.ts`,
+  `${CLIENT_SRC}/app/data/lib/redux.types.ts`,
   SLICES_TEMPLATE
     .replace('{{REDUCER_KEYS}}', reducerKeys.join('\n')),
   'utf-8'

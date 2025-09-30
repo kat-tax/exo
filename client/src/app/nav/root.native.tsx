@@ -1,8 +1,8 @@
-import {createTabs} from 'app/lib/nav.tabs';
-import {Screen} from 'app/lib/screens';
+import {createTabs} from './lib/nav.tabs';
+import {Screen} from './lib/screens';
 
 import type {Theme} from 'app/ui/types';
-import type {MenuItemList, RootTabsParamList} from 'app/nav/types';
+import type {MenuItemList, RootTabsParamList} from './types';
 
 export default (links: MenuItemList, theme: Theme) => createTabs<RootTabsParamList>({
   backBehavior: 'order',
