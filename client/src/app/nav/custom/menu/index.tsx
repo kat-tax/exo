@@ -1,7 +1,8 @@
 import {View, ScrollView} from 'react-native';
 import {StyleSheet} from 'react-native-unistyles';
 import {useLingui} from '@lingui/react/macro';
-import {useLinkData} from '../hooks/use-link-data';
+import {useLinkData} from 'app/nav/hooks/use-link-data';
+
 import {MenuHeader} from './menu-header';
 import {MenuFooter} from './menu-footer';
 import {MenuGroup} from './menu-group';

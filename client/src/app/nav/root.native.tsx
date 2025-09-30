@@ -5,10 +5,7 @@ import type {Theme} from 'app/ui/types';
 import type {MenuItemList, RootTabsParamList} from 'app/nav/types';
 
 export default (links: MenuItemList, theme: Theme) => createTabs<RootTabsParamList>({
-  // Functionality
   backBehavior: 'order',
-  disablePageAnimations: false,
-  // Appearance
   tabBarStyle: {
     backgroundColor: theme.colors.neutral,
   },
@@ -22,7 +19,6 @@ export default (links: MenuItemList, theme: Theme) => createTabs<RootTabsParamLi
   screenOptions: {
     tabBarActiveTintColor: theme.colors.foreground,
   },
-  // Setup
   screens: {
     HomeDashboard: {
       screen: Screen.Home.Dashboard,

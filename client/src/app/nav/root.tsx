@@ -1,12 +1,14 @@
 import {createStack} from 'app/lib/nav.stack';
 import {Screen} from 'app/lib/nav';
-import layout from 'app/nav/layout';
+import {Layout} from 'app/nav/custom/layout';
+import {ScreenLayout} from 'app/nav/custom/screenLayout';
 
 import type {Theme} from 'app/ui/types';
 import type {MenuItemList, RootStackParamList} from 'app/nav/types';
 
 export default (links: MenuItemList, theme: Theme) => createStack<RootStackParamList>({
-  ...layout,
+  layout: Layout,
+  screenLayout: ScreenLayout,
   screenOptions: {
     headerShown: false,
     headerTintColor: theme.colors.foreground,
