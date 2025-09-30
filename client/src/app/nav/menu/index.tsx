@@ -93,6 +93,7 @@ const styles = StyleSheet.create((theme) => ({
   },
   menu: {
     width: __WEB__ ? APP_MENU_WIDTH : undefined,
+    backgroundColor: theme.colors.background,
   },
   scroll: {
     flex: 1,
