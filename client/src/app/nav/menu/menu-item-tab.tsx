@@ -15,8 +15,8 @@ export function MenuItemTab(props: MenuItemProps) {
         styles.root,
         focused && styles.focused,
       ]}>
-        {props.icon && createElement(Icon, {
-          name: props.icon,
+        {props.options?.icon && createElement(Icon, {
+          name: props.options?.icon,
           size: 20,
           uniProps: (theme) => ({
             color: active
@@ -28,7 +28,7 @@ export function MenuItemTab(props: MenuItemProps) {
           styles.label,
           active && styles.labelActive,
         ]}>
-          {props.label}
+          {props.options?.title}
         </Text>
       </View>
     </Link>

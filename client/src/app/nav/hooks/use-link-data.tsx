@@ -25,50 +25,68 @@ export function useLinkData() {
 
   const links: MenuItemList = {
     NotFound: {
-      label: t`Not Found`,
-      path: '*',
+      linking: '*',
+      options: {
+        title: t`Not Found`,
+      },
     },
     HomeDashboard: {
-      label: t`Dashboard`,
-      path: '',
-      icon: 'ph:squares-four',
-      iconNative: () => require('../icons/PhSquaresFour.png'),
+      linking: '',
+      options: {
+        title: t`Dashboard`,
+        icon: 'ph:squares-four',
+        tabBarIcon: () => require('../icons/PhSquaresFour.png'),
+      },
     },
     HomeShortcut: {
-      label: t`Shortcut`,
-      path: 'shortcut/:id',
+      linking: 'shortcut/:id',
+      options: {
+        title: t`Shortcut`,
+      },
     },
     Settings: {
-      label: t`Settings`,
-      path: 'settings',
-      icon: 'ph:gear',
-      iconNative: () => require('../icons/PhGear.png'),
+      linking: 'settings',
+      options: {
+        title: t`Settings`,
+        icon: 'ph:gear',
+        tabBarIcon: () => require('../icons/PhGear.png'),
+      },
     },
     TasksListAll: {
-      label: t`Lists`,
-      path: 'lists',
-      icon: 'ph:list-checks',
-      iconNative: () => require('../icons/PhListChecks.png'),
+      linking: 'lists',
+      options: {
+        title: t`Lists`,
+        icon: 'ph:list-checks',
+        tabBarIcon: () => require('../icons/PhListChecks.png'),
+      },
     },
     TasksListDetails: {
-      label: t`Details`,
-      path: 'list/:id',
-      icon: 'ph:list-checks',
+      linking: 'list/:id',
+      options: {
+        title: t`Details`,
+        icon: 'ph:list-checks',
+      },
     },
     TasksListEdit: {
-      label: t`Edit`,
-      path: 'list/:id/edit',
-      icon: 'ph:list-checks',
+      linking: 'list/:id/edit',
+      options: {
+        title: t`Edit`,
+        icon: 'ph:list-checks',
+      },
     },
     DevDesign: {
-      label: t`Design`,
-      path: 'design',
-      icon: 'ph:palette',
+      linking: 'design',
+      options: {
+        title: t`Design`,
+        icon: 'ph:palette',
+      },
     },
     DevCharts: {
-      label: t`Charts`,
-      path: 'charts',
-      icon: 'ph:chart-line',
+      linking: 'charts',
+      options: {
+        title: t`Charts`,
+        icon: 'ph:chart-line',
+      },
     },
   };
 

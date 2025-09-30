@@ -7,8 +7,10 @@ import type {Theme} from 'app/ui/types';
 import type {MenuItemList, RootStackParamList} from 'app/nav/types';
 
 export default (links: MenuItemList, theme: Theme) => createStack<RootStackParamList>({
+  // Functionality
   layout: Layout,
   screenLayout: Suspend,
+  // Appearance
   screenOptions: {
     headerShown: false,
     headerTintColor: theme.colors.foreground,
@@ -16,89 +18,54 @@ export default (links: MenuItemList, theme: Theme) => createStack<RootStackParam
       backgroundColor: theme.colors.background,
     },
   },
+  // Setup
   screens: {
     HomeDashboard: {
       screen: Screen.Home.Dashboard,
-      linking: {
-        path: links.HomeDashboard.path,
-      },
-      options: {
-        title: links.HomeDashboard.label,
-      },
+      linking: links.HomeDashboard.linking,
+      options: links.HomeDashboard.options,
     },
     HomeShortcut: {
       screen: Screen.Home.Shortcut,
-      linking: {
-        path: links.HomeShortcut.path,
-      },
-      options: {
-        title: links.HomeShortcut.label,
-      },
+      linking: links.HomeShortcut.linking,
+      options: links.HomeShortcut.options,
     },
     NotFound: {
       screen: Screen.Home.NotFound,
-      linking: {
-        path: links.NotFound.path,
-      },
-      options: {
-        title: links.NotFound.label,
-      },
+      linking: links.NotFound.linking,
+      options: links.NotFound.options,
     },
     Settings: {
       screen: Screen.Settings.Settings,
-      linking: {
-        path: links.Settings.path,
-      },
-      options: {
-        title: links.Settings.label,
-      },
+      linking: links.Settings.linking,
+      options: links.Settings.options,
     },
     TasksListAll: {
       screen: Screen.Tasks.ListAll,
-      linking: {
-        path: links.TasksListAll.path,
-      },
-      options: {
-        title: links.TasksListAll.label,
-      },
+      linking: links.TasksListAll.linking,
+      options: links.TasksListAll.options,
     },
     TasksListDetails: {
       screen: Screen.Tasks.ListDetails,
-      linking: {
-        path: links.TasksListDetails.path,
-      },
-      options: {
-        title: links.TasksListDetails.label,
-      },
+      linking: links.TasksListDetails.linking,
+      options: links.TasksListDetails.options,
     },
     TasksListEdit: {
       screen: Screen.Tasks.ListEdit,
-      linking: {
-        path: links.TasksListEdit.path,
-      },
-      options: {
-        title: links.TasksListEdit.label,
-      },
+      linking: links.TasksListEdit.linking,
+      options: links.TasksListEdit.options,
     },
     DevDesign: {
       if: () => __DEV__,
       screen: Screen.Dev.Design,
-      linking: {
-        path: links.DevDesign.path,
-      },
-      options: {
-        title: links.DevDesign.label,
-      },
+      linking: links.DevDesign.linking,
+      options: links.DevDesign.options,
     },
     DevCharts: {
       if: () => __DEV__,
       screen: Screen.Dev.Charts,
-      linking: {
-        path: links.DevCharts.path,
-      },
-      options: {
-        title: links.DevCharts.label,
-      },
+      linking: links.DevCharts.linking,
+      options: links.DevCharts.options,
     },
   },
 });

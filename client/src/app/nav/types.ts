@@ -1,4 +1,4 @@
-import type {NavigationHelpers, NavigationRoute} from '@react-navigation/native';
+import type {NavigationHelpers, NavigationRoute, PathConfig} from '@react-navigation/native';
 import type {ImageSourcePropType} from 'react-native';
 
 export type RootStackParamList = {
@@ -25,15 +25,17 @@ export type MenuItemList = Record<
 >;
 
 export type MenuItemData = {
+  if?: () => boolean | undefined,
   name: keyof RootStackParamList,
-  label: string,
-  path?: string,
-  icon?: string,
-  /** @deprecated This will be removed once react-exo/icons can generate pngs */
-  iconNative?: () => ImageSourcePropType,
+  linking?: string | PathConfig<RootStackParamList | RootTabsParamList>,
+  options?: {
+    title: string,
+    icon?: string,
+    tabBarIcon?: () => ImageSourcePropType,
+  },
 }
 
-export interface MenuItemProps extends Omit<MenuItemData, 'path' | 'iconNative'>, React.PropsWithChildren {
+export interface MenuItemProps extends Omit<MenuItemData, 'path' | 'tabBarIcon'>, React.PropsWithChildren {
   activeRoute: NavigationRoute<RootStackParamList, keyof RootStackParamList>
   navigation: NavigationHelpers<RootStackParamList, {}>,
 }

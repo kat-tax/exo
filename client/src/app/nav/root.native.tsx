@@ -26,33 +26,18 @@ export default (links: MenuItemList, theme: Theme) => createTabs<RootTabsParamLi
   screens: {
     HomeDashboard: {
       screen: Screen.Home.Dashboard,
-      linking: {
-        path: links.HomeDashboard.path,
-      },
-      options: {
-        title: links.HomeDashboard.label,
-        tabBarIcon: links.HomeDashboard.iconNative,
-      },
+      linking: links.HomeDashboard.linking,
+      options: links.HomeDashboard.options,
     },
     TasksListAll: {
       screen: Screen.Tasks.ListAll,
-      linking: {
-        path: links.TasksListAll.path,
-      },
-      options: {
-        title: links.TasksListAll.label,
-        tabBarIcon: links.TasksListAll.iconNative,
-      },
+      linking: links.TasksListAll.linking,
+      options: links.TasksListAll.options,
     },
     Settings: {
       screen: Screen.Settings.Settings,
-      linking: {
-        path: links.Settings.path,
-      },
-      options: {
-        title: links.Settings.label,
-        tabBarIcon: links.Settings.iconNative,
-      },
+      linking: links.Settings.linking,
+      options: links.Settings.options,
     },
   },
 });

@@ -11,13 +11,13 @@ export function MenuItemIcon(props: MenuItemProps) {
 
   return (
     <Link screen={props.name} params={{}} style={{width: '100%'}}>
-      <View aria-label={props.label} ref={ref} style={[
+      <View aria-label={props.options?.title} ref={ref} style={[
         styles.root,
         active && styles.active,
         focused && styles.focused,
       ]}>
-        {props.icon && createElement(Icon, {
-          name: props.icon,
+        {props.options?.icon && createElement(Icon, {
+          name: props.options?.icon,
           size: __TOUCH__ ? 20 : 16,
           uniProps: (theme) => ({
             color: active
