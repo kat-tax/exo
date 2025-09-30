@@ -1,11 +1,11 @@
 import {useFocusable} from '@noriginmedia/norigin-spatial-navigation';
 import type {MenuItemProps} from 'app/nav/types';
 
-export function useLinkState(props: MenuItemProps) {
-  const active = props.activeRoute.name === props.name;
+export function useLinkState({activeRoute, name, navigation}: MenuItemProps) {
+  const active = activeRoute.name === name;
   const {ref, focused} = useFocusable({
-    focusKey: `menu@${props.name}`,
-    onEnterPress: () => props.navigation.navigate(props.name as never),
+    focusKey: `menu@${name}`,
+    onEnterPress: () => navigation.navigate(name as never),
   });
 
   return {

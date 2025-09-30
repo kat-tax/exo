@@ -11,6 +11,7 @@
     "client": "mobile",
     "stacks": "react-components",
     "utils": "include",
+    "nav": "routes",
     // Platforms
     "native": "target",
     "targets": "target",

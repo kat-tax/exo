@@ -23,6 +23,12 @@ export function Router() {
           'exo://',
         ],
       }}
+      documentTitle={{
+        enabled: true,
+        formatter: (options, _route) => options?.title
+          ? `${cfg.APP_NAME} - ${options?.title}`
+          : cfg.APP_NAME
+      }}
       theme={{
         dark: scheme === 'dark',
         colors: {
@@ -51,12 +57,6 @@ export function Router() {
             fontWeight: theme.typography.weightBold,
           },
         }
-      }}
-      documentTitle={{
-        enabled: true,
-        formatter: (options, _route) => options?.title
-          ? `${cfg.APP_NAME} - ${options?.title}`
-          : cfg.APP_NAME
       }}
     />
   );
