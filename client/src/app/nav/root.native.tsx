@@ -22,15 +22,15 @@ export default (screens: NavScreens, theme: Theme) => createTabs<RootTabsParamLi
   screens: {
     HomeDashboard: {
       ...screens.HomeDashboard,
-      screen: Screen.Home.Dashboard,
+      screen: Screen.HomeDashboard,
     },
     TasksListAll: {
       ...screens.TasksListAll,
-      screen: Screen.Tasks.ListAll,
+      screen: Screen.TasksListAll,
     },
     SettingsOverview: {
       ...screens.SettingsOverview,
-      screen: Screen.Settings.Overview,
+      screen: Screen.SettingsOverview,
     },
   },
 });

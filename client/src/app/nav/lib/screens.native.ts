@@ -3,7 +3,7 @@ import {startCase} from 'lodash';
 import type {JSX} from 'react/jsx-runtime';
 
 type NavLayouts = {[slice: string]: () => JSX.Element};
-type NavScreens = {[slice: string]: {[path: string]: () => JSX.Element}};
+type NavScreens = {[slice: string]: () => JSX.Element};
 
 const ctx = {
   layouts: (require as any).context('../../../../', true, /\/layout\.tsx$/),
@@ -24,8 +24,7 @@ export const Screen = ctx.screens.keys().reduce((acc: NavScreens, path: string) 
   if (match) {
     const slice = startCase(match[1]).replace(/\s/g, '');
     const name = startCase(match[2]).replace(/\s/g, '');
-    if (!acc[slice]) acc[slice] = {};
-    acc[slice][name] = ctx.screens(path).default;
+    acc[slice + name] = ctx.screens(path).default;
   }
   return acc;
 }, {} as NavScreens);

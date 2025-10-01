@@ -18,39 +18,39 @@ export default (screens: NavScreens, theme: Theme) => createStack<RootStackParam
   screens: {
     HomeDashboard: {
       ...screens.HomeDashboard,
-      screen: Screen.Home.Dashboard,
+      screen: Screen.HomeDashboard,
     },
     HomeNotFound: {
       ...screens.HomeNotFound,
-      screen: Screen.Home.NotFound,
+      screen: Screen.HomeNotFound,
     },
     HomeShortcut: {
       ...screens.HomeShortcut,
-      screen: Screen.Home.Shortcut,
+      screen: Screen.HomeShortcut,
     },
     SettingsOverview: {
       ...screens.SettingsOverview,
-      screen: Screen.Settings.Overview,
+      screen: Screen.SettingsOverview,
     },
     TasksListAll: {
       ...screens.TasksListAll,
-      screen: Screen.Tasks.ListAll,
+      screen: Screen.TasksListAll,
     },
     TasksListDetails: {
       ...screens.TasksListDetails,
-      screen: Screen.Tasks.ListDetails,
+      screen: Screen.TasksListDetails,
     },
     TasksListEdit: {
       ...screens.TasksListEdit,
-      screen: Screen.Tasks.ListEdit,
+      screen: Screen.TasksListEdit,
     },
     DevDesign: {
       ...screens.DevDesign,
-      screen: Screen.Dev.Design,
+      screen: Screen.DevDesign,
     },
     DevCharts: {
       ...screens.DevCharts,
-      screen: Screen.Dev.Charts,
+      screen: Screen.DevCharts,
     },
   },
 });
