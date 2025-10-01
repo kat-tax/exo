@@ -1,14 +1,13 @@
+import {layout, screenLayout} from './custom';
 import {createStack} from './lib/nav.stack';
 import {Screen} from './lib/screens';
-import {Layout} from './custom/layout';
-import {ScreenLayout} from './custom/screenLayout';
 
 import type {Theme} from 'app/ui';
-import type {NavScreens, RootStackParamList} from 'app/nav';
+import type {NavScreens, RootStackParamList} from 'app/nav/config';
 
-export default (links: NavScreens, theme: Theme) => createStack<RootStackParamList>({
-  layout: Layout,
-  screenLayout: ScreenLayout,
+export default (screens: NavScreens, theme: Theme) => createStack<RootStackParamList>({
+  layout: layout(screens),
+  screenLayout,
   screenOptions: {
     headerShown: false,
     headerTintColor: theme.colors.foreground,
@@ -18,51 +17,40 @@ export default (links: NavScreens, theme: Theme) => createStack<RootStackParamLi
   },
   screens: {
     HomeDashboard: {
+      ...screens.HomeDashboard,
       screen: Screen.Home.Dashboard,
-      linking: links.HomeDashboard.linking,
-      options: links.HomeDashboard.options,
+    },
+    HomeNotFound: {
+      ...screens.HomeNotFound,
+      screen: Screen.Home.NotFound,
     },
     HomeShortcut: {
+      ...screens.HomeShortcut,
       screen: Screen.Home.Shortcut,
-      linking: links.HomeShortcut.linking,
-      options: links.HomeShortcut.options,
     },
-    NotFound: {
-      screen: Screen.Home.NotFound,
-      linking: links.NotFound.linking,
-      options: links.NotFound.options,
-    },
-    Settings: {
-      screen: Screen.Settings.Settings,
-      linking: links.Settings.linking,
-      options: links.Settings.options,
+    SettingsOverview: {
+      ...screens.SettingsOverview,
+      screen: Screen.Settings.Overview,
     },
     TasksListAll: {
+      ...screens.TasksListAll,
       screen: Screen.Tasks.ListAll,
-      linking: links.TasksListAll.linking,
-      options: links.TasksListAll.options,
     },
     TasksListDetails: {
+      ...screens.TasksListDetails,
       screen: Screen.Tasks.ListDetails,
-      linking: links.TasksListDetails.linking,
-      options: links.TasksListDetails.options,
     },
     TasksListEdit: {
+      ...screens.TasksListEdit,
       screen: Screen.Tasks.ListEdit,
-      linking: links.TasksListEdit.linking,
-      options: links.TasksListEdit.options,
     },
     DevDesign: {
-      if: () => __DEV__,
+      ...screens.DevDesign,
       screen: Screen.Dev.Design,
-      linking: links.DevDesign.linking,
-      options: links.DevDesign.options,
     },
     DevCharts: {
-      if: () => __DEV__,
+      ...screens.DevCharts,
       screen: Screen.Dev.Charts,
-      linking: links.DevCharts.linking,
-      options: links.DevCharts.options,
     },
   },
 });

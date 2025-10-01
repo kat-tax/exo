@@ -1,55 +1,80 @@
-import {useMemo} from 'react';
-import {useTheme} from 'settings/hooks/use-theme';
-import {useUnistyles} from 'react-native-unistyles';
 import {createStaticNavigation} from '@react-navigation/native';
-import {useScreens} from 'app/nav/use-screens';
+import {useUnistyles} from 'react-native-unistyles';
+import {useLingui} from '@lingui/react/macro';
+import {useTheme} from 'settings/hooks/use-theme';
 import nav from 'app/nav/root';
 import cfg from 'config';
 
-import type {PathConfig} from '@react-navigation/native';
-import type {ImageSourcePropType} from 'react-native';
-
-export type RootStackParamList = {
-  HomeDashboard: undefined;
-  HomeShortcut: {id: string};
-  TasksListAll: undefined;
-  TasksListDetails: {id: string};
-  TasksListEdit: {id: string};
-  DevDesign: undefined;
-  DevCharts: undefined;
-  Settings: undefined;
-  NotFound: undefined;
-};
-
-export type RootTabsParamList = {
-  HomeDashboard: undefined;
-  TasksListAll: undefined;
-  Settings: undefined;
-};
-
-export type NavScreens = Record<
-  keyof RootStackParamList,
-  Omit<NavScreenConfig, 'name'>
->;
-
-export type NavScreenConfig = {
-  if?: () => boolean | undefined,
-  name: keyof RootStackParamList,
-  linking?: string | PathConfig<RootStackParamList | RootTabsParamList>,
-  options?: {
-    title: string,
-    icon?: string,
-    tabBarIcon?: () => ImageSourcePropType,
-  },
-}
-
 export function Navigator() {
-  const {links} = useScreens();
+  const {t} = useLingui();
   const {theme} = useUnistyles();
   const [scheme] = useTheme();
-  const Navigation = useMemo(() =>
-    createStaticNavigation(nav(links, theme))
-  , [theme, links]);
+  const Navigation = createStaticNavigation(nav({
+    HomeDashboard: {
+      linking: '',
+      options: {
+        title: t`Dashboard`,
+        icon: 'ph:squares-four',
+        tabBarIcon: () => require('./icons/ph-squares-four.png'),
+      },
+    },
+    HomeNotFound: {
+      linking: '*',
+      options: {
+        title: t`Not Found`,
+      },
+    },
+    HomeShortcut: {
+      linking: 'shortcut/:id',
+      options: {
+        title: t`Shortcut`,
+      },
+    },
+    SettingsOverview: {
+      linking: 'settings',
+      options: {
+        title: t`Settings`,
+        icon: 'ph:gear',
+        tabBarIcon: () => require('./icons/ph-gear.png'),
+      },
+    },
+    TasksListAll: {
+      linking: 'lists',
+      options: {
+        title: t`Lists`,
+        icon: 'ph:list-checks',
+        tabBarIcon: () => require('./icons/ph-list-checks.png'),
+      },
+    },
+    TasksListDetails: {
+      linking: 'list/:id',
+      options: {
+        title: t`List Details`,
+      },
+    },
+    TasksListEdit: {
+      linking: 'list/:id/edit',
+      options: {
+        title: t`Edit List`,
+      },
+    },
+    DevDesign: {
+      if: () => __DEV__,
+      linking: 'design',
+      options: {
+        title: t`Design`,
+        icon: 'ph:palette',
+      },
+    },
+    DevCharts: {
+      if: () => __DEV__,
+      linking: 'charts',
+      options: {
+        title: t`Charts`,
+        icon: 'ph:chart-line',
+      },
+    },
+  }, theme));
 
   return (
     <Navigation

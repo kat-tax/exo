@@ -13,7 +13,7 @@ import {useSettings} from 'settings/hooks/use-settings';
 import {locales} from 'config/locales';
 import {Button, Prompt} from 'design';
 
-export default function ScreenSettings() {
+export default function ScreenOverview() {
   const [scheme, setScheme] = useTheme(true);
   const [locale, setLocale] = useLocale(true);
   const [showKey, setShowKey] = useState(false);

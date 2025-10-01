@@ -2,9 +2,9 @@ import {createTabs} from './lib/nav.tabs';
 import {Screen} from './lib/screens';
 
 import type {Theme} from 'app/ui';
-import type {RootTabsParamList, NavScreens} from 'app/nav';
+import type {RootTabsParamList, NavScreens} from 'app/nav/config';
 
-export default (links: NavScreens, theme: Theme) => createTabs<RootTabsParamList>({
+export default (screens: NavScreens, theme: Theme) => createTabs<RootTabsParamList>({
   backBehavior: 'order',
   tabBarStyle: {
     backgroundColor: theme.colors.neutral,
@@ -21,19 +21,16 @@ export default (links: NavScreens, theme: Theme) => createTabs<RootTabsParamList
   },
   screens: {
     HomeDashboard: {
+      ...screens.HomeDashboard,
       screen: Screen.Home.Dashboard,
-      linking: links.HomeDashboard.linking,
-      options: links.HomeDashboard.options,
     },
     TasksListAll: {
+      ...screens.TasksListAll,
       screen: Screen.Tasks.ListAll,
-      linking: links.TasksListAll.linking,
-      options: links.TasksListAll.options,
     },
-    Settings: {
-      screen: Screen.Settings.Settings,
-      linking: links.Settings.linking,
-      options: links.Settings.options,
+    SettingsOverview: {
+      ...screens.SettingsOverview,
+      screen: Screen.Settings.Overview,
     },
   },
 });

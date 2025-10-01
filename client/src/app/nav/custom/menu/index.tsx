@@ -1,33 +1,32 @@
 import {View, ScrollView} from 'react-native';
 import {StyleSheet} from 'react-native-unistyles';
 import {useLingui} from '@lingui/react/macro';
-import {useScreens} from 'app/nav/use-screens';
+import {links} from 'app/nav/config';
 
 import {MenuHeader} from './menu-header';
 import {MenuFooter} from './menu-footer';
 import {MenuGroup} from './menu-group';
 import {MenuItemTab} from './menu-item-tab';
 import {MenuItemList} from './menu-item-list';
-import {MenuItemIcon} from './menu-item-icon'
+import {MenuItemIcon} from './menu-item-icon';
 
-import type {LayoutProps} from '../layout';
+import type {LayoutProps} from '../';
 
 export const APP_MENU_WIDTH = 146;
 export const APP_MENU_TAB_HEIGHT = 64;
 
 export function Tabs(props: LayoutProps) {
-  const {config, links} = useScreens();
-  const {state, navigation} = props;
+  const {state, navigation, screens} = props;
   const activeRoute = state.routes[state.index];
 
   return (
     <View style={styles.tabs}>
-      {config.tabs.map((tab) => (
+      {links.tabs.map((tab) => (
         <MenuItemTab
           key={tab}
           name={tab}
           {...{navigation, activeRoute}}
-          {...links[tab]}
+          {...screens[tab]}
         />
       ))}
     </View>
@@ -36,8 +35,7 @@ export function Tabs(props: LayoutProps) {
 
 export function Menu(props: LayoutProps) {
   const {t} = useLingui();
-  const {config, links} = useScreens();
-  const {state, navigation} = props;
+  const {state, navigation, screens} = props;
   const activeRoute = state.routes[state.index];
 
   return (
@@ -45,22 +43,22 @@ export function Menu(props: LayoutProps) {
       <ScrollView style={styles.scroll} contentContainerStyle={{flexGrow: 1}}>
         <View style={styles.list}>
           <MenuHeader/>
-          {config.menuTop.map((link) => (
+          {links.menuTop.map((link) => (
             <MenuItemList
               key={link}
               name={link}
               {...{navigation, activeRoute}}
-              {...links[link]}
+              {...screens[link]}
             />
           ))}
           {__DEV__ &&
             <MenuGroup label={t`Development`}>
-              {config.menuDevMenu.map((link) => (
+              {links.menuDevMenu.map((link) => (
                 <MenuItemList
                   key={link}
                   name={link}
                   {...{navigation, activeRoute}}
-                  {...links[link]}
+                  {...screens[link]}
                 />
               ))}
             </MenuGroup>
@@ -68,12 +66,12 @@ export function Menu(props: LayoutProps) {
         </View>
         <MenuFooter actions={
           <View style={styles.actions}>
-            {config.menuFooterIcons.map((link) => (
+            {links.menuFooterIcons.map((link) => (
               <MenuItemIcon
                 key={link}
                 name={link}
                 {...{navigation, activeRoute}}
-                {...links[link]}
+                {...screens[link]}
               />
             ))}
           </View>

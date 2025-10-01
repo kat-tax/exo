@@ -3,7 +3,7 @@
 import type {SvgProps} from 'react-native-svg';
 import type {NativeStackScreenProps} from '@react-navigation/native-stack';
 import type {AppThemes, AppBreakpoints} from 'design/styles';
-import type {RootStackParamList} from 'app/nav';
+import type {RootStackParamList} from 'app/nav/config';
 
 // Navigation types
 declare global {
