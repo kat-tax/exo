@@ -21,7 +21,6 @@ export type RootStackParamList = {
   TasksListDetails: {id: string};
   TasksListEdit: {id: string};
   SettingsOverview: undefined;
-  SettingsTest: undefined;
   DevDesign: undefined;
   DevCharts: undefined;
 };
@@ -110,12 +109,6 @@ export function Navigator() {
         title: t`Settings`,
         icon: 'ph:gear',
         tabBarIcon: () => require('./icons/ph-gear.png'),
-      },
-    },
-    SettingsTest: {
-      linking: 'test',
-      options: {
-        title: t`Test`,
       },
     },
     TasksListAll: {
