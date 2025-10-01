@@ -16,11 +16,12 @@ export type RootStackParamList = {
   TasksListDetails: {id: string};
   TasksListEdit: {id: string};
   SettingsOverview: undefined;
+  SettingsTest: undefined;
   DevDesign: undefined;
   DevCharts: undefined;
 };
 
-export const links: Record<string, Array<keyof NavScreens>> = {
+export const links: Record<string, Array<keyof RootStackParamList>> = {
   tabs: [
     'HomeDashboard',
     'TasksListAll',
@@ -30,7 +31,7 @@ export const links: Record<string, Array<keyof NavScreens>> = {
     'HomeDashboard',
     'TasksListAll',
   ],
-  menuDevMenu: [
+  menuDev: [
     'DevDesign',
     'DevCharts',
   ],
@@ -70,6 +71,12 @@ export function Navigator() {
         title: t`Settings`,
         icon: 'ph:gear',
         tabBarIcon: () => require('./icons/ph-gear.png'),
+      },
+    },
+    SettingsTest: {
+      linking: 'test',
+      options: {
+        title: t`Test`,
       },
     },
     TasksListAll: {

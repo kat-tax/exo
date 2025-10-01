@@ -53,7 +53,7 @@ export function Menu(props: LayoutProps) {
           ))}
           {__DEV__ &&
             <MenuGroup label={t`Development`}>
-              {links.menuDevMenu.map((link) => (
+              {links.menuDev.map((link) => (
                 <MenuItemList
                   key={link}
                   name={link}

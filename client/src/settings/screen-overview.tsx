@@ -1,5 +1,6 @@
 import {useState} from 'react';
 import {useLingui} from '@lingui/react/macro';
+import {useNavigation} from '@react-navigation/native';
 import {StyleSheet} from 'react-native-unistyles';
 import {View, Platform} from 'react-native';
 import {TextInput} from 'react-exo/textinput';
@@ -19,6 +20,7 @@ export default function ScreenOverview() {
   const [showKey, setShowKey] = useState(false);
   const [deleteConfirm, setDeleteConfirm] = useState('');
   const settings = useSettings();
+  const nav = useNavigation();
   const {t} = useLingui();
 
   return (
@@ -27,6 +29,12 @@ export default function ScreenOverview() {
       message={t`Configure the app`}
       right={<Avatar id={settings.owner?.id} size={100}/>}>
       <View style={styles.root}>
+        <Button
+          label={t`Test`}
+          mode="Primary"
+          state="Default"
+          onPress={() => nav.navigate('SettingsTest')}
+        />
         <PanelSection title={t`Profile`}>
           <PanelItem
             label={t`Display Name`}

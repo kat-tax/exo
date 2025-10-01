@@ -1,10 +1,10 @@
 import {createNativeStackNavigator as $} from '@react-navigation/native-stack';
-import {createScreens} from './lib/create-screens';
-import {createLayout} from './custom/layout';
-import {createScreenLayout} from './custom/screen-layout';
+import {createScreens} from 'app/nav/lib/create-screens';
+import {createLayout} from 'app/nav/custom/layout';
+import {createScreenLayout} from 'app/nav/custom/screen-layout';
 
 import type {Theme} from 'app/ui';
-import type {NavScreens, RootStackParamList} from '.';
+import type {NavScreens, RootStackParamList} from 'app/nav';
 
 export default (screens: NavScreens, theme: Theme) => $<RootStackParamList>({
   screenLayout: createScreenLayout(screens),
@@ -14,6 +14,7 @@ export default (screens: NavScreens, theme: Theme) => $<RootStackParamList>({
     'HomeNotFound',
     'HomeShortcut',
     'SettingsOverview',
+    'SettingsTest',
     'TasksListAll',
     'TasksListDetails',
     'TasksListEdit',
