@@ -1,56 +1,30 @@
-import {layout, screenLayout} from './custom';
-import {createStack} from './lib/nav.stack';
-import {Screen} from './lib/screens';
+import {createNativeStackNavigator as $} from '@react-navigation/native-stack';
+import {createScreens} from './lib/create-screens';
+import {createLayout} from './custom/layout';
+import {createScreenLayout} from './custom/screen-layout';
 
 import type {Theme} from 'app/ui';
-import type {NavScreens, RootStackParamList} from 'app/nav/config';
+import type {NavScreens, RootStackParamList} from '.';
 
-export default (screens: NavScreens, theme: Theme) => createStack<RootStackParamList>({
-  layout: layout(screens),
-  screenLayout,
+export default (screens: NavScreens, theme: Theme) => $<RootStackParamList>({
+  screenLayout: createScreenLayout(screens),
+  layout: createLayout(screens),
+  screens: createScreens(screens, [
+    'HomeDashboard',
+    'HomeNotFound',
+    'HomeShortcut',
+    'SettingsOverview',
+    'TasksListAll',
+    'TasksListDetails',
+    'TasksListEdit',
+    'DevDesign',
+    'DevCharts',
+  ]),
   screenOptions: {
     headerShown: false,
     headerTintColor: theme.colors.foreground,
     headerStyle: {
       backgroundColor: theme.colors.background,
-    },
-  },
-  screens: {
-    HomeDashboard: {
-      ...screens.HomeDashboard,
-      screen: Screen.HomeDashboard,
-    },
-    HomeNotFound: {
-      ...screens.HomeNotFound,
-      screen: Screen.HomeNotFound,
-    },
-    HomeShortcut: {
-      ...screens.HomeShortcut,
-      screen: Screen.HomeShortcut,
-    },
-    SettingsOverview: {
-      ...screens.SettingsOverview,
-      screen: Screen.SettingsOverview,
-    },
-    TasksListAll: {
-      ...screens.TasksListAll,
-      screen: Screen.TasksListAll,
-    },
-    TasksListDetails: {
-      ...screens.TasksListDetails,
-      screen: Screen.TasksListDetails,
-    },
-    TasksListEdit: {
-      ...screens.TasksListEdit,
-      screen: Screen.TasksListEdit,
-    },
-    DevDesign: {
-      ...screens.DevDesign,
-      screen: Screen.DevDesign,
-    },
-    DevCharts: {
-      ...screens.DevCharts,
-      screen: Screen.DevCharts,
     },
   },
 });

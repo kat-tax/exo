@@ -1,13 +1,11 @@
 import {useFocusable, FocusContext} from '@noriginmedia/norigin-spatial-navigation';
 import {StyleSheet, Display, mq} from 'react-native-unistyles';
-import {Suspense} from 'react';
 import {View} from 'react-native';
-import {Panel} from 'app/ui/panel';
 import {breakpoints} from 'design/theme';
 import {Menu, Tabs} from './menu';
 
 import type {NavigationHelpers, NavigationState} from '@react-navigation/native';
-import type {NavScreens, RootStackParamList} from 'app/nav/config';
+import type {NavScreens, RootStackParamList} from 'app/nav';
 
 export interface LayoutProps {
   state: NavigationState<RootStackParamList>;
@@ -43,16 +41,10 @@ export function Layout(props: LayoutProps) {
   );
 }
 
-export const layout = (screens: NavScreens) => (
+export const createLayout = (screens: NavScreens) => (
   (props: Omit<LayoutProps, 'screens'>) => (
     <Layout {...props} screens={screens}/>
   )
-);
-
-export const screenLayout = (props: React.PropsWithChildren) => (
-  <Suspense fallback={<Panel/>}>
-    {props.children}
-  </Suspense>
 );
 
 const styles = StyleSheet.create(() => ({

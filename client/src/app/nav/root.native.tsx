@@ -1,11 +1,18 @@
-import {createTabs} from './lib/nav.tabs';
-import {Screen} from './lib/screens';
+import {createNativeBottomTabNavigator as $} from '@bottom-tabs/react-navigation';
+import {createScreens} from './lib/create-screens';
+import {links} from '.';
 
 import type {Theme} from 'app/ui';
-import type {RootTabsParamList, NavScreens} from 'app/nav/config';
+import type {RootStackParamList, NavScreens} from '.';
 
-export default (screens: NavScreens, theme: Theme) => createTabs<RootTabsParamList>({
+export default (screens: NavScreens, theme: Theme) => $<RootStackParamList>({
+  screens: createScreens(screens, links.tabs),
   backBehavior: 'order',
+  rippleColor: theme.colors.card,
+  activeIndicatorColor: theme.colors.accent,
+  screenOptions: {
+    tabBarActiveTintColor: theme.colors.foreground,
+  },
   tabBarStyle: {
     backgroundColor: theme.colors.neutral,
   },
@@ -13,24 +20,5 @@ export default (screens: NavScreens, theme: Theme) => createTabs<RootTabsParamLi
     fontFamily: theme.font.family,
     fontWeight: theme.font.weight,
     fontSize: theme.font.size,
-  },
-  activeIndicatorColor: theme.colors.accent,
-  rippleColor: theme.colors.card,
-  screenOptions: {
-    tabBarActiveTintColor: theme.colors.foreground,
-  },
-  screens: {
-    HomeDashboard: {
-      ...screens.HomeDashboard,
-      screen: Screen.HomeDashboard,
-    },
-    TasksListAll: {
-      ...screens.TasksListAll,
-      screen: Screen.TasksListAll,
-    },
-    SettingsOverview: {
-      ...screens.SettingsOverview,
-      screen: Screen.SettingsOverview,
-    },
   },
 });

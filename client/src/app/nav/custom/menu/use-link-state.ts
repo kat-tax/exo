@@ -1,6 +1,6 @@
 import {useFocusable} from '@noriginmedia/norigin-spatial-navigation';
 import type {NavigationRoute, NavigationHelpers} from '@react-navigation/native';
-import type {NavScreenConfig, RootStackParamList} from 'app/nav/config';
+import type {NavScreenConfig, RootStackParamList} from 'app/nav';
 
 export interface MenuItemProps extends Omit<NavScreenConfig, 'path' | 'tabBarIcon'>, React.PropsWithChildren {
   activeRoute: NavigationRoute<RootStackParamList, keyof RootStackParamList>

@@ -5,6 +5,40 @@ import {useTheme} from 'settings/hooks/use-theme';
 import nav from 'app/nav/root';
 import cfg from 'config';
 
+import type {PathConfig} from '@react-navigation/native';
+import type {ImageSourcePropType} from 'react-native';
+
+export type RootStackParamList = {
+  HomeDashboard: undefined;
+  HomeShortcut: {id: string};
+  HomeNotFound: undefined;
+  TasksListAll: undefined;
+  TasksListDetails: {id: string};
+  TasksListEdit: {id: string};
+  SettingsOverview: undefined;
+  DevDesign: undefined;
+  DevCharts: undefined;
+};
+
+export const links: Record<string, Array<keyof NavScreens>> = {
+  tabs: [
+    'HomeDashboard',
+    'TasksListAll',
+    'SettingsOverview',
+  ],
+  menuTop: [
+    'HomeDashboard',
+    'TasksListAll',
+  ],
+  menuDevMenu: [
+    'DevDesign',
+    'DevCharts',
+  ],
+  menuFooterIcons: [
+    'SettingsOverview',
+  ],
+} as const;
+
 export function Navigator() {
   const {t} = useLingui();
   const {theme} = useUnistyles();
@@ -122,4 +156,16 @@ export function Navigator() {
       }}
     />
   );
+}
+
+export type NavScreens = Record<keyof RootStackParamList, Omit<NavScreenConfig, 'name'>>;
+export type NavScreenConfig = {
+  if?: () => boolean,
+  name: keyof RootStackParamList,
+  linking?: string | PathConfig<RootStackParamList>,
+  options?: {
+    title: string,
+    icon?: string,
+    tabBarIcon?: () => ImageSourcePropType,
+  },
 }

@@ -3,7 +3,7 @@ import {StyleSheet} from 'react-native-unistyles';
 import {Link} from '@react-navigation/native';
 import {Icon} from 'react-exo/icon';
 
-import type {RootStackParamList} from 'app/nav/config';
+import type {RootStackParamList} from 'app/nav';
 
 export interface PanelProps extends React.PropsWithChildren {
   title?: string | React.ReactNode,

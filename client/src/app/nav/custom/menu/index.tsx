@@ -1,7 +1,7 @@
 import {View, ScrollView} from 'react-native';
 import {StyleSheet} from 'react-native-unistyles';
 import {useLingui} from '@lingui/react/macro';
-import {links} from 'app/nav/config';
+import {links} from 'app/nav';
 
 import {MenuHeader} from './menu-header';
 import {MenuFooter} from './menu-footer';
@@ -10,7 +10,7 @@ import {MenuItemTab} from './menu-item-tab';
 import {MenuItemList} from './menu-item-list';
 import {MenuItemIcon} from './menu-item-icon';
 
-import type {LayoutProps} from '../';
+import type {LayoutProps} from '../layout';
 
 export const APP_MENU_WIDTH = 146;
 export const APP_MENU_TAB_HEIGHT = 64;
