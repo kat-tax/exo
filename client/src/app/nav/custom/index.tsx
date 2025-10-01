@@ -59,7 +59,6 @@ export const createScreenLayout = (_screens: NavScreens) => (
   )
 );
 
-
 const styles = StyleSheet.create(() => ({
   root: {
     flex: 1,
