@@ -1,11 +1,11 @@
-import {createNativeBottomTabNavigator as $} from '@bottom-tabs/react-navigation';
+import {createTabs} from 'app/nav/lib/tabs';
 import {createScreens} from 'app/nav/lib/create-screens';
 import {links} from 'app/nav';
 
 import type {Theme} from 'app/ui';
 import type {RootStackParamList, NavScreens} from 'app/nav';
 
-export default (screens: NavScreens, theme: Theme) => $<RootStackParamList>({
+export default (screens: NavScreens, theme: Theme) => createTabs<RootStackParamList>({
   screens: createScreens(screens, links.tabs),
   backBehavior: 'order',
   rippleColor: theme.colors.card,
