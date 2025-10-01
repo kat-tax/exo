@@ -2,11 +2,17 @@ import {createStaticNavigation} from '@react-navigation/native';
 import {useUnistyles} from 'react-native-unistyles';
 import {useLingui} from '@lingui/react/macro';
 import {useTheme} from 'settings/hooks/use-theme';
-import {root} from 'app/nav/root';
 import cfg from 'config';
+
+import {createNativeStackNavigator as createStack} from '@react-navigation/native-stack';
+import {createScreens} from './lib/create-screens';
+import {createTabs} from './lib/tabs';
+import {createLayout} from './custom/layout';
+import {createScreenLayout} from './custom/screen-layout';
 
 import type {PathConfig} from '@react-navigation/native';
 import type {ImageSourcePropType} from 'react-native';
+import type {Theme} from 'app/ui';
 
 export type RootStackParamList = {
   HomeDashboard: undefined;
@@ -21,7 +27,7 @@ export type RootStackParamList = {
   DevCharts: undefined;
 };
 
-export const links: Record<string, Array<keyof RootStackParamList>> = {
+const links: Record<string, Array<keyof RootStackParamList>> = {
   tabs: [
     'HomeDashboard',
     'TasksListAll',
@@ -39,6 +45,40 @@ export const links: Record<string, Array<keyof RootStackParamList>> = {
     'SettingsOverview',
   ],
 } as const;
+
+const tabs = (screens: NavScreens, theme: Theme) => createTabs<RootStackParamList>({
+  screens: createScreens(screens, links.tabs),
+  backBehavior: 'order',
+  rippleColor: theme.colors.card,
+  activeIndicatorColor: theme.colors.accent,
+  screenOptions: {
+    tabBarActiveTintColor: theme.colors.foreground,
+  },
+  tabBarStyle: {
+    backgroundColor: theme.colors.neutral,
+  },
+  tabLabelStyle: {
+    fontFamily: theme.font.family,
+    fontWeight: theme.font.weight,
+    fontSize: theme.font.size,
+  },
+});
+
+const root = (screens: NavScreens, theme: Theme) => createStack<RootStackParamList>({
+  screenLayout: __WEB__ ? createScreenLayout(screens) : undefined,
+  layout: __WEB__ ? createLayout(screens, links) : undefined,
+  screens: {
+    ...createScreens(screens),
+    ... !__WEB__ ? {HomeDashboard: tabs(screens, theme)} : {},
+  },
+  screenOptions: (route) => ({
+    headerShown: !__WEB__ && route.route.name !== 'HomeDashboard',
+    headerTintColor: theme.colors.foreground,
+    headerStyle: {
+      backgroundColor: theme.colors.background,
+    },
+  }),
+});
 
 export function Navigator() {
   const {t} = useLingui();

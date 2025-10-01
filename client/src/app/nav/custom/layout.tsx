@@ -12,6 +12,7 @@ export interface LayoutProps {
   navigation: NavigationHelpers<RootStackParamList, {}>;
   children: React.ReactNode;
   screens: NavScreens;
+  links: Record<string, Array<keyof RootStackParamList>>;
 };
 
 export function Layout(props: LayoutProps) {
@@ -41,9 +42,9 @@ export function Layout(props: LayoutProps) {
   );
 }
 
-export const createLayout = (screens: NavScreens) => (
-  (props: Omit<LayoutProps, 'screens'>) => (
-    <Layout {...props} screens={screens}/>
+export const createLayout = (screens: NavScreens, links: Record<string, Array<keyof RootStackParamList>>) => (
+  (props: Omit<LayoutProps, 'screens' | 'links'>) => (
+    <Layout {...props} screens={screens} links={links}/>
   )
 );
 
