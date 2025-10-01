@@ -5,10 +5,9 @@ import {useTheme} from 'settings/hooks/use-theme';
 import cfg from 'config';
 
 import {createNativeStackNavigator as createStack} from '@react-navigation/native-stack';
+import {createLayout, createScreenLayout} from './custom';
 import {createScreens} from './lib/create-screens';
 import {createTabs} from './lib/tabs';
-import {createLayout} from './custom/layout';
-import {createScreenLayout} from './custom/screen-layout';
 
 import type {PathConfig} from '@react-navigation/native';
 import type {ImageSourcePropType} from 'react-native';

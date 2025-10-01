@@ -9,7 +9,7 @@ import {MenuItemTab} from './menu-item-tab';
 import {MenuItemList} from './menu-item-list';
 import {MenuItemIcon} from './menu-item-icon';
 
-import type {LayoutProps} from '../layout';
+import type {LayoutProps} from '../';
 
 export const APP_MENU_WIDTH = 146;
 export const APP_MENU_TAB_HEIGHT = 64;

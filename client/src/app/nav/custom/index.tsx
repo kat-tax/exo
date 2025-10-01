@@ -1,7 +1,10 @@
 import {useFocusable, FocusContext} from '@noriginmedia/norigin-spatial-navigation';
 import {StyleSheet, Display, mq} from 'react-native-unistyles';
+import {Suspense} from 'react';
 import {View} from 'react-native';
+import {Panel} from 'app/ui/panel';
 import {breakpoints} from 'design/theme';
+
 import {Menu, Tabs} from './menu';
 
 import type {NavigationHelpers, NavigationState} from '@react-navigation/native';
@@ -47,6 +50,15 @@ export const createLayout = (screens: NavScreens, links: Record<string, Array<ke
     <Layout {...props} screens={screens} links={links}/>
   )
 );
+
+export const createScreenLayout = (_screens: NavScreens) => (
+  (props: React.PropsWithChildren) => (
+    <Suspense fallback={<Panel/>}>
+      {props.children}
+    </Suspense>
+  )
+);
+
 
 const styles = StyleSheet.create(() => ({
   root: {
