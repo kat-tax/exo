@@ -83,18 +83,20 @@ const styles = StyleSheet.create((theme, rt) => ({
   scroll: {
     backgroundColor: theme.colors.card,
     borderColor: theme.colors.border,
-    borderWidth: {
-      initial: 0,
-      xs: StyleSheet.hairlineWidth,
-    },
-    borderRadius: {
-      initial: 0,
-      xs: theme.display.radius2,
-    },
-    margin: {
-      initial: 0,
-      xs: theme.display.space2,
-    },
+    _web: {
+      borderWidth: {
+        initial: 0,
+        xs: StyleSheet.hairlineWidth,
+      },
+      borderRadius: {
+        initial: 0,
+        xs: theme.display.radius2,
+      },
+      margin: {
+        initial: 0,
+        xs: theme.display.space2,
+      },
+    }
   },
   content: {
     flex: 1,
