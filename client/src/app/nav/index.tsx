@@ -2,7 +2,7 @@ import {createStaticNavigation} from '@react-navigation/native';
 import {useUnistyles} from 'react-native-unistyles';
 import {useLingui} from '@lingui/react/macro';
 import {useTheme} from 'settings/hooks/use-theme';
-import nav from 'app/nav/root';
+import {root} from 'app/nav/root';
 import cfg from 'config';
 
 import type {PathConfig} from '@react-navigation/native';
@@ -44,7 +44,7 @@ export function Navigator() {
   const {t} = useLingui();
   const {theme} = useUnistyles();
   const [scheme] = useTheme();
-  const Navigation = createStaticNavigation(nav({
+  const Navigation = createStaticNavigation(root({
     HomeDashboard: {
       linking: '',
       options: {
