@@ -18,9 +18,13 @@
  * ```
  */
 
-import {writeFileSync, readFileSync} from 'node:fs';
+import {writeFileSync, readFileSync, mkdirSync} from 'node:fs';
 import {resolve} from 'node:path';
 import config from 'react-native-ultimate-config/index.web.js';
+
+// Ensure gen directory exists
+const genDir = './gen';
+mkdirSync(genDir, { recursive: true });
 
 // Generate logo-bg.svg
 const logoBgTemplate = `<svg xmlns="http://www.w3.org/2000/svg" width="108" height="108" viewBox="0 0 108 108">
