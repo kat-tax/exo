@@ -1,6 +1,5 @@
 import {useMemo, useRef} from 'react';
 import {useLingui} from '@lingui/react/macro';
-import {useNavigate, useParams} from 'react-exo/navigation';
 import {Platform, View, Pressable} from 'react-native';
 import {StyleSheet} from 'react-native-unistyles';
 import {TextInput} from 'react-exo/textinput';
@@ -14,8 +13,8 @@ import {getList, getListCategories} from 'app/data/queries';
 
 import type {TextInput as TextInputType} from 'react-native';
 
-export default function ScreenListEdit() {
-  const {id} = useParams<{id: string}>();
+export default function ScreenListEdit({route, navigation}: ReactNavigation.ScreenProps<'TasksListEdit'>) {
+  const {id} = route.params;
   const lists = useLists();
   const listId = useMemo(() => lists.getId(id), [id]);
   const listData = useQuery(getList(listId))[0];
@@ -23,7 +22,6 @@ export default function ScreenListEdit() {
   const categoryInputRef = useRef<TextInputType>(null);
 
   const update = lists.update.bind(null, listId);
-  const nav = useNavigate();
   const {t} = useLingui();
 
   const removeCategory = lists.removeCategory.bind(null, listId);
@@ -36,133 +34,119 @@ export default function ScreenListEdit() {
   };
 
   if (!listData) {
-    nav('/lists');
+    navigation.navigate('TasksListAll');
     return null;
   }
 
   return (
-    <Panel
-      title={listData.name || t`Untitled`}
-      message={t`Configure task list`}
-      back="/lists"
-      right={
-        <View style={styles.list}>
-          <Icon.Remote
-            name={listData.icon ?? 'ph:list-checks'}
-            size={'50%'}
-            uniProps={(theme) => ({
-              color: listData.color ?? theme.colors.foreground,
-            })}
-          />
-        </View>
-      }>
-        <View style={styles.root}>
-          <PanelSection title={t`General`}>
-            <PanelItem
-              label={t`Name`}
-              description={t`The display name of the list.`}>
-              <TextInput
-                style={styles.input}
-                maxLength={25}
-                placeholder={t`List name`}
-                onChangeText={update.bind(null, 'name')}
-                value={listData.name ?? ''}
-              />
-            </PanelItem>
-            <PanelItem
-              label={t`Categories`}
-              description={t`Add section names for items.`}>
-              <View style={styles.categoryList}>
-                {categories.map((category) => (
-                  <View key={category.id} style={styles.categoryRow}>
-                    <Pressable
-                      style={styles.categoryDelete}
-                      onPress={() => removeCategory(category.id)}>
-                      <Icon
-                        name="ph:x"
-                        size={16}
-                        uniProps={(theme) => ({
-                          color: theme.colors.mutedForeground,
-                        })}
-                      />
-                    </Pressable>
-                    <TextInput
-                      style={[styles.input, styles.categoryInput]}
-                      value={category.name ?? ''}
-                      maxLength={50}
-                      onChangeText={text => {
-                        lists.updateCategory(category.id, text);
-                      }}
-                      onKeyPress={e => {
-                        if (e.nativeEvent.key === 'Backspace' && (category.name ?? '') === '') {
-                          removeCategory(category.id);
-                        }
-                      }}
-                      onBlur={() => {
-                        if (!category.name || category.name.trim() === '') {
-                          removeCategory(category.id);
-                        }
-                      }}
+    <Panel title={listData.name || t`Untitled`}>
+      <View style={styles.root}>
+        <PanelSection title={t`General`}>
+          <PanelItem
+            label={t`Name`}
+            description={t`The display name of the list.`}>
+            <TextInput
+              style={styles.input}
+              maxLength={25}
+              placeholder={t`List name`}
+              onChangeText={update.bind(null, 'name')}
+              value={listData.name ?? ''}
+            />
+          </PanelItem>
+          <PanelItem
+            label={t`Categories`}
+            description={t`Add section names for items.`}>
+            <View style={styles.categoryList}>
+              {categories.map((category) => (
+                <View key={category.id} style={styles.categoryRow}>
+                  <Pressable
+                    style={styles.categoryDelete}
+                    onPress={() => removeCategory(category.id)}>
+                    <Icon
+                      name="ph:x"
+                      size={16}
+                      uniProps={(theme) => ({
+                        color: theme.colors.mutedForeground,
+                      })}
                     />
-                  </View>
-                ))}
-                <TextInput
-                  ref={categoryInputRef}
-                  style={styles.input}
-                  placeholder={t`Add category...`}
-                  maxLength={50}
-                  onBlur={e => {
-                    createCategory(e.nativeEvent.text.trim());
-                  }}
-                  onSubmitEditing={(e) => {
-                    createCategory(e.nativeEvent.text.trim());
-                  }}
-                />
-              </View>
-            </PanelItem>
-          </PanelSection>
-          <PanelSection title={t`Appearance`}>
-            <PanelItem
-              label={t`Icon`}
-              description={t`The icon to display for the list.`}>
+                  </Pressable>
+                  <TextInput
+                    style={[styles.input, styles.categoryInput]}
+                    value={category.name ?? ''}
+                    maxLength={50}
+                    onChangeText={text => {
+                      lists.updateCategory(category.id, text);
+                    }}
+                    onKeyPress={e => {
+                      if (e.nativeEvent.key === 'Backspace' && (category.name ?? '') === '') {
+                        removeCategory(category.id);
+                      }
+                    }}
+                    onBlur={() => {
+                      if (!category.name || category.name.trim() === '') {
+                        removeCategory(category.id);
+                      }
+                    }}
+                  />
+                </View>
+              ))}
               <TextInput
+                ref={categoryInputRef}
                 style={styles.input}
-                autoCapitalize="none"
-                maxLength={25}
-                placeholder={`ph:list-checks`}
-                onChangeText={update.bind(null, 'icon')}
-                value={listData.icon ?? ''}
-              />
-            </PanelItem>
-            <PanelItem
-              label={t`Color`}
-              description={t`The color of the list icon.`}>
-              <TextInput
-                style={styles.input}
-                autoCapitalize="none"
-                maxLength={25}
-                placeholder={`#888`}
-                onChangeText={update.bind(null, 'color')}
-                value={listData.color ?? ''}
-              />
-            </PanelItem>
-          </PanelSection>
-          <PanelSection title={t`Danger Zone`}>
-            <PanelItem
-              label={t`Delete List`}
-              description={t`Permanently delete list.`}>
-              <Button
-                label={t`Delete List`}
-                mode="Destructive"
-                state="Default"
-                onPress={() => {
-                  lists.remove(listId);
-                  nav('/lists');
+                placeholder={t`Add category...`}
+                maxLength={50}
+                onBlur={e => {
+                  createCategory(e.nativeEvent.text.trim());
+                }}
+                onSubmitEditing={(e) => {
+                  createCategory(e.nativeEvent.text.trim());
                 }}
               />
-            </PanelItem>
-          </PanelSection>
-        </View>
+            </View>
+          </PanelItem>
+        </PanelSection>
+        <PanelSection title={t`Appearance`}>
+          <PanelItem
+            label={t`Icon`}
+            description={t`The icon to display for the list.`}>
+            <TextInput
+              style={styles.input}
+              autoCapitalize="none"
+              maxLength={25}
+              placeholder={`ph:list-checks`}
+              onChangeText={update.bind(null, 'icon')}
+              value={listData.icon ?? ''}
+            />
+          </PanelItem>
+          <PanelItem
+            label={t`Color`}
+            description={t`The color of the list icon.`}>
+            <TextInput
+              style={styles.input}
+              autoCapitalize="none"
+              maxLength={25}
+              placeholder={`#888`}
+              onChangeText={update.bind(null, 'color')}
+              value={listData.color ?? ''}
+            />
+          </PanelItem>
+        </PanelSection>
+        <PanelSection title={t`Danger Zone`}>
+          <PanelItem
+            label={t`Delete List`}
+            description={t`Permanently delete list.`}>
+            <Button
+              label={t`Delete List`}
+              mode="Destructive"
+              state="Default"
+              onPress={() => {
+                lists.remove(listId);
+                navigation.navigate('TasksListAll');
+              }}
+            />
+          </PanelItem>
+        </PanelSection>
+      </View>
     </Panel>
   );
 }

@@ -1,4 +1,4 @@
-import * as $ from 'app/data/types';
+import * as $ from './types';
 
 export default {
   profile: {

@@ -1,13 +1,21 @@
 import {useState, useEffect} from 'react';
+import {StyleSheet, withUnistyles} from 'react-native-unistyles';
+import {Progress as ProgressX} from 'react-exo/progress';
 import {View, Text} from 'react-native';
-import {StyleSheet} from 'react-native-unistyles';
-import {getDiskSpace} from 'react-exo/fs';
-import {bytesize} from 'app/lib/format';
-import {Progress} from 'app/ui/base';
+
+import {getDiskSpace, bytesize} from 'react-exo/fs';
 
 interface MenuFooterProps {
   actions?: React.ReactNode,
 }
+
+export const Progress = withUnistyles(ProgressX, (theme) => ({
+  progressColor: theme.colors.foreground,
+  style: {
+    height: __TOUCH__ ? 8 : 6,
+    backgroundColor: theme.colors.muted,
+  },
+}))
 
 export function MenuFooter(props: MenuFooterProps) {
   const [storage, setStorage] = useState<{msg: string, val: number}>();

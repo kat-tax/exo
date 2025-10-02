@@ -5,7 +5,7 @@ import {isRTL} from './lingui.rtl';
 import type {Messages} from '@lingui/core';
 import type {Locales} from 'config/locales';
 
-const ctx = (require as any).context('../i18n/messages', false, /\.json$/);
+const ctx = (require as any).context('../messages', false, /\.json$/);
 const dir = new Map<Locales, Messages>();
 ctx.keys().forEach((p: string) => dir.set(p.slice(2, -5) as Locales, ctx(p).messages));
 

@@ -1,7 +1,6 @@
 import {Icon} from 'react-exo/icon';
 import {StyleSheet} from 'react-native-unistyles';
 import {Platform, Pressable, View} from 'react-native';
-import {useNavigate, useParams} from 'react-exo/navigation';
 import {useMemo} from 'react';
 import {useLingui} from '@lingui/react/macro';
 import {useLists} from 'tasks/hooks/use-lists';
@@ -10,19 +9,18 @@ import {Panel} from 'app/ui/panel';
 import {ListGroup} from 'tasks/stacks/list-group';
 import {getList, getListCounts, getListCategories} from 'app/data/queries';
 
-export default function ScreenList() {
-  const {id} = useParams<{id: string}>();
+export default function ScreenList({route, navigation}: ReactNavigation.ScreenProps<'TasksListDetails'>) {
+  const {id} = route.params;
   const lists = useLists();
   const listId = useMemo(() => lists.getId(id), [id]);
   const listData = useQuery(getList(listId))[0];
   const listCounts = useQuery(getListCounts(listId))[0];
   const listCategories = useQuery(getListCategories(listId));
 
-  const nav = useNavigate();
   const {t} = useLingui();
 
   if (!listData) {
-    nav('/lists');
+    navigation.navigate('TasksListAll');
     return null;
   }
 
@@ -30,11 +28,10 @@ export default function ScreenList() {
     <Panel
       title={listData.name || t`Untitled`}
       message={`${listCounts.completed ?? 0} / ${listCounts.total ?? 0} completed`}
-      back={'/lists'}
       right={
         <Pressable
           style={styles.icon}
-          onPress={() => nav(`/list/${listId}/edit`)}>
+          onPress={() => navigation.navigate('TasksListEdit', {id})}>
           <Icon.Remote
             name={listData.icon ?? 'ph:list-checks'}
             size={'50%'}

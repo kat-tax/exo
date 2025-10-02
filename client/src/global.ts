@@ -1,5 +1,6 @@
 import {Platform} from 'react-native';
 
+globalThis.global = globalThis;
 globalThis.__WEB__ = Platform.OS === 'web';
 globalThis.__NATIVE__ = Platform.OS !== 'web';
 globalThis.__ANDROID__ = Platform.OS === 'android';
@@ -23,3 +24,4 @@ globalThis.__TOUCH__ = (() => {
       return false;
   }
 })();
+

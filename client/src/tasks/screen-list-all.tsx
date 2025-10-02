@@ -1,7 +1,7 @@
 import {View} from 'react-native';
 import {Icon} from 'react-exo/icon';
 import {StyleSheet} from 'react-native-unistyles';
-import {useNavigate} from 'react-exo/navigation';
+import {useNavigation} from '@react-navigation/native';
 import {useLingui} from '@lingui/react/macro';
 import {Panel} from 'app/ui/panel';
 import {Grid} from 'app/ui/grid';
@@ -13,7 +13,7 @@ import {useLists} from 'tasks/hooks/use-lists';
 export default function ScreenLists() {
   const lists = useLists();
   const data = useQuery(getLists);
-  const nav = useNavigate();
+  const nav = useNavigation();
   const {t} = useLingui();
 
   return (
@@ -25,8 +25,8 @@ export default function ScreenLists() {
           <GridCell
             key={id}
             focusKey={`list-${id}`}
-            onPress={() => nav(`/list/${id}`)}
-            onEditSelect={() => nav(`/list/${id}/edit`)}>
+            onPress={() => nav.navigate('TasksListDetails', {id})}
+            onEditSelect={() => nav.navigate('TasksListEdit', {id})}>
             <View style={[styles.list, !name && styles.listAdd]}>
               <Icon.Remote
                 name={icon ?? ''}
@@ -42,7 +42,7 @@ export default function ScreenLists() {
           focusKey="list-add"
           onPress={() => {
             const id = data?.find(list => !list.name)?.id ?? lists.create();
-            if (id) nav(`/list/${id}/edit`);
+            if (id) nav.navigate('TasksListEdit', {id});
           }}>
           <View style={[styles.list, styles.listAdd]}>
             <Icon

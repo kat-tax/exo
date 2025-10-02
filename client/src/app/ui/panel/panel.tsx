@@ -1,19 +1,21 @@
 import {View, ScrollView, Text} from 'react-native';
 import {StyleSheet} from 'react-native-unistyles';
-import {Link} from 'react-exo/navigation';
+import {Link} from '@react-navigation/native';
 import {Icon} from 'react-exo/icon';
+
+import type {RootStackParamList} from 'app/nav';
 
 export interface PanelProps extends React.PropsWithChildren {
   title?: string | React.ReactNode,
   message?: string | React.ReactNode,
   right?: React.ReactNode,
-  back?: string,
+  back?: keyof RootStackParamList,
 }
 
 export function Panel(props: PanelProps) {
   const hasTitle = Boolean(props.title);
   const hasMessage = Boolean(props.message);
-  const hasHeader = hasTitle || hasMessage || props.right;
+  const hasHeader = (hasTitle || hasMessage || props.right);
 
   return (
     <View style={styles.root}>
@@ -27,7 +29,7 @@ export function Panel(props: PanelProps) {
                     <View style={styles.titlebar}>
                       {props.back &&
                         <View style={styles.back}>
-                          <Link to={props.back}>
+                          <Link screen={props.back} params={{}}>
                             <Icon name="ph:arrow-left" size={28}/>
                           </Link>
                         </View>
@@ -74,25 +76,31 @@ const styles = StyleSheet.create((theme, rt) => ({
       xs: 'transparent',
     },
     paddingTop: {
-      initial: rt.insets.top / 1.5,
+      initial: rt.insets.top / 2,
       xs: 0,
     },
   },
   scroll: {
     backgroundColor: theme.colors.card,
     borderColor: theme.colors.border,
-    borderWidth: {
-      initial: 0,
-      xs: StyleSheet.hairlineWidth,
-    },
-    borderRadius: {
-      initial: 0,
-      xs: theme.display.radius2,
-    },
-    margin: {
-      initial: 0,
-      xs: theme.display.space2,
-    },
+    _web: {
+      borderWidth: {
+        initial: 0,
+        xs: StyleSheet.hairlineWidth,
+      },
+      borderRadius: {
+        initial: 0,
+        xs: theme.display.radius2,
+      },
+      marginHorizontal: {
+        initial: 0,
+        xs: theme.display.space2,
+      },
+      marginBottom: {
+        initial: 0,
+        xs: theme.display.space2,
+      },
+    }
   },
   content: {
     flex: 1,

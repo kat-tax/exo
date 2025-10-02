@@ -5,7 +5,7 @@ import type {JSX} from 'react/jsx-runtime';
 
 type NavFile = () => Promise<{default: () => JSX.Element}>;
 type NavLayouts = {[slice: string]: React.LazyExoticComponent<() => JSX.Element>};
-type NavScreens = {[slice: string]: {[path: string]: React.LazyExoticComponent<() => JSX.Element>}};
+type NavScreens = {[slice: string]: React.LazyExoticComponent<() => JSX.Element>};
 
 const ctx = {
   layouts: (import.meta as any).glob('./**/layout.tsx', {base: '/'}),
@@ -26,8 +26,7 @@ export const Screen = Object.entries(ctx.screens).reduce((acc, [_, screen]) => {
   if (match) {
     const slice = startCase(match[1]).replace(/\s/g, '');
     const name = startCase(match[2]).replace(/\s/g, '');
-    if (!acc[slice]) acc[slice] = {};
-    acc[slice][name] = lazy(screen as NavFile);
+    acc[slice + name] = lazy(screen as NavFile);
   }
   return acc;
 }, {} as NavScreens);

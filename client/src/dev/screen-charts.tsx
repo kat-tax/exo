@@ -1,4 +1,3 @@
-import {useLingui} from '@lingui/react/macro';
 import {useTheme} from 'settings/hooks/use-theme';
 import {Panel} from 'app/ui/panel';
 import {Grid} from 'dev/stacks/grid';
@@ -8,11 +7,8 @@ import charts from 'react-exo/demo/charts';
 
 export default function ScreenCharts() {
   const [theme] = useTheme();
-  const {t} = useLingui();
   return (
-    <Panel
-      title={t`Charts`}
-      message="Apache ECharts v6">
+    <Panel>
       <Grid>
         {charts.map((chart) => (
           <Frame key={chart.title} title={chart.title} noScroll>

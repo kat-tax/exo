@@ -1,15 +1,18 @@
 import * as $ from 'react-exo/redux';
+import {KV} from 'react-exo/kv';
 import cfg from 'config';
-import mmkv from 'app/lib/kv';
-import slices from 'app/lib/redux.slices';
+import slices from './redux.slices';
 
 const redux = $.configureStore({
   devTools: __DEV__,
   reducer: $.persistReducer({
     key: cfg.APP_NAME,
     version: cfg.STORE_VERSION,
-    storage: mmkv,
     blacklist: ['router'],
+    storage: KV.init(
+      `${cfg.APP_NAME}::state`,
+      cfg.STORE_VERSION,
+    ),
   }, $.combineReducers({
     ...slices,
     router: $.history.context.routerReducer,

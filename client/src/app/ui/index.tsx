@@ -1,11 +1,15 @@
 import {useEffect} from 'react';
-import {StatusBar, Appearance} from 'react-native';
+import {Appearance} from 'react-native';
+import {SystemBars} from 'react-native-edge-to-edge';
 import {UnistylesRuntime} from 'react-native-unistyles';
 import {GestureProvider} from 'react-exo/gesture';
 import {ToastRoot} from 'react-exo/toast';
 import {useTheme} from 'settings/hooks/use-theme';
 
-export function Theme(props: React.PropsWithChildren) {
+import type {UnistylesThemes} from 'react-native-unistyles';
+export type Theme = UnistylesThemes[keyof UnistylesThemes];
+
+export function Interface(props: React.PropsWithChildren) {
   const [scheme] = useTheme();
 
   useEffect(() => {
@@ -22,8 +26,8 @@ export function Theme(props: React.PropsWithChildren) {
 
   return (
     <GestureProvider style={{flex: 1}}>
-      <StatusBar
-        barStyle={scheme === 'dark' ? 'light-content' : 'dark-content'}
+      <SystemBars
+        style={scheme === 'dark' ? 'light' : 'dark'}
       />
       {props.children}
       <ToastRoot

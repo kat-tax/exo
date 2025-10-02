@@ -20,7 +20,7 @@
     "postinstall": "pnpm generate"
   },
   "devDependencies": {
-    "@lingui/cli": "^5.5.0",
+    "@lingui/cli": "catalog:",
     "concurrently": "^9.2.1",
     "ult-scripts": "workspace:*"
   },
