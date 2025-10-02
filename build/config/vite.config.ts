@@ -37,6 +37,10 @@ export default defineConfig(env => ({
         warn(warning);
       },
     },
+    // Needed for react-navigation's use of "require"
+    commonjsOptions: {
+      transformMixedEsModules: true,
+    },
   },
   // React Native Web Compatibility
   resolve: {
