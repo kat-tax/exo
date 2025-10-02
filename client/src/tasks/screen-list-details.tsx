@@ -28,7 +28,6 @@ export default function ScreenList({route, navigation}: ReactNavigation.ScreenPr
     <Panel
       title={listData.name || t`Untitled`}
       message={`${listCounts.completed ?? 0} / ${listCounts.total ?? 0} completed`}
-      back="TasksListAll"
       right={
         <Pressable
           style={styles.icon}

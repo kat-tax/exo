@@ -1,4 +1,3 @@
-import {useLingui} from '@lingui/react/macro';
 import {View} from 'react-native';
 import {Icon} from 'react-exo/icon';
 import {Panel} from 'app/ui/panel';
@@ -8,11 +7,8 @@ import {Grid} from 'dev/stacks/grid';
 import * as Design from 'design';
 
 export default function ScreenDesign() {
-  const {t} = useLingui();
   return (
-    <Panel
-      title={t`Design`}
-      message={t`${12} components`}>
+    <Panel>
       <Grid>
         <Frame title="Button">
           <Design.Button

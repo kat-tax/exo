@@ -5,7 +5,7 @@ import {useTheme} from 'settings/hooks/use-theme';
 import cfg from 'config';
 
 import {createNativeStackNavigator as createStack} from '@react-navigation/native-stack';
-import {createLayout, createScreenLayout} from './custom';
+import {createLayout, createScreenLayout, HeaderLeft} from './custom';
 import {createScreens} from './lib/create-screens';
 import {createTabs} from './lib/tabs';
 
@@ -21,25 +21,32 @@ export type RootStackParamList = {
   TasksListDetails: {id: string};
   TasksListEdit: {id: string};
   SettingsOverview: undefined;
+  SettingsStorage: undefined;
   DevDesign: undefined;
   DevCharts: undefined;
 };
 
+/** Top level navigation links shown in the drawer menus and tab bars. */
 const links: Record<string, Array<keyof RootStackParamList>> = {
+  /** Displayed on the native/web tab navigator. */
   tabs: [
     'HomeDashboard',
     'TasksListAll',
     'SettingsOverview',
   ],
+  /** The menu items shown at the top of the drawer menu. */
   menuTop: [
     'HomeDashboard',
     'TasksListAll',
   ],
+  /** The menu items to show in development only (below the top items in a group). */
   menuDev: [
     'DevDesign',
     'DevCharts',
   ],
+  /** The icon buttons displayed in the menu footer. */
   menuFooterIcons: [
+    'SettingsStorage',
     'SettingsOverview',
   ],
 } as const;
@@ -66,17 +73,40 @@ const root = (screens: NavScreens, theme: Theme) => createStack<RootStackParamLi
   screenLayout: __WEB__ ? createScreenLayout(screens) : undefined,
   layout: __WEB__ ? createLayout(screens, links) : undefined,
   screens: {
+    // Native only, add tab navigator
+    ... !__WEB__ ? {
+      HomeTabs: {
+        screen: tabs(screens, theme),
+        options: {
+          headerShown: false,
+        },
+      }
+    } : {},
+    // Add all other screens to stack
     ...createScreens(screens),
-    ... !__WEB__ ? {HomeDashboard: tabs(screens, theme)} : {},
   },
-  screenOptions: (route) => ({
-    headerShown: !__WEB__ && route.route.name !== 'HomeDashboard',
+  screenOptions: (_props) => ({
+    // Example: Hide header if in top level navigation
+    // headerShown: !Object.values(links).flat().includes(props.route.name),
+    headerShown: true,
     headerTintColor: theme.colors.foreground,
+    headerTitleAlign: 'center',
+    headerTitleStyle: {
+      fontFamily: theme.font.family,
+      fontSize: __WEB__ ? 13 : 16,
+      fontWeight: 500,
+    },
+    // Show the back button on native, but not on web.
+    headerBackVisible: !__WEB__,
+    // Custom back button component for web.
+    headerLeft: __WEB__ ? HeaderLeft : undefined,
     headerStyle: {
+      height: 40,
       backgroundColor: theme.colors.background,
     },
   }),
 });
+
 
 export function Navigator() {
   const {t} = useLingui();
@@ -109,6 +139,13 @@ export function Navigator() {
         title: t`Settings`,
         icon: 'ph:gear',
         tabBarIcon: () => require('./icons/ph-gear.png'),
+      },
+    },
+    SettingsStorage: {
+      linking: 'storage',
+      options: {
+        title: t`Storage`,
+        icon: 'ph:database',
       },
     },
     TasksListAll: {
@@ -168,7 +205,7 @@ export function Navigator() {
         dark: scheme === 'dark',
         colors: {
           background: theme.colors.background,
-          border: theme.colors.border,
+          border: 'transparent',
           card: theme.colors.card,
           text: theme.colors.foreground,
           primary: theme.colors.primary,

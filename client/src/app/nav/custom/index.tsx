@@ -1,13 +1,15 @@
+import {useNavigation} from '@react-navigation/native';
 import {useFocusable, FocusContext} from '@noriginmedia/norigin-spatial-navigation';
 import {StyleSheet, Display, mq} from 'react-native-unistyles';
+import {View, Pressable} from 'react-native';
 import {Suspense} from 'react';
-import {View} from 'react-native';
+import {Icon} from 'react-exo/icon';
 import {Panel} from 'app/ui/panel';
 import {breakpoints} from 'design/theme';
-
 import {Menu, Tabs} from './menu';
 
 import type {NavigationHelpers, NavigationState} from '@react-navigation/native';
+import type {NativeStackHeaderLeftProps} from '@react-navigation/native-stack';
 import type {NavScreens, RootStackParamList} from 'app/nav';
 
 export interface LayoutProps {
@@ -45,6 +47,23 @@ export function Layout(props: LayoutProps) {
   );
 }
 
+export function HeaderLeft({canGoBack, tintColor}: NativeStackHeaderLeftProps) {
+  const nav = useNavigation();
+  return (
+    <View style={styles.headerLeft}>
+      {canGoBack &&
+        <Pressable style={styles.headerBack} onPress={() => nav.goBack()}>
+          <Icon
+            name="ph:arrow-left"
+            size={__TOUCH__ ? 20 : 16}
+            color={tintColor}
+          />
+        </Pressable>
+      }
+    </View>
+  );
+}
+
 export const createLayout = (screens: NavScreens, links: Record<string, Array<keyof RootStackParamList>>) => (
   (props: Omit<LayoutProps, 'screens' | 'links'>) => (
     <Layout {...props} screens={screens} links={links}/>
@@ -59,7 +78,7 @@ export const createScreenLayout = (_screens: NavScreens) => (
   )
 );
 
-const styles = StyleSheet.create(() => ({
+const styles = StyleSheet.create((theme) => ({
   root: {
     flex: 1,
     flexDirection: {
@@ -70,5 +89,10 @@ const styles = StyleSheet.create(() => ({
   content: {
     flex: 1,
     flexDirection: 'row',
+  },
+  headerLeft: {
+  },
+  headerBack: {
+    padding: theme.display.space2,
   },
 }));

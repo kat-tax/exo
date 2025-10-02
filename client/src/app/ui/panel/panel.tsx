@@ -15,7 +15,7 @@ export interface PanelProps extends React.PropsWithChildren {
 export function Panel(props: PanelProps) {
   const hasTitle = Boolean(props.title);
   const hasMessage = Boolean(props.message);
-  const hasHeader = hasTitle || hasMessage || props.right;
+  const hasHeader = (hasTitle || hasMessage || props.right);
 
   return (
     <View style={styles.root}>
@@ -92,7 +92,11 @@ const styles = StyleSheet.create((theme, rt) => ({
         initial: 0,
         xs: theme.display.radius2,
       },
-      margin: {
+      marginHorizontal: {
+        initial: 0,
+        xs: theme.display.space2,
+      },
+      marginBottom: {
         initial: 0,
         xs: theme.display.space2,
       },

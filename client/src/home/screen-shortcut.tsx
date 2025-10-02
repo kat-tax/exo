@@ -4,42 +4,51 @@ import {Platform, View} from 'react-native';
 import {StyleSheet} from 'react-native-unistyles';
 import {TextInput} from 'react-exo/textinput';
 import {Icon} from 'react-exo/icon';
+import {useNavigation} from '@react-navigation/native';
+import {useEffect} from 'react';
 import {Panel, PanelSection, PanelItem} from 'app/ui/panel';
 import {useShortcuts} from 'home/hooks/use-shortcuts';
 import {getShortcut} from 'app/data/queries';
 import {useQuery} from 'app/data';
 import {Button} from 'design';
 
-export default function ScreenShortcutEdit({route, navigation}: ReactNavigation.ScreenProps<'HomeShortcut'>) {
+export default function ScreenShortcutEdit({route}: ReactNavigation.ScreenProps<'HomeShortcut'>) {
   const {id} = route.params;
+  const nav = useNavigation();
   const shortcuts = useShortcuts();
   const shortcutId = useMemo(() => shortcuts.getId(id), [id]);
   const shortcutData = useQuery(getShortcut(shortcutId))[0];
-
   const update = shortcuts.update.bind(null, shortcutId);
   const {t} = useLingui();
 
   if (!shortcutData) {
-    navigation.navigate('HomeDashboard');
+    //nav.navigate('HomeDashboard');
     return null;
   }
 
+  useEffect(() => {
+    // nav.setOptions({
+    //   title: shortcutData.name || t`Untitled`,
+    // });
+  }, [shortcutData]);
+
   return (
-    <Panel
-      title={shortcutData.name || t`Untitled`}
-      message={t`Configure dashboard shortcut`}
-      back="HomeDashboard"
-      right={
-        <View style={styles.icon}>
-          <Icon.Remote
-            name={shortcutData.icon ?? 'ph:globe'}
-            size={'50%'}
-            uniProps={(theme) => ({
-              color: shortcutData.color ?? theme.colors.foreground,
-            })}
-          />
-        </View>
-      }>
+    // <Panel
+    //   title={shortcutData.name || t`Untitled`}
+    //   message={t`Configure dashboard shortcut`}
+    //   back="HomeDashboard"
+    //   right={
+    //     <View style={styles.icon}>
+    //       <Icon.Remote
+    //         name={shortcutData.icon ?? 'ph:globe'}
+    //         size={'50%'}
+    //         uniProps={(theme) => ({
+    //           color: shortcutData.color ?? theme.colors.foreground,
+    //         })}
+    //       />
+    //     </View>
+    //   }>
+      <Panel>
         <View style={styles.root}>
           <PanelSection title={t`General`}>
             <PanelItem
@@ -52,7 +61,7 @@ export default function ScreenShortcutEdit({route, navigation}: ReactNavigation.
                 keyboardType="url"
                 textContentType="URL"
                 maxLength={1000}
-                placeholder={`https://search.brave.com`}
+                placeholder={`https://x.com`}
                 onChangeText={update.bind(null, 'url')}
                 value={shortcutData.url ?? ''}
               />
@@ -63,7 +72,7 @@ export default function ScreenShortcutEdit({route, navigation}: ReactNavigation.
               <TextInput
                 style={styles.input}
                 maxLength={25}
-                placeholder={`Brave`}
+                placeholder={`X`}
                 onChangeText={update.bind(null, 'name')}
                 value={shortcutData.name ?? ''}
               />
@@ -77,7 +86,7 @@ export default function ScreenShortcutEdit({route, navigation}: ReactNavigation.
                 style={styles.input}
                 autoCapitalize="none"
                 maxLength={25}
-                placeholder={`simple-icons:brave`}
+                placeholder={`simple-icons:x`}
                 onChangeText={update.bind(null, 'icon')}
                 value={shortcutData.icon ?? ''}
               />
@@ -100,12 +109,12 @@ export default function ScreenShortcutEdit({route, navigation}: ReactNavigation.
               label={t`Delete Shortcut`}
               description={t`Permanently delete shortcut.`}>
               <Button
-                label={t`Delete Shortcut`}
+                label={t`Delete`}
                 mode="Destructive"
                 state="Default"
                 onPress={() => {
                   shortcuts.remove(shortcutId);
-                  navigation.navigate('HomeDashboard');
+                  nav.navigate('HomeDashboard');
                 }}
               />
             </PanelItem>

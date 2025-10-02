@@ -1,5 +1,6 @@
 import {useState} from 'react';
 import {useLingui} from '@lingui/react/macro';
+import {useNavigation} from '@react-navigation/native';
 import {StyleSheet} from 'react-native-unistyles';
 import {View, Platform} from 'react-native';
 import {TextInput} from 'react-exo/textinput';
@@ -19,6 +20,7 @@ export default function ScreenOverview() {
   const [showKey, setShowKey] = useState(false);
   const [deleteConfirm, setDeleteConfirm] = useState('');
   const settings = useSettings();
+  const nav = useNavigation();
   const {t} = useLingui();
 
   return (
@@ -101,8 +103,18 @@ export default function ScreenOverview() {
             />
           </PanelItem>
           <PanelItem
-            label={t`Clear Data`}
-            description={t`Reset owner and delete database.`}>
+            label={t`Inspect Storage`}
+            description={t`Monitor disk usage on device.`}>
+            <Button
+              label={t`Storage Usage`}
+              mode="Primary"
+              state="Default"
+              onPress={() => nav.navigate('SettingsStorage')}
+            />
+          </PanelItem>
+          <PanelItem
+            label={t`Reset Data`}
+            description={t`Clear owner and delete database.`}>
             <Sheet
               autoWebSize={250}
               edgeToEdge={false}
