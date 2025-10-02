@@ -1,18 +1,19 @@
 import {StyleSheet} from 'react-native-unistyles';
 import {Panel} from 'app/ui/panel';
-import {View, Text} from 'react-native';
+import {View} from 'react-native';
 
 export default function ScreenStorage() {
   return (
     <Panel>
       <View style={styles.root}>
-        <Text>Storage</Text>
+        {/* TODO: Implement */}
       </View>
     </Panel>
   );
 }
 
-const styles = StyleSheet.create((theme) => ({
+const styles = StyleSheet.create((_theme) => ({
   root: {
+    // TODO: Implement
   },
 }));
