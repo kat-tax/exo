@@ -36,9 +36,9 @@ const hotkeys = (cfg) => ({
     {key: 'q', label: 'Quit'},
   ],
   'Manage project': [
-    {key: 'd', label: 'Dashboard'},
-    {key: 'f', label: 'Figma' , disabled: !cfg.figma},
+    {key: 'u', label: 'ULT', disabled: true},
     {key: 'g', label: 'Git' , disabled: !cfg.git},
+    {key: 'f', label: 'Figma' , disabled: !cfg.figma},
   ],
 });
 
@@ -272,9 +272,16 @@ async function help(ondemand) {
     const lines = [
       _.italic(title),
       '─'.repeat(columnWidths[index] - 3),
-      ...keys.map(h => h.disabled
-        ? _.gray(`[${h.key}] = ${h.label}`)
-        : `[${_.yellow(h.key)}] = ${_.bold(h.label)}`),
+      ...keys.map(h => {
+        if (h.disabled) {
+          return _.gray(`[${h.key}] = ${h.label}`);
+        }
+        if (h.special) {
+          return `[${_.yellow(h.key)}] = ${ _.bold(_.white(h.label))}`;
+        }
+
+        return `[${_.yellow(h.key)}] = ${_.bold(h.label)}`;
+      }),
       ''
     ];
     return lines.map(line => {
