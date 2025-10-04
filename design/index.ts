@@ -1,5 +1,6 @@
 export {Placeholder} from './components/base/utilities/placeholder';
 export {Alert} from './components/base/indicators/alert';
+export {Badge} from './components/base/indicators/badge';
 export {Status} from './components/base/indicators/status';
 export {Article} from './components/base/cards/article';
 export {Panel} from './components/base/cards/panel';
@@ -8,7 +9,6 @@ export {MenuItem} from './components/base/lists/menu-item';
 export {InputPassword} from './components/base/inputs/input-password';
 export {InputEmail} from './components/base/inputs/input-email';
 export {InputText} from './components/base/inputs/input-text';
-export {Badge} from './components/base/pressables/badge';
 export {Button} from './components/base/pressables/button';
 export {Message} from './components/features/chat/message';
 export {Signup} from './components/features/auth/signup';
