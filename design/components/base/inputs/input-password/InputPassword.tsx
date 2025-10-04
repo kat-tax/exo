@@ -49,6 +49,7 @@ export function InputPassword(props: InputPasswordProps) {
         {Icon.New(props.icon, vstyles.icon())}
         <TextInput testID="4029:270"
           style={vstyles.textinput()}
+          secureTextEntry
           placeholder={props.placeholder}
         />
       </View>
