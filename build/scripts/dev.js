@@ -7,7 +7,7 @@ import {PassThrough} from 'node:stream';
 import {exec} from 'node:child_process';
 
 import {openUrl} from './utils/url.js';
-import {parseConfig} from './utils/config.js';
+import {loadConfig} from './utils/config.js';
 import {sendMetroCmd} from './utils/metro.js';
 
 import ReadLine from './vendor/ReadLine.js';
@@ -18,7 +18,7 @@ import QRCodes from './vendor/QRCodes.js';
 
 const command = 'pnpm:*:dev';
 
-const hotkeys = {
+const hotkeys = (cfg) => ({
   'Launch applications': [
     {key: 'b', label: 'Web Browser'},
     {key: 'a', label: 'Android'},
@@ -37,10 +37,10 @@ const hotkeys = {
   ],
   'Manage project': [
     {key: 'd', label: 'Dashboard'},
-    {key: 'f', label: 'Figma'},
-    {key: 'g', label: 'Git'},
+    {key: 'f', label: 'Figma' , disabled: !cfg.figma},
+    {key: 'g', label: 'Git' , disabled: !cfg.git},
   ],
-};
+});
 
 const matches = [
   {
@@ -193,13 +193,11 @@ function done() {
       case 'd':
         openUrl(`http://ult.dev`);
         break;
-      case 'f':
-        const config = parseConfig();
-        openUrl(config.LINK_FIGMA + '?try-plugin-id=821138713091291738&try-plugin-version-id=139053&try-plugin-name=Figma+-%3E+React+Native&is-widget=0&is-playground-file=0&try-plugin-file-key=tmRcxoy1M3XdGWYKoJQDOt&mode=design&type=design');
-        break;
       case 'g':
-        const gitConfig = parseConfig();
-        openUrl(gitConfig.LINK_GITHUB);
+        loadConfig().then(cfg => openUrl(cfg.git));
+        break;
+      case 'f':
+        loadConfig().then(cfg => openUrl(cfg.figma));
         break;
       case 'i':
         if (process.platform === 'darwin') {
@@ -234,7 +232,7 @@ function done() {
 /**
  * Handler after startup or "h" hotkey is pressed
  */
-function help(ondemand) {
+async function help(ondemand) {
   if (ondemand) {
     console.log();
     console.log(' ' + _.bgWhiteBright(_.black(_.bold(' '.repeat(18) + 'EXO COMMAND CENTER' + ' '.repeat(18)))));
@@ -259,21 +257,22 @@ function help(ondemand) {
   }
 
   // Get max width for each column
-  const _hotkeys = Object.entries(hotkeys);
-  const columnWidths = _hotkeys.map(([title, hotkeys]) => {
+  const cfg = await loadConfig();
+  const list = Object.entries(hotkeys(cfg));
+  const columnWidths = list.map(([title, keys]) => {
     const titleWidth = stripAnsi(title).length;
-    const contentWidth = Math.max(...hotkeys.map(h =>
+    const contentWidth = Math.max(...keys.map(h =>
       stripAnsi(`[${h.key}] = ${h.label}`).length
     ));
     return Math.max(titleWidth, contentWidth) + 3;
   });
 
   // Convert sections to arrays of lines
-  const columns = _hotkeys.map(([title, hotkeys], index) => {
+  const columns = list.map(([title, keys], index) => {
     const lines = [
       _.italic(title),
       '─'.repeat(columnWidths[index] - 3),
-      ...hotkeys.map(h => h.disabled
+      ...keys.map(h => h.disabled
         ? _.gray(`[${h.key}] = ${h.label}`)
         : `[${_.yellow(h.key)}] = ${_.bold(h.label)}`),
       ''

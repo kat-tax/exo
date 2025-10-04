@@ -15,11 +15,8 @@ PACKAGE_ANDROID: com.exo.android
 PACKAGE_DESKTOP: com.exo.desktop
 
 # Web
-LINK_DOCS: https://exo.ult.dev
-LINK_FIGMA: https://www.figma.com/file/DFmPlavFWyMaYJtoGLhGz3
-LINK_STORYBOOK: https://exo.fig.run
+LINK_HOMEPAGE: https://exo.ult.dev
 LINK_DISCORD: https://discord.kat.tax
-LINK_GITHUB: https://github.com/kat-tax/exo
 LINK_X: https://x.com/theultdev
 
 # Translations

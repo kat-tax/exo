@@ -1,30 +1,12 @@
-import {readFileSync} from 'node:fs';
-import {fileURLToPath} from 'node:url';
-import {dirname, join} from 'node:path'
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
 /**
- * Read and parse config.yaml file
+ * Read and parse .ultconfig.json file (if exists)
  */
-export function parseConfig() {
+export async function loadConfig() {
   try {
-    const configPath = join(__dirname, '../../../config.yaml');
-    const configContent = readFileSync(configPath, 'utf8');
-    const config = {};
-    // Simple YAML parser for key-value pairs
-    const lines = configContent.split('\n');
-    for (const line of lines) {
-      const match = line.match(/^([A-Z_]+):\s*(.+)$/);
-      if (match) {
-        const [, key, value] = match;
-        config[key] = value.trim();
-      }
-    }
-    return config;
+    return await import('../../../.ultconfig.json', {
+      with: {type: 'json'},
+    }).then(module => module.default);
   } catch (error) {
-    console.error('Failed to read config.yaml:', error.message);
     return {};
   }
 }
