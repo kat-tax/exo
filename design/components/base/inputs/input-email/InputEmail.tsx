@@ -49,6 +49,7 @@ export function InputEmail(props: InputEmailProps) {
         {Icon.New(props.icon, vstyles.icon())}
         <TextInput testID="4107:168"
           style={vstyles.textinput()}
+          autoComplete="email"
           placeholder={props.placeholder}
         />
       </View>
