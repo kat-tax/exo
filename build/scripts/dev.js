@@ -179,32 +179,43 @@ function done() {
       exit();
     switch(key) {
       case 'b':
+        console.log(_.blue('→'), `Launching Web...`);
         exec(`pnpm ult-run web --port ${_servers.Web.port}`);
         break;
       case 's':
+        console.log(_.blue('→'), `Launching Storybook...`);
         exec(`pnpm ult-run web --port ${_servers.Storybook.port}`);
         break;
       case 'r':
+        console.log(_.blue('→'), `Reloading Native...`);
         sendMetroCmd('reload', _servers.Native.port);
         break;
       case 'j':
+        console.log(_.blue('→'), `Opening Devtools...`);
         sendMetroCmd('open-debugger', _servers.Native.port);
         break;
       case 'd':
+        console.log(_.blue('→'), `Opening ULT...`);
         openUrl(`http://ult.dev`);
         break;
       case 'g':
+        console.log(_.blue('→'), `Opening Git...`);
         loadConfig().then(cfg => openUrl(cfg.git));
         break;
       case 'f':
+        console.log(_.blue('→'), `Opening Figma...`);
         loadConfig().then(cfg => openUrl(cfg.figma));
         break;
       case 'i':
         if (process.platform === 'darwin') {
+          console.log(_.blue('→'), `Launching iOS...`);
           exec('pnpm ult-run ios');
+        } else {
+          console.log(_.red('✘'), `No Apple platforms supported on this device`);
         }
         break;
       case 'a':
+        console.log(_.blue('→'), `Launching Android...`);
         exec('pnpm ult-run android');
         break;
       // case 'm':

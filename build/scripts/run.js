@@ -39,7 +39,6 @@ async function main() {
 
   // Try to launch platform
   try {
-    console.log(_.blue('→'), `Launching ${platform}...`);
     const [cmd, ...cmdArgs] = command.split(' ');
     const child = spawn(cmd, cmdArgs, {stdio: 'inherit', shell: true});
     child.on('error', (error) => {
