@@ -1,5 +1,6 @@
 import {createUseEvolu, EvoluProvider} from '@evolu/react';
 import {Provider as ReduxProvider} from 'react-exo/redux';
+import {HfsProvider} from './lib/hfs';
 import evolu from './lib/evolu.db';
 import redux from './lib/redux.db';
 
@@ -13,7 +14,9 @@ export function Data(props: React.PropsWithChildren) {
   return (
     <ReduxProvider store={redux}>
       <EvoluProvider value={evolu}>
-        {props.children}
+        <HfsProvider>
+          {props.children}
+        </HfsProvider>
       </EvoluProvider>
     </ReduxProvider>
   )
