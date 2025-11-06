@@ -1,6 +1,6 @@
 import {Icon} from 'react-exo/icon';
 import {View, Text} from 'react-native';
-import {useStyles, createStyleSheet} from 'react-native-unistyles';
+import {StyleSheet} from 'react-native-unistyles';
 import {Button} from 'design';
 
 interface WatermarkProps extends React.PropsWithChildren {
@@ -12,8 +12,6 @@ interface WatermarkProps extends React.PropsWithChildren {
 }
 
 export function Watermark(props: WatermarkProps) {
-  const {styles} = useStyles(stylesheet);
-
   return (
     <View style={styles.root}>
       <View style={[styles.box, props.dnd && styles.boxDnd]}>
@@ -34,7 +32,7 @@ export function Watermark(props: WatermarkProps) {
   );
 }
 
-const stylesheet = createStyleSheet(theme => ({
+const styles = StyleSheet.create((theme) => ({
   root: {
     flex: 1,
     alignItems: 'center',

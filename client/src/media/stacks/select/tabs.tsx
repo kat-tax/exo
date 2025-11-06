@@ -1,6 +1,6 @@
 import {Motion} from 'react-exo/motion';
 import {useRef, useMemo, useEffect} from 'react';
-import {useStyles, createStyleSheet} from 'react-native-unistyles';
+import {StyleSheet} from 'react-native-unistyles';
 import {useFocusable, FocusContext} from '@noriginmedia/norigin-spatial-navigation';
 import {useComposedRefs} from 'app/lib/components';
 import {useGet} from 'app/data';
@@ -21,7 +21,6 @@ interface SelectTabsProps {
 
 export function SelectTabs({hfs, path, name, ext}: SelectTabsProps) {
   const scroll = useRef<ScrollView>(null);
-  const {styles} = useStyles(stylesheet);
   const selection = useGet(media.selectors.getSelected);
   const focused = useGet(media.selectors.getFocused);
   const list = useMemo(() => selection.map(selectItem => {
@@ -75,7 +74,7 @@ export function SelectTabs({hfs, path, name, ext}: SelectTabsProps) {
 }
 
 
-const stylesheet = createStyleSheet((theme) => ({
+const styles = StyleSheet.create((theme) => ({
   root: {
     flexGrow: 0,
     flexShrink: 0,

@@ -4,7 +4,7 @@
 
 import {Book} from 'react-exo/book';
 import {forwardRef} from 'react';
-import {useStyles, createStyleSheet} from 'react-native-unistyles';
+import {StyleSheet} from 'react-native-unistyles';
 import {useFile} from 'media/file/hooks/use-file';
 
 import type {FileProps} from 'media/file';
@@ -13,7 +13,6 @@ export interface FileModel extends FileProps {}
 
 export default forwardRef(({path}: FileModel) => {
   const source = useFile(path, 'dataUrl');
-  const {styles} = useStyles(stylesheet);
 
   return source ? (
     <Book
@@ -23,7 +22,7 @@ export default forwardRef(({path}: FileModel) => {
   ) : null;
 });
 
-const stylesheet = createStyleSheet(() => ({
+const styles = StyleSheet.create(() => ({
   root: {
     flex: 1,
   },

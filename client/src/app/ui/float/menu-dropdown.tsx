@@ -1,6 +1,5 @@
 import * as Z from 'zeego/dropdown-menu';
 import {Icon} from 'react-exo/icon';
-import {useStyles} from 'react-native-unistyles';
 
 import type {ComponentProps} from 'react';
 
@@ -20,7 +19,6 @@ export interface MenuDropdownItem {
 }
 
 export function MenuDropdown(props: MenuDropdownProps) {
-  const {theme} = useStyles();
   const {label, items, children, ...rest} = props;
   return (
     <Root {...rest}>
@@ -34,12 +32,26 @@ export function MenuDropdown(props: MenuDropdownProps) {
                   <SubTrigger key={item.name}>
                     {item.icon &&
                       <ItemIcon>
-                        <Icon size={14} name={item.icon} color={item.destructive ? theme.colors.destructive : theme.colors.primary}/>
+                        <Icon
+                          size={14}
+                          name={item.icon}
+                          uniProps={(theme) => ({
+                            color: item.destructive
+                              ? theme.colors.destructive
+                              : theme.colors.primary,
+                          })}
+                        />
                       </ItemIcon>
                     }
                     <ItemTitle>{item.label}</ItemTitle>
                     <div className="RightSlot">
-                      <Icon name="ph:caret-right" size={12} color={theme.colors.mutedForeground}/>
+                      <Icon
+                        name="ph:caret-right"
+                        size={12}
+                        uniProps={(theme) => ({
+                          color: theme.colors.mutedForeground,
+                        })}
+                      />
                     </div>
                     {item.shortcut &&
                       <ItemSubtitle>{item.shortcut}</ItemSubtitle>
@@ -50,7 +62,13 @@ export function MenuDropdown(props: MenuDropdownProps) {
                       <Item key={sub.name} onSelect={sub.action} destructive={sub.destructive}>
                         {sub.icon &&
                           <ItemIcon>
-                            <Icon size={14} name={sub.icon} color={sub.destructive ? theme.colors.destructive : theme.colors.primary}/>
+                            <Icon
+                              size={14}
+                              name={sub.icon}
+                              uniProps={(theme) => ({
+                                color: sub.destructive ? theme.colors.destructive : theme.colors.primary,
+                              })}
+                            />
                           </ItemIcon>
                         }
                         <ItemTitle>{sub.label}</ItemTitle>
@@ -64,7 +82,13 @@ export function MenuDropdown(props: MenuDropdownProps) {
               : <Item key={item.name} onSelect={item.action} destructive={item.destructive}>
                   {item.icon &&
                     <ItemIcon>
-                      <Icon size={14} name={item.icon} color={item.destructive ? theme.colors.destructive : theme.colors.primary}/>
+                      <Icon
+                        size={14}
+                        name={item.icon}
+                        uniProps={(theme) => ({
+                          color: item.destructive ? theme.colors.destructive : theme.colors.primary,
+                        })}
+                      />
                     </ItemIcon>
                   }
                   <ItemTitle>{item.label}</ItemTitle>

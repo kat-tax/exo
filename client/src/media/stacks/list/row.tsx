@@ -1,4 +1,4 @@
-import {useStyles, createStyleSheet} from 'react-native-unistyles';
+import {StyleSheet} from 'react-native-unistyles';
 import {View, Text} from 'react-native';
 import {Thumb} from 'media/stacks/thumb';
 import {bytesize} from 'app/lib/formatting';
@@ -21,7 +21,6 @@ interface ListRow {
 
 export function ListRow(props: ListRow) {
   const title = useMediaName(props.name);
-  const {styles} = useStyles(stylesheet);
   const {name, size, ext, dir, opt, img} = props;
   const {focused, selected, dragging, dropping} = opt ?? {};
   const isGrid = opt?.layout === 'grid';
@@ -64,7 +63,7 @@ export function ListRow(props: ListRow) {
   );
 }
 
-const stylesheet = createStyleSheet((theme) => ({
+const styles = StyleSheet.create((theme) => ({
   root: {
     gap: 6,
     flex: 1,

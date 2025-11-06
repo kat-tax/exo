@@ -1,10 +1,10 @@
 import {Code} from 'react-exo/code';
 import {View} from 'react-native';
 import {forwardRef, useEffect} from 'react';
-import {useStyles, createStyleSheet} from 'react-native-unistyles';
+import {StyleSheet} from 'react-native-unistyles';
 import {useFile} from 'media/file/hooks/use-file';
-import {useTheme} from 'app/hooks/use-theme';
-import {bytesize} from 'app/utils/formatting';
+import {useTheme} from 'settings/hooks/use-theme';
+import {bytesize} from 'app/lib/formatting';
 
 import type {FileProps} from 'media/file';
 import type {CodeLanguages} from 'react-exo/code';
@@ -15,7 +15,6 @@ export interface FileText extends FileProps {
 
 export default forwardRef(({path, language, actions}: FileText, _ref: React.Ref<View>) => {
   const source = useFile(path, 'text');
-  const {styles} = useStyles(stylesheet);
   const [scheme] = useTheme();
 
   useEffect(() => {
@@ -35,7 +34,7 @@ export default forwardRef(({path, language, actions}: FileText, _ref: React.Ref<
   ) : null;
 });
 
-const stylesheet = createStyleSheet((theme) => ({
+const styles = StyleSheet.create((theme) => ({
   root: {
     padding: theme.display.space3,
     paddingTop: theme.display.space2,

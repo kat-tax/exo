@@ -2,7 +2,7 @@ import {Progress} from 'react-exo/progress';
 import {View, Text} from 'react-native';
 import {getDiskSpace} from 'react-exo/fs';
 import {useState, useEffect} from 'react';
-import {useStyles, createStyleSheet} from 'react-native-unistyles';
+import {StyleSheet, useUnistyles} from 'react-native-unistyles';
 import {bytesize} from 'app/lib/formatting';
 
 interface TransfersWidgetProps {
@@ -11,7 +11,7 @@ interface TransfersWidgetProps {
 
 export function TransfersWidget(props: TransfersWidgetProps) {
   const [storage, setStorage] = useState<{msg: string, val: number}>();
-  const {styles, theme} = useStyles(stylesheet);
+  const {theme} = useUnistyles();
 
   useEffect(() => {
     const updateStorage = () => {
@@ -51,7 +51,7 @@ export function TransfersWidget(props: TransfersWidgetProps) {
   );
 }
 
-const stylesheet = createStyleSheet(theme => ({
+const styles = StyleSheet.create(theme => ({
   root: {
     flexDirection: 'column',
     gap: theme.display.space1,

@@ -1,4 +1,4 @@
-import {useStyles, createStyleSheet} from 'react-native-unistyles';
+import {StyleSheet, useUnistyles} from 'react-native-unistyles';
 import {useWindowDimensions, View} from 'react-native';
 import {useEffect} from 'react';
 import {useParams} from 'react-exo/navigation';
@@ -12,7 +12,7 @@ export default function ScreenBrowse() {
   const {path} = usePath();
   const {backend} = useParams<{backend: string}>();
   const {hfs, cmd, ext} = useDirHfs(path);
-  const {theme, styles} = useStyles(stylesheet);
+  const {theme} = useUnistyles();
   const isVertical = screen.width < theme.breakpoints.sm;
 
   const bar = {
@@ -40,7 +40,7 @@ export default function ScreenBrowse() {
   );
 }
 
-const stylesheet = createStyleSheet(() => ({
+const styles = StyleSheet.create(() => ({
   root: {
     flex: 1,
   },

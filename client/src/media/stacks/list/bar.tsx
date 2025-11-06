@@ -4,7 +4,7 @@ import {Motion} from 'react-exo/motion';
 import {useLingui} from '@lingui/react/macro';
 import {useNavigate} from 'react-exo/navigation';
 import {useCallback, useEffect, useRef, useState} from 'react';
-import {useStyles, createStyleSheet} from 'react-native-unistyles';
+import {StyleSheet, useUnistyles} from 'react-native-unistyles';
 import {useFocusable, FocusContext} from '@noriginmedia/norigin-spatial-navigation';
 import {useMediaName} from 'media/hooks/use-media-name';
 import {MenuDropdown} from 'app/ui/float';
@@ -30,7 +30,6 @@ export function ListBar({path, actions}: ListBarProps) {
   const {t} = useLingui();
   const items = path?.split('/');
   const scroll = useRef<ScrollView>(null);
-  const {styles} = useStyles(stylesheet);
   const {ref, focusKey} = useFocusable({
     preferredChildFocusKey: `bar@${path}`,
     saveLastFocusedChild: false,
@@ -60,7 +59,7 @@ export function ListBar({path, actions}: ListBarProps) {
             const last = index === array.length - 1;
             return (
               <View key={path} style={styles.breadcrumb}>
-                <ListBarItem {...{name, path, last, scroll}}/>
+                <ListBarItem {...{name, path, last}}/>
                 {index < array.length - 1 && <ListBarItemSeparator/>}
               </View>
             );
@@ -76,11 +75,10 @@ export function ListBar({path, actions}: ListBarProps) {
   );
 }
 
-export function ListBarItem({name, path, last, scroll}: {
+export function ListBarItem({name, path, last}: {
   name?: string,
   path?: string,
   last?: boolean,
-  scroll?: React.RefObject<ScrollView>,
 }) {
   const nav = useNavigate();
   const goto = useCallback(() => nav(path ?? name ?? '/browse/local'), [nav, path, name]);
@@ -173,7 +171,7 @@ export function ListBarAction({id, icon, onPress}: ListBarAction) {
 }
 
 export function ListBarItemSeparator() {
-  const {styles, theme} = useStyles(stylesheet);
+  const {theme} = useUnistyles();
 
   return (
     <View tabIndex={-1} style={styles.separator}>
@@ -186,7 +184,7 @@ export function ListBarItemSeparator() {
   );
 }
 
-const stylesheet = createStyleSheet((theme) => ({
+const styles = StyleSheet.create((theme) => ({
   root: {
     height: ITEM_SIZE,
     paddingVertical: theme.display.space2,

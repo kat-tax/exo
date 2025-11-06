@@ -1,4 +1,4 @@
-import {useStyles, createStyleSheet} from 'react-native-unistyles';
+import {StyleSheet} from 'react-native-unistyles';
 import {useVariants} from 'react-exo/utils';
 import {Pressable} from 'react-native';
 import {Icon} from 'react-exo/icon';
@@ -24,22 +24,23 @@ export const ButtonIconVariants = {
 } as const;
 
 export function ButtonIcon({state, vref, ...props}: ButtonIconProps) {
-  const {styles, theme} = useStyles(stylesheet);
   const {vstyles} = useVariants(ButtonIconVariants, {state}, styles);
   return (
     <Pressable ref={vref} style={vstyles.root} {...props}>
       {e => <>
         <Icon
           name={props.icon}
-          color={e.hovered ? theme.colors.accentForeground : theme.colors.mutedForeground}
           size={props.size ?? 14}
+          uniProps={(theme) => ({
+            color: e.hovered ? theme.colors.accentForeground : theme.colors.mutedForeground,
+          })}
         />
       </>}
     </Pressable>
   );
 }
 
-const stylesheet = createStyleSheet(theme => ({
+const styles = StyleSheet.create((theme) => ({
   root: {
     flexDirection: 'row',
     justifyContent: 'center',

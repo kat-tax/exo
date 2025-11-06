@@ -1,6 +1,6 @@
 import {View} from 'react-native';
 import {useEffect, forwardRef} from 'react';
-import {useStyles, createStyleSheet} from 'react-native-unistyles';
+import {StyleSheet} from 'react-native-unistyles';
 import {useFile} from 'media/file/hooks/use-file';
 import {bytesize} from 'app/lib/formatting';
 import {Markdown} from 'app/ui/markdown';
@@ -11,7 +11,6 @@ export interface FileMarkdown extends FileProps {}
 
 export default forwardRef(({path, actions}: FileMarkdown) => {
   const source = useFile(path, 'text');
-  const {styles} = useStyles(stylesheet);
 
   useEffect(() => {
     if (!source) return;
@@ -25,7 +24,7 @@ export default forwardRef(({path, actions}: FileMarkdown) => {
   ) : null;
 });
 
-const stylesheet = createStyleSheet((theme) => ({
+const styles = StyleSheet.create((theme) => ({
   root: {
     padding: theme.display.space3,
   },

@@ -3,7 +3,7 @@ import {Thumb} from 'media/stacks/thumb';
 import {Text, View, Pressable} from 'react-native';
 import {useNavigate, useLocation} from 'react-exo/navigation';
 import {useCallback, useEffect, useState} from 'react';
-import {useStyles, createStyleSheet} from 'react-native-unistyles';
+import {StyleSheet, useUnistyles} from 'react-native-unistyles';
 import {useFocusable} from '@noriginmedia/norigin-spatial-navigation';
 import {useMediaName} from 'media/hooks/use-media-name';
 import {useSet} from 'app/data';
@@ -26,7 +26,7 @@ interface SelectItemProps {
 
 export function SelectItem(props: SelectItemProps) {
   const {focused, index, path, name, ext, hfs} = props;
-  const {styles, theme} = useStyles(stylesheet);
+  const {theme} = useUnistyles();
   const [dir, setDir] = useState(!ext);
   const {pathname} = useLocation();
   const title = useMediaName(name);
@@ -105,7 +105,7 @@ export function SelectItem(props: SelectItemProps) {
   );
 }
 
-const stylesheet = createStyleSheet((theme) => ({
+const styles = StyleSheet.create((theme) => ({
   root: {
     height: HEIGHT,
     gap: __TOUCH__ ? theme.display.space3 : theme.display.space2,

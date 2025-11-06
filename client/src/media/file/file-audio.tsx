@@ -1,7 +1,7 @@
 import {Video} from 'react-exo/video';
 import {View} from 'react-native';
 import {forwardRef} from 'react';
-import {useStyles, createStyleSheet} from 'react-native-unistyles';
+import {StyleSheet} from 'react-native-unistyles';
 import {useFile} from 'media/file/hooks/use-file';
 import {toTimeRange} from 'app/lib/formatting';
 
@@ -19,7 +19,6 @@ export default forwardRef((
   ref: React.Ref<AudioRef>,
 ) => {
   const source = useFile(path, 'dataUrl');
-  const {styles} = useStyles(stylesheet);
 
   return source ? (
     <View style={styles.root}>
@@ -43,7 +42,7 @@ export default forwardRef((
   ) : null;
 });
 
-const stylesheet = createStyleSheet(() => ({
+const styles = StyleSheet.create(() => ({
   root: {
     flex: 1,
   },

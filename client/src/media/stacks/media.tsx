@@ -1,7 +1,7 @@
 import {useLingui} from '@lingui/react/macro';
 import {View, ScrollView} from 'react-native';
 import {useMemo, useState, useEffect, useRef} from 'react';
-import {useStyles, createStyleSheet} from 'react-native-unistyles';
+import {StyleSheet, useUnistyles} from 'react-native-unistyles';
 import {useMediaPictInPict} from 'media/hooks/use-media-pip';
 import {useHfs} from 'app/data/lib/hfs';
 import {SelectTabs} from 'media/stacks/select/tabs';
@@ -27,7 +27,7 @@ interface MediaProps {
 }
 
 export function Media({ext, name, path, vertical, maximized, embedded, standalone, layout, close}: MediaProps) {
-  const {styles, theme} = useStyles(stylesheet);
+  const {theme} = useUnistyles();
   const file = useRef<FileRef>(null);
   const pip = useMediaPictInPict(ext, layout);
   const hfs = useHfs();
@@ -142,7 +142,7 @@ export function Media({ext, name, path, vertical, maximized, embedded, standalon
   );
 }
 
-const stylesheet = createStyleSheet((theme, rt) => ({
+const styles = StyleSheet.create((theme) => ({
   root: {
     flex: 2,
     backgroundColor: theme.colors.neutral,
@@ -162,7 +162,7 @@ const stylesheet = createStyleSheet((theme, rt) => ({
     bottom: theme.display.space5,
     right: theme.display.space5,
     borderRadius: theme.display.radius2,
-    borderWidth: rt.hairlineWidth,
+    borderWidth: StyleSheet.hairlineWidth,
     borderColor: theme.colors.border,
     boxShadow: 'rgba(0, 0, 0, 0.2) 0px 2px 2px 1px',
   },

@@ -1,7 +1,7 @@
 import {Pdf} from 'react-exo/pdf';
 import {View} from 'react-native';
 import {forwardRef} from 'react';
-import {useStyles, createStyleSheet} from 'react-native-unistyles';
+import {StyleSheet} from 'react-native-unistyles';
 import {useFile} from 'media/file/hooks/use-file';
 
 import type {FileProps} from 'media/file';
@@ -18,7 +18,6 @@ export default forwardRef((
   ref: React.Ref<PdfRef>,
 ) => {
   const source = useFile(path, 'dataUrl');
-  const {styles} = useStyles(stylesheet);
 
   return source ? (
     <View style={styles.root}>
@@ -33,7 +32,7 @@ export default forwardRef((
   ) : null;
 });
 
-const stylesheet = createStyleSheet(() => ({
+const styles = StyleSheet.create(() => ({
   root: {
     flex: 1,
   },

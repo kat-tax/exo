@@ -3,7 +3,7 @@ import {Slider} from 'react-exo/slider';
 import {Motion} from 'react-exo/motion';
 import {Icon} from 'react-exo/icon';
 import {useCallback, useMemo} from 'react';
-import {useStyles, createStyleSheet} from 'react-native-unistyles';
+import {StyleSheet, useUnistyles} from 'react-native-unistyles';
 import {useMediaControls} from 'media/hooks/use-media-controls';
 import {FileType} from 'media/file/types';
 import {Thumb} from 'media/stacks/thumb';
@@ -37,7 +37,7 @@ export interface MediaControlsProps {
 
 export function MediaControls(props: MediaControlsProps) {
   const {controls, seekable} = useMediaControls(props);
-  const {styles, theme} = useStyles(stylesheet);
+  const {theme} = useUnistyles();
   const [fileType] = props.renderer ?? [];
   const isBook = fileType === FileType.Book;
   const isDir = fileType === FileType.Directory;
@@ -119,14 +119,14 @@ export function MediaControls(props: MediaControlsProps) {
   );
 }
 
-const stylesheet = createStyleSheet((theme, rt) => ({
+const styles = StyleSheet.create((theme) => ({
   root: {
     position: 'relative',
     flexDirection: 'row',
     alignItems: 'center',
     paddingHorizontal: theme.display.space1,
     backgroundColor: theme.colors.neutral,
-    borderTopWidth: rt.hairlineWidth,
+    borderTopWidth: StyleSheet.hairlineWidth,
     borderTopColor: theme.colors.border,
   },
   track: {

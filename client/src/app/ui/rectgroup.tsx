@@ -1,6 +1,6 @@
 import {View} from 'react-native';
 import {useState, useEffect, useCallback, Children} from 'react';
-import {useStyles, createStyleSheet} from 'react-native-unistyles';
+import {StyleSheet} from 'react-native-unistyles';
 import {getRectLayout} from 'app/lib/rect';
 
 import type {LayoutRectangle, LayoutChangeEvent} from 'react-native';
@@ -11,7 +11,6 @@ interface RectGroupProps extends React.PropsWithChildren {
 }
 
 export function RectGroup(props: RectGroupProps) {
-  const {styles} = useStyles(stylesheet);
   const [rect, setRect] = useState<LayoutRectangle>();
   const [layout, setLayout] = useState<RectLayout>();
 
@@ -42,7 +41,7 @@ export function RectGroup(props: RectGroupProps) {
   );
 }
 
-const stylesheet = createStyleSheet(() => ({
+const styles = StyleSheet.create(() => ({
   root: {
     flex: 1,
     margin: 4,

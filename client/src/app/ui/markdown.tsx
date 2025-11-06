@@ -1,32 +1,27 @@
 import {memo} from 'react';
-import {useStyles} from 'react-native-unistyles';
+import {withUnistyles} from 'react-native-unistyles';
 import {Platform, StyleSheet} from 'react-native';
 import {Markdown as MarkdownBase} from 'react-exo/markdown';
 import {useTheme} from 'settings/hooks/use-theme';
 import {Code} from 'react-exo/code';
 
+const UniMarkdown = withUnistyles(MarkdownBase);
+
 export const Markdown = memo(({text}: {text: string}) => {
-  const {theme} = useStyles();
   const [scheme] = useTheme();
 
   if (!text) return null;
 
   return (
-    <MarkdownBase
-      mergeStyle={false}
-      rules={{
+    <UniMarkdown uniProps={(theme) => ({
+      mergeStyle: false,
+      rules: {
         code_block: (node, parents, children, styles) => {
           console.log('>> code_block', node, parents, children, styles);
-          return (
-            <Code
-              lang="typescript"
-              theme={scheme === 'dark' ? 'dark-plus' : 'light-plus'}>
-              {node.content}
-            </Code>
-          );
+          return <Code lang="typescript" theme={scheme === 'dark' ? 'dark-plus' : 'light-plus'}>{node.content}</Code>;
         },
-      }}
-      style={{
+      },
+      style: {
         body: {
           gap: theme.display.space2,
           width: '100%',
@@ -230,8 +225,9 @@ export const Markdown = memo(({text}: {text: string}) => {
         pre: {},
         inline: {},
         span: {},
-      }}>
+      }
+    })}>
       {text}
-    </MarkdownBase>
+    </UniMarkdown>
   );
 })

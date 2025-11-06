@@ -1,7 +1,7 @@
 import {View} from 'react-native';
 import {LegendList} from '@legendapp/list';
 import {useFocusable, FocusContext} from '@noriginmedia/norigin-spatial-navigation';
-import {useStyles, createStyleSheet} from 'react-native-unistyles';
+import {StyleSheet} from 'react-native-unistyles';
 import {useWindowDimensions} from 'react-native';
 import {useRef, useMemo} from 'react';
 import {ListBar} from 'media/stacks/list/bar';
@@ -29,7 +29,6 @@ export interface ListProps<T> {
 
 export function List<T>({items, path, data, opts, render}: ListProps<T>) {
   const {ref, focusKey} = useFocusable({saveLastFocusedChild: !opts?.preview});
-  const {styles} = useStyles(stylesheet);
   const {width} = useWindowDimensions();
   const listRef = useRef<LegendListRef>(null);
   const layout = opts?.layout ?? 'list';
@@ -84,7 +83,7 @@ export function List<T>({items, path, data, opts, render}: ListProps<T>) {
   );
 }
 
-const stylesheet = createStyleSheet(theme => ({
+const styles = StyleSheet.create(theme => ({
   root: {
     flex: 1,
   },

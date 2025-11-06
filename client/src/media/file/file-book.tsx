@@ -2,7 +2,7 @@ import {Book} from 'react-exo/book';
 import {View, Platform} from 'react-native';
 import {useLingui} from '@lingui/react/macro';
 import {useEffect, useState, useCallback, forwardRef} from 'react';
-import {useStyles, createStyleSheet} from 'react-native-unistyles';
+import {StyleSheet} from 'react-native-unistyles';
 import {useTheme} from 'settings/hooks/use-theme';
 import {useFile} from 'media/file/hooks/use-file';
 
@@ -22,7 +22,6 @@ export default forwardRef((
   const source = useFile(path, 'dataUrl', 'application/epub+zip');
   const [title, setTitle] = useState('');
   const [chapter, setChapter] = useState('');
-  const {styles} = useStyles(stylesheet);
   const [scheme] = useTheme();
   const {t} = useLingui();
 
@@ -72,7 +71,7 @@ export default forwardRef((
   ) : null;
 });
 
-const stylesheet = createStyleSheet((theme) => ({
+const styles = StyleSheet.create((theme) => ({
   root: {
     flex: 1,
     padding: theme.display.space3,

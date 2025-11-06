@@ -3,7 +3,7 @@ import {Image as ExoImage} from 'react-exo/image';
 import {useRef, useImperativeHandle, useEffect, useState, memo, forwardRef} from 'react';
 import {getMatrixTransformStyles, TransformWrapper, TransformComponent} from 'react-zoom-pan-pinch';
 //import {useImageResolution, ResumableZoom, fitContainer} from 'react-native-zoom-toolkit';
-import {useStyles, createStyleSheet} from 'react-native-unistyles';
+import {StyleSheet} from 'react-native-unistyles';
 
 import {useFile} from 'media/file/hooks/use-file';
 
@@ -27,7 +27,6 @@ export default memo(forwardRef((
   const [scale, setScale] = useState(1);
   const [width, setWidth] = useState(0);
   const [height, setHeight] = useState(0);
-  const {styles} = useStyles(stylesheet);
 
   // const {width, height} = useWindowDimensions();
   // const {isFetching, resolution} = useImageResolution({uri: image || ''});
@@ -102,7 +101,7 @@ export default memo(forwardRef((
   ) : null;
 }));
 
-const stylesheet = createStyleSheet(() => ({
+const styles = StyleSheet.create(() => ({
   root: {
     flex: 1,
     overflow: 'hidden',

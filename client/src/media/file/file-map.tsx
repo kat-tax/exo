@@ -1,7 +1,7 @@
 import {View} from 'react-native';
 import {Map, Source, Layer} from 'react-map-gl/maplibre';
 import {useEffect, useState, forwardRef} from 'react';
-import {useStyles, createStyleSheet} from 'react-native-unistyles';
+import {StyleSheet, useUnistyles} from 'react-native-unistyles';
 import {useTheme} from 'settings/hooks/use-theme';
 import {useApp} from 'app/hooks/use-app';
 import {useFile} from 'media/file/hooks/use-file';
@@ -18,7 +18,7 @@ export default forwardRef(({path, actions, maximized}: FileMap) => {
   const source = useFile(path, 'text');
   const [scheme] = useTheme();
   const {profile} = useApp();
-  const {styles, theme} = useStyles(stylesheet);
+  const {theme} = useUnistyles();
   const [markers, setMarkers] = useState<GeoJSON.Feature<GeoJSON.Point>[]>([]);
   const [bounds, setBounds] = useState<LngLatBounds | null>(null);
   const maptilerUrl = profile?.maptilerUrl ?? 'https://api.maptiler.com';
@@ -77,12 +77,12 @@ export default forwardRef(({path, actions, maximized}: FileMap) => {
   ) : null;
 });
 
-const stylesheet = createStyleSheet((theme, rt) => ({
+const styles = StyleSheet.create((theme) => ({
   root: {
     flex: 1,
   },
   maximized: {
-    borderTopWidth: rt.hairlineWidth,
+    borderTopWidth: StyleSheet.hairlineWidth,
     borderColor: theme.colors.border,
     overflow: 'hidden',
   },

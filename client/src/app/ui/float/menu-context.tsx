@@ -1,6 +1,5 @@
 import * as Z from 'zeego/context-menu';
 import {Icon} from 'react-exo/icon';
-import {useStyles} from 'react-native-unistyles';
 
 import type {ComponentProps} from 'react';
 
@@ -19,7 +18,6 @@ export interface MenuContextItem {
 }
 
 export function MenuContext(props: MenuContextProps) {
-  const {theme} = useStyles();
   const {label, items, children, ...rest} = props;
   return (
     <Root {...rest}>
@@ -37,9 +35,11 @@ export function MenuContext(props: MenuContextProps) {
                 <Icon
                   size={14}
                   name={item.icon}
-                  color={item.destructive
-                    ? theme.colors.destructive
-                    : theme.colors.primary}
+                  uniProps={(theme) => ({
+                    color: item.destructive
+                      ? theme.colors.destructive
+                      : theme.colors.primary,
+                  })}
                 />
               </ItemIcon>
             }

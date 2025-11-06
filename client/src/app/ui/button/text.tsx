@@ -1,4 +1,4 @@
-import {useStyles, createStyleSheet} from 'react-native-unistyles';
+import {StyleSheet} from 'react-native-unistyles';
 import {useVariants} from 'react-exo/utils';
 import {Text, Pressable} from 'react-native';
 
@@ -23,7 +23,6 @@ export const ButtonTextVariants = {
 } as const;
 
 export function ButtonText({state, vref, ...props}: ButtonTextProps) {
-  const {styles} = useStyles(stylesheet);
   const {vstyles} = useVariants(ButtonTextVariants, {state}, styles);
   return (
     <Pressable ref={vref} style={vstyles.root} {...props}>
@@ -36,7 +35,7 @@ export function ButtonText({state, vref, ...props}: ButtonTextProps) {
   );
 }
 
-const stylesheet = createStyleSheet(theme => ({
+const styles = StyleSheet.create((theme) => ({
   root: {
     flexDirection: 'row',
     paddingHorizontal: theme.display.space1,

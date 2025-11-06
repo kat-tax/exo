@@ -1,5 +1,5 @@
 import {Suspense as SuspenseBase} from 'react';
-import {Spinner} from './spinner';
+//import {Spinner} from './spinner';
 
 import type {SuspenseProps as SuspenseBaseProps} from 'react';
 
@@ -9,7 +9,7 @@ interface SuspenseProps extends SuspenseBaseProps {
 
 export function Suspense(props: SuspenseProps) {
   return (
-    <SuspenseBase fallback={<Spinner/>}>
+    <SuspenseBase fallback={undefined}>
       {props.children}
     </SuspenseBase>
   );

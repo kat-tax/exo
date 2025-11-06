@@ -2,8 +2,8 @@ import {plural} from '@lingui/core/macro';
 import {useEffect, forwardRef, useMemo} from 'react';
 import {useDirTorrent} from 'media/dir/hooks/use-dir-torrent';
 import {DirTorrent} from 'media/dir/stacks/dir-torrent';
-import {bytesize} from 'app/utils/formatting';
-import {Panel} from 'app/stacks/panel';
+import {bytesize} from 'app/lib/formatting';
+import {Panel} from 'app/ui/panel';
 
 import type {FileProps} from 'media/file';
 

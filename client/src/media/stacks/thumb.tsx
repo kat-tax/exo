@@ -2,7 +2,7 @@ import {View} from 'react-native';
 import {Icon} from 'react-exo/icon';
 import {Image} from 'react-exo/image';
 import {useEffect, useState} from 'react';
-import {useStyles, createStyleSheet} from 'react-native-unistyles';
+import {StyleSheet, useUnistyles} from 'react-native-unistyles';
 import {useTheme} from 'settings/hooks/use-theme';
 import {getIcon} from 'media/file/icons';
 
@@ -54,7 +54,7 @@ export function Thumb({
 }: ThumbProps) {
   const height = getHeight(size);
   const [scheme] = useTheme();
-  const {styles, theme} = useStyles(stylesheet);
+  const {theme} = useUnistyles();
   const [icon, setIcon] = useState<string | null>(null);
   const [image, setImage] = useState<string | null>(null);
 
@@ -101,7 +101,7 @@ export function Thumb({
   );
 }
 
-const stylesheet = createStyleSheet((theme) => ({
+const styles = StyleSheet.create((theme) => ({
   root: {
     alignItems: 'center',
     justifyContent: 'center',
