@@ -9,8 +9,13 @@ export function Touch(props: TouchProps) {
     // biome-ignore lint/a11y/useKeyWithClickEvents: events handled by focusable
     <div
       ref={useComposedRefs(...props.refs)}
-      onClick={props.onPress}
-      onDoubleClick={props.onDoublePress}
+      onClick={(e) => {
+        if (e.detail === 2) {
+          props.onDoublePress?.();
+        } else {
+          props.onPress?.();
+        }
+      }}
       className={`_p ${theme}`}
       // biome-ignore lint/a11y/useSemanticElements: needs to be div
       role="button"

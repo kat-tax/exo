@@ -6,7 +6,6 @@ import {Screen} from 'app/ui/screen';
 
 export default function ScreenBrowse({route}: ReactNavigation.ScreenProps<'MediaBrowse'>) {
   const {path} = usePath();
-  const {backend} = route.params;
   const {hfs, cmd, ext} = useDirHfs(path);
 
   const bar = {
@@ -20,10 +19,8 @@ export default function ScreenBrowse({route}: ReactNavigation.ScreenProps<'Media
   };
 
   useEffect(() => {
-    if (backend) {
-      console.log('>> backend', backend);
-    }
-  }, [backend]);
+    console.log('>> backend', route.params.backend);
+  }, [route.params.backend]);
 
   return (
     <Screen>
