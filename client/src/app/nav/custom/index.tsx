@@ -30,7 +30,7 @@ export function Layout(props: LayoutProps) {
     forceFocus: true,
     isFocusBoundary: true,
     focusBoundaryDirections: ['up', 'down'],
-    preferredChildFocusKey: `menu@${activeRoute?.key}`,
+    preferredChildFocusKey: `menu@${activeRoute?.name}`,
   });
 
   useHotkeys({
