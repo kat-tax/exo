@@ -1,11 +1,11 @@
-import {View, ScrollView} from 'react-native';
 import {Icon} from 'react-exo/icon';
 import {Motion} from 'react-exo/motion';
+import {StyleSheet} from 'react-native-unistyles';
+import {View, ScrollView} from 'react-native';
+import {useCallback, useEffect, useRef, useState} from 'react';
+import {useFocusable, FocusContext} from '@noriginmedia/norigin-spatial-navigation';
 import {useLingui} from '@lingui/react/macro';
 import {useNavigate} from 'react-exo/navigation';
-import {useCallback, useEffect, useRef, useState} from 'react';
-import {StyleSheet, useUnistyles} from 'react-native-unistyles';
-import {useFocusable, FocusContext} from '@noriginmedia/norigin-spatial-navigation';
 import {useMediaName} from 'media/hooks/use-media-name';
 import {MenuDropdown} from 'app/ui/float';
 import {ButtonText} from 'app/ui/button/text';
@@ -171,14 +171,14 @@ export function ListBarAction({id, icon, onPress}: ListBarAction) {
 }
 
 export function ListBarItemSeparator() {
-  const {theme} = useUnistyles();
-
   return (
     <View tabIndex={-1} style={styles.separator}>
       <Icon
         name="ph:caret-right"
-        color={theme.colors.mutedForeground}
         size={10}
+        uniProps={(theme) => ({
+          color: theme.colors.mutedForeground,
+        })}
       />
     </View>
   );

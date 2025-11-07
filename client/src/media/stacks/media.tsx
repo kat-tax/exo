@@ -1,7 +1,8 @@
-import {useLingui} from '@lingui/react/macro';
 import {View, ScrollView} from 'react-native';
+import {StyleSheet} from 'react-native-unistyles';
+import {breakpoints} from 'design/theme';
+import {useLingui} from '@lingui/react/macro';
 import {useMemo, useState, useEffect, useRef} from 'react';
-import {StyleSheet, useUnistyles} from 'react-native-unistyles';
 import {useMediaPictInPict} from 'media/hooks/use-media-pip';
 import {useHfs} from 'app/data/lib/hfs';
 import {SelectTabs} from 'media/stacks/select/tabs';
@@ -27,7 +28,6 @@ interface MediaProps {
 }
 
 export function Media({ext, name, path, vertical, maximized, embedded, standalone, layout, close}: MediaProps) {
-  const {theme} = useUnistyles();
   const file = useRef<FileRef>(null);
   const pip = useMediaPictInPict(ext, layout);
   const hfs = useHfs();
@@ -49,7 +49,7 @@ export function Media({ext, name, path, vertical, maximized, embedded, standalon
       vertical && styles.vertical,
       maximized ? styles.maximized : styles.minimized,
       !maximized && {width: pip.resolution[0]},
-      pip.viewportWidth <= theme.breakpoints.xs && styles.fullwidth,
+      pip.viewportWidth <= breakpoints.xs && styles.fullwidth,
       embedded && {
         width: pip.resolution[0],
         height: pip.resolution[1],
@@ -59,9 +59,9 @@ export function Media({ext, name, path, vertical, maximized, embedded, standalon
     ],
     frame: [
       !maximized && {width: pip.resolution[0], height: pip.resolution[1]},
-      pip.viewportWidth <= theme.breakpoints.xs && styles.fullwidth,
+      pip.viewportWidth <= breakpoints.xs && styles.fullwidth,
     ],
-  }), [styles, pip, vertical, maximized, embedded, theme.breakpoints]);
+  }), [styles, pip, vertical, maximized, embedded]);
 
   const actions = useMemo(() => ({
     open: () => console.log('open'),

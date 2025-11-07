@@ -1,16 +1,15 @@
+import {StyleSheet, withUnistyles} from 'react-native-unistyles';
 import {View, Text, Pressable} from 'react-native';
 import {Slider} from 'react-exo/slider';
 import {Motion} from 'react-exo/motion';
 import {Icon} from 'react-exo/icon';
-import {useCallback, useMemo} from 'react';
-import {StyleSheet, useUnistyles} from 'react-native-unistyles';
+import {useCallback} from 'react';
 import {useMediaControls} from 'media/hooks/use-media-controls';
 import {FileType} from 'media/file/types';
 import {Thumb} from 'media/stacks/thumb';
 
 import type {FileProps} from 'media/file';
 import type {FileRef, FileRenderInfo} from 'media/file/types';
-import type {PressableStateCallbackType} from 'react-native';
 
 export interface MediaControlsProps {
   file: React.RefObject<FileRef>,
@@ -35,22 +34,13 @@ export interface MediaControlsProps {
   },
 }
 
+const UniSlider = withUnistyles(Slider);
+
 export function MediaControls(props: MediaControlsProps) {
   const {controls, seekable} = useMediaControls(props);
-  const {theme} = useUnistyles();
   const [fileType] = props.renderer ?? [];
   const isBook = fileType === FileType.Book;
   const isDir = fileType === FileType.Directory;
-  const vstyles = useMemo(() => ({
-    icon: (state: PressableStateCallbackType) =>
-      state.hovered || __TOUCH__
-        ? theme.colors.foreground
-        : theme.colors.mutedForeground,
-    track: [
-      styles.track,
-      isBook && styles.disabled,
-    ],
-  }), [theme, styles, isBook]);
 
   const toc = useCallback(() => {
     console.log('>> table of contents not implemented');
@@ -64,15 +54,17 @@ export function MediaControls(props: MediaControlsProps) {
       exit={{opacity: 0}}>
       {seekable &&
         <View style={styles.track}>
-          <Slider
+          <UniSlider
             step={1}
             lowerLimit={0}
             disabled={isBook}
             value={props.metadata.current}
             upperLimit={props.metadata.duration}
-            thumbColor={isBook ? 'transparent' : theme.colors.primary}
-            rangeColor={isBook ? theme.colors.mutedForeground : theme.colors.primary}
-            trackColor={theme.colors.secondary}
+            uniProps={(theme) => ({
+              thumbColor: isBook ? 'transparent' : theme.colors.primary,
+              rangeColor: isBook ? theme.colors.mutedForeground : theme.colors.primary,
+              trackColor: theme.colors.secondary,
+            })}
             trackHeight={isBook ? 1 : 2}
             onChange={e => {
               if (!props.file.current) return;
@@ -109,8 +101,12 @@ export function MediaControls(props: MediaControlsProps) {
             {state => (
               icon && <Icon
                 name={icon}
-                color={vstyles.icon(state)}
                 size={__TOUCH__ ? 20 : 18}
+                uniProps={(theme) => ({
+                  color: state.hovered || __TOUCH__
+                    ? theme.colors.foreground
+                    : theme.colors.mutedForeground,
+                })}
               />
             )}
           </Pressable>

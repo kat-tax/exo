@@ -1,8 +1,8 @@
 import {View} from 'react-native';
 import {Icon} from 'react-exo/icon';
 import {Image} from 'react-exo/image';
+import {StyleSheet} from 'react-native-unistyles';
 import {useEffect, useState} from 'react';
-import {StyleSheet, useUnistyles} from 'react-native-unistyles';
 import {useTheme} from 'settings/hooks/use-theme';
 import {getIcon} from 'media/file/icons';
 
@@ -54,7 +54,6 @@ export function Thumb({
 }: ThumbProps) {
   const height = getHeight(size);
   const [scheme] = useTheme();
-  const {theme} = useUnistyles();
   const [icon, setIcon] = useState<string | null>(null);
   const [image, setImage] = useState<string | null>(null);
 
@@ -89,12 +88,14 @@ export function Thumb({
         : dir
           ? <Icon
               name="ph:folder-simple-fill"
-              color={theme.colors.foreground}
               size={height}
+              uniProps={(theme) => ({
+                color: theme.colors.foreground,
+              })}
             />
           : <span
               className={icon ?? ''}
-              style={{fontSize: height / 1.3, color: theme.colors.foreground}}
+              style={{fontSize: height / 1.3}}
             />
       )}
     </View>

@@ -46,7 +46,7 @@ msgid "Books"
 msgstr "Books"
 
 #. placeholder {0}: data.metadata.author
-#: ../../client/src/media/file/file-book.tsx:42
+#: ../../client/src/media/file/file-book.tsx:41
 msgid "by {0}"
 msgstr "by {0}"
 
@@ -264,7 +264,7 @@ msgid "Failed to update shortcut."
 msgstr "Failed to update shortcut."
 
 #: ../../client/src/media/hooks/use-media-name.ts:25
-#: ../../client/src/media/stacks/list/bar.tsx:54
+#: ../../client/src/media/stacks/list/bar.tsx:53
 #: ../../client/src/media/stacks/media.tsx:89
 msgid "Files"
 msgstr "Files"

@@ -1,7 +1,7 @@
 import {View} from 'react-native';
 import {Map, Source, Layer} from 'react-map-gl/maplibre';
 import {useEffect, useState, forwardRef} from 'react';
-import {StyleSheet, useUnistyles} from 'react-native-unistyles';
+import {StyleSheet, withUnistyles} from 'react-native-unistyles';
 import {useTheme} from 'settings/hooks/use-theme';
 import {useApp} from 'app/hooks/use-app';
 import {useFile} from 'media/file/hooks/use-file';
@@ -13,12 +13,13 @@ import type {LngLatBounds} from 'maplibre-gl';
 
 export interface FileMap extends FileProps {}
 
+const UniLayer = withUnistyles(Layer);
+
 export default forwardRef(({path, actions, maximized}: FileMap) => {
   const url = useFile(path, 'dataUrl');
   const source = useFile(path, 'text');
   const [scheme] = useTheme();
   const {profile} = useApp();
-  const {theme} = useUnistyles();
   const [markers, setMarkers] = useState<GeoJSON.Feature<GeoJSON.Point>[]>([]);
   const [bounds, setBounds] = useState<LngLatBounds | null>(null);
   const maptilerUrl = profile?.maptilerUrl ?? 'https://api.maptiler.com';
@@ -52,18 +53,20 @@ export default forwardRef(({path, actions, maximized}: FileMap) => {
         <Source
           id="file"
           type="geojson"
-          data={url}
+          data={url ?? ''}
         />
-        <Layer
-          id="file"
-          type="fill"
-          source="file"
-          paint={{
-            'fill-opacity': 0.2,
-            'fill-color': theme.colors.foreground,
-            'fill-outline-color': theme.colors.border,
-            'fill-antialias': true,
-          }}
+        <UniLayer
+          uniProps={(theme) => ({
+            id: 'file',
+            type: 'fill',
+            source: 'file',
+            paint: {
+              'fill-opacity': 0.2,
+              'fill-color': theme.colors.foreground,
+              'fill-outline-color': theme.colors.border,
+              'fill-antialias': true,
+            },
+          })}
         />
         {markers.map(feature => (
           <MarkerGeoJson

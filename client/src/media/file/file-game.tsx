@@ -1,6 +1,6 @@
 import {Game, PLATFORMS} from 'react-exo/game';
+import {StyleSheet, withUnistyles} from 'react-native-unistyles';
 import {useEffect, forwardRef} from 'react';
-import {StyleSheet, useUnistyles} from 'react-native-unistyles';
 import {useFile} from 'media/file/hooks/use-file';
 
 import type {FileProps} from 'media/file';
@@ -12,12 +12,13 @@ export interface FileGame extends FileProps {
 
 export interface GameRef extends Game {}
 
+const UniGame = withUnistyles(Game);
+
 export default forwardRef((
   {path, name, actions, platform, embedded}: FileGame,
   ref: React.Ref<GameRef>,
 ) => {
   const source = useFile(path, 'dataUrl');
-  const {theme} = useUnistyles();
 
   useEffect(() => {
     if (!source) return;
@@ -25,13 +26,15 @@ export default forwardRef((
   }, [source, platform, actions]);
 
   return source ? (
-    <Game
+    <UniGame
       ref={ref}
       url={source}
       name={name}
       platform={platform}
-      accent={theme.colors.accent}
-      background={theme.colors.neutral}
+      uniProps={(theme) => ({
+        accent: theme.colors.accent,
+        background: theme.colors.neutral,
+      })}
       bios={`/.bios/${platform}.bin`}
       style={styles.root}
       startOnLoaded={!embedded}

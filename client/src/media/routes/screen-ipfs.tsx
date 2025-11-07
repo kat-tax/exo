@@ -9,7 +9,7 @@ export default function ScreenIpfs() {
   const url = `/ipfs/${cid}/${name}`;
   const ext = name.split('.').pop() || '';
   return (
-    <Panel fluid margin="none">
+    <Panel>
       <Media
         {...{name, ext, url, path}}
         close={() => null}

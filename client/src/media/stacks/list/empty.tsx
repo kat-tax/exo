@@ -1,6 +1,6 @@
 import {View} from 'react-native';
-import {useLingui} from '@lingui/react/macro';
 import {useState, useEffect} from 'react';
+import {useLingui} from '@lingui/react/macro';
 import {useImportHfs} from 'media/dir/hooks/use-import-hfs';
 import {Watermark} from 'app/ui/watermark';
 

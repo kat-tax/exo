@@ -32,11 +32,7 @@ export default forwardRef((
   return (
     <Panel
       title={embedded ? name : undefined}
-      message={embedded ? message : undefined}
-      margin={embedded ? 'small' : 'none'}
-      transparent
-      noframe
-      fluid>
+      message={embedded ? message : undefined}>
       {zip && <DirZip {...{zip, cmd}}/>}
     </Panel>
   )

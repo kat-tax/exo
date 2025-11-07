@@ -1,6 +1,6 @@
 import {Motion} from 'react-exo/motion';
-import {useRef, useMemo, useEffect} from 'react';
 import {StyleSheet} from 'react-native-unistyles';
+import {useRef, useMemo, useEffect} from 'react';
 import {useFocusable, FocusContext} from '@noriginmedia/norigin-spatial-navigation';
 import {useComposedRefs} from 'app/lib/components';
 import {useGet} from 'app/data';

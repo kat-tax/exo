@@ -34,11 +34,7 @@ export default forwardRef((
   return (
     <Panel
       title={embedded ? name : undefined}
-      message={embedded ? `${torrent?.info.name}` : undefined}
-      margin={embedded ? 'small' : 'none'}
-      transparent
-      noframe
-      fluid>
+      message={embedded ? `${torrent?.info.name}` : undefined}>
       {torrent && <DirTorrent {...{torrent, cmd}}/>}
     </Panel>
   )
