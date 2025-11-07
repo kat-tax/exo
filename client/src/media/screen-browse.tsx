@@ -2,7 +2,7 @@ import {useEffect} from 'react';
 import {useDirHfs} from 'media/dir/hooks/use-dir-hfs';
 import {usePath} from 'media/hooks/use-path';
 import {DirHfs} from 'media/dir/stacks/dir-hfs';
-import {Panel} from 'app/ui/panel';
+import {Screen} from 'app/ui/screen';
 
 export default function ScreenBrowse({route}: ReactNavigation.ScreenProps<'MediaBrowse'>) {
   const {path} = usePath();
@@ -26,8 +26,8 @@ export default function ScreenBrowse({route}: ReactNavigation.ScreenProps<'Media
   }, [backend]);
 
   return (
-    <Panel>
+    <Screen>
       <DirHfs {...{hfs, cmd, ext, bar}}/>
-    </Panel>
+    </Screen>
   );
 }

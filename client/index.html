@@ -19,33 +19,27 @@
         font-feature-settings:
           "liga" 1,
           "calt" 1;
+        --bg: #fff;
+        --bg-dark: #09090b;
+        --sel: rgba(0, 0, 0, 0.2);
+        --sel-dark: rgba(255, 255, 255, 0.2);
       }
 
-      a:-webkit-any-link {
-        cursor: default;
-      }
-
-      *:focus {
-        outline: none;
-      }
-
-      html,
-      body,
-      #root {
-        height: 100%;
-        width: 100%;
-        margin: 0;
-        display: flex;
-        background: #fff;
-        overscroll-behavior: none;
-        overflow: hidden;
+      body.dark {
+        --bg: var(--bg-dark);
+        --sel: var(--sel-dark);
       }
 
       @media (prefers-color-scheme: dark) {
-        html,
-        body,
-        #root {
-          background: #000;
+        :root {
+          --bg: var(--bg-dark);
+          --sel: var(--sel-dark);
+        }
+      }
+
+      @media (prefers-reduced-motion: no-preference) {
+        html {
+          scroll-behavior: smooth;
         }
       }
 
@@ -55,10 +49,167 @@
         }
       }
 
-      @media (prefers-reduced-motion: no-preference) {
-        html {
-          scroll-behavior: smooth;
-        }
+      *:focus {outline: none}
+      ::selection {background: var(--sel)}
+      a:-webkit-any-link {cursor: default}
+
+      html,
+      body,
+      #root {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        display: flex;
+        background: var(--bg);
+        overscroll-behavior: none;
+        overflow: hidden;
+      }
+
+
+      /* PointerEvent */
+      ._p {
+        cursor: default;
+        user-select: none;
+        border-radius: 3px;
+      }
+      ._p.dark:hover,
+      ._p.dark.focus {
+        background-color: rgba(255, 255, 255, 0.025);
+      }
+      ._p.light:hover,
+      ._p.light.focus {
+        background-color: rgba(0, 0, 0, 0.025);
+      }
+
+      /* Readium */
+      #D2Reader-Container iframe {
+        height: 100%;
+      }
+
+      /* Zeego */
+      .ContextMenuContent,
+      .ContextMenuSubContent {
+        background-color: #09090b;
+        border: 1px solid #27272a;
+        border-radius: 6px;
+        overflow: hidden;
+        padding: 5px;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 2px 1px
+      }
+
+      .ContextMenuContent.context {
+        width: 200px;
+      }
+
+      .ContextMenuArrow {
+        fill: #27272a;
+      }
+
+      .ContextMenuTrigger {
+        padding: 0;
+        cursor: default;
+        border: none;
+        outline: none;
+        background: none;
+      }
+
+      .ContextMenuLabel {
+        margin: -5px;
+        margin-bottom: 5px;
+        padding-inline: 12px;
+        background: #18181b;
+        border-bottom: 1px solid #27272a;
+        color: #71717a;
+        font-size: 11px;
+        line-height: 24px;
+        text-overflow: ellipsis;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+
+      .ContextMenuItem,
+      .ContextMenuCheckboxItem,
+      .ContextMenuRadioItem,
+      .ContextMenuSubTrigger {
+        font-size: 12px;
+        line-height: 1;
+        color: #fafafa;
+        border-radius: 3px;
+        display: flex;
+        align-items: center;
+        height: 25px;
+        padding: 0 5px;
+        position: relative;
+        padding-left: 30px;
+        user-select: none;
+        outline: none;
+      }
+
+      .ContextMenuItemDestructive {
+        color: #7f1d1d;
+      }
+
+      .ContextMenuSubTrigger[data-state="open"] {
+        background-color: #09090b;
+        color: #fafafa;
+      }
+      .ContextMenuItem[data-disabled],
+      .ContextMenuCheckboxItem[data-disabled],
+      .ContextMenuRadioItem[data-disabled],
+      .ContextMenuSubTrigger[data-disabled] {
+        pointer-events: "none";
+      }
+      .ContextMenuItem[data-highlighted],
+      .ContextMenuCheckboxItem[data-highlighted],
+      .ContextMenuRadioItem[data-highlighted],
+      .ContextMenuSubTrigger[data-highlighted] {
+        background-color: #18181b;
+      }
+
+      .ContextMenuSeparator {
+        height: 1px;
+        background-color: #27272a;
+        margin: 5px -5px;
+      }
+
+      .ContextMenuItemTitle {
+        font-size: 12px;
+        line-height: 1;
+      }
+
+      .ContextMenuItemSubtitle {
+        position: absolute;
+        right: 6px;
+        font-size: 10px;
+        font-weight: 300;
+        text-align: right;
+        color: #a1a1aa;
+      }
+
+      .ContextMenuItemIndicator,
+      .ContextMenuItemIcon,
+      .ContextMenuItemImage {
+        position: absolute;
+        left: 0;
+        width: 14px;
+        height: 14px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding-inline: 6px;
+      }
+
+      .RightSlot {
+        margin-left: auto;
+        padding-left: 20px;
+        color: #fafafa;
+      }
+      [data-highlighted] > .RightSlot {
+        color: #fafafa;
+      }
+      [data-disabled] .RightSlot {
+        color: #fafafa;
       }
     </style>
   </head>

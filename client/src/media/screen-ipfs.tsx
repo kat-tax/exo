@@ -1,5 +1,5 @@
 import {Media} from 'media/stacks/media';
-import {Panel} from 'app/ui/panel';
+import {Screen} from 'app/ui/screen';
 
 export default function ScreenIpfs({route}: ReactNavigation.ScreenProps<'MediaIpfs'>) {
   const {cid, filename} = route.params;
@@ -8,7 +8,7 @@ export default function ScreenIpfs({route}: ReactNavigation.ScreenProps<'MediaIp
   const url = `/ipfs/${cid}/${name}`;
   const ext = name.split('.').pop() || '';
   return (
-    <Panel>
+    <Screen>
       <Media
         {...{name, ext, url, path}}
         close={() => null}
@@ -17,6 +17,6 @@ export default function ScreenIpfs({route}: ReactNavigation.ScreenProps<'MediaIp
         maximized
         vertical
       />
-    </Panel>
+    </Screen>
   );
 }

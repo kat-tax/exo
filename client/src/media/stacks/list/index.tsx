@@ -56,28 +56,30 @@ export function List<T>({items, path, data, opts, render}: ListProps<T>) {
         {opts?.header &&
           <ListBar {...{path}} {...opts.header}/>
         }
-        {!items?.length
-          ? <ListEmpty
-              path={path ?? '.'}
-              offset={opts?.header ? -35 : 0}
-            />
-          : (
-            <LegendList
-              key={`${layout}:${columns}`}
-              ref={listRef}
-              data={items}
-              extraData={data}
-              numColumns={columns}
-              drawDistance={height * 20}
-              estimatedItemSize={height}
-              contentContainerStyle={vstyles.list}
-              ListHeaderComponent={opts?.header ? <View style={vstyles.header}/> : null}
-              keyExtractor={(_,i) => i.toString()}
-              renderItem={render}
-              recycleItems
-            />
-          )
-        }
+        <View style={vstyles.list}>
+          {!items?.length
+            ? <ListEmpty
+                path={path ?? '.'}
+                offset={opts?.header ? 100 : 0}
+              />
+            : (
+              <LegendList
+                key={`${layout}:${columns}`}
+                ref={listRef}
+                data={items}
+                extraData={data}
+                numColumns={columns}
+                drawDistance={height * 20}
+                estimatedItemSize={height}
+                contentContainerStyle={vstyles.list}
+                ListHeaderComponent={opts?.header ? <View style={vstyles.header}/> : null}
+                keyExtractor={(_,i) => i.toString()}
+                renderItem={render}
+                recycleItems
+              />
+            )
+          }
+        </View>
       </View>
     </FocusContext.Provider>
   );
