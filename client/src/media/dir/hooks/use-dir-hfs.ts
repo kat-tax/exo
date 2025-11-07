@@ -1,4 +1,4 @@
-import {useNavigate} from 'react-exo/navigation';
+import {useNavigation} from '@react-navigation/native';
 import {useState, useCallback, useMemo, useEffect} from 'react';
 import {useHfs, useHfsWatch} from 'app/data/lib/hfs';
 import {useSet, useGet} from 'app/data';
@@ -22,14 +22,14 @@ export function useDirHfs(path: string, tmp?: boolean): Omit<HfsCtx, 'bar'> {
   const ext = useMemo(() => ({sel, dnd, tmp}), [sel, dnd, tmp]);
 
   const set = useSet();
-  const nav = useNavigate();
+  const navigation = useNavigation();
 
   const goUp = useCallback(() => {
     if (!path) return false;
     const parent = path.split('/').slice(0, -1).join('/');
-    nav(parent);
+    navigation.navigate('MediaBrowse', {path: parent, backend: 'local'});
     return true;
-  }, [path, nav]);
+  }, [path, navigation]);
 
   const refresh = useCallback(async () => {
     const showHidden = true;
@@ -77,10 +77,11 @@ export function useDirHfs(path: string, tmp?: boolean): Omit<HfsCtx, 'bar'> {
 
   const open = useCallback(async (entry: HfsFileEntry, clearSel?: boolean) => {
     if (!entry.isDirectory) return;
-    nav(path ? `local/${path}/${entry.name}` : `local/${entry.name}`);
+    const newPath = path ? `${path}/${entry.name}` : entry.name;
+    navigation.navigate('MediaBrowse', {path: newPath, backend: 'local'});
     console.log('>> fs [open]', path ? `${path}/${entry.name}` : entry.name);
     if (clearSel) set(media.actions.selectBulk([]));
-  }, [path, nav, set]);
+  }, [path, navigation, set]);
 
   const move = useCallback(async (from: HfsFileEntry, to?: HfsFileEntry) => {
     if (to) {

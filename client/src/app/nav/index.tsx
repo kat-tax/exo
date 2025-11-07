@@ -24,6 +24,8 @@ export type RootStackParamList = {
   SettingsStorage: undefined;
   DevDesign: undefined;
   DevCharts: undefined;
+  MediaBrowse: {path?: string; backend?: string};
+  MediaIpfs: {cid: string; filename?: string};
 };
 
 /** Top level navigation links shown in the drawer menus and tab bars. */
@@ -182,6 +184,18 @@ export function Navigator() {
       options: {
         title: t`Charts`,
         icon: 'ph:chart-line',
+      },
+    },
+    MediaBrowse: {
+      linking: 'browse/:backend/:path*',
+      options: {
+        title: t`Browse`,
+      },
+    },
+    MediaIpfs: {
+      linking: 'ipfs/:cid/:filename*',
+      options: {
+        title: t`IPFS`,
       },
     },
   }, theme));

@@ -1,16 +1,15 @@
 import {StyleSheet, Display, mq} from 'react-native-unistyles';
 import {View} from 'react-native';
 import {useEffect} from 'react';
-import {useParams} from 'react-exo/navigation';
 import {useDirHfs} from 'media/dir/hooks/use-dir-hfs';
 import {usePath} from 'media/hooks/use-path';
 import {DirHfs} from 'media/dir/stacks/dir-hfs';
 import {Panel} from 'app/ui/panel';
 import {breakpoints} from 'design/theme';
 
-export default function ScreenBrowse() {
+export default function ScreenBrowse({route}: ReactNavigation.ScreenProps<'MediaBrowse'>) {
   const {path} = usePath();
-  const {backend} = useParams<{backend: string}>();
+  const {backend} = route.params;
   const {hfs, cmd, ext} = useDirHfs(path);
 
   const bar = {

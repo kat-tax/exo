@@ -5,7 +5,7 @@ import {View, ScrollView} from 'react-native';
 import {useCallback, useEffect, useRef, useState} from 'react';
 import {useFocusable, FocusContext} from '@noriginmedia/norigin-spatial-navigation';
 import {useLingui} from '@lingui/react/macro';
-import {useNavigate} from 'react-exo/navigation';
+import {useNavigation} from '@react-navigation/native';
 import {useMediaName} from 'media/hooks/use-media-name';
 import {MenuDropdown} from 'app/ui/float';
 import {ButtonText} from 'app/ui/button/text';
@@ -80,8 +80,21 @@ export function ListBarItem({name, path, last}: {
   path?: string,
   last?: boolean,
 }) {
-  const nav = useNavigate();
-  const goto = useCallback(() => nav(path ?? name ?? '/browse/local'), [nav, path, name]);
+  const navigation = useNavigation();
+  const goto = useCallback(() => {
+    // Convert path to navigation params
+    // If path is like '/browse/local' or '/browse/local/path', extract the path part
+    const targetPath = path ?? name;
+    if (targetPath?.startsWith('/browse/local')) {
+      const extractedPath = targetPath.replace('/browse/local', '').replace(/^\//, '');
+      navigation.navigate('MediaBrowse', {path: extractedPath || undefined, backend: 'local'});
+    } else if (targetPath) {
+      // Assume it's a relative path
+      navigation.navigate('MediaBrowse', {path: targetPath, backend: 'local'});
+    } else {
+      navigation.navigate('MediaBrowse', {backend: 'local'});
+    }
+  }, [navigation, path, name]);
   const title = useMediaName(name);
 
   const {ref, focused} = useFocusable({

@@ -1,9 +1,8 @@
-import {useParams} from 'react-exo/navigation';
 import {Media} from 'media/stacks/media';
 import {Panel} from 'app/ui/panel';
 
-export default function ScreenIpfs() {
-  const {cid, filename} = useParams<{cid: string, filename: string}>();
+export default function ScreenIpfs({route}: ReactNavigation.ScreenProps<'MediaIpfs'>) {
+  const {cid, filename} = route.params;
   const name = filename || '';
   const path = `ipfs://${cid}`;
   const url = `/ipfs/${cid}/${name}`;
