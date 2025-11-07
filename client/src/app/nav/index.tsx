@@ -33,12 +33,14 @@ const links: Record<string, Array<keyof RootStackParamList>> = {
   /** Displayed on the native/web tab navigator. */
   tabs: [
     'HomeDashboard',
+    'MediaBrowse',
     'TasksListAll',
     'SettingsOverview',
   ],
   /** The menu items shown at the top of the drawer menu. */
   menuTop: [
     'HomeDashboard',
+    'MediaBrowse',
     'TasksListAll',
   ],
   /** The menu items to show in development only (below the top items in a group). */
@@ -150,6 +152,19 @@ export function Navigator() {
         icon: 'ph:database',
       },
     },
+    MediaBrowse: {
+      linking: 'browse/:backend/:path*',
+      options: {
+        title: t`Browse`,
+        icon: 'ph:folder',
+      },
+    },
+    MediaIpfs: {
+      linking: 'ipfs/:cid/:filename*',
+      options: {
+        title: t`IPFS`,
+      },
+    },
     TasksListAll: {
       linking: 'lists',
       options: {
@@ -184,18 +199,6 @@ export function Navigator() {
       options: {
         title: t`Charts`,
         icon: 'ph:chart-line',
-      },
-    },
-    MediaBrowse: {
-      linking: 'browse/:backend/:path*',
-      options: {
-        title: t`Browse`,
-      },
-    },
-    MediaIpfs: {
-      linking: 'ipfs/:cid/:filename*',
-      options: {
-        title: t`IPFS`,
       },
     },
   }, theme));

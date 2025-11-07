@@ -35,32 +35,27 @@ export default function ScreenDesign() {
         <Frame title="Badge">
           <Design.Badge
             mode="Default"
-            state="Default"
             label="Default"
             showLabel={true}
           />
           <Design.Badge
             mode="Info"
-            state="Default"
             label="Info"
             showLabel={true}
           />
           <Design.Badge
             mode="Success"
-            state="Default"
             label="Success"
             showLabel={true}
           />
           <Design.Badge
             mode="Warning"
-            state="Default"
             label="Warning"
             showLabel={true}
           />
           <Design.Badge
             mode="Error"
             label="Error"
-            state="Default"
             showLabel={true}
           />
         </Frame>
