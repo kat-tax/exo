@@ -10,6 +10,7 @@ export interface Hotkeys {
 export function useHotkeys(hotkeys: Hotkeys) {
   const set = useSet();
   useEffect(() => {
+    if (!__WEB__) return;
     const down = (e: KeyboardEvent) => {
       const {key} = e;
       switch (key) {

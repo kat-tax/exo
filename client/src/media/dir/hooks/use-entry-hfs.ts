@@ -24,7 +24,7 @@ export function useEntryHfs({item, cmd, opt}: EntryHfsProps) {
   const {focused, ref: refFoc, focusSelf: foc} = useFocusable({
     onFocus: (_lay, _props, e) => opt.preview
       ? undefined
-      : cmd.select(item, e.event as unknown as RN.GestureResponderEvent),
+      : undefined,// TODO: cmd.select(item, e.event as unknown as RN.GestureResponderEvent),
     onEnterPress: () => opt.preview
       ? cmd.select(item)
       : item.isDirectory

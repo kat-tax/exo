@@ -2,9 +2,7 @@
 packages:
   - build/**
   - client/**
-  - native/**
   - design/**
-  - locales/**
   - '!**/test/**'
 
 # Prevent zero-days
