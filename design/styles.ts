@@ -5,7 +5,7 @@ export type AppThemes = {[K in keyof typeof themes]: typeof themes[K]}
 export type AppBreakpoints = typeof breakpoints;
 
 export * from 'react-native-unistyles';
-
+console.log('>> StyleSheet.configure', themes);
 StyleSheet.configure({
   themes,
   breakpoints,

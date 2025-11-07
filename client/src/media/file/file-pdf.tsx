@@ -24,7 +24,7 @@ export default forwardRef((
       <Pdf
         ref={ref}
         src={source}
-        onPageChange={(page, totalPages) => {
+        onPageChange={(page: number, totalPages: number) => {
           actions.setInfo(`Page ${page || 1}/${totalPages}`);
         }}
       />

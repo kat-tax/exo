@@ -65,7 +65,7 @@
     "react-native-unistyles": "catalog:",
     "react-native-url-polyfill": "^3.0.0",
     "react-native-web": "catalog:",
-    "react-zoom-pan-pinch": "^5.1.0",
+    "react-zoom-pan-pinch": "^3.7.0",
     "uint8array-extras": "^1.4.0",
     "webtorrent": "^2.6.10",
     "zeego": "^2.0.4"

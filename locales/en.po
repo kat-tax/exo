@@ -45,6 +45,10 @@ msgstr "Are you sure you want to change the owner key? This will reset the local
 msgid "Books"
 msgstr "Books"
 
+#: ../../client/src/app/nav/index.tsx:192
+msgid "Browse"
+msgstr "Browse"
+
 #. placeholder {0}: data.metadata.author
 #: ../../client/src/media/file/file-book.tsx:41
 msgid "by {0}"
@@ -70,7 +74,7 @@ msgstr "Categories"
 msgid "Category"
 msgstr "Category"
 
-#: ../../client/src/app/nav/index.tsx:183
+#: ../../client/src/app/nav/index.tsx:185
 msgid "Charts"
 msgstr "Charts"
 
@@ -123,7 +127,7 @@ msgstr "Danger Zone"
 msgid "Dark"
 msgstr "Dark"
 
-#: ../../client/src/app/nav/index.tsx:119
+#: ../../client/src/app/nav/index.tsx:121
 msgid "Dashboard"
 msgstr "Dashboard"
 
@@ -145,7 +149,7 @@ msgstr "Delete List"
 msgid "Delete Shortcut"
 msgstr "Delete Shortcut"
 
-#: ../../client/src/app/nav/index.tsx:175
+#: ../../client/src/app/nav/index.tsx:177
 msgid "Design"
 msgstr "Design"
 
@@ -184,7 +188,7 @@ msgstr "Edit"
 msgid "Edit Item..."
 msgstr "Edit Item..."
 
-#: ../../client/src/app/nav/index.tsx:168
+#: ../../client/src/app/nav/index.tsx:170
 msgid "Edit List"
 msgstr "Edit List"
 
@@ -360,6 +364,10 @@ msgstr "Invalid text content field."
 msgid "Invalid URL field."
 msgstr "Invalid URL field."
 
+#: ../../client/src/app/nav/index.tsx:198
+msgid "IPFS"
+msgstr "IPFS"
+
 #: ../../client/src/settings/screen-overview.tsx:47
 msgid "Language"
 msgstr "Language"
@@ -368,7 +376,7 @@ msgstr "Language"
 msgid "Light"
 msgstr "Light"
 
-#: ../../client/src/app/nav/index.tsx:162
+#: ../../client/src/app/nav/index.tsx:164
 msgid "List Details"
 msgstr "List Details"
 
@@ -380,7 +388,7 @@ msgstr "List Error"
 msgid "List name"
 msgstr "List name"
 
-#: ../../client/src/app/nav/index.tsx:154
+#: ../../client/src/app/nav/index.tsx:156
 #: ../../client/src/tasks/screen-list-all.tsx:21
 msgid "Lists"
 msgstr "Lists"
@@ -427,7 +435,7 @@ msgstr "New item..."
 msgid "Next"
 msgstr "Next"
 
-#: ../../client/src/app/nav/index.tsx:127
+#: ../../client/src/app/nav/index.tsx:129
 msgid "Not Found"
 msgstr "Not Found"
 
@@ -531,7 +539,7 @@ msgstr "Select your preferred language."
 msgid "Set mnemonic to sync devices."
 msgstr "Set mnemonic to sync devices."
 
-#: ../../client/src/app/nav/index.tsx:139
+#: ../../client/src/app/nav/index.tsx:141
 #: ../../client/src/settings/screen-overview.tsx:28
 msgid "Settings"
 msgstr "Settings"
@@ -541,7 +549,7 @@ msgstr "Settings"
 msgid "Share"
 msgstr "Share"
 
-#: ../../client/src/app/nav/index.tsx:133
+#: ../../client/src/app/nav/index.tsx:135
 msgid "Shortcut"
 msgstr "Shortcut"
 
@@ -557,7 +565,7 @@ msgstr "Skip backward"
 msgid "Skip forward"
 msgstr "Skip forward"
 
-#: ../../client/src/app/nav/index.tsx:147
+#: ../../client/src/app/nav/index.tsx:149
 msgid "Storage"
 msgstr "Storage"
 

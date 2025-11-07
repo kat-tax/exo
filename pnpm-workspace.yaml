@@ -22,7 +22,7 @@ catalog:
   react-native: "0.80.2"
   react-native-web: "0.21.1"
   react-native-svg: "^15.13.0"
-  react-native-unistyles: "^3.0.12"
+  react-native-unistyles: "^3.0.17"
   react-native-reanimated: "^3.19.1"
   typescript: "^5.9.2"
   "@types/react": "^19.1.13"

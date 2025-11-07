@@ -45,6 +45,10 @@ msgstr "¿Estás seguro de cambiar la clave propietaria? Esto reiniciará la bas
 msgid "Books"
 msgstr ""
 
+#: ../../client/src/app/nav/index.tsx:192
+msgid "Browse"
+msgstr ""
+
 #. placeholder {0}: data.metadata.author
 #: ../../client/src/media/file/file-book.tsx:41
 msgid "by {0}"
@@ -70,7 +74,7 @@ msgstr ""
 msgid "Category"
 msgstr ""
 
-#: ../../client/src/app/nav/index.tsx:183
+#: ../../client/src/app/nav/index.tsx:185
 msgid "Charts"
 msgstr ""
 
@@ -123,7 +127,7 @@ msgstr ""
 msgid "Dark"
 msgstr "Oscuro"
 
-#: ../../client/src/app/nav/index.tsx:119
+#: ../../client/src/app/nav/index.tsx:121
 msgid "Dashboard"
 msgstr "Panel"
 
@@ -145,7 +149,7 @@ msgstr ""
 msgid "Delete Shortcut"
 msgstr ""
 
-#: ../../client/src/app/nav/index.tsx:175
+#: ../../client/src/app/nav/index.tsx:177
 msgid "Design"
 msgstr "Diseño"
 
@@ -184,7 +188,7 @@ msgstr ""
 msgid "Edit Item..."
 msgstr ""
 
-#: ../../client/src/app/nav/index.tsx:168
+#: ../../client/src/app/nav/index.tsx:170
 msgid "Edit List"
 msgstr ""
 
@@ -360,6 +364,10 @@ msgstr ""
 msgid "Invalid URL field."
 msgstr "Campo de URL inválido."
 
+#: ../../client/src/app/nav/index.tsx:198
+msgid "IPFS"
+msgstr ""
+
 #: ../../client/src/settings/screen-overview.tsx:47
 msgid "Language"
 msgstr "Idioma"
@@ -368,7 +376,7 @@ msgstr "Idioma"
 msgid "Light"
 msgstr "Claro"
 
-#: ../../client/src/app/nav/index.tsx:162
+#: ../../client/src/app/nav/index.tsx:164
 msgid "List Details"
 msgstr ""
 
@@ -380,7 +388,7 @@ msgstr ""
 msgid "List name"
 msgstr ""
 
-#: ../../client/src/app/nav/index.tsx:154
+#: ../../client/src/app/nav/index.tsx:156
 #: ../../client/src/tasks/screen-list-all.tsx:21
 msgid "Lists"
 msgstr ""
@@ -427,7 +435,7 @@ msgstr ""
 msgid "Next"
 msgstr ""
 
-#: ../../client/src/app/nav/index.tsx:127
+#: ../../client/src/app/nav/index.tsx:129
 msgid "Not Found"
 msgstr ""
 
@@ -531,7 +539,7 @@ msgstr ""
 msgid "Set mnemonic to sync devices."
 msgstr ""
 
-#: ../../client/src/app/nav/index.tsx:139
+#: ../../client/src/app/nav/index.tsx:141
 #: ../../client/src/settings/screen-overview.tsx:28
 msgid "Settings"
 msgstr "Configuración"
@@ -541,7 +549,7 @@ msgstr "Configuración"
 msgid "Share"
 msgstr ""
 
-#: ../../client/src/app/nav/index.tsx:133
+#: ../../client/src/app/nav/index.tsx:135
 msgid "Shortcut"
 msgstr ""
 
@@ -557,7 +565,7 @@ msgstr ""
 msgid "Skip forward"
 msgstr ""
 
-#: ../../client/src/app/nav/index.tsx:147
+#: ../../client/src/app/nav/index.tsx:149
 msgid "Storage"
 msgstr ""
 
