@@ -1,9 +1,10 @@
-import {useNavigation} from '@react-navigation/native';
-import {useFocusable, FocusContext} from '@noriginmedia/norigin-spatial-navigation';
-import {StyleSheet, Display, mq} from 'react-native-unistyles';
-import {View, Pressable} from 'react-native';
-import {Suspense} from 'react';
 import {Icon} from 'react-exo/icon';
+import {View, Pressable} from 'react-native';
+import {StyleSheet, Display, mq} from 'react-native-unistyles';
+import {useFocusable, FocusContext} from '@noriginmedia/norigin-spatial-navigation';
+import {useState, Suspense} from 'react';
+import {useNavigation} from '@react-navigation/native';
+import {useHotkeys} from 'app/nav/hooks/use-hotkeys';
 import {Panel} from 'app/ui/panel';
 import {breakpoints} from 'design/theme';
 import {Menu, Tabs} from './menu';
@@ -23,11 +24,22 @@ export interface LayoutProps {
 export function Layout(props: LayoutProps) {
   const {state, children} = props;
   const activeRoute = state.routes[state.index];
+  const [previewOpen, setPreviewOpen] = useState(true);
+  const [menuOpen, setMenuOpen] = useState(true);
   const {ref, focusKey} = useFocusable({
     forceFocus: true,
     isFocusBoundary: true,
     focusBoundaryDirections: ['up', 'down'],
     preferredChildFocusKey: `menu@${activeRoute?.key}`,
+  });
+
+  useHotkeys({
+    toggleMenu: () => {
+      setMenuOpen(!menuOpen);
+    },
+    togglePreview: () => {
+      setPreviewOpen(!previewOpen);
+    },
   });
 
   return (
@@ -36,9 +48,11 @@ export function Layout(props: LayoutProps) {
         <Display mq={mq.only.width(0, breakpoints.xs - 1)}>
           <Tabs {...props}/>
         </Display>
-        <Display mq={mq.only.width(breakpoints.xs)}>
-          <Menu {...props}/>
-        </Display>
+        {menuOpen && (
+          <Display mq={mq.only.width(breakpoints.xs)}>
+            <Menu {...props}/>
+          </Display>
+        )}
         <View style={styles.content}>
           {children}
         </View>

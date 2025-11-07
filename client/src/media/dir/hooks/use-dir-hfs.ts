@@ -15,21 +15,18 @@ import type {GestureResponderEvent} from 'react-native';
 
 export function useDirHfs(path: string, tmp?: boolean): Omit<HfsCtx, 'bar'> {
   const [list, setList] = useState<HfsFileEntry[]>([]);
-
+  const nav = useNavigation();
   const hfs = useHfs();
   const sel = useGet(media.selectors.getSelected);
   const dnd = useGet(media.selectors.getDragging);
   const ext = useMemo(() => ({sel, dnd, tmp}), [sel, dnd, tmp]);
-
   const set = useSet();
-  const navigation = useNavigation();
-
   const goUp = useCallback(() => {
     if (!path) return false;
     const parent = path.split('/').slice(0, -1).join('/');
-    navigation.navigate('MediaBrowse', {path: parent, backend: 'local'});
+    nav.navigate('MediaBrowse', {path: parent, backend: 'local'});
     return true;
-  }, [path, navigation]);
+  }, [path, nav]);
 
   const refresh = useCallback(async () => {
     const showHidden = true;
@@ -78,10 +75,10 @@ export function useDirHfs(path: string, tmp?: boolean): Omit<HfsCtx, 'bar'> {
   const open = useCallback(async (entry: HfsFileEntry, clearSel?: boolean) => {
     if (!entry.isDirectory) return;
     const newPath = path ? `${path}/${entry.name}` : entry.name;
-    navigation.navigate('MediaBrowse', {path: newPath, backend: 'local'});
+    nav.navigate('MediaBrowse', {path: newPath, backend: 'local'});
     console.log('>> fs [open]', path ? `${path}/${entry.name}` : entry.name);
     if (clearSel) set(media.actions.selectBulk([]));
-  }, [path, navigation, set]);
+  }, [path, nav, set]);
 
   const move = useCallback(async (from: HfsFileEntry, to?: HfsFileEntry) => {
     if (to) {

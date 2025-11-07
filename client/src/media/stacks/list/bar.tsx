@@ -11,9 +11,10 @@ import {MenuDropdown} from 'app/ui/float';
 import {ButtonText} from 'app/ui/button/text';
 import {ButtonIcon} from 'app/ui/button/icon';
 
-const ITEM_SIZE = __TOUCH__ ? 46 : 32;
+const ITEM_SIZE = __TOUCH__ ? 46 : 36;
 const ICON_SIZE = __TOUCH__ ? 18 : 16;
-const TEXT_SIZE = __TOUCH__ ? 14 : 11;
+const TEXT_SIZE = __TOUCH__ ? 14 : 12;
+const SEPARATOR_SIZE = __TOUCH__ ? 14 : 10;
 
 export interface ListBarProps {
   path?: string,
@@ -221,7 +222,7 @@ const styles = StyleSheet.create((theme) => ({
     gap: __TOUCH__ ? theme.display.space3 : theme.display.space2,
   },
   separator: {
-    width: 10,
+    width: SEPARATOR_SIZE,
     height: 10,
   },
 }));

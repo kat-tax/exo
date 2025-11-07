@@ -2,6 +2,7 @@ import {createStaticNavigation} from '@react-navigation/native';
 import {useUnistyles} from 'react-native-unistyles';
 import {useLingui} from '@lingui/react/macro';
 import {useTheme} from 'settings/hooks/use-theme';
+
 import cfg from 'config';
 
 import {createNativeStackNavigator as createStack} from '@react-navigation/native-stack';
