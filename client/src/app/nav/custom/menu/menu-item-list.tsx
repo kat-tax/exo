@@ -10,7 +10,7 @@ export function MenuItemList(props: MenuItemProps) {
   const {ref, active, focused} = useLinkState(props);
 
   return (
-    <Link screen={props.name} params={{}} style={{width: '100%'}}>
+    <Link screen={props.name} params={props.params} style={{width: '100%'}}>
       <View ref={ref} style={[
         styles.root,
         active && styles.active,

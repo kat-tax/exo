@@ -50,12 +50,12 @@ export function ListBar({path, actions}: ListBarProps) {
           contentContainerStyle={styles.breadcrumbs}>
           {path ? (
             <>
-              <ListBarItem name={t`Files`} path="/browse/local"/>
+              <ListBarItem name={t`Files`} path=""/>
               <ListBarItemSeparator/>
             </>
           ) : null}
           {items?.map((name, index, array) => {
-            const path = ['local', ...array.slice(0, index + 1)].join('/');
+            const path = [...array.slice(0, index + 1)].join('/');
             const last = index === array.length - 1;
             return (
               <View key={path} style={styles.breadcrumb}>
@@ -80,22 +80,12 @@ export function ListBarItem({name, path, last}: {
   path?: string,
   last?: boolean,
 }) {
-  const navigation = useNavigation();
-  const goto = useCallback(() => {
-    // Convert path to navigation params
-    // If path is like '/browse/local' or '/browse/local/path', extract the path part
-    const targetPath = path ?? name;
-    if (targetPath?.startsWith('/browse/local')) {
-      const extractedPath = targetPath.replace('/browse/local', '').replace(/^\//, '');
-      navigation.navigate('MediaBrowse', {path: extractedPath || undefined, backend: 'local'});
-    } else if (targetPath) {
-      // Assume it's a relative path
-      navigation.navigate('MediaBrowse', {path: targetPath, backend: 'local'});
-    } else {
-      navigation.navigate('MediaBrowse', {backend: 'local'});
-    }
-  }, [navigation, path, name]);
   const title = useMediaName(name);
+  const nav = useNavigation();
+  const goto = useCallback(() => nav.navigate('MediaBrowse', {
+    path: path ?? name ?? '',
+    backend: 'local',
+  }), [nav, path, name]);
 
   const {ref, focused} = useFocusable({
     focusKey: `bar@${path}`,

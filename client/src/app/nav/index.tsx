@@ -153,14 +153,29 @@ export function Navigator() {
       },
     },
     MediaBrowse: {
-      linking: 'browse/:backend/:path*',
+      linking: {
+        path: 'browse/:backend/:path?',
+        alias: ['browse/:backend'],
+        // parse: {
+        //   backend: (value) => value === 'undefined' ? 'local' : value,
+        //   path: (value) => value || '',
+        // },
+        // stringify: {
+        //   backend: (value) => value === 'undefined' ? 'local' : value,
+        //   path: (value) => value || '',
+        // },
+      },
       options: {
         title: t`Browse`,
         icon: 'ph:folder',
       },
+      params: {
+        backend: 'local',
+        path: undefined,
+      },
     },
     MediaIpfs: {
-      linking: 'ipfs/:cid/:filename*',
+      linking: 'ipfs/:cid/:filename',
       options: {
         title: t`IPFS`,
       },
@@ -256,6 +271,7 @@ export type NavScreenConfig = {
   if?: () => boolean,
   name: keyof RootStackParamList,
   linking?: string | PathConfig<RootStackParamList>,
+  params?: RootStackParamList[keyof RootStackParamList],
   options?: {
     title: string,
     icon?: string,

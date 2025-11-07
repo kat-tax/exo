@@ -1,4 +1,3 @@
-import {useEffect} from 'react';
 import {useDirHfs} from 'media/dir/hooks/use-dir-hfs';
 import {usePath} from 'media/hooks/use-path';
 import {DirHfs} from 'media/dir/stacks/dir-hfs';
@@ -17,10 +16,6 @@ export default function ScreenBrowse({route}: ReactNavigation.ScreenProps<'Media
       },
     ],
   };
-
-  useEffect(() => {
-    console.log('>> backend', route.params.backend);
-  }, [route.params.backend]);
 
   return (
     <Screen>
