@@ -44,6 +44,10 @@ const styles = StyleSheet.create((theme, rt) => ({
         initial: 0,
         xs: theme.display.space2,
       },
+      marginTop: {
+        initial: 0,
+        xs: theme.display.space2,
+      },
       marginBottom: {
         initial: 0,
         xs: theme.display.space2,

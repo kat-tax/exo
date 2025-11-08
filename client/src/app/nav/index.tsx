@@ -90,10 +90,11 @@ const root = (screens: NavScreens, theme: Theme) => createStack<RootStackParamLi
     // Add all other screens to stack
     ...createScreens(screens),
   },
-  screenOptions: (_props) => ({
-    // Example: Hide header if in top level navigation
-    // headerShown: !Object.values(links).flat().includes(props.route.name),
-    headerShown: true,
+  screenOptions: (props) => ({
+    // Example: Hide header if in top level navigation (excluding SettingsStorage)
+    headerShown: !Object.values(links).flat().includes(props.route.name)
+      || props.route.name === 'SettingsStorage',
+    //headerShown: true,
     headerTintColor: theme.colors.foreground,
     headerTitleAlign: 'center',
     headerTitleStyle: {

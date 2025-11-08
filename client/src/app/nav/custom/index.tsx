@@ -1,4 +1,5 @@
 import {Icon} from 'react-exo/icon';
+import {Sheet} from 'react-exo/sheet';
 import {View, Pressable} from 'react-native';
 import {StyleSheet, Display, mq} from 'react-native-unistyles';
 import {useFocusable, FocusContext} from '@noriginmedia/norigin-spatial-navigation';
@@ -24,7 +25,7 @@ export interface LayoutProps {
 export function Layout(props: LayoutProps) {
   const {state, children} = props;
   const activeRoute = state.routes[state.index];
-  const [previewOpen, setPreviewOpen] = useState(true);
+  const [previewOpen, setPreviewOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(true);
   const {ref, focusKey} = useFocusable({
     forceFocus: true,
@@ -56,6 +57,8 @@ export function Layout(props: LayoutProps) {
         <View style={styles.content}>
           {children}
         </View>
+        <Sheet open={previewOpen} onOpenChange={setPreviewOpen}>
+        </Sheet>
       </View>
     </FocusContext.Provider>
   );
