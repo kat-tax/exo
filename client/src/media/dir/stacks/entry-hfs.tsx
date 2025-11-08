@@ -23,7 +23,11 @@ export function EntryHfs(props: EntryHfsProps) {
       onPress={cmd.select}
       onDoublePress={dir ? () => cmd.open(true) : undefined}>
       <MenuHfs {...{item, cmd}} on={() => foc()}>
-        <ListRow {...{name, size, ext, dir, opt}} img={cmd.thumbnail}/>
+        <ListRow
+          {...{name, size, ext, dir, opt}}
+          img={cmd.thumbnail}
+          onRename={cmd.rename}
+        />
       </MenuHfs>
     </Touch>
   );

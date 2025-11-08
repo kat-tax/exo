@@ -4,7 +4,7 @@ import type {HfsCtx, HfsOpt} from 'media/dir/types/hfs';
 
 export function DirHfs({hfs, cmd, ext, bar}: HfsCtx) {
   const {list, path} = hfs;
-  const {dnd, sel, tmp} = ext;
+  const {dnd, sel, tmp, rnm} = ext;
   const layout = tmp ? 'grid' : 'list'; // This is default, make user configurable
   return (
     <List
@@ -24,6 +24,7 @@ export function DirHfs({hfs, cmd, ext, bar}: HfsCtx) {
           layout,
           preview: tmp,
           dragging: dnd?.includes(self),
+          renaming: rnm?.includes(self),
           selected: {
             self: sel?.includes(self),
             prev: sel?.includes(path ? `${path}/${prev?.name}` : prev?.name),

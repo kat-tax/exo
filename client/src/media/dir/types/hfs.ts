@@ -15,6 +15,7 @@ export type HfsCtx = {
     tmp?: boolean,
     sel: string[],
     dnd: string[],
+    rnm: string[],
   },
 }
 
@@ -24,6 +25,7 @@ export type HfsOpt = {
   focused?: boolean,
   dragging?: boolean,
   dropping?: boolean,
+  renaming?: boolean,
   selected?: {
     self: boolean,
     prev: boolean,
@@ -39,7 +41,7 @@ export type HfsCmd = {
   copy: (entry: HfsFileEntry) => Promise<void>,
   move: (from: HfsFileEntry, to?: HfsFileEntry) => Promise<void>,
   purge: (entry: HfsFileEntry) => Promise<void>,
-  rename: (entry: HfsFileEntry) => Promise<void>,
+  rename: (entry: HfsFileEntry, name?: string | null) => Promise<void>,
   select: (entry: HfsFileEntry, event?: GestureResponderEvent) => void,
   upload: (entry: HfsFileEntry, files: File[]) => Promise<void>,
   download: (entry: HfsFileEntry) => Promise<void>,

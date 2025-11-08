@@ -19,7 +19,8 @@ export function useDirHfs(path: string, tmp?: boolean): Omit<HfsCtx, 'bar'> {
   const hfs = useHfs();
   const sel = useGet(media.selectors.getSelected);
   const dnd = useGet(media.selectors.getDragging);
-  const ext = useMemo(() => ({sel, dnd, tmp}), [sel, dnd, tmp]);
+  const rnm = useGet(media.selectors.getRenaming);
+  const ext = useMemo(() => ({sel, dnd, rnm, tmp}), [sel, dnd, rnm, tmp]);
   const set = useSet();
   const goUp = useCallback(() => {
     if (!path) return false;
@@ -106,13 +107,27 @@ export function useDirHfs(path: string, tmp?: boolean): Omit<HfsCtx, 'bar'> {
     await hfs?.deleteAll?.(uri);
   }, [hfs, path]);
 
-  const rename = useCallback(async (entry: HfsFileEntry, name?: string) => {
-    if (name) {
-      await hfs?.move?.(entry.name, name);
-    } else {
-      console.log('>> fs [rename]', entry);
+  const rename = useCallback(async (entry: HfsFileEntry, name?: string | null) => {
+    // Null provided, cancel rename
+    if (name === null) {
+      set(media.actions.rename([]));
+      return;
     }
-  }, [hfs]);
+    // Undefined provided, start rename mode
+    if (name === undefined) {
+      const fullPath = path ? `${path}/${entry.name}` : entry.name;
+      set(media.actions.rename([fullPath]));
+    // String provided - perform rename
+    } else {
+      if (name && name !== entry.name) {
+        const base = path ? `${path}/` : '';
+        const oldPath = `${base}${entry.name}`;
+        const newPath = `${base}${name}`;
+        await hfs?.moveAll?.(oldPath, newPath);
+      }
+      set(media.actions.rename([]));
+    }
+  }, [hfs, path, set]);
 
   const select = useCallback((entry: HfsFileEntry, event?: GestureResponderEvent) => {
     if (isZeego(event)) return;

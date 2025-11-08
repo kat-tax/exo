@@ -1,9 +1,10 @@
 import {StyleSheet} from 'react-native-unistyles';
 import {View, Text} from 'react-native';
-import {Thumb} from 'media/stacks/thumb';
+import {TextInput} from 'react-exo/textinput';
 import {bytesize} from 'app/lib/formatting';
-import {useMediaName} from 'media/hooks/use-media-name';
+import {Thumb} from 'media/stacks/thumb';
 import {ThumbSize} from 'media/stacks/thumb';
+import {useMediaName} from 'media/hooks/use-media-name';
 
 import type {HfsOpt} from 'media/dir/types/hfs';
 
@@ -17,12 +18,13 @@ interface ListRow {
   dir?: boolean,
   img?: (() => Promise<string | null>) | string,
   opt?: Partial<HfsOpt>,
+  onRename?: (name?: string | null) => Promise<void>,
 }
 
 export function ListRow(props: ListRow) {
   const title = useMediaName(props.name);
   const {name, size, ext, dir, opt, img} = props;
-  const {focused, selected, dragging, dropping} = opt ?? {};
+  const {focused, selected, dragging, dropping, renaming} = opt ?? {};
   const isGrid = opt?.layout === 'grid';
   const thumbSize = isGrid
     ? ThumbSize.MD
@@ -47,12 +49,46 @@ export function ListRow(props: ListRow) {
         <Thumb size={thumbSize} {...{name, ext, img, dir}}/>
       </View>
       <View style={[styles.info, isGrid && styles.infoCell]}>
-        <Text
-          style={[styles.text, isGrid && styles.textCell]}
-          numberOfLines={isGrid ? 2 : 1}
-          ellipsizeMode="middle">
-          {title}
-        </Text>
+        {renaming ? (
+          <TextInput
+            style={[styles.text, styles.input, isGrid && styles.textCell]}
+            placeholder={name}
+            defaultValue={name}
+            autoFocus={true}
+            selection={(() => {
+              const idx = name.indexOf('.');
+              const end = idx === -1 ? name.length : idx;
+              return {start: 0, end};
+            })()}
+            onKeyPress={(e) => {
+              if (e.nativeEvent.key === 'Escape') {
+                props.onRename?.(null);
+              }
+            }}
+            onSubmitEditing={async (e) => {
+              if (props.onRename) {
+                const newName = e.nativeEvent.text?.trim();
+                if (newName && name !== newName) {
+                  await props.onRename(newName);
+                } else {
+                  await props.onRename(null);
+                }
+              }
+            }}
+            onBlur={async () => {
+              if (props.onRename) {
+                await props.onRename(null);
+              }
+            }}
+          />
+        ) : (
+          <Text
+            style={[styles.text, isGrid && styles.textCell]}
+            numberOfLines={isGrid ? 2 : 1}
+            ellipsizeMode="middle">
+            {title}
+          </Text>
+        )}
         <Text
           style={[styles.text, styles.size, isGrid && styles.textCell]}
           numberOfLines={1}>
@@ -128,6 +164,13 @@ const styles = StyleSheet.create((theme) => ({
     color: theme.colors.mutedForeground,
     fontSize: 11,
     flexShrink: 0,
+  },
+  input: {
+    flex: 1,
+    padding: 0,
+    margin: 0,
+    borderWidth: 0,
+    backgroundColor: 'transparent',
   },
   /* States */
   outline: {

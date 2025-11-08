@@ -53,6 +53,9 @@ export default createSlice({
         media.dragging = media.selected;
       }
     },
+    rename(media, action: PayloadAction<string[]>) {
+      media.renaming = action.payload;
+    },
     selectBulk(media, action: PayloadAction<string[] | 'main' | 'temp'>) {
       media.selected = Array.isArray(action.payload)
         ? action.payload
