@@ -11,6 +11,8 @@ import {MenuDropdown} from 'app/ui/float';
 import {ButtonText} from 'app/ui/button/text';
 import {ButtonIcon} from 'app/ui/button/icon';
 
+import type {MenuDropdownItem} from 'app/ui/float/menu-dropdown';
+
 const ITEM_SIZE = __TOUCH__ ? 46 : 36;
 const ICON_SIZE = __TOUCH__ ? 18 : 16;
 const TEXT_SIZE = __TOUCH__ ? 14 : 12;
@@ -24,7 +26,8 @@ export interface ListBarProps {
 export interface ListBarAction {
   id: string,
   icon: string,
-  onPress: () => void,
+  onPress?: () => void,
+  items?: Array<MenuDropdownItem | undefined | false>,
 }
 
 export function ListBar({path, actions}: ListBarProps) {
@@ -67,8 +70,8 @@ export function ListBar({path, actions}: ListBarProps) {
           })}
         </ScrollView>
         <View style={styles.actions}>
-          {actions?.map(({id, icon, onPress}) => (
-            <ListBarAction key={id} {...{id, icon, onPress}}/>
+          {actions?.map(({id, icon, onPress, items}) => (
+            <ListBarAction key={id} {...{id, icon, onPress, items}}/>
           ))}
         </View>
       </View>
@@ -113,65 +116,51 @@ export function ListBarItem({name, path, last}: {
   );
 }
 
-export function ListBarAction({id, icon, onPress}: ListBarAction) {
+export function ListBarAction({id, icon, onPress, items}: ListBarAction) {
   const [open, setOpen] = useState(false);
   const {ref, focused} = useFocusable({
-    onEnterPress: () => setOpen(true),
+    onEnterPress: () => {
+      if (items) {
+        setOpen(true);
+      } else {
+        onPress?.();
+      }
+    },
     focusKey: `bar@${id}`,
   });
 
-  return (
-    <MenuDropdown label={id} open={open} onOpenChange={setOpen} items={[
-      {
-        name: 'new-folder',
-        label: 'New Folder',
-        icon: 'ph:folder-plus',
-        action: onPress,
-      },
-      {
-        name: 'divider',
-        label: '-',
-      },
-      {
-        name: 'import',
-        label: 'Import…',
-        icon: 'ph:upload',
-        sub: [
-          {
-            name: 'import-folder',
-            label: 'Folder',
-            icon: 'ph:folder',
-            action: onPress,
-          },
-          {
-            name: 'import-files',
-            label: 'Files',
-            icon: 'ph:file',
-            action: onPress,
-          },
-          {
-            name: 'import-camera',
-            label: 'Cam',
-            icon: 'ph:camera',
-            action: onPress,
-          },
-        ],
-      },
-    ]}>
-      <Motion.View
-        ref={ref}
-        initial={{rotate: '0deg'}}
-        animate={{rotate: open ? '45deg' : '0deg'}}
-        transition={{type: 'spring', speed: 100}}>
-        <ButtonIcon
-          icon={icon}
-          size={ICON_SIZE}
-          state={focused ? 'Focused' : 'Default'}
-          onPress={onPress}
-        />
-      </Motion.View>
-    </MenuDropdown>
+  const button = items ? (
+    <Motion.View
+      ref={ref}
+      initial={{rotate: '0deg'}}
+      animate={{rotate: open ? '45deg' : '0deg'}}
+      transition={{type: 'spring', speed: 100}}>
+      <ButtonIcon
+        icon={icon}
+        size={ICON_SIZE}
+        state={focused ? 'Focused' : 'Default'}
+      />
+    </Motion.View>
+  ) : (
+    <View ref={ref}>
+      <ButtonIcon
+        icon={icon}
+        size={ICON_SIZE}
+        state={focused ? 'Focused' : 'Default'}
+        onPress={onPress}
+      />
+    </View>
   );
+
+  if (items) {
+    return (
+      <MenuDropdown label={id} open={open} onOpenChange={setOpen} items={items}>
+        {button}
+      </MenuDropdown>
+    );
+  }
+
+  return button;
 }
 
 export function ListBarItemSeparator() {

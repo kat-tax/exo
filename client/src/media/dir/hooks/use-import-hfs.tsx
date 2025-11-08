@@ -6,7 +6,15 @@ export function useImportHfs() {
   /** Create a new folder */
   const createFolder = useCallback(async (path: string) => {
     const fs = await FS.init('local');
-    await fs?.createDirectory?.(path);
+    // Check if directory exists, append number (1) until it doesn't exist
+    let i = 1;
+    let newPath = path;
+    while (await fs?.isDirectory?.(newPath)) {
+      newPath = i === 1 ? path : `${path} (${i})`;
+      i++;
+    }
+    await fs?.createDirectory?.(newPath);
+    return newPath;
   }, []);
 
   /** Import a folder from the device */
@@ -27,5 +35,10 @@ export function useImportHfs() {
     console.log('>> fs [imported files]', from, performance.now() - timer);
   }, []);
 
-  return {createFolder, importFolder, importFile};
+  /** Import a camera from the device */
+  const importCam = useCallback(async (path = '') => {
+    console.log('>> fs [imported camera]', path);
+  }, []);
+
+  return {createFolder, importFolder, importFile, importCam};
 }

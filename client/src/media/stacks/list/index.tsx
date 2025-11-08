@@ -9,6 +9,7 @@ import {ListEmpty} from 'media/stacks/list/empty';
 import {ListBar} from 'media/stacks/list/bar';
 
 import type {LegendListRef} from '@legendapp/list';
+import type {ListBarAction} from 'media/stacks/list/bar';
 
 export interface ListProps<T> {
   items?: T[];
@@ -18,7 +19,7 @@ export interface ListProps<T> {
     preview?: boolean,
     layout?: 'list' | 'grid',
     header?: {
-      actions?: Array<{id: string, icon: string, onPress: () => void}>,
+      actions?: Array<ListBarAction>,
     },
   };
   render: (props: {
