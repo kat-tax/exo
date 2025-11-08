@@ -7,7 +7,7 @@ export default function ScreenIpfs({route}: ReactNavigation.ScreenProps<'MediaIp
   const path = `ipfs://${cid}`;
   const url = `/ipfs/${cid}/${name}`;
   const ext = name.split('.').pop() || '';
-  console.log('ScreenIpfs', {cid, filename, name, ext, url, path});
+
   return (
     <Screen>
       <Media
