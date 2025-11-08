@@ -1,7 +1,6 @@
 import {StyleSheet, withUnistyles} from 'react-native-unistyles';
 import {View, Text, Pressable} from 'react-native';
 import {Slider} from 'react-exo/slider';
-import {Motion} from 'react-exo/motion';
 import {Icon} from 'react-exo/icon';
 import {useCallback} from 'react';
 import {useMediaControls} from 'media/hooks/use-media-controls';
@@ -47,11 +46,7 @@ export function MediaControls(props: MediaControlsProps) {
   }, []);
 
   return (
-    <Motion.View
-      style={styles.root}
-      initial={{opacity: 0}}
-      animate={{opacity: 1}}
-      exit={{opacity: 0}}>
+    <View style={styles.root}>
       {seekable &&
         <View style={styles.track}>
           <UniSlider
@@ -111,7 +106,7 @@ export function MediaControls(props: MediaControlsProps) {
             )}
           </Pressable>
       )}
-    </Motion.View>
+    </View>
   );
 }
 

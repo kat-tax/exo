@@ -92,8 +92,8 @@ const root = (screens: NavScreens, theme: Theme) => createStack<RootStackParamLi
   },
   screenOptions: (props) => ({
     // Example: Hide header if in top level navigation (excluding SettingsStorage)
-    headerShown: !Object.values(links).flat().includes(props.route.name)
-      || props.route.name === 'SettingsStorage',
+    headerShown: (!Object.values(links).flat().includes(props.route.name)
+      || props.route.name === 'SettingsStorage') && props.route.name !== 'MediaIpfs',
     //headerShown: true,
     headerTintColor: theme.colors.foreground,
     headerTitleAlign: 'center',

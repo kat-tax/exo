@@ -22,6 +22,7 @@
     "@evolu/react": "9.0.1-preview.4",
     "@evolu/react-native": "12.0.1-preview.4",
     "@evolu/react-web": "1.0.1-preview.3",
+    "@fontsource-variable/inter": "^5.2.8",
     "@helia/verified-fetch": "^3.2.0",
     "@legendapp/list": "1.1.4",
     "@lingui/core": "catalog:",

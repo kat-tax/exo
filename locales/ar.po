@@ -45,7 +45,7 @@ msgstr "هل أنت متأكد من تغيير مفتاح المالك؟ سيؤ�
 msgid "Books"
 msgstr ""
 
-#: ../../client/src/app/nav/index.tsx:170
+#: ../../client/src/app/nav/index.tsx:171
 msgid "Browse"
 msgstr ""
 
@@ -74,7 +74,7 @@ msgstr ""
 msgid "Category"
 msgstr ""
 
-#: ../../client/src/app/nav/index.tsx:216
+#: ../../client/src/app/nav/index.tsx:217
 msgid "Charts"
 msgstr ""
 
@@ -127,7 +127,7 @@ msgstr ""
 msgid "Dark"
 msgstr "داكن"
 
-#: ../../client/src/app/nav/index.tsx:124
+#: ../../client/src/app/nav/index.tsx:125
 msgid "Dashboard"
 msgstr "لوحة التحكم"
 
@@ -149,7 +149,7 @@ msgstr ""
 msgid "Delete Shortcut"
 msgstr ""
 
-#: ../../client/src/app/nav/index.tsx:208
+#: ../../client/src/app/nav/index.tsx:209
 msgid "Design"
 msgstr "تصميم"
 
@@ -188,7 +188,7 @@ msgstr ""
 msgid "Edit Item..."
 msgstr ""
 
-#: ../../client/src/app/nav/index.tsx:201
+#: ../../client/src/app/nav/index.tsx:202
 msgid "Edit List"
 msgstr ""
 
@@ -364,7 +364,7 @@ msgstr ""
 msgid "Invalid URL field."
 msgstr "حقل الرابط غير صالح."
 
-#: ../../client/src/app/nav/index.tsx:181
+#: ../../client/src/app/nav/index.tsx:182
 msgid "IPFS"
 msgstr ""
 
@@ -376,7 +376,7 @@ msgstr "اللغة"
 msgid "Light"
 msgstr "فاتح"
 
-#: ../../client/src/app/nav/index.tsx:195
+#: ../../client/src/app/nav/index.tsx:196
 msgid "List Details"
 msgstr ""
 
@@ -388,7 +388,7 @@ msgstr ""
 msgid "List name"
 msgstr ""
 
-#: ../../client/src/app/nav/index.tsx:187
+#: ../../client/src/app/nav/index.tsx:188
 #: ../../client/src/tasks/screen-list-all.tsx:21
 msgid "Lists"
 msgstr ""
@@ -435,7 +435,7 @@ msgstr ""
 msgid "Next"
 msgstr ""
 
-#: ../../client/src/app/nav/index.tsx:132
+#: ../../client/src/app/nav/index.tsx:133
 msgid "Not Found"
 msgstr ""
 
@@ -539,7 +539,7 @@ msgstr ""
 msgid "Set mnemonic to sync devices."
 msgstr ""
 
-#: ../../client/src/app/nav/index.tsx:144
+#: ../../client/src/app/nav/index.tsx:145
 #: ../../client/src/settings/screen-overview.tsx:28
 msgid "Settings"
 msgstr "الإعدادات"
@@ -549,7 +549,7 @@ msgstr "الإعدادات"
 msgid "Share"
 msgstr ""
 
-#: ../../client/src/app/nav/index.tsx:138
+#: ../../client/src/app/nav/index.tsx:139
 msgid "Shortcut"
 msgstr ""
 
@@ -565,7 +565,7 @@ msgstr ""
 msgid "Skip forward"
 msgstr ""
 
-#: ../../client/src/app/nav/index.tsx:152
+#: ../../client/src/app/nav/index.tsx:153
 msgid "Storage"
 msgstr ""
 

@@ -2,6 +2,7 @@ import 'global';
 import 'design/styles';
 import 'react-exo/sheet.css';
 import 'maplibre-gl/dist/maplibre-gl.css';
+import '@fontsource-variable/inter';
 import {init} from '@noriginmedia/norigin-spatial-navigation';
 import {AppRegistry} from 'react-native';
 import {injectStyles} from 'media/file/icons';

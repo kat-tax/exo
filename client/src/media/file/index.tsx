@@ -1,5 +1,4 @@
 import {forwardRef, memo} from 'react';
-import {Suspense as $} from 'app/ui/load';
 import {FileType} from 'media/file/types';
 import File from 'media/file/loader';
 
@@ -33,45 +32,45 @@ export default memo(forwardRef((props: FileProps, ref: React.Ref<FileRef>) => {
   const meta = {...base, ref};
   switch (file) {
     case FileType.Directory:
-      return <$><File.Directory {...meta} {...ctx}/></$>
+      return <File.Directory {...meta} {...ctx}/>
     case FileType.Binary:
-      return <$><File.Binary {...meta} {...ctx}/></$>
+      return <File.Binary {...meta} {...ctx}/>
     case FileType.Text:
-      return <$><File.Text {...meta} {...ctx}/></$>
+      return <File.Text {...meta} {...ctx}/>
     case FileType.Document:
-      return <$><File.Document {...meta} {...ctx}/></$>
+      return <File.Document {...meta} {...ctx}/>
     case FileType.Spreadsheet:
-      return <$><File.Spreadsheet {...meta} {...ctx}/></$>
+      return <File.Spreadsheet {...meta} {...ctx}/>
     case FileType.Presentation:
-      return <$><File.Presentation {...meta} {...ctx}/></$>
+      return <File.Presentation {...meta} {...ctx}/>
     case FileType.Markdown:
-      return <$><File.Markdown {...meta} {...ctx}/></$>
+      return <File.Markdown {...meta} {...ctx}/>
     case FileType.Typst:
-      return <$><File.Typst {...meta} {...ctx}/></$>
+      return <File.Typst {...meta} {...ctx}/>
     case FileType.Audio:
-      return <$><File.Audio {...meta} {...ctx}/></$>
+      return <File.Audio {...meta} {...ctx}/>
     case FileType.Video:
-      return <$><File.Video {...meta} {...ctx}/></$>
+      return <File.Video {...meta} {...ctx}/>
     case FileType.Image:
-      return <$><File.Image {...meta} {...ctx}/></$>
+      return <File.Image {...meta} {...ctx}/>
     case FileType.Model:
-      return <$><File.Model {...meta} {...ctx}/></$>
+      return <File.Model {...meta} {...ctx}/>
     case FileType.Lottie:
-      return <$><File.Lottie {...meta} {...ctx}/></$>
+      return <File.Lottie {...meta} {...ctx}/>
     case FileType.Rive:
-      return <$><File.Rive {...meta} {...ctx}/></$>
+      return <File.Rive {...meta} {...ctx}/>
     case FileType.Game:
-      return <$><File.Game {...meta} {...ctx}/></$>
+      return <File.Game {...meta} {...ctx}/>
     case FileType.Book:
-      return <$><File.Book {...meta} {...ctx}/></$>
+      return <File.Book {...meta} {...ctx}/>
     case FileType.Pdf:
-      return <$><File.Pdf {...meta} {...ctx}/></$>
+      return <File.Pdf {...meta} {...ctx}/>
     case FileType.Map:
-      return <$><File.Map {...meta} {...ctx}/></$>
+      return <File.Map {...meta} {...ctx}/>
     case FileType.Torrent:
-      return <$><File.Torrent {...meta} {...ctx}/></$>
+      return <File.Torrent {...meta} {...ctx}/>
     case FileType.Zip:
-      return <$><File.Zip {...meta} {...ctx}/></$>
+      return <File.Zip {...meta} {...ctx}/>
     default: file satisfies never;
   }
 }));
