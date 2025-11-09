@@ -24,7 +24,7 @@
     "@evolu/react-web": "1.0.1-preview.3",
     "@fontsource-variable/inter": "^5.2.8",
     "@helia/verified-fetch": "^3.2.0",
-    "@legendapp/list": "1.1.4",
+    "@legendapp/list": "^2.0.14",
     "@lingui/core": "catalog:",
     "@lingui/macro": "catalog:",
     "@lingui/react": "catalog:",

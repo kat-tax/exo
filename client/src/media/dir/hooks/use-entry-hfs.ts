@@ -22,20 +22,32 @@ export function useEntryHfs({item, cmd, opt}: EntryHfsProps) {
 
   // Spatial navigation
   const {focused, ref: refFoc, focusSelf: foc} = useFocusable({
-    onFocus: (_lay, _props, e) => opt.preview
-      ? undefined
-      : undefined,// TODO: cmd.select(item, e.event as unknown as RN.GestureResponderEvent),
+    // onFocus: (_lay, _props, e) => opt.preview
+    //   ? undefined
+    //   : cmd.select(item, e.event as unknown as RN.GestureResponderEvent),
     onEnterPress: () => opt.preview
       ? cmd.select(item)
       : item.isDirectory
         ? cmd.open(item)
         : cmd.select(item),
     onArrowPress: (dir) => {
-      if (dir !== 'left' || opt.preview) return true;
-      if (cmd.goUp()) return false;
+      if (opt.preview) return true;
+      // Handle navigating to top-level (left arrow)
+      if (dir === 'left') {
+        return !cmd.goUp();
+      // Handle navigating into sub-directory (right arrow)
+      } else if (dir === 'right' && item.isDirectory) {
+        cmd.open(item);
+        return false;
+      }
       return true;
     },
   });
+
+  // Focus on renaming
+  useEffect(() => {
+    if (opt.renaming) foc();
+  }, [opt.renaming, foc]);
 
   // Drag and drop
   const refDnd = useRef<RN.View>(null);

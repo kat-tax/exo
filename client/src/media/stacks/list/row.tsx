@@ -56,6 +56,11 @@ export function ListRow(props: ListRow) {
             defaultValue={name}
             spellCheck={false}
             autoFocus={true}
+            ref={(ref) => {
+              if (ref && !ref.isFocused()) {
+                setTimeout(() => ref.focus(), 100);
+              }
+            }}
             selection={(() => {
               const idx = name.indexOf('.');
               const end = idx === -1 ? name.length : idx;

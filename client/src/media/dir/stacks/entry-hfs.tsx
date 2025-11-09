@@ -20,7 +20,7 @@ export function EntryHfs(props: EntryHfsProps) {
   return (
     <Touch
       refs={ref}
-      onPress={cmd.select}
+      onPress={(e) => {foc(); cmd.select(e)}}
       onDoublePress={dir ? () => cmd.open(true) : undefined}>
       <MenuHfs {...{item, cmd}} on={() => foc()}>
         <ListRow
