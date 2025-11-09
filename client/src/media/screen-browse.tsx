@@ -21,7 +21,11 @@ export default function ScreenBrowse({route: _route}: ReactNavigation.ScreenProp
     // Focus, select, and trigger rename for the newly created folder
     set(media.actions.rename([fullPath]));
     set(media.actions.focus(fullPath));
-    set(media.actions.selectItem({path: fullPath, isMulti: false, isRange: false}));
+    set(media.actions.selectItem({
+      path: fullPath,
+      isMulti: false,
+      isRange: false,
+    }));
   };
 
   const bar = {
