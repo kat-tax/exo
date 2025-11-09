@@ -22,6 +22,7 @@ export function useDirHfs(path: string, tmp?: boolean): Omit<HfsCtx, 'bar'> {
   const rnm = useGet(media.selectors.getRenaming);
   const ext = useMemo(() => ({sel, dnd, rnm, tmp}), [sel, dnd, rnm, tmp]);
   const set = useSet();
+
   const goUp = useCallback(() => {
     if (!path) return false;
     const parent = path.split('/').slice(0, -1).join('/');
@@ -29,15 +30,15 @@ export function useDirHfs(path: string, tmp?: boolean): Omit<HfsCtx, 'bar'> {
     return true;
   }, [path, nav]);
 
-  const refresh = useCallback(async () => {
+  const refresh = useCallback(async (): Promise<boolean> => {
     const showHidden = true;
     const entries: HfsFileEntry[] = [];
     const dirPath = path || '.';
     try {
       // Check if path is valid
-      if (!dirPath) return;
+      if (!dirPath) return false;
       // Check if directory exists
-      if (!(await hfs?.isDirectory?.(dirPath))) return;
+      if (!(await hfs?.isDirectory?.(dirPath))) return false;
       // Get directory entries
       const list = hfs?.list?.(dirPath);
       for await (const entry of list ?? []) {
@@ -210,6 +211,7 @@ export function useDirHfs(path: string, tmp?: boolean): Omit<HfsCtx, 'bar'> {
     },
     cmd: {
       goUp,
+      refresh,
       share,
       open,
       move,

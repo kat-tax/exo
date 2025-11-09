@@ -36,6 +36,7 @@ export type HfsOpt = {
 
 export type HfsCmd = {
   goUp: () => boolean,
+  refresh: () => Promise<boolean>,
   share: (entry: HfsFileEntry) => Promise<void>,
   open: (entry: HfsFileEntry, clearSel?: boolean) => Promise<void>,
   copy: (entry: HfsFileEntry) => Promise<void>,

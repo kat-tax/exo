@@ -18,16 +18,10 @@ export default function ScreenBrowse({route: _route}: ReactNavigation.ScreenProp
     // Extract folder name from the full path
     const folderName = newPath.split('/').pop() || newPath;
     const fullPath = path ? `${path}/${folderName}` : folderName;
-    // Focus the newly created folder
+    // Focus, select, and trigger rename for the newly created folder
+    set(media.actions.rename([fullPath]));
     set(media.actions.focus(fullPath));
     set(media.actions.selectItem({path: fullPath, isMulti: false, isRange: false}));
-    // Trigger rename
-    const entry = hfs.list.find(item => item.name === folderName);
-    if (entry) {
-      cmd.rename(entry);
-    } else {
-      console.log('>> fs [entry not found]', fullPath);
-    }
   };
 
   const bar = {

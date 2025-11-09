@@ -54,6 +54,7 @@ export function ListRow(props: ListRow) {
             style={[styles.text, styles.input, isGrid && styles.textCell]}
             placeholder={name}
             defaultValue={name}
+            spellCheck={false}
             autoFocus={true}
             selection={(() => {
               const idx = name.indexOf('.');
@@ -89,11 +90,13 @@ export function ListRow(props: ListRow) {
             {title}
           </Text>
         )}
-        <Text
-          style={[styles.text, styles.size, isGrid && styles.textCell]}
-          numberOfLines={1}>
-          {dir ? '‎' : bytesize(size ?? 0)}
-        </Text>
+        {!renaming && (
+          <Text
+            style={[styles.text, styles.size, isGrid && styles.textCell]}
+            numberOfLines={1}>
+            {dir ? '‎' : bytesize(size ?? 0)}
+          </Text>
+        )}
       </View>
     </View>
   );
