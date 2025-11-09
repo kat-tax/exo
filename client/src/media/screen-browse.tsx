@@ -9,12 +9,12 @@ import media from 'media/store';
 export default function ScreenBrowse({route: _route}: ReactNavigation.ScreenProps<'MediaBrowse'>) {
   const {path} = usePath();
   const {hfs, cmd, ext} = useDirHfs(path);
-  const {createFolder, importFolder, importFile, importCam} = useImportHfs();
+  const add = useImportHfs();
   const set = useSet();
 
-  const handleCreateFolder = async () => {
+  const newFolder = async () => {
     const folderPath = path ? `${path}/New Folder` : 'New Folder';
-    const newPath = await createFolder(folderPath);
+    const newPath = await add.newFolder(folderPath);
     // Extract folder name from the full path
     const folderName = newPath.split('/').pop() || newPath;
     const fullPath = path ? `${path}/${folderName}` : folderName;
@@ -38,7 +38,7 @@ export default function ScreenBrowse({route: _route}: ReactNavigation.ScreenProp
             name: 'new-folder',
             label: 'New Folder',
             icon: 'ph:folder-plus',
-            action: handleCreateFolder,
+            action: newFolder,
           },
           {
             name: 'divider',
@@ -53,19 +53,19 @@ export default function ScreenBrowse({route: _route}: ReactNavigation.ScreenProp
                 name: 'import-folder',
                 label: 'Folder',
                 icon: 'ph:folder',
-                action: () => importFolder(path),
+                action: () => add.importFolder(path),
               },
               {
                 name: 'import-files',
                 label: 'Files',
                 icon: 'ph:file',
-                action: () => importFile(path),
+                action: () => add.importFile(path),
               },
               {
                 name: 'import-camera',
                 label: 'Cam',
                 icon: 'ph:camera',
-                action: () => importCam(path),
+                action: () => add.importCam(path),
               },
             ],
           },

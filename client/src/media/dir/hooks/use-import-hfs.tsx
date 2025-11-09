@@ -4,7 +4,7 @@ import {getStartInDir, filterJunkFiles} from 'media/dir/utils/hfs/path';
 
 export function useImportHfs() {
   /** Create a new folder */
-  const createFolder = useCallback(async (path: string) => {
+  const newFolder = useCallback(async (path: string) => {
     const fs = await FS.init('local');
     // Check if directory exists, append number (1) until it doesn't exist
     let i = 1;
@@ -40,5 +40,5 @@ export function useImportHfs() {
     console.log('>> fs [imported camera]', path);
   }, []);
 
-  return {createFolder, importFolder, importFile, importCam};
+  return {newFolder, importFolder, importFile, importCam};
 }

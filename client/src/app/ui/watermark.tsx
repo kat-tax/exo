@@ -54,7 +54,7 @@ const styles = StyleSheet.create((theme) => ({
     textAlign: 'center',
     fontFamily: theme.font.family,
     fontSize: theme.font.size,
-    fontWeight: '100',
+    fontWeight: '300',
     lineHeight: theme.font.contentHeight,
     letterSpacing: theme.font.contentSpacing,
     color: theme.colors.mutedForeground,
