@@ -82,7 +82,7 @@ export default memo(forwardRef((
       ref={controls}
       customTransform={getMatrixTransformStyles}
       doubleClick={{mode: 'reset'}}
-      wheel={{smoothStep: 0.01}}
+      wheel={{smoothStep: 0.0025}}
       onTransformed={({state}) => setScale(state.scale)}>
       {/* <ResumableZoom maxScale={resolution}> */}
       <TransformComponent
@@ -91,6 +91,8 @@ export default memo(forwardRef((
         <View style={styles.root}>
           <ExoImage
             url={source}
+            height={height}
+            width={width}
             style={styles.image}
             resizeMode={maximized ? 'center' : 'cover'}
           />
@@ -104,6 +106,8 @@ export default memo(forwardRef((
 const styles = StyleSheet.create(() => ({
   root: {
     flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
     overflow: 'hidden',
   },
   image: {
