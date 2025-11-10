@@ -1,4 +1,5 @@
-import {Motion} from 'react-exo/motion';
+//import {Motion} from 'react-exo/motion';
+import {ScrollView} from 'react-native';
 import {StyleSheet} from 'react-native-unistyles';
 import {useRef, useMemo, useEffect} from 'react';
 import {useFocusable, FocusContext} from '@noriginmedia/norigin-spatial-navigation';
@@ -9,7 +10,7 @@ import media from 'media/store';
 
 import {SelectItem} from './item';
 
-import type {ScrollView} from 'react-native';
+//import type {ScrollView} from 'react-native';
 import type {HfsImpl} from 'react-exo/fs';
 
 interface SelectTabsProps {
@@ -45,15 +46,16 @@ export function SelectTabs({hfs, path, name, ext}: SelectTabsProps) {
 
   return (
     <FocusContext.Provider value={focusKey}>
-      <Motion.ScrollView
+      <ScrollView
         horizontal
         ref={refs}
         style={styles.root}
         contentContainerStyle={styles.inner}
         showsHorizontalScrollIndicator={false}
-        initial={{opacity: 0}}
-        animate={{opacity: 1}}
-        exit={{opacity: 0}}>
+        // initial={{opacity: 0}}
+        // animate={{opacity: 1}}
+        // exit={{opacity: 0}}>
+        >
         {list?.length === 0 &&
           <SelectItem
             focused
@@ -68,7 +70,7 @@ export function SelectTabs({hfs, path, name, ext}: SelectTabsProps) {
             {...{hfs, path, name, ext, index}}
           />
         ))}
-      </Motion.ScrollView>
+      </ScrollView>
     </FocusContext.Provider>
   );
 }

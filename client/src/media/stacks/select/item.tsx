@@ -2,14 +2,14 @@ import {Icon} from 'react-exo/icon';
 import {Thumb} from 'media/stacks/thumb';
 import {StyleSheet} from 'react-native-unistyles';
 import {Text, View, Pressable} from 'react-native';
-import {useNavigation, useRoute, RouteProp} from '@react-navigation/native';
+//import {useNavigation, useRoute, RouteProp} from '@react-navigation/native';
 import {useCallback, useEffect, useState} from 'react';
 import {useFocusable} from '@noriginmedia/norigin-spatial-navigation';
 import {useMediaName} from 'media/hooks/use-media-name';
 import {useSet} from 'app/data';
 import media from 'media/store';
 
-import type {RootStackParamList} from 'app/nav';
+//import type {RootStackParamList} from 'app/nav';
 import type {HfsImpl} from 'react-exo/fs';
 
 export const HEIGHT = __TOUCH__ ? 46 : 32;
@@ -28,25 +28,25 @@ interface SelectItemProps {
 export function SelectItem(props: SelectItemProps) {
   const {focused, index, path, name, ext, hfs} = props;
   const [dir, setDir] = useState(!ext);
-  const route = useRoute<RouteProp<RootStackParamList, 'MediaBrowse'>>();
+  //const route = useRoute<RouteProp<RootStackParamList, 'MediaBrowse'>>();
   const title = useMediaName(name);
   const virt = index === -1;
 
-  const navigation = useNavigation();
+  //const navigation = useNavigation();
   const set = useSet();
 
   const open = useCallback(() => {
     set(media.actions.focus(path));
   }, [path, set]);
 
-  const goto = useCallback(() => {
-    const parent = path.split('/').slice(0, -1).join('/');
-    const targetPath = parent || undefined;
-    // Get current path from route params to check if we're already there
-    const currentPath = route.params?.path;
-    if (targetPath === currentPath) return;
-    navigation.navigate('MediaBrowse', {path: targetPath, backend: 'local'});
-  }, [path, route.params, navigation]);
+  // const goto = useCallback(() => {
+  //   const parent = path.split('/').slice(0, -1).join('/');
+  //   const targetPath = parent || undefined;
+  //   // Get current path from route params to check if we're already there
+  //   const currentPath = route.params?.path;
+  //   if (targetPath === currentPath) return;
+  //   navigation.navigate('MediaBrowse', {path: targetPath, backend: 'local'});
+  // }, [path, route.params, navigation]);
 
   const close = useCallback((index: number) => {
     set(media.actions.selectRemove(index));
@@ -55,7 +55,7 @@ export function SelectItem(props: SelectItemProps) {
   const {ref, focused: focusedSpatial} = useFocusable({
     focusKey: `select@${path}`,
     onFocus: open,
-    onEnterPress: goto,
+    //onEnterPress: goto,
   });
 
   // Check if the item is a directory
@@ -72,7 +72,7 @@ export function SelectItem(props: SelectItemProps) {
       ref={ref}
       key={path}
       onPress={open}
-      onLongPress={goto}
+      //onLongPress={goto}
       disabled={virt}
       style={[
         styles.root,

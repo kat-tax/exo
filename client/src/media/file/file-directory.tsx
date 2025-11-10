@@ -2,7 +2,7 @@ import {plural} from '@lingui/core/macro';
 import {useEffect, useMemo, forwardRef} from 'react';
 import {useDirHfs} from 'media/dir/hooks/use-dir-hfs';
 import {DirHfs} from 'media/dir/stacks/dir-hfs';
-import {Panel} from 'app/ui/panel';
+// import {Panel} from 'app/ui/panel';
 
 import type {FileProps} from 'media/file';
 
@@ -29,11 +29,12 @@ export default forwardRef((
     actions.setInfo(message);
   }, [message, actions]);
 
-  return (
-    <Panel
-      title={embedded ? name : undefined}
-      message={embedded ? message : undefined}>
-      {hfs && <DirHfs {...{hfs, cmd, ext}}/>}
-    </Panel>
-  );
+  return hfs ? <DirHfs {...{hfs, cmd, ext}}/> : null;
+  // return (
+  //   <Panel
+  //     title={embedded ? name : undefined}
+  //     message={embedded ? message : undefined}>
+  //     {hfs && <DirHfs {...{hfs, cmd, ext}}/>}
+  //   </Panel>
+  // );
 });

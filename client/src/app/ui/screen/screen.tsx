@@ -40,7 +40,7 @@ const styles = StyleSheet.create((theme, rt) => ({
         initial: 0,
         xs: theme.display.radius2,
       },
-      marginHorizontal: {
+      marginLeft: {
         initial: 0,
         xs: theme.display.space2,
       },

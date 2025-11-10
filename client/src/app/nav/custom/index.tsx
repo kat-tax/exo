@@ -1,13 +1,18 @@
 import {Icon} from 'react-exo/icon';
-import {Sheet} from 'react-exo/sheet';
+// import {Sheet} from 'react-exo/sheet';
 import {View, Pressable} from 'react-native';
 import {StyleSheet, Display, mq} from 'react-native-unistyles';
 import {useFocusable, FocusContext} from '@noriginmedia/norigin-spatial-navigation';
 import {useState, Suspense} from 'react';
 import {useNavigation} from '@react-navigation/native';
 import {useHotkeys} from 'app/nav/hooks/use-hotkeys';
+import {useGet} from 'app/data';
+import {toPath} from 'app/lib/formatting';
 import {Panel} from 'app/ui/panel';
+import {Media} from 'media/stacks/media';
 import {breakpoints} from 'design/theme';
+import media from 'media/store';
+
 import {Menu, Tabs} from './menu';
 
 import type {NavigationHelpers, NavigationState} from '@react-navigation/native';
@@ -25,8 +30,9 @@ export interface LayoutProps {
 export function Layout(props: LayoutProps) {
   const {state, children} = props;
   const activeRoute = state.routes[state.index];
-  const [previewOpen, setPreviewOpen] = useState(false);
+  const [previewOpen, setPreviewOpen] = useState(true);
   const [menuOpen, setMenuOpen] = useState(true);
+  const focused = useGet(media.selectors.getFocused);
   const {ref, focusKey} = useFocusable({
     forceFocus: true,
     isFocusBoundary: true,
@@ -54,11 +60,23 @@ export function Layout(props: LayoutProps) {
             <Menu {...props}/>
           </Display>
         )}
-        <View style={styles.content}>
+        <View style={[styles.content, previewOpen && styles.contentWithPreview]}>
           {children}
         </View>
-        <Sheet open={previewOpen} onOpenChange={setPreviewOpen}>
-        </Sheet>
+        {previewOpen && (
+          <View style={styles.preview}>
+            <Media
+              {...toPath(focused || activeRoute.path || '', false)}
+              vertical={false}
+              standalone={false}
+              maximized={true}
+              embedded={false}
+              close={() => {}}
+            />
+          </View>
+        )}
+        {/* <Sheet open={previewOpen} onOpenChange={setPreviewOpen}>
+        </Sheet> */}
       </View>
     </FocusContext.Provider>
   );
@@ -106,6 +124,13 @@ const styles = StyleSheet.create((theme) => ({
   content: {
     flex: 1,
     flexDirection: 'row',
+    marginRight: theme.display.space2,
+  },
+  contentWithPreview: {
+    marginRight: 0,
+  },
+  preview: {
+    flex: 2,
   },
   headerLeft: {
   },
