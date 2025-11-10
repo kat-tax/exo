@@ -1,14 +1,15 @@
+import {use} from 'react';
 import {alert} from 'react-exo/toast';
 import {useLingui} from '@lingui/react/macro';
 import {useCallback} from 'react';
-import {useEvolu, useAppOwner, useQuery} from 'app/data';
+import {useEvolu, useQuery} from 'app/data';
 import {getProfile} from 'app/data/queries';
 import * as $ from 'app/data/types';
 
 export function useSettings() {
   const {t} = useLingui();
   const evolu = useEvolu();
-  const owner = useAppOwner();
+  const owner = use(evolu.appOwner);
   const profiles = useQuery(getProfile);
 
   const updateName = useCallback((text: string) => {
