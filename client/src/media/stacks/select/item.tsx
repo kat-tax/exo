@@ -12,7 +12,7 @@ import media from 'media/store';
 //import type {RootStackParamList} from 'app/nav';
 import type {HfsImpl} from 'react-exo/fs';
 
-export const HEIGHT = __TOUCH__ ? 46 : 32;
+export const HEIGHT = __TOUCH__ ? 46 : 36;
 export const ICON_SIZE = __TOUCH__ ? 1 : 0;
 export const TEXT_LINES = __TOUCH__ ? 2 : 1;
 
@@ -121,7 +121,7 @@ const styles = StyleSheet.create((theme) => ({
     paddingHorizontal: __TOUCH__ ? theme.display.space3 : theme.display.space2,
     borderRadius: theme.display.radius1,
     borderColor: theme.colors.border,
-    borderWidth: 1,
+    borderWidth: StyleSheet.hairlineWidth,
   },
   disabled: {
     opacity: 0.5,
