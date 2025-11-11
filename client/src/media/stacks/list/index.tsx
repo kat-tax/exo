@@ -72,7 +72,6 @@ export function List<T>({items, path, data, opts, render}: ListProps<T>) {
                 numColumns={columns}
                 drawDistance={height * 20}
                 estimatedItemSize={height}
-                contentContainerStyle={vstyles.list}
                 ListHeaderComponent={opts?.header ? <View style={vstyles.header}/> : null}
                 keyExtractor={(_,i) => i.toString()}
                 renderItem={render}
@@ -91,6 +90,7 @@ const styles = StyleSheet.create(theme => ({
     flex: 1,
   },
   list: {
+    flex: 1,
     paddingHorizontal: theme.display.space1,
     paddingBottom: theme.display.space1,
   },

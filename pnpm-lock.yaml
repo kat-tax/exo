@@ -61,11 +61,6 @@ catalogs:
       specifier: ^5.9.2
       version: 5.9.2
 
-patchedDependencies:
-  '@legendapp/list@2.0.14':
-    hash: b506ba74f0dba9baed5eab6f1ddf2f4bad854092c8e04f429cd56d397bb59eb1
-    path: patches/@legendapp__list@2.0.14.patch
-
 importers:
 
   .:
@@ -219,8 +214,8 @@ importers:
         specifier: ^3.2.0
         version: 3.2.3(bufferutil@4.0.9)(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(bufferutil@4.0.9)(typescript@5.9.2))(@types/react@19.1.13)(bufferutil@4.0.9)(react@19.1.0))
       '@legendapp/list':
-        specifier: ^2.0.14
-        version: 2.0.14(patch_hash=b506ba74f0dba9baed5eab6f1ddf2f4bad854092c8e04f429cd56d397bb59eb1)(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(bufferutil@4.0.9)(typescript@5.9.2))(@types/react@19.1.13)(bufferutil@4.0.9)(react@19.1.0))(react@19.1.0)
+        specifier: 2.1.0-beta.10
+        version: 2.1.0-beta.10(react-dom@19.1.0(react@19.1.0))(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(bufferutil@4.0.9)(typescript@5.9.2))(@types/react@19.1.13)(bufferutil@4.0.9)(react@19.1.0))(react@19.1.0)
       '@lingui/core':
         specifier: 'catalog:'
         version: 5.5.0(@lingui/babel-plugin-lingui-macro@5.5.0(babel-plugin-macros@3.1.0)(typescript@5.9.2))(babel-plugin-macros@3.1.0)
@@ -286,7 +281,7 @@ importers:
         version: 19.1.0(react@19.1.0)
       react-exo:
         specifier: 'catalog:'
-        version: 0.20.19(951a207f2add0ff7d0f797243d47ba1f)
+        version: 0.20.19(e48d6746f0974c126dd56ed4a9f1a4bf)
       react-exo-ui:
         specifier: workspace:*
         version: link:../design
@@ -408,7 +403,7 @@ importers:
         version: 19.1.0(react@19.1.0)
       react-exo:
         specifier: 'catalog:'
-        version: 0.20.19(951a207f2add0ff7d0f797243d47ba1f)
+        version: 0.20.19(e48d6746f0974c126dd56ed4a9f1a4bf)
       react-native:
         specifier: 'catalog:'
         version: 0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(bufferutil@4.0.9)(typescript@5.9.2))(@types/react@19.1.13)(bufferutil@4.0.9)(react@19.1.0)
@@ -1906,11 +1901,17 @@ packages:
   '@jridgewell/trace-mapping@0.3.31':
     resolution: {integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==}
 
-  '@legendapp/list@2.0.14':
-    resolution: {integrity: sha512-16r4zNrjm9GrydHwdCJxZWnvc20BLo/9SOwPI3ACTFnuzuek9Xe9jUd3wvrIB193sjzuoZOyIZOSsGuZSxqTtQ==}
+  '@legendapp/list@2.1.0-beta.10':
+    resolution: {integrity: sha512-3hJwSvdDkVp+xZ7h8oqjEloDJ/znAu+T3eBbbbnjYigVK+vPHydGrYCHWalJLI9rkJxfwEReFkfL0Pwz4RCP2g==}
     peerDependencies:
       react: '*'
+      react-dom: '*'
       react-native: '*'
+    peerDependenciesMeta:
+      react-dom:
+        optional: true
+      react-native:
+        optional: true
 
   '@leichtgewicht/ip-codec@2.0.5':
     resolution: {integrity: sha512-Vo+PSpZG2/fmgmiNzYK9qWRh8h/CHrwD0mo1h1DzL4yzHNSfWYujGTYsWGreD000gcgmZ7K4Ys6Tx9TxtsKdDw==}
@@ -10086,11 +10087,13 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
 
-  '@legendapp/list@2.0.14(patch_hash=b506ba74f0dba9baed5eab6f1ddf2f4bad854092c8e04f429cd56d397bb59eb1)(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(bufferutil@4.0.9)(typescript@5.9.2))(@types/react@19.1.13)(bufferutil@4.0.9)(react@19.1.0))(react@19.1.0)':
+  '@legendapp/list@2.1.0-beta.10(react-dom@19.1.0(react@19.1.0))(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(bufferutil@4.0.9)(typescript@5.9.2))(@types/react@19.1.13)(bufferutil@4.0.9)(react@19.1.0))(react@19.1.0)':
     dependencies:
       react: 19.1.0
-      react-native: 0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(bufferutil@4.0.9)(typescript@5.9.2))(@types/react@19.1.13)(bufferutil@4.0.9)(react@19.1.0)
       use-sync-external-store: 1.5.0(react@19.1.0)
+    optionalDependencies:
+      react-dom: 19.1.0(react@19.1.0)
+      react-native: 0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(bufferutil@4.0.9)(typescript@5.9.2))(@types/react@19.1.13)(bufferutil@4.0.9)(react@19.1.0)
 
   '@leichtgewicht/ip-codec@2.0.5': {}
 
@@ -16390,7 +16393,7 @@ snapshots:
       - '@types/react-dom'
       - supports-color
 
-  react-exo@0.20.19(951a207f2add0ff7d0f797243d47ba1f):
+  react-exo@0.20.19(e48d6746f0974c126dd56ed4a9f1a4bf):
     dependencies:
       '@iconify/react': 5.2.1(react@19.1.0)
       '@iconify/utils': 2.3.0
@@ -16418,7 +16421,7 @@ snapshots:
       vaul: 1.1.2(@types/react-dom@19.1.9(@types/react@19.1.13))(@types/react@19.1.13)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
     optionalDependencies:
       '@helia/unixfs': 5.1.0
-      '@legendapp/list': 2.0.14(patch_hash=b506ba74f0dba9baed5eab6f1ddf2f4bad854092c8e04f429cd56d397bb59eb1)(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(bufferutil@4.0.9)(typescript@5.9.2))(@types/react@19.1.13)(bufferutil@4.0.9)(react@19.1.0))(react@19.1.0)
+      '@legendapp/list': 2.1.0-beta.10(react-dom@19.1.0(react@19.1.0))(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(bufferutil@4.0.9)(typescript@5.9.2))(@types/react@19.1.13)(bufferutil@4.0.9)(react@19.1.0))(react@19.1.0)
       '@lodev09/react-native-true-sheet': 2.0.6(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(bufferutil@4.0.9)(typescript@5.9.2))(@types/react@19.1.13)(bufferutil@4.0.9)(react@19.1.0))(react@19.1.0)
       '@react-native-community/netinfo': 11.4.1(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(bufferutil@4.0.9)(typescript@5.9.2))(@types/react@19.1.13)(bufferutil@4.0.9)(react@19.1.0))
       '@react-native-picker/picker': 2.11.2(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(bufferutil@4.0.9)(typescript@5.9.2))(@types/react@19.1.13)(bufferutil@4.0.9)(react@19.1.0))(react@19.1.0)

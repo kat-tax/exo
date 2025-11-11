@@ -37,7 +37,7 @@ msgstr ""
 msgid "Appearance"
 msgstr "Внешний вид"
 
-#: ../../client/src/settings/hooks/use-settings.ts:38
+#: ../../client/src/settings/hooks/use-settings.ts:39
 msgid "Are you sure you want to change the owner key? This will reset the local database. This action cannot be undone."
 msgstr "Вы уверены, что хотите изменить ключ владельца? Это сбросит локальную базу данных. Это действие нельзя отменить."
 
@@ -205,8 +205,8 @@ msgstr "Введите мнемонику"
 msgid "Enter name"
 msgstr "Введите имя"
 
-#: ../../client/src/settings/hooks/use-settings.ts:24
-#: ../../client/src/settings/hooks/use-settings.ts:45
+#: ../../client/src/settings/hooks/use-settings.ts:25
+#: ../../client/src/settings/hooks/use-settings.ts:46
 msgid "Error"
 msgstr "Ошибка"
 
@@ -302,7 +302,7 @@ msgstr "Доброе утро, {name}."
 msgid "Good night, {name}."
 msgstr "Спокойной ночи, {name}."
 
-#: ../../client/src/app/nav/custom/menu/menu-header.tsx:19
+#: ../../client/src/app/nav/custom/menu/menu-header.tsx:21
 msgid "Human"
 msgstr "Человек"
 
@@ -338,7 +338,7 @@ msgstr "Неверная иконка."
 msgid "Invalid list id."
 msgstr ""
 
-#: ../../client/src/settings/hooks/use-settings.ts:26
+#: ../../client/src/settings/hooks/use-settings.ts:27
 msgid "Invalid name (max 25 characters)."
 msgstr "Неверное имя (максимум 25 символов)."
 
@@ -347,7 +347,7 @@ msgstr "Неверное имя (максимум 25 символов)."
 msgid "Invalid name field."
 msgstr "Неверное имя."
 
-#: ../../client/src/settings/hooks/use-settings.ts:47
+#: ../../client/src/settings/hooks/use-settings.ts:48
 msgid "Invalid owner key."
 msgstr "Неверный ключ владельца."
 

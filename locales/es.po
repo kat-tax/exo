@@ -37,7 +37,7 @@ msgstr ""
 msgid "Appearance"
 msgstr "Apariencia"
 
-#: ../../client/src/settings/hooks/use-settings.ts:38
+#: ../../client/src/settings/hooks/use-settings.ts:39
 msgid "Are you sure you want to change the owner key? This will reset the local database. This action cannot be undone."
 msgstr "¿Estás seguro de cambiar la clave propietaria? Esto reiniciará la base de datos local. Esta acción no se puede deshacer."
 
@@ -205,8 +205,8 @@ msgstr "Ingresa mnemónico"
 msgid "Enter name"
 msgstr "Ingresa nombre"
 
-#: ../../client/src/settings/hooks/use-settings.ts:24
-#: ../../client/src/settings/hooks/use-settings.ts:45
+#: ../../client/src/settings/hooks/use-settings.ts:25
+#: ../../client/src/settings/hooks/use-settings.ts:46
 msgid "Error"
 msgstr "Error"
 
@@ -302,7 +302,7 @@ msgstr "Buenos días, {name}."
 msgid "Good night, {name}."
 msgstr "Buenas noches, {name}."
 
-#: ../../client/src/app/nav/custom/menu/menu-header.tsx:19
+#: ../../client/src/app/nav/custom/menu/menu-header.tsx:21
 msgid "Human"
 msgstr "Humano"
 
@@ -338,7 +338,7 @@ msgstr "Campo de icono inválido."
 msgid "Invalid list id."
 msgstr ""
 
-#: ../../client/src/settings/hooks/use-settings.ts:26
+#: ../../client/src/settings/hooks/use-settings.ts:27
 msgid "Invalid name (max 25 characters)."
 msgstr "Nombre inválido (máximo 25 caracteres)."
 
@@ -347,7 +347,7 @@ msgstr "Nombre inválido (máximo 25 caracteres)."
 msgid "Invalid name field."
 msgstr "Campo de nombre inválido."
 
-#: ../../client/src/settings/hooks/use-settings.ts:47
+#: ../../client/src/settings/hooks/use-settings.ts:48
 msgid "Invalid owner key."
 msgstr "Clave propietaria inválida."
 

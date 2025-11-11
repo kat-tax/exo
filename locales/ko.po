@@ -37,7 +37,7 @@ msgstr ""
 msgid "Appearance"
 msgstr "외관"
 
-#: ../../client/src/settings/hooks/use-settings.ts:38
+#: ../../client/src/settings/hooks/use-settings.ts:39
 msgid "Are you sure you want to change the owner key? This will reset the local database. This action cannot be undone."
 msgstr "소유자 키를 변경하시겠습니까? 로컬 데이터베이스가 초기화됩니다. 이 작업은 되돌릴 수 없습니다."
 
@@ -205,8 +205,8 @@ msgstr "니모닉 입력"
 msgid "Enter name"
 msgstr "이름 입력"
 
-#: ../../client/src/settings/hooks/use-settings.ts:24
-#: ../../client/src/settings/hooks/use-settings.ts:45
+#: ../../client/src/settings/hooks/use-settings.ts:25
+#: ../../client/src/settings/hooks/use-settings.ts:46
 msgid "Error"
 msgstr "오류"
 
@@ -302,7 +302,7 @@ msgstr "안녕하세요, {name}님."
 msgid "Good night, {name}."
 msgstr "안녕히 주무세요, {name}님."
 
-#: ../../client/src/app/nav/custom/menu/menu-header.tsx:19
+#: ../../client/src/app/nav/custom/menu/menu-header.tsx:21
 msgid "Human"
 msgstr "인간"
 
@@ -338,7 +338,7 @@ msgstr "잘못된 아이콘 필드입니다."
 msgid "Invalid list id."
 msgstr ""
 
-#: ../../client/src/settings/hooks/use-settings.ts:26
+#: ../../client/src/settings/hooks/use-settings.ts:27
 msgid "Invalid name (max 25 characters)."
 msgstr "잘못된 이름 (최대 25자)."
 
@@ -347,7 +347,7 @@ msgstr "잘못된 이름 (최대 25자)."
 msgid "Invalid name field."
 msgstr "잘못된 이름 필드입니다."
 
-#: ../../client/src/settings/hooks/use-settings.ts:47
+#: ../../client/src/settings/hooks/use-settings.ts:48
 msgid "Invalid owner key."
 msgstr "잘못된 소유자 키입니다."
 

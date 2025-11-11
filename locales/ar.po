@@ -37,7 +37,7 @@ msgstr ""
 msgid "Appearance"
 msgstr "المظهر"
 
-#: ../../client/src/settings/hooks/use-settings.ts:38
+#: ../../client/src/settings/hooks/use-settings.ts:39
 msgid "Are you sure you want to change the owner key? This will reset the local database. This action cannot be undone."
 msgstr "هل أنت متأكد من تغيير مفتاح المالك؟ سيؤدي هذا إلى إعادة تعيين قاعدة البيانات المحلية. لا يمكن التراجع عن هذا الإجراء."
 
@@ -205,8 +205,8 @@ msgstr "أدخل العبارة المساعدة"
 msgid "Enter name"
 msgstr "أدخل الاسم"
 
-#: ../../client/src/settings/hooks/use-settings.ts:24
-#: ../../client/src/settings/hooks/use-settings.ts:45
+#: ../../client/src/settings/hooks/use-settings.ts:25
+#: ../../client/src/settings/hooks/use-settings.ts:46
 msgid "Error"
 msgstr "خطأ"
 
@@ -302,7 +302,7 @@ msgstr "صباح الخير، {name}."
 msgid "Good night, {name}."
 msgstr "تصبح على خير، {name}."
 
-#: ../../client/src/app/nav/custom/menu/menu-header.tsx:19
+#: ../../client/src/app/nav/custom/menu/menu-header.tsx:21
 msgid "Human"
 msgstr "بشري"
 
@@ -338,7 +338,7 @@ msgstr "حقل الأيقونة غير صالح."
 msgid "Invalid list id."
 msgstr ""
 
-#: ../../client/src/settings/hooks/use-settings.ts:26
+#: ../../client/src/settings/hooks/use-settings.ts:27
 msgid "Invalid name (max 25 characters)."
 msgstr "اسم غير صالح (أقصى 25 حرف)."
 
@@ -347,7 +347,7 @@ msgstr "اسم غير صالح (أقصى 25 حرف)."
 msgid "Invalid name field."
 msgstr "حقل الاسم غير صالح."
 
-#: ../../client/src/settings/hooks/use-settings.ts:47
+#: ../../client/src/settings/hooks/use-settings.ts:48
 msgid "Invalid owner key."
 msgstr "مفتاح المالك غير صالح."
 
