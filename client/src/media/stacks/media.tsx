@@ -100,8 +100,6 @@ export function Media({ext, name, path, vertical, maximized, embedded, standalon
     })();
   }, [ext, path, hfs]);
 
-  console.log('>> file', File)
-
   return (
     <View style={vstyles.root}>
       {!embedded && !standalone &&

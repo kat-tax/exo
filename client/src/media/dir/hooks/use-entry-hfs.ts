@@ -18,13 +18,19 @@ export const {is, get, type} = $.tag<HfsFileEntry, HfsCmd>('hfs');
 
 export function useEntryHfs({item, cmd, opt}: EntryHfsProps) {
   const [dropping, setDropping] = useState(false);
+  const ref = useRef<RN.GestureResponderEvent>(undefined);
   const set = useSet();
 
   // Spatial navigation
   const {focused, ref: refFoc, focusSelf: foc} = useFocusable({
-    // onFocus: (_lay, _props, e) => opt.preview
-    //   ? undefined
-    //   : cmd.select(item, e.event as unknown as RN.GestureResponderEvent),
+    onFocus: (_lay, _props, e) =>
+      ref.current = e.event as unknown as RN.GestureResponderEvent,
+    onArrowRelease: () => {
+      if (opt.preview) return true;
+      cmd.select(item, ref.current);
+      ref.current = undefined;
+      return true;
+    },
     onEnterPress: () => opt.preview
       ? cmd.select(item)
       : item.isDirectory
