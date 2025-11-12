@@ -55,7 +55,6 @@ export function ListRow(props: ListRow) {
             placeholder={name}
             defaultValue={name}
             spellCheck={false}
-            autoFocus={true}
             ref={(ref) => {
               if (ref && !ref.isFocused()) {
                 setTimeout(() => ref.focus(), 100);
