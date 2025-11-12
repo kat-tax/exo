@@ -72,6 +72,8 @@ export function List<T>({items, path, data, opts, render}: ListProps<T>) {
                 numColumns={columns}
                 drawDistance={height * 50}
                 estimatedItemSize={height}
+                getFixedItemSize={() => height}
+                getEstimatedItemSize={() => height}
                 ListHeaderComponent={opts?.header ? <View style={vstyles.header}/> : null}
                 keyExtractor={(_,i) => i.toString()}
                 renderItem={render}
