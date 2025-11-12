@@ -42,9 +42,9 @@ export function useEntryHfs({item, cmd, opt}: EntryHfsProps) {
       if (dir === 'left') {
         return !cmd.goUp();
       // Handle navigating into sub-directory (right arrow)
-      } else if (dir === 'right' && item.isDirectory) {
-        cmd.open(item);
-        return false;
+      // } else if (dir === 'right' && item.isDirectory) {
+      //   cmd.open(item);
+      //   return false;
       }
       return true;
     },
