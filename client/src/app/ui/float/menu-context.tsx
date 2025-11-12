@@ -6,6 +6,7 @@ import type {ComponentProps} from 'react';
 export interface MenuContextProps extends ComponentProps<typeof Z['Root']> {
   label: string,
   items: Array<MenuContextItem | undefined | false>,
+  enabled?: boolean,
 }
 
 export interface MenuContextItem {
@@ -14,41 +15,97 @@ export interface MenuContextItem {
   destructive?: boolean,
   shortcut?: string,
   icon?: string,
+  sub?: Array<MenuContextItem>,
   action?: () => void,
 }
 
 export function MenuContext(props: MenuContextProps) {
-  const {label, items, children, ...rest} = props;
+  const {label, items, enabled = true, children, ...rest} = props;
+  if (!enabled) return children;
   return (
     <Root {...rest}>
       <Trigger>{children}</Trigger>
       <Content>
         <Label key="label">{label}</Label>
         {items.map(item => item && (
-          item.label === '-' ? <Separator key={item.name} /> : (
-          <Item
-            key={item.name}
-            onSelect={item.action}
-            destructive={item.destructive}>
-            {item.icon &&
-              <ItemIcon>
-                <Icon
-                  size={14}
-                  name={item.icon}
-                  uniProps={(theme) => ({
-                    color: item.destructive
-                      ? theme.colors.destructive
-                      : theme.colors.primary,
-                  })}
-                />
-              </ItemIcon>
-            }
-            <ItemTitle>{item.label}</ItemTitle>
-            {item.shortcut &&
-              <ItemSubtitle>{item.shortcut}</ItemSubtitle>
-            }
-          </Item>
-          )
+          item.label === '-'
+            ? <Separator key={item.name} />
+            : item.sub
+              ? <Sub>
+                  <SubTrigger key={item.name}>
+                    {item.icon &&
+                      <ItemIcon>
+                        <Icon
+                          size={14}
+                          name={item.icon}
+                          uniProps={(theme) => ({
+                            color: item.destructive
+                              ? theme.colors.destructive
+                              : theme.colors.primary,
+                          })}
+                        />
+                      </ItemIcon>
+                    }
+                    <ItemTitle>{item.label}</ItemTitle>
+                    <div className="RightSlot">
+                      <Icon
+                        name="ph:caret-right"
+                        size={12}
+                        uniProps={(theme) => ({
+                          color: theme.colors.mutedForeground,
+                        })}
+                      />
+                    </div>
+                    {item.shortcut &&
+                      <ItemSubtitle>{item.shortcut}</ItemSubtitle>
+                    }
+                  </SubTrigger>
+                  <SubContent>
+                    {item.sub.map(sub => sub && (
+                      <Item key={sub.name} onSelect={sub.action} destructive={sub.destructive}>
+                        {sub.icon &&
+                          <ItemIcon>
+                            <Icon
+                              size={14}
+                              name={sub.icon}
+                              uniProps={(theme) => ({
+                                color: sub.destructive
+                                  ? theme.colors.destructive
+                                  : theme.colors.primary,
+                              })}
+                            />
+                          </ItemIcon>
+                        }
+                        <ItemTitle>{sub.label}</ItemTitle>
+                        {sub.shortcut &&
+                          <ItemSubtitle>{sub.shortcut}</ItemSubtitle>
+                        }
+                      </Item>
+                    ))}
+                  </SubContent>
+                </Sub>
+              : <Item
+                  key={item.name}
+                  onSelect={item.action}
+                  destructive={item.destructive}>
+                  {item.icon &&
+                    <ItemIcon>
+                      <Icon
+                        size={14}
+                        name={item.icon}
+                        uniProps={(theme) => ({
+                          color: item.destructive
+                            ? theme.colors.destructive
+                            : theme.colors.primary,
+                        })}
+                      />
+                    </ItemIcon>
+                  }
+                  <ItemTitle>{item.label}</ItemTitle>
+                  {item.shortcut &&
+                    <ItemSubtitle>{item.shortcut}</ItemSubtitle>
+                  }
+                </Item>
         )).filter(Boolean)}
       </Content>
     </Root>

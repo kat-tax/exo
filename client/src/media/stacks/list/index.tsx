@@ -7,9 +7,11 @@ import {useFocusable, FocusContext} from '@noriginmedia/norigin-spatial-navigati
 import {HEIGHT_ROW, HEIGHT_CELL} from 'media/stacks/list/row';
 import {ListEmpty} from 'media/stacks/list/empty';
 import {ListBar} from 'media/stacks/list/bar';
+import {MenuContext} from 'app/ui/float';
 
 import type {LegendListRef} from '@legendapp/list';
 import type {ListBarAction} from 'media/stacks/list/bar';
+import type {MenuContextItem} from 'app/ui/float/menu-context';
 
 export interface ListProps<T> {
   items?: T[];
@@ -18,6 +20,7 @@ export interface ListProps<T> {
   opts?: {
     preview?: boolean,
     layout?: 'list' | 'grid',
+    menu?: Array<MenuContextItem>,
     header?: {
       actions?: Array<ListBarAction>,
     },
@@ -53,36 +56,41 @@ export function List<T>({items, path, data, opts, render}: ListProps<T>) {
 
   return (
     <FocusContext.Provider value={focusKey}>
-      <View ref={ref} style={vstyles.root}>
-        {opts?.header &&
-          <ListBar {...{path}} {...opts.header}/>
-        }
-        <View style={vstyles.list}>
-          {!items?.length
-            ? <ListEmpty
-                path={path ?? '.'}
-                offset={opts?.header ? 100 : 0}
-              />
-            : (
-              <LegendList
-                key={`${layout}:${columns}`}
-                ref={listRef}
-                data={items}
-                extraData={data}
-                numColumns={columns}
-                drawDistance={height * 50}
-                estimatedItemSize={height}
-                getFixedItemSize={() => height}
-                getEstimatedItemSize={() => height}
-                ListHeaderComponent={opts?.header ? <View style={vstyles.header}/> : null}
-                keyExtractor={(_,i) => i.toString()}
-                renderItem={render}
-                recycleItems
-              />
-            )
+      <MenuContext
+        label={path || 'Files'}
+        items={opts?.menu ?? []}
+        enabled={!!opts?.menu}>
+        <View ref={ref} style={vstyles.root}>
+          {opts?.header &&
+            <ListBar {...{path}} {...opts.header}/>
           }
+          <View style={vstyles.list}>
+            {!items?.length
+              ? <ListEmpty
+                  path={path ?? '.'}
+                  offset={opts?.header ? 100 : 0}
+                />
+              : (
+                <LegendList
+                  key={`${layout}:${columns}`}
+                  ref={listRef}
+                  data={items}
+                  extraData={data}
+                  numColumns={columns}
+                  drawDistance={height * 50}
+                  estimatedItemSize={height}
+                  getFixedItemSize={() => height}
+                  getEstimatedItemSize={() => height}
+                  ListHeaderComponent={opts?.header ? <View style={vstyles.header}/> : null}
+                  keyExtractor={(_,i) => i.toString()}
+                  renderItem={render}
+                  recycleItems
+                />
+              )
+            }
+          </View>
         </View>
-      </View>
+      </MenuContext>
     </FocusContext.Provider>
   );
 }
