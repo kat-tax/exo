@@ -1,6 +1,6 @@
 import {useCallback} from 'react';
 import {FS} from 'react-exo/fs';
-import {capture} from 'media/dir/utils/cam/capture';
+import {captureVideo} from 'media/dir/utils/cam/video';
 import {getStartInDir, filterJunkFiles} from 'media/dir/utils/hfs/path';
 
 export function useImportHfs() {
@@ -38,9 +38,12 @@ export function useImportHfs() {
 
   /** Import a camera from the device */
   const importCam = useCallback(async (path = '') => {
-    const timer = performance.now();
     try {
-      const file = await capture();
+      const timer = performance.now();
+      const file = await captureVideo(
+        () => new Promise<void>((resolve) => setTimeout(resolve, 1000)),
+        () => new Promise<void>((resolve) => setTimeout(resolve, 5000)),
+      );
       if (!file) return;
       await FS.importFiles(path, [file]);
       console.log('>> fs [imported camera]', file.name, performance.now() - timer);
