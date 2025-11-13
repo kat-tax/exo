@@ -1,5 +1,5 @@
 export type * from 'react-native-vision-camera';
-export {Camera} from './components/Camera';
+export {Camera, type CameraRef} from './components/Camera';
 export {useCameraDevices} from './hooks/use-camera-devices';
 export {useCameraDevice} from './hooks/use-camera-device';
 export {useCameraPermission} from './hooks/use-camera-permission';

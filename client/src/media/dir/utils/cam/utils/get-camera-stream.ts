@@ -4,7 +4,7 @@ import type {CameraDevice} from 'react-native-vision-camera';
  * Get a camera media stream using web APIs
  * Similar to how react-native-vision-camera manages camera streams
  */
-export async function getCameraStream(device: CameraDevice): Promise<MediaStream> {
+export async function getCameraStream(device: CameraDevice, audio = false): Promise<MediaStream> {
   if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
     throw new Error('getUserMedia is not supported in this browser');
   }
@@ -14,7 +14,7 @@ export async function getCameraStream(device: CameraDevice): Promise<MediaStream
     video: device.id
       ? {deviceId: {exact: device.id}}
       : {facingMode: device.position === 'front' ? 'user' : 'environment'},
-    audio: false,
+    audio,
   };
 
   try {

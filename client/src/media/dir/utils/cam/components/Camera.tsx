@@ -1,18 +1,52 @@
 import {View} from 'react-native';
-import {useEffect, useRef} from 'react';
+import {forwardRef, useEffect, useImperativeHandle, useRef} from 'react';
+import {CameraCaptureError, CameraRuntimeError} from 'react-native-vision-camera';
 import {getCameraStream} from '../utils/get-camera-stream';
 import {stopCameraStream} from '../utils/stop-camera-stream';
-import type {CameraProps} from 'react-native-vision-camera';
+import {takePhotoFromVideo} from '../utils/take-photo';
+import {takeSnapshotFromVideo} from '../utils/take-snapshot';
 
-/**
- * Camera component polyfill using web video element
- * This provides a web-compatible implementation of react-native-vision-camera
- */
-export function Camera(props: CameraProps) {
+import {
+  startVideoRecording,
+  pauseVideoRecording,
+  resumeVideoRecording,
+  stopVideoRecording,
+  cancelVideoRecording,
+  type VideoRecorderState,
+} from '../utils/video-recorder';
+
+import type {
+  CameraProps,
+  PhotoFile,
+  TakePhotoOptions,
+  TakeSnapshotOptions,
+  RecordVideoOptions,
+  Point,
+} from 'react-native-vision-camera';
+
+export interface CameraRef {
+  takePhoto(options?: TakePhotoOptions): Promise<PhotoFile>;
+  takeSnapshot(options?: TakeSnapshotOptions): Promise<PhotoFile>;
+  startRecording(options: RecordVideoOptions): void;
+  pauseRecording(): Promise<void>;
+  resumeRecording(): Promise<void>;
+  stopRecording(): Promise<void>;
+  cancelRecording(): Promise<void>;
+  focus(point: Point): Promise<void>;
+}
+
+export const Camera = forwardRef<CameraRef, CameraProps>((props, ref) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const streamRef = useRef<MediaStream | null>(null);
   const isActiveRef = useRef(false);
-  const {style, device, isActive, resizeMode = 'cover', onInitialized, onStarted, onStopped, onPreviewStarted, onPreviewStopped, onError, ...otherProps} = props;
+  const recorderStateRef = useRef<VideoRecorderState>({
+    recorder: null,
+    isRecording: false,
+    isPaused: false,
+    onRecordingFinished: null,
+    onRecordingError: null,
+  });
+  const {style, device, isActive, resizeMode = 'cover', onInitialized, onStarted, onStopped, onPreviewStarted, onPreviewStopped, onError, photo, video, audio, ...otherProps} = props;
 
   useEffect(() => {
     if (!isActive) {
@@ -39,7 +73,7 @@ export function Camera(props: CameraProps) {
       if (!device) {
         throw new Error('No camera device available');
       }
-      const stream = await getCameraStream(device);
+      const stream = await getCameraStream(device, audio === true);
       streamRef.current = stream;
       isActiveRef.current = true;
       if (videoRef.current) {
@@ -60,6 +94,14 @@ export function Camera(props: CameraProps) {
 
   const stopCamera = () => {
     if (!isActiveRef.current) return;
+    // Cancel any ongoing recording
+    if (recorderStateRef.current.isRecording) {
+      try {
+        cancelVideoRecording(recorderStateRef.current);
+      } catch {
+        // Ignore errors when stopping camera
+      }
+    }
     stopCameraStream(streamRef.current);
     streamRef.current = null;
     if (videoRef.current) {
@@ -69,6 +111,69 @@ export function Camera(props: CameraProps) {
     onStopped?.();
     onPreviewStopped?.();
   };
+
+  // Expose ref methods
+  useImperativeHandle(ref, () => ({
+    async takePhoto(options?: TakePhotoOptions): Promise<PhotoFile> {
+      if (!photo) {
+        throw new CameraCaptureError('capture/photo-not-enabled', 'Photo capture is not enabled');
+      }
+      if (!videoRef.current || !isActiveRef.current) {
+        throw new CameraRuntimeError(
+          'session/camera-not-ready',
+          'Camera is not ready. Make sure the camera is active and initialized.',
+        );
+      }
+      return takePhotoFromVideo(videoRef.current, options);
+    },
+
+    async takeSnapshot(options?: TakeSnapshotOptions): Promise<PhotoFile> {
+      if (!videoRef.current || !isActiveRef.current) {
+        throw new CameraCaptureError(
+          'capture/snapshot-failed-preview-not-enabled',
+          'Camera preview is not enabled. Make sure the camera is active and initialized.',
+        );
+      }
+      return takeSnapshotFromVideo(videoRef.current, options);
+    },
+
+    startRecording(options: RecordVideoOptions): void {
+      if (!video) {
+        throw new CameraCaptureError('capture/video-not-enabled', 'Video recording is not enabled');
+      }
+      if (!streamRef.current || !isActiveRef.current) {
+        throw new CameraRuntimeError(
+          'session/camera-not-ready',
+          'Camera is not ready. Make sure the camera is active and initialized.',
+        );
+      }
+      startVideoRecording(streamRef.current, options, recorderStateRef.current);
+    },
+
+    async pauseRecording(): Promise<void> {
+      pauseVideoRecording(recorderStateRef.current);
+    },
+
+    async resumeRecording(): Promise<void> {
+      resumeVideoRecording(recorderStateRef.current);
+    },
+
+    async stopRecording(): Promise<void> {
+      stopVideoRecording(recorderStateRef.current);
+    },
+
+    async cancelRecording(): Promise<void> {
+      cancelVideoRecording(recorderStateRef.current);
+    },
+
+    async focus(_point: Point): Promise<void> {
+      // Web browsers don't support programmatic camera focus
+      // This is a no-op for web compatibility
+      // In the future, we could try to use MediaStreamTrack.applyConstraints
+      // but it's not widely supported and doesn't work the same way as native focus
+      return Promise.resolve();
+    },
+  }));
 
   // Filter out props that don't apply to web
   const webProps = {
@@ -88,7 +193,7 @@ export function Camera(props: CameraProps) {
         ref={videoRef}
         autoPlay
         playsInline
-        muted
+        muted={!video} // Unmute if video recording is enabled (for audio)
         style={{
           width: '100%',
           height: '100%',
@@ -98,4 +203,6 @@ export function Camera(props: CameraProps) {
       />
     </View>
   );
-}
+});
+
+Camera.displayName = 'Camera';
