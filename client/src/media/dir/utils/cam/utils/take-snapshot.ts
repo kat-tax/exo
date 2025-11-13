@@ -1,5 +1,5 @@
 import type {PhotoFile, TakeSnapshotOptions} from 'react-native-vision-camera';
-import {CameraCaptureError} from 'react-native-vision-camera';
+import {CameraCaptureError} from './camera-errors';
 import {takePhotoFromVideo} from './take-photo';
 
 /**

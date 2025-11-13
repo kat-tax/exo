@@ -1,5 +1,5 @@
 import type {RecordVideoOptions, VideoFile} from 'react-native-vision-camera';
-import {CameraCaptureError} from 'react-native-vision-camera';
+import {CameraCaptureError} from './camera-errors';
 
 export interface VideoRecorderState {
   recorder: MediaRecorder | null;
@@ -119,7 +119,7 @@ export function startVideoRecording(
     state.isRecording = true;
     state.isPaused = false;
     state.onRecordingFinished = options.onRecordingFinished;
-    state.onRecordingError = options.onRecordingError;
+    state.onRecordingError = options.onRecordingError as unknown as ((error: CameraCaptureError) => void) | null;
   } catch (error) {
     const captureError = new CameraCaptureError(
       'capture/create-recorder-error',

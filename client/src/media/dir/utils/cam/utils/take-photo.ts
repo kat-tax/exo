@@ -1,5 +1,5 @@
 import type {PhotoFile, TakePhotoOptions} from 'react-native-vision-camera';
-import {CameraCaptureError} from 'react-native-vision-camera';
+import {CameraCaptureError} from './camera-errors';
 
 /**
  * Take a photo from a video element using canvas

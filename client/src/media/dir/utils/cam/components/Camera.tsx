@@ -1,6 +1,6 @@
 import {View} from 'react-native';
 import {forwardRef, useEffect, useImperativeHandle, useRef} from 'react';
-import {CameraCaptureError, CameraRuntimeError} from 'react-native-vision-camera';
+import {CameraCaptureError, CameraRuntimeError} from '../utils/camera-errors';
 import {getCameraStream} from '../utils/get-camera-stream';
 import {stopCameraStream} from '../utils/stop-camera-stream';
 import {takePhotoFromVideo} from '../utils/take-photo';
