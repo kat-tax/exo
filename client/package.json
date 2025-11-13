@@ -66,6 +66,7 @@
     "react-native-svg-app-icon": "^0.6.1",
     "react-native-unistyles": "catalog:",
     "react-native-url-polyfill": "^3.0.0",
+    "react-native-vision-camera": "catalog:",
     "react-native-web": "catalog:",
     "react-zoom-pan-pinch": "^3.7.0",
     "uint8array-extras": "^1.4.0",
