@@ -6,6 +6,7 @@ import type {CameraDevice, CameraPosition, CameraDeviceFormat} from 'react-nativ
 export function createCameraDeviceFromMediaDevice(
   deviceInfo: MediaDeviceInfo,
   position: CameraPosition,
+  hasFlash: boolean = false,
 ): CameraDevice {
   // Create a basic format - web APIs don't expose all the details
   const format: CameraDeviceFormat = {
@@ -30,8 +31,8 @@ export function createCameraDeviceFromMediaDevice(
     physicalDevices: ['wide-angle-camera'],
     position,
     name: deviceInfo.label || `${position} camera`,
-    hasFlash: false, // Web APIs don't expose flash capability easily
-    hasTorch: false,
+    hasFlash,
+    hasTorch: hasFlash, // Torch is typically the same as flash on web
     minFocusDistance: 0,
     isMultiCam: false,
     minZoom: 1,

@@ -51,7 +51,9 @@ export function CameraPicker() {
   const handleTakePhoto = async () => {
     if (!cameraRef.current) return;
     try {
-      const photo = await cameraRef.current.takePhoto();
+      const photo = await cameraRef.current.takePhoto({
+        flash: flashMode,
+      } as any);
       console.log('Photo taken:', photo);
       // Handle photo result (e.g., save, preview, etc.)
     } catch (error) {
