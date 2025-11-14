@@ -5,8 +5,8 @@ import {CameraPicker} from './picker';
 type CameraEvent = PhotoFile | VideoFile;
 type FlashMode = 'off' | 'on' | 'auto';
 type CameraMode = 'photo' | 'video';
-type CameraResultByMode<T extends CameraMode> = T extends 'photo' ? PhotoFile : VideoFile;
-type CameraCallback<T extends CameraMode> = (event: CameraResultByMode<T>) => void;
+type CameraEventByMode<T extends CameraMode> = T extends 'photo' ? PhotoFile : VideoFile;
+type CameraCallback<T extends CameraMode> = (event: CameraEventByMode<T>) => void;
 
 interface CameraContextValue {
   // State
@@ -42,26 +42,6 @@ export function CameraProvider({children}: {children: ReactNode}) {
   const [onResult, setOnResult] = useState<((event: CameraEvent) => void) | null>(null);
   const recordTimeRef = useRef<NodeJS.Timeout | null>(null);
 
-  // Recording timer effect
-  useEffect(() => {
-    if (isRecording) {
-      recordTimeRef.current = setInterval(() => {
-        setRecordingTime((prev) => prev + 1);
-      }, 1000);
-    } else {
-      if (recordTimeRef.current) {
-        clearInterval(recordTimeRef.current);
-        recordTimeRef.current = null;
-      }
-      setRecordingTime(0);
-    }
-    return () => {
-      if (recordTimeRef.current) {
-        clearInterval(recordTimeRef.current);
-      }
-    };
-  }, [isRecording]);
-
   const openCamera = useCallback(<T extends CameraMode = 'photo'>(
     event: CameraCallback<T>,
     cameraMode?: T,
@@ -84,11 +64,29 @@ export function CameraProvider({children}: {children: ReactNode}) {
   }, []);
 
   const handleResult = useCallback((event: CameraEvent) => {
-    if (onResult) {
-      onResult(event);
-    }
+    onResult?.(event);
     closeCamera();
   }, [onResult, closeCamera]);
+
+  // Recording timer effect
+  useEffect(() => {
+    if (isRecording) {
+      recordTimeRef.current = setInterval(() => {
+        setRecordingTime((prev) => prev + 1);
+      }, 1000);
+    } else {
+      if (recordTimeRef.current) {
+        clearInterval(recordTimeRef.current);
+        recordTimeRef.current = null;
+      }
+      setRecordingTime(0);
+    }
+    return () => {
+      if (recordTimeRef.current) {
+        clearInterval(recordTimeRef.current);
+      }
+    };
+  }, [isRecording]);
 
   return (
     <CameraContext.Provider value={{

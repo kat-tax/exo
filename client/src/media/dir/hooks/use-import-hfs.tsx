@@ -2,7 +2,6 @@ import {FS} from 'react-exo/fs';
 import {useCallback} from 'react';
 import {useCamera} from 'media/cam/context';
 import {getStartInDir, filterJunkFiles} from 'media/dir/utils/hfs/path';
-import type {PhotoFile, VideoFile} from 'react-native-vision-camera';
 
 export function useImportHfs() {
   const {openCamera} = useCamera();
@@ -44,14 +43,14 @@ export function useImportHfs() {
     try {
       const timer = performance.now();
       return new Promise<void>((resolve, reject) => {
-        openCamera(async (result: PhotoFile | VideoFile) => {
+        openCamera(async (event) => {
           try {
             // Convert blob URL to File object
-            const res = await fetch(result.path);
+            const res = await fetch(event.path);
             const blob = await res.blob();
             // Determine file extension and name based on type
-            const isVideo = 'duration' in result;
-            const extension = isVideo ? (result.path.includes('webm') ? 'webm' : 'mp4') : 'jpg';
+            const isVideo = 'duration' in event;
+            const extension = isVideo ? (event.path.includes('webm') ? 'webm' : 'mp4') : 'jpg';
             const fileName = `camera-${Date.now()}.${extension}`;
             const type = blob.type || (isVideo ? 'video/mp4' : 'image/jpeg');
             // Create a File object from the blob
