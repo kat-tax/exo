@@ -293,7 +293,6 @@ const styles = StyleSheet.create((theme) => ({
     width: 72,
     height: 72,
     borderRadius: 36,
-    backgroundColor: theme.colors.background,
     borderWidth: 4,
     borderColor: theme.colors.mutedForeground,
     justifyContent: 'center',
