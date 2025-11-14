@@ -110,7 +110,7 @@ export function CameraProvider({children}: {children: ReactNode}) {
       setCameraPosition,
     }}>
       {children}
-      {isOpen && <CameraPicker/>}
+      <CameraPicker/>
     </CameraContext.Provider>
   );
 }

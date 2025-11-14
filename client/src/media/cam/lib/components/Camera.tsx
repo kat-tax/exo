@@ -49,16 +49,8 @@ export const Camera = forwardRef<CameraRef, CameraProps>((props, ref) => {
   const {style, device, isActive, resizeMode = 'cover', onInitialized, onStarted, onStopped, onPreviewStarted, onPreviewStopped, onError, photo, video, audio, ...otherProps} = props;
 
   useEffect(() => {
-    if (!isActive) {
+    if (!isActive || !device) {
       stopCamera();
-      return;
-    }
-    if (!device) {
-      onError?.({
-        code: 'device/no-device',
-        message: 'No camera device available',
-        cause: undefined,
-      } as any);
       return;
     }
     startCamera();
@@ -68,12 +60,17 @@ export const Camera = forwardRef<CameraRef, CameraProps>((props, ref) => {
   }, [isActive, device?.id]);
 
   const startCamera = async () => {
-    if (isActiveRef.current) return;
+    if (isActiveRef.current || !isActive) return;
     try {
       if (!device) {
         throw new Error('No camera device available');
       }
       const stream = await getCameraStream(device, audio === true);
+      // Check if still active after async operation
+      if (!isActive) {
+        stopCameraStream(stream);
+        return;
+      }
       streamRef.current = stream;
       isActiveRef.current = true;
       if (videoRef.current) {

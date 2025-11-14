@@ -36,7 +36,7 @@ export function CameraPicker() {
     try {
       const photo = await cameraRef.current.takePhoto({
         flash: flashMode,
-      } as any);
+      });
       console.log('Photo taken:', photo);
       onResult(photo);
     } catch (error) {
@@ -110,25 +110,18 @@ export function CameraPicker() {
     return `${mins}:${secs.toString().padStart(2, '0')}`;
   };
 
-  // Open sheet when camera device is ready and context is open
-  const cameraOpen = isOpen && !!cameraDevice;
-
   return (
     <Sheet
-      open={cameraOpen}
+      open={isOpen}
       autoWebSize={380}
-      onOpenChange={(open) => {
-        if (!open) {
-          closeCamera();
-        }
-      }}>
+      onOpenChange={(open) => !open && closeCamera()}>
       {cameraDevice && (
         <View style={styles.container}>
           <Camera
             ref={cameraRef}
             device={cameraDevice}
             style={styles.camera}
-            isActive={cameraOpen}
+            isActive={isOpen}
             photo={mode === 'photo'}
             video={mode === 'video'}
             audio={mode === 'video'}
