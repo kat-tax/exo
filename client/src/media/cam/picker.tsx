@@ -38,7 +38,7 @@ export function CameraPicker() {
         flash: flashMode,
       } as any);
       console.log('Photo taken:', photo);
-      onResult?.(photo);
+      onResult(photo);
     } catch (error) {
       console.error('Failed to take photo:', error);
     }
@@ -63,7 +63,7 @@ export function CameraPicker() {
         onRecordingFinished: (video: VideoFile) => {
           console.log('Video recorded:', video);
           setIsRecording(false);
-          onResult?.(video);
+          onResult(video);
         },
         onRecordingError: (error) => {
           console.error('Recording error:', error);
