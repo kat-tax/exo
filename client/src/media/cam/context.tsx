@@ -19,36 +19,37 @@ interface CameraContextValue {
   hdrEnabled: boolean;
   flashMode: CameraFlash;
   // Actions
+  onResult: (result: CameraResult) => void;
   openCamera: <T extends CameraMode = 'photo'>(callback: CameraCallback<T>, mode?: T) => void;
   closeCamera: () => void;
   setMode: (mode: CameraMode) => void;
+  setFlashMode: (mode: CameraFlash) => void;
+  setHdrEnabled: (enabled: boolean) => void;
   setIsRecording: (recording: boolean) => void;
   setRecordingTime: (time: number) => void;
-  setHdrEnabled: (enabled: boolean) => void;
   setCameraPosition: (position: CameraPosition) => void;
-  setFlashMode: (mode: CameraFlash) => void;
-  onResult: (result: CameraResult) => void;
 }
 
 const CameraContext = createContext<CameraContextValue | null>(null);
 
 export function CameraProvider({children}: {children: ReactNode}) {
-  const [isOpen, setIsOpen] = useState(false);
   const [mode, setMode] = useState<CameraMode>('photo');
-  const [cameraPosition, setCameraPosition] = useState<CameraPosition>('back');
-  const [recordingTime, setRecordingTime] = useState(0);
+  const [isOpen, setIsOpen] = useState(false);
   const [isRecording, setIsRecording] = useState(false);
+  const [recordingTime, setRecordingTime] = useState(0);
+  const [cameraPosition, setCameraPosition] = useState<CameraPosition>('back');
   const [hdrEnabled, setHdrEnabled] = useState(false);
   const [flashMode, setFlashMode] = useState<CameraFlash>('off');
-  const recordTimeRef = useRef<NodeJS.Timeout | null>(null);
-  const callbackRef = useRef<CameraCallback<CameraMode> | null>(null);
+
+  const refRecordTime = useRef<NodeJS.Timeout | null>(null);
+  const refCallback = useRef<CameraCallback<CameraMode> | null>(null);
 
   const openCamera = useCallback(<T extends CameraMode = 'photo'>(
     callback: CameraCallback<T>,
     cameraMode?: T,
   ) => {
     setMode(cameraMode ?? 'photo');
-    callbackRef.current = callback;
+    refCallback.current = callback;
     setIsOpen(true);
     // Reset state when opening
     setFlashMode('off');
@@ -59,32 +60,32 @@ export function CameraProvider({children}: {children: ReactNode}) {
 
   const closeCamera = useCallback(() => {
     setIsOpen(false);
-    callbackRef.current = null;
+    refCallback.current = null;
     setIsRecording(false);
     setRecordingTime(0);
   }, []);
 
-  const handleResult = useCallback((result: CameraResult) => {
-    callbackRef.current?.(result);
+  const onResult = useCallback((result: CameraResult) => {
+    refCallback.current?.(result);
     closeCamera();
   }, [closeCamera]);
 
   // Recording timer effect
   useEffect(() => {
     if (isRecording) {
-      recordTimeRef.current = setInterval(() => {
+      refRecordTime.current = setInterval(() => {
         setRecordingTime((prev) => prev + 1);
       }, 1000);
     } else {
-      if (recordTimeRef.current) {
-        clearInterval(recordTimeRef.current);
-        recordTimeRef.current = null;
+      if (refRecordTime.current) {
+        clearInterval(refRecordTime.current);
+        refRecordTime.current = null;
       }
       setRecordingTime(0);
     }
     return () => {
-      if (recordTimeRef.current) {
-        clearInterval(recordTimeRef.current);
+      if (refRecordTime.current) {
+        clearInterval(refRecordTime.current);
       }
     };
   }, [isRecording]);
@@ -93,20 +94,20 @@ export function CameraProvider({children}: {children: ReactNode}) {
     <CameraContext.Provider value={{
       mode,
       isOpen,
-      cameraPosition,
-      flashMode,
-      recordingTime,
       isRecording,
+      recordingTime,
+      cameraPosition,
       hdrEnabled,
+      flashMode,
+      onResult,
       openCamera,
       closeCamera,
       setMode,
-      setCameraPosition,
       setFlashMode,
-      setIsRecording,
       setHdrEnabled,
+      setIsRecording,
       setRecordingTime,
-      onResult: handleResult,
+      setCameraPosition,
     }}>
       {children}
       {isOpen && <CameraPicker/>}
