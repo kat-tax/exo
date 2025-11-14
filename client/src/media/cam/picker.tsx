@@ -115,93 +115,95 @@ export function CameraPicker() {
       open={isOpen}
       autoWebSize={380}
       onOpenChange={(open) => !open && closeCamera()}>
-      {cameraDevice && (
-        <View style={styles.container}>
-          <Camera
-            ref={cameraRef}
-            device={cameraDevice}
-            style={styles.camera}
-            isActive={isOpen}
-            photo={mode === 'photo'}
-            video={mode === 'video'}
-            audio={mode === 'video'}
-            onError={(error) => {
-              console.error('>> camera error', error);
-            }}
-          />
-          {/* Top right controls */}
-          <View style={styles.topRightControls}>
-            {/* Mode toggle */}
-            <Pressable
-              style={styles.controlButton}
-              onPress={toggleMode}>
-              <Icon
-                size={24}
-                color="#000"
-                name={mode === 'photo'
-                  ? 'ph:camera'
-                  : 'ph:video-camera'
-                }
-              />
-            </Pressable>
-            {/* HDR toggle */}
-            <Pressable
-              style={styles.controlButton}
-              onPress={() => setHdrEnabled(!hdrEnabled)}>
-              <Icon
-                size={24}
-                color="#000"
-                name={hdrEnabled
-                  ? "ph:circle-half"
-                  : "ph:circle-half-fill"
-                }
-              />
-            </Pressable>
-            {/* Flash toggle */}
-            <Pressable
-              style={styles.controlButton}
-              onPress={toggleFlash}>
-              <Icon
-                size={24}
-                color="#000"
-                name={
-                  flashMode === 'off'
-                    ? 'ph:lightning-slash'
-                    : flashMode === 'on'
-                      ? 'ph:lightning-fill'
-                      : 'ph:lightning-a'
-                }
-              />
-            </Pressable>
-          </View>
-          {/* Recording indicator */}
-          {isRecording && (
-            <View style={styles.recordingIndicator}>
-              <View style={styles.recordingDot} />
-              <Text style={styles.recordingTime}>{formatTime(recordingTime)}</Text>
-            </View>
+      <View style={styles.container}>
+        <View style={styles.viewport}>
+          {cameraDevice && (
+            <Camera
+              ref={cameraRef}
+              device={cameraDevice}
+              style={styles.camera}
+              isActive={isOpen}
+              photo={mode === 'photo'}
+              video={mode === 'video'}
+              audio={mode === 'video'}
+              onError={(error) => {
+                console.error('>> camera error', error);
+              }}
+            />
           )}
-          {/* Bottom controls */}
-          <View style={styles.bottomControls}>
-            <Pressable
-              style={[styles.shutterButton, isRecording && styles.shutterButtonRecording]}
-              onPress={handleShutterPress}>
-              {mode === 'video' && isRecording ? (
-                <View style={styles.stopIcon} />
-              ) : null}
-            </Pressable>
-            <Pressable
-              style={styles.flipButton}
-              onPress={toggleCamera}>
-              <Icon
-                name="ph:camera-rotate"
-                size={24}
-                color="#000"
-              />
-            </Pressable>
-          </View>
         </View>
-      )}
+        {/* Top right controls */}
+        <View style={styles.topRightControls}>
+          {/* Mode toggle */}
+          <Pressable
+            style={styles.controlButton}
+            onPress={toggleMode}>
+            <Icon
+              size={24}
+              color="#000"
+              name={mode === 'photo'
+                ? 'ph:camera'
+                : 'ph:video-camera'
+              }
+            />
+          </Pressable>
+          {/* HDR toggle */}
+          <Pressable
+            style={styles.controlButton}
+            onPress={() => setHdrEnabled(!hdrEnabled)}>
+            <Icon
+              size={24}
+              color="#000"
+              name={hdrEnabled
+                ? "ph:circle-half"
+                : "ph:circle-half-fill"
+              }
+            />
+          </Pressable>
+          {/* Flash toggle */}
+          <Pressable
+            style={styles.controlButton}
+            onPress={toggleFlash}>
+            <Icon
+              size={24}
+              color="#000"
+              name={
+                flashMode === 'off'
+                  ? 'ph:lightning-slash'
+                  : flashMode === 'on'
+                    ? 'ph:lightning-fill'
+                    : 'ph:lightning-a'
+              }
+            />
+          </Pressable>
+        </View>
+        {/* Recording indicator */}
+        {isRecording && (
+          <View style={styles.recordingIndicator}>
+            <View style={styles.recordingDot} />
+            <Text style={styles.recordingTime}>{formatTime(recordingTime)}</Text>
+          </View>
+        )}
+        {/* Bottom controls */}
+        <View style={styles.bottomControls}>
+          <Pressable
+            style={[styles.shutterButton, isRecording && styles.shutterButtonRecording]}
+            onPress={handleShutterPress}>
+            {mode === 'video' && isRecording ? (
+              <View style={styles.stopIcon} />
+            ) : null}
+          </Pressable>
+          <Pressable
+            style={styles.flipButton}
+            onPress={toggleCamera}>
+            <Icon
+              name="ph:camera-rotate"
+              size={24}
+              color="#000"
+            />
+          </Pressable>
+        </View>
+      </View>
     </Sheet>
   );
 }
@@ -214,6 +216,11 @@ const styles = StyleSheet.create((theme) => ({
   camera: {
     flex: 1,
     width: '100%',
+  },
+  viewport: {
+    width: 448,
+    height: 336,
+    backgroundColor: theme.colors.neutral,
   },
   topRightControls: {
     position: 'absolute',
