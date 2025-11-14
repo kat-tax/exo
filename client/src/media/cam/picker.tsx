@@ -33,7 +33,7 @@ export function CameraPicker() {
 
   // Set up code scanner for QR code scanning
   const codeScanner = useCodeScanner({
-    codeTypes: ['qr', 'ean-13'],
+    codeTypes: ['qr'],
     onCodeScanned: (codes: Code[], _frame: CodeScannerFrame) => {
       if (codes.length > 0 && mode === 'code') {
         // Use the first detected code
@@ -65,7 +65,6 @@ export function CameraPicker() {
         handleStartRecording();
       }
     }
-    // 'code' mode doesn't use shutter button - scanning happens automatically
   };
 
   const handleStartRecording = () => {

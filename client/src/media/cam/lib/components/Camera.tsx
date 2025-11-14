@@ -48,7 +48,24 @@ export const Camera = forwardRef<CameraRef, CameraProps>((props, ref) => {
     onRecordingFinished: null,
     onRecordingError: null,
   });
-  const {style, device, isActive, resizeMode = 'cover', onInitialized, onStarted, onStopped, onPreviewStarted, onPreviewStopped, onError, photo, video, audio, codeScanner, ...otherProps} = props;
+
+  const {
+    style,
+    device,
+    isActive,
+    resizeMode = 'cover',
+    onInitialized,
+    onStarted,
+    onStopped,
+    onPreviewStarted,
+    onPreviewStopped,
+    onError,
+    photo,
+    video,
+    audio,
+    codeScanner,
+    ...otherProps
+  } = props;
 
   useEffect(() => {
     if (!isActive || !device) {
