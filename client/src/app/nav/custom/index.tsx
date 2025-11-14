@@ -124,7 +124,10 @@ const styles = StyleSheet.create((theme) => ({
   content: {
     flex: 1,
     flexDirection: 'row',
-    marginRight: theme.display.space2,
+    marginRight: {
+      initial: 0,
+      xs: theme.display.space2,
+    },
   },
   contentWithPreview: {
     marginRight: 0,
