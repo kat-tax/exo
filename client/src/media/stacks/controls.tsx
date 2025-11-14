@@ -1,4 +1,4 @@
-import {StyleSheet, withUnistyles} from 'react-native-unistyles';
+import {mq, StyleSheet, withUnistyles} from 'react-native-unistyles';
 import {View, Text, Pressable} from 'react-native';
 import {Slider} from 'react-exo/slider';
 import {Icon} from 'react-exo/icon';
@@ -6,6 +6,8 @@ import {useCallback} from 'react';
 import {useMediaControls} from 'media/hooks/use-media-controls';
 import {FileType} from 'media/file/types';
 import {Thumb} from 'media/stacks/thumb';
+import {Display} from 'react-native-unistyles';
+import {breakpoints} from 'design/theme';
 
 import type {FileProps} from 'media/file';
 import type {FileRef, FileRenderInfo} from 'media/file/types';
@@ -72,25 +74,27 @@ export function MediaControls(props: MediaControlsProps) {
       }
       {controls.map(({name, icon, action}) => name === 'banner'
         ? <Pressable key={name} style={styles.content} onPress={toc}>
-            <View style={styles.thumb}>
-              <Thumb
-                size={__TOUCH__ ? 3 : 2}
-                name={name ?? ''}
-                ext={props.metadata.ext}
-                img={() => Promise.resolve(props.metadata.cover ?? null)}
-                dir={isDir}
-              />
-            </View>
-            <Text style={styles.metadata} numberOfLines={2} selectable={false}>
-              <View>
-                <Text style={styles.title} numberOfLines={__TOUCH__ ? 2 : 1}>
-                  {props.metadata.title}
-                </Text>
-                <Text style={styles.info} numberOfLines={1}>
-                  {props.metadata.info}
-                </Text>
+            <Display mq={mq.only.width(breakpoints.md)}>
+              <View style={styles.thumb}>
+                <Thumb
+                  size={__TOUCH__ ? 3 : 2}
+                  name={name ?? ''}
+                  ext={props.metadata.ext}
+                  img={() => Promise.resolve(props.metadata.cover ?? null)}
+                  dir={isDir}
+                />
               </View>
-            </Text>
+              <Text style={styles.metadata} numberOfLines={2} selectable={false}>
+                <View>
+                  <Text style={styles.title} numberOfLines={__TOUCH__ ? 2 : 1}>
+                    {props.metadata.title}
+                  </Text>
+                  <Text style={styles.info} numberOfLines={1}>
+                    {props.metadata.info}
+                  </Text>
+                </View>
+              </Text>
+            </Display>
           </Pressable>
         : <Pressable key={name} style={styles.action} onPress={action}>
             {state => (
