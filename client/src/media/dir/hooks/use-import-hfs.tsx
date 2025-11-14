@@ -1,9 +1,12 @@
-import {useCallback} from 'react';
 import {FS} from 'react-exo/fs';
-//import {captureVideo} from 'media/dir/utils/cam/video';
+import {useCallback} from 'react';
+import {useCamera} from 'media/cam/context';
 import {getStartInDir, filterJunkFiles} from 'media/dir/utils/hfs/path';
+import type {PhotoFile, VideoFile} from 'react-native-vision-camera';
 
 export function useImportHfs() {
+  const {openCamera} = useCamera();
+
   /** Create a new folder */
   const newFolder = useCallback(async (path: string) => {
     const fs = await FS.init('local');
@@ -37,21 +40,41 @@ export function useImportHfs() {
   }, []);
 
   /** Import a camera from the device */
-  const importCam = useCallback(async (path = '') => {
+  const importCam = useCallback(async (path = '', mode: 'photo' | 'video' = 'photo') => {
     try {
-      // const timer = performance.now();
-      // const file = await captureVideo(
-      //   () => new Promise<void>((resolve) => setTimeout(resolve, 1000)),
-      //   () => new Promise<void>((resolve) => setTimeout(resolve, 5000)),
-      // );
-      // if (!file) return;
-      // await FS.importFiles(path, [file]);
-      // console.log('>> fs [imported camera]', file.name, performance.now() - timer);
+      const timer = performance.now();
+      return new Promise<void>((resolve, reject) => {
+        openCamera(async (result: PhotoFile | VideoFile) => {
+          try {
+            // Convert blob URL to File object
+            const res = await fetch(result.path);
+            const blob = await res.blob();
+            // Determine file extension and name based on type
+            const isVideo = 'duration' in result;
+            const extension = isVideo ? (result.path.includes('webm') ? 'webm' : 'mp4') : 'jpg';
+            const fileName = `camera-${Date.now()}.${extension}`;
+            const type = blob.type || (isVideo ? 'video/mp4' : 'image/jpeg');
+            // Create a File object from the blob
+            const file = new File([blob], fileName, {type});
+            await FS.importFiles(path, [file]);
+            console.log('>> fs [imported camera]', fileName, performance.now() - timer);
+            resolve();
+          } catch (error) {
+            console.error('>> fs [camera error]', error);
+            reject(error);
+          }
+        }, mode);
+      });
     } catch (error) {
       console.error('>> fs [camera error]', error);
       throw error;
     }
-  }, []);
+  }, [openCamera]);
 
-  return {newFolder, importFolder, importFile, importCam};
+  return {
+    newFolder,
+    importFolder,
+    importFile,
+    importCam,
+  };
 }

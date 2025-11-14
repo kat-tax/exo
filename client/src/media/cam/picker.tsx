@@ -1,52 +1,35 @@
 import {Sheet} from 'react-exo/sheet';
-import {useEffect, useState, useRef} from 'react';
+import {useRef} from 'react';
 import {View, Text, Pressable, Platform} from 'react-native';
 import {StyleSheet} from 'react-native-unistyles';
 import {Icon} from 'react-exo/icon';
+
+import {useCamera} from './context';
 import {useCameraDevice, Camera} from './lib';
+
 import type {VideoFile} from 'react-native-vision-camera';
 import type {CameraRef} from './lib';
 
-type CameraMode = 'photo' | 'video';
-type FlashMode = 'off' | 'on' | 'auto';
-
 export function CameraPicker() {
-  const [cameraPosition, setCameraPosition] = useState<'front' | 'back'>('back');
-  const [cameraMode, setCameraMode] = useState<CameraMode>('photo');
-  const [flashMode, setFlashMode] = useState<FlashMode>('off');
-  const [recordingTime, setRecordingTime] = useState(0);
-  const [isRecording, setIsRecording] = useState(false);
-  const [hdrEnabled, setHdrEnabled] = useState(false);
-  const [cameraOpen, setCameraOpen] = useState(false);
+  const {
+    isOpen,
+    mode,
+    cameraPosition,
+    flashMode,
+    recordingTime,
+    isRecording,
+    hdrEnabled,
+    onResult,
+    closeCamera,
+    setMode,
+    setCameraPosition,
+    setFlashMode,
+    setIsRecording,
+    setHdrEnabled,
+  } = useCamera();
 
   const cameraDevice = useCameraDevice(cameraPosition);
   const cameraRef = useRef<CameraRef>(null);
-  const recordingTimerRef = useRef<NodeJS.Timeout | null>(null);
-
-  useEffect(() => {
-    if (cameraDevice) {
-      setCameraOpen(true);
-    }
-  }, [cameraDevice]);
-
-  useEffect(() => {
-    if (isRecording) {
-      recordingTimerRef.current = setInterval(() => {
-        setRecordingTime((prev) => prev + 1);
-      }, 1000);
-    } else {
-      if (recordingTimerRef.current) {
-        clearInterval(recordingTimerRef.current);
-        recordingTimerRef.current = null;
-      }
-      setRecordingTime(0);
-    }
-    return () => {
-      if (recordingTimerRef.current) {
-        clearInterval(recordingTimerRef.current);
-      }
-    };
-  }, [isRecording]);
 
   const handleTakePhoto = async () => {
     if (!cameraRef.current) return;
@@ -55,14 +38,14 @@ export function CameraPicker() {
         flash: flashMode,
       } as any);
       console.log('Photo taken:', photo);
-      // Handle photo result (e.g., save, preview, etc.)
+      onResult?.(photo);
     } catch (error) {
       console.error('Failed to take photo:', error);
     }
   };
 
   const handleShutterPress = () => {
-    if (cameraMode === 'photo') {
+    if (mode === 'photo') {
       handleTakePhoto();
     } else {
       if (isRecording) {
@@ -80,7 +63,7 @@ export function CameraPicker() {
         onRecordingFinished: (video: VideoFile) => {
           console.log('Video recorded:', video);
           setIsRecording(false);
-          // Handle video result (e.g., save, preview, etc.)
+          onResult?.(video);
         },
         onRecordingError: (error) => {
           console.error('Recording error:', error);
@@ -104,19 +87,21 @@ export function CameraPicker() {
   };
 
   const toggleMode = () => {
-    setCameraMode((prev) => (prev === 'photo' ? 'video' : 'photo'));
+    setMode(mode === 'photo' ? 'video' : 'photo');
   };
 
   const toggleFlash = () => {
-    setFlashMode((prev) => {
-      if (prev === 'off') return 'on';
-      if (prev === 'on') return 'auto';
-      return 'off';
-    });
+    if (flashMode === 'off') {
+      setFlashMode('on');
+    } else if (flashMode === 'on') {
+      setFlashMode('auto');
+    } else {
+      setFlashMode('off');
+    }
   };
 
   const toggleCamera = () => {
-    setCameraPosition((prev) => (prev === 'back' ? 'front' : 'back'));
+    setCameraPosition(cameraPosition === 'back' ? 'front' : 'back');
   };
 
   const formatTime = (seconds: number) => {
@@ -125,11 +110,18 @@ export function CameraPicker() {
     return `${mins}:${secs.toString().padStart(2, '0')}`;
   };
 
+  // Open sheet when camera device is ready and context is open
+  const cameraOpen = isOpen && !!cameraDevice;
+
   return (
     <Sheet
       open={cameraOpen}
       autoWebSize={380}
-      onOpenChange={setCameraOpen}>
+      onOpenChange={(open) => {
+        if (!open) {
+          closeCamera();
+        }
+      }}>
       {cameraDevice && (
         <View style={styles.container}>
           <Camera
@@ -137,9 +129,9 @@ export function CameraPicker() {
             device={cameraDevice}
             style={styles.camera}
             isActive={cameraOpen}
-            photo={cameraMode === 'photo'}
-            video={cameraMode === 'video'}
-            audio={cameraMode === 'video'}
+            photo={mode === 'photo'}
+            video={mode === 'video'}
+            audio={mode === 'video'}
             onError={(error) => {
               console.error('>> camera error', error);
             }}
@@ -153,7 +145,7 @@ export function CameraPicker() {
               <Icon
                 size={24}
                 color="#000"
-                name={cameraMode === 'photo'
+                name={mode === 'photo'
                   ? 'ph:camera'
                   : 'ph:video-camera'
                 }
@@ -201,7 +193,7 @@ export function CameraPicker() {
             <Pressable
               style={[styles.shutterButton, isRecording && styles.shutterButtonRecording]}
               onPress={handleShutterPress}>
-              {cameraMode === 'video' && isRecording ? (
+              {mode === 'video' && isRecording ? (
                 <View style={styles.stopIcon} />
               ) : null}
             </Pressable>
