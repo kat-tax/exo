@@ -5,6 +5,7 @@ import {getCameraStream} from '../utils/get-camera-stream';
 import {stopCameraStream} from '../utils/stop-camera-stream';
 import {takePhotoFromVideo} from '../utils/take-photo';
 import {takeSnapshotFromVideo} from '../utils/take-snapshot';
+import {detectBarcodesInVideo} from '../hooks/use-code-scanner';
 
 import {
   startVideoRecording,
@@ -39,6 +40,7 @@ export const Camera = forwardRef<CameraRef, CameraProps>((props, ref) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const streamRef = useRef<MediaStream | null>(null);
   const isActiveRef = useRef(false);
+  const barcodeDetectionIntervalRef = useRef<number | null>(null);
   const recorderStateRef = useRef<VideoRecorderState>({
     recorder: null,
     isRecording: false,
@@ -46,7 +48,7 @@ export const Camera = forwardRef<CameraRef, CameraProps>((props, ref) => {
     onRecordingFinished: null,
     onRecordingError: null,
   });
-  const {style, device, isActive, resizeMode = 'cover', onInitialized, onStarted, onStopped, onPreviewStarted, onPreviewStopped, onError, photo, video, audio, ...otherProps} = props;
+  const {style, device, isActive, resizeMode = 'cover', onInitialized, onStarted, onStopped, onPreviewStarted, onPreviewStopped, onError, photo, video, audio, codeScanner, ...otherProps} = props;
 
   useEffect(() => {
     if (!isActive || !device) {
@@ -58,6 +60,46 @@ export const Camera = forwardRef<CameraRef, CameraProps>((props, ref) => {
       stopCamera();
     };
   }, [isActive, device?.id]);
+
+  // Set up barcode detection when codeScanner is provided
+  useEffect(() => {
+    if (!codeScanner?.onCodeScanned || !isActive || !videoRef.current) {
+      if (barcodeDetectionIntervalRef.current) {
+        clearInterval(barcodeDetectionIntervalRef.current);
+        barcodeDetectionIntervalRef.current = null;
+      }
+      return;
+    }
+
+    // Start periodic barcode detection (check every 500ms)
+    const startBarcodeDetection = () => {
+      if (barcodeDetectionIntervalRef.current) {
+        clearInterval(barcodeDetectionIntervalRef.current);
+      }
+
+      barcodeDetectionIntervalRef.current = window.setInterval(() => {
+        if (videoRef.current && isActiveRef.current && codeScanner?.onCodeScanned) {
+          detectBarcodesInVideo(videoRef.current, codeScanner.onCodeScanned);
+        }
+      }, 500);
+    };
+
+    // Wait for video to be ready
+    const video = videoRef.current;
+    if (video.readyState >= video.HAVE_CURRENT_DATA) {
+      startBarcodeDetection();
+    } else {
+      video.addEventListener('loadeddata', startBarcodeDetection, {once: true});
+    }
+
+    return () => {
+      if (barcodeDetectionIntervalRef.current) {
+        clearInterval(barcodeDetectionIntervalRef.current);
+        barcodeDetectionIntervalRef.current = null;
+      }
+      video?.removeEventListener('loadeddata', startBarcodeDetection);
+    };
+  }, [codeScanner?.onCodeScanned, isActive]);
 
   const startCamera = async () => {
     if (isActiveRef.current || !isActive) return;
@@ -98,6 +140,11 @@ export const Camera = forwardRef<CameraRef, CameraProps>((props, ref) => {
       } catch {
         // Ignore errors when stopping camera
       }
+    }
+    // Stop barcode detection
+    if (barcodeDetectionIntervalRef.current) {
+      clearInterval(barcodeDetectionIntervalRef.current);
+      barcodeDetectionIntervalRef.current = null;
     }
     stopCameraStream(streamRef.current);
     streamRef.current = null;

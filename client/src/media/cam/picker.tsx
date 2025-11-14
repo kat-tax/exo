@@ -5,9 +5,9 @@ import {StyleSheet} from 'react-native-unistyles';
 import {Icon} from 'react-exo/icon';
 
 import {useCamera} from './context';
-import {useCameraDevice, Camera} from './lib';
+import {useCameraDevice, Camera, useCodeScanner} from './lib';
 
-import type {VideoFile} from 'react-native-vision-camera';
+import type {VideoFile, Code, CodeScannerFrame} from 'react-native-vision-camera';
 import type {CameraRef} from './lib';
 
 export function CameraPicker() {
@@ -31,6 +31,17 @@ export function CameraPicker() {
   const cameraDevice = useCameraDevice(cameraPosition);
   const cameraRef = useRef<CameraRef>(null);
 
+  // Set up code scanner for QR code scanning
+  const codeScanner = useCodeScanner({
+    codeTypes: ['qr', 'ean-13'],
+    onCodeScanned: (codes: Code[], _frame: CodeScannerFrame) => {
+      if (codes.length > 0 && mode === 'code') {
+        // Use the first detected code
+        onResult(codes[0]);
+      }
+    },
+  });
+
   const handleTakePhoto = async () => {
     if (!cameraRef.current) return;
     try {
@@ -47,13 +58,14 @@ export function CameraPicker() {
   const handleShutterPress = () => {
     if (mode === 'photo') {
       handleTakePhoto();
-    } else {
+    } else if (mode === 'video') {
       if (isRecording) {
         handleStopRecording();
       } else {
         handleStartRecording();
       }
     }
+    // 'code' mode doesn't use shutter button - scanning happens automatically
   };
 
   const handleStartRecording = () => {
@@ -87,7 +99,13 @@ export function CameraPicker() {
   };
 
   const toggleMode = () => {
-    setMode(mode === 'photo' ? 'video' : 'photo');
+    if (mode === 'photo') {
+      setMode('video');
+    } else if (mode === 'video') {
+      setMode('code');
+    } else {
+      setMode('photo');
+    }
   };
 
   const toggleFlash = () => {
@@ -124,8 +142,9 @@ export function CameraPicker() {
               style={styles.camera}
               isActive={isOpen}
               photo={mode === 'photo'}
-              video={mode === 'video'}
+              video={mode === 'video' || mode === 'code'}
               audio={mode === 'video'}
+              codeScanner={mode === 'code' ? codeScanner : undefined}
               onError={(error) => {
                 console.error('>> camera error', error);
               }}
@@ -143,39 +162,45 @@ export function CameraPicker() {
               color="#000"
               name={mode === 'photo'
                 ? 'ph:camera'
-                : 'ph:video-camera'
+                : mode === 'video'
+                  ? 'ph:video-camera'
+                  : 'ph:qr-code'
               }
             />
           </Pressable>
           {/* HDR toggle */}
-          <Pressable
-            style={styles.controlButton}
-            onPress={() => setHdrEnabled(!hdrEnabled)}>
-            <Icon
-              size={24}
-              color="#000"
-              name={hdrEnabled
-                ? "ph:circle-half"
-                : "ph:circle-half-fill"
-              }
-            />
-          </Pressable>
+          {mode !== 'code' && (
+            <Pressable
+              style={styles.controlButton}
+              onPress={() => setHdrEnabled(!hdrEnabled)}>
+              <Icon
+                size={24}
+                color="#000"
+                name={hdrEnabled
+                  ? "ph:circle-half"
+                  : "ph:circle-half-fill"
+                }
+              />
+            </Pressable>
+          )}
           {/* Flash toggle */}
-          <Pressable
-            style={styles.controlButton}
-            onPress={toggleFlash}>
-            <Icon
-              size={24}
-              color="#000"
-              name={
-                flashMode === 'off'
-                  ? 'ph:lightning-slash'
-                  : flashMode === 'on'
-                    ? 'ph:lightning-fill'
-                    : 'ph:lightning-a'
-              }
-            />
-          </Pressable>
+          {mode !== 'code' && (
+            <Pressable
+              style={styles.controlButton}
+              onPress={toggleFlash}>
+              <Icon
+                size={24}
+                color="#000"
+                name={
+                  flashMode === 'off'
+                    ? 'ph:lightning-slash'
+                    : flashMode === 'on'
+                      ? 'ph:lightning-fill'
+                      : 'ph:lightning-a'
+                }
+              />
+            </Pressable>
+          )}
         </View>
         {/* Recording indicator */}
         {isRecording && (
@@ -186,13 +211,20 @@ export function CameraPicker() {
         )}
         {/* Bottom controls */}
         <View style={styles.bottomControls}>
-          <Pressable
-            style={[styles.shutterButton, isRecording && styles.shutterButtonRecording]}
-            onPress={handleShutterPress}>
-            {mode === 'video' && isRecording ? (
-              <View style={styles.stopIcon} />
-            ) : null}
-          </Pressable>
+          {mode !== 'code' && (
+            <Pressable
+              style={[styles.shutterButton, isRecording && styles.shutterButtonRecording]}
+              onPress={handleShutterPress}>
+              {mode === 'video' && isRecording ? (
+                <View style={styles.stopIcon} />
+              ) : null}
+            </Pressable>
+          )}
+          {mode === 'code' && (
+            <View style={styles.codeScanningIndicator}>
+              <Text style={styles.codeScanningText}>Scanning QR code...</Text>
+            </View>
+          )}
           <Pressable
             style={styles.flipButton}
             onPress={toggleCamera}>
@@ -307,5 +339,16 @@ const styles = StyleSheet.create((theme) => ({
     height: 24,
     borderRadius: 4,
     backgroundColor: theme.colors.background,
+  },
+  codeScanningIndicator: {
+    paddingHorizontal: theme.display.space4,
+    paddingVertical: theme.display.space2,
+    backgroundColor: 'rgba(255, 255, 255, 0.3)',
+    borderRadius: theme.display.radius2,
+  },
+  codeScanningText: {
+    color: theme.colors.background,
+    fontSize: 14,
+    fontWeight: '600',
   },
 }));

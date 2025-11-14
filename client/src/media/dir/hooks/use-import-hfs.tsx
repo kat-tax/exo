@@ -39,12 +39,21 @@ export function useImportHfs() {
   }, []);
 
   /** Import a camera from the device */
-  const importCam = useCallback(async (path = '', mode: 'photo' | 'video' = 'photo') => {
+  const importCam = useCallback(async (path = '', mode: 'photo' | 'video' | 'code' = 'photo') => {
     try {
       const timer = performance.now();
       return new Promise<void>((resolve, reject) => {
         openCamera(async (result) => {
           try {
+            if (!('path' in result)) {
+              if (result.value) {
+                alert(result.value);
+                resolve();
+              } else {
+                reject();
+              }
+              return;
+            }
             // Convert blob URL to File object
             const response = await fetch(result.path);
             const blob = await response.blob();

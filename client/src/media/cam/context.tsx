@@ -1,12 +1,12 @@
 import {createContext, useContext, useState, useCallback, useEffect, useRef, type ReactNode} from 'react';
-import type {PhotoFile, VideoFile} from 'react-native-vision-camera';
+import type {PhotoFile, VideoFile, Code} from 'react-native-vision-camera';
 import {CameraPicker} from './picker';
 
-type CameraMode = 'photo' | 'video';
+type CameraMode = 'photo' | 'video' | 'code';
 type CameraFlash = 'off' | 'on' | 'auto';
 type CameraPosition = 'front' | 'back';
-type CameraResult = PhotoFile | VideoFile;
-type CameraResultByMode<T extends CameraMode> = T extends 'photo' ? PhotoFile : VideoFile;
+type CameraResult = PhotoFile | VideoFile | Code;
+type CameraResultByMode<T extends CameraMode> = T extends 'photo' ? PhotoFile : T extends 'video' ? VideoFile : Code;
 type CameraCallback<T extends CameraMode> = (result: CameraResultByMode<T>) => void;
 
 interface CameraContextValue {
