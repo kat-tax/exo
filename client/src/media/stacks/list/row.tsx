@@ -27,7 +27,7 @@ export function ListRow(props: ListRow) {
   const {focused, selected, dragging, dropping, renaming} = opt ?? {};
   const isGrid = opt?.layout === 'grid';
   const thumbSize = isGrid
-    ? ThumbSize.MD
+    ? ThumbSize.LG
     : __TOUCH__
       ? ThumbSize.SM
       : ThumbSize.XS;
@@ -166,6 +166,9 @@ const styles = StyleSheet.create((theme) => ({
   textCell: {
     textAlign: 'center',
     alignSelf: 'center',
+    _web: {
+      overflowWrap: 'normal',
+    },
   },
   size: {
     color: theme.colors.mutedForeground,
