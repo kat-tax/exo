@@ -21,22 +21,62 @@
         --bg-dark: #09090b;
         --sel-light: rgba(0, 0, 0, 0.2);
         --sel-dark: rgba(255, 255, 255, 0.2);
+        --ctx-bg-light: #ffffff;
+        --ctx-bg-dark: #09090b;
+        --ctx-border-light: #e4e4e7;
+        --ctx-border-dark: #27272a;
+        --ctx-text-light: #18181b;
+        --ctx-text-dark: #fafafa;
+        --ctx-text-muted-light: #71717a;
+        --ctx-text-muted-dark: #71717a;
+        --ctx-hover-light: #f4f4f5;
+        --ctx-hover-dark: #18181b;
+        --ctx-label-bg-light: #f9fafb;
+        --ctx-label-bg-dark: #18181b;
+        --ctx-destructive-light: #dc2626;
+        --ctx-destructive-dark: #7f1d1d;
+        --ctx-shadow-light: rgba(0, 0, 0, 0.05) 0px 2px 2px 1px;
+        --ctx-shadow-dark: rgba(0, 0, 0, 0.2) 0px 2px 2px 1px;
       }
 
       html.dark {
         --bg: var(--bg-dark);
         --sel: var(--sel-dark);
+        --ctx-bg: var(--ctx-bg-dark);
+        --ctx-border: var(--ctx-border-dark);
+        --ctx-text: var(--ctx-text-dark);
+        --ctx-text-muted: var(--ctx-text-muted-dark);
+        --ctx-hover: var(--ctx-hover-dark);
+        --ctx-label-bg: var(--ctx-label-bg-dark);
+        --ctx-destructive: var(--ctx-destructive-dark);
+        --ctx-shadow: var(--ctx-shadow-dark);
       }
 
       html.light {
         --bg: var(--bg-light);
         --sel: var(--sel-light);
+        --ctx-bg: var(--ctx-bg-light);
+        --ctx-border: var(--ctx-border-light);
+        --ctx-text: var(--ctx-text-light);
+        --ctx-text-muted: var(--ctx-text-muted-light);
+        --ctx-hover: var(--ctx-hover-light);
+        --ctx-label-bg: var(--ctx-label-bg-light);
+        --ctx-destructive: var(--ctx-destructive-light);
+        --ctx-shadow: var(--ctx-shadow-light);
       }
 
       @media (prefers-color-scheme: dark) {
         :root:not(html.light):not(html.dark) {
           --bg: var(--bg-dark);
           --sel: var(--sel-dark);
+          --ctx-bg: var(--ctx-bg-dark);
+          --ctx-border: var(--ctx-border-dark);
+          --ctx-text: var(--ctx-text-dark);
+          --ctx-text-muted: var(--ctx-text-muted-dark);
+          --ctx-hover: var(--ctx-hover-dark);
+          --ctx-label-bg: var(--ctx-label-bg-dark);
+          --ctx-destructive: var(--ctx-destructive-dark);
+          --ctx-shadow: var(--ctx-shadow-dark);
         }
       }
 
@@ -44,6 +84,14 @@
         :root:not(html.dark):not(html.light) {
           --bg: var(--bg-light);
           --sel: var(--sel-light);
+          --ctx-bg: var(--ctx-bg-light);
+          --ctx-border: var(--ctx-border-light);
+          --ctx-text: var(--ctx-text-light);
+          --ctx-text-muted: var(--ctx-text-muted-light);
+          --ctx-hover: var(--ctx-hover-light);
+          --ctx-label-bg: var(--ctx-label-bg-light);
+          --ctx-destructive: var(--ctx-destructive-light);
+          --ctx-shadow: var(--ctx-shadow-light);
         }
       }
 
@@ -93,12 +141,12 @@
       /* Zeego */
       .ContextMenuContent,
       .ContextMenuSubContent {
-        background-color: #09090b;
-        border: 1px solid #27272a;
+        background-color: var(--ctx-bg);
+        border: 1px solid var(--ctx-border);
         border-radius: 6px;
         overflow: hidden;
         padding: 5px;
-        box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 2px 1px
+        box-shadow: var(--ctx-shadow);
       }
 
       .ContextMenuContent.context {
@@ -110,7 +158,7 @@
       }
 
       .ContextMenuArrow {
-        fill: #27272a;
+        fill: var(--ctx-border);
       }
 
       .ContextMenuTrigger {
@@ -128,9 +176,9 @@
         margin: -5px;
         margin-bottom: 5px;
         padding-inline: 12px;
-        background: #18181b;
-        border-bottom: 1px solid #27272a;
-        color: #71717a;
+        background: var(--ctx-label-bg);
+        border-bottom: 1px solid var(--ctx-border);
+        color: var(--ctx-text-muted);
         font-size: 11px;
         line-height: 24px;
         text-overflow: ellipsis;
@@ -145,7 +193,7 @@
       .ContextMenuSubTrigger {
         font-size: 12px;
         line-height: 1;
-        color: #fafafa;
+        color: var(--ctx-text);
         border-radius: 3px;
         display: flex;
         align-items: center;
@@ -158,12 +206,12 @@
       }
 
       .ContextMenuItemDestructive {
-        color: #7f1d1d;
+        color: var(--ctx-destructive);
       }
 
       .ContextMenuSubTrigger[data-state="open"] {
-        background-color: #09090b;
-        color: #fafafa;
+        background-color: var(--ctx-bg);
+        color: var(--ctx-text);
       }
       .ContextMenuItem[data-disabled],
       .ContextMenuCheckboxItem[data-disabled],
@@ -175,12 +223,12 @@
       .ContextMenuCheckboxItem[data-highlighted],
       .ContextMenuRadioItem[data-highlighted],
       .ContextMenuSubTrigger[data-highlighted] {
-        background-color: #18181b;
+        background-color: var(--ctx-hover);
       }
 
       .ContextMenuSeparator {
         height: 1px;
-        background-color: #27272a;
+        background-color: var(--ctx-border);
         margin: 5px -5px;
       }
 
@@ -195,7 +243,7 @@
         font-size: 10px;
         font-weight: 300;
         text-align: right;
-        color: #a1a1aa;
+        color: var(--ctx-text-muted);
       }
 
       .ContextMenuItemIndicator,
@@ -214,13 +262,13 @@
       .RightSlot {
         margin-left: auto;
         padding-left: 20px;
-        color: #fafafa;
+        color: var(--ctx-text);
       }
       [data-highlighted] > .RightSlot {
-        color: #fafafa;
+        color: var(--ctx-text);
       }
       [data-disabled] .RightSlot {
-        color: #fafafa;
+        color: var(--ctx-text);
       }
     </style>
   </head>
