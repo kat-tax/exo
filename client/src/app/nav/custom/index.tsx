@@ -30,6 +30,7 @@ export interface LayoutProps {
 export function Layout(props: LayoutProps) {
   const {state, children} = props;
   const activeRoute = state.routes[state.index];
+  const hasPreview = activeRoute.name === 'MediaBrowse';
   const [previewOpen, setPreviewOpen] = useState(true);
   const [menuOpen, setMenuOpen] = useState(true);
   const focused = useGet(media.selectors.getFocused);
@@ -63,7 +64,7 @@ export function Layout(props: LayoutProps) {
         <View style={[styles.content, previewOpen && styles.contentWithPreview]}>
           {children}
         </View>
-        {previewOpen && (
+        {hasPreview && previewOpen && (
           <View style={styles.preview}>
             <Media
               {...toPath(focused || activeRoute.path || '', false)}

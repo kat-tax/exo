@@ -120,14 +120,14 @@ export default function ScreenOverview() {
               edgeToEdge={false}
               trigger={
                 <Button
-                  label={t`Reset Database`}
+                  label={t`Clear Data`}
                   mode="Destructive"
                   state="Default"
                 />
               }>
               <View style={styles.confirmRoot}>
                 <Prompt
-                  title={t`Reset Database`}
+                  title={t`Clear Data`}
                   message={t`This will reset your owner key and delete your local database. This action is irreversible. If you have data you wish to backup make sure to save your owner key.`}
                   showClose={false}
                   confirmButton={
