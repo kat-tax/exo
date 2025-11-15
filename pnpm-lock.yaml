@@ -237,6 +237,12 @@ importers:
       '@op-engineering/op-sqlite':
         specifier: 15.0.5
         version: 15.0.5(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(bufferutil@4.0.9)(typescript@5.9.2))(@types/react@19.1.13)(bufferutil@4.0.9)(react@19.1.0))(react@19.1.0)
+      '@qrgrid/react':
+        specifier: ^1.3.4
+        version: 1.3.4(react@19.1.0)
+      '@qrgrid/styles':
+        specifier: ^1.3.2
+        version: 1.3.2
       '@react-native-community/netinfo':
         specifier: ^11.4.1
         version: 11.4.1(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(bufferutil@4.0.9)(typescript@5.9.2))(@types/react@19.1.13)(bufferutil@4.0.9)(react@19.1.0))
@@ -2290,6 +2296,14 @@ packages:
 
   '@qrgrid/core@0.2.3':
     resolution: {integrity: sha512-PW/u9B11rNvwEsmNKqNTCALPPlx/2nUQ2mRyrwaD/Wq3qAoISvJblaITPdoBAL3ZQXWUVezEMEqbEdj3cm6cyw==}
+
+  '@qrgrid/react@1.3.4':
+    resolution: {integrity: sha512-NK/ts0nbd8We1t6LkI753Uc3k3wbiYTtjMgDGHXGpzjPABsshLBgQWEUrnJlsYO6WrMQjYtiuk3POGHTgVqslg==}
+    peerDependencies:
+      react: '*'
+
+  '@qrgrid/styles@1.3.2':
+    resolution: {integrity: sha512-fJCjGGB5/NVOu4MSq2MId+ogxUVgvy7+d4eyBFE7Ev/pQdGKLBnMaw2IWmrx23D7EpBuFZxgMq1bp9bq3dHuXQ==}
 
   '@quansync/fs@0.1.5':
     resolution: {integrity: sha512-lNS9hL2aS2NZgNW7BBj+6EBl4rOf8l+tQ0eRY6JWCI8jI2kc53gSoqbjojU0OnAWhzoXiOjFyGsHcDGePB3lhA==}
@@ -11092,6 +11106,15 @@ snapshots:
     optional: true
 
   '@qrgrid/core@0.2.3': {}
+
+  '@qrgrid/react@1.3.4(react@19.1.0)':
+    dependencies:
+      '@qrgrid/core': 0.2.3
+      react: 19.1.0
+
+  '@qrgrid/styles@1.3.2':
+    dependencies:
+      '@qrgrid/core': 0.2.3
 
   '@quansync/fs@0.1.5':
     dependencies:

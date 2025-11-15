@@ -8,20 +8,22 @@ import {Sheet} from 'react-exo/sheet';
 import {Avatar} from 'react-exo/avatar';
 import {Picker} from 'react-exo/picker';
 import {Panel, PanelSection, PanelItem} from 'app/ui/panel';
+import {MnemonicSheet} from 'settings/stacks/mnemonic-sheet';
+import {useSettings} from 'settings/hooks/use-settings';
 import {useTheme} from 'settings/hooks/use-theme';
 import {useLocale} from 'settings/hooks/use-locale';
-import {useSettings} from 'settings/hooks/use-settings';
+import {useCamera} from 'media/cam/context';
 import {locales} from 'config/locales';
 import {Button, Prompt} from 'design';
 
 export default function ScreenOverview() {
   const [scheme, setScheme] = useTheme(true);
   const [locale, setLocale] = useLocale(true);
-  const [showKey, setShowKey] = useState(false);
   const [deleteConfirm, setDeleteConfirm] = useState('');
   const settings = useSettings();
   const nav = useNavigation();
   const {t} = useLingui();
+  const {openCamera} = useCamera();
 
   return (
     <Panel
@@ -77,36 +79,30 @@ export default function ScreenOverview() {
         </PanelSection>
         <PanelSection title={t`Data`}>
           <PanelItem
-            label={t`Owner Key`}
-            description={t`Set mnemonic to sync devices.`}>
-            <TextInput
-              style={styles.input}
-              selectTextOnFocus
-              secureTextEntry={!showKey}
-              defaultValue={settings.owner?.mnemonic?.toString() ?? ''}
-              placeholder={t`Enter mnemonic`}
-              importantForAutofill="no"
-              autoCapitalize="none"
-              autoComplete="off"
-              spellCheck={false}
-              passwordRules="none"
-              autoCorrect={false}
-              onFocus={() => setShowKey(true)}
-              onSubmitEditing={e => {
-                setShowKey(false);
-                settings.changeOwner(e.nativeEvent.text);
-              }}
-              onBlur={e => {
-                setShowKey(false);
-                settings.changeOwner(e.nativeEvent.text);
-              }}
-            />
+            label={t`Account Key`}
+            description={t`Manage your mnemonic phrase.`}>
+            <Sheet
+              autoWebSize={620}
+              edgeToEdge={false}
+              trigger={
+                <Button
+                  label={settings.owner?.mnemonic ? t`Manage Key` : t`Set Key`}
+                  mode="Primary"
+                  state="Default"
+                />
+              }>
+              <MnemonicSheet
+                mnemonic={settings.owner?.mnemonic?.toString() ?? ''}
+                onChangeOwner={settings.changeOwner}
+                openCamera={openCamera}
+              />
+            </Sheet>
           </PanelItem>
           <PanelItem
-            label={t`Inspect Storage`}
+            label={t`Storage Usage`}
             description={t`Monitor disk usage on device.`}>
             <Button
-              label={t`Storage Usage`}
+              label={t`View Usage`}
               mode="Primary"
               state="Default"
               onPress={() => nav.navigate('SettingsStorage')}
