@@ -113,7 +113,6 @@ const root = (screens: NavScreens, theme: Theme) => createStack<RootStackParamLi
   }),
 });
 
-
 export function Navigator() {
   const {t} = useLingui();
   const {theme} = useUnistyles();
@@ -128,7 +127,10 @@ export function Navigator() {
       },
     },
     HomeNotFound: {
-      linking: '*',
+      linking: {
+        alias: ['*'],
+        path: '404',
+      },
       options: {
         title: t`Not Found`,
       },
@@ -158,14 +160,14 @@ export function Navigator() {
       linking: {
         path: 'browse/:backend/:path?',
         alias: ['browse/:backend'],
-        // parse: {
-        //   backend: (value) => value === 'undefined' ? 'local' : value,
-        //   path: (value) => value || '',
-        // },
-        // stringify: {
-        //   backend: (value) => value === 'undefined' ? 'local' : value,
-        //   path: (value) => value || '',
-        // },
+        parse: {
+          backend: (value) => value === 'undefined' ? 'local' : value,
+          path: (value) => value.replaceAll('~', '/').replaceAll('+', ' '),
+        },
+        stringify: {
+          backend: (value) => value === 'undefined' ? 'local' : value,
+          path: (value) => value.replaceAll('/', '~').replaceAll(' ', '+'),
+        },
       },
       options: {
         title: t`Browse`,
