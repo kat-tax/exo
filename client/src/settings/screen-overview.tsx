@@ -170,7 +170,6 @@ const styles = StyleSheet.create((theme) => ({
     width: {
       initial: '100%',
       xxs: 120,
-      sm: 215,
     },
     padding: theme.display.space2,
     paddingHorizontal: theme.display.space3,
