@@ -26,6 +26,12 @@ export type RootStackParamList = {
   DevDesign: undefined;
   DevCharts: undefined;
   MediaBrowse: {path?: string; backend?: string};
+  MediaDocs: undefined;
+  MediaMusic: undefined;
+  MediaPictures: undefined;
+  MediaVideos: undefined;
+  MediaGames: undefined;
+  MediaBooks: undefined;
   MediaIpfs: {cid: string; filename?: string};
 };
 
@@ -41,8 +47,17 @@ const links: Record<string, Array<keyof RootStackParamList>> = {
   /** The menu items shown at the top of the drawer menu. */
   menuTop: [
     'HomeDashboard',
-    'MediaBrowse',
     'TasksListAll',
+  ],
+  /** The menu items shown in the media group. */
+  menuMedia: [
+    'MediaBrowse',
+    'MediaDocs',
+    'MediaMusic',
+    'MediaPictures',
+    'MediaVideos',
+    'MediaGames',
+    'MediaBooks',
   ],
   /** The menu items to show in development only (below the top items in a group). */
   menuDev: [
@@ -176,6 +191,48 @@ export function Navigator() {
       params: {
         backend: 'local',
         path: undefined,
+      },
+    },
+    MediaDocs: {
+      linking: 'docs',
+      options: {
+        title: t`Docs`,
+        icon: 'ph:file-text',
+      },
+    },
+    MediaMusic: {
+      linking: 'music',
+      options: {
+        title: t`Music`,
+        icon: 'ph:music-notes',
+      },
+    },
+    MediaPictures: {
+      linking: 'pictures',
+      options: {
+        title: t`Pictures`,
+        icon: 'ph:image',
+      },
+    },
+    MediaVideos: {
+      linking: 'videos',
+      options: {
+        title: t`Videos`,
+        icon: 'ph:video',
+      },
+    },
+    MediaGames: {
+      linking: 'games',
+      options: {
+        title: t`Games`,
+        icon: 'ph:game-controller',
+      },
+    },
+    MediaBooks: {
+      linking: 'books',
+      options: {
+        title: t`Books`,
+        icon: 'ph:book-open-text',
       },
     },
     MediaIpfs: {
