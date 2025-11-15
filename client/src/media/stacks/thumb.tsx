@@ -90,7 +90,7 @@ export function Thumb({
               name="ph:folder-fill"
               size={height}
               uniProps={(theme) => ({
-                color: theme.colors.mutedForeground,
+                color: theme.colors.secondaryForeground,
               })}
             />
           : <span
