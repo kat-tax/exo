@@ -104,7 +104,7 @@ export function MediaControls(props: MediaControlsProps) {
                 uniProps={(theme) => ({
                   color: state.hovered || __TOUCH__
                     ? theme.colors.foreground
-                    : theme.colors.mutedForeground,
+                    : theme.colors.secondaryForeground,
                 })}
               />
             )}

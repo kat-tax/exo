@@ -17,21 +17,33 @@
         font-feature-settings:
           "liga" 1,
           "calt" 1;
-        --bg: #fff;
+        --bg-light: #fff;
         --bg-dark: #09090b;
-        --sel: rgba(0, 0, 0, 0.2);
+        --sel-light: rgba(0, 0, 0, 0.2);
         --sel-dark: rgba(255, 255, 255, 0.2);
       }
 
-      body.dark {
+      html.dark {
         --bg: var(--bg-dark);
         --sel: var(--sel-dark);
       }
 
+      html.light {
+        --bg: var(--bg-light);
+        --sel: var(--sel-light);
+      }
+
       @media (prefers-color-scheme: dark) {
-        :root {
+        :root:not(html.light):not(html.dark) {
           --bg: var(--bg-dark);
           --sel: var(--sel-dark);
+        }
+      }
+
+      @media (prefers-color-scheme: light) {
+        :root:not(html.dark):not(html.light) {
+          --bg: var(--bg-light);
+          --sel: var(--sel-light);
         }
       }
 
