@@ -145,7 +145,6 @@ export function Media({ext, name, path, vertical, maximized, embedded, standalon
 const styles = StyleSheet.create((theme) => ({
   root: {
     flex: 2,
-    backgroundColor: theme.colors.neutral,
   },
   vertical: {
     flex: 2,

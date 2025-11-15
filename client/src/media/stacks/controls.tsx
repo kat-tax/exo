@@ -120,7 +120,6 @@ const styles = StyleSheet.create((theme) => ({
     flexDirection: 'row',
     alignItems: 'center',
     paddingHorizontal: theme.display.space1,
-    backgroundColor: theme.colors.neutral,
     borderTopWidth: StyleSheet.hairlineWidth,
     borderTopColor: theme.colors.border,
   },
