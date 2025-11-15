@@ -29,7 +29,6 @@ export interface LayoutProps {
 export function Layout(props: LayoutProps) {
   const {state, children} = props;
   const activeRoute = state.routes[state.index];
-  const hasPreview = activeRoute.name === 'MediaBrowse';
   const [previewOpen, setPreviewOpen] = useState(true);
   const [menuOpen, setMenuOpen] = useState(true);
   const focused = useGet(media.selectors.getFocused);
@@ -39,6 +38,8 @@ export function Layout(props: LayoutProps) {
     focusBoundaryDirections: ['up', 'down'],
     preferredChildFocusKey: `menu@${activeRoute?.name}`,
   });
+
+  const hasPreview = activeRoute.name === 'MediaBrowse' && previewOpen;
 
   useHotkeys({
     toggleMenu: () => {
@@ -60,10 +61,10 @@ export function Layout(props: LayoutProps) {
             <Menu {...props}/>
           </Display>
         )}
-        <View style={[styles.content, previewOpen && styles.contentWithPreview]}>
+        <View style={[styles.content, hasPreview && styles.contentWithPreview]}>
           {children}
         </View>
-        {hasPreview && previewOpen && (
+        {hasPreview && (
           <View style={styles.preview}>
             <Media
               {...toPath(focused || activeRoute.path || '', false)}
