@@ -87,10 +87,10 @@ export function Thumb({
           />
         : dir
           ? <Icon
-              name="ph:folder-simple-fill"
+              name="ph:folder-fill"
               size={height}
               uniProps={(theme) => ({
-                color: theme.colors.foreground,
+                color: theme.colors.mutedForeground,
               })}
             />
           : <span
