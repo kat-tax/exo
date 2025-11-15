@@ -185,7 +185,7 @@ export function Navigator() {
         },
       },
       options: {
-        title: t`Browse`,
+        title: t`Files`,
         icon: 'ph:folder',
       },
       params: {
