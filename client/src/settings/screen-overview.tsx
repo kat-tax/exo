@@ -107,21 +107,21 @@ export default function ScreenOverview() {
           </PanelItem>
           <PanelItem
             label={t`Reset Data`}
-            description={t`Clear owner and delete database.`}>
+            description={t`Deletes database and resets key.`}>
             <Sheet
               autoWebSize={250}
               edgeToEdge={false}
               trigger={
                 <Button
-                  label={t`Clear Data`}
+                  label={t`Reset Data`}
                   mode="Destructive"
                   state="Default"
                 />
               }>
               <View style={styles.confirmRoot}>
                 <Prompt
-                  title={t`Clear Data`}
-                  message={t`This will reset your owner key and delete your local database. This action is irreversible. If you have data you wish to backup make sure to save your owner key.`}
+                  title={t`Reset Data`}
+                  message={t`This will reset your account key and delete your local database. This action is irreversible. If you have data you wish to backup make sure to save your account key.`}
                   showClose={false}
                   confirmButton={
                     <View style={styles.confirmForm}>
