@@ -8,7 +8,7 @@ import {Sheet} from 'react-exo/sheet';
 import {Avatar} from 'react-exo/avatar';
 import {Picker} from 'react-exo/picker';
 import {Panel, PanelSection, PanelItem} from 'app/ui/panel';
-import {MnemonicSheet} from 'settings/stacks/mnemonic-sheet';
+import {AccountKey} from 'settings/stacks/account-key';
 import {useSettings} from 'settings/hooks/use-settings';
 import {useTheme} from 'settings/hooks/use-theme';
 import {useLocale} from 'settings/hooks/use-locale';
@@ -91,7 +91,7 @@ export default function ScreenOverview() {
                   state="Default"
                 />
               }>
-              <MnemonicSheet
+              <AccountKey
                 mnemonic={settings.owner?.mnemonic?.toString() ?? ''}
                 onChangeOwner={settings.changeOwner}
                 openCamera={openCamera}

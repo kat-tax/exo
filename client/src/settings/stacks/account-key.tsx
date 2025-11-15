@@ -11,13 +11,13 @@ import {useCamera} from 'media/cam/context';
 import type {Code} from 'react-native-vision-camera';
 import type {ModuleStyleFunction} from '@qrgrid/react/canvas';
 
-interface MnemonicSheetProps {
+interface AccountKeyProps {
   mnemonic: string;
   onChangeOwner: (mnemonic: string) => void;
   openCamera: ReturnType<typeof useCamera>['openCamera'];
 }
 
-export function MnemonicSheet({mnemonic, onChangeOwner, openCamera}: MnemonicSheetProps) {
+export function AccountKey({mnemonic, onChangeOwner, openCamera}: AccountKeyProps) {
   const {t} = useLingui();
   const [copied, setCopied] = useState(false);
   const [showMnemonic, setShowMnemonic] = useState(false);
