@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react';
+import {useState} from 'react';
 import {useLingui} from '@lingui/react/macro';
 import {StyleSheet} from 'react-native-unistyles';
 import {TextInput} from 'react-exo/textinput';
@@ -25,7 +25,7 @@ export function AccountKey({mnemonic, onChangeOwner}: AccountKeyProps) {
   const [showMnemonic, setShowMnemonic] = useState(false);
   const [showQr, setShowQr] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
-  const [editedWords, setEditedWords] = useState<string[]>(() => mnemonic ? mnemonic.split(' ') : []);
+  const [editedWords, setEditedWords] = useState<string[]>([]);
 
   const words = mnemonic ? mnemonic.split(' ') : [];
   const columns = words.length <= 12 ? 3 : 4;
@@ -44,22 +44,13 @@ export function AccountKey({mnemonic, onChangeOwner}: AccountKeyProps) {
   };
 
   const handlePaste = async () => {
-    try {
-      let clipboardText = '';
-      if (typeof navigator !== 'undefined' && navigator.clipboard) {
-        clipboardText = await navigator.clipboard.readText();
-      }
-      if (clipboardText) {
-        const words = clipboardText.trim().split(/\s+/);
-        // Only fill up to the number of word inputs we have
-        const newWords = [...editedWords];
-        words.slice(0, newWords.length).forEach((word, index) => {
-          newWords[index] = word;
-        });
-        setEditedWords(newWords);
-      }
-    } catch (error) {
-      console.error('Failed to paste:', error);
+    let clipboardText = '';
+    if (typeof navigator !== 'undefined' && navigator.clipboard) {
+      clipboardText = await navigator.clipboard.readText();
+    }
+    if (clipboardText) {
+      const words = clipboardText.trim().split(/\s+/);
+      setEditedWords(words);
     }
   };
 
@@ -87,17 +78,29 @@ export function AccountKey({mnemonic, onChangeOwner}: AccountKeyProps) {
   };
 
   const handleCancel = () => {
-    if (mnemonic) {
-      setEditedWords(mnemonic.split(' '));
-    }
+    setEditedWords([]);
     setIsEditing(false);
     setShowMnemonic(false);
   };
 
+  const handleClear = () => {
+    setEditedWords([]);
+  };
+
   const handleWordChange = (index: number, value: string) => {
-    const newWords = [...editedWords];
-    newWords[index] = value;
-    setEditedWords(newWords);
+    // Detect if full mnemonic phrase (all words) was provided
+    const trimmedValue = value.trim();
+    const wordsInInput = trimmedValue.split(/\s+/);
+
+    // If multiple words detected, treat as full mnemonic phrase
+    if (wordsInInput.length > 1) {
+      setEditedWords(wordsInInput);
+    } else {
+      // Otherwise, update the current word
+      const newWords = [...editedWords];
+      newWords[index] = trimmedValue;
+      setEditedWords(newWords);
+    }
   };
 
   const qrModuleStyle: ModuleStyleFunction = (ctx, module, qr) => {
@@ -110,15 +113,6 @@ export function AccountKey({mnemonic, onChangeOwner}: AccountKeyProps) {
     }
     drawSmoothEdges(ctx, module, qr);
   };
-
-  // Update editedWords when mnemonic prop changes
-  useEffect(() => {
-    if (mnemonic) {
-      setEditedWords(mnemonic.split(' '));
-    } else {
-      setEditedWords([]);
-    }
-  }, [mnemonic]);
 
   return (
     <View style={styles.root}>
@@ -155,11 +149,6 @@ export function AccountKey({mnemonic, onChangeOwner}: AccountKeyProps) {
                 words.map((word, index) => (
                   <TextInput
                     key={index}
-                    ref={ref => {
-                      if (index === 0 && isEditing) {
-                        ref?.focus();
-                      }
-                    }}
                     selectTextOnFocus={isEditing}
                     pointerEvents={isEditing ? 'auto' : 'none'}
                     style={[styles.wordInput, {flexBasis: `${100 / columns}%`, maxWidth: `${100 / columns}%`}]}
@@ -236,6 +225,19 @@ export function AccountKey({mnemonic, onChangeOwner}: AccountKeyProps) {
                       })}
                     />
                   </Pressable>
+                  {editedWords.length > 0 && (
+                    <Pressable
+                      style={styles.iconButton}
+                      onPress={handleClear}>
+                      <Icon
+                        name="ph:eraser"
+                        size={18}
+                        uniProps={(theme) => ({
+                          color: theme.colors.mutedForeground,
+                        })}
+                      />
+                    </Pressable>
+                  )}
                 </View>
               )}
             </View>
@@ -334,7 +336,7 @@ const styles = StyleSheet.create((theme) => ({
     fontWeight: theme.typography.weightRegular,
     lineHeight: theme.typography.lineHeight3,
     letterSpacing: theme.typography.letterSpacing2,
-    fontFamily: 'monospace',
+    fontFamily: theme.font.family,
     textAlign: 'center',
     flexGrow: 1,
     flexShrink: 1,
