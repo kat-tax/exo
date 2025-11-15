@@ -52,6 +52,7 @@
     "react-exo-ui": "workspace:*",
     "react-map-gl": "^8.1.0",
     "react-native": "catalog:",
+    "react-native-audio-pro": "^10.1.2",
     "react-native-bottom-tabs": "^0.11.2",
     "react-native-edge-to-edge": "^1.7.0",
     "react-native-file-access": "^3.2.0",
