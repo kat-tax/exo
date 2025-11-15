@@ -16,6 +16,7 @@ export function CameraPicker() {
     mode,
     cameraPosition,
     flashMode,
+    forceMode,
     recordingTime,
     isRecording,
     hdrEnabled,
@@ -153,20 +154,22 @@ export function CameraPicker() {
         {/* Top right controls */}
         <View style={styles.topRightControls}>
           {/* Mode toggle */}
-          <Pressable
-            style={styles.controlButton}
-            onPress={toggleMode}>
-            <Icon
-              size={24}
-              color="#000"
-              name={mode === 'photo'
-                ? 'ph:camera'
-                : mode === 'video'
-                  ? 'ph:video-camera'
-                  : 'ph:qr-code'
-              }
-            />
-          </Pressable>
+          {!forceMode && (
+            <Pressable
+              style={styles.controlButton}
+              onPress={toggleMode}>
+              <Icon
+                size={24}
+                color="#000"
+                name={mode === 'photo'
+                  ? 'ph:camera'
+                  : mode === 'video'
+                    ? 'ph:video-camera'
+                    : 'ph:qr-code'
+                }
+              />
+            </Pressable>
+          )}
           {/* HDR toggle */}
           {mode !== 'code' && (
             <Pressable
@@ -224,15 +227,17 @@ export function CameraPicker() {
               <Text style={styles.codeScanningText}>Scanning QR code...</Text>
             </View>
           )}
-          <Pressable
-            style={styles.flipButton}
-            onPress={toggleCamera}>
-            <Icon
-              name="ph:camera-rotate"
-              size={24}
-              color="#000"
-            />
-          </Pressable>
+          {mode !== 'code' && (
+            <Pressable
+              style={styles.flipButton}
+              onPress={toggleCamera}>
+              <Icon
+                name="ph:camera-rotate"
+                size={24}
+                color="#000"
+              />
+            </Pressable>
+          )}
         </View>
       </View>
     </Sheet>

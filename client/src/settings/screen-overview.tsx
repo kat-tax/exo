@@ -1,20 +1,19 @@
 import {useState} from 'react';
 import {useLingui} from '@lingui/react/macro';
 import {useNavigation} from '@react-navigation/native';
-import {StyleSheet} from 'react-native-unistyles';
 import {View, Platform} from 'react-native';
+import {StyleSheet} from 'react-native-unistyles';
 import {TextInput} from 'react-exo/textinput';
 import {Sheet} from 'react-exo/sheet';
 import {Avatar} from 'react-exo/avatar';
 import {Picker} from 'react-exo/picker';
+import {locales} from 'config/locales';
+import {Button, Prompt} from 'design';
 import {Panel, PanelSection, PanelItem} from 'app/ui/panel';
 import {AccountKey} from 'settings/stacks/account-key';
 import {useSettings} from 'settings/hooks/use-settings';
-import {useTheme} from 'settings/hooks/use-theme';
 import {useLocale} from 'settings/hooks/use-locale';
-import {useCamera} from 'media/cam/context';
-import {locales} from 'config/locales';
-import {Button, Prompt} from 'design';
+import {useTheme} from 'settings/hooks/use-theme';
 
 export default function ScreenOverview() {
   const [scheme, setScheme] = useTheme(true);
@@ -23,7 +22,6 @@ export default function ScreenOverview() {
   const settings = useSettings();
   const nav = useNavigation();
   const {t} = useLingui();
-  const {openCamera} = useCamera();
 
   return (
     <Panel
@@ -94,7 +92,6 @@ export default function ScreenOverview() {
               <AccountKey
                 mnemonic={settings.owner?.mnemonic?.toString() ?? ''}
                 onChangeOwner={settings.changeOwner}
-                openCamera={openCamera}
               />
             </Sheet>
           </PanelItem>

@@ -1,29 +1,34 @@
 import {useState, useEffect} from 'react';
 import {useLingui} from '@lingui/react/macro';
 import {StyleSheet} from 'react-native-unistyles';
-import {View, Pressable} from 'react-native';
 import {TextInput} from 'react-exo/textinput';
+import {View, Pressable} from 'react-native';
 import {Button, Prompt, Alert} from 'design';
 import {Icon} from 'react-exo/icon';
 import {Qr} from '@qrgrid/react/canvas';
-import {drawSmoothEdges} from'@qrgrid/styles/canvas';
 import {useCamera} from 'media/cam/context';
+import {drawSmoothEdges} from'@qrgrid/styles/canvas';
+
 import type {Code} from 'react-native-vision-camera';
 import type {ModuleStyleFunction} from '@qrgrid/react/canvas';
 
 interface AccountKeyProps {
   mnemonic: string;
   onChangeOwner: (mnemonic: string) => void;
-  openCamera: ReturnType<typeof useCamera>['openCamera'];
 }
 
-export function AccountKey({mnemonic, onChangeOwner, openCamera}: AccountKeyProps) {
+export function AccountKey({mnemonic, onChangeOwner}: AccountKeyProps) {
   const {t} = useLingui();
+  const {openCamera} = useCamera();
+
   const [copied, setCopied] = useState(false);
   const [showMnemonic, setShowMnemonic] = useState(false);
   const [showQr, setShowQr] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
   const [editedWords, setEditedWords] = useState<string[]>(() => mnemonic ? mnemonic.split(' ') : []);
+
+  const words = mnemonic ? mnemonic.split(' ') : [];
+  const columns = words.length <= 12 ? 3 : 4;
 
   const handleCopy = async () => {
     if (!mnemonic) return;
@@ -63,7 +68,7 @@ export function AccountKey({mnemonic, onChangeOwner, openCamera}: AccountKeyProp
       if (result.value) {
         setEditedWords(result.value.trim().split(' '));
       }
-    }, 'code');
+    }, 'code', {forceMode: true});
   };
 
   const handleShowQR = () => {
@@ -105,10 +110,6 @@ export function AccountKey({mnemonic, onChangeOwner, openCamera}: AccountKeyProp
     }
     drawSmoothEdges(ctx, module, qr);
   };
-
-  const words = mnemonic ? mnemonic.split(' ') : [];
-  // Calculate grid columns: 3 columns for 12 words, 4 columns for 24 words
-  const columns = words.length <= 12 ? 3 : 4;
 
   // Update editedWords when mnemonic prop changes
   useEffect(() => {
