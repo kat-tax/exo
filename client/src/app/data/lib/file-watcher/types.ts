@@ -1,29 +1,37 @@
-export interface PathSnapshot {
-  [pathId: string]: [
-    name: string,
-    parentId: string | undefined,
-    fileId: string | undefined,
-  ];
-}
+import type evolu from '../evolu.db';
 
-export interface FileSnapshot {
-  [fileId: string]: [
-    size: number,
-    mimetype: string,
-    thumbnail: Uint8Array | undefined,
-  ];
-}
+export type EvoluInstance = typeof evolu;
+
+export type PathTuple = [
+  name: string,
+  parentId: string | undefined,
+  fileId: string | undefined,
+];
+
+export type FileTuple = [
+  size: number,
+  mimetype: string,
+  thumbnail: Uint8Array | undefined,
+];
 
 export interface SnapshotData {
   paths: PathSnapshot;
   files: FileSnapshot;
 }
 
+export interface PathSnapshot {
+  [pathId: string]: PathTuple;
+}
+
+export interface FileSnapshot {
+  [fileId: string]: FileTuple;
+}
+
 export interface DeltaUpdate {
   type: 'appeared' | 'disappeared' | 'modified' | 'moved';
   pathId: string;
-  path?: [string, string | undefined, string | undefined];
-  file?: [number, string, Uint8Array | undefined];
+  path?: PathTuple;
+  file?: FileTuple;
   movedFrom?: string;
 }
 

@@ -21,16 +21,11 @@ class FileWatcherWorker {
   async initialize(_deviceId: string, rootHandle: FileSystemDirectoryHandle) {
     this.rootHandle = rootHandle;
     try {
-      // Build initial snapshot
       await this.buildInitialSnapshot();
-      // Start observing for changes
       await this.startObserver();
       this.postMessage({type: 'ready'});
     } catch (error) {
-      this.postMessage({
-        type: 'error',
-        message: error instanceof Error ? error.message : 'Unknown error',
-      });
+      this.postMessage({type: 'error', message: error instanceof Error ? error.message : 'Unknown error'});
     }
   }
 
@@ -38,121 +33,65 @@ class FileWatcherWorker {
     if (!this.rootHandle) throw new Error('Root handle not set');
     this.pathsSnapshot = {};
     this.filesSnapshot = {};
-    const stats: StatsData = {
-      totals: {
-        entries: 0,
-        hashing: 0,
-        indexing: 0,
-        generating: 0,
-      },
-    };
-    try {
-      await this.scanDirectory(this.rootHandle, undefined, stats);
-      // Send snapshot to main thread
-      this.postMessage({
-        type: 'snapshot',
-        data: {
-          paths: this.pathsSnapshot,
-          files: this.filesSnapshot,
-        },
-      });
-      // Send final stats
-      this.postMessage({type: 'stats', data: stats});
-    } finally {
-      // Scanning complete
-    }
+    const stats: StatsData = {totals: {entries: 0, hashing: 0, indexing: 0, generating: 0}};
+    await this.scanDirectory(this.rootHandle, undefined, stats);
+    this.postMessage({type: 'snapshot', data: {paths: this.pathsSnapshot, files: this.filesSnapshot}});
+    this.postMessage({type: 'stats', data: stats});
   }
 
-  private async scanDirectory(
-    dirHandle: FileSystemDirectoryHandle,
-    parentId: string | undefined,
-    stats: StatsData,
-  ) {
-    const dirPath = await this.getHandlePath(dirHandle);
-    const dirId = createIdFromString(dirPath);
-    // Add directory to paths snapshot
+  private async scanDirectory(dirHandle: FileSystemDirectoryHandle, parentId: string | undefined, stats: StatsData) {
+    const dirId = createIdFromString(await this.getHandlePath(dirHandle));
     this.pathsSnapshot[dirId] = [dirHandle.name, parentId, undefined];
-    stats.totals.entries++;
-    // Periodically send stats updates
-    if (stats.totals.entries % 100 === 0) {
-      this.postMessage({type: 'stats', data: {...stats}});
-    }
+    if (++stats.totals.entries % 100 === 0) this.postMessage({type: 'stats', data: {...stats}});
     try {
-      // Iterate through directory entries
-      // Check if values() method exists (for FileSystemDirectoryHandle)
-      if (typeof (dirHandle as any).values === 'function') {
-        for await (const entry of (dirHandle as any).values()) {
-          if (entry.kind === 'file') {
-            await this.processFile(entry, dirId, stats);
-          } else if (entry.kind === 'directory') {
-            await this.scanDirectory(entry, dirId, stats);
-          }
-        }
+      for await (const entry of dirHandle.values()) {
+        entry.kind === 'file' ? await this.processFile(entry as FileSystemFileHandle, dirId, stats) :
+        entry.kind === 'directory' && await this.scanDirectory(entry as FileSystemDirectoryHandle, dirId, stats);
       }
     } catch (error) {
-      console.error(`Error scanning directory ${dirPath}:`, error);
+      console.error(`Error scanning directory ${await this.getHandlePath(dirHandle)}:`, error);
     }
   }
 
-  private async processFile(
-    fileHandle: FileSystemFileHandle,
-    parentId: string,
-    stats: StatsData,
-  ) {
+  private async readFileContent(fileHandle: FileSystemFileHandle): Promise<{size: number; mimetype: string; content: Uint8Array}> {
+    try {
+      const syncHandle = await fileHandle.createSyncAccessHandle?.();
+      if (syncHandle) {
+        try {
+          const size = syncHandle.getSize();
+          const readSize = Math.min(size, 1024 * 1024);
+          const content = readSize > 0 ? new Uint8Array(readSize) : new Uint8Array(0);
+          if (readSize > 0) syncHandle.read(content, {at: 0});
+          return {size, mimetype: getMediaType(fileHandle.name), content};
+        } finally {
+          syncHandle.close();
+        }
+      }
+    } catch {}
+    const file = await fileHandle.getFile();
+    const content = file.size > 0 && file.size < 1024 * 1024
+      ? new Uint8Array(await file.arrayBuffer())
+      : new Uint8Array(0);
+    return {size: file.size, mimetype: file.type || getMediaType(fileHandle.name), content};
+  }
+
+  private async processFileData(fileHandle: FileSystemFileHandle, content: Uint8Array, size: number, mimetype: string) {
+    const fileId = await this.createFileId(content);
+    const thumbnail = isImageFile(mimetype) ? await generateThumbnail(fileHandle) : undefined;
+    return {fileId, snapshot: [size, mimetype, thumbnail] as [number, string, Uint8Array | undefined]};
+  }
+
+  private async processFile(fileHandle: FileSystemFileHandle, parentId: string, stats: StatsData) {
     try {
       const filePath = await this.getHandlePath(fileHandle);
       const pathId = createIdFromString(filePath);
-      // Get file metadata using SyncAccessHandle when possible
-      let size = 0;
-      let mimetype = '';
-      let thumbnail: Uint8Array | undefined;
-      let fileContent: Uint8Array | null = null;
-      // Try to use FileSystemSyncAccessHandle for better performance
-      try {
-        const syncHandle = await (fileHandle as any).createSyncAccessHandle?.();
-        if (syncHandle) {
-          try {
-            size = syncHandle.getSize();
-            // Read file content for hashing (limited size for performance)
-            const readSize = Math.min(size, 1024 * 1024); // Read max 1MB for hashing
-            if (readSize > 0) {
-              const buffer = new Uint8Array(readSize);
-              syncHandle.read(buffer, {at: 0});
-              fileContent = buffer;
-            }
-          } finally {
-            syncHandle.close();
-          }
-        }
-      } catch (syncError) {
-        // Fallback to regular File API
-        const file = await fileHandle.getFile();
-        size = file.size;
-        mimetype = file.type || getMediaType(fileHandle.name);
-        // Read file content for hashing
-        if (size > 0 && size < 1024 * 1024) {
-          const buffer = await file.arrayBuffer();
-          fileContent = new Uint8Array(buffer);
-        }
-      }
-      // Generate file ID from content hash
+      const {size, mimetype, content} = await this.readFileContent(fileHandle);
       stats.totals.hashing++;
-      const fileId = await this.createFileId(fileContent || new Uint8Array(0));
-      // Generate thumbnail for images
-      if (isImageFile(mimetype || fileHandle.name)) {
-        stats.totals.generating++;
-        thumbnail = await generateThumbnail(fileHandle);
-      }
-      // Add to snapshots
+      if (isImageFile(mimetype)) stats.totals.generating++;
       stats.totals.indexing++;
+      const {fileId, snapshot} = await this.processFileData(fileHandle, content, size, mimetype);
       this.pathsSnapshot[pathId] = [fileHandle.name, parentId, fileId];
-      if (!this.filesSnapshot[fileId]) {
-        this.filesSnapshot[fileId] = [
-          size,
-          mimetype || getMediaType(fileHandle.name),
-          thumbnail,
-        ];
-      }
+      if (!this.filesSnapshot[fileId]) this.filesSnapshot[fileId] = snapshot;
       stats.totals.entries++;
     } catch (error) {
       console.error(`Error processing file ${fileHandle.name}:`, error);
@@ -169,133 +108,68 @@ class FileWatcherWorker {
     await this.observer.observe(this.rootHandle, {recursive: true});
   }
 
+  private async getRecordPath(record: FileSystemChangeRecord, pathComponents?: string[]): Promise<{fullPath: string; pathId: string; parentId: string | undefined; name: string}> {
+    const components = pathComponents || record.relativePathComponents;
+    const path = components.join('/');
+    const rootPath = await this.getHandlePath(record.root);
+    const fullPath = `${rootPath}/${path}`;
+    const pathId = createIdFromString(fullPath);
+    const parentPath = components.slice(0, -1).join('/');
+    const parentId = parentPath ? createIdFromString(`${rootPath}/${parentPath}`) : undefined;
+    const name = components[components.length - 1];
+    return {fullPath, pathId, parentId, name};
+  }
+
+  private async handleFileChange(fileHandle: FileSystemFileHandle, pathId: string, name: string, parentId: string | undefined, changeType: 'appeared' | 'modified') {
+    const file = await fileHandle.getFile();
+    const content = new Uint8Array(await file.arrayBuffer().catch(() => new ArrayBuffer(0)));
+    const {fileId, snapshot} = await this.processFileData(fileHandle, content, file.size, file.type || getMediaType(name));
+    const path = [name, parentId, fileId] as [string, string | undefined, string];
+    this.pathsSnapshot[pathId] = path;
+    this.filesSnapshot[fileId] = snapshot;
+    this.postMessage({type: 'delta', data: {type: changeType, pathId, path, file: snapshot}});
+  }
+
   private async handleChangeRecord(record: FileSystemChangeRecord) {
     try {
-      const path = record.relativePathComponents.join('/');
-      const fullPath = await this.getHandlePath(record.root) + '/' + path;
-      const pathId = createIdFromString(fullPath);
+      const {pathId, parentId, name} = await this.getRecordPath(record);
       switch (record.type) {
-        case 'appeared': {
-          // New file or directory appeared
-          const parentPath = record.relativePathComponents.slice(0, -1).join('/');
-          const parentId = parentPath
-            ? createIdFromString(await this.getHandlePath(record.root) + '/' + parentPath)
-            : undefined;
-          const name = record.relativePathComponents[record.relativePathComponents.length - 1];
+        case 'appeared':
           if (record.changedHandle.kind === 'file') {
-            const fileHandle = record.changedHandle as FileSystemFileHandle;
-            const file = await fileHandle.getFile();
-            const fileContent = new Uint8Array(
-              await file.arrayBuffer().catch(() => new ArrayBuffer(0)),
-            );
-            const fileId = await this.createFileId(fileContent);
-            const mimetype = file.type || getMediaType(name);
-            const thumbnail = isImageFile(mimetype)
-              ? await generateThumbnail(fileHandle)
-              : undefined;
-            this.pathsSnapshot[pathId] = [name, parentId, fileId];
-            this.filesSnapshot[fileId] = [file.size, mimetype, thumbnail];
-            this.postMessage({
-              type: 'delta',
-              data: {
-                type: 'appeared',
-                pathId,
-                path: [name, parentId, fileId],
-                file: [file.size, mimetype, thumbnail],
-              },
-            });
+            await this.handleFileChange(record.changedHandle as FileSystemFileHandle, pathId, name, parentId, 'appeared');
           } else {
             this.pathsSnapshot[pathId] = [name, parentId, undefined];
-            this.postMessage({
-              type: 'delta',
-              data: {
-                type: 'appeared',
-                pathId,
-                path: [name, parentId, undefined],
-              },
-            });
+            this.postMessage({type: 'delta', data: {type: 'appeared', pathId, path: [name, parentId, undefined]}});
           }
           break;
-        }
-
-        case 'disappeared': {
-          // File or directory disappeared
+        case 'disappeared':
           delete this.pathsSnapshot[pathId];
-          this.postMessage({
-            type: 'delta',
-            data: {type: 'disappeared', pathId},
-          });
+          this.postMessage({type: 'delta', data: {type: 'disappeared', pathId}});
           break;
-        }
-
-        case 'modified': {
-          // File content modified
+        case 'modified':
           if (record.changedHandle.kind === 'file') {
-            const fileHandle = record.changedHandle as FileSystemFileHandle;
-            const file = await fileHandle.getFile();
-            const fileContent = new Uint8Array(await file.arrayBuffer().catch(() => new ArrayBuffer(0)));
-            const fileId = await this.createFileId(fileContent);
-            const mimetype = file.type || getMediaType(fileHandle.name);
-            const thumbnail = isImageFile(mimetype)
-              ? await generateThumbnail(fileHandle)
-              : undefined;
             const entry = this.pathsSnapshot[pathId];
             if (entry) {
-              entry[2] = fileId;
-              this.filesSnapshot[fileId] = [file.size, mimetype, thumbnail];
-              this.postMessage({
-                type: 'delta',
-                data: {
-                  type: 'modified',
-                  pathId,
-                  path: entry,
-                  file: [file.size, mimetype, thumbnail],
-                },
-              });
+              await this.handleFileChange(record.changedHandle as FileSystemFileHandle, pathId, name, parentId, 'modified');
+              entry[2] = this.pathsSnapshot[pathId][2];
             }
           }
           break;
-        }
-
-        case 'moved': {
-          // File or directory moved
-          const oldPath =
-            (await this.getHandlePath(record.root)) +
-            '/' +
-            (record.relativePathMovedFrom?.join('/') || '');
-          const oldPathId = createIdFromString(oldPath);
+        case 'moved':
+          const {pathId: oldPathId} = await this.getRecordPath(record, record.relativePathMovedFrom ? [...record.relativePathMovedFrom] : undefined);
           const entry = this.pathsSnapshot[oldPathId];
           if (entry) {
             delete this.pathsSnapshot[oldPathId];
-            const parentPath = record.relativePathComponents.slice(0, -1).join('/');
-            const parentId = parentPath
-              ? createIdFromString(await this.getHandlePath(record.root) + '/' + parentPath)
-              : undefined;
-            const name = record.relativePathComponents[record.relativePathComponents.length - 1];
             entry[0] = name;
             entry[1] = parentId;
             this.pathsSnapshot[pathId] = entry;
-            this.postMessage({
-              type: 'delta',
-              data: {
-                type: 'moved',
-                pathId,
-                path: entry,
-                movedFrom: oldPathId,
-              },
-            });
+            this.postMessage({type: 'delta', data: {type: 'moved', pathId, path: entry, movedFrom: oldPathId}});
           }
           break;
-        }
-
-        case 'errored': {
+        case 'errored':
           this.observer?.unobserve(record.root);
-          this.postMessage({
-            type: 'error',
-            message: 'File system observer error',
-          });
+          this.postMessage({type: 'error', message: 'File system observer error'});
           break;
-        }
       }
     } catch (error) {
       console.error('Error handling change record:', error);
@@ -303,33 +177,22 @@ class FileWatcherWorker {
   }
 
   private async createFileId(content: Uint8Array): Promise<string> {
-    // Hash file content
     const hashBuffer = await crypto.subtle.digest('SHA-256', content.buffer as ArrayBuffer);
-    const hashArray = Array.from(new Uint8Array(hashBuffer));
-    const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+    const hashHex = Array.from(new Uint8Array(hashBuffer), b => b.toString(16).padStart(2, '0')).join('');
     return createIdFromString(hashHex);
   }
 
   private async getHandlePath(handle: FileSystemHandle): Promise<string> {
-    // For root handle, return empty string
-    if (handle === this.rootHandle) return '';
-    // Try to resolve path (this is a simplified version)
-    // In practice, you might need to traverse up the tree
-    return handle.name;
+    return handle === this.rootHandle ? '' : handle.name;
   }
 
   stop() {
-    if (this.observer) {
-      this.observer.disconnect();
-      this.observer = null;
-    }
+    this.observer?.disconnect();
+    this.observer = null;
   }
 
   getSnapshot(): SnapshotData {
-    return {
-      paths: this.pathsSnapshot,
-      files: this.filesSnapshot,
-    };
+    return {paths: this.pathsSnapshot, files: this.filesSnapshot};
   }
 
   private postMessage(message: WorkerResponse) {
@@ -337,10 +200,8 @@ class FileWatcherWorker {
   }
 }
 
-// Worker instance
 const worker = new FileWatcherWorker();
 
-// Message handler
 self.addEventListener('message', async (event: MessageEvent<WorkerMessage>) => {
   const message = event.data;
   switch (message.type) {

@@ -106,6 +106,20 @@ declare global {
      */
     write(buffer: ArrayBuffer | ArrayBufferView, options?: FileSystemReadWriteOptions): number;
   }
+
+  // File System Access API - Directory and File Handles
+  interface FileSystemDirectoryHandle extends FileSystemHandle {
+    readonly kind: 'directory';
+    values(): AsyncIterableIterator<FileSystemHandle>;
+    getDirectoryHandle(name: string, options?: {create?: boolean}): Promise<FileSystemDirectoryHandle>;
+    getFileHandle(name: string, options?: {create?: boolean}): Promise<FileSystemFileHandle>;
+  }
+
+  interface FileSystemFileHandle extends FileSystemHandle {
+    readonly kind: 'file';
+    getFile(): Promise<File>;
+    createSyncAccessHandle?(): Promise<FileSystemSyncAccessHandle>;
+  }
 }
 
 // Set Unistyles theme types
