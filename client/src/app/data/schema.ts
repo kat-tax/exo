@@ -30,7 +30,7 @@ export default {
     id: $.PathId,
     name: $.NonEmptyString255,
     deviceId: $.DeviceId,
-    parentId: $.PathId,
+    parentId: $.nullOr($.PathId),
     fileId: $.nullOr($.FileId),
   },
   file: {

@@ -22,6 +22,25 @@ export const getShortcuts = _.createQuery(db => db
 );
 
 /**
+ * Query all files
+ */
+export const getFiles = _.createQuery(db => db
+  .selectFrom('file')
+  .select(['id', 'size', 'mime', 'thumb'])
+  .where('isDeleted', 'is not', 1),
+);
+
+/**
+ * Query all paths for a device
+ */
+export const getPathsForDevice = (deviceId: $.DeviceId) => _.createQuery(db => db
+  .selectFrom('path')
+  .select(['id', 'name', 'parentId', 'fileId'])
+  .where('deviceId', '=', deviceId)
+  .where('isDeleted', 'is not', 1),
+);
+
+/**
  * Query folder contents (subfolders and files)
  * Pass null for folderId to get top-level items
  */
