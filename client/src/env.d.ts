@@ -26,6 +26,41 @@ declare global {
   var __TOUCH__: boolean;
 }
 
+// File System Observer API
+declare global {
+  type FileSystemChangeType =
+    | 'appeared'
+    | 'disappeared'
+    | 'modified'
+    | 'moved'
+    | 'unknown'
+    | 'errored';
+
+  interface FileSystemObserverObserveOptions {
+    recursive?: boolean;
+  }
+
+  interface FileSystemChangeRecord {
+    readonly root: FileSystemHandle;
+    readonly changedHandle: FileSystemHandle;
+    readonly relativePathComponents: readonly string[];
+    readonly type: FileSystemChangeType;
+    readonly relativePathMovedFrom: readonly string[] | null;
+  }
+
+  type FileSystemObserverCallback = (
+    records: FileSystemChangeRecord[],
+    observer: FileSystemObserver
+  ) => void;
+
+  class FileSystemObserver {
+    constructor(callback: FileSystemObserverCallback);
+    observe(handle: FileSystemHandle, options?: FileSystemObserverObserveOptions): Promise<void>;
+    unobserve(handle: FileSystemHandle): void;
+    disconnect(): void;
+  }
+}
+
 // Set Unistyles theme types
 declare module 'react-native-unistyles' {
   export interface UnistylesThemes extends AppThemes {}

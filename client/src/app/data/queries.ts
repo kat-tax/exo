@@ -22,6 +22,40 @@ export const getShortcuts = _.createQuery(db => db
 );
 
 /**
+ * Query folder contents (subfolders and files)
+ * Pass null for folderId to get top-level items
+ */
+export const folderContentsQuery = (folderId: $.PathId | null) =>
+  _.createQuery(db => db
+    .selectFrom('path')
+    .leftJoin('file', 'path.fileId', 'file.id')
+    .select([
+      'path.id',
+      'path.name',
+      'path.parentId',
+      'path.deviceId',
+      'path.fileId',
+      'file.size',
+      'file.mime',
+    ])
+    .where('path.parentId', folderId ? '=' : 'is', folderId)
+    .where('path.isDeleted', 'is not', 1)
+    .orderBy('path.createdAt', 'desc')
+  );
+
+/**
+ * Query transfers for a file.
+ */
+export const transfersForFileQuery = (fileId: $.FileId) =>
+  _.createQuery(db => db
+    .selectFrom('transfer')
+    .selectAll()
+    .where('fileId', '=', fileId)
+    .where('isDeleted', 'is not', 1)
+    .orderBy('createdAt', 'desc')
+  );
+
+/**
  * Query a shortcut by id.
  */
 export const getShortcut = (
