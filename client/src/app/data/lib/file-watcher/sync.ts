@@ -87,11 +87,11 @@ async function loadExistingPaths(
   evolu: EvoluInstance,
   deviceId: DeviceId,
 ): Promise<Map<string, PathTuple>> {
-  const result = await evolu.loadQuery(getPathsForDevice(deviceId));
+  const res = await evolu.loadQuery(getPathsForDevice(deviceId));
   const map = new Map<string, PathTuple>();
-  for (const row of result) {
+  for (const row of res) {
     if (row.id && row.name) {
-      map.set(String(row.id), [row.name, row.parentId || undefined, row.fileId || undefined]);
+      map.set(row.id, [row.name, row.parentId || undefined, row.fileId || undefined]);
     }
   }
   return map;
@@ -100,11 +100,11 @@ async function loadExistingPaths(
 async function loadExistingFiles(
   evolu: EvoluInstance,
 ): Promise<Map<string, FileTuple>> {
-  const result = await evolu.loadQuery(getFiles);
+  const res = await evolu.loadQuery(getFiles);
   const map = new Map<string, FileTuple>();
-  for (const row of result) {
+  for (const row of res) {
     if (row.id && row.size !== null && row.mime) {
-      map.set(String(row.id), [row.size, row.mime, row.thumb || undefined]);
+      map.set(row.id, [row.size, row.mime, row.thumb || undefined]);
     }
   }
   return map;
