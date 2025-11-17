@@ -4,6 +4,7 @@ import {useLingui} from '@lingui/react/macro';
 import {useCallback} from 'react';
 import {useEvolu, useQuery} from 'app/data';
 import {getProfile} from 'app/data/queries';
+import cfg from 'config';
 import * as $ from 'app/data/types';
 
 export function useSettings() {
@@ -50,11 +51,22 @@ export function useSettings() {
     }
   }, [owner, evolu, t]);
 
+  const downloadDatabase = useCallback(async () => {
+    const database = await evolu.exportDatabase();
+    const blob = new Blob([database], {type: 'application/x-sqlite3'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.download = `${cfg.APP_NAME}.sqlite3`;
+    a.href = url;
+    a.click();
+  }, [evolu]);
+
   return {
     name: profiles[0]?.name ?? '',
     owner,
+    updateName,
     resetOwner,
     changeOwner,
-    updateName,
+    downloadDatabase,
   };
 }
