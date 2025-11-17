@@ -18,10 +18,11 @@ class FileWatcherWorker {
   private rootHandle: FileSystemDirectoryHandle | null = null;
   private pathsSnapshot: PathSnapshot = {};
   private filesSnapshot: FileSnapshot = {};
-  async initialize(_deviceId: string, rootHandle: FileSystemDirectoryHandle) {
-    this.rootHandle = rootHandle;
+
+  async initialize() {
+    this.rootHandle = await navigator.storage.getDirectory();
     try {
-      await this.buildInitialSnapshot();
+      await this.buildSnapshot();
       await this.startObserver();
       this.postMessage({type: 'ready'});
     } catch (error) {
@@ -29,7 +30,16 @@ class FileWatcherWorker {
     }
   }
 
-  private async buildInitialSnapshot() {
+  stop() {
+    this.observer?.disconnect();
+    this.observer = null;
+  }
+
+  getSnapshot(): SnapshotData {
+    return {paths: this.pathsSnapshot, files: this.filesSnapshot};
+  }
+
+  private async buildSnapshot() {
     if (!this.rootHandle) throw new Error('Root handle not set');
     this.pathsSnapshot = {};
     this.filesSnapshot = {};
@@ -186,35 +196,26 @@ class FileWatcherWorker {
     return handle === this.rootHandle ? '' : handle.name;
   }
 
-  stop() {
-    this.observer?.disconnect();
-    this.observer = null;
-  }
-
-  getSnapshot(): SnapshotData {
-    return {paths: this.pathsSnapshot, files: this.filesSnapshot};
-  }
-
   private postMessage(message: WorkerResponse) {
     self.postMessage(message);
   }
 }
 
-const worker = new FileWatcherWorker();
+const watcher = new FileWatcherWorker();
 
 self.addEventListener('message', async (event: MessageEvent<WorkerMessage>) => {
   const message = event.data;
   switch (message.type) {
     case 'init':
-      await worker.initialize(message.deviceId, message.rootHandle);
+      await watcher.initialize();
       break;
     case 'stop':
-      worker.stop();
+      watcher.stop();
       break;
     case 'get-snapshot':
-      worker['postMessage']({
+      watcher['postMessage']({
         type: 'snapshot',
-        data: worker.getSnapshot(),
+        data: watcher.getSnapshot(),
       });
       break;
   }

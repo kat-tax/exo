@@ -45,7 +45,7 @@ export interface StatsData {
 }
 
 export type WorkerMessage =
-  | {type: 'init'; deviceId: string; rootHandle: FileSystemDirectoryHandle}
+  | {type: 'init'}
   | {type: 'stop'}
   | {type: 'get-snapshot'};
 

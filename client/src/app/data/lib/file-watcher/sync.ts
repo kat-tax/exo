@@ -13,6 +13,7 @@ export async function syncSnapshot(
 
   const existingPaths = await loadExistingPaths(evolu, deviceId);
   const existingFiles = await loadExistingFiles(evolu);
+
   const pathsToRemove: Array<PathId> = [];
   const pathsToUpsert: Array<[PathId, PathTuple]> = [];
   const filesToUpsert: Array<[FileId, FileTuple]> = [];

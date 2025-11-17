@@ -1,10 +1,9 @@
-import type {DeviceId} from 'app/data/types';
 import type {
-  WorkerMessage,
-  WorkerResponse,
   SnapshotData,
   DeltaUpdate,
   StatsData,
+  WorkerMessage,
+  WorkerResponse,
 } from '../types';
 
 export interface FileWatcherCallbacks {
@@ -22,25 +21,16 @@ export class FileWatcherClient {
     this.callbacks = callbacks || {};
   }
 
-  async initialize(deviceId: DeviceId, rootHandle: FileSystemDirectoryHandle) {
-    // Create worker
+  async initialize() {
     this.worker = new Worker(new URL('./index.worker.ts', import.meta.url), {type: 'module'});
-    // Set up message handler
     this.worker.onmessage = (event: MessageEvent<WorkerResponse>) => {
       this.handleWorkerMessage(event.data);
     };
-    // Handle loading errors
     this.worker.onerror = (error) => {
       console.error('File watcher worker error:', error);
       this.callbacks.onError?.(`Worker error: ${error.message}`);
     };
-    // Send init message
-    const message: WorkerMessage = {
-      type: 'init',
-      deviceId,
-      rootHandle,
-    };
-    this.worker.postMessage(message);
+    this.worker.postMessage({type: 'init'} satisfies WorkerMessage);
   }
 
   private handleWorkerMessage(message: WorkerResponse) {
@@ -65,14 +55,12 @@ export class FileWatcherClient {
 
   getSnapshot() {
     if (!this.worker) throw new Error('Worker not initialized');
-    const message: WorkerMessage = {type: 'get-snapshot'};
-    this.worker.postMessage(message);
+    this.worker.postMessage({type: 'get-snapshot'} satisfies WorkerMessage);
   }
 
   stop() {
     if (this.worker) {
-      const message: WorkerMessage = {type: 'stop'};
-      this.worker.postMessage(message);
+      this.worker.postMessage({type: 'stop'} satisfies WorkerMessage);
       this.worker.terminate();
       this.worker = null;
     }
