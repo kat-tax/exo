@@ -35,15 +35,6 @@ export interface DeltaUpdate {
   movedFrom?: string;
 }
 
-export interface StatsData {
-  totals: {
-    entries: number;
-    hashing: number;
-    indexing: number;
-    generating: number;
-  };
-}
-
 export type WorkerMessage =
   | {type: 'init'}
   | {type: 'stop'}
@@ -53,5 +44,4 @@ export type WorkerResponse =
   | {type: 'ready'}
   | {type: 'error'; message: string}
   | {type: 'snapshot'; data: SnapshotData}
-  | {type: 'delta'; data: DeltaUpdate}
-  | {type: 'stats'; data: StatsData};
+  | {type: 'delta'; data: DeltaUpdate};

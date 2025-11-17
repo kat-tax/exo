@@ -20,9 +20,6 @@ export function useFileSync() {
       console.log('[fs-watcher] delta:', data);
       applyDelta(evolu, deviceId, data);
     },
-    onStats: (data) => {
-      console.log('[fs-watcher] stats:', data);
-    },
   });
 
   useEffect(() => {

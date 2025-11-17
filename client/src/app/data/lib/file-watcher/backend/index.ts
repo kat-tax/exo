@@ -1,7 +1,6 @@
 import type {
   SnapshotData,
   DeltaUpdate,
-  StatsData,
   WorkerMessage,
   WorkerResponse,
 } from '../types';
@@ -11,7 +10,6 @@ export interface FileWatcherCallbacks {
   onError?: (message: string) => void;
   onSnapshot?: (data: SnapshotData) => void;
   onDelta?: (data: DeltaUpdate) => void;
-  onStats?: (data: StatsData) => void;
 }
 
 export class FileWatcherClient {
@@ -46,9 +44,6 @@ export class FileWatcherClient {
         break;
       case 'delta':
         this.callbacks.onDelta?.(message.data);
-        break;
-      case 'stats':
-        this.callbacks.onStats?.(message.data);
         break;
     }
   }

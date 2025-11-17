@@ -10,7 +10,6 @@ import type {
   SnapshotData,
   PathSnapshot,
   FileSnapshot,
-  StatsData,
 } from '../types';
 
 class FileWatcherWorker {
@@ -43,20 +42,17 @@ class FileWatcherWorker {
     if (!this.rootHandle) throw new Error('Root handle not set');
     this.pathsSnapshot = {};
     this.filesSnapshot = {};
-    const stats: StatsData = {totals: {entries: 0, hashing: 0, indexing: 0, generating: 0}};
-    await this.scanDirectory(this.rootHandle, null, stats);
+    await this.scanDirectory(this.rootHandle, null);
     this.postMessage({type: 'snapshot', data: {paths: this.pathsSnapshot, files: this.filesSnapshot}});
-    this.postMessage({type: 'stats', data: stats});
   }
 
-  private async scanDirectory(dirHandle: FileSystemDirectoryHandle, parentId: string | null, stats: StatsData) {
+  private async scanDirectory(dirHandle: FileSystemDirectoryHandle, parentId: string | null) {
     const dirId = createIdFromString(await this.getHandlePath(dirHandle));
     this.pathsSnapshot[dirId] = [dirHandle.name, parentId, null];
-    if (++stats.totals.entries % 100 === 0) this.postMessage({type: 'stats', data: {...stats}});
     try {
       for await (const entry of dirHandle.values()) {
-        entry.kind === 'file' ? await this.processFile(entry as FileSystemFileHandle, dirId, stats) :
-        entry.kind === 'directory' && await this.scanDirectory(entry as FileSystemDirectoryHandle, dirId, stats);
+        entry.kind === 'file' ? await this.processFile(entry as FileSystemFileHandle, dirId) :
+        entry.kind === 'directory' && await this.scanDirectory(entry as FileSystemDirectoryHandle, dirId);
       }
     } catch (error) {
       console.error(`Error scanning directory ${await this.getHandlePath(dirHandle)}:`, error);
@@ -91,18 +87,14 @@ class FileWatcherWorker {
     return {fileId, snapshot: [size, mimetype, thumbnail] as [number, string, Uint8Array | null]};
   }
 
-  private async processFile(fileHandle: FileSystemFileHandle, parentId: string | null, stats: StatsData) {
+  private async processFile(fileHandle: FileSystemFileHandle, parentId: string | null) {
     try {
       const filePath = await this.getHandlePath(fileHandle);
       const pathId = createIdFromString(filePath);
       const {size, mimetype, content} = await this.readFileContent(fileHandle);
-      stats.totals.hashing++;
-      if (isImageFile(mimetype)) stats.totals.generating++;
-      stats.totals.indexing++;
       const {fileId, snapshot} = await this.processFileData(fileHandle, content, size, mimetype);
       this.pathsSnapshot[pathId] = [fileHandle.name, parentId, fileId];
       if (!this.filesSnapshot[fileId]) this.filesSnapshot[fileId] = snapshot;
-      stats.totals.entries++;
     } catch (error) {
       console.error(`Error processing file ${fileHandle.name}:`, error);
     }
