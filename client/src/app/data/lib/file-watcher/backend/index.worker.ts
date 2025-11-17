@@ -1,5 +1,6 @@
 /// <reference lib="webworker" />
 
+import {hash} from 'react-exo/fs';
 import {createIdFromString} from '@evolu/common';
 import {generateThumbnail} from '../utils/generate';
 import {getMediaType, isImageFile} from '../utils/detect';
@@ -87,8 +88,8 @@ class FileWatcherWorker {
     return {size: file.size, mimetype: file.type || getMediaType(fileHandle.name), content};
   }
 
-  private async processFileData(fileHandle: FileSystemFileHandle, content: Uint8Array, size: number, mimetype: string) {
-    const fileId = await this.createFileId(content);
+  private async processFileData(fileHandle: FileSystemFileHandle, size: number, mimetype: string) {
+    const fileId = await this.createFileId(fileHandle);
     const thumbnail = isImageFile(mimetype) ? await generateThumbnail(fileHandle) : null;
     return {fileId, snapshot: [size, mimetype, thumbnail] as [number, string, Uint8Array | null]};
   }
@@ -97,8 +98,8 @@ class FileWatcherWorker {
     try {
       const filePath = await this.getHandlePath(fileHandle);
       const pathId = createIdFromString(filePath);
-      const {size, mimetype, content} = await this.readFileContent(fileHandle);
-      const {fileId, snapshot} = await this.processFileData(fileHandle, content, size, mimetype);
+      const {size, mimetype} = await this.readFileContent(fileHandle);
+      const {fileId, snapshot} = await this.processFileData(fileHandle, size, mimetype);
       this.pathsSnapshot[pathId] = [fileHandle.name, parentId, fileId];
       if (!this.filesSnapshot[fileId]) this.filesSnapshot[fileId] = snapshot;
     } catch (error) {
@@ -130,8 +131,7 @@ class FileWatcherWorker {
 
   private async handleFileChange(fileHandle: FileSystemFileHandle, pathId: string, name: string, parentId: string | null, changeType: 'appeared' | 'modified') {
     const file = await fileHandle.getFile();
-    const content = new Uint8Array(await file.arrayBuffer().catch(() => new ArrayBuffer(0)));
-    const {fileId, snapshot} = await this.processFileData(fileHandle, content, file.size, file.type || getMediaType(name));
+    const {fileId, snapshot} = await this.processFileData(fileHandle, file.size, file.type || getMediaType(name));
     const path = [name, parentId, fileId] as [string, string | null, string];
     this.pathsSnapshot[pathId] = path;
     this.filesSnapshot[fileId] = snapshot;
@@ -189,9 +189,23 @@ class FileWatcherWorker {
     }
   }
 
-  private async createFileId(content: Uint8Array): Promise<string> {
-    const hashBuffer = await crypto.subtle.digest('SHA-256', content.buffer as ArrayBuffer);
-    const hashHex = Array.from(new Uint8Array(hashBuffer), b => b.toString(16).padStart(2, '0')).join('');
+  private async createFileId(fileHandle: FileSystemFileHandle): Promise<string> {
+    try {
+      // Try to use sync access handle for efficient hashing
+      const syncHandle = await fileHandle.createSyncAccessHandle?.();
+      if (syncHandle) {
+        try {
+          const hashHex = await hash(syncHandle);
+          return createIdFromString(hashHex);
+        } finally {
+          syncHandle.close();
+        }
+      }
+    } catch {}
+
+    // Fallback to File API
+    const file = await fileHandle.getFile();
+    const hashHex = await hash(file);
     return createIdFromString(hashHex);
   }
 

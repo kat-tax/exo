@@ -40,8 +40,8 @@ catalogs:
       specifier: 19.1.0
       version: 19.1.0
     react-exo:
-      specifier: 0.20.19
-      version: 0.20.19
+      specifier: 0.20.20
+      version: 0.20.20
     react-native:
       specifier: 0.80.2
       version: 0.80.2
@@ -140,7 +140,7 @@ importers:
         version: 1.30.1
       react-exo:
         specifier: 'catalog:'
-        version: 0.20.19(8a65e795cd7663c816b077f246a99288)
+        version: 0.20.20(8a65e795cd7663c816b077f246a99288)
       react-native-reanimated:
         specifier: 'catalog:'
         version: 3.19.1(@babel/core@7.28.4)(react-native@0.81.4(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(bufferutil@4.0.9)(typescript@5.9.2))(@react-native/metro-config@0.81.1(@babel/core@7.28.4)(bufferutil@4.0.9))(@types/react@19.1.13)(bufferutil@4.0.9)(react@19.1.1))(react@19.1.1)
@@ -293,7 +293,7 @@ importers:
         version: 19.1.0(react@19.1.0)
       react-exo:
         specifier: 'catalog:'
-        version: 0.20.19(e48d6746f0974c126dd56ed4a9f1a4bf)
+        version: 0.20.20(e48d6746f0974c126dd56ed4a9f1a4bf)
       react-exo-ui:
         specifier: workspace:*
         version: link:../design
@@ -421,7 +421,7 @@ importers:
         version: 19.1.0(react@19.1.0)
       react-exo:
         specifier: 'catalog:'
-        version: 0.20.19(e48d6746f0974c126dd56ed4a9f1a4bf)
+        version: 0.20.20(e48d6746f0974c126dd56ed4a9f1a4bf)
       react-native:
         specifier: 'catalog:'
         version: 0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(bufferutil@4.0.9)(typescript@5.9.2))(@types/react@19.1.13)(bufferutil@4.0.9)(react@19.1.0)
@@ -6358,8 +6358,8 @@ packages:
     peerDependencies:
       react: ^19.1.1
 
-  react-exo@0.20.19:
-    resolution: {integrity: sha512-keinUff6T54qhCPukHuC2i0m3YKov2j5hX9pk9D74VXZIqp9EIidn4USceahqCDvg8DaOJq1Rgu7tqxKgxrvbA==}
+  react-exo@0.20.20:
+    resolution: {integrity: sha512-9UDb3I6cBlgB4NV/FEnzPqf0aP6r8+MLg64wtTxfUoiWUjyLFR2bQJFtj8ETTiU3j3rOh2LmlcKbhFpNg9zPUA==}
     peerDependencies:
       '@candlefinance/faster-image': '>=1.7'
       '@helia/unixfs': '>=4'
@@ -16447,7 +16447,7 @@ snapshots:
       react: 19.1.1
       scheduler: 0.26.0
 
-  react-exo@0.20.19(8a65e795cd7663c816b077f246a99288):
+  react-exo@0.20.20(8a65e795cd7663c816b077f246a99288):
     dependencies:
       '@iconify/react': 5.2.1(react@19.1.1)
       '@iconify/utils': 2.3.0
@@ -16497,7 +16497,7 @@ snapshots:
       - '@types/react-dom'
       - supports-color
 
-  react-exo@0.20.19(e48d6746f0974c126dd56ed4a9f1a4bf):
+  react-exo@0.20.20(e48d6746f0974c126dd56ed4a9f1a4bf):
     dependencies:
       '@iconify/react': 5.2.1(react@19.1.0)
       '@iconify/utils': 2.3.0
