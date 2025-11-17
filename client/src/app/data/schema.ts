@@ -8,8 +8,8 @@ export default {
   },
   device: {
     id: $.DeviceId,
-    name: $.NonEmptyString255,
-    ownerId: $.ProfileId,
+    name: $.nullOr($.NonEmptyString255),
+    online: $.nullOr($.SqliteBoolean),
   },
   location: {
     id: $.LocationId,

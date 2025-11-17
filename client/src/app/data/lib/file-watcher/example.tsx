@@ -6,14 +6,12 @@
  */
 
 import {useState, useEffect} from 'react';
+import {useEvolu, deviceId} from 'app/data';
 import {syncSnapshot, applyDelta} from './sync';
 import {useFileWatcher} from './hooks/use-file-watcher';
-import {useEvolu} from '../../index';
-import * as $ from '../../types';
 
 export function FileWatcherExample() {
   const evolu = useEvolu();
-  const [deviceId, setDeviceId] = useState<$.DeviceId | null>(null);
   const [isWatching, setIsWatching] = useState(false);
   const [status, setStatus] = useState<string>('Not started');
   const [stats, setStats] = useState({
@@ -22,19 +20,6 @@ export function FileWatcherExample() {
     indexing: 0,
     generating: 0,
   });
-
-  // Initialize device ID
-  useEffect(() => {
-    const initDevice = async () => {
-      // Get or create device ID
-      const query = evolu.createQuery(db => db.selectFrom('device').select(['id']).limit(1));
-      const result = await evolu.loadQuery(query);
-      if (result.length > 0 && result[0].id) {
-        setDeviceId(result[0].id);
-      }
-    };
-    initDevice();
-  }, [evolu]);
 
   const fileWatcher = useFileWatcher({
     onReady: () => {
