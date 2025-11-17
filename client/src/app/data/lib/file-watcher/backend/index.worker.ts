@@ -45,24 +45,25 @@ class FileWatcherWorker {
     if (!this.rootHandle) throw new Error('Root handle not set');
     this.pathsSnapshot = {};
     this.filesSnapshot = {};
-    await this.scanDirectory(this.rootHandle, null);
+    await this.scanDirectory(this.rootHandle, null, '');
     this.postMessage({type: 'snapshot', data: {paths: this.pathsSnapshot, files: this.filesSnapshot}});
   }
 
-  private async scanDirectory(dirHandle: FileSystemDirectoryHandle, parentId: string | null) {
+  private async scanDirectory(dirHandle: FileSystemDirectoryHandle, parentId: string | null, currentPath: string) {
     const isRoot = dirHandle === this.rootHandle;
-    const dirId = isRoot ? null : createIdFromString(await this.getHandlePath(dirHandle));
+    const dirId = isRoot ? null : createIdFromString(currentPath);
     if (!isRoot && dirId) {
       this.pathsSnapshot[dirId] = [dirHandle.name, parentId, null];
     }
     try {
       for await (const entry of dirHandle.values()) {
         if (entry.kind === 'directory' && this.ignoreFolders.includes(entry.name)) continue;
-        entry.kind === 'file' ? await this.processFile(entry as FileSystemFileHandle, dirId) :
-        entry.kind === 'directory' && await this.scanDirectory(entry as FileSystemDirectoryHandle, dirId);
+        const entryPath = isRoot ? entry.name : `${currentPath}/${entry.name}`;
+        entry.kind === 'file' ? await this.processFile(entry as FileSystemFileHandle, dirId, entryPath) :
+        entry.kind === 'directory' && await this.scanDirectory(entry as FileSystemDirectoryHandle, dirId, entryPath);
       }
     } catch (error) {
-      console.error(`Error scanning directory ${await this.getHandlePath(dirHandle)}:`, error);
+      console.error(`Error scanning directory ${currentPath}:`, error);
     }
   }
 
@@ -94,9 +95,8 @@ class FileWatcherWorker {
     return {fileId, snapshot: [size, mimetype, thumbnail] as [number, string, Uint8Array | null]};
   }
 
-  private async processFile(fileHandle: FileSystemFileHandle, parentId: string | null) {
+  private async processFile(fileHandle: FileSystemFileHandle, parentId: string | null, filePath: string) {
     try {
-      const filePath = await this.getHandlePath(fileHandle);
       const pathId = createIdFromString(filePath);
       const {size, mimetype} = await this.readFileContent(fileHandle);
       const {fileId, snapshot} = await this.processFileData(fileHandle, size, mimetype);
@@ -117,16 +117,14 @@ class FileWatcherWorker {
     await this.observer.observe(this.rootHandle, {recursive: true});
   }
 
-  private async getRecordPath(record: FileSystemChangeRecord, pathComponents?: string[]): Promise<{fullPath: string; pathId: string; parentId: string | null; name: string}> {
+  private async getRecordPath(record: FileSystemChangeRecord, pathComponents?: string[]): Promise<{pathId: string; parentId: string | null; name: string}> {
     const components = pathComponents || record.relativePathComponents;
-    const path = components.join('/');
-    const rootPath = await this.getHandlePath(record.root);
-    const fullPath = `${rootPath}/${path}`;
+    const fullPath = components.join('/');
     const pathId = createIdFromString(fullPath);
     const parentPath = components.slice(0, -1).join('/');
-    const parentId = parentPath ? createIdFromString(`${rootPath}/${parentPath}`) : null;
+    const parentId = parentPath ? createIdFromString(parentPath) : null;
     const name = components[components.length - 1];
-    return {fullPath, pathId, parentId, name};
+    return {pathId, parentId, name};
   }
 
   private async handleFileChange(fileHandle: FileSystemFileHandle, pathId: string, name: string, parentId: string | null, changeType: 'appeared' | 'modified') {
@@ -207,10 +205,6 @@ class FileWatcherWorker {
     const file = await fileHandle.getFile();
     const hashHex = await hash(file);
     return createIdFromString(hashHex);
-  }
-
-  private async getHandlePath(handle: FileSystemHandle): Promise<string> {
-    return handle === this.rootHandle ? '' : handle.name;
   }
 
   private postMessage(message: WorkerResponse) {
