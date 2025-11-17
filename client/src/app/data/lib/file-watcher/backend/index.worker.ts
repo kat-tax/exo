@@ -63,7 +63,7 @@ class FileWatcherWorker {
         entry.kind === 'directory' && await this.scanDirectory(entry as FileSystemDirectoryHandle, dirId, entryPath);
       }
     } catch (error) {
-      console.error(`Error scanning directory ${currentPath}:`, error);
+      console.error(`[fs-watcher] error scanning directory ${currentPath}:`, error);
     }
   }
 
@@ -103,7 +103,7 @@ class FileWatcherWorker {
       this.pathsSnapshot[pathId] = [fileHandle.name, parentId, fileId];
       if (!this.filesSnapshot[fileId]) this.filesSnapshot[fileId] = snapshot;
     } catch (error) {
-      console.error(`Error processing file ${fileHandle.name}:`, error);
+      console.error(`[fs-watcher] error processing file ${fileHandle.name}:`, error);
     }
   }
 
@@ -183,7 +183,7 @@ class FileWatcherWorker {
           break;
       }
     } catch (error) {
-      console.error('Error handling change record:', error);
+      console.error('[fs-watcher] error handling change record:', error);
     }
   }
 
