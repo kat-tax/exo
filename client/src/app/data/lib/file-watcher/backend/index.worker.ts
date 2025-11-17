@@ -3,6 +3,7 @@
 import {createIdFromString} from '@evolu/common';
 import {generateThumbnail} from '../utils/generate';
 import {getMediaType, isImageFile} from '../utils/detect';
+import cfg from 'config';
 
 import type {
   WorkerMessage,
@@ -17,6 +18,7 @@ class FileWatcherWorker {
   private rootHandle: FileSystemDirectoryHandle | null = null;
   private pathsSnapshot: PathSnapshot = {};
   private filesSnapshot: FileSnapshot = {};
+  private readonly ignoreFolders = [`.${cfg.APP_NAME}-${cfg.STORE_VERSION}`];
 
   async initialize() {
     this.rootHandle = await navigator.storage.getDirectory();
@@ -47,10 +49,14 @@ class FileWatcherWorker {
   }
 
   private async scanDirectory(dirHandle: FileSystemDirectoryHandle, parentId: string | null) {
-    const dirId = createIdFromString(await this.getHandlePath(dirHandle));
-    this.pathsSnapshot[dirId] = [dirHandle.name, parentId, null];
+    const isRoot = dirHandle === this.rootHandle;
+    const dirId = isRoot ? null : createIdFromString(await this.getHandlePath(dirHandle));
+    if (!isRoot && dirId) {
+      this.pathsSnapshot[dirId] = [dirHandle.name, parentId, null];
+    }
     try {
       for await (const entry of dirHandle.values()) {
+        if (entry.kind === 'directory' && this.ignoreFolders.includes(entry.name)) continue;
         entry.kind === 'file' ? await this.processFile(entry as FileSystemFileHandle, dirId) :
         entry.kind === 'directory' && await this.scanDirectory(entry as FileSystemDirectoryHandle, dirId);
       }
@@ -134,7 +140,12 @@ class FileWatcherWorker {
 
   private async handleChangeRecord(record: FileSystemChangeRecord) {
     try {
+      // Ignore root folder changes
+      if (record.relativePathComponents.length === 0) return;
       const {pathId, parentId, name} = await this.getRecordPath(record);
+      // Ignore changes in ignored folders
+      if (record.changedHandle.kind === 'directory' && this.ignoreFolders.includes(name)) return;
+      if (this.ignoreFolders.includes(record.relativePathComponents[0])) return;
       switch (record.type) {
         case 'appeared':
           if (record.changedHandle.kind === 'file') {
