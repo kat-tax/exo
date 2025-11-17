@@ -1,12 +1,7 @@
-import {useRef} from 'react';
-import {useCallback, useEffect} from 'react';
+import {useRef, useCallback, useEffect} from 'react';
 import {FileWatcherClient} from '../backend';
-
 import type {FileWatcherCallbacks} from '../backend';
 
-/**
- * React hook for using the file watcher
- */
 export function useFileWatcher(callbacks?: FileWatcherCallbacks) {
   const clientRef = useRef<FileWatcherClient | null>(null);
 
@@ -20,11 +15,9 @@ export function useFileWatcher(callbacks?: FileWatcherCallbacks) {
       clientRef.current = new FileWatcherClient(callbacks);
       try {
         await clientRef.current.initialize();
-      } catch (error) {
-        console.error('Failed to initialize file watcher:', error);
-        callbacks?.onError?.(
-          error instanceof Error ? error.message : 'Failed to initialize',
-        );
+      } catch (e) {
+        console.error('Failed to initialize file watcher:', e);
+        callbacks?.onError?.(e instanceof Error ? e.message : 'Failed to initialize');
       }
     },
     [callbacks],
@@ -59,7 +52,7 @@ export function useFileWatcher(callbacks?: FileWatcherCallbacks) {
   return {
     start,
     stop,
-    getSnapshot,
     isRunning,
+    getSnapshot,
   };
 }
