@@ -1,7 +1,7 @@
-import * as $ from '../../types';
+import * as $ from 'app/data/types';
 import {getFiles, getPathsForDevice} from 'app/data/queries';
 
-import type {DeviceId, PathId, FileId} from '../../types';
+import type {DeviceId, PathId, FileId} from 'app/data/types';
 import type {SnapshotData, DeltaUpdate, EvoluInstance, PathTuple, FileTuple} from './types';
 
 export async function syncSnapshot(
