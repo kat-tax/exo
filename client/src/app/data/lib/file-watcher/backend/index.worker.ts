@@ -1,8 +1,8 @@
 /// <reference lib="webworker" />
 
 import {createIdFromString} from '@evolu/common';
-import {generateThumbnail} from '../utils/thumbnail';
-import {getMediaType, isImageFile} from '../utils/filetype';
+import {generateThumbnail} from '../utils/generate';
+import {getMediaType, isImageFile} from '../utils/detect';
 
 import type {
   WorkerMessage,
