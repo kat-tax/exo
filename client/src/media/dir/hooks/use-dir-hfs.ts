@@ -5,6 +5,7 @@ import {useSet, useGet} from 'app/data';
 import {isZeego} from 'app/ui/float';
 import {getData} from 'media/file/utils/data';
 import media from 'media/store';
+import cfg from 'config';
 
 import {isInitDirectory, INIT_DIRECTORIES} from '../utils/hfs/path';
 import {getThumbnail} from '../utils/hfs/meta';
@@ -46,14 +47,17 @@ export function useDirHfs(path: string, tmp?: boolean): Omit<HfsCtx, 'bar'> {
         if (entry.name.endsWith('.crswap'))
           continue;
         // Special directories
-        if (entry.name === '.db' || entry.name === '.tmp')
+        if (entry.name === '.tmp')
           continue;
         // Hidden files
         if (entry.name.startsWith('.') && !showHidden)
           continue;
-        // Initial directories
-        if (dirPath === '.' && isInitDirectory(entry.name))
+        // Database files
+        if (dirPath === '.' && entry.name === `.${cfg.APP_NAME}-${cfg.STORE_VERSION}`)
           continue;
+        // Initial directories
+        // if (dirPath === '.' && isInitDirectory(entry.name))
+        //   continue;
         entries.push(entry);
       }
       setList(entries.sort((a, b) => {

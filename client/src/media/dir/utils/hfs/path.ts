@@ -1,7 +1,6 @@
 import type {PickDirectoryOptions} from 'react-exo/fs';
 
 export enum InitDirectory {
-  Transfers = 'transfers',
   Documents = 'documents',
   Music = 'music',
   Pictures = 'pictures',
@@ -19,7 +18,7 @@ export const JUNK_FILES = [
 export const INIT_DIRECTORIES = Object.values(InitDirectory)
 
 export function getStartInDir(path: string): PickDirectoryOptions['startIn'] {
-  const customDirs = ['transfers', 'games', 'books'];
+  const customDirs = ['games', 'books'];
   return isInitDirectory(path) && !customDirs.includes(path)
     ? (path as PickDirectoryOptions['startIn'])
     : 'downloads';

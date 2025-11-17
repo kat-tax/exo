@@ -4,14 +4,14 @@ export type EvoluInstance = typeof evolu;
 
 export type PathTuple = [
   name: string,
-  parentId: string | undefined,
-  fileId: string | undefined,
+  parentId: string | null,
+  fileId: string | null,
 ];
 
 export type FileTuple = [
   size: number,
   mimetype: string,
-  thumbnail: Uint8Array | undefined,
+  thumbnail: Uint8Array | null,
 ];
 
 export interface SnapshotData {

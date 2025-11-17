@@ -9,7 +9,7 @@ export async function syncSnapshot(
   deviceId: DeviceId,
   snapshot: SnapshotData,
 ) {
-  console.log(`Syncing snapshot: ${Object.keys(snapshot.paths).length} paths, ${Object.keys(snapshot.files).length} files`);
+  console.log(`[fs-watcher] syncing snapshot: ${Object.keys(snapshot.paths).length} paths, ${Object.keys(snapshot.files).length} files`);
 
   const existingPaths = await loadExistingPaths(evolu, deviceId);
   const existingFiles = await loadExistingFiles(evolu);
@@ -45,18 +45,28 @@ export async function syncSnapshot(
   }
 
   // Apply changes
-  for (const [pathId, [name, parentId, fileId]] of pathsToUpsert)
-    evolu.upsert('path', {id: pathId, name, deviceId, parentId, fileId});
-  for (const pathId of pathsToRemove)
-    evolu.update('path', {id: pathId, isDeleted: 1});
-  for (const [fileId, [size, mime, thumb]] of filesToUpsert)
-    evolu.upsert('file', {id: fileId, size, mime, thumb});
+  for (const [pathId, [name, parentId, fileId]] of pathsToUpsert) {
+    const res = evolu.upsert('path', {id: pathId, name, deviceId, parentId, fileId});
+    console.log('[fs-watcher] upsert path:', pathId, name, res);
+  }
+  for (const pathId of pathsToRemove) {
+    const res = evolu.update('path', {id: pathId, isDeleted: 1});
+    console.log('[fs-watcher] remove path:', pathId, res);
+  }
+  for (const [fileId, [size, mime, thumb]] of filesToUpsert) {
+    const res = evolu.upsert('file', {id: fileId, size, mime, thumb});
+    console.log('[fs-watcher] upsert file:', fileId, res);
+  }
 
   // Debug log
-  console.log('Snapshot sync complete');
-  console.table({
-    'Paths': {'Upsert': pathsToUpsert.length, 'Remove': pathsToRemove.length},
-    'Files': {'Upsert': filesToUpsert.length},
+  console.log('[fs-watcher] snapshot sync complete', {
+    paths: {
+      upsert: pathsToUpsert.length,
+      remove: pathsToRemove.length,
+    },
+    files: {
+      upsert: filesToUpsert.length,
+    },
   });
 }
 
@@ -92,7 +102,7 @@ async function loadExistingPaths(
   const map = new Map<string, PathTuple>();
   for (const row of res) {
     if (row.id && row.name) {
-      map.set(row.id, [row.name, row.parentId || undefined, row.fileId || undefined]);
+      map.set(row.id, [row.name, row.parentId || null, row.fileId || null]);
     }
   }
   return map;
@@ -105,7 +115,7 @@ async function loadExistingFiles(
   const map = new Map<string, FileTuple>();
   for (const row of res) {
     if (row.id && row.size !== null && row.mime) {
-      map.set(row.id, [row.size, row.mime, row.thumb || undefined]);
+      map.set(row.id, [row.size, row.mime, row.thumb || null]);
     }
   }
   return map;

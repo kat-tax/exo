@@ -44,14 +44,14 @@ class FileWatcherWorker {
     this.pathsSnapshot = {};
     this.filesSnapshot = {};
     const stats: StatsData = {totals: {entries: 0, hashing: 0, indexing: 0, generating: 0}};
-    await this.scanDirectory(this.rootHandle, undefined, stats);
+    await this.scanDirectory(this.rootHandle, null, stats);
     this.postMessage({type: 'snapshot', data: {paths: this.pathsSnapshot, files: this.filesSnapshot}});
     this.postMessage({type: 'stats', data: stats});
   }
 
-  private async scanDirectory(dirHandle: FileSystemDirectoryHandle, parentId: string | undefined, stats: StatsData) {
+  private async scanDirectory(dirHandle: FileSystemDirectoryHandle, parentId: string | null, stats: StatsData) {
     const dirId = createIdFromString(await this.getHandlePath(dirHandle));
-    this.pathsSnapshot[dirId] = [dirHandle.name, parentId, undefined];
+    this.pathsSnapshot[dirId] = [dirHandle.name, parentId, null];
     if (++stats.totals.entries % 100 === 0) this.postMessage({type: 'stats', data: {...stats}});
     try {
       for await (const entry of dirHandle.values()) {
@@ -87,11 +87,11 @@ class FileWatcherWorker {
 
   private async processFileData(fileHandle: FileSystemFileHandle, content: Uint8Array, size: number, mimetype: string) {
     const fileId = await this.createFileId(content);
-    const thumbnail = isImageFile(mimetype) ? await generateThumbnail(fileHandle) : undefined;
-    return {fileId, snapshot: [size, mimetype, thumbnail] as [number, string, Uint8Array | undefined]};
+    const thumbnail = isImageFile(mimetype) ? await generateThumbnail(fileHandle) : null;
+    return {fileId, snapshot: [size, mimetype, thumbnail] as [number, string, Uint8Array | null]};
   }
 
-  private async processFile(fileHandle: FileSystemFileHandle, parentId: string, stats: StatsData) {
+  private async processFile(fileHandle: FileSystemFileHandle, parentId: string | null, stats: StatsData) {
     try {
       const filePath = await this.getHandlePath(fileHandle);
       const pathId = createIdFromString(filePath);
@@ -118,23 +118,23 @@ class FileWatcherWorker {
     await this.observer.observe(this.rootHandle, {recursive: true});
   }
 
-  private async getRecordPath(record: FileSystemChangeRecord, pathComponents?: string[]): Promise<{fullPath: string; pathId: string; parentId: string | undefined; name: string}> {
+  private async getRecordPath(record: FileSystemChangeRecord, pathComponents?: string[]): Promise<{fullPath: string; pathId: string; parentId: string | null; name: string}> {
     const components = pathComponents || record.relativePathComponents;
     const path = components.join('/');
     const rootPath = await this.getHandlePath(record.root);
     const fullPath = `${rootPath}/${path}`;
     const pathId = createIdFromString(fullPath);
     const parentPath = components.slice(0, -1).join('/');
-    const parentId = parentPath ? createIdFromString(`${rootPath}/${parentPath}`) : undefined;
+    const parentId = parentPath ? createIdFromString(`${rootPath}/${parentPath}`) : null;
     const name = components[components.length - 1];
     return {fullPath, pathId, parentId, name};
   }
 
-  private async handleFileChange(fileHandle: FileSystemFileHandle, pathId: string, name: string, parentId: string | undefined, changeType: 'appeared' | 'modified') {
+  private async handleFileChange(fileHandle: FileSystemFileHandle, pathId: string, name: string, parentId: string | null, changeType: 'appeared' | 'modified') {
     const file = await fileHandle.getFile();
     const content = new Uint8Array(await file.arrayBuffer().catch(() => new ArrayBuffer(0)));
     const {fileId, snapshot} = await this.processFileData(fileHandle, content, file.size, file.type || getMediaType(name));
-    const path = [name, parentId, fileId] as [string, string | undefined, string];
+    const path = [name, parentId, fileId] as [string, string | null, string];
     this.pathsSnapshot[pathId] = path;
     this.filesSnapshot[fileId] = snapshot;
     this.postMessage({type: 'delta', data: {type: changeType, pathId, path, file: snapshot}});
@@ -148,8 +148,8 @@ class FileWatcherWorker {
           if (record.changedHandle.kind === 'file') {
             await this.handleFileChange(record.changedHandle as FileSystemFileHandle, pathId, name, parentId, 'appeared');
           } else {
-            this.pathsSnapshot[pathId] = [name, parentId, undefined];
-            this.postMessage({type: 'delta', data: {type: 'appeared', pathId, path: [name, parentId, undefined]}});
+            this.pathsSnapshot[pathId] = [name, parentId, null];
+            this.postMessage({type: 'delta', data: {type: 'appeared', pathId, path: [name, parentId, null]}});
           }
           break;
         case 'disappeared':

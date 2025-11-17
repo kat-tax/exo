@@ -7,21 +7,21 @@ export function useFileSync() {
   const evolu = useEvolu();
   const watcher = useFileWatcher({
     onReady: () => {
-      console.log('File watcher ready');
+      console.log('[fs-watcher] ready');
     },
     onError: (message) => {
-      console.error('File watcher error:', message);
+      console.error('[fs-watcher] error:', message);
     },
-    onSnapshot: async (data) => {
-      console.log('Received snapshot:', data);
-      await syncSnapshot(evolu, deviceId, data);
+    onSnapshot: (data) => {
+      console.log('[fs-watcher] snapshot:', data);
+      syncSnapshot(evolu, deviceId, data);
     },
     onDelta: (data) => {
-      console.log('Received delta:', data);
+      console.log('[fs-watcher] delta:', data);
       applyDelta(evolu, deviceId, data);
     },
     onStats: (data) => {
-      console.table(data);
+      console.log('[fs-watcher] stats:', data);
     },
   });
 
