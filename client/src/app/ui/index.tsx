@@ -10,6 +10,7 @@ import {isOnline, suscribeOnline} from 'react-exo/device';
 import {GestureProvider} from 'react-exo/gesture';
 import {CameraProvider} from 'media/cam/context';
 import {useTheme} from 'settings/hooks/use-theme';
+import {useFileSync} from 'app/data/lib/file-watcher';
 import {useEvolu, deviceId} from 'app/data';
 
 import type {UnistylesThemes} from 'react-native-unistyles';
@@ -19,6 +20,9 @@ export function Interface(props: React.PropsWithChildren) {
   const {t} = useLingui();
   const evolu = useEvolu();
   const [scheme] = useTheme();
+
+  // File changes
+  useFileSync();
 
   // Theme changes
   useEffect(() => {
