@@ -17,9 +17,9 @@ export function useSettings() {
     try {
       const name = $.getOrThrow($.NonEmptyString25.from(text));
       if (profiles.length === 0) {
-        evolu.insert('profile', {name});
+        evolu.insert('app_profile', {name});
       } else {
-        evolu.update('profile', {name, id: profiles[0].id});
+        evolu.update('app_profile', {name, id: profiles[0].id});
       }
     } catch (error) {
       alert({

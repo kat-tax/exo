@@ -14,7 +14,7 @@ export * from './lib/redux.db';
 export const useEvolu = createUseEvolu(evolu);
 export const deviceId = DeviceId.orThrow(createIdFromString('device-1'));
 
-evolu.upsert('device', {id: deviceId});
+evolu.upsert('app_device', {id: deviceId});
 
 export function Data(props: React.PropsWithChildren) {
   return (

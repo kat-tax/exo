@@ -46,7 +46,7 @@ export function Interface(props: React.PropsWithChildren) {
       } else if (!online) {
         toast({title: t`You are offline`, preset: 'error'});
       }
-      evolu.update('device', {id: deviceId, online})
+      evolu.update('app_device', {id: deviceId, online});
     };
     isOnline().then(online => update(online, true));
     return suscribeOnline(update);

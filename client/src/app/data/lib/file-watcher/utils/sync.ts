@@ -46,15 +46,15 @@ export async function syncSnapshot(
 
   // Apply changes
   for (const [pathId, [name, parentId, fileId]] of pathsToUpsert) {
-    const res = evolu.upsert('path', {id: pathId, name, deviceId, parentId, fileId});
+    const res = evolu.upsert('media_path', {id: pathId, name, deviceId, parentId, fileId});
     console.log('[fs-watcher] upsert path:', pathId, name, res);
   }
   for (const pathId of pathsToRemove) {
-    const res = evolu.update('path', {id: pathId, isDeleted: 1});
+    const res = evolu.update('media_path', {id: pathId, isDeleted: 1});
     console.log('[fs-watcher] remove path:', pathId, res);
   }
   for (const [fileId, [size, mime, thumb]] of filesToUpsert) {
-    const res = evolu.upsert('file', {id: fileId, size, mime, thumb});
+    const res = evolu.upsert('media_file', {id: fileId, size, mime, thumb});
     console.log('[fs-watcher] upsert file:', fileId, res);
   }
 
@@ -85,10 +85,10 @@ export function applyDelta(
       upsertPathAndFile(evolu, deviceId, delta.pathId, delta.path!, delta.file);
       break;
     case 'disappeared':
-      evolu.update('path', {id: delta.pathId, isDeleted: 1});
+      evolu.update('media_path', {id: delta.pathId, isDeleted: 1});
       break;
     case 'moved':
-      if (delta.movedFrom) evolu.update('path', {id: delta.movedFrom, isDeleted: 1});
+      if (delta.movedFrom) evolu.update('media_path', {id: delta.movedFrom, isDeleted: 1});
       upsertPathAndFile(evolu, deviceId, delta.pathId, delta.path!, delta.file);
       break;
   }
@@ -129,10 +129,10 @@ function upsertPathAndFile(
   file?: FileTuple,
 ) {
   const [name, parentId, fileId] = path;
-  evolu.upsert('path', {id: pathId, name, deviceId, parentId, fileId});
+  evolu.upsert('media_path', {id: pathId, name, deviceId, parentId, fileId});
   if (file && fileId) {
     const [size, mime, thumb] = file;
-    evolu.upsert('file', {id: fileId, size, mime, thumb});
+    evolu.upsert('media_file', {id: fileId, size, mime, thumb});
   }
 }
 
