@@ -140,15 +140,16 @@ class FileWatcherWorker {
     try {
       // Ignore root folder changes
       if (record.relativePathComponents.length === 0) return;
-      const {pathId, parentId, name} = await this.getRecordPath(record);
-      // Ignore changes in ignored folders
-      if (record.changedHandle.kind === 'directory' && this.ignoreFolders.includes(name)) return;
+      // Ignore changes in ignored folders (check path components first)
       if (this.ignoreFolders.includes(record.relativePathComponents[0])) return;
+      const {pathId, parentId, name} = await this.getRecordPath(record);
+      // For ignored directory operations (when changedHandle is available)
+      if (record.changedHandle?.kind === 'directory' && this.ignoreFolders.includes(name)) return;
       switch (record.type) {
         case 'appeared':
-          if (record.changedHandle.kind === 'file') {
+          if (record.changedHandle?.kind === 'file') {
             await this.handleFileChange(record.changedHandle as FileSystemFileHandle, pathId, name, parentId, 'appeared');
-          } else {
+          } else if (record.changedHandle?.kind === 'directory') {
             this.pathsSnapshot[pathId] = [name, parentId, null];
             this.postMessage({type: 'delta', data: {type: 'appeared', pathId, path: [name, parentId, null]}});
           }
@@ -158,7 +159,7 @@ class FileWatcherWorker {
           this.postMessage({type: 'delta', data: {type: 'disappeared', pathId}});
           break;
         case 'modified':
-          if (record.changedHandle.kind === 'file') {
+          if (record.changedHandle?.kind === 'file') {
             const entry = this.pathsSnapshot[pathId];
             if (entry) {
               await this.handleFileChange(record.changedHandle as FileSystemFileHandle, pathId, name, parentId, 'modified');
