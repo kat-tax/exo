@@ -39,7 +39,7 @@ export function Layout(props: LayoutProps) {
     preferredChildFocusKey: `menu@${activeRoute?.name}`,
   });
 
-  const hasPreview = activeRoute.name === 'MediaBrowse' && previewOpen;
+  const hasPreview = activeRoute.name.startsWith('MediaBrowse') && previewOpen;
 
   useHotkeys({
     toggleMenu: () => {

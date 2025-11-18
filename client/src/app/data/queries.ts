@@ -30,6 +30,26 @@ export const getFiles = _.createQuery(db => db
   .where('isDeleted', 'is not', 1),
 );
 
+/** Query hierachy of paths (recurse up parentIds) */
+export const getPathHierarchy = (deviceId: $.DeviceId | null, pathId: $.PathId | null) => _.createQuery(db => db
+  .withRecursive('path_hierarchy', (qb) =>
+    qb.selectFrom('media_path')
+      .where('id', pathId ? '=' : 'is', pathId)
+      .where('deviceId', '=', deviceId)
+      .where('isDeleted', 'is not', 1)
+      .select(['id', 'name', 'parentId'])
+      .unionAll(
+        qb.selectFrom('media_path')
+          .innerJoin('path_hierarchy', 'media_path.id', 'path_hierarchy.parentId')
+          .where('media_path.deviceId', '=', deviceId)
+          .where('media_path.isDeleted', 'is not', 1)
+          .select(['media_path.id', 'media_path.name', 'media_path.parentId'])
+      )
+  )
+  .selectFrom('path_hierarchy')
+  .select(['id', 'name'])
+);
+
 /**
  * Query all paths for a device
  */
@@ -41,10 +61,22 @@ export const getPathsForDevice = (deviceId: $.DeviceId) => _.createQuery(db => d
 );
 
 /**
+ * Query a path by id
+ */
+export const getPathById = (deviceId: $.DeviceId, pathId: $.PathId | null) => _.createQuery(db => db
+  .selectFrom('media_path')
+  .where('id', pathId ? '=' : 'is', pathId)
+  .where('deviceId', '=', deviceId)
+  .where('isDeleted', 'is not', 1)
+  .selectAll()
+  .limit(1)
+);
+
+/**
  * Query folder contents (subfolders and files)
  * Pass null for folderId to get top-level items
  */
-export const folderContentsQuery = (folderId: $.PathId | null) =>
+export const getPathList = (deviceId: $.DeviceId, pathId: $.PathId | null) =>
   _.createQuery(db => db
     .selectFrom('media_path')
     .leftJoin('media_file', 'media_path.fileId', 'media_file.id')
@@ -54,18 +86,25 @@ export const folderContentsQuery = (folderId: $.PathId | null) =>
       'media_path.parentId',
       'media_path.deviceId',
       'media_path.fileId',
+      'media_path.createdAt',
+      'media_path.updatedAt',
+      'media_file.thumb',
       'media_file.size',
       'media_file.mime',
     ])
-    .where('media_path.parentId', folderId ? '=' : 'is', folderId)
+    .where('media_path.deviceId', '=', deviceId)
+    .where('media_path.parentId', pathId ? '=' : 'is', pathId)
     .where('media_path.isDeleted', 'is not', 1)
-    .orderBy('media_path.createdAt', 'desc')
+    .orderBy((eb) => eb.case()
+      .when('media_path.fileId', 'is', null)
+      .then(0).else(1).end(), 'asc')
+    .orderBy('media_path.name', 'asc')
   );
 
 /**
  * Query transfers for a file.
  */
-export const transfersForFileQuery = (fileId: $.FileId) =>
+export const getTransfersByFile = (fileId: $.FileId) =>
   _.createQuery(db => db
     .selectFrom('media_transfer')
     .selectAll()
@@ -73,6 +112,27 @@ export const transfersForFileQuery = (fileId: $.FileId) =>
     .where('isDeleted', 'is not', 1)
     .orderBy('createdAt', 'desc')
   );
+
+/**
+ * Query all devices
+ */
+export const getDevices = _.createQuery(db => db
+  .selectFrom('app_device')
+  .where('isDeleted', 'is not', 1)
+  .selectAll()
+  .orderBy('createdAt', 'asc')
+);
+
+/**
+ * Query a device by id
+ */
+export const getDevice = (id: $.DeviceId | null) => _.createQuery(db => db
+  .selectFrom('app_device')
+  .where('id', '=', id)
+  .where('isDeleted', 'is not', 1)
+  .selectAll()
+  .limit(1)
+);
 
 /**
  * Query a shortcut by id.

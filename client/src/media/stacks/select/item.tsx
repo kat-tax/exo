@@ -28,7 +28,7 @@ interface SelectItemProps {
 export function SelectItem(props: SelectItemProps) {
   const {focused, index, path, name, ext, hfs} = props;
   const [dir, setDir] = useState(!ext);
-  //const route = useRoute<RouteProp<RootStackParamList, 'MediaBrowse'>>();
+  //const route = useRoute<RouteProp<RootStackParamList, 'MediaBrowseHfs'>>();
   const title = useMediaName(name);
   const virt = index === -1;
 

@@ -27,7 +27,7 @@ export function useDirHfs(path: string, tmp?: boolean): Omit<HfsCtx, 'bar'> {
   const goUp = useCallback(() => {
     if (!path) return false;
     const parent = path.split('/').slice(0, -1).join('/');
-    nav.navigate('MediaBrowse', {path: parent, backend: 'local'});
+    nav.navigate('MediaBrowseLocal', {path: parent});
     return true;
   }, [path, nav]);
 
@@ -82,7 +82,7 @@ export function useDirHfs(path: string, tmp?: boolean): Omit<HfsCtx, 'bar'> {
     if (!entry.isDirectory) return;
     const newPath = path ? `${path}/${entry.name}` : entry.name;
     console.log('>> fs [open]', path ? `${path}/${entry.name}` : entry.name);
-    nav.navigate('MediaBrowse', {path: newPath, backend: 'local'}, {pop: true});
+    nav.navigate('MediaBrowseLocal', {path: newPath}, {pop: true});
     if (clearSel) set(media.actions.selectBulk([]));
   }, [path, nav, set]);
 

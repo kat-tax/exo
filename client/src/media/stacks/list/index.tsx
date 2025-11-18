@@ -12,12 +12,15 @@ import {MenuContext} from 'app/ui/float';
 import type {LegendListRef} from '@legendapp/list';
 import type {ListBarAction} from 'media/stacks/list/bar';
 import type {MenuContextItem} from 'app/ui/float/menu-context';
+import type {DeviceId} from 'app/data/types';
 
 export interface ListProps<T> {
-  items?: T[];
-  path?: string;
+  items?: Array<T>;
+  paths?: Array<[path: string, name: string]>;
+  name?: string;
   data?: unknown;
   opts?: {
+    deviceId?: DeviceId | null;
     preview?: boolean,
     layout?: 'list' | 'grid',
     menu?: Array<MenuContextItem>,
@@ -31,7 +34,7 @@ export interface ListProps<T> {
   }) => React.ReactNode;
 }
 
-export function List<T>({items, path, data, opts, render}: ListProps<T>) {
+export function List<T>({items, paths, name, data, opts, render}: ListProps<T>) {
   const {ref, focusKey} = useFocusable({saveLastFocusedChild: !opts?.preview});
   const {width} = useWindowDimensions();
   const listRef = useRef<LegendListRef>(null);
@@ -57,17 +60,21 @@ export function List<T>({items, path, data, opts, render}: ListProps<T>) {
   return (
     <FocusContext.Provider value={focusKey}>
       <MenuContext
-        label={path || 'Files'}
+        label={name || 'Files'}
         items={opts?.menu ?? []}
         enabled={!!opts?.menu}>
         <View ref={ref} style={vstyles.root}>
           {opts?.header &&
-            <ListBar {...{path}} {...opts.header}/>
+            <ListBar
+              paths={paths}
+              deviceId={opts?.deviceId}
+              {...opts.header}
+            />
           }
           <View style={vstyles.list}>
             {!items?.length
               ? <ListEmpty
-                  path={path ?? '.'}
+                  path={paths?.map(p => p[0]).join('/')}
                   offset={opts?.header ? 100 : 0}
                 />
               : (
