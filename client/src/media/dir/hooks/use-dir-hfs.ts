@@ -7,7 +7,7 @@ import {getData} from 'media/file/utils/data';
 import media from 'media/store';
 import cfg from 'config';
 
-import {isInitDirectory, INIT_DIRECTORIES} from '../utils/hfs/path';
+import {INIT_DIRECTORIES} from '../utils/hfs/path';
 import {getThumbnail} from '../utils/hfs/meta';
 import {saveAs} from '../utils/hfs/fs';
 
