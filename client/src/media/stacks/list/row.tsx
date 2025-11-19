@@ -4,7 +4,6 @@ import {TextInput} from 'react-exo/textinput';
 import {bytesize} from 'app/lib/formatting';
 import {Thumb} from 'media/stacks/thumb';
 import {ThumbSize} from 'media/stacks/thumb';
-import {useMediaName} from 'media/hooks/use-media-name';
 
 import type {HfsOpt} from 'media/dir/types/hfs';
 
@@ -22,7 +21,6 @@ interface ListRow {
 }
 
 export function ListRow(props: ListRow) {
-  const title = useMediaName(props.name);
   const {name, size, ext, dir, opt, img} = props;
   const {focused, selected, dragging, dropping, renaming} = opt ?? {};
   const isGrid = opt?.layout === 'grid';
@@ -91,7 +89,7 @@ export function ListRow(props: ListRow) {
             style={[styles.text, isGrid && styles.textCell]}
             numberOfLines={isGrid ? 2 : 1}
             ellipsizeMode="middle">
-            {title}
+            {name}
           </Text>
         )}
         {!renaming && (

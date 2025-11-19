@@ -3,7 +3,7 @@ import * as $ from './types';
 export default {
   app_device: {
     id: $.DeviceId,
-    name: $.nullOr($.NonEmptyString255),
+    name: $.NonEmptyString255,
     online: $.nullOr($.SqliteBoolean),
   },
   app_profile: {

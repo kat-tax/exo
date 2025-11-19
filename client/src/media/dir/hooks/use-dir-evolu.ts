@@ -92,6 +92,7 @@ export function useDirEvolu(pathId: PathId | null, deviceId: DeviceId, tmp?: boo
     dir: {
       list,
       path,
+      deviceId,
     },
     cmd: {
       goUp,

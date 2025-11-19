@@ -26,6 +26,7 @@ export type RootStackParamList = {
   SettingsStorage: undefined;
   DevDesign: undefined;
   DevCharts: undefined;
+  MediaBrowseDevices: undefined;
   MediaBrowseLocal: {path?: string};
   MediaBrowseEvolu: {pathId?: PathId; deviceId: DeviceId};
   MediaViewDocs: undefined;
@@ -42,7 +43,7 @@ const links: Record<string, Array<keyof RootStackParamList>> = {
   /** Displayed on the native/web tab navigator. */
   tabs: [
     'HomeDashboard',
-    'MediaBrowseLocal',
+    'MediaBrowseDevices',
     'TasksListAll',
     'SettingsOverview',
   ],
@@ -53,7 +54,7 @@ const links: Record<string, Array<keyof RootStackParamList>> = {
   ],
   /** The menu items shown in the media group. */
   menuMedia: [
-    'MediaBrowseLocal',
+    'MediaBrowseDevices',
     'MediaViewDocs',
     'MediaViewMusic',
     'MediaViewPictures',
@@ -108,12 +109,12 @@ const root = (screens: NavScreens, theme: Theme) => createNativeStackNavigator<R
     ...createScreens(screens),
   },
   screenOptions: (props) => ({
-    // Example: Hide header if in top level navigation (excluding SettingsStorage)
+    // Hide header if in top level navigation (excluding SettingsStorage)
+    // Also hide header if the route is a media view or browse route
     headerShown: (!Object.values(links).flat().includes(props.route.name)
       || props.route.name === 'SettingsStorage')
-      && props.route.name !== 'MediaViewIpfs'
-      && props.route.name !== 'MediaBrowseEvolu',
-    //headerShown: true,
+      && !props.route.name.startsWith('MediaView')
+      && !props.route.name.startsWith('MediaBrowse'),
     headerTintColor: theme.colors.foreground,
     headerTitleAlign: 'center',
     headerTitleStyle: {
@@ -175,6 +176,13 @@ export function Navigator() {
         icon: 'ph:database',
       },
     },
+    MediaBrowseDevices: {
+      linking: 'browse',
+      options: {
+        title: t`Files`,
+        icon: 'ph:folder',
+      },
+    },
     MediaBrowseLocal: {
       linking: {
         path: 'browse/local/:path?',
@@ -184,13 +192,6 @@ export function Navigator() {
         stringify: {
           path: (value) => value.replaceAll('/', '~').replaceAll(' ', '+'),
         },
-      },
-      options: {
-        title: t`Files`,
-        icon: 'ph:folder',
-      },
-      params: {
-        path: undefined,
       },
     },
     MediaBrowseEvolu: {

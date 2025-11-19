@@ -1,6 +1,7 @@
 import {createIdFromString} from '@evolu/common';
 import {createUseEvolu, EvoluProvider} from '@evolu/react';
 import {Provider as ReduxProvider} from 'react-exo/redux';
+import {getDeviceName} from 'app/lib/platform';
 import {HfsProvider} from './lib/hfs';
 import {DeviceId} from './types';
 import evolu from './lib/evolu.db';
@@ -13,8 +14,9 @@ export * from './lib/redux.db';
 
 export const useEvolu = createUseEvolu(evolu);
 export const deviceId = DeviceId.orThrow(createIdFromString('device-1'));
+export const deviceName = getDeviceName();
 
-evolu.upsert('app_device', {id: deviceId});
+evolu.upsert('app_device', {id: deviceId, name: deviceName});
 
 export function Data(props: React.PropsWithChildren) {
   return (

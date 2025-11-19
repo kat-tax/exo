@@ -6,7 +6,6 @@ import {View, ScrollView} from 'react-native';
 import {useEffect, useRef, useState, useCallback} from 'react';
 import {useFocusable, FocusContext} from '@noriginmedia/norigin-spatial-navigation';
 import {useLingui} from '@lingui/react/macro';
-import {useMediaName} from 'media/hooks/use-media-name';
 import {MenuDropdown} from 'app/ui/float';
 import {ButtonText} from 'app/ui/button/text';
 import {ButtonIcon} from 'app/ui/button/icon';
@@ -24,6 +23,7 @@ export interface ListBarProps {
   paths?: Array<[name: string, path: string]>;
   actions?: Array<ListBarAction>,
   deviceId?: DeviceId | null;
+  deviceName?: string | null;
 }
 
 export interface ListBarAction {
@@ -33,17 +33,18 @@ export interface ListBarAction {
   items?: Array<MenuDropdownItem | undefined | false>,
 }
 
-export function ListBar({paths, actions, deviceId}: ListBarProps) {
+export function ListBar({paths, actions, deviceId, deviceName}: ListBarProps) {
   const {t} = useLingui();
   const scroll = useRef<ScrollView>(null);
   const {ref, focusKey} = useFocusable({
-    preferredChildFocusKey: `bar@${paths?.at(-1)?.[1]}`,
+    preferredChildFocusKey: `bar@${!paths?.length ? '%device%' : paths?.at(-1)?.[1]}`,
     saveLastFocusedChild: false,
+    focusBoundaryDirections: ['left', 'right'],
   });
 
   // biome-ignore lint/correctness/useExhaustiveDependencies: explicit
   useEffect(() => {
-    scroll.current?.scrollToEnd({animated: true});
+    scroll.current?.scrollToEnd({animated: true})
   }, [paths]);
 
   return (
@@ -54,16 +55,25 @@ export function ListBar({paths, actions, deviceId}: ListBarProps) {
           horizontal={true}
           showsHorizontalScrollIndicator={false}
           contentContainerStyle={styles.breadcrumbs}>
-          {paths ? (
+          <ListBarItem
+            name={t`Files`}
+            deviceId={deviceId}
+            last={!paths}
+          />
+          {paths &&
             <>
+              <ListBarItemSeparator/>
               <ListBarItem
-                name={t`Files`}
-                path=""
+                name={deviceName ?? t`Local`}
                 deviceId={deviceId}
+                path=""
+                last={paths.length === 0}
               />
-              {paths.length > 0 && <ListBarItemSeparator/>}
+              {paths.length > 0 &&
+                <ListBarItemSeparator/>
+              }
             </>
-          ) : null}
+          }
           {paths?.map(([name, path], index, array) => {
             const last = index === array.length - 1;
             return (
@@ -86,14 +96,15 @@ export function ListBar({paths, actions, deviceId}: ListBarProps) {
 
 export function ListBarItem({name, path, last, deviceId}: {
   name: string,
-  path: string,
+  path?: string,
   last?: boolean,
   deviceId?: DeviceId | null,
 }) {
-  const title = useMediaName(name);
   const nav = useNavigation();
   const open = useCallback(() => {
-    if (deviceId) {
+    if (path === undefined) {
+      nav.navigate('MediaBrowseDevices');
+    } else if (deviceId) {
       let pathId: PathId | undefined = undefined;
       const _pathId = PathId.from(path);
       if (_pathId.ok) pathId = _pathId.value;
@@ -104,10 +115,9 @@ export function ListBarItem({name, path, last, deviceId}: {
   }, [deviceId, path, nav]);
 
   const {ref, focused} = useFocusable({
-    focusKey: `bar@${path}`,
+    focusKey: `bar@${path === undefined ? '%root%' : path === '' ? '%device%' : path}`,
     onEnterPress: open,
     onFocus: () => {
-      // TODO: scroll to the item once flashlist is used
       // scroll?.current?.scrollTo({x: layout.x, animated: true});
     },
   });
@@ -115,7 +125,7 @@ export function ListBarItem({name, path, last, deviceId}: {
   return (
     <ButtonText
       vref={ref}
-      label={title}
+      label={name}
       size={TEXT_SIZE}
       onPress={open}
       state={focused

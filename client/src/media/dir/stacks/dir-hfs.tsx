@@ -9,7 +9,7 @@ export function DirHfs({hfs, cmd, ext, bar}: HfsCtx) {
   return (
     <List
       items={hfs.list}
-      paths={hfs.path?.split('/').map(p => [p, p]) ?? []}
+      paths={hfs.path?.split('/').filter(Boolean).map(p => [p, p]) ?? []}
       data={ext}
       opts={{
         layout,

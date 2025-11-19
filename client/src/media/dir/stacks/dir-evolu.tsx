@@ -1,12 +1,13 @@
 import {EntryEvolu} from 'media/dir/stacks/entry-evolu';
 import {List} from 'media/stacks/list';
 import {useQuery} from 'app/data';
-import {getPathHierarchy} from 'app/data/queries';
+import {getDevice, getPathHierarchy} from 'app/data/queries';
 
 import type {DirEvoluCtx, DirEvoluOpt} from 'media/dir/types/evolu';
 import type {MenuContextItem} from 'app/ui/float/menu-context';
 
 export function DirEvolu({dir, cmd, ext, bar}: DirEvoluCtx) {
+  const [device] = useQuery(getDevice(dir.deviceId));
   const paths = useQuery(getPathHierarchy(dir.path?.deviceId, dir.path?.id));
   const layout = ext.tmp ? 'grid' : 'list';
 
@@ -17,7 +18,8 @@ export function DirEvolu({dir, cmd, ext, bar}: DirEvoluCtx) {
       data={ext}
       opts={{
         layout,
-        deviceId: dir.path?.deviceId,
+        deviceId: device.id,
+        deviceName: device.name,
         preview: ext.tmp,
         header: bar ? {actions: bar?.actions} : undefined,
         menu: bar?.actions?.[0]?.items?.filter(Boolean) as MenuContextItem[],

@@ -20,6 +20,7 @@ export interface ListProps<T> {
   data?: unknown;
   opts?: {
     deviceId?: DeviceId | null;
+    deviceName?: string | null;
     preview?: boolean,
     layout?: 'list' | 'grid',
     menu?: Array<MenuContextItem>,
@@ -68,6 +69,7 @@ export function List<T>({items, paths, data, opts, render}: ListProps<T>) {
             <ListBar
               paths={paths}
               deviceId={opts?.deviceId}
+              deviceName={opts?.deviceName}
               {...opts.header}
             />
           }

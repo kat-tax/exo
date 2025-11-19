@@ -1,11 +1,12 @@
 import type {GestureResponderEvent} from 'react-native';
-import type {ListBarProps} from 'media/stacks/list/bar';
+import type {PathId, DeviceId} from 'app/data/types';
 import type {getPathById} from 'app/data/queries';
-import type {PathId} from 'app/data/types';
+import type {ListBarProps} from 'media/stacks/list/bar';
 
 export interface DirEvolu {
   path: ReturnType<typeof getPathById>['Row'],
   list: Array<DirEvoluEntry>,
+  deviceId: DeviceId,
 }
 
 export type DirEvoluCtx = {
