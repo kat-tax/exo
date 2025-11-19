@@ -21,7 +21,6 @@ const TEXT_SIZE = __TOUCH__ ? 14 : 12;
 const SEPARATOR_SIZE = __TOUCH__ ? 14 : 10;
 
 export interface ListBarProps {
-  id?: string,
   paths?: Array<[name: string, path: string]>;
   actions?: Array<ListBarAction>,
   deviceId?: DeviceId | null;
@@ -34,11 +33,11 @@ export interface ListBarAction {
   items?: Array<MenuDropdownItem | undefined | false>,
 }
 
-export function ListBar({id, paths, actions, deviceId}: ListBarProps) {
+export function ListBar({paths, actions, deviceId}: ListBarProps) {
   const {t} = useLingui();
   const scroll = useRef<ScrollView>(null);
   const {ref, focusKey} = useFocusable({
-    preferredChildFocusKey: `bar@${id}`,
+    preferredChildFocusKey: `bar@${paths?.at(-1)?.[1]}`,
     saveLastFocusedChild: false,
   });
 
