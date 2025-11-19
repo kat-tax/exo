@@ -22,8 +22,11 @@ export function useDirEvolu(pathId: PathId | null, deviceId: DeviceId, tmp?: boo
   const set = useSet();
 
   const goUp = useCallback(() => {
-    if (!path?.parentId) return false;
-    const pathId = path.parentId;
+    if (!path) {
+      nav.navigate('MediaBrowseDevices');
+      return false;
+    }
+    const pathId = path.parentId ?? undefined;
     nav.navigate('MediaBrowseEvolu', {pathId, deviceId});
     return true;
   }, [path, nav, deviceId]);

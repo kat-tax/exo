@@ -25,7 +25,10 @@ export function useDirHfs(path: string, tmp?: boolean): Omit<HfsCtx, 'bar'> {
   const set = useSet();
 
   const goUp = useCallback(() => {
-    if (!path) return false;
+    if (!path) {
+      nav.navigate('MediaBrowseDevices');
+      return false;
+    }
     const parent = path.split('/').slice(0, -1).join('/');
     nav.navigate('MediaBrowseLocal', {path: parent});
     return true;
