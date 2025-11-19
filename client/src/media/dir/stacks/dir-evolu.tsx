@@ -13,7 +13,6 @@ export function DirEvolu({dir, cmd, ext, bar}: DirEvoluCtx) {
   return (
     <List
       items={dir.list}
-      name={'Evolu'}
       paths={Array.from(paths).reverse().map(p => [p.name ?? '', p.id.toString()])}
       data={ext}
       opts={{

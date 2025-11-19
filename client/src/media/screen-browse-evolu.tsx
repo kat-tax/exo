@@ -7,7 +7,22 @@ export default function ScreenBrowseEvolu({route}: ReactNavigation.ScreenProps<'
   const {dir, cmd, ext} = useDirEvolu(pathId || null, deviceId);
 
   const bar = {
-    actions: [],
+    actions: [
+      {
+        id: 'create',
+        icon: 'ph:plus',
+        items: [
+          {
+            name: 'new-folder',
+            label: 'New Folder',
+            icon: 'ph:folder-plus',
+            action: () => {
+              console.log('new folder');
+            },
+          },
+        ],
+      },
+    ],
   };
 
   return (

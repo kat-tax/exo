@@ -17,7 +17,6 @@ import type {DeviceId} from 'app/data/types';
 export interface ListProps<T> {
   items?: Array<T>;
   paths?: Array<[path: string, name: string]>;
-  name?: string;
   data?: unknown;
   opts?: {
     deviceId?: DeviceId | null;
@@ -34,10 +33,11 @@ export interface ListProps<T> {
   }) => React.ReactNode;
 }
 
-export function List<T>({items, paths, name, data, opts, render}: ListProps<T>) {
+export function List<T>({items, paths, data, opts, render}: ListProps<T>) {
   const {ref, focusKey} = useFocusable({saveLastFocusedChild: !opts?.preview});
   const {width} = useWindowDimensions();
   const listRef = useRef<LegendListRef>(null);
+  const [,name] = paths?.at(-1) ?? [null,'Files'];
   const layout = opts?.layout ?? 'list';
   const isGrid = layout === 'grid';
   const height = isGrid ? HEIGHT_CELL : HEIGHT_ROW;
@@ -60,7 +60,7 @@ export function List<T>({items, paths, name, data, opts, render}: ListProps<T>) 
   return (
     <FocusContext.Provider value={focusKey}>
       <MenuContext
-        label={name || 'Files'}
+        label={name}
         items={opts?.menu ?? []}
         enabled={!!opts?.menu}>
         <View ref={ref} style={vstyles.root}>

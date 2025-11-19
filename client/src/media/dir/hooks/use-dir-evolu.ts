@@ -37,18 +37,17 @@ export function useDirEvolu(pathId: PathId | null, deviceId: DeviceId, tmp?: boo
   const select = useCallback((entry: DirEvoluEntry, event?: GestureResponderEvent) => {
     if (isZeego(event)) return;
     const [isShift, isCtrl] = [event?.shiftKey, event?.metaKey || event?.ctrlKey];
-    const fullPath = path ? `${path}/${entry.name}` : entry.name;
-    const isSelected = sel?.includes(fullPath);
+    const isSelected = sel?.includes(entry.id);
     if (isShift && entry.isDirectory && (isSelected || sel?.length === 0)) {
       return open(entry);
     }
     set(media.actions.selectItem({
-      path: fullPath,
+      path: entry.id,
       isRange: isShift ?? false,
       isMulti: isCtrl ?? false,
       namespace: tmp ? 'temp' : 'main',
     }));
-  }, [path, tmp, sel, open, set]);
+  }, [tmp, sel, open, set]);
 
   const download = useCallback(async (entry: DirEvoluEntry) => {
     if (entry.isFile) {
