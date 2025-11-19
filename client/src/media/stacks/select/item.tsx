@@ -5,6 +5,7 @@ import {Text, View, Pressable} from 'react-native';
 //import {useNavigation, useRoute, RouteProp} from '@react-navigation/native';
 import {useCallback, useEffect, useState} from 'react';
 import {useFocusable} from '@noriginmedia/norigin-spatial-navigation';
+import {useMediaName} from 'media/hooks/use-media-name';
 import {useSet} from 'app/data';
 import media from 'media/store';
 
@@ -28,6 +29,7 @@ export function SelectItem(props: SelectItemProps) {
   const {focused, index, path, name, ext, hfs} = props;
   const [dir, setDir] = useState(!ext);
   //const route = useRoute<RouteProp<RootStackParamList, 'MediaBrowseHfs'>>();
+  const title = useMediaName(name);
   const virt = index === -1;
 
   //const navigation = useNavigation();
@@ -90,7 +92,7 @@ export function SelectItem(props: SelectItemProps) {
         style={[styles.text, focused && styles.textFocused]}
         selectable={false}
         numberOfLines={TEXT_LINES}>
-        {name ? name : ext ? `.${ext}` : name}
+        {name ? title : ext ? `.${ext}` : title}
       </Text>
       {index !== -1 &&
         <Pressable style={styles.close} onPress={() => close(index)}>
