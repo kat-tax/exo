@@ -23,6 +23,11 @@ msgstr "{files, plural, one {# file} other {# files}}"
 msgid "{folders, plural, one {# folder} other {# folders}}"
 msgstr "{folders, plural, one {# folder} other {# folders}}"
 
+#: ../../client/src/settings/screen-overview.tsx:80
+#: ../../client/src/settings/stacks/account-key.tsx:120
+msgid "Account Key"
+msgstr "Account Key"
+
 #: ../../client/src/tasks/screen-list-edit.tsx:96
 msgid "Add category..."
 msgstr "Add category..."
@@ -37,23 +42,21 @@ msgstr "Add section names for items."
 msgid "Appearance"
 msgstr "Appearance"
 
-#: ../../client/src/settings/hooks/use-settings.ts:39
+#: ../../client/src/settings/hooks/use-settings.ts:40
 msgid "Are you sure you want to change the owner key? This will reset the local database. This action cannot be undone."
 msgstr "Are you sure you want to change the owner key? This will reset the local database. This action cannot be undone."
 
-#: ../../client/src/media/hooks/use-media-name.ts:23
+#: ../../client/src/app/nav/index.tsx:260
+#: ../../client/src/media/hooks/use-media-name.ts:21
 msgid "Books"
 msgstr "Books"
-
-#: ../../client/src/app/nav/index.tsx:171
-msgid "Browse"
-msgstr "Browse"
 
 #. placeholder {0}: data.metadata.author
 #: ../../client/src/media/file/file-book.tsx:41
 msgid "by {0}"
 msgstr "by {0}"
 
+#: ../../client/src/settings/stacks/account-key.tsx:253
 #: ../../design/components/base/popovers/prompt/Prompt.tsx:49
 msgid "Cancel"
 msgstr "Cancel"
@@ -74,17 +77,13 @@ msgstr "Categories"
 msgid "Category"
 msgstr "Category"
 
-#: ../../client/src/app/nav/index.tsx:217
+#: ../../client/src/app/nav/index.tsx:296
 msgid "Charts"
 msgstr "Charts"
 
 #: ../../client/src/settings/screen-overview.tsx:35
 msgid "Choose your display name."
 msgstr "Choose your display name."
-
-#: ../../client/src/settings/screen-overview.tsx:117
-msgid "Clear owner and delete database."
-msgstr "Clear owner and delete database."
 
 #: ../../client/src/media/hooks/use-media-controls.ts:298
 msgid "Close"
@@ -103,7 +102,7 @@ msgstr "Compress"
 msgid "Configure the app"
 msgstr "Configure the app"
 
-#: ../../client/src/settings/screen-overview.tsx:146
+#: ../../client/src/settings/screen-overview.tsx:149
 #: ../../design/components/features/auth/signup/Signup.tsx:53
 msgid "Confirm"
 msgstr "Confirm"
@@ -127,7 +126,7 @@ msgstr "Danger Zone"
 msgid "Dark"
 msgstr "Dark"
 
-#: ../../client/src/app/nav/index.tsx:125
+#: ../../client/src/app/nav/index.tsx:144
 msgid "Dashboard"
 msgstr "Dashboard"
 
@@ -149,11 +148,15 @@ msgstr "Delete List"
 msgid "Delete Shortcut"
 msgstr "Delete Shortcut"
 
-#: ../../client/src/app/nav/index.tsx:209
+#: ../../client/src/settings/screen-overview.tsx:120
+msgid "Deletes database and resets key."
+msgstr "Deletes database and resets key."
+
+#: ../../client/src/app/nav/index.tsx:288
 msgid "Design"
 msgstr "Design"
 
-#: ../../client/src/app/nav/custom/menu/index.tsx:52
+#: ../../client/src/app/nav/custom/menu/index.tsx:62
 msgid "Development"
 msgstr "Development"
 
@@ -169,16 +172,29 @@ msgstr "Directory empty. Select folder to import."
 msgid "Display Name"
 msgstr "Display Name"
 
-#: ../../client/src/media/hooks/use-media-name.ts:13
+#: ../../client/src/settings/stacks/account-key.tsx:127
+msgid "Do not share it with anyone."
+msgstr "Do not share it with anyone."
+
+#: ../../client/src/app/nav/index.tsx:225
+msgid "Docs"
+msgstr "Docs"
+
+#: ../../client/src/media/hooks/use-media-name.ts:11
 msgid "Documents"
 msgstr "Documents"
 
+#: ../../client/src/media/dir/stacks/menu-evolu.tsx:30
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:44
 #: ../../client/src/media/dir/stacks/menu-torrent.tsx:23
 #: ../../client/src/media/file/file-binary.tsx:36
 #: ../../client/src/media/hooks/use-media-controls.ts:91
 msgid "Download"
 msgstr "Download"
+
+#: ../../client/src/settings/screen-overview.tsx:110
+msgid "Download the sqlite database."
+msgstr "Download the sqlite database."
 
 #: ../../client/src/media/hooks/use-media-controls.ts:81
 msgid "Edit"
@@ -188,7 +204,7 @@ msgstr "Edit"
 msgid "Edit Item..."
 msgstr "Edit Item..."
 
-#: ../../client/src/app/nav/index.tsx:202
+#: ../../client/src/app/nav/index.tsx:281
 msgid "Edit List"
 msgstr "Edit List"
 
@@ -197,18 +213,22 @@ msgstr "Edit List"
 msgid "Email"
 msgstr "Email"
 
-#: ../../client/src/settings/screen-overview.tsx:87
-msgid "Enter mnemonic"
-msgstr "Enter mnemonic"
-
 #: ../../client/src/settings/screen-overview.tsx:41
 msgid "Enter name"
 msgstr "Enter name"
 
-#: ../../client/src/settings/hooks/use-settings.ts:25
-#: ../../client/src/settings/hooks/use-settings.ts:46
+#: ../../client/src/settings/hooks/use-settings.ts:26
+#: ../../client/src/settings/hooks/use-settings.ts:47
 msgid "Error"
 msgstr "Error"
+
+#: ../../client/src/settings/screen-overview.tsx:109
+msgid "Export Database"
+msgstr "Export Database"
+
+#: ../../client/src/settings/screen-overview.tsx:112
+msgid "Export DB"
+msgstr "Export DB"
 
 #: ../../client/src/media/dir/stacks/menu-zip.tsx:23
 #: ../../client/src/media/hooks/use-media-controls.ts:101
@@ -267,8 +287,13 @@ msgstr "Failed to update list."
 msgid "Failed to update shortcut."
 msgstr "Failed to update shortcut."
 
-#: ../../client/src/media/hooks/use-media-name.ts:25
-#: ../../client/src/media/stacks/list/bar.tsx:57
+#: ../../client/src/app/ui/teaser.tsx:11
+msgid "Feature in development..."
+msgstr "Feature in development..."
+
+#: ../../client/src/app/nav/index.tsx:182
+#: ../../client/src/media/hooks/use-media-name.ts:23
+#: ../../client/src/media/stacks/list/bar.tsx:59
 #: ../../client/src/media/stacks/media.tsx:89
 msgid "Files"
 msgstr "Files"
@@ -277,7 +302,8 @@ msgstr "Files"
 msgid "Fullscreen"
 msgstr "Fullscreen"
 
-#: ../../client/src/media/hooks/use-media-name.ts:21
+#: ../../client/src/app/nav/index.tsx:253
+#: ../../client/src/media/hooks/use-media-name.ts:19
 msgid "Games"
 msgstr "Games"
 
@@ -311,13 +337,13 @@ msgstr "Human"
 msgid "Icon"
 msgstr "Icon"
 
+#: ../../client/src/settings/stacks/account-key.tsx:270
+msgid "Import"
+msgstr "Import"
+
 #: ../../client/src/media/stacks/list/empty.tsx:26
 msgid "Import Folder"
 msgstr "Import Folder"
-
-#: ../../client/src/settings/screen-overview.tsx:106
-msgid "Inspect Storage"
-msgstr "Inspect Storage"
 
 #: ../../client/src/tasks/hooks/use-lists.ts:139
 #: ../../client/src/tasks/hooks/use-lists.ts:171
@@ -338,7 +364,7 @@ msgstr "Invalid icon field."
 msgid "Invalid list id."
 msgstr "Invalid list id."
 
-#: ../../client/src/settings/hooks/use-settings.ts:27
+#: ../../client/src/settings/hooks/use-settings.ts:28
 msgid "Invalid name (max 25 characters)."
 msgstr "Invalid name (max 25 characters)."
 
@@ -347,7 +373,7 @@ msgstr "Invalid name (max 25 characters)."
 msgid "Invalid name field."
 msgstr "Invalid name field."
 
-#: ../../client/src/settings/hooks/use-settings.ts:48
+#: ../../client/src/settings/hooks/use-settings.ts:49
 msgid "Invalid owner key."
 msgstr "Invalid owner key."
 
@@ -364,7 +390,7 @@ msgstr "Invalid text content field."
 msgid "Invalid URL field."
 msgstr "Invalid URL field."
 
-#: ../../client/src/app/nav/index.tsx:182
+#: ../../client/src/app/nav/index.tsx:219
 msgid "IPFS"
 msgstr "IPFS"
 
@@ -376,7 +402,7 @@ msgstr "Language"
 msgid "Light"
 msgstr "Light"
 
-#: ../../client/src/app/nav/index.tsx:196
+#: ../../client/src/app/nav/index.tsx:275
 msgid "List Details"
 msgstr "List Details"
 
@@ -388,10 +414,14 @@ msgstr "List Error"
 msgid "List name"
 msgstr "List name"
 
-#: ../../client/src/app/nav/index.tsx:188
+#: ../../client/src/app/nav/index.tsx:267
 #: ../../client/src/tasks/screen-list-all.tsx:21
 msgid "Lists"
 msgstr "Lists"
+
+#: ../../client/src/media/stacks/list/bar.tsx:67
+msgid "Local"
+msgstr "Local"
 
 #: ../../design/components/features/auth/login/Login.tsx:53
 #: ../../design/components/features/auth/signup/Signup.tsx:74
@@ -402,6 +432,18 @@ msgstr "Login"
 msgid "Logout?"
 msgstr "Logout?"
 
+#: ../../client/src/settings/screen-overview.tsx:87
+msgid "Manage Key"
+msgstr "Manage Key"
+
+#: ../../client/src/settings/screen-overview.tsx:81
+msgid "Manage your mnemonic phrase."
+msgstr "Manage your mnemonic phrase."
+
+#: ../../client/src/app/nav/custom/menu/index.tsx:51
+msgid "Media"
+msgstr "Media"
+
 #: ../../client/src/tasks/hooks/use-lists.ts:21
 msgid "Missing list id."
 msgstr "Missing list id."
@@ -410,7 +452,7 @@ msgstr "Missing list id."
 msgid "Missing shortcut id."
 msgstr "Missing shortcut id."
 
-#: ../../client/src/settings/screen-overview.tsx:107
+#: ../../client/src/settings/screen-overview.tsx:100
 msgid "Monitor disk usage on device."
 msgstr "Monitor disk usage on device."
 
@@ -418,7 +460,8 @@ msgstr "Monitor disk usage on device."
 msgid "Move"
 msgstr "Move"
 
-#: ../../client/src/media/hooks/use-media-name.ts:15
+#: ../../client/src/app/nav/index.tsx:232
+#: ../../client/src/media/hooks/use-media-name.ts:13
 msgid "Music"
 msgstr "Music"
 
@@ -435,10 +478,11 @@ msgstr "New item..."
 msgid "Next"
 msgstr "Next"
 
-#: ../../client/src/app/nav/index.tsx:133
+#: ../../client/src/app/nav/index.tsx:155
 msgid "Not Found"
 msgstr "Not Found"
 
+#: ../../client/src/media/dir/stacks/menu-evolu.tsx:23
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:23
 msgid "Open"
 msgstr "Open"
@@ -451,13 +495,14 @@ msgstr "Options"
 msgid "Organize your tasks"
 msgstr "Organize your tasks"
 
-#: ../../client/src/settings/screen-overview.tsx:80
-msgid "Owner Key"
-msgstr "Owner Key"
-
 #: ../../client/src/home/screen-not-found.tsx:11
 msgid "Page not found"
 msgstr "Page not found"
+
+#: ../../client/src/settings/stacks/account-key.tsx:262
+#: ../../client/src/settings/stacks/account-key.tsx:267
+msgid "Passkey"
+msgstr "Passkey"
 
 #: ../../design/components/features/auth/login/Login.tsx:42
 #: ../../design/components/features/auth/signup/Signup.tsx:42
@@ -482,7 +527,8 @@ msgstr "Permanently delete list."
 msgid "Permanently delete shortcut."
 msgstr "Permanently delete shortcut."
 
-#: ../../client/src/media/hooks/use-media-name.ts:17
+#: ../../client/src/app/nav/index.tsx:239
+#: ../../client/src/media/hooks/use-media-name.ts:15
 msgid "Pictures"
 msgstr "Pictures"
 
@@ -510,14 +556,15 @@ msgstr "Rename"
 msgid "Replay"
 msgstr "Replay"
 
-#: ../../client/src/settings/screen-overview.tsx:116
+#: ../../client/src/settings/screen-overview.tsx:119
+#: ../../client/src/settings/screen-overview.tsx:126
+#: ../../client/src/settings/screen-overview.tsx:133
 msgid "Reset Data"
 msgstr "Reset Data"
 
-#: ../../client/src/settings/screen-overview.tsx:123
-#: ../../client/src/settings/screen-overview.tsx:130
-msgid "Reset Database"
-msgstr "Reset Database"
+#: ../../client/src/settings/stacks/account-key.tsx:247
+msgid "Save"
+msgstr "Save"
 
 #: ../../client/src/media/hooks/use-media-controls.ts:111
 msgid "Search"
@@ -535,11 +582,11 @@ msgstr "Select the color scheme."
 msgid "Select your preferred language."
 msgstr "Select your preferred language."
 
-#: ../../client/src/settings/screen-overview.tsx:81
-msgid "Set mnemonic to sync devices."
-msgstr "Set mnemonic to sync devices."
+#: ../../client/src/settings/screen-overview.tsx:87
+msgid "Set Key"
+msgstr "Set Key"
 
-#: ../../client/src/app/nav/index.tsx:145
+#: ../../client/src/app/nav/index.tsx:167
 #: ../../client/src/settings/screen-overview.tsx:28
 msgid "Settings"
 msgstr "Settings"
@@ -549,7 +596,7 @@ msgstr "Settings"
 msgid "Share"
 msgstr "Share"
 
-#: ../../client/src/app/nav/index.tsx:139
+#: ../../client/src/app/nav/index.tsx:161
 msgid "Shortcut"
 msgstr "Shortcut"
 
@@ -565,11 +612,11 @@ msgstr "Skip backward"
 msgid "Skip forward"
 msgstr "Skip forward"
 
-#: ../../client/src/app/nav/index.tsx:153
+#: ../../client/src/app/nav/index.tsx:175
 msgid "Storage"
 msgstr "Storage"
 
-#: ../../client/src/settings/screen-overview.tsx:109
+#: ../../client/src/settings/screen-overview.tsx:99
 msgid "Storage Usage"
 msgstr "Storage Usage"
 
@@ -618,16 +665,16 @@ msgstr "This file can not be previewed."
 msgid "This will clear all session data. Are you sure you would like to proceed?"
 msgstr "This will clear all session data. Are you sure you would like to proceed?"
 
-#: ../../client/src/settings/screen-overview.tsx:131
-msgid "This will reset your owner key and delete your local database. This action is irreversible. If you have data you wish to backup make sure to save your owner key."
-msgstr "This will reset your owner key and delete your local database. This action is irreversible. If you have data you wish to backup make sure to save your owner key."
+#: ../../client/src/settings/screen-overview.tsx:134
+msgid "This will reset your account key and delete your local database. This action is irreversible. If you have data you wish to backup make sure to save your account key."
+msgstr "This will reset your account key and delete your local database. This action is irreversible. If you have data you wish to backup make sure to save your account key."
 
-#: ../../client/src/media/hooks/use-media-name.ts:11
-msgid "Transfers"
-msgstr "Transfers"
+#: ../../client/src/settings/stacks/account-key.tsx:126
+msgid "Treat your mnemonic phrase with care."
+msgstr "Treat your mnemonic phrase with care."
 
 #. placeholder {0}: 'delete'
-#: ../../client/src/settings/screen-overview.tsx:139
+#: ../../client/src/settings/screen-overview.tsx:142
 msgid "Type \"{0}\" to confirm"
 msgstr "Type \"{0}\" to confirm"
 
@@ -644,14 +691,23 @@ msgstr "Untitled"
 msgid "URL"
 msgstr "URL"
 
+#: ../../client/src/settings/stacks/account-key.tsx:121
+msgid "Used to encrypt and sync your data between devices."
+msgstr "Used to encrypt and sync your data between devices."
+
 #: ../../design/components/features/auth/login/Login.tsx:30
 #: ../../design/components/features/auth/signup/Signup.tsx:30
 msgid "user@example.com"
 msgstr "user@example.com"
 
-#: ../../client/src/media/hooks/use-media-name.ts:19
+#: ../../client/src/app/nav/index.tsx:246
+#: ../../client/src/media/hooks/use-media-name.ts:17
 msgid "Videos"
 msgstr "Videos"
+
+#: ../../client/src/settings/screen-overview.tsx:102
+msgid "View Usage"
+msgstr "View Usage"
 
 #: ../../client/src/media/hooks/use-media-controls.ts:231
 msgid "Volume"
@@ -660,6 +716,14 @@ msgstr "Volume"
 #: ../../client/src/home/utils/time.ts:21
 msgid "Welcome back, {name}."
 msgstr "Welcome back, {name}."
+
+#: ../../client/src/app/ui/index.tsx:47
+msgid "You are offline"
+msgstr "You are offline"
+
+#: ../../client/src/app/ui/index.tsx:45
+msgid "You are online"
+msgstr "You are online"
 
 #: ../../client/src/media/hooks/use-media-controls.ts:121
 msgid "Zoom in"

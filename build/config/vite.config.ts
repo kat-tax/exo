@@ -42,6 +42,9 @@ export default defineConfig(env => ({
       transformMixedEsModules: true,
     },
   },
+  worker: {
+    format: 'es',
+  },
   // React Native Web Compatibility
   resolve: {
     extensions: EXTENSIONS,

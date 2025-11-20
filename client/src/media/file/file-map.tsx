@@ -3,10 +3,10 @@ import {Map, Source, Layer} from 'react-map-gl/maplibre';
 import {useEffect, useState, forwardRef} from 'react';
 import {StyleSheet, withUnistyles} from 'react-native-unistyles';
 import {useTheme} from 'settings/hooks/use-theme';
-import {useApp} from 'app/hooks/use-app';
+//import {useApp} from 'app/hooks/use-app';
 import {useFile} from 'media/file/hooks/use-file';
 import {getBounds} from 'app/lib/mapping';
-import {MarkerGeoJson} from 'world/stacks/marker-geojson';
+//import {MarkerGeoJson} from 'world/stacks/marker-geojson';
 
 import type {FileProps} from 'media/file';
 import type {LngLatBounds} from 'maplibre-gl';
@@ -19,11 +19,11 @@ export default forwardRef(({path, actions, maximized}: FileMap) => {
   const url = useFile(path, 'dataUrl');
   const source = useFile(path, 'text');
   const [scheme] = useTheme();
-  const {profile} = useApp();
+  //const {profile} = useApp();
   const [markers, setMarkers] = useState<GeoJSON.Feature<GeoJSON.Point>[]>([]);
   const [bounds, setBounds] = useState<LngLatBounds | null>(null);
-  const maptilerUrl = profile?.maptilerUrl ?? 'https://api.maptiler.com';
-  const maptilerKey = profile?.maptilerKey ?? '';
+  //const maptilerUrl = profile?.maptilerUrl ?? 'https://api.maptiler.com';
+  //const maptilerKey = profile?.maptilerKey ?? '';
 
   useEffect(() => {
     if (!source) return;
@@ -48,7 +48,8 @@ export default forwardRef(({path, actions, maximized}: FileMap) => {
     <View style={[styles.root, maximized && styles.maximized]}>
       <Map
         style={{width: '100%', height: '100%'}}
-        mapStyle={`${maptilerUrl}/maps/${`dataviz-${scheme}`}/style.json?key=${maptilerKey}`}
+        //mapStyle={`${maptilerUrl}/maps/${`dataviz-${scheme}`}/style.json?key=${maptilerKey}`}
+        mapStyle={`https://api.maptiler.com/maps/basic/style.json?key=getkLfm6NT7HTVq6TK2ZB`}
         maxBounds={bounds ?? undefined}>
         <Source
           id="file"
@@ -68,13 +69,13 @@ export default forwardRef(({path, actions, maximized}: FileMap) => {
             },
           })}
         />
-        {markers.map(feature => (
+        {/* {markers.map(feature => (
           <MarkerGeoJson
             key={feature.id}
             longitude={feature.geometry.coordinates[0]}
             latitude={feature.geometry.coordinates[1]}
           />
-        ))}
+        ))} */}
       </Map>
     </View>
   ) : null;
