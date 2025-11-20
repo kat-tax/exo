@@ -1,6 +1,6 @@
 import {useNavigation} from '@react-navigation/native';
 import {useState, useCallback, useMemo, useEffect} from 'react';
-import {useSet, useGet, useQuery} from 'app/data';
+import {useSet, useGet, useQueries} from 'app/data';
 import {getPathById, getPathList} from 'app/data/queries';
 import {PathId} from 'app/data/types';
 import {isZeego} from 'app/ui/float';
@@ -13,13 +13,15 @@ import type {DirEvoluCtx, DirEvoluEntry} from 'media/dir/types/evolu';
 import type {DeviceId} from 'app/data/types';
 
 export function useDirEvolu(pathId: PathId | null, deviceId: DeviceId, tmp?: boolean): Omit<DirEvoluCtx, 'bar'> {
-  const [list, setList] = useState<DirEvoluEntry[]>([]);
-  const [path] = useQuery(getPathById(deviceId, pathId));
-  const data = useQuery(getPathList(deviceId, pathId));
+  const set = useSet();
   const nav = useNavigation();
   const sel = useGet(media.selectors.getSelected);
   const ext = useMemo(() => ({sel, tmp}), [sel, tmp]);
-  const set = useSet();
+  const [list, setList] = useState<DirEvoluEntry[]>([]);
+  const [[path], data] = useQueries([
+    getPathById(deviceId, pathId),
+    getPathList(deviceId, pathId),
+  ]);
 
   const goUp = useCallback(() => {
     if (!path) {
@@ -86,8 +88,7 @@ export function useDirEvolu(pathId: PathId | null, deviceId: DeviceId, tmp?: boo
       isFile: e.fileId !== null,
     }));
     setList(entries);
-
-    console.log('[evolu-browse]', {path, deviceId, pathId, data: data});
+    console.log('[evolu-browse]', {path, deviceId, pathId, data});
   }, [data]);
 
   return {
