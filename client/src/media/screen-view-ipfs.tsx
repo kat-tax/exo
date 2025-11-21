@@ -14,7 +14,6 @@ export default function ScreenIpfs({route}: ReactNavigation.ScreenProps<'MediaVi
         {...{name, ext, url, path}}
         close={() => null}
         embedded={false}
-        standalone
         maximized
         vertical
       />

@@ -1,8 +1,11 @@
 import {FileType} from 'media/file/types';
 
 export const loader: {[key in FileType]: React.FC} = {
-  get [FileType.Directory]() {
-    return require('../file-directory').default
+  get [FileType.DirLocal]() {
+    return require('../file-dir-local').default
+  },
+  get [FileType.DirEvolu]() {
+    return require('../file-dir-evolu').default
   },
   get [FileType.Binary]() {
     return require('../file-binary').default

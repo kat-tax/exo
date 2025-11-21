@@ -2,22 +2,21 @@ import {plural} from '@lingui/core/macro';
 import {useEffect, useMemo, forwardRef} from 'react';
 import {useDirHfs} from 'media/dir/hooks/use-dir-hfs';
 import {DirHfs} from 'media/dir/stacks/dir-hfs';
-// import {Panel} from 'app/ui/panel';
 
 import type {FileProps} from 'media/file';
 
-export interface FileDirectory extends FileProps {}
+export interface FileDirLocal extends FileProps {}
 
 export default forwardRef((
-  {path, name, actions, embedded}: FileDirectory,
+  {path, actions}: FileDirLocal,
   _ref: React.Ref<unknown>,
 ) => {
-  const {hfs, cmd, ext} = useDirHfs(path, true);
-  const {folders, files} = useMemo(() => hfs?.list?.reduce((acc, item) => {
+  const {dir, cmd, ext} = useDirHfs(path, true);
+  const {folders, files} = useMemo(() => dir?.list?.reduce((acc, item) => {
     if (item.isFile) acc.files++;
     else acc.folders++;
     return acc;
-  }, {folders: 0, files: 0}), [hfs]);
+  }, {folders: 0, files: 0}), [dir]);
 
   const message = useMemo(() => {
     const _folders = plural(folders, {one: '# folder', other: '# folders'});
@@ -29,12 +28,5 @@ export default forwardRef((
     actions.setInfo(message);
   }, [message, actions]);
 
-  return hfs ? <DirHfs {...{hfs, cmd, ext}}/> : null;
-  // return (
-  //   <Panel
-  //     title={embedded ? name : undefined}
-  //     message={embedded ? message : undefined}>
-  //     {hfs && <DirHfs {...{hfs, cmd, ext}}/>}
-  //   </Panel>
-  // );
+  return dir ? <DirHfs {...{dir, cmd, ext}}/> : null;
 });

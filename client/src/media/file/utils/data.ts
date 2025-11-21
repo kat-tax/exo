@@ -1,6 +1,10 @@
 import {FS} from 'react-exo/fs';
+import {evolu} from 'app/data';
+import {getPathById} from 'app/data/queries';
+import {DeviceId, PathId} from 'app/data/types';
+import {toText, toPathInfo} from 'app/lib/formatting';
 import {fetchIpfs} from 'media/dir/utils/ipfs/fetch';
-import {toText} from 'app/lib/formatting';
+import {deviceId} from 'app/data';
 
 import type {FileData, FileFormat, FileProtocol, FileTransfer} from '../types';
 
@@ -37,9 +41,9 @@ export async function getData<T extends FileFormat>(
     case 'arrayBuffer':
       return $?.buffer as FileData<T>;
     case 'dataUrl':
-      return $ ? URL.createObjectURL(new Blob([$], {type})) as FileData<T> : undefined;
+      return $ ? URL.createObjectURL(new Blob([$ as BlobPart], {type})) as FileData<T> : undefined;
     case 'blob':
-      return $ ? new Blob([$], {type}) as FileData<T> : undefined;
+      return $ ? new Blob([$ as BlobPart], {type}) as FileData<T> : undefined;
     case 'text':
       return $ ? toText($) as FileData<T> : undefined;
     case 'json':
@@ -49,13 +53,21 @@ export async function getData<T extends FileFormat>(
   }
 }
 
+export function getProtocol(path: string): FileProtocol {
+  let protocol: FileProtocol = 'file';
+  try {protocol = new URL(path).protocol.slice(0, -1) as FileProtocol} catch (e) {}
+  return protocol;
+}
+
 export async function getTransfer(
   path: string,
   protocol: FileProtocol,
 ): Promise<FileTransfer | undefined> {
   switch (protocol) {
-    case 'fs':
-      return (await FS.init()).bytes?.(path);
+    case 'file':
+      return (await FS.init()).bytes?.(path.replace('file://', ''));
+    case 'evolu':
+      return fetchEvolu(path);
     case 'ipfs':
       return fetchIpfs(path);
     case 'http':
@@ -65,8 +77,57 @@ export async function getTransfer(
   }
 }
 
-export function getProtocol(path: string): FileProtocol {
-  let protocol: FileProtocol = 'fs';
-  try {protocol = new URL(path).protocol.slice(0, -1) as FileProtocol} catch (e) {}
-  return protocol;
+export async function getPathInfo(path: string): Promise<{
+  protocol: FileProtocol,
+  isDir: boolean,
+  name: string,
+  ext: string,
+}> {
+  const protocol = getProtocol(path);
+  switch (protocol) {
+    case 'file': {
+      const fs = await FS.init();
+      const uri = path.replace('file://', '');
+      const isDir = Boolean(await fs?.isDirectory?.(uri || '.'));
+      const parts = uri.split('/');
+      return {protocol, ...toPathInfo(parts.at(-1) ?? '', isDir)};
+    }
+    case 'evolu': {
+      const parts = path.replace('evolu://', '').split('/');
+      const _deviceId = DeviceId.from(parts[0]);
+      const _pathId = PathId.from(parts[1]);
+      const pathDeviceId = _deviceId.ok ? _deviceId.value : deviceId;
+      const pathId = _pathId.ok ? _pathId.value : null;
+      const [data] = await evolu.loadQuery(getPathById(pathDeviceId, pathId));
+      const isDir = data?.fileId === null;
+      return {protocol, ...toPathInfo(data?.name ?? '', isDir)};
+    }
+    case 'ipfs': {
+      const [_cid, name] = path.replace('ipfs://', '').split('/');
+      return {protocol, ...toPathInfo(name)};
+    }
+    case 'http':
+    case 'https': {
+      const parts = path.replace(`${protocol}://`, '').split('/');
+      const name = parts.at(-1) ?? '';
+      return {protocol, ...toPathInfo(name)};
+    }
+    default: protocol satisfies never;
+    console.error(`Unknown protocol: ${protocol}`);
+    return {protocol, ...toPathInfo('')};
+  }
+}
+
+export function fetchEvolu(_path: string): Promise<FileTransfer | undefined> {
+  // Return dummy data for now
+  return Promise.resolve(new Response(new Blob([
+    'This is a dummy response for the evolu protocol.',
+  ]), {
+    headers: {
+      'Content-Type': 'text/plain',
+    },
+  }));
+  // 1. get path id from path
+  // 2. add to transfers table
+  // 3. devices with file id from path id fulfills transfer
 }

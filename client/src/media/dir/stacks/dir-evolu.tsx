@@ -25,16 +25,16 @@ export function DirEvolu({dir, cmd, ext, bar}: DirEvoluCtx) {
         menu: bar?.actions?.[0]?.items?.filter(Boolean) as MenuContextItem[],
       }}
       render={({item, index}) => {
-        const self = item.id;
-        const prev = dir.list[index - 1];
-        const next = dir.list[index + 1];
+        const self = `evolu://${dir.deviceId}/${item.id}`;
+        const prev = `evolu://${dir.deviceId}/${dir.list[index - 1]?.id}`;
+        const next = `evolu://${dir.deviceId}/${dir.list[index + 1]?.id}`;
         const opt: Partial<DirEvoluOpt> = {
           layout,
           preview: ext.tmp,
           selected: {
             self: ext.sel.includes(self),
-            prev: ext.sel.includes(prev?.id),
-            next: ext.sel.includes(next?.id),
+            prev: ext.sel.includes(prev),
+            next: ext.sel.includes(next),
             count: ext.sel.length,
           },
         };

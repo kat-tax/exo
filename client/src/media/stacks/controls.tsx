@@ -22,6 +22,8 @@ export interface MediaControlsProps {
     ext: string,
     path: string,
     name: string,
+    isDir: boolean,
+    loading?: boolean,
     // Display
     title: string,
     info?: string,
@@ -41,7 +43,6 @@ export function MediaControls(props: MediaControlsProps) {
   const {controls, seekable} = useMediaControls(props);
   const [fileType] = props.renderer ?? [];
   const isBook = fileType === FileType.Book;
-  const isDir = fileType === FileType.Directory;
 
   const toc = useCallback(() => {
     console.log('>> table of contents not implemented');
@@ -81,7 +82,7 @@ export function MediaControls(props: MediaControlsProps) {
                   name={name ?? ''}
                   ext={props.metadata.ext}
                   img={() => Promise.resolve(props.metadata.cover ?? null)}
-                  dir={isDir}
+                  dir={props.metadata.isDir}
                 />
               </View>
               <Text style={styles.metadata} numberOfLines={2} selectable={false}>
@@ -116,6 +117,7 @@ export function MediaControls(props: MediaControlsProps) {
 
 const styles = StyleSheet.create((theme) => ({
   root: {
+    height: __TOUCH__ ? 61 : 51,
     position: 'relative',
     flexDirection: 'row',
     alignItems: 'center',

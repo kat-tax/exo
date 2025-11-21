@@ -2,15 +2,13 @@ import {Icon} from 'react-exo/icon';
 import {Thumb} from 'media/stacks/thumb';
 import {StyleSheet} from 'react-native-unistyles';
 import {Text, View, Pressable} from 'react-native';
-//import {useNavigation, useRoute, RouteProp} from '@react-navigation/native';
 import {useCallback, useEffect, useState} from 'react';
 import {useFocusable} from '@noriginmedia/norigin-spatial-navigation';
-import {useMediaName} from 'media/hooks/use-media-name';
+import {useLingui} from '@lingui/react/macro';
 import {useSet} from 'app/data';
-import media from 'media/store';
 
-//import type {RootStackParamList} from 'app/nav';
-import type {HfsImpl} from 'react-exo/fs';
+import {getPathInfo} from 'media/file/utils/data';
+import media from 'media/store';
 
 export const HEIGHT = __TOUCH__ ? 46 : 36;
 export const ICON_SIZE = __TOUCH__ ? 1 : 0;
@@ -20,20 +18,15 @@ interface SelectItemProps {
   focused: boolean,
   index: number,
   path: string,
-  name: string,
-  ext: string,
-  hfs: HfsImpl | null,
 }
 
 export function SelectItem(props: SelectItemProps) {
-  const {focused, index, path, name, ext, hfs} = props;
-  const [dir, setDir] = useState(!ext);
-  //const route = useRoute<RouteProp<RootStackParamList, 'MediaBrowseHfs'>>();
-  const title = useMediaName(name);
-  const virt = index === -1;
-
-  //const navigation = useNavigation();
+  const {t} = useLingui();
   const set = useSet();
+
+  const {focused, index, path} = props;
+  const [pathInfo, setPathInfo] = useState<{isDir: boolean, name: string, ext: string} | null>(null);
+  const virt = index === -1;
 
   const open = useCallback(() => {
     set(media.actions.focus(path));
@@ -61,11 +54,9 @@ export function SelectItem(props: SelectItemProps) {
   // Check if the item is a directory
   useEffect(() => {
     (async () => {
-      setDir(!path.includes('://')
-        ? await hfs?.isDirectory?.(path || '.') ?? false
-        : false);
+      setPathInfo(await getPathInfo(path));
     })();
-  }, [hfs, path]);
+  }, [path]);
 
   return (
     <Pressable
@@ -79,21 +70,26 @@ export function SelectItem(props: SelectItemProps) {
         focused && styles.focus,
         focusedSpatial && styles.focusSpatial,
         virt && styles.disabled,
+        !pathInfo && styles.loading,
       ]}>
-      <View style={styles.thumb}>
-        <Thumb
-          name={name ?? ''}
-          size={ICON_SIZE}
-          dir={dir}
-          ext={ext}
-        />
-      </View>
-      <Text
-        style={[styles.text, focused && styles.textFocused]}
-        selectable={false}
-        numberOfLines={TEXT_LINES}>
-        {name ? title : ext ? `.${ext}` : title}
-      </Text>
+      {pathInfo ? (
+        <>
+          <View style={styles.thumb}>
+            <Thumb
+              size={ICON_SIZE}
+              name={pathInfo.name}
+              dir={pathInfo.isDir}
+              ext={pathInfo.ext}
+            />
+          </View>
+          <Text
+            style={[styles.text, focused && styles.textFocused]}
+            selectable={false}
+            numberOfLines={TEXT_LINES}>
+            {pathInfo.name || t`Files`}
+          </Text>
+        </>
+      ) : null}
       {index !== -1 &&
         <Pressable style={styles.close} onPress={() => close(index)}>
           <Icon
@@ -122,6 +118,9 @@ const styles = StyleSheet.create((theme) => ({
     borderRadius: theme.display.radius1,
     borderColor: theme.colors.border,
     borderWidth: StyleSheet.hairlineWidth,
+  },
+  loading: {
+    opacity: 0,
   },
   disabled: {
     opacity: 0.5,

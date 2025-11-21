@@ -5,15 +5,18 @@ import {isTextFile} from 'react-exo/fs';
 import {FileType} from '../types';
 import {getData} from './data';
 
-import type {FileRenderInfo} from '../types';
+import type {FileProtocol, FileRenderInfo} from '../types';
 
 export async function getRenderer(
   ext: string,
   path?: string,
-  isDir?: boolean,
+  dirType?: FileProtocol,
 ): Promise<FileRenderInfo> {
-  if (isDir)
-    return [FileType.Directory, {}];
+  if (dirType)
+    return [dirType === 'file'
+      ? FileType.DirLocal
+      : FileType.DirEvolu
+    , {}];
   switch (ext) {
     // Archives
     case 'zip':

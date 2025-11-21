@@ -8,7 +8,7 @@ export interface Hfs {
 }
 
 export type HfsCtx = {
-  hfs: Hfs,
+  dir: Hfs,
   cmd: HfsCmd,
   bar?: ListBarProps,
   ext: {

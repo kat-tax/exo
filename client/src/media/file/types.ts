@@ -9,7 +9,8 @@ import type {RiveRef} from 'media/file/file-rive';
 import type {GameRef} from 'media/file/file-game';
 
 export enum FileType {
-  Directory = 'Directory',
+  DirLocal = 'DirLocal',
+  DirEvolu = 'DirEvolu',
   Binary = 'Binary',
   Text = 'Text',
   Torrent = 'Torrent',
@@ -46,10 +47,11 @@ export type FileRef =
   | GameRef
 
 export type FileProtocol =
-  | 'fs'
+  | 'file'
   | 'ipfs'
   | 'http'
   | 'https'
+  | 'evolu'
 
 export type FileFormat =
   | 'arrayBuffer'

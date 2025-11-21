@@ -2,13 +2,11 @@ import {View, ScrollView} from 'react-native';
 import {StyleSheet} from 'react-native-unistyles';
 import {breakpoints} from 'design/theme';
 import {useLingui} from '@lingui/react/macro';
-import {useMemo, useState, useEffect, useRef} from 'react';
+import {useMemo, useState, useEffect, useRef, startTransition} from 'react';
 import {useMediaPictInPict} from 'media/hooks/use-media-pip';
-import {useHfs} from 'app/data/lib/hfs';
-import {SelectTabs} from 'media/stacks/select/tabs';
 import {MediaControls} from 'media/stacks/controls';
 import {getRenderer} from 'media/file/utils/render';
-import {FileType} from 'media/file/types';
+import {getPathInfo} from 'media/file/utils/data';
 import File from 'media/file';
 
 import type {FileRef, FileRenderInfo} from 'media/file/types';
@@ -16,24 +14,18 @@ import type {FileRef, FileRenderInfo} from 'media/file/types';
 const PLACEHOLDER = '‎';
 
 interface MediaProps {
-  ext: string,
-  name: string,
   path: string,
   embedded: boolean,
-  standalone: boolean,
   maximized: boolean,
   vertical: boolean,
   layout?: [number, number],
   close: () => void,
 }
 
-export function Media({ext, name, path, vertical, maximized, embedded, standalone, layout, close}: MediaProps) {
-  const file = useRef<FileRef>(null);
-  const pip = useMediaPictInPict(ext, layout);
-  const hfs = useHfs();
-  const {t} = useLingui();
-
+export function Media({path, vertical, maximized, embedded, layout, close}: MediaProps) {
+  const [pathInfo, setPathInfo] = useState<Awaited<ReturnType<typeof getPathInfo>> | null>(null);
   const [renderer, setRenderer] = useState<FileRenderInfo>();
+  const [loading, setLoading] = useState(false);
   const [title, setTitle] = useState(PLACEHOLDER);
   const [info, setInfo] = useState(PLACEHOLDER);
   const [cover, setCover] = useState('');
@@ -42,6 +34,14 @@ export function Media({ext, name, path, vertical, maximized, embedded, standalon
   const [playing, setPlaying] = useState(false);
   const [current, setCurrent] = useState(0);
   const [duration, setDuration] = useState(0);
+
+  const {t} = useLingui();
+  const pip = useMediaPictInPict(pathInfo?.ext, layout);
+  const file = useRef<FileRef>(null);
+
+  const isDir = pathInfo?.isDir ?? false;
+  const name = pathInfo?.name || t`Files`;
+  const ext = pathInfo?.ext ?? '';
 
   const vstyles = useMemo(() => ({
     root: [
@@ -76,68 +76,68 @@ export function Media({ext, name, path, vertical, maximized, embedded, standalon
     setDuration,
   }), [close]);
 
-  // Reset information when file changes
+  // Update path info when path changes
   useEffect(() => {
-    setPlaying(false);
-    setMuted(false);
+    setLoading(true);
+    setInfo(PLACEHOLDER);
+    setTitle(PLACEHOLDER);
     setCover('');
+    setMuted(false);
+    setVolume(100);
+    setPlaying(false);
     setCurrent(0);
     setDuration(0);
-    setVolume(100);
-    setInfo(PLACEHOLDER);
-    setTitle(renderer?.[0] === FileType.Directory
-      ? name || ext ? `.${ext}` : t`Files`
-      : `${name}.${ext}`);
-  }, [name, ext, renderer, t]);
-
-  // Update renderer when file extension changes
-  useEffect(() => {
-    (async () => {
-      const isDir = !path.includes('://')
-        ? await hfs?.isDirectory?.(path || '.') ?? false
-        : false;
-      setRenderer(await getRenderer(ext, path, isDir));
-    })();
-  }, [ext, path, hfs]);
+    startTransition(() => {
+      (async () => {
+        const _pathInfo = await getPathInfo(path);
+        const dirType = _pathInfo.isDir ? _pathInfo.protocol : undefined;
+        setRenderer(await getRenderer(_pathInfo.ext, path, dirType));
+        setPathInfo(_pathInfo);
+        setTitle(_pathInfo.name || t`Files`);
+        setLoading(false);
+      })();
+    });
+  }, [path]);
 
   return (
     <View style={vstyles.root}>
-      {!embedded && !standalone &&
-        <SelectTabs {...{hfs, path, name, ext}}/>
-      }
-      <ScrollView style={vstyles.frame} contentContainerStyle={styles.contents}>
-        <File
-          ref={file}
-          path={path}
-          name={name}
-          extension={ext}
-          renderer={renderer}
-          embedded={embedded}
-          maximized={maximized}
-          actions={actions}
-        />
-      </ScrollView>
-      {!embedded &&
-        <MediaControls {...{
-          file,
-          renderer,
-          maximized,
-          actions,
-          metadata: {
-            info,
-            title,
-            cover,
-            path,
-            name,
-            ext,
-            muted,
-            volume,
-            playing,
-            current,
-            duration,
-          },
-        }}/>
-      }
+      {loading ? null : <>
+        <ScrollView style={vstyles.frame} contentContainerStyle={styles.contents}>
+          <File
+            ref={file}
+            path={path}
+            name={name}
+            extension={ext}
+            renderer={renderer}
+            embedded={embedded}
+            maximized={maximized}
+            actions={actions}
+          />
+        </ScrollView>
+        {!embedded &&
+          <MediaControls {...{
+            file,
+            renderer,
+            maximized,
+            actions,
+            metadata: {
+              info,
+              title,
+              cover,
+              path,
+              name,
+              ext,
+              isDir,
+              loading,
+              muted,
+              volume,
+              playing,
+              current,
+              duration,
+            },
+          }}/>
+        }
+      </>}
     </View>
   );
 }

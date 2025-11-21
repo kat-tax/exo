@@ -15,6 +15,7 @@ export * from './lib/redux.db';
 export const useEvolu = createUseEvolu(evolu);
 export const deviceId = DeviceId.orThrow(createIdFromString('device-1'));
 export const deviceName = getDeviceName();
+export {evolu};
 
 evolu.upsert('app_device', {id: deviceId, name: deviceName});
 

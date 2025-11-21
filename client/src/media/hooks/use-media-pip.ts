@@ -7,7 +7,7 @@ export type MediaPictureInPicture = {
   viewportWidth: number,
 };
 
-export function useMediaPictInPict(ext: string, layout?: [number, number]): MediaPictureInPicture {
+export function useMediaPictInPict(ext?: string, layout?: [number, number]): MediaPictureInPicture {
   const width = layout?.[0] ?? 0;
 
   /** Scale of the PIP window */

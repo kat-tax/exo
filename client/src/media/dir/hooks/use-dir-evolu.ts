@@ -42,32 +42,34 @@ export function useDirEvolu(pathId: PathId | null, deviceId: DeviceId, tmp?: boo
   const select = useCallback((entry: DirEvoluEntry, event?: GestureResponderEvent) => {
     if (isZeego(event)) return;
     const [isShift, isCtrl] = [event?.shiftKey, event?.metaKey || event?.ctrlKey];
-    const isSelected = sel?.includes(entry.id);
+    const isSelected = sel?.includes(`evolu://${deviceId}/${entry.id}`);
     if (isShift && entry.isDirectory && (isSelected || sel?.length === 0)) {
       return open(entry);
     }
     set(media.actions.selectItem({
-      path: entry.id,
+      path: `evolu://${deviceId}/${entry.id}`,
       isRange: isShift ?? false,
       isMulti: isCtrl ?? false,
       namespace: tmp ? 'temp' : 'main',
     }));
-  }, [tmp, sel, open, set]);
+  }, [tmp, sel, deviceId, open, set]);
 
   const download = useCallback(async (entry: DirEvoluEntry) => {
     if (entry.isFile) {
-      const uri = path ? `${path}/${entry.name}` : entry.name;
+      const uri = path
+        ? `evolu://${deviceId}/${path}/${entry.name}`
+        : `evolu://${deviceId}/${entry.name}`;
       saveAs(await getData(uri, 'dataUrl'), entry.name);
     }
-  }, [path]);
+  }, [path, deviceId]);
 
   // Update state with current files (for range-select)
   useEffect(() => {
     set(media.actions.list({
       list: tmp ? 'temp' : 'main',
-      items: list.map(e => e.id),
+      items: list.map(e => `evolu://${deviceId}/${e.id}`),
     }));
-  }, [list, path, set, tmp]);
+  }, [list, path, deviceId, set, tmp]);
 
   // Update list with query results
   useEffect(() => {
@@ -88,7 +90,6 @@ export function useDirEvolu(pathId: PathId | null, deviceId: DeviceId, tmp?: boo
       isFile: e.fileId !== null,
     }));
     setList(entries);
-    console.log('[evolu-browse]', {path, deviceId, pathId, data});
   }, [data]);
 
   return {
