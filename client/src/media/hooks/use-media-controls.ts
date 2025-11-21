@@ -9,7 +9,7 @@ import media from 'media/store';
 
 import type {MediaControlsProps} from 'media/stacks/controls';
 
-export const ITERABLE = [FileType.Directory];
+export const ITERABLE = [FileType.DirLocal, FileType.DirEvolu];
 export const SHAREABLE = [FileType.Image, FileType.Video, FileType.Audio, FileType.Pdf];
 export const EXTRACTABLE = [FileType.Zip];
 export const DOWNLOADABLE = [FileType.Torrent, FileType.Binary];
