@@ -1,23 +1,19 @@
 // TODO: make sure all code languages are supported:
 // https://gist.github.com/TheUltDev/88fca551dde03548da958d52aeab7e50
 
-import {isTextFile} from 'react-exo/fs';
 import {FileType} from '../types';
-import {getData} from './data';
-
 import type {FileProtocol, FileRenderInfo} from '../types';
 
-export async function getRenderer(
-  ext: string,
-  path?: string,
+export function getRenderer(
+  extension: string,
   dirType?: FileProtocol,
-): Promise<FileRenderInfo> {
+): FileRenderInfo {
   if (dirType)
     return [dirType === 'file'
       ? FileType.DirLocal
       : FileType.DirEvolu
     , {}];
-  switch (ext) {
+  switch (extension) {
     // Archives
     case 'zip':
       return [FileType.Zip, {}];
@@ -792,11 +788,7 @@ export async function getRenderer(
     case 'zcml':
       return [FileType.Text, {language: 'xml'}];
     default: {
-      if (!path) return [FileType.Binary, {}];
-      const buffer = await getData(path, 'arrayBuffer');
-      return await isTextFile(ext ?? '', buffer)
-        ? [FileType.Text, {language: 'text'}]
-        : [FileType.Binary, {}];
+      return [FileType.Binary, {}];
     }
   }
 }

@@ -91,7 +91,7 @@ export function Media({path, vertical, maximized, embedded, layout, close}: Medi
       (async () => {
         const _pathInfo = await getPathInfo(path);
         const dirType = _pathInfo.isDir ? _pathInfo.protocol : undefined;
-        setRenderer(await getRenderer(_pathInfo.ext, path, dirType));
+        setRenderer(getRenderer(_pathInfo.ext, dirType));
         setPathInfo(_pathInfo);
         setTitle(_pathInfo.name || t`Files`);
         setLoading(false);

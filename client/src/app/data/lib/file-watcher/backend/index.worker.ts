@@ -2,8 +2,11 @@
 
 import {hash} from 'react-exo/fs';
 import {createIdFromString} from '@evolu/common';
+import {toPathInfo} from 'app/lib/formatting';
+import {FileType} from 'media/file/types';
+import {getRenderer} from 'media/file/utils/render';
+import {getMediaType} from '../utils/detect';
 import {generateImageThumb} from '../utils/generate';
-import {getMediaType, isImageFile} from '../utils/detect';
 import cfg from 'config';
 
 import type {
@@ -12,6 +15,8 @@ import type {
   SnapshotData,
   PathSnapshot,
   FileSnapshot,
+  FileTuple,
+  PathTuple,
 } from '../types';
 
 class FileWatcherWorker {
@@ -21,35 +26,49 @@ class FileWatcherWorker {
   private filesSnapshot: FileSnapshot = {};
   private readonly ignoreFolders = [`.${cfg.APP_NAME}-${cfg.STORE_VERSION}`];
 
-  async initialize() {
+  async initialize(): Promise<void> {
     this.rootHandle = await navigator.storage.getDirectory();
     try {
       await this.buildSnapshot();
       await this.startObserver();
       this.postMessage({type: 'ready'});
     } catch (error) {
-      this.postMessage({type: 'error', message: error instanceof Error ? error.message : 'Unknown error'});
+      const message = error instanceof Error ? error.message : 'Unknown error';
+      this.postMessage({type: 'error', message});
     }
   }
 
-  stop() {
+  stop(): void {
     this.observer?.disconnect();
     this.observer = null;
   }
 
   getSnapshot(): SnapshotData {
-    return {paths: this.pathsSnapshot, files: this.filesSnapshot};
+    return {
+      paths: this.pathsSnapshot,
+      files: this.filesSnapshot,
+    };
   }
 
-  private async buildSnapshot() {
+  private async buildSnapshot(): Promise<void> {
     if (!this.rootHandle) throw new Error('Root handle not set');
     this.pathsSnapshot = {};
     this.filesSnapshot = {};
     await this.scanDirectory(this.rootHandle, null, '');
-    this.postMessage({type: 'snapshot', data: {paths: this.pathsSnapshot, files: this.filesSnapshot}});
+    this.postMessage({
+      type: 'snapshot',
+      data: {
+        paths: this.pathsSnapshot,
+        files: this.filesSnapshot,
+      },
+    });
   }
 
-  private async scanDirectory(dirHandle: FileSystemDirectoryHandle, parentId: string | null, currentPath: string) {
+  private async scanDirectory(
+    dirHandle: FileSystemDirectoryHandle,
+    parentId: string | null,
+    currentPath: string,
+  ): Promise<void> {
     const isRoot = dirHandle === this.rootHandle;
     const dirId = isRoot ? null : createIdFromString(currentPath);
     if (!isRoot && dirId) {
@@ -67,7 +86,13 @@ class FileWatcherWorker {
     }
   }
 
-  private async readFileContent(fileHandle: FileSystemFileHandle): Promise<{size: number; mimetype: string; content: Uint8Array}> {
+  private async readFileContent(
+    fileHandle: FileSystemFileHandle,
+  ): Promise<{
+    size: number,
+    mimetype: string,
+    content: Uint8Array,
+  }> {
     try {
       const syncHandle = await fileHandle.createSyncAccessHandle?.();
       if (syncHandle) {
@@ -89,13 +114,57 @@ class FileWatcherWorker {
     return {size: file.size, mimetype: file.type || getMediaType(fileHandle.name), content};
   }
 
-  private async processFileData(fileHandle: FileSystemFileHandle, size: number, mimetype: string) {
+  private async processFileData(
+    fileHandle: FileSystemFileHandle,
+    size: number,
+    mimetype: string,
+  ): Promise<{
+    fileId: string,
+    snapshot: FileTuple,
+  }> {
     const fileId = await this.createFileId(fileHandle);
-    const thumbnail = isImageFile(mimetype) ? await generateImageThumb(fileHandle) : null;
-    return {fileId, snapshot: [size, mimetype, thumbnail] as [number, string, Uint8Array | null]};
+    const name = fileHandle.name.split('/').at(-1) ?? fileHandle.name;
+    const pathInfo = toPathInfo(name);
+    const [fileType] = getRenderer(pathInfo.ext);
+    switch (fileType) {
+      case FileType.Image: {
+        return {
+          fileId,
+          snapshot: [
+            size,
+            mimetype,
+            await generateImageThumb(fileHandle),
+          ],
+        };
+      }
+      // case FileType.Video: {
+      //   return {
+      //     fileId,
+      //     snapshot: [
+      //       size,
+      //       mimetype,
+      //       await generateVideoThumb(fileHandle),
+      //     ],
+      //   };
+      // }
+      default: {
+        return {
+          fileId,
+          snapshot: [
+            size,
+            mimetype,
+            null,
+          ],
+        };
+      }
+    }
   }
 
-  private async processFile(fileHandle: FileSystemFileHandle, parentId: string | null, filePath: string) {
+  private async processFile(
+    fileHandle: FileSystemFileHandle,
+    parentId: string | null,
+    filePath: string,
+  ): Promise<void> {
     try {
       const pathId = createIdFromString(filePath);
       const {size, mimetype} = await this.readFileContent(fileHandle);
@@ -117,7 +186,14 @@ class FileWatcherWorker {
     await this.observer.observe(this.rootHandle, {recursive: true});
   }
 
-  private async getRecordPath(record: FileSystemChangeRecord, pathComponents?: string[]): Promise<{pathId: string; parentId: string | null; name: string}> {
+  private async getRecordPath(
+    record: FileSystemChangeRecord,
+    pathComponents?: string[],
+  ): Promise<{
+    pathId: string,
+    parentId: string | null,
+    name: string,
+  }> {
     const components = pathComponents || record.relativePathComponents;
     const fullPath = components.join('/');
     const pathId = createIdFromString(fullPath);
@@ -127,13 +203,27 @@ class FileWatcherWorker {
     return {pathId, parentId, name};
   }
 
-  private async handleFileChange(fileHandle: FileSystemFileHandle, pathId: string, name: string, parentId: string | null, changeType: 'appeared' | 'modified') {
+  private async handleFileChange(
+    fileHandle: FileSystemFileHandle,
+    pathId: string,
+    name: string,
+    parentId: string | null,
+    changeType: 'appeared' | 'modified',
+  ): Promise<void> {
     const file = await fileHandle.getFile();
     const {fileId, snapshot} = await this.processFileData(fileHandle, file.size, file.type || getMediaType(name));
-    const path = [name, parentId, fileId] as [string, string | null, string];
+    const path: PathTuple = [name, parentId, fileId];
     this.pathsSnapshot[pathId] = path;
     this.filesSnapshot[fileId] = snapshot;
-    this.postMessage({type: 'delta', data: {type: changeType, pathId, path, file: snapshot}});
+    this.postMessage({
+      type: 'delta',
+      data: {
+        type: changeType,
+        pathId,
+        path,
+        file: snapshot,
+      },
+    });
   }
 
   private async handleChangeRecord(record: FileSystemChangeRecord) {
@@ -189,8 +279,8 @@ class FileWatcherWorker {
   }
 
   private async createFileId(fileHandle: FileSystemFileHandle): Promise<string> {
+    // Try to use sync access handle for efficient hashing
     try {
-      // Try to use sync access handle for efficient hashing
       const syncHandle = await fileHandle.createSyncAccessHandle?.();
       if (syncHandle) {
         try {
@@ -201,7 +291,6 @@ class FileWatcherWorker {
         }
       }
     } catch {}
-
     // Fallback to File API
     const file = await fileHandle.getFile();
     const hashHex = await hash(file);
@@ -214,7 +303,6 @@ class FileWatcherWorker {
 }
 
 const watcher = new FileWatcherWorker();
-
 self.addEventListener('message', async (event: MessageEvent<WorkerMessage>) => {
   const message = event.data;
   switch (message.type) {

@@ -1,9 +1,3 @@
-export function isImageFile(mimetypeOrFilename: string): boolean {
-  return (
-    mimetypeOrFilename.startsWith('image/') ||
-    /\.(jpg|jpeg|png|gif|webp)$/i.test(mimetypeOrFilename)
-  );
-}
 
 export function getMediaType(filename: string): string {
   const ext = filename.split('.').pop()?.toLowerCase() || '';
