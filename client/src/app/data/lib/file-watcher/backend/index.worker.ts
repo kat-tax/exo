@@ -2,7 +2,7 @@
 
 import {hash} from 'react-exo/fs';
 import {createIdFromString} from '@evolu/common';
-import {generateThumbnail} from '../utils/generate';
+import {generateImageThumb} from '../utils/generate';
 import {getMediaType, isImageFile} from '../utils/detect';
 import cfg from 'config';
 
@@ -91,7 +91,7 @@ class FileWatcherWorker {
 
   private async processFileData(fileHandle: FileSystemFileHandle, size: number, mimetype: string) {
     const fileId = await this.createFileId(fileHandle);
-    const thumbnail = isImageFile(mimetype) ? await generateThumbnail(fileHandle) : null;
+    const thumbnail = isImageFile(mimetype) ? await generateImageThumb(fileHandle) : null;
     return {fileId, snapshot: [size, mimetype, thumbnail] as [number, string, Uint8Array | null]};
   }
 
