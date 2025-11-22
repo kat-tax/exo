@@ -1,3 +1,4 @@
+import {device} from 'app/data/lib/device';
 import type {
   SnapshotData,
   DeltaUpdate,
@@ -28,7 +29,7 @@ export class FileWatcherClient {
       console.error('File watcher worker error:', error);
       this.callbacks.onError?.(`Worker error: ${error.message}`);
     };
-    this.worker.postMessage({type: 'init'} satisfies WorkerMessage);
+    this.worker.postMessage({type: 'init', deviceId: device.id} satisfies WorkerMessage);
   }
 
   private handleWorkerMessage(message: WorkerResponse) {

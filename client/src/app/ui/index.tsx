@@ -11,7 +11,8 @@ import {GestureProvider} from 'react-exo/gesture';
 import {CameraProvider} from 'media/cam/context';
 import {useTheme} from 'settings/hooks/use-theme';
 import {useFileSync} from 'app/data/lib/file-watcher';
-import {useEvolu, deviceId} from 'app/data';
+import {useEvolu} from 'app/data';
+import {device} from 'app/data/lib/device';
 
 import type {UnistylesThemes} from 'react-native-unistyles';
 export type Theme = UnistylesThemes[keyof UnistylesThemes];
@@ -46,7 +47,7 @@ export function Interface(props: React.PropsWithChildren) {
       } else if (!online) {
         toast({title: t`You are offline`, preset: 'error'});
       }
-      evolu.update('app_device', {id: deviceId, online});
+      evolu.update('app_device', {id: device.id, online});
     };
     isOnline().then(online => update(online, true));
     return suscribeOnline(update);

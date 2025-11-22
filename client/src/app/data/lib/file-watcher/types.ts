@@ -1,3 +1,4 @@
+import type {DeviceId} from 'app/data/types';
 import type evolu from '../evolu.db';
 
 export type EvoluInstance = typeof evolu;
@@ -36,7 +37,7 @@ export interface DeltaUpdate {
 }
 
 export type WorkerMessage =
-  | {type: 'init'}
+  | {type: 'init'; deviceId: DeviceId}
   | {type: 'stop'}
   | {type: 'get-snapshot'};
 

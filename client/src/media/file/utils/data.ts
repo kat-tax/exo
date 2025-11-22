@@ -4,7 +4,7 @@ import {getPathById} from 'app/data/queries';
 import {DeviceId, PathId} from 'app/data/types';
 import {toText, toPathInfo} from 'app/lib/formatting';
 import {fetchIpfs} from 'media/dir/utils/ipfs/fetch';
-import {deviceId} from 'app/data';
+import {device} from 'app/data/lib/device';
 
 import type {FileData, FileFormat, FileProtocol, FileTransfer} from '../types';
 
@@ -93,12 +93,8 @@ export async function getPathInfo(path: string): Promise<{
       return {protocol, ...toPathInfo(parts.at(-1) ?? '', isDir)};
     }
     case 'evolu': {
-      const parts = path.replace('evolu://', '').split('/');
-      const _deviceId = DeviceId.from(parts[0]);
-      const _pathId = PathId.from(parts[1]);
-      const pathDeviceId = _deviceId.ok ? _deviceId.value : deviceId;
-      const pathId = _pathId.ok ? _pathId.value : null;
-      const [data] = await evolu.loadQuery(getPathById(pathDeviceId, pathId));
+      const {deviceId, pathId} = parseEvoluPath(path);
+      const [data] = await evolu.loadQuery(getPathById(deviceId, pathId));
       const isDir = data?.fileId === null;
       return {protocol, ...toPathInfo(data?.name ?? '', isDir)};
     }
@@ -118,16 +114,43 @@ export async function getPathInfo(path: string): Promise<{
   }
 }
 
-export function fetchEvolu(_path: string): Promise<FileTransfer | undefined> {
-  // Return dummy data for now
-  return Promise.resolve(new Response(new Blob([
-    'This is a dummy response for the evolu protocol.',
-  ]), {
+export async function fetchEvolu(path: string): Promise<FileTransfer | undefined> {
+  const {deviceId: sourceDeviceId, pathId} = parseEvoluPath(path);
+  const [pathData] = await evolu.loadQuery(getPathById(sourceDeviceId, pathId));
+  const fileId = pathData?.fileId;
+
+  if (!fileId) {
+    console.error(`[evolu-fetch] no file id found for path ${pathId} on device ${sourceDeviceId}`);
+    return undefined;
+  }
+
+  const transfer = evolu.insert('media_transfer', {
+    fileId,
+    status: 'active',
+    recipientId: device.id, // Current device is the recipient
+  });
+
+  if (!transfer.ok) {
+    console.error(`[evolu-fetch] failed to create transfer request:`, transfer.error);
+    return undefined;
+  }
+
+  return Promise.resolve(new Response(new Blob([`Transfer request created for file ${fileId} from device ${sourceDeviceId}.`]), {
     headers: {
       'Content-Type': 'text/plain',
     },
   }));
-  // 1. get path id from path
-  // 2. add to transfers table
-  // 3. devices with file id from path id fulfills transfer
+}
+
+export function parseEvoluPath(path: string): {
+  deviceId: DeviceId,
+  pathId: PathId | null,
+} {
+  const parts = path.replace('evolu://', '').split('/');
+  const _deviceId = DeviceId.from(parts[0]);
+  const _pathId = PathId.from(parts[1]);
+  return {
+    deviceId: _deviceId.ok ? _deviceId.value : device.id,
+    pathId: _pathId.ok ? _pathId.value : null,
+  };
 }

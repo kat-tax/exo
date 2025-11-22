@@ -3,7 +3,7 @@ import {useEffect, useMemo, forwardRef} from 'react';
 import {useDirEvolu} from 'media/dir/hooks/use-dir-evolu';
 import {DirEvolu} from 'media/dir/stacks/dir-evolu';
 import {PathId, DeviceId} from 'app/data/types';
-import {deviceId} from 'app/data';
+import {device} from 'app/data/lib/device';
 
 import type {FileProps} from 'media/file';
 
@@ -17,7 +17,7 @@ export default forwardRef((
     const parts = path.replace('evolu://', '').split('/');
     const _device = DeviceId.from(parts[0]);
     const _path = PathId.from(parts[1]);
-    let _deviceId = deviceId;
+    let _deviceId = device.id;
     if (_device.ok) _deviceId = _device.value;
     let _pathId = null;
     if (_path.ok) _pathId = _path.value;

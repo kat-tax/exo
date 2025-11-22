@@ -3,6 +3,7 @@
 import {hash} from 'react-exo/fs';
 import {createIdFromString} from '@evolu/common';
 import {toPathInfo} from 'app/lib/formatting';
+import {DeviceId} from 'app/data/types';
 import {FileType} from 'media/file/types';
 import {getRenderer} from 'media/file/utils/render';
 import {getMediaType} from '../utils/detect';
@@ -20,13 +21,15 @@ import type {
 } from '../types';
 
 class FileWatcherWorker {
+  private deviceId: DeviceId | null = null;
   private observer: FileSystemObserver | null = null;
   private rootHandle: FileSystemDirectoryHandle | null = null;
   private pathsSnapshot: PathSnapshot = {};
   private filesSnapshot: FileSnapshot = {};
   private readonly ignoreFolders = [`.${cfg.APP_NAME}-${cfg.STORE_VERSION}`];
 
-  async initialize(): Promise<void> {
+  async initialize(deviceId: DeviceId): Promise<void> {
+    this.deviceId = deviceId;
     this.rootHandle = await navigator.storage.getDirectory();
     try {
       await this.buildSnapshot();
@@ -70,7 +73,7 @@ class FileWatcherWorker {
     currentPath: string,
   ): Promise<void> {
     const isRoot = dirHandle === this.rootHandle;
-    const dirId = isRoot ? null : createIdFromString(currentPath);
+    const dirId = isRoot ? null : this.createPathId(currentPath);
     if (!isRoot && dirId) {
       this.pathsSnapshot[dirId] = [dirHandle.name, parentId, null];
     }
@@ -166,7 +169,7 @@ class FileWatcherWorker {
     filePath: string,
   ): Promise<void> {
     try {
-      const pathId = createIdFromString(filePath);
+      const pathId = this.createPathId(filePath);
       const {size, filetype} = await this.readFileContent(fileHandle);
       const {fileId, snapshot} = await this.processFileData(fileHandle, size, filetype);
       this.pathsSnapshot[pathId] = [fileHandle.name, parentId, fileId];
@@ -196,9 +199,9 @@ class FileWatcherWorker {
   }> {
     const components = pathComponents || record.relativePathComponents;
     const fullPath = components.join('/');
-    const pathId = createIdFromString(fullPath);
+    const pathId = this.createPathId(fullPath);
     const parentPath = components.slice(0, -1).join('/');
-    const parentId = parentPath ? createIdFromString(parentPath) : null;
+    const parentId = parentPath ? this.createPathId(parentPath) : null;
     const name = components[components.length - 1];
     return {pathId, parentId, name};
   }
@@ -297,6 +300,10 @@ class FileWatcherWorker {
     return createIdFromString(hashHex);
   }
 
+  private createPathId(path: string): string {
+    return createIdFromString(`${this.deviceId}/${path}`);
+  }
+
   private postMessage(message: WorkerResponse) {
     self.postMessage(message);
   }
@@ -307,7 +314,7 @@ self.addEventListener('message', async (event: MessageEvent<WorkerMessage>) => {
   const message = event.data;
   switch (message.type) {
     case 'init':
-      await watcher.initialize();
+      await watcher.initialize(message.deviceId);
       break;
     case 'stop':
       watcher.stop();
