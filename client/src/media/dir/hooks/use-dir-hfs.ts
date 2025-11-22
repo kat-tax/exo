@@ -72,7 +72,7 @@ export function useDirHfs(path: string, tmp?: boolean): Omit<HfsCtx, 'bar'> {
           return -1;
         if (!a.isDirectory && b.isDirectory)
           return 1;
-        return a.name.localeCompare(b.name);
+        return a.name < b.name ? -1 : a.name > b.name ? 1 : 0;
       }));
       return true;
     } catch (e) {
