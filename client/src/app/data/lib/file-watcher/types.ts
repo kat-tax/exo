@@ -10,7 +10,7 @@ export type PathTuple = [
 
 export type FileTuple = [
   size: number,
-  mimetype: string,
+  filetype: string,
   thumbnail: Uint8Array | null,
 ];
 

@@ -33,7 +33,7 @@ export default {
   media_file: {
     id: $.FileId,
     size: $.PositiveNumber,
-    mime: $.NonEmptyString255,
+    type: $.NonEmptyString255,
     thumb: $.nullOr($.Uint8Array),
   },
   media_transfer: {

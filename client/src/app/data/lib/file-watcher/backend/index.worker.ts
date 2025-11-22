@@ -90,7 +90,7 @@ class FileWatcherWorker {
     fileHandle: FileSystemFileHandle,
   ): Promise<{
     size: number,
-    mimetype: string,
+    filetype: string,
     content: Uint8Array,
   }> {
     try {
@@ -101,7 +101,7 @@ class FileWatcherWorker {
           const readSize = Math.min(size, 1024 * 1024);
           const content = readSize > 0 ? new Uint8Array(readSize) : new Uint8Array(0);
           if (readSize > 0) syncHandle.read(content, {at: 0});
-          return {size, mimetype: getMediaType(fileHandle.name), content};
+          return {size, filetype: getMediaType(fileHandle.name), content};
         } finally {
           syncHandle.close();
         }
@@ -111,13 +111,13 @@ class FileWatcherWorker {
     const content = file.size > 0 && file.size < 1024 * 1024
       ? new Uint8Array(await file.arrayBuffer())
       : new Uint8Array(0);
-    return {size: file.size, mimetype: file.type || getMediaType(fileHandle.name), content};
+    return {size: file.size, filetype: file.type || getMediaType(fileHandle.name), content};
   }
 
   private async processFileData(
     fileHandle: FileSystemFileHandle,
     size: number,
-    mimetype: string,
+    filetype: string,
   ): Promise<{
     fileId: string,
     snapshot: FileTuple,
@@ -132,7 +132,7 @@ class FileWatcherWorker {
           fileId,
           snapshot: [
             size,
-            mimetype,
+            filetype,
             await generateImageThumb(fileHandle),
           ],
         };
@@ -142,7 +142,7 @@ class FileWatcherWorker {
       //     fileId,
       //     snapshot: [
       //       size,
-      //       mimetype,
+      //       filetype,
       //       await generateVideoThumb(fileHandle),
       //     ],
       //   };
@@ -152,7 +152,7 @@ class FileWatcherWorker {
           fileId,
           snapshot: [
             size,
-            mimetype,
+            filetype,
             null,
           ],
         };
@@ -167,8 +167,8 @@ class FileWatcherWorker {
   ): Promise<void> {
     try {
       const pathId = createIdFromString(filePath);
-      const {size, mimetype} = await this.readFileContent(fileHandle);
-      const {fileId, snapshot} = await this.processFileData(fileHandle, size, mimetype);
+      const {size, filetype} = await this.readFileContent(fileHandle);
+      const {fileId, snapshot} = await this.processFileData(fileHandle, size, filetype);
       this.pathsSnapshot[pathId] = [fileHandle.name, parentId, fileId];
       if (!this.filesSnapshot[fileId]) this.filesSnapshot[fileId] = snapshot;
     } catch (error) {

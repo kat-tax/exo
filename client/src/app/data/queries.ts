@@ -26,7 +26,7 @@ export const getShortcuts = _.createQuery(db => db
  */
 export const getFiles = _.createQuery(db => db
   .selectFrom('media_file')
-  .select(['id', 'size', 'mime', 'thumb'])
+  .select(['id', 'size', 'type', 'thumb'])
   .where('isDeleted', 'is not', 1),
 );
 
@@ -90,7 +90,7 @@ export const getPathList = (deviceId: $.DeviceId, pathId: $.PathId | null) =>
       'media_path.updatedAt',
       'media_file.thumb',
       'media_file.size',
-      'media_file.mime',
+      'media_file.type',
     ])
     .where('media_path.deviceId', '=', deviceId)
     .where('media_path.parentId', pathId ? '=' : 'is', pathId)
