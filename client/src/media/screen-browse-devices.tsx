@@ -1,8 +1,10 @@
 import {Icon} from 'react-exo/icon';
+import {bytesize} from 'react-exo/fs';
 import {StyleSheet} from 'react-native-unistyles';
 import {ScrollView, Text, View} from 'react-native';
 import {useLinkProps} from '@react-navigation/native';
 import {useQuery} from '@evolu/react';
+import {useMemo} from 'react';
 import {ListBar} from 'media/stacks/list/bar';
 import {GridCell} from 'app/ui/grid';
 import {Grid} from 'app/ui/grid';
@@ -16,7 +18,7 @@ const SHOW_LOCAL_AND_EVOLU_DEVICE = true;
 
 export default function ScreenBrowseDevices(_: ReactNavigation.ScreenProps<'MediaBrowseDevices'>) {
   const devices = useQuery(getDevices);
-
+  const local = useMemo(() => devices.find(d => d.id === device.id), [devices]);
   return (
     <Screen>
       <ListBar/>
@@ -29,6 +31,8 @@ export default function ScreenBrowseDevices(_: ReactNavigation.ScreenProps<'Medi
             name={device.name}
             icon={getDeviceIcon(device.platform)}
             online={true}
+            storageUsed={local?.storageUsed}
+            storageTotal={local?.storageTotal}
           />
           {devices.filter(d => SHOW_LOCAL_AND_EVOLU_DEVICE ? d.id !== device.id : true).map(d => (
             <DeviceEvolu
@@ -37,6 +41,8 @@ export default function ScreenBrowseDevices(_: ReactNavigation.ScreenProps<'Medi
               name={d.name}
               icon={getDeviceIcon(d.platform)}
               online={Boolean(d.online)}
+              storageUsed={d.storageUsed}
+              storageTotal={d.storageTotal}
             />
           ))}
         </Grid>
@@ -78,6 +84,8 @@ interface DeviceCardProps {
   icon: string,
   online: boolean,
   isLocal?: boolean,
+  storageUsed?: number | null,
+  storageTotal?: number | null,
   onPress: () => void,
 }
 
@@ -99,6 +107,16 @@ function DeviceCard(props: DeviceCardProps) {
             {props.name}
           </Text>
         </View>
+        {props.storageUsed && props.storageTotal && (
+          <View style={styles.storageDisplay}>
+            <Text numberOfLines={1} style={styles.storageUsed}>
+              {bytesize(props.storageUsed)}
+            </Text>
+            <Text numberOfLines={1} style={styles.storageTotal}>
+              / {bytesize(props.storageTotal)}
+            </Text>
+          </View>
+        )}
         <View style={styles.footer}>
           <View style={[styles.badge, props.isLocal && styles.badgeVisible]}>
             <Text style={styles.badgeText}>local</Text>
@@ -202,5 +220,26 @@ const styles = StyleSheet.create((theme) => ({
     fontWeight: theme.font.headerWeight,
     lineHeight: theme.font.height,
     letterSpacing: theme.font.spacing,
+  },
+  storageDisplay: {
+    flex: 1,
+    opacity: 0.5,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  storageUsed: {
+    color: theme.colors.foreground,
+    fontSize: 24,
+    fontFamily: theme.font.family,
+    fontWeight: theme.typography.weightBold,
+    lineHeight: 32,
+    textAlign: 'center',
+  },
+  storageTotal: {
+    color: theme.colors.mutedForeground,
+    fontSize: 16,
+    fontFamily: theme.font.family,
+    lineHeight: 20,
+    textAlign: 'center',
   },
 }));

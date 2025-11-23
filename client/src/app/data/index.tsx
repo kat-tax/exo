@@ -15,8 +15,10 @@ export const useEvolu = createUseEvolu(evolu);
 export {evolu};
 
 evolu.upsert('app_device', device);
+globalThis.__EVOLU_RESETTING_APP_OWNER__ = false;
 if (__WEB__) {
   window.addEventListener('beforeunload', () => {
+    if (globalThis.__EVOLU_RESETTING_APP_OWNER__) return;
     evolu.upsert('app_device', {...device, online: 0});
   });
 }

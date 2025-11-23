@@ -13,6 +13,11 @@ declare global {
   }
 }
 
+// Evolu types
+declare global {
+  var __EVOLU_RESETTING_APP_OWNER__: boolean;
+}
+
 // Platform globals
 declare global {
   var __WEB__: boolean;

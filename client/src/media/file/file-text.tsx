@@ -1,10 +1,10 @@
 import {Code} from 'react-exo/code';
 import {View} from 'react-native';
+import {bytesize} from 'react-exo/fs';
 import {forwardRef, useEffect} from 'react';
 import {StyleSheet} from 'react-native-unistyles';
 import {useFile} from 'media/file/hooks/use-file';
 import {useTheme} from 'settings/hooks/use-theme';
-import {bytesize} from 'app/lib/formatting';
 
 import type {FileProps} from 'media/file';
 import type {CodeLanguages} from 'react-exo/code';

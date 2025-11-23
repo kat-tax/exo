@@ -31,6 +31,7 @@ export function useSettings() {
   }, [evolu, profiles, t]);
 
   const resetOwner = useCallback(() => {
+    globalThis.__EVOLU_RESETTING_APP_OWNER__ = true;
     evolu.resetAppOwner();
   }, [evolu, t]);
 
@@ -41,6 +42,7 @@ export function useSettings() {
       return;
     try {
       const parsed = $.getOrThrow($.Mnemonic.from(key));
+      globalThis.__EVOLU_RESETTING_APP_OWNER__ = true;
       evolu.restoreAppOwner(parsed, {reload: true});
     } catch (error) {
       alert({

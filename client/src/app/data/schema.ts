@@ -6,6 +6,8 @@ export default {
     name: $.NonEmptyString255,
     online: $.nullOr($.SqliteBoolean),
     platform: $.NonEmptyString255,
+    storageUsed: $.nullOr($.FiniteNumber),
+    storageTotal: $.nullOr($.FiniteNumber),
   },
   app_profile: {
     id: $.ProfileId,

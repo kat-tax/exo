@@ -1,7 +1,7 @@
 import {StyleSheet} from 'react-native-unistyles';
 import {View, Text} from 'react-native';
 import {TextInput} from 'react-exo/textinput';
-import {bytesize} from 'app/lib/formatting';
+import {bytesize} from 'react-exo/fs';
 import {Thumb} from 'media/stacks/thumb';
 import {ThumbSize} from 'media/stacks/thumb';
 import {useMediaName} from 'media/hooks/use-media-name';
