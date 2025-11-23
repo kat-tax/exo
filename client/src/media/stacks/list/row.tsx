@@ -177,6 +177,7 @@ const styles = StyleSheet.create((theme) => ({
   },
   input: {
     flex: 1,
+    width: '100%',
     padding: 0,
     margin: 0,
     borderWidth: 0,
