@@ -157,6 +157,7 @@ class FileWatcherWorker {
     try {
       const pathId = this.createPathId(filePath);
       const {size, filetype} = await this.readFileContent(fileHandle);
+      if (size === 0) return;
       const {fileId, snapshot} = await this.processFileData(fileHandle, size, filetype);
       this.snapshot.paths[pathId] = [fileHandle.name, parentId, fileId];
       if (!this.snapshot.files[fileId]) this.snapshot.files[fileId] = snapshot;
@@ -200,6 +201,7 @@ class FileWatcherWorker {
     changeType: 'appeared' | 'modified',
   ): Promise<void> {
     const file = await fileHandle.getFile();
+    if (file.size === 0) return;
     const {fileId, snapshot} = await this.processFileData(fileHandle, file.size, file.type || getMediaType(name));
     const path: PathTuple = [name, parentId, fileId];
 
