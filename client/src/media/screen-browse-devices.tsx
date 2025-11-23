@@ -1,6 +1,6 @@
 import {useQuery} from '@evolu/react';
 import {useLinkProps} from '@react-navigation/native';
-import {Pressable, ScrollView, Text, View} from 'react-native';
+import {ScrollView, Text, View} from 'react-native';
 import {StyleSheet} from 'react-native-unistyles';
 import {getDevices} from 'app/data/queries';
 import {GridCell} from 'app/ui/grid';
@@ -9,6 +9,7 @@ import {Screen} from 'app/ui/screen';
 import {ListBar} from 'media/stacks/list/bar';
 import {Icon} from 'react-exo/icon';
 import {DeviceId} from 'app/data/types';
+import {device} from 'app/data/lib/device';
 
 export default function ScreenBrowseDevices(_: ReactNavigation.ScreenProps<'MediaBrowseDevices'>) {
   const devices = useQuery(getDevices);
@@ -20,22 +21,20 @@ export default function ScreenBrowseDevices(_: ReactNavigation.ScreenProps<'Medi
         style={styles.root}
         contentContainerStyle={styles.list}>
         <Grid>
-          <GridCell focusKey="device-local">
-            <DeviceLocal
-              name="Local"
-              icon="ph:desktop-tower"
-              online={true}
+          <DeviceLocal
+            id={device.id}
+            name="Local"
+            icon="ph:desktop-tower"
+            online={true}
+          />
+          {devices.map(device => (
+            <DeviceEvolu
+              key={device.id}
+              id={device.id}
+              name={device.name ?? ''}
+              icon="ph:hard-drives"
+              online={Boolean(device.online)}
             />
-          </GridCell>
-          {devices.map((device) => (
-            <GridCell focusKey={`device-${device.id}`}>
-              <DeviceEvolu
-                name={device.name ?? ''}
-                icon="ph:hard-drives"
-                online={Boolean(device.online)}
-                deviceId={device.id}
-              />
-            </GridCell>
           ))}
         </Grid>
       </ScrollView>
@@ -56,10 +55,10 @@ function DeviceLocal(props: Omit<DeviceCardProps, 'onPress'>) {
   );
 }
 
-function DeviceEvolu({deviceId, ...props}: Omit<DeviceCardProps, 'onPress'> & {deviceId: DeviceId}) {
+function DeviceEvolu(props: Omit<DeviceCardProps, 'onPress'>) {
   const link = useLinkProps({
     screen: 'MediaBrowseEvolu',
-    params: {deviceId},
+    params: {deviceId: props.id},
   });
   return (
     <DeviceCard
@@ -70,6 +69,7 @@ function DeviceEvolu({deviceId, ...props}: Omit<DeviceCardProps, 'onPress'> & {d
 }
 
 interface DeviceCardProps {
+  id: DeviceId,
   name: string,
   icon: string,
   online: boolean,
@@ -78,28 +78,32 @@ interface DeviceCardProps {
 
 function DeviceCard(props: DeviceCardProps) {
   return (
-    <Pressable onPress={props.onPress} style={styles.device}>
-      <View style={styles.header}>
-        <View style={styles.identity}>
-          <Icon
-            name={props.icon}
-            size={20}
-            uniProps={(theme) => ({
-              color: theme.colors.mutedForeground,
-            })}
-          />
-          <Text style={styles.deviceName} numberOfLines={1}>
-            {props.name}
+    <GridCell
+      focusKey={`device-${props.id}:${props.name}`}
+      onPress={props.onPress}>
+      <View style={styles.device}>
+        <View style={styles.header}>
+          <View style={styles.identity}>
+            <Icon
+              name={props.icon}
+              size={20}
+              uniProps={(theme) => ({
+                color: theme.colors.mutedForeground,
+              })}
+            />
+            <Text style={styles.deviceName} numberOfLines={1}>
+              {props.name}
+            </Text>
+          </View>
+        </View>
+        <View style={styles.status}>
+          <View style={[styles.statusDot, props.online && styles.statusDotOnline]}/>
+          <Text style={styles.statusText}>
+            {props.online ? 'online' : 'offline'}
           </Text>
         </View>
       </View>
-      <View style={styles.status}>
-        <View style={[styles.statusDot, props.online && styles.statusDotOnline]}/>
-        <Text style={styles.statusText}>
-          {props.online ? 'online' : 'offline'}
-        </Text>
-      </View>
-    </Pressable>
+    </GridCell>
   );
 }
 
