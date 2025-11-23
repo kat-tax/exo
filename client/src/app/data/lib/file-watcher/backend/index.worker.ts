@@ -14,31 +14,33 @@ import type {
   WorkerMessage,
   WorkerResponse,
   SnapshotData,
-  PathSnapshot,
-  FileSnapshot,
   FileTuple,
   PathTuple,
 } from '../types';
 
 class FileWatcherWorker {
+  private rootHandle: FileSystemDirectoryHandle | null = null;
   private deviceId: DeviceId | null = null;
   private observer: FileSystemObserver | null = null;
-  private rootHandle: FileSystemDirectoryHandle | null = null;
-  private pathsSnapshot: PathSnapshot = {};
-  private filesSnapshot: FileSnapshot = {};
+  private snapshot: SnapshotData = {paths: {}, files: {}};
   private readonly ignoreFolders = [`.${cfg.APP_NAME}-${cfg.STORE_VERSION}`];
 
-  async initialize(deviceId: DeviceId): Promise<void> {
-    this.deviceId = deviceId;
+  async init(deviceId: DeviceId): Promise<void> {
     this.rootHandle = await navigator.storage.getDirectory();
+    this.deviceId = deviceId;
     try {
       await this.buildSnapshot();
+      this.send({type: 'ready', snapshot: this.snapshot});
+      this.snapshot = {paths: {}, files: {}};
       await this.startObserver();
-      this.postMessage({type: 'ready'});
     } catch (error) {
       const message = error instanceof Error ? error.message : 'Unknown error';
-      this.postMessage({type: 'error', message});
+      this.send({type: 'error', message});
     }
+  }
+
+  send(message: WorkerResponse): void {
+    self.postMessage(message);
   }
 
   stop(): void {
@@ -46,25 +48,9 @@ class FileWatcherWorker {
     this.observer = null;
   }
 
-  getSnapshot(): SnapshotData {
-    return {
-      paths: this.pathsSnapshot,
-      files: this.filesSnapshot,
-    };
-  }
-
-  private async buildSnapshot(): Promise<void> {
+  async buildSnapshot(): Promise<void> {
     if (!this.rootHandle) throw new Error('Root handle not set');
-    this.pathsSnapshot = {};
-    this.filesSnapshot = {};
     await this.scanDirectory(this.rootHandle, null, '');
-    this.postMessage({
-      type: 'snapshot',
-      data: {
-        paths: this.pathsSnapshot,
-        files: this.filesSnapshot,
-      },
-    });
   }
 
   private async scanDirectory(
@@ -75,7 +61,7 @@ class FileWatcherWorker {
     const isRoot = dirHandle === this.rootHandle;
     const dirId = isRoot ? null : this.createPathId(currentPath);
     if (!isRoot && dirId) {
-      this.pathsSnapshot[dirId] = [dirHandle.name, parentId, null];
+      this.snapshot.paths[dirId] = [dirHandle.name, parentId, null];
     }
     try {
       for await (const entry of dirHandle.values()) {
@@ -172,8 +158,8 @@ class FileWatcherWorker {
       const pathId = this.createPathId(filePath);
       const {size, filetype} = await this.readFileContent(fileHandle);
       const {fileId, snapshot} = await this.processFileData(fileHandle, size, filetype);
-      this.pathsSnapshot[pathId] = [fileHandle.name, parentId, fileId];
-      if (!this.filesSnapshot[fileId]) this.filesSnapshot[fileId] = snapshot;
+      this.snapshot.paths[pathId] = [fileHandle.name, parentId, fileId];
+      if (!this.snapshot.files[fileId]) this.snapshot.files[fileId] = snapshot;
     } catch (error) {
       console.error(`[fs-watcher] error processing file ${fileHandle.name}:`, error);
     }
@@ -216,9 +202,9 @@ class FileWatcherWorker {
     const file = await fileHandle.getFile();
     const {fileId, snapshot} = await this.processFileData(fileHandle, file.size, file.type || getMediaType(name));
     const path: PathTuple = [name, parentId, fileId];
-    this.pathsSnapshot[pathId] = path;
-    this.filesSnapshot[fileId] = snapshot;
-    this.postMessage({
+
+    // Send delta with complete data (stateless)
+    this.send({
       type: 'delta',
       data: {
         type: changeType,
@@ -243,37 +229,37 @@ class FileWatcherWorker {
           if (record.changedHandle?.kind === 'file') {
             await this.handleFileChange(record.changedHandle as FileSystemFileHandle, pathId, name, parentId, 'appeared');
           } else if (record.changedHandle?.kind === 'directory') {
-            this.pathsSnapshot[pathId] = [name, parentId, null];
-            this.postMessage({type: 'delta', data: {type: 'appeared', pathId, path: [name, parentId, null]}});
+            const path: PathTuple = [name, parentId, null];
+            this.send({type: 'delta', data: {type: 'appeared', pathId, path}});
           }
           break;
         case 'disappeared':
-          delete this.pathsSnapshot[pathId];
-          this.postMessage({type: 'delta', data: {type: 'disappeared', pathId}});
+          // Send delta with only pathId (stateless - receiver doesn't need snapshot state)
+          this.send({type: 'delta', data: {type: 'disappeared', pathId}});
           break;
         case 'modified':
           if (record.changedHandle?.kind === 'file') {
-            const entry = this.pathsSnapshot[pathId];
-            if (entry) {
-              await this.handleFileChange(record.changedHandle as FileSystemFileHandle, pathId, name, parentId, 'modified');
-              entry[2] = this.pathsSnapshot[pathId][2];
-            }
+            await this.handleFileChange(record.changedHandle as FileSystemFileHandle, pathId, name, parentId, 'modified');
           }
           break;
         case 'moved':
           const {pathId: oldPathId} = await this.getRecordPath(record, record.relativePathMovedFrom ? [...record.relativePathMovedFrom] : undefined);
-          const entry = this.pathsSnapshot[oldPathId];
-          if (entry) {
-            delete this.pathsSnapshot[oldPathId];
-            entry[0] = name;
-            entry[1] = parentId;
-            this.pathsSnapshot[pathId] = entry;
-            this.postMessage({type: 'delta', data: {type: 'moved', pathId, path: entry, movedFrom: oldPathId}});
+          let path: PathTuple;
+          let file: FileTuple | undefined;
+          if (record.changedHandle?.kind === 'file') {
+            const fileHandle = record.changedHandle as FileSystemFileHandle;
+            const fileData = await fileHandle.getFile();
+            const {fileId, snapshot} = await this.processFileData(fileHandle, fileData.size, fileData.type || getMediaType(name));
+            path = [name, parentId, fileId];
+            file = snapshot;
+          } else {
+            path = [name, parentId, null];
           }
+          this.send({type: 'delta', data: {type: 'moved', pathId, path, movedFrom: oldPathId, file}});
           break;
         case 'errored':
           this.observer?.unobserve(record.root);
-          this.postMessage({type: 'error', message: 'File system observer error'});
+          this.send({type: 'error', message: 'File system observer error'});
           break;
       }
     } catch (error) {
@@ -303,10 +289,6 @@ class FileWatcherWorker {
   private createPathId(path: string): string {
     return createIdFromString(`${this.deviceId}/${path}`);
   }
-
-  private postMessage(message: WorkerResponse) {
-    self.postMessage(message);
-  }
 }
 
 const watcher = new FileWatcherWorker();
@@ -314,16 +296,10 @@ self.addEventListener('message', async (event: MessageEvent<WorkerMessage>) => {
   const message = event.data;
   switch (message.type) {
     case 'init':
-      await watcher.initialize(message.deviceId);
+      watcher.init(message.deviceId);
       break;
     case 'stop':
       watcher.stop();
-      break;
-    case 'get-snapshot':
-      watcher['postMessage']({
-        type: 'snapshot',
-        data: watcher.getSnapshot(),
-      });
       break;
   }
 });

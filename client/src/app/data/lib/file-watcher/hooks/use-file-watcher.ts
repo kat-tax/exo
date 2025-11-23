@@ -30,12 +30,6 @@ export function useFileWatcher(callbacks?: FileWatcherCallbacks) {
     }
   }, []);
 
-  const getSnapshot = useCallback(() => {
-    if (clientRef.current) {
-      clientRef.current.getSnapshot();
-    }
-  }, []);
-
   const isRunning = useCallback(() => {
     return clientRef.current?.isRunning() || false;
   }, []);
@@ -53,6 +47,5 @@ export function useFileWatcher(callbacks?: FileWatcherCallbacks) {
     start,
     stop,
     isRunning,
-    getSnapshot,
   };
 }

@@ -39,10 +39,9 @@ export interface DeltaUpdate {
 export type WorkerMessage =
   | {type: 'init'; deviceId: DeviceId}
   | {type: 'stop'}
-  | {type: 'get-snapshot'};
+  | {type: 'debrief'}
 
 export type WorkerResponse =
-  | {type: 'ready'}
+  | {type: 'ready', snapshot: SnapshotData}
   | {type: 'error'; message: string}
-  | {type: 'snapshot'; data: SnapshotData}
-  | {type: 'delta'; data: DeltaUpdate};
+  | {type: 'delta'; data: DeltaUpdate}

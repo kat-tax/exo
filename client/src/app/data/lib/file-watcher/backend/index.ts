@@ -7,9 +7,8 @@ import type {
 } from '../types';
 
 export interface FileWatcherCallbacks {
-  onReady?: () => void;
+  onReady?: (snapshot: SnapshotData) => void;
   onError?: (message: string) => void;
-  onSnapshot?: (data: SnapshotData) => void;
   onDelta?: (data: DeltaUpdate) => void;
 }
 
@@ -35,23 +34,15 @@ export class FileWatcherClient {
   private handleWorkerMessage(message: WorkerResponse) {
     switch (message.type) {
       case 'ready':
-        this.callbacks.onReady?.();
+        this.callbacks.onReady?.(message.snapshot);
         break;
       case 'error':
         this.callbacks.onError?.(message.message);
-        break;
-      case 'snapshot':
-        this.callbacks.onSnapshot?.(message.data);
         break;
       case 'delta':
         this.callbacks.onDelta?.(message.data);
         break;
     }
-  }
-
-  getSnapshot() {
-    if (!this.worker) throw new Error('Worker not initialized');
-    this.worker.postMessage({type: 'get-snapshot'} satisfies WorkerMessage);
   }
 
   stop() {
