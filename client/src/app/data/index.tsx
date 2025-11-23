@@ -15,6 +15,11 @@ export const useEvolu = createUseEvolu(evolu);
 export {evolu};
 
 evolu.upsert('app_device', device);
+if (__WEB__) {
+  window.addEventListener('beforeunload', () => {
+    evolu.upsert('app_device', {...device, online: 0});
+  });
+}
 
 export function Data(props: React.PropsWithChildren) {
   return (
