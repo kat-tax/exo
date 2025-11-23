@@ -46,7 +46,7 @@ export async function syncSnapshot(
 
   // Apply changes
   for (const [pathId, [name, parentId, fileId]] of pathsToUpsert) {
-    const res = evolu.upsert('media_path', {id: pathId, name, deviceId, parentId, fileId});
+    const res = evolu.upsert('media_path', {id: pathId, name, deviceId, parentId, fileId, isDeleted: 0});
     console.log('[fs-watcher] upsert path:', pathId, name, res);
   }
   for (const pathId of pathsToRemove) {
@@ -129,7 +129,7 @@ function upsertPathAndFile(
   file?: FileTuple,
 ) {
   const [name, parentId, fileId] = path;
-  evolu.upsert('media_path', {id: pathId, name, deviceId, parentId, fileId});
+  evolu.upsert('media_path', {id: pathId, name, deviceId, parentId, fileId, isDeleted: 0});
   if (file && fileId) {
     const [size, type, thumb] = file;
     evolu.upsert('media_file', {id: fileId, size, type, thumb});
