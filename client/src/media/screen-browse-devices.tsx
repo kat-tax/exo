@@ -1,15 +1,18 @@
-import {useQuery} from '@evolu/react';
-import {useLinkProps} from '@react-navigation/native';
-import {ScrollView, Text, View} from 'react-native';
+import {Icon} from 'react-exo/icon';
 import {StyleSheet} from 'react-native-unistyles';
-import {getDevices} from 'app/data/queries';
+import {ScrollView, Text, View} from 'react-native';
+import {useLinkProps} from '@react-navigation/native';
+import {useQuery} from '@evolu/react';
+import {ListBar} from 'media/stacks/list/bar';
 import {GridCell} from 'app/ui/grid';
 import {Grid} from 'app/ui/grid';
 import {Screen} from 'app/ui/screen';
-import {ListBar} from 'media/stacks/list/bar';
-import {Icon} from 'react-exo/icon';
 import {DeviceId} from 'app/data/types';
+import {getDevices} from 'app/data/queries';
+import {getDeviceIcon} from 'app/lib/platform';
 import {device} from 'app/data/lib/device';
+
+const SHOW_LOCAL_AND_EVOLU_DEVICE = true;
 
 export default function ScreenBrowseDevices(_: ReactNavigation.ScreenProps<'MediaBrowseDevices'>) {
   const devices = useQuery(getDevices);
@@ -23,17 +26,17 @@ export default function ScreenBrowseDevices(_: ReactNavigation.ScreenProps<'Medi
         <Grid>
           <DeviceLocal
             id={device.id}
-            name="Local"
-            icon="ph:desktop-tower"
+            name={device.name}
+            icon={getDeviceIcon(device.platform)}
             online={true}
           />
-          {devices.map(device => (
+          {devices.filter(d => SHOW_LOCAL_AND_EVOLU_DEVICE ? d.id !== device.id : true).map(d => (
             <DeviceEvolu
-              key={device.id}
-              id={device.id}
-              name={device.name ?? ''}
-              icon="ph:hard-drives"
-              online={Boolean(device.online)}
+              key={d.id}
+              id={d.id}
+              name={d.name}
+              icon={getDeviceIcon(d.platform)}
+              online={Boolean(d.online)}
             />
           ))}
         </Grid>
@@ -70,7 +73,7 @@ function DeviceEvolu(props: Omit<DeviceCardProps, 'onPress'>) {
 
 interface DeviceCardProps {
   id: DeviceId,
-  name: string,
+  name: string | null,
   icon: string,
   online: boolean,
   onPress: () => void,

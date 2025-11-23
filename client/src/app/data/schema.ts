@@ -5,6 +5,7 @@ export default {
     id: $.DeviceId,
     name: $.NonEmptyString255,
     online: $.nullOr($.SqliteBoolean),
+    platform: $.NonEmptyString255,
   },
   app_profile: {
     id: $.ProfileId,
