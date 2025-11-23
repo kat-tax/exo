@@ -53,6 +53,7 @@ function DeviceLocal(props: Omit<DeviceCardProps, 'onPress'>) {
   return (
     <DeviceCard
       {...props}
+      isLocal={true}
       onPress={link.onPress}
     />
   );
@@ -76,6 +77,7 @@ interface DeviceCardProps {
   name: string | null,
   icon: string,
   online: boolean,
+  isLocal?: boolean,
   onPress: () => void,
 }
 
@@ -85,25 +87,28 @@ function DeviceCard(props: DeviceCardProps) {
       focusKey={`device-${props.id}:${props.name}`}
       onPress={props.onPress}>
       <View style={styles.device}>
-        <View style={styles.header}>
-          <View style={styles.identity}>
-            <Icon
-              name={props.icon}
-              size={20}
-              uniProps={(theme) => ({
-                color: theme.colors.mutedForeground,
-              })}
-            />
-            <Text style={styles.deviceName} numberOfLines={1}>
-              {props.name}
+        <View style={styles.identity}>
+          <Icon
+            name={props.icon}
+            size={16}
+            uniProps={(theme) => ({
+              color: theme.colors.mutedForeground,
+            })}
+          />
+          <Text style={styles.deviceName} numberOfLines={1}>
+            {props.name}
+          </Text>
+        </View>
+        <View style={styles.footer}>
+          <View style={[styles.badge, props.isLocal && styles.badgeVisible]}>
+            <Text style={styles.badgeText}>local</Text>
+          </View>
+          <View style={styles.status}>
+            <View style={[styles.statusDot, props.online && styles.statusDotOnline]}/>
+            <Text style={styles.statusText}>
+              {props.online ? 'online' : 'offline'}
             </Text>
           </View>
-        </View>
-        <View style={styles.status}>
-          <View style={[styles.statusDot, props.online && styles.statusDotOnline]}/>
-          <Text style={styles.statusText}>
-            {props.online ? 'online' : 'offline'}
-          </Text>
         </View>
       </View>
     </GridCell>
@@ -123,40 +128,55 @@ const styles = StyleSheet.create((theme) => ({
   },
   device: {
     flex: 1,
-    aspectRatio: 1,
     flexDirection: 'column',
-    backgroundColor: theme.colors.secondary,
+    justifyContent: 'space-between',
+    aspectRatio: 1,
+    padding: theme.display.space3,
+    borderWidth: 1,
     borderRadius: theme.display.radius3,
     borderColor: theme.colors.border,
-    borderWidth: 1,
-    padding: theme.display.space3,
-    justifyContent: 'space-between',
-  },
-  header: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    height: 24,
+    backgroundColor: theme.colors.secondary,
   },
   identity: {
-    flexDirection: 'row',
     alignItems: 'center',
+    flexDirection: 'row',
     gap: theme.display.space2,
-    flex: 1,
     marginRight: theme.display.space2,
   },
   deviceName: {
-    color: theme.colors.foreground,
-    fontFamily: theme.font.family,
-    fontSize: theme.typography.size3,
-    fontWeight: theme.typography.weightBold,
-    letterSpacing: theme.font.headerSpacing,
     flex: 1,
+    color: theme.colors.foreground,
+    fontSize: theme.font.contentSize,
+    fontFamily: theme.font.family,
+    fontWeight: theme.typography.weightBold,
+    letterSpacing: theme.font.contentSpacing,
+  },
+  footer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  badge: {
+    opacity: 0,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingBottom: 3,
+    paddingHorizontal: theme.display.space2,
+    backgroundColor: theme.colors.primary,
+    borderRadius: theme.display.radius2,
+  },
+  badgeVisible: {
+    opacity: 0.5,
+  },
+  badgeText: {
+    color: theme.colors.primaryForeground,
+    fontSize: theme.font.size,
+    fontVariant: ['small-caps'],
+    fontWeight: theme.font.headerWeight,
+    lineHeight: theme.font.height,
+    letterSpacing: theme.font.spacing,
   },
   status: {
-    position: 'absolute',
-    right: 12,
-    bottom: 12,
     flexDirection: 'row',
     alignItems: 'center',
     gap: 6,
@@ -164,9 +184,9 @@ const styles = StyleSheet.create((theme) => ({
   statusDot: {
     height: 8,
     width: 8,
-    marginTop: 3,
     minWidth: 8,
     minHeight: 8,
+    marginTop: 3,
     borderRadius: 9999,
     borderWidth: StyleSheet.hairlineWidth,
     borderColor: theme.colors.ring,
@@ -178,9 +198,9 @@ const styles = StyleSheet.create((theme) => ({
   statusText: {
     color: theme.colors.mutedForeground,
     fontSize: theme.font.size,
+    fontVariant: ['small-caps'],
     fontWeight: theme.font.headerWeight,
-    letterSpacing: theme.font.spacing,
     lineHeight: theme.font.height,
-    fontVariant: ['small-caps']
+    letterSpacing: theme.font.spacing,
   },
 }));
