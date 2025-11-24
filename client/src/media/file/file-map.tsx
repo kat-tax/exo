@@ -1,5 +1,5 @@
-import {View} from 'react-native';
-import {Map, Source, Layer} from 'react-map-gl/maplibre';
+import {View, Text} from 'react-native';
+import {Map, Source, Layer, Popup} from 'react-map-gl/maplibre';
 import {useEffect, useState, forwardRef} from 'react';
 import {StyleSheet} from 'react-native-unistyles';
 import {useTheme} from 'settings/hooks/use-theme';
@@ -18,7 +18,9 @@ export default forwardRef(({path, actions, maximized}: FileMap) => {
   const [scheme] = useTheme();
   const [markers, setMarkers] = useState<GeoJSON.Feature<GeoJSON.Point>[]>([]);
   const [bounds, setBounds] = useState<LngLatBounds | null>(null);
+  const [selectedMarker, setSelectedMarker] = useState<GeoJSON.Feature<GeoJSON.Point> | null>(null);
 
+  const textColor = scheme === 'dark' ? '#fff' : '#000';
   const fillColor = scheme === 'dark' ? '#000' : '#999';
   const fillOutlineColor = scheme === 'dark' ? '#fff' : '#000';
 
@@ -72,8 +74,24 @@ export default forwardRef(({path, actions, maximized}: FileMap) => {
             key={feature.id}
             longitude={feature.geometry.coordinates[0]}
             latitude={feature.geometry.coordinates[1]}
+            onClick={() => {
+              // Check if the feature has a name for the popup
+              if (!feature.properties?.name) return;
+              setSelectedMarker(feature);
+            }}
           />
         ))}
+        {selectedMarker && (
+          <Popup
+            longitude={selectedMarker.geometry.coordinates[0]}
+            latitude={selectedMarker.geometry.coordinates[1]}
+            anchor="bottom"
+            onClose={() => setSelectedMarker(null)}>
+            <Text style={[styles.popupText, {color: textColor}]}>
+              {selectedMarker.properties?.name}
+            </Text>
+          </Popup>
+        )}
       </Map>
     </View>
   ) : null;
@@ -87,5 +105,12 @@ const styles = StyleSheet.create((theme) => ({
     borderTopWidth: StyleSheet.hairlineWidth,
     borderColor: theme.colors.border,
     overflow: 'hidden',
+  },
+  popupText: {
+    fontFamily: theme.font.family,
+    fontSize: theme.font.size,
+    fontWeight: theme.font.weight,
+    lineHeight: theme.font.height,
+    letterSpacing: theme.font.spacing,
   },
 }));

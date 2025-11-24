@@ -4,12 +4,14 @@ import {Marker} from 'react-map-gl/maplibre';
 
 import type {MarkerProps} from 'react-map-gl/maplibre';
 
-interface MarkerGeoJsonProps extends MarkerProps {}
+interface MarkerGeoJsonProps extends MarkerProps {
+  onClick?: () => void;
+}
 
-export function MarkerGeoJson(props: MarkerGeoJsonProps) {
+export function MarkerGeoJson({onClick, ...props}: MarkerGeoJsonProps) {
   return (
     <Marker {...props}>
-      <Motion.Pressable onPress={console.log}>
+      <Motion.Pressable onPress={onClick}>
         <Motion.View
           initial={{scale: 1}}
           whileTap={{scale: 0.95}}
