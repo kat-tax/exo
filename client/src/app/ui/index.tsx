@@ -1,11 +1,11 @@
 import {toast} from 'react-exo/toast';
-import {useEffect} from 'react';
+import {useEffect, useRef} from 'react';
 import {useLingui} from '@lingui/react/macro';
 import {ToastRoot} from 'react-exo/toast';
 import {Appearance} from 'react-native';
 import {SystemBars} from 'react-native-edge-to-edge';
 import {UnistylesRuntime} from 'react-native-unistyles';
-// import Geolocation from '@react-native-community/geolocation';
+import Geolocation from '@react-native-community/geolocation';
 import {isOnline, suscribeOnline} from 'react-exo/device';
 import {GestureProvider} from 'react-exo/gesture';
 import {CameraProvider} from 'media/cam/context';
@@ -21,6 +21,7 @@ export function Interface(props: React.PropsWithChildren) {
   const {t} = useLingui();
   const evolu = useEvolu();
   const [scheme] = useTheme();
+  const locationRef = useRef<[latitude: number, longitude: number] | null>(null);
 
   // File changes
   useFileSync();
@@ -54,14 +55,23 @@ export function Interface(props: React.PropsWithChildren) {
   }, [t]);
 
   // Position
-  // useEffect(() => {
-  //   const id = Geolocation.watchPosition(
-  //     ({coords: {latitude, longitude}}) => setGeoloc([latitude, longitude]),
-  //     ({message}) => message !== 'Position update is unavailable'
-  //       && toast({title: t`Geolocation Error`, preset: 'error', message}),
-  //   );
-  //   return () => Geolocation.clearWatch(id);
-  // }, [t]);
+  useEffect(() => {
+    const id = Geolocation.watchPosition(
+      ({coords: {latitude, longitude}}) => {
+        const [lastLat, lastLong] = locationRef.current ?? [0, 0];
+        if (lastLat === latitude && lastLong === longitude) return;
+        locationRef.current = [latitude, longitude];
+        evolu.insert('app_location', {deviceId: device.id, latitude, longitude});
+      },
+      ({message}) => {
+        if (message) {
+          toast({title: t`Geolocation Error`, preset: 'error', message});
+        }
+      },
+      {enableHighAccuracy: true}
+    );
+    return () => Geolocation.clearWatch(id);
+  }, [t, evolu]);
 
   return (
     <CameraProvider>

@@ -58,6 +58,16 @@ export function Menu({state, navigation, screens, links}: LayoutProps) {
               />
             ))}
           </MenuGroup>
+          <MenuGroup label={t`World`}>
+            {links.menuWorld.map((link) => (
+              <MenuItemList
+                key={link}
+                name={link}
+                {...{navigation, activeRoute}}
+                {...screens[link]}
+              />
+            ))}
+          </MenuGroup>
           {__DEV__ &&
             <MenuGroup label={t`Development`}>
               {links.menuDev.map((link) => (

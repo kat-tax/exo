@@ -135,6 +135,41 @@ export const getDevice = (id: $.DeviceId | null) => _.createQuery(db => db
 );
 
 /**
+ * Query the last location for all devices
+ */
+export const getLastLocations = _.createQuery(db => {
+  const latestLocations = db
+    .selectFrom('app_location')
+    .select((eb) => [
+      'deviceId',
+      eb.fn.max('createdAt').as('maxCreatedAt')
+    ])
+    .where('isDeleted', 'is not', 1)
+    .groupBy('deviceId')
+    .as('latest');
+
+  return db
+    .selectFrom('app_location')
+    .innerJoin(latestLocations, (join) =>
+      join
+        .onRef('app_location.deviceId', '=', 'latest.deviceId')
+        .onRef('app_location.createdAt', '=', 'latest.maxCreatedAt')
+    )
+    .innerJoin('app_device', 'app_location.deviceId', 'app_device.id')
+    .select([
+      'app_location.id',
+      'app_location.deviceId',
+      'app_location.latitude',
+      'app_location.longitude',
+      'app_location.createdAt',
+      'app_device.name as deviceName',
+      'app_device.online',
+    ])
+    .where('app_location.isDeleted', 'is not', 1)
+    .where('app_device.isDeleted', 'is not', 1);
+});
+
+/**
  * Query a shortcut by id.
  */
 export const getShortcut = (

@@ -36,6 +36,9 @@ export type RootStackParamList = {
   MediaViewGames: undefined;
   MediaViewBooks: undefined;
   MediaViewIpfs: {cid: string; filename?: string};
+  WorldOverview: undefined;
+  WorldCalendar: undefined;
+  WorldMap: undefined;
 };
 
 /** Top level navigation links shown in the drawer menus and tab bars. */
@@ -44,7 +47,7 @@ const links: Record<string, Array<keyof RootStackParamList>> = {
   tabs: [
     'HomeDashboard',
     'MediaBrowseDevices',
-    'TasksListAll',
+    'WorldOverview',
     'SettingsOverview',
   ],
   /** The menu items shown at the top of the drawer menu. */
@@ -61,6 +64,11 @@ const links: Record<string, Array<keyof RootStackParamList>> = {
     'MediaViewVideos',
     'MediaViewGames',
     'MediaViewBooks',
+  ],
+  /** The menu items shown in the world group. */
+  menuWorld: [
+    'WorldMap',
+    'WorldCalendar',
   ],
   /** The menu items to show in development only (below the top items in a group). */
   menuDev: [
@@ -259,6 +267,27 @@ export function Navigator() {
       options: {
         title: t`Books`,
         icon: 'ph:book-open-text',
+      },
+    },
+    WorldOverview: {
+      linking: 'world',
+      options: {
+        title: t`World`,
+        icon: 'ph:earth',
+      },
+    },
+    WorldCalendar: {
+      linking: 'calendar',
+      options: {
+        title: t`Calendar`,
+        icon: 'ph:calendar-dots',
+      },
+    },
+    WorldMap: {
+      linking: 'map',
+      options: {
+        title: t`Map`,
+        icon: 'ph:map-trifold',
       },
     },
     TasksListAll: {
