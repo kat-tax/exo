@@ -1,5 +1,7 @@
 import Map from 'react-map-gl/maplibre';
+import {toast} from 'react-exo/toast';
 import {useQuery} from '@evolu/react';
+import {useLingui} from '@lingui/react/macro';
 import {useMemo, useState} from 'react';
 import {useMMKVBoolean} from 'react-native-mmkv';
 import {View, Text, Pressable} from 'react-native';
@@ -16,6 +18,7 @@ export default function ScreenMap() {
   const [deviceTracking, setDeviceTracking] = useMMKVBoolean(store.tracking, mmkv);
   const [trackingEnabled, setTrackingEnabled] = useState(deviceTracking);
   const [scheme] = useTheme();
+  const {t} = useLingui();
 
   const profile = {maptilerUrl: undefined, maptilerKey: undefined} // TODO: get profile
   const maptilerUrl = profile?.maptilerUrl ?? 'https://api.maptiler.com';
@@ -44,8 +47,12 @@ export default function ScreenMap() {
         style={styles.toggleContainer}
         onPress={() => {
           setDeviceTracking(prev => {
-            setTrackingEnabled(!prev);
-            return !prev;
+            const newTracking = !prev;
+            setTrackingEnabled(newTracking);
+            toast({title: newTracking
+              ? t`Enabled location tracking (requires reload)`
+              : t`Disabled location tracking (requires reload)`, preset: 'done'});
+            return newTracking;
           });
         }}>
         <View style={[
@@ -68,7 +75,8 @@ export default function ScreenMap() {
 const styles = StyleSheet.create(theme => ({
   toggleContainer: {
     position: 'absolute',
-    bottom: 16,
+    bottom: 8,
+    left: 8,
     alignSelf: 'center',
     flexDirection: 'row',
     alignItems: 'center',
@@ -76,7 +84,7 @@ const styles = StyleSheet.create(theme => ({
     gap: 8,
     backgroundColor: theme.colors.card,
     paddingVertical: 6,
-    paddingHorizontal: 12,
+    paddingHorizontal: 10,
     borderRadius: 20,
     shadowColor: '#000',
     shadowOffset: {width: 0, height: 1},
@@ -86,7 +94,7 @@ const styles = StyleSheet.create(theme => ({
   },
   toggleTrack: {
     width: 32,
-    height: 18,
+    height: 16,
     borderRadius: 9,
     backgroundColor: theme.colors.border,
     borderWidth: 1,
