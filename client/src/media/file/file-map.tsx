@@ -1,35 +1,36 @@
 import {View} from 'react-native';
 import {Map, Source, Layer} from 'react-map-gl/maplibre';
 import {useEffect, useState, forwardRef} from 'react';
-import {StyleSheet, withUnistyles} from 'react-native-unistyles';
+import {StyleSheet} from 'react-native-unistyles';
 import {useTheme} from 'settings/hooks/use-theme';
-//import {useApp} from 'app/hooks/use-app';
 import {useFile} from 'media/file/hooks/use-file';
 import {getBounds} from 'app/lib/mapping';
-//import {MarkerGeoJson} from 'world/stacks/marker-geojson';
+import {MarkerGeoJson} from 'world/stacks/marker-geojson';
 
 import type {FileProps} from 'media/file';
 import type {LngLatBounds} from 'maplibre-gl';
 
 export interface FileMap extends FileProps {}
 
-const UniLayer = withUnistyles(Layer);
-
 export default forwardRef(({path, actions, maximized}: FileMap) => {
   const url = useFile(path, 'dataUrl');
   const source = useFile(path, 'text');
   const [scheme] = useTheme();
-  //const {profile} = useApp();
   const [markers, setMarkers] = useState<GeoJSON.Feature<GeoJSON.Point>[]>([]);
   const [bounds, setBounds] = useState<LngLatBounds | null>(null);
-  //const maptilerUrl = profile?.maptilerUrl ?? 'https://api.maptiler.com';
-  //const maptilerKey = profile?.maptilerKey ?? '';
+
+  const fillColor = scheme === 'dark' ? '#000' : '#999';
+  const fillOutlineColor = scheme === 'dark' ? '#fff' : '#000';
+
+  const profile = {maptilerUrl: undefined, maptilerKey: undefined} // TODO: get profile
+  const maptilerUrl = profile?.maptilerUrl ?? 'https://api.maptiler.com';
+  const maptilerKey = profile?.maptilerKey ?? 'v75KlHHSXtWqCs3puQsX';
 
   useEffect(() => {
     if (!source) return;
     let features = 0;
     const geojson = JSON.parse(source) as GeoJSON.FeatureCollection;
-    const bounds = getBounds(geojson, 0.01);
+    const bounds = getBounds(geojson, 0.5);
     setBounds(bounds);
     const points: GeoJSON.Feature<GeoJSON.Point>[] = [];
     if (geojson.features) {
@@ -48,34 +49,31 @@ export default forwardRef(({path, actions, maximized}: FileMap) => {
     <View style={[styles.root, maximized && styles.maximized]}>
       <Map
         style={{width: '100%', height: '100%'}}
-        //mapStyle={`${maptilerUrl}/maps/${`dataviz-${scheme}`}/style.json?key=${maptilerKey}`}
-        mapStyle={`https://api.maptiler.com/maps/basic/style.json?key=getkLfm6NT7HTVq6TK2ZB`}
+        mapStyle={`${maptilerUrl}/maps/${`dataviz-${scheme}`}/style.json?key=${maptilerKey}`}
         maxBounds={bounds ?? undefined}>
         <Source
           id="file"
           type="geojson"
           data={url ?? ''}
         />
-        <UniLayer
-          uniProps={(theme) => ({
-            id: 'file',
-            type: 'fill',
-            source: 'file',
-            paint: {
-              'fill-opacity': 0.2,
-              'fill-color': theme.colors.foreground,
-              'fill-outline-color': theme.colors.border,
-              'fill-antialias': true,
-            },
-          })}
+        <Layer
+          id="file"
+          type="fill"
+          source="file"
+          paint={{
+            'fill-antialias': true,
+            'fill-opacity': 0.2,
+            'fill-color': fillColor,
+            'fill-outline-color': fillOutlineColor,
+          }}
         />
-        {/* {markers.map(feature => (
+        {markers.map(feature => (
           <MarkerGeoJson
             key={feature.id}
             longitude={feature.geometry.coordinates[0]}
             latitude={feature.geometry.coordinates[1]}
           />
-        ))} */}
+        ))}
       </Map>
     </View>
   ) : null;
