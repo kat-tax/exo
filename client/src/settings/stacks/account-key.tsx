@@ -8,6 +8,7 @@ import {Icon} from 'react-exo/icon';
 import {Qr} from '@qrgrid/react/canvas';
 import {useCamera} from 'media/cam/context';
 import {drawSmoothEdges} from'@qrgrid/styles/canvas';
+import {printDocument} from 'settings/utils/print';
 
 import type {Code} from 'react-native-vision-camera';
 import type {ModuleStyleFunction} from '@qrgrid/react/canvas';
@@ -64,6 +65,23 @@ export function AccountKey({mnemonic, onChangeOwner}: AccountKeyProps) {
 
   const handleShowQR = () => {
     setShowQr(!showQr);
+  };
+
+  const handlePrint = () => {
+    if (!mnemonic) return;
+    printDocument({
+      title: t`Account Key - Mnemonic Phrase`,
+      warning: {
+        title: t`⚠️ Treat your mnemonic phrase with care.`,
+        message: t`Do not share it with anyone. Store it securely.`,
+      },
+      mnemonic: {
+        columns,
+        phrase: mnemonic,
+        showNumbers: true,
+        qrcode: true,
+      },
+    });
   };
 
   const handleEdit = () => {
@@ -186,6 +204,17 @@ export function AccountKey({mnemonic, onChangeOwner}: AccountKeyProps) {
                         color: !copied
                           ? theme.colors.mutedForeground
                           : theme.colors.success,
+                      })}
+                    />
+                  </Pressable>
+                  <Pressable
+                    style={styles.iconButton}
+                    onPress={handlePrint}>
+                    <Icon
+                      name="ph:printer"
+                      size={18}
+                      uniProps={(theme) => ({
+                        color: theme.colors.mutedForeground,
                       })}
                     />
                   </Pressable>
