@@ -1,18 +1,19 @@
 import {toast} from 'react-exo/toast';
-import {useEffect, useRef} from 'react';
 import {useLingui} from '@lingui/react/macro';
-import {ToastRoot} from 'react-exo/toast';
-import {Appearance} from 'react-native';
-import {SystemBars} from 'react-native-edge-to-edge';
+import {useMMKVBoolean} from 'react-native-mmkv';
+import {useEffect, useRef} from 'react';
 import {UnistylesRuntime} from 'react-native-unistyles';
 import Geolocation from '@react-native-community/geolocation';
+import {Appearance} from 'react-native';
+import {SystemBars} from 'react-native-edge-to-edge';
+import {ToastRoot} from 'react-exo/toast';
 import {isOnline, suscribeOnline} from 'react-exo/device';
 import {GestureProvider} from 'react-exo/gesture';
 import {CameraProvider} from 'media/cam/context';
 import {useTheme} from 'settings/hooks/use-theme';
 import {useFileSync} from 'app/data/lib/file-watcher';
 import {useEvolu} from 'app/data';
-import {device} from 'app/data/lib/device';
+import {device, mmkv, store} from 'app/data/lib/device';
 
 import type {UnistylesThemes} from 'react-native-unistyles';
 export type Theme = UnistylesThemes[keyof UnistylesThemes];
@@ -22,6 +23,7 @@ export function Interface(props: React.PropsWithChildren) {
   const evolu = useEvolu();
   const [scheme] = useTheme();
   const locationRef = useRef<[latitude: number, longitude: number] | null>(null);
+  const [deviceTracking] = useMMKVBoolean(store.tracking, mmkv);
 
   // File changes
   useFileSync();
@@ -56,12 +58,15 @@ export function Interface(props: React.PropsWithChildren) {
 
   // Position
   useEffect(() => {
+    if (!deviceTracking) return;
     const id = Geolocation.watchPosition(
       ({coords: {latitude, longitude}}) => {
         const [lastLat, lastLong] = locationRef.current ?? [0, 0];
         if (lastLat === latitude && lastLong === longitude) return;
         locationRef.current = [latitude, longitude];
-        evolu.insert('app_location', {deviceId: device.id, latitude, longitude});
+        if (deviceTracking) {
+          evolu.insert('app_location', {deviceId: device.id, latitude, longitude});
+        }
       },
       ({message}) => {
         if (message) {
@@ -71,7 +76,7 @@ export function Interface(props: React.PropsWithChildren) {
       {enableHighAccuracy: true}
     );
     return () => Geolocation.clearWatch(id);
-  }, [t, evolu]);
+  }, [t, evolu, deviceTracking]);
 
   return (
     <CameraProvider>

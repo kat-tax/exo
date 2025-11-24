@@ -1,15 +1,20 @@
 import Map from 'react-map-gl/maplibre';
-import {useMemo} from 'react';
 import {useQuery} from '@evolu/react';
+import {useMemo, useState} from 'react';
+import {useMMKVBoolean} from 'react-native-mmkv';
+import {View, Text, Pressable} from 'react-native';
+import {StyleSheet} from 'react-native-unistyles';
 import {useTheme} from 'settings/hooks/use-theme';
 import {Screen} from 'app/ui/screen';
-import {device} from 'app/data/lib/device';
+import {device, mmkv, store} from 'app/data/lib/device';
 import {getLastLocations} from 'app/data/queries';
 import {MarkerDevice} from './stacks/marker-device';
 
 export default function ScreenMap() {
   const locations = useQuery(getLastLocations);
   const localDevice = useMemo(() => locations.find(l => l.deviceId === device.id), [locations]);
+  const [deviceTracking, setDeviceTracking] = useMMKVBoolean(store.tracking, mmkv);
+  const [trackingEnabled, setTrackingEnabled] = useState(deviceTracking);
   const [scheme] = useTheme();
 
   const profile = {maptilerUrl: undefined, maptilerKey: undefined} // TODO: get profile
@@ -35,6 +40,81 @@ export default function ScreenMap() {
           />
         ))}
       </Map>
+      <Pressable
+        style={styles.toggleContainer}
+        onPress={() => {
+          setDeviceTracking(prev => {
+            setTrackingEnabled(!prev);
+            return !prev;
+          });
+        }}>
+        <View style={[
+          styles.toggleTrack,
+          trackingEnabled && styles.toggleTrackActive
+        ]}>
+          <View style={[
+            styles.toggleThumb,
+            trackingEnabled && styles.toggleThumbActive
+          ]} />
+        </View>
+        <Text selectable={false} style={styles.toggleLabel}>
+          Track Device
+        </Text>
+      </Pressable>
     </Screen>
   );
 }
+
+const styles = StyleSheet.create(theme => ({
+  toggleContainer: {
+    position: 'absolute',
+    bottom: 16,
+    alignSelf: 'center',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 8,
+    backgroundColor: theme.colors.card,
+    paddingVertical: 6,
+    paddingHorizontal: 12,
+    borderRadius: 20,
+    shadowColor: '#000',
+    shadowOffset: {width: 0, height: 1},
+    shadowOpacity: 0.2,
+    shadowRadius: 2,
+    elevation: 3,
+  },
+  toggleTrack: {
+    width: 32,
+    height: 18,
+    borderRadius: 9,
+    backgroundColor: theme.colors.border,
+    borderWidth: 1,
+    borderColor: theme.colors.border,
+    justifyContent: 'center',
+    paddingHorizontal: 2,
+  },
+  toggleTrackActive: {
+    backgroundColor: '#007AFF',
+    borderColor: '#007AFF',
+  },
+  toggleThumb: {
+    width: 12,
+    height: 12,
+    borderRadius: 6,
+    backgroundColor: '#fff',
+    shadowColor: '#000',
+    shadowOffset: {width: 0, height: 1},
+    shadowOpacity: 0.3,
+    shadowRadius: 1,
+    elevation: 2,
+  },
+  toggleThumbActive: {
+    alignSelf: 'flex-end',
+  },
+  toggleLabel: {
+    fontSize: 12,
+    fontWeight: '500',
+    color: theme.colors.foreground,
+  },
+}));
