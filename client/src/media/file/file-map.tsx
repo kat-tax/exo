@@ -18,9 +18,13 @@ export default forwardRef(({path, actions, maximized}: FileMap) => {
   const [scheme] = useTheme();
   const [markers, setMarkers] = useState<GeoJSON.Feature<GeoJSON.Point>[]>([]);
   const [bounds, setBounds] = useState<LngLatBounds | null>(null);
-  const [selectedMarker, setSelectedMarker] = useState<GeoJSON.Feature<GeoJSON.Point> | null>(null);
+  const [selectedFeature, setSelectedFeature] = useState<{
+    feature: GeoJSON.Feature;
+    longitude: number;
+    latitude: number;
+  } | null>(null);
 
-  const textColor = scheme === 'dark' ? '#fff' : '#000';
+  const textColor = '#000';
   const fillColor = scheme === 'dark' ? '#000' : '#999';
   const fillOutlineColor = scheme === 'dark' ? '#fff' : '#000';
 
@@ -52,7 +56,18 @@ export default forwardRef(({path, actions, maximized}: FileMap) => {
       <Map
         style={{width: '100%', height: '100%'}}
         mapStyle={`${maptilerUrl}/maps/${`dataviz-${scheme}`}/style.json?key=${maptilerKey}`}
-        maxBounds={bounds ?? undefined}>
+        maxBounds={bounds ?? undefined}
+        interactiveLayerIds={['file']}
+        onClick={(event) => {
+          const feature = event.features?.[0];
+          if (feature && feature.properties) {
+            setSelectedFeature({
+              feature: feature as GeoJSON.Feature,
+              longitude: event.lngLat.lng,
+              latitude: event.lngLat.lat,
+            });
+          }
+        }}>
         <Source
           id="file"
           type="geojson"
@@ -69,27 +84,59 @@ export default forwardRef(({path, actions, maximized}: FileMap) => {
             'fill-outline-color': fillOutlineColor,
           }}
         />
+        {/* <Layer
+          id="file-labels"
+          type="symbol"
+          source="file"
+          layout={{
+            'text-field': ['coalesce', ['get', 'name'], ['get', 'title'], ''],
+            'text-font': ['Open Sans Regular', 'Arial Unicode MS Regular'],
+            'text-size': 14,
+            'text-anchor': 'center',
+            'text-offset': [0,-1.5],
+            'text-allow-overlap': false,
+            'text-ignore-placement': false,
+          }}
+          paint={{
+            'text-color': textColor,
+            'text-halo-color': scheme === 'dark' ? '#000' : '#fff',
+            'text-halo-width': 2,
+            'text-halo-blur': 1,
+          }}
+        /> */}
         {markers.map(feature => (
           <MarkerGeoJson
             key={feature.id}
             longitude={feature.geometry.coordinates[0]}
             latitude={feature.geometry.coordinates[1]}
             onClick={() => {
-              // Check if the feature has a name for the popup
-              if (!feature.properties?.name) return;
-              setSelectedMarker(feature);
+              setSelectedFeature({
+                feature,
+                longitude: feature.geometry.coordinates[0],
+                latitude: feature.geometry.coordinates[1],
+              });
             }}
           />
         ))}
-        {selectedMarker && (
+        {selectedFeature && (
           <Popup
-            longitude={selectedMarker.geometry.coordinates[0]}
-            latitude={selectedMarker.geometry.coordinates[1]}
+            longitude={selectedFeature.longitude}
+            latitude={selectedFeature.latitude}
             anchor="bottom"
-            onClose={() => setSelectedMarker(null)}>
-            <Text style={[styles.popupText, {color: textColor}]}>
-              {selectedMarker.properties?.name}
-            </Text>
+            onClose={() => setSelectedFeature(null)}
+            maxWidth="400px">
+            <View style={styles.popupContainer}>
+              {selectedFeature.feature.properties && Object.entries(selectedFeature.feature.properties).map(([key, value]) => (
+                <View key={key} style={styles.popupRow}>
+                  <Text style={[styles.popupKey, {color: textColor}]}>
+                    {key}:
+                  </Text>
+                  <Text style={[styles.popupValue, {color: textColor}]}>
+                    {String(value)}
+                  </Text>
+                </View>
+              ))}
+            </View>
           </Popup>
         )}
       </Map>
@@ -106,11 +153,28 @@ const styles = StyleSheet.create((theme) => ({
     borderColor: theme.colors.border,
     overflow: 'hidden',
   },
-  popupText: {
+  popupContainer: {
+    gap: 4,
+  },
+  popupRow: {
+    flexDirection: 'row',
+    gap: 6,
+  },
+  popupKey: {
     fontFamily: theme.font.family,
-    fontSize: theme.font.size,
+    fontSize: theme.font.size - 1,
+    fontWeight: '600',
+    textTransform: 'uppercase',
+    lineHeight: theme.font.height,
+    letterSpacing: theme.font.spacing,
+    flexShrink: 0,
+  },
+  popupValue: {
+    fontFamily: theme.font.family,
+    fontSize: theme.font.size - 1,
     fontWeight: theme.font.weight,
     lineHeight: theme.font.height,
     letterSpacing: theme.font.spacing,
+    flex: 1,
   },
 }));
