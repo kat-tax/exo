@@ -40,8 +40,8 @@ catalogs:
       specifier: 19.1.0
       version: 19.1.0
     react-exo:
-      specifier: 0.20.19
-      version: 0.20.19
+      specifier: 0.20.20
+      version: 0.20.20
     react-native:
       specifier: 0.80.2
       version: 0.80.2
@@ -140,7 +140,7 @@ importers:
         version: 1.30.1
       react-exo:
         specifier: 'catalog:'
-        version: 0.20.19(8a65e795cd7663c816b077f246a99288)
+        version: 0.20.20(8a65e795cd7663c816b077f246a99288)
       react-native-reanimated:
         specifier: 'catalog:'
         version: 3.19.1(@babel/core@7.28.4)(react-native@0.81.4(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(bufferutil@4.0.9)(typescript@5.9.2))(@react-native/metro-config@0.81.1(@babel/core@7.28.4)(bufferutil@4.0.9))(@types/react@19.1.13)(bufferutil@4.0.9)(react@19.1.1))(react@19.1.1)
@@ -196,20 +196,20 @@ importers:
         specifier: ^0.11.2
         version: 0.11.2(@react-navigation/native@7.1.17(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(bufferutil@4.0.9)(typescript@5.9.2))(@types/react@19.1.13)(bufferutil@4.0.9)(react@19.1.0))(react@19.1.0))(react-native-bottom-tabs@0.11.2(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(bufferutil@4.0.9)(typescript@5.9.2))(@types/react@19.1.13)(bufferutil@4.0.9)(react@19.1.0))(react@19.1.0))(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(bufferutil@4.0.9)(typescript@5.9.2))(@types/react@19.1.13)(bufferutil@4.0.9)(react@19.1.0))(react@19.1.0)
       '@evolu/common':
-        specifier: 6.0.1-preview.28
-        version: 6.0.1-preview.28
+        specifier: 7.2.1
+        version: 7.2.1
       '@evolu/react':
-        specifier: 9.0.1-preview.6
-        version: 9.0.1-preview.6(@evolu/common@6.0.1-preview.28)(react@19.1.0)
+        specifier: 10.2.1
+        version: 10.2.1(@evolu/common@7.2.1)(react@19.1.0)
       '@evolu/react-native':
-        specifier: 12.0.1-preview.9
-        version: 12.0.1-preview.9(c8d58137c900c69ef786bc7a769e102e)
+        specifier: 14.1.1
+        version: 14.1.1(a709732f18f3e1ed5a6ac4eec3ac7bde)
       '@evolu/react-web':
-        specifier: 1.0.1-preview.7
-        version: 1.0.1-preview.7(@evolu/common@6.0.1-preview.28)(@evolu/web@1.0.1-preview.7(@evolu/common@6.0.1-preview.28))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+        specifier: 2.2.1
+        version: 2.2.1(@evolu/common@7.2.1)(@evolu/web@2.2.1(@evolu/common@7.2.1))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@evolu/web':
-        specifier: 1.0.1-preview.7
-        version: 1.0.1-preview.7(@evolu/common@6.0.1-preview.28)
+        specifier: 2.2.1
+        version: 2.2.1(@evolu/common@7.2.1)
       '@fontsource-variable/inter':
         specifier: ^5.2.8
         version: 5.2.8
@@ -231,6 +231,9 @@ importers:
       '@lodev09/react-native-true-sheet':
         specifier: ^2.0.6
         version: 2.0.6(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(bufferutil@4.0.9)(typescript@5.9.2))(@types/react@19.1.13)(bufferutil@4.0.9)(react@19.1.0))(react@19.1.0)
+      '@marceloterreiro/flash-calendar':
+        specifier: ^1.5.0
+        version: 1.5.0(@shopify/flash-list@2.2.0(@babel/runtime@7.28.4)(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(bufferutil@4.0.9)(typescript@5.9.2))(@types/react@19.1.13)(bufferutil@4.0.9)(react@19.1.0))(react@19.1.0))(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(bufferutil@4.0.9)(typescript@5.9.2))(@types/react@19.1.13)(bufferutil@4.0.9)(react@19.1.0))(react@19.1.0)
       '@noriginmedia/norigin-spatial-navigation':
         specifier: ^2.3.0
         version: 2.3.0(react@19.1.0)
@@ -243,6 +246,9 @@ importers:
       '@qrgrid/styles':
         specifier: ^1.3.2
         version: 1.3.2
+      '@react-native-community/geolocation':
+        specifier: ^3.4.0
+        version: 3.4.0(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(bufferutil@4.0.9)(typescript@5.9.2))(@types/react@19.1.13)(bufferutil@4.0.9)(react@19.1.0))(react@19.1.0)
       '@react-native-community/netinfo':
         specifier: ^11.4.1
         version: 11.4.1(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(bufferutil@4.0.9)(typescript@5.9.2))(@types/react@19.1.13)(bufferutil@4.0.9)(react@19.1.0))
@@ -285,6 +291,12 @@ importers:
       maplibre-gl:
         specifier: ^5.11.0
         version: 5.11.0
+      mediabunny:
+        specifier: ^1.25.1
+        version: 1.25.1
+      qrcode:
+        specifier: ^1.5.4
+        version: 1.5.4
       react:
         specifier: 'catalog:'
         version: 19.1.0
@@ -293,7 +305,7 @@ importers:
         version: 19.1.0(react@19.1.0)
       react-exo:
         specifier: 'catalog:'
-        version: 0.20.19(e48d6746f0974c126dd56ed4a9f1a4bf)
+        version: 0.20.20(e48d6746f0974c126dd56ed4a9f1a4bf)
       react-exo-ui:
         specifier: workspace:*
         version: link:../design
@@ -382,6 +394,9 @@ importers:
       '@types/lodash':
         specifier: ^4.17.20
         version: 4.17.20
+      '@types/qrcode':
+        specifier: ^1.5.6
+        version: 1.5.6
       '@types/react':
         specifier: 'catalog:'
         version: 19.1.13
@@ -421,7 +436,7 @@ importers:
         version: 19.1.0(react@19.1.0)
       react-exo:
         specifier: 'catalog:'
-        version: 0.20.19(e48d6746f0974c126dd56ed4a9f1a4bf)
+        version: 0.20.20(e48d6746f0974c126dd56ed4a9f1a4bf)
       react-native:
         specifier: 'catalog:'
         version: 0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(bufferutil@4.0.9)(typescript@5.9.2))(@types/react@19.1.13)(bufferutil@4.0.9)(react@19.1.0)
@@ -1364,16 +1379,16 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@evolu/common@6.0.1-preview.28':
-    resolution: {integrity: sha512-Qoha14Y8zb4+AiDT8rgKv8GiJfjxSbvnxm3ZVoIMj/Sk3kGUg3YWSzLzJToyIxRENc9B86XjPeeGj9RYkP0mKQ==}
+  '@evolu/common@7.2.1':
+    resolution: {integrity: sha512-n30LlQxDpWZHpRbmt28DP6hCGkcPCA77NHxZ+vZVzdwo1IE4m40hqQWi4HNoYLY/1PIVktBT3LVYb3YKyTE2Zg==}
     engines: {node: '>=22.0.0'}
 
-  '@evolu/react-native@12.0.1-preview.9':
-    resolution: {integrity: sha512-c2Dz9OuLApF/pPra2MfoJWnL96JeQ/fDAigfH1Bw8rjGZ2WnZeF9AMk3taiPE6ZIEh6SJSavSaZ/l9U7dvlobg==}
+  '@evolu/react-native@14.1.1':
+    resolution: {integrity: sha512-wjq67uuFlqiYfJilcr+ZHKztRF9z6+UJ6DHICmMjwmi2qv51/kf2zK2gjP0u57d4OlkPYekKxo/JHwnn13ggKQ==}
     engines: {node: '>=22.0.0'}
     peerDependencies:
-      '@evolu/common': ^6.0.1-preview.27
-      '@evolu/react': ^9.0.1-preview.6
+      '@evolu/common': ^7.2.1
+      '@evolu/react': ^10.2.1
       '@op-engineering/op-sqlite': '>=12'
       expo: '>=54'
       expo-secure-store: '>=15'
@@ -1398,31 +1413,31 @@ packages:
       react-native-svg:
         optional: true
 
-  '@evolu/react-web@1.0.1-preview.7':
-    resolution: {integrity: sha512-nAkoNxT5YwDZEgvBHptpHhIW7hTJA9aBemAtZltahpLdU0uxOHCmpH06TpBYykcQK5B9pWc2M+qosd/iwZ/DaQ==}
+  '@evolu/react-web@2.2.1':
+    resolution: {integrity: sha512-MyulemaAcExx6bn3cp5AW9/1Wx9IdyXFjLVv3spfUJzrocJSQwMZLr9L0zz37tWh2v+p7QqzLrmtffN4qCyYaQ==}
     engines: {node: '>=22.0.0'}
     peerDependencies:
-      '@evolu/common': ^6.0.1-preview.27
-      '@evolu/web': ^1.0.1-preview.7
+      '@evolu/common': ^7.2.1
+      '@evolu/web': ^2.2.1
       react: '>=19'
       react-dom: '>=19'
 
-  '@evolu/react@9.0.1-preview.6':
-    resolution: {integrity: sha512-acMy5NTCOfN5tNj7cU+Tc88enSfTeRmPyPa/hBcc9nIiYm+62tlrgfWVldv5/j9YILdFNTWQo+cA70max2Pg8Q==}
+  '@evolu/react@10.2.1':
+    resolution: {integrity: sha512-G1nVsBnWZ3jSTlcC5u7Len0lk6gjBN2Uz4oO5ZXCClnfHXi9hoT0dGysRD3x4itqwLqVthc8HZBZJACNghheww==}
     engines: {node: '>=22.0.0'}
     peerDependencies:
-      '@evolu/common': ^6.0.1-preview.22
+      '@evolu/common': ^7.2.1
       react: '>=19'
 
   '@evolu/sqlite-wasm@2.2.4':
     resolution: {integrity: sha512-/JOYGFN93QspD2C8HVxVgBUlFWqJ1IpaVuIhEB53u4+ZvE+D3LjpNHDYiwZgf0n7VaH2U85OY5eV3wUrWc3scg==}
     hasBin: true
 
-  '@evolu/web@1.0.1-preview.7':
-    resolution: {integrity: sha512-8KaKLo6qUQuZWTvKIvmLtWqZ9wTsiRjG2dLw9r1SNV1ukKf7GL7iyGWlyG8aQM185gAQ6eGX5ODN3A0N6zrg/A==}
+  '@evolu/web@2.2.1':
+    resolution: {integrity: sha512-rnKZN1/XUNMHlsMGs4esyXdd4o3vRDMVJyfFQ2AYfd+LsWJlo5+5jv5MDr2c3HKQxwTget+YIXRcb9qzuaXN2g==}
     engines: {node: '>=22.0.0'}
     peerDependencies:
-      '@evolu/common': ^6.0.1-preview.23
+      '@evolu/common': ^7.2.1
 
   '@expo/cli@54.0.5':
     resolution: {integrity: sha512-8MZOZKHfHRHTBQu2/PXBi7eCKc2aF1i1JsZweL/P7aX8nivhrP6KV6An5PtO1/rrdnS9z7pmX2KwMygvvaFNhg==}
@@ -2141,6 +2156,13 @@ packages:
   '@maplibre/vt-pbf@4.0.3':
     resolution: {integrity: sha512-YsW99BwnT+ukJRkseBcLuZHfITB4puJoxnqPVjo72rhW/TaawVYsgQHcqWLzTxqknttYoDpgyERzWSa/XrETdA==}
 
+  '@marceloterreiro/flash-calendar@1.5.0':
+    resolution: {integrity: sha512-zg+wPJ/hqI3biMj1p1HkoqvsKeWAn34orCJnoQxMK6Phv0yCWPFsB7XYHl+8Udi7jD2E+q7lbgGEpBkxN0+Akg==}
+    peerDependencies:
+      '@shopify/flash-list': '*'
+      react: '*'
+      react-native: '*'
+
   '@messageformat/parser@5.1.1':
     resolution: {integrity: sha512-3p0YRGCcTUCYvBKLIxtDDyrJ0YijGIwrTRu1DT8gIviIDZru8H23+FkY6MJBzM1n9n20CiM4VeDYuBsrrwnLjg==}
 
@@ -2715,6 +2737,13 @@ packages:
     engines: {node: '>=20.19.4'}
     hasBin: true
 
+  '@react-native-community/geolocation@3.4.0':
+    resolution: {integrity: sha512-bzZH89/cwmpkPMKKveoC72C4JH0yF4St5Ceg/ZM9pA1SqX9MlRIrIrrOGZ/+yi++xAvFDiYfihtn9TvXWU9/rA==}
+    engines: {node: '>=18.0.0'}
+    peerDependencies:
+      react: '*'
+      react-native: '*'
+
   '@react-native-community/netinfo@11.4.1':
     resolution: {integrity: sha512-B0BYAkghz3Q2V09BF88RA601XursIEA111tnc2JOaN7axJWmNefmfjZqw/KdSxKZp7CZUuPpjBmz/WCR9uaHYg==}
     peerDependencies:
@@ -3154,6 +3183,13 @@ packages:
   '@scure/bip39@2.0.1':
     resolution: {integrity: sha512-PsxdFj/d2AcJcZDX1FXN3dDgitDDTmwf78rKZq1a6c1P1Nan1X/Sxc7667zU3U+AN60g7SxxP0YCVw2H/hBycg==}
 
+  '@shopify/flash-list@2.2.0':
+    resolution: {integrity: sha512-mL61IofcfBNRZ/qazIf+pghGULkcZUQ7EZNldH1JBbIjtDb25ADSiQrt62ZTnRz0H5+bPFEZUmN9+WChHzX8pw==}
+    peerDependencies:
+      '@babel/runtime': '*'
+      react: '*'
+      react-native: '*'
+
   '@shopify/react-native-skia@2.2.18':
     resolution: {integrity: sha512-7Vd/rYSL9Xi84gkLykC0I2cJQ8ZdkuA+r6Vgzd3hUA0W99rrTKxWjz/s8QJdGbRNFhh8rHrZNXxyC86aRf0s1A==}
     hasBin: true
@@ -3224,6 +3260,12 @@ packages:
   '@types/dns-packet@5.6.5':
     resolution: {integrity: sha512-qXOC7XLOEe43ehtWJCMnQXvgcIpv6rPmQ1jXT98Ad8A3TB1Ue50jsCbSSSyuazScEuZ/Q026vHbrOTVkmwA+7Q==}
 
+  '@types/dom-mediacapture-transform@0.1.11':
+    resolution: {integrity: sha512-Y2p+nGf1bF2XMttBnsVPHUWzRRZzqUoJAKmiP10b5umnO6DDrWI0BrGDJy1pOHoOULVmGSfFNkQrAlC5dcj6nQ==}
+
+  '@types/dom-webcodecs@0.1.13':
+    resolution: {integrity: sha512-O5hkiFIcjjszPIYyUSyvScyvrBoV3NOEEZx/pMlsu44TKzWNkLVBBxnxJz42in5n3QIolYOcBYFCPZZ0h8SkwQ==}
+
   '@types/emscripten@1.41.5':
     resolution: {integrity: sha512-cMQm7pxu6BxtHyqJ7mQZ2kXWV5SLmugybFdHCBbJ5eHzOo6VhBckEgAT3//rP5FwPHNPeEiq4SmQ5ucBwsOo4Q==}
 
@@ -3271,6 +3313,9 @@ packages:
 
   '@types/q@1.5.8':
     resolution: {integrity: sha512-hroOstUScF6zhIi+5+x0dzqrHA1EJi+Irri6b1fxolMTqqHIV/Cg77EtnQcZqZCu8hR3mX2BzIxN4/GzI68Kfw==}
+
+  '@types/qrcode@1.5.6':
+    resolution: {integrity: sha512-te7NQcV2BOvdj2b1hCAHzAoMNuj65kNBMz0KBaxM6c3VGBOhU0dURQKOtH8CFNI/dsKkwlv32p26qYQTWoB5bw==}
 
   '@types/react-dom@19.1.9':
     resolution: {integrity: sha512-qXRuZaOsAdXKFyOhRBg6Lqqc0yay13vN7KrIg4L7N4aaHN68ma9OK3NE1BoDFgFOTfM7zg+3/8+2n8rLUH3OKQ==}
@@ -4182,6 +4227,9 @@ packages:
 
   detect-node-es@1.1.0:
     resolution: {integrity: sha512-ypdmJU/TbBby2Dxibuv7ZLW3Bs1QEmM7nHjEANfohJLvE0XVujisn1qPJcZxg+qDucsr+bP6fLD1rPS3AhJ7EQ==}
+
+  dijkstrajs@1.0.3:
+    resolution: {integrity: sha512-qiSlmBq9+BCdCA/L46dw8Uy93mloxsPSbwnm5yrKn2vMPiy8KyAskTF6zuV/j5BMsmOGZDPs7KjU+mjb670kfA==}
 
   dns-packet@5.6.1:
     resolution: {integrity: sha512-l4gcSouhcgIKRvyy99RNVOgxXiicE+2jZoNmaNmZ6JXiGajBOJAesk1OBlJuM5k2c+eudGdLxDqXuPCKIj6kpw==}
@@ -5578,6 +5626,9 @@ packages:
     resolution: {integrity: sha512-dq+qelQ9akHpcOl/gUVRTxVIOkAJ1wR3QAvb4RsVjS8oVoFjDGTc679wJYmUmknUF5HwMLOgb5O+a3KxfWapPQ==}
     engines: {node: '>= 0.6'}
 
+  mediabunny@1.25.1:
+    resolution: {integrity: sha512-0Rrd47PMCVJbTPA7IJaXPCupV5/RZ/icgr+a0qExRJAr0n5vB4fsGSo+fdHIehG0CrddXtVRvNZwFtJz709yfA==}
+
   memoize-one@5.2.1:
     resolution: {integrity: sha512-zYiwtZUcYyXKo/np96AGZAckk+FWWsUdJ3cHGGmld7+AhvcWmQyGCYUh1hc4Q/pkOhb65dQR/pqCyK0cOaHz4Q==}
 
@@ -5778,6 +5829,9 @@ packages:
   minizlib@3.0.2:
     resolution: {integrity: sha512-oG62iEk+CYt5Xj2YqI5Xi9xWUeZhDI8jjQmC5oThVH5JGCTgIjr7ciJDzC7MBzYd//WvR1OTmP5Q38Q8ShQtVA==}
     engines: {node: '>= 18'}
+
+  mitt@3.0.1:
+    resolution: {integrity: sha512-vKivATfr97l2/QBCYAkXYDbrIWPM2IIKEl7YPhjCvKlG3kE2gm+uBo6nEXK3M5/Ffh/FLpKExzOQ3JJoJGFKBw==}
 
   mkdirp-classic@0.5.3:
     resolution: {integrity: sha512-gKLcREMhtuZRwRAfqP3RFW+TK4JqApVBtOIftVgjuABpAtpxhPGaDcfvbhNvD0B8iD1oUr/txX35NjcaY6Ns/A==}
@@ -6174,6 +6228,10 @@ packages:
     resolution: {integrity: sha512-NCrCHhWmnQklfH4MtJMRjZ2a8c80qXeMlQMv2uVp9ISJMTt562SbGd6n2oq0PaPgKm7Z6pL9E2UlLIhC+SHL3w==}
     engines: {node: '>=4.0.0'}
 
+  pngjs@5.0.0:
+    resolution: {integrity: sha512-40QW5YalBNfQo5yRYmiw7Yz6TKKVr3h6970B2YE+3fQpsWcrbj1PzJgxeJ19DRQjhMbKPIuMY8rFaXc8moolVw==}
+    engines: {node: '>=10.13.0'}
+
   pofile@1.1.4:
     resolution: {integrity: sha512-r6Q21sKsY1AjTVVjOuU02VYKVNQGJNQHjTIvs4dEbeuuYfxgYk/DGD2mqqq4RDaVkwdSq0VEtmQUOPe/wH8X3g==}
 
@@ -6280,6 +6338,11 @@ packages:
     resolution: {integrity: sha512-Uu7ii+FQy4Qf82G4xu7ShHhjhGahEpCWc3x8UavY3CTcWV+ufmmCtwkr7ZKsX42jdL0kr1B5FKUeqJvAn51jzQ==}
     hasBin: true
 
+  qrcode@1.5.4:
+    resolution: {integrity: sha512-1ca71Zgiu6ORjHqFBDpnSMTR2ReToX4l1Au1VFLyVeBTFavzQnv5JxMFr3ukHVKpSrSA2MCk0lNJSykjUfz7Zg==}
+    engines: {node: '>=10.13.0'}
+    hasBin: true
+
   qs@6.13.0:
     resolution: {integrity: sha512-+38qI9SOr8tfZ4QmJNplMUxqjbe7LKvvZgWdExBOmd+egZTtjLB67Gu0HRX3u/XOq7UU2Nx6nsjvS16Z9uwfpg==}
     engines: {node: '>=0.6'}
@@ -6358,8 +6421,8 @@ packages:
     peerDependencies:
       react: ^19.1.1
 
-  react-exo@0.20.19:
-    resolution: {integrity: sha512-keinUff6T54qhCPukHuC2i0m3YKov2j5hX9pk9D74VXZIqp9EIidn4USceahqCDvg8DaOJq1Rgu7tqxKgxrvbA==}
+  react-exo@0.20.20:
+    resolution: {integrity: sha512-9UDb3I6cBlgB4NV/FEnzPqf0aP6r8+MLg64wtTxfUoiWUjyLFR2bQJFtj8ETTiU3j3rOh2LmlcKbhFpNg9zPUA==}
     peerDependencies:
       '@candlefinance/faster-image': '>=1.7'
       '@helia/unixfs': '>=4'
@@ -8073,7 +8136,7 @@ snapshots:
       netmask: 2.0.2
       p-defer: 4.0.1
       race-signal: 2.0.0
-      xml2js: 0.6.0
+      xml2js: 0.6.2
 
   '@achingbrain/ssdp@4.2.4':
     dependencies:
@@ -9124,7 +9187,7 @@ snapshots:
   '@esbuild/win32-x64@0.25.9':
     optional: true
 
-  '@evolu/common@6.0.1-preview.28':
+  '@evolu/common@7.2.1':
     dependencies:
       '@noble/ciphers': 2.0.1
       '@noble/hashes': 2.0.1
@@ -9133,10 +9196,10 @@ snapshots:
       msgpackr: 1.11.5
       random: 5.4.1
 
-  '@evolu/react-native@12.0.1-preview.9(c8d58137c900c69ef786bc7a769e102e)':
+  '@evolu/react-native@14.1.1(a709732f18f3e1ed5a6ac4eec3ac7bde)':
     dependencies:
-      '@evolu/common': 6.0.1-preview.28
-      '@evolu/react': 9.0.1-preview.6(@evolu/common@6.0.1-preview.28)(react@19.1.0)
+      '@evolu/common': 7.2.1
+      '@evolu/react': 10.2.1(@evolu/common@7.2.1)(react@19.1.0)
       react-native: 0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(bufferutil@4.0.9)(typescript@5.9.2))(@types/react@19.1.13)(bufferutil@4.0.9)(react@19.1.0)
     optionalDependencies:
       '@op-engineering/op-sqlite': 15.0.5(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(bufferutil@4.0.9)(typescript@5.9.2))(@types/react@19.1.13)(bufferutil@4.0.9)(react@19.1.0))(react@19.1.0)
@@ -9144,23 +9207,23 @@ snapshots:
       react-native-nitro-modules: 0.29.6(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(bufferutil@4.0.9)(typescript@5.9.2))(@types/react@19.1.13)(bufferutil@4.0.9)(react@19.1.0))(react@19.1.0)
       react-native-svg: 15.13.0(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(bufferutil@4.0.9)(typescript@5.9.2))(@types/react@19.1.13)(bufferutil@4.0.9)(react@19.1.0))(react@19.1.0)
 
-  '@evolu/react-web@1.0.1-preview.7(@evolu/common@6.0.1-preview.28)(@evolu/web@1.0.1-preview.7(@evolu/common@6.0.1-preview.28))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
+  '@evolu/react-web@2.2.1(@evolu/common@7.2.1)(@evolu/web@2.2.1(@evolu/common@7.2.1))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
     dependencies:
-      '@evolu/common': 6.0.1-preview.28
-      '@evolu/web': 1.0.1-preview.7(@evolu/common@6.0.1-preview.28)
+      '@evolu/common': 7.2.1
+      '@evolu/web': 2.2.1(@evolu/common@7.2.1)
       react: 19.1.0
       react-dom: 19.1.0(react@19.1.0)
 
-  '@evolu/react@9.0.1-preview.6(@evolu/common@6.0.1-preview.28)(react@19.1.0)':
+  '@evolu/react@10.2.1(@evolu/common@7.2.1)(react@19.1.0)':
     dependencies:
-      '@evolu/common': 6.0.1-preview.28
+      '@evolu/common': 7.2.1
       react: 19.1.0
 
   '@evolu/sqlite-wasm@2.2.4': {}
 
-  '@evolu/web@1.0.1-preview.7(@evolu/common@6.0.1-preview.28)':
+  '@evolu/web@2.2.1(@evolu/common@7.2.1)':
     dependencies:
-      '@evolu/common': 6.0.1-preview.28
+      '@evolu/common': 7.2.1
       '@evolu/sqlite-wasm': 2.2.4
       idb-keyval: 6.2.2
 
@@ -10886,6 +10949,13 @@ snapshots:
       pbf: 4.0.1
       supercluster: 8.0.1
 
+  '@marceloterreiro/flash-calendar@1.5.0(@shopify/flash-list@2.2.0(@babel/runtime@7.28.4)(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(bufferutil@4.0.9)(typescript@5.9.2))(@types/react@19.1.13)(bufferutil@4.0.9)(react@19.1.0))(react@19.1.0))(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(bufferutil@4.0.9)(typescript@5.9.2))(@types/react@19.1.13)(bufferutil@4.0.9)(react@19.1.0))(react@19.1.0)':
+    dependencies:
+      '@shopify/flash-list': 2.2.0(@babel/runtime@7.28.4)(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(bufferutil@4.0.9)(typescript@5.9.2))(@types/react@19.1.13)(bufferutil@4.0.9)(react@19.1.0))(react@19.1.0)
+      mitt: 3.0.1
+      react: 19.1.0
+      react-native: 0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(bufferutil@4.0.9)(typescript@5.9.2))(@types/react@19.1.13)(bufferutil@4.0.9)(react@19.1.0)
+
   '@messageformat/parser@5.1.1':
     dependencies:
       moo: 0.5.2
@@ -11878,6 +11948,11 @@ snapshots:
       - typescript
       - utf-8-validate
 
+  '@react-native-community/geolocation@3.4.0(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(bufferutil@4.0.9)(typescript@5.9.2))(@types/react@19.1.13)(bufferutil@4.0.9)(react@19.1.0))(react@19.1.0)':
+    dependencies:
+      react: 19.1.0
+      react-native: 0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(bufferutil@4.0.9)(typescript@5.9.2))(@types/react@19.1.13)(bufferutil@4.0.9)(react@19.1.0)
+
   '@react-native-community/netinfo@11.4.1(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(bufferutil@4.0.9)(typescript@5.9.2))(@types/react@19.1.13)(bufferutil@4.0.9)(react@19.1.0))':
     dependencies:
       react-native: 0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(bufferutil@4.0.9)(typescript@5.9.2))(@types/react@19.1.13)(bufferutil@4.0.9)(react@19.1.0)
@@ -12506,6 +12581,12 @@ snapshots:
       '@noble/hashes': 2.0.1
       '@scure/base': 2.0.0
 
+  '@shopify/flash-list@2.2.0(@babel/runtime@7.28.4)(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(bufferutil@4.0.9)(typescript@5.9.2))(@types/react@19.1.13)(bufferutil@4.0.9)(react@19.1.0))(react@19.1.0)':
+    dependencies:
+      '@babel/runtime': 7.28.4
+      react: 19.1.0
+      react-native: 0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(bufferutil@4.0.9)(typescript@5.9.2))(@types/react@19.1.13)(bufferutil@4.0.9)(react@19.1.0)
+
   '@shopify/react-native-skia@2.2.18(react-native-reanimated@3.19.1(@babel/core@7.28.4)(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(bufferutil@4.0.9)(typescript@5.9.2))(@types/react@19.1.13)(bufferutil@4.0.9)(react@19.1.0))(react@19.1.0))(react-native@0.80.2(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(bufferutil@4.0.9)(typescript@5.9.2))(@types/react@19.1.13)(bufferutil@4.0.9)(react@19.1.0))(react@19.1.0)':
     dependencies:
       canvaskit-wasm: 0.40.0
@@ -12593,6 +12674,12 @@ snapshots:
     dependencies:
       '@types/node': 24.4.0
 
+  '@types/dom-mediacapture-transform@0.1.11':
+    dependencies:
+      '@types/dom-webcodecs': 0.1.13
+
+  '@types/dom-webcodecs@0.1.13': {}
+
   '@types/emscripten@1.41.5': {}
 
   '@types/estree@0.0.39': {}
@@ -12637,6 +12724,10 @@ snapshots:
   '@types/parse-json@4.0.2': {}
 
   '@types/q@1.5.8': {}
+
+  '@types/qrcode@1.5.6':
+    dependencies:
+      '@types/node': 24.4.0
 
   '@types/react-dom@19.1.9(@types/react@19.1.13)':
     dependencies:
@@ -13707,6 +13798,8 @@ snapshots:
   detect-libc@2.1.0: {}
 
   detect-node-es@1.1.0: {}
+
+  dijkstrajs@1.0.3: {}
 
   dns-packet@5.6.1:
     dependencies:
@@ -15471,6 +15564,11 @@ snapshots:
 
   media-typer@0.3.0: {}
 
+  mediabunny@1.25.1:
+    dependencies:
+      '@types/dom-mediacapture-transform': 0.1.11
+      '@types/dom-webcodecs': 0.1.13
+
   memoize-one@5.2.1: {}
 
   memoize-one@6.0.0: {}
@@ -15882,6 +15980,8 @@ snapshots:
     dependencies:
       minipass: 7.1.2
 
+  mitt@3.0.1: {}
+
   mkdirp-classic@0.5.3: {}
 
   mkdirp@1.0.4: {}
@@ -16254,6 +16354,8 @@ snapshots:
 
   pngjs@3.4.0: {}
 
+  pngjs@5.0.0: {}
+
   pofile@1.1.4: {}
 
   possible-typed-array-names@1.1.0: {}
@@ -16354,6 +16456,12 @@ snapshots:
 
   qrcode-terminal@0.11.0: {}
 
+  qrcode@1.5.4:
+    dependencies:
+      dijkstrajs: 1.0.3
+      pngjs: 5.0.0
+      yargs: 15.4.1
+
   qs@6.13.0:
     dependencies:
       side-channel: 1.1.0
@@ -16447,7 +16555,7 @@ snapshots:
       react: 19.1.1
       scheduler: 0.26.0
 
-  react-exo@0.20.19(8a65e795cd7663c816b077f246a99288):
+  react-exo@0.20.20(8a65e795cd7663c816b077f246a99288):
     dependencies:
       '@iconify/react': 5.2.1(react@19.1.1)
       '@iconify/utils': 2.3.0
@@ -16497,7 +16605,7 @@ snapshots:
       - '@types/react-dom'
       - supports-color
 
-  react-exo@0.20.19(e48d6746f0974c126dd56ed4a9f1a4bf):
+  react-exo@0.20.20(e48d6746f0974c126dd56ed4a9f1a4bf):
     dependencies:
       '@iconify/react': 5.2.1(react@19.1.0)
       '@iconify/utils': 2.3.0

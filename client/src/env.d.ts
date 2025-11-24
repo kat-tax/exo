@@ -13,6 +13,11 @@ declare global {
   }
 }
 
+// Evolu types
+declare global {
+  var __EVOLU_RESETTING_APP_OWNER__: boolean;
+}
+
 // Platform globals
 declare global {
   var __WEB__: boolean;
@@ -58,6 +63,67 @@ declare global {
     observe(handle: FileSystemHandle, options?: FileSystemObserverObserveOptions): Promise<void>;
     unobserve(handle: FileSystemHandle): void;
     disconnect(): void;
+  }
+
+  // File System Sync Access Handle API
+  interface FileSystemReadWriteOptions {
+    at?: number;
+  }
+
+  interface FileSystemSyncAccessHandle {
+    /**
+     * Closes an open synchronous file handle, disabling any further operations on it
+     * and releasing the exclusive lock previously put on the file.
+     */
+    close(): void;
+
+    /**
+     * Persists any changes made to the file associated with the handle via the write() method to disk.
+     */
+    flush(): void;
+
+    /**
+     * Returns the size of the file associated with the handle in bytes.
+     */
+    getSize(): number;
+
+    /**
+     * Reads the content of the file associated with the handle into a specified buffer,
+     * optionally at a given offset.
+     * @param buffer - The buffer to read data into (ArrayBuffer or ArrayBufferView)
+     * @param options - Options specifying the offset to read from
+     * @returns The number of bytes read
+     */
+    read(buffer: ArrayBuffer | ArrayBufferView, options?: FileSystemReadWriteOptions): number;
+
+    /**
+     * Resizes the file associated with the handle to a specified number of bytes.
+     * @param newSize - The new size in bytes
+     */
+    truncate(newSize: number): void;
+
+    /**
+     * Writes the content of a specified buffer to the file associated with the handle,
+     * optionally at a given offset.
+     * @param buffer - The data to write (ArrayBuffer or ArrayBufferView)
+     * @param options - Options specifying the offset to write at
+     * @returns The number of bytes written
+     */
+    write(buffer: ArrayBuffer | ArrayBufferView, options?: FileSystemReadWriteOptions): number;
+  }
+
+  // File System Access API - Directory and File Handles
+  interface FileSystemDirectoryHandle extends FileSystemHandle {
+    readonly kind: 'directory';
+    values(): AsyncIterableIterator<FileSystemHandle>;
+    getDirectoryHandle(name: string, options?: {create?: boolean}): Promise<FileSystemDirectoryHandle>;
+    getFileHandle(name: string, options?: {create?: boolean}): Promise<FileSystemFileHandle>;
+  }
+
+  interface FileSystemFileHandle extends FileSystemHandle {
+    readonly kind: 'file';
+    getFile(): Promise<File>;
+    createSyncAccessHandle?(): Promise<FileSystemSyncAccessHandle>;
   }
 }
 

@@ -5,8 +5,9 @@ import {useSet, useGet} from 'app/data';
 import {isZeego} from 'app/ui/float';
 import {getData} from 'media/file/utils/data';
 import media from 'media/store';
+import cfg from 'config';
 
-import {isInitDirectory, INIT_DIRECTORIES} from '../utils/hfs/path';
+import {INIT_DIRECTORIES} from '../utils/hfs/path';
 import {getThumbnail} from '../utils/hfs/meta';
 import {saveAs} from '../utils/hfs/fs';
 
@@ -24,9 +25,12 @@ export function useDirHfs(path: string, tmp?: boolean): Omit<HfsCtx, 'bar'> {
   const set = useSet();
 
   const goUp = useCallback(() => {
-    if (!path) return false;
+    if (!path) {
+      nav.navigate('MediaBrowseDevices');
+      return false;
+    }
     const parent = path.split('/').slice(0, -1).join('/');
-    nav.navigate('MediaBrowse', {path: parent, backend: 'local'});
+    nav.navigate('MediaBrowseLocal', {path: parent});
     return true;
   }, [path, nav]);
 
@@ -46,14 +50,17 @@ export function useDirHfs(path: string, tmp?: boolean): Omit<HfsCtx, 'bar'> {
         if (entry.name.endsWith('.crswap'))
           continue;
         // Special directories
-        if (entry.name === '.db' || entry.name === '.tmp')
+        if (entry.name === '.tmp')
           continue;
         // Hidden files
         if (entry.name.startsWith('.') && !showHidden)
           continue;
-        // Initial directories
-        if (dirPath === '.' && isInitDirectory(entry.name))
+        // Database files
+        if (dirPath === '.' && entry.name === `.${cfg.APP_NAME}-${cfg.STORE_VERSION}`)
           continue;
+        // Initial directories
+        // if (dirPath === '.' && isInitDirectory(entry.name))
+        //   continue;
         entries.push(entry);
       }
       setList(entries.sort((a, b) => {
@@ -65,7 +72,7 @@ export function useDirHfs(path: string, tmp?: boolean): Omit<HfsCtx, 'bar'> {
           return -1;
         if (!a.isDirectory && b.isDirectory)
           return 1;
-        return a.name.localeCompare(b.name);
+        return a.name < b.name ? -1 : a.name > b.name ? 1 : 0;
       }));
       return true;
     } catch (e) {
@@ -77,8 +84,7 @@ export function useDirHfs(path: string, tmp?: boolean): Omit<HfsCtx, 'bar'> {
   const open = useCallback(async (entry: HfsFileEntry, clearSel?: boolean) => {
     if (!entry.isDirectory) return;
     const newPath = path ? `${path}/${entry.name}` : entry.name;
-    console.log('>> fs [open]', path ? `${path}/${entry.name}` : entry.name);
-    nav.navigate('MediaBrowse', {path: newPath, backend: 'local'}, {pop: true});
+    nav.navigate('MediaBrowseLocal', {path: newPath}, {pop: true});
     if (clearSel) set(media.actions.selectBulk([]));
   }, [path, nav, set]);
 
@@ -205,7 +211,7 @@ export function useDirHfs(path: string, tmp?: boolean): Omit<HfsCtx, 'bar'> {
 
   return {
     ext,
-    hfs: {
+    dir: {
       list,
       path,
     },

@@ -1,12 +1,3 @@
-export function bytesize(bytes: number) {
-  const a = ['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
-  const s = 1000;
-  let b = bytes;
-  let u = 0;
-  while (b >= s || -b >= s) {b /= s; u++}
-  return `${u ? b.toFixed(1) : b} ${a[u]}`;
-}
-
 export function toText(input?: AllowSharedBufferSource) {
   return new TextDecoder('utf-8').decode(input);
 }
@@ -23,7 +14,7 @@ export function toTimeRange(from: number, to: number) {
   const cHours = cH.toString().padStart(2, '0');
   const cMinutes = cM.toString().padStart(2, '0');
   const cSeconds = cS.toString().padStart(2, '0');
-  
+
   const d = Math.ceil(to);
   const dH = Math.floor(d / 3600);
   const dM = Math.floor((d % 3600) / 60);
@@ -39,6 +30,7 @@ export function toTimeRange(from: number, to: number) {
   return `${currentTime} / ${durationTime}`;
 }
 
+/** @deprecated */
 export function toPath(url: string, isDirectory: boolean) {
   const _path = decodeURIComponent(url)
     .replace(/^\/browse\/local/, '')
@@ -60,5 +52,14 @@ export function toPath(url: string, isDirectory: boolean) {
     base,
     path,
     parts,
+  };
+}
+
+export function toPathInfo(name: string, isDir?: boolean) {
+  const dot = isDir ? -1 : name.lastIndexOf('.') ?? -1;
+  return {
+    ext: dot !== -1 ? name.slice(dot + 1) : '',
+    name: dot !== -1 ? name.slice(0, dot) : name,
+    isDir: isDir ?? false,
   };
 }

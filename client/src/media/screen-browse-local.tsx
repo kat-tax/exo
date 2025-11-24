@@ -1,14 +1,13 @@
-import {useDirHfs} from 'media/dir/hooks/use-dir-hfs';
 import {useImportHfs} from 'media/dir/hooks/use-import-hfs';
-import {usePath} from 'media/hooks/use-path';
+import {useDirHfs} from 'media/dir/hooks/use-dir-hfs';
 import {DirHfs} from 'media/dir/stacks/dir-hfs';
 import {Screen} from 'app/ui/screen';
 import {useSet} from 'app/data';
 import media from 'media/store';
 
-export default function ScreenBrowse({route: _route}: ReactNavigation.ScreenProps<'MediaBrowse'>) {
-  const {path} = usePath();
-  const {hfs, cmd, ext} = useDirHfs(path);
+export default function ScreenBrowse({route}: ReactNavigation.ScreenProps<'MediaBrowseLocal'>) {
+  const {path} = route.params;
+  const {dir, cmd, ext} = useDirHfs(path || '');
   const add = useImportHfs();
   const set = useSet();
 
@@ -76,7 +75,7 @@ export default function ScreenBrowse({route: _route}: ReactNavigation.ScreenProp
 
   return (
     <Screen>
-      <DirHfs {...{hfs, cmd, ext, bar}}/>
+      <DirHfs {...{dir, cmd, ext, bar}}/>
     </Screen>
   );
 }

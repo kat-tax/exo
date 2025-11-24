@@ -1,13 +1,14 @@
 import {useState} from 'react';
 import {useLingui} from '@lingui/react/macro';
-import {StyleSheet} from 'react-native-unistyles';
+import {drawSmoothEdges} from '@qrgrid/styles/canvas';
+import {withUnistyles, StyleSheet} from 'react-native-unistyles';
 import {TextInput} from 'react-exo/textinput';
 import {View, Pressable} from 'react-native';
 import {Button, Prompt, Alert} from 'design';
 import {Icon} from 'react-exo/icon';
 import {Qr} from '@qrgrid/react/canvas';
 import {useCamera} from 'media/cam/context';
-import {drawSmoothEdges} from'@qrgrid/styles/canvas';
+import {printDocument} from 'settings/utils/print';
 
 import type {Code} from 'react-native-vision-camera';
 import type {ModuleStyleFunction} from '@qrgrid/react/canvas';
@@ -16,6 +17,10 @@ interface AccountKeyProps {
   mnemonic: string;
   onChangeOwner: (mnemonic: string) => void;
 }
+
+const UniQr = withUnistyles(Qr, (theme) => ({
+  color: theme.colors.foreground,
+}));
 
 export function AccountKey({mnemonic, onChangeOwner}: AccountKeyProps) {
   const {t} = useLingui();
@@ -64,6 +69,23 @@ export function AccountKey({mnemonic, onChangeOwner}: AccountKeyProps) {
 
   const handleShowQR = () => {
     setShowQr(!showQr);
+  };
+
+  const handlePrint = () => {
+    if (!mnemonic) return;
+    printDocument({
+      title: t`Account Key - Mnemonic Phrase`,
+      warning: {
+        title: t`⚠️ Treat your mnemonic phrase with care.`,
+        message: t`Do not share it with anyone. Store it securely.`,
+      },
+      mnemonic: {
+        columns,
+        phrase: mnemonic,
+        showNumbers: true,
+        qrcode: true,
+      },
+    });
   };
 
   const handleEdit = () => {
@@ -136,7 +158,7 @@ export function AccountKey({mnemonic, onChangeOwner}: AccountKeyProps) {
               <View style={styles.wordsContainer}>
                 {showQr ? (
                   <View style={[styles.qrContainer, !showMnemonic && styles.qrContainerBlurred]}>
-                    <Qr
+                    <UniQr
                       input={mnemonic}
                       size={300}
                       watchKey={showMnemonic ? 'shown' : 'hidden'}
@@ -186,6 +208,17 @@ export function AccountKey({mnemonic, onChangeOwner}: AccountKeyProps) {
                         color: !copied
                           ? theme.colors.mutedForeground
                           : theme.colors.success,
+                      })}
+                    />
+                  </Pressable>
+                  <Pressable
+                    style={styles.iconButton}
+                    onPress={handlePrint}>
+                    <Icon
+                      name="ph:printer"
+                      size={18}
+                      uniProps={(theme) => ({
+                        color: theme.colors.mutedForeground,
                       })}
                     />
                   </Pressable>

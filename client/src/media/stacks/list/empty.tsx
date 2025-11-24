@@ -4,7 +4,7 @@ import {useLingui} from '@lingui/react/macro';
 import {useImportHfs} from 'media/dir/hooks/use-import-hfs';
 import {Watermark} from 'app/ui/watermark';
 
-export function ListEmpty({path, offset}: {path: string, offset: number}) {
+export function ListEmpty({path, offset}: {path?: string, offset: number}) {
   const [visible, setVisible] = useState(false);
   const {importFolder} = useImportHfs();
   const {t} = useLingui();
@@ -27,7 +27,7 @@ export function ListEmpty({path, offset}: {path: string, offset: number}) {
           icon="ph:upload"
           dnd={!__TOUCH__}
           onAction={async () => {
-            await importFolder(path);
+            await importFolder(path ?? '.');
           }}
         />
       </View>

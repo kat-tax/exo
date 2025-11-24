@@ -2,8 +2,9 @@ import {useState, useEffect} from 'react';
 import {StyleSheet, withUnistyles} from 'react-native-unistyles';
 import {Progress as ProgressX} from 'react-exo/progress';
 import {View, Text} from 'react-native';
-
 import {getDiskSpace, bytesize} from 'react-exo/fs';
+import {useEvolu} from 'app/data';
+import {device} from 'app/data/lib/device';
 
 interface MenuFooterProps {
   actions?: React.ReactNode,
@@ -19,14 +20,23 @@ export const Progress = withUnistyles(ProgressX, (theme) => ({
 
 export function MenuFooter(props: MenuFooterProps) {
   const [storage, setStorage] = useState<{msg: string, val: number}>();
+  const evolu = useEvolu();
 
   useEffect(() => {
     const updateStorage = () => {
       getDiskSpace().then(e => {
         setStorage(prev => {
           const val = (e.used / e.total) * 100;
-          if (prev?.val === val) return prev;
-          return {val, msg: `${bytesize(e.used)} / ${bytesize(e.total)}`};
+          const msg = `${bytesize(e.used)} / ${bytesize(e.total)}`;
+          if (prev?.msg === msg) return prev;
+          if (e.used && e.total) {
+            evolu.update('app_device', {
+              ...device,
+              storageUsed: e.used,
+              storageTotal: e.total,
+            });
+          }
+          return {val, msg};
         });
       });
     };

@@ -1,7 +1,7 @@
 import {Media} from 'media/stacks/media';
 import {Screen} from 'app/ui/screen';
 
-export default function ScreenIpfs({route}: ReactNavigation.ScreenProps<'MediaIpfs'>) {
+export default function ScreenIpfs({route}: ReactNavigation.ScreenProps<'MediaViewIpfs'>) {
   const {cid, filename} = route.params;
   const name = filename || '';
   const path = `ipfs://${cid}`;
@@ -14,7 +14,6 @@ export default function ScreenIpfs({route}: ReactNavigation.ScreenProps<'MediaIp
         {...{name, ext, url, path}}
         close={() => null}
         embedded={false}
-        standalone
         maximized
         vertical
       />

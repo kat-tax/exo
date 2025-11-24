@@ -30,7 +30,7 @@ export function useLists() {
   };
 
   const create = () => {
-    const result = evolu.insert('list', {});
+    const result = evolu.insert('world_list', {});
     if (!result.ok) {
       fail(t`Failed to create new list.`);
       return null;
@@ -41,7 +41,7 @@ export function useLists() {
   const remove = (id: $.ListId | null) => {
     if (!id) return;
 
-    const result = evolu.update('list', {id, isDeleted: true});
+    const result = evolu.update('world_list', {id, isDeleted: 1});
     if (!result.ok) {
       fail(t`Failed to delete list.`);
     }
@@ -84,7 +84,7 @@ export function useLists() {
       return;
     }
 
-    const result = evolu.update('list', {id, [field]: value});
+    const result = evolu.update('world_list', {id, [field]: value});
     if (!result.ok) {
       fail(t`Failed to update list.`);
     }
@@ -99,14 +99,14 @@ export function useLists() {
       return;
     }
 
-    const result = evolu.insert('listItem', {listId, categoryId, textContent: field.value, isCompleted: false});
+    const result = evolu.insert('world_listItem', {listId, categoryId, textContent: field.value, isCompleted: 0});
     if (!result.ok) {
       fail(t`Failed to create list item.`);
     }
   };
 
   const removeItem = (id: $.ListItemId) => {
-    const result = evolu.update('listItem', {id, isDeleted: true});
+    const result = evolu.update('world_listItem', {id, isDeleted: 1});
     if (!result.ok) {
       fail(t`Failed to delete list item.`);
     }
@@ -118,14 +118,14 @@ export function useLists() {
       fail(t`Invalid text content field.`);
       return;
     }
-    const result = evolu.update('listItem', {id, textContent: field.value});
+    const result = evolu.update('world_listItem', {id, textContent: field.value});
     if (!result.ok) {
       fail(t`Failed to update list item text.`);
     }
   };
 
   const updateItemStatus = (id: $.ListItemId, value: boolean) => {
-    const result = evolu.update('listItem', {id, isCompleted: value});
+    const result = evolu.update('world_listItem', {id, isCompleted: value ? 1 : 0});
     if (!result.ok) {
       fail(t`Failed to update list item status.`);
     }
@@ -140,7 +140,7 @@ export function useLists() {
       return null;
     }
 
-    const result = evolu.insert('listCategory', {listId, name: field.value});
+    const result = evolu.insert('world_listCategory', {listId, name: field.value});
     if (!result.ok) {
       fail(t`Failed to create category.`);
       return null;
@@ -154,12 +154,12 @@ export function useLists() {
     // Clear items from category.
     evolu.loadQuery(getListItems(listId, categoryId)).then(items => {
       items.forEach(item => {
-        evolu.update('listItem', {id: item.id, categoryId: null});
+        evolu.update('world_listItem', {id: item.id, categoryId: null});
       });
     });
 
     // Delete category.
-    const result = evolu.update('listCategory', {id: categoryId, isDeleted: true});
+    const result = evolu.update('world_listCategory', {id: categoryId, isDeleted: 1});
     if (!result.ok) {
       fail(t`Failed to delete category.`);
     }
@@ -172,7 +172,7 @@ export function useLists() {
       return;
     }
 
-    const result = evolu.update('listCategory', {id, name: field.value});
+    const result = evolu.update('world_listCategory', {id, name: field.value});
     if (!result.ok) {
       fail(t`Failed to update category.`);
     }

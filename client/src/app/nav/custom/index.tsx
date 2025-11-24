@@ -6,13 +6,12 @@ import {useState, Suspense} from 'react';
 import {useNavigation} from '@react-navigation/native';
 import {useHotkeys} from 'app/nav/hooks/use-hotkeys';
 import {useGet} from 'app/data';
-import {toPath} from 'app/lib/formatting';
 import {Panel} from 'app/ui/panel';
-import {Media} from 'media/stacks/media';
 import {breakpoints} from 'design/theme';
 import media from 'media/store';
 
 import {Menu, Tabs} from './menu';
+import {Preview} from './preview';
 
 import type {NavigationHelpers, NavigationState} from '@react-navigation/native';
 import type {NativeStackHeaderLeftProps} from '@react-navigation/native-stack';
@@ -39,7 +38,9 @@ export function Layout(props: LayoutProps) {
     preferredChildFocusKey: `menu@${activeRoute?.name}`,
   });
 
-  const hasPreview = activeRoute.name === 'MediaBrowse' && previewOpen;
+  // Media preview
+  const previewRoutes = ['MediaBrowseEvolu', 'MediaBrowseLocal'];
+  const hasPreview = previewRoutes.includes(activeRoute.name) && previewOpen;
 
   useHotkeys({
     toggleMenu: () => {
@@ -66,14 +67,7 @@ export function Layout(props: LayoutProps) {
         </View>
         {hasPreview && (
           <View style={styles.preview}>
-            <Media
-              {...toPath(focused || activeRoute.path || '', false)}
-              vertical={false}
-              standalone={false}
-              maximized={true}
-              embedded={false}
-              close={() => {}}
-            />
+            <Preview {...{focused, activeRoute}}/>
           </View>
         )}
       </View>

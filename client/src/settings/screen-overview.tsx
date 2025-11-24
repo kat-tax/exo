@@ -106,6 +106,16 @@ export default function ScreenOverview() {
             />
           </PanelItem>
           <PanelItem
+            label={t`Export Database`}
+            description={t`Download the sqlite database.`}>
+            <Button
+              label={t`Export DB`}
+              mode="Primary"
+              state="Default"
+              onPress={settings.downloadDatabase}
+            />
+          </PanelItem>
+          <PanelItem
             label={t`Reset Data`}
             description={t`Deletes database and resets key.`}>
             <Sheet

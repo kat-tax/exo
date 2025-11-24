@@ -1,9 +1,8 @@
-import {web} from 'react-exo/fs';
+import {web, bytesize} from 'react-exo/fs';
 import {useCallback, useMemo} from 'react';
 import {useSet} from 'app/data';
 import {usePath} from 'media/hooks/use-path';
 import {useFile} from 'media/file/hooks/use-file';
-import {bytesize} from 'app/lib/formatting';
 import * as tor from 'media/dir/utils/torrent/info';
 import Tor from 'media/dir/utils/torrent/lib';
 import store from 'media/dir/utils/torrent/chunkstore';

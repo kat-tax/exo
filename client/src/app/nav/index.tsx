@@ -1,11 +1,12 @@
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createStaticNavigation} from '@react-navigation/native';
 import {useUnistyles} from 'react-native-unistyles';
 import {useLingui} from '@lingui/react/macro';
 import {useTheme} from 'settings/hooks/use-theme';
+import {DeviceId, PathId} from 'app/data/types';
 
 import cfg from 'config';
 
-import {createNativeStackNavigator as createStack} from '@react-navigation/native-stack';
 import {createLayout, createScreenLayout, HeaderLeft} from './custom';
 import {createScreens} from './lib/create-screens';
 import {createTabs} from './lib/tabs';
@@ -25,14 +26,19 @@ export type RootStackParamList = {
   SettingsStorage: undefined;
   DevDesign: undefined;
   DevCharts: undefined;
-  MediaBrowse: {path?: string; backend?: string};
-  MediaDocs: undefined;
-  MediaMusic: undefined;
-  MediaPictures: undefined;
-  MediaVideos: undefined;
-  MediaGames: undefined;
-  MediaBooks: undefined;
-  MediaIpfs: {cid: string; filename?: string};
+  MediaBrowseDevices: undefined;
+  MediaBrowseLocal: {path?: string};
+  MediaBrowseEvolu: {pathId?: PathId; deviceId: DeviceId};
+  MediaViewDocs: undefined;
+  MediaViewMusic: undefined;
+  MediaViewPictures: undefined;
+  MediaViewVideos: undefined;
+  MediaViewGames: undefined;
+  MediaViewBooks: undefined;
+  MediaViewIpfs: {cid: string; filename?: string};
+  WorldOverview: undefined;
+  WorldCalendar: undefined;
+  WorldMap: undefined;
 };
 
 /** Top level navigation links shown in the drawer menus and tab bars. */
@@ -40,8 +46,8 @@ const links: Record<string, Array<keyof RootStackParamList>> = {
   /** Displayed on the native/web tab navigator. */
   tabs: [
     'HomeDashboard',
-    'MediaBrowse',
-    'TasksListAll',
+    'MediaBrowseDevices',
+    'WorldOverview',
     'SettingsOverview',
   ],
   /** The menu items shown at the top of the drawer menu. */
@@ -51,13 +57,18 @@ const links: Record<string, Array<keyof RootStackParamList>> = {
   ],
   /** The menu items shown in the media group. */
   menuMedia: [
-    'MediaBrowse',
-    'MediaDocs',
-    'MediaMusic',
-    'MediaPictures',
-    'MediaVideos',
-    'MediaGames',
-    'MediaBooks',
+    'MediaBrowseDevices',
+    'MediaViewDocs',
+    'MediaViewMusic',
+    'MediaViewPictures',
+    'MediaViewVideos',
+    'MediaViewGames',
+    'MediaViewBooks',
+  ],
+  /** The menu items shown in the world group. */
+  menuWorld: [
+    'WorldMap',
+    'WorldCalendar',
   ],
   /** The menu items to show in development only (below the top items in a group). */
   menuDev: [
@@ -89,7 +100,7 @@ const tabs = (screens: NavScreens, theme: Theme) => createTabs<RootStackParamLis
   },
 });
 
-const root = (screens: NavScreens, theme: Theme) => createStack<RootStackParamList>({
+const root = (screens: NavScreens, theme: Theme) => createNativeStackNavigator<RootStackParamList>({
   screenLayout: __WEB__ ? createScreenLayout(screens) : undefined,
   layout: __WEB__ ? createLayout(screens, links) : undefined,
   screens: {
@@ -106,10 +117,12 @@ const root = (screens: NavScreens, theme: Theme) => createStack<RootStackParamLi
     ...createScreens(screens),
   },
   screenOptions: (props) => ({
-    // Example: Hide header if in top level navigation (excluding SettingsStorage)
+    // Hide header if in top level navigation (excluding SettingsStorage)
+    // Also hide header if the route is a media view or browse route
     headerShown: (!Object.values(links).flat().includes(props.route.name)
-      || props.route.name === 'SettingsStorage') && props.route.name !== 'MediaIpfs',
-    //headerShown: true,
+      || props.route.name === 'SettingsStorage')
+      && !props.route.name.startsWith('MediaView')
+      && !props.route.name.startsWith('MediaBrowse'),
     headerTintColor: theme.colors.foreground,
     headerTitleAlign: 'center',
     headerTitleStyle: {
@@ -171,74 +184,110 @@ export function Navigator() {
         icon: 'ph:database',
       },
     },
-    MediaBrowse: {
-      linking: {
-        path: 'browse/:backend/:path?',
-        alias: ['browse/:backend'],
-        parse: {
-          backend: (value) => value === 'undefined' ? 'local' : value,
-          path: (value) => value.replaceAll('~', '/').replaceAll('+', ' '),
-        },
-        stringify: {
-          backend: (value) => value === 'undefined' ? 'local' : value,
-          path: (value) => value.replaceAll('/', '~').replaceAll(' ', '+'),
-        },
-      },
+    MediaBrowseDevices: {
+      linking: 'browse',
       options: {
         title: t`Files`,
         icon: 'ph:folder',
       },
-      params: {
-        backend: 'local',
-        path: undefined,
+    },
+    MediaBrowseLocal: {
+      linking: {
+        path: 'browse/local/:path?',
+        parse: {
+          path: (value) => value.replaceAll('~', '/').replaceAll('+', ' '),
+        },
+        stringify: {
+          path: (value) => value.replaceAll('/', '~').replaceAll(' ', '+'),
+        },
       },
     },
-    MediaDocs: {
+    MediaBrowseEvolu: {
+      linking: {
+        path: 'browse/:deviceId/:pathId?',
+        parse: {
+          pathId: (value) => {
+            const pathId = PathId.from(value);
+            return pathId.ok ? pathId.value : null;
+          },
+          deviceId: (value) => {
+            const deviceId = DeviceId.from(value);
+            return deviceId.ok ? deviceId.value : null;
+          },
+        },
+        stringify: {
+          pathId: (value) => value.toString(),
+          deviceId: (value) => value.toString(),
+        },
+      },
+    },
+    MediaViewIpfs: {
+      linking: 'ipfs/:cid/:filename',
+      options: {
+        title: t`IPFS`,
+      },
+    },
+    MediaViewDocs: {
       linking: 'docs',
       options: {
         title: t`Docs`,
         icon: 'ph:file-text',
       },
     },
-    MediaMusic: {
+    MediaViewMusic: {
       linking: 'music',
       options: {
         title: t`Music`,
         icon: 'ph:music-notes',
       },
     },
-    MediaPictures: {
+    MediaViewPictures: {
       linking: 'pictures',
       options: {
         title: t`Pictures`,
         icon: 'ph:image',
       },
     },
-    MediaVideos: {
+    MediaViewVideos: {
       linking: 'videos',
       options: {
         title: t`Videos`,
         icon: 'ph:video',
       },
     },
-    MediaGames: {
+    MediaViewGames: {
       linking: 'games',
       options: {
         title: t`Games`,
         icon: 'ph:game-controller',
       },
     },
-    MediaBooks: {
+    MediaViewBooks: {
       linking: 'books',
       options: {
         title: t`Books`,
         icon: 'ph:book-open-text',
       },
     },
-    MediaIpfs: {
-      linking: 'ipfs/:cid/:filename',
+    WorldOverview: {
+      linking: 'world',
       options: {
-        title: t`IPFS`,
+        title: t`World`,
+        icon: 'ph:earth',
+      },
+    },
+    WorldCalendar: {
+      linking: 'calendar',
+      options: {
+        title: t`Calendar`,
+        icon: 'ph:calendar-dots',
+      },
+    },
+    WorldMap: {
+      linking: 'map',
+      options: {
+        title: t`Map`,
+        icon: 'ph:map-trifold',
       },
     },
     TasksListAll: {

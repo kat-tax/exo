@@ -1,8 +1,8 @@
 import {View} from 'react-native';
-import {useEffect, forwardRef} from 'react';
+import {bytesize} from 'react-exo/fs';
 import {StyleSheet} from 'react-native-unistyles';
+import {useEffect, forwardRef} from 'react';
 import {useFile} from 'media/file/hooks/use-file';
-import {bytesize} from 'app/lib/formatting';
 import {Markdown} from 'app/ui/markdown';
 
 import type {FileProps} from 'media/file';

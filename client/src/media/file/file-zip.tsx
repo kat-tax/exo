@@ -1,9 +1,9 @@
 import {plural} from '@lingui/core/macro';
+import {bytesize} from 'react-exo/fs';
 import {forwardRef, useEffect, useMemo} from 'react';
 import {useDirZip} from 'media/dir/hooks/use-dir-zip';
 import {DirZip} from 'media/dir/stacks/dir-zip';
 import {Panel} from 'app/ui/panel';
-import {bytesize} from 'app/lib/formatting';
 
 import type {FileProps} from 'media/file';
 

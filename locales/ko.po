@@ -23,6 +23,11 @@ msgstr ""
 msgid "{folders, plural, one {# folder} other {# folders}}"
 msgstr ""
 
+#: ../../client/src/settings/screen-overview.tsx:80
+#: ../../client/src/settings/stacks/account-key.tsx:120
+msgid "Account Key"
+msgstr ""
+
 #: ../../client/src/tasks/screen-list-edit.tsx:96
 msgid "Add category..."
 msgstr ""
@@ -37,16 +42,13 @@ msgstr ""
 msgid "Appearance"
 msgstr "외관"
 
-#: ../../client/src/settings/hooks/use-settings.ts:39
+#: ../../client/src/settings/hooks/use-settings.ts:40
 msgid "Are you sure you want to change the owner key? This will reset the local database. This action cannot be undone."
 msgstr "소유자 키를 변경하시겠습니까? 로컬 데이터베이스가 초기화됩니다. 이 작업은 되돌릴 수 없습니다."
 
-#: ../../client/src/media/hooks/use-media-name.ts:23
+#: ../../client/src/app/nav/index.tsx:260
+#: ../../client/src/media/hooks/use-media-name.ts:21
 msgid "Books"
-msgstr ""
-
-#: ../../client/src/app/nav/index.tsx:171
-msgid "Browse"
 msgstr ""
 
 #. placeholder {0}: data.metadata.author
@@ -54,6 +56,7 @@ msgstr ""
 msgid "by {0}"
 msgstr ""
 
+#: ../../client/src/settings/stacks/account-key.tsx:253
 #: ../../design/components/base/popovers/prompt/Prompt.tsx:49
 msgid "Cancel"
 msgstr "취소"
@@ -74,16 +77,12 @@ msgstr ""
 msgid "Category"
 msgstr ""
 
-#: ../../client/src/app/nav/index.tsx:217
+#: ../../client/src/app/nav/index.tsx:296
 msgid "Charts"
 msgstr ""
 
 #: ../../client/src/settings/screen-overview.tsx:35
 msgid "Choose your display name."
-msgstr ""
-
-#: ../../client/src/settings/screen-overview.tsx:117
-msgid "Clear owner and delete database."
 msgstr ""
 
 #: ../../client/src/media/hooks/use-media-controls.ts:298
@@ -103,7 +102,7 @@ msgstr ""
 msgid "Configure the app"
 msgstr ""
 
-#: ../../client/src/settings/screen-overview.tsx:146
+#: ../../client/src/settings/screen-overview.tsx:149
 #: ../../design/components/features/auth/signup/Signup.tsx:53
 msgid "Confirm"
 msgstr ""
@@ -127,7 +126,7 @@ msgstr ""
 msgid "Dark"
 msgstr "다크"
 
-#: ../../client/src/app/nav/index.tsx:125
+#: ../../client/src/app/nav/index.tsx:144
 msgid "Dashboard"
 msgstr "대시보드"
 
@@ -149,11 +148,15 @@ msgstr ""
 msgid "Delete Shortcut"
 msgstr ""
 
-#: ../../client/src/app/nav/index.tsx:209
+#: ../../client/src/settings/screen-overview.tsx:120
+msgid "Deletes database and resets key."
+msgstr ""
+
+#: ../../client/src/app/nav/index.tsx:288
 msgid "Design"
 msgstr "디자인"
 
-#: ../../client/src/app/nav/custom/menu/index.tsx:52
+#: ../../client/src/app/nav/custom/menu/index.tsx:62
 msgid "Development"
 msgstr "개발"
 
@@ -169,15 +172,28 @@ msgstr ""
 msgid "Display Name"
 msgstr "표시 이름"
 
-#: ../../client/src/media/hooks/use-media-name.ts:13
+#: ../../client/src/settings/stacks/account-key.tsx:127
+msgid "Do not share it with anyone."
+msgstr ""
+
+#: ../../client/src/app/nav/index.tsx:225
+msgid "Docs"
+msgstr ""
+
+#: ../../client/src/media/hooks/use-media-name.ts:11
 msgid "Documents"
 msgstr ""
 
+#: ../../client/src/media/dir/stacks/menu-evolu.tsx:30
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:44
 #: ../../client/src/media/dir/stacks/menu-torrent.tsx:23
 #: ../../client/src/media/file/file-binary.tsx:36
 #: ../../client/src/media/hooks/use-media-controls.ts:91
 msgid "Download"
+msgstr ""
+
+#: ../../client/src/settings/screen-overview.tsx:110
+msgid "Download the sqlite database."
 msgstr ""
 
 #: ../../client/src/media/hooks/use-media-controls.ts:81
@@ -188,7 +204,7 @@ msgstr ""
 msgid "Edit Item..."
 msgstr ""
 
-#: ../../client/src/app/nav/index.tsx:202
+#: ../../client/src/app/nav/index.tsx:281
 msgid "Edit List"
 msgstr ""
 
@@ -197,18 +213,22 @@ msgstr ""
 msgid "Email"
 msgstr ""
 
-#: ../../client/src/settings/screen-overview.tsx:87
-msgid "Enter mnemonic"
-msgstr "니모닉 입력"
-
 #: ../../client/src/settings/screen-overview.tsx:41
 msgid "Enter name"
 msgstr "이름 입력"
 
-#: ../../client/src/settings/hooks/use-settings.ts:25
-#: ../../client/src/settings/hooks/use-settings.ts:46
+#: ../../client/src/settings/hooks/use-settings.ts:26
+#: ../../client/src/settings/hooks/use-settings.ts:47
 msgid "Error"
 msgstr "오류"
+
+#: ../../client/src/settings/screen-overview.tsx:109
+msgid "Export Database"
+msgstr ""
+
+#: ../../client/src/settings/screen-overview.tsx:112
+msgid "Export DB"
+msgstr ""
 
 #: ../../client/src/media/dir/stacks/menu-zip.tsx:23
 #: ../../client/src/media/hooks/use-media-controls.ts:101
@@ -267,8 +287,13 @@ msgstr ""
 msgid "Failed to update shortcut."
 msgstr ""
 
-#: ../../client/src/media/hooks/use-media-name.ts:25
-#: ../../client/src/media/stacks/list/bar.tsx:57
+#: ../../client/src/app/ui/teaser.tsx:11
+msgid "Feature in development..."
+msgstr ""
+
+#: ../../client/src/app/nav/index.tsx:182
+#: ../../client/src/media/hooks/use-media-name.ts:23
+#: ../../client/src/media/stacks/list/bar.tsx:59
 #: ../../client/src/media/stacks/media.tsx:89
 msgid "Files"
 msgstr ""
@@ -277,7 +302,8 @@ msgstr ""
 msgid "Fullscreen"
 msgstr ""
 
-#: ../../client/src/media/hooks/use-media-name.ts:21
+#: ../../client/src/app/nav/index.tsx:253
+#: ../../client/src/media/hooks/use-media-name.ts:19
 msgid "Games"
 msgstr ""
 
@@ -311,12 +337,12 @@ msgstr "인간"
 msgid "Icon"
 msgstr "아이콘"
 
-#: ../../client/src/media/stacks/list/empty.tsx:26
-msgid "Import Folder"
+#: ../../client/src/settings/stacks/account-key.tsx:270
+msgid "Import"
 msgstr ""
 
-#: ../../client/src/settings/screen-overview.tsx:106
-msgid "Inspect Storage"
+#: ../../client/src/media/stacks/list/empty.tsx:26
+msgid "Import Folder"
 msgstr ""
 
 #: ../../client/src/tasks/hooks/use-lists.ts:139
@@ -338,7 +364,7 @@ msgstr "잘못된 아이콘 필드입니다."
 msgid "Invalid list id."
 msgstr ""
 
-#: ../../client/src/settings/hooks/use-settings.ts:27
+#: ../../client/src/settings/hooks/use-settings.ts:28
 msgid "Invalid name (max 25 characters)."
 msgstr "잘못된 이름 (최대 25자)."
 
@@ -347,7 +373,7 @@ msgstr "잘못된 이름 (최대 25자)."
 msgid "Invalid name field."
 msgstr "잘못된 이름 필드입니다."
 
-#: ../../client/src/settings/hooks/use-settings.ts:48
+#: ../../client/src/settings/hooks/use-settings.ts:49
 msgid "Invalid owner key."
 msgstr "잘못된 소유자 키입니다."
 
@@ -364,7 +390,7 @@ msgstr ""
 msgid "Invalid URL field."
 msgstr "잘못된 URL 필드입니다."
 
-#: ../../client/src/app/nav/index.tsx:182
+#: ../../client/src/app/nav/index.tsx:219
 msgid "IPFS"
 msgstr ""
 
@@ -376,7 +402,7 @@ msgstr "언어"
 msgid "Light"
 msgstr "라이트"
 
-#: ../../client/src/app/nav/index.tsx:196
+#: ../../client/src/app/nav/index.tsx:275
 msgid "List Details"
 msgstr ""
 
@@ -388,9 +414,13 @@ msgstr ""
 msgid "List name"
 msgstr ""
 
-#: ../../client/src/app/nav/index.tsx:188
+#: ../../client/src/app/nav/index.tsx:267
 #: ../../client/src/tasks/screen-list-all.tsx:21
 msgid "Lists"
+msgstr ""
+
+#: ../../client/src/media/stacks/list/bar.tsx:67
+msgid "Local"
 msgstr ""
 
 #: ../../design/components/features/auth/login/Login.tsx:53
@@ -402,6 +432,18 @@ msgstr ""
 msgid "Logout?"
 msgstr ""
 
+#: ../../client/src/settings/screen-overview.tsx:87
+msgid "Manage Key"
+msgstr ""
+
+#: ../../client/src/settings/screen-overview.tsx:81
+msgid "Manage your mnemonic phrase."
+msgstr ""
+
+#: ../../client/src/app/nav/custom/menu/index.tsx:51
+msgid "Media"
+msgstr ""
+
 #: ../../client/src/tasks/hooks/use-lists.ts:21
 msgid "Missing list id."
 msgstr ""
@@ -410,7 +452,7 @@ msgstr ""
 msgid "Missing shortcut id."
 msgstr ""
 
-#: ../../client/src/settings/screen-overview.tsx:107
+#: ../../client/src/settings/screen-overview.tsx:100
 msgid "Monitor disk usage on device."
 msgstr ""
 
@@ -418,7 +460,8 @@ msgstr ""
 msgid "Move"
 msgstr ""
 
-#: ../../client/src/media/hooks/use-media-name.ts:15
+#: ../../client/src/app/nav/index.tsx:232
+#: ../../client/src/media/hooks/use-media-name.ts:13
 msgid "Music"
 msgstr ""
 
@@ -435,10 +478,11 @@ msgstr ""
 msgid "Next"
 msgstr ""
 
-#: ../../client/src/app/nav/index.tsx:133
+#: ../../client/src/app/nav/index.tsx:155
 msgid "Not Found"
 msgstr ""
 
+#: ../../client/src/media/dir/stacks/menu-evolu.tsx:23
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:23
 msgid "Open"
 msgstr ""
@@ -451,12 +495,13 @@ msgstr ""
 msgid "Organize your tasks"
 msgstr ""
 
-#: ../../client/src/settings/screen-overview.tsx:80
-msgid "Owner Key"
-msgstr "소유자 키"
-
 #: ../../client/src/home/screen-not-found.tsx:11
 msgid "Page not found"
+msgstr ""
+
+#: ../../client/src/settings/stacks/account-key.tsx:262
+#: ../../client/src/settings/stacks/account-key.tsx:267
+msgid "Passkey"
 msgstr ""
 
 #: ../../design/components/features/auth/login/Login.tsx:42
@@ -482,7 +527,8 @@ msgstr ""
 msgid "Permanently delete shortcut."
 msgstr ""
 
-#: ../../client/src/media/hooks/use-media-name.ts:17
+#: ../../client/src/app/nav/index.tsx:239
+#: ../../client/src/media/hooks/use-media-name.ts:15
 msgid "Pictures"
 msgstr ""
 
@@ -510,13 +556,14 @@ msgstr ""
 msgid "Replay"
 msgstr ""
 
-#: ../../client/src/settings/screen-overview.tsx:116
+#: ../../client/src/settings/screen-overview.tsx:119
+#: ../../client/src/settings/screen-overview.tsx:126
+#: ../../client/src/settings/screen-overview.tsx:133
 msgid "Reset Data"
 msgstr ""
 
-#: ../../client/src/settings/screen-overview.tsx:123
-#: ../../client/src/settings/screen-overview.tsx:130
-msgid "Reset Database"
+#: ../../client/src/settings/stacks/account-key.tsx:247
+msgid "Save"
 msgstr ""
 
 #: ../../client/src/media/hooks/use-media-controls.ts:111
@@ -535,11 +582,11 @@ msgstr ""
 msgid "Select your preferred language."
 msgstr ""
 
-#: ../../client/src/settings/screen-overview.tsx:81
-msgid "Set mnemonic to sync devices."
+#: ../../client/src/settings/screen-overview.tsx:87
+msgid "Set Key"
 msgstr ""
 
-#: ../../client/src/app/nav/index.tsx:145
+#: ../../client/src/app/nav/index.tsx:167
 #: ../../client/src/settings/screen-overview.tsx:28
 msgid "Settings"
 msgstr "설정"
@@ -549,7 +596,7 @@ msgstr "설정"
 msgid "Share"
 msgstr ""
 
-#: ../../client/src/app/nav/index.tsx:139
+#: ../../client/src/app/nav/index.tsx:161
 msgid "Shortcut"
 msgstr ""
 
@@ -565,11 +612,11 @@ msgstr ""
 msgid "Skip forward"
 msgstr ""
 
-#: ../../client/src/app/nav/index.tsx:153
+#: ../../client/src/app/nav/index.tsx:175
 msgid "Storage"
 msgstr ""
 
-#: ../../client/src/settings/screen-overview.tsx:109
+#: ../../client/src/settings/screen-overview.tsx:99
 msgid "Storage Usage"
 msgstr ""
 
@@ -618,16 +665,16 @@ msgstr ""
 msgid "This will clear all session data. Are you sure you would like to proceed?"
 msgstr ""
 
-#: ../../client/src/settings/screen-overview.tsx:131
-msgid "This will reset your owner key and delete your local database. This action is irreversible. If you have data you wish to backup make sure to save your owner key."
+#: ../../client/src/settings/screen-overview.tsx:134
+msgid "This will reset your account key and delete your local database. This action is irreversible. If you have data you wish to backup make sure to save your account key."
 msgstr ""
 
-#: ../../client/src/media/hooks/use-media-name.ts:11
-msgid "Transfers"
+#: ../../client/src/settings/stacks/account-key.tsx:126
+msgid "Treat your mnemonic phrase with care."
 msgstr ""
 
 #. placeholder {0}: 'delete'
-#: ../../client/src/settings/screen-overview.tsx:139
+#: ../../client/src/settings/screen-overview.tsx:142
 msgid "Type \"{0}\" to confirm"
 msgstr ""
 
@@ -644,13 +691,22 @@ msgstr "제목 없음"
 msgid "URL"
 msgstr "URL"
 
+#: ../../client/src/settings/stacks/account-key.tsx:121
+msgid "Used to encrypt and sync your data between devices."
+msgstr ""
+
 #: ../../design/components/features/auth/login/Login.tsx:30
 #: ../../design/components/features/auth/signup/Signup.tsx:30
 msgid "user@example.com"
 msgstr ""
 
-#: ../../client/src/media/hooks/use-media-name.ts:19
+#: ../../client/src/app/nav/index.tsx:246
+#: ../../client/src/media/hooks/use-media-name.ts:17
 msgid "Videos"
+msgstr ""
+
+#: ../../client/src/settings/screen-overview.tsx:102
+msgid "View Usage"
 msgstr ""
 
 #: ../../client/src/media/hooks/use-media-controls.ts:231
@@ -660,6 +716,14 @@ msgstr ""
 #: ../../client/src/home/utils/time.ts:21
 msgid "Welcome back, {name}."
 msgstr "다시 오신 것을 환영합니다, {name}님."
+
+#: ../../client/src/app/ui/index.tsx:47
+msgid "You are offline"
+msgstr ""
+
+#: ../../client/src/app/ui/index.tsx:45
+msgid "You are online"
+msgstr ""
 
 #: ../../client/src/media/hooks/use-media-controls.ts:121
 msgid "Zoom in"

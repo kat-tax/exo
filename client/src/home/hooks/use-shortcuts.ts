@@ -29,7 +29,7 @@ export function useShortcuts() {
   };
 
   const create = () => {
-    const result = evolu.insert('shortcut', {});
+    const result = evolu.insert('app_shortcut', {});
     if (!result.ok) {
       fail(result.error.value as string ?? t`Failed to create new shortcut.`);
       return null;
@@ -82,7 +82,7 @@ export function useShortcuts() {
       return;
     }
 
-    const result = evolu.update('shortcut', {id, [field]: value});
+    const result = evolu.update('app_shortcut', {id, [field]: value});
     if (!result.ok) {
       fail(result.error.value as string ?? t`Failed to update shortcut.`);
     }
@@ -91,7 +91,7 @@ export function useShortcuts() {
   const remove = (id: $.ShortcutId | null) => {
     if (!id) return;
 
-    const result = evolu.update('shortcut', {id, isDeleted: true});
+    const result = evolu.update('app_shortcut', {id, isDeleted: 1});
     if (!result.ok) {
       fail(result.error.value as string ?? t`Failed to delete shortcut.`);
     }

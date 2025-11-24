@@ -1,34 +1,17 @@
-//import {Motion} from 'react-exo/motion';
 import {ScrollView} from 'react-native';
 import {StyleSheet} from 'react-native-unistyles';
-import {useRef, useMemo, useEffect} from 'react';
+import {useRef, useEffect} from 'react';
 import {useFocusable, FocusContext} from '@noriginmedia/norigin-spatial-navigation';
 import {useComposedRefs} from 'app/lib/components';
 import {useGet} from 'app/data';
-import {toPath} from 'app/lib/formatting';
 import media from 'media/store';
 
 import {SelectItem} from './item';
 
-//import type {ScrollView} from 'react-native';
-import type {HfsImpl} from 'react-exo/fs';
-
-interface SelectTabsProps {
-  hfs: HfsImpl | null,
-  path: string,
-  name: string,
-  ext: string,
-}
-
-export function SelectTabs({hfs, path, name, ext}: SelectTabsProps) {
+export function SelectTabs() {
   const scroll = useRef<ScrollView>(null);
-  const selection = useGet(media.selectors.getSelected);
   const focused = useGet(media.selectors.getFocused);
-  const list = useMemo(() => selection.map(selectItem => {
-    const {path, name, ext} = toPath(selectItem, false);
-    return {path, name, ext};
-  }), [selection]);
-
+  const selection = useGet(media.selectors.getSelected);
   const {ref, focusKey} = useFocusable({
     preferredChildFocusKey: `select@${focused}`,
     saveLastFocusedChild: false,
@@ -38,11 +21,11 @@ export function SelectTabs({hfs, path, name, ext}: SelectTabsProps) {
 
   // Scroll to focus
   useEffect(() => {
-    const index = list.findIndex(item => item.path === focused);
+    const index = selection.findIndex(item => item === focused);
     if (index > -1) {
       scroll.current?.scrollTo({x: index * 100, animated: true});
     }
-  }, [focused, list]);
+  }, [focused]);
 
   return (
     <FocusContext.Provider value={focusKey}>
@@ -51,23 +34,16 @@ export function SelectTabs({hfs, path, name, ext}: SelectTabsProps) {
         ref={refs}
         style={styles.root}
         contentContainerStyle={styles.inner}
-        showsHorizontalScrollIndicator={false}
-        // initial={{opacity: 0}}
-        // animate={{opacity: 1}}
-        // exit={{opacity: 0}}>
-        >
-        {list?.length === 0 &&
-          <SelectItem
-            focused
-            index={-1}
-            {...{hfs, path, name, ext}}
-          />
+        showsHorizontalScrollIndicator={false}>
+        {selection.length === 0 &&
+          <SelectItem path={focused} index={-1} focused/>
         }
-        {list?.map(({path, name, ext}, index) => (
+        {selection.map((path, index) => (
           <SelectItem
             key={path}
+            path={path}
+            index={index}
             focused={focused === path}
-            {...{hfs, path, name, ext, index}}
           />
         ))}
       </ScrollView>

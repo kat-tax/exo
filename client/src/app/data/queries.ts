@@ -5,7 +5,7 @@ import * as $ from './types';
  * Query the latest profile.
  */
 export const getProfile = _.createQuery(db => db
-  .selectFrom('profile')
+  .selectFrom('app_profile')
   .orderBy('createdAt', 'desc')
   .selectAll()
   .limit(1)
@@ -15,40 +15,98 @@ export const getProfile = _.createQuery(db => db
  * Query all shortcuts, ordered by earliest created.
  */
 export const getShortcuts = _.createQuery(db => db
-  .selectFrom('shortcut')
+  .selectFrom('app_shortcut')
   .orderBy('createdAt', 'asc')
   .where('isDeleted', 'is not', 1)
   .selectAll()
 );
 
 /**
+ * Query all files
+ */
+export const getFiles = _.createQuery(db => db
+  .selectFrom('media_file')
+  .select(['id', 'size', 'type', 'thumb'])
+  .where('isDeleted', 'is not', 1),
+);
+
+/** Query hierachy of paths (recurse up parentIds) */
+export const getPathHierarchy = (deviceId: $.DeviceId | null, pathId: $.PathId | null) => _.createQuery(db => db
+  .withRecursive('path_hierarchy', (qb) =>
+    qb.selectFrom('media_path')
+      .where('id', pathId ? '=' : 'is', pathId)
+      .where('deviceId', '=', deviceId)
+      .where('isDeleted', 'is not', 1)
+      .select(['id', 'name', 'parentId'])
+      .unionAll(
+        qb.selectFrom('media_path')
+          .innerJoin('path_hierarchy', 'media_path.id', 'path_hierarchy.parentId')
+          .where('media_path.deviceId', '=', deviceId)
+          .where('media_path.isDeleted', 'is not', 1)
+          .select(['media_path.id', 'media_path.name', 'media_path.parentId'])
+      )
+  )
+  .selectFrom('path_hierarchy')
+  .select(['id', 'name'])
+);
+
+/**
+ * Query all paths for a device
+ */
+export const getPathsForDevice = (deviceId: $.DeviceId) => _.createQuery(db => db
+  .selectFrom('media_path')
+  .select(['id', 'name', 'parentId', 'fileId'])
+  .where('deviceId', '=', deviceId)
+  .where('isDeleted', 'is not', 1),
+);
+
+/**
+ * Query a path by id
+ */
+export const getPathById = (deviceId: $.DeviceId, pathId: $.PathId | null) => _.createQuery(db => db
+  .selectFrom('media_path')
+  .where('id', pathId ? '=' : 'is', pathId)
+  .where('deviceId', '=', deviceId)
+  .where('isDeleted', 'is not', 1)
+  .selectAll()
+  .limit(1)
+);
+
+/**
  * Query folder contents (subfolders and files)
  * Pass null for folderId to get top-level items
  */
-export const folderContentsQuery = (folderId: $.PathId | null) =>
+export const getPathList = (deviceId: $.DeviceId, pathId: $.PathId | null) =>
   _.createQuery(db => db
-    .selectFrom('path')
-    .leftJoin('file', 'path.fileId', 'file.id')
+    .selectFrom('media_path')
+    .leftJoin('media_file', 'media_path.fileId', 'media_file.id')
     .select([
-      'path.id',
-      'path.name',
-      'path.parentId',
-      'path.deviceId',
-      'path.fileId',
-      'file.size',
-      'file.mime',
+      'media_path.id',
+      'media_path.name',
+      'media_path.parentId',
+      'media_path.deviceId',
+      'media_path.fileId',
+      'media_path.createdAt',
+      'media_path.updatedAt',
+      'media_file.thumb',
+      'media_file.size',
+      'media_file.type',
     ])
-    .where('path.parentId', folderId ? '=' : 'is', folderId)
-    .where('path.isDeleted', 'is not', 1)
-    .orderBy('path.createdAt', 'desc')
+    .where('media_path.deviceId', '=', deviceId)
+    .where('media_path.parentId', pathId ? '=' : 'is', pathId)
+    .where('media_path.isDeleted', 'is not', 1)
+    .orderBy((eb) => eb.case()
+      .when('media_path.fileId', 'is', null)
+      .then(0).else(1).end(), 'asc')
+    .orderBy('media_path.name', 'asc')
   );
 
 /**
  * Query transfers for a file.
  */
-export const transfersForFileQuery = (fileId: $.FileId) =>
+export const getTransfersByFile = (fileId: $.FileId) =>
   _.createQuery(db => db
-    .selectFrom('transfer')
+    .selectFrom('media_transfer')
     .selectAll()
     .where('fileId', '=', fileId)
     .where('isDeleted', 'is not', 1)
@@ -56,12 +114,71 @@ export const transfersForFileQuery = (fileId: $.FileId) =>
   );
 
 /**
+ * Query all devices
+ */
+export const getDevices = _.createQuery(db => db
+  .selectFrom('app_device')
+  .where('isDeleted', 'is not', 1)
+  .selectAll()
+  .orderBy('createdAt', 'asc')
+);
+
+/**
+ * Query a device by id
+ */
+export const getDevice = (id: $.DeviceId | null) => _.createQuery(db => db
+  .selectFrom('app_device')
+  .where('id', '=', id)
+  .where('isDeleted', 'is not', 1)
+  .selectAll()
+  .limit(1)
+);
+
+/**
+ * Query the last location for all devices
+ */
+export const getLastLocations = _.createQuery(db => {
+  const latestLocations = db
+    .selectFrom('app_location')
+    .select((eb) => [
+      'deviceId',
+      eb.fn.max('createdAt').as('maxCreatedAt')
+    ])
+    .where('isDeleted', 'is not', 1)
+    .groupBy('deviceId')
+    .as('latest');
+
+  return db
+    .selectFrom('app_location')
+    .innerJoin(latestLocations, (join) =>
+      join
+        .onRef('app_location.deviceId', '=', 'latest.deviceId')
+        .onRef('app_location.createdAt', '=', 'latest.maxCreatedAt')
+    )
+    .innerJoin('app_device', 'app_location.deviceId', 'app_device.id')
+    .select([
+      'app_location.id',
+      'app_location.deviceId',
+      'app_location.latitude',
+      'app_location.longitude',
+      'app_location.createdAt',
+      'app_device.name as deviceName',
+      'app_device.online',
+      'app_device.platform',
+      'app_device.storageUsed',
+      'app_device.storageTotal',
+    ])
+    .where('app_location.isDeleted', 'is not', 1)
+    .where('app_device.isDeleted', 'is not', 1);
+});
+
+/**
  * Query a shortcut by id.
  */
 export const getShortcut = (
   id: $.ShortcutId | null,
 ) => _.createQuery(db => db
-  .selectFrom('shortcut')
+  .selectFrom('app_shortcut')
   .where('id', '=', id)
   .where('isDeleted', 'is not', 1)
   .selectAll()
@@ -72,7 +189,7 @@ export const getShortcut = (
  * Query all lists, ordered by earliest created.
  */
 export const getLists = _.createQuery(db => db
-  .selectFrom('list')
+  .selectFrom('world_list')
   .orderBy('createdAt', 'asc')
   .where('isDeleted', 'is not', 1)
   .selectAll()
@@ -84,7 +201,7 @@ export const getLists = _.createQuery(db => db
 export const getList = (
   id: $.ListId | null,
 ) => _.createQuery(db => db
-  .selectFrom('list')
+  .selectFrom('world_list')
   .where('id', '=', id)
   .where('isDeleted', 'is not', 1)
   .selectAll()
@@ -98,7 +215,7 @@ export const getListItems = (
   listId: $.ListId | null,
   categoryId: $.ListCategoryId | null = null,
 ) => _.createQuery(db => db
-  .selectFrom('listItem')
+  .selectFrom('world_listItem')
   .where('listId', '=', listId)
   .where('categoryId', categoryId ? '=' : 'is', categoryId)
   .where('isDeleted', 'is not', 1)
@@ -112,7 +229,7 @@ export const getListItems = (
 export const getListCounts = (
   id: $.ListId | null,
 ) => _.createQuery(db => db
-  .selectFrom('listItem')
+  .selectFrom('world_listItem')
   .where('listId', '=', id)
   .where('isDeleted', 'is not', 1)
   .select((eb) => [
@@ -129,7 +246,7 @@ export const getListCounts = (
 export const getListCategories = (
   id: $.ListId | null,
 ) => _.createQuery(db => db
-  .selectFrom('listCategory')
+  .selectFrom('world_listCategory')
   .where('listId', '=', id)
   .where('isDeleted', 'is not', 1)
   .orderBy('createdAt', 'asc')

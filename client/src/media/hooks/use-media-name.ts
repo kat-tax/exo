@@ -7,8 +7,6 @@ export function useMediaName(name?: string) {
   const title = useCallback((n?: string) => {
     const dir = n as InitDirectory;
     switch (dir) {
-      case InitDirectory.Transfers:
-        return t`Transfers`;
       case InitDirectory.Documents:
         return t`Documents`;
       case InitDirectory.Music:
