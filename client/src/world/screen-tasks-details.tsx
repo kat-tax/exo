@@ -3,16 +3,16 @@ import {StyleSheet} from 'react-native-unistyles';
 import {Platform, Pressable, View} from 'react-native';
 import {useMemo} from 'react';
 import {useLingui} from '@lingui/react/macro';
-import {useLists} from 'tasks/hooks/use-lists';
+import {useTasks} from 'world/hooks/use-tasks';
 import {useQuery} from 'app/data';
 import {Panel} from 'app/ui/panel';
-import {ListGroup} from 'tasks/stacks/list-group';
+import {TasksListGroup} from 'world/stacks/tasks-list-group';
 import {getList, getListCounts, getListCategories} from 'app/data/queries';
 
-export default function ScreenList({route, navigation}: ReactNavigation.ScreenProps<'TasksListDetails'>) {
+export default function ScreenTasksDetails({route, navigation}: ReactNavigation.ScreenProps<'WorldTasksDetails'>) {
   const {id} = route.params;
-  const lists = useLists();
-  const listId = useMemo(() => lists.getId(id), [id]);
+  const tasks = useTasks();
+  const listId = useMemo(() => tasks.getId(id), [id]);
   const listData = useQuery(getList(listId))[0];
   const listCounts = useQuery(getListCounts(listId))[0];
   const listCategories = useQuery(getListCategories(listId));
@@ -20,7 +20,7 @@ export default function ScreenList({route, navigation}: ReactNavigation.ScreenPr
   const {t} = useLingui();
 
   if (!listData) {
-    navigation.navigate('TasksListAll');
+    navigation.navigate('WorldTasksAll');
     return null;
   }
 
@@ -31,7 +31,7 @@ export default function ScreenList({route, navigation}: ReactNavigation.ScreenPr
       right={
         <Pressable
           style={styles.icon}
-          onPress={() => navigation.navigate('TasksListEdit', {id})}>
+          onPress={() => navigation.navigate('WorldTasksEdit', {id})}>
           <Icon.Remote
             name={listData.icon ?? 'ph:list-checks'}
             size={'50%'}
@@ -42,13 +42,13 @@ export default function ScreenList({route, navigation}: ReactNavigation.ScreenPr
         </Pressable>
       }>
       <View style={styles.root}>
-        <ListGroup
+        <TasksListGroup
           id={listId}
           categoryId={null}
           categoryName={null}
         />
         {listCategories?.map((category) => (
-          <ListGroup
+          <TasksListGroup
             key={category.id}
             id={listId}
             categoryId={category.id}

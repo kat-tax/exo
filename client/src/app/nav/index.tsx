@@ -19,9 +19,6 @@ export type RootStackParamList = {
   HomeDashboard: undefined;
   HomeShortcut: {id: string};
   HomeNotFound: undefined;
-  TasksListAll: undefined;
-  TasksListDetails: {id: string};
-  TasksListEdit: {id: string};
   SettingsOverview: undefined;
   SettingsStorage: undefined;
   DevDesign: undefined;
@@ -37,8 +34,11 @@ export type RootStackParamList = {
   MediaViewBooks: undefined;
   MediaViewIpfs: {cid: string; filename?: string};
   WorldOverview: undefined;
-  WorldCalendar: undefined;
   WorldMap: undefined;
+  WorldCalendar: undefined;
+  WorldTasksAll: undefined;
+  WorldTasksEdit: {id: string};
+  WorldTasksDetails: {id: string};
 };
 
 /** Top level navigation links shown in the drawer menus and tab bars. */
@@ -53,7 +53,6 @@ const links: Record<string, Array<keyof RootStackParamList>> = {
   /** The menu items shown at the top of the drawer menu. */
   menuTop: [
     'HomeDashboard',
-    'TasksListAll',
   ],
   /** The menu items shown in the media group. */
   menuMedia: [
@@ -68,6 +67,7 @@ const links: Record<string, Array<keyof RootStackParamList>> = {
   /** The menu items shown in the world group. */
   menuWorld: [
     'WorldMap',
+    'WorldTasksAll',
     'WorldCalendar',
   ],
   /** The menu items to show in development only (below the top items in a group). */
@@ -273,14 +273,7 @@ export function Navigator() {
       linking: 'world',
       options: {
         title: t`World`,
-        icon: 'ph:earth',
-      },
-    },
-    WorldCalendar: {
-      linking: 'calendar',
-      options: {
-        title: t`Calendar`,
-        icon: 'ph:calendar-dots',
+        icon: 'ph:globe',
       },
     },
     WorldMap: {
@@ -290,22 +283,28 @@ export function Navigator() {
         icon: 'ph:map-trifold',
       },
     },
-    TasksListAll: {
-      linking: 'lists',
+    WorldCalendar: {
+      linking: 'calendar',
       options: {
-        title: t`Lists`,
-        icon: 'ph:list-checks',
-        tabBarIcon: () => require('./icons/ph-list-checks.png'),
+        title: t`Calendar`,
+        icon: 'ph:calendar-dots',
       },
     },
-    TasksListDetails: {
-      linking: 'list/:id',
+    WorldTasksAll: {
+      linking: 'tasks',
+      options: {
+        title: t`Tasks`,
+        icon: 'ph:list-checks',
+      },
+    },
+    WorldTasksDetails: {
+      linking: 'tasks/:id',
       options: {
         title: t`List Details`,
       },
     },
-    TasksListEdit: {
-      linking: 'list/:id/edit',
+    WorldTasksEdit: {
+      linking: 'tasks/:id/edit',
       options: {
         title: t`Edit List`,
       },

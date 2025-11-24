@@ -4,26 +4,26 @@ import {StyleSheet} from 'react-native-unistyles';
 import {Pressable, View} from 'react-native';
 import {useMemo, useRef} from 'react';
 import {useLingui} from '@lingui/react/macro';
-import {useLists} from 'tasks/hooks/use-lists';
+import {useTasks} from 'world/hooks/use-tasks';
 import {useQuery} from 'app/data';
 import {getListItems} from 'app/data/queries';
 
 import type {ListId, ListCategoryId} from 'app/data/types';
 import type {TextInput as TextInputType} from 'react-native';
 
-interface ListGroupProps {
+interface TasksListGroupProps {
   id: ListId | null;
   categoryId: ListCategoryId | null;
   categoryName: string | null;
 }
 
-export function ListGroup({id, categoryId, categoryName}: ListGroupProps) {
+export function TasksListGroup({id, categoryId, categoryName}: TasksListGroupProps) {
   const ref = useRef<TextInputType>(null);
-  const lists = useLists();
-  const listId = useMemo(() => lists.getId(id ?? ''), [id]);
+  const tasks = useTasks();
+  const listId = useMemo(() => tasks.getId(id ?? ''), [id]);
   const listItems = useQuery(getListItems(listId, categoryId));
 
-  const create = lists.createItem.bind(null, listId, categoryId);
+  const create = tasks.createItem.bind(null, listId, categoryId);
   const {t} = useLingui();
 
   const resetInput = () => {
@@ -76,7 +76,7 @@ export function ListGroup({id, categoryId, categoryName}: ListGroupProps) {
         {listItems.map((item) => (
           <View key={item.id} style={styles.item}>
             <Pressable onPress={() => {
-              lists.updateItemStatus(item.id, !item.isCompleted);
+              tasks.updateItemStatus(item.id, !item.isCompleted);
             }}>
               {item.isCompleted ? (
                 <Icon
@@ -103,13 +103,13 @@ export function ListGroup({id, categoryId, categoryName}: ListGroupProps) {
               maxLength={1000}
               selectTextOnFocus={true}
               onChangeText={(value) => {
-                lists.updateItemText(item.id, value);
+                tasks.updateItemText(item.id, value);
               }}
               // Clear item if backspace is pressed and the item is empty
               onKeyPress={(e) => {
                 if (e.nativeEvent.key === 'Backspace') {
                   if (item.textContent === '') {
-                    lists.removeItem(item.id);
+                    tasks.removeItem(item.id);
                     ref.current?.focus();
                   }
                 }
@@ -117,7 +117,7 @@ export function ListGroup({id, categoryId, categoryName}: ListGroupProps) {
               // Clear item if it is empty and the user blurs the input
               onBlur={() => {
                 if (item.textContent === '') {
-                  lists.removeItem(item.id);
+                  tasks.removeItem(item.id);
                 }
               }}
               // Focus new item input when user submits the current item

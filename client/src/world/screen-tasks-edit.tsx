@@ -8,33 +8,33 @@ import {Button} from 'design';
 import {Panel, PanelSection, PanelItem} from 'app/ui/panel';
 
 import {useQuery} from 'app/data';
-import {useLists} from 'tasks/hooks/use-lists';
+import {useTasks} from 'world/hooks/use-tasks';
 import {getList, getListCategories} from 'app/data/queries';
 
 import type {TextInput as TextInputType} from 'react-native';
 
-export default function ScreenListEdit({route, navigation}: ReactNavigation.ScreenProps<'TasksListEdit'>) {
+export default function ScreenTasksEdit({route, navigation}: ReactNavigation.ScreenProps<'WorldTasksEdit'>) {
   const {id} = route.params;
-  const lists = useLists();
-  const listId = useMemo(() => lists.getId(id), [id]);
+  const tasks = useTasks();
+  const listId = useMemo(() => tasks.getId(id), [id]);
   const listData = useQuery(getList(listId))[0];
   const categories = useQuery(getListCategories(listId));
   const categoryInputRef = useRef<TextInputType>(null);
 
-  const update = lists.update.bind(null, listId);
+  const update = tasks.update.bind(null, listId);
   const {t} = useLingui();
 
-  const removeCategory = lists.removeCategory.bind(null, listId);
+  const removeCategory = tasks.removeCategory.bind(null, listId);
   const createCategory = (text: string) => {
     if (text.length > 0) {
-      lists.createCategory(listId, text);
+      tasks.createCategory(listId, text);
       categoryInputRef.current?.clear();
       categoryInputRef.current?.focus();
     }
   };
 
   if (!listData) {
-    navigation.navigate('TasksListAll');
+    navigation.navigate('WorldTasksAll');
     return null;
   }
 
@@ -75,7 +75,7 @@ export default function ScreenListEdit({route, navigation}: ReactNavigation.Scre
                     value={category.name ?? ''}
                     maxLength={50}
                     onChangeText={text => {
-                      lists.updateCategory(category.id, text);
+                      tasks.updateCategory(category.id, text);
                     }}
                     onKeyPress={e => {
                       if (e.nativeEvent.key === 'Backspace' && (category.name ?? '') === '') {
@@ -140,8 +140,8 @@ export default function ScreenListEdit({route, navigation}: ReactNavigation.Scre
               mode="Destructive"
               state="Default"
               onPress={() => {
-                lists.remove(listId);
-                navigation.navigate('TasksListAll');
+                tasks.remove(listId);
+                navigation.navigate('WorldTasksAll');
               }}
             />
           </PanelItem>

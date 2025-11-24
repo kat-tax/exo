@@ -8,10 +8,10 @@ import {Grid} from 'app/ui/grid';
 import {GridCell} from 'app/ui/grid';
 import {useQuery} from 'app/data';
 import {getLists} from 'app/data/queries';
-import {useLists} from 'tasks/hooks/use-lists';
+import {useTasks} from 'world/hooks/use-tasks';
 
-export default function ScreenLists() {
-  const lists = useLists();
+export default function ScreenTasksAll() {
+  const tasks = useTasks();
   const data = useQuery(getLists);
   const nav = useNavigation();
   const {t} = useLingui();
@@ -25,8 +25,8 @@ export default function ScreenLists() {
           <GridCell
             key={id}
             focusKey={`list-${id}`}
-            onPress={() => nav.navigate('TasksListDetails', {id})}
-            onEditSelect={() => nav.navigate('TasksListEdit', {id})}>
+            onPress={() => nav.navigate('WorldTasksDetails', {id})}
+            onEditSelect={() => nav.navigate('WorldTasksEdit', {id})}>
             <View style={[styles.list, !name && styles.listAdd]}>
               <Icon.Remote
                 name={icon ?? ''}
@@ -41,8 +41,8 @@ export default function ScreenLists() {
         <GridCell
           focusKey="list-add"
           onPress={() => {
-            const id = data?.find(list => !list.name)?.id ?? lists.create();
-            if (id) nav.navigate('TasksListEdit', {id});
+            const id = data?.find(list => !list.name)?.id ?? tasks.create();
+            if (id) nav.navigate('WorldTasksEdit', {id});
           }}>
           <View style={[styles.list, styles.listAdd]}>
             <Icon

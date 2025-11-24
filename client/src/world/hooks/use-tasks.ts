@@ -4,7 +4,7 @@ import {useEvolu} from 'app/data';
 import {getListItems} from 'app/data/queries';
 import * as $ from 'app/data/types';
 
-export function useLists() {
+export function useTasks() {
   const {t} = useLingui();
   const evolu = useEvolu();
 

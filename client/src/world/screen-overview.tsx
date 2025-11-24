@@ -1,42 +1,87 @@
-import {StyleSheet} from 'react-native-unistyles';
 import {useLingui} from '@lingui/react/macro';
-import {Link} from 'react-exo/navigation';
-import {View} from 'react-native';
-import {Panel} from 'app/ui/panel';
-import {Panel as DesignPanel} from 'design';
+import {StyleSheet} from 'react-native-unistyles';
+import {View, Text} from 'react-native';
+import {Screen} from 'app/ui/screen';
+import {Grid, GridCell} from 'app/ui/grid';
+import {Icon} from 'react-exo/icon';
+import {useNavigation} from '@react-navigation/native';
 
-export default function ScreenWorld() {
+export default function ScreenWorld(_: ReactNavigation.ScreenProps<'WorldOverview'>) {
   const {t} = useLingui();
-
   return (
-    <Panel>
+    <Screen>
       <View style={styles.root}>
-        <Link to="/map">
-          <DesignPanel
-            header={t`Map`}
-            message={t`View your device locations and geo-related info`}
+        <Grid>
+          <WorldTile
+            link="WorldMap"
+            icon="ph:map-trifold"
+            title={t`Map`}
           />
-        </Link>
-        <Link to="/news">
-          <DesignPanel
-            header={t`News`}
-            message={t`View your latest news and rss feeds`}
+          <WorldTile
+            link="WorldTasksAll"
+            icon="ph:list-checks"
+            title={t`Tasks`}
           />
-        </Link>
-        <Link to="/calendar">
-          <DesignPanel
-            header={t`Calendar`}
-            message={t`View your events and time-related info`}
+          <WorldTile
+            link="WorldCalendar"
+            icon="ph:calendar-dots"
+            title={t`Calendar`}
           />
-        </Link>
+        </Grid>
       </View>
-    </Panel>
+    </Screen>
+  );
+}
+
+interface WorldTileProps {
+  link: string;
+  icon: string;
+  title: string;
+}
+
+function WorldTile(props: WorldTileProps) {
+  const nav = useNavigation();
+  return (
+    <GridCell
+      focusKey={props.link}
+      onPress={() => nav.navigate(props.link as any)}>
+      <View style={styles.tile}>
+        <Icon
+          name={props.icon}
+          size={32}
+          uniProps={(theme) => ({
+            color: theme.colors.foreground,
+          })}
+        />
+        <Text
+          selectable={false}
+          style={styles.tileTitle}>
+          {props.title}
+        </Text>
+      </View>
+    </GridCell>
   );
 }
 
 const styles = StyleSheet.create((theme) => ({
   root: {
-    gap: theme.display.space5,
-    paddingBottom: theme.display.space5,
+    flex: 1,
+    padding: theme.display.space2,
+  },
+  tile: {
+    flex: 1,
+    gap: theme.display.space3,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: theme.display.radius3,
+    backgroundColor: theme.colors.secondary,
+  },
+  tileTitle: {
+    fontFamily: theme.font.family,
+    fontSize: theme.font.contentSize,
+    fontWeight: theme.font.contentWeight,
+    lineHeight: theme.font.contentHeight,
+    letterSpacing: theme.font.contentSpacing,
+    color: theme.colors.foreground,
   },
 }));
