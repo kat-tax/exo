@@ -124,16 +124,23 @@ export async function fetchEvolu(path: string): Promise<FileTransfer | undefined
     return undefined;
   }
 
-  const transfer = evolu.insert('media_transfer', {
-    fileId,
-    status: 'active',
-    recipientId: device.id, // Current device is the recipient
-  });
+  // TODO: implement device to device file transfers
+  // For local, we should find the path via hierarchy query and use hfs
+  // For remote, we should do the following:
+  // 1. Create a transfer request
+  // 2. Other devices with file update with a magnet link
+  // 3. Download via webtorrent
 
-  if (!transfer.ok) {
-    console.error(`[evolu-fetch] failed to create transfer request:`, transfer.error);
-    return undefined;
-  }
+  // const transfer = evolu.insert('media_transfer', {
+  //   fileId,
+  //   status: 'active',
+  //   recipientId: device.id, // Current device is the recipient
+  // });
+
+  // if (!transfer.ok) {
+  //   console.error(`[evolu-fetch] failed to create transfer request:`, transfer.error);
+  //   return undefined;
+  // }
 
   return Promise.resolve(new Response(new Blob([`Transfer request created for file ${fileId} from device ${sourceDeviceId}.`]), {
     headers: {
