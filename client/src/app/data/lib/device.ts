@@ -14,7 +14,6 @@ export const store = {
 
 let _deviceId = mmkv.getString(store.id);
 let _deviceName = mmkv.getString(store.name);
-let _deviceTracking = mmkv.getBoolean(store.tracking);
 
 // Device ID is generated if not set
 if (!_deviceId) {
@@ -29,9 +28,9 @@ if (!_deviceName) {
 }
 
 // Note: device platform is not configurable
+// Note: tracking is not provided (local only, accessed via hooks)
 export const device = {
   id: DeviceId.orThrow(_deviceId),
   name: _deviceName,
-  tracking: _deviceTracking,
   platform,
 } as const;
