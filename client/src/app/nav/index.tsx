@@ -17,6 +17,7 @@ import type {Theme} from 'app/ui';
 
 export type RootStackParamList = {
   HomeDashboard: undefined;
+  HomeInbox: undefined;
   HomeShortcut: {id: string};
   HomeNotFound: undefined;
   SettingsOverview: undefined;
@@ -53,6 +54,7 @@ const links: Record<string, Array<keyof RootStackParamList>> = {
   /** The menu items shown at the top of the drawer menu. */
   menuTop: [
     'HomeDashboard',
+    'HomeInbox',
   ],
   /** The menu items shown in the media group. */
   menuMedia: [
@@ -152,6 +154,13 @@ export function Navigator() {
         title: t`Dashboard`,
         icon: 'ph:squares-four',
         tabBarIcon: () => require('./icons/ph-squares-four.png'),
+      },
+    },
+    HomeInbox: {
+      linking: 'inbox',
+      options: {
+        title: t`Inbox`,
+        icon: 'ph:tray',
       },
     },
     HomeNotFound: {
