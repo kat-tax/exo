@@ -7,12 +7,13 @@ import type {MarkerProps} from 'react-map-gl/maplibre';
 interface MarkerDeviceProps extends MarkerProps {
   online: boolean,
   isSelf: boolean,
+  onClick?: () => void,
 }
 
-export function MarkerDevice(props: MarkerDeviceProps) {
+export function MarkerDevice({onClick, online, isSelf, ...props}: MarkerDeviceProps) {
   return (
     <Marker {...props}>
-      <Motion.Pressable onPress={console.log}>
+      <Motion.Pressable onPress={onClick}>
         <Motion.View
           initial={{scale: 1}}
           whileTap={{scale: 0.95}}
@@ -20,9 +21,9 @@ export function MarkerDevice(props: MarkerDeviceProps) {
           transition={{type: 'spring', speed: 100}}>
           <Icon
             name="ph:map-pin"
-            size={props.isSelf ? 32 : 24}
+            size={isSelf ? 32 : 24}
             uniProps={(theme) => ({
-              color: props.online
+              color: online
                 ? theme.colors.primary
                 : theme.colors.mutedForeground
             })}

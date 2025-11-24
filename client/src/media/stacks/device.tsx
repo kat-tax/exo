@@ -14,6 +14,7 @@ export interface DeviceCardProps {
   isLocal?: boolean,
   storageUsed?: number | null,
   storageTotal?: number | null,
+  disableAdaptiveSize?: boolean,
   onPress: () => void,
 }
 
@@ -48,7 +49,8 @@ export function DeviceCard(props: DeviceCardProps) {
   return (
     <GridCell
       focusKey={`device-${props.id}:${props.name}`}
-      onPress={props.onPress}>
+      onPress={props.onPress}
+      disableAdaptiveSize={props.disableAdaptiveSize}>
       <View style={styles.root}>
         <View style={styles.identity}>
           <Icon

@@ -8,6 +8,7 @@ import type {ViewProps} from 'react-native';
 
 interface GridCellProps extends ViewProps {
   focusKey: string;
+  disableAdaptiveSize?: boolean;
   onPress?: () => void;
   onEditSelect?: () => void;
 }
@@ -21,7 +22,7 @@ export function GridCell(props: GridCellProps) {
 
   return (
     <Pressable
-      style={styles.root}
+      style={[styles.root, props.disableAdaptiveSize && styles.disableAdaptiveSize]}
       onPress={() => props.onPress?.()}
       onLongPress={() => props.onEditSelect?.()}>
       {root => (
@@ -67,6 +68,11 @@ const styles = StyleSheet.create((theme) => ({
       lg: '14.2857%',   // 7 col
       xl: '12.5%',      // 8 col
     },
+  },
+  disableAdaptiveSize: {
+    aspectRatio: undefined,
+    width: '100%',
+    height: '100%',
   },
   inner: {
     width: '100%',

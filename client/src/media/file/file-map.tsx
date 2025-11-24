@@ -24,7 +24,6 @@ export default forwardRef(({path, actions, maximized}: FileMap) => {
     latitude: number;
   } | null>(null);
 
-  const textColor = '#000';
   const fillColor = scheme === 'dark' ? '#000' : '#999';
   const fillOutlineColor = scheme === 'dark' ? '#fff' : '#000';
 
@@ -128,10 +127,10 @@ export default forwardRef(({path, actions, maximized}: FileMap) => {
             <View style={styles.popupContainer}>
               {selectedFeature.feature.properties && Object.entries(selectedFeature.feature.properties).map(([key, value]) => (
                 <View key={key} style={styles.popupRow}>
-                  <Text style={[styles.popupKey, {color: textColor}]}>
+                  <Text style={styles.popupKey}>
                     {key}:
                   </Text>
-                  <Text style={[styles.popupValue, {color: textColor}]}>
+                  <Text style={styles.popupValue}>
                     {String(value)}
                   </Text>
                 </View>
@@ -155,6 +154,7 @@ const styles = StyleSheet.create((theme) => ({
   },
   popupContainer: {
     gap: 4,
+    padding: theme.display.space3,
   },
   popupRow: {
     flexDirection: 'row',
@@ -167,6 +167,7 @@ const styles = StyleSheet.create((theme) => ({
     textTransform: 'uppercase',
     lineHeight: theme.font.height,
     letterSpacing: theme.font.spacing,
+    color: theme.colors.mutedForeground,
     flexShrink: 0,
   },
   popupValue: {
@@ -175,6 +176,7 @@ const styles = StyleSheet.create((theme) => ({
     fontWeight: theme.font.weight,
     lineHeight: theme.font.height,
     letterSpacing: theme.font.spacing,
+    color: theme.colors.foreground,
     flex: 1,
   },
 }));

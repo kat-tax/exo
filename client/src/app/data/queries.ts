@@ -164,6 +164,9 @@ export const getLastLocations = _.createQuery(db => {
       'app_location.createdAt',
       'app_device.name as deviceName',
       'app_device.online',
+      'app_device.platform',
+      'app_device.storageUsed',
+      'app_device.storageTotal',
     ])
     .where('app_location.isDeleted', 'is not', 1)
     .where('app_device.isDeleted', 'is not', 1);
