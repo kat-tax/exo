@@ -21,7 +21,7 @@ export function MarkerDevice({onClick, online, isSelf, ...props}: MarkerDevicePr
           transition={{type: 'spring', speed: 100}}>
           <Icon
             name="ph:map-pin"
-            size={isSelf ? 32 : 24}
+            size={isSelf ? 48 : 36}
             uniProps={(theme) => ({
               color: online
                 ? theme.colors.primary

@@ -36,6 +36,7 @@ export default function ScreenMap() {
       longitude: target?.longitude,
       storageUsed: target?.storageUsed,
       storageTotal: target?.storageTotal,
+      transparent: true,
       disableAdaptiveSize: true,
     };
   }, [selectedDeviceId, locations]);

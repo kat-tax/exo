@@ -14,6 +14,7 @@ export interface DeviceCardProps {
   isLocal?: boolean,
   storageUsed?: number | null,
   storageTotal?: number | null,
+  transparent?: boolean,
   disableAdaptiveSize?: boolean,
   onPress: () => void,
 }
@@ -51,7 +52,7 @@ export function DeviceCard(props: DeviceCardProps) {
       focusKey={`device-${props.id}:${props.name}`}
       onPress={props.onPress}
       disableAdaptiveSize={props.disableAdaptiveSize}>
-      <View style={styles.root}>
+      <View style={[styles.root, props.transparent && styles.transparent]}>
         <View style={styles.identity}>
           <Icon
             name={props.icon}
@@ -101,6 +102,10 @@ const styles = StyleSheet.create((theme) => ({
     borderRadius: theme.display.radius3,
     borderColor: theme.colors.border,
     backgroundColor: theme.colors.secondary,
+  },
+  transparent: {
+    borderColor: 'transparent',
+    backgroundColor: 'transparent',
   },
   identity: {
     alignItems: 'center',
