@@ -24,18 +24,13 @@ export function useDirZip(path: string): ZipCtx {
     if (!zip) return;
     const source = zipfs.current?.getById(file.id);
     if (!source) return;
-    // Root directory (context based on path)
-    const rootDirectory = path.includes('/') ? path.split('/').slice(0, -1).join('/') + '/' : '';
-    // Target directory to extract to
-    const targetDirectory = target?.name ? `${rootDirectory}${target.name}/` : rootDirectory;
-    // Destination file path
-    const destPath = `${targetDirectory}${file.name}`;
-    const handle = await web.getFileHandle(destPath, {create: true});
+    const dest = getTargetPath(path, file.name, target?.name);
+    const handle = await web.getFileHandle(dest, {create: true});
     const writable = await handle?.createWritable();
     if (!writable) return;
     // @ts-expect-error TS missing types
     source?.getData({writable});
-    console.log('>> zip [extract]', file.name, '->', destPath);
+    console.log('>> zip [extract]', file.name, '->', dest);
     // Open file on gesture event once extracted
     if (event) {
       const [isShift, isCtrl] = [
@@ -45,7 +40,7 @@ export function useDirZip(path: string): ZipCtx {
       // Wait for the file to be created before selecting it
       await new Promise(resolve => setTimeout(resolve, 200));
       set(media.actions.selectItem({
-        path: destPath,
+        path: dest,
         isRange: isShift ?? false,
         isMulti: isCtrl ?? false,
         namespace: 'temp',
@@ -103,4 +98,13 @@ export function useDirZip(path: string): ZipCtx {
     zip,
     cmd: {extract}
   };
+}
+
+function getTargetPath(srcPath: string, fileName: string, targetDir?: string) {
+  // Root directory (context based on path)
+  const rootDirectory = srcPath.includes('/') ? srcPath.split('/').slice(0, -1).join('/') + '/' : '';
+  // Target directory to extract to
+  const targetDirectory = targetDir ? `${rootDirectory}${targetDir}/` : rootDirectory;
+  // Destination file path
+  return `${targetDirectory}${fileName}`;
 }
