@@ -298,7 +298,7 @@ self.addEventListener('message', async (event: MessageEvent<WorkerMessage>) => {
   const message = event.data;
   switch (message.type) {
     case 'init':
-      watcher.init(message.deviceId);
+      await watcher.init(message.deviceId);
       break;
     case 'stop':
       watcher.stop();
