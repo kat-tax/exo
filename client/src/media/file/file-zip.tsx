@@ -3,14 +3,13 @@ import {bytesize} from 'react-exo/fs';
 import {forwardRef, useEffect, useMemo} from 'react';
 import {useDirZip} from 'media/dir/hooks/use-dir-zip';
 import {DirZip} from 'media/dir/stacks/dir-zip';
-import {Panel} from 'app/ui/panel';
 
 import type {FileProps} from 'media/file';
 
 export interface FileZip extends FileProps {}
 
 export default forwardRef((
-  {path, name, actions, embedded}: FileZip,
+  {path, actions}: FileZip,
   _ref,
 ) => {
   const {zip, cmd} = useDirZip(path);
@@ -29,11 +28,7 @@ export default forwardRef((
     actions.setInfo(message);
   }, [message, actions]);
 
-  return (
-    <Panel
-      title={embedded ? name : undefined}
-      message={embedded ? message : undefined}>
-      {zip && <DirZip {...{zip, cmd}}/>}
-    </Panel>
-  )
+  return zip ? (
+    <DirZip {...{zip, cmd}}/>
+  ) : null;
 });

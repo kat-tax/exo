@@ -1,10 +1,8 @@
 import {fs} from '@zip.js/zip.js';
 import {web} from 'react-exo/fs';
 import {useEffect, useCallback, useState, useRef} from 'react';
-import {usePath} from 'media/hooks/use-path';
 import {useSet} from 'app/data';
 import {useFile} from 'media/file/hooks/use-file';
-import {toPath} from 'app/lib/formatting';
 import media from 'media/store';
 
 import type {Zip, ZipCtx, ZipFileEntry} from 'media/dir/types/zip';
@@ -14,7 +12,6 @@ import type {FS} from '@zip.js/zip.js';
 
 export function useDirZip(path: string): ZipCtx {
   const [zip, setZip] = useState<Zip | null>(null);
-  const {path: url} = usePath();
   const buffer = useFile(path, 'arrayBuffer');
   const zipfs = useRef<FS | null>(null);
   const set = useSet();
@@ -27,32 +24,34 @@ export function useDirZip(path: string): ZipCtx {
     if (!zip) return;
     const source = zipfs.current?.getById(file.id);
     if (!source) return;
-    const {name, ext} = toPath(file.name, false);
-    const {name: zdir} = toPath(path, false); // TODO: only for extract all
-    const root = url ? `${url}/` : '';
-    const head = target?.name ? `${target.name}/` : '';
-    const tail = false && zdir ? `${zdir}/` : ''; // TODO: this is for extract all
-    const dest = `${root}${head}${tail}${name}.${ext}`;
-    const handle = await web.getFileHandle(dest, {create: true});
+    // Root directory (context based on path)
+    const rootDirectory = path.includes('/') ? path.split('/').slice(0, -1).join('/') + '/' : '';
+    // Target directory to extract to
+    const targetDirectory = target?.name ? `${rootDirectory}${target.name}/` : rootDirectory;
+    // Destination file path
+    const destPath = `${targetDirectory}${file.name}`;
+    const handle = await web.getFileHandle(destPath, {create: true});
     const writable = await handle?.createWritable();
     if (!writable) return;
     // @ts-expect-error TS missing types
     source?.getData({writable});
-    console.log('>> zip [extract]', file.name, '->', dest);
-    // Open file on gesture event
+    console.log('>> zip [extract]', file.name, '->', destPath);
+    // Open file on gesture event once extracted
     if (event) {
       const [isShift, isCtrl] = [
         event?.shiftKey,
         event?.metaKey || event?.ctrlKey,
       ];
+      // Wait for the file to be created before selecting it
+      await new Promise(resolve => setTimeout(resolve, 200));
       set(media.actions.selectItem({
-        path: dest,
+        path: destPath,
         isRange: isShift ?? false,
         isMulti: isCtrl ?? false,
         namespace: 'temp',
       }));
     }
-  }, [zip, url, path, set]);
+  }, [zip, path, set]);
 
   useEffect(() => {
     (async () => {
@@ -81,6 +80,7 @@ export function useDirZip(path: string): ZipCtx {
             name: entry.data?.rawFilename ? new TextDecoder().decode(entry.data?.rawFilename) : entry.name,
             size: entry.data?.uncompressedSize ?? 0,
             ext: entry.name.split('.').pop() ?? '',
+            // @ts-expect-error TS missing types?
             dir: entry.data?.directory ?? false,
           }))
           .sort((a, b) => {
