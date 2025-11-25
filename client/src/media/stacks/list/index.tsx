@@ -83,6 +83,7 @@ export function List<T>({items, paths, data, opts, render}: ListProps<T>) {
                 <LegendList
                   key={`${layout}:${columns}`}
                   ref={listRef}
+                  style={{paddingBottom: 2}}
                   data={items}
                   extraData={data}
                   numColumns={columns}
