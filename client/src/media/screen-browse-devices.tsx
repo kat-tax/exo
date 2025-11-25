@@ -1,7 +1,8 @@
-import {StyleSheet} from 'react-native-unistyles';
-import {ScrollView} from 'react-native';
+import {useFocusable, FocusContext} from '@noriginmedia/norigin-spatial-navigation';
 import {useQuery} from '@evolu/react';
 import {useMemo} from 'react';
+import {StyleSheet} from 'react-native-unistyles';
+import {ScrollView} from 'react-native';
 import {ListBar} from 'media/stacks/list/bar';
 import {Grid} from 'app/ui/grid';
 import {Screen} from 'app/ui/screen';
@@ -16,34 +17,38 @@ const SHOW_LOCAL_AND_EVOLU_DEVICE = true;
 export default function ScreenBrowseDevices(_: ReactNavigation.ScreenProps<'MediaBrowseDevices'>) {
   const devices = useQuery(getDevices);
   const local = useMemo(() => devices.find(d => d.id === device.id), [devices]);
+  const {ref, focusKey} = useFocusable();
   return (
     <Screen>
       <ListBar/>
-      <ScrollView
-        style={styles.root}
-        contentContainerStyle={styles.list}>
-        <Grid>
-          <DeviceLocal
-            id={device.id}
-            name={device.name}
-            icon={getDeviceIcon(device.platform)}
-            online={true}
-            storageUsed={local?.storageUsed}
-            storageTotal={local?.storageTotal}
-          />
-          {devices.filter(d => SHOW_LOCAL_AND_EVOLU_DEVICE ? d.id !== device.id : true).map(d => (
-            <DeviceEvolu
-              key={d.id}
-              id={d.id}
-              name={d.name}
-              icon={getDeviceIcon(d.platform)}
-              online={Boolean(d.online)}
-              storageUsed={d.storageUsed}
-              storageTotal={d.storageTotal}
+      <FocusContext.Provider value={focusKey}>
+        <ScrollView
+          ref={ref}
+          style={styles.root}
+          contentContainerStyle={styles.list}>
+          <Grid>
+            <DeviceLocal
+              id={device.id}
+              name={device.name}
+              icon={getDeviceIcon(device.platform)}
+              online={true}
+              storageUsed={local?.storageUsed}
+              storageTotal={local?.storageTotal}
             />
-          ))}
-        </Grid>
-      </ScrollView>
+            {devices.filter(d => SHOW_LOCAL_AND_EVOLU_DEVICE ? d.id !== device.id : true).map(d => (
+              <DeviceEvolu
+                key={d.id}
+                id={d.id}
+                name={d.name}
+                icon={getDeviceIcon(d.platform)}
+                online={Boolean(d.online)}
+                storageUsed={d.storageUsed}
+                storageTotal={d.storageTotal}
+              />
+            ))}
+          </Grid>
+        </ScrollView>
+      </FocusContext.Provider>
     </Screen>
   );
 }
