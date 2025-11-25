@@ -12,6 +12,7 @@ export function useHotkeys(hotkeys: Hotkeys) {
   useEffect(() => {
     if (!__WEB__) return;
     const down = (e: KeyboardEvent) => {
+      if (isInputFocused()) return;
       const {key} = e;
       switch (key) {
         // Toggle main menu
@@ -39,4 +40,11 @@ export function useHotkeys(hotkeys: Hotkeys) {
       window.removeEventListener('keydown', down);
     };
   }, [hotkeys, set]);
+}
+
+function isInputFocused() {
+  if (!__WEB__) return false;
+  if (!(document.activeElement instanceof HTMLElement)) return false;
+  return document.activeElement instanceof HTMLInputElement ||
+    document.activeElement instanceof HTMLTextAreaElement;
 }
