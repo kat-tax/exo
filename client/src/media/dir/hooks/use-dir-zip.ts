@@ -3,6 +3,7 @@ import {web} from 'react-exo/fs';
 import {useEffect, useCallback, useState, useRef} from 'react';
 import {useSet} from 'app/data';
 import {useFile} from 'media/file/hooks/use-file';
+import {getTargetPath} from 'media/dir/utils/path';
 import media from 'media/store';
 
 import type {Zip, ZipCtx, ZipFileEntry} from 'media/dir/types/zip';
@@ -98,13 +99,4 @@ export function useDirZip(path: string): ZipCtx {
     zip,
     cmd: {extract}
   };
-}
-
-function getTargetPath(srcPath: string, fileName: string, targetDir?: string) {
-  // Root directory (context based on path)
-  const rootDirectory = srcPath.includes('/') ? srcPath.split('/').slice(0, -1).join('/') + '/' : '';
-  // Target directory to extract to
-  const targetDirectory = targetDir ? `${rootDirectory}${targetDir}/` : rootDirectory;
-  // Destination file path
-  return `${targetDirectory}${fileName}`;
 }

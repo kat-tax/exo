@@ -29,37 +29,3 @@ export function toTimeRange(from: number, to: number) {
 
   return `${currentTime} / ${durationTime}`;
 }
-
-/** @deprecated */
-export function toPath(url: string, isDirectory: boolean) {
-  const _path = decodeURIComponent(url)
-    .replace(/^\/browse\/local/, '')
-    .replace(/^\/browse\/ipfs/, '')
-    .replace(/\\/g, '/');
-  // Split path into parts
-  const parts = _path.split('/').filter(Boolean);
-  // Get the last part (could be filename or folder name)
-  const last = parts.pop() || '';
-  // Find the last dot in the filename
-  const dot = isDirectory ? -1 : last.lastIndexOf('.');
-  // Build the base path (without the last part)
-  const base = parts.join('/');
-  // Build the full path
-  const path = base ? `${base}/${last}` : last;
-  return {
-    ext: !isDirectory && dot !== -1 ? last.slice(dot + 1) : '',
-    name: !isDirectory && dot !== -1 ? last.slice(0, dot) : last,
-    base,
-    path,
-    parts,
-  };
-}
-
-export function toPathInfo(name: string, isDir?: boolean) {
-  const dot = isDir ? -1 : name.lastIndexOf('.') ?? -1;
-  return {
-    ext: dot !== -1 ? name.slice(dot + 1) : '',
-    name: dot !== -1 ? name.slice(0, dot) : name,
-    isDir: isDir ?? false,
-  };
-}

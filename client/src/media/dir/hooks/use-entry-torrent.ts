@@ -1,6 +1,6 @@
 import {useRef, useState, useEffect} from 'react';
 import {useFocusable} from '@noriginmedia/norigin-spatial-navigation';
-import {toPath} from 'app/lib/formatting';
+import {getPathInfo} from 'media/dir/utils/path';
 import * as dnd from 'app/lib/dragdrop';
 import * as $ from 'media/utils/entry';
 
@@ -36,7 +36,7 @@ export function useEntryTorrent({item, cmd, opt}: EntryTorrentProps) {
   }, [item, cmd]);
 
   return {
-    ext: toPath(item.name, false)?.ext,
+    ext: getPathInfo(item.name).ext,
     cmd: $.bind(cmd, item),
     opt: {...opt, focused, dragging},
     ref: [refDnd, refFoc],

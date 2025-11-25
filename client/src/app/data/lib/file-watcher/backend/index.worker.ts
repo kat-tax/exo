@@ -2,10 +2,10 @@
 
 import {hash} from 'react-exo/fs';
 import {createIdFromString} from '@evolu/common';
-import {toPathInfo} from 'app/lib/formatting';
 import {DeviceId} from 'app/data/types';
 import {FileType} from 'media/file/types';
 import {getRenderer} from 'media/file/utils/render';
+import {getPathInfo} from 'media/dir/utils/path';
 import {getMediaType} from '../utils/detect';
 import {generateImageThumb} from '../utils/generate';
 import cfg from 'config';
@@ -113,7 +113,7 @@ class FileWatcherWorker {
   }> {
     const fileId = await this.createFileId(fileHandle);
     const name = fileHandle.name.split('/').at(-1) ?? fileHandle.name;
-    const pathInfo = toPathInfo(name);
+    const pathInfo = getPathInfo(name);
     const [fileType] = getRenderer(pathInfo.ext);
     switch (fileType) {
       case FileType.Image: {

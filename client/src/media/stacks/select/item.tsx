@@ -6,8 +6,7 @@ import {useCallback, useEffect, useState} from 'react';
 import {useFocusable} from '@noriginmedia/norigin-spatial-navigation';
 import {useLingui} from '@lingui/react/macro';
 import {useSet} from 'app/data';
-
-import {getPathInfo} from 'media/file/utils/data';
+import {findPathInfo} from 'media/file/utils/data';
 import media from 'media/store';
 
 export const HEIGHT = __TOUCH__ ? 46 : 36;
@@ -54,7 +53,7 @@ export function SelectItem(props: SelectItemProps) {
   // Check if the item is a directory
   useEffect(() => {
     (async () => {
-      setPathInfo(await getPathInfo(path));
+      setPathInfo(await findPathInfo(path));
     })();
   }, [path]);
 

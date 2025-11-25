@@ -1,6 +1,6 @@
 import {useRef} from 'react';
 import {useFocusable} from '@noriginmedia/norigin-spatial-navigation';
-import {toPath} from 'app/lib/formatting';
+import {getPathInfo} from 'media/dir/utils/path';
 import * as _ from 'app/lib/dragdrop';
 import * as $ from 'media/utils/entry';
 
@@ -39,7 +39,7 @@ export function useEntryEvolu({item, cmd, opt}: EntryEvoluProps) {
   });
 
   return {
-    ext: toPath(item.name, item.isDirectory)?.ext,
+    ext: getPathInfo(item.name, item.isDirectory).ext,
     cmd: $.bind(cmd, item),
     opt: {...opt, focused},
     ref: [refFoc],

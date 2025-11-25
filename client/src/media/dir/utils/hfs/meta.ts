@@ -1,7 +1,7 @@
 import {web} from 'react-exo/fs';
 import {FileType} from 'media/file/types';
 import {getRenderer} from 'media/file/utils/render';
-import {toPathInfo} from 'app/lib/formatting';
+import {getPathInfo} from 'media/dir/utils/path';
 
 import type {HfsFileEntry} from 'media/dir/types/hfs';
 import type {GameProps} from 'react-exo/game';
@@ -12,7 +12,7 @@ const GAME_ART_SOURCE = 'https://thumbnails.libretro.com';
 export async function getThumbnail(path: string, item: HfsFileEntry) {
   if (item.isDirectory) return null;
   const url = path ? `${path}/${item.name}` : item.name;
-  const info = toPathInfo(item.name);
+  const info = getPathInfo(item.name);
   const [type, _renderer] = getRenderer(info.ext);
   switch (type) {
     case FileType.Image:

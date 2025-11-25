@@ -6,7 +6,7 @@ import {useMemo, useState, useEffect, useRef, startTransition} from 'react';
 import {useMediaPictInPict} from 'media/hooks/use-media-pip';
 import {MediaControls} from 'media/stacks/controls';
 import {getRenderer} from 'media/file/utils/render';
-import {getPathInfo} from 'media/file/utils/data';
+import {findPathInfo} from 'media/file/utils/data';
 import File from 'media/file';
 
 import type {FileRef, FileRenderInfo} from 'media/file/types';
@@ -23,7 +23,7 @@ interface MediaProps {
 }
 
 export function Media({path, vertical, maximized, embedded, layout, close}: MediaProps) {
-  const [pathInfo, setPathInfo] = useState<Awaited<ReturnType<typeof getPathInfo>> | null>(null);
+  const [pathInfo, setPathInfo] = useState<Awaited<ReturnType<typeof findPathInfo>> | null>(null);
   const [renderer, setRenderer] = useState<FileRenderInfo>();
   const [loading, setLoading] = useState(false);
   const [title, setTitle] = useState(PLACEHOLDER);
@@ -89,7 +89,7 @@ export function Media({path, vertical, maximized, embedded, layout, close}: Medi
     setDuration(0);
     startTransition(() => {
       (async () => {
-        const _pathInfo = await getPathInfo(path);
+        const _pathInfo = await findPathInfo(path);
         const dirType = _pathInfo.isDir ? _pathInfo.protocol : undefined;
         setRenderer(getRenderer(_pathInfo.ext, dirType));
         setPathInfo(_pathInfo);

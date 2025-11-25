@@ -2,7 +2,8 @@ import {FS} from 'react-exo/fs';
 import {evolu} from 'app/data';
 import {getPathById} from 'app/data/queries';
 import {DeviceId, PathId} from 'app/data/types';
-import {toText, toPathInfo} from 'app/lib/formatting';
+import {toText} from 'app/lib/formatting';
+import {getPathInfo} from 'media/dir/utils/path';
 import {fetchIpfs} from 'media/dir/utils/ipfs/fetch';
 import {device} from 'app/data/lib/device';
 
@@ -77,7 +78,7 @@ export async function getTransfer(
   }
 }
 
-export async function getPathInfo(path: string): Promise<{
+export async function findPathInfo(path: string): Promise<{
   protocol: FileProtocol,
   isDir: boolean,
   name: string,
@@ -90,27 +91,27 @@ export async function getPathInfo(path: string): Promise<{
       const uri = path.replace('file://', '');
       const isDir = Boolean(await fs?.isDirectory?.(uri || '.'));
       const parts = uri.split('/');
-      return {protocol, ...toPathInfo(parts.at(-1) ?? '', isDir)};
+      return {protocol, ...getPathInfo(parts.at(-1) ?? '', isDir)};
     }
     case 'evolu': {
       const {deviceId, pathId} = parseEvoluPath(path);
       const [data] = await evolu.loadQuery(getPathById(deviceId, pathId));
       const isDir = data?.fileId === null;
-      return {protocol, ...toPathInfo(data?.name ?? '', isDir)};
+      return {protocol, ...getPathInfo(data?.name ?? '', isDir)};
     }
     case 'ipfs': {
       const [_cid, name] = path.replace('ipfs://', '').split('/');
-      return {protocol, ...toPathInfo(name)};
+      return {protocol, ...getPathInfo(name)};
     }
     case 'http':
     case 'https': {
       const parts = path.replace(`${protocol}://`, '').split('/');
       const name = parts.at(-1) ?? '';
-      return {protocol, ...toPathInfo(name)};
+      return {protocol, ...getPathInfo(name)};
     }
     default: protocol satisfies never;
     console.error(`Unknown protocol: ${protocol}`);
-    return {protocol, ...toPathInfo('')};
+    return {protocol, ...getPathInfo('')};
   }
 }
 
