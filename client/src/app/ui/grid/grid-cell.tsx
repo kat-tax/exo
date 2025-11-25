@@ -67,6 +67,7 @@ const styles = StyleSheet.create((theme) => ({
       md: '16.666%',    // 6 col
       lg: '14.2857%',   // 7 col
       xl: '12.5%',      // 8 col
+      xxl: '10%',       // 9 col
     },
   },
   disableAdaptiveSize: {
