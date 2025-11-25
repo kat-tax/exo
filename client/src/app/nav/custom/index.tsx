@@ -1,7 +1,6 @@
 import {Icon} from 'react-exo/icon';
 import {View, Pressable} from 'react-native';
 import {StyleSheet, Display, mq} from 'react-native-unistyles';
-import {useFocusable, FocusContext} from '@noriginmedia/norigin-spatial-navigation';
 import {useState, Suspense} from 'react';
 import {useNavigation} from '@react-navigation/native';
 import {useHotkeys} from 'app/nav/hooks/use-hotkeys';
@@ -31,7 +30,6 @@ export function Layout(props: LayoutProps) {
   const [previewOpen, setPreviewOpen] = useState(true);
   const [menuOpen, setMenuOpen] = useState(true);
   const focused = useGet(media.selectors.getFocused);
-  const {ref, focusKey} = useFocusable();
 
   // Media preview
   const previewRoutes = ['MediaBrowseEvolu', 'MediaBrowseLocal'];
@@ -47,26 +45,24 @@ export function Layout(props: LayoutProps) {
   });
 
   return (
-    <FocusContext.Provider value={focusKey}>
-      <View ref={ref} style={styles.root}>
-        <Display mq={mq.only.width(0, breakpoints.xs - 1)}>
-          <Tabs {...props}/>
+    <View style={styles.root}>
+      <Display mq={mq.only.width(0, breakpoints.xs - 1)}>
+        <Tabs {...props}/>
+      </Display>
+      {menuOpen && (
+        <Display mq={mq.only.width(breakpoints.xs)}>
+          <Menu {...props}/>
         </Display>
-        {menuOpen && (
-          <Display mq={mq.only.width(breakpoints.xs)}>
-            <Menu {...props}/>
-          </Display>
-        )}
-        <View style={[styles.content, hasPreview && styles.contentWithPreview]}>
-          {children}
-        </View>
-        {hasPreview && (
-          <View style={styles.preview}>
-            <Preview {...{focused, activeRoute}}/>
-          </View>
-        )}
+      )}
+      <View style={[styles.content, hasPreview && styles.contentWithPreview]}>
+        {children}
       </View>
-    </FocusContext.Provider>
+      {hasPreview && (
+        <View style={styles.preview}>
+          <Preview {...{focused, activeRoute}}/>
+        </View>
+      )}
+    </View>
   );
 }
 
