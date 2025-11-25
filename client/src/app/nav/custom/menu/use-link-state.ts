@@ -11,7 +11,7 @@ export interface MenuItemProps extends Omit<NavScreenConfig, 'path' | 'tabBarIco
 export function useLinkState({activeRoute, name, navigation, params}: MenuItemProps) {
   const active = activeRoute.name === name;
   const {ref, focused} = useFocusable({
-    focusKey: `menu@${name}`,
+    focusKey: `menu-${name}`,
     onEnterPress: () => navigation.navigate(name, params),
   });
 

@@ -31,12 +31,7 @@ export function Layout(props: LayoutProps) {
   const [previewOpen, setPreviewOpen] = useState(true);
   const [menuOpen, setMenuOpen] = useState(true);
   const focused = useGet(media.selectors.getFocused);
-  const {ref, focusKey} = useFocusable({
-    forceFocus: true,
-    isFocusBoundary: true,
-    focusBoundaryDirections: ['up', 'down'],
-    preferredChildFocusKey: `menu@${activeRoute?.name}`,
-  });
+  const {ref, focusKey} = useFocusable();
 
   // Media preview
   const previewRoutes = ['MediaBrowseEvolu', 'MediaBrowseLocal'];
