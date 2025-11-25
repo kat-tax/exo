@@ -6,7 +6,9 @@ import {useLinkProps} from '@react-navigation/native';
 import {GridCell} from 'app/ui/grid';
 import {DeviceId} from 'app/data/types';
 
-export interface DeviceCardProps {
+import type {GridCellProps} from 'app/ui/grid';
+
+export interface DeviceCardProps  {
   id: DeviceId,
   name: string | null,
   icon: string,
@@ -16,7 +18,8 @@ export interface DeviceCardProps {
   storageTotal?: number | null,
   transparent?: boolean,
   disableAdaptiveSize?: boolean,
-  onPress: () => void,
+  onPress?: GridCellProps['onPress'],
+  onArrowPress?: GridCellProps['onArrowPress'];
 }
 
 export function DeviceLocal(props: Omit<DeviceCardProps, 'onPress'>) {
@@ -49,8 +52,9 @@ export function DeviceEvolu(props: Omit<DeviceCardProps, 'onPress'>) {
 export function DeviceCard(props: DeviceCardProps) {
   return (
     <GridCell
-      focusKey={`device-${props.id}:${props.name}`}
+      focusKey={`device-${props.id}`}
       onPress={props.onPress}
+      onArrowPress={props.onArrowPress}
       disableAdaptiveSize={props.disableAdaptiveSize}>
       <View style={[styles.root, props.transparent && styles.transparent]}>
         <View style={styles.identity}>

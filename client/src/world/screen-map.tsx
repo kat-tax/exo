@@ -1,9 +1,11 @@
-import Map, {Popup} from 'react-map-gl/maplibre';
+import Map, {Popup, MapRef} from 'react-map-gl/maplibre';
+import {setFocus} from '@noriginmedia/norigin-spatial-navigation';
 import {toast} from 'react-exo/toast';
 import {useQuery} from '@evolu/react';
+import {useEffect} from 'react';
 import {useLingui} from '@lingui/react/macro';
 import {useMMKVBoolean} from 'react-native-mmkv';
-import {useMemo, useState} from 'react';
+import {useMemo, useState, useRef} from 'react';
 import {View, Text, Pressable} from 'react-native';
 import {StyleSheet} from 'react-native-unistyles';
 import {useTheme} from 'settings/hooks/use-theme';
@@ -20,9 +22,14 @@ export default function ScreenMap() {
   const localDevice = useMemo(() => locations.find(l => l.deviceId === device.id), [locations]);
   const [deviceTracking, setDeviceTracking] = useMMKVBoolean(store.tracking, mmkv);
   const [trackingEnabled, setTrackingEnabled] = useState(deviceTracking);
-  const [selectedDeviceId, setSelectedDeviceId] = useState<DeviceId | null>(null);
+  const [selectedDeviceId, setSelectedDeviceId] = useState<DeviceId | null>(localDevice?.deviceId ?? null);
   const [scheme] = useTheme();
   const {t} = useLingui();
+  const mapRef = useRef<MapRef>(null);
+
+  const profile = {maptilerUrl: undefined, maptilerKey: undefined} // TODO: get profile
+  const maptilerUrl = profile?.maptilerUrl ?? 'https://api.maptiler.com';
+  const maptilerKey = profile?.maptilerKey ?? 'v75KlHHSXtWqCs3puQsX';
 
   const selectedDevice = useMemo(() => {
     if (!selectedDeviceId) return null;
@@ -41,12 +48,50 @@ export default function ScreenMap() {
     };
   }, [selectedDeviceId, locations]);
 
-  const profile = {maptilerUrl: undefined, maptilerKey: undefined} // TODO: get profile
-  const maptilerUrl = profile?.maptilerUrl ?? 'https://api.maptiler.com';
-  const maptilerKey = profile?.maptilerKey ?? 'v75KlHHSXtWqCs3puQsX';
+  // Navigate to next device if arrow right is pressed, return false
+  // Navigate to previous device if arrow left is pressed, return false
+  // If first device in list, return true to navigate to menu out of map
+  const handleArrowPress = (dir: string): boolean => {
+    if (!selectedDeviceId || locations.length === 0) return true;
+    const idx = locations.findIndex(l => l.deviceId === selectedDeviceId);
+    if (idx === -1) return true;
+    if (dir === 'right') {
+      const nextIdx = (idx + 1) % locations.length;
+      const targetId = locations[nextIdx].deviceId;
+      setSelectedDeviceId(targetId);
+      setFocus(`device-${targetId}`);
+      return false;
+    } else if (dir === 'left') {
+      if (idx === 0) {
+        // First device, allow navigation out
+        return true;
+      }
+      const prevIdx = idx - 1;
+      const targetId = locations[prevIdx].deviceId;
+      setSelectedDeviceId(targetId);
+      setFocus(`device-${targetId}`);
+      return false;
+    }
+    return true;
+  };
+
+  // Fly to device location when selected device changes
+  useEffect(() => {
+    if (!mapRef.current) return;
+    if (selectedDevice?.id && selectedDevice.longitude && selectedDevice.latitude) {
+      mapRef.current?.flyTo({
+        center: [selectedDevice.longitude, selectedDevice.latitude],
+        zoom: 14,
+        duration: 2000,
+        essential: true,
+      });
+    }
+  }, [selectedDevice, mapRef]);
+
   return (
     <Screen>
       <Map
+        ref={mapRef}
         style={{width: '100%', height: '100%'}}
         mapStyle={`${maptilerUrl}/maps/${`dataviz-${scheme}`}/style.json?key=${maptilerKey}`}
         initialViewState={{
@@ -61,9 +106,7 @@ export default function ScreenMap() {
             isSelf={location.deviceId === device?.id}
             latitude={location.latitude ?? 0}
             longitude={location.longitude ?? 0}
-            onClick={() => {
-              setSelectedDeviceId(location.deviceId);
-            }}
+            onClick={() => setSelectedDeviceId(location.deviceId)}
           />
         ))}
         {selectedDeviceId && selectedDevice?.id && (
@@ -76,8 +119,8 @@ export default function ScreenMap() {
             anchor="bottom">
             <View style={styles.popupContainer}>
               {selectedDevice.id === device.id
-                ? <DeviceLocal {...selectedDevice}/>
-                : <DeviceEvolu {...selectedDevice}/>
+                ? <DeviceLocal {...selectedDevice} onArrowPress={handleArrowPress}/>
+                : <DeviceEvolu {...selectedDevice} onArrowPress={handleArrowPress}/>
               }
             </View>
           </Popup>

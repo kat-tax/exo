@@ -17,6 +17,8 @@
         font-feature-settings:
           "liga" 1,
           "calt" 1;
+        --bg-opaque-light: #ffffffab;
+        --bg-opaque-dark: #09090bab;
         --bg-light: #fff;
         --bg-dark: #09090b;
         --sel-light: rgba(0, 0, 0, 0.2);
@@ -40,6 +42,7 @@
       }
 
       html.dark {
+        --bg-opaque: var(--bg-opaque-dark);
         --bg: var(--bg-dark);
         --sel: var(--sel-dark);
         --ctx-bg: var(--ctx-bg-dark);
@@ -53,6 +56,7 @@
       }
 
       html.light {
+        --bg-opaque: var(--bg-opaque-light);
         --bg: var(--bg-light);
         --sel: var(--sel-light);
         --ctx-bg: var(--ctx-bg-light);
@@ -67,6 +71,7 @@
 
       @media (prefers-color-scheme: dark) {
         :root:not(html.light):not(html.dark) {
+          --bg-opaque: var(--bg-opaque-dark);
           --bg: var(--bg-dark);
           --sel: var(--sel-dark);
           --ctx-bg: var(--ctx-bg-dark);
@@ -82,6 +87,7 @@
 
       @media (prefers-color-scheme: light) {
         :root:not(html.dark):not(html.light) {
+          --bg-opaque: var(--bg-opaque-light);
           --bg: var(--bg-light);
           --sel: var(--sel-light);
           --ctx-bg: var(--ctx-bg-light);
@@ -135,14 +141,18 @@
 
       /* Map */
       .maplibregl-map .maplibregl-popup-content {
-        background-color: var(--ctx-bg);
+        background-color: var(--bg-opaque);
         box-shadow: var(--ctx-shadow);
         border-radius: 6px;
         padding: 0;
       }
 
       .maplibregl-map .maplibregl-popup-anchor-bottom .maplibregl-popup-tip {
-        border-top-color: var(--ctx-bg);
+        border-top-color: var(--bg-opaque);
+      }
+
+      .maplibregl-popup-close-button {
+        display: none;
       }
 
       /* Readium */
