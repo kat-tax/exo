@@ -1,5 +1,6 @@
 import {List} from 'media/stacks/list';
 import {EntryHfs} from 'media/dir/stacks/entry-hfs';
+import {device} from 'app/data/lib/device';
 import type {HfsCtx, HfsOpt} from 'media/dir/types/hfs';
 import type {MenuContextItem} from 'app/ui/float/menu-context';
 
@@ -13,6 +14,7 @@ export function DirHfs({dir, cmd, ext, bar}: HfsCtx) {
       data={ext}
       opts={{
         layout,
+        deviceName: device.name,
         preview: ext.tmp,
         header: bar ? {actions: bar?.actions} : undefined,
         menu: bar?.actions?.[0]?.items?.filter(Boolean) as MenuContextItem[],
