@@ -143,6 +143,7 @@ export default defineConfig(env => ({
       },
       workbox: {
         globPatterns: ["**/*.{js,css,html,svg,png,ico,wasm}"],
+        maximumFileSizeToCacheInBytes: 1024 * 1024 * 15, // 15MB
         cleanupOutdatedCaches: true,
         clientsClaim: true,
       },

@@ -2,10 +2,11 @@
 
 import {hash} from 'react-exo/fs';
 import {createIdFromString} from '@evolu/common';
-import {DeviceId} from 'app/data/types';
-import {FileType} from 'media/file/types';
-import {getRenderer} from 'media/file/utils/render';
-import {getPathInfo} from 'media/dir/utils/path';
+// FIXME: vite build needs these to be relative for some reason
+import {DeviceId} from '../../../../../app/data/types';
+import {FileType} from '../../../../../media/file/types';
+import {getRenderer} from '../../../../../media/file/utils/render';
+import {getPathInfo} from '../../../../../media/dir/utils/path';
 import {getMediaType} from '../utils/detect';
 import {generateImageThumb} from '../utils/generate';
 import cfg from 'config';
