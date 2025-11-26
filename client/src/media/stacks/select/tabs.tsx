@@ -8,7 +8,11 @@ import media from 'media/store';
 
 import {SelectItem} from './item';
 
-export function SelectTabs() {
+interface SelectTabsProps {
+  routePath: string;
+}
+
+export function SelectTabs(props: SelectTabsProps) {
   const scroll = useRef<ScrollView>(null);
   const focused = useGet(media.selectors.getFocused);
   const selection = useGet(media.selectors.getSelected);
@@ -36,7 +40,11 @@ export function SelectTabs() {
         contentContainerStyle={styles.inner}
         showsHorizontalScrollIndicator={false}>
         {selection.length === 0 &&
-          <SelectItem path={focused} index={-1} focused/>
+          <SelectItem
+            index={-1}
+            path={props.routePath}
+            focused
+          />
         }
         {selection.map((path, index) => (
           <SelectItem

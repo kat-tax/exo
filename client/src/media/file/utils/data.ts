@@ -96,7 +96,7 @@ export async function findPathInfo(path: string): Promise<{
     case 'evolu': {
       const {deviceId, pathId} = parseEvoluPath(path);
       const [data] = await evolu.loadQuery(getPathById(deviceId, pathId));
-      const isDir = data?.fileId === null;
+      const isDir = pathId === null ||data?.fileId === null;
       return {protocol, ...getPathInfo(data?.name ?? '', isDir)};
     }
     case 'ipfs': {

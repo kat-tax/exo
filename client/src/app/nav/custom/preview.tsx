@@ -10,12 +10,14 @@ interface PreviewProps {
 }
 
 export function Preview({focused, activeRoute}: PreviewProps) {
+  const path = getPathFromRoute(activeRoute);
+
   return (
     <>
-      <SelectTabs/>
+      <SelectTabs routePath={path}/>
       <Suspense>
         <Media
-          path={focused || activeRoute.path || ''}
+          path={focused || path}
           vertical={false}
           maximized={true}
           embedded={false}
@@ -24,4 +26,20 @@ export function Preview({focused, activeRoute}: PreviewProps) {
       </Suspense>
     </>
   );
+}
+
+function getPathFromRoute(route: NavigationRoute<RootStackParamList, keyof RootStackParamList>): string {
+  if (route.name === 'MediaBrowseEvolu') {
+    const params = route.params as RootStackParamList['MediaBrowseEvolu'];
+    const deviceId = params.deviceId?.toString() || '';
+    const pathId = params.pathId?.toString() || '';
+    return pathId ? `evolu://${deviceId}/${pathId}` : `evolu://${deviceId}`;
+  }
+
+  if (route.name === 'MediaBrowseLocal') {
+    const params = route.params as RootStackParamList['MediaBrowseLocal'];
+    return params.path || '';
+  }
+
+  return '';
 }
