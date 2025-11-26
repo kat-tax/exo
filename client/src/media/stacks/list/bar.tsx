@@ -37,9 +37,9 @@ export function ListBar({paths, actions, deviceId, deviceName}: ListBarProps) {
   const {t} = useLingui();
   const scroll = useRef<ScrollView>(null);
   const {ref, focusKey} = useFocusable({
-    preferredChildFocusKey: `bar@${!paths?.length ? '%device%' : paths?.at(-1)?.[1]}`,
     saveLastFocusedChild: false,
     focusBoundaryDirections: ['left', 'right'],
+    //preferredChildFocusKey: `bar@${!paths?.length ? '%device%' : paths?.at(-1)?.[1]}`,
   });
 
   // biome-ignore lint/correctness/useExhaustiveDependencies: explicit
@@ -148,7 +148,7 @@ export function ListBarAction({id, icon, onPress, items}: ListBarAction) {
         onPress?.();
       }
     },
-    focusKey: `bar@${id}`,
+    focusKey: `bar@%action-${id}%`,
   });
 
   const button = items ? (

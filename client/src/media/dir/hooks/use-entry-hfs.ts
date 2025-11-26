@@ -23,8 +23,9 @@ export function useEntryHfs({item, cmd, opt}: EntryHfsProps) {
 
   // Spatial navigation
   const {focused, ref: refFoc, focusSelf: foc} = useFocusable({
-    onFocus: (_lay, _props, e) =>
-      ref.current = e.event as unknown as RN.GestureResponderEvent,
+    onFocus: (_lay, _props, e) => {
+      ref.current = e.event as unknown as RN.GestureResponderEvent;
+    },
     onArrowRelease: () => {
       if (opt.preview) return true;
       cmd.select(item, ref.current);
