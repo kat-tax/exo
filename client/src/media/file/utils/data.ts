@@ -1,11 +1,11 @@
 import {FS} from 'react-exo/fs';
 import {evolu} from 'app/data';
+import {toText} from 'app/lib/formatting';
+import {device} from 'app/data/lib/device';
 import {getPathById} from 'app/data/queries';
 import {DeviceId, PathId} from 'app/data/types';
-import {toText} from 'app/lib/formatting';
 import {getPathInfo} from 'media/dir/utils/path';
-import {fetchIpfs} from 'media/dir/utils/ipfs/fetch';
-import {device} from 'app/data/lib/device';
+import {IPFS} from 'media/dir/utils/ipfs/fetch';
 
 import type {FileData, FileFormat, FileProtocol, FileTransfer} from '../types';
 
@@ -70,7 +70,7 @@ export async function getTransfer(
     case 'evolu':
       return fetchEvolu(path);
     case 'ipfs':
-      return fetchIpfs(path);
+      return (await IPFS.init()).fetch(path);
     case 'http':
     case 'https':
       return fetch(path);

@@ -3,15 +3,11 @@ import {Screen} from 'app/ui/screen';
 
 export default function ScreenIpfs({route}: ReactNavigation.ScreenProps<'MediaViewIpfs'>) {
   const {cid, filename} = route.params;
-  const name = filename || '';
-  const path = `ipfs://${cid}`;
-  const url = `/ipfs/${cid}/${name}`;
-  const ext = name.split('.').pop() || '';
-
+  const path = `ipfs://${cid}/${filename}`;
   return (
     <Screen>
       <Media
-        {...{name, ext, url, path}}
+        path={path}
         close={() => null}
         embedded={false}
         maximized
