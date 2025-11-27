@@ -96,12 +96,14 @@ export function useEntryHfs({item, cmd, opt}: EntryHfsProps) {
         getDropEffect: () => 'copy',
         onDragEnter: () => setDropping(true),
         onDragLeave: () => setDropping(false),
-        onDrop: (e) => {
+        onDrop: ({source}) => {
           setDropping(false);
-          const files = _.getFiles(e);
-          if (files.length) {
-            cmd.upload(item, files);
-          }
+          _.droppedFiles(source, async (files) => {
+            if (files.length) {
+              await cmd.upload(item, files);
+              cmd.refresh();
+            }
+          });
         },
       }),
     ].filter(Boolean) as CleanupFn[]);

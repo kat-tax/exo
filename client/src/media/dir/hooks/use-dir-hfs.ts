@@ -161,8 +161,16 @@ export function useDirHfs(path: string, tmp?: boolean): Omit<HfsCtx, 'bar'> {
     if (!hfs) return;
     for (const file of files) {
       const data = await file.arrayBuffer();
+      const relPath = file.webkitRelativePath
+        // @ts-expect-error TS missing types
+        || file.relativePath
+        // @ts-expect-error TS missing types
+        || file.dndRelativePath;
+      const targetPath = relPath
+        ? `${entry.name}/${relPath}`
+        : entry.name;
       await hfs?.write?.(
-        `${entry.name}/${file.name}`,
+        `${targetPath}/${file.name}`,
         new Uint8Array(data),
       );
     }
@@ -209,14 +217,15 @@ export function useDirHfs(path: string, tmp?: boolean): Omit<HfsCtx, 'bar'> {
         onDropTargetChange: ({location, self}) => {
           setDropping(location.current.dropTargets[0]?.element === self.element);
         },
-        onDrop: async (e) => {
-          if (e.location.current.dropTargets[0]?.element !== e.self.element) return;
+        onDrop: async ({location, self, source}) => {
+          if (location.current.dropTargets[0]?.element !== self.element) return;
           setDropping(false);
-          const files = _.getFiles(e);
-          if (files.length) {
-            await upload(entry, files);
-            await refresh();
-          }
+          _.droppedFiles(source, async (files) => {
+            if (files.length) {
+              await upload(entry, files);
+              refresh();
+            }
+          });
         },
       }),
     ].filter(Boolean) as CleanupFn[]);
