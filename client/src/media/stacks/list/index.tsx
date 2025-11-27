@@ -4,6 +4,7 @@ import {StyleSheet} from 'react-native-unistyles';
 import {useRef, useMemo} from 'react';
 import {useWindowDimensions} from 'react-native';
 import {useFocusable, FocusContext} from '@noriginmedia/norigin-spatial-navigation';
+import {useComposedRefs} from 'app/lib/components';
 import {HEIGHT_ROW, HEIGHT_CELL} from 'media/stacks/list/row';
 import {ListEmpty} from 'media/stacks/list/empty';
 import {ListBar} from 'media/stacks/list/bar';
@@ -22,19 +23,21 @@ export interface ListProps<T> {
     deviceId?: DeviceId | null;
     deviceName?: string | null;
     preview?: boolean,
+    dropping?: boolean,
     layout?: 'list' | 'grid',
     menu?: Array<MenuContextItem>,
     header?: {
       actions?: Array<ListBarAction>,
     },
   };
+  refs?: Array<any>;
   render: (props: {
     item: T,
     index: number,
   }) => React.ReactNode;
 }
 
-export function List<T>({items, paths, data, opts, render}: ListProps<T>) {
+export function List<T>({items, paths, data, opts, refs, render}: ListProps<T>) {
   const {ref, focusKey} = useFocusable({saveLastFocusedChild: !opts?.preview});
   const {width} = useWindowDimensions();
   const listRef = useRef<LegendListRef>(null);
@@ -47,6 +50,7 @@ export function List<T>({items, paths, data, opts, render}: ListProps<T>) {
     root: [
       styles.root,
       isGrid && styles.grid,
+      opts?.dropping && styles.dropping,
     ],
     list: [
       styles.list,
@@ -56,7 +60,7 @@ export function List<T>({items, paths, data, opts, render}: ListProps<T>) {
       styles.header,
       isGrid && styles.headerGrid,
     ],
-  }), [isGrid, styles]);
+  }), [isGrid, opts?.dropping, styles]);
 
   return (
     <FocusContext.Provider value={focusKey}>
@@ -64,7 +68,7 @@ export function List<T>({items, paths, data, opts, render}: ListProps<T>) {
         label={name}
         items={opts?.menu ?? []}
         enabled={!!opts?.menu}>
-        <View ref={ref} style={vstyles.root}>
+        <View ref={useComposedRefs(ref, ...refs ?? [])} style={vstyles.root}>
           {opts?.header &&
             <ListBar
               paths={paths}
@@ -108,6 +112,13 @@ export function List<T>({items, paths, data, opts, render}: ListProps<T>) {
 const styles = StyleSheet.create(theme => ({
   root: {
     flex: 1,
+    borderRadius: theme.display.radius1,
+    borderWidth: StyleSheet.hairlineWidth,
+    borderColor: 'transparent',
+  },
+  dropping: {
+    borderColor: theme.colors.outline,
+    borderStyle: 'dashed',
   },
   list: {
     flex: 1,

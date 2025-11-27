@@ -1,11 +1,12 @@
 import {useNavigation} from '@react-navigation/native';
-import {useState, useCallback, useMemo, useEffect} from 'react';
+import {useState, useCallback, useMemo, useEffect, useRef} from 'react';
 import {useHfs, useHfsWatch} from 'app/data/lib/hfs';
 import {useSet, useGet} from 'app/data';
 import {isZeego} from 'app/ui/float';
 import {getData} from 'media/file/utils/data';
 import media from 'media/store';
 import cfg from 'config';
+import * as _ from 'app/lib/dragdrop';
 
 import {INIT_DIRECTORIES} from '../utils/hfs/path';
 import {getThumbnail} from '../utils/hfs/meta';
@@ -13,9 +14,13 @@ import {saveAs} from '../utils/hfs/fs';
 
 import type {HfsCtx, HfsFileEntry} from 'media/dir/types/hfs';
 import type {GestureResponderEvent} from 'react-native';
+import type {CleanupFn} from 'app/lib/dragdrop';
+import type * as RN from 'react-native';
 
 export function useDirHfs(path: string, tmp?: boolean): Omit<HfsCtx, 'bar'> {
   const [list, setList] = useState<HfsFileEntry[]>([]);
+  const [dropping, setDropping] = useState(false);
+  const refDnd = useRef<RN.View>(null);
   const nav = useNavigation();
   const hfs = useHfs();
   const sel = useGet(media.selectors.getSelected);
@@ -182,6 +187,41 @@ export function useDirHfs(path: string, tmp?: boolean): Omit<HfsCtx, 'bar'> {
     console.log('>> fs [share]', entry);
   }, []);
 
+  // Drag and drop files to the directory
+  useEffect(() => {
+    if (!refDnd.current) return;
+    const element = refDnd.current as unknown as HTMLElement;
+    const entry: HfsFileEntry = {
+      name: path || '.',
+      size: 0,
+      isFile: false,
+      isSymlink: false,
+      isDirectory: true,
+      lastModified: new Date(),
+    };
+    return _.combine(...[
+      _.dropTargetForExternal({
+        element,
+        canDrop: _.containsFiles,
+        getDropEffect: () => 'copy',
+        onDragEnter: () => setDropping(true),
+        onDragLeave: () => setDropping(false),
+        onDropTargetChange: ({location, self}) => {
+          setDropping(location.current.dropTargets[0]?.element === self.element);
+        },
+        onDrop: async (e) => {
+          if (e.location.current.dropTargets[0]?.element !== e.self.element) return;
+          setDropping(false);
+          const files = _.getFiles(e);
+          if (files.length) {
+            await upload(entry, files);
+            await refresh();
+          }
+        },
+      }),
+    ].filter(Boolean) as CleanupFn[]);
+  }, [path, hfs, move, refresh]);
+
   // Update state with current files (for range-select)
   useEffect(() => {
     set(media.actions.list({
@@ -215,6 +255,12 @@ export function useDirHfs(path: string, tmp?: boolean): Omit<HfsCtx, 'bar'> {
       list,
       path,
     },
+    opt: {
+      dropping,
+    },
+    refs: [
+      refDnd,
+    ],
     cmd: {
       goUp,
       refresh,

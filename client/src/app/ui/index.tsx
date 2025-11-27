@@ -11,8 +11,9 @@ import {isOnline, suscribeOnline} from 'react-exo/device';
 import {GestureProvider} from 'react-exo/gesture';
 import {CameraProvider} from 'media/cam/context';
 import {useTheme} from 'settings/hooks/use-theme';
-import {useFileSync} from 'app/data/lib/file-watcher';
 import {useEvolu} from 'app/data';
+import {useFileSync} from 'app/data/lib/file-watcher';
+import {preventDragDrop} from 'app/lib/dragdrop';
 import {device, mmkv, store} from 'app/data/lib/device';
 
 import type {UnistylesThemes} from 'react-native-unistyles';
@@ -77,6 +78,14 @@ export function Interface(props: React.PropsWithChildren) {
     );
     return () => Geolocation.clearWatch(id);
   }, [t, evolu, deviceTracking]);
+
+  // Prevent drag and drop on root
+  useEffect(() => {
+    if (__WEB__) {
+      const element = document.body;
+      return preventDragDrop(element);
+    }
+  }, []);
 
   return (
     <CameraProvider>

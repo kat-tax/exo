@@ -4,18 +4,20 @@ import {device} from 'app/data/lib/device';
 import type {HfsCtx, HfsOpt} from 'media/dir/types/hfs';
 import type {MenuContextItem} from 'app/ui/float/menu-context';
 
-export function DirHfs({dir, cmd, ext, bar}: HfsCtx) {
+export function DirHfs({dir, cmd, ext, bar, opt, refs}: HfsCtx) {
   const layout = ext.tmp ? 'grid' : 'list';
 
   return (
     <List
       items={dir.list}
       paths={dir.path?.split('/').filter(Boolean).map(p => [p, p]) ?? []}
+      refs={refs}
       data={ext}
       opts={{
         layout,
         deviceName: device.name,
         preview: ext.tmp,
+        dropping: opt?.dropping,
         header: bar ? {actions: bar?.actions} : undefined,
         menu: bar?.actions?.[0]?.items?.filter(Boolean) as MenuContextItem[],
       }}

@@ -37,7 +37,8 @@ export function ListRow(props: ListRow) {
       selected?.self && styles.selected,
       selected?.prev && styles.selectedPrev,
       selected?.next && styles.selectedNext,
-      (dropping || focused) && !dragging && styles.outline,
+      focused && styles.focused,
+      dropping && !dragging && styles.dropping,
       dragging && styles.disabled,
       isGrid && styles.cell,
     ],
@@ -116,8 +117,8 @@ const styles = StyleSheet.create((theme) => ({
     paddingHorizontal: theme.display.space2,
     paddingVertical: theme.display.space1,
     borderRadius: theme.display.radius1,
-    borderWidth: 1,
-    borderColor: 'rgba(0,0,0,0)',
+    borderWidth: StyleSheet.hairlineWidth,
+    borderColor: 'transparent',
   },
   cell: {
     gap: theme.display.space1,
@@ -184,8 +185,12 @@ const styles = StyleSheet.create((theme) => ({
     backgroundColor: 'transparent',
   },
   /* States */
-  outline: {
+  dropping: {
     borderColor: theme.colors.outline,
+    borderStyle: 'dashed',
+  },
+  focused: {
+    borderColor: theme.colors.ring,
   },
   disabled: {
     opacity: 0.5,

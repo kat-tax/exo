@@ -17,6 +17,10 @@ export type HfsCtx = {
     dnd: string[],
     rnm: string[],
   },
+  opt?: {
+    dropping?: boolean,
+  },
+  refs?: Array<any>,
 }
 
 export type HfsOpt = {

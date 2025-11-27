@@ -7,7 +7,7 @@ import media from 'media/store';
 
 export default function ScreenBrowse({route}: ReactNavigation.ScreenProps<'MediaBrowseLocal'>) {
   const {path} = route.params;
-  const {dir, cmd, ext} = useDirHfs(path || '');
+  const {dir, cmd, ext, opt, refs} = useDirHfs(path || '');
   const add = useImportHfs();
   const set = useSet();
 
@@ -75,7 +75,7 @@ export default function ScreenBrowse({route}: ReactNavigation.ScreenProps<'Media
 
   return (
     <Screen>
-      <DirHfs {...{dir, cmd, ext, bar}}/>
+      <DirHfs {...{dir, cmd, ext, bar, opt, refs}}/>
     </Screen>
   );
 }
