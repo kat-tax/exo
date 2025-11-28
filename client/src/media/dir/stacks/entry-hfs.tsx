@@ -3,12 +3,13 @@ import {ListRow} from 'media/stacks/list/row';
 import {MenuHfs} from 'media/dir/stacks/menu-hfs';
 import {useEntryHfs} from 'media/dir/hooks/use-entry-hfs';
 
-import type {HfsCmd, HfsOpt, HfsFileEntry} from 'media/dir/types/hfs';
+import type {Hfs, HfsCmd, HfsOpt, HfsFileEntry} from 'media/dir/types/hfs';
 
 export interface EntryHfsProps {
   item: HfsFileEntry,
   cmd: HfsCmd,
   opt: HfsOpt,
+  dir: Hfs,
 }
 
 export function EntryHfs(props: EntryHfsProps) {

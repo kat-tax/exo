@@ -31,6 +31,7 @@ export type HfsOpt = {
   dropping?: boolean,
   renaming?: boolean,
   selected?: {
+    all: string[],
     self: boolean,
     prev: boolean,
     next: boolean,

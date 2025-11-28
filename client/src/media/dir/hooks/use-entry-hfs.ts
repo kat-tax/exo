@@ -14,9 +14,9 @@ import type {EntryHfsProps} from 'media/dir/stacks/entry-hfs';
 import type {CleanupFn} from 'app/lib/dragdrop';
 import type * as RN from 'react-native';
 
-export const {is, get, type} = $.tag<HfsFileEntry, HfsCmd>('hfs');
+export const {is, get, type} = $.tag<HfsFileEntry[], HfsCmd>('hfs');
 
-export function useEntryHfs({item, cmd, opt}: EntryHfsProps) {
+export function useEntryHfs({item, cmd, opt, dir}: EntryHfsProps) {
   const [dropping, setDropping] = useState(false);
   const ref = useRef<RN.GestureResponderEvent>(undefined);
   const set = useSet();
@@ -37,13 +37,13 @@ export function useEntryHfs({item, cmd, opt}: EntryHfsProps) {
       : item.isDirectory
         ? cmd.open(item)
         : cmd.select(item),
-    onArrowPress: (dir) => {
+    onArrowPress: (arrow) => {
       if (opt.preview) return true;
       // Handle navigating to top-level (left arrow)
-      if (dir === 'left') {
+      if (arrow === 'left') {
         return !cmd.goUp();
       // Handle navigating into sub-directory (right arrow)
-      // } else if (dir === 'right' && item.isDirectory) {
+      // } else if (arrow === 'right' && item.isDirectory) {
       //   cmd.open(item);
       //   return false;
       }
@@ -64,7 +64,16 @@ export function useEntryHfs({item, cmd, opt}: EntryHfsProps) {
     return _.combine(...[
       _.draggable({
         element,
-        getInitialData: () => get(item, cmd),
+        getInitialData: () => {
+          const base = dir.path ? `${dir.path}/` : '';
+          const entries = opt.selected?.all?.includes(`${base}${item.name}`)
+            && opt.selected?.all?.length > 1
+            && dir.list.length > 0
+              ? dir.list.filter(e => opt.selected?.all?.includes(`${base}${e.name}`))
+              : [item];
+          const data = get(entries, cmd);
+          return data;
+        },
         onGenerateDragPreview: _.dragPreview(opt.selected?.count ?? 1),
         onDragStart: () => set(media.actions.drag(item.name)),
         onDrop: () => set(media.actions.drag(null)),
@@ -78,11 +87,13 @@ export function useEntryHfs({item, cmd, opt}: EntryHfsProps) {
         ),
         onDragEnter: () => setDropping(true),
         onDragLeave: () => setDropping(false),
-        onDrop: (e) => {
+        onDrop: async (e) => {
           setDropping(false);
           const {data} = e.source;
           if (is(data)) {
-            cmd.move(data.entry, item);
+            for (const entry of data.entry) {
+              await cmd.move(entry, item);
+            }
           } else if (isZip(data)) {
             data.cmd.extract(data.entry, undefined, item);
           } else if (isTorrent(data)) {
@@ -107,7 +118,7 @@ export function useEntryHfs({item, cmd, opt}: EntryHfsProps) {
         },
       }),
     ].filter(Boolean) as CleanupFn[]);
-  }, [item, cmd, opt.selected?.count, set]);
+  }, [item, cmd, dir, opt.selected?.count, opt.selected?.all, set]);
 
   return {
     ext: getPathInfo(item.name, item.isDirectory).ext,

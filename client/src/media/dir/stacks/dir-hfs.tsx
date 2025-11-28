@@ -31,6 +31,7 @@ export function DirHfs({dir, cmd, ext, bar, opt, refs}: HfsCtx) {
           dragging: ext.dnd.includes(self),
           renaming: ext.rnm.includes(self),
           selected: {
+            all: ext.sel,
             self: ext.sel.includes(self),
             prev: ext.sel.includes(dir.path ? `${dir.path}/${prev?.name}` : prev?.name),
             next: ext.sel.includes(dir.path ? `${dir.path}/${next?.name}` : next?.name),
@@ -38,7 +39,7 @@ export function DirHfs({dir, cmd, ext, bar, opt, refs}: HfsCtx) {
           },
         };
         return (
-          <EntryHfs {...{item, cmd, opt}}/>
+          <EntryHfs {...{item, cmd, opt, dir}}/>
         );
       }}
     />
