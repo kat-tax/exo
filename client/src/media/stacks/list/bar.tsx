@@ -42,7 +42,6 @@ export function ListBar({paths, actions, deviceId, deviceName}: ListBarProps) {
     //preferredChildFocusKey: `bar@${!paths?.length ? '%device%' : paths?.at(-1)?.[1]}`,
   });
 
-  // biome-ignore lint/correctness/useExhaustiveDependencies: explicit
   useEffect(() => {
     scroll.current?.scrollToEnd({animated: true})
   }, [paths]);
@@ -52,9 +51,10 @@ export function ListBar({paths, actions, deviceId, deviceName}: ListBarProps) {
       <View ref={ref} style={styles.root}>
         <ScrollView
           ref={scroll}
-          horizontal={true}
-          showsHorizontalScrollIndicator={false}
-          contentContainerStyle={styles.breadcrumbs}>
+          horizontal
+          style={styles.breadcrumbs}
+          contentContainerStyle={styles.breadcrumbsContent}
+          showsHorizontalScrollIndicator={false}>
           <ListBarItem
             name={t`Files`}
             deviceId={deviceId}
@@ -212,11 +212,13 @@ const styles = StyleSheet.create((theme) => ({
   },
   breadcrumbs: {
     height: ITEM_SIZE,
+    flexGrow: 1,
+    flexShrink: 1,
+    flexBasis: 0,
+  },
+  breadcrumbsContent: {
     flexDirection: 'row',
     alignItems: 'center',
-    flexGrow: 1,
-    flexShrink: 0,
-    flexBasis: 0,
   },
   breadcrumb: {
     flexDirection: 'row',
