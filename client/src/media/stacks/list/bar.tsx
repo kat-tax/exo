@@ -36,6 +36,7 @@ export interface ListBarAction {
 export function ListBar({paths, actions, deviceId, deviceName}: ListBarProps) {
   const {t} = useLingui();
   const scroll = useRef<ScrollView>(null);
+  const wrapperRef = useRef<View>(null);
   const {ref, focusKey} = useFocusable({
     saveLastFocusedChild: false,
     focusBoundaryDirections: ['left', 'right'],
@@ -46,44 +47,64 @@ export function ListBar({paths, actions, deviceId, deviceName}: ListBarProps) {
     scroll.current?.scrollToEnd({animated: true})
   }, [paths]);
 
+  useEffect(() => {
+    if (!__WEB__) return;
+    if (!wrapperRef.current) return;
+    const element = wrapperRef.current as unknown as HTMLElement;
+    const handleWheel = (event: WheelEvent) => {
+      if (scroll.current && event.deltaY !== 0) {
+        const scrollViewNode = scroll.current.getScrollableNode?.();
+        if (scrollViewNode) {
+          scrollViewNode.scrollLeft += event.deltaY;
+          event.preventDefault();
+        }
+      }
+    };
+    if (element) {
+      element.addEventListener('wheel', handleWheel, {passive: false});
+      return () => element.removeEventListener('wheel', handleWheel);
+    }
+  }, []);
+
   return (
     <FocusContext.Provider value={focusKey}>
       <View ref={ref} style={styles.root}>
-        <ScrollView
-          ref={scroll}
-          horizontal
-          style={styles.breadcrumbs}
-          contentContainerStyle={styles.breadcrumbsContent}
-          showsHorizontalScrollIndicator={false}>
-          <ListBarItem
-            name={t`Files`}
-            deviceId={deviceId}
-            last={!paths}
-          />
-          {paths &&
-            <>
-              <ListBarItemSeparator/>
-              <ListBarItem
-                name={deviceName ?? t`Local`}
-                deviceId={deviceId}
-                path=""
-                last={paths.length === 0}
-              />
-              {paths.length > 0 &&
+        <View ref={wrapperRef} style={styles.breadcrumbs}>
+          <ScrollView
+            ref={scroll}
+            horizontal
+            contentContainerStyle={styles.breadcrumbsContent}
+            showsHorizontalScrollIndicator={false}>
+            <ListBarItem
+              name={t`Files`}
+              deviceId={deviceId}
+              last={!paths}
+            />
+            {paths &&
+              <>
                 <ListBarItemSeparator/>
-              }
-            </>
-          }
-          {paths?.map(([name, path], index, array) => {
-            const last = index === array.length - 1;
-            return (
-              <View key={path} style={styles.breadcrumb}>
-                <ListBarItem {...{name, path, last, deviceId}}/>
-                {index < array.length - 1 && <ListBarItemSeparator/>}
-              </View>
-            );
-          })}
-        </ScrollView>
+                <ListBarItem
+                  name={deviceName ?? t`Local`}
+                  deviceId={deviceId}
+                  path=""
+                  last={paths.length === 0}
+                />
+                {paths.length > 0 &&
+                  <ListBarItemSeparator/>
+                }
+              </>
+            }
+            {paths?.map(([name, path], index, array) => {
+              const last = index === array.length - 1;
+              return (
+                <View key={path} style={styles.breadcrumb}>
+                  <ListBarItem {...{name, path, last, deviceId}}/>
+                  {index < array.length - 1 && <ListBarItemSeparator/>}
+                </View>
+              );
+            })}
+          </ScrollView>
+        </View>
         <View style={styles.actions}>
           {actions?.map(({id, icon, onPress, items}) => (
             <ListBarAction key={id} {...{id, icon, onPress, items}}/>
