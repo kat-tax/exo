@@ -11,7 +11,7 @@ import {ListBar} from 'media/stacks/list/bar';
 import {MenuContext} from 'app/ui/float';
 
 import type {LegendListRef} from '@legendapp/list';
-import type {ListBarAction} from 'media/stacks/list/bar';
+import type {ListBarActionProps} from 'media/stacks/list/bar-action';
 import type {MenuContextItem} from 'app/ui/float/menu-context';
 import type {DeviceId} from 'app/data/types';
 
@@ -27,7 +27,7 @@ export interface ListProps<T> {
     layout?: 'list' | 'grid',
     menu?: Array<MenuContextItem>,
     header?: {
-      actions?: Array<ListBarAction>,
+      actions?: Array<ListBarActionProps>,
     },
   };
   refs?: Array<any>;
