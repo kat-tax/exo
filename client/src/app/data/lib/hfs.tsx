@@ -1,17 +1,62 @@
 import {FS} from 'react-exo/fs';
-import {poll} from 'media/dir/utils/hfs/fs';
-import {useContext, useEffect, useState, createContext} from 'react';
+import {createContext, useContext, useEffect, useState} from 'react';
+import {subscribePaths} from 'app/data/lib/file-watcher/events';
 
 import type {HfsImpl} from 'react-exo/fs';
 
+const ROOT_PATH = '';
 const HfsContext = createContext<HfsContextType | null>(null);
-const $ = new Map<string, {callbacks: Set<WatchFn>, disconnect: () => void}>();
+const watchers = new Map<string, Set<WatchFn>>();
 
 export type WatchFn = () => void;
 
 export interface HfsContextType {
   fs: HfsImpl | null;
   watch: (path: string, fn: WatchFn) => () => void;
+}
+
+function normalizePath(path: string): string {
+  if (!path)
+    return ROOT_PATH;
+  const cleaned = path
+    .replace(/\\/g, '/')
+    .replace(/^\.\/+/, '')
+    .replace(/\/{2,}/g, '/')
+    .replace(/^\/+/, '')
+    .replace(/\/+$/, '');
+  if (cleaned === '.' || cleaned === '')
+    return ROOT_PATH;
+  return cleaned;
+}
+
+function collectRelevantPaths(path: string): string[] {
+  const normalized = normalizePath(path);
+  const targets = new Set<string>();
+  if (normalized) {
+    targets.add(normalized);
+    const segments = normalized.split('/');
+    for (let i = segments.length - 1; i >= 1; i--) {
+      targets.add(segments.slice(0, i).join('/'));
+    }
+  }
+  targets.add(ROOT_PATH);
+  return [...targets];
+}
+
+function notifyWatchers(paths: string[]): void {
+  if (!paths.length || watchers.size === 0) return;
+  const notified = new Set<WatchFn>();
+  for (const path of paths) {
+    for (const key of collectRelevantPaths(path)) {
+      const callbacks = watchers.get(key);
+      if (!callbacks) continue;
+      for (const cb of callbacks) {
+        if (notified.has(cb)) continue;
+        notified.add(cb);
+        cb();
+      }
+    }
+  }
 }
 
 export function useHfs() {
@@ -29,48 +74,17 @@ export function useHfsWatch(path: string, fn: WatchFn) {
 export function HfsProvider({children}: React.PropsWithChildren) {
   const [fs, setFs] = useState<HfsImpl | null>(null);
 
-  const register = async (path: string) => {
-    const disconnect = await FS.watch(path, () => {
-      const callbacks = $.get(path)?.callbacks;
-      if (!callbacks) return;
-      for (const c of callbacks) c();
-    });
-    if (!disconnect) {
-      let delta = 0;
-      const interval = setInterval(async () => {
-        if (await poll(path, delta)) {
-          delta = Date.now();
-          const callbacks = $.get(path)?.callbacks;
-          if (!callbacks) return;
-          for (const c of callbacks) c();
-        }
-      }, 200);
-      console.warn('>> fs [polling]', path);
-      return () => clearInterval(interval);
-    }
-    console.log('>> fs [observing]', path);
-    return disconnect;
-  };
-
   const watch = (path: string, fn: WatchFn) => {
-    if (!$.has(path)) {
-      $.set(path, {callbacks: new Set(), disconnect: () => {}});
-      register(path).then(disconnect => {
-        const callbacks = $.get(path);
-        if (!callbacks) return;
-        callbacks.disconnect = disconnect;
-      });
-    }
-    $.get(path)?.callbacks.add(fn);
+    const normalizedPath = normalizePath(path);
+    if (!watchers.has(normalizedPath))
+      watchers.set(normalizedPath, new Set());
+    watchers.get(normalizedPath)?.add(fn);
     return () => {
-      const {callbacks} = $.get(path) ?? {};
+      const callbacks = watchers.get(normalizedPath);
       if (!callbacks) return;
       callbacks.delete(fn);
       if (callbacks.size === 0) {
-        try {
-          $.get(path)?.disconnect();
-        } catch (e) {}
-        $.delete(path);
+        watchers.delete(normalizedPath);
       }
     };
   };
@@ -79,6 +93,10 @@ export function HfsProvider({children}: React.PropsWithChildren) {
     (async () => {
       setFs(await FS.init('local'));
     })();
+  }, []);
+
+  useEffect(() => {
+    return subscribePaths(notifyWatchers);
   }, []);
 
   return (

@@ -1,4 +1,5 @@
 import {device} from 'app/data/lib/device';
+import {emitPaths} from '../events';
 import type {
   SnapshotData,
   DeltaUpdate,
@@ -10,6 +11,7 @@ export interface FileWatcherCallbacks {
   onReady?: (snapshot: SnapshotData) => void;
   onError?: (message: string) => void;
   onDelta?: (data: DeltaUpdate) => void;
+  onPaths?: (paths: string[]) => void;
 }
 
 export class FileWatcherClient {
@@ -41,6 +43,10 @@ export class FileWatcherClient {
         break;
       case 'delta':
         this.callbacks.onDelta?.(message.data);
+        break;
+      case 'paths':
+        emitPaths(message.paths);
+        this.callbacks.onPaths?.(message.paths);
         break;
     }
   }

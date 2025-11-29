@@ -25,6 +25,9 @@ class FileWatcherWorker {
   private observer: FileSystemObserver | null = null;
   private snapshot: SnapshotData = {paths: {}, files: {}};
   private readonly ignoreFolders = [`.${cfg.APP_NAME}-${cfg.STORE_VERSION}`];
+  private readonly pendingPathsDelay = 200;
+  private pendingPaths = new Set<string>();
+  private pendingPathsTimer: number | null = null;
 
   async init(deviceId: DeviceId): Promise<void> {
     this.rootHandle = await navigator.storage.getDirectory();
@@ -47,6 +50,26 @@ class FileWatcherWorker {
   stop(): void {
     this.observer?.disconnect();
     this.observer = null;
+    this.clearPendingPaths();
+  }
+
+  private clearPendingPaths(): void {
+    if (this.pendingPathsTimer !== null) {
+      self.clearTimeout(this.pendingPathsTimer);
+      this.pendingPathsTimer = null;
+    }
+    this.pendingPaths.clear();
+  }
+
+  private enqueuePathChange(path: string): void {
+    this.pendingPaths.add(path);
+    if (this.pendingPathsTimer !== null) return;
+    this.pendingPathsTimer = self.setTimeout(() => {
+      this.pendingPathsTimer = null;
+      if (!this.pendingPaths.size) return;
+      this.send({type: 'paths', paths: Array.from(this.pendingPaths)});
+      this.pendingPaths.clear();
+    }, this.pendingPathsDelay);
   }
 
   async buildSnapshot(): Promise<void> {
@@ -184,6 +207,7 @@ class FileWatcherWorker {
     pathId: string,
     parentId: string | null,
     name: string,
+    fullPath: string,
   }> {
     const components = pathComponents || record.relativePathComponents;
     const fullPath = components.join('/');
@@ -191,7 +215,7 @@ class FileWatcherWorker {
     const parentPath = components.slice(0, -1).join('/');
     const parentId = parentPath ? this.createPathId(parentPath) : null;
     const name = components[components.length - 1];
-    return {pathId, parentId, name};
+    return {pathId, parentId, name, fullPath};
   }
 
   private async handleFileChange(
@@ -224,9 +248,10 @@ class FileWatcherWorker {
       if (record.relativePathComponents.length === 0) return;
       // Ignore changes in ignored folders (check path components first)
       if (this.ignoreFolders.includes(record.relativePathComponents[0])) return;
-      const {pathId, parentId, name} = await this.getRecordPath(record);
+      const {pathId, parentId, name, fullPath} = await this.getRecordPath(record);
       // For ignored directory operations (when changedHandle is available)
       if (record.changedHandle?.kind === 'directory' && this.ignoreFolders.includes(name)) return;
+      this.enqueuePathChange(fullPath);
       switch (record.type) {
         case 'appeared':
           if (record.changedHandle?.kind === 'file') {
@@ -246,7 +271,11 @@ class FileWatcherWorker {
           }
           break;
         case 'moved':
-          const {pathId: oldPathId} = await this.getRecordPath(record, record.relativePathMovedFrom ? [...record.relativePathMovedFrom] : undefined);
+          const {pathId: oldPathId, fullPath: oldFullPath} = await this.getRecordPath(
+            record,
+            record.relativePathMovedFrom ? [...record.relativePathMovedFrom] : undefined,
+          );
+          this.enqueuePathChange(oldFullPath);
           let path: PathTuple;
           let file: FileTuple | undefined;
           if (record.changedHandle?.kind === 'file') {

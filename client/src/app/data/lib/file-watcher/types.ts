@@ -45,3 +45,4 @@ export type WorkerResponse =
   | {type: 'ready', snapshot: SnapshotData}
   | {type: 'error'; message: string}
   | {type: 'delta'; data: DeltaUpdate}
+  | {type: 'paths'; paths: string[]}
