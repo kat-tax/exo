@@ -25,7 +25,7 @@
     "@evolu/web": "2.2.1",
     "@fontsource-variable/inter": "^5.2.8",
     "@helia/verified-fetch": "^3.2.0",
-    "@legendapp/list": "2.1.0-beta.10",
+    "@legendapp/list": "3.0.0-beta.3",
     "@lingui/core": "catalog:",
     "@lingui/macro": "catalog:",
     "@lingui/react": "catalog:",
