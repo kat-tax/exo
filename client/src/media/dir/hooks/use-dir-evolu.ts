@@ -35,7 +35,7 @@ export function useDirEvolu(pathId: PathId | null, deviceId: DeviceId, tmp?: boo
 
   const open = useCallback(async (entry: DirEvoluEntry, clearSel?: boolean) => {
     if (!entry.isDirectory) return;
-    nav.navigate('MediaBrowseEvolu', {pathId: entry.id, deviceId}, {pop: true});
+    nav.navigate('MediaBrowseEvolu', {pathId: entry.id, deviceId});
     if (clearSel) set(media.actions.selectBulk([]));
   }, [nav, set]);
 

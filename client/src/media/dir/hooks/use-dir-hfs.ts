@@ -89,7 +89,7 @@ export function useDirHfs(path: string, tmp?: boolean): Omit<HfsCtx, 'bar'> {
   const open = useCallback(async (entry: HfsFileEntry, clearSel?: boolean) => {
     if (!entry.isDirectory) return;
     const newPath = path ? `${path}/${entry.name}` : entry.name;
-    nav.navigate('MediaBrowseLocal', {path: newPath}, {pop: true});
+    nav.navigate('MediaBrowseLocal', {path: newPath});
     if (clearSel) set(media.actions.selectBulk([]));
   }, [path, nav, set]);
 
