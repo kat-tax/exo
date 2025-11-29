@@ -6,11 +6,20 @@ import type {MenuContextItem} from 'app/ui/float/menu-context';
 
 export function DirHfs({dir, cmd, ext, bar, opt, refs}: HfsCtx) {
   const layout = ext.tmp ? 'grid' : 'list';
+  const paths = dir.path
+    ?.split('/')
+    .filter(Boolean)
+    .reduce<Array<[name: string, path: string]>>((acc, segment) => {
+      const prev = acc.at(-1)?.[1];
+      const full = prev ? `${prev}/${segment}` : segment;
+      acc.push([segment, full]);
+      return acc;
+    }, []);
 
   return (
     <List
       items={dir.list}
-      paths={dir.path?.split('/').filter(Boolean).map(p => [p, p]) ?? []}
+      paths={paths}
       refs={refs}
       data={ext}
       opts={{
