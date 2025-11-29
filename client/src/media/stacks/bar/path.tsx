@@ -8,12 +8,15 @@ import type {DeviceId} from 'app/data/types';
 
 const TEXT_SIZE = __TOUCH__ ? 14 : 12;
 
-export function ListBarItem({name, path, last, deviceId}: {
+interface BarPathProps {
   name: string,
   path?: string,
   last?: boolean,
   deviceId?: DeviceId | null,
-}) {
+}
+
+export function BarPath(props: BarPathProps) {
+  const {name, path, last, deviceId} = props;
   const nav = useNavigation();
   const open = useCallback(() => {
     if (path === undefined) {

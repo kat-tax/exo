@@ -9,16 +9,17 @@ import type {MenuDropdownItem} from 'app/ui/float/menu-dropdown';
 
 const ICON_SIZE = __TOUCH__ ? 18 : 16;
 
-export interface ListBarActionProps {
+export interface BarActionProps {
   id: string,
   icon: string,
-  onPress?: () => void,
   items?: Array<MenuDropdownItem | undefined | false>,
+  onPress?: () => void,
 }
 
-export function ListBarAction(props: ListBarActionProps) {
+export function BarAction(props: BarActionProps) {
   const [open, setOpen] = useState(false);
   const {ref, focused} = useFocusable({
+    focusKey: `bar@%action-${props.id}%`,
     onEnterPress: () => {
       if (props.items) {
         setOpen(true);
@@ -26,7 +27,6 @@ export function ListBarAction(props: ListBarActionProps) {
         props.onPress?.();
       }
     },
-    focusKey: `bar@%action-${props.id}%`,
   });
 
   const button = props.items ? (

@@ -2,7 +2,7 @@ import {useQuery} from '@evolu/react';
 import {useMemo} from 'react';
 import {StyleSheet} from 'react-native-unistyles';
 import {ScrollView} from 'react-native';
-import {ListBar} from 'media/stacks/list/bar';
+import {Bar} from 'media/stacks/bar';
 import {Grid} from 'app/ui/grid';
 import {Screen} from 'app/ui/screen';
 import {getDevices} from 'app/data/queries';
@@ -18,7 +18,7 @@ export default function ScreenBrowseDevices(_: ReactNavigation.ScreenProps<'Medi
   const local = useMemo(() => devices.find(d => d.id === device.id), [devices]);
   return (
     <Screen>
-      <ListBar/>
+      <Bar/>
       <ScrollView
         style={styles.root}
         contentContainerStyle={styles.list}>

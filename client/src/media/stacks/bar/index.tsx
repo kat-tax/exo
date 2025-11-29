@@ -4,23 +4,23 @@ import {useEffect, useRef} from 'react';
 import {useFocusable, FocusContext} from '@noriginmedia/norigin-spatial-navigation';
 import {useLingui} from '@lingui/react/macro';
 
-import {ListBarItem} from './bar-item';
-import {ListBarAction} from './bar-action';
-import {ListBarSeparator} from './bar-separator';
+import {BarPath} from './path';
+import {BarAction} from './action';
+import {BarSeparator} from './separator';
 
-import type {ListBarActionProps} from './bar-action';
+import type {BarActionProps} from './action';
 import type {DeviceId} from 'app/data/types';
 
 const ITEM_SIZE = __TOUCH__ ? 46 : 36;
 
-export interface ListBarProps {
+export interface BarProps {
   paths?: Array<[name: string, path: string]>;
-  actions?: Array<ListBarActionProps>,
+  actions?: Array<BarActionProps>,
   deviceId?: DeviceId | null;
   deviceName?: string | null;
 }
 
-export function ListBar({paths, actions, deviceId, deviceName}: ListBarProps) {
+export function Bar({paths, actions, deviceId, deviceName}: BarProps) {
   const {t} = useLingui();
   const scroll = useRef<ScrollView>(null);
   const wrapperRef = useRef<View>(null);
@@ -62,22 +62,22 @@ export function ListBar({paths, actions, deviceId, deviceName}: ListBarProps) {
             horizontal
             contentContainerStyle={styles.breadcrumbsContent}
             showsHorizontalScrollIndicator={false}>
-            <ListBarItem
+            <BarPath
               name={t`Files`}
               deviceId={deviceId}
               last={!paths}
             />
             {paths &&
               <>
-                <ListBarSeparator/>
-                <ListBarItem
+                <BarSeparator/>
+                <BarPath
                   name={deviceName ?? t`Local`}
                   deviceId={deviceId}
                   path=""
                   last={paths.length === 0}
                 />
                 {paths.length > 0 &&
-                  <ListBarSeparator/>
+                  <BarSeparator/>
                 }
               </>
             }
@@ -85,8 +85,8 @@ export function ListBar({paths, actions, deviceId, deviceName}: ListBarProps) {
               const last = index === array.length - 1;
               return (
                 <View key={path} style={styles.breadcrumb}>
-                  <ListBarItem {...{name, path, last, deviceId}}/>
-                  {index < array.length - 1 && <ListBarSeparator/>}
+                  <BarPath {...{name, path, last, deviceId}}/>
+                  {index < array.length - 1 && <BarSeparator/>}
                 </View>
               );
             })}
@@ -94,7 +94,7 @@ export function ListBar({paths, actions, deviceId, deviceName}: ListBarProps) {
         </View>
         <View style={styles.actions}>
           {actions?.map(({id, icon, onPress, items}) => (
-            <ListBarAction key={id} {...{id, icon, onPress, items}}/>
+            <BarAction key={id} {...{id, icon, onPress, items}}/>
           ))}
         </View>
       </View>

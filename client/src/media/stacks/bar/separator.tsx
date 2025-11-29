@@ -4,7 +4,7 @@ import {View} from 'react-native';
 
 const SEPARATOR_SIZE = __TOUCH__ ? 14 : 10;
 
-export function ListBarSeparator() {
+export function BarSeparator() {
   return (
     <View tabIndex={-1} style={styles.separator}>
       <Icon

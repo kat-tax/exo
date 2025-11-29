@@ -4,14 +4,14 @@ import {StyleSheet} from 'react-native-unistyles';
 import {useRef, useMemo} from 'react';
 import {useWindowDimensions} from 'react-native';
 import {useFocusable, FocusContext} from '@noriginmedia/norigin-spatial-navigation';
-import {useComposedRefs} from 'app/lib/components';
 import {HEIGHT_ROW, HEIGHT_CELL} from 'media/stacks/list/row';
-import {ListEmpty} from 'media/stacks/list/empty';
-import {ListBar} from 'media/stacks/list/bar';
+import {useComposedRefs} from 'app/lib/components';
 import {MenuContext} from 'app/ui/float';
+import {ListEmpty} from 'media/stacks/list/empty';
+import {Bar} from 'media/stacks/bar';
 
 import type {LegendListRef} from '@legendapp/list';
-import type {ListBarActionProps} from 'media/stacks/list/bar-action';
+import type {BarActionProps} from 'media/stacks/bar/action';
 import type {MenuContextItem} from 'app/ui/float/menu-context';
 import type {DeviceId} from 'app/data/types';
 
@@ -27,7 +27,7 @@ export interface ListProps<T> {
     layout?: 'list' | 'grid',
     menu?: Array<MenuContextItem>,
     header?: {
-      actions?: Array<ListBarActionProps>,
+      actions?: Array<BarActionProps>,
     },
   };
   refs?: Array<any>;
@@ -70,7 +70,7 @@ export function List<T>({items, paths, data, opts, refs, render}: ListProps<T>) 
         enabled={!!opts?.menu}>
         <View ref={useComposedRefs(ref, ...refs ?? [])} style={vstyles.root}>
           {opts?.header &&
-            <ListBar
+            <Bar
               paths={paths}
               deviceId={opts?.deviceId}
               deviceName={opts?.deviceName}
