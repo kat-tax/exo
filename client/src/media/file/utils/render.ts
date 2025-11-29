@@ -259,6 +259,7 @@ export function getRenderer(
     case 'tsx':
       return [FileType.Text, {language: 'tsx'}];
     case 'js':
+    case 'cjs':
     case 'mjs':
     case '_js':
     case 'es6':
@@ -280,6 +281,7 @@ export function getRenderer(
     case 'xsjslib':
       return [FileType.Text, {language: 'javascript'}];
     case 'ts':
+    case 'cts':
     case 'mts':
       return [FileType.Text, {language: 'typescript'}];
     case 'coffee':
