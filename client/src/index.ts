@@ -10,7 +10,7 @@ import {injectStyles} from 'media/file/icons';
 import AppRoot from 'app';
 import cfg from 'config';
 
-init({shouldFocusDOMNode: false, debug: false});
+init({shouldFocusDOMNode: true, debug: false});
 injectStyles();
 
 AppRegistry.registerComponent(cfg.APP_NAME, () => AppRoot);
