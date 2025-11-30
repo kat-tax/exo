@@ -23,40 +23,36 @@ export interface BarProps {
 export function Bar({paths, actions, deviceId, deviceName}: BarProps) {
   const {t} = useLingui();
   const scroll = useRef<ScrollView>(null);
-  const wrapperRef = useRef<View>(null);
   const {ref, focusKey} = useFocusable({
     saveLastFocusedChild: false,
     focusBoundaryDirections: ['left', 'right'],
     //preferredChildFocusKey: `bar@${!paths?.length ? '%device%' : paths?.at(-1)?.[1]}`,
   });
 
+  // Scroll to end when paths change
   useEffect(() => {
     scroll.current?.scrollToEnd({animated: true})
   }, [paths]);
 
+  // Scroll with wheel
   useEffect(() => {
     if (!__WEB__) return;
-    if (!wrapperRef.current) return;
-    const element = wrapperRef.current as unknown as HTMLElement;
+    if (!scroll.current) return;
+    const element = scroll.current.getScrollableNode?.();
     const handleWheel = (event: WheelEvent) => {
       if (scroll.current && event.deltaY !== 0) {
-        const scrollViewNode = scroll.current.getScrollableNode?.();
-        if (scrollViewNode) {
-          scrollViewNode.scrollLeft += event.deltaY;
-          event.preventDefault();
-        }
+        element.scrollLeft += event.deltaY;
+        event.preventDefault();
       }
     };
-    if (element) {
-      element.addEventListener('wheel', handleWheel, {passive: false});
-      return () => element.removeEventListener('wheel', handleWheel);
-    }
+    element?.addEventListener('wheel', handleWheel, {passive: false});
+    return () => element?.removeEventListener('wheel', handleWheel);
   }, []);
 
   return (
     <FocusContext.Provider value={focusKey}>
       <View ref={ref} style={styles.root}>
-        <View ref={wrapperRef} style={styles.breadcrumbs}>
+        <View style={styles.breadcrumbs}>
           <ScrollView
             ref={scroll}
             horizontal

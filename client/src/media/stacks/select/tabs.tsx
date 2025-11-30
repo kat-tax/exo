@@ -31,6 +31,21 @@ export function SelectTabs(props: SelectTabsProps) {
     }
   }, [focused]);
 
+  // Scroll with wheel
+  useEffect(() => {
+    if (!__WEB__) return;
+    if (!scroll.current) return;
+    const element = scroll.current.getScrollableNode?.();
+    const handleWheel = (event: WheelEvent) => {
+      if (scroll.current && event.deltaY !== 0) {
+        element.scrollLeft += event.deltaY;
+        event.preventDefault();
+      }
+    };
+    element?.addEventListener('wheel', handleWheel, {passive: false});
+    return () => element?.removeEventListener('wheel', handleWheel);
+  }, []);
+
   return (
     <FocusContext.Provider value={focusKey}>
       <ScrollView
