@@ -61,7 +61,9 @@ export function useMediaControls(props: MediaControlsProps): MediaControls {
       label: t`Select all`,
       media: ITERABLE,
       action: () => {
-        //set(media.actions.selectBulk([]));
+        if (file?.current && 'selectAll' in file.current) {
+          file.current.selectAll();
+        }
       },
     },
     // Edit controls

@@ -1,11 +1,13 @@
 import type {FileGame} from 'media/file/file-game';
 import type {FileText} from 'media/file/file-text';
 
+import type {DirLocalRef} from 'media/file/file-dir-local';
+import type {DirEvoluRef} from 'media/file/file-dir-evolu';
 import type {ImageRef} from 'media/file/file-image';
 import type {VideoRef} from 'media/file/file-video';
 import type {PdfRef} from 'media/file/file-pdf';
 import type {BookRef} from 'media/file/file-book';
-import type {RiveRef} from 'media/file/file-rive';
+//import type {RiveRef} from 'media/file/file-rive';
 import type {GameRef} from 'media/file/file-game';
 
 export enum FileType {
@@ -39,11 +41,13 @@ export type FileOptions = {
 } & Record<FileType, Record<string, unknown>>
 
 export type FileRef =
+  | DirLocalRef
+  | DirEvoluRef
   | ImageRef
   | VideoRef
   | PdfRef
   | BookRef
-  | RiveRef
+  //| RiveRef (TODO: fix rive ref export)
   | GameRef
 
 export type FileProtocol =

@@ -1,16 +1,23 @@
 import {plural} from '@lingui/core/macro';
-import {useEffect, useMemo, forwardRef} from 'react';
+import {useEffect, useImperativeHandle, useMemo, memo, forwardRef} from 'react';
 import {useDirHfs} from 'media/dir/hooks/use-dir-hfs';
 import {DirHfs} from 'media/dir/stacks/dir-hfs';
+import {useSet} from 'app/data';
+import media from 'media/store';
 
 import type {FileProps} from 'media/file';
 
 export interface FileDirLocal extends FileProps {}
 
-export default forwardRef((
+export interface DirLocalRef {
+  selectAll: () => void,
+}
+
+export default memo(forwardRef((
   {path, actions}: FileDirLocal,
-  _ref: React.Ref<unknown>,
+  ref: React.Ref<DirLocalRef>,
 ) => {
+  const set = useSet();
   const {dir, cmd, ext} = useDirHfs(path, true);
   const {folders, files} = useMemo(() => dir?.list?.reduce((acc, item) => {
     if (item.isFile) acc.files++;
@@ -24,9 +31,17 @@ export default forwardRef((
     return folders > 0 ? `${_folders}, ${_files}` : _files;
   }, [folders, files]);
 
+  useImperativeHandle(ref, () => ({
+    selectAll: () => {
+      const items = dir?.list?.map(e => path ? `${path}/${e.name}` : e.name);
+      if (!items?.length) return;
+      set(media.actions.selectBulk(items));
+    },
+  }));
+
   useEffect(() => {
     actions.setInfo(message);
   }, [message, actions]);
 
   return dir ? <DirHfs {...{dir, cmd, ext}}/> : null;
-});
+}));

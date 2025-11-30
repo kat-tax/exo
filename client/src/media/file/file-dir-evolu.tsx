@@ -1,18 +1,25 @@
 import {plural} from '@lingui/core/macro';
-import {useEffect, useMemo, forwardRef} from 'react';
+import {useEffect, useImperativeHandle, useMemo, memo, forwardRef} from 'react';
+import {useSet} from 'app/data';
+import {device} from 'app/data/lib/device';
+import {PathId, DeviceId} from 'app/data/types';
 import {useDirEvolu} from 'media/dir/hooks/use-dir-evolu';
 import {DirEvolu} from 'media/dir/stacks/dir-evolu';
-import {PathId, DeviceId} from 'app/data/types';
-import {device} from 'app/data/lib/device';
+import media from 'media/store';
 
 import type {FileProps} from 'media/file';
 
 export interface FileDirEvolu extends FileProps {}
 
-export default forwardRef((
+export interface DirEvoluRef {
+  selectAll: () => void,
+}
+
+export default memo(forwardRef((
   {path, actions}: FileDirEvolu,
-  _ref: React.Ref<unknown>,
+  ref: React.Ref<DirEvoluRef>,
 ) => {
+  const set = useSet();
   const evolu = useMemo(() => {
     const parts = path.replace('evolu://', '').split('/');
     const _device = DeviceId.from(parts[0]);
@@ -37,9 +44,17 @@ export default forwardRef((
     return folders > 0 ? `${_folders}, ${_files}` : _files;
   }, [folders, files]);
 
+  useImperativeHandle(ref, () => ({
+    selectAll: () => {
+      const items = dir?.list?.map(e => `evolu://${evolu.deviceId}/${e.id}`);
+      if (!items?.length) return;
+      set(media.actions.selectBulk(items as string[]));
+    },
+  }));
+
   useEffect(() => {
     actions.setInfo(message);
   }, [message, actions]);
 
   return dir ? <DirEvolu {...{dir, cmd, ext}}/> : null;
-});
+}));
