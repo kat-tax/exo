@@ -7,10 +7,6 @@ export type Media = {
   selected: string[],
   dragging: string[],
   renaming: string[],
-  lists: {
-    main: string[],
-    temp: string[],
-  },
 }
 
 export default createSlice({
@@ -37,10 +33,6 @@ export default createSlice({
     layout(media, action: PayloadAction<'list' | 'grid'>) {
       media.layout = action.payload;
     },
-    list(media, action: PayloadAction<{list: 'main' | 'temp', items: string[]}>) {
-      const {list, items} = action.payload;
-      media.lists[list] = items;
-    },
     focus(media, action: PayloadAction<string>) {
       media.focused = action.payload;
     },
@@ -56,10 +48,8 @@ export default createSlice({
     rename(media, action: PayloadAction<string[]>) {
       media.renaming = action.payload;
     },
-    selectBulk(media, action: PayloadAction<string[] | 'main' | 'temp'>) {
-      media.selected = Array.isArray(action.payload)
-        ? action.payload
-        : media.lists[action.payload];
+    selectBulk(media, action: PayloadAction<string[]>) {
+      media.selected = action.payload;
       // Refocus after selection changes
       if (media.selected.length === 0) {
         media.focused = '';
@@ -78,13 +68,13 @@ export default createSlice({
       path: string,
       isMulti: boolean,
       isRange: boolean,
-      namespace?: 'main' | 'temp',
+      list: string[],
     }>) {
-      const {path, isMulti, isRange, namespace = 'main'} = action.payload;
+      const {path, isMulti, isRange, list} = action.payload;
       const indexSelected = media.selected.indexOf(path);
       // Range select (shift+click)
       if (isRange) {
-        const _ = media.lists[namespace];
+        const _ = list;
         const to = _.indexOf(path);
         const from = _.indexOf(media.focused);
         const range = _.slice(Math.min(from, to), Math.max(from, to) + 1);

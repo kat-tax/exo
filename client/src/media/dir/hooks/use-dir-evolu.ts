@@ -50,9 +50,9 @@ export function useDirEvolu(pathId: PathId | null, deviceId: DeviceId, tmp?: boo
       path: `evolu://${deviceId}/${entry.id}`,
       isRange: isShift ?? false,
       isMulti: isCtrl ?? false,
-      namespace: tmp ? 'temp' : 'main',
+      list: list.map(e => `evolu://${deviceId}/${e.id}`),
     }));
-  }, [tmp, sel, deviceId, open, set]);
+  }, [sel, deviceId, list, open, set]);
 
   const download = useCallback(async (entry: DirEvoluEntry) => {
     if (entry.isFile) {
@@ -62,14 +62,6 @@ export function useDirEvolu(pathId: PathId | null, deviceId: DeviceId, tmp?: boo
       saveAs(await getData(uri, 'dataUrl'), entry.name);
     }
   }, [path, deviceId]);
-
-  // Update state with current files (for range-select)
-  useEffect(() => {
-    set(media.actions.list({
-      list: tmp ? 'temp' : 'main',
-      items: list.map(e => `evolu://${deviceId}/${e.id}`),
-    }));
-  }, [list, path, deviceId, set, tmp]);
 
   // Update list with query results
   useEffect(() => {

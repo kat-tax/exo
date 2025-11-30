@@ -18,32 +18,35 @@ export const {is, get, type} = $.tag<HfsFileEntry[], HfsCmd>('hfs');
 
 export function useEntryHfs({item, cmd, opt, dir}: EntryHfsProps) {
   const [dropping, setDropping] = useState(false);
-  const ref = useRef<RN.GestureResponderEvent>(undefined);
+  const focusRef = useRef<RN.GestureResponderEvent>(undefined);
+  const itemRef = useRef<HfsFileEntry>(item);
   const set = useSet();
 
   // Spatial navigation
+  // Note: that itemRef is needed to avoid stale closures
+  itemRef.current = item;
   const {focused, ref: refFoc, focusSelf: foc} = useFocusable({
     onFocus: (_lay, _props, e) => {
-      ref.current = e.event as unknown as RN.GestureResponderEvent;
+      focusRef.current = e.event as unknown as RN.GestureResponderEvent;
     },
     onArrowRelease: () => {
       if (opt.preview) return true;
-      cmd.select(item, ref.current);
-      ref.current = undefined;
+      cmd.select(itemRef.current, focusRef.current);
+      focusRef.current = undefined;
       return true;
     },
     onEnterPress: () => opt.preview
-      ? cmd.select(item)
-      : item.isDirectory
-        ? cmd.open(item)
-        : cmd.select(item),
+      ? cmd.select(itemRef.current)
+      : itemRef.current.isDirectory
+        ? cmd.open(itemRef.current)
+        : cmd.select(itemRef.current),
     onArrowPress: (arrow) => {
       if (opt.preview) return true;
       // Handle navigating to top-level (left arrow)
       if (arrow === 'left') {
         return !cmd.goUp();
       // Handle navigating into sub-directory (right arrow)
-      // } else if (arrow === 'right' && item.isDirectory) {
+      // } else if (arrow === 'right' && itemRef.current.isDirectory) {
       //   cmd.open(item);
       //   return false;
       }

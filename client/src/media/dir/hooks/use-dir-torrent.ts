@@ -42,7 +42,7 @@ export function useDirTorrent(path: string): TorrentCtx {
     const client = new Tor();
     // @ts-expect-error Incorrect vendor types
     client.add(torrent.file, {store}, async ({files}) => {
-      const item = files.find(e => e.path.split('/').slice(1).join('/') === file.path);
+      const item = files.find((e: TorrentFileEntry) => e.path.split('/').slice(1).join('/') === file.path);
       const dest = getTargetPath(path, file.path, target?.name);
       const handle = await web.getFileHandle(dest, {create: true});
       const writable = await handle?.createWritable();
@@ -61,7 +61,7 @@ export function useDirTorrent(path: string): TorrentCtx {
         path: getTargetPath(path, file.path, target?.name),
         isRange: isShift ?? false,
         isMulti: isCtrl ?? false,
-        namespace: 'temp',
+        list: torrent.list.map(e => e.path),
       }));
     }
   }, [torrent, path, set]);

@@ -1,11 +1,11 @@
 import {Icon} from 'react-exo/icon';
 import {View, Pressable} from 'react-native';
 import {StyleSheet, Display, mq} from 'react-native-unistyles';
-import {useState, Suspense} from 'react';
+import {useState, useEffect, Suspense} from 'react';
 import {useNavigation} from '@react-navigation/native';
-import {useHotkeys} from 'app/nav/hooks/use-hotkeys';
 import {useGet} from 'app/data';
 import {Panel} from 'app/ui/panel';
+import {isInputFocused} from 'app/lib/interface';
 import {breakpoints} from 'design/theme';
 import media from 'media/store';
 
@@ -35,14 +35,28 @@ export function Layout(props: LayoutProps) {
   const previewRoutes = ['MediaBrowseEvolu', 'MediaBrowseLocal'];
   const hasPreview = previewRoutes.includes(activeRoute.name) && previewOpen;
 
-  useHotkeys({
-    toggleMenu: () => {
-      setMenuOpen(!menuOpen);
-    },
-    togglePreview: () => {
-      setPreviewOpen(!previewOpen);
-    },
-  });
+  // Column hotkeys
+  useEffect(() => {
+    if (!__WEB__) return;
+    const down = (e: KeyboardEvent) => {
+      if (isInputFocused()) return;
+      const {key} = e;
+      switch (key) {
+        // Toggle main menu
+        case '[':
+          setMenuOpen(prev => !prev);
+          break;
+        // Toggle preview
+        case ']':
+          setPreviewOpen(prev => !prev);
+          break;
+      }
+    };
+    window.addEventListener('keydown', down);
+    return () => {
+      window.removeEventListener('keydown', down);
+    };
+  }, [setMenuOpen, setPreviewOpen]);
 
   return (
     <View style={styles.root}>
@@ -96,6 +110,7 @@ export const createScreenLayout = (_screens: NavScreens) => (
     </Suspense>
   )
 );
+
 
 const styles = StyleSheet.create((theme) => ({
   root: {

@@ -5,7 +5,6 @@ import {useLingui} from '@lingui/react/macro';
 import {useSet} from 'app/data';
 import {pinFile} from 'media/dir/utils/ipfs/pin';
 import {FileType} from 'media/file/types';
-import media from 'media/store';
 
 import type {MediaControlsProps} from 'media/stacks/controls';
 
@@ -62,7 +61,7 @@ export function useMediaControls(props: MediaControlsProps): MediaControls {
       label: t`Select all`,
       media: ITERABLE,
       action: () => {
-        set(media.actions.selectBulk('temp'));
+        //set(media.actions.selectBulk([]));
       },
     },
     // Edit controls

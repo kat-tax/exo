@@ -44,7 +44,7 @@ export function useDirZip(path: string): ZipCtx {
         path: dest,
         isRange: isShift ?? false,
         isMulti: isCtrl ?? false,
-        namespace: 'temp',
+        list: zip.list.map(e => e.name),
       }));
     }
   }, [zip, path, set]);
