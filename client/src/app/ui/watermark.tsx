@@ -1,6 +1,7 @@
 import {Icon} from 'react-exo/icon';
 import {View, Text} from 'react-native';
 import {StyleSheet} from 'react-native-unistyles';
+import {useFocusable} from '@noriginmedia/norigin-spatial-navigation';
 import {Button} from 'design';
 
 interface WatermarkProps extends React.PropsWithChildren {
@@ -12,6 +13,7 @@ interface WatermarkProps extends React.PropsWithChildren {
 }
 
 export function Watermark(props: WatermarkProps) {
+  const {ref, focused} = useFocusable();
   return (
     <View style={styles.root}>
       <View style={[styles.box, props.dnd && styles.boxDnd]}>
@@ -19,8 +21,10 @@ export function Watermark(props: WatermarkProps) {
           {props.title}
         </Text>
         <Button
+          // @ts-expect-error - TODO: extend design prop types
+          ref={ref}
           mode="Secondary"
-          state="Default"
+          state={focused ? 'Focused' : 'Default'}
           label={props.label}
           onPress={props.onAction}
           icon={<Icon name={props.icon}/>}

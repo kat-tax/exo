@@ -4,6 +4,7 @@ import {Slider} from 'react-exo/slider';
 import {Icon} from 'react-exo/icon';
 import {useCallback} from 'react';
 import {useMediaControls} from 'media/hooks/use-media-controls';
+import {useFocusable} from '@noriginmedia/norigin-spatial-navigation';
 import {FileType} from 'media/file/types';
 import {Thumb} from 'media/stacks/thumb';
 import {Display} from 'react-native-unistyles';
@@ -13,7 +14,7 @@ import type {FileProps} from 'media/file';
 import type {FileRef, FileRenderInfo} from 'media/file/types';
 
 export interface MediaControlsProps {
-  file: React.RefObject<FileRef>,
+  file: React.RefObject<FileRef | null>,
   renderer?: FileRenderInfo,
   maximized: boolean,
   actions: FileProps['actions'],
@@ -97,21 +98,37 @@ export function MediaControls(props: MediaControlsProps) {
               </Text>
             </Display>
           </Pressable>
-        : <Pressable key={name} style={styles.action} onPress={action}>
-            {state => (
-              icon && <Icon
-                name={icon}
-                size={__TOUCH__ ? 20 : 18}
-                uniProps={(theme) => ({
-                  color: state.hovered || __TOUCH__
-                    ? theme.colors.foreground
-                    : theme.colors.secondaryForeground,
-                })}
-              />
-            )}
-          </Pressable>
+        : <MediaActionButton key={name} {...{name, icon, action}}/>
       )}
     </View>
+  );
+}
+
+interface MediaActionButtonProps {
+  name?: string,
+  icon?: string,
+  action?: () => void,
+}
+
+function MediaActionButton(props: MediaActionButtonProps) {
+  const {ref, focused} = useFocusable();
+  return (
+    <Pressable
+      ref={ref}
+      style={[styles.action, focused && styles.actionFocused]}
+      onPress={props.action}>
+      {state => (
+        <Icon
+          name={props.icon ?? 'ph:placeholder'}
+          size={__TOUCH__ ? 20 : 18}
+          uniProps={(theme) => ({
+            color: focused || state.hovered || __TOUCH__
+              ? theme.colors.foreground
+              : theme.colors.secondaryForeground,
+          })}
+        />
+      )}
+    </Pressable>
   );
 }
 
@@ -135,14 +152,6 @@ const styles = StyleSheet.create((theme) => ({
   },
   disabled: {
     pointerEvents: 'none',
-  },
-  action: {
-    zIndex: 100,
-    margin: theme.display.space1,
-    paddingHorizontal: theme.display.space3,
-    paddingVertical: __TOUCH__
-      ? theme.display.space4
-      : theme.display.space3,
   },
   content: {
     flex: 1,
@@ -175,5 +184,21 @@ const styles = StyleSheet.create((theme) => ({
     lineHeight: theme.font.height,
     letterSpacing: theme.font.spacing,
     color: theme.colors.mutedForeground,
+  },
+  action: {
+    zIndex: 100,
+    margin: theme.display.space1,
+    borderRadius: theme.display.radius1,
+    borderWidth: StyleSheet.hairlineWidth,
+    borderColor: 'transparent',
+    paddingHorizontal: __TOUCH__
+      ? theme.display.space4
+      : theme.display.space2,
+    paddingVertical: __TOUCH__
+      ? theme.display.space4
+      : theme.display.space2,
+  },
+  actionFocused: {
+    borderColor: theme.colors.ring,
   },
 }));
