@@ -20,6 +20,7 @@ export function Tabs({state, navigation, screens, links}: LayoutProps) {
   const {ref, focusKey} = useFocusable({
     forceFocus: true,
     preferredChildFocusKey: `menu-${activeRoute?.name}`,
+    saveLastFocusedChild: false,
   });
 
   return (
@@ -44,6 +45,7 @@ export function Menu({state, navigation, screens, links}: LayoutProps) {
   const {ref, focusKey} = useFocusable({
     forceFocus: true,
     preferredChildFocusKey: `menu-${activeRoute?.name}`,
+    saveLastFocusedChild: false,
   });
 
   return (
