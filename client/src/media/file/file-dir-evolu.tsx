@@ -1,5 +1,7 @@
 import {plural} from '@lingui/core/macro';
-import {useEffect, useImperativeHandle, useMemo, memo, forwardRef} from 'react';
+import {View} from 'react-native';
+import {StyleSheet} from 'react-native-unistyles';
+import {useEffect, useImperativeHandle, useMemo, memo, forwardRef, useRef} from 'react';
 import {useSet} from 'app/data';
 import {device} from 'app/data/lib/device';
 import {PathId, DeviceId} from 'app/data/types';
@@ -13,6 +15,7 @@ export interface FileDirEvolu extends FileProps {}
 
 export interface DirEvoluRef {
   selectAll: () => void,
+  presentFullscreen: () => void,
 }
 
 export default memo(forwardRef((
@@ -20,6 +23,7 @@ export default memo(forwardRef((
   ref: React.Ref<DirEvoluRef>,
 ) => {
   const set = useSet();
+  const dirRef = useRef<View>(null);
   const evolu = useMemo(() => {
     const parts = path.replace('evolu://', '').split('/');
     const _device = DeviceId.from(parts[0]);
@@ -50,11 +54,28 @@ export default memo(forwardRef((
       if (!items?.length) return;
       set(media.actions.selectBulk(items as string[]));
     },
+    presentFullscreen: () => {
+      if (__WEB__ && dirRef.current) {
+        const element = dirRef.current as unknown as HTMLElement;
+        element.requestFullscreen?.();
+      }
+    },
   }));
 
   useEffect(() => {
     actions.setInfo(message);
   }, [message, actions]);
 
-  return dir ? <DirEvolu {...{dir, cmd, ext}}/> : null;
+  return dir ? (
+    <View ref={dirRef} style={styles.root}>
+      <DirEvolu {...{dir, cmd, ext}}/>
+    </View>
+  ) : null;
+}));
+
+const styles = StyleSheet.create((theme) => ({
+  root: {
+    flex: 1,
+    paddingVertical: theme.display.space2,
+  },
 }));
