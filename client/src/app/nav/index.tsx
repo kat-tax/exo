@@ -198,6 +198,7 @@ export function Navigator() {
       options: {
         title: t`Files`,
         icon: 'ph:folder',
+        isActive: (route) => route.startsWith('MediaBrowse'),
       },
     },
     MediaBrowseLocal: {
@@ -394,5 +395,6 @@ export type NavScreenConfig = {
     title: string,
     icon?: string,
     tabBarIcon?: () => ImageSourcePropType,
+    isActive?: (routeName: keyof RootStackParamList) => boolean,
   },
 }

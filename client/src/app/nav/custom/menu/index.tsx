@@ -19,7 +19,7 @@ export function Tabs({state, navigation, screens, links}: LayoutProps) {
   const activeRoute = state.routes[state.index];
   const {ref, focusKey} = useFocusable({
     forceFocus: true,
-    preferredChildFocusKey: `menu-${activeRoute?.name}`,
+    preferredChildFocusKey: getPreferredChildFocusKey(state),
     saveLastFocusedChild: false,
   });
 
@@ -44,7 +44,7 @@ export function Menu({state, navigation, screens, links}: LayoutProps) {
   const activeRoute = state.routes[state.index];
   const {ref, focusKey} = useFocusable({
     forceFocus: true,
-    preferredChildFocusKey: `menu-${activeRoute?.name}`,
+    preferredChildFocusKey: getPreferredChildFocusKey(state),
     saveLastFocusedChild: false,
   });
 
@@ -111,6 +111,19 @@ export function Menu({state, navigation, screens, links}: LayoutProps) {
       </View>
     </FocusContext.Provider>
   );
+}
+
+const getPreferredChildFocusKey = (state: LayoutProps['state']) => {
+  const activeRoute = state.routes[state.index];
+  // Subroute overrides, focus the parent route
+  let name = activeRoute?.name;
+  switch (name) {
+    case 'MediaBrowseEvolu':
+    case 'MediaBrowseLocal':
+      name = 'MediaBrowseDevices';
+      break;
+  }
+  return name ? `menu-${name}` : undefined;
 }
 
 const styles = StyleSheet.create((theme) => ({
