@@ -3,14 +3,13 @@ import {bytesize} from 'react-exo/fs';
 import {useEffect, forwardRef, useMemo} from 'react';
 import {useDirTorrent} from 'media/dir/hooks/use-dir-torrent';
 import {DirTorrent} from 'media/dir/stacks/dir-torrent';
-import {Panel} from 'app/ui/panel';
 
 import type {FileProps} from 'media/file';
 
 export interface FileTorrent extends FileProps {}
 
 export default forwardRef((
-  {path, name, actions, embedded}: FileTorrent,
+  {path, actions}: FileTorrent,
   _ref,
 ) => {
   const {torrent, cmd} = useDirTorrent(path);
@@ -31,11 +30,7 @@ export default forwardRef((
     actions.setInfo(message);
   }, [title, message, actions]);
 
-  return (
-    <Panel
-      title={embedded ? name : undefined}
-      message={embedded ? `${torrent?.info.name}` : undefined}>
-      {torrent && <DirTorrent {...{torrent, cmd}}/>}
-    </Panel>
-  )
+  return torrent ? (
+    <DirTorrent {...{torrent, cmd}}/>
+  ) : null;
 });
