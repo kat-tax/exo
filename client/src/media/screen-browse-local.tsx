@@ -24,6 +24,7 @@ export default function ScreenBrowse({route}: ReactNavigation.ScreenProps<'Media
       path: fullPath,
       isMulti: false,
       isRange: false,
+      list: [],
     }));
   };
 
