@@ -32,11 +32,13 @@ export function useDirHfs(path: string, tmp?: boolean): Omit<HfsCtx, 'bar'> {
   const set = useSet();
 
   const goUp = useCallback(() => {
+    // Navigate to device overview (+ focus local device)
     if (!path) {
       nav.push('MediaBrowseDevices');
-      setFocus(`device-${device.id}`);
+      setTimeout(() => setFocus(`device-${device.id}`), 0);
       return false;
     }
+    // Navigate to parent directory
     const parent = path.split('/').slice(0, -1).join('/');
     nav.push('MediaBrowseLocal', {path: parent});
     setFocus('list-0');

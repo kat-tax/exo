@@ -1,9 +1,10 @@
 import {useCallback} from 'react';
-import {useFocusable} from '@noriginmedia/norigin-spatial-navigation';
+import {useFocusable, setFocus} from '@noriginmedia/norigin-spatial-navigation';
 import {Text, Pressable} from 'react-native';
 import {StyleSheet} from 'react-native-unistyles';
 import {useNav} from 'app/nav/hooks';
 import {PathId} from 'app/data/types';
+import {device} from 'app/data/lib/device';
 
 import type {DeviceId} from 'app/data/types';
 
@@ -19,13 +20,17 @@ export function BarPath(props: BarPathProps) {
   const nav = useNav();
 
   const open = useCallback(() => {
+    // Navigate to device overview (+ focus current device)
     if (path === undefined) {
       nav.push('MediaBrowseDevices');
+      setFocus(`device-${deviceId ?? device.id}`);
+    // Navigate to evolu directory
     } else if (deviceId) {
       let pathId: PathId | undefined = undefined;
       const _pathId = PathId.from(path);
       if (_pathId.ok) pathId = _pathId.value;
       nav.push('MediaBrowseEvolu', {pathId, deviceId});
+    // Navigate to local directory
     } else {
       nav.push('MediaBrowseLocal', {path});
     }

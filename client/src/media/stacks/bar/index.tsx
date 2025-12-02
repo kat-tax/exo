@@ -25,8 +25,7 @@ export function Bar({paths, actions, deviceId, deviceName}: BarProps) {
   const scroll = useRef<ScrollView>(null);
   const {ref, focusKey} = useFocusable({
     saveLastFocusedChild: false,
-    focusBoundaryDirections: ['left', 'right'],
-    //preferredChildFocusKey: `bar@${!paths?.length ? '%device%' : paths?.at(-1)?.[1]}`,
+    preferredChildFocusKey: `bar@${!paths?.length ? '%device%' : paths?.at(-1)?.[1]}`,
   });
 
   // Scroll to end when paths change

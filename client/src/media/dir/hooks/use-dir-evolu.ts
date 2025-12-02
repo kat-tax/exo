@@ -7,7 +7,6 @@ import {PathId} from 'app/data/types';
 import {isZeego} from 'app/ui/float';
 import {getData} from 'media/file/utils/data';
 import {saveAs} from 'media/dir/utils/hfs/fs';
-import {device} from 'app/data/lib/device';
 import media from 'media/store';
 
 import type {GestureResponderEvent} from 'react-native';
@@ -26,11 +25,13 @@ export function useDirEvolu(pathId: PathId | null, deviceId: DeviceId, tmp?: boo
   ]);
 
   const goUp = useCallback(() => {
+    // Navigate to device overview (+ focus current device)
     if (!path) {
       nav.push('MediaBrowseDevices');
-      setFocus(`device-${device.id}`);
+      setTimeout(() => setFocus(`device-${deviceId}`), 0);
       return false;
     }
+    // Navigate to parent directory
     const pathId = path.parentId ?? undefined;
     nav.push('MediaBrowseEvolu', {pathId, deviceId});
     setFocus('list-0');
