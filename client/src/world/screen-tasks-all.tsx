@@ -1,8 +1,8 @@
 import {View} from 'react-native';
 import {Icon} from 'react-exo/icon';
 import {StyleSheet} from 'react-native-unistyles';
-import {useNavigation} from '@react-navigation/native';
 import {useLingui} from '@lingui/react/macro';
+import {useNav} from 'app/nav/hooks';
 import {Panel} from 'app/ui/panel';
 import {Grid} from 'app/ui/grid';
 import {GridCell} from 'app/ui/grid';
@@ -13,7 +13,7 @@ import {useTasks} from 'world/hooks/use-tasks';
 export default function ScreenTasksAll() {
   const tasks = useTasks();
   const data = useQuery(getLists);
-  const nav = useNavigation();
+  const nav = useNav();
   const {t} = useLingui();
 
   return (
@@ -25,8 +25,8 @@ export default function ScreenTasksAll() {
           <GridCell
             key={id}
             focusKey={`list-${id}`}
-            onPress={() => nav.navigate('WorldTasksDetails', {id})}
-            onEditSelect={() => nav.navigate('WorldTasksEdit', {id})}>
+            onPress={() => nav.push('WorldTasksDetails', {id})}
+            onEditSelect={() => nav.push('WorldTasksEdit', {id})}>
             <View style={[styles.list, !name && styles.listAdd]}>
               <Icon.Remote
                 name={icon ?? ''}
@@ -42,7 +42,7 @@ export default function ScreenTasksAll() {
           focusKey="list-add"
           onPress={() => {
             const id = data?.find(list => !list.name)?.id ?? tasks.create();
-            if (id) nav.navigate('WorldTasksEdit', {id});
+            if (id) nav.push('WorldTasksEdit', {id});
           }}>
           <View style={[styles.list, styles.listAdd]}>
             <Icon

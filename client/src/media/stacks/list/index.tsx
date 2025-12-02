@@ -38,7 +38,6 @@ export interface ListProps<T> {
 }
 
 export function List<T>({items, paths, data, opts, refs, render}: ListProps<T>) {
-  const {ref, focusKey} = useFocusable({saveLastFocusedChild: !opts?.preview});
   const {width} = useWindowDimensions();
   const listRef = useRef<LegendListRef>(null);
   const [,name] = paths?.at(-1) ?? [null,'Files'];
@@ -61,6 +60,11 @@ export function List<T>({items, paths, data, opts, refs, render}: ListProps<T>) 
       isGrid && styles.headerGrid,
     ],
   }), [isGrid, opts?.dropping, styles]);
+
+  const {ref, focusKey} = useFocusable({
+    preferredChildFocusKey: opts?.preview ? 'preview-0' : 'list-0',
+    saveLastFocusedChild: !opts?.preview,
+  });
 
   return (
     <FocusContext.Provider value={focusKey}>

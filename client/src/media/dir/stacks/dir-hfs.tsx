@@ -48,7 +48,7 @@ export function DirHfs({dir, cmd, ext, bar, opt, refs}: HfsCtx) {
           },
         };
         return (
-          <EntryHfs {...{item, cmd, opt, dir}}/>
+          <EntryHfs {...{index, item, cmd, opt, dir}}/>
         );
       }}
     />

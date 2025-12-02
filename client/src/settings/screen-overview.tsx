@@ -1,6 +1,5 @@
 import {useState} from 'react';
 import {useLingui} from '@lingui/react/macro';
-import {useNavigation} from '@react-navigation/native';
 import {View, Platform} from 'react-native';
 import {StyleSheet} from 'react-native-unistyles';
 import {TextInput} from 'react-exo/textinput';
@@ -14,13 +13,14 @@ import {AccountKey} from 'settings/stacks/account-key';
 import {useSettings} from 'settings/hooks/use-settings';
 import {useLocale} from 'settings/hooks/use-locale';
 import {useTheme} from 'settings/hooks/use-theme';
+import {useNav} from 'app/nav/hooks';
 
 export default function ScreenOverview() {
   const [scheme, setScheme] = useTheme(true);
   const [locale, setLocale] = useLocale(true);
   const [deleteConfirm, setDeleteConfirm] = useState('');
   const settings = useSettings();
-  const nav = useNavigation();
+  const nav = useNav();
   const {t} = useLingui();
 
   return (
@@ -102,7 +102,7 @@ export default function ScreenOverview() {
               label={t`View Usage`}
               mode="Primary"
               state="Default"
-              onPress={() => nav.navigate('SettingsStorage')}
+              onPress={() => nav.push('SettingsStorage')}
             />
           </PanelItem>
           <PanelItem

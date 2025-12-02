@@ -1,3 +1,4 @@
+import {setFocus} from '@noriginmedia/norigin-spatial-navigation';
 import {Icon} from 'react-exo/icon';
 import {bytesize} from 'react-exo/fs';
 import {StyleSheet} from 'react-native-unistyles';
@@ -31,7 +32,10 @@ export function DeviceLocal(props: Omit<DeviceCardProps, 'onPress'>) {
     <DeviceCard
       {...props}
       isLocal={true}
-      onPress={link.onPress}
+      onPress={() => {
+        link.onPress();
+        setFocus('list-0');
+      }}
     />
   );
 }
@@ -44,7 +48,10 @@ export function DeviceEvolu(props: Omit<DeviceCardProps, 'onPress'>) {
   return (
     <DeviceCard
       {...props}
-      onPress={link.onPress}
+      onPress={() => {
+        link.onPress();
+        setFocus('list-0');
+      }}
     />
   );
 }

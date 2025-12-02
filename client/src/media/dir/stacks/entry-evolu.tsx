@@ -7,6 +7,7 @@ import {useEntryEvolu} from 'media/dir/hooks/use-entry-evolu';
 import type {DirEvoluCmd, DirEvoluOpt, DirEvoluEntry} from 'media/dir/types/evolu';
 
 export interface EntryEvoluProps {
+  index: number,
   item: DirEvoluEntry,
   cmd: DirEvoluCmd,
   opt: DirEvoluOpt,

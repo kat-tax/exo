@@ -1,9 +1,11 @@
-import {useNavigation} from '@react-navigation/native';
+import {setFocus} from '@noriginmedia/norigin-spatial-navigation';
 import {useState, useCallback, useMemo, useEffect, useRef} from 'react';
 import {useHfs, useHfsWatch} from 'app/data/lib/hfs';
 import {useSet, useGet} from 'app/data';
+import {useNav} from 'app/nav/hooks';
 import {isZeego} from 'app/ui/float';
 import {getData} from 'media/file/utils/data';
+import {device} from 'app/data/lib/device';
 import media from 'media/store';
 import cfg from 'config';
 import * as _ from 'app/lib/dragdrop';
@@ -21,7 +23,7 @@ export function useDirHfs(path: string, tmp?: boolean): Omit<HfsCtx, 'bar'> {
   const [list, setList] = useState<HfsFileEntry[]>([]);
   const [dropping, setDropping] = useState(false);
   const refDnd = useRef<RN.View>(null);
-  const nav = useNavigation();
+  const nav = useNav();
   const hfs = useHfs();
   const sel = useGet(media.selectors.getSelected);
   const dnd = useGet(media.selectors.getDragging);
@@ -31,11 +33,13 @@ export function useDirHfs(path: string, tmp?: boolean): Omit<HfsCtx, 'bar'> {
 
   const goUp = useCallback(() => {
     if (!path) {
-      nav.navigate('MediaBrowseDevices');
+      nav.push('MediaBrowseDevices');
+      setFocus(`device-${device.id}`);
       return false;
     }
     const parent = path.split('/').slice(0, -1).join('/');
-    nav.navigate('MediaBrowseLocal', {path: parent});
+    nav.push('MediaBrowseLocal', {path: parent});
+    setFocus('list-0');
     return true;
   }, [path, nav]);
 
@@ -89,7 +93,8 @@ export function useDirHfs(path: string, tmp?: boolean): Omit<HfsCtx, 'bar'> {
   const open = useCallback(async (entry: HfsFileEntry, clearSel?: boolean) => {
     if (!entry.isDirectory) return;
     const newPath = path ? `${path}/${entry.name}` : entry.name;
-    nav.navigate('MediaBrowseLocal', {path: newPath});
+    nav.push('MediaBrowseLocal', {path: newPath});
+    setFocus('list-0');
     if (clearSel) set(media.actions.selectBulk([]));
   }, [path, nav, set]);
 

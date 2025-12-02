@@ -32,6 +32,7 @@ export function DirEvolu({dir, cmd, ext, bar}: DirEvoluCtx) {
           layout,
           preview: ext.tmp,
           selected: {
+            all: ext.sel,
             self: ext.sel.includes(self),
             prev: ext.sel.includes(prev),
             next: ext.sel.includes(next),
@@ -39,7 +40,7 @@ export function DirEvolu({dir, cmd, ext, bar}: DirEvoluCtx) {
           },
         };
         return (
-          <EntryEvolu {...{item, cmd, opt}}/>
+          <EntryEvolu {...{index, item, cmd, opt}}/>
         );
       }}
     />

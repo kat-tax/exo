@@ -1,10 +1,10 @@
 import {useLingui} from '@lingui/react/macro';
 import {StyleSheet} from 'react-native-unistyles';
 import {View, Text} from 'react-native';
+import {Icon} from 'react-exo/icon';
 import {Screen} from 'app/ui/screen';
 import {Grid, GridCell} from 'app/ui/grid';
-import {Icon} from 'react-exo/icon';
-import {useNavigation} from '@react-navigation/native';
+import {useNav} from 'app/nav/hooks';
 
 export default function ScreenWorld(_: ReactNavigation.ScreenProps<'WorldOverview'>) {
   const {t} = useLingui();
@@ -40,11 +40,11 @@ interface WorldTileProps {
 }
 
 function WorldTile(props: WorldTileProps) {
-  const nav = useNavigation();
+  const nav = useNav();
   return (
     <GridCell
       focusKey={props.link}
-      onPress={() => nav.navigate(props.link as any)}>
+      onPress={() => nav.push(props.link as any)}>
       <View style={styles.tile}>
         <Icon
           name={props.icon}

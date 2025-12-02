@@ -4,12 +4,19 @@ import {DirHfs} from 'media/dir/stacks/dir-hfs';
 import {Screen} from 'app/ui/screen';
 import {useSet} from 'app/data';
 import media from 'media/store';
+import {useFocusable, FocusContext} from '@noriginmedia/norigin-spatial-navigation';
+import {StyleSheet} from 'react-native-unistyles';
+import {View} from 'react-native';
 
 export default function ScreenBrowse({route}: ReactNavigation.ScreenProps<'MediaBrowseLocal'>) {
   const {path} = route.params;
   const {dir, cmd, ext, opt, refs} = useDirHfs(path || '');
   const add = useImportHfs();
   const set = useSet();
+
+  const {ref, focusKey} = useFocusable({
+    preferredChildFocusKey: 'list-0',
+  });
 
   const newFolder = async () => {
     const folderPath = path ? `${path}/New Folder` : 'New Folder';
@@ -75,8 +82,18 @@ export default function ScreenBrowse({route}: ReactNavigation.ScreenProps<'Media
   };
 
   return (
-    <Screen>
-      <DirHfs {...{dir, cmd, ext, bar, opt, refs}}/>
-    </Screen>
+    <FocusContext.Provider value={focusKey}>
+      <View ref={ref} style={styles.root}>
+        <Screen>
+          <DirHfs {...{dir, cmd, ext, bar, opt, refs}}/>
+        </Screen>
+      </View>
+    </FocusContext.Provider>
   );
 }
+
+const styles = StyleSheet.create(() => ({
+  root: {
+    flex: 1,
+  },
+}));

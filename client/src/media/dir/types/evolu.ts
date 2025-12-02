@@ -1,7 +1,7 @@
 import type {GestureResponderEvent} from 'react-native';
 import type {PathId, DeviceId} from 'app/data/types';
 import type {getPathById} from 'app/data/queries';
-import type {ListBarProps} from 'media/stacks/list/bar';
+import type {BarProps} from 'media/stacks/bar';
 
 export interface DirEvolu {
   path: ReturnType<typeof getPathById>['Row'],
@@ -12,7 +12,7 @@ export interface DirEvolu {
 export type DirEvoluCtx = {
   dir: DirEvolu,
   cmd: DirEvoluCmd,
-  bar?: ListBarProps,
+  bar?: BarProps,
   ext: {
     tmp?: boolean,
     sel: string[],
@@ -24,6 +24,7 @@ export type DirEvoluOpt = {
   preview?: boolean,
   focused?: boolean,
   selected?: {
+    all: string[],
     self: boolean,
     prev: boolean,
     next: boolean,

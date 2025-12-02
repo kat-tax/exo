@@ -1,11 +1,13 @@
-import {useNavigation} from '@react-navigation/native';
+import {setFocus} from '@noriginmedia/norigin-spatial-navigation';
 import {useState, useCallback, useMemo, useEffect} from 'react';
 import {useSet, useGet, useQueries} from 'app/data';
 import {getPathById, getPathList} from 'app/data/queries';
+import {useNav} from 'app/nav/hooks';
 import {PathId} from 'app/data/types';
 import {isZeego} from 'app/ui/float';
 import {getData} from 'media/file/utils/data';
 import {saveAs} from 'media/dir/utils/hfs/fs';
+import {device} from 'app/data/lib/device';
 import media from 'media/store';
 
 import type {GestureResponderEvent} from 'react-native';
@@ -14,7 +16,7 @@ import type {DeviceId} from 'app/data/types';
 
 export function useDirEvolu(pathId: PathId | null, deviceId: DeviceId, tmp?: boolean): Omit<DirEvoluCtx, 'bar'> {
   const set = useSet();
-  const nav = useNavigation();
+  const nav = useNav();
   const sel = useGet(media.selectors.getSelected);
   const ext = useMemo(() => ({sel, tmp}), [sel, tmp]);
   const [list, setList] = useState<DirEvoluEntry[]>([]);
@@ -25,19 +27,22 @@ export function useDirEvolu(pathId: PathId | null, deviceId: DeviceId, tmp?: boo
 
   const goUp = useCallback(() => {
     if (!path) {
-      nav.navigate('MediaBrowseDevices');
+      nav.push('MediaBrowseDevices');
+      setFocus(`device-${device.id}`);
       return false;
     }
     const pathId = path.parentId ?? undefined;
-    nav.navigate('MediaBrowseEvolu', {pathId, deviceId});
+    nav.push('MediaBrowseEvolu', {pathId, deviceId});
+    setFocus('list-0');
     return true;
   }, [path, nav, deviceId]);
 
   const open = useCallback(async (entry: DirEvoluEntry, clearSel?: boolean) => {
     if (!entry.isDirectory) return;
-    nav.navigate('MediaBrowseEvolu', {pathId: entry.id, deviceId});
+    nav.push('MediaBrowseEvolu', {pathId: entry.id, deviceId});
+    setFocus('list-0');
     if (clearSel) set(media.actions.selectBulk([]));
-  }, [nav, set]);
+  }, [nav, set, deviceId]);
 
   const select = useCallback((entry: DirEvoluEntry, event?: GestureResponderEvent) => {
     if (isZeego(event)) return;

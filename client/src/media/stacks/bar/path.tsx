@@ -1,8 +1,8 @@
 import {useCallback} from 'react';
 import {useFocusable} from '@noriginmedia/norigin-spatial-navigation';
-import {useNavigation} from '@react-navigation/native';
 import {Text, Pressable} from 'react-native';
 import {StyleSheet} from 'react-native-unistyles';
+import {useNav} from 'app/nav/hooks';
 import {PathId} from 'app/data/types';
 
 import type {DeviceId} from 'app/data/types';
@@ -16,18 +16,18 @@ interface BarPathProps {
 
 export function BarPath(props: BarPathProps) {
   const {name, path, last, deviceId} = props;
-  const nav = useNavigation();
+  const nav = useNav();
 
   const open = useCallback(() => {
     if (path === undefined) {
-      nav.navigate('MediaBrowseDevices');
+      nav.push('MediaBrowseDevices');
     } else if (deviceId) {
       let pathId: PathId | undefined = undefined;
       const _pathId = PathId.from(path);
       if (_pathId.ok) pathId = _pathId.value;
-      nav.navigate('MediaBrowseEvolu', {pathId, deviceId});
+      nav.push('MediaBrowseEvolu', {pathId, deviceId});
     } else {
-      nav.navigate('MediaBrowseLocal', {path});
+      nav.push('MediaBrowseLocal', {path});
     }
   }, [deviceId, path, nav]);
 

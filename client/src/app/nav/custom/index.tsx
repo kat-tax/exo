@@ -2,7 +2,7 @@ import {Icon} from 'react-exo/icon';
 import {View, Pressable} from 'react-native';
 import {StyleSheet, Display, mq} from 'react-native-unistyles';
 import {useState, useEffect, Suspense} from 'react';
-import {useNavigation} from '@react-navigation/native';
+import {useNav} from 'app/nav/hooks';
 import {useGet} from 'app/data';
 import {Panel} from 'app/ui/panel';
 import {isInputFocused} from 'app/lib/interface';
@@ -81,7 +81,7 @@ export function Layout(props: LayoutProps) {
 }
 
 export function HeaderLeft({canGoBack, tintColor}: NativeStackHeaderLeftProps) {
-  const nav = useNavigation();
+  const nav = useNav();
   return (
     <View style={styles.headerLeft}>
       {canGoBack &&

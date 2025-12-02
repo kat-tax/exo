@@ -6,6 +6,7 @@ import {useEntryHfs} from 'media/dir/hooks/use-entry-hfs';
 import type {Hfs, HfsCmd, HfsOpt, HfsFileEntry} from 'media/dir/types/hfs';
 
 export interface EntryHfsProps {
+  index: number,
   item: HfsFileEntry,
   cmd: HfsCmd,
   opt: HfsOpt,

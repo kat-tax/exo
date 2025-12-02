@@ -10,7 +10,7 @@ import type * as RN from 'react-native';
 
 export const {is, get, type} = $.tag<DirEvoluEntry, DirEvoluCmd>('evolu');
 
-export function useEntryEvolu({item, cmd, opt}: EntryEvoluProps) {
+export function useEntryEvolu({item, index, cmd, opt}: EntryEvoluProps) {
   const focusRef = useRef<RN.GestureResponderEvent>(undefined);
   const itemRef = useRef<DirEvoluEntry>(item);
 
@@ -18,6 +18,7 @@ export function useEntryEvolu({item, cmd, opt}: EntryEvoluProps) {
   // Note: that itemRef is needed to avoid stale closures
   itemRef.current = item;
   const {focused, ref: refFoc, focusSelf: foc} = useFocusable({
+    focusKey: opt.preview ? `preview-${index}` : `list-${index}`,
     onFocus: (_lay, _props, e) => {
       focusRef.current = e.event as unknown as RN.GestureResponderEvent;
     },
@@ -32,10 +33,9 @@ export function useEntryEvolu({item, cmd, opt}: EntryEvoluProps) {
       : itemRef.current.isDirectory
         ? cmd.open(itemRef.current)
         : cmd.select(itemRef.current),
-    onArrowPress: (dir) => {
+    onArrowPress: (arrow) => {
       if (opt.preview) return true;
-      // Handle navigating to top-level (left arrow)
-      if (dir === 'left') {
+      if (arrow === 'left') {
         return !cmd.goUp();
       }
       return true;
