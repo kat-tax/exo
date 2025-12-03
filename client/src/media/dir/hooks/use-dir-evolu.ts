@@ -28,7 +28,7 @@ export function useDirEvolu(pathId: PathId | null, deviceId: DeviceId, tmp?: boo
     // Navigate to device overview (+ focus current device)
     if (!path) {
       nav.push('MediaBrowseDevices');
-      setTimeout(() => setFocus(`device-${deviceId}`), 0);
+      setFocus(`device-${deviceId}`)
       return false;
     }
     // Navigate to parent directory

@@ -46,7 +46,7 @@ msgstr ""
 msgid "Add section names for items."
 msgstr ""
 
-#: ../../client/src/home/screen-shortcut.tsx:81
+#: ../../client/src/home/screen-shortcut.tsx:80
 #: ../../client/src/settings/screen-overview.tsx:45
 #: ../../client/src/world/screen-tasks-edit.tsx:108
 msgid "Appearance"
@@ -56,7 +56,7 @@ msgstr "Apariencia"
 msgid "Are you sure you want to change the owner key? This will reset the local database. This action cannot be undone."
 msgstr "¿Estás seguro de cambiar la clave propietaria? Esto reiniciará la base de datos local. Esta acción no se puede deshacer."
 
-#: ../../client/src/app/nav/index.tsx:278
+#: ../../client/src/app/nav/index.tsx:279
 #: ../../client/src/media/hooks/use-media-name.ts:21
 msgid "Books"
 msgstr ""
@@ -66,7 +66,7 @@ msgstr ""
 msgid "by {0}"
 msgstr ""
 
-#: ../../client/src/app/nav/index.tsx:299
+#: ../../client/src/app/nav/index.tsx:300
 #: ../../client/src/world/screen-overview.tsx:28
 msgid "Calendar"
 msgstr ""
@@ -92,7 +92,7 @@ msgstr ""
 msgid "Category"
 msgstr ""
 
-#: ../../client/src/app/nav/index.tsx:334
+#: ../../client/src/app/nav/index.tsx:335
 msgid "Charts"
 msgstr ""
 
@@ -104,7 +104,7 @@ msgstr ""
 msgid "Close"
 msgstr ""
 
-#: ../../client/src/home/screen-shortcut.tsx:95
+#: ../../client/src/home/screen-shortcut.tsx:94
 #: ../../client/src/world/screen-tasks-edit.tsx:122
 msgid "Color"
 msgstr "Color"
@@ -132,7 +132,7 @@ msgstr ""
 msgid "Create Account"
 msgstr ""
 
-#: ../../client/src/home/screen-shortcut.tsx:107
+#: ../../client/src/home/screen-shortcut.tsx:106
 #: ../../client/src/world/screen-tasks-edit.tsx:134
 msgid "Danger Zone"
 msgstr ""
@@ -141,7 +141,7 @@ msgstr ""
 msgid "Dark"
 msgstr "Oscuro"
 
-#: ../../client/src/app/nav/index.tsx:154
+#: ../../client/src/app/nav/index.tsx:155
 msgid "Dashboard"
 msgstr "Panel"
 
@@ -149,7 +149,7 @@ msgstr "Panel"
 msgid "Data"
 msgstr ""
 
-#: ../../client/src/home/screen-shortcut.tsx:112
+#: ../../client/src/home/screen-shortcut.tsx:111
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:80
 msgid "Delete"
 msgstr ""
@@ -159,7 +159,7 @@ msgstr ""
 msgid "Delete List"
 msgstr ""
 
-#: ../../client/src/home/screen-shortcut.tsx:109
+#: ../../client/src/home/screen-shortcut.tsx:108
 msgid "Delete Shortcut"
 msgstr ""
 
@@ -167,11 +167,11 @@ msgstr ""
 msgid "Deletes database and resets key."
 msgstr ""
 
-#: ../../client/src/app/nav/index.tsx:326
+#: ../../client/src/app/nav/index.tsx:327
 msgid "Design"
 msgstr "Diseño"
 
-#: ../../client/src/app/nav/custom/menu/index.tsx:86
+#: ../../client/src/app/nav/custom/menu/index.tsx:90
 msgid "Development"
 msgstr "Desarrollo"
 
@@ -199,7 +199,7 @@ msgstr ""
 msgid "Do not share it with anyone. Store it securely."
 msgstr ""
 
-#: ../../client/src/app/nav/index.tsx:243
+#: ../../client/src/app/nav/index.tsx:244
 msgid "Docs"
 msgstr ""
 
@@ -227,7 +227,7 @@ msgstr ""
 msgid "Edit Item..."
 msgstr ""
 
-#: ../../client/src/app/nav/index.tsx:319
+#: ../../client/src/app/nav/index.tsx:320
 msgid "Edit List"
 msgstr ""
 
@@ -318,7 +318,7 @@ msgstr ""
 msgid "Feature in development..."
 msgstr ""
 
-#: ../../client/src/app/nav/index.tsx:199
+#: ../../client/src/app/nav/index.tsx:200
 #: ../../client/src/media/hooks/use-media-name.ts:23
 #: ../../client/src/media/stacks/bar/index.tsx:62
 #: ../../client/src/media/stacks/media.tsx:43
@@ -331,12 +331,12 @@ msgstr ""
 msgid "Fullscreen"
 msgstr ""
 
-#: ../../client/src/app/nav/index.tsx:271
+#: ../../client/src/app/nav/index.tsx:272
 #: ../../client/src/media/hooks/use-media-name.ts:19
 msgid "Games"
 msgstr ""
 
-#: ../../client/src/home/screen-shortcut.tsx:53
+#: ../../client/src/home/screen-shortcut.tsx:52
 #: ../../client/src/world/screen-tasks-edit.tsx:44
 msgid "General"
 msgstr "General"
@@ -365,7 +365,7 @@ msgstr "Buenas noches, {name}."
 msgid "Human"
 msgstr "Humano"
 
-#: ../../client/src/home/screen-shortcut.tsx:83
+#: ../../client/src/home/screen-shortcut.tsx:82
 #: ../../client/src/world/screen-tasks-edit.tsx:110
 msgid "Icon"
 msgstr "Icono"
@@ -378,7 +378,7 @@ msgstr ""
 msgid "Import Folder"
 msgstr ""
 
-#: ../../client/src/app/nav/index.tsx:162
+#: ../../client/src/app/nav/index.tsx:163
 msgid "Inbox"
 msgstr ""
 
@@ -427,7 +427,7 @@ msgstr ""
 msgid "Invalid URL field."
 msgstr "Campo de URL inválido."
 
-#: ../../client/src/app/nav/index.tsx:237
+#: ../../client/src/app/nav/index.tsx:238
 msgid "IPFS"
 msgstr ""
 
@@ -439,7 +439,7 @@ msgstr "Idioma"
 msgid "Light"
 msgstr "Claro"
 
-#: ../../client/src/app/nav/index.tsx:313
+#: ../../client/src/app/nav/index.tsx:314
 msgid "List Details"
 msgstr ""
 
@@ -476,12 +476,12 @@ msgstr ""
 msgid "Manage your mnemonic phrase."
 msgstr ""
 
-#: ../../client/src/app/nav/index.tsx:292
+#: ../../client/src/app/nav/index.tsx:293
 #: ../../client/src/world/screen-overview.tsx:18
 msgid "Map"
 msgstr ""
 
-#: ../../client/src/app/nav/custom/menu/index.tsx:65
+#: ../../client/src/app/nav/custom/menu/index.tsx:69
 msgid "Media"
 msgstr ""
 
@@ -501,12 +501,12 @@ msgstr ""
 msgid "Move"
 msgstr ""
 
-#: ../../client/src/app/nav/index.tsx:250
+#: ../../client/src/app/nav/index.tsx:251
 #: ../../client/src/media/hooks/use-media-name.ts:13
 msgid "Music"
 msgstr ""
 
-#: ../../client/src/home/screen-shortcut.tsx:70
+#: ../../client/src/home/screen-shortcut.tsx:69
 #: ../../client/src/world/screen-tasks-edit.tsx:46
 msgid "Name"
 msgstr "Nombre"
@@ -519,7 +519,7 @@ msgstr ""
 msgid "Next"
 msgstr ""
 
-#: ../../client/src/app/nav/index.tsx:172
+#: ../../client/src/app/nav/index.tsx:173
 msgid "Not Found"
 msgstr ""
 
@@ -564,11 +564,11 @@ msgstr ""
 msgid "Permanently delete list."
 msgstr ""
 
-#: ../../client/src/home/screen-shortcut.tsx:110
+#: ../../client/src/home/screen-shortcut.tsx:109
 msgid "Permanently delete shortcut."
 msgstr ""
 
-#: ../../client/src/app/nav/index.tsx:257
+#: ../../client/src/app/nav/index.tsx:258
 #: ../../client/src/media/hooks/use-media-name.ts:15
 msgid "Pictures"
 msgstr ""
@@ -627,7 +627,7 @@ msgstr ""
 msgid "Set Key"
 msgstr ""
 
-#: ../../client/src/app/nav/index.tsx:184
+#: ../../client/src/app/nav/index.tsx:185
 #: ../../client/src/settings/screen-overview.tsx:28
 msgid "Settings"
 msgstr "Configuración"
@@ -637,7 +637,7 @@ msgstr "Configuración"
 msgid "Share"
 msgstr ""
 
-#: ../../client/src/app/nav/index.tsx:178
+#: ../../client/src/app/nav/index.tsx:179
 msgid "Shortcut"
 msgstr ""
 
@@ -653,7 +653,7 @@ msgstr ""
 msgid "Skip forward"
 msgstr ""
 
-#: ../../client/src/app/nav/index.tsx:192
+#: ../../client/src/app/nav/index.tsx:193
 msgid "Storage"
 msgstr ""
 
@@ -666,7 +666,7 @@ msgstr ""
 msgid "System"
 msgstr "Sistema"
 
-#: ../../client/src/app/nav/index.tsx:306
+#: ../../client/src/app/nav/index.tsx:307
 #: ../../client/src/world/screen-overview.tsx:23
 msgid "Tasks"
 msgstr ""
@@ -675,7 +675,7 @@ msgstr ""
 msgid "The color of the list icon."
 msgstr ""
 
-#: ../../client/src/home/screen-shortcut.tsx:96
+#: ../../client/src/home/screen-shortcut.tsx:95
 msgid "The color of the shortcut icon."
 msgstr ""
 
@@ -683,7 +683,7 @@ msgstr ""
 msgid "The display name of the list."
 msgstr ""
 
-#: ../../client/src/home/screen-shortcut.tsx:71
+#: ../../client/src/home/screen-shortcut.tsx:70
 msgid "The display name of the shortcut."
 msgstr ""
 
@@ -691,11 +691,11 @@ msgstr ""
 msgid "The icon to display for the list."
 msgstr ""
 
-#: ../../client/src/home/screen-shortcut.tsx:84
+#: ../../client/src/home/screen-shortcut.tsx:83
 msgid "The icon to display for the shortcut."
 msgstr ""
 
-#: ../../client/src/home/screen-shortcut.tsx:56
+#: ../../client/src/home/screen-shortcut.tsx:55
 msgid "The web page to link to."
 msgstr "La página web a enlazar."
 
@@ -733,7 +733,7 @@ msgstr ""
 msgid "Untitled"
 msgstr "Sin título"
 
-#: ../../client/src/home/screen-shortcut.tsx:55
+#: ../../client/src/home/screen-shortcut.tsx:54
 msgid "URL"
 msgstr "URL"
 
@@ -746,7 +746,7 @@ msgstr ""
 msgid "user@example.com"
 msgstr ""
 
-#: ../../client/src/app/nav/index.tsx:264
+#: ../../client/src/app/nav/index.tsx:265
 #: ../../client/src/media/hooks/use-media-name.ts:17
 msgid "Videos"
 msgstr ""
@@ -763,8 +763,8 @@ msgstr ""
 msgid "Welcome back, {name}."
 msgstr "Bienvenido, {name}."
 
-#: ../../client/src/app/nav/custom/menu/index.tsx:75
-#: ../../client/src/app/nav/index.tsx:285
+#: ../../client/src/app/nav/custom/menu/index.tsx:79
+#: ../../client/src/app/nav/index.tsx:286
 msgid "World"
 msgstr ""
 

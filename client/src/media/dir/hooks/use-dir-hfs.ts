@@ -35,7 +35,7 @@ export function useDirHfs(path: string, tmp?: boolean): Omit<HfsCtx, 'bar'> {
     // Navigate to device overview (+ focus local device)
     if (!path) {
       nav.push('MediaBrowseDevices');
-      setTimeout(() => setFocus(`device-${device.id}`), 0);
+      setFocus(`device-${device.id}`)
       return false;
     }
     // Navigate to parent directory

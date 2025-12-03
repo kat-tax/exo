@@ -119,6 +119,7 @@ const root = (screens: NavScreens, theme: Theme) => createNativeStackNavigator<R
     ...createScreens(screens),
   },
   screenOptions: (props) => ({
+    animation: 'none',
     // Hide header if in top level navigation (excluding SettingsStorage)
     // Also hide header if the route is a media view or browse route
     headerShown: (!Object.values(links).flat().includes(props.route.name)

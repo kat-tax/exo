@@ -100,6 +100,7 @@ export function List<T>({items, paths, data, opts, refs, render}: ListProps<T>) 
                   getFixedItemSize={() => height}
                   getEstimatedItemSize={() => height}
                   ListHeaderComponent={opts?.header ? <View style={vstyles.header}/> : null}
+                  //keyExtractor={(item) => `${opts?.preview ? 'preview-' : 'list-'}${item.name}`}
                   keyExtractor={(_,i) => i.toString()}
                   renderItem={render}
                   recycleItems

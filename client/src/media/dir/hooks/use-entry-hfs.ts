@@ -20,19 +20,21 @@ export function useEntryHfs({item, index, cmd, opt, dir}: EntryHfsProps) {
   const [dropping, setDropping] = useState(false);
   const focusRef = useRef<RN.GestureResponderEvent>(undefined);
   const itemRef = useRef<HfsFileEntry>(item);
+  const indexRef = useRef<number>(index);
   const set = useSet();
 
   // Spatial navigation
-  // Note: that itemRef is needed to avoid stale closures
+  // Note: that refs are needed to avoid stale closures
   itemRef.current = item;
+  indexRef.current = index;
   const {focused, ref: refFoc, focusSelf: foc} = useFocusable({
-    focusKey: opt.preview ? `preview-${index}` : `list-${index}`,
+    focusKey: opt.preview ? `preview-${indexRef.current}` : `list-${indexRef.current}`,
     onFocus: (_lay, _props, e) => {
       focusRef.current = e.event as unknown as RN.GestureResponderEvent;
     },
     onArrowRelease: () => {
       if (opt.preview) return true;
-      cmd.select(itemRef.current, focusRef.current);
+      //cmd.select(itemRef.current, focusRef.current);
       focusRef.current = undefined;
       return true;
     },
@@ -43,6 +45,8 @@ export function useEntryHfs({item, index, cmd, opt, dir}: EntryHfsProps) {
         : cmd.select(itemRef.current),
     onArrowPress: (arrow) => {
       if (opt.preview) return true;
+      // Prevent going up from the first item
+      //if (arrow === 'up' && indexRef.current === 0) return false;
       if (arrow === 'left') {
         return !cmd.goUp();
       }

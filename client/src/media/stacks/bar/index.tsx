@@ -25,6 +25,7 @@ export function Bar({paths, actions, deviceId, deviceName}: BarProps) {
   const scroll = useRef<ScrollView>(null);
   const {ref, focusKey} = useFocusable({
     saveLastFocusedChild: false,
+    // TODO: support bar@%root%
     preferredChildFocusKey: `bar@${!paths?.length ? '%device%' : paths?.at(-1)?.[1]}`,
   });
 

@@ -19,13 +19,15 @@ export default function ScreenBrowseDevices(_: ReactNavigation.ScreenProps<'Medi
   const local = useMemo(() => devices.find(d => d.id === device.id), [devices]);
   const {ref, focusKey} = useFocusable({
     preferredChildFocusKey: `device-${device.id}`,
+    isFocusBoundary: true,
+    focusBoundaryDirections: ['up', 'down', 'right'],
   });
 
   return (
     <FocusContext.Provider value={focusKey}>
       <View ref={ref} style={styles.root}>
         <Screen>
-          <Bar/>
+          {/* <Bar/> */}
           <ScrollView
             style={styles.root}
             contentContainerStyle={styles.list}>

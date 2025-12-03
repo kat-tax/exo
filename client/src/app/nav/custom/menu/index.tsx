@@ -21,6 +21,8 @@ export function Tabs({state, navigation, screens, links}: LayoutProps) {
     forceFocus: true,
     preferredChildFocusKey: getPreferredChildFocusKey(state),
     saveLastFocusedChild: false,
+    isFocusBoundary: true,
+    focusBoundaryDirections: ['up', 'down', 'left'],
   });
 
   return (
@@ -46,6 +48,8 @@ export function Menu({state, navigation, screens, links}: LayoutProps) {
     forceFocus: true,
     preferredChildFocusKey: getPreferredChildFocusKey(state),
     saveLastFocusedChild: false,
+    isFocusBoundary: true,
+    focusBoundaryDirections: ['up', 'down', 'left'],
   });
 
   return (

@@ -13,18 +13,20 @@ export const {is, get, type} = $.tag<DirEvoluEntry, DirEvoluCmd>('evolu');
 export function useEntryEvolu({item, index, cmd, opt}: EntryEvoluProps) {
   const focusRef = useRef<RN.GestureResponderEvent>(undefined);
   const itemRef = useRef<DirEvoluEntry>(item);
+  const indexRef = useRef<number>(index);
 
   // Spatial navigation
-  // Note: that itemRef is needed to avoid stale closures
+  // Note: that refs are needed to avoid stale closures
   itemRef.current = item;
+  indexRef.current = index;
   const {focused, ref: refFoc, focusSelf: foc} = useFocusable({
-    focusKey: opt.preview ? `preview-${index}` : `list-${index}`,
+    focusKey: opt.preview ? `preview-${indexRef.current}` : `list-${indexRef.current}`,
     onFocus: (_lay, _props, e) => {
       focusRef.current = e.event as unknown as RN.GestureResponderEvent;
     },
     onArrowRelease: () => {
       if (opt.preview) return true;
-      cmd.select(itemRef.current, focusRef.current);
+      //cmd.select(itemRef.current, focusRef.current);
       focusRef.current = undefined;
       return true;
     },

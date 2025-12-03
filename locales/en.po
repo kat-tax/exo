@@ -46,7 +46,7 @@ msgstr "Add category..."
 msgid "Add section names for items."
 msgstr "Add section names for items."
 
-#: ../../client/src/home/screen-shortcut.tsx:81
+#: ../../client/src/home/screen-shortcut.tsx:80
 #: ../../client/src/settings/screen-overview.tsx:45
 #: ../../client/src/world/screen-tasks-edit.tsx:108
 msgid "Appearance"
@@ -56,7 +56,7 @@ msgstr "Appearance"
 msgid "Are you sure you want to change the owner key? This will reset the local database. This action cannot be undone."
 msgstr "Are you sure you want to change the owner key? This will reset the local database. This action cannot be undone."
 
-#: ../../client/src/app/nav/index.tsx:278
+#: ../../client/src/app/nav/index.tsx:279
 #: ../../client/src/media/hooks/use-media-name.ts:21
 msgid "Books"
 msgstr "Books"
@@ -66,7 +66,7 @@ msgstr "Books"
 msgid "by {0}"
 msgstr "by {0}"
 
-#: ../../client/src/app/nav/index.tsx:299
+#: ../../client/src/app/nav/index.tsx:300
 #: ../../client/src/world/screen-overview.tsx:28
 msgid "Calendar"
 msgstr "Calendar"
@@ -92,7 +92,7 @@ msgstr "Categories"
 msgid "Category"
 msgstr "Category"
 
-#: ../../client/src/app/nav/index.tsx:334
+#: ../../client/src/app/nav/index.tsx:335
 msgid "Charts"
 msgstr "Charts"
 
@@ -104,7 +104,7 @@ msgstr "Choose your display name."
 msgid "Close"
 msgstr "Close"
 
-#: ../../client/src/home/screen-shortcut.tsx:95
+#: ../../client/src/home/screen-shortcut.tsx:94
 #: ../../client/src/world/screen-tasks-edit.tsx:122
 msgid "Color"
 msgstr "Color"
@@ -132,7 +132,7 @@ msgstr "Copy"
 msgid "Create Account"
 msgstr "Create Account"
 
-#: ../../client/src/home/screen-shortcut.tsx:107
+#: ../../client/src/home/screen-shortcut.tsx:106
 #: ../../client/src/world/screen-tasks-edit.tsx:134
 msgid "Danger Zone"
 msgstr "Danger Zone"
@@ -141,7 +141,7 @@ msgstr "Danger Zone"
 msgid "Dark"
 msgstr "Dark"
 
-#: ../../client/src/app/nav/index.tsx:154
+#: ../../client/src/app/nav/index.tsx:155
 msgid "Dashboard"
 msgstr "Dashboard"
 
@@ -149,7 +149,7 @@ msgstr "Dashboard"
 msgid "Data"
 msgstr "Data"
 
-#: ../../client/src/home/screen-shortcut.tsx:112
+#: ../../client/src/home/screen-shortcut.tsx:111
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:80
 msgid "Delete"
 msgstr "Delete"
@@ -159,7 +159,7 @@ msgstr "Delete"
 msgid "Delete List"
 msgstr "Delete List"
 
-#: ../../client/src/home/screen-shortcut.tsx:109
+#: ../../client/src/home/screen-shortcut.tsx:108
 msgid "Delete Shortcut"
 msgstr "Delete Shortcut"
 
@@ -167,11 +167,11 @@ msgstr "Delete Shortcut"
 msgid "Deletes database and resets key."
 msgstr "Deletes database and resets key."
 
-#: ../../client/src/app/nav/index.tsx:326
+#: ../../client/src/app/nav/index.tsx:327
 msgid "Design"
 msgstr "Design"
 
-#: ../../client/src/app/nav/custom/menu/index.tsx:86
+#: ../../client/src/app/nav/custom/menu/index.tsx:90
 msgid "Development"
 msgstr "Development"
 
@@ -199,7 +199,7 @@ msgstr "Do not share it with anyone."
 msgid "Do not share it with anyone. Store it securely."
 msgstr "Do not share it with anyone. Store it securely."
 
-#: ../../client/src/app/nav/index.tsx:243
+#: ../../client/src/app/nav/index.tsx:244
 msgid "Docs"
 msgstr "Docs"
 
@@ -227,7 +227,7 @@ msgstr "Edit"
 msgid "Edit Item..."
 msgstr "Edit Item..."
 
-#: ../../client/src/app/nav/index.tsx:319
+#: ../../client/src/app/nav/index.tsx:320
 msgid "Edit List"
 msgstr "Edit List"
 
@@ -318,7 +318,7 @@ msgstr "Failed to update shortcut."
 msgid "Feature in development..."
 msgstr "Feature in development..."
 
-#: ../../client/src/app/nav/index.tsx:199
+#: ../../client/src/app/nav/index.tsx:200
 #: ../../client/src/media/hooks/use-media-name.ts:23
 #: ../../client/src/media/stacks/bar/index.tsx:62
 #: ../../client/src/media/stacks/media.tsx:43
@@ -331,12 +331,12 @@ msgstr "Files"
 msgid "Fullscreen"
 msgstr "Fullscreen"
 
-#: ../../client/src/app/nav/index.tsx:271
+#: ../../client/src/app/nav/index.tsx:272
 #: ../../client/src/media/hooks/use-media-name.ts:19
 msgid "Games"
 msgstr "Games"
 
-#: ../../client/src/home/screen-shortcut.tsx:53
+#: ../../client/src/home/screen-shortcut.tsx:52
 #: ../../client/src/world/screen-tasks-edit.tsx:44
 msgid "General"
 msgstr "General"
@@ -365,7 +365,7 @@ msgstr "Good night, {name}."
 msgid "Human"
 msgstr "Human"
 
-#: ../../client/src/home/screen-shortcut.tsx:83
+#: ../../client/src/home/screen-shortcut.tsx:82
 #: ../../client/src/world/screen-tasks-edit.tsx:110
 msgid "Icon"
 msgstr "Icon"
@@ -378,7 +378,7 @@ msgstr "Import"
 msgid "Import Folder"
 msgstr "Import Folder"
 
-#: ../../client/src/app/nav/index.tsx:162
+#: ../../client/src/app/nav/index.tsx:163
 msgid "Inbox"
 msgstr "Inbox"
 
@@ -427,7 +427,7 @@ msgstr "Invalid text content field."
 msgid "Invalid URL field."
 msgstr "Invalid URL field."
 
-#: ../../client/src/app/nav/index.tsx:237
+#: ../../client/src/app/nav/index.tsx:238
 msgid "IPFS"
 msgstr "IPFS"
 
@@ -439,7 +439,7 @@ msgstr "Language"
 msgid "Light"
 msgstr "Light"
 
-#: ../../client/src/app/nav/index.tsx:313
+#: ../../client/src/app/nav/index.tsx:314
 msgid "List Details"
 msgstr "List Details"
 
@@ -476,12 +476,12 @@ msgstr "Manage Key"
 msgid "Manage your mnemonic phrase."
 msgstr "Manage your mnemonic phrase."
 
-#: ../../client/src/app/nav/index.tsx:292
+#: ../../client/src/app/nav/index.tsx:293
 #: ../../client/src/world/screen-overview.tsx:18
 msgid "Map"
 msgstr "Map"
 
-#: ../../client/src/app/nav/custom/menu/index.tsx:65
+#: ../../client/src/app/nav/custom/menu/index.tsx:69
 msgid "Media"
 msgstr "Media"
 
@@ -501,12 +501,12 @@ msgstr "Monitor disk usage on device."
 msgid "Move"
 msgstr "Move"
 
-#: ../../client/src/app/nav/index.tsx:250
+#: ../../client/src/app/nav/index.tsx:251
 #: ../../client/src/media/hooks/use-media-name.ts:13
 msgid "Music"
 msgstr "Music"
 
-#: ../../client/src/home/screen-shortcut.tsx:70
+#: ../../client/src/home/screen-shortcut.tsx:69
 #: ../../client/src/world/screen-tasks-edit.tsx:46
 msgid "Name"
 msgstr "Name"
@@ -519,7 +519,7 @@ msgstr "New item..."
 msgid "Next"
 msgstr "Next"
 
-#: ../../client/src/app/nav/index.tsx:172
+#: ../../client/src/app/nav/index.tsx:173
 msgid "Not Found"
 msgstr "Not Found"
 
@@ -564,11 +564,11 @@ msgstr "Pause"
 msgid "Permanently delete list."
 msgstr "Permanently delete list."
 
-#: ../../client/src/home/screen-shortcut.tsx:110
+#: ../../client/src/home/screen-shortcut.tsx:109
 msgid "Permanently delete shortcut."
 msgstr "Permanently delete shortcut."
 
-#: ../../client/src/app/nav/index.tsx:257
+#: ../../client/src/app/nav/index.tsx:258
 #: ../../client/src/media/hooks/use-media-name.ts:15
 msgid "Pictures"
 msgstr "Pictures"
@@ -627,7 +627,7 @@ msgstr "Select your preferred language."
 msgid "Set Key"
 msgstr "Set Key"
 
-#: ../../client/src/app/nav/index.tsx:184
+#: ../../client/src/app/nav/index.tsx:185
 #: ../../client/src/settings/screen-overview.tsx:28
 msgid "Settings"
 msgstr "Settings"
@@ -637,7 +637,7 @@ msgstr "Settings"
 msgid "Share"
 msgstr "Share"
 
-#: ../../client/src/app/nav/index.tsx:178
+#: ../../client/src/app/nav/index.tsx:179
 msgid "Shortcut"
 msgstr "Shortcut"
 
@@ -653,7 +653,7 @@ msgstr "Skip backward"
 msgid "Skip forward"
 msgstr "Skip forward"
 
-#: ../../client/src/app/nav/index.tsx:192
+#: ../../client/src/app/nav/index.tsx:193
 msgid "Storage"
 msgstr "Storage"
 
@@ -666,7 +666,7 @@ msgstr "Storage Usage"
 msgid "System"
 msgstr "System"
 
-#: ../../client/src/app/nav/index.tsx:306
+#: ../../client/src/app/nav/index.tsx:307
 #: ../../client/src/world/screen-overview.tsx:23
 msgid "Tasks"
 msgstr "Tasks"
@@ -675,7 +675,7 @@ msgstr "Tasks"
 msgid "The color of the list icon."
 msgstr "The color of the list icon."
 
-#: ../../client/src/home/screen-shortcut.tsx:96
+#: ../../client/src/home/screen-shortcut.tsx:95
 msgid "The color of the shortcut icon."
 msgstr "The color of the shortcut icon."
 
@@ -683,7 +683,7 @@ msgstr "The color of the shortcut icon."
 msgid "The display name of the list."
 msgstr "The display name of the list."
 
-#: ../../client/src/home/screen-shortcut.tsx:71
+#: ../../client/src/home/screen-shortcut.tsx:70
 msgid "The display name of the shortcut."
 msgstr "The display name of the shortcut."
 
@@ -691,11 +691,11 @@ msgstr "The display name of the shortcut."
 msgid "The icon to display for the list."
 msgstr "The icon to display for the list."
 
-#: ../../client/src/home/screen-shortcut.tsx:84
+#: ../../client/src/home/screen-shortcut.tsx:83
 msgid "The icon to display for the shortcut."
 msgstr "The icon to display for the shortcut."
 
-#: ../../client/src/home/screen-shortcut.tsx:56
+#: ../../client/src/home/screen-shortcut.tsx:55
 msgid "The web page to link to."
 msgstr "The web page to link to."
 
@@ -733,7 +733,7 @@ msgstr "Unsupported File"
 msgid "Untitled"
 msgstr "Untitled"
 
-#: ../../client/src/home/screen-shortcut.tsx:55
+#: ../../client/src/home/screen-shortcut.tsx:54
 msgid "URL"
 msgstr "URL"
 
@@ -746,7 +746,7 @@ msgstr "Used to encrypt and sync your data between devices."
 msgid "user@example.com"
 msgstr "user@example.com"
 
-#: ../../client/src/app/nav/index.tsx:264
+#: ../../client/src/app/nav/index.tsx:265
 #: ../../client/src/media/hooks/use-media-name.ts:17
 msgid "Videos"
 msgstr "Videos"
@@ -763,8 +763,8 @@ msgstr "Volume"
 msgid "Welcome back, {name}."
 msgstr "Welcome back, {name}."
 
-#: ../../client/src/app/nav/custom/menu/index.tsx:75
-#: ../../client/src/app/nav/index.tsx:285
+#: ../../client/src/app/nav/custom/menu/index.tsx:79
+#: ../../client/src/app/nav/index.tsx:286
 msgid "World"
 msgstr "World"
 

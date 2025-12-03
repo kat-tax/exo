@@ -22,7 +22,7 @@ catalog:
   react-native-svg: ^15.13.0
   react-native-unistyles: ^3.0.17
   react-native-vision-camera: ^4.7.3
-  react-native-web: 0.21.1
+  react-native-web: 0.21.2
   typescript: ^5.9.2
 
 catalogMode: manual
