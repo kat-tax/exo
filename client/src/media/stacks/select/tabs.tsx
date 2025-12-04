@@ -17,7 +17,7 @@ export function SelectTabs(props: SelectTabsProps) {
   const focused = useGet(media.selectors.getFocused);
   const selection = useGet(media.selectors.getSelected);
   const {ref, focusKey} = useFocusable({
-    //preferredChildFocusKey: `select@${focused}`,
+    preferredChildFocusKey: `select@${focused}`,
     saveLastFocusedChild: false,
   });
 
