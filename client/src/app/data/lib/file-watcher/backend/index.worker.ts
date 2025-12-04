@@ -24,7 +24,7 @@ class FileWatcherWorker {
   private deviceId: DeviceId | null = null;
   private observer: FileSystemObserver | null = null;
   private snapshot: SnapshotData = {paths: {}, files: {}};
-  private readonly ignoreFolders = [`.${cfg.APP_NAME}-${cfg.STORE_VERSION}`];
+  private readonly ignoreFolders = [`.tmp`, `.${cfg.APP_NAME}-${cfg.STORE_VERSION}`];
   private readonly pendingPathsDelay = 200;
   private pendingPaths = new Set<string>();
   private pendingPathsTimer: number | null = null;
