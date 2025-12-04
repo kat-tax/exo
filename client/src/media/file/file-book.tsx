@@ -61,7 +61,7 @@ export default forwardRef((
         style={maximized ? styles.maximized : undefined}
         theme={scheme === 'light' ? 'default' : 'night'}
         onTableOfContents={console.log}
-        onLocationChange={(e) => {
+        onLocationChange={(e: any) => {
           actions.setCurrent((e.locations?.totalProgression || 0) * 100);
           actions.setDuration(100);
           e.title && setChapter(e.title);

@@ -41,10 +41,10 @@ export function useDirTorrent(path: string): TorrentCtx {
   ) => {
     if (!torrent) return;
     const client = new Tor();
+    const dest = getTargetPath(path, file.path, target?.name);
     // @ts-expect-error Incorrect vendor types
     client.add(torrent.file, {store: FSAChunkStore}, async ({files}) => {
       const item = files.find((e) => e.path.split('/').slice(1).join('/') === file.path);
-      const dest = getTargetPath(path, file.path, target?.name);
       const handle = await web.getFileHandle(dest, {create: true});
       const writable = await handle?.createWritable();
       if (!writable) return;
@@ -59,8 +59,11 @@ export function useDirTorrent(path: string): TorrentCtx {
         event?.shiftKey,
         event?.metaKey || event?.ctrlKey,
       ];
+      // Wait for the file to be created before selecting it
+      // TODO: remove this in favor of reactive previews
+      await new Promise(resolve => setTimeout(resolve, 500));
       set(media.actions.selectItem({
-        path: getTargetPath(path, file.path, target?.name),
+        path: dest,
         isRange: isShift ?? false,
         isMulti: isCtrl ?? false,
         list: torrent.list.map(e => e.path),

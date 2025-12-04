@@ -39,7 +39,8 @@ export function useDirZip(path: string): ZipCtx {
         event?.metaKey || event?.ctrlKey,
       ];
       // Wait for the file to be created before selecting it
-      await new Promise(resolve => setTimeout(resolve, 200));
+      // TODO: remove this in favor of reactive previews
+      await new Promise(resolve => setTimeout(resolve, 500));
       set(media.actions.selectItem({
         path: dest,
         isRange: isShift ?? false,
