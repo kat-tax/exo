@@ -3,12 +3,13 @@ import {useCallback, useMemo} from 'react';
 import {useSet} from 'app/data';
 import {useFile} from 'media/file/hooks/use-file';
 import {getTargetPath} from 'media/dir/utils/path';
-import * as tor from 'media/dir/utils/torrent/info';
-import Tor from 'media/dir/utils/torrent/lib';
-import store from 'media/dir/utils/torrent/chunkstore';
+import {FSAChunkStore} from 'torrent/chunk-store';
+import {torrentInfo} from 'torrent/torrent-info';
+import Tor from 'torrent';
 import media from 'media/store';
 
-import type {Torrent, TorrentCtx, TorrentInfo, TorrentFileData, TorrentFileEntry} from 'media/dir/types/torrent';
+import type {Torrent, TorrentCtx, TorrentFileEntry} from 'media/dir/types/torrent';
+import type {TorrentInfo, TorrentFileData} from 'torrent/types';
 import type {GestureResponderEvent} from 'react-native';
 import type {HfsFileEntry} from 'media/dir/types/hfs';
 
@@ -21,8 +22,8 @@ export function useDirTorrent(path: string): TorrentCtx {
     const name = path.split('/').pop();
     const view = new Uint8Array(buffer);
     const file = new File([view], name ?? '');
-    const info = tor.info(view);
-    const data = tor.files(view);
+    const info = torrentInfo.info(view);
+    const data = torrentInfo.files(view);
     return {
       file,
       info,
@@ -41,12 +42,13 @@ export function useDirTorrent(path: string): TorrentCtx {
     if (!torrent) return;
     const client = new Tor();
     // @ts-expect-error Incorrect vendor types
-    client.add(torrent.file, {store}, async ({files}) => {
-      const item = files.find((e: TorrentFileEntry) => e.path.split('/').slice(1).join('/') === file.path);
+    client.add(torrent.file, {store: FSAChunkStore}, async ({files}) => {
+      const item = files.find((e) => e.path.split('/').slice(1).join('/') === file.path);
       const dest = getTargetPath(path, file.path, target?.name);
       const handle = await web.getFileHandle(dest, {create: true});
       const writable = await handle?.createWritable();
       if (!writable) return;
+      // @ts-expect-error Incorrect vendor types
       const source = item?.stream();
       source?.pipeTo(writable);
       console.log('>> torrent [download]', file.path, '->', dest);

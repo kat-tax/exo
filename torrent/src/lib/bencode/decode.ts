@@ -13,7 +13,6 @@ class Decoder {
     if (this.idx >= this.buf.length) {
       return null;
     }
-
     return String.fromCharCode(this.buf[this.idx++]!);
   }
 
@@ -21,7 +20,6 @@ class Decoder {
     if (this.idx + length > this.buf.length) {
       throw new Error(`could not read ${length} bytes, insufficient content`);
     }
-
     const result = this.buf.slice(this.idx, this.idx + length);
     this.idx += length;
     return result;
@@ -32,7 +30,6 @@ class Decoder {
     if (targetIdx === -1) {
       throw new Error(`could not find terminated char: ${char}`);
     }
-
     const result = this.buf.slice(this.idx, targetIdx);
     this.idx = targetIdx;
     return result;
@@ -47,12 +44,10 @@ class Decoder {
     if (this.idx >= this.buf.length) {
       return '';
     }
-
     const result = this.readByte();
     if (result === null) {
       return '';
     }
-
     this.idx--;
     return result;
   }
@@ -69,15 +64,12 @@ class Decoder {
       case 'd': {
         return this.nextDictionary();
       }
-
       case 'l': {
         return this.nextList();
       }
-
       case 'i': {
         return this.nextNumber();
       }
-
       default: {
         return this.nextBufOrString();
       }
@@ -102,22 +94,17 @@ class Decoder {
     const content = td.decode(this.readUntil('e'));
     this.assertByte('e');
     const result = Number(content);
-
     if (Number.isNaN(result)) {
       throw new Error(`not a number: ${content}`);
     }
-
     return result;
   }
 
   nextList(): bencodeValue[] {
     this.assertByte('l');
-    const result = [];
-
-    while (this.peekByte() !== 'e') {
+    const result: bencodeValue[] = [];
+    while (this.peekByte() !== 'e')
       result.push(this.next());
-    }
-
     this.assertByte('e');
     return result;
   }
@@ -125,13 +112,9 @@ class Decoder {
   nextDictionary(): Record<string, bencodeValue> {
     this.assertByte('d');
     const result: Record<string, bencodeValue> = {};
-
-    while (this.peekByte() !== 'e') {
+    while (this.peekByte() !== 'e')
       result[this.nextString()] = this.next();
-    }
-
     this.assertByte('e');
-
     return result;
   }
 }
@@ -147,7 +130,6 @@ export const decode = (payload: ArrayBufferView | ArrayBuffer | string): bencode
   } else {
     throw new Error('invalid payload type');
   }
-
   const decoder = new Decoder(buf);
   return decoder.next();
 };

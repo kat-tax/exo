@@ -77,7 +77,7 @@
     "react-native-vision-camera": "catalog:",
     "react-native-web": "catalog:",
     "react-zoom-pan-pinch": "^3.7.0",
-    "uint8array-extras": "^1.4.0",
+    "torrent": "workspace:*",
     "zeego": "^3.0.6"
   },
   "devDependencies": {

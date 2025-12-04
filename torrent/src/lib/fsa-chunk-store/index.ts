@@ -1,17 +1,17 @@
 // @ts-nocheck
 
-import './utils/writable.js';
-import getFileRegex from './utils/reserved';
+import './writable.js';
+import getFileRegex from './reserved';
 
 const RESERVED_FILENAME_REGEX = getFileRegex();
 
 const noop = (_, __) => {};
 const err = (cb, err) => queueMicrotask(() => cb(new Error(err)));
 
-export default class FSAChunkStore {
+export class FSAChunkStore {
   name = ''
 
-  chunks = [] // individual chunks, required for reads :/
+  chunks: FileSystemFileHandle[] = []; // individual chunks, required for reads :/
   chunkMap = [] // full files
   directoryMap = {}
   files
@@ -24,13 +24,24 @@ export default class FSAChunkStore {
   closing = false
   closed = false
 
-  /**
-   * @param {number} chunkLength
-   * @param {{ name?: string, rootDir?: Promise<FileSystemDirectoryHandle>, length?: number, files?: {path: string, length: number, offset?: number, handle?: Promise<FileSystemFileHandle>, blob?: Promise<Blob>, stream?: Promise<FileSystemWritableFileStream> }[] }} [opts]
-   */
-  constructor (chunkLength, opts = {}) {
+  constructor (
+    chunkLength: number,
+    opts: {
+      name?: string,
+      rootDir?: Promise<FileSystemDirectoryHandle>,
+      length?: number,
+      files?: {
+        path: string,
+        length: number,
+        offset?: number,
+        handle?: Promise<FileSystemFileHandle>,
+        stream?: Promise<FileSystemWritableFileStream>,
+        blob?: Promise<Blob>,
+      }[],
+    } = {},
+  ) {
     this.chunkLength = Number(chunkLength)
-  
+
     if (!this.chunkLength) {
       throw new Error('First argument must be a chunk length')
     }
@@ -40,11 +51,8 @@ export default class FSAChunkStore {
     }
 
     this.closed = false
-
     this.name = opts.name || crypto.randomUUID()
-
     this.rootDirPromise = opts.rootDir || navigator.storage.getDirectory()
-
     this.tempDirPromise = (async () => {
       const rootDir = await this.rootDirPromise
       return rootDir.getDirectoryHandle('.tmp', { create: true })
@@ -86,13 +94,10 @@ export default class FSAChunkStore {
         for (let i = firstChunk; i <= lastChunk; ++i) {
           const chunkStart = i * this.chunkLength
           const chunkEnd = chunkStart + this.chunkLength
-
           const from = (fileStart < chunkStart) ? 0 : fileStart - chunkStart
           const to = (fileEnd > chunkEnd) ? this.chunkLength : fileEnd - chunkStart
           const offset = (fileStart > chunkStart) ? 0 : chunkStart - fileStart
-
           if (!this.chunkMap[i]) this.chunkMap[i] = []
-
           this.chunkMap[i].push({ from, to, offset, file })
         }
 
@@ -116,7 +121,7 @@ export default class FSAChunkStore {
     }
   }
 
-  async _getChunkHandle (index) {
+  async _getChunkHandle (index: number): Promise<FileSystemFileHandle> {
     let chunk = this.chunks[index]
     if (!chunk) {
       const storageDir = await this.chunksDirPromise
@@ -125,24 +130,19 @@ export default class FSAChunkStore {
     return chunk
   }
 
-  /**
-   * @param {{path: string}} opts
-   */
-  async _createFileHandle (opts) {
+  async _createFileHandle (opts: {path: string}): Promise<FileSystemFileHandle> {
     const fileName = opts.path.slice(opts.path.lastIndexOf('/') + 1)
     return (await this._getDirectoryHandle(opts)).getFileHandle(fileName.replace(RESERVED_FILENAME_REGEX, ''), { create: true })
   }
 
-  async _createBlobReference (handle) {
+  async _createBlobReference (handle: FileSystemFileHandle): Promise<Blob> {
     return (await handle).getFile()
   }
 
   /**
    * recursive, equiv of cd and mkdirp
-   * @param {{path: string}} opts
-   * @returns {Promise<FileSystemDirectoryHandle>}
    */
-  async _getDirectoryHandle (opts) {
+  async _getDirectoryHandle (opts: {path: string}): Promise<FileSystemDirectoryHandle> {
     const lastIndex = opts.path.lastIndexOf('/')
     if (lastIndex === -1 || lastIndex === 0) return this.storageDirPromise
     const path = opts.path = opts.path.slice(0, lastIndex)
@@ -172,10 +172,7 @@ export default class FSAChunkStore {
     }
   }
 
-  /**
-   * @param {Promise<FileSystemFileHandle>} handle
-   */
-  async getStreamForHandle (handle) {
+  async getStreamForHandle (handle: FileSystemFileHandle) {
     return (await handle).createWritable({ keepExistingData: true })
   }
 
@@ -224,18 +221,15 @@ export default class FSAChunkStore {
   async _get (index, opts) {
     if (typeof opts === 'function') return this.get(index, undefined, opts)
     if (this.closed) throw new Error('Storage is closed')
-
     const isLastChunk = index === this.lastChunkIndex
     const chunkLength = isLastChunk ? /** @type {number} */(this.lastChunkLength) : this.chunkLength
-
     const rangeFrom = opts.offset || 0
     const rangeTo = opts.length ? rangeFrom + opts.length : chunkLength
     const len = opts.length || chunkLength - rangeFrom
-
-    if (rangeFrom < 0 || rangeFrom < 0 || rangeTo > chunkLength) throw new Error('Invalid offset and/or length')
-
-    if (rangeFrom === rangeTo) return new Uint8Array(0)
-
+    if (rangeFrom < 0 || rangeFrom < 0 || rangeTo > chunkLength)
+      throw new Error('Invalid offset and/or length')
+    if (rangeFrom === rangeTo)
+      return new Uint8Array(0)
     if (!this.files || this.chunks[index]) {
       const chunk = await this._getChunkHandle(index)
       let file = await chunk.getFile()
@@ -243,11 +237,9 @@ export default class FSAChunkStore {
         file = file.slice(rangeFrom, len + rangeFrom)
       }
       const buf = await file.arrayBuffer()
-
       if (buf.byteLength === 0) throw new Error(`Index ${index} does not exist`)
       return new Uint8Array(buf)
     }
-
     // if chunk was GC'ed
     let targets = this.chunkMap[index]
     if (!targets) throw new Error('No files matching the request range')
@@ -255,7 +247,6 @@ export default class FSAChunkStore {
       targets = targets.filter(({ from, to }) => to > rangeFrom && from < rangeTo)
       if (targets.length === 0) throw new Error('No files matching the request range')
     }
-
     const promises = targets.map(async ({ from, to, offset, file }) => {
       if (opts) {
         if (to > rangeTo) to = rangeTo
@@ -275,7 +266,6 @@ export default class FSAChunkStore {
 
   async close (cb = noop) {
     if (this.closing) return err(cb, 'Storage is closed')
-
     this.closing = true
     this.chunkMap = undefined
     this.directoryMap = undefined
@@ -312,15 +302,15 @@ export default class FSAChunkStore {
 
   async destroy (cb = noop) {
     this.close(async (err) => {
-      if (err) return cb(err)
+      if (err) return cb(err);
       try {
         const rootDir = await this.storageDirPromise
         // .remove() doesnt exist on firefox or safari
-        await rootDir.removeEntry(this.name, { recursive: true })
+        await rootDir.removeEntry(this.name, {recursive: true});
       } catch (err) {
         return cb(err)
       }
-      cb(null)
+      cb(null);
     })
   }
 }
