@@ -14,6 +14,10 @@ import {INIT_DIRECTORIES} from '../utils/hfs/path';
 import {getThumbnail} from '../utils/hfs/meta';
 import {saveAs} from '../utils/hfs/fs';
 
+import {is as isHfs} from './use-entry-hfs';
+import {is as isZip} from './use-entry-zip';
+import {is as isTorrent} from './use-entry-torrent';
+
 import type {HfsCtx, HfsFileEntry} from 'media/dir/types/hfs';
 import type {GestureResponderEvent} from 'react-native';
 import type {CleanupFn} from 'app/lib/dragdrop';
@@ -214,7 +218,42 @@ export function useDirHfs(path: string, tmp?: boolean): Omit<HfsCtx, 'bar'> {
       isDirectory: true,
       lastModified: new Date(),
     };
+    const existingNames = new Set(list.map(e => e.name));
     return _.combine(...[
+      _.dropTargetForElements({
+        element,
+        canDrop: ({source}) => {
+          // Ignore self
+          if (source.element === element) return false;
+          // Ignore dropping into own directory
+          // TODO: check source parent to compare to this path instead of names
+          if (isHfs(source.data)) {
+            return !source.data.entry.some(e => existingNames.has(e.name));
+          }
+          // Other sources are always allowed (zip, torrent)
+          return true;
+        },
+        getDropEffect: () => 'copy',
+        onDragEnter: () => setDropping(true),
+        onDragLeave: () => setDropping(false),
+        onDropTargetChange: ({location, self}) => {
+          setDropping(location.current.dropTargets[0]?.element === self.element);
+        },
+        onDrop: async ({location, self, source}) => {
+          if (location.current.dropTargets[0]?.element !== self.element) return;
+          setDropping(false);
+          if (isHfs(source.data)) {
+            for (const entry of source.data.entry) {
+              await move(entry, entry);
+            }
+          } else if (isZip(source.data)) {
+            source.data.cmd.extract(source.data.entry, undefined, entry);
+          } else if (isTorrent(source.data)) {
+            source.data.cmd.download(source.data.entry, undefined, entry);
+          }
+          refresh();
+        },
+      }),
       _.dropTargetForExternal({
         element,
         canDrop: _.containsFiles,
@@ -236,7 +275,7 @@ export function useDirHfs(path: string, tmp?: boolean): Omit<HfsCtx, 'bar'> {
         },
       }),
     ].filter(Boolean) as CleanupFn[]);
-  }, [path, hfs, move, refresh]);
+  }, [path, hfs, list, move, refresh]);
 
   // Create initial directories
   useEffect(() => {
