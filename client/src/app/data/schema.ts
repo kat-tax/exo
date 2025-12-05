@@ -43,6 +43,7 @@ export default {
     id: $.TransferId,
     fileId: $.FileId,
     status: $.union('active', 'completed', 'failed'),
+    infoHash: $.nullOr($.NonEmptyString255),
     lastError: $.nullOr($.NonEmptyString1000),
     recipientId: $.DeviceId,
   },

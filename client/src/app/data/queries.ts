@@ -51,6 +51,28 @@ export const getPathHierarchy = (deviceId: $.DeviceId | null, pathId: $.PathId |
 );
 
 /**
+ * Query hierarchy of paths by fileId (finds path with fileId and recurses up parentIds)
+ */
+export const getPathHierarchyByFileId = (deviceId: $.DeviceId | null, fileId: $.FileId) => _.createQuery(db => db
+  .withRecursive('path_hierarchy', (qb) =>
+    qb.selectFrom('media_path')
+      .where('fileId', '=', fileId)
+      .where('deviceId', '=', deviceId)
+      .where('isDeleted', 'is not', 1)
+      .select(['id', 'name', 'parentId'])
+      .unionAll(
+        qb.selectFrom('media_path')
+          .innerJoin('path_hierarchy', 'media_path.id', 'path_hierarchy.parentId')
+          .where('media_path.deviceId', '=', deviceId)
+          .where('media_path.isDeleted', 'is not', 1)
+          .select(['media_path.id', 'media_path.name', 'media_path.parentId'])
+      )
+  )
+  .selectFrom('path_hierarchy')
+  .select(['id', 'name'])
+);
+
+/**
  * Query all paths for a device
  */
 export const getPathsForDevice = (deviceId: $.DeviceId) => _.createQuery(db => db
