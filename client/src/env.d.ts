@@ -123,7 +123,7 @@ declare global {
   interface FileSystemFileHandle extends FileSystemHandle {
     readonly kind: 'file';
     getFile(): Promise<File>;
-    createSyncAccessHandle?(): Promise<FileSystemSyncAccessHandle>;
+    createSyncAccessHandle(): Promise<FileSystemSyncAccessHandle>;
   }
 }
 

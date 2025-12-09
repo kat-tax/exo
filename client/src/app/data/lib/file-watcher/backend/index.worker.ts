@@ -1,13 +1,12 @@
 /// <reference lib="webworker" />
 
-import {hash} from 'react-exo/fs';
 import {createIdFromString} from '@evolu/common';
 // FIXME: vite build needs these to be relative for some reason
 import {DeviceId} from '../../../../../app/data/types';
 import {FileType} from '../../../../../media/file/types';
 import {getRenderer} from '../../../../../media/file/utils/render';
 import {getPathInfo} from '../../../../../media/dir/utils/path';
-import {getMediaType} from '../utils/detect';
+import {getFileHash} from '../utils/identify';
 import {generateImageThumb} from '../utils/generate';
 import cfg from 'config';
 
@@ -33,7 +32,7 @@ class FileWatcherWorker {
     this.rootHandle = await navigator.storage.getDirectory();
     this.deviceId = deviceId;
     try {
-      await this.buildSnapshot();
+      await this.scanDirectory(this.rootHandle, null, '');
       this.send({type: 'ready', snapshot: this.snapshot});
       this.snapshot = {paths: {}, files: {}};
       await this.startObserver();
@@ -72,11 +71,6 @@ class FileWatcherWorker {
     }, this.pendingPathsDelay);
   }
 
-  async buildSnapshot(): Promise<void> {
-    if (!this.rootHandle) throw new Error('Root handle not set');
-    await this.scanDirectory(this.rootHandle, null, '');
-  }
-
   private async scanDirectory(
     dirHandle: FileSystemDirectoryHandle,
     parentId: string | null,
@@ -84,79 +78,66 @@ class FileWatcherWorker {
   ): Promise<void> {
     const isRoot = dirHandle === this.rootHandle;
     const dirId = isRoot ? null : this.createPathId(currentPath);
+    // Add directory path to snapshot
     if (!isRoot && dirId) {
       this.snapshot.paths[dirId] = [dirHandle.name, parentId, null];
     }
-    try {
-      for await (const entry of dirHandle.values()) {
-        if (entry.kind === 'directory' && this.ignoreFolders.includes(entry.name)) continue;
-        const entryPath = isRoot ? entry.name : `${currentPath}/${entry.name}`;
-        entry.kind === 'file' ? await this.processFile(entry as FileSystemFileHandle, dirId, entryPath) :
-        entry.kind === 'directory' && await this.scanDirectory(entry as FileSystemDirectoryHandle, dirId, entryPath);
+    // Scan directory contents
+    for await (const entry of dirHandle.values()) {
+      // Skip ignored directories
+      if (entry.kind === 'directory' && this.ignoreFolders.includes(entry.name))
+        continue;
+      const entryPath = isRoot ? entry.name : `${currentPath}/${entry.name}`;
+      // Process file data
+      if (entry.kind === 'file') {
+        const {fileId, snapshot} = await this.processFile(entry as FileSystemFileHandle);
+        // Skip zero-byte files
+        if (fileId === '')
+          continue;
+        // Add file path to snapshot
+        const pathId = this.createPathId(entryPath);
+        this.snapshot.paths[pathId] = [entry.name, dirId, fileId];
+        // Add file data to snapshot
+        if (!this.snapshot.files[fileId])
+          this.snapshot.files[fileId] = snapshot;
+      // Recursively scan subdirectories
+      } else if (entry.kind === 'directory') {
+        await this.scanDirectory(entry as FileSystemDirectoryHandle, dirId, entryPath);
       }
-    } catch (error) {
-      console.error(`[fs-watcher] error scanning directory ${currentPath}:`, error);
     }
   }
 
-  private async readFileContent(
-    fileHandle: FileSystemFileHandle,
-  ): Promise<{
-    size: number,
-    filetype: string,
-    content: Uint8Array,
-  }> {
-    try {
-      const syncHandle = await fileHandle.createSyncAccessHandle?.();
-      if (syncHandle) {
-        try {
-          const size = syncHandle.getSize();
-          const readSize = Math.min(size, 1024 * 1024);
-          const content = readSize > 0 ? new Uint8Array(readSize) : new Uint8Array(0);
-          if (readSize > 0) syncHandle.read(content, {at: 0});
-          return {size, filetype: getMediaType(fileHandle.name), content};
-        } finally {
-          syncHandle.close();
-        }
-      }
-    } catch {}
-    const file = await fileHandle.getFile();
-    const content = file.size > 0 && file.size < 1024 * 1024
-      ? new Uint8Array(await file.arrayBuffer())
-      : new Uint8Array(0);
-    return {size: file.size, filetype: file.type || getMediaType(fileHandle.name), content};
-  }
-
-  private async processFileData(
-    fileHandle: FileSystemFileHandle,
-    size: number,
-    filetype: string,
-  ): Promise<{
-    fileId: string,
-    snapshot: FileTuple,
-  }> {
-    const fileId = await this.createFileId(fileHandle);
-    const name = fileHandle.name.split('/').at(-1) ?? fileHandle.name;
+  private async processFile(handle: FileSystemFileHandle): Promise<{fileId: string, snapshot: FileTuple}> {
+    const file = await handle.getFile();
+    // Do nothing if zero-byte file
+    if (file.size === 0) {
+      return {
+        fileId: '',
+        snapshot: [0, '', null],
+      };
+    }
+    const fileId = await this.createFileId(handle);
+    const name = handle.name.split('/').at(-1) ?? handle.name;
     const pathInfo = getPathInfo(name);
-    const [fileType] = getRenderer(pathInfo.ext);
-    switch (fileType) {
-      case FileType.Image: {
-        return {
-          fileId,
-          snapshot: [
-            size,
-            filetype,
-            await generateImageThumb(fileHandle),
-          ],
-        };
-      }
+    const [filetype] = getRenderer(pathInfo.ext);
+    switch (filetype) {
+      // case FileType.Image: {
+      //   return {
+      //     fileId,
+      //     snapshot: [
+      //       file.size,
+      //       filetype,
+      //       await generateImageThumb(handle),
+      //     ],
+      //   };
+      // }
       // case FileType.Video: {
       //   return {
       //     fileId,
       //     snapshot: [
-      //       size,
+      //       file.size,
       //       filetype,
-      //       await generateVideoThumb(fileHandle),
+      //       await generateVideoThumb(handle),
       //     ],
       //   };
       // }
@@ -164,29 +145,12 @@ class FileWatcherWorker {
         return {
           fileId,
           snapshot: [
-            size,
+            file.size,
             filetype,
             null,
           ],
         };
       }
-    }
-  }
-
-  private async processFile(
-    fileHandle: FileSystemFileHandle,
-    parentId: string | null,
-    filePath: string,
-  ): Promise<void> {
-    try {
-      const pathId = this.createPathId(filePath);
-      const {size, filetype} = await this.readFileContent(fileHandle);
-      if (size === 0) return;
-      const {fileId, snapshot} = await this.processFileData(fileHandle, size, filetype);
-      this.snapshot.paths[pathId] = [fileHandle.name, parentId, fileId];
-      if (!this.snapshot.files[fileId]) this.snapshot.files[fileId] = snapshot;
-    } catch (error) {
-      console.error(`[fs-watcher] error processing file ${fileHandle.name}:`, error);
     }
   }
 
@@ -198,6 +162,61 @@ class FileWatcherWorker {
       }
     });
     await this.observer.observe(this.rootHandle, {recursive: true});
+  }
+
+  private async handleChangeRecord(record: FileSystemChangeRecord) {
+    try {
+      // Ignore root folder changes
+      if (record.relativePathComponents.length === 0) return;
+      // Ignore changes in ignored folders (check path components first)
+      if (this.ignoreFolders.includes(record.relativePathComponents[0])) return;
+      const {pathId, parentId, name, fullPath} = await this.getRecordPath(record);
+      // For ignored directory operations (when changedHandle is available)
+      if (record.changedHandle?.kind === 'directory' && this.ignoreFolders.includes(name)) return;
+      this.enqueuePathChange(fullPath);
+      switch (record.type) {
+        case 'appeared':
+          if (record.changedHandle?.kind === 'file') {
+            await this.handleFileChange(record.changedHandle as FileSystemFileHandle, pathId, name, parentId, 'appeared');
+          } else if (record.changedHandle?.kind === 'directory') {
+            const path: PathTuple = [name, parentId, null];
+            this.send({type: 'delta', data: {type: 'appeared', pathId, path}});
+          }
+          break;
+        case 'disappeared':
+          this.send({type: 'delta', data: {type: 'disappeared', pathId}});
+          break;
+        case 'modified':
+          if (record.changedHandle?.kind === 'file') {
+            await this.handleFileChange(record.changedHandle as FileSystemFileHandle, pathId, name, parentId, 'modified');
+          }
+          break;
+        case 'moved':
+          const {pathId: oldPathId, fullPath: oldFullPath} = await this.getRecordPath(
+            record,
+            record.relativePathMovedFrom ? [...record.relativePathMovedFrom] : undefined,
+          );
+          this.enqueuePathChange(oldFullPath);
+          let path: PathTuple;
+          let file: FileTuple | undefined;
+          if (record.changedHandle?.kind === 'file') {
+            const fileHandle = record.changedHandle as FileSystemFileHandle;
+            const {fileId, snapshot} = await this.processFile(fileHandle);
+            path = [name, parentId, fileId];
+            file = snapshot;
+          } else {
+            path = [name, parentId, null];
+          }
+          this.send({type: 'delta', data: {type: 'moved', pathId, path, movedFrom: oldPathId, file}});
+          break;
+        case 'errored':
+          this.observer?.unobserve(record.root);
+          this.send({type: 'error', message: 'File system observer error'});
+          break;
+      }
+    } catch (error) {
+      console.error('[fs-watcher] error handling change record:', error);
+    }
   }
 
   private async getRecordPath(
@@ -227,10 +246,8 @@ class FileWatcherWorker {
   ): Promise<void> {
     const file = await fileHandle.getFile();
     if (file.size === 0) return;
-    const {fileId, snapshot} = await this.processFileData(fileHandle, file.size, file.type || getMediaType(name));
+    const {fileId, snapshot} = await this.processFile(fileHandle);
     const path: PathTuple = [name, parentId, fileId];
-
-    // Send delta with complete data (stateless)
     this.send({
       type: 'delta',
       data: {
@@ -242,80 +259,8 @@ class FileWatcherWorker {
     });
   }
 
-  private async handleChangeRecord(record: FileSystemChangeRecord) {
-    try {
-      // Ignore root folder changes
-      if (record.relativePathComponents.length === 0) return;
-      // Ignore changes in ignored folders (check path components first)
-      if (this.ignoreFolders.includes(record.relativePathComponents[0])) return;
-      const {pathId, parentId, name, fullPath} = await this.getRecordPath(record);
-      // For ignored directory operations (when changedHandle is available)
-      if (record.changedHandle?.kind === 'directory' && this.ignoreFolders.includes(name)) return;
-      this.enqueuePathChange(fullPath);
-      switch (record.type) {
-        case 'appeared':
-          if (record.changedHandle?.kind === 'file') {
-            await this.handleFileChange(record.changedHandle as FileSystemFileHandle, pathId, name, parentId, 'appeared');
-          } else if (record.changedHandle?.kind === 'directory') {
-            const path: PathTuple = [name, parentId, null];
-            this.send({type: 'delta', data: {type: 'appeared', pathId, path}});
-          }
-          break;
-        case 'disappeared':
-          // Send delta with only pathId (stateless - receiver doesn't need snapshot state)
-          this.send({type: 'delta', data: {type: 'disappeared', pathId}});
-          break;
-        case 'modified':
-          if (record.changedHandle?.kind === 'file') {
-            await this.handleFileChange(record.changedHandle as FileSystemFileHandle, pathId, name, parentId, 'modified');
-          }
-          break;
-        case 'moved':
-          const {pathId: oldPathId, fullPath: oldFullPath} = await this.getRecordPath(
-            record,
-            record.relativePathMovedFrom ? [...record.relativePathMovedFrom] : undefined,
-          );
-          this.enqueuePathChange(oldFullPath);
-          let path: PathTuple;
-          let file: FileTuple | undefined;
-          if (record.changedHandle?.kind === 'file') {
-            const fileHandle = record.changedHandle as FileSystemFileHandle;
-            const fileData = await fileHandle.getFile();
-            const {fileId, snapshot} = await this.processFileData(fileHandle, fileData.size, fileData.type || getMediaType(name));
-            path = [name, parentId, fileId];
-            file = snapshot;
-          } else {
-            path = [name, parentId, null];
-          }
-          this.send({type: 'delta', data: {type: 'moved', pathId, path, movedFrom: oldPathId, file}});
-          break;
-        case 'errored':
-          this.observer?.unobserve(record.root);
-          this.send({type: 'error', message: 'File system observer error'});
-          break;
-      }
-    } catch (error) {
-      console.error('[fs-watcher] error handling change record:', error);
-    }
-  }
-
   private async createFileId(fileHandle: FileSystemFileHandle): Promise<string> {
-    // Try to use sync access handle for efficient hashing
-    try {
-      const syncHandle = await fileHandle.createSyncAccessHandle?.();
-      if (syncHandle) {
-        try {
-          const hashHex = await hash(syncHandle);
-          return createIdFromString(hashHex);
-        } finally {
-          syncHandle.close();
-        }
-      }
-    } catch {}
-    // Fallback to File API
-    const file = await fileHandle.getFile();
-    const hashHex = await hash(file);
-    return createIdFromString(hashHex);
+    return createIdFromString(await getFileHash(fileHandle));
   }
 
   private createPathId(path: string): string {
