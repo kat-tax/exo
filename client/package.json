@@ -44,7 +44,6 @@
     "@shopify/react-native-skia": "^2.2.18",
     "@zip.js/zip.js": "^2.8.8",
     "barcode-detector": "^3.0.7",
-    "burnt": "^0.13.0",
     "config": "workspace:*",
     "design": "workspace:react-exo-ui@*",
     "file-type": "^21.0.0",
