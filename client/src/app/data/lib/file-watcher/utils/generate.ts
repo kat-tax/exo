@@ -1,10 +1,12 @@
+const INPUT_MAX_SIZE = 500 * 1024 * 1024; // 500MB
 const THUMB_MAX_SIZE = 320;
+const THUMB_JPG_QUAL = 0.7;
 
-export async function generateImageThumb(handle: FileSystemFileHandle): Promise<Uint8Array | null> {
+export async function imageThumbnail(handle: FileSystemFileHandle): Promise<Uint8Array | null> {
   try {
     const file = await handle.getFile();
     // Skip large files
-    if (file.size > 10 * 1024 * 1024) return null;
+    if (file.size > INPUT_MAX_SIZE) return null;
     // Create image bitmap
     const bitmap = await createImageBitmap(file);
     const scale = Math.min(THUMB_MAX_SIZE / bitmap.width, THUMB_MAX_SIZE / bitmap.height);
@@ -21,7 +23,7 @@ export async function generateImageThumb(handle: FileSystemFileHandle): Promise<
     // Convert to blob
     const blob = await canvas.convertToBlob({
       type: 'image/jpeg',
-      quality: 0.7,
+      quality: THUMB_JPG_QUAL,
     });
     // Convert to Uint8Array
     const arrayBuffer = await blob.arrayBuffer();
@@ -32,11 +34,11 @@ export async function generateImageThumb(handle: FileSystemFileHandle): Promise<
   }
 }
 
-export async function generateVideoThumb(handle: FileSystemFileHandle): Promise<Uint8Array | null> {
+export async function videoThumbnail(handle: FileSystemFileHandle): Promise<Uint8Array | null> {
   try {
     const file = await handle.getFile();
-    // Skip large files (limit to 500MB for video processing)
-    if (file.size > 500 * 1024 * 1024) return null;
+    // Skip large files
+    if (file.size > INPUT_MAX_SIZE) return null;
     // Dynamically import mediabunny to avoid bundling it if not needed
     const {Input, BlobSource, CanvasSink, ALL_FORMATS} = await import('mediabunny');
     // Create input from the file
@@ -66,14 +68,17 @@ export async function generateVideoThumb(handle: FileSystemFileHandle): Promise<
     const firstTimestamp = await videoTrack.getFirstTimestamp();
     const duration = await videoTrack.computeDuration();
     const middleTimestamp = firstTimestamp + duration / 2;
-    // Create a CanvasSink for extracting a frame from the video track
+    // Create a sink for extracting a frame from the video track
     const sink = new CanvasSink(videoTrack, {width, height, fit: 'fill'});
     // Extract the frame at the middle timestamp
     let resultBlob: Blob | null = null;
     for await (const wrappedCanvas of sink.canvasesAtTimestamps([middleTimestamp])) {
       if (wrappedCanvas && wrappedCanvas.canvas instanceof OffscreenCanvas) {
         // Convert canvas to JPEG blob
-        resultBlob = await wrappedCanvas.canvas.convertToBlob({type: 'image/jpeg', quality: 0.7});
+        resultBlob = await wrappedCanvas.canvas.convertToBlob({
+          type: 'image/jpeg',
+          quality: THUMB_JPG_QUAL,
+        });
         break;
       }
     }
