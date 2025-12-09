@@ -1,6 +1,7 @@
 import * as $ from 'app/data/types';
 import {getFiles, getPathsForDevice} from 'app/data/queries';
 
+import type {FileType} from 'media/file/types';
 import type {DeviceId, PathId, FileId} from 'app/data/types';
 import type {SnapshotData, DeltaUpdate, EvoluInstance, PathTuple, FileTuple} from '../types';
 
@@ -53,8 +54,8 @@ export async function syncSnapshot(
     const res = evolu.update('media_path', {id: pathId, isDeleted: 1});
     console.log('[fs-watcher] remove path:', pathId, res);
   }
-  for (const [fileId, [size, type, thumb]] of filesToUpsert) {
-    const res = evolu.upsert('media_file', {id: fileId, size, type, thumb});
+  for (const [fileId, [size, type]] of filesToUpsert) {
+    const res = evolu.upsert('media_file', {id: fileId, size, type});
     console.log('[fs-watcher] upsert file:', fileId, res);
   }
 
@@ -115,7 +116,7 @@ async function loadExistingFiles(
   const map = new Map<string, FileTuple>();
   for (const row of res) {
     if (row.id && row.size !== null && row.type) {
-      map.set(row.id, [row.size, row.type, row.thumb || null]);
+      map.set(row.id, [row.size, row.type as FileType]);
     }
   }
   return map;
@@ -131,8 +132,8 @@ function upsertPathAndFile(
   const [name, parentId, fileId] = path;
   evolu.upsert('media_path', {id: pathId, name, deviceId, parentId, fileId, isDeleted: 0});
   if (file && fileId) {
-    const [size, type, thumb] = file;
-    evolu.upsert('media_file', {id: fileId, size, type, thumb});
+    const [size, type] = file;
+    evolu.upsert('media_file', {id: fileId, size, type});
   }
 }
 

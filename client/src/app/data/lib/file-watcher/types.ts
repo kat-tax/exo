@@ -1,4 +1,5 @@
 import type {DeviceId} from 'app/data/types';
+import type {FileType} from 'media/file/types';
 import type evolu from '../evolu.db';
 
 export type EvoluInstance = typeof evolu;
@@ -11,8 +12,7 @@ export type PathTuple = [
 
 export type FileTuple = [
   size: number,
-  filetype: string,
-  thumbnail: Uint8Array | null,
+  type: FileType,
 ];
 
 export interface SnapshotData {

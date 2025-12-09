@@ -7,7 +7,6 @@ import {FileType} from '../../../../../media/file/types';
 import {getRenderer} from '../../../../../media/file/utils/render';
 import {getPathInfo} from '../../../../../media/dir/utils/path';
 import {getFileHash} from '../utils/identify';
-import {generateImageThumb} from '../utils/generate';
 import cfg from 'config';
 
 import type {
@@ -109,49 +108,18 @@ class FileWatcherWorker {
 
   private async processFile(handle: FileSystemFileHandle): Promise<{fileId: string, snapshot: FileTuple}> {
     const file = await handle.getFile();
-    // Do nothing if zero-byte file
-    if (file.size === 0) {
-      return {
-        fileId: '',
-        snapshot: [0, '', null],
-      };
-    }
-    const fileId = await this.createFileId(handle);
+    if (file.size === 0) return {fileId: '', snapshot: [0, FileType.Binary]};
     const name = handle.name.split('/').at(-1) ?? handle.name;
+    const fileId = await this.createFileId(handle);
     const pathInfo = getPathInfo(name);
-    const [filetype] = getRenderer(pathInfo.ext);
-    switch (filetype) {
-      // case FileType.Image: {
-      //   return {
-      //     fileId,
-      //     snapshot: [
-      //       file.size,
-      //       filetype,
-      //       await generateImageThumb(handle),
-      //     ],
-      //   };
-      // }
-      // case FileType.Video: {
-      //   return {
-      //     fileId,
-      //     snapshot: [
-      //       file.size,
-      //       filetype,
-      //       await generateVideoThumb(handle),
-      //     ],
-      //   };
-      // }
-      default: {
-        return {
-          fileId,
-          snapshot: [
-            file.size,
-            filetype,
-            null,
-          ],
-        };
-      }
-    }
+    const [fileType] = getRenderer(pathInfo.ext);
+    return {
+      fileId,
+      snapshot: [
+        file.size,
+        fileType,
+      ],
+    };
   }
 
   private async startObserver() {
