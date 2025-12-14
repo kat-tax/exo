@@ -7,6 +7,7 @@ import {FileType} from '../../../../../media/file/types';
 import {getRenderer} from '../../../../../media/file/utils/render';
 import {getPathInfo} from '../../../../../media/dir/utils/path';
 import {getFileHash} from '../utils/identify';
+import * as gen from '../utils/generate';
 import cfg from 'config';
 
 import type {
@@ -17,15 +18,27 @@ import type {
   PathTuple,
 } from '../types';
 
+interface ThumbQueueItem {
+  fileId: string;
+  handle: FileSystemFileHandle;
+  size: number;
+  type: FileType;
+}
+
 class FileWatcherWorker {
   private rootHandle: FileSystemDirectoryHandle | null = null;
   private deviceId: DeviceId | null = null;
   private observer: FileSystemObserver | null = null;
   private snapshot: SnapshotData = {paths: {}, files: {}};
-  private readonly ignoreFolders = [`.tmp`, `.${cfg.APP_NAME}-${cfg.STORE_VERSION}`];
-  private readonly pendingPathsDelay = 200;
   private pendingPaths = new Set<string>();
   private pendingPathsTimer: number | null = null;
+  private thumbQueue: ThumbQueueItem[] = [];
+  private thumbQueueTimer: number | null = null;
+
+  private readonly IGNORED_FOLDERS = [`.tmp`, `.${cfg.APP_NAME}-${cfg.STORE_VERSION}`];
+  private readonly PENDING_PATHS_DELAY = 200;
+  private readonly THUMB_QUEUE_INTERVAL = 1000;
+  private readonly THUMB_BATCH_SIZE_BYTES = 50 * 1024 * 1024;
 
   async init(deviceId: DeviceId): Promise<void> {
     this.rootHandle = await navigator.storage.getDirectory();
@@ -34,7 +47,8 @@ class FileWatcherWorker {
       await this.scanDirectory(this.rootHandle, null, '');
       this.send({type: 'ready', snapshot: this.snapshot});
       this.snapshot = {paths: {}, files: {}};
-      await this.startObserver();
+      this.startObserver();
+      this.startThumbnailProcessor();
     } catch (error) {
       const message = error instanceof Error ? error.message : 'Unknown error';
       this.send({type: 'error', message});
@@ -49,6 +63,7 @@ class FileWatcherWorker {
     this.observer?.disconnect();
     this.observer = null;
     this.clearPendingPaths();
+    this.stopThumbnailProcessor();
   }
 
   private clearPendingPaths(): void {
@@ -67,7 +82,7 @@ class FileWatcherWorker {
       if (!this.pendingPaths.size) return;
       this.send({type: 'paths', paths: Array.from(this.pendingPaths)});
       this.pendingPaths.clear();
-    }, this.pendingPathsDelay);
+    }, this.PENDING_PATHS_DELAY);
   }
 
   private async scanDirectory(
@@ -84,7 +99,7 @@ class FileWatcherWorker {
     // Scan directory contents
     for await (const entry of dirHandle.values()) {
       // Skip ignored directories
-      if (entry.kind === 'directory' && this.ignoreFolders.includes(entry.name))
+      if (entry.kind === 'directory' && this.IGNORED_FOLDERS.includes(entry.name))
         continue;
       const entryPath = isRoot ? entry.name : `${currentPath}/${entry.name}`;
       // Process file data
@@ -106,13 +121,17 @@ class FileWatcherWorker {
     }
   }
 
-  private async processFile(handle: FileSystemFileHandle): Promise<{fileId: string, snapshot: FileTuple}> {
+  private async processFile(handle: FileSystemFileHandle, skipThumbQueue = false): Promise<{fileId: string, snapshot: FileTuple}> {
     const file = await handle.getFile();
     if (file.size === 0) return {fileId: '', snapshot: [0, FileType.Binary]};
     const name = handle.name.split('/').at(-1) ?? handle.name;
     const fileId = await this.createFileId(handle);
     const pathInfo = getPathInfo(name);
     const [fileType] = getRenderer(pathInfo.ext);
+    // Queue for thumbnail generation if applicable
+    if (!skipThumbQueue && (fileType === FileType.Image || fileType === FileType.Video)) {
+      this.thumbQueue.push({fileId, handle, size: file.size, type: fileType});
+    }
     return {
       fileId,
       snapshot: [
@@ -137,10 +156,10 @@ class FileWatcherWorker {
       // Ignore root folder changes
       if (record.relativePathComponents.length === 0) return;
       // Ignore changes in ignored folders (check path components first)
-      if (this.ignoreFolders.includes(record.relativePathComponents[0])) return;
+      if (this.IGNORED_FOLDERS.includes(record.relativePathComponents[0])) return;
       const {pathId, parentId, name, fullPath} = await this.getRecordPath(record);
       // For ignored directory operations (when changedHandle is available)
-      if (record.changedHandle?.kind === 'directory' && this.ignoreFolders.includes(name)) return;
+      if (record.changedHandle?.kind === 'directory' && this.IGNORED_FOLDERS.includes(name)) return;
       this.enqueuePathChange(fullPath);
       switch (record.type) {
         case 'appeared':
@@ -233,6 +252,68 @@ class FileWatcherWorker {
 
   private createPathId(path: string): string {
     return createIdFromString(`${this.deviceId}/${path}`);
+  }
+
+  private startThumbnailProcessor(): void {
+    if (this.thumbQueueTimer !== null) return;
+    this.thumbQueueTimer = self.setInterval(() => {
+      this.processThumbnailQueue();
+    }, this.THUMB_QUEUE_INTERVAL);
+  }
+
+  private stopThumbnailProcessor(): void {
+    if (this.thumbQueueTimer !== null) {
+      self.clearInterval(this.thumbQueueTimer);
+      this.thumbQueueTimer = null;
+    }
+    this.thumbQueue = [];
+  }
+
+  private async processThumbnailQueue(): Promise<void> {
+    // Sort by size (smallest first)
+    this.thumbQueue.sort((a, b) => a.size - b.size);
+    while (this.thumbQueue.length > 0) {
+      const batch: ThumbQueueItem[] = [];
+      let batchSize = 0;
+      // Build batch based on filesize, filling up to limit
+      while (this.thumbQueue.length > 0) {
+        const next = this.thumbQueue[0];
+        // Add to batch if it fits within size limit, or if batch is empty
+        if (batch.length === 0 || batchSize + next.size <= this.THUMB_BATCH_SIZE_BYTES) {
+          batch.push(this.thumbQueue.shift()!);
+          batchSize += next.size;
+        } else {
+          break;
+        }
+      }
+      // Process batch
+      for (const item of batch) {
+        try {
+          let thumb: Uint8Array | null = null;
+          switch (item.type) {
+            case FileType.Image:
+              thumb = await gen.imageThumbnail(item.handle);
+              break;
+            case FileType.Video:
+              thumb = await gen.videoThumbnail(item.handle);
+              break;
+          }
+          if (thumb) {
+            this.send({
+              type: 'delta',
+              data: {
+                type: 'modified',
+                pathId: '',
+                fileId: item.fileId,
+                file: [item.size, item.type, thumb],
+              },
+            });
+          }
+        } catch (error) {
+          console.error('[fs-watcher] Error generating thumbnail:', error);
+        }
+      }
+    }
   }
 }
 

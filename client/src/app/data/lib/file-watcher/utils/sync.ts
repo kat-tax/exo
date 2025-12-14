@@ -46,17 +46,17 @@ export async function syncSnapshot(
   }
 
   // Apply changes
-  for (const [pathId, [name, parentId, fileId]] of pathsToUpsert) {
-    const res = evolu.upsert('media_path', {id: pathId, name, deviceId, parentId, fileId, isDeleted: 0});
-    console.log('[fs-watcher] upsert path:', pathId, name, res);
+  for (const [id, [name, parentId, fileId]] of pathsToUpsert) {
+    const res = evolu.upsert('media_path', {id, name, deviceId, parentId, fileId, isDeleted: 0});
+    console.log('[fs-watcher] upsert path:', id, name, res);
   }
-  for (const pathId of pathsToRemove) {
-    const res = evolu.update('media_path', {id: pathId, isDeleted: 1});
-    console.log('[fs-watcher] remove path:', pathId, res);
+  for (const id of pathsToRemove) {
+    const res = evolu.update('media_path', {id, isDeleted: 1});
+    console.log('[fs-watcher] remove path:', id, res);
   }
-  for (const [fileId, [size, type]] of filesToUpsert) {
-    const res = evolu.upsert('media_file', {id: fileId, size, type});
-    console.log('[fs-watcher] upsert file:', fileId, res);
+  for (const [id, [size, type, thumb]] of filesToUpsert) {
+    const res = evolu.upsert('media_file', {id, size, type, thumb: thumb || null});
+    console.log('[fs-watcher] upsert file:', id, res);
   }
 
   // Debug log
@@ -79,6 +79,12 @@ export function applyDelta(
   deviceId: DeviceId,
   delta: DeltaUpdate,
 ) {
+  // Handle metadata updates
+  if (delta.fileId && delta.file && !delta.path) {
+    const [,,thumb] = delta.file;
+    evolu.update('media_file', {id: delta.fileId, thumb});
+    return;
+  }
   if (!delta.path && delta.type !== 'disappeared') return;
   switch (delta.type) {
     case 'appeared':
@@ -116,7 +122,7 @@ async function loadExistingFiles(
   const map = new Map<string, FileTuple>();
   for (const row of res) {
     if (row.id && row.size !== null && row.type) {
-      map.set(row.id, [row.size, row.type as FileType]);
+      map.set(row.id, [row.size, row.type as FileType, row.thumb || null]);
     }
   }
   return map;
@@ -132,8 +138,8 @@ function upsertPathAndFile(
   const [name, parentId, fileId] = path;
   evolu.upsert('media_path', {id: pathId, name, deviceId, parentId, fileId, isDeleted: 0});
   if (file && fileId) {
-    const [size, type] = file;
-    evolu.upsert('media_file', {id: fileId, size, type});
+    const [size, type, thumb] = file;
+    evolu.upsert('media_file', {id: fileId, size, type, thumb: thumb || null});
   }
 }
 
@@ -145,5 +151,6 @@ function pathsNeedUpdate(existing: PathTuple, current: PathTuple) {
 
 function filesNeedUpdate(existing: FileTuple, current: FileTuple) {
   return existing[0] !== current[0]
-    || existing[1] !== current[1];
+    || existing[1] !== current[1]
+    || (current[2] && existing[2] !== current[2]);
 }

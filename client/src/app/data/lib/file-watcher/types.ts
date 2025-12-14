@@ -13,6 +13,7 @@ export type PathTuple = [
 export type FileTuple = [
   size: number,
   type: FileType,
+  thumb?: Uint8Array | null,
 ];
 
 export interface SnapshotData {
@@ -33,6 +34,7 @@ export interface DeltaUpdate {
   pathId: string;
   path?: PathTuple;
   file?: FileTuple;
+  fileId?: string;
   movedFrom?: string;
 }
 
