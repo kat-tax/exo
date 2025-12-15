@@ -58,7 +58,6 @@ const styles = StyleSheet.create(theme => ({
     justifyContent: 'center',
     alignItems: 'center',
     gap: theme.display.space2,
-    flexShrink: 0,
     borderRadius: theme.display.radius3,
     borderWidth: 1,
     borderStyle: 'solid',
@@ -66,60 +65,74 @@ const styles = StyleSheet.create(theme => ({
     backgroundColor: theme.colors.primary,
   },
   rootModePrimaryStateHovered: {
+    flexShrink: 0,
     opacity: 0.9,
   },
   rootModePrimaryStatePressed: {
+    flexShrink: 0,
     opacity: 0.8,
   },
   rootModePrimaryStateFocused: {
+    flexShrink: 0,
     borderColor: theme.colors.accent,
   },
   rootModePrimaryStateDisabled: {
+    flexShrink: 0,
     borderColor: theme.colors.border,
     opacity: 0.4,
   },
   rootModeSecondaryStateDefault: {
+    flexShrink: 0,
     borderColor: theme.colors.border,
     backgroundColor: theme.colors.secondary,
   },
   rootModeSecondaryStateHovered: {
+    flexShrink: 0,
     borderColor: theme.colors.border,
     opacity: 0.9,
     backgroundColor: theme.colors.secondary,
   },
   rootModeSecondaryStatePressed: {
+    flexShrink: 0,
     borderColor: theme.colors.border,
     opacity: 0.8,
     backgroundColor: theme.colors.secondary,
   },
   rootModeSecondaryStateFocused: {
+    flexShrink: 0,
     borderColor: theme.colors.ring,
     backgroundColor: theme.colors.secondary,
   },
   rootModeSecondaryStateDisabled: {
+    flexShrink: 0,
     borderColor: theme.colors.border,
     opacity: 0.4,
     backgroundColor: theme.colors.secondary,
   },
   rootModeDestructiveStateDefault: {
+    flexShrink: 0,
     borderColor: theme.colors.destructive,
     backgroundColor: theme.colors.destructive,
   },
   rootModeDestructiveStateHovered: {
+    flexShrink: 0,
     borderColor: theme.colors.destructive,
     opacity: 0.9,
     backgroundColor: theme.colors.destructive,
   },
   rootModeDestructiveStatePressed: {
+    flexShrink: 0,
     borderColor: theme.colors.destructive,
     opacity: 0.8,
     backgroundColor: theme.colors.destructive,
   },
   rootModeDestructiveStateFocused: {
+    flexShrink: 0,
     borderColor: theme.colors.ring,
     backgroundColor: theme.colors.destructive,
   },
   rootModeDestructiveStateDisabled: {
+    flexShrink: 0,
     borderColor: theme.colors.destructive,
     opacity: 0.4,
     backgroundColor: theme.colors.destructive,
@@ -130,20 +143,24 @@ const styles = StyleSheet.create(theme => ({
   },
   rootModeTextStateHovered: {
     backgroundColor: undefined,
+    flexShrink: 0,
     borderColor: 'rgba(0, 0, 0, 0)',
     opacity: 0.9,
   },
   rootModeTextStatePressed: {
     backgroundColor: undefined,
+    flexShrink: 0,
     borderColor: 'rgba(0, 0, 0, 0)',
     opacity: 0.8,
   },
   rootModeTextStateFocused: {
     backgroundColor: undefined,
+    flexShrink: 0,
     borderColor: theme.colors.ring,
   },
   rootModeTextStateDisabled: {
     backgroundColor: undefined,
+    flexShrink: 0,
     borderColor: 'rgba(0, 0, 0, 0)',
     opacity: 0.4,
   },

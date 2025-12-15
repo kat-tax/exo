@@ -50,6 +50,7 @@ export function InputPassword(props: InputPasswordProps) {
         <TextInput testID="4029:270"
           style={vstyles.textinput()}
           secureTextEntry
+          autoComplete="password"
           placeholder={props.placeholder}
         />
       </View>
