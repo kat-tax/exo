@@ -88,6 +88,7 @@
     "@types/qrcode": "^1.5.6",
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
+    "baseline-browser-mapping": "^2.9.7",
     "typescript": "catalog:"
   },
   "browserslist": {

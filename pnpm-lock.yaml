@@ -155,7 +155,7 @@ importers:
         version: 0.1.5
       sonda:
         specifier: latest
-        version: 0.10.0
+        version: 0.10.1
       typescript:
         specifier: 'catalog:'
         version: 5.9.2
@@ -400,6 +400,9 @@ importers:
       '@types/react-dom':
         specifier: 'catalog:'
         version: 19.1.9(@types/react@19.1.13)
+      baseline-browser-mapping:
+        specifier: ^2.9.7
+        version: 2.9.7
       typescript:
         specifier: 'catalog:'
         version: 5.9.2
@@ -3588,6 +3591,10 @@ packages:
 
   baseline-browser-mapping@2.8.4:
     resolution: {integrity: sha512-L+YvJwGAgwJBV1p6ffpSTa2KRc69EeeYGYjRVWKs0GKrK+LON0GC0gV+rKSNtALEDvMDqkvCFq9r1r94/Gjwxw==}
+    hasBin: true
+
+  baseline-browser-mapping@2.9.7:
+    resolution: {integrity: sha512-k9xFKplee6KIio3IDbwj+uaCLpqzOwakOgmqzPezM0sFJlFKcg30vk2wOiAJtkTSfx0SSQDSe8q+mWA/fSH5Zg==}
     hasBin: true
 
   bencode@2.0.3:
@@ -7046,8 +7053,8 @@ packages:
     resolution: {integrity: sha512-HLpt+uLy/pxB+bum/9DzAgiKS8CX1EvbWxI4zlmgGCExImLdiad2iCwXT5Z4c9c3Eq8rP2318mPW2c+QbtjK8A==}
     engines: {node: '>= 10.0.0', npm: '>= 3.0.0'}
 
-  sonda@0.10.0:
-    resolution: {integrity: sha512-Mg6YWl8QOD9Yf8wV5teUYZiB0P1oy994pmPJmi3Fr7+0RXhBcNY6TUZFa7c3gHKLJfemfoAeV22+PSBXlzuT4g==}
+  sonda@0.10.1:
+    resolution: {integrity: sha512-nXlQEVsw7833XADV94MXW9EKwLxn4S1U7oSUEgKCQeU4dt0CwYvEFcyRjhjM0Ae2taxsJ9HnFrtw8Eb40/rX4w==}
     engines: {node: '>=20.19 || >=22.12'}
     hasBin: true
 
@@ -12571,6 +12578,8 @@ snapshots:
 
   baseline-browser-mapping@2.8.4: {}
 
+  baseline-browser-mapping@2.9.7: {}
+
   bencode@2.0.3: {}
 
   bencode@4.0.0:
@@ -16940,7 +16949,7 @@ snapshots:
       ip-address: 10.1.0
       smart-buffer: 4.2.0
 
-  sonda@0.10.0:
+  sonda@0.10.1:
     dependencies:
       '@jridgewell/remapping': 2.3.5
       open: 10.2.0
