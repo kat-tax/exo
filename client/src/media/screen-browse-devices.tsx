@@ -3,7 +3,6 @@ import {useQuery} from '@evolu/react';
 import {useFocusable, FocusContext} from '@noriginmedia/norigin-spatial-navigation';
 import {ScrollView, View} from 'react-native';
 import {StyleSheet} from 'react-native-unistyles';
-import {Bar} from 'media/stacks/bar';
 import {Grid} from 'app/ui/grid';
 import {Screen} from 'app/ui/screen';
 import {getDevices} from 'app/data/queries';
@@ -27,7 +26,6 @@ export default function ScreenBrowseDevices(_: ReactNavigation.ScreenProps<'Medi
     <FocusContext.Provider value={focusKey}>
       <View ref={ref} style={styles.root}>
         <Screen>
-          {/* <Bar/> */}
           <ScrollView
             style={styles.root}
             contentContainerStyle={styles.list}>
