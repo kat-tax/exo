@@ -64,7 +64,7 @@ export function Media({path, vertical, maximized, embedded, layout, close}: Medi
   }), [styles, pip, vertical, maximized, embedded]);
 
   const actions = useMemo(() => ({
-    open: () => console.log('open'),
+    open: () => {},
     close,
     setInfo,
     setCover,
