@@ -18,33 +18,33 @@ msgstr ""
 #: ../../client/src/media/file/file-torrent.tsx:23
 #: ../../client/src/media/file/file-zip.tsx:22
 msgid "{files, plural, one {# file} other {# files}}"
-msgstr ""
+msgstr "{files, plural, one {파일 #개} other {파일 #개}}"
 
 #: ../../client/src/media/file/file-dir-evolu.tsx:46
 #: ../../client/src/media/file/file-dir-local.tsx:33
 msgid "{folders, plural, one {# folder} other {# folders}}"
-msgstr ""
+msgstr "{folders, plural, one {폴더 #개} other {폴더 #개}}"
 
 #: ../../client/src/settings/stacks/account-key.tsx:79
 msgid "⚠️ Treat your mnemonic phrase with care."
-msgstr ""
+msgstr "⚠️ 니모닉 구문을 신중히 관리하세요."
 
 #: ../../client/src/settings/screen-overview.tsx:80
 #: ../../client/src/settings/stacks/account-key.tsx:142
 msgid "Account Key"
-msgstr ""
+msgstr "계정 키"
 
 #: ../../client/src/settings/stacks/account-key.tsx:77
 msgid "Account Key - Mnemonic Phrase"
-msgstr ""
+msgstr "계정 키 - 니모닉 구문"
 
 #: ../../client/src/world/screen-tasks-edit.tsx:96
 msgid "Add category..."
-msgstr ""
+msgstr "카테고리 추가..."
 
 #: ../../client/src/world/screen-tasks-edit.tsx:58
 msgid "Add section names for items."
-msgstr ""
+msgstr "항목의 섹션 이름을 추가하세요."
 
 #: ../../client/src/home/screen-shortcut.tsx:80
 #: ../../client/src/settings/screen-overview.tsx:45
@@ -59,17 +59,17 @@ msgstr "소유자 키를 변경하시겠습니까? 로컬 데이터베이스가 
 #: ../../client/src/app/nav/index.tsx:279
 #: ../../client/src/media/hooks/use-media-name.ts:21
 msgid "Books"
-msgstr ""
+msgstr "도서"
 
 #. placeholder {0}: data.metadata.author
 #: ../../client/src/media/file/file-book.tsx:41
 msgid "by {0}"
-msgstr ""
+msgstr "저자: {0}"
 
 #: ../../client/src/app/nav/index.tsx:300
 #: ../../client/src/world/screen-overview.tsx:28
 msgid "Calendar"
-msgstr ""
+msgstr "달력"
 
 #: ../../client/src/settings/stacks/account-key.tsx:286
 #: ../../design/components/base/popovers/prompt/Prompt.tsx:49
@@ -82,27 +82,27 @@ msgstr "취소"
 #: ../../design/components/features/auth/signup/Signup.tsx:40
 #: ../../design/components/features/auth/signup/Signup.tsx:52
 msgid "Caption"
-msgstr ""
+msgstr "캡션"
 
 #: ../../client/src/world/screen-tasks-edit.tsx:57
 msgid "Categories"
-msgstr ""
+msgstr "카테고리"
 
 #: ../../client/src/world/stacks/tasks-list-group.tsx:70
 msgid "Category"
-msgstr ""
+msgstr "카테고리"
 
 #: ../../client/src/app/nav/index.tsx:335
 msgid "Charts"
-msgstr ""
+msgstr "차트"
 
 #: ../../client/src/settings/screen-overview.tsx:35
 msgid "Choose your display name."
-msgstr ""
+msgstr "표시 이름을 선택하세요."
 
 #: ../../client/src/media/hooks/use-media-controls.ts:299
 msgid "Close"
-msgstr ""
+msgstr "닫기"
 
 #: ../../client/src/home/screen-shortcut.tsx:94
 #: ../../client/src/world/screen-tasks-edit.tsx:122
@@ -111,31 +111,31 @@ msgstr "색상"
 
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:37
 msgid "Compress"
-msgstr ""
+msgstr "압축"
 
 #: ../../client/src/settings/screen-overview.tsx:29
 msgid "Configure the app"
-msgstr ""
+msgstr "앱 설정"
 
 #: ../../client/src/settings/screen-overview.tsx:149
 #: ../../design/components/features/auth/signup/Signup.tsx:53
 msgid "Confirm"
-msgstr ""
+msgstr "확인"
 
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:55
 #: ../../client/src/media/hooks/use-media-controls.ts:73
 msgid "Copy"
-msgstr ""
+msgstr "복사"
 
 #: ../../design/components/features/auth/login/Login.tsx:62
 #: ../../design/components/features/auth/signup/Signup.tsx:65
 msgid "Create Account"
-msgstr ""
+msgstr "계정 생성"
 
 #: ../../client/src/home/screen-shortcut.tsx:106
 #: ../../client/src/world/screen-tasks-edit.tsx:134
 msgid "Danger Zone"
-msgstr ""
+msgstr "위험 구역"
 
 #: ../../client/src/settings/screen-overview.tsx:74
 msgid "Dark"
@@ -147,25 +147,25 @@ msgstr "대시보드"
 
 #: ../../client/src/settings/screen-overview.tsx:78
 msgid "Data"
-msgstr ""
+msgstr "데이터"
 
 #: ../../client/src/home/screen-shortcut.tsx:111
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:80
 msgid "Delete"
-msgstr ""
+msgstr "삭제"
 
 #: ../../client/src/world/screen-tasks-edit.tsx:136
 #: ../../client/src/world/screen-tasks-edit.tsx:139
 msgid "Delete List"
-msgstr ""
+msgstr "목록 삭제"
 
 #: ../../client/src/home/screen-shortcut.tsx:108
 msgid "Delete Shortcut"
-msgstr ""
+msgstr "바로가기 삭제"
 
 #: ../../client/src/settings/screen-overview.tsx:120
 msgid "Deletes database and resets key."
-msgstr ""
+msgstr "데이터베이스를 삭제하고 키를 초기화합니다."
 
 #: ../../client/src/app/nav/index.tsx:327
 msgid "Design"
@@ -177,15 +177,15 @@ msgstr "개발"
 
 #: ../../client/src/media/stacks/list/empty.tsx:25
 msgid "Directory empty. Drop items or select folder to import."
-msgstr ""
+msgstr "디렉토리가 비어있습니다. 항목을 드롭하거나 가져올 폴더를 선택하세요."
 
 #: ../../client/src/media/stacks/list/empty.tsx:24
 msgid "Directory empty. Select folder to import."
-msgstr ""
+msgstr "디렉토리가 비어있습니다. 가져올 폴더를 선택하세요."
 
 #: ../../client/src/world/screen-map.tsx:137
 msgid "Disabled location tracking (requires reload)"
-msgstr ""
+msgstr "위치 추적 비활성화됨 (새로고침 필요)"
 
 #: ../../client/src/settings/screen-overview.tsx:34
 msgid "Display Name"
@@ -193,19 +193,19 @@ msgstr "표시 이름"
 
 #: ../../client/src/settings/stacks/account-key.tsx:149
 msgid "Do not share it with anyone."
-msgstr ""
+msgstr "누구와도 공유하지 마세요."
 
 #: ../../client/src/settings/stacks/account-key.tsx:80
 msgid "Do not share it with anyone. Store it securely."
-msgstr ""
+msgstr "누구와도 공유하지 말고 안전하게 보관하세요."
 
 #: ../../client/src/app/nav/index.tsx:244
 msgid "Docs"
-msgstr ""
+msgstr "문서"
 
 #: ../../client/src/media/hooks/use-media-name.ts:11
 msgid "Documents"
-msgstr ""
+msgstr "문서"
 
 #: ../../client/src/media/dir/stacks/menu-evolu.tsx:30
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:44
@@ -213,32 +213,32 @@ msgstr ""
 #: ../../client/src/media/file/file-binary.tsx:36
 #: ../../client/src/media/hooks/use-media-controls.ts:92
 msgid "Download"
-msgstr ""
+msgstr "다운로드"
 
 #: ../../client/src/settings/screen-overview.tsx:110
 msgid "Download the sqlite database."
-msgstr ""
+msgstr "SQLite 데이터베이스를 다운로드합니다."
 
 #: ../../client/src/media/hooks/use-media-controls.ts:82
 msgid "Edit"
-msgstr ""
+msgstr "편집"
 
 #: ../../client/src/world/stacks/tasks-list-group.tsx:101
 msgid "Edit Item..."
-msgstr ""
+msgstr "항목 편집..."
 
 #: ../../client/src/app/nav/index.tsx:320
 msgid "Edit List"
-msgstr ""
+msgstr "목록 편집"
 
 #: ../../design/components/features/auth/login/Login.tsx:29
 #: ../../design/components/features/auth/signup/Signup.tsx:29
 msgid "Email"
-msgstr ""
+msgstr "이메일"
 
 #: ../../client/src/world/screen-map.tsx:136
 msgid "Enabled location tracking (requires reload)"
-msgstr ""
+msgstr "위치 추적 활성화됨 (새로고침 필요)"
 
 #: ../../client/src/settings/screen-overview.tsx:41
 msgid "Enter name"
@@ -251,72 +251,72 @@ msgstr "오류"
 
 #: ../../client/src/settings/screen-overview.tsx:109
 msgid "Export Database"
-msgstr ""
+msgstr "데이터베이스 내보내기"
 
 #: ../../client/src/settings/screen-overview.tsx:112
 msgid "Export DB"
-msgstr ""
+msgstr "DB 내보내기"
 
 #: ../../client/src/media/dir/stacks/menu-zip.tsx:23
 #: ../../client/src/media/hooks/use-media-controls.ts:102
 msgid "Extract"
-msgstr ""
+msgstr "압축 해제"
 
 #: ../../client/src/world/hooks/use-tasks.ts:145
 msgid "Failed to create category."
-msgstr ""
+msgstr "카테고리 생성에 실패했습니다."
 
 #: ../../client/src/world/hooks/use-tasks.ts:104
 msgid "Failed to create list item."
-msgstr ""
+msgstr "목록 항목 생성에 실패했습니다."
 
 #: ../../client/src/world/hooks/use-tasks.ts:35
 msgid "Failed to create new list."
-msgstr ""
+msgstr "새 목록 생성에 실패했습니다."
 
 #: ../../client/src/home/hooks/use-shortcuts.ts:34
 msgid "Failed to create new shortcut."
-msgstr ""
+msgstr "새 바로가기 생성에 실패했습니다."
 
 #: ../../client/src/world/hooks/use-tasks.ts:164
 msgid "Failed to delete category."
-msgstr ""
+msgstr "카테고리 삭제에 실패했습니다."
 
 #: ../../client/src/world/hooks/use-tasks.ts:111
 msgid "Failed to delete list item."
-msgstr ""
+msgstr "목록 항목 삭제에 실패했습니다."
 
 #: ../../client/src/world/hooks/use-tasks.ts:46
 msgid "Failed to delete list."
-msgstr ""
+msgstr "목록 삭제에 실패했습니다."
 
 #: ../../client/src/home/hooks/use-shortcuts.ts:96
 msgid "Failed to delete shortcut."
-msgstr ""
+msgstr "바로가기 삭제에 실패했습니다."
 
 #: ../../client/src/world/hooks/use-tasks.ts:177
 msgid "Failed to update category."
-msgstr ""
+msgstr "카테고리 업데이트에 실패했습니다."
 
 #: ../../client/src/world/hooks/use-tasks.ts:130
 msgid "Failed to update list item status."
-msgstr ""
+msgstr "목록 항목 상태 업데이트에 실패했습니다."
 
 #: ../../client/src/world/hooks/use-tasks.ts:123
 msgid "Failed to update list item text."
-msgstr ""
+msgstr "목록 항목 텍스트 업데이트에 실패했습니다."
 
 #: ../../client/src/world/hooks/use-tasks.ts:89
 msgid "Failed to update list."
-msgstr ""
+msgstr "목록 업데이트에 실패했습니다."
 
 #: ../../client/src/home/hooks/use-shortcuts.ts:87
 msgid "Failed to update shortcut."
-msgstr ""
+msgstr "바로가기 업데이트에 실패했습니다."
 
 #: ../../client/src/app/ui/teaser.tsx:11
 msgid "Feature in development..."
-msgstr ""
+msgstr "개발 중인 기능..."
 
 #: ../../client/src/app/nav/index.tsx:200
 #: ../../client/src/media/hooks/use-media-name.ts:23
@@ -325,16 +325,16 @@ msgstr ""
 #: ../../client/src/media/stacks/media.tsx:96
 #: ../../client/src/media/stacks/select/item.tsx:88
 msgid "Files"
-msgstr ""
+msgstr "파일"
 
 #: ../../client/src/media/hooks/use-media-controls.ts:289
 msgid "Fullscreen"
-msgstr ""
+msgstr "전체화면"
 
 #: ../../client/src/app/nav/index.tsx:272
 #: ../../client/src/media/hooks/use-media-name.ts:19
 msgid "Games"
-msgstr ""
+msgstr "게임"
 
 #: ../../client/src/home/screen-shortcut.tsx:52
 #: ../../client/src/world/screen-tasks-edit.tsx:44
@@ -343,7 +343,7 @@ msgstr "일반"
 
 #: ../../client/src/app/ui/index.tsx:74
 msgid "Geolocation Error"
-msgstr ""
+msgstr "위치 정보 오류"
 
 #: ../../client/src/home/utils/time.ts:16
 msgid "Good afternoon, {name}."
@@ -372,20 +372,20 @@ msgstr "아이콘"
 
 #: ../../client/src/settings/stacks/account-key.tsx:303
 msgid "Import"
-msgstr ""
+msgstr "가져오기"
 
 #: ../../client/src/media/stacks/list/empty.tsx:26
 msgid "Import Folder"
-msgstr ""
+msgstr "폴더 가져오기"
 
 #: ../../client/src/app/nav/index.tsx:163
 msgid "Inbox"
-msgstr ""
+msgstr "받은편지함"
 
 #: ../../client/src/world/hooks/use-tasks.ts:139
 #: ../../client/src/world/hooks/use-tasks.ts:171
 msgid "Invalid category name."
-msgstr ""
+msgstr "잘못된 카테고리 이름입니다."
 
 #: ../../client/src/home/hooks/use-shortcuts.ts:74
 #: ../../client/src/world/hooks/use-tasks.ts:76
@@ -399,7 +399,7 @@ msgstr "잘못된 아이콘 필드입니다."
 
 #: ../../client/src/world/hooks/use-tasks.ts:26
 msgid "Invalid list id."
-msgstr ""
+msgstr "잘못된 목록 ID입니다."
 
 #: ../../client/src/settings/hooks/use-settings.ts:28
 msgid "Invalid name (max 25 characters)."
@@ -416,12 +416,12 @@ msgstr "잘못된 소유자 키입니다."
 
 #: ../../client/src/home/hooks/use-shortcuts.ts:25
 msgid "Invalid shortcut id."
-msgstr ""
+msgstr "잘못된 바로가기 ID입니다."
 
 #: ../../client/src/world/hooks/use-tasks.ts:98
 #: ../../client/src/world/hooks/use-tasks.ts:118
 msgid "Invalid text content field."
-msgstr ""
+msgstr "잘못된 텍스트 내용 필드입니다."
 
 #: ../../client/src/home/hooks/use-shortcuts.ts:50
 msgid "Invalid URL field."
@@ -429,7 +429,7 @@ msgstr "잘못된 URL 필드입니다."
 
 #: ../../client/src/app/nav/index.tsx:238
 msgid "IPFS"
-msgstr ""
+msgstr "IPFS"
 
 #: ../../client/src/settings/screen-overview.tsx:47
 msgid "Language"
@@ -441,70 +441,70 @@ msgstr "라이트"
 
 #: ../../client/src/app/nav/index.tsx:314
 msgid "List Details"
-msgstr ""
+msgstr "목록 세부정보"
 
 #: ../../client/src/world/hooks/use-tasks.ts:13
 msgid "List Error"
-msgstr ""
+msgstr "목록 오류"
 
 #: ../../client/src/world/screen-tasks-edit.tsx:51
 msgid "List name"
-msgstr ""
+msgstr "목록 이름"
 
 #: ../../client/src/world/screen-tasks-all.tsx:21
 msgid "Lists"
-msgstr ""
+msgstr "목록"
 
 #: ../../client/src/media/stacks/bar/index.tsx:70
 msgid "Local"
-msgstr ""
+msgstr "로컬"
 
 #: ../../design/components/features/auth/login/Login.tsx:53
 #: ../../design/components/features/auth/signup/Signup.tsx:74
 msgid "Login"
-msgstr ""
+msgstr "로그인"
 
 #: ../../design/components/features/auth/logout/Logout.tsx:25
 msgid "Logout?"
-msgstr ""
+msgstr "로그아웃하시겠습니까?"
 
 #: ../../client/src/settings/screen-overview.tsx:87
 msgid "Manage Key"
-msgstr ""
+msgstr "키 관리"
 
 #: ../../client/src/settings/screen-overview.tsx:81
 msgid "Manage your mnemonic phrase."
-msgstr ""
+msgstr "니모닉 구문을 관리하세요."
 
 #: ../../client/src/app/nav/index.tsx:293
 #: ../../client/src/world/screen-overview.tsx:18
 msgid "Map"
-msgstr ""
+msgstr "지도"
 
 #: ../../client/src/app/nav/custom/menu/index.tsx:69
 msgid "Media"
-msgstr ""
+msgstr "미디어"
 
 #: ../../client/src/world/hooks/use-tasks.ts:21
 msgid "Missing list id."
-msgstr ""
+msgstr "목록 ID가 없습니다."
 
 #: ../../client/src/home/hooks/use-shortcuts.ts:20
 msgid "Missing shortcut id."
-msgstr ""
+msgstr "바로가기 ID가 없습니다."
 
 #: ../../client/src/settings/screen-overview.tsx:100
 msgid "Monitor disk usage on device."
-msgstr ""
+msgstr "기기의 디스크 사용량을 모니터링합니다."
 
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:62
 msgid "Move"
-msgstr ""
+msgstr "이동"
 
 #: ../../client/src/app/nav/index.tsx:251
 #: ../../client/src/media/hooks/use-media-name.ts:13
 msgid "Music"
-msgstr ""
+msgstr "음악"
 
 #: ../../client/src/home/screen-shortcut.tsx:69
 #: ../../client/src/world/screen-tasks-edit.tsx:46
@@ -513,77 +513,77 @@ msgstr "이름"
 
 #: ../../client/src/world/stacks/tasks-list-group.tsx:141
 msgid "New item..."
-msgstr ""
+msgstr "새 항목..."
 
 #: ../../client/src/media/hooks/use-media-controls.ts:210
 msgid "Next"
-msgstr ""
+msgstr "다음"
 
 #: ../../client/src/app/nav/index.tsx:173
 msgid "Not Found"
-msgstr ""
+msgstr "찾을 수 없음"
 
 #: ../../client/src/media/dir/stacks/menu-evolu.tsx:23
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:23
 msgid "Open"
-msgstr ""
+msgstr "열기"
 
 #: ../../client/src/media/hooks/use-media-controls.ts:244
 msgid "Options"
-msgstr ""
+msgstr "옵션"
 
 #: ../../client/src/world/screen-tasks-all.tsx:22
 msgid "Organize your tasks"
-msgstr ""
+msgstr "작업을 정리하세요"
 
 #: ../../client/src/home/screen-not-found.tsx:11
 msgid "Page not found"
-msgstr ""
+msgstr "페이지를 찾을 수 없습니다"
 
 #: ../../client/src/settings/stacks/account-key.tsx:295
 #: ../../client/src/settings/stacks/account-key.tsx:300
 msgid "Passkey"
-msgstr ""
+msgstr "패스키"
 
 #: ../../design/components/features/auth/login/Login.tsx:42
 #: ../../design/components/features/auth/signup/Signup.tsx:42
 #: ../../design/components/features/auth/signup/Signup.tsx:54
 msgid "password"
-msgstr ""
+msgstr "비밀번호"
 
 #: ../../design/components/features/auth/login/Login.tsx:41
 #: ../../design/components/features/auth/signup/Signup.tsx:41
 msgid "Password"
-msgstr ""
+msgstr "비밀번호"
 
 #: ../../client/src/media/hooks/use-media-controls.ts:145
 msgid "Pause"
-msgstr ""
+msgstr "일시정지"
 
 #: ../../client/src/world/screen-tasks-edit.tsx:137
 msgid "Permanently delete list."
-msgstr ""
+msgstr "목록을 영구적으로 삭제합니다."
 
 #: ../../client/src/home/screen-shortcut.tsx:109
 msgid "Permanently delete shortcut."
-msgstr ""
+msgstr "바로가기를 영구적으로 삭제합니다."
 
 #: ../../client/src/app/nav/index.tsx:258
 #: ../../client/src/media/hooks/use-media-name.ts:15
 msgid "Pictures"
-msgstr ""
+msgstr "사진"
 
 #: ../../client/src/media/hooks/use-media-controls.ts:255
 msgid "Pin"
-msgstr ""
+msgstr "고정"
 
 #: ../../client/src/media/hooks/use-media-controls.ts:146
 msgid "Play"
-msgstr ""
+msgstr "재생"
 
 #: ../../client/src/media/hooks/use-media-controls.ts:199
 msgid "Previous"
-msgstr ""
+msgstr "이전"
 
 #: ../../client/src/settings/screen-overview.tsx:32
 msgid "Profile"
@@ -591,41 +591,41 @@ msgstr "프로필"
 
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:69
 msgid "Rename"
-msgstr ""
+msgstr "이름 변경"
 
 #: ../../client/src/media/hooks/use-media-controls.ts:187
 msgid "Replay"
-msgstr ""
+msgstr "다시 재생"
 
 #: ../../client/src/settings/screen-overview.tsx:119
 #: ../../client/src/settings/screen-overview.tsx:126
 #: ../../client/src/settings/screen-overview.tsx:133
 msgid "Reset Data"
-msgstr ""
+msgstr "데이터 초기화"
 
 #: ../../client/src/settings/stacks/account-key.tsx:280
 msgid "Save"
-msgstr ""
+msgstr "저장"
 
 #: ../../client/src/media/hooks/use-media-controls.ts:112
 msgid "Search"
-msgstr ""
+msgstr "검색"
 
 #: ../../client/src/media/hooks/use-media-controls.ts:61
 msgid "Select all"
-msgstr ""
+msgstr "모두 선택"
 
 #: ../../client/src/settings/screen-overview.tsx:66
 msgid "Select the color scheme."
-msgstr ""
+msgstr "색상 테마를 선택하세요."
 
 #: ../../client/src/settings/screen-overview.tsx:48
 msgid "Select your preferred language."
-msgstr ""
+msgstr "선호하는 언어를 선택하세요."
 
 #: ../../client/src/settings/screen-overview.tsx:87
 msgid "Set Key"
-msgstr ""
+msgstr "키 설정"
 
 #: ../../client/src/app/nav/index.tsx:185
 #: ../../client/src/settings/screen-overview.tsx:28
@@ -635,31 +635,31 @@ msgstr "설정"
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:30
 #: ../../client/src/media/hooks/use-media-controls.ts:269
 msgid "Share"
-msgstr ""
+msgstr "공유"
 
 #: ../../client/src/app/nav/index.tsx:179
 msgid "Shortcut"
-msgstr ""
+msgstr "바로가기"
 
 #: ../../client/src/home/hooks/use-shortcuts.ts:12
 msgid "Shortcut Error"
-msgstr ""
+msgstr "바로가기 오류"
 
 #: ../../client/src/media/hooks/use-media-controls.ts:165
 msgid "Skip backward"
-msgstr ""
+msgstr "뒤로 건너뛰기"
 
 #: ../../client/src/media/hooks/use-media-controls.ts:176
 msgid "Skip forward"
-msgstr ""
+msgstr "앞으로 건너뛰기"
 
 #: ../../client/src/app/nav/index.tsx:193
 msgid "Storage"
-msgstr ""
+msgstr "저장소"
 
 #: ../../client/src/settings/screen-overview.tsx:99
 msgid "Storage Usage"
-msgstr ""
+msgstr "저장소 사용량"
 
 #: ../../client/src/settings/screen-overview.tsx:54
 #: ../../client/src/settings/screen-overview.tsx:72
@@ -669,31 +669,31 @@ msgstr "시스템"
 #: ../../client/src/app/nav/index.tsx:307
 #: ../../client/src/world/screen-overview.tsx:23
 msgid "Tasks"
-msgstr ""
+msgstr "작업"
 
 #: ../../client/src/world/screen-tasks-edit.tsx:123
 msgid "The color of the list icon."
-msgstr ""
+msgstr "목록 아이콘의 색상입니다."
 
 #: ../../client/src/home/screen-shortcut.tsx:95
 msgid "The color of the shortcut icon."
-msgstr ""
+msgstr "바로가기 아이콘의 색상입니다."
 
 #: ../../client/src/world/screen-tasks-edit.tsx:47
 msgid "The display name of the list."
-msgstr ""
+msgstr "목록의 표시 이름입니다."
 
 #: ../../client/src/home/screen-shortcut.tsx:70
 msgid "The display name of the shortcut."
-msgstr ""
+msgstr "바로가기의 표시 이름입니다."
 
 #: ../../client/src/world/screen-tasks-edit.tsx:111
 msgid "The icon to display for the list."
-msgstr ""
+msgstr "목록에 표시할 아이콘입니다."
 
 #: ../../client/src/home/screen-shortcut.tsx:83
 msgid "The icon to display for the shortcut."
-msgstr ""
+msgstr "바로가기에 표시할 아이콘입니다."
 
 #: ../../client/src/home/screen-shortcut.tsx:55
 msgid "The web page to link to."
@@ -705,28 +705,28 @@ msgstr "테마"
 
 #: ../../client/src/media/file/file-binary.tsx:35
 msgid "This file can not be previewed."
-msgstr ""
+msgstr "이 파일은 미리 볼 수 없습니다."
 
 #: ../../design/components/features/auth/logout/Logout.tsx:24
 msgid "This will clear all session data. Are you sure you would like to proceed?"
-msgstr ""
+msgstr "모든 세션 데이터가 삭제됩니다. 계속하시겠습니까?"
 
 #: ../../client/src/settings/screen-overview.tsx:134
 msgid "This will reset your account key and delete your local database. This action is irreversible. If you have data you wish to backup make sure to save your account key."
-msgstr ""
+msgstr "계정 키가 초기화되고 로컬 데이터베이스가 삭제됩니다. 이 작업은 되돌릴 수 없습니다. 백업하려는 데이터가 있다면 계정 키를 저장해두세요."
 
 #: ../../client/src/settings/stacks/account-key.tsx:148
 msgid "Treat your mnemonic phrase with care."
-msgstr ""
+msgstr "니모닉 구문을 신중히 관리하세요."
 
 #. placeholder {0}: 'delete'
 #: ../../client/src/settings/screen-overview.tsx:142
 msgid "Type \"{0}\" to confirm"
-msgstr ""
+msgstr "확인하려면 \"{0}\"을 입력하세요"
 
 #: ../../client/src/media/file/file-binary.tsx:30
 msgid "Unsupported File"
-msgstr ""
+msgstr "지원되지 않는 파일"
 
 #: ../../client/src/world/screen-tasks-details.tsx:29
 #: ../../client/src/world/screen-tasks-edit.tsx:42
@@ -739,25 +739,25 @@ msgstr "URL"
 
 #: ../../client/src/settings/stacks/account-key.tsx:143
 msgid "Used to encrypt and sync your data between devices."
-msgstr ""
+msgstr "기기 간 데이터 암호화 및 동기화에 사용됩니다."
 
 #: ../../design/components/features/auth/login/Login.tsx:30
 #: ../../design/components/features/auth/signup/Signup.tsx:30
 msgid "user@example.com"
-msgstr ""
+msgstr "user@example.com"
 
 #: ../../client/src/app/nav/index.tsx:265
 #: ../../client/src/media/hooks/use-media-name.ts:17
 msgid "Videos"
-msgstr ""
+msgstr "동영상"
 
 #: ../../client/src/settings/screen-overview.tsx:102
 msgid "View Usage"
-msgstr ""
+msgstr "사용량 보기"
 
 #: ../../client/src/media/hooks/use-media-controls.ts:232
 msgid "Volume"
-msgstr ""
+msgstr "볼륨"
 
 #: ../../client/src/home/utils/time.ts:21
 msgid "Welcome back, {name}."
@@ -766,20 +766,20 @@ msgstr "다시 오신 것을 환영합니다, {name}님."
 #: ../../client/src/app/nav/custom/menu/index.tsx:79
 #: ../../client/src/app/nav/index.tsx:286
 msgid "World"
-msgstr ""
+msgstr "월드"
 
 #: ../../client/src/app/ui/index.tsx:52
 msgid "You are offline"
-msgstr ""
+msgstr "오프라인 상태입니다"
 
 #: ../../client/src/app/ui/index.tsx:50
 msgid "You are online"
-msgstr ""
+msgstr "온라인 상태입니다"
 
 #: ../../client/src/media/hooks/use-media-controls.ts:122
 msgid "Zoom in"
-msgstr ""
+msgstr "확대"
 
 #: ../../client/src/media/hooks/use-media-controls.ts:133
 msgid "Zoom out"
-msgstr ""
+msgstr "축소"

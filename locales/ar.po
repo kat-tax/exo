@@ -18,33 +18,33 @@ msgstr ""
 #: ../../client/src/media/file/file-torrent.tsx:23
 #: ../../client/src/media/file/file-zip.tsx:22
 msgid "{files, plural, one {# file} other {# files}}"
-msgstr ""
+msgstr "{files, plural, one {# ملف} other {# ملفات}}"
 
 #: ../../client/src/media/file/file-dir-evolu.tsx:46
 #: ../../client/src/media/file/file-dir-local.tsx:33
 msgid "{folders, plural, one {# folder} other {# folders}}"
-msgstr ""
+msgstr "{folders, plural, one {# مجلد} other {# مجلدات}}"
 
 #: ../../client/src/settings/stacks/account-key.tsx:79
 msgid "⚠️ Treat your mnemonic phrase with care."
-msgstr ""
+msgstr "⚠️ تعامل مع عبارة الاستذكار بحذر."
 
 #: ../../client/src/settings/screen-overview.tsx:80
 #: ../../client/src/settings/stacks/account-key.tsx:142
 msgid "Account Key"
-msgstr ""
+msgstr "مفتاح الحساب"
 
 #: ../../client/src/settings/stacks/account-key.tsx:77
 msgid "Account Key - Mnemonic Phrase"
-msgstr ""
+msgstr "مفتاح الحساب - عبارة الاستذكار"
 
 #: ../../client/src/world/screen-tasks-edit.tsx:96
 msgid "Add category..."
-msgstr ""
+msgstr "إضافة فئة..."
 
 #: ../../client/src/world/screen-tasks-edit.tsx:58
 msgid "Add section names for items."
-msgstr ""
+msgstr "إضافة أسماء أقسام للعناصر."
 
 #: ../../client/src/home/screen-shortcut.tsx:80
 #: ../../client/src/settings/screen-overview.tsx:45
@@ -59,17 +59,17 @@ msgstr "هل أنت متأكد من تغيير مفتاح المالك؟ سيؤ�
 #: ../../client/src/app/nav/index.tsx:279
 #: ../../client/src/media/hooks/use-media-name.ts:21
 msgid "Books"
-msgstr ""
+msgstr "كتب"
 
 #. placeholder {0}: data.metadata.author
 #: ../../client/src/media/file/file-book.tsx:41
 msgid "by {0}"
-msgstr ""
+msgstr "بواسطة {0}"
 
 #: ../../client/src/app/nav/index.tsx:300
 #: ../../client/src/world/screen-overview.tsx:28
 msgid "Calendar"
-msgstr ""
+msgstr "التقويم"
 
 #: ../../client/src/settings/stacks/account-key.tsx:286
 #: ../../design/components/base/popovers/prompt/Prompt.tsx:49
@@ -82,27 +82,27 @@ msgstr "إلغاء"
 #: ../../design/components/features/auth/signup/Signup.tsx:40
 #: ../../design/components/features/auth/signup/Signup.tsx:52
 msgid "Caption"
-msgstr ""
+msgstr "تسمية"
 
 #: ../../client/src/world/screen-tasks-edit.tsx:57
 msgid "Categories"
-msgstr ""
+msgstr "الفئات"
 
 #: ../../client/src/world/stacks/tasks-list-group.tsx:70
 msgid "Category"
-msgstr ""
+msgstr "فئة"
 
 #: ../../client/src/app/nav/index.tsx:335
 msgid "Charts"
-msgstr ""
+msgstr "الرسوم البيانية"
 
 #: ../../client/src/settings/screen-overview.tsx:35
 msgid "Choose your display name."
-msgstr ""
+msgstr "اختر اسم العرض."
 
 #: ../../client/src/media/hooks/use-media-controls.ts:299
 msgid "Close"
-msgstr ""
+msgstr "إغلاق"
 
 #: ../../client/src/home/screen-shortcut.tsx:94
 #: ../../client/src/world/screen-tasks-edit.tsx:122
@@ -111,31 +111,31 @@ msgstr "اللون"
 
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:37
 msgid "Compress"
-msgstr ""
+msgstr "ضغط"
 
 #: ../../client/src/settings/screen-overview.tsx:29
 msgid "Configure the app"
-msgstr ""
+msgstr "تكوين التطبيق"
 
 #: ../../client/src/settings/screen-overview.tsx:149
 #: ../../design/components/features/auth/signup/Signup.tsx:53
 msgid "Confirm"
-msgstr ""
+msgstr "تأكيد"
 
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:55
 #: ../../client/src/media/hooks/use-media-controls.ts:73
 msgid "Copy"
-msgstr ""
+msgstr "نسخ"
 
 #: ../../design/components/features/auth/login/Login.tsx:62
 #: ../../design/components/features/auth/signup/Signup.tsx:65
 msgid "Create Account"
-msgstr ""
+msgstr "إنشاء حساب"
 
 #: ../../client/src/home/screen-shortcut.tsx:106
 #: ../../client/src/world/screen-tasks-edit.tsx:134
 msgid "Danger Zone"
-msgstr ""
+msgstr "منطقة الخطر"
 
 #: ../../client/src/settings/screen-overview.tsx:74
 msgid "Dark"
@@ -147,25 +147,25 @@ msgstr "لوحة التحكم"
 
 #: ../../client/src/settings/screen-overview.tsx:78
 msgid "Data"
-msgstr ""
+msgstr "البيانات"
 
 #: ../../client/src/home/screen-shortcut.tsx:111
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:80
 msgid "Delete"
-msgstr ""
+msgstr "حذف"
 
 #: ../../client/src/world/screen-tasks-edit.tsx:136
 #: ../../client/src/world/screen-tasks-edit.tsx:139
 msgid "Delete List"
-msgstr ""
+msgstr "حذف القائمة"
 
 #: ../../client/src/home/screen-shortcut.tsx:108
 msgid "Delete Shortcut"
-msgstr ""
+msgstr "حذف الاختصار"
 
 #: ../../client/src/settings/screen-overview.tsx:120
 msgid "Deletes database and resets key."
-msgstr ""
+msgstr "حذف قاعدة البيانات وإعادة تعيين المفتاح."
 
 #: ../../client/src/app/nav/index.tsx:327
 msgid "Design"
@@ -177,15 +177,15 @@ msgstr "تطوير"
 
 #: ../../client/src/media/stacks/list/empty.tsx:25
 msgid "Directory empty. Drop items or select folder to import."
-msgstr ""
+msgstr "المجلد فارغ. اسحب العناصر أو اختر مجلد للاستيراد."
 
 #: ../../client/src/media/stacks/list/empty.tsx:24
 msgid "Directory empty. Select folder to import."
-msgstr ""
+msgstr "المجلد فارغ. اختر مجلد للاستيراد."
 
 #: ../../client/src/world/screen-map.tsx:137
 msgid "Disabled location tracking (requires reload)"
-msgstr ""
+msgstr "تم تعطيل تتبع الموقع (يتطلب إعادة تحميل)"
 
 #: ../../client/src/settings/screen-overview.tsx:34
 msgid "Display Name"
@@ -193,19 +193,19 @@ msgstr "اسم العرض"
 
 #: ../../client/src/settings/stacks/account-key.tsx:149
 msgid "Do not share it with anyone."
-msgstr ""
+msgstr "لا تشاركها مع أحد."
 
 #: ../../client/src/settings/stacks/account-key.tsx:80
 msgid "Do not share it with anyone. Store it securely."
-msgstr ""
+msgstr "لا تشاركها مع أحد. احفظها بأمان."
 
 #: ../../client/src/app/nav/index.tsx:244
 msgid "Docs"
-msgstr ""
+msgstr "المستندات"
 
 #: ../../client/src/media/hooks/use-media-name.ts:11
 msgid "Documents"
-msgstr ""
+msgstr "المستندات"
 
 #: ../../client/src/media/dir/stacks/menu-evolu.tsx:30
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:44
@@ -213,32 +213,32 @@ msgstr ""
 #: ../../client/src/media/file/file-binary.tsx:36
 #: ../../client/src/media/hooks/use-media-controls.ts:92
 msgid "Download"
-msgstr ""
+msgstr "تحميل"
 
 #: ../../client/src/settings/screen-overview.tsx:110
 msgid "Download the sqlite database."
-msgstr ""
+msgstr "تحميل قاعدة بيانات sqlite."
 
 #: ../../client/src/media/hooks/use-media-controls.ts:82
 msgid "Edit"
-msgstr ""
+msgstr "تحرير"
 
 #: ../../client/src/world/stacks/tasks-list-group.tsx:101
 msgid "Edit Item..."
-msgstr ""
+msgstr "تحرير العنصر..."
 
 #: ../../client/src/app/nav/index.tsx:320
 msgid "Edit List"
-msgstr ""
+msgstr "تحرير القائمة"
 
 #: ../../design/components/features/auth/login/Login.tsx:29
 #: ../../design/components/features/auth/signup/Signup.tsx:29
 msgid "Email"
-msgstr ""
+msgstr "البريد الإلكتروني"
 
 #: ../../client/src/world/screen-map.tsx:136
 msgid "Enabled location tracking (requires reload)"
-msgstr ""
+msgstr "تم تفعيل تتبع الموقع (يتطلب إعادة تحميل)"
 
 #: ../../client/src/settings/screen-overview.tsx:41
 msgid "Enter name"
@@ -251,72 +251,72 @@ msgstr "خطأ"
 
 #: ../../client/src/settings/screen-overview.tsx:109
 msgid "Export Database"
-msgstr ""
+msgstr "تصدير قاعدة البيانات"
 
 #: ../../client/src/settings/screen-overview.tsx:112
 msgid "Export DB"
-msgstr ""
+msgstr "تصدير قاعدة البيانات"
 
 #: ../../client/src/media/dir/stacks/menu-zip.tsx:23
 #: ../../client/src/media/hooks/use-media-controls.ts:102
 msgid "Extract"
-msgstr ""
+msgstr "استخراج"
 
 #: ../../client/src/world/hooks/use-tasks.ts:145
 msgid "Failed to create category."
-msgstr ""
+msgstr "فشل في إنشاء الفئة."
 
 #: ../../client/src/world/hooks/use-tasks.ts:104
 msgid "Failed to create list item."
-msgstr ""
+msgstr "فشل في إنشاء عنصر القائمة."
 
 #: ../../client/src/world/hooks/use-tasks.ts:35
 msgid "Failed to create new list."
-msgstr ""
+msgstr "فشل في إنشاء قائمة جديدة."
 
 #: ../../client/src/home/hooks/use-shortcuts.ts:34
 msgid "Failed to create new shortcut."
-msgstr ""
+msgstr "فشل في إنشاء اختصار جديد."
 
 #: ../../client/src/world/hooks/use-tasks.ts:164
 msgid "Failed to delete category."
-msgstr ""
+msgstr "فشل في حذف الفئة."
 
 #: ../../client/src/world/hooks/use-tasks.ts:111
 msgid "Failed to delete list item."
-msgstr ""
+msgstr "فشل في حذف عنصر القائمة."
 
 #: ../../client/src/world/hooks/use-tasks.ts:46
 msgid "Failed to delete list."
-msgstr ""
+msgstr "فشل في حذف القائمة."
 
 #: ../../client/src/home/hooks/use-shortcuts.ts:96
 msgid "Failed to delete shortcut."
-msgstr ""
+msgstr "فشل في حذف الاختصار."
 
 #: ../../client/src/world/hooks/use-tasks.ts:177
 msgid "Failed to update category."
-msgstr ""
+msgstr "فشل في تحديث الفئة."
 
 #: ../../client/src/world/hooks/use-tasks.ts:130
 msgid "Failed to update list item status."
-msgstr ""
+msgstr "فشل في تحديث حالة عنصر القائمة."
 
 #: ../../client/src/world/hooks/use-tasks.ts:123
 msgid "Failed to update list item text."
-msgstr ""
+msgstr "فشل في تحديث نص عنصر القائمة."
 
 #: ../../client/src/world/hooks/use-tasks.ts:89
 msgid "Failed to update list."
-msgstr ""
+msgstr "فشل في تحديث القائمة."
 
 #: ../../client/src/home/hooks/use-shortcuts.ts:87
 msgid "Failed to update shortcut."
-msgstr ""
+msgstr "فشل في تحديث الاختصار."
 
 #: ../../client/src/app/ui/teaser.tsx:11
 msgid "Feature in development..."
-msgstr ""
+msgstr "ميزة قيد التطوير..."
 
 #: ../../client/src/app/nav/index.tsx:200
 #: ../../client/src/media/hooks/use-media-name.ts:23
@@ -325,16 +325,16 @@ msgstr ""
 #: ../../client/src/media/stacks/media.tsx:96
 #: ../../client/src/media/stacks/select/item.tsx:88
 msgid "Files"
-msgstr ""
+msgstr "الملفات"
 
 #: ../../client/src/media/hooks/use-media-controls.ts:289
 msgid "Fullscreen"
-msgstr ""
+msgstr "ملء الشاشة"
 
 #: ../../client/src/app/nav/index.tsx:272
 #: ../../client/src/media/hooks/use-media-name.ts:19
 msgid "Games"
-msgstr ""
+msgstr "الألعاب"
 
 #: ../../client/src/home/screen-shortcut.tsx:52
 #: ../../client/src/world/screen-tasks-edit.tsx:44
@@ -343,7 +343,7 @@ msgstr "عام"
 
 #: ../../client/src/app/ui/index.tsx:74
 msgid "Geolocation Error"
-msgstr ""
+msgstr "خطأ في تحديد الموقع"
 
 #: ../../client/src/home/utils/time.ts:16
 msgid "Good afternoon, {name}."
@@ -372,20 +372,20 @@ msgstr "أيقونة"
 
 #: ../../client/src/settings/stacks/account-key.tsx:303
 msgid "Import"
-msgstr ""
+msgstr "استيراد"
 
 #: ../../client/src/media/stacks/list/empty.tsx:26
 msgid "Import Folder"
-msgstr ""
+msgstr "استيراد مجلد"
 
 #: ../../client/src/app/nav/index.tsx:163
 msgid "Inbox"
-msgstr ""
+msgstr "صندوق الوارد"
 
 #: ../../client/src/world/hooks/use-tasks.ts:139
 #: ../../client/src/world/hooks/use-tasks.ts:171
 msgid "Invalid category name."
-msgstr ""
+msgstr "اسم فئة غير صالح."
 
 #: ../../client/src/home/hooks/use-shortcuts.ts:74
 #: ../../client/src/world/hooks/use-tasks.ts:76
@@ -399,7 +399,7 @@ msgstr "حقل الأيقونة غير صالح."
 
 #: ../../client/src/world/hooks/use-tasks.ts:26
 msgid "Invalid list id."
-msgstr ""
+msgstr "معرف قائمة غير صالح."
 
 #: ../../client/src/settings/hooks/use-settings.ts:28
 msgid "Invalid name (max 25 characters)."
@@ -416,12 +416,12 @@ msgstr "مفتاح المالك غير صالح."
 
 #: ../../client/src/home/hooks/use-shortcuts.ts:25
 msgid "Invalid shortcut id."
-msgstr ""
+msgstr "معرف اختصار غير صالح."
 
 #: ../../client/src/world/hooks/use-tasks.ts:98
 #: ../../client/src/world/hooks/use-tasks.ts:118
 msgid "Invalid text content field."
-msgstr ""
+msgstr "حقل محتوى النص غير صالح."
 
 #: ../../client/src/home/hooks/use-shortcuts.ts:50
 msgid "Invalid URL field."
@@ -429,7 +429,7 @@ msgstr "حقل الرابط غير صالح."
 
 #: ../../client/src/app/nav/index.tsx:238
 msgid "IPFS"
-msgstr ""
+msgstr "IPFS"
 
 #: ../../client/src/settings/screen-overview.tsx:47
 msgid "Language"
@@ -441,70 +441,70 @@ msgstr "فاتح"
 
 #: ../../client/src/app/nav/index.tsx:314
 msgid "List Details"
-msgstr ""
+msgstr "تفاصيل القائمة"
 
 #: ../../client/src/world/hooks/use-tasks.ts:13
 msgid "List Error"
-msgstr ""
+msgstr "خطأ في القائمة"
 
 #: ../../client/src/world/screen-tasks-edit.tsx:51
 msgid "List name"
-msgstr ""
+msgstr "اسم القائمة"
 
 #: ../../client/src/world/screen-tasks-all.tsx:21
 msgid "Lists"
-msgstr ""
+msgstr "القوائم"
 
 #: ../../client/src/media/stacks/bar/index.tsx:70
 msgid "Local"
-msgstr ""
+msgstr "محلي"
 
 #: ../../design/components/features/auth/login/Login.tsx:53
 #: ../../design/components/features/auth/signup/Signup.tsx:74
 msgid "Login"
-msgstr ""
+msgstr "تسجيل الدخول"
 
 #: ../../design/components/features/auth/logout/Logout.tsx:25
 msgid "Logout?"
-msgstr ""
+msgstr "تسجيل الخروج؟"
 
 #: ../../client/src/settings/screen-overview.tsx:87
 msgid "Manage Key"
-msgstr ""
+msgstr "إدارة المفتاح"
 
 #: ../../client/src/settings/screen-overview.tsx:81
 msgid "Manage your mnemonic phrase."
-msgstr ""
+msgstr "إدارة عبارة الاستذكار."
 
 #: ../../client/src/app/nav/index.tsx:293
 #: ../../client/src/world/screen-overview.tsx:18
 msgid "Map"
-msgstr ""
+msgstr "الخريطة"
 
 #: ../../client/src/app/nav/custom/menu/index.tsx:69
 msgid "Media"
-msgstr ""
+msgstr "الوسائط"
 
 #: ../../client/src/world/hooks/use-tasks.ts:21
 msgid "Missing list id."
-msgstr ""
+msgstr "معرف القائمة مفقود."
 
 #: ../../client/src/home/hooks/use-shortcuts.ts:20
 msgid "Missing shortcut id."
-msgstr ""
+msgstr "معرف الاختصار مفقود."
 
 #: ../../client/src/settings/screen-overview.tsx:100
 msgid "Monitor disk usage on device."
-msgstr ""
+msgstr "مراقبة استخدام القرص على الجهاز."
 
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:62
 msgid "Move"
-msgstr ""
+msgstr "نقل"
 
 #: ../../client/src/app/nav/index.tsx:251
 #: ../../client/src/media/hooks/use-media-name.ts:13
 msgid "Music"
-msgstr ""
+msgstr "الموسيقى"
 
 #: ../../client/src/home/screen-shortcut.tsx:69
 #: ../../client/src/world/screen-tasks-edit.tsx:46
@@ -513,77 +513,77 @@ msgstr "الاسم"
 
 #: ../../client/src/world/stacks/tasks-list-group.tsx:141
 msgid "New item..."
-msgstr ""
+msgstr "عنصر جديد..."
 
 #: ../../client/src/media/hooks/use-media-controls.ts:210
 msgid "Next"
-msgstr ""
+msgstr "التالي"
 
 #: ../../client/src/app/nav/index.tsx:173
 msgid "Not Found"
-msgstr ""
+msgstr "غير موجود"
 
 #: ../../client/src/media/dir/stacks/menu-evolu.tsx:23
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:23
 msgid "Open"
-msgstr ""
+msgstr "فتح"
 
 #: ../../client/src/media/hooks/use-media-controls.ts:244
 msgid "Options"
-msgstr ""
+msgstr "خيارات"
 
 #: ../../client/src/world/screen-tasks-all.tsx:22
 msgid "Organize your tasks"
-msgstr ""
+msgstr "نظم مهامك"
 
 #: ../../client/src/home/screen-not-found.tsx:11
 msgid "Page not found"
-msgstr ""
+msgstr "الصفحة غير موجودة"
 
 #: ../../client/src/settings/stacks/account-key.tsx:295
 #: ../../client/src/settings/stacks/account-key.tsx:300
 msgid "Passkey"
-msgstr ""
+msgstr "مفتاح المرور"
 
 #: ../../design/components/features/auth/login/Login.tsx:42
 #: ../../design/components/features/auth/signup/Signup.tsx:42
 #: ../../design/components/features/auth/signup/Signup.tsx:54
 msgid "password"
-msgstr ""
+msgstr "كلمة المرور"
 
 #: ../../design/components/features/auth/login/Login.tsx:41
 #: ../../design/components/features/auth/signup/Signup.tsx:41
 msgid "Password"
-msgstr ""
+msgstr "كلمة المرور"
 
 #: ../../client/src/media/hooks/use-media-controls.ts:145
 msgid "Pause"
-msgstr ""
+msgstr "إيقاف مؤقت"
 
 #: ../../client/src/world/screen-tasks-edit.tsx:137
 msgid "Permanently delete list."
-msgstr ""
+msgstr "حذف القائمة نهائياً."
 
 #: ../../client/src/home/screen-shortcut.tsx:109
 msgid "Permanently delete shortcut."
-msgstr ""
+msgstr "حذف الاختصار نهائياً."
 
 #: ../../client/src/app/nav/index.tsx:258
 #: ../../client/src/media/hooks/use-media-name.ts:15
 msgid "Pictures"
-msgstr ""
+msgstr "الصور"
 
 #: ../../client/src/media/hooks/use-media-controls.ts:255
 msgid "Pin"
-msgstr ""
+msgstr "تثبيت"
 
 #: ../../client/src/media/hooks/use-media-controls.ts:146
 msgid "Play"
-msgstr ""
+msgstr "تشغيل"
 
 #: ../../client/src/media/hooks/use-media-controls.ts:199
 msgid "Previous"
-msgstr ""
+msgstr "السابق"
 
 #: ../../client/src/settings/screen-overview.tsx:32
 msgid "Profile"
@@ -591,41 +591,41 @@ msgstr "الملف الشخصي"
 
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:69
 msgid "Rename"
-msgstr ""
+msgstr "إعادة تسمية"
 
 #: ../../client/src/media/hooks/use-media-controls.ts:187
 msgid "Replay"
-msgstr ""
+msgstr "إعادة تشغيل"
 
 #: ../../client/src/settings/screen-overview.tsx:119
 #: ../../client/src/settings/screen-overview.tsx:126
 #: ../../client/src/settings/screen-overview.tsx:133
 msgid "Reset Data"
-msgstr ""
+msgstr "إعادة تعيين البيانات"
 
 #: ../../client/src/settings/stacks/account-key.tsx:280
 msgid "Save"
-msgstr ""
+msgstr "حفظ"
 
 #: ../../client/src/media/hooks/use-media-controls.ts:112
 msgid "Search"
-msgstr ""
+msgstr "بحث"
 
 #: ../../client/src/media/hooks/use-media-controls.ts:61
 msgid "Select all"
-msgstr ""
+msgstr "تحديد الكل"
 
 #: ../../client/src/settings/screen-overview.tsx:66
 msgid "Select the color scheme."
-msgstr ""
+msgstr "اختر نظام الألوان."
 
 #: ../../client/src/settings/screen-overview.tsx:48
 msgid "Select your preferred language."
-msgstr ""
+msgstr "اختر لغتك المفضلة."
 
 #: ../../client/src/settings/screen-overview.tsx:87
 msgid "Set Key"
-msgstr ""
+msgstr "تعيين المفتاح"
 
 #: ../../client/src/app/nav/index.tsx:185
 #: ../../client/src/settings/screen-overview.tsx:28
@@ -635,31 +635,31 @@ msgstr "الإعدادات"
 #: ../../client/src/media/dir/stacks/menu-hfs.tsx:30
 #: ../../client/src/media/hooks/use-media-controls.ts:269
 msgid "Share"
-msgstr ""
+msgstr "مشاركة"
 
 #: ../../client/src/app/nav/index.tsx:179
 msgid "Shortcut"
-msgstr ""
+msgstr "اختصار"
 
 #: ../../client/src/home/hooks/use-shortcuts.ts:12
 msgid "Shortcut Error"
-msgstr ""
+msgstr "خطأ في الاختصار"
 
 #: ../../client/src/media/hooks/use-media-controls.ts:165
 msgid "Skip backward"
-msgstr ""
+msgstr "تخطي للخلف"
 
 #: ../../client/src/media/hooks/use-media-controls.ts:176
 msgid "Skip forward"
-msgstr ""
+msgstr "تخطي للأمام"
 
 #: ../../client/src/app/nav/index.tsx:193
 msgid "Storage"
-msgstr ""
+msgstr "التخزين"
 
 #: ../../client/src/settings/screen-overview.tsx:99
 msgid "Storage Usage"
-msgstr ""
+msgstr "استخدام التخزين"
 
 #: ../../client/src/settings/screen-overview.tsx:54
 #: ../../client/src/settings/screen-overview.tsx:72
@@ -669,31 +669,31 @@ msgstr "النظام"
 #: ../../client/src/app/nav/index.tsx:307
 #: ../../client/src/world/screen-overview.tsx:23
 msgid "Tasks"
-msgstr ""
+msgstr "المهام"
 
 #: ../../client/src/world/screen-tasks-edit.tsx:123
 msgid "The color of the list icon."
-msgstr ""
+msgstr "لون أيقونة القائمة."
 
 #: ../../client/src/home/screen-shortcut.tsx:95
 msgid "The color of the shortcut icon."
-msgstr ""
+msgstr "لون أيقونة الاختصار."
 
 #: ../../client/src/world/screen-tasks-edit.tsx:47
 msgid "The display name of the list."
-msgstr ""
+msgstr "اسم عرض القائمة."
 
 #: ../../client/src/home/screen-shortcut.tsx:70
 msgid "The display name of the shortcut."
-msgstr ""
+msgstr "اسم عرض الاختصار."
 
 #: ../../client/src/world/screen-tasks-edit.tsx:111
 msgid "The icon to display for the list."
-msgstr ""
+msgstr "الأيقونة المعروضة للقائمة."
 
 #: ../../client/src/home/screen-shortcut.tsx:83
 msgid "The icon to display for the shortcut."
-msgstr ""
+msgstr "الأيقونة المعروضة للاختصار."
 
 #: ../../client/src/home/screen-shortcut.tsx:55
 msgid "The web page to link to."
@@ -705,28 +705,28 @@ msgstr "النسق"
 
 #: ../../client/src/media/file/file-binary.tsx:35
 msgid "This file can not be previewed."
-msgstr ""
+msgstr "لا يمكن معاينة هذا الملف."
 
 #: ../../design/components/features/auth/logout/Logout.tsx:24
 msgid "This will clear all session data. Are you sure you would like to proceed?"
-msgstr ""
+msgstr "سيؤدي هذا إلى مسح جميع بيانات الجلسة. هل أنت متأكد من المتابعة؟"
 
 #: ../../client/src/settings/screen-overview.tsx:134
 msgid "This will reset your account key and delete your local database. This action is irreversible. If you have data you wish to backup make sure to save your account key."
-msgstr ""
+msgstr "سيؤدي هذا إلى إعادة تعيين مفتاح حسابك وحذف قاعدة البيانات المحلية. هذا الإجراء لا رجعة فيه. إذا كان لديك بيانات تريد نسخها احتياطياً تأكد من حفظ مفتاح حسابك."
 
 #: ../../client/src/settings/stacks/account-key.tsx:148
 msgid "Treat your mnemonic phrase with care."
-msgstr ""
+msgstr "تعامل مع عبارة الاستذكار بحذر."
 
 #. placeholder {0}: 'delete'
 #: ../../client/src/settings/screen-overview.tsx:142
 msgid "Type \"{0}\" to confirm"
-msgstr ""
+msgstr "اكتب \"{0}\" للتأكيد"
 
 #: ../../client/src/media/file/file-binary.tsx:30
 msgid "Unsupported File"
-msgstr ""
+msgstr "ملف غير مدعوم"
 
 #: ../../client/src/world/screen-tasks-details.tsx:29
 #: ../../client/src/world/screen-tasks-edit.tsx:42
@@ -739,25 +739,25 @@ msgstr "الرابط"
 
 #: ../../client/src/settings/stacks/account-key.tsx:143
 msgid "Used to encrypt and sync your data between devices."
-msgstr ""
+msgstr "يُستخدم لتشفير ومزامنة بياناتك بين الأجهزة."
 
 #: ../../design/components/features/auth/login/Login.tsx:30
 #: ../../design/components/features/auth/signup/Signup.tsx:30
 msgid "user@example.com"
-msgstr ""
+msgstr "user@example.com"
 
 #: ../../client/src/app/nav/index.tsx:265
 #: ../../client/src/media/hooks/use-media-name.ts:17
 msgid "Videos"
-msgstr ""
+msgstr "الفيديوهات"
 
 #: ../../client/src/settings/screen-overview.tsx:102
 msgid "View Usage"
-msgstr ""
+msgstr "عرض الاستخدام"
 
 #: ../../client/src/media/hooks/use-media-controls.ts:232
 msgid "Volume"
-msgstr ""
+msgstr "الصوت"
 
 #: ../../client/src/home/utils/time.ts:21
 msgid "Welcome back, {name}."
@@ -766,20 +766,20 @@ msgstr "أهلاً بعودتك، {name}."
 #: ../../client/src/app/nav/custom/menu/index.tsx:79
 #: ../../client/src/app/nav/index.tsx:286
 msgid "World"
-msgstr ""
+msgstr "العالم"
 
 #: ../../client/src/app/ui/index.tsx:52
 msgid "You are offline"
-msgstr ""
+msgstr "أنت غير متصل"
 
 #: ../../client/src/app/ui/index.tsx:50
 msgid "You are online"
-msgstr ""
+msgstr "أنت متصل"
 
 #: ../../client/src/media/hooks/use-media-controls.ts:122
 msgid "Zoom in"
-msgstr ""
+msgstr "تكبير"
 
 #: ../../client/src/media/hooks/use-media-controls.ts:133
 msgid "Zoom out"
-msgstr ""
+msgstr "تصغير"
