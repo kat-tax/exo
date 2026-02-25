@@ -14,6 +14,7 @@ import {useTheme} from 'settings/hooks/use-theme';
 import {useEvolu} from 'app/data';
 import {useFileSync} from 'app/data/lib/file-watcher';
 import {preventDragDrop} from 'app/lib/dragdrop';
+import {useEvoluBackup} from 'app/data/lib/use-evolu-backup';
 import {device, mmkv, store} from 'app/data/lib/device';
 
 import type {UnistylesThemes} from 'react-native-unistyles';
@@ -25,6 +26,34 @@ export function Interface(props: React.PropsWithChildren) {
   const [scheme] = useTheme();
   const locationRef = useRef<[latitude: number, longitude: number] | null>(null);
   const [deviceTracking] = useMMKVBoolean(store.tracking, mmkv);
+
+  // Backup
+  useEvoluBackup(evolu, {
+    enabled: __DEV__ && __WEB__,
+    hotkey: 'ctrl+d',
+    intervalMs: 3_000, // 3 seconds
+    suggestedName: 'evolu.db',
+    onWrite: (bytes) => {
+      console.log('[dev] database backup written', bytes);
+    },
+    onError: (error) => {
+      console.error('[dev] database backup error', error);
+    },
+    onStart: () => {
+      toast({
+        title: t`Evolu Backup`,
+        message: t`Database export started`,
+        preset: 'done',
+      });
+    },
+    onStop: () => {
+      toast({
+        title: t`Evolu Backup`,
+        message: t`Database export stopped`,
+        preset: 'error',
+      });
+    },
+  });
 
   // File changes
   useFileSync();
