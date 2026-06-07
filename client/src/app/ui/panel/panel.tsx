@@ -92,7 +92,11 @@ const styles = StyleSheet.create((theme, rt) => ({
         initial: 0,
         xs: theme.display.radius2,
       },
-      marginHorizontal: {
+      marginLeft: {
+        initial: 0,
+        xs: theme.display.space2,
+      },
+      marginTop: {
         initial: 0,
         xs: theme.display.space2,
       },
@@ -106,11 +110,7 @@ const styles = StyleSheet.create((theme, rt) => ({
     flex: 1,
     alignSelf: 'center',
     maxWidth: '100%',
-    paddingVertical: theme.display.space5,
-    paddingHorizontal: {
-      initial: theme.display.space5,
-      md: 0,
-    },
+    padding: theme.display.space5,
     width: {
       initial: '100%',
       md: 800,

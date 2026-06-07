@@ -1,0 +1,25 @@
+import {View} from 'react-native';
+import {forwardRef} from 'react';
+import {StyleSheet} from 'react-native-unistyles';
+import {useFile} from 'media/file/hooks/use-file';
+import {Markdown} from 'app/ui/markdown';
+
+import type {FileProps} from 'media/file';
+
+export interface FileTypst extends FileProps {}
+
+export default forwardRef(({path}: FileTypst) => {
+  const source = useFile(path, 'text');
+
+  return source ? (
+    <View style={styles.root}>
+      <Markdown text={source}/>
+    </View>
+  ) : null;
+});
+
+const styles = StyleSheet.create((theme) => ({
+  root: {
+    margin: theme.display.space3,
+  },
+}));

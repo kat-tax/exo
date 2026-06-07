@@ -1,0 +1,16 @@
+{
+  "name": "torrent",
+  "type": "module",
+  "private": true,
+  "exports": {
+    ".": "./src/index.ts",
+    "./types": "./src/types.ts",
+    "./chunk-store": "./src/utils/chunk-store.ts",
+    "./torrent-info": "./src/utils/torrent-info.ts"
+  },
+  "dependencies": {
+    "@types/webtorrent": "0.110.1",
+    "uint8array-extras": "1.4.0",
+    "webtorrent": "2.8.5"
+  }
+}

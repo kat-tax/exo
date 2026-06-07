@@ -1,0 +1,56 @@
+import {List} from 'media/stacks/list';
+import {EntryHfs} from 'media/dir/stacks/entry-hfs';
+import {device} from 'app/data/lib/device';
+import type {HfsCtx, HfsOpt} from 'media/dir/types/hfs';
+import type {MenuContextItem} from 'app/ui/float/menu-context';
+
+export function DirHfs({dir, cmd, ext, bar, opt, refs}: HfsCtx) {
+  const layout = ext.tmp ? 'grid' : 'list';
+  const paths = dir.path
+    ?.split('/')
+    .filter(Boolean)
+    .reduce<Array<[name: string, path: string]>>((acc, segment) => {
+      const prev = acc.at(-1)?.[1];
+      const full = prev ? `${prev}/${segment}` : segment;
+      acc.push([segment, full]);
+      return acc;
+    }, []);
+
+  return (
+    <List
+      items={dir.list}
+      paths={paths}
+      refs={refs}
+      data={ext}
+      opts={{
+        layout,
+        deviceName: device.name,
+        preview: ext.tmp,
+        dropping: opt?.dropping,
+        header: bar ? {actions: bar?.actions} : undefined,
+        menu: bar?.actions?.[0]?.items?.filter(Boolean) as MenuContextItem[],
+      }}
+      render={({item, index}) => {
+        const self = dir.path ? `${dir.path}/${item.name}` : item.name;
+        const prev = dir.list[index - 1];
+        const next = dir.list[index + 1];
+        const opt: Partial<HfsOpt> = {
+          layout,
+          preview: ext.tmp,
+          dragging: ext.dnd.includes(self),
+          renaming: ext.rnm.includes(self),
+          selected: {
+            all: ext.sel,
+            self: ext.sel.includes(self),
+            prev: ext.sel.includes(dir.path ? `${dir.path}/${prev?.name}` : prev?.name),
+            next: ext.sel.includes(dir.path ? `${dir.path}/${next?.name}` : next?.name),
+            count: ext.sel.length,
+          },
+        };
+        return (
+          <EntryHfs {...{index, item, cmd, opt, dir}}/>
+        );
+      }}
+    />
+  );
+}

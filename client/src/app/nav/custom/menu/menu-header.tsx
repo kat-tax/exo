@@ -1,14 +1,16 @@
+import {use} from 'react';
 import {Avatar} from 'react-exo/avatar';
 import {View, Text} from 'react-native';
 import {StyleSheet} from 'react-native-unistyles';
 import {useLingui} from '@lingui/react/macro';
+import {useEvolu, useQuery} from 'app/data';
 import {getProfile} from 'app/data/queries';
-import {useQuery, useAppOwner} from 'app/data';
 
 export function MenuHeader() {
   const {t} = useLingui();
+  const evolu = useEvolu();
   const profiles = useQuery(getProfile);
-  const appOwner = useAppOwner();
+  const appOwner = use(evolu.appOwner);
 
   return (
     <View style={styles.root}>

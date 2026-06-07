@@ -10,7 +10,7 @@ export function MenuItemTab(props: MenuItemProps) {
   const {ref, active, focused} = useLinkState(props);
 
   return (
-    <Link screen={props.name} params={{}}>
+    <Link screen={props.name} params={props.params}>
       <View ref={ref} style={[
         styles.root,
         focused && styles.focused,

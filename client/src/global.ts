@@ -1,6 +1,7 @@
 import {Platform} from 'react-native';
 
 globalThis.global = globalThis;
+globalThis.__EVOLU_RESETTING_APP_OWNER__ = false;
 globalThis.__WEB__ = Platform.OS === 'web';
 globalThis.__NATIVE__ = Platform.OS !== 'web';
 globalThis.__ANDROID__ = Platform.OS === 'android';

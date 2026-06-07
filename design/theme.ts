@@ -82,7 +82,7 @@ export const typography = {
 } as const;
 
 export const font = {
-  family: 'Inter',
+  family: 'Inter Variable',
   size: typography.size1,
   weight: typography.weightRegular,
   spacing: typography.letterSpacing1,

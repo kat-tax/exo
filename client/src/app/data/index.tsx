@@ -1,19 +1,35 @@
+
 import {createUseEvolu, EvoluProvider} from '@evolu/react';
 import {Provider as ReduxProvider} from 'react-exo/redux';
-import evolu from './lib/evolu.db';
-import redux from './lib/redux.db';
+import {HfsProvider} from 'app/data/lib/hfs';
+import {device} from 'app/data/lib/device';
+import evolu from 'app/data/lib/evolu.db';
+import redux from 'app/data/lib/redux.db';
 
+export * from '@evolu/common';
 export * from '@evolu/react';
 export * from './lib/evolu.db';
 export * from './lib/redux.db';
 
 export const useEvolu = createUseEvolu(evolu);
+export {evolu};
+
+evolu.upsert('app_device', device);
+globalThis.__EVOLU_RESETTING_APP_OWNER__ = false;
+if (__WEB__) {
+  window.addEventListener('beforeunload', () => {
+    if (globalThis.__EVOLU_RESETTING_APP_OWNER__) return;
+    evolu.upsert('app_device', {...device, online: 0});
+  });
+}
 
 export function Data(props: React.PropsWithChildren) {
   return (
     <ReduxProvider store={redux}>
       <EvoluProvider value={evolu}>
-        {props.children}
+        <HfsProvider>
+          {props.children}
+        </HfsProvider>
       </EvoluProvider>
     </ReduxProvider>
   )

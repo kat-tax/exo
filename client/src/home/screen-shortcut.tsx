@@ -1,11 +1,10 @@
-import {useMemo} from 'react';
 import {useLingui} from '@lingui/react/macro';
+import {useMemo, useEffect} from 'react';
 import {Platform, View} from 'react-native';
 import {StyleSheet} from 'react-native-unistyles';
 import {TextInput} from 'react-exo/textinput';
 import {Icon} from 'react-exo/icon';
-import {useNavigation} from '@react-navigation/native';
-import {useEffect} from 'react';
+import {useNav} from 'app/nav/hooks';
 import {Panel, PanelSection, PanelItem} from 'app/ui/panel';
 import {useShortcuts} from 'home/hooks/use-shortcuts';
 import {getShortcut} from 'app/data/queries';
@@ -14,7 +13,7 @@ import {Button} from 'design';
 
 export default function ScreenShortcutEdit({route}: ReactNavigation.ScreenProps<'HomeShortcut'>) {
   const {id} = route.params;
-  const nav = useNavigation();
+  const nav = useNav();
   const shortcuts = useShortcuts();
   const shortcutId = useMemo(() => shortcuts.getId(id), [id]);
   const shortcutData = useQuery(getShortcut(shortcutId))[0];
@@ -22,7 +21,7 @@ export default function ScreenShortcutEdit({route}: ReactNavigation.ScreenProps<
   const {t} = useLingui();
 
   if (!shortcutData) {
-    //nav.navigate('HomeDashboard');
+    //nav.push('HomeDashboard');
     return null;
   }
 
@@ -114,7 +113,7 @@ export default function ScreenShortcutEdit({route}: ReactNavigation.ScreenProps<
                 state="Default"
                 onPress={() => {
                   shortcuts.remove(shortcutId);
-                  nav.navigate('HomeDashboard');
+                  nav.push('HomeDashboard');
                 }}
               />
             </PanelItem>

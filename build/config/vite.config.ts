@@ -42,6 +42,9 @@ export default defineConfig(env => ({
       transformMixedEsModules: true,
     },
   },
+  worker: {
+    format: 'es',
+  },
   // React Native Web Compatibility
   resolve: {
     extensions: EXTENSIONS,
@@ -140,6 +143,7 @@ export default defineConfig(env => ({
       },
       workbox: {
         globPatterns: ["**/*.{js,css,html,svg,png,ico,wasm}"],
+        maximumFileSizeToCacheInBytes: 1024 * 1024 * 15, // 15MB
         cleanupOutdatedCaches: true,
         clientsClaim: true,
       },
@@ -147,6 +151,16 @@ export default defineConfig(env => ({
         enabled: false,
       },
     }),
+    {
+      name: 'configure-response-headers',
+      configureServer: (server) => {
+        server.middlewares.use((_req, res, next) => {
+          res.setHeader('Cross-Origin-Embedder-Policy', 'require-corp');
+          res.setHeader('Cross-Origin-Opener-Policy', 'same-origin');
+          next();
+        });
+      },
+    },
     // Config Placeholders in index.html
     {
       name: 'index-html-config',

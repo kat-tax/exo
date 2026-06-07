@@ -1,0 +1,103 @@
+import {fs} from '@zip.js/zip.js';
+import {web} from 'react-exo/fs';
+import {useEffect, useCallback, useState, useRef} from 'react';
+import {useSet} from 'app/data';
+import {useFile} from 'media/file/hooks/use-file';
+import {getTargetPath} from 'media/dir/utils/path';
+import media from 'media/store';
+
+import type {Zip, ZipCtx, ZipFileEntry} from 'media/dir/types/zip';
+import type {GestureResponderEvent} from 'react-native';
+import type {HfsFileEntry} from 'media/dir/types/hfs';
+import type {FS} from '@zip.js/zip.js';
+
+export function useDirZip(path: string): ZipCtx {
+  const [zip, setZip] = useState<Zip | null>(null);
+  const buffer = useFile(path, 'arrayBuffer');
+  const zipfs = useRef<FS | null>(null);
+  const set = useSet();
+
+  const extract = useCallback(async (
+    file: ZipFileEntry,
+    event?: GestureResponderEvent,
+    target?: HfsFileEntry,
+  ) => {
+    if (!zip) return;
+    const source = zipfs.current?.getById(file.id);
+    if (!source) return;
+    const dest = getTargetPath(path, file.name, target?.name);
+    const handle = await web.getFileHandle(dest, {create: true});
+    const writable = await handle?.createWritable();
+    if (!writable) return;
+    // @ts-expect-error TS missing types
+    source?.getData({writable});
+    console.log('>> zip [extract]', file.name, '->', dest);
+    // Open file on gesture event once extracted
+    if (event) {
+      const [isShift, isCtrl] = [
+        event?.shiftKey,
+        event?.metaKey || event?.ctrlKey,
+      ];
+      // Wait for the file to be created before selecting it
+      // TODO: remove this in favor of reactive previews
+      await new Promise(resolve => setTimeout(resolve, 500));
+      set(media.actions.selectItem({
+        path: dest,
+        isRange: isShift ?? false,
+        isMulti: isCtrl ?? false,
+        list: zip.list.map(e => e.name),
+      }));
+    }
+  }, [zip, path, set]);
+
+  useEffect(() => {
+    (async () => {
+      if (!buffer) return;
+      const _fs = new fs.FS();
+      const _view = new Uint8Array(buffer);
+      const _zip = await _fs.importUint8Array(_view);
+      zipfs.current = _fs;
+      setZip({
+        date: {
+          created: _zip?.[0]?.data?.creationDate,
+          modified: _zip?.[0]?.data?.lastModDate,
+          accessed: _zip?.[0]?.data?.lastAccessDate,
+        },
+        size: {
+          compressed: _zip?.reduce((acc, entry) => acc + (entry.data?.compressedSize ?? 0), 0) ?? 0,
+          uncompressed: _zip?.reduce((acc, entry) => acc + (entry.data?.uncompressedSize ?? 0), 0) ?? 0,
+        },
+        list: _zip
+          .filter(entry =>{
+            const path = entry.getFullname();
+            return !path.startsWith('__MACOSX');
+          })
+          .map(entry => ({
+            id: entry.id,
+            name: entry.data?.rawFilename ? new TextDecoder().decode(entry.data?.rawFilename) : entry.name,
+            size: entry.data?.uncompressedSize ?? 0,
+            ext: entry.name.split('.').pop() ?? '',
+            // @ts-expect-error TS missing types?
+            dir: entry.data?.directory ?? false,
+          }))
+          .sort((a, b) => {
+            if (a.name.startsWith('.'))
+              return 1;
+            if (b.name.startsWith('.'))
+              return -1;
+            if (a.dir && !b.dir)
+              return -1;
+            if (!a.dir && b.dir)
+              return 1;
+            return a.name.localeCompare(b.name);
+          })
+          .filter(Boolean),
+      });
+    })();
+  }, [buffer]);
+
+  return {
+    zip,
+    cmd: {extract}
+  };
+}

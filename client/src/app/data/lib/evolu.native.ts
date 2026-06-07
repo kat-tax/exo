@@ -1,1 +1,1 @@
-export {evoluReactNativeDeps as default} from '@evolu/react-native/op-sqlite';
+export {evoluReactNativeDeps as default} from '@evolu/react-native/bare-op-sqlite';

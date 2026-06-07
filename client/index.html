@@ -10,24 +10,106 @@
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
     <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
-    <link rel="preconnect" href="https://rsms.me/" />
-    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
     <title>__APP_NAME__</title>
     <style>
       :root {
-        font-family: __APP_FONT__, sans-serif;
+        font-family: '__APP_FONT__', sans-serif;
         font-feature-settings:
           "liga" 1,
           "calt" 1;
+        --bg-opaque-light: #ffffffab;
+        --bg-opaque-dark: #09090bab;
+        --bg-light: #fff;
+        --bg-dark: #09090b;
+        --sel-light: rgba(0, 0, 0, 0.2);
+        --sel-dark: rgba(255, 255, 255, 0.2);
+        --ctx-bg-light: #ffffff;
+        --ctx-bg-dark: #09090b;
+        --ctx-border-light: #e4e4e7;
+        --ctx-border-dark: #27272a;
+        --ctx-text-light: #18181b;
+        --ctx-text-dark: #fafafa;
+        --ctx-text-muted-light: #71717a;
+        --ctx-text-muted-dark: #71717a;
+        --ctx-hover-light: #f4f4f5;
+        --ctx-hover-dark: #18181b;
+        --ctx-label-bg-light: #f9fafb;
+        --ctx-label-bg-dark: #18181b;
+        --ctx-destructive-light: #dc2626;
+        --ctx-destructive-dark: #7f1d1d;
+        --ctx-shadow-light: rgba(0, 0, 0, 0.05) 0px 2px 2px 1px;
+        --ctx-shadow-dark: rgba(0, 0, 0, 0.2) 0px 2px 2px 1px;
       }
 
-      a:-webkit-any-link {
-        cursor: default;
+      html.dark {
+        --bg-opaque: var(--bg-opaque-dark);
+        --bg: var(--bg-dark);
+        --sel: var(--sel-dark);
+        --ctx-bg: var(--ctx-bg-dark);
+        --ctx-border: var(--ctx-border-dark);
+        --ctx-text: var(--ctx-text-dark);
+        --ctx-text-muted: var(--ctx-text-muted-dark);
+        --ctx-hover: var(--ctx-hover-dark);
+        --ctx-label-bg: var(--ctx-label-bg-dark);
+        --ctx-destructive: var(--ctx-destructive-dark);
+        --ctx-shadow: var(--ctx-shadow-dark);
       }
 
-      *:focus {
-        outline: none;
+      html.light {
+        --bg-opaque: var(--bg-opaque-light);
+        --bg: var(--bg-light);
+        --sel: var(--sel-light);
+        --ctx-bg: var(--ctx-bg-light);
+        --ctx-border: var(--ctx-border-light);
+        --ctx-text: var(--ctx-text-light);
+        --ctx-text-muted: var(--ctx-text-muted-light);
+        --ctx-hover: var(--ctx-hover-light);
+        --ctx-label-bg: var(--ctx-label-bg-light);
+        --ctx-destructive: var(--ctx-destructive-light);
+        --ctx-shadow: var(--ctx-shadow-light);
       }
+
+      @media (prefers-color-scheme: dark) {
+        :root:not(html.light):not(html.dark) {
+          --bg-opaque: var(--bg-opaque-dark);
+          --bg: var(--bg-dark);
+          --sel: var(--sel-dark);
+          --ctx-bg: var(--ctx-bg-dark);
+          --ctx-border: var(--ctx-border-dark);
+          --ctx-text: var(--ctx-text-dark);
+          --ctx-text-muted: var(--ctx-text-muted-dark);
+          --ctx-hover: var(--ctx-hover-dark);
+          --ctx-label-bg: var(--ctx-label-bg-dark);
+          --ctx-destructive: var(--ctx-destructive-dark);
+          --ctx-shadow: var(--ctx-shadow-dark);
+        }
+      }
+
+      @media (prefers-color-scheme: light) {
+        :root:not(html.dark):not(html.light) {
+          --bg-opaque: var(--bg-opaque-light);
+          --bg: var(--bg-light);
+          --sel: var(--sel-light);
+          --ctx-bg: var(--ctx-bg-light);
+          --ctx-border: var(--ctx-border-light);
+          --ctx-text: var(--ctx-text-light);
+          --ctx-text-muted: var(--ctx-text-muted-light);
+          --ctx-hover: var(--ctx-hover-light);
+          --ctx-label-bg: var(--ctx-label-bg-light);
+          --ctx-destructive: var(--ctx-destructive-light);
+          --ctx-shadow: var(--ctx-shadow-light);
+        }
+      }
+
+      @media (prefers-reduced-motion: no-preference) {
+        html {
+          scroll-behavior: smooth;
+        }
+      }
+
+      *:focus {outline: none}
+      ::selection {background: var(--sel)}
+      a:-webkit-any-link {cursor: default}
 
       html,
       body,
@@ -36,29 +118,179 @@
         width: 100%;
         margin: 0;
         display: flex;
-        background: #fff;
+        background: var(--bg);
         overscroll-behavior: none;
         overflow: hidden;
       }
 
-      @media (prefers-color-scheme: dark) {
-        html,
-        body,
-        #root {
-          background: #000;
-        }
+
+      /* PointerEvent */
+      ._p {
+        cursor: default;
+        user-select: none;
+        border-radius: 3px;
+      }
+      ._p.dark:hover,
+      ._p.dark.focus {
+        background-color: rgba(255, 255, 255, 0.025);
+      }
+      ._p.light:hover,
+      ._p.light.focus {
+        background-color: rgba(0, 0, 0, 0.025);
       }
 
-      @supports (font-variation-settings: normal) {
-        :root {
-          font-family: __APP_FONT__Variable, sans-serif;
-        }
+      /* Map */
+      .maplibregl-map .maplibregl-popup-content {
+        background-color: var(--bg-opaque);
+        box-shadow: var(--ctx-shadow);
+        border-radius: 6px;
+        padding: 0;
       }
 
-      @media (prefers-reduced-motion: no-preference) {
-        html {
-          scroll-behavior: smooth;
-        }
+      .maplibregl-map .maplibregl-popup-anchor-bottom .maplibregl-popup-tip {
+        border-top-color: var(--bg-opaque);
+      }
+
+      .maplibregl-popup-close-button {
+        display: none;
+      }
+
+      /* Readium */
+      #D2Reader-Container iframe {
+        height: 100%;
+      }
+
+      /* Zeego */
+      .ContextMenuContent,
+      .ContextMenuSubContent {
+        background-color: var(--ctx-bg);
+        border: 1px solid var(--ctx-border);
+        border-radius: 6px;
+        overflow: hidden;
+        padding: 5px;
+        box-shadow: var(--ctx-shadow);
+      }
+
+      .ContextMenuContent.context {
+        width: 160px;
+      }
+
+      .ContextMenuSubContent.context {
+        width: 160px;
+      }
+
+      .ContextMenuArrow {
+        fill: var(--ctx-border);
+      }
+
+      .ContextMenuTrigger {
+        padding: 0;
+        cursor: default;
+        border: none;
+        outline: none;
+        background: none;
+        display: flex;
+        overflow: auto;
+        flex: 1;
+      }
+
+      .ContextMenuLabel {
+        margin: -5px;
+        margin-bottom: 5px;
+        padding-inline: 12px;
+        background: var(--ctx-label-bg);
+        border-bottom: 1px solid var(--ctx-border);
+        color: var(--ctx-text-muted);
+        font-size: 11px;
+        line-height: 24px;
+        text-overflow: ellipsis;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+
+      .ContextMenuItem,
+      .ContextMenuCheckboxItem,
+      .ContextMenuRadioItem,
+      .ContextMenuSubTrigger {
+        font-size: 12px;
+        line-height: 1;
+        color: var(--ctx-text);
+        border-radius: 3px;
+        display: flex;
+        align-items: center;
+        height: 25px;
+        padding: 0 5px;
+        position: relative;
+        padding-left: 30px;
+        user-select: none;
+        outline: none;
+      }
+
+      .ContextMenuItemDestructive {
+        color: var(--ctx-destructive);
+      }
+
+      .ContextMenuSubTrigger[data-state="open"] {
+        background-color: var(--ctx-bg);
+        color: var(--ctx-text);
+      }
+      .ContextMenuItem[data-disabled],
+      .ContextMenuCheckboxItem[data-disabled],
+      .ContextMenuRadioItem[data-disabled],
+      .ContextMenuSubTrigger[data-disabled] {
+        pointer-events: "none";
+      }
+      .ContextMenuItem[data-highlighted],
+      .ContextMenuCheckboxItem[data-highlighted],
+      .ContextMenuRadioItem[data-highlighted],
+      .ContextMenuSubTrigger[data-highlighted] {
+        background-color: var(--ctx-hover);
+      }
+
+      .ContextMenuSeparator {
+        height: 1px;
+        background-color: var(--ctx-border);
+        margin: 5px -5px;
+      }
+
+      .ContextMenuItemTitle {
+        font-size: 12px;
+        line-height: 1;
+      }
+
+      .ContextMenuItemSubtitle {
+        position: absolute;
+        right: 6px;
+        font-size: 10px;
+        font-weight: 300;
+        text-align: right;
+        color: var(--ctx-text-muted);
+      }
+
+      .ContextMenuItemIndicator,
+      .ContextMenuItemIcon,
+      .ContextMenuItemImage {
+        position: absolute;
+        left: 0;
+        width: 14px;
+        height: 14px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding-inline: 6px;
+      }
+
+      .RightSlot {
+        margin-left: auto;
+        padding-left: 20px;
+        color: var(--ctx-text);
+      }
+      [data-highlighted] > .RightSlot {
+        color: var(--ctx-text);
+      }
+      [data-disabled] .RightSlot {
+        color: var(--ctx-text);
       }
     </style>
   </head>

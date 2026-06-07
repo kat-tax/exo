@@ -5,23 +5,27 @@ import {StyleSheet} from 'react-native-unistyles';
 import {Icon} from 'react-exo/icon';
 
 import type {ViewProps} from 'react-native';
+import type {KeyPressDetails} from '@noriginmedia/norigin-spatial-navigation';
 
-interface GridCellProps extends ViewProps {
+export interface GridCellProps extends ViewProps {
   focusKey: string;
+  disableAdaptiveSize?: boolean;
   onPress?: () => void;
   onEditSelect?: () => void;
+  onArrowPress?: (dir: string, props: unknown, e: KeyPressDetails) => boolean;
 }
 
 export function GridCell(props: GridCellProps) {
   const _hovered = useRef(false);
   const {ref, focused} = useFocusable({
-    focusKey: `grid-cell-${props.focusKey}`,
-    onEnterPress: () => props.onPress?.(),
+    focusKey: props.focusKey,
+    onEnterPress: props.onPress,
+    onArrowPress: props.onArrowPress,
   });
 
   return (
     <Pressable
-      style={styles.root}
+      style={[styles.root, props.disableAdaptiveSize && styles.disableAdaptiveSize]}
       onPress={() => props.onPress?.()}
       onLongPress={() => props.onEditSelect?.()}>
       {root => (
@@ -66,7 +70,14 @@ const styles = StyleSheet.create((theme) => ({
       md: '16.666%',    // 6 col
       lg: '14.2857%',   // 7 col
       xl: '12.5%',      // 8 col
+      xxl: '10%',       // 9 col
     },
+  },
+  disableAdaptiveSize: {
+    aspectRatio: undefined,
+    padding: 0,
+    width: '100%',
+    height: '100%',
   },
   inner: {
     width: '100%',

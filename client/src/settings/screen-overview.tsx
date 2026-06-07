@@ -1,26 +1,26 @@
 import {useState} from 'react';
 import {useLingui} from '@lingui/react/macro';
-import {useNavigation} from '@react-navigation/native';
-import {StyleSheet} from 'react-native-unistyles';
 import {View, Platform} from 'react-native';
+import {StyleSheet} from 'react-native-unistyles';
 import {TextInput} from 'react-exo/textinput';
 import {Sheet} from 'react-exo/sheet';
 import {Avatar} from 'react-exo/avatar';
 import {Picker} from 'react-exo/picker';
-import {Panel, PanelSection, PanelItem} from 'app/ui/panel';
-import {useTheme} from 'settings/hooks/use-theme';
-import {useLocale} from 'settings/hooks/use-locale';
-import {useSettings} from 'settings/hooks/use-settings';
 import {locales} from 'config/locales';
 import {Button, Prompt} from 'design';
+import {Panel, PanelSection, PanelItem} from 'app/ui/panel';
+import {AccountKey} from 'settings/stacks/account-key';
+import {useSettings} from 'settings/hooks/use-settings';
+import {useLocale} from 'settings/hooks/use-locale';
+import {useTheme} from 'settings/hooks/use-theme';
+import {useNav} from 'app/nav/hooks';
 
 export default function ScreenOverview() {
   const [scheme, setScheme] = useTheme(true);
   const [locale, setLocale] = useLocale(true);
-  const [showKey, setShowKey] = useState(false);
   const [deleteConfirm, setDeleteConfirm] = useState('');
   const settings = useSettings();
-  const nav = useNavigation();
+  const nav = useNav();
   const {t} = useLingui();
 
   return (
@@ -77,58 +77,61 @@ export default function ScreenOverview() {
         </PanelSection>
         <PanelSection title={t`Data`}>
           <PanelItem
-            label={t`Owner Key`}
-            description={t`Set mnemonic to sync devices.`}>
-            <TextInput
-              style={styles.input}
-              selectTextOnFocus
-              secureTextEntry={!showKey}
-              defaultValue={settings.owner?.mnemonic?.toString() ?? ''}
-              placeholder={t`Enter mnemonic`}
-              importantForAutofill="no"
-              autoCapitalize="none"
-              autoComplete="off"
-              spellCheck={false}
-              passwordRules="none"
-              autoCorrect={false}
-              onFocus={() => setShowKey(true)}
-              onSubmitEditing={e => {
-                setShowKey(false);
-                settings.changeOwner(e.nativeEvent.text);
-              }}
-              onBlur={e => {
-                setShowKey(false);
-                settings.changeOwner(e.nativeEvent.text);
-              }}
+            label={t`Account Key`}
+            description={t`Manage your mnemonic phrase.`}>
+            <Sheet
+              autoWebSize={620}
+              edgeToEdge={false}
+              trigger={
+                <Button
+                  label={settings.owner?.mnemonic ? t`Manage Key` : t`Set Key`}
+                  mode="Primary"
+                  state="Default"
+                />
+              }>
+              <AccountKey
+                mnemonic={settings.owner?.mnemonic?.toString() ?? ''}
+                onChangeOwner={settings.changeOwner}
+              />
+            </Sheet>
+          </PanelItem>
+          <PanelItem
+            label={t`Storage Usage`}
+            description={t`Monitor disk usage on device.`}>
+            <Button
+              label={t`View Usage`}
+              mode="Primary"
+              state="Default"
+              onPress={() => nav.push('SettingsStorage')}
             />
           </PanelItem>
           <PanelItem
-            label={t`Inspect Storage`}
-            description={t`Monitor disk usage on device.`}>
+            label={t`Export Database`}
+            description={t`Download the sqlite database.`}>
             <Button
-              label={t`Storage Usage`}
+              label={t`Export DB`}
               mode="Primary"
               state="Default"
-              onPress={() => nav.navigate('SettingsStorage')}
+              onPress={settings.downloadDatabase}
             />
           </PanelItem>
           <PanelItem
             label={t`Reset Data`}
-            description={t`Clear owner and delete database.`}>
+            description={t`Deletes database and resets key.`}>
             <Sheet
               autoWebSize={250}
               edgeToEdge={false}
               trigger={
                 <Button
-                  label={t`Reset Database`}
+                  label={t`Reset Data`}
                   mode="Destructive"
                   state="Default"
                 />
               }>
               <View style={styles.confirmRoot}>
                 <Prompt
-                  title={t`Reset Database`}
-                  message={t`This will reset your owner key and delete your local database. This action is irreversible. If you have data you wish to backup make sure to save your owner key.`}
+                  title={t`Reset Data`}
+                  message={t`This will reset your account key and delete your local database. This action is irreversible. If you have data you wish to backup make sure to save your account key.`}
                   showClose={false}
                   confirmButton={
                     <View style={styles.confirmForm}>
@@ -177,7 +180,6 @@ const styles = StyleSheet.create((theme) => ({
     width: {
       initial: '100%',
       xxs: 120,
-      sm: 215,
     },
     padding: theme.display.space2,
     paddingHorizontal: theme.display.space3,

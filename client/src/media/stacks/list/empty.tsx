@@ -1,0 +1,36 @@
+import {View} from 'react-native';
+import {useState, useEffect} from 'react';
+import {useLingui} from '@lingui/react/macro';
+import {useImportHfs} from 'media/dir/hooks/use-import-hfs';
+import {Watermark} from 'app/ui/watermark';
+
+export function ListEmpty({path, offset}: {path?: string, offset: number}) {
+  const [visible, setVisible] = useState(false);
+  const {importFolder} = useImportHfs();
+  const {t} = useLingui();
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setVisible(true);
+    }, 200);
+    return () => clearTimeout(timeout);
+  }, []);
+
+  return visible ? (
+    <View style={{marginHorizontal: 10, flex: 1, justifyContent: 'center'}}>
+      <View style={{marginTop: offset}}>
+        <Watermark
+          title={__TOUCH__
+            ? t`Directory empty. Select folder to import.`
+            : t`Directory empty. Drop items or select folder to import.`}
+          label={t`Import Folder`}
+          icon="ph:upload"
+          dnd={!__TOUCH__}
+          onAction={async () => {
+            await importFolder(path ?? '.');
+          }}
+        />
+      </View>
+    </View>
+  ) : null;
+}

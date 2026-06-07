@@ -1,23 +1,25 @@
+import {use} from 'react';
 import {alert} from 'react-exo/toast';
 import {useLingui} from '@lingui/react/macro';
 import {useCallback} from 'react';
-import {useEvolu, useAppOwner, useQuery} from 'app/data';
+import {useEvolu, useQuery} from 'app/data';
 import {getProfile} from 'app/data/queries';
+import cfg from 'config';
 import * as $ from 'app/data/types';
 
 export function useSettings() {
   const {t} = useLingui();
   const evolu = useEvolu();
-  const owner = useAppOwner();
+  const owner = use(evolu.appOwner);
   const profiles = useQuery(getProfile);
 
   const updateName = useCallback((text: string) => {
     try {
       const name = $.getOrThrow($.NonEmptyString25.from(text));
       if (profiles.length === 0) {
-        evolu.insert('profile', {name});
+        evolu.insert('app_profile', {name});
       } else {
-        evolu.update('profile', {name, id: profiles[0].id});
+        evolu.update('app_profile', {name, id: profiles[0].id});
       }
     } catch (error) {
       alert({
@@ -29,6 +31,7 @@ export function useSettings() {
   }, [evolu, profiles, t]);
 
   const resetOwner = useCallback(() => {
+    globalThis.__EVOLU_RESETTING_APP_OWNER__ = true;
     evolu.resetAppOwner();
   }, [evolu, t]);
 
@@ -39,6 +42,7 @@ export function useSettings() {
       return;
     try {
       const parsed = $.getOrThrow($.Mnemonic.from(key));
+      globalThis.__EVOLU_RESETTING_APP_OWNER__ = true;
       evolu.restoreAppOwner(parsed, {reload: true});
     } catch (error) {
       alert({
@@ -49,11 +53,22 @@ export function useSettings() {
     }
   }, [owner, evolu, t]);
 
+  const downloadDatabase = useCallback(async () => {
+    const database = await evolu.exportDatabase();
+    const blob = new Blob([database], {type: 'application/x-sqlite3'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.download = `${cfg.APP_NAME}.sqlite3`;
+    a.href = url;
+    a.click();
+  }, [evolu]);
+
   return {
     name: profiles[0]?.name ?? '',
     owner,
+    updateName,
     resetOwner,
     changeOwner,
-    updateName,
+    downloadDatabase,
   };
 }

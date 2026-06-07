@@ -13,29 +13,65 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#. placeholder {0}: 12
-#: ../../client/src/dev/screen-design.tsx:15
-msgid "{0} components"
-msgstr "{0} компонентов"
+#: ../../client/src/media/file/file-dir-evolu.tsx:47
+#: ../../client/src/media/file/file-dir-local.tsx:34
+#: ../../client/src/media/file/file-torrent.tsx:23
+#: ../../client/src/media/file/file-zip.tsx:22
+msgid "{files, plural, one {# file} other {# files}}"
+msgstr "{files, plural, one {# файл} few {# файла} many {# файлов} other {# файлов}}"
 
-#: ../../client/src/tasks/screen-list-edit.tsx:110
+#: ../../client/src/media/file/file-dir-evolu.tsx:46
+#: ../../client/src/media/file/file-dir-local.tsx:33
+msgid "{folders, plural, one {# folder} other {# folders}}"
+msgstr "{folders, plural, one {# папка} few {# папки} many {# папок} other {# папок}}"
+
+#: ../../client/src/settings/stacks/account-key.tsx:79
+msgid "⚠️ Treat your mnemonic phrase with care."
+msgstr "⚠️ Обращайтесь с мнемонической фразой осторожно."
+
+#: ../../client/src/settings/screen-overview.tsx:80
+#: ../../client/src/settings/stacks/account-key.tsx:142
+msgid "Account Key"
+msgstr "Ключ аккаунта"
+
+#: ../../client/src/settings/stacks/account-key.tsx:77
+msgid "Account Key - Mnemonic Phrase"
+msgstr "Ключ аккаунта - Мнемоническая фраза"
+
+#: ../../client/src/world/screen-tasks-edit.tsx:96
 msgid "Add category..."
-msgstr ""
+msgstr "Добавить категорию..."
 
-#: ../../client/src/tasks/screen-list-edit.tsx:72
+#: ../../client/src/world/screen-tasks-edit.tsx:58
 msgid "Add section names for items."
-msgstr ""
+msgstr "Добавьте названия разделов для элементов."
 
-#: ../../client/src/home/screen-shortcut.tsx:72
-#: ../../client/src/settings/screen-overview.tsx:51
-#: ../../client/src/tasks/screen-list-edit.tsx:122
+#: ../../client/src/home/screen-shortcut.tsx:80
+#: ../../client/src/settings/screen-overview.tsx:45
+#: ../../client/src/world/screen-tasks-edit.tsx:108
 msgid "Appearance"
 msgstr "Внешний вид"
 
-#: ../../client/src/settings/hooks/use-settings.ts:38
+#: ../../client/src/settings/hooks/use-settings.ts:41
 msgid "Are you sure you want to change the owner key? This will reset the local database. This action cannot be undone."
 msgstr "Вы уверены, что хотите изменить ключ владельца? Это сбросит локальную базу данных. Это действие нельзя отменить."
 
+#: ../../client/src/app/nav/index.tsx:279
+#: ../../client/src/media/hooks/use-media-name.ts:21
+msgid "Books"
+msgstr "Книги"
+
+#. placeholder {0}: data.metadata.author
+#: ../../client/src/media/file/file-book.tsx:41
+msgid "by {0}"
+msgstr "автор: {0}"
+
+#: ../../client/src/app/nav/index.tsx:300
+#: ../../client/src/world/screen-overview.tsx:28
+msgid "Calendar"
+msgstr "Календарь"
+
+#: ../../client/src/settings/stacks/account-key.tsx:286
 #: ../../design/components/base/popovers/prompt/Prompt.tsx:49
 msgid "Cancel"
 msgstr "Отмена"
@@ -46,178 +82,268 @@ msgstr "Отмена"
 #: ../../design/components/features/auth/signup/Signup.tsx:40
 #: ../../design/components/features/auth/signup/Signup.tsx:52
 msgid "Caption"
-msgstr ""
+msgstr "Подпись"
 
-#: ../../client/src/tasks/screen-list-edit.tsx:71
+#: ../../client/src/world/screen-tasks-edit.tsx:57
 msgid "Categories"
-msgstr ""
+msgstr "Категории"
 
-#: ../../client/src/tasks/stacks/list-group.tsx:70
+#: ../../client/src/world/stacks/tasks-list-group.tsx:70
 msgid "Category"
-msgstr ""
+msgstr "Категория"
 
-#: ../../client/src/app/nav/index.tsx:114
-#: ../../client/src/dev/screen-charts.tsx:14
+#: ../../client/src/app/nav/index.tsx:335
 msgid "Charts"
-msgstr ""
+msgstr "Графики"
 
-#: ../../client/src/settings/screen-overview.tsx:41
+#: ../../client/src/settings/screen-overview.tsx:35
 msgid "Choose your display name."
-msgstr ""
+msgstr "Выберите отображаемое имя."
 
-#: ../../client/src/settings/screen-overview.tsx:112
-msgid "Clear Data"
-msgstr ""
+#: ../../client/src/media/hooks/use-media-controls.ts:299
+msgid "Close"
+msgstr "Закрыть"
 
-#: ../../client/src/home/screen-shortcut.tsx:86
-#: ../../client/src/tasks/screen-list-edit.tsx:136
+#: ../../client/src/home/screen-shortcut.tsx:94
+#: ../../client/src/world/screen-tasks-edit.tsx:122
 msgid "Color"
 msgstr "Цвет"
 
-#: ../../client/src/home/screen-shortcut.tsx:30
-msgid "Configure dashboard shortcut"
-msgstr ""
-
-#: ../../client/src/tasks/screen-list-edit.tsx:44
-msgid "Configure task list"
-msgstr ""
+#: ../../client/src/media/dir/stacks/menu-hfs.tsx:37
+msgid "Compress"
+msgstr "Сжать"
 
 #: ../../client/src/settings/screen-overview.tsx:29
 msgid "Configure the app"
-msgstr ""
+msgstr "Настроить приложение"
 
-#: ../../client/src/settings/screen-overview.tsx:142
+#: ../../client/src/settings/screen-overview.tsx:149
 #: ../../design/components/features/auth/signup/Signup.tsx:53
 msgid "Confirm"
-msgstr ""
+msgstr "Подтвердить"
+
+#: ../../client/src/media/dir/stacks/menu-hfs.tsx:55
+#: ../../client/src/media/hooks/use-media-controls.ts:73
+msgid "Copy"
+msgstr "Копировать"
 
 #: ../../design/components/features/auth/login/Login.tsx:62
 #: ../../design/components/features/auth/signup/Signup.tsx:65
 msgid "Create Account"
-msgstr ""
+msgstr "Создать аккаунт"
 
-#: ../../client/src/home/screen-shortcut.tsx:98
-#: ../../client/src/tasks/screen-list-edit.tsx:148
+#: ../../client/src/home/screen-shortcut.tsx:106
+#: ../../client/src/world/screen-tasks-edit.tsx:134
 msgid "Danger Zone"
-msgstr ""
+msgstr "Опасная зона"
 
-#: ../../client/src/settings/screen-overview.tsx:80
+#: ../../client/src/settings/screen-overview.tsx:74
 msgid "Dark"
 msgstr "Тёмная"
 
-#: ../../client/src/app/nav/index.tsx:51
+#: ../../client/src/app/nav/index.tsx:155
 msgid "Dashboard"
 msgstr "Панель"
 
-#: ../../client/src/settings/screen-overview.tsx:84
+#: ../../client/src/settings/screen-overview.tsx:78
 msgid "Data"
-msgstr ""
+msgstr "Данные"
 
-#: ../../client/src/tasks/screen-list-edit.tsx:150
-#: ../../client/src/tasks/screen-list-edit.tsx:153
+#: ../../client/src/home/screen-shortcut.tsx:111
+#: ../../client/src/media/dir/stacks/menu-hfs.tsx:80
+msgid "Delete"
+msgstr "Удалить"
+
+#: ../../client/src/world/screen-tasks-edit.tsx:136
+#: ../../client/src/world/screen-tasks-edit.tsx:139
 msgid "Delete List"
-msgstr ""
+msgstr "Удалить список"
 
-#: ../../client/src/home/screen-shortcut.tsx:100
-#: ../../client/src/home/screen-shortcut.tsx:103
+#: ../../client/src/home/screen-shortcut.tsx:108
 msgid "Delete Shortcut"
-msgstr ""
+msgstr "Удалить ярлык"
 
-#: ../../client/src/app/nav/index.tsx:106
-#: ../../client/src/dev/screen-design.tsx:14
+#: ../../client/src/settings/screen-overview.tsx:120
+msgid "Deletes database and resets key."
+msgstr "Удаляет базу данных и сбрасывает ключ."
+
+#: ../../client/src/app/nav/index.tsx:327
 msgid "Design"
 msgstr "Дизайн"
 
-#: ../../client/src/app/nav/custom/menu/index.tsx:55
+#: ../../client/src/app/nav/custom/menu/index.tsx:90
 msgid "Development"
 msgstr "Разработка"
 
-#: ../../client/src/settings/screen-overview.tsx:40
+#: ../../client/src/media/stacks/list/empty.tsx:25
+msgid "Directory empty. Drop items or select folder to import."
+msgstr "Папка пуста. Перетащите файлы или выберите папку для импорта."
+
+#: ../../client/src/media/stacks/list/empty.tsx:24
+msgid "Directory empty. Select folder to import."
+msgstr "Папка пуста. Выберите папку для импорта."
+
+#: ../../client/src/world/screen-map.tsx:137
+msgid "Disabled location tracking (requires reload)"
+msgstr "Отслеживание местоположения отключено (требуется перезагрузка)"
+
+#: ../../client/src/settings/screen-overview.tsx:34
 msgid "Display Name"
 msgstr "Имя"
 
-#: ../../client/src/tasks/stacks/list-group.tsx:101
-msgid "Edit Item..."
-msgstr ""
+#: ../../client/src/settings/stacks/account-key.tsx:149
+msgid "Do not share it with anyone."
+msgstr "Не делитесь ей ни с кем."
 
-#: ../../client/src/app/nav/index.tsx:99
+#: ../../client/src/settings/stacks/account-key.tsx:80
+msgid "Do not share it with anyone. Store it securely."
+msgstr "Не делитесь ей ни с кем. Храните её в безопасности."
+
+#: ../../client/src/app/nav/index.tsx:244
+msgid "Docs"
+msgstr "Документы"
+
+#: ../../client/src/media/hooks/use-media-name.ts:11
+msgid "Documents"
+msgstr "Документы"
+
+#: ../../client/src/media/dir/stacks/menu-evolu.tsx:30
+#: ../../client/src/media/dir/stacks/menu-hfs.tsx:44
+#: ../../client/src/media/dir/stacks/menu-torrent.tsx:23
+#: ../../client/src/media/file/file-binary.tsx:36
+#: ../../client/src/media/hooks/use-media-controls.ts:92
+msgid "Download"
+msgstr "Скачать"
+
+#: ../../client/src/settings/screen-overview.tsx:110
+msgid "Download the sqlite database."
+msgstr "Скачать базу данных sqlite."
+
+#: ../../client/src/media/hooks/use-media-controls.ts:82
+msgid "Edit"
+msgstr "Редактировать"
+
+#: ../../client/src/world/stacks/tasks-list-group.tsx:101
+msgid "Edit Item..."
+msgstr "Редактировать элемент..."
+
+#: ../../client/src/app/nav/index.tsx:320
 msgid "Edit List"
-msgstr ""
+msgstr "Редактировать список"
 
 #: ../../design/components/features/auth/login/Login.tsx:29
 #: ../../design/components/features/auth/signup/Signup.tsx:29
 msgid "Email"
-msgstr ""
+msgstr "Email"
 
-#: ../../client/src/settings/screen-overview.tsx:93
-msgid "Enter mnemonic"
-msgstr "Введите мнемонику"
+#: ../../client/src/world/screen-map.tsx:136
+msgid "Enabled location tracking (requires reload)"
+msgstr "Отслеживание местоположения включено (требуется перезагрузка)"
 
-#: ../../client/src/settings/screen-overview.tsx:47
+#: ../../client/src/settings/screen-overview.tsx:41
 msgid "Enter name"
 msgstr "Введите имя"
 
-#: ../../client/src/settings/hooks/use-settings.ts:24
-#: ../../client/src/settings/hooks/use-settings.ts:45
+#: ../../client/src/settings/hooks/use-settings.ts:26
+#: ../../client/src/settings/hooks/use-settings.ts:49
 msgid "Error"
 msgstr "Ошибка"
 
-#: ../../client/src/tasks/hooks/use-lists.ts:145
+#: ../../client/src/settings/screen-overview.tsx:109
+msgid "Export Database"
+msgstr "Экспорт базы данных"
+
+#: ../../client/src/settings/screen-overview.tsx:112
+msgid "Export DB"
+msgstr "Экспорт БД"
+
+#: ../../client/src/media/dir/stacks/menu-zip.tsx:23
+#: ../../client/src/media/hooks/use-media-controls.ts:102
+msgid "Extract"
+msgstr "Извлечь"
+
+#: ../../client/src/world/hooks/use-tasks.ts:145
 msgid "Failed to create category."
-msgstr ""
+msgstr "Не удалось создать категорию."
 
-#: ../../client/src/tasks/hooks/use-lists.ts:104
+#: ../../client/src/world/hooks/use-tasks.ts:104
 msgid "Failed to create list item."
-msgstr ""
+msgstr "Не удалось создать элемент списка."
 
-#: ../../client/src/tasks/hooks/use-lists.ts:35
+#: ../../client/src/world/hooks/use-tasks.ts:35
 msgid "Failed to create new list."
-msgstr ""
+msgstr "Не удалось создать новый список."
 
 #: ../../client/src/home/hooks/use-shortcuts.ts:34
 msgid "Failed to create new shortcut."
-msgstr ""
+msgstr "Не удалось создать новый ярлык."
 
-#: ../../client/src/tasks/hooks/use-lists.ts:164
+#: ../../client/src/world/hooks/use-tasks.ts:164
 msgid "Failed to delete category."
-msgstr ""
+msgstr "Не удалось удалить категорию."
 
-#: ../../client/src/tasks/hooks/use-lists.ts:111
+#: ../../client/src/world/hooks/use-tasks.ts:111
 msgid "Failed to delete list item."
-msgstr ""
+msgstr "Не удалось удалить элемент списка."
 
-#: ../../client/src/tasks/hooks/use-lists.ts:46
+#: ../../client/src/world/hooks/use-tasks.ts:46
 msgid "Failed to delete list."
-msgstr ""
+msgstr "Не удалось удалить список."
 
 #: ../../client/src/home/hooks/use-shortcuts.ts:96
 msgid "Failed to delete shortcut."
-msgstr ""
+msgstr "Не удалось удалить ярлык."
 
-#: ../../client/src/tasks/hooks/use-lists.ts:177
+#: ../../client/src/world/hooks/use-tasks.ts:177
 msgid "Failed to update category."
-msgstr ""
+msgstr "Не удалось обновить категорию."
 
-#: ../../client/src/tasks/hooks/use-lists.ts:130
+#: ../../client/src/world/hooks/use-tasks.ts:130
 msgid "Failed to update list item status."
-msgstr ""
+msgstr "Не удалось обновить статус элемента списка."
 
-#: ../../client/src/tasks/hooks/use-lists.ts:123
+#: ../../client/src/world/hooks/use-tasks.ts:123
 msgid "Failed to update list item text."
-msgstr ""
+msgstr "Не удалось обновить текст элемента списка."
 
-#: ../../client/src/tasks/hooks/use-lists.ts:89
+#: ../../client/src/world/hooks/use-tasks.ts:89
 msgid "Failed to update list."
-msgstr ""
+msgstr "Не удалось обновить список."
 
 #: ../../client/src/home/hooks/use-shortcuts.ts:87
 msgid "Failed to update shortcut."
-msgstr ""
+msgstr "Не удалось обновить ярлык."
 
-#: ../../client/src/home/screen-shortcut.tsx:44
-#: ../../client/src/tasks/screen-list-edit.tsx:58
+#: ../../client/src/app/ui/teaser.tsx:11
+msgid "Feature in development..."
+msgstr "Функция в разработке..."
+
+#: ../../client/src/app/nav/index.tsx:200
+#: ../../client/src/media/hooks/use-media-name.ts:23
+#: ../../client/src/media/stacks/bar/index.tsx:62
+#: ../../client/src/media/stacks/media.tsx:43
+#: ../../client/src/media/stacks/media.tsx:96
+#: ../../client/src/media/stacks/select/item.tsx:88
+msgid "Files"
+msgstr "Файлы"
+
+#: ../../client/src/media/hooks/use-media-controls.ts:289
+msgid "Fullscreen"
+msgstr "Полный экран"
+
+#: ../../client/src/app/nav/index.tsx:272
+#: ../../client/src/media/hooks/use-media-name.ts:19
+msgid "Games"
+msgstr "Игры"
+
+#: ../../client/src/home/screen-shortcut.tsx:52
+#: ../../client/src/world/screen-tasks-edit.tsx:44
 msgid "General"
 msgstr "Основное"
+
+#: ../../client/src/app/ui/index.tsx:74
+msgid "Geolocation Error"
+msgstr "Ошибка геолокации"
 
 #: ../../client/src/home/utils/time.ts:16
 msgid "Good afternoon, {name}."
@@ -235,254 +361,425 @@ msgstr "Доброе утро, {name}."
 msgid "Good night, {name}."
 msgstr "Спокойной ночи, {name}."
 
-#: ../../client/src/app/nav/custom/menu/menu-header.tsx:19
+#: ../../client/src/app/nav/custom/menu/menu-header.tsx:21
 msgid "Human"
 msgstr "Человек"
 
-#: ../../client/src/home/screen-shortcut.tsx:74
-#: ../../client/src/tasks/screen-list-edit.tsx:124
+#: ../../client/src/home/screen-shortcut.tsx:82
+#: ../../client/src/world/screen-tasks-edit.tsx:110
 msgid "Icon"
 msgstr "Иконка"
 
-#: ../../client/src/tasks/hooks/use-lists.ts:139
-#: ../../client/src/tasks/hooks/use-lists.ts:171
+#: ../../client/src/settings/stacks/account-key.tsx:303
+msgid "Import"
+msgstr "Импорт"
+
+#: ../../client/src/media/stacks/list/empty.tsx:26
+msgid "Import Folder"
+msgstr "Импорт папки"
+
+#: ../../client/src/app/nav/index.tsx:163
+msgid "Inbox"
+msgstr "Входящие"
+
+#: ../../client/src/world/hooks/use-tasks.ts:139
+#: ../../client/src/world/hooks/use-tasks.ts:171
 msgid "Invalid category name."
-msgstr ""
+msgstr "Неверное название категории."
 
 #: ../../client/src/home/hooks/use-shortcuts.ts:74
-#: ../../client/src/tasks/hooks/use-lists.ts:76
+#: ../../client/src/world/hooks/use-tasks.ts:76
 msgid "Invalid color field."
 msgstr "Неверный цвет."
 
 #: ../../client/src/home/hooks/use-shortcuts.ts:66
-#: ../../client/src/tasks/hooks/use-lists.ts:68
+#: ../../client/src/world/hooks/use-tasks.ts:68
 msgid "Invalid icon field."
 msgstr "Неверная иконка."
 
-#: ../../client/src/tasks/hooks/use-lists.ts:26
+#: ../../client/src/world/hooks/use-tasks.ts:26
 msgid "Invalid list id."
-msgstr ""
+msgstr "Неверный ID списка."
 
-#: ../../client/src/settings/hooks/use-settings.ts:26
+#: ../../client/src/settings/hooks/use-settings.ts:28
 msgid "Invalid name (max 25 characters)."
 msgstr "Неверное имя (максимум 25 символов)."
 
 #: ../../client/src/home/hooks/use-shortcuts.ts:58
-#: ../../client/src/tasks/hooks/use-lists.ts:60
+#: ../../client/src/world/hooks/use-tasks.ts:60
 msgid "Invalid name field."
 msgstr "Неверное имя."
 
-#: ../../client/src/settings/hooks/use-settings.ts:47
+#: ../../client/src/settings/hooks/use-settings.ts:51
 msgid "Invalid owner key."
 msgstr "Неверный ключ владельца."
 
 #: ../../client/src/home/hooks/use-shortcuts.ts:25
 msgid "Invalid shortcut id."
-msgstr ""
+msgstr "Неверный ID ярлыка."
 
-#: ../../client/src/tasks/hooks/use-lists.ts:98
-#: ../../client/src/tasks/hooks/use-lists.ts:118
+#: ../../client/src/world/hooks/use-tasks.ts:98
+#: ../../client/src/world/hooks/use-tasks.ts:118
 msgid "Invalid text content field."
-msgstr ""
+msgstr "Неверное текстовое содержимое."
 
 #: ../../client/src/home/hooks/use-shortcuts.ts:50
 msgid "Invalid URL field."
 msgstr "Неверный URL."
 
-#: ../../client/src/settings/screen-overview.tsx:53
+#: ../../client/src/app/nav/index.tsx:238
+msgid "IPFS"
+msgstr "IPFS"
+
+#: ../../client/src/settings/screen-overview.tsx:47
 msgid "Language"
 msgstr "Язык"
 
-#: ../../client/src/settings/screen-overview.tsx:79
+#: ../../client/src/settings/screen-overview.tsx:73
 msgid "Light"
 msgstr "Светлая"
 
-#: ../../client/src/app/nav/index.tsx:93
+#: ../../client/src/app/nav/index.tsx:314
 msgid "List Details"
-msgstr ""
+msgstr "Детали списка"
 
-#: ../../client/src/tasks/hooks/use-lists.ts:13
+#: ../../client/src/world/hooks/use-tasks.ts:13
 msgid "List Error"
-msgstr ""
+msgstr "Ошибка списка"
 
-#: ../../client/src/tasks/screen-list-edit.tsx:65
+#: ../../client/src/world/screen-tasks-edit.tsx:51
 msgid "List name"
-msgstr ""
+msgstr "Название списка"
 
-#: ../../client/src/app/nav/index.tsx:85
-#: ../../client/src/tasks/screen-list-all.tsx:21
+#: ../../client/src/world/screen-tasks-all.tsx:21
 msgid "Lists"
-msgstr ""
+msgstr "Списки"
+
+#: ../../client/src/media/stacks/bar/index.tsx:70
+msgid "Local"
+msgstr "Локальные"
 
 #: ../../design/components/features/auth/login/Login.tsx:53
 #: ../../design/components/features/auth/signup/Signup.tsx:74
 msgid "Login"
-msgstr ""
+msgstr "Войти"
 
 #: ../../design/components/features/auth/logout/Logout.tsx:25
 msgid "Logout?"
-msgstr ""
+msgstr "Выйти?"
 
-#: ../../client/src/tasks/hooks/use-lists.ts:21
+#: ../../client/src/settings/screen-overview.tsx:87
+msgid "Manage Key"
+msgstr "Управление ключом"
+
+#: ../../client/src/settings/screen-overview.tsx:81
+msgid "Manage your mnemonic phrase."
+msgstr "Управляйте мнемонической фразой."
+
+#: ../../client/src/app/nav/index.tsx:293
+#: ../../client/src/world/screen-overview.tsx:18
+msgid "Map"
+msgstr "Карта"
+
+#: ../../client/src/app/nav/custom/menu/index.tsx:69
+msgid "Media"
+msgstr "Медиа"
+
+#: ../../client/src/world/hooks/use-tasks.ts:21
 msgid "Missing list id."
-msgstr ""
+msgstr "Отсутствует ID списка."
 
 #: ../../client/src/home/hooks/use-shortcuts.ts:20
 msgid "Missing shortcut id."
-msgstr ""
+msgstr "Отсутствует ID ярлыка."
 
-#: ../../client/src/home/screen-shortcut.tsx:61
-#: ../../client/src/tasks/screen-list-edit.tsx:60
+#: ../../client/src/settings/screen-overview.tsx:100
+msgid "Monitor disk usage on device."
+msgstr "Отслеживать использование диска на устройстве."
+
+#: ../../client/src/media/dir/stacks/menu-hfs.tsx:62
+msgid "Move"
+msgstr "Переместить"
+
+#: ../../client/src/app/nav/index.tsx:251
+#: ../../client/src/media/hooks/use-media-name.ts:13
+msgid "Music"
+msgstr "Музыка"
+
+#: ../../client/src/home/screen-shortcut.tsx:69
+#: ../../client/src/world/screen-tasks-edit.tsx:46
 msgid "Name"
 msgstr "Название"
 
-#: ../../client/src/tasks/stacks/list-group.tsx:141
+#: ../../client/src/world/stacks/tasks-list-group.tsx:141
 msgid "New item..."
-msgstr ""
+msgstr "Новый элемент..."
 
-#: ../../client/src/app/nav/index.tsx:59
+#: ../../client/src/media/hooks/use-media-controls.ts:210
+msgid "Next"
+msgstr "Следующий"
+
+#: ../../client/src/app/nav/index.tsx:173
 msgid "Not Found"
-msgstr ""
+msgstr "Не найдено"
 
-#: ../../client/src/tasks/screen-list-all.tsx:22
+#: ../../client/src/media/dir/stacks/menu-evolu.tsx:23
+#: ../../client/src/media/dir/stacks/menu-hfs.tsx:23
+msgid "Open"
+msgstr "Открыть"
+
+#: ../../client/src/media/hooks/use-media-controls.ts:244
+msgid "Options"
+msgstr "Опции"
+
+#: ../../client/src/world/screen-tasks-all.tsx:22
 msgid "Organize your tasks"
-msgstr ""
-
-#: ../../client/src/settings/screen-overview.tsx:86
-msgid "Owner Key"
-msgstr "Ключ владельца"
+msgstr "Организуйте свои задачи"
 
 #: ../../client/src/home/screen-not-found.tsx:11
 msgid "Page not found"
-msgstr ""
+msgstr "Страница не найдена"
+
+#: ../../client/src/settings/stacks/account-key.tsx:295
+#: ../../client/src/settings/stacks/account-key.tsx:300
+msgid "Passkey"
+msgstr "Ключ доступа"
 
 #: ../../design/components/features/auth/login/Login.tsx:42
 #: ../../design/components/features/auth/signup/Signup.tsx:42
 #: ../../design/components/features/auth/signup/Signup.tsx:54
 msgid "password"
-msgstr ""
+msgstr "пароль"
 
 #: ../../design/components/features/auth/login/Login.tsx:41
 #: ../../design/components/features/auth/signup/Signup.tsx:41
 msgid "Password"
-msgstr ""
+msgstr "Пароль"
 
-#: ../../client/src/tasks/screen-list-edit.tsx:151
+#: ../../client/src/media/hooks/use-media-controls.ts:145
+msgid "Pause"
+msgstr "Пауза"
+
+#: ../../client/src/world/screen-tasks-edit.tsx:137
 msgid "Permanently delete list."
-msgstr ""
+msgstr "Навсегда удалить список."
 
-#: ../../client/src/home/screen-shortcut.tsx:101
+#: ../../client/src/home/screen-shortcut.tsx:109
 msgid "Permanently delete shortcut."
-msgstr ""
+msgstr "Навсегда удалить ярлык."
 
-#: ../../client/src/settings/screen-overview.tsx:38
+#: ../../client/src/app/nav/index.tsx:258
+#: ../../client/src/media/hooks/use-media-name.ts:15
+msgid "Pictures"
+msgstr "Изображения"
+
+#: ../../client/src/media/hooks/use-media-controls.ts:255
+msgid "Pin"
+msgstr "Закрепить"
+
+#: ../../client/src/media/hooks/use-media-controls.ts:146
+msgid "Play"
+msgstr "Воспроизвести"
+
+#: ../../client/src/media/hooks/use-media-controls.ts:199
+msgid "Previous"
+msgstr "Предыдущий"
+
+#: ../../client/src/settings/screen-overview.tsx:32
 msgid "Profile"
 msgstr "Профиль"
 
+#: ../../client/src/media/dir/stacks/menu-hfs.tsx:69
+msgid "Rename"
+msgstr "Переименовать"
+
+#: ../../client/src/media/hooks/use-media-controls.ts:187
+msgid "Replay"
+msgstr "Повтор"
+
 #: ../../client/src/settings/screen-overview.tsx:119
 #: ../../client/src/settings/screen-overview.tsx:126
-msgid "Reset Database"
-msgstr ""
+#: ../../client/src/settings/screen-overview.tsx:133
+msgid "Reset Data"
+msgstr "Сброс данных"
 
-#: ../../client/src/settings/screen-overview.tsx:113
-msgid "Reset owner and delete database."
-msgstr ""
+#: ../../client/src/settings/stacks/account-key.tsx:280
+msgid "Save"
+msgstr "Сохранить"
 
-#: ../../client/src/settings/screen-overview.tsx:72
+#: ../../client/src/media/hooks/use-media-controls.ts:112
+msgid "Search"
+msgstr "Поиск"
+
+#: ../../client/src/media/hooks/use-media-controls.ts:61
+msgid "Select all"
+msgstr "Выбрать всё"
+
+#: ../../client/src/settings/screen-overview.tsx:66
 msgid "Select the color scheme."
-msgstr ""
+msgstr "Выберите цветовую схему."
 
-#: ../../client/src/settings/screen-overview.tsx:54
+#: ../../client/src/settings/screen-overview.tsx:48
 msgid "Select your preferred language."
-msgstr ""
+msgstr "Выберите предпочитаемый язык."
 
 #: ../../client/src/settings/screen-overview.tsx:87
-msgid "Set mnemonic to sync devices."
-msgstr ""
+msgid "Set Key"
+msgstr "Установить ключ"
 
-#: ../../client/src/app/nav/index.tsx:71
+#: ../../client/src/app/nav/index.tsx:185
 #: ../../client/src/settings/screen-overview.tsx:28
 msgid "Settings"
 msgstr "Настройки"
 
-#: ../../client/src/app/nav/index.tsx:65
+#: ../../client/src/media/dir/stacks/menu-hfs.tsx:30
+#: ../../client/src/media/hooks/use-media-controls.ts:269
+msgid "Share"
+msgstr "Поделиться"
+
+#: ../../client/src/app/nav/index.tsx:179
 msgid "Shortcut"
-msgstr ""
+msgstr "Ярлык"
 
 #: ../../client/src/home/hooks/use-shortcuts.ts:12
 msgid "Shortcut Error"
-msgstr ""
+msgstr "Ошибка ярлыка"
 
-#: ../../client/src/settings/screen-overview.tsx:60
-#: ../../client/src/settings/screen-overview.tsx:78
+#: ../../client/src/media/hooks/use-media-controls.ts:165
+msgid "Skip backward"
+msgstr "Перемотать назад"
+
+#: ../../client/src/media/hooks/use-media-controls.ts:176
+msgid "Skip forward"
+msgstr "Перемотать вперёд"
+
+#: ../../client/src/app/nav/index.tsx:193
+msgid "Storage"
+msgstr "Хранилище"
+
+#: ../../client/src/settings/screen-overview.tsx:99
+msgid "Storage Usage"
+msgstr "Использование хранилища"
+
+#: ../../client/src/settings/screen-overview.tsx:54
+#: ../../client/src/settings/screen-overview.tsx:72
 msgid "System"
 msgstr "Системная"
 
-#: ../../client/src/app/nav/index.tsx:79
-#: ../../client/src/settings/screen-overview.tsx:33
-msgid "Test"
-msgstr ""
+#: ../../client/src/app/nav/index.tsx:307
+#: ../../client/src/world/screen-overview.tsx:23
+msgid "Tasks"
+msgstr "Задачи"
 
-#: ../../client/src/tasks/screen-list-edit.tsx:137
+#: ../../client/src/world/screen-tasks-edit.tsx:123
 msgid "The color of the list icon."
-msgstr ""
+msgstr "Цвет иконки списка."
 
-#: ../../client/src/home/screen-shortcut.tsx:87
+#: ../../client/src/home/screen-shortcut.tsx:95
 msgid "The color of the shortcut icon."
-msgstr ""
+msgstr "Цвет иконки ярлыка."
 
-#: ../../client/src/tasks/screen-list-edit.tsx:61
+#: ../../client/src/world/screen-tasks-edit.tsx:47
 msgid "The display name of the list."
-msgstr ""
+msgstr "Отображаемое название списка."
 
-#: ../../client/src/home/screen-shortcut.tsx:62
+#: ../../client/src/home/screen-shortcut.tsx:70
 msgid "The display name of the shortcut."
-msgstr ""
+msgstr "Отображаемое название ярлыка."
 
-#: ../../client/src/tasks/screen-list-edit.tsx:125
+#: ../../client/src/world/screen-tasks-edit.tsx:111
 msgid "The icon to display for the list."
-msgstr ""
+msgstr "Иконка для отображения списка."
 
-#: ../../client/src/home/screen-shortcut.tsx:75
+#: ../../client/src/home/screen-shortcut.tsx:83
 msgid "The icon to display for the shortcut."
-msgstr ""
+msgstr "Иконка для отображения ярлыка."
 
-#: ../../client/src/home/screen-shortcut.tsx:47
+#: ../../client/src/home/screen-shortcut.tsx:55
 msgid "The web page to link to."
 msgstr "Веб-страница для ссылки."
 
-#: ../../client/src/settings/screen-overview.tsx:71
+#: ../../client/src/settings/screen-overview.tsx:65
 msgid "Theme"
 msgstr "Тема"
 
+#: ../../client/src/media/file/file-binary.tsx:35
+msgid "This file can not be previewed."
+msgstr "Этот файл нельзя просмотреть."
+
 #: ../../design/components/features/auth/logout/Logout.tsx:24
 msgid "This will clear all session data. Are you sure you would like to proceed?"
-msgstr ""
+msgstr "Это очистит все данные сессии. Вы уверены, что хотите продолжить?"
 
-#: ../../client/src/settings/screen-overview.tsx:127
-msgid "This will reset your owner key and delete your local database. This action is irreversible. If you have data you wish to backup make sure to save your owner key."
-msgstr ""
+#: ../../client/src/settings/screen-overview.tsx:134
+msgid "This will reset your account key and delete your local database. This action is irreversible. If you have data you wish to backup make sure to save your account key."
+msgstr "Это сбросит ключ аккаунта и удалит локальную базу данных. Это действие необратимо. Если у вас есть данные для резервного копирования, обязательно сохраните ключ аккаунта."
+
+#: ../../client/src/settings/stacks/account-key.tsx:148
+msgid "Treat your mnemonic phrase with care."
+msgstr "Обращайтесь с мнемонической фразой осторожно."
 
 #. placeholder {0}: 'delete'
-#: ../../client/src/settings/screen-overview.tsx:135
+#: ../../client/src/settings/screen-overview.tsx:142
 msgid "Type \"{0}\" to confirm"
-msgstr ""
+msgstr "Введите \"{0}\" для подтверждения"
 
-#: ../../client/src/home/screen-shortcut.tsx:29
-#: ../../client/src/tasks/screen-list-details.tsx:29
-#: ../../client/src/tasks/screen-list-edit.tsx:43
+#: ../../client/src/media/file/file-binary.tsx:30
+msgid "Unsupported File"
+msgstr "Неподдерживаемый файл"
+
+#: ../../client/src/world/screen-tasks-details.tsx:29
+#: ../../client/src/world/screen-tasks-edit.tsx:42
 msgid "Untitled"
 msgstr "Без названия"
 
-#: ../../client/src/home/screen-shortcut.tsx:46
+#: ../../client/src/home/screen-shortcut.tsx:54
 msgid "URL"
 msgstr "URL"
+
+#: ../../client/src/settings/stacks/account-key.tsx:143
+msgid "Used to encrypt and sync your data between devices."
+msgstr "Используется для шифрования и синхронизации данных между устройствами."
 
 #: ../../design/components/features/auth/login/Login.tsx:30
 #: ../../design/components/features/auth/signup/Signup.tsx:30
 msgid "user@example.com"
-msgstr ""
+msgstr "user@example.com"
+
+#: ../../client/src/app/nav/index.tsx:265
+#: ../../client/src/media/hooks/use-media-name.ts:17
+msgid "Videos"
+msgstr "Видео"
+
+#: ../../client/src/settings/screen-overview.tsx:102
+msgid "View Usage"
+msgstr "Просмотр использования"
+
+#: ../../client/src/media/hooks/use-media-controls.ts:232
+msgid "Volume"
+msgstr "Громкость"
 
 #: ../../client/src/home/utils/time.ts:21
 msgid "Welcome back, {name}."
 msgstr "С возвращением, {name}."
+
+#: ../../client/src/app/nav/custom/menu/index.tsx:79
+#: ../../client/src/app/nav/index.tsx:286
+msgid "World"
+msgstr "Мир"
+
+#: ../../client/src/app/ui/index.tsx:52
+msgid "You are offline"
+msgstr "Вы не в сети"
+
+#: ../../client/src/app/ui/index.tsx:50
+msgid "You are online"
+msgstr "Вы в сети"
+
+#: ../../client/src/media/hooks/use-media-controls.ts:122
+msgid "Zoom in"
+msgstr "Увеличить"
+
+#: ../../client/src/media/hooks/use-media-controls.ts:133
+msgid "Zoom out"
+msgstr "Уменьшить"

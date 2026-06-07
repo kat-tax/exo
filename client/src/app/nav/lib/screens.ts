@@ -1,5 +1,5 @@
 import {lazy} from 'react';
-import {startCase} from 'lodash';
+import startCase from 'lodash/startCase';
 
 import type {JSX} from 'react/jsx-runtime';
 

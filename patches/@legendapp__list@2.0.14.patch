@@ -1,0 +1,21 @@
+diff --git a/index.mjs b/index.mjs
+index d429183f26804975eaa9ef775304bffabdf4e4ce..9ab40d3a577c93aa0cc3964fd78f5f0b1bdb57d9 100644
+--- a/index.mjs
++++ b/index.mjs
+@@ -1,6 +1,6 @@
+ import * as React2 from 'react';
+ import React2__default, { useReducer, useEffect, createContext, useRef, useState, useMemo, useCallback, useLayoutEffect, useImperativeHandle, forwardRef, memo, useContext } from 'react';
+-import { View, Text, Platform, Animated, StyleSheet, Dimensions, RefreshControl, unstable_batchedUpdates } from 'react-native';
++import { View, Text, Platform, Animated, StyleSheet, Dimensions, RefreshControl } from 'react-native';
+ import { useSyncExternalStore } from 'use-sync-external-store/shim';
+ 
+ // src/components/LegendList.tsx
+@@ -1485,7 +1485,7 @@ function maybeUpdateViewabilityCallback(ctx, configId, containerId, viewToken) {
+   const cb = ctx.mapViewabilityCallbacks.get(key);
+   cb == null ? void 0 : cb(viewToken);
+ }
+-var batchedUpdates = unstable_batchedUpdates || ((callback) => callback());
++var batchedUpdates = (callback) => callback();
+ 
+ // src/utils/checkAllSizesKnown.ts
+ function isNullOrUndefined2(value) {

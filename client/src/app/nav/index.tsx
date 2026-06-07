@@ -1,10 +1,12 @@
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createStaticNavigation} from '@react-navigation/native';
 import {useUnistyles} from 'react-native-unistyles';
 import {useLingui} from '@lingui/react/macro';
 import {useTheme} from 'settings/hooks/use-theme';
+import {DeviceId, PathId} from 'app/data/types';
+
 import cfg from 'config';
 
-import {createNativeStackNavigator as createStack} from '@react-navigation/native-stack';
 import {createLayout, createScreenLayout, HeaderLeft} from './custom';
 import {createScreens} from './lib/create-screens';
 import {createTabs} from './lib/tabs';
@@ -15,15 +17,29 @@ import type {Theme} from 'app/ui';
 
 export type RootStackParamList = {
   HomeDashboard: undefined;
+  HomeInbox: undefined;
   HomeShortcut: {id: string};
   HomeNotFound: undefined;
-  TasksListAll: undefined;
-  TasksListDetails: {id: string};
-  TasksListEdit: {id: string};
   SettingsOverview: undefined;
   SettingsStorage: undefined;
   DevDesign: undefined;
   DevCharts: undefined;
+  MediaBrowseDevices: undefined;
+  MediaBrowseLocal: {path?: string};
+  MediaBrowseEvolu: {pathId?: PathId; deviceId: DeviceId};
+  MediaViewDocs: undefined;
+  MediaViewMusic: undefined;
+  MediaViewPictures: undefined;
+  MediaViewVideos: undefined;
+  MediaViewGames: undefined;
+  MediaViewBooks: undefined;
+  MediaViewIpfs: {cid: string; filename?: string};
+  WorldOverview: undefined;
+  WorldMap: undefined;
+  WorldCalendar: undefined;
+  WorldTasksAll: undefined;
+  WorldTasksEdit: {id: string};
+  WorldTasksDetails: {id: string};
 };
 
 /** Top level navigation links shown in the drawer menus and tab bars. */
@@ -31,13 +47,30 @@ const links: Record<string, Array<keyof RootStackParamList>> = {
   /** Displayed on the native/web tab navigator. */
   tabs: [
     'HomeDashboard',
-    'TasksListAll',
+    'MediaBrowseDevices',
+    'WorldOverview',
     'SettingsOverview',
   ],
   /** The menu items shown at the top of the drawer menu. */
   menuTop: [
     'HomeDashboard',
-    'TasksListAll',
+    'HomeInbox',
+  ],
+  /** The menu items shown in the media group. */
+  menuMedia: [
+    'MediaBrowseDevices',
+    'MediaViewDocs',
+    'MediaViewMusic',
+    'MediaViewPictures',
+    'MediaViewVideos',
+    'MediaViewGames',
+    'MediaViewBooks',
+  ],
+  /** The menu items shown in the world group. */
+  menuWorld: [
+    'WorldMap',
+    'WorldTasksAll',
+    'WorldCalendar',
   ],
   /** The menu items to show in development only (below the top items in a group). */
   menuDev: [
@@ -69,7 +102,7 @@ const tabs = (screens: NavScreens, theme: Theme) => createTabs<RootStackParamLis
   },
 });
 
-const root = (screens: NavScreens, theme: Theme) => createStack<RootStackParamList>({
+const root = (screens: NavScreens, theme: Theme) => createNativeStackNavigator<RootStackParamList>({
   screenLayout: __WEB__ ? createScreenLayout(screens) : undefined,
   layout: __WEB__ ? createLayout(screens, links) : undefined,
   screens: {
@@ -85,10 +118,14 @@ const root = (screens: NavScreens, theme: Theme) => createStack<RootStackParamLi
     // Add all other screens to stack
     ...createScreens(screens),
   },
-  screenOptions: (_props) => ({
-    // Example: Hide header if in top level navigation
-    // headerShown: !Object.values(links).flat().includes(props.route.name),
-    headerShown: true,
+  screenOptions: (props) => ({
+    animation: 'none',
+    // Hide header if in top level navigation (excluding SettingsStorage)
+    // Also hide header if the route is a media view or browse route
+    headerShown: (!Object.values(links).flat().includes(props.route.name)
+      || props.route.name === 'SettingsStorage')
+      && !props.route.name.startsWith('MediaView')
+      && !props.route.name.startsWith('MediaBrowse'),
     headerTintColor: theme.colors.foreground,
     headerTitleAlign: 'center',
     headerTitleStyle: {
@@ -107,7 +144,6 @@ const root = (screens: NavScreens, theme: Theme) => createStack<RootStackParamLi
   }),
 });
 
-
 export function Navigator() {
   const {t} = useLingui();
   const {theme} = useUnistyles();
@@ -121,8 +157,18 @@ export function Navigator() {
         tabBarIcon: () => require('./icons/ph-squares-four.png'),
       },
     },
+    HomeInbox: {
+      linking: 'inbox',
+      options: {
+        title: t`Inbox`,
+        icon: 'ph:tray',
+      },
+    },
     HomeNotFound: {
-      linking: '*',
+      linking: {
+        alias: ['*'],
+        path: '404',
+      },
       options: {
         title: t`Not Found`,
       },
@@ -148,22 +194,128 @@ export function Navigator() {
         icon: 'ph:database',
       },
     },
-    TasksListAll: {
-      linking: 'lists',
+    MediaBrowseDevices: {
+      linking: 'browse',
       options: {
-        title: t`Lists`,
-        icon: 'ph:list-checks',
-        tabBarIcon: () => require('./icons/ph-list-checks.png'),
+        title: t`Files`,
+        icon: 'ph:folder',
+        isActive: (route) => route.startsWith('MediaBrowse'),
       },
     },
-    TasksListDetails: {
-      linking: 'list/:id',
+    MediaBrowseLocal: {
+      linking: {
+        path: 'browse/local/:path?',
+        parse: {
+          path: (value) => value.replaceAll('~', '/').replaceAll('+', ' '),
+        },
+        stringify: {
+          path: (value) => value.replaceAll('/', '~').replaceAll(' ', '+'),
+        },
+      },
+    },
+    MediaBrowseEvolu: {
+      linking: {
+        path: 'browse/:deviceId/:pathId?',
+        parse: {
+          pathId: (value) => {
+            const pathId = PathId.from(value);
+            return pathId.ok ? pathId.value : null;
+          },
+          deviceId: (value) => {
+            const deviceId = DeviceId.from(value);
+            return deviceId.ok ? deviceId.value : null;
+          },
+        },
+        stringify: {
+          pathId: (value) => value.toString(),
+          deviceId: (value) => value.toString(),
+        },
+      },
+    },
+    MediaViewIpfs: {
+      linking: 'ipfs/:cid/:filename',
+      options: {
+        title: t`IPFS`,
+      },
+    },
+    MediaViewDocs: {
+      linking: 'docs',
+      options: {
+        title: t`Docs`,
+        icon: 'ph:file-text',
+      },
+    },
+    MediaViewMusic: {
+      linking: 'music',
+      options: {
+        title: t`Music`,
+        icon: 'ph:music-notes',
+      },
+    },
+    MediaViewPictures: {
+      linking: 'pictures',
+      options: {
+        title: t`Pictures`,
+        icon: 'ph:image',
+      },
+    },
+    MediaViewVideos: {
+      linking: 'videos',
+      options: {
+        title: t`Videos`,
+        icon: 'ph:video',
+      },
+    },
+    MediaViewGames: {
+      linking: 'games',
+      options: {
+        title: t`Games`,
+        icon: 'ph:game-controller',
+      },
+    },
+    MediaViewBooks: {
+      linking: 'books',
+      options: {
+        title: t`Books`,
+        icon: 'ph:book-open-text',
+      },
+    },
+    WorldOverview: {
+      linking: 'world',
+      options: {
+        title: t`World`,
+        icon: 'ph:globe',
+      },
+    },
+    WorldMap: {
+      linking: 'map',
+      options: {
+        title: t`Map`,
+        icon: 'ph:map-trifold',
+      },
+    },
+    WorldCalendar: {
+      linking: 'calendar',
+      options: {
+        title: t`Calendar`,
+        icon: 'ph:calendar-dots',
+      },
+    },
+    WorldTasksAll: {
+      linking: 'tasks',
+      options: {
+        title: t`Tasks`,
+        icon: 'ph:list-checks',
+      },
+    },
+    WorldTasksDetails: {
+      linking: 'tasks/:id',
       options: {
         title: t`List Details`,
       },
     },
-    TasksListEdit: {
-      linking: 'list/:id/edit',
+    WorldTasksEdit: {
+      linking: 'tasks/:id/edit',
       options: {
         title: t`Edit List`,
       },
@@ -239,9 +391,11 @@ export type NavScreenConfig = {
   if?: () => boolean,
   name: keyof RootStackParamList,
   linking?: string | PathConfig<RootStackParamList>,
+  params?: RootStackParamList[keyof RootStackParamList],
   options?: {
     title: string,
     icon?: string,
     tabBarIcon?: () => ImageSourcePropType,
+    isActive?: (routeName: keyof RootStackParamList) => boolean,
   },
 }

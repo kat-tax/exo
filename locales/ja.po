@@ -13,29 +13,65 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#. placeholder {0}: 12
-#: ../../client/src/dev/screen-design.tsx:15
-msgid "{0} components"
-msgstr "{0}個のコンポーネント"
+#: ../../client/src/media/file/file-dir-evolu.tsx:47
+#: ../../client/src/media/file/file-dir-local.tsx:34
+#: ../../client/src/media/file/file-torrent.tsx:23
+#: ../../client/src/media/file/file-zip.tsx:22
+msgid "{files, plural, one {# file} other {# files}}"
+msgstr "{files, plural, other {#個のファイル}}"
 
-#: ../../client/src/tasks/screen-list-edit.tsx:110
+#: ../../client/src/media/file/file-dir-evolu.tsx:46
+#: ../../client/src/media/file/file-dir-local.tsx:33
+msgid "{folders, plural, one {# folder} other {# folders}}"
+msgstr "{folders, plural, other {#個のフォルダ}}"
+
+#: ../../client/src/settings/stacks/account-key.tsx:79
+msgid "⚠️ Treat your mnemonic phrase with care."
+msgstr "⚠️ ニーモニックフレーズは大切に扱ってください。"
+
+#: ../../client/src/settings/screen-overview.tsx:80
+#: ../../client/src/settings/stacks/account-key.tsx:142
+msgid "Account Key"
+msgstr "アカウントキー"
+
+#: ../../client/src/settings/stacks/account-key.tsx:77
+msgid "Account Key - Mnemonic Phrase"
+msgstr "アカウントキー - ニーモニックフレーズ"
+
+#: ../../client/src/world/screen-tasks-edit.tsx:96
 msgid "Add category..."
-msgstr ""
+msgstr "カテゴリを追加..."
 
-#: ../../client/src/tasks/screen-list-edit.tsx:72
+#: ../../client/src/world/screen-tasks-edit.tsx:58
 msgid "Add section names for items."
-msgstr ""
+msgstr "アイテムのセクション名を追加。"
 
-#: ../../client/src/home/screen-shortcut.tsx:72
-#: ../../client/src/settings/screen-overview.tsx:51
-#: ../../client/src/tasks/screen-list-edit.tsx:122
+#: ../../client/src/home/screen-shortcut.tsx:80
+#: ../../client/src/settings/screen-overview.tsx:45
+#: ../../client/src/world/screen-tasks-edit.tsx:108
 msgid "Appearance"
 msgstr "外観"
 
-#: ../../client/src/settings/hooks/use-settings.ts:38
+#: ../../client/src/settings/hooks/use-settings.ts:41
 msgid "Are you sure you want to change the owner key? This will reset the local database. This action cannot be undone."
 msgstr "オーナーキーを変更しますか？ローカルデータベースがリセットされます。この操作は元に戻せません。"
 
+#: ../../client/src/app/nav/index.tsx:279
+#: ../../client/src/media/hooks/use-media-name.ts:21
+msgid "Books"
+msgstr "書籍"
+
+#. placeholder {0}: data.metadata.author
+#: ../../client/src/media/file/file-book.tsx:41
+msgid "by {0}"
+msgstr "著者: {0}"
+
+#: ../../client/src/app/nav/index.tsx:300
+#: ../../client/src/world/screen-overview.tsx:28
+msgid "Calendar"
+msgstr "カレンダー"
+
+#: ../../client/src/settings/stacks/account-key.tsx:286
 #: ../../design/components/base/popovers/prompt/Prompt.tsx:49
 msgid "Cancel"
 msgstr "キャンセル"
@@ -46,178 +82,268 @@ msgstr "キャンセル"
 #: ../../design/components/features/auth/signup/Signup.tsx:40
 #: ../../design/components/features/auth/signup/Signup.tsx:52
 msgid "Caption"
-msgstr ""
+msgstr "キャプション"
 
-#: ../../client/src/tasks/screen-list-edit.tsx:71
+#: ../../client/src/world/screen-tasks-edit.tsx:57
 msgid "Categories"
-msgstr ""
+msgstr "カテゴリ"
 
-#: ../../client/src/tasks/stacks/list-group.tsx:70
+#: ../../client/src/world/stacks/tasks-list-group.tsx:70
 msgid "Category"
-msgstr ""
+msgstr "カテゴリ"
 
-#: ../../client/src/app/nav/index.tsx:114
-#: ../../client/src/dev/screen-charts.tsx:14
+#: ../../client/src/app/nav/index.tsx:335
 msgid "Charts"
-msgstr ""
+msgstr "チャート"
 
-#: ../../client/src/settings/screen-overview.tsx:41
+#: ../../client/src/settings/screen-overview.tsx:35
 msgid "Choose your display name."
-msgstr ""
+msgstr "表示名を選択してください。"
 
-#: ../../client/src/settings/screen-overview.tsx:112
-msgid "Clear Data"
-msgstr ""
+#: ../../client/src/media/hooks/use-media-controls.ts:299
+msgid "Close"
+msgstr "閉じる"
 
-#: ../../client/src/home/screen-shortcut.tsx:86
-#: ../../client/src/tasks/screen-list-edit.tsx:136
+#: ../../client/src/home/screen-shortcut.tsx:94
+#: ../../client/src/world/screen-tasks-edit.tsx:122
 msgid "Color"
 msgstr "色"
 
-#: ../../client/src/home/screen-shortcut.tsx:30
-msgid "Configure dashboard shortcut"
-msgstr ""
-
-#: ../../client/src/tasks/screen-list-edit.tsx:44
-msgid "Configure task list"
-msgstr ""
+#: ../../client/src/media/dir/stacks/menu-hfs.tsx:37
+msgid "Compress"
+msgstr "圧縮"
 
 #: ../../client/src/settings/screen-overview.tsx:29
 msgid "Configure the app"
-msgstr ""
+msgstr "アプリを設定"
 
-#: ../../client/src/settings/screen-overview.tsx:142
+#: ../../client/src/settings/screen-overview.tsx:149
 #: ../../design/components/features/auth/signup/Signup.tsx:53
 msgid "Confirm"
-msgstr ""
+msgstr "確認"
+
+#: ../../client/src/media/dir/stacks/menu-hfs.tsx:55
+#: ../../client/src/media/hooks/use-media-controls.ts:73
+msgid "Copy"
+msgstr "コピー"
 
 #: ../../design/components/features/auth/login/Login.tsx:62
 #: ../../design/components/features/auth/signup/Signup.tsx:65
 msgid "Create Account"
-msgstr ""
+msgstr "アカウント作成"
 
-#: ../../client/src/home/screen-shortcut.tsx:98
-#: ../../client/src/tasks/screen-list-edit.tsx:148
+#: ../../client/src/home/screen-shortcut.tsx:106
+#: ../../client/src/world/screen-tasks-edit.tsx:134
 msgid "Danger Zone"
-msgstr ""
+msgstr "危険な操作"
 
-#: ../../client/src/settings/screen-overview.tsx:80
+#: ../../client/src/settings/screen-overview.tsx:74
 msgid "Dark"
 msgstr "ダーク"
 
-#: ../../client/src/app/nav/index.tsx:51
+#: ../../client/src/app/nav/index.tsx:155
 msgid "Dashboard"
 msgstr "ダッシュボード"
 
-#: ../../client/src/settings/screen-overview.tsx:84
+#: ../../client/src/settings/screen-overview.tsx:78
 msgid "Data"
-msgstr ""
+msgstr "データ"
 
-#: ../../client/src/tasks/screen-list-edit.tsx:150
-#: ../../client/src/tasks/screen-list-edit.tsx:153
+#: ../../client/src/home/screen-shortcut.tsx:111
+#: ../../client/src/media/dir/stacks/menu-hfs.tsx:80
+msgid "Delete"
+msgstr "削除"
+
+#: ../../client/src/world/screen-tasks-edit.tsx:136
+#: ../../client/src/world/screen-tasks-edit.tsx:139
 msgid "Delete List"
-msgstr ""
+msgstr "リストを削除"
 
-#: ../../client/src/home/screen-shortcut.tsx:100
-#: ../../client/src/home/screen-shortcut.tsx:103
+#: ../../client/src/home/screen-shortcut.tsx:108
 msgid "Delete Shortcut"
-msgstr ""
+msgstr "ショートカットを削除"
 
-#: ../../client/src/app/nav/index.tsx:106
-#: ../../client/src/dev/screen-design.tsx:14
+#: ../../client/src/settings/screen-overview.tsx:120
+msgid "Deletes database and resets key."
+msgstr "データベースを削除してキーをリセット。"
+
+#: ../../client/src/app/nav/index.tsx:327
 msgid "Design"
 msgstr "デザイン"
 
-#: ../../client/src/app/nav/custom/menu/index.tsx:55
+#: ../../client/src/app/nav/custom/menu/index.tsx:90
 msgid "Development"
 msgstr "開発"
 
-#: ../../client/src/settings/screen-overview.tsx:40
+#: ../../client/src/media/stacks/list/empty.tsx:25
+msgid "Directory empty. Drop items or select folder to import."
+msgstr "ディレクトリが空です。アイテムをドロップするかフォルダを選択してインポートしてください。"
+
+#: ../../client/src/media/stacks/list/empty.tsx:24
+msgid "Directory empty. Select folder to import."
+msgstr "ディレクトリが空です。インポートするフォルダを選択してください。"
+
+#: ../../client/src/world/screen-map.tsx:137
+msgid "Disabled location tracking (requires reload)"
+msgstr "位置情報追跡を無効化（再読み込みが必要）"
+
+#: ../../client/src/settings/screen-overview.tsx:34
 msgid "Display Name"
 msgstr "表示名"
 
-#: ../../client/src/tasks/stacks/list-group.tsx:101
-msgid "Edit Item..."
-msgstr ""
+#: ../../client/src/settings/stacks/account-key.tsx:149
+msgid "Do not share it with anyone."
+msgstr "誰とも共有しないでください。"
 
-#: ../../client/src/app/nav/index.tsx:99
+#: ../../client/src/settings/stacks/account-key.tsx:80
+msgid "Do not share it with anyone. Store it securely."
+msgstr "誰とも共有せず、安全に保管してください。"
+
+#: ../../client/src/app/nav/index.tsx:244
+msgid "Docs"
+msgstr "ドキュメント"
+
+#: ../../client/src/media/hooks/use-media-name.ts:11
+msgid "Documents"
+msgstr "ドキュメント"
+
+#: ../../client/src/media/dir/stacks/menu-evolu.tsx:30
+#: ../../client/src/media/dir/stacks/menu-hfs.tsx:44
+#: ../../client/src/media/dir/stacks/menu-torrent.tsx:23
+#: ../../client/src/media/file/file-binary.tsx:36
+#: ../../client/src/media/hooks/use-media-controls.ts:92
+msgid "Download"
+msgstr "ダウンロード"
+
+#: ../../client/src/settings/screen-overview.tsx:110
+msgid "Download the sqlite database."
+msgstr "SQLiteデータベースをダウンロード。"
+
+#: ../../client/src/media/hooks/use-media-controls.ts:82
+msgid "Edit"
+msgstr "編集"
+
+#: ../../client/src/world/stacks/tasks-list-group.tsx:101
+msgid "Edit Item..."
+msgstr "アイテムを編集..."
+
+#: ../../client/src/app/nav/index.tsx:320
 msgid "Edit List"
-msgstr ""
+msgstr "リストを編集"
 
 #: ../../design/components/features/auth/login/Login.tsx:29
 #: ../../design/components/features/auth/signup/Signup.tsx:29
 msgid "Email"
-msgstr ""
+msgstr "メール"
 
-#: ../../client/src/settings/screen-overview.tsx:93
-msgid "Enter mnemonic"
-msgstr "ニーモニックを入力"
+#: ../../client/src/world/screen-map.tsx:136
+msgid "Enabled location tracking (requires reload)"
+msgstr "位置情報追跡を有効化（再読み込みが必要）"
 
-#: ../../client/src/settings/screen-overview.tsx:47
+#: ../../client/src/settings/screen-overview.tsx:41
 msgid "Enter name"
 msgstr "名前を入力"
 
-#: ../../client/src/settings/hooks/use-settings.ts:24
-#: ../../client/src/settings/hooks/use-settings.ts:45
+#: ../../client/src/settings/hooks/use-settings.ts:26
+#: ../../client/src/settings/hooks/use-settings.ts:49
 msgid "Error"
 msgstr "エラー"
 
-#: ../../client/src/tasks/hooks/use-lists.ts:145
+#: ../../client/src/settings/screen-overview.tsx:109
+msgid "Export Database"
+msgstr "データベースをエクスポート"
+
+#: ../../client/src/settings/screen-overview.tsx:112
+msgid "Export DB"
+msgstr "DBをエクスポート"
+
+#: ../../client/src/media/dir/stacks/menu-zip.tsx:23
+#: ../../client/src/media/hooks/use-media-controls.ts:102
+msgid "Extract"
+msgstr "展開"
+
+#: ../../client/src/world/hooks/use-tasks.ts:145
 msgid "Failed to create category."
-msgstr ""
+msgstr "カテゴリの作成に失敗しました。"
 
-#: ../../client/src/tasks/hooks/use-lists.ts:104
+#: ../../client/src/world/hooks/use-tasks.ts:104
 msgid "Failed to create list item."
-msgstr ""
+msgstr "リストアイテムの作成に失敗しました。"
 
-#: ../../client/src/tasks/hooks/use-lists.ts:35
+#: ../../client/src/world/hooks/use-tasks.ts:35
 msgid "Failed to create new list."
-msgstr ""
+msgstr "新しいリストの作成に失敗しました。"
 
 #: ../../client/src/home/hooks/use-shortcuts.ts:34
 msgid "Failed to create new shortcut."
-msgstr ""
+msgstr "新しいショートカットの作成に失敗しました。"
 
-#: ../../client/src/tasks/hooks/use-lists.ts:164
+#: ../../client/src/world/hooks/use-tasks.ts:164
 msgid "Failed to delete category."
-msgstr ""
+msgstr "カテゴリの削除に失敗しました。"
 
-#: ../../client/src/tasks/hooks/use-lists.ts:111
+#: ../../client/src/world/hooks/use-tasks.ts:111
 msgid "Failed to delete list item."
-msgstr ""
+msgstr "リストアイテムの削除に失敗しました。"
 
-#: ../../client/src/tasks/hooks/use-lists.ts:46
+#: ../../client/src/world/hooks/use-tasks.ts:46
 msgid "Failed to delete list."
-msgstr ""
+msgstr "リストの削除に失敗しました。"
 
 #: ../../client/src/home/hooks/use-shortcuts.ts:96
 msgid "Failed to delete shortcut."
-msgstr ""
+msgstr "ショートカットの削除に失敗しました。"
 
-#: ../../client/src/tasks/hooks/use-lists.ts:177
+#: ../../client/src/world/hooks/use-tasks.ts:177
 msgid "Failed to update category."
-msgstr ""
+msgstr "カテゴリの更新に失敗しました。"
 
-#: ../../client/src/tasks/hooks/use-lists.ts:130
+#: ../../client/src/world/hooks/use-tasks.ts:130
 msgid "Failed to update list item status."
-msgstr ""
+msgstr "リストアイテムのステータス更新に失敗しました。"
 
-#: ../../client/src/tasks/hooks/use-lists.ts:123
+#: ../../client/src/world/hooks/use-tasks.ts:123
 msgid "Failed to update list item text."
-msgstr ""
+msgstr "リストアイテムのテキスト更新に失敗しました。"
 
-#: ../../client/src/tasks/hooks/use-lists.ts:89
+#: ../../client/src/world/hooks/use-tasks.ts:89
 msgid "Failed to update list."
-msgstr ""
+msgstr "リストの更新に失敗しました。"
 
 #: ../../client/src/home/hooks/use-shortcuts.ts:87
 msgid "Failed to update shortcut."
-msgstr ""
+msgstr "ショートカットの更新に失敗しました。"
 
-#: ../../client/src/home/screen-shortcut.tsx:44
-#: ../../client/src/tasks/screen-list-edit.tsx:58
+#: ../../client/src/app/ui/teaser.tsx:11
+msgid "Feature in development..."
+msgstr "開発中の機能..."
+
+#: ../../client/src/app/nav/index.tsx:200
+#: ../../client/src/media/hooks/use-media-name.ts:23
+#: ../../client/src/media/stacks/bar/index.tsx:62
+#: ../../client/src/media/stacks/media.tsx:43
+#: ../../client/src/media/stacks/media.tsx:96
+#: ../../client/src/media/stacks/select/item.tsx:88
+msgid "Files"
+msgstr "ファイル"
+
+#: ../../client/src/media/hooks/use-media-controls.ts:289
+msgid "Fullscreen"
+msgstr "フルスクリーン"
+
+#: ../../client/src/app/nav/index.tsx:272
+#: ../../client/src/media/hooks/use-media-name.ts:19
+msgid "Games"
+msgstr "ゲーム"
+
+#: ../../client/src/home/screen-shortcut.tsx:52
+#: ../../client/src/world/screen-tasks-edit.tsx:44
 msgid "General"
 msgstr "一般"
+
+#: ../../client/src/app/ui/index.tsx:74
+msgid "Geolocation Error"
+msgstr "位置情報エラー"
 
 #: ../../client/src/home/utils/time.ts:16
 msgid "Good afternoon, {name}."
@@ -235,254 +361,425 @@ msgstr "おはようございます、{name}さん。"
 msgid "Good night, {name}."
 msgstr "おやすみなさい、{name}さん。"
 
-#: ../../client/src/app/nav/custom/menu/menu-header.tsx:19
+#: ../../client/src/app/nav/custom/menu/menu-header.tsx:21
 msgid "Human"
 msgstr "人間"
 
-#: ../../client/src/home/screen-shortcut.tsx:74
-#: ../../client/src/tasks/screen-list-edit.tsx:124
+#: ../../client/src/home/screen-shortcut.tsx:82
+#: ../../client/src/world/screen-tasks-edit.tsx:110
 msgid "Icon"
 msgstr "アイコン"
 
-#: ../../client/src/tasks/hooks/use-lists.ts:139
-#: ../../client/src/tasks/hooks/use-lists.ts:171
+#: ../../client/src/settings/stacks/account-key.tsx:303
+msgid "Import"
+msgstr "インポート"
+
+#: ../../client/src/media/stacks/list/empty.tsx:26
+msgid "Import Folder"
+msgstr "フォルダをインポート"
+
+#: ../../client/src/app/nav/index.tsx:163
+msgid "Inbox"
+msgstr "受信箱"
+
+#: ../../client/src/world/hooks/use-tasks.ts:139
+#: ../../client/src/world/hooks/use-tasks.ts:171
 msgid "Invalid category name."
-msgstr ""
+msgstr "無効なカテゴリ名です。"
 
 #: ../../client/src/home/hooks/use-shortcuts.ts:74
-#: ../../client/src/tasks/hooks/use-lists.ts:76
+#: ../../client/src/world/hooks/use-tasks.ts:76
 msgid "Invalid color field."
 msgstr "無効な色です。"
 
 #: ../../client/src/home/hooks/use-shortcuts.ts:66
-#: ../../client/src/tasks/hooks/use-lists.ts:68
+#: ../../client/src/world/hooks/use-tasks.ts:68
 msgid "Invalid icon field."
 msgstr "無効なアイコンです。"
 
-#: ../../client/src/tasks/hooks/use-lists.ts:26
+#: ../../client/src/world/hooks/use-tasks.ts:26
 msgid "Invalid list id."
-msgstr ""
+msgstr "無効なリストIDです。"
 
-#: ../../client/src/settings/hooks/use-settings.ts:26
+#: ../../client/src/settings/hooks/use-settings.ts:28
 msgid "Invalid name (max 25 characters)."
 msgstr "無効な名前（最大25文字）。"
 
 #: ../../client/src/home/hooks/use-shortcuts.ts:58
-#: ../../client/src/tasks/hooks/use-lists.ts:60
+#: ../../client/src/world/hooks/use-tasks.ts:60
 msgid "Invalid name field."
 msgstr "無効な名前です。"
 
-#: ../../client/src/settings/hooks/use-settings.ts:47
+#: ../../client/src/settings/hooks/use-settings.ts:51
 msgid "Invalid owner key."
 msgstr "無効なオーナーキーです。"
 
 #: ../../client/src/home/hooks/use-shortcuts.ts:25
 msgid "Invalid shortcut id."
-msgstr ""
+msgstr "無効なショートカットIDです。"
 
-#: ../../client/src/tasks/hooks/use-lists.ts:98
-#: ../../client/src/tasks/hooks/use-lists.ts:118
+#: ../../client/src/world/hooks/use-tasks.ts:98
+#: ../../client/src/world/hooks/use-tasks.ts:118
 msgid "Invalid text content field."
-msgstr ""
+msgstr "無効なテキストコンテンツです。"
 
 #: ../../client/src/home/hooks/use-shortcuts.ts:50
 msgid "Invalid URL field."
 msgstr "無効なURLです。"
 
-#: ../../client/src/settings/screen-overview.tsx:53
+#: ../../client/src/app/nav/index.tsx:238
+msgid "IPFS"
+msgstr "IPFS"
+
+#: ../../client/src/settings/screen-overview.tsx:47
 msgid "Language"
 msgstr "言語"
 
-#: ../../client/src/settings/screen-overview.tsx:79
+#: ../../client/src/settings/screen-overview.tsx:73
 msgid "Light"
 msgstr "ライト"
 
-#: ../../client/src/app/nav/index.tsx:93
+#: ../../client/src/app/nav/index.tsx:314
 msgid "List Details"
-msgstr ""
+msgstr "リスト詳細"
 
-#: ../../client/src/tasks/hooks/use-lists.ts:13
+#: ../../client/src/world/hooks/use-tasks.ts:13
 msgid "List Error"
-msgstr ""
+msgstr "リストエラー"
 
-#: ../../client/src/tasks/screen-list-edit.tsx:65
+#: ../../client/src/world/screen-tasks-edit.tsx:51
 msgid "List name"
-msgstr ""
+msgstr "リスト名"
 
-#: ../../client/src/app/nav/index.tsx:85
-#: ../../client/src/tasks/screen-list-all.tsx:21
+#: ../../client/src/world/screen-tasks-all.tsx:21
 msgid "Lists"
-msgstr ""
+msgstr "リスト"
+
+#: ../../client/src/media/stacks/bar/index.tsx:70
+msgid "Local"
+msgstr "ローカル"
 
 #: ../../design/components/features/auth/login/Login.tsx:53
 #: ../../design/components/features/auth/signup/Signup.tsx:74
 msgid "Login"
-msgstr ""
+msgstr "ログイン"
 
 #: ../../design/components/features/auth/logout/Logout.tsx:25
 msgid "Logout?"
-msgstr ""
+msgstr "ログアウトしますか？"
 
-#: ../../client/src/tasks/hooks/use-lists.ts:21
+#: ../../client/src/settings/screen-overview.tsx:87
+msgid "Manage Key"
+msgstr "キーを管理"
+
+#: ../../client/src/settings/screen-overview.tsx:81
+msgid "Manage your mnemonic phrase."
+msgstr "ニーモニックフレーズを管理。"
+
+#: ../../client/src/app/nav/index.tsx:293
+#: ../../client/src/world/screen-overview.tsx:18
+msgid "Map"
+msgstr "マップ"
+
+#: ../../client/src/app/nav/custom/menu/index.tsx:69
+msgid "Media"
+msgstr "メディア"
+
+#: ../../client/src/world/hooks/use-tasks.ts:21
 msgid "Missing list id."
-msgstr ""
+msgstr "リストIDがありません。"
 
 #: ../../client/src/home/hooks/use-shortcuts.ts:20
 msgid "Missing shortcut id."
-msgstr ""
+msgstr "ショートカットIDがありません。"
 
-#: ../../client/src/home/screen-shortcut.tsx:61
-#: ../../client/src/tasks/screen-list-edit.tsx:60
+#: ../../client/src/settings/screen-overview.tsx:100
+msgid "Monitor disk usage on device."
+msgstr "デバイスのディスク使用量を監視。"
+
+#: ../../client/src/media/dir/stacks/menu-hfs.tsx:62
+msgid "Move"
+msgstr "移動"
+
+#: ../../client/src/app/nav/index.tsx:251
+#: ../../client/src/media/hooks/use-media-name.ts:13
+msgid "Music"
+msgstr "音楽"
+
+#: ../../client/src/home/screen-shortcut.tsx:69
+#: ../../client/src/world/screen-tasks-edit.tsx:46
 msgid "Name"
 msgstr "名前"
 
-#: ../../client/src/tasks/stacks/list-group.tsx:141
+#: ../../client/src/world/stacks/tasks-list-group.tsx:141
 msgid "New item..."
-msgstr ""
+msgstr "新しいアイテム..."
 
-#: ../../client/src/app/nav/index.tsx:59
+#: ../../client/src/media/hooks/use-media-controls.ts:210
+msgid "Next"
+msgstr "次へ"
+
+#: ../../client/src/app/nav/index.tsx:173
 msgid "Not Found"
-msgstr ""
+msgstr "見つかりません"
 
-#: ../../client/src/tasks/screen-list-all.tsx:22
+#: ../../client/src/media/dir/stacks/menu-evolu.tsx:23
+#: ../../client/src/media/dir/stacks/menu-hfs.tsx:23
+msgid "Open"
+msgstr "開く"
+
+#: ../../client/src/media/hooks/use-media-controls.ts:244
+msgid "Options"
+msgstr "オプション"
+
+#: ../../client/src/world/screen-tasks-all.tsx:22
 msgid "Organize your tasks"
-msgstr ""
-
-#: ../../client/src/settings/screen-overview.tsx:86
-msgid "Owner Key"
-msgstr "オーナーキー"
+msgstr "タスクを整理"
 
 #: ../../client/src/home/screen-not-found.tsx:11
 msgid "Page not found"
-msgstr ""
+msgstr "ページが見つかりません"
+
+#: ../../client/src/settings/stacks/account-key.tsx:295
+#: ../../client/src/settings/stacks/account-key.tsx:300
+msgid "Passkey"
+msgstr "パスキー"
 
 #: ../../design/components/features/auth/login/Login.tsx:42
 #: ../../design/components/features/auth/signup/Signup.tsx:42
 #: ../../design/components/features/auth/signup/Signup.tsx:54
 msgid "password"
-msgstr ""
+msgstr "パスワード"
 
 #: ../../design/components/features/auth/login/Login.tsx:41
 #: ../../design/components/features/auth/signup/Signup.tsx:41
 msgid "Password"
-msgstr ""
+msgstr "パスワード"
 
-#: ../../client/src/tasks/screen-list-edit.tsx:151
+#: ../../client/src/media/hooks/use-media-controls.ts:145
+msgid "Pause"
+msgstr "一時停止"
+
+#: ../../client/src/world/screen-tasks-edit.tsx:137
 msgid "Permanently delete list."
-msgstr ""
+msgstr "リストを完全に削除。"
 
-#: ../../client/src/home/screen-shortcut.tsx:101
+#: ../../client/src/home/screen-shortcut.tsx:109
 msgid "Permanently delete shortcut."
-msgstr ""
+msgstr "ショートカットを完全に削除。"
 
-#: ../../client/src/settings/screen-overview.tsx:38
+#: ../../client/src/app/nav/index.tsx:258
+#: ../../client/src/media/hooks/use-media-name.ts:15
+msgid "Pictures"
+msgstr "画像"
+
+#: ../../client/src/media/hooks/use-media-controls.ts:255
+msgid "Pin"
+msgstr "ピン留め"
+
+#: ../../client/src/media/hooks/use-media-controls.ts:146
+msgid "Play"
+msgstr "再生"
+
+#: ../../client/src/media/hooks/use-media-controls.ts:199
+msgid "Previous"
+msgstr "前へ"
+
+#: ../../client/src/settings/screen-overview.tsx:32
 msgid "Profile"
 msgstr "プロフィール"
 
+#: ../../client/src/media/dir/stacks/menu-hfs.tsx:69
+msgid "Rename"
+msgstr "名前を変更"
+
+#: ../../client/src/media/hooks/use-media-controls.ts:187
+msgid "Replay"
+msgstr "リプレイ"
+
 #: ../../client/src/settings/screen-overview.tsx:119
 #: ../../client/src/settings/screen-overview.tsx:126
-msgid "Reset Database"
-msgstr ""
+#: ../../client/src/settings/screen-overview.tsx:133
+msgid "Reset Data"
+msgstr "データをリセット"
 
-#: ../../client/src/settings/screen-overview.tsx:113
-msgid "Reset owner and delete database."
-msgstr ""
+#: ../../client/src/settings/stacks/account-key.tsx:280
+msgid "Save"
+msgstr "保存"
 
-#: ../../client/src/settings/screen-overview.tsx:72
+#: ../../client/src/media/hooks/use-media-controls.ts:112
+msgid "Search"
+msgstr "検索"
+
+#: ../../client/src/media/hooks/use-media-controls.ts:61
+msgid "Select all"
+msgstr "すべて選択"
+
+#: ../../client/src/settings/screen-overview.tsx:66
 msgid "Select the color scheme."
-msgstr ""
+msgstr "カラースキームを選択。"
 
-#: ../../client/src/settings/screen-overview.tsx:54
+#: ../../client/src/settings/screen-overview.tsx:48
 msgid "Select your preferred language."
-msgstr ""
+msgstr "希望する言語を選択。"
 
 #: ../../client/src/settings/screen-overview.tsx:87
-msgid "Set mnemonic to sync devices."
-msgstr ""
+msgid "Set Key"
+msgstr "キーを設定"
 
-#: ../../client/src/app/nav/index.tsx:71
+#: ../../client/src/app/nav/index.tsx:185
 #: ../../client/src/settings/screen-overview.tsx:28
 msgid "Settings"
 msgstr "設定"
 
-#: ../../client/src/app/nav/index.tsx:65
+#: ../../client/src/media/dir/stacks/menu-hfs.tsx:30
+#: ../../client/src/media/hooks/use-media-controls.ts:269
+msgid "Share"
+msgstr "共有"
+
+#: ../../client/src/app/nav/index.tsx:179
 msgid "Shortcut"
-msgstr ""
+msgstr "ショートカット"
 
 #: ../../client/src/home/hooks/use-shortcuts.ts:12
 msgid "Shortcut Error"
-msgstr ""
+msgstr "ショートカットエラー"
 
-#: ../../client/src/settings/screen-overview.tsx:60
-#: ../../client/src/settings/screen-overview.tsx:78
+#: ../../client/src/media/hooks/use-media-controls.ts:165
+msgid "Skip backward"
+msgstr "巻き戻し"
+
+#: ../../client/src/media/hooks/use-media-controls.ts:176
+msgid "Skip forward"
+msgstr "早送り"
+
+#: ../../client/src/app/nav/index.tsx:193
+msgid "Storage"
+msgstr "ストレージ"
+
+#: ../../client/src/settings/screen-overview.tsx:99
+msgid "Storage Usage"
+msgstr "ストレージ使用量"
+
+#: ../../client/src/settings/screen-overview.tsx:54
+#: ../../client/src/settings/screen-overview.tsx:72
 msgid "System"
 msgstr "システム"
 
-#: ../../client/src/app/nav/index.tsx:79
-#: ../../client/src/settings/screen-overview.tsx:33
-msgid "Test"
-msgstr ""
+#: ../../client/src/app/nav/index.tsx:307
+#: ../../client/src/world/screen-overview.tsx:23
+msgid "Tasks"
+msgstr "タスク"
 
-#: ../../client/src/tasks/screen-list-edit.tsx:137
+#: ../../client/src/world/screen-tasks-edit.tsx:123
 msgid "The color of the list icon."
-msgstr ""
+msgstr "リストアイコンの色。"
 
-#: ../../client/src/home/screen-shortcut.tsx:87
+#: ../../client/src/home/screen-shortcut.tsx:95
 msgid "The color of the shortcut icon."
-msgstr ""
+msgstr "ショートカットアイコンの色。"
 
-#: ../../client/src/tasks/screen-list-edit.tsx:61
+#: ../../client/src/world/screen-tasks-edit.tsx:47
 msgid "The display name of the list."
-msgstr ""
+msgstr "リストの表示名。"
 
-#: ../../client/src/home/screen-shortcut.tsx:62
+#: ../../client/src/home/screen-shortcut.tsx:70
 msgid "The display name of the shortcut."
-msgstr ""
+msgstr "ショートカットの表示名。"
 
-#: ../../client/src/tasks/screen-list-edit.tsx:125
+#: ../../client/src/world/screen-tasks-edit.tsx:111
 msgid "The icon to display for the list."
-msgstr ""
+msgstr "リストに表示するアイコン。"
 
-#: ../../client/src/home/screen-shortcut.tsx:75
+#: ../../client/src/home/screen-shortcut.tsx:83
 msgid "The icon to display for the shortcut."
-msgstr ""
+msgstr "ショートカットに表示するアイコン。"
 
-#: ../../client/src/home/screen-shortcut.tsx:47
+#: ../../client/src/home/screen-shortcut.tsx:55
 msgid "The web page to link to."
 msgstr "リンク先のWebページ。"
 
-#: ../../client/src/settings/screen-overview.tsx:71
+#: ../../client/src/settings/screen-overview.tsx:65
 msgid "Theme"
 msgstr "テーマ"
 
+#: ../../client/src/media/file/file-binary.tsx:35
+msgid "This file can not be previewed."
+msgstr "このファイルはプレビューできません。"
+
 #: ../../design/components/features/auth/logout/Logout.tsx:24
 msgid "This will clear all session data. Are you sure you would like to proceed?"
-msgstr ""
+msgstr "すべてのセッションデータがクリアされます。続行しますか？"
 
-#: ../../client/src/settings/screen-overview.tsx:127
-msgid "This will reset your owner key and delete your local database. This action is irreversible. If you have data you wish to backup make sure to save your owner key."
-msgstr ""
+#: ../../client/src/settings/screen-overview.tsx:134
+msgid "This will reset your account key and delete your local database. This action is irreversible. If you have data you wish to backup make sure to save your account key."
+msgstr "アカウントキーがリセットされ、ローカルデータベースが削除されます。この操作は元に戻せません。バックアップしたいデータがある場合は、アカウントキーを保存してください。"
+
+#: ../../client/src/settings/stacks/account-key.tsx:148
+msgid "Treat your mnemonic phrase with care."
+msgstr "ニーモニックフレーズは大切に扱ってください。"
 
 #. placeholder {0}: 'delete'
-#: ../../client/src/settings/screen-overview.tsx:135
+#: ../../client/src/settings/screen-overview.tsx:142
 msgid "Type \"{0}\" to confirm"
-msgstr ""
+msgstr "確認のため「{0}」と入力"
 
-#: ../../client/src/home/screen-shortcut.tsx:29
-#: ../../client/src/tasks/screen-list-details.tsx:29
-#: ../../client/src/tasks/screen-list-edit.tsx:43
+#: ../../client/src/media/file/file-binary.tsx:30
+msgid "Unsupported File"
+msgstr "サポートされていないファイル"
+
+#: ../../client/src/world/screen-tasks-details.tsx:29
+#: ../../client/src/world/screen-tasks-edit.tsx:42
 msgid "Untitled"
 msgstr "タイトルなし"
 
-#: ../../client/src/home/screen-shortcut.tsx:46
+#: ../../client/src/home/screen-shortcut.tsx:54
 msgid "URL"
 msgstr "URL"
+
+#: ../../client/src/settings/stacks/account-key.tsx:143
+msgid "Used to encrypt and sync your data between devices."
+msgstr "デバイス間でデータを暗号化・同期するために使用。"
 
 #: ../../design/components/features/auth/login/Login.tsx:30
 #: ../../design/components/features/auth/signup/Signup.tsx:30
 msgid "user@example.com"
-msgstr ""
+msgstr "user@example.com"
+
+#: ../../client/src/app/nav/index.tsx:265
+#: ../../client/src/media/hooks/use-media-name.ts:17
+msgid "Videos"
+msgstr "動画"
+
+#: ../../client/src/settings/screen-overview.tsx:102
+msgid "View Usage"
+msgstr "使用量を表示"
+
+#: ../../client/src/media/hooks/use-media-controls.ts:232
+msgid "Volume"
+msgstr "音量"
 
 #: ../../client/src/home/utils/time.ts:21
 msgid "Welcome back, {name}."
 msgstr "おかえりなさい、{name}さん。"
+
+#: ../../client/src/app/nav/custom/menu/index.tsx:79
+#: ../../client/src/app/nav/index.tsx:286
+msgid "World"
+msgstr "ワールド"
+
+#: ../../client/src/app/ui/index.tsx:52
+msgid "You are offline"
+msgstr "オフラインです"
+
+#: ../../client/src/app/ui/index.tsx:50
+msgid "You are online"
+msgstr "オンラインです"
+
+#: ../../client/src/media/hooks/use-media-controls.ts:122
+msgid "Zoom in"
+msgstr "ズームイン"
+
+#: ../../client/src/media/hooks/use-media-controls.ts:133
+msgid "Zoom out"
+msgstr "ズームアウト"
